@@ -835,6 +835,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Sign-In manages authentication for AWS services. This service provides secure authentication flows for accessing AWS resources from the console and developer tools. This release adds the CreateOAuth2Token API, which can be used to fetch OAuth2 access tokens and refresh tokens from Sign-In.
 * [AWSSDK.SimpleDB](https://www.nuget.org/packages/AWSSDK.SimpleDB/)
 	* Amazon SimpleDB is a highly available, scalable, and flexible non-relational data store that enables you to store and query data items using web services requests.
+* [AWSSDK.SimpleDBv2](https://www.nuget.org/packages/AWSSDK.SimpleDBv2/)
+	* Introduced Amazon SimpleDB export functionality enabling domain data export to S3 in JSON format. Added three new APIs StartDomainExport, GetExport, and ListExports via SimpleDBv2 service. Supports cross-region exports and KMS encryption.
 * [AWSSDK.SimpleEmail](https://www.nuget.org/packages/AWSSDK.SimpleEmail/)
 	* Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.
 * [AWSSDK.SimpleEmailV2](https://www.nuget.org/packages/AWSSDK.SimpleEmailV2/)
