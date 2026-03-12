@@ -280,6 +280,17 @@ namespace Amazon.Runtime.Internal.Transform
                             stackString = StackToPath(stack);
                             this.ReadElement();
                             break;
+                        default:
+                            // Advance past any unhandled node types (e.g. Text nodes between sibling
+                            // elements in malformed/HTML responses) to prevent an infinite loop.
+                            XmlReader.Read();
+
+                            // Ensure the context state does not continue to reflect the previous node
+                            // after advancing the underlying XmlReader past an unhandled node type.
+                            nodeType = XmlNodeType.None;
+                            nodeContent = string.Empty;
+                            stackString = StackToPath(stack);
+                            break;
                     }
                 }
             }
