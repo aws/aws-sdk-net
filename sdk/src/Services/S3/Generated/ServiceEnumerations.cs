@@ -399,6 +399,56 @@ namespace Amazon.S3
 
 
     /// <summary>
+    /// Constants used for properties of type BucketNamespace.
+    /// </summary>
+    public partial class BucketNamespace : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccountRegional for BucketNamespace
+        /// </summary>
+        public static readonly BucketNamespace AccountRegional = new BucketNamespace("account-regional");
+        /// <summary>
+        /// Constant Global for BucketNamespace
+        /// </summary>
+        public static readonly BucketNamespace Global = new BucketNamespace("global");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BucketNamespace(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BucketNamespace FindValue(string value)
+        {
+            return FindValue<BucketNamespace>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BucketNamespace(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BucketType.
     /// </summary>
     public partial class BucketType : ConstantClass
