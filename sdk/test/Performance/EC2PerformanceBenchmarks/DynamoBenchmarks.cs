@@ -147,7 +147,8 @@ namespace AWSSDK.Benchmarks
             _tableName = Utils.GenerateName("books");
             await CreateTable(_dynamoDbClient).ConfigureAwait(false);
             await FillTable(_tableName).ConfigureAwait(false);
-            _table = Table.LoadTable(_dynamoDbClient, _tableName);
+            _table = new TableBuilder(_dynamoDbClient, _tableName)
+                .Build();
         }
 
         /// <summary>
@@ -164,7 +165,8 @@ namespace AWSSDK.Benchmarks
         {
             await CommonSetup().ConfigureAwait(false);
 
-            _table = Table.LoadTable(_dynamoDbClient, _tableName);
+            _table = new TableBuilder(_dynamoDbClient, _tableName)
+                .Build();
             _putItemDocument = new Document
             {
                 ["author"] = "John Doe",
@@ -195,7 +197,7 @@ namespace AWSSDK.Benchmarks
         {
             await CommonSetup().ConfigureAwait(false);
 
-            _table = Table.LoadTable(_dynamoDbClient, _tableName);
+            _table = new TableBuilder(_dynamoDbClient, _tableName).Build();
             _queryFilter = new QueryFilter("author",QueryOperator.Equal,"John Doe");
         }
 
@@ -504,7 +506,8 @@ namespace AWSSDK.Benchmarks
                 PropertyNameCaseInsensitive = true
             };
             books = JsonSerializer.Deserialize<List<Book>>(jsonData, options);
-            Table booksTable = Table.LoadTable(_dynamoDbClient, tableName);
+            Table booksTable = new TableBuilder(_dynamoDbClient, tableName)
+                .Build();
 
             foreach (var book in books)
             {
