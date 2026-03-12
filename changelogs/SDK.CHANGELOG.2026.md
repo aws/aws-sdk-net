@@ -1,3 +1,14 @@
+### 3.7.1241.0 (2026-03-12 18:24 UTC)
+* DataSync (3.7.506.0)
+	* DataSync's 3 location types, Hadoop Distributed File System (HDFS), FSx for Windows File Server (FSx Windows), and FSx for NetApp ONTAP (FSx ONTAP) now have credentials managed via Secrets Manager, which may be encrypted with service keys or be configured to use customer-managed keys or secret.
+* ECR (3.7.509.0)
+	* Add Chainguard to PTC upstreamRegistry enum
+* S3 (3.7.511.0)
+	* Adds support for account regional namespaces for general purpose buckets. The account regional namespace is a reserved subdivision of the global bucket namespace where only your account can create general purpose buckets.
+* Core 3.7.500.90
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1240.0 (2026-03-11 18:43 UTC)
 * CustomerProfiles (3.7.506.0)
 	* Today, Amazon Connect is announcing the ability to filter (include or exclude) recommendations based on properties of items and interactions.
