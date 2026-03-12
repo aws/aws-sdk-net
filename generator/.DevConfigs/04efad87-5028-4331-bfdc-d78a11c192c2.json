@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Update InstanceProfileAWSCredentials to fix flaky test (no change in functionality for existing customers)"
+    ]
+  }
+}
