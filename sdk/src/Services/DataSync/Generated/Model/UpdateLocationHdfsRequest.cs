@@ -45,6 +45,8 @@ namespace Amazon.DataSync.Model
         private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private HdfsAuthenticationType _authenticationType;
         private int? _blockSize;
+        private CmkSecretConfig _cmkSecretConfig;
+        private CustomSecretConfig _customSecretConfig;
         private MemoryStream _kerberosKeytab;
         private MemoryStream _kerberosKrb5Conf;
         private string _kerberosPrincipal;
@@ -111,6 +113,47 @@ namespace Amazon.DataSync.Model
         internal bool IsSetBlockSize()
         {
             return this._blockSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CmkSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a DataSync-managed secret, such as a <c>KerberosKeytab</c>
+        /// or set of credentials that DataSync uses to access a specific transfer location, and
+        /// a customer-managed KMS key.
+        /// </para>
+        /// </summary>
+        public CmkSecretConfig CmkSecretConfig
+        {
+            get { return this._cmkSecretConfig; }
+            set { this._cmkSecretConfig = value; }
+        }
+
+        // Check to see if CmkSecretConfig property is set
+        internal bool IsSetCmkSecretConfig()
+        {
+            return this._cmkSecretConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomSecretConfig. 
+        /// <para>
+        /// Specifies configuration information for a customer-managed secret, such as a <c>KerberosKeytab</c>
+        /// or set of credentials that DataSync uses to access a specific transfer location, and
+        /// a customer-managed Identity and Access Management (IAM) role that provides access
+        /// to the secret.
+        /// </para>
+        /// </summary>
+        public CustomSecretConfig CustomSecretConfig
+        {
+            get { return this._customSecretConfig; }
+            set { this._customSecretConfig = value; }
+        }
+
+        // Check to see if CustomSecretConfig property is set
+        internal bool IsSetCustomSecretConfig()
+        {
+            return this._customSecretConfig != null;
         }
 
         /// <summary>

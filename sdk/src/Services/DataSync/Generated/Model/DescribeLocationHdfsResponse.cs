@@ -37,11 +37,14 @@ namespace Amazon.DataSync.Model
         private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private HdfsAuthenticationType _authenticationType;
         private int? _blockSize;
+        private CmkSecretConfig _cmkSecretConfig;
         private DateTime? _creationTime;
+        private CustomSecretConfig _customSecretConfig;
         private string _kerberosPrincipal;
         private string _kmsKeyProviderUri;
         private string _locationArn;
         private string _locationUri;
+        private ManagedSecretConfig _managedSecretConfig;
         private List<HdfsNameNode> _nameNodes = AWSConfigs.InitializeCollections ? new List<HdfsNameNode>() : null;
         private QopConfiguration _qopConfiguration;
         private int? _replicationFactor;
@@ -104,6 +107,26 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CmkSecretConfig. 
+        /// <para>
+        /// Describes configuration information for a DataSync-managed secret, such as a <c>KerberosKeytab</c>
+        /// that DataSync uses to access a specific storage location, with a customer-managed
+        /// KMS key.
+        /// </para>
+        /// </summary>
+        public CmkSecretConfig CmkSecretConfig
+        {
+            get { return this._cmkSecretConfig; }
+            set { this._cmkSecretConfig = value; }
+        }
+
+        // Check to see if CmkSecretConfig property is set
+        internal bool IsSetCmkSecretConfig()
+        {
+            return this._cmkSecretConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// The time that the HDFS location was created.
@@ -119,6 +142,26 @@ namespace Amazon.DataSync.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomSecretConfig. 
+        /// <para>
+        /// Describes configuration information for a customer-managed secret, such as a <c>KerberosKeytab</c>
+        /// that DataSync uses to access a specific storage location, with a customer-managed
+        /// Identity and Access Management (IAM) role that provides access to the secret.
+        /// </para>
+        /// </summary>
+        public CustomSecretConfig CustomSecretConfig
+        {
+            get { return this._customSecretConfig; }
+            set { this._customSecretConfig = value; }
+        }
+
+        // Check to see if CustomSecretConfig property is set
+        internal bool IsSetCustomSecretConfig()
+        {
+            return this._customSecretConfig != null;
         }
 
         /// <summary>
@@ -196,6 +239,26 @@ namespace Amazon.DataSync.Model
         internal bool IsSetLocationUri()
         {
             return this._locationUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedSecretConfig. 
+        /// <para>
+        /// Describes configuration information for a DataSync-managed secret, such as a <c>KerberosKeytab</c>
+        /// that DataSync uses to access a specific storage location. DataSync uses the default
+        /// Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.
+        /// </para>
+        /// </summary>
+        public ManagedSecretConfig ManagedSecretConfig
+        {
+            get { return this._managedSecretConfig; }
+            set { this._managedSecretConfig = value; }
+        }
+
+        // Check to see if ManagedSecretConfig property is set
+        internal bool IsSetManagedSecretConfig()
+        {
+            return this._managedSecretConfig != null;
         }
 
         /// <summary>
