@@ -175,6 +175,54 @@ namespace AWSSDK.UnitTests.DSQL
             }, typeof(ArgumentException));
         }
 
+        [TestMethod]
+        [TestCategory("DSQL")]
+        public void GenerateDbConnectAuthTokenCustomExpiresIn()
+        {
+            AssertAuthToken(DSQLAuthTokenGenerator.GenerateDbConnectAuthToken(BasicCredentials,
+                AWSRegion, DBCluster, TimeSpan.FromSeconds(450)), AccessKey, AWSRegion, DBConnectActionValue, false, 450);
+        }
+
+        [TestMethod]
+        [TestCategory("DSQL")]
+        public void GenerateDbConnectAuthTokenZeroExpiresIn()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                DSQLAuthTokenGenerator.GenerateDbConnectAuthToken(BasicCredentials, AWSRegion, DBCluster, TimeSpan.Zero);
+            }, typeof(ArgumentOutOfRangeException));
+        }
+
+        [TestMethod]
+        [TestCategory("DSQL")]
+        public void GenerateDbConnectAuthTokenNegativeExpiresIn()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                DSQLAuthTokenGenerator.GenerateDbConnectAuthToken(BasicCredentials, AWSRegion, DBCluster, TimeSpan.FromSeconds(-1));
+            }, typeof(ArgumentOutOfRangeException));
+        }
+
+        [TestMethod]
+        [TestCategory("DSQL")]
+        public void GenerateDbConnectAuthTokenExpiresInExceeds7Days()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                DSQLAuthTokenGenerator.GenerateDbConnectAuthToken(BasicCredentials, AWSRegion, DBCluster, TimeSpan.FromDays(8));
+            }, typeof(ArgumentOutOfRangeException));
+        }
+
+#if ASYNC_AWAIT
+        [TestMethod]
+        [TestCategory("DSQL")]
+        public async System.Threading.Tasks.Task GenerateDbConnectAuthTokenCustomExpiresInAsync()
+        {
+            AssertAuthToken(await DSQLAuthTokenGenerator.GenerateDbConnectAuthTokenAsync(BasicCredentials,
+                AWSRegion, DBCluster, TimeSpan.FromSeconds(450)), AccessKey, AWSRegion, DBConnectActionValue, false, 450);
+        }
+#endif
+
         // DbConnectAdmin
 
         #if ASYNC_AWAIT
@@ -275,12 +323,35 @@ namespace AWSSDK.UnitTests.DSQL
             }, typeof(ArgumentException));
         }
 
+        [TestMethod]
+        [TestCategory("DSQL")]
+        public void GenerateDbConnectAdminAuthTokenCustomExpiresIn()
+        {
+            AssertAuthToken(DSQLAuthTokenGenerator.GenerateDbConnectAdminAuthToken(BasicCredentials,
+                AWSRegion, DBCluster, TimeSpan.FromSeconds(450)), AccessKey, AWSRegion, DBConnectAdminActionValue, false, 450);
+        }
+
+#if ASYNC_AWAIT
+        [TestMethod]
+        [TestCategory("DSQL")]
+        public async System.Threading.Tasks.Task GenerateDbConnectAdminAuthTokenCustomExpiresInAsync()
+        {
+            AssertAuthToken(await DSQLAuthTokenGenerator.GenerateDbConnectAdminAuthTokenAsync(BasicCredentials,
+                AWSRegion, DBCluster, TimeSpan.FromSeconds(450)), AccessKey, AWSRegion, DBConnectAdminActionValue, false, 450);
+        }
+#endif
+
         private void AssertAuthToken(string token, string accessKey, RegionEndpoint region, string actionValue)
         {
-            AssertAuthToken(token, accessKey, region, actionValue, false);
+            AssertAuthToken(token, accessKey, region, actionValue, false, 900);
         }
 
         private void AssertAuthToken(string token, string accessKey, RegionEndpoint region, string actionValue, bool hasSessionToken)
+        {
+            AssertAuthToken(token, accessKey, region, actionValue, hasSessionToken, 900);
+        }
+
+        private void AssertAuthToken(string token, string accessKey, RegionEndpoint region, string actionValue, bool hasSessionToken, int expectedExpiresInSeconds)
         {
             // Look for today or yesterday to cover the crazy case where the
             // token was generated utc yesterday but we're asserting utc today.
@@ -289,9 +360,9 @@ namespace AWSSDK.UnitTests.DSQL
 
             var sessionTokenPart = hasSessionToken ? "X-Amz-Security-Token=" + AWSSDKUtils.UrlEncode(SessionToken, false) + "&" : "";
             var regex = Regex.Escape(string.Format(CultureInfo.InvariantCulture,
-                "{0}/?Action={1}&X-Amz-Expires=900&{2}X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=" +
-                "{3}%2FTODAYREGEX%2F{4}%2Fdsql%2Faws4_request&X-Amz-Date=TODAYREGEXTTIMEREGEXZ&X-Amz-SignedHeaders=host&X-Amz-Signature=SIGNATUREREGEX",
-                DBCluster, actionValue, sessionTokenPart, accessKey, region.SystemName));
+                "{0}/?Action={1}&X-Amz-Expires={2}&{3}X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=" +
+                "{4}%2FTODAYREGEX%2F{5}%2Fdsql%2Faws4_request&X-Amz-Date=TODAYREGEXTTIMEREGEXZ&X-Amz-SignedHeaders=host&X-Amz-Signature=SIGNATUREREGEX",
+                DBCluster, actionValue, expectedExpiresInSeconds, sessionTokenPart, accessKey, region.SystemName));
             regex = regex.Replace("TIMEREGEX", "[0-9]{6}").Replace("SIGNATUREREGEX", "[0-9a-f]{64}").Replace("TODAYREGEX", todayRegex);
 
             Assert.IsTrue(Regex.IsMatch(token, regex), token + " doesn't match regex " + regex);
