@@ -41,6 +41,7 @@ namespace Amazon.ObservabilityAdmin.Model
         private Dictionary<string, string> _resourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ResourceType _resourceType;
         private Dictionary<string, string> _telemetryConfigurationState = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private TelemetrySourceType _telemetrySourceType;
 
         /// <summary>
         /// Gets and sets the property AccountIdentifier. 
@@ -165,6 +166,21 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetTelemetryConfigurationState()
         {
             return this._telemetryConfigurationState != null && (this._telemetryConfigurationState.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TelemetrySourceType.
+        /// </summary>
+        public TelemetrySourceType TelemetrySourceType
+        {
+            get { return this._telemetrySourceType; }
+            set { this._telemetrySourceType = value; }
+        }
+
+        // Check to see if TelemetrySourceType property is set
+        internal bool IsSetTelemetrySourceType()
+        {
+            return this._telemetrySourceType != null;
         }
 
     }

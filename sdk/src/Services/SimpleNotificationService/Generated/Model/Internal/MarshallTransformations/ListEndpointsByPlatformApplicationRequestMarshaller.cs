@@ -68,6 +68,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     request.Parameters.Add("PlatformApplicationArn", StringUtils.FromString(publicRequest.PlatformApplicationArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListEndpointsByPlatformApplicationRequestMarshaller _instance = new ListEndpointsByPlatformApplicationRequestMarshaller();        

@@ -9078,6 +9078,44 @@ namespace Amazon.SageMaker
         }
         #endregion
         
+        #region  DescribeTrainingPlanExtensionHistory
+
+        internal virtual DescribeTrainingPlanExtensionHistoryResponse DescribeTrainingPlanExtensionHistory(DescribeTrainingPlanExtensionHistoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTrainingPlanExtensionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrainingPlanExtensionHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrainingPlanExtensionHistoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the extension history for a specified training plan. The response includes
+        /// details about each extension, such as the offering ID, start and end dates, status,
+        /// payment status, and cost information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrainingPlanExtensionHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrainingPlanExtensionHistory service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlanExtensionHistory">REST API Reference for DescribeTrainingPlanExtensionHistory Operation</seealso>
+        public virtual Task<DescribeTrainingPlanExtensionHistoryResponse> DescribeTrainingPlanExtensionHistoryAsync(DescribeTrainingPlanExtensionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTrainingPlanExtensionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrainingPlanExtensionHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTrainingPlanExtensionHistoryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeTransformJob
 
         internal virtual DescribeTransformJobResponse DescribeTransformJob(DescribeTransformJobRequest request)
@@ -9459,6 +9497,55 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = EnableSagemakerServicecatalogPortfolioResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableSagemakerServicecatalogPortfolioResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ExtendTrainingPlan
+
+        internal virtual ExtendTrainingPlanResponse ExtendTrainingPlan(ExtendTrainingPlanRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ExtendTrainingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExtendTrainingPlanResponseUnmarshaller.Instance;
+
+            return Invoke<ExtendTrainingPlanResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Extends an existing training plan by purchasing an extension offering. This allows
+        /// you to add additional compute capacity time to your training plan without creating
+        /// a new plan or reconfiguring your workloads.
+        /// 
+        ///  
+        /// <para>
+        /// To find available extension offerings, use the <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchTrainingPlanOfferings.html">SearchTrainingPlanOfferings</a>
+        /// </c> API with the <c>TrainingPlanArn</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// To view the history of extensions for a training plan, use the <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingPlanExtensionHistory.html">DescribeTrainingPlanExtensionHistory</a>
+        /// </c> API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExtendTrainingPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExtendTrainingPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ExtendTrainingPlan">REST API Reference for ExtendTrainingPlan Operation</seealso>
+        public virtual Task<ExtendTrainingPlanResponse> ExtendTrainingPlanAsync(ExtendTrainingPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ExtendTrainingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExtendTrainingPlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExtendTrainingPlanResponse>(request, options, cancellationToken);
         }
         #endregion
         

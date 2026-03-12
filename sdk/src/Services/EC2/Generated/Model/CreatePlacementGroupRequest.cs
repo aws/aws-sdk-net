@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         private bool? _dryRun;
         private string _groupName;
         private string _linkedGroupId;
+        private OperatorRequest _operator;
         private int? _partitionCount;
         private SpreadLevel _spreadLevel;
         private PlacementStrategy _strategy;
@@ -133,6 +134,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLinkedGroupId()
         {
             return this._linkedGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// Reserved for internal use.
+        /// </para>
+        /// </summary>
+        public OperatorRequest Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

@@ -64,6 +64,12 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
                     response.ActionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AdditionalSecurityRequirements", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.AdditionalSecurityRequirements = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ApprovalStrategy", targetDepth))
                 {
                     var unmarshaller = ApprovalStrategyResponseUnmarshaller.Instance;

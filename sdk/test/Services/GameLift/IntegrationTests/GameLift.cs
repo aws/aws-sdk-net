@@ -2,6 +2,7 @@
 using Amazon.GameLift.Model;
 using Amazon.S3;
 using Amazon.S3.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -33,11 +34,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var originalBuilds = (await GetAllBuilds()).ToList();
 
-            var timestamp = DateTime.UtcNow.ToFileTime().ToString();
             var createRespone = await Client.CreateBuildAsync(new CreateBuildRequest
             {
-                Name = "TestBuild-" + timestamp,
-                Version = timestamp,
+                Name = UtilityMethods.GenerateName("TestBuild-"),
+                Version = DateTime.UtcNow.ToFileTime().ToString(),
                 OperatingSystem = Amazon.GameLift.OperatingSystem.AMAZON_LINUX_2
             });
 

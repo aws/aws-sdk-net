@@ -75,6 +75,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ResetCapacityReservation", StringUtils.FromBool(publicRequest.ResetCapacityReservation));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyCapacityReservationRequestMarshaller _instance = new ModifyCapacityReservationRequestMarshaller();        

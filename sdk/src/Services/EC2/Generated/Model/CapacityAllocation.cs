@@ -34,8 +34,33 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CapacityAllocation
     {
+        private List<CapacityAllocationMetadataEntry> _allocationMetadata = AWSConfigs.InitializeCollections ? new List<CapacityAllocationMetadataEntry>() : null;
         private AllocationType _allocationType;
         private int? _count;
+
+        /// <summary>
+        /// Gets and sets the property AllocationMetadata. 
+        /// <para>
+        /// Additional metadata associated with the capacity allocation. Each entry contains a
+        /// key-value pair providing context about the allocation.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<CapacityAllocationMetadataEntry> AllocationMetadata
+        {
+            get { return this._allocationMetadata; }
+            set { this._allocationMetadata = value; }
+        }
+
+        // Check to see if AllocationMetadata property is set
+        internal bool IsSetAllocationMetadata()
+        {
+            return this._allocationMetadata != null && (this._allocationMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AllocationType. 

@@ -76,6 +76,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TrafficSourceType", StringUtils.FromString(publicRequest.TrafficSourceType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeTrafficSourcesRequestMarshaller _instance = new DescribeTrafficSourcesRequestMarshaller();        

@@ -37,6 +37,8 @@ namespace Amazon.SageMaker.Model
     public partial class ClusterInstanceStorageConfig
     {
         private ClusterEbsVolumeConfig _ebsVolumeConfig;
+        private ClusterFsxLustreConfig _fsxLustreConfig;
+        private ClusterFsxOpenZfsConfig _fsxOpenZfsConfig;
 
         /// <summary>
         /// Gets and sets the property EbsVolumeConfig. 
@@ -57,6 +59,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEbsVolumeConfig()
         {
             return this._ebsVolumeConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FsxLustreConfig. 
+        /// <para>
+        /// Defines the configuration for attaching an Amazon FSx for Lustre file system to the
+        /// instances in the SageMaker HyperPod cluster instance group.
+        /// </para>
+        /// </summary>
+        public ClusterFsxLustreConfig FsxLustreConfig
+        {
+            get { return this._fsxLustreConfig; }
+            set { this._fsxLustreConfig = value; }
+        }
+
+        // Check to see if FsxLustreConfig property is set
+        internal bool IsSetFsxLustreConfig()
+        {
+            return this._fsxLustreConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FsxOpenZfsConfig. 
+        /// <para>
+        /// Defines the configuration for attaching an Amazon FSx for OpenZFS file system to the
+        /// instances in the SageMaker HyperPod cluster instance group.
+        /// </para>
+        /// </summary>
+        public ClusterFsxOpenZfsConfig FsxOpenZfsConfig
+        {
+            get { return this._fsxOpenZfsConfig; }
+            set { this._fsxOpenZfsConfig = value; }
+        }
+
+        // Check to see if FsxOpenZfsConfig property is set
+        internal bool IsSetFsxOpenZfsConfig()
+        {
+            return this._fsxOpenZfsConfig != null;
         }
 
     }

@@ -32,14 +32,6 @@ namespace Amazon.MPA.Model
     /// <summary>
     /// Container for the parameters to the ListPolicies operation.
     /// Returns a list of policies. Policies define the permissions for team resources.
-    /// 
-    ///  
-    /// <para>
-    /// The protected operation for a service integration might require specific permissions.
-    /// For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How
-    /// other services work with Multi-party approval</a> in the <i>Multi-party approval User
-    /// Guide</i>.
-    /// </para>
     /// </summary>
     public partial class ListPoliciesRequest : AmazonMPARequest
     {

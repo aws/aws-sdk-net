@@ -35,8 +35,8 @@ namespace Amazon.PartnerCentralChannel.Model
     public partial class SupportPlan
     {
         private PartnerLedSupport _partnerLedSupport;
-        private ResoldBusiness _resoldBusiness;
         private ResoldEnterprise _resoldEnterprise;
+        private ResoldUnifiedOperations _resoldUnifiedOperations;
 
         /// <summary>
         /// Gets and sets the property PartnerLedSupport. 
@@ -57,24 +57,6 @@ namespace Amazon.PartnerCentralChannel.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResoldBusiness. 
-        /// <para>
-        /// Configuration for resold business support plans.
-        /// </para>
-        /// </summary>
-        public ResoldBusiness ResoldBusiness
-        {
-            get { return this._resoldBusiness; }
-            set { this._resoldBusiness = value; }
-        }
-
-        // Check to see if ResoldBusiness property is set
-        internal bool IsSetResoldBusiness()
-        {
-            return this._resoldBusiness != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ResoldEnterprise. 
         /// <para>
         /// Configuration for resold enterprise support plans.
@@ -90,6 +72,24 @@ namespace Amazon.PartnerCentralChannel.Model
         internal bool IsSetResoldEnterprise()
         {
             return this._resoldEnterprise != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResoldUnifiedOperations. 
+        /// <para>
+        /// Configuration for resold unified operations support plans.
+        /// </para>
+        /// </summary>
+        public ResoldUnifiedOperations ResoldUnifiedOperations
+        {
+            get { return this._resoldUnifiedOperations; }
+            set { this._resoldUnifiedOperations = value; }
+        }
+
+        // Check to see if ResoldUnifiedOperations property is set
+        internal bool IsSetResoldUnifiedOperations()
+        {
+            return this._resoldUnifiedOperations != null;
         }
 
     }

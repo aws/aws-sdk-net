@@ -68,6 +68,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RetainPrimaryReplicationGroup", StringUtils.FromBool(publicRequest.RetainPrimaryReplicationGroup));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteGlobalReplicationGroupRequestMarshaller _instance = new DeleteGlobalReplicationGroupRequestMarshaller();        

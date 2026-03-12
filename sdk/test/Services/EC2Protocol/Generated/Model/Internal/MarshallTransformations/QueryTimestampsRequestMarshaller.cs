@@ -72,6 +72,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NormalFormat", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.NormalFormat));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static QueryTimestampsRequestMarshaller _instance = new QueryTimestampsRequestMarshaller();        

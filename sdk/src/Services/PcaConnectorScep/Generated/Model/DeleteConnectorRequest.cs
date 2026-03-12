@@ -31,7 +31,7 @@ namespace Amazon.PcaConnectorScep.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConnector operation.
-    /// Deletes the specified <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>.
+    /// Deletes the specified <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>.
     /// This operation also deletes any challenges associated with the connector.
     /// </summary>
     public partial class DeleteConnectorRequest : AmazonPcaConnectorScepRequest

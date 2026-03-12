@@ -34,9 +34,27 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class SrtOutputDestinationSettings
     {
+        private ConnectionMode _connectionMode;
         private string _encryptionPassphraseSecretArn;
+        private int? _listenerPort;
         private string _streamId;
         private string _url;
+
+        /// <summary>
+        /// Gets and sets the property ConnectionMode. Specifies the mode the output should use
+        /// for connection establishment. CALLER mode requires URL, LISTENER mode requires port.
+        /// </summary>
+        public ConnectionMode ConnectionMode
+        {
+            get { return this._connectionMode; }
+            set { this._connectionMode = value; }
+        }
+
+        // Check to see if ConnectionMode property is set
+        internal bool IsSetConnectionMode()
+        {
+            return this._connectionMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EncryptionPassphraseSecretArn. Arn used to extract the
@@ -52,6 +70,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetEncryptionPassphraseSecretArn()
         {
             return this._encryptionPassphraseSecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListenerPort. Port number for listener mode connections
+        /// (required when connectionMode is LISTENER, must not be provided when connectionMode
+        /// is CALLER).
+        /// </summary>
+        public int? ListenerPort
+        {
+            get { return this._listenerPort; }
+            set { this._listenerPort = value; }
+        }
+
+        // Check to see if ListenerPort property is set
+        internal bool IsSetListenerPort()
+        {
+            return this._listenerPort.HasValue; 
         }
 
         /// <summary>

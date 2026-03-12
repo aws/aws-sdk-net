@@ -169,6 +169,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "CoreCount", StringUtils.FromInt(publicRequest.LaunchTemplateData.CpuOptions.CoreCount));
                         }
+                        if(publicRequest.LaunchTemplateData.CpuOptions.IsSetNestedVirtualization())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "NestedVirtualization", StringUtils.FromString(publicRequest.LaunchTemplateData.CpuOptions.NestedVirtualization));
+                        }
                         if(publicRequest.LaunchTemplateData.CpuOptions.IsSetThreadsPerCore())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "ThreadsPerCore", StringUtils.FromInt(publicRequest.LaunchTemplateData.CpuOptions.ThreadsPerCore));
@@ -897,6 +901,60 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "RamDiskId", StringUtils.FromString(publicRequest.LaunchTemplateData.RamDiskId));
                     }
+                    if(publicRequest.LaunchTemplateData.IsSetSecondaryInterfaces())
+                    {
+                        if (publicRequest.LaunchTemplateData.SecondaryInterfaces.Count == 0)
+                            request.Parameters.Add("LaunchTemplateData" + "." + "SecondaryInterface", "");
+                        else
+                        {
+                             int publicRequestLaunchTemplateDatalistValueIndex = 1;
+                             foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.SecondaryInterfaces)
+                             {
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetDeleteOnTermination())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "SecondaryInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.DeleteOnTermination));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetDeviceIndex())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "SecondaryInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.DeviceIndex));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetInterfaceType())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "SecondaryInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "InterfaceType", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.InterfaceType));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetNetworkCardIndex())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "SecondaryInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "NetworkCardIndex", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.NetworkCardIndex));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetPrivateIpAddressCount())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "SecondaryInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddressCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.PrivateIpAddressCount));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetPrivateIpAddresses())
+                                {
+                                    if (publicRequestLaunchTemplateDatalistValue.PrivateIpAddresses.Count == 0)
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "SecondaryInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddress", "");
+                                    else
+                                    {
+                                         int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
+                                         foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.PrivateIpAddresses)
+                                         {
+                                            if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetPrivateIpAddress())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateData" + "." + "SecondaryInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddress" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.PrivateIpAddress));
+                                            }
+                                             publicRequestLaunchTemplateDatalistValuelistValueIndex++;
+                                         }
+                                    }
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetSecondarySubnetId())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "SecondaryInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "SecondarySubnetId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.SecondarySubnetId));
+                                }
+                                 publicRequestLaunchTemplateDatalistValueIndex++;
+                             }
+                        }
+                    }
                     if(publicRequest.LaunchTemplateData.IsSetSecurityGroupIds())
                     {
                         if (publicRequest.LaunchTemplateData.SecurityGroupIds.Count == 0)
@@ -1022,6 +1080,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VersionDescription", StringUtils.FromString(publicRequest.VersionDescription));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateLaunchTemplateRequestMarshaller _instance = new CreateLaunchTemplateRequestMarshaller();        

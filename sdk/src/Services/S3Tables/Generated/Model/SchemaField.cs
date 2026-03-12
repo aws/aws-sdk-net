@@ -34,9 +34,30 @@ namespace Amazon.S3Tables.Model
     /// </summary>
     public partial class SchemaField
     {
+        private int? _id;
         private string _name;
         private bool? _required;
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// An optional unique identifier for the schema field. Field IDs are used by Apache Iceberg
+        /// to track schema evolution and maintain compatibility across schema changes. If not
+        /// specified, S3 Tables automatically assigns field IDs.
+        /// </para>
+        /// </summary>
+        public int? Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

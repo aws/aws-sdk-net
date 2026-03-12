@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private int? _coreCount;
         private string _instanceId;
+        private NestedVirtualizationSpecification _nestedVirtualization;
         private int? _threadsPerCore;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NestedVirtualization. 
+        /// <para>
+        /// Indicates whether nested virtualization has been enabled or disabled.
+        /// </para>
+        /// </summary>
+        public NestedVirtualizationSpecification NestedVirtualization
+        {
+            get { return this._nestedVirtualization; }
+            set { this._nestedVirtualization = value; }
+        }
+
+        // Check to see if NestedVirtualization property is set
+        internal bool IsSetNestedVirtualization()
+        {
+            return this._nestedVirtualization != null;
         }
 
         /// <summary>

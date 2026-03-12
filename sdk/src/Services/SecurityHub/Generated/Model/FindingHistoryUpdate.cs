@@ -44,7 +44,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property NewValue. 
         /// <para>
         ///  The value of the ASFF field after the finding change event. To preserve storage and
-        /// readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html">
+        /// readability, Security Hub CSPM omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html">
         /// <c>FindingHistoryRecord</c> </a> exceeds database limits. 
         /// </para>
         /// </summary>

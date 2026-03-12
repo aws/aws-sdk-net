@@ -61,6 +61,7 @@ namespace Amazon.GameLift.Model
         private int? _maximumPlayerSessionCount;
         private List<PlacedPlayerSession> _placedPlayerSessions = AWSConfigs.InitializeCollections ? new List<PlacedPlayerSession>() : null;
         private string _placementId;
+        private PlayerGatewayStatus _playerGatewayStatus;
         private List<PlayerLatency> _playerLatencies = AWSConfigs.InitializeCollections ? new List<PlayerLatency>() : null;
         private int? _port;
         private PriorityConfigurationOverride _priorityConfigurationOverride;
@@ -125,13 +126,19 @@ namespace Amazon.GameLift.Model
         /// A set of key-value pairs that can store custom data in a game session. For example:
         /// <c>{"Key": "difficulty", "Value": "novice"}</c>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// Avoid using periods (".") in property keys if you plan to search for game sessions
         /// by properties. Property keys containing periods cannot be searched and will be filtered
         /// out from search results due to search index limitations.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use SearchGameSessions API, there is a limit of 500 game property keys across
+        /// all game sessions and all fleets per region. If the limit is exceeded, there will
+        /// potentially be game session entries missing from SearchGameSessions API results.
+        /// </para>
+        ///  </li> </ul> </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -380,6 +387,41 @@ namespace Amazon.GameLift.Model
         internal bool IsSetPlacementId()
         {
             return this._placementId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlayerGatewayStatus. 
+        /// <para>
+        /// The current status of player gateway for the game session placement. Note, even if
+        /// a fleet has PlayerGatewayMode configured as <c>ENABLED</c>, player gateway might not
+        /// be available in a specific location. For more information about locations where player
+        /// gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon
+        /// GameLift Servers service locations</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c> -- Player gateway is available for this game session placement.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c> -- Player gateway is not available for this game session placement.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PlayerGatewayStatus PlayerGatewayStatus
+        {
+            get { return this._playerGatewayStatus; }
+            set { this._playerGatewayStatus = value; }
+        }
+
+        // Check to see if PlayerGatewayStatus property is set
+        internal bool IsSetPlayerGatewayStatus()
+        {
+            return this._playerGatewayStatus != null;
         }
 
         /// <summary>

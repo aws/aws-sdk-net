@@ -108,6 +108,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
                 }
+                if(publicRequest.IsSetBackupRetentionPeriod())
+                {
+                    request.Parameters.Add("BackupRetentionPeriod", StringUtils.FromInt(publicRequest.BackupRetentionPeriod));
+                }
                 if(publicRequest.IsSetBackupTarget())
                 {
                     request.Parameters.Add("BackupTarget", StringUtils.FromString(publicRequest.BackupTarget));
@@ -256,6 +260,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
                 }
+                if(publicRequest.IsSetPreferredBackupWindow())
+                {
+                    request.Parameters.Add("PreferredBackupWindow", StringUtils.FromString(publicRequest.PreferredBackupWindow));
+                }
                 if(publicRequest.IsSetProcessorFeatures())
                 {
                     if (publicRequest.ProcessorFeatures.Count == 0)
@@ -375,6 +383,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RestoreDBInstanceFromDBSnapshotRequestMarshaller _instance = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();        

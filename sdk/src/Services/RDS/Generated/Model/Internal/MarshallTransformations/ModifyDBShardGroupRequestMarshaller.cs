@@ -76,6 +76,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("MinACU", StringUtils.FromDouble(publicRequest.MinACU));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyDBShardGroupRequestMarshaller _instance = new ModifyDBShardGroupRequestMarshaller();        

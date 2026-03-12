@@ -139,5 +139,13 @@ namespace Amazon.RAM.Model
         {
             return new ListResourceTypesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSourceAssociations operation
+        ///</summary>
+        public IListSourceAssociationsPaginator ListSourceAssociations(ListSourceAssociationsRequest request) 
+        {
+            return new ListSourceAssociationsPaginator(this.client, request);
+        }
     }
 }

@@ -1731,6 +1731,157 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateQueueEmailAddresses
+
+
+        /// <summary>
+        /// Associates a set of email addresses with a queue to enable agents to select different
+        /// "From" (system) email addresses when replying to inbound email contacts or initiating
+        /// outbound email contacts. This allows agents to handle email contacts across different
+        /// brands and business units within the same queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can associate up to 49 additional email addresses with a single queue, plus 1
+        /// default outbound email address, for a total of 50.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The email addresses must already exist in the Amazon Connect instance before they
+        /// can be associated with a queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents will be able to select from these associated email addresses when handling
+        /// email contacts in the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For inbound email contacts, agents can select from email addresses associated with
+        /// the queue where the contact was accepted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For outbound email contacts, agents can select from email addresses associated with
+        /// their default outbound queue configured in their routing profile.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateQueueEmailAddresses service method.</param>
+        /// 
+        /// <returns>The response from the AssociateQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueEmailAddresses">REST API Reference for AssociateQueueEmailAddresses Operation</seealso>
+        public virtual AssociateQueueEmailAddressesResponse AssociateQueueEmailAddresses(AssociateQueueEmailAddressesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateQueueEmailAddressesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates a set of email addresses with a queue to enable agents to select different
+        /// "From" (system) email addresses when replying to inbound email contacts or initiating
+        /// outbound email contacts. This allows agents to handle email contacts across different
+        /// brands and business units within the same queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can associate up to 49 additional email addresses with a single queue, plus 1
+        /// default outbound email address, for a total of 50.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The email addresses must already exist in the Amazon Connect instance before they
+        /// can be associated with a queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents will be able to select from these associated email addresses when handling
+        /// email contacts in the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For inbound email contacts, agents can select from email addresses associated with
+        /// the queue where the contact was accepted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For outbound email contacts, agents can select from email addresses associated with
+        /// their default outbound queue configured in their routing profile.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateQueueEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueEmailAddresses">REST API Reference for AssociateQueueEmailAddresses Operation</seealso>
+        public virtual Task<AssociateQueueEmailAddressesResponse> AssociateQueueEmailAddressesAsync(AssociateQueueEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateQueueEmailAddressesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateQueueEmailAddressesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateQueueQuickConnects
 
 
@@ -4746,6 +4897,95 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateNotification
+
+
+        /// <summary>
+        /// Creates a new notification to be delivered to specified recipients. Notifications
+        /// can include localized content with links, and an optional expiration time. Recipients
+        /// can be specified as individual user ARNs or instance ARNs to target all users in an
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotification service method.</param>
+        /// 
+        /// <returns>The response from the CreateNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
+        public virtual CreateNotificationResponse CreateNotification(CreateNotificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNotificationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new notification to be delivered to specified recipients. Notifications
+        /// can include localized content with links, and an optional expiration time. Recipients
+        /// can be specified as individual user ARNs or instance ARNs to target all users in an
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
+        public virtual Task<CreateNotificationResponse> CreateNotificationAsync(CreateNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotificationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateNotificationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateParticipant
 
 
@@ -6113,7 +6353,37 @@ namespace Amazon.Connect
         /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
         /// management.
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
+        /// <para>
+        /// Fields in <c>PhoneConfig</c> cannot be set simultaneously with their corresponding
+        /// channel-specific configuration parameters. Specifically:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.AutoAccept</c> conflicts with <c>AutoAcceptConfigs</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.AfterContactWorkTimeLimit</c> conflicts with <c>AfterContactWorkConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.PhoneType</c> and <c>PhoneConfig.PhoneNumber</c> conflict with <c>PhoneNumberConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.PersistentConnection</c> conflicts with <c>PersistentConnectionConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// We recommend using channel-specific parameters such as <c>AutoAcceptConfigs</c>, <c>AfterContactWorkConfigs</c>,
+        /// <c>PhoneNumberConfigs</c>, <c>PersistentConnectionConfigs</c>, and <c>VoiceEnhancementConfigs</c>
+        /// for per-channel configuration.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For information about how to create users using the Amazon Connect admin website,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
@@ -6165,7 +6435,37 @@ namespace Amazon.Connect
         /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
         /// management.
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
+        /// <para>
+        /// Fields in <c>PhoneConfig</c> cannot be set simultaneously with their corresponding
+        /// channel-specific configuration parameters. Specifically:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.AutoAccept</c> conflicts with <c>AutoAcceptConfigs</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.AfterContactWorkTimeLimit</c> conflicts with <c>AfterContactWorkConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.PhoneType</c> and <c>PhoneConfig.PhoneNumber</c> conflict with <c>PhoneNumberConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.PersistentConnection</c> conflicts with <c>PersistentConnectionConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// We recommend using channel-specific parameters such as <c>AutoAcceptConfigs</c>, <c>AfterContactWorkConfigs</c>,
+        /// <c>PhoneNumberConfigs</c>, <c>PersistentConnectionConfigs</c>, and <c>VoiceEnhancementConfigs</c>
+        /// for per-channel configuration.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For information about how to create users using the Amazon Connect admin website,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
@@ -8091,6 +8391,85 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DeleteIntegrationAssociationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteIntegrationAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteNotification
+
+
+        /// <summary>
+        /// Deletes a notification. Once deleted, the notification is no longer visible to all
+        /// users and cannot be managed through the Admin Website or APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotification service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
+        public virtual DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNotificationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a notification. Once deleted, the notification is no longer visible to all
+        /// users and cannot be managed through the Admin Website or APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
+        public virtual Task<DeleteNotificationResponse> DeleteNotificationAsync(DeleteNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteNotificationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11161,6 +11540,85 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribeNotification
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific notification, including its content,
+        /// priority, recipients, and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotification service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeNotification">REST API Reference for DescribeNotification Operation</seealso>
+        public virtual DescribeNotificationResponse DescribeNotification(DescribeNotificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNotificationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific notification, including its content,
+        /// priority, recipients, and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeNotification">REST API Reference for DescribeNotification Operation</seealso>
+        public virtual Task<DescribeNotificationResponse> DescribeNotificationAsync(DescribeNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeNotificationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribePhoneNumber
 
 
@@ -13501,6 +13959,131 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateQueueEmailAddresses
+
+
+        /// <summary>
+        /// Removes the association between a set of email addresses and a queue. After disassociation,
+        /// agents will no longer be able to select these email addresses as "From" addresses
+        /// when replying to inbound email contacts or initiating outbound email contacts in this
+        /// queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Agents will no longer see these email addresses in their "From" address selection
+        /// options for this queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The email addresses themselves are not deleted from the instance, only their availability
+        /// for agent selection in this queue is removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Changes take effect immediately and will affect the agent experience in the Contact
+        /// Control Panel (CCP).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateQueueEmailAddresses service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueEmailAddresses">REST API Reference for DisassociateQueueEmailAddresses Operation</seealso>
+        public virtual DisassociateQueueEmailAddressesResponse DisassociateQueueEmailAddresses(DisassociateQueueEmailAddressesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateQueueEmailAddressesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes the association between a set of email addresses and a queue. After disassociation,
+        /// agents will no longer be able to select these email addresses as "From" addresses
+        /// when replying to inbound email contacts or initiating outbound email contacts in this
+        /// queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Agents will no longer see these email addresses in their "From" address selection
+        /// options for this queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The email addresses themselves are not deleted from the instance, only their availability
+        /// for agent selection in this queue is removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Changes take effect immediately and will affect the agent experience in the Contact
+        /// Control Panel (CCP).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateQueueEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueEmailAddresses">REST API Reference for DisassociateQueueEmailAddresses Operation</seealso>
+        public virtual Task<DisassociateQueueEmailAddressesResponse> DisassociateQueueEmailAddressesAsync(DisassociateQueueEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateQueueEmailAddressesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateQueueEmailAddressesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateQueueQuickConnects
 
 
@@ -14358,7 +14941,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Retrieves the position of the contact in the queue.
+        /// Retrieves contact metric data for a specified contact.
         /// 
         ///  
         /// <para>
@@ -14366,23 +14949,27 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// Following are common uses cases for position in queue:
+        /// Following are common use cases for position in queue and estimated wait time:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Understand the expected wait experience of a contact.
+        /// Customer-Facing Wait Time Announcements - Display or announce the estimated wait time
+        /// and position in queue to customers before or during their queue experience. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Inform customers of their position in queue and potentially offer a callback.
+        /// Callback Offerings - Offer customers a callback option when the estimated wait time
+        /// or position in queue exceeds a defined threshold. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Make data-driven routing decisions between primary and alternative queues.
+        /// Queue Routing Decisions - Route incoming contacts to less congested queues by comparing
+        /// estimated wait time and position in queue across multiple queues. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Enhance queue visibility and leverage agent proficiencies to streamline contact routing.
+        /// Self-Service Deflection - Redirect customers to self-service options like chatbots
+        /// or FAQs when estimated wait time is high or position in queue is unfavorable. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -14390,8 +14977,7 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The only way to retrieve the position of the contact in queue is by using this API.
-        /// You can't retrieve the position by using flows and attributes.
+        /// Metrics are only available while the contact is actively in queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14437,7 +15023,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Retrieves the position of the contact in the queue.
+        /// Retrieves contact metric data for a specified contact.
         /// 
         ///  
         /// <para>
@@ -14445,23 +15031,27 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// Following are common uses cases for position in queue:
+        /// Following are common use cases for position in queue and estimated wait time:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Understand the expected wait experience of a contact.
+        /// Customer-Facing Wait Time Announcements - Display or announce the estimated wait time
+        /// and position in queue to customers before or during their queue experience. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Inform customers of their position in queue and potentially offer a callback.
+        /// Callback Offerings - Offer customers a callback option when the estimated wait time
+        /// or position in queue exceeds a defined threshold. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Make data-driven routing decisions between primary and alternative queues.
+        /// Queue Routing Decisions - Route incoming contacts to less congested queues by comparing
+        /// estimated wait time and position in queue across multiple queues. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Enhance queue visibility and leverage agent proficiencies to streamline contact routing.
+        /// Self-Service Deflection - Redirect customers to self-service options like chatbots
+        /// or FAQs when estimated wait time is high or position in queue is unfavorable. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -14469,8 +15059,7 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The only way to retrieve the position of the contact in queue is by using this API.
-        /// You can't retrieve the position by using flows and attributes.
+        /// Metrics are only available while the contact is actively in queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18278,6 +18867,83 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListNotifications
+
+
+        /// <summary>
+        /// Retrieves a paginated list of all notifications in the Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotifications service method.</param>
+        /// 
+        /// <returns>The response from the ListNotifications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListNotifications">REST API Reference for ListNotifications Operation</seealso>
+        public virtual ListNotificationsResponse ListNotifications(ListNotificationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNotificationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a paginated list of all notifications in the Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotifications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNotifications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListNotifications">REST API Reference for ListNotifications Operation</seealso>
+        public virtual Task<ListNotificationsResponse> ListNotificationsAsync(ListNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNotificationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListPhoneNumbers
 
 
@@ -18700,6 +19366,141 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListPromptsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListPromptsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListQueueEmailAddresses
+
+
+        /// <summary>
+        /// Lists all email addresses that are currently associated with a specific queue, providing
+        /// details about which "From" email addresses agents can select when handling email contacts.
+        /// This helps administrators manage agent email address options and understand the available
+        /// choices for different brands and business units.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The response includes metadata about each email address available for agent selection,
+        /// including whether it's configured as the default outbound email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents can select from these email addresses when replying to inbound contacts or
+        /// initiating outbound contacts in this queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The list includes both explicitly associated email addresses and any default outbound
+        /// email address configured for the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Results are paginated to handle queues with many associated email addresses (up to
+        /// 50 per queue).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueueEmailAddresses service method.</param>
+        /// 
+        /// <returns>The response from the ListQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueEmailAddresses">REST API Reference for ListQueueEmailAddresses Operation</seealso>
+        public virtual ListQueueEmailAddressesResponse ListQueueEmailAddresses(ListQueueEmailAddressesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<ListQueueEmailAddressesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all email addresses that are currently associated with a specific queue, providing
+        /// details about which "From" email addresses agents can select when handling email contacts.
+        /// This helps administrators manage agent email address options and understand the available
+        /// choices for different brands and business units.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The response includes metadata about each email address available for agent selection,
+        /// including whether it's configured as the default outbound email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents can select from these email addresses when replying to inbound contacts or
+        /// initiating outbound contacts in this queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The list includes both explicitly associated email addresses and any default outbound
+        /// email address configured for the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Results are paginated to handle queues with many associated email addresses (up to
+        /// 50 per queue).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueueEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueEmailAddresses">REST API Reference for ListQueueEmailAddresses Operation</seealso>
+        public virtual Task<ListQueueEmailAddressesResponse> ListQueueEmailAddressesAsync(ListQueueEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueueEmailAddressesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListQueueEmailAddressesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -20490,6 +21291,85 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListUserNotifications
+
+
+        /// <summary>
+        /// Retrieves a paginated list of notifications for a specific user, including the notification
+        /// status for that user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserNotifications service method.</param>
+        /// 
+        /// <returns>The response from the ListUserNotifications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserNotifications">REST API Reference for ListUserNotifications Operation</seealso>
+        public virtual ListUserNotificationsResponse ListUserNotifications(ListUserNotificationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUserNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserNotificationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a paginated list of notifications for a specific user, including the notification
+        /// status for that user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserNotifications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUserNotifications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserNotifications">REST API Reference for ListUserNotifications Operation</seealso>
+        public virtual Task<ListUserNotificationsResponse> ListUserNotificationsAsync(ListUserNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUserNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserNotificationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListUserNotificationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListUserProficiencies
 
 
@@ -21921,9 +22801,7 @@ namespace Amazon.Connect
         /// <para>
         /// A Search operation, unlike a List operation, takes time to index changes to resource
         /// (create, update or delete). If you don't see updated information for recently changed
-        /// contact evaluations, try calling the API again in a few seconds. Contact Evaluations
-        /// may not be fully backfilled with historical data in all regions yet, however all recently
-        /// created Contact Evaluations should be available for search.
+        /// contact evaluations, try calling the API again in a few seconds.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -21988,9 +22866,7 @@ namespace Amazon.Connect
         /// <para>
         /// A Search operation, unlike a List operation, takes time to index changes to resource
         /// (create, update or delete). If you don't see updated information for recently changed
-        /// contact evaluations, try calling the API again in a few seconds. Contact Evaluations
-        /// may not be fully backfilled with historical data in all regions yet, however all recently
-        /// created Contact Evaluations should be available for search.
+        /// contact evaluations, try calling the API again in a few seconds.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -22679,6 +23555,87 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = SearchHoursOfOperationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<SearchHoursOfOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchNotifications
+
+
+        /// <summary>
+        /// Searches for notifications based on specified criteria and filters. Returns a paginated
+        /// list of notifications matching the search parameters, ordered by descending creation
+        /// time. Supports filtering by content and tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchNotifications service method.</param>
+        /// 
+        /// <returns>The response from the SearchNotifications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchNotifications">REST API Reference for SearchNotifications Operation</seealso>
+        public virtual SearchNotificationsResponse SearchNotifications(SearchNotificationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchNotificationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches for notifications based on specified criteria and filters. Returns a paginated
+        /// list of notifications matching the search parameters, ordered by descending creation
+        /// time. Supports filtering by content and tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchNotifications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchNotifications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchNotifications">REST API Reference for SearchNotifications Operation</seealso>
+        public virtual Task<SearchNotificationsResponse> SearchNotificationsAsync(SearchNotificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchNotificationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchNotificationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -28765,6 +29722,85 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateNotificationContent
+
+
+        /// <summary>
+        /// Updates the localized content of an existing notification. This operation applies
+        /// to all users for whom the notification was sent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationContent service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNotificationContent service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateNotificationContent">REST API Reference for UpdateNotificationContent Operation</seealso>
+        public virtual UpdateNotificationContentResponse UpdateNotificationContent(UpdateNotificationContentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNotificationContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotificationContentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNotificationContentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the localized content of an existing notification. This operation applies
+        /// to all users for whom the notification was sent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNotificationContent service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateNotificationContent">REST API Reference for UpdateNotificationContent Operation</seealso>
+        public virtual Task<UpdateNotificationContentResponse> UpdateNotificationContentAsync(UpdateNotificationContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNotificationContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotificationContentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateNotificationContentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateParticipantAuthentication
 
 
@@ -30933,6 +31969,101 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateUserConfig
+
+
+        /// <summary>
+        /// Updates the configuration settings for the specified user, including per-channel auto-accept
+        /// and after contact work (ACW) timeout settings.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation replaces the UpdateUserPhoneConfig API. While UpdateUserPhoneConfig
+        /// applies the same ACW timeout to all channels, UpdateUserConfig allows you to set different
+        /// auto-accept and ACW timeout values for each channel type.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUserConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserConfig">REST API Reference for UpdateUserConfig Operation</seealso>
+        public virtual UpdateUserConfigResponse UpdateUserConfig(UpdateUserConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the configuration settings for the specified user, including per-channel auto-accept
+        /// and after contact work (ACW) timeout settings.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation replaces the UpdateUserPhoneConfig API. While UpdateUserPhoneConfig
+        /// applies the same ACW timeout to all channels, UpdateUserConfig allows you to set different
+        /// auto-accept and ACW timeout values for each channel type.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateUserConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserConfig">REST API Reference for UpdateUserConfig Operation</seealso>
+        public virtual Task<UpdateUserConfigResponse> UpdateUserConfigAsync(UpdateUserConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateUserConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateUserHierarchy
 
 
@@ -31257,11 +32388,104 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateUserNotificationStatus
+
+
+        /// <summary>
+        /// Updates the status of a notification for a specific user, such as marking it as read
+        /// or hidden. Users can only update notification status for notifications that have been
+        /// sent to them. READ status deprioritizes the notification and greys it out, while HIDDEN
+        /// status removes it from the notification widget.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserNotificationStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUserNotificationStatus service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserNotificationStatus">REST API Reference for UpdateUserNotificationStatus Operation</seealso>
+        public virtual UpdateUserNotificationStatusResponse UpdateUserNotificationStatus(UpdateUserNotificationStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserNotificationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserNotificationStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserNotificationStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the status of a notification for a specific user, such as marking it as read
+        /// or hidden. Users can only update notification status for notifications that have been
+        /// sent to them. READ status deprioritizes the notification and greys it out, while HIDDEN
+        /// status removes it from the notification widget.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserNotificationStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateUserNotificationStatus service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserNotificationStatus">REST API Reference for UpdateUserNotificationStatus Operation</seealso>
+        public virtual Task<UpdateUserNotificationStatusResponse> UpdateUserNotificationStatusAsync(UpdateUserNotificationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserNotificationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserNotificationStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateUserNotificationStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateUserPhoneConfig
 
 
         /// <summary>
         /// Updates the phone configuration settings for the specified user.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserConfig.html">UpdateUserConfig</a>
+        /// API, which supports additional functionality that is not available in the UpdateUserPhoneConfig
+        /// API, such as voice enhancement settings and per-channel configuration for auto-accept
+        /// and After Contact Work (ACW) timeouts. In comparison, the UpdateUserPhoneConfig API
+        /// will always set the same ACW timeouts to all channels the user handles.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPhoneConfig service method.</param>
         /// 
@@ -31294,6 +32518,16 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates the phone configuration settings for the specified user.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserConfig.html">UpdateUserConfig</a>
+        /// API, which supports additional functionality that is not available in the UpdateUserPhoneConfig
+        /// API, such as voice enhancement settings and per-channel configuration for auto-accept
+        /// and After Contact Work (ACW) timeouts. In comparison, the UpdateUserPhoneConfig API
+        /// will always set the same ACW timeouts to all channels the user handles.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPhoneConfig service method.</param>
         /// <param name="cancellationToken">

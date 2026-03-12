@@ -92,6 +92,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Tenancy", StringUtils.FromString(publicRequest.Tenancy));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyInstancePlacementRequestMarshaller _instance = new ModifyInstancePlacementRequestMarshaller();        

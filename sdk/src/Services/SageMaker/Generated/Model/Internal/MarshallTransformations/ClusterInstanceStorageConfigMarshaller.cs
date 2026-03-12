@@ -57,6 +57,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetFsxLustreConfig())
+            {
+                context.Writer.WritePropertyName("FsxLustreConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterFsxLustreConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.FsxLustreConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetFsxOpenZfsConfig())
+            {
+                context.Writer.WritePropertyName("FsxOpenZfsConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterFsxOpenZfsConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.FsxOpenZfsConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

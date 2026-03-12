@@ -64,6 +64,8 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                     request.Parameters.Add("AccessKeyId", StringUtils.FromString(publicRequest.AccessKeyId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetAccessKeyInfoRequestMarshaller _instance = new GetAccessKeyInfoRequestMarshaller();        

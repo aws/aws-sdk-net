@@ -79,6 +79,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCandidateIds())
+            {
+                context.Writer.WritePropertyName("CandidateIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCandidateIdsListValue in publicRequest.CandidateIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestCandidateIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetContext())
             {
                 context.Writer.WritePropertyName("Context");
@@ -99,10 +110,53 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
 
+            if(publicRequest.IsSetMetadataConfig())
+            {
+                context.Writer.WritePropertyName("MetadataConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MetadataConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MetadataConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRecommenderFilters())
+            {
+                context.Writer.WritePropertyName("RecommenderFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRecommenderFiltersListValue in publicRequest.RecommenderFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RecommenderFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRecommenderFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetRecommenderName())
             {
                 context.Writer.WritePropertyName("RecommenderName");
                 context.Writer.WriteStringValue(publicRequest.RecommenderName);
+            }
+
+            if(publicRequest.IsSetRecommenderPromotionalFilters())
+            {
+                context.Writer.WritePropertyName("RecommenderPromotionalFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRecommenderPromotionalFiltersListValue in publicRequest.RecommenderPromotionalFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RecommenderPromotionalFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRecommenderPromotionalFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();

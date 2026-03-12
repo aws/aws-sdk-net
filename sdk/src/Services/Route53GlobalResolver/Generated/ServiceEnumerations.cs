@@ -193,6 +193,10 @@ namespace Amazon.Route53GlobalResolver
         /// </summary>
         public static readonly DnsAdvancedProtection DGA = new DnsAdvancedProtection("DGA");
         /// <summary>
+        /// Constant DICTIONARY_DGA for DnsAdvancedProtection
+        /// </summary>
+        public static readonly DnsAdvancedProtection DICTIONARY_DGA = new DnsAdvancedProtection("DICTIONARY_DGA");
+        /// <summary>
         /// Constant DNS_TUNNELING for DnsAdvancedProtection
         /// </summary>
         public static readonly DnsAdvancedProtection DNS_TUNNELING = new DnsAdvancedProtection("DNS_TUNNELING");
@@ -538,6 +542,56 @@ namespace Amazon.Route53GlobalResolver
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FirewallRulesFailOpenType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GlobalResolverIpAddressType.
+    /// </summary>
+    public class GlobalResolverIpAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUAL_STACK for GlobalResolverIpAddressType
+        /// </summary>
+        public static readonly GlobalResolverIpAddressType DUAL_STACK = new GlobalResolverIpAddressType("DUAL_STACK");
+        /// <summary>
+        /// Constant IPV4 for GlobalResolverIpAddressType
+        /// </summary>
+        public static readonly GlobalResolverIpAddressType IPV4 = new GlobalResolverIpAddressType("IPV4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GlobalResolverIpAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlobalResolverIpAddressType FindValue(string value)
+        {
+            return FindValue<GlobalResolverIpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlobalResolverIpAddressType(string value)
         {
             return FindValue(value);
         }

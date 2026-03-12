@@ -66,7 +66,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSearchString())
             {
                 context.Writer.WritePropertyName("SearchString");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.SearchString));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.SearchString);
             }
 
             if(requestObject.IsSetTextTransformations())

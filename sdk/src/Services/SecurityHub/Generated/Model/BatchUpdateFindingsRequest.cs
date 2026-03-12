@@ -31,12 +31,12 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchUpdateFindings operation.
-    /// Used by Security Hub customers to update information about their investigation into
-    /// one or more findings. Requested by administrator accounts or member accounts. Administrator
-    /// accounts can update findings for their account and their member accounts. A member
-    /// account can update findings only for their own account. Administrator and member accounts
-    /// can use this operation to update the following fields and objects for one or more
-    /// findings: 
+    /// Used by Security Hub CSPM customers to update information about their investigation
+    /// into one or more findings. Requested by administrator accounts or member accounts.
+    /// Administrator accounts can update findings for their account and their member accounts.
+    /// A member account can update findings only for their own account. Administrator and
+    /// member accounts can use this operation to update the following fields and objects
+    /// for one or more findings: 
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -78,7 +78,7 @@ namespace Amazon.SecurityHub.Model
     /// <para>
     ///  If you use this operation to update a finding, your updates don’t affect the value
     /// for the <c>UpdatedAt</c> field of the finding. Also note that it can take several
-    /// minutes for Security Hub to process your request and update each finding specified
+    /// minutes for Security Hub CSPM to process your request and update each finding specified
     /// in the request. 
     /// </para>
     ///  
@@ -86,7 +86,7 @@ namespace Amazon.SecurityHub.Model
     ///  You can configure IAM policies to restrict access to fields and field values. For
     /// example, you might not want member accounts to be able to suppress findings or change
     /// the finding severity. For more information see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
-    /// access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>. 
+    /// access to BatchUpdateFindings</a> in the <i>Security Hub CSPM User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class BatchUpdateFindingsRequest : AmazonSecurityHubRequest

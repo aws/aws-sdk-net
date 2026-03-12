@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSelfUpgradeConfiguration operation.
-    /// Describes the self-upgrade configuration for a Quick Suite account.
+    /// Describes the self-upgrade configuration for a Quick account.
     /// </summary>
     public partial class DescribeSelfUpgradeConfigurationRequest : AmazonQuickSightRequest
     {
@@ -41,8 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade
-        /// configuration.
+        /// The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -61,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The Quick Suite namespace that you want to describe the Quick Suite self-upgrade configuration
+        /// The Quick namespace that you want to describe the Quick self-upgrade configuration
         /// for.
         /// </para>
         /// </summary>

@@ -60,9 +60,11 @@ namespace Amazon.RDS.Model
         private bool? _multiTenant;
         private string _optionGroupName;
         private int? _port;
+        private string _preferredBackupWindow;
         private string _region;
         private RestoreWindow _restoreWindow;
         private string _status;
+        private StorageEncryptionType _storageEncryptionType;
         private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -539,6 +541,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreferredBackupWindow. 
+        /// <para>
+        /// The daily time range during which automated backups are created if automated backups
+        /// are enabled, as determined by the <c>BackupRetentionPeriod</c>.
+        /// </para>
+        /// </summary>
+        public string PreferredBackupWindow
+        {
+            get { return this._preferredBackupWindow; }
+            set { this._preferredBackupWindow = value; }
+        }
+
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
+        {
+            return this._preferredBackupWindow != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
         /// The Amazon Web Services Region associated with the automated backup.
@@ -604,6 +625,40 @@ namespace Amazon.RDS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageEncryptionType. 
+        /// <para>
+        /// The type of encryption used to protect data at rest in the automated backup. Possible
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>none</c> - The automated backup is not encrypted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-rds</c> - The automated backup is encrypted using an Amazon Web Services owned
+        /// KMS key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-kms</c> - The automated backup is encrypted using a customer managed KMS key
+        /// or Amazon Web Services managed KMS key.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StorageEncryptionType StorageEncryptionType
+        {
+            get { return this._storageEncryptionType; }
+            set { this._storageEncryptionType = value; }
+        }
+
+        // Check to see if StorageEncryptionType property is set
+        internal bool IsSetStorageEncryptionType()
+        {
+            return this._storageEncryptionType != null;
         }
 
         /// <summary>

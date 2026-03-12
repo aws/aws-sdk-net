@@ -59,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAllAvailabilityZones())
+                {
+                    request.Parameters.Add("AllAvailabilityZones", StringUtils.FromBool(publicRequest.AllAvailabilityZones));
+                }
                 if(publicRequest.IsSetCapacityDurationHours())
                 {
                     request.Parameters.Add("CapacityDurationHours", StringUtils.FromInt(publicRequest.CapacityDurationHours));
@@ -100,6 +104,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UltraserverType", StringUtils.FromString(publicRequest.UltraserverType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeCapacityBlockOfferingsRequestMarshaller _instance = new DescribeCapacityBlockOfferingsRequestMarshaller();        

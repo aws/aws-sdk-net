@@ -90,7 +90,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCertificateWallet())
             {
                 context.Writer.WritePropertyName("CertificateWallet");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.CertificateWallet));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.CertificateWallet);
             }
 
             if(publicRequest.IsSetKmsKeyId())

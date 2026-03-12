@@ -254,6 +254,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.RamDiskId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("secondaryInterfaceSet/item", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateInstanceSecondaryInterfaceSpecificationUnmarshaller.Instance;
+                        if (unmarshalledObject.SecondaryInterfaces == null)
+                        {
+                            unmarshalledObject.SecondaryInterfaces = new List<LaunchTemplateInstanceSecondaryInterfaceSpecification>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SecondaryInterfaces.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("securityGroupIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

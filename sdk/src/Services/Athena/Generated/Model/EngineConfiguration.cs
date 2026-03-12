@@ -30,8 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// Contains data processing unit (DPU) configuration settings and parameter mappings
-    /// for a notebook engine.
+    /// The engine configuration for the workgroup, which includes the minimum/maximum number
+    /// of Data Processing Units (DPU) that queries should use when running in provisioned
+    /// capacity. If not specified, Athena uses default values (Default value for min is 4
+    /// and for max is Minimum of 124 and allocated DPUs).
+    /// 
+    ///  
+    /// <para>
+    /// To specify DPU values for PC queries the WG containing EngineConfiguration should
+    /// have the following values: The name of the Classifications should be <c>athena-query-engine-properties</c>,
+    /// with the only allowed properties as <c>max-dpu-count</c> and <c>min-dpu-count</c>.
+    /// </para>
     /// </summary>
     public partial class EngineConfiguration
     {

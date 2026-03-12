@@ -56,6 +56,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("capacityUsage", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ServiceJobCapacityUsageSummary, ServiceJobCapacityUsageSummaryUnmarshaller>(ServiceJobCapacityUsageSummaryUnmarshaller.Instance);
+                    unmarshalledObject.CapacityUsage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
@@ -84,6 +90,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LatestServiceJobAttemptUnmarshaller.Instance;
                     unmarshalledObject.LatestAttempt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("scheduledAt", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.ScheduledAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("serviceJobType", targetDepth))

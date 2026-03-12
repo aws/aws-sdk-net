@@ -64,6 +64,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DBProxyName", StringUtils.FromString(publicRequest.DBProxyName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteDBProxyRequestMarshaller _instance = new DeleteDBProxyRequestMarshaller();        

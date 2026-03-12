@@ -71,11 +71,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+                if(publicRequest.IsSetNestedVirtualization())
+                {
+                    request.Parameters.Add("NestedVirtualization", StringUtils.FromString(publicRequest.NestedVirtualization));
+                }
                 if(publicRequest.IsSetThreadsPerCore())
                 {
                     request.Parameters.Add("ThreadsPerCore", StringUtils.FromInt(publicRequest.ThreadsPerCore));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyInstanceCpuOptionsRequestMarshaller _instance = new ModifyInstanceCpuOptionsRequestMarshaller();        

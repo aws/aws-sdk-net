@@ -1000,6 +1000,12 @@
     <pattern>arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateMlflowTrackingServerRequest.S3BucketOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateMlflowTrackingServerRequest.TrackingServerName</property>
     <min>1</min>
     <max>256</max>
@@ -3714,6 +3720,12 @@
     <pattern>arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeMlflowTrackingServerResponse.S3BucketOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeMlflowTrackingServerResponse.TrackingServerArn</property>
     <min>0</min>
     <max>2048</max>
@@ -4585,6 +4597,29 @@
     <property>Amazon.SageMaker.Model.DescribeTrainingPlanResponse.UpfrontFee</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingPlanExtensionHistoryRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingPlanExtensionHistoryRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingPlanExtensionHistoryRequest.TrainingPlanArn</property>
+    <min>50</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-plan/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingPlanExtensionHistoryResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTransformJobRequest.TransformJobName</property>
@@ -8061,6 +8096,12 @@
     <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateMlflowTrackingServerRequest.S3BucketOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateMlflowTrackingServerRequest.TrackingServerName</property>
     <min>1</min>
     <max>256</max>
@@ -9465,6 +9506,36 @@
     <min>1</min>
     <max>63</max>
     <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterFsxLustreConfig.DnsName</property>
+    <min>16</min>
+    <max>275</max>
+    <pattern>((fs|fc)i?-[0-9a-f]{8,}\..{4,253})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterFsxLustreConfig.MountName</property>
+    <min>1</min>
+    <max>8</max>
+    <pattern>([A-Za-z0-9_-]{1,8})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterFsxLustreConfig.MountPath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>/[a-zA-Z0-9._/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterFsxOpenZfsConfig.DnsName</property>
+    <min>16</min>
+    <max>275</max>
+    <pattern>((fs|fc)i?-[0-9a-f]{8,}\..{4,253})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterFsxOpenZfsConfig.MountPath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>/[a-zA-Z0-9._/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.CurrentCount</property>
@@ -14676,6 +14747,50 @@
     <min>50</min>
     <max>2048</max>
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-plan/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtension.AvailabilityZone</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtension.AvailabilityZoneId</property>
+    <pattern>[a-z]{3}\d-az\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtension.DurationHours</property>
+    <min>0</min>
+    <max>4368</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtension.PaymentStatus</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtension.Status</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtension.UpfrontFee</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtensionOffering.AvailabilityZone</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtensionOffering.DurationHours</property>
+    <min>0</min>
+    <max>4368</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtensionOffering.UpfrontFee</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TrainingPlanFilter.Value</property>

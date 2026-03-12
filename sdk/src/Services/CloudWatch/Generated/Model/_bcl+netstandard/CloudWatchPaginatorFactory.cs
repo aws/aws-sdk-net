@@ -77,6 +77,14 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Paginator for ListAlarmMuteRules operation
+        ///</summary>
+        public IListAlarmMuteRulesPaginator ListAlarmMuteRules(ListAlarmMuteRulesRequest request) 
+        {
+            return new ListAlarmMuteRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
         public IListDashboardsPaginator ListDashboards(ListDashboardsRequest request) 

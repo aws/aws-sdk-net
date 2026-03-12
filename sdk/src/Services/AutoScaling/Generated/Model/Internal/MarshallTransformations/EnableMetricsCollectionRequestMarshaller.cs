@@ -82,6 +82,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static EnableMetricsCollectionRequestMarshaller _instance = new EnableMetricsCollectionRequestMarshaller();        

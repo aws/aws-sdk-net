@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// The type of experience you want to embed. For anonymous users, you can embed Quick
-    /// Suite dashboards.
+    /// dashboards.
     /// </summary>
     public partial class AnonymousUserEmbeddingExperienceConfiguration
     {

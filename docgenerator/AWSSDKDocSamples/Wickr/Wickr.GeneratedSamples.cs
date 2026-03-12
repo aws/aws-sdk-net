@@ -886,6 +886,42 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
             #endregion
         }
 
+        public void WickrGetOpentdfConfig()
+        {
+            #region example-1
+
+            var client = new AmazonWickrClient();
+            var response = client.GetOpentdfConfig(new GetOpentdfConfigRequest 
+            {
+                NetworkId = "12345678"
+            });
+
+            string clientId = response.ClientId;
+            string clientSecret = response.ClientSecret;
+            string domain = response.Domain;
+            string provider = response.Provider;
+
+            #endregion
+        }
+
+        public void WickrGetOpentdfConfig()
+        {
+            #region example-2
+
+            var client = new AmazonWickrClient();
+            var response = client.GetOpentdfConfig(new GetOpentdfConfigRequest 
+            {
+                NetworkId = "12345678"
+            });
+
+            string clientId = response.ClientId;
+            string clientSecret = response.ClientSecret;
+            string domain = response.Domain;
+            string provider = response.Provider;
+
+            #endregion
+        }
+
         public void WickrGetSecurityGroup()
         {
             #region example-1
@@ -1476,6 +1512,106 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
                 Issuer = "https://blocked-endpoint.com",
                 NetworkId = "12345678",
                 Scopes = "openid profile email"
+            });
+
+
+            #endregion
+        }
+
+        public void WickrRegisterOpentdfConfig()
+        {
+            #region example-1
+
+            var client = new AmazonWickrClient();
+            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest 
+            {
+                ClientId = "client123",
+                ClientSecret = "secret456",
+                Domain = "https://api.sample.com",
+                NetworkId = "12345678",
+                Provider = "virtru"
+            });
+
+            string clientId = response.ClientId;
+            string clientSecret = response.ClientSecret;
+            string domain = response.Domain;
+            string provider = response.Provider;
+
+            #endregion
+        }
+
+        public void WickrRegisterOpentdfConfig()
+        {
+            #region example-2
+
+            var client = new AmazonWickrClient();
+            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest 
+            {
+                ClientId = "client123",
+                ClientSecret = "secret456",
+                Domain = "https://api.sample.com",
+                DryRun = true,
+                NetworkId = "12345678",
+                Provider = "virtru"
+            });
+
+            string clientId = response.ClientId;
+            string clientSecret = response.ClientSecret;
+            string domain = response.Domain;
+            string provider = response.Provider;
+
+            #endregion
+        }
+
+        public void WickrRegisterOpentdfConfig()
+        {
+            #region example-3
+
+            var client = new AmazonWickrClient();
+            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest 
+            {
+                ClientId = "client123",
+                ClientSecret = "secret456",
+                Domain = "https://api.sample.com",
+                DryRun = true,
+                NetworkId = "12345678",
+                Provider = "virtru"
+            });
+
+
+            #endregion
+        }
+
+        public void WickrRegisterOpentdfConfig()
+        {
+            #region example-4
+
+            var client = new AmazonWickrClient();
+            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest 
+            {
+                ClientId = "client123",
+                ClientSecret = "secret456",
+                Domain = "https://api.sample.com",
+                NetworkId = "12345678",
+                Provider = "invalid provider"
+            });
+
+
+            #endregion
+        }
+
+        public void WickrRegisterOpentdfConfig()
+        {
+            #region example-5
+
+            var client = new AmazonWickrClient();
+            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest 
+            {
+                ClientId = "client123",
+                ClientSecret = "secret456",
+                Domain = "https://api.sample.com",
+                NetworkId = "99999999",
+                Provider = "virtru"
             });
 
 

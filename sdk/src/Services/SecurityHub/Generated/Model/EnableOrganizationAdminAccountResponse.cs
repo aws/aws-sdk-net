@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property AdminAccountId. 
         /// <para>
         /// The Amazon Web Services account identifier of the account to designate as the Security
-        /// Hub administrator account.
+        /// Hub CSPM administrator account.
         /// </para>
         /// </summary>
         public string AdminAccountId
@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Feature. 
         /// <para>
         /// The feature where the delegated administrator is enabled. The default is Security
-        /// Hub CSPM if no delegated administrator is specified in the request.
+        /// Hub CSPM CSPM if no delegated administrator is specified in the request.
         /// </para>
         /// </summary>
         public SecurityHubFeature Feature

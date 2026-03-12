@@ -341,6 +341,10 @@ namespace Amazon.MediaTailor
     {
 
         /// <summary>
+        /// Constant RAW_ADS_REQUEST for AdsInteractionPublishOptInEventType
+        /// </summary>
+        public static readonly AdsInteractionPublishOptInEventType RAW_ADS_REQUEST = new AdsInteractionPublishOptInEventType("RAW_ADS_REQUEST");
+        /// <summary>
         /// Constant RAW_ADS_RESPONSE for AdsInteractionPublishOptInEventType
         /// </summary>
         public static readonly AdsInteractionPublishOptInEventType RAW_ADS_RESPONSE = new AdsInteractionPublishOptInEventType("RAW_ADS_RESPONSE");

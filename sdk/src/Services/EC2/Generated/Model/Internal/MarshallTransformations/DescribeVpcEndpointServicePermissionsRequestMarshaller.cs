@@ -107,6 +107,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ServiceId", StringUtils.FromString(publicRequest.ServiceId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeVpcEndpointServicePermissionsRequestMarshaller _instance = new DescribeVpcEndpointServicePermissionsRequestMarshaller();        

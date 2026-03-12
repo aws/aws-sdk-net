@@ -72,6 +72,7 @@ namespace Amazon.Deadline.Model
         /// then you receive an HTTP 400 <c>ValidationException</c> error.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

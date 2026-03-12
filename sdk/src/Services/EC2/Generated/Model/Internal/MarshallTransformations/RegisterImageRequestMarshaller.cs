@@ -252,6 +252,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VirtualizationType", StringUtils.FromString(publicRequest.VirtualizationType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RegisterImageRequestMarshaller _instance = new RegisterImageRequestMarshaller();        

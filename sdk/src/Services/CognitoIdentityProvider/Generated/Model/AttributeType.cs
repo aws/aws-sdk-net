@@ -40,7 +40,18 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the attribute.
+        /// The name of the attribute, for example <c>email</c> or <c>custom:department</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// In some older user pools, the regex pattern for acceptable values of this parameter
+        /// is <c>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</c>. Older pools will eventually be updated to
+        /// use the new pattern. Affected user pools are those created before May 2024 in US East
+        /// (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon), Asia Pacific
+        /// (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia
+        /// Pacific (Sydney), Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London),
+        /// Europe (Paris), Europe (Stockholm), Middle East (Bahrain), and South America (São
+        /// Paulo). 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

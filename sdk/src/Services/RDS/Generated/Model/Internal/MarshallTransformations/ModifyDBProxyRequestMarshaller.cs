@@ -139,6 +139,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyDBProxyRequestMarshaller _instance = new ModifyDBProxyRequestMarshaller();        

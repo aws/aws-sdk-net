@@ -68,6 +68,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetPolicyArn())
                 throw new AmazonBedrockException("Request object does not have required field PolicyArn set");
             request.AddPathResource("{policyArn}", StringUtils.FromString(publicRequest.PolicyArn));
+            
+            if (publicRequest.IsSetAssetId())
+                request.Parameters.Add("assetId", StringUtils.FromString(publicRequest.AssetId));
             if (string.IsNullOrEmpty(publicRequest.AssetType))
                 throw new AmazonBedrockException("Request object does not have required field AssetType set");
             

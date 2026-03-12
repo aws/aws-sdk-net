@@ -31,14 +31,13 @@ namespace Amazon.ARCRegionswitch.Model
 {
     /// <summary>
     /// Container for the parameters to the StartPlanExecution operation.
-    /// Starts the execution of a Region switch plan. You can execute a plan in either PRACTICE
-    /// or RECOVERY mode.
+    /// Starts the execution of a Region switch plan. You can execute a plan in either <c>graceful</c>
+    /// or <c>ungraceful</c> mode.
     /// 
     ///  
     /// <para>
-    /// In PRACTICE mode, the execution simulates the steps without making actual changes
-    /// to your application's traffic routing. In RECOVERY mode, the execution performs actual
-    /// changes to shift traffic between Regions.
+    /// Specifing <c>ungraceful</c> mode either changes the behavior of the execution blocks
+    /// in a workflow or skips specific execution blocks.
     /// </para>
     /// </summary>
     public partial class StartPlanExecutionRequest : AmazonARCRegionswitchRequest
@@ -48,13 +47,14 @@ namespace Amazon.ARCRegionswitch.Model
         private string _latestVersion;
         private ExecutionMode _mode;
         private string _planArn;
+        private string _recoveryExecutionId;
         private string _targetRegion;
 
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action to perform. Valid values are ACTIVATE (to shift traffic to the target Region)
-        /// or DEACTIVATE (to shift traffic away from the target Region).
+        /// The action to perform. Valid values are <c>activate</c> (to shift traffic to the target
+        /// Region) or <c>deactivate</c> (to shift traffic away from the target Region).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -111,8 +111,8 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The plan execution mode. Valid values are <c>Practice</c>, for testing without making
-        /// actual changes, or <c>Recovery</c>, for actual traffic shifting and application recovery.
+        /// The plan execution mode. Valid values are <c>graceful</c>, for starting the execution
+        /// in graceful mode, or <c>ungraceful</c>, for starting the execution in ungraceful mode.
         /// </para>
         /// </summary>
         public ExecutionMode Mode
@@ -144,6 +144,25 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetPlanArn()
         {
             return this._planArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecoveryExecutionId. 
+        /// <para>
+        /// The execution identifier of the recovery execution that ran in the opposite region
+        /// post-recovery is ran in. Required when starting a post-recovery execution.
+        /// </para>
+        /// </summary>
+        public string RecoveryExecutionId
+        {
+            get { return this._recoveryExecutionId; }
+            set { this._recoveryExecutionId = value; }
+        }
+
+        // Check to see if RecoveryExecutionId property is set
+        internal bool IsSetRecoveryExecutionId()
+        {
+            return this._recoveryExecutionId != null;
         }
 
         /// <summary>

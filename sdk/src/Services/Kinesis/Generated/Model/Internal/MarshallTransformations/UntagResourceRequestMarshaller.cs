@@ -81,6 +81,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ResourceARN);
             }
 
+            if(publicRequest.IsSetStreamId())
+            {
+                context.Writer.WritePropertyName("StreamId");
+                context.Writer.WriteStringValue(publicRequest.StreamId);
+            }
+
             if(publicRequest.IsSetTagKeys())
             {
                 context.Writer.WritePropertyName("TagKeys");

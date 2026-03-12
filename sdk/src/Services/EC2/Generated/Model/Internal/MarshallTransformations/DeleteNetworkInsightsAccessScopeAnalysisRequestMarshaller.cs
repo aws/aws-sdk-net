@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NetworkInsightsAccessScopeAnalysisId", StringUtils.FromString(publicRequest.NetworkInsightsAccessScopeAnalysisId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteNetworkInsightsAccessScopeAnalysisRequestMarshaller _instance = new DeleteNetworkInsightsAccessScopeAnalysisRequestMarshaller();        

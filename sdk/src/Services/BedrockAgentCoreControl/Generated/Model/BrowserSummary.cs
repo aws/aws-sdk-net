@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Contains summary information about a browser. A browser enables Amazon Bedrock Agent
-    /// to interact with web content.
+    /// Contains summary information about a browser. A browser enables Amazon Bedrock AgentCore
+    /// Agent to interact with web content.
     /// </summary>
     public partial class BrowserSummary
     {

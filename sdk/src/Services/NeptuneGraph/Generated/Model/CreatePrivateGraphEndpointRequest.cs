@@ -31,8 +31,8 @@ namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePrivateGraphEndpoint operation.
-    /// Create a private graph endpoint to allow private access from to the graph from within
-    /// a VPC. You can attach security groups to the private graph endpoint.
+    /// Create a private graph endpoint to allow private access to the graph from within a
+    /// VPC. You can attach security groups to the private graph endpoint.
     /// 
     ///  <note> 
     /// <para>
@@ -111,7 +111,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// Security groups to be attached to the private graph endpoint..
+        /// Security groups to be attached to the private graph endpoint.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

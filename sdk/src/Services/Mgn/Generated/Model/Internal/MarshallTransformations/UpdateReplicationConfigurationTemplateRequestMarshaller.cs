@@ -170,6 +170,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetStoreSnapshotOnLocalZone())
+            {
+                context.Writer.WritePropertyName("storeSnapshotOnLocalZone");
+                context.Writer.WriteBooleanValue(publicRequest.StoreSnapshotOnLocalZone.Value);
+            }
+
             if(publicRequest.IsSetUseDedicatedReplicationServer())
             {
                 context.Writer.WritePropertyName("useDedicatedReplicationServer");

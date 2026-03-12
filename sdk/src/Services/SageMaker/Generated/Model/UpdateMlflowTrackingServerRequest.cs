@@ -37,6 +37,8 @@ namespace Amazon.SageMaker.Model
     {
         private string _artifactStoreUri;
         private bool? _automaticModelRegistration;
+        private string _s3BucketOwnerAccountId;
+        private bool? _s3BucketOwnerVerification;
         private string _trackingServerName;
         private TrackingServerSize _trackingServerSize;
         private string _weeklyMaintenanceWindowStart;
@@ -80,6 +82,45 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAutomaticModelRegistration()
         {
             return this._automaticModelRegistration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BucketOwnerAccountId. 
+        /// <para>
+        /// The new expected Amazon Web Services account ID that owns the Amazon S3 bucket for
+        /// artifact storage.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string S3BucketOwnerAccountId
+        {
+            get { return this._s3BucketOwnerAccountId; }
+            set { this._s3BucketOwnerAccountId = value; }
+        }
+
+        // Check to see if S3BucketOwnerAccountId property is set
+        internal bool IsSetS3BucketOwnerAccountId()
+        {
+            return this._s3BucketOwnerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BucketOwnerVerification. 
+        /// <para>
+        /// Whether to enable or disable Amazon S3 Bucket Owenrship Verifaction whenever the MLflow
+        /// Tracking Server interacts with Amazon Amazon S3.
+        /// </para>
+        /// </summary>
+        public bool? S3BucketOwnerVerification
+        {
+            get { return this._s3BucketOwnerVerification; }
+            set { this._s3BucketOwnerVerification = value; }
+        }
+
+        // Check to see if S3BucketOwnerVerification property is set
+        internal bool IsSetS3BucketOwnerVerification()
+        {
+            return this._s3BucketOwnerVerification.HasValue; 
         }
 
         /// <summary>

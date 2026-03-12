@@ -64,6 +64,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("IntegrationArn", StringUtils.FromString(publicRequest.IntegrationArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteIntegrationRequestMarshaller _instance = new DeleteIntegrationRequestMarshaller();        

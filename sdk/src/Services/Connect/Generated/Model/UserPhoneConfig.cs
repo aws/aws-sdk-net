@@ -93,6 +93,7 @@ namespace Amazon.Connect.Model
         /// The phone number for the user's desk phone.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DeskPhoneNumber
         {
             get { return this._deskPhoneNumber; }
@@ -129,7 +130,6 @@ namespace Amazon.Connect.Model
         /// The phone type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public PhoneType PhoneType
         {
             get { return this._phoneType; }

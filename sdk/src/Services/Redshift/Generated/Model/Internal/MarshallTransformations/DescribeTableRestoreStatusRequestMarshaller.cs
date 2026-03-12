@@ -76,6 +76,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TableRestoreRequestId", StringUtils.FromString(publicRequest.TableRestoreRequestId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeTableRestoreStatusRequestMarshaller _instance = new DescribeTableRestoreStatusRequestMarshaller();        

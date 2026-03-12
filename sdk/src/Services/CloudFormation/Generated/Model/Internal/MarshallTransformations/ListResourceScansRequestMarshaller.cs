@@ -72,6 +72,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ScanTypeFilter", StringUtils.FromString(publicRequest.ScanTypeFilter));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListResourceScansRequestMarshaller _instance = new ListResourceScansRequestMarshaller();        

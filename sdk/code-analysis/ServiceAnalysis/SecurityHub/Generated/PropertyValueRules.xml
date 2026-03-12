@@ -6802,6 +6802,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ProductV2.MarketplaceProductId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.ProductV2.MarketplaceUrl</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>

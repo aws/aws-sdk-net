@@ -76,6 +76,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetSnapshotIdentifier", StringUtils.FromString(publicRequest.TargetSnapshotIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CopyClusterSnapshotRequestMarshaller _instance = new CopyClusterSnapshotRequestMarshaller();        

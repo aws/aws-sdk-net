@@ -72,6 +72,8 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TokenCode", StringUtils.FromString(publicRequest.TokenCode));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetSessionTokenRequestMarshaller _instance = new GetSessionTokenRequestMarshaller();        

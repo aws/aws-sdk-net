@@ -151,7 +151,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsControlDescription. 
         /// <para>
-        ///  The description of a control. This typically summarizes how Security Hub evaluates
+        ///  The description of a control. This typically summarizes how Security Hub CSPM evaluates
         /// the control and the conditions under which it produces a failed finding. The parameter
         /// may reference a specific standard. 
         /// </para>

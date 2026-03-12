@@ -3726,6 +3726,25 @@
     <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.QueryGraphRequest.DomainIdentifier</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.QueryGraphRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.QueryGraphRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.QueryGraphResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.RejectPredictionsRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
@@ -5448,6 +5467,11 @@
     <pattern>[a-z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.EntityPattern.Identifier</property>
+    <min>1</min>
+    <max>2086</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentActionSummary.DomainId</property>
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
@@ -5911,6 +5935,19 @@
     <pattern>[a-z0-9]{14}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageNodeItem.DomainId</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageNodeItem.Id</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageNodeItem.TypeRevision</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.LineageNodeReference.Id</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
@@ -6236,6 +6273,11 @@
     <property>Amazon.DataZone.Model.RelationalFilterConfiguration.SchemaName</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.RelationPattern.MaxPathLength</property>
+    <min>1</min>
+    <max>5</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.ResourceTag.Key</property>

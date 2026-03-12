@@ -1141,6 +1141,10 @@ namespace Amazon.Transfer
     {
 
         /// <summary>
+        /// Constant ASYNC for MdnResponse
+        /// </summary>
+        public static readonly MdnResponse ASYNC = new MdnResponse("ASYNC");
+        /// <summary>
         /// Constant NONE for MdnResponse
         /// </summary>
         public static readonly MdnResponse NONE = new MdnResponse("NONE");

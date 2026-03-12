@@ -64,6 +64,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("GlobalEndpointTokenVersion", StringUtils.FromString(publicRequest.GlobalEndpointTokenVersion));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SetSecurityTokenServicePreferencesRequestMarshaller _instance = new SetSecurityTokenServicePreferencesRequestMarshaller();        

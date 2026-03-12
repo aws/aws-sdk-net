@@ -72,6 +72,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RetentionPeriod", StringUtils.FromInt(publicRequest.RetentionPeriod));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifySnapshotCopyRetentionPeriodRequestMarshaller _instance = new ModifySnapshotCopyRetentionPeriodRequestMarshaller();        

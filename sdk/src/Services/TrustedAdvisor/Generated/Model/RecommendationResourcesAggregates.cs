@@ -35,6 +35,7 @@ namespace Amazon.TrustedAdvisor.Model
     public partial class RecommendationResourcesAggregates
     {
         private long? _errorCount;
+        private long? _excludedCount;
         private long? _okCount;
         private long? _warningCount;
 
@@ -56,6 +57,25 @@ namespace Amazon.TrustedAdvisor.Model
         internal bool IsSetErrorCount()
         {
             return this._errorCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcludedCount. 
+        /// <para>
+        /// The number of AWS resources belonging to this Trusted Advisor check that were excluded
+        /// by the customer
+        /// </para>
+        /// </summary>
+        public long? ExcludedCount
+        {
+            get { return this._excludedCount; }
+            set { this._excludedCount = value; }
+        }
+
+        // Check to see if ExcludedCount property is set
+        internal bool IsSetExcludedCount()
+        {
+            return this._excludedCount.HasValue; 
         }
 
         /// <summary>

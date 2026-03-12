@@ -26,11 +26,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     {
         public static readonly long MEG_SIZE = (int)Math.Pow(2, 20);
 
-        private Random random = new Random();
         private static string bucketName;
         private const string testContent = "This is the content body!";
-        private const string testKey = "test-key.json.gz";
         private const string testFileName = "PutObjectFile.txt";
+        private string _testId;
+
+        [TestInitialize]
+        public void SetTestId()
+        {
+            _testId = Guid.NewGuid().ToString("N");
+        }
 
         [ClassInitialize]
         public static async Task Initialize(TestContext a)
@@ -126,7 +131,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task TestStorageClass()
         {
-            var key = "contentBodyPut" + random.Next();
+            var key = _testId + "-contentBodyPut";
             var storageClass = S3StorageClass.ReducedRedundancy;
             var request = new PutObjectRequest
             {
@@ -164,7 +169,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 await Client.PutObjectAsync(new PutObjectRequest
                 {
                     BucketName = bucketName,
-                    Key = "CancellationTest" + random.Next(),
+                    Key = _testId + "-CancellationTest",
                     CannedACL = S3CannedACL.AuthenticatedRead,
                     FilePath = path
                 }, token);
@@ -190,7 +195,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ServiceURL = "https://s3-external-1.amazonaws.com"
             });
 
-            var testBucketName = "aws-net-sdk-external" + random.Next();
+            var testBucketName = UtilityMethods.GenerateName("aws-net-sdk-external");
             var key = "testKey";
             
             try
@@ -217,7 +222,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var request = new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = "/contentBodyPut" + random.Next(),
+                Key = "/" + _testId + "-contentBodyPut",
                 ContentBody = "This is the content body!",
                 CannedACL = S3CannedACL.AuthenticatedRead
             };
@@ -233,7 +238,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var request = new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = "X$abc,xyz",
+                Key = _testId + "-X$abc,xyz",
                 ContentBody = testContent,
                 CannedACL = S3CannedACL.AuthenticatedRead
             };
@@ -250,7 +255,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var request = new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = "contentBodyPut" + random.Next(),
+                Key = _testId + "-contentBodyPut",
                 ContentBody = testContent,
                 CannedACL = S3CannedACL.AuthenticatedRead
             };
@@ -271,7 +276,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var response = await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = "inputStreamPut" + random.Next(),
+                Key = _testId + "-inputStreamPut",
                 InputStream = new MemoryStream(),
                 DisableDefaultChecksumValidation = disableDefaultChecksumValidation,
                 DisablePayloadSigning = disablePayloadSigning,
@@ -286,7 +291,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var request = new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = "contentBodyPut" + random.Next(),
+                Key = _testId + "-contentBodyPut",
                 ContentBody = "This is the content body!",
                 CannedACL = S3CannedACL.AuthenticatedRead
             };
@@ -299,7 +304,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task PutObject_WithExpires()
         {
-            var key = "contentBodyPut" + random.Next();
+            var key = _testId + "-contentBodyPut";
             var expires = DateTime.UtcNow.AddYears(5);
             var request = new PutObjectRequest
             {
@@ -324,7 +329,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var request = new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = "contentBodyPut" + random.Next(),
+                Key = _testId + "-contentBodyPut",
                 ContentBody = "This is the content body!",
                 CannedACL = S3CannedACL.AuthenticatedRead
             };
@@ -344,7 +349,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task GetObjectWithNonMatchingEtag()
         {
-            var key = "TestMatchingEtag" + random.Next();
+            var key = _testId + "-TestMatchingEtag";
 
             await Client.PutObjectAsync(new PutObjectRequest
             {
@@ -470,7 +475,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task TestPutObjectWithContentLanguage()
         {
-            var key = "contentLanguageTest" + random.Next();
+            var key = _testId + "-contentLanguageTest";
             var contentLanguage = "en-US";
             
             var request = new PutObjectRequest
@@ -556,14 +561,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private PutObjectRequest CreatePutObjectRequest() => new PutObjectRequest
         {
             BucketName = bucketName,
-            Key = DateTime.UtcNow.ToFileTime() + testKey,
+            Key = _testId + "-test-key.json.gz",
             ContentBody = testContent
         };
 
         [TestMethod]
         public async Task PutEmptyFile()
         {
-            string key = "contentBodyPut" + random.Next();
+            string key = _testId + "-contentBodyPut";
             await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
@@ -579,7 +584,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public async Task PutObjectLeaveStreamOpen()
         {
             var filepath = Path.GetTempFileName();
-            var key = "PutObjectLeaveStreamOpen" + random.Next();
+            var key = _testId + "-PutObjectLeaveStreamOpen";
             File.WriteAllText(filepath, "abcdefghighfsldfsdfn");
 
             try
@@ -732,7 +737,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 await Client.PutObjectAsync(new PutObjectRequest
                 {
                     BucketName = bucketName,
-                    Key = "PutObjectStreamChecksum" + random.Next(),
+                    Key = _testId + "-PutObjectStreamChecksum",
                     InputStream = fStream
                 });
             }
@@ -827,10 +832,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task PutObjectWithACL()
         {
+            var objectKey = _testId + "-putobjectwithacl";
             await Client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = "putobjectwithacl",
+                Key = objectKey,
                 ContentBody = "Some Random Nonsense",
                 Grants = new List<S3Grant>
                 {
@@ -853,13 +859,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             });
 
-            var acl = (await Client.GetACLAsync(new GetACLRequest { BucketName = bucketName, Key = "putobjectwithacl" })).AccessControlList;
+            var acl = (await Client.GetACLAsync(new GetACLRequest { BucketName = bucketName, Key = objectKey })).AccessControlList;
             Assert.AreEqual(2, acl.Grants.Count);
 
             await Client.PutACLAsync(new PutACLRequest
             {
                 BucketName = bucketName,
-                Key = "putobjectwithacl",
+                Key = objectKey,
                 AccessControlList = new S3AccessControlList
                 {
                     Grants = new List<S3Grant>
@@ -876,7 +882,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         
             acl = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetACLAsync(new GetACLRequest() { BucketName = bucketName, Key = "putobjectwithacl" });
+                var res = await Client.GetACLAsync(new GetACLRequest() { BucketName = bucketName, Key = objectKey });
                 return res.AccessControlList?.Grants?.Count > 0 ? res.AccessControlList : null;
             });            
             Assert.AreEqual(1, acl.Grants.Count);
@@ -885,7 +891,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task PutBucketWithCannedACL()
         {
-            var aclBucketName = "dotnet-integtests-cannedacl" + DateTime.UtcNow.Ticks;
+            var aclBucketName = UtilityMethods.GenerateName("dotnet-integtests-cannedacl");
             await Client.PutBucketAsync(new PutBucketRequest 
             { 
                 BucketName = aclBucketName, 
@@ -921,8 +927,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task PutObjectWithContentLength()
         {
-            string sourceKey = "source";
-            string destKey = "dest";
+            string sourceKey = _testId + "-source";
+            string destKey = _testId + "-dest";
             string contents = "Sample contents";
             int length = contents.Length;
 
@@ -1011,9 +1017,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var exceptions = new List<Exception>();
             for (int i = 0; i < runs; i++)
             {
-                exceptions.Add(TryTest(sizeForFailWithoutWriting, failRequest: true));
-                exceptions.Add(TryTest(sizeForFailWithSomeWriting, failRequest: true));
-                exceptions.Add(TryTest(arbitrarySizeForSuccess, failRequest: false));
+                exceptions.Add(TryTest(sizeForFailWithoutWriting, failRequest: true, _testId));
+                exceptions.Add(TryTest(sizeForFailWithSomeWriting, failRequest: true, _testId));
+                exceptions.Add(TryTest(arbitrarySizeForSuccess, failRequest: false, _testId));
             }
 
             exceptions = exceptions.Where(e => e != null).ToList();
@@ -1023,11 +1029,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        private static Exception TryTest(int errorSize, bool failRequest)
+        private static Exception TryTest(int errorSize, bool failRequest, string testId)
         {
             try
             {
-                Test(errorSize, failRequest);
+                Test(errorSize, failRequest, testId);
                 return null;
             }
             catch (Exception e)
@@ -1036,7 +1042,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        private static void Test(int errorSize, bool failRequest)
+        private static void Test(int errorSize, bool failRequest, string testId)
         {
             var actualSize = errorSize + 128;
             var bytes = CreateData(actualSize);
@@ -1055,7 +1061,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var putRequest = new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = "foo1",
+                Key = testId + "-foo1",
                 AutoCloseStream = false
             };
             putRequest.Headers["x-amz-content-sha256"] = payloadhash;
@@ -1136,10 +1142,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             Assert.AreEqual(stream.Position, stream.Length);
 
+            var streamKey = _testId + "-thestream";
             var putObjectRequest = new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = "thestream",
+                Key = streamKey,
                 InputStream = stream,
                 AutoCloseStream = false
             };
@@ -1148,7 +1155,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var getObjectRequest = new GetObjectRequest
             {
                 BucketName = bucketName,
-                Key = "thestream"
+                Key = streamKey
             };
             using (var getObjectResponse = await Client.GetObjectAsync(getObjectRequest))
             {
@@ -1182,7 +1189,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             PutObjectRequest request = new PutObjectRequest()
             {
                 BucketName = bucketName,
-                Key = "thestream",
+                Key = _testId + "-thestream",
                 InputStream = stream,
                 AutoCloseStream = false,
                 DisablePayloadSigning = true

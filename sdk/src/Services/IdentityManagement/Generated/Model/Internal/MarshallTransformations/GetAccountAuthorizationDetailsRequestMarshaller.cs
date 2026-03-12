@@ -82,6 +82,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetAccountAuthorizationDetailsRequestMarshaller _instance = new GetAccountAuthorizationDetailsRequestMarshaller();        

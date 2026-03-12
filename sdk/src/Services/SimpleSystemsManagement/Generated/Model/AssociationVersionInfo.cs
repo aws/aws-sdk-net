@@ -35,6 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class AssociationVersionInfo
     {
         private bool? _applyOnlyAtCronInterval;
+        private string _associationDispatchAssumeRole;
         private string _associationId;
         private string _associationName;
         private string _associationVersion;
@@ -74,6 +75,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetApplyOnlyAtCronInterval()
         {
             return this._applyOnlyAtCronInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationDispatchAssumeRole. 
+        /// <para>
+        /// A role used by association to take actions on your behalf. State Manager will assume
+        /// this role and call required APIs when dispatching configurations to nodes. If not
+        /// specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html">
+        /// service-linked role for Systems Manager</a> will be used by default. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string AssociationDispatchAssumeRole
+        {
+            get { return this._associationDispatchAssumeRole; }
+            set { this._associationDispatchAssumeRole = value; }
+        }
+
+        // Check to see if AssociationDispatchAssumeRole property is set
+        internal bool IsSetAssociationDispatchAssumeRole()
+        {
+            return this._associationDispatchAssumeRole != null;
         }
 
         /// <summary>

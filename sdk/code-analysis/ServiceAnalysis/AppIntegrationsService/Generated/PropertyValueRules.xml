@@ -589,7 +589,7 @@
     <property>Amazon.AppIntegrationsService.Model.EventFilter.Source</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^aws\.partner\/.*$</pattern>
+    <pattern>^(aws\.(partner\/.*|cases|cases\-test))|Pipe\s.[a-zA-Z0-9\/\._\-]+$|app\-integrations\.webhooks\/[a-zA-Z0-9\-_.\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.EventIntegration.Description</property>

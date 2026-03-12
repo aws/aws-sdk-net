@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Contains information about a Security Hub insight.
+    /// Contains information about a Security Hub CSPM insight.
     /// </summary>
     public partial class Insight
     {
@@ -86,7 +86,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InsightArn. 
         /// <para>
-        /// The ARN of a Security Hub insight.
+        /// The ARN of a Security Hub CSPM insight.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -105,7 +105,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a Security Hub insight.
+        /// The name of a Security Hub CSPM insight.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

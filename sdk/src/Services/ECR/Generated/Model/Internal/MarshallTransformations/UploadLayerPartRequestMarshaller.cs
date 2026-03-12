@@ -78,7 +78,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetLayerPartBlob())
             {
                 context.Writer.WritePropertyName("layerPartBlob");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.LayerPartBlob));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.LayerPartBlob);
             }
 
             if(publicRequest.IsSetPartFirstByte())

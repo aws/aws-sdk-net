@@ -34,7 +34,47 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class ClusterOperationV2Serverless
     {
+        private ServerlessConnectivityInfo _sourceClusterInfo;
+        private ServerlessConnectivityInfo _targetClusterInfo;
         private VpcConnectionInfoServerless _vpcConnectionInfo;
+
+        /// <summary>
+        /// Gets and sets the property SourceClusterInfo.             
+        /// <para>
+        /// Describes the cluster's attributes before any updates are applied. For example, networkType,
+        /// which can be either IPv4 or DUAL.
+        /// </para>
+        /// </summary>
+        public ServerlessConnectivityInfo SourceClusterInfo
+        {
+            get { return this._sourceClusterInfo; }
+            set { this._sourceClusterInfo = value; }
+        }
+
+        // Check to see if SourceClusterInfo property is set
+        internal bool IsSetSourceClusterInfo()
+        {
+            return this._sourceClusterInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetClusterInfo.              
+        /// <para>
+        /// Describes the cluster's attributes after any updates are applied. For example, networkType,
+        /// which can be either IPv4 or DUAL.
+        /// </para>
+        /// </summary>
+        public ServerlessConnectivityInfo TargetClusterInfo
+        {
+            get { return this._targetClusterInfo; }
+            set { this._targetClusterInfo = value; }
+        }
+
+        // Check to see if TargetClusterInfo property is set
+        internal bool IsSetTargetClusterInfo()
+        {
+            return this._targetClusterInfo != null;
+        }
 
         /// <summary>
         /// Gets and sets the property VpcConnectionInfo.             

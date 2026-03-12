@@ -1104,6 +1104,18 @@
     <pattern>[a-zA-Z0-9\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.GetPlayerConnectionDetailsRequest.GameSessionId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GetPlayerConnectionDetailsResponse.GameSessionId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.ListAliasesRequest.Limit</property>
     <min>1</min>
   </property-value-rule>
@@ -1965,7 +1977,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Build.SizeOnDisk</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Compute.ComputeArn</property>
@@ -3020,6 +3032,27 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.PlayerConnectionDetail.PlayerGatewayToken</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PlayerConnectionDetail.PlayerId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PlayerConnectionEndpoint.IpAddress</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9A-Fa-f\:\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PlayerConnectionEndpoint.Port</property>
+    <min>1</min>
+    <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.PlayerLatency.PlayerId</property>
     <min>1</min>
     <max>1024</max>
@@ -3166,7 +3199,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Script.SizeOnDisk</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Script.Version</property>

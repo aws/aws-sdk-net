@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("InternetGatewayId", StringUtils.FromString(publicRequest.InternetGatewayId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteInternetGatewayRequestMarshaller _instance = new DeleteInternetGatewayRequestMarshaller();        

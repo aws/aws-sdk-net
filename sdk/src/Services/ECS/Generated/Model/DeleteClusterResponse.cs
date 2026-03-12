@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteCluster operation.
+    /// <zonbook></zonbook><xhtml></xhtml>
     /// </summary>
     public partial class DeleteClusterResponse : AmazonWebServiceResponse
     {

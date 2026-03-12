@@ -24,6 +24,12 @@
     <pattern>[a-z][a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AddDirectQueryDataSourceRequest.DataSourceAccessPolicy</property>
+    <min>0</min>
+    <max>102400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.AddDirectQueryDataSourceRequest.DataSourceName</property>
     <min>3</min>
     <max>80</max>
@@ -464,6 +470,12 @@
     <pattern>[a-z][a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetDirectQueryDataSourceResponse.DataSourceAccessPolicy</property>
+    <min>0</min>
+    <max>102400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetDirectQueryDataSourceResponse.DataSourceName</property>
     <min>3</min>
     <max>80</max>
@@ -750,6 +762,12 @@
     <pattern>[a-z][a-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateDirectQueryDataSourceRequest.DataSourceAccessPolicy</property>
+    <min>0</min>
+    <max>102400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpdateDirectQueryDataSourceRequest.DataSourceName</property>
     <min>3</min>
     <max>80</max>
@@ -979,6 +997,12 @@
     <property>Amazon.OpenSearchService.Model.DataSource.DataSourceDescription</property>
     <max>1000</max>
     <pattern>^([a-zA-Z0-9_])*[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DataSource.IamRoleForDataSourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):iam::[0-9]+:role\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DataSourceDetails.Description</property>

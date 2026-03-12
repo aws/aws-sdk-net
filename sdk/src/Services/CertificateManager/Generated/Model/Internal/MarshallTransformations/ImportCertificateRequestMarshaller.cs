@@ -78,7 +78,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCertificate())
             {
                 context.Writer.WritePropertyName("Certificate");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Certificate));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Certificate);
             }
 
             if(publicRequest.IsSetCertificateArn())
@@ -90,13 +90,13 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCertificateChain())
             {
                 context.Writer.WritePropertyName("CertificateChain");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.CertificateChain));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.CertificateChain);
             }
 
             if(publicRequest.IsSetPrivateKey())
             {
                 context.Writer.WritePropertyName("PrivateKey");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.PrivateKey));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.PrivateKey);
             }
 
             if(publicRequest.IsSetTags())

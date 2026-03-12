@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NotBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.NotBefore));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyInstanceEventStartTimeRequestMarshaller _instance = new ModifyInstanceEventStartTimeRequestMarshaller();        

@@ -42,6 +42,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         private DiscoveryAuthMaterialType _authenticationMaterialType;
         private string _clientToken;
         private string _connectorAssociationIdentifier;
+        private List<string> _connectorDeviceIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _controllerIdentifier;
         private Dictionary<string, string> _customProtocolDetail = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DiscoveryType _discoveryType;
@@ -145,6 +146,30 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetConnectorAssociationIdentifier()
         {
             return this._connectorAssociationIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorDeviceIdList. 
+        /// <para>
+        /// Used as a filter for PLA discoveries.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> ConnectorDeviceIdList
+        {
+            get { return this._connectorDeviceIdList; }
+            set { this._connectorDeviceIdList = value; }
+        }
+
+        // Check to see if ConnectorDeviceIdList property is set
+        internal bool IsSetConnectorDeviceIdList()
+        {
+            return this._connectorDeviceIdList != null && (this._connectorDeviceIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

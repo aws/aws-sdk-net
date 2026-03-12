@@ -203,7 +203,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var newObjectContent = "New Test Content";
 
             // Create regular bucket
-            var newRegularBucket = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks}";
+            var newRegularBucket = UtilityMethods.GenerateName(UtilityMethods.SDK_TEST_PREFIX);
             await _usEast1Client.PutBucketAsync(newRegularBucket);
 
             // Copy object from S3Express bucket to regular bucket
@@ -291,14 +291,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task Test_MultipartUpload()
         {
-            var random = new Random();
-            var nextRandom = random.Next();
-            var filePath = Path.Combine(Path.GetTempPath(), "multi-" + nextRandom + ".txt");
-            var retrievedFilepath = Path.Combine(Path.GetTempPath(), "retrieved-" + nextRandom + ".txt");
+            var guid = Guid.NewGuid().ToString("N");
+            var filePath = Path.Combine(Path.GetTempPath(), "multi-" + guid + ".txt");
+            var retrievedFilepath = Path.Combine(Path.GetTempPath(), "retrieved-" + guid + ".txt");
             var totalSize = megSize * 15;
 
             UtilityMethods.GenerateFile(filePath, totalSize);
-            var key = "key-" + random.Next();
+            var key = "key-" + guid;
 
             var inputStream = File.OpenRead(filePath);
             try
@@ -391,7 +390,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 });
                 Assert.AreEqual("text/html", metaDataResponse.Headers.ContentType);
 
-                var key2 = "key-" + random.Next();
+                var key2 = UtilityMethods.GenerateName("key-");
                 var initResponse2 = await Client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
                 {
                     BucketName = bucketName,
@@ -452,8 +451,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task Test_TransferUtility()
         {
-            var random = new Random();
-            var key = "key-" + random.Next() + ".txt";
+            var key = "key-" + Guid.NewGuid().ToString("N") + ".txt";
             var filePath = Path.Combine(Path.GetTempPath(), key);
             var retrievedFilepath = filePath + ".download";
             UtilityMethods.GenerateFile(filePath, megSize * 15);
@@ -508,8 +506,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task Test_TransferUtility_Precalculated()
         {
-            var random = new Random();
-            var key = "key-" + random.Next() + ".txt";
+            var key = "key-" + Guid.NewGuid().ToString("N") + ".txt";
             var filePath = Path.Combine(Path.GetTempPath(), key);
             var totalSize = megSize * 20;
 

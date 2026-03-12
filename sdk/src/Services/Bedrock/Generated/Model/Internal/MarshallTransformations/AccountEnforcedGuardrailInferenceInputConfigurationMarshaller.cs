@@ -64,6 +64,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.InputTags);
             }
 
+            if(requestObject.IsSetModelEnforcement())
+            {
+                context.Writer.WritePropertyName("modelEnforcement");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ModelEnforcementMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelEnforcement, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

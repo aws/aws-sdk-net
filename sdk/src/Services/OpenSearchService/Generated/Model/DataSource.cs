@@ -36,6 +36,7 @@ namespace Amazon.OpenSearchService.Model
     {
         private string _dataSourceArn;
         private string _dataSourceDescription;
+        private string _iamRoleForDataSourceArn;
 
         /// <summary>
         /// Gets and sets the property DataSourceArn.
@@ -70,6 +71,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetDataSourceDescription()
         {
             return this._dataSourceDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamRoleForDataSourceArn. 
+        /// <para>
+        /// The ARN of the IAM role to be used for cross account/region data source association.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string IamRoleForDataSourceArn
+        {
+            get { return this._iamRoleForDataSourceArn; }
+            set { this._iamRoleForDataSourceArn = value; }
+        }
+
+        // Check to see if IamRoleForDataSourceArn property is set
+        internal bool IsSetIamRoleForDataSourceArn()
+        {
+            return this._iamRoleForDataSourceArn != null;
         }
 
     }

@@ -33,6 +33,15 @@ namespace Amazon.Route53GlobalResolver.Model
     /// Container for the parameters to the DeleteGlobalResolver operation.
     /// Deletes a Route 53 Global Resolver instance. This operation cannot be undone. All
     /// associated DNS views, access sources, tokens, and firewall rules are also deleted.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+    /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+    /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+    /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteGlobalResolverRequest : AmazonRoute53GlobalResolverRequest
     {

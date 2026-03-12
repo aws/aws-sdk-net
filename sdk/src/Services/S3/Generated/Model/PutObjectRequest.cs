@@ -236,7 +236,6 @@ namespace Amazon.S3.Model
         private string _checksumCRC64NVME;
         private string _checksumSHA1;
         private string _checksumSHA256;
-        
         private string _expectedBucketOwner;
         private string _expires;
         private string _ifMatch;

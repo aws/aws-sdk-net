@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
     {
         private AmdSevSnpSpecification _amdSevSnp;
         private int? _coreCount;
+        private NestedVirtualizationSpecification _nestedVirtualization;
         private int? _threadsPerCore;
 
         /// <summary>
@@ -75,6 +76,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetCoreCount()
         {
             return this._coreCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NestedVirtualization. 
+        /// <para>
+        /// Indicates whether to enable the instance for nested virtualization. Nested virtualization
+        /// is supported only on 8th generation Intel-based instance types (c8i, m8i, r8i, and
+        /// their flex variants). When nested virtualization is enabled, Virtual Secure Mode (VSM)
+        /// is automatically disabled for the instance.
+        /// </para>
+        /// </summary>
+        public NestedVirtualizationSpecification NestedVirtualization
+        {
+            get { return this._nestedVirtualization; }
+            set { this._nestedVirtualization = value; }
+        }
+
+        // Check to see if NestedVirtualization property is set
+        internal bool IsSetNestedVirtualization()
+        {
+            return this._nestedVirtualization != null;
         }
 
         /// <summary>

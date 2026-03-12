@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ControlStatus. 
         /// <para>
         /// The current status of the security standard control. Indicates whether the control
-        /// is enabled or disabled. Security Hub does not check against disabled controls.
+        /// is enabled or disabled. Security Hub CSPM does not check against disabled controls.
         /// </para>
         /// </summary>
         public ControlStatus ControlStatus
@@ -164,7 +164,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RemediationUrl. 
         /// <para>
-        /// A link to remediation information for the control in the Security Hub user documentation.
+        /// A link to remediation information for the control in the Security Hub CSPM user documentation.
         /// </para>
         /// </summary>
         public string RemediationUrl

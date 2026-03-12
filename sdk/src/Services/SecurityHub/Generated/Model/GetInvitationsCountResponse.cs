@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InvitationsCount. 
         /// <para>
-        /// The number of all membership invitations sent to this Security Hub member account,
+        /// The number of all membership invitations sent to this Security Hub CSPM member account,
         /// not including the currently accepted invitation.
         /// </para>
         /// </summary>

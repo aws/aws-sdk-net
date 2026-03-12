@@ -2706,6 +2706,12 @@ namespace Amazon.ElasticBeanstalk
         /// </para>
         ///  
         /// <para>
+        ///  Setting the <c>InfoType</c> to <c>analyze</c> collects recent events, instance health,
+        /// and logs from your environment and sends them to Amazon Bedrock in your account to
+        /// generate diagnostic insights and recommended next steps. 
+        /// </para>
+        ///  
+        /// <para>
         ///  Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. 
         /// </para>
         ///  
@@ -2745,6 +2751,12 @@ namespace Amazon.ElasticBeanstalk
         ///  Setting the <c>InfoType</c> to <c>bundle</c> compresses the application server log
         /// files for every Amazon EC2 instance into a <c>.zip</c> file. Legacy and .NET containers
         /// do not support bundle logs. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Setting the <c>InfoType</c> to <c>analyze</c> collects recent events, instance health,
+        /// and logs from your environment and sends them to Amazon Bedrock in your account to
+        /// generate diagnostic insights and recommended next steps. 
         /// </para>
         ///  
         /// <para>

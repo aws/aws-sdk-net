@@ -55,7 +55,7 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBIN())
             {
                 context.Writer.WritePropertyName("BIN");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.BIN));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.BIN);
             }
 
             if(requestObject.IsSetD())

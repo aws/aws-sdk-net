@@ -64,6 +64,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ResourceScanId", StringUtils.FromString(publicRequest.ResourceScanId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeResourceScanRequestMarshaller _instance = new DescribeResourceScanRequestMarshaller();        

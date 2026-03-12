@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("IpamExternalResourceVerificationTokenId", StringUtils.FromString(publicRequest.IpamExternalResourceVerificationTokenId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteIpamExternalResourceVerificationTokenRequestMarshaller _instance = new DeleteIpamExternalResourceVerificationTokenRequestMarshaller();        

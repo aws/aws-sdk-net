@@ -46,6 +46,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetNetworkType())
+            {
+                context.Writer.WritePropertyName("networkType");
+                context.Writer.WriteStringValue(requestObject.NetworkType);
+            }
+
             if(requestObject.IsSetPublicAccess())
             {
                 context.Writer.WritePropertyName("publicAccess");

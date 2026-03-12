@@ -69,6 +69,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListBrowserProfiles operation
+        ///</summary>
+        public IListBrowserProfilesPaginator ListBrowserProfiles(ListBrowserProfilesRequest request) 
+        {
+            return new ListBrowserProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBrowsers operation
         ///</summary>
         public IListBrowsersPaginator ListBrowsers(ListBrowsersRequest request) 

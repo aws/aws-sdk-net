@@ -34,11 +34,31 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class AthenaTableReference
     {
+        private string _catalogName;
         private string _databaseName;
         private string _outputLocation;
         private CommercialRegion _region;
         private string _tableName;
         private string _workGroup;
+
+        /// <summary>
+        /// Gets and sets the property CatalogName. 
+        /// <para>
+        ///  The catalog name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string CatalogName
+        {
+            get { return this._catalogName; }
+            set { this._catalogName = value; }
+        }
+
+        // Check to see if CatalogName property is set
+        internal bool IsSetCatalogName()
+        {
+            return this._catalogName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DatabaseName. 

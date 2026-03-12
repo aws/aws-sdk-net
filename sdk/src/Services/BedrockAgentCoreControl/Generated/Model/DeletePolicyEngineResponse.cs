@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private DateTime? _createdAt;
         private string _description;
+        private string _encryptionKeyArn;
         private string _name;
         private string _policyEngineArn;
         private string _policyEngineId;
@@ -79,6 +80,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string EncryptionKeyArn
+        {
+            get { return this._encryptionKeyArn; }
+            set { this._encryptionKeyArn = value; }
+        }
+
+        // Check to see if EncryptionKeyArn property is set
+        internal bool IsSetEncryptionKeyArn()
+        {
+            return this._encryptionKeyArn != null;
         }
 
         /// <summary>

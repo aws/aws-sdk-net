@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Object containing information about metric requested for the contact.
+    /// Contains the result of a requested metric for the contact. This object is returned
+    /// as part of the GetContactMetrics response and includes both the metric name and its
+    /// calculated value.
     /// </summary>
     public partial class ContactMetricResult
     {
@@ -40,7 +42,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the metric being retrieved in type String.
+        /// The name of the metric that was retrieved. This corresponds to the metric name specified
+        /// in the request, such as POSITION_IN_QUEUE or ESTIMATED_WAIT_TIME.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +62,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Object result associated with the metric received.
+        /// The calculated value for the requested metric. This object contains the numeric result
+        /// based on the contact's current state in the queue.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

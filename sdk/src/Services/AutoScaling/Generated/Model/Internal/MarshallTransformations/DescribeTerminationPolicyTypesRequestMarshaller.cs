@@ -60,6 +60,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             if(publicRequest != null)
             {
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeTerminationPolicyTypesRequestMarshaller _instance = new DescribeTerminationPolicyTypesRequestMarshaller();        

@@ -34,8 +34,27 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class TestCaseEntryPoint
     {
+        private ChatEntryPointParameters _chatEntryPointParameters;
         private TestCaseEntryPointType _type;
         private VoiceCallEntryPointParameters _voiceCallEntryPointParameters;
+
+        /// <summary>
+        /// Gets and sets the property ChatEntryPointParameters. 
+        /// <para>
+        /// Parameters for chat entry point.
+        /// </para>
+        /// </summary>
+        public ChatEntryPointParameters ChatEntryPointParameters
+        {
+            get { return this._chatEntryPointParameters; }
+            set { this._chatEntryPointParameters = value; }
+        }
+
+        // Check to see if ChatEntryPointParameters property is set
+        internal bool IsSetChatEntryPointParameters()
+        {
+            return this._chatEntryPointParameters != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Type. 

@@ -52,6 +52,12 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("outputConfiguration", targetDepth))
+                {
+                    var unmarshaller = OutputConfigurationUnmarshaller.Instance;
+                    response.OutputConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("outputSegments", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OutputSegment, OutputSegmentUnmarshaller>(OutputSegmentUnmarshaller.Instance);

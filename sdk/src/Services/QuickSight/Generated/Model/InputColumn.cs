@@ -101,6 +101,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The data type of the column.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> <c>SEMISTRUCT</c> represents Athena's map, row, and struct data types.
+        /// It is supported when using the new data preparation experience.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public InputColumnDataType Type

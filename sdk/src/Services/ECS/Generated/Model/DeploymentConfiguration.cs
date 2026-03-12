@@ -107,7 +107,9 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeploymentCircuitBreaker. <note> 
+        /// Gets and sets the property DeploymentCircuitBreaker. 
+        /// <para>
+        /// <note> 
         /// <para>
         /// The deployment circuit breaker can only be used for services using the rolling update
         /// (<c>ECS</c>) deployment type.
@@ -121,6 +123,8 @@ namespace Amazon.ECS.Model
         /// is rolled back to the last deployment that completed successfully. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
         /// update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> 
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public DeploymentCircuitBreaker DeploymentCircuitBreaker

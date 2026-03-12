@@ -918,6 +918,36 @@ namespace Amazon.EC2.Model
         IDescribeScheduledInstancesPaginator DescribeScheduledInstances(DescribeScheduledInstancesRequest request);
 
         /// <summary>
+        /// Paginator for DescribeSecondaryInterfaces operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeSecondaryInterfacesPaginator DescribeSecondaryInterfaces(DescribeSecondaryInterfacesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeSecondaryNetworks operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeSecondaryNetworksPaginator DescribeSecondaryNetworks(DescribeSecondaryNetworksRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeSecondarySubnets operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeSecondarySubnetsPaginator DescribeSecondarySubnets(DescribeSecondarySubnetsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeSecurityGroupRules operation
         ///</summary>
         [AWSPaginator(

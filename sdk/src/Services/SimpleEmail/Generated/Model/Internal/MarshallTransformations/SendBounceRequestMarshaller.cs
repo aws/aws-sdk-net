@@ -181,6 +181,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("OriginalMessageId", StringUtils.FromString(publicRequest.OriginalMessageId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SendBounceRequestMarshaller _instance = new SendBounceRequestMarshaller();        

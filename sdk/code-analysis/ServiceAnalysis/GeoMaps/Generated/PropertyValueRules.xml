@@ -18,7 +18,7 @@
   <property-value-rule>
     <property>Amazon.GeoMaps.Model.GetStaticMapRequest.BoundedPositions</property>
     <min>0</min>
-    <max>2000</max>
+    <max>5000</max>
     <pattern>(-?\d{1,3}(\.\d{1,14})?,-?\d{1,2}(\.\d{1,14})?)(,(-?\d{1,3}(\.\d{1,14})?,-?\d{1,2}(\.\d{1,14})?))*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -36,7 +36,7 @@
   <property-value-rule>
     <property>Amazon.GeoMaps.Model.GetStaticMapRequest.CompactOverlay</property>
     <min>1</min>
-    <max>7000</max>
+    <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoMaps.Model.GetStaticMapRequest.FileName</property>
@@ -45,7 +45,7 @@
   <property-value-rule>
     <property>Amazon.GeoMaps.Model.GetStaticMapRequest.GeoJsonOverlay</property>
     <min>1</min>
-    <max>7000</max>
+    <max>4200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoMaps.Model.GetStaticMapRequest.Height</property>

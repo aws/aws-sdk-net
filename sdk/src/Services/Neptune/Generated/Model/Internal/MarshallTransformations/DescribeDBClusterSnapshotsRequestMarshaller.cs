@@ -119,6 +119,8 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SnapshotType", StringUtils.FromString(publicRequest.SnapshotType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeDBClusterSnapshotsRequestMarshaller _instance = new DescribeDBClusterSnapshotsRequestMarshaller();        

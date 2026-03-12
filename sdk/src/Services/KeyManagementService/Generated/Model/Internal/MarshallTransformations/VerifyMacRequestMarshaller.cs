@@ -101,7 +101,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetMac())
             {
                 context.Writer.WritePropertyName("Mac");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Mac));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Mac);
             }
 
             if(publicRequest.IsSetMacAlgorithm())
@@ -113,7 +113,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetMessage())
             {
                 context.Writer.WritePropertyName("Message");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Message));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Message);
             }
 
             writer.WriteEndObject();

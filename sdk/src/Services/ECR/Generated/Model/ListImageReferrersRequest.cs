@@ -32,6 +32,12 @@ namespace Amazon.ECR.Model
     /// <summary>
     /// Container for the parameters to the ListImageReferrers operation.
     /// Lists the artifacts associated with a specified subject image.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The IAM principal invoking this operation must have the <c>ecr:BatchGetImage</c> permission.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListImageReferrersRequest : AmazonECRRequest
     {

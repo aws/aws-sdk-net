@@ -293,6 +293,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for QueryGraph operation
+        ///</summary>
+        public IQueryGraphPaginator QueryGraph(QueryGraphRequest request) 
+        {
+            return new QueryGraphPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for Search operation
         ///</summary>
         public ISearchPaginator Search(SearchRequest request) 

@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model
     /// <para>
     /// The deployment circuit breaker can only be used for services using the rolling update
     /// (<c>ECS</c>) deployment type.
-    /// </para>
+    /// 
     ///  </note> 
     /// <para>
     /// The <b>deployment circuit breaker</b> determines whether a service deployment will
@@ -48,6 +48,8 @@ namespace Amazon.ECS.Model
     /// <para>
     /// For more information about API failure reasons, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
     /// failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class DeploymentCircuitBreaker

@@ -48,6 +48,7 @@ namespace Amazon.Batch.Model
         private int? _maxvCpus;
         private int? _minvCpus;
         private string _placementGroup;
+        private ComputeScalingPolicy _scalingPolicy;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -562,6 +563,30 @@ namespace Amazon.Batch.Model
         internal bool IsSetPlacementGroup()
         {
             return this._placementGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalingPolicy. 
+        /// <para>
+        /// The scaling policy configuration for the compute environment.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+        /// specify it.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ComputeScalingPolicy ScalingPolicy
+        {
+            get { return this._scalingPolicy; }
+            set { this._scalingPolicy = value; }
+        }
+
+        // Check to see if ScalingPolicy property is set
+        internal bool IsSetScalingPolicy()
+        {
+            return this._scalingPolicy != null;
         }
 
         /// <summary>

@@ -31,8 +31,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAdministratorAccount operation.
-    /// Provides the details for the Security Hub administrator account for the current member
-    /// account.
+    /// Provides the details for the Security Hub CSPM administrator account for the current
+    /// member account.
     /// 
     ///  
     /// <para>

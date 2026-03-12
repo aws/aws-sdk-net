@@ -38,6 +38,7 @@ namespace Amazon.ECS.Model
     public partial class InstanceLaunchTemplate
     {
         private CapacityOptionType _capacityOptionType;
+        private CapacityReservationRequest _capacityReservations;
         private string _ec2InstanceProfileArn;
         private bool? _fipsEnabled;
         private InstanceRequirementsRequest _instanceRequirements;
@@ -48,8 +49,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CapacityOptionType. 
         /// <para>
-        /// The capacity option type. This determines whether Amazon ECS launches On-Demand or
-        /// Spot Instances for your managed instance capacity provider.
+        /// The capacity option type. This determines whether Amazon ECS launches On-Demand, Spot
+        /// or Capacity Reservation Instances for your managed instance capacity provider.
         /// </para>
         ///  
         /// <para>
@@ -65,6 +66,12 @@ namespace Amazon.ECS.Model
         ///  <c>SPOT</c> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced
         /// cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification
         /// when the capacity is needed back.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RESERVED</c> - Launches Instances using Amazon EC2 Capacity Reservations. Capacity
+        /// Reservations allow you to reserve compute capacity for Amazon EC2 instances in a specific
+        /// Availability Zone.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -86,6 +93,36 @@ namespace Amazon.ECS.Model
         internal bool IsSetCapacityOptionType()
         {
             return this._capacityOptionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservations. 
+        /// <para>
+        /// Capacity reservation specifications. You can specify:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity reservation preference
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Reservation resource group to be used for targeted capacity reservations
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon ECS will launch instances according to the specified criteria.
+        /// </para>
+        /// </summary>
+        public CapacityReservationRequest CapacityReservations
+        {
+            get { return this._capacityReservations; }
+            set { this._capacityReservations = value; }
+        }
+
+        // Check to see if CapacityReservations property is set
+        internal bool IsSetCapacityReservations()
+        {
+            return this._capacityReservations != null;
         }
 
         /// <summary>

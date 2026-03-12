@@ -31,8 +31,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableOrganizationAdminAccount operation.
-    /// Designates the Security Hub administrator account for an organization. Can only be
-    /// called by the organization management account.
+    /// Designates the Security Hub CSPM administrator account for an organization. Can only
+    /// be called by the organization management account.
     /// </summary>
     public partial class EnableOrganizationAdminAccountRequest : AmazonSecurityHubRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property AdminAccountId. 
         /// <para>
         /// The Amazon Web Services account identifier of the account to designate as the Security
-        /// Hub administrator account.
+        /// Hub CSPM administrator account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Feature. 
         /// <para>
         /// The feature for which the delegated admin account is enabled. Defaults to Security
-        /// Hub if not specified.
+        /// Hub CSPM if not specified.
         /// </para>
         /// </summary>
         public SecurityHubFeature Feature

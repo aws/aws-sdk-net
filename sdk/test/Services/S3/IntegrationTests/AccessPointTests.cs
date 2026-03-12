@@ -7,6 +7,7 @@ using Amazon.S3Control;
 using Amazon.S3Control.Model;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
@@ -20,9 +21,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     public class AccessPointTests : TestBase<AmazonS3Client>
     {
         static string _bucketName;
-        static string _accesspointName = "sdk-integtests-" + DateTime.UtcNow.Ticks;
+        static string _accesspointName = UtilityMethods.GenerateName("sdk-integtests-");
         static string _accesspointArn;
         static string _accountId;
+        private string _testId;
+
+        [TestInitialize]
+        public void SetTestId()
+        {
+            _testId = Guid.NewGuid().ToString("N");
+        }
 
         [ClassInitialize]
         public static async Task Setup(TestContext context)
@@ -62,17 +70,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task PutAndGetObject()
         {
-            var objectKey = Guid.NewGuid().ToString();
             var putRequest = new PutObjectRequest
             {
                 BucketName = _accesspointArn,
-                Key = objectKey,
+                Key = _testId,
                 ContentBody = "access point test data"
             };
 
             await Client.PutObjectAsync(putRequest);
 
-            using (var getResponse = await Client.GetObjectAsync(_accesspointArn, objectKey))
+            using (var getResponse = await Client.GetObjectAsync(_accesspointArn, _testId))
             {
                 var getBody = await new StreamReader(getResponse.ResponseStream).ReadToEndAsync();
                 Assert.AreEqual(putRequest.ContentBody, getBody);
@@ -93,7 +100,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var uploadRequest = new TransferUtilityUploadRequest
             {
                 BucketName = _bucketName,
-                Key = "a-lot-of-as.txt",
+                Key = _testId,
                 InputStream = body
             };
 
@@ -109,11 +116,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task TestPresignedUrl()
         {
-            var objectKey = Guid.NewGuid().ToString();
             var putRequest = new PutObjectRequest
             {
                 BucketName = _accesspointArn,
-                Key = objectKey,
+                Key = _testId,
                 ContentBody = "access point test data"
             };
 
@@ -122,7 +128,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var getPresignedUrl = await Client.GetPreSignedURLAsync(new GetPreSignedUrlRequest
             {
                 BucketName = _accesspointArn,
-                Key = objectKey,
+                Key = _testId,
                 Verb = HttpVerb.GET,
                 Expires = DateTime.UtcNow.AddDays(1)
             });

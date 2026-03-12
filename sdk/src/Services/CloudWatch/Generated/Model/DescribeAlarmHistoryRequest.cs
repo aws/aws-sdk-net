@@ -66,7 +66,7 @@ namespace Amazon.CloudWatch.Model
         /// results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=16)]
         public string AlarmContributorId
         {
             get { return this._alarmContributorId; }

@@ -35,10 +35,10 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// The output produced by executing code in a code interpreter session in Amazon Bedrock.
-    /// This structure contains the results of code execution, including textual output, structured
-    /// data, and error information. Agents use these results to generate responses that incorporate
-    /// computation, data analysis, and visualization.
+    /// The output produced by executing code in a code interpreter session in Amazon Bedrock
+    /// AgentCore. This structure contains the results of code execution, including textual
+    /// output, structured data, and error information. Agents use these results to generate
+    /// responses that incorporate computation, data analysis, and visualization.
     /// </summary>
     public partial class CodeInterpreterResult
         : IEventStreamEvent

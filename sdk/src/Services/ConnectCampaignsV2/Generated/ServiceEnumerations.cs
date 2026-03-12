@@ -532,6 +532,10 @@ namespace Amazon.ConnectCampaignsV2
         /// Constant CampaignTelephony for EventType
         /// </summary>
         public static readonly EventType CampaignTelephony = new EventType("Campaign-Telephony");
+        /// <summary>
+        /// Constant CampaignWhatsApp for EventType
+        /// </summary>
+        public static readonly EventType CampaignWhatsApp = new EventType("Campaign-WhatsApp");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

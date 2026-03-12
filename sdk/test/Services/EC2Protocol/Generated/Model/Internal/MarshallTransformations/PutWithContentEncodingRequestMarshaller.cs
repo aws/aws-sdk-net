@@ -69,6 +69,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Encoding", StringUtils.FromString(publicRequest.Encoding));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static PutWithContentEncodingRequestMarshaller _instance = new PutWithContentEncodingRequestMarshaller();        

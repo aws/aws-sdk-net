@@ -68,6 +68,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Granularity", StringUtils.FromString(publicRequest.Granularity));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GenerateServiceLastAccessedDetailsRequestMarshaller _instance = new GenerateServiceLastAccessedDetailsRequestMarshaller();        

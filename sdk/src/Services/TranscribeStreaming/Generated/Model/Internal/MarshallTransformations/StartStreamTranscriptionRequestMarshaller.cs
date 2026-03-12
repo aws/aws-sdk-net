@@ -151,6 +151,11 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                 request.Headers["x-amzn-transcribe-session-id"] = publicRequest.SessionId;
             }
         
+            if (publicRequest.IsSetSessionResumeWindow()) 
+            {
+                request.Headers["x-amzn-transcribe-session-resume-window"] = StringUtils.FromInt(publicRequest.SessionResumeWindow);
+            }
+        
             if (publicRequest.IsSetShowSpeakerLabel()) 
             {
                 request.Headers["x-amzn-transcribe-show-speaker-label"] = StringUtils.FromBool(publicRequest.ShowSpeakerLabel);

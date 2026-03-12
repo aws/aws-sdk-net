@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Remove tags for the specified resource.
+    /// Removes tags from a specified resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonIoTManagedIntegrationsRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource to which to add tags.
+        /// The Amazon Resource Name (ARN) of the resource from which to remove tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

@@ -2522,5 +2522,633 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             Assert.AreEqual("https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: OperationType not set with StreamId")]
+        [ExpectedException(typeof(AmazonClientException), @"Operation Type is not set. Please contact service team for resolution.")]
+        public void StreamId_test_OperationType_not_set_with_StreamId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint targeting control operation type")]
+        public void StreamId_test_Stream_endpoint_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["StreamARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint targeting data operation type")]
+        public void StreamId_test_Stream_endpoint_targeting_data_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["StreamARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with fips targeting data operation type")]
+        public void StreamId_test_Stream_endpoint_with_fips_targeting_data_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["StreamARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with fips targeting control operation type")]
+        public void StreamId_test_Stream_endpoint_with_fips_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["StreamARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with Dual Stack and FIPS enabled")]
+        public void StreamId_test_Stream_endpoint_with_Dual_Stack_and_FIPS_enabled_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["StreamARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with Dual Stack enabled")]
+        public void StreamId_test_Stream_endpoint_with_Dual_Stack_enabled_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["StreamARN"] = "arn:aws:kinesis:us-west-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis.us-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with FIPS and DualStack disabled")]
+        public void StreamId_test_Stream_endpoint_with_FIPS_and_DualStack_disabled_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["StreamARN"] = "arn:aws:kinesis:us-west-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis.us-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint FIPS and DualStack disabled with endpoint")]
+        public void StreamId_test_Stream_endpoint_FIPS_and_DualStack_disabled_with_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis-pod1.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint targeting data operation type with endpoint")]
+        public void StreamId_test_Stream_endpoint_targeting_data_operation_type_with_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with fips targeting data operation type with endpoint")]
+        public void StreamId_test_Stream_endpoint_with_fips_targeting_data_operation_type_with_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis-pod1-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with fips targeting control operation type with endpoint")]
+        public void StreamId_test_Stream_endpoint_with_fips_targeting_control_operation_type_with_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with Dual Stack and FIPS enabled with endpoint")]
+        public void StreamId_test_Stream_endpoint_with_Dual_Stack_and_FIPS_enabled_with_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with Dual Stack enabled with endpoint")]
+        public void StreamId_test_Stream_endpoint_with_Dual_Stack_enabled_with_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint targeting data operation type with https endpoint")]
+        public void StreamId_test_Stream_endpoint_targeting_data_operation_type_with_https_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "https://kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: HTTPS endpoint with FIPS enabled targeting control operation type")]
+        public void StreamId_test_HTTPS_endpoint_with_FIPS_enabled_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "https://kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: HTTPS endpoint with FIPS enabled targeting data operation type")]
+        public void StreamId_test_HTTPS_endpoint_with_FIPS_enabled_targeting_data_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "https://kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis-pod1-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: HTTPS endpoint with DualStack enabled targeting control operation type")]
+        public void StreamId_test_HTTPS_endpoint_with_DualStack_enabled_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "https://kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis-pod1.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: HTTPS endpoint with DualStack enabled targeting data operation type")]
+        public void StreamId_test_HTTPS_endpoint_with_DualStack_enabled_targeting_data_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "https://kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis-pod1.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: HTTPS endpoint with FIPS and DualStack enabled targeting control operation type")]
+        public void StreamId_test_HTTPS_endpoint_with_FIPS_and_DualStack_enabled_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "https://kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis-pod1-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: HTTPS endpoint with FIPS and DualStack enabled targeting data operation type")]
+        public void StreamId_test_HTTPS_endpoint_with_FIPS_and_DualStack_enabled_targeting_data_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "https://kinesis-pod1.us-east-1.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis-pod1-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: HTTPS endpoint with FIPS enabled in different region")]
+        public void StreamId_test_HTTPS_endpoint_with_FIPS_enabled_in_different_region_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "https://kinesis-pod2.us-west-2.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis-pod2-fips.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: HTTPS endpoint with DualStack enabled in different region")]
+        public void StreamId_test_HTTPS_endpoint_with_DualStack_enabled_in_different_region_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["Endpoint"] = "https://kinesis-pod2.us-west-2.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis-pod2.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with ConsumerARN targeting control operation type")]
+        public void StreamId_test_Stream_endpoint_with_ConsumerARN_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["ConsumerARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with ConsumerARN targeting data operation type")]
+        public void StreamId_test_Stream_endpoint_with_ConsumerARN_targeting_data_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["ConsumerARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream/consumer/test-consumer:1525898737";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with ResourceARN targeting control operation type")]
+        public void StreamId_test_Stream_endpoint_with_ResourceARN_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Stream endpoint with ResourceARN targeting data operation type")]
+        public void StreamId_test_Stream_endpoint_with_ResourceARN_targeting_data_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.data-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Invalid StreamId with ARN")]
+        public void StreamId_test_Invalid_StreamId_with_ARN_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["StreamId"] = "af4lwng4k01746835071=xyz";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123.data-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Invalid streamId with custom endpoint")]
+        public void StreamId_test_Invalid_streamId_with_custom_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071=xyz";
+            parameters["Endpoint"] = "https://kinesis-pod2.us-west-2.amazonaws.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-pod2.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Invalid streamId")]
+        public void StreamId_test_Invalid_streamId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071=xyz";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Invalid streamId with custom endpoint and ARN")]
+        public void StreamId_test_Invalid_streamId_with_custom_endpoint_and_ARN_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071=xyz";
+            parameters["Endpoint"] = "https://kinesis-pod2.us-west-2.amazonaws.com";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-pod2.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Invalid streamId with longer prefix")]
+        public void StreamId_test_Invalid_streamId_with_longer_prefix_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k0174683507123-xyz";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Invalid streamId with shorter prefix")]
+        public void StreamId_test_Invalid_streamId_with_shorter_prefix_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835-xyz";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Invalid streamId with longer suffix")]
+        public void StreamId_test_Invalid_streamId_with_longer_suffix_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-wxyz";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("StreamId test: Invalid streamId with shorter suffix")]
+        public void StreamId_test_Invalid_streamId_with_shorter_suffix_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-yz";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
     }
 }

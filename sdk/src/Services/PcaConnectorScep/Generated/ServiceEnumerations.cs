@@ -104,6 +104,14 @@ namespace Amazon.PcaConnectorScep
         /// Constant PRIVATECA_RESOURCE_NOT_FOUND for ConnectorStatusReason
         /// </summary>
         public static readonly ConnectorStatusReason PRIVATECA_RESOURCE_NOT_FOUND = new ConnectorStatusReason("PRIVATECA_RESOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant VPC_ENDPOINT_DNS_ENTRIES_NOT_FOUND for ConnectorStatusReason
+        /// </summary>
+        public static readonly ConnectorStatusReason VPC_ENDPOINT_DNS_ENTRIES_NOT_FOUND = new ConnectorStatusReason("VPC_ENDPOINT_DNS_ENTRIES_NOT_FOUND");
+        /// <summary>
+        /// Constant VPC_ENDPOINT_RESOURCE_NOT_FOUND for ConnectorStatusReason
+        /// </summary>
+        public static readonly ConnectorStatusReason VPC_ENDPOINT_RESOURCE_NOT_FOUND = new ConnectorStatusReason("VPC_ENDPOINT_RESOURCE_NOT_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("OrganizationTargetId", StringUtils.FromString(publicRequest.OrganizationTargetId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DisableIpamPolicyRequestMarshaller _instance = new DisableIpamPolicyRequestMarshaller();        

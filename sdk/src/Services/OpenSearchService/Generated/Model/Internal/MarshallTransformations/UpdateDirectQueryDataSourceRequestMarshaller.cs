@@ -76,6 +76,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDataSourceAccessPolicy())
+            {
+                context.Writer.WritePropertyName("DataSourceAccessPolicy");
+                context.Writer.WriteStringValue(publicRequest.DataSourceAccessPolicy);
+            }
+
             if(publicRequest.IsSetDataSourceType())
             {
                 context.Writer.WritePropertyName("DataSourceType");

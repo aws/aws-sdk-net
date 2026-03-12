@@ -49,7 +49,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBinaryValue())
             {
                 context.Writer.WritePropertyName("BinaryValue");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.BinaryValue));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.BinaryValue);
             }
 
             if(requestObject.IsSetBooleanValue())

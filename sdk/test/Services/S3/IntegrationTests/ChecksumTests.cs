@@ -341,15 +341,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <param name="bucketName">bucket to upload the object to</param>
         private async Task CopyObjectUsingMultipartTestHelper(CoreChecksumAlgorithm algorithm, string bucketName)
         {
-            var random = new Random();
-            var nextRandom = random.Next();
-            var filePath = Path.Combine(Path.GetTempPath(), "multipartcopy-" + nextRandom + ".txt");
-            var retrievedFilepath = Path.Combine(Path.GetTempPath(), "retreived-" + nextRandom + ".txt");
+            var guid = Guid.NewGuid().ToString("N");
+            var filePath = Path.Combine(Path.GetTempPath(), "multipartcopy-" + guid + ".txt");
+            var retrievedFilepath = Path.Combine(Path.GetTempPath(), "retreived-" + guid + ".txt");
             var totalSize = MegSize * 15;
 
             UtilityMethods.GenerateFile(filePath, totalSize);
-            string sourceKey = "sourceKey-" + random.Next();
-            string copiedKey = "sourceKey-" + random.Next() + "-copy";
+            string sourceKey = "sourceKey-" + guid;
+            string copiedKey = "sourceKey-" + guid + "-copy";
 
             try
             {
@@ -447,14 +446,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <param name="disablePayloadSigning">whether the request payload should be signed</param>
         private async Task MultipartTestHelper(CoreChecksumAlgorithm algorithm, string bucketName, bool disablePayloadSigning)
         {
-            var random = new Random();
-            var nextRandom = random.Next();
-            var filePath = Path.Combine(Path.GetTempPath(), "multi-" + nextRandom + ".txt");
-            var retrievedFilepath = Path.Combine(Path.GetTempPath(), "retreived-" + nextRandom + ".txt");
+            var guid = Guid.NewGuid().ToString("N");
+            var filePath = Path.Combine(Path.GetTempPath(), "multi-" + guid + ".txt");
+            var retrievedFilepath = Path.Combine(Path.GetTempPath(), "retreived-" + guid + ".txt");
             var totalSize = MegSize * 15;
 
             UtilityMethods.GenerateFile(filePath, totalSize);
-            string key = "sourceKey-" + random.Next();
+            string key = "sourceKey-" + guid;
 
             Stream inputStream = File.OpenRead(filePath);
             try

@@ -86,6 +86,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SkipOsShutdown", StringUtils.FromBool(publicRequest.SkipOsShutdown));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static TerminateInstancesRequestMarshaller _instance = new TerminateInstancesRequestMarshaller();        

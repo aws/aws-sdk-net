@@ -60,6 +60,8 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
             if(publicRequest != null)
             {
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static IgnoresWrappingXmlNameRequestMarshaller _instance = new IgnoresWrappingXmlNameRequestMarshaller();        

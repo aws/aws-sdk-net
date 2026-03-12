@@ -80,6 +80,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ValidateOnly", StringUtils.FromBool(publicRequest.ValidateOnly));
                 }
             }
+
             return request;
         }
                     private static UpdateJobRequestMarshaller _instance = new UpdateJobRequestMarshaller();        

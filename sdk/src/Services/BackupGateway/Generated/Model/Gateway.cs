@@ -48,7 +48,7 @@ namespace Amazon.BackupGateway.Model
         /// to return a list of gateways for your account and Amazon Web Services Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=50, Max=500)]
+        [AWSProperty(Min=50, Max=180)]
         public string GatewayArn
         {
             get { return this._gatewayArn; }

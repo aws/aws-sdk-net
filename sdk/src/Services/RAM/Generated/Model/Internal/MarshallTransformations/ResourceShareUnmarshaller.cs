@@ -98,6 +98,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceShareArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("resourceShareConfiguration", targetDepth))
+                {
+                    var unmarshaller = ResourceShareConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ResourceShareConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

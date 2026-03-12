@@ -125,6 +125,7 @@ namespace Amazon.RDS.Model
         private string _secondaryAvailabilityZone;
         private List<DBInstanceStatusInfo> _statusInfos = AWSConfigs.InitializeCollections ? new List<DBInstanceStatusInfo>() : null;
         private bool? _storageEncrypted;
+        private StorageEncryptionType _storageEncryptionType;
         private int? _storageThroughput;
         private string _storageType;
         private string _storageVolumeStatus;
@@ -1889,6 +1890,39 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageEncryptionType. 
+        /// <para>
+        /// The type of encryption used to protect data at rest in the DB instance. Possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>none</c> - The DB instance is not encrypted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-rds</c> - The DB instance is encrypted using an Amazon Web Services owned
+        /// KMS key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-kms</c> - The DB instance is encrypted using a customer managed KMS key or
+        /// Amazon Web Services managed KMS key.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StorageEncryptionType StorageEncryptionType
+        {
+            get { return this._storageEncryptionType; }
+            set { this._storageEncryptionType = value; }
+        }
+
+        // Check to see if StorageEncryptionType property is set
+        internal bool IsSetStorageEncryptionType()
+        {
+            return this._storageEncryptionType != null;
         }
 
         /// <summary>

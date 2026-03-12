@@ -18,6 +18,7 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -210,7 +211,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private static async Task AssertPresignedUrlPut(AmazonS3Client client, PresignedUrlTestParameters testParams)
         {
-            string objectKey = TestKey + DateTime.UtcNow.Ticks;
+            string objectKey = UtilityMethods.GenerateName(TestKey);
 
             var request = new GetPreSignedUrlRequest
             {

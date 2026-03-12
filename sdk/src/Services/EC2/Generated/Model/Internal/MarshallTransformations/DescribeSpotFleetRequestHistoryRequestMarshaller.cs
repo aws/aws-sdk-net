@@ -84,6 +84,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("StartTime", Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601NoMs(publicRequest.StartTime));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeSpotFleetRequestHistoryRequestMarshaller _instance = new DescribeSpotFleetRequestHistoryRequestMarshaller();        

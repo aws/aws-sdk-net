@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("InstanceConnectEndpointId", StringUtils.FromString(publicRequest.InstanceConnectEndpointId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteInstanceConnectEndpointRequestMarshaller _instance = new DeleteInstanceConnectEndpointRequestMarshaller();        

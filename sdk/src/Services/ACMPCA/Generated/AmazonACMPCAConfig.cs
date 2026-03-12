@@ -33,7 +33,7 @@ namespace Amazon.ACMPCA
     public partial class AmazonACMPCAConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ACM PCA", "4.0.3.11");
+            InternalSDKUtils.BuildUserAgentString("ACM PCA", "4.0.3.13");
 
         private static readonly AmazonACMPCAEndpointResolver EndpointResolver =
             new AmazonACMPCAEndpointResolver();

@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VpnConcentratorId", StringUtils.FromString(publicRequest.VpnConcentratorId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteVpnConcentratorRequestMarshaller _instance = new DeleteVpnConcentratorRequestMarshaller();        

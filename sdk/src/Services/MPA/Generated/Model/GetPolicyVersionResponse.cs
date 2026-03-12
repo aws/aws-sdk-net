@@ -42,13 +42,6 @@ namespace Amazon.MPA.Model
         /// A <c>PolicyVersion</c> object. Contains details for the version of the policy. Policies
         /// define the permissions for team resources.
         /// </para>
-        ///  
-        /// <para>
-        /// The protected operation for a service integration might require specific permissions.
-        /// For more information, see <a href="https://docs.aws.amazon.com/mpa/latest/userguide/mpa-integrations.html">How
-        /// other services work with Multi-party approval</a> in the <i>Multi-party approval User
-        /// Guide</i>.
-        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PolicyVersion PolicyVersion

@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("IpamPrefixListResolverTargetId", StringUtils.FromString(publicRequest.IpamPrefixListResolverTargetId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteIpamPrefixListResolverTargetRequestMarshaller _instance = new DeleteIpamPrefixListResolverTargetRequestMarshaller();        

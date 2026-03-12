@@ -48,7 +48,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// You can perform on-demand key rotation a <b>maximum of 10 times</b> per KMS key. You
+    /// You can perform on-demand key rotation a <b>maximum of 25 times</b> per KMS key. You
     /// can use the KMS console to view the number of remaining on-demand rotations available
     /// for a KMS key.
     /// </para>

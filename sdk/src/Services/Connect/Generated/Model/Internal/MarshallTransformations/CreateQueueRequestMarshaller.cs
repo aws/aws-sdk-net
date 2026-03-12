@@ -82,6 +82,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetEmailAddressesConfig())
+            {
+                context.Writer.WritePropertyName("EmailAddressesConfig");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEmailAddressesConfigListValue in publicRequest.EmailAddressesConfig)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EmailAddressConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEmailAddressesConfigListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetHoursOfOperationId())
             {
                 context.Writer.WritePropertyName("HoursOfOperationId");

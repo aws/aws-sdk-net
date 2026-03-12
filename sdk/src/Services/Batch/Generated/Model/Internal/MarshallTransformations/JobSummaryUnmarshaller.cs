@@ -62,6 +62,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArrayProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("capacityUsage", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<JobCapacityUsageSummary, JobCapacityUsageSummaryUnmarshaller>(JobCapacityUsageSummaryUnmarshaller.Instance);
+                    unmarshalledObject.CapacityUsage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("container", targetDepth))
                 {
                     var unmarshaller = ContainerSummaryUnmarshaller.Instance;
@@ -102,6 +108,18 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NodePropertiesSummaryUnmarshaller.Instance;
                     unmarshalledObject.NodeProperties = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("scheduledAt", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.ScheduledAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("shareIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ShareIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("startedAt", targetDepth))

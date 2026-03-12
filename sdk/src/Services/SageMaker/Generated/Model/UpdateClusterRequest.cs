@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private List<string> _instanceGroupsToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ClusterNodeProvisioningMode _nodeProvisioningMode;
         private ClusterNodeRecovery _nodeRecovery;
+        private ClusterOrchestrator _orchestrator;
         private List<ClusterRestrictedInstanceGroupSpecification> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupSpecification>() : null;
         private ClusterTieredStorageConfig _tieredStorageConfig;
 
@@ -190,6 +191,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetNodeRecovery()
         {
             return this._nodeRecovery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Orchestrator.
+        /// </summary>
+        public ClusterOrchestrator Orchestrator
+        {
+            get { return this._orchestrator; }
+            set { this._orchestrator = value; }
+        }
+
+        // Check to see if Orchestrator property is set
+        internal bool IsSetOrchestrator()
+        {
+            return this._orchestrator != null;
         }
 
         /// <summary>

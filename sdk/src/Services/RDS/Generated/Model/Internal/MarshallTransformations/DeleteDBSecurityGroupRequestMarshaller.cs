@@ -64,6 +64,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DBSecurityGroupName", StringUtils.FromString(publicRequest.DBSecurityGroupName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteDBSecurityGroupRequestMarshaller _instance = new DeleteDBSecurityGroupRequestMarshaller();        

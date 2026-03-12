@@ -137,6 +137,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NodeRecovery);
             }
 
+            if(publicRequest.IsSetOrchestrator())
+            {
+                context.Writer.WritePropertyName("Orchestrator");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterOrchestratorMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Orchestrator, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetRestrictedInstanceGroups())
             {
                 context.Writer.WritePropertyName("RestrictedInstanceGroups");

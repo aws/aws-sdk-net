@@ -60,6 +60,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             if(publicRequest != null)
             {
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static EnableOrganizationsRootSessionsRequestMarshaller _instance = new EnableOrganizationsRootSessionsRequestMarshaller();        

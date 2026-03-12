@@ -49,7 +49,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBytes())
             {
                 context.Writer.WritePropertyName("Bytes");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Bytes));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Bytes);
             }
 
             if(requestObject.IsSetCategory())

@@ -144,7 +144,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetZipFile())
             {
                 context.Writer.WritePropertyName("ZipFile");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.ZipFile));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.ZipFile);
             }
 
             writer.WriteEndObject();

@@ -62,6 +62,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Eks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Slurm", targetDepth))
+                {
+                    var unmarshaller = ClusterOrchestratorSlurmConfigUnmarshaller.Instance;
+                    unmarshalledObject.Slurm = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

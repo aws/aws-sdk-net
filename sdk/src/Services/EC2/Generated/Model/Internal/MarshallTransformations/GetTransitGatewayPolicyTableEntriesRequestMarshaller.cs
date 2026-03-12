@@ -107,6 +107,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TransitGatewayPolicyTableId", StringUtils.FromString(publicRequest.TransitGatewayPolicyTableId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetTransitGatewayPolicyTableEntriesRequestMarshaller _instance = new GetTransitGatewayPolicyTableEntriesRequestMarshaller();        

@@ -68,6 +68,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("OrganizationsPolicyId", StringUtils.FromString(publicRequest.OrganizationsPolicyId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GenerateOrganizationsAccessReportRequestMarshaller _instance = new GenerateOrganizationsAccessReportRequestMarshaller();        

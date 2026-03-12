@@ -101,6 +101,10 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 {
                     return InvalidCustomerIdentifierExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLicenseException"))
+                {
+                    return InvalidLicenseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidProductCodeException"))
                 {
                     return InvalidProductCodeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

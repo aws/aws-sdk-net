@@ -33,7 +33,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     public class ObjectLockConfigurationTests : TestBase<AmazonS3Client>
     {
         private static string bucketName;        
-        private Random random = new Random();
+
+        private string _testId;
+
+        [TestInitialize]
+        public void SetTestId()
+        {
+            _testId = Guid.NewGuid().ToString("N");
+        }
         private static readonly Dictionary<string, string> headers = new Dictionary<string, string>(StringComparer.Ordinal)
         {
             { "Content-Type", "text/html" },
@@ -77,7 +84,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         public async Task<string> PutObject(DateTime? retainUntilDate = null)
         {
-            var key = "contentBodyPut" + random.Next();
+            var key = _testId + "-contentBodyPut";
             var content = "This is the content body!";
             var putObjectRequest = new PutObjectRequest
             {

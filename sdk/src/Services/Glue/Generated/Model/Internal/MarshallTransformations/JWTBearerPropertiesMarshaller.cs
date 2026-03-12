@@ -1,0 +1,107 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the glue-2017-03-31.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Glue.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
+namespace Amazon.Glue.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// JWTBearerProperties Marshaller
+    /// </summary>
+    public class JWTBearerPropertiesMarshaller : IRequestMarshaller<JWTBearerProperties, JsonMarshallerContext> 
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public void Marshall(JWTBearerProperties requestObject, JsonMarshallerContext context)
+        {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetContentType())
+            {
+                context.Writer.WritePropertyName("ContentType");
+                context.Writer.WriteStringValue(requestObject.ContentType);
+            }
+
+            if(requestObject.IsSetJwtToken())
+            {
+                context.Writer.WritePropertyName("JwtToken");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConnectorPropertyMarshaller.Instance;
+                marshaller.Marshall(requestObject.JwtToken, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetRequestMethod())
+            {
+                context.Writer.WritePropertyName("RequestMethod");
+                context.Writer.WriteStringValue(requestObject.RequestMethod);
+            }
+
+            if(requestObject.IsSetTokenUrl())
+            {
+                context.Writer.WritePropertyName("TokenUrl");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConnectorPropertyMarshaller.Instance;
+                marshaller.Marshall(requestObject.TokenUrl, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetTokenUrlParameters())
+            {
+                context.Writer.WritePropertyName("TokenUrlParameters");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectTokenUrlParametersListValue in requestObject.TokenUrlParameters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ConnectorPropertyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTokenUrlParametersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+        }
+
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>
+        public readonly static JWTBearerPropertiesMarshaller Instance = new JWTBearerPropertiesMarshaller();
+
+    }
+}

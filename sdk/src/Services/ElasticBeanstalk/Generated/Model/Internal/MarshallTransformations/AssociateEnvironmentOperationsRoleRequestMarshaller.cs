@@ -68,6 +68,8 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     request.Parameters.Add("OperationsRole", StringUtils.FromString(publicRequest.OperationsRole));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static AssociateEnvironmentOperationsRoleRequestMarshaller _instance = new AssociateEnvironmentOperationsRoleRequestMarshaller();        

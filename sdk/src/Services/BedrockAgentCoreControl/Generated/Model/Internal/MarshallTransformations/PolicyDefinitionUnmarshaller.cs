@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.Cedar = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("policyGeneration", targetDepth))
+                {
+                    var unmarshaller = PolicyGenerationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.PolicyGeneration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

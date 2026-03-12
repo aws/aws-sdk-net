@@ -304,6 +304,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RestoreDBClusterFromS3RequestMarshaller _instance = new RestoreDBClusterFromS3RequestMarshaller();        

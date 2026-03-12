@@ -66,6 +66,7 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class ListOpportunitiesRequest : AmazonPartnerCentralSellingRequest
     {
         private string _catalog;
+        private CreatedDateFilter _createdDate;
         private List<string> _customerCompanyName = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _identifier = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LastModifiedDate _lastModifiedDate;
@@ -74,6 +75,7 @@ namespace Amazon.PartnerCentralSelling.Model
         private int? _maxResults;
         private string _nextToken;
         private OpportunitySort _sort;
+        private TargetCloseDateFilter _targetCloseDate;
 
         /// <summary>
         /// Gets and sets the property Catalog. 
@@ -96,6 +98,24 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCatalog()
         {
             return this._catalog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        /// Filter opportunities by creation date criteria.
+        /// </para>
+        /// </summary>
+        public CreatedDateFilter CreatedDate
+        {
+            get { return this._createdDate; }
+            set { this._createdDate = value; }
+        }
+
+        // Check to see if CreatedDate property is set
+        internal bool IsSetCreatedDate()
+        {
+            return this._createdDate != null;
         }
 
         /// <summary>
@@ -283,6 +303,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetSort()
         {
             return this._sort != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetCloseDate. 
+        /// <para>
+        /// Filters opportunities based on their target close date. This filter helps retrieve
+        /// opportunities with an expected close date before or after a specified date.
+        /// </para>
+        /// </summary>
+        public TargetCloseDateFilter TargetCloseDate
+        {
+            get { return this._targetCloseDate; }
+            set { this._targetCloseDate = value; }
+        }
+
+        // Check to see if TargetCloseDate property is set
+        internal bool IsSetTargetCloseDate()
+        {
+            return this._targetCloseDate != null;
         }
 
     }

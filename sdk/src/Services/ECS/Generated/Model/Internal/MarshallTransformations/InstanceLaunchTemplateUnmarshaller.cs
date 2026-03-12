@@ -62,6 +62,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.CapacityOptionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("capacityReservations", targetDepth))
+                {
+                    var unmarshaller = CapacityReservationRequestUnmarshaller.Instance;
+                    unmarshalledObject.CapacityReservations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ec2InstanceProfileArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
