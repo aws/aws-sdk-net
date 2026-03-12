@@ -39,6 +39,7 @@ namespace Amazon.DSQL.Util
         private const string XAmzExpires = "X-Amz-Expires";
         private const string XAmzSecurityToken = "X-Amz-Security-Token";
         private static readonly TimeSpan FifteenMinutes = TimeSpan.FromMinutes(15);
+        private static readonly TimeSpan MaxExpiresIn = TimeSpan.FromDays(7);
 
         /// <summary>
         /// AWS4PreSignedUrlSigner is built around operation request objects.
@@ -116,7 +117,24 @@ namespace Amazon.DSQL.Util
                 throw new ArgumentNullException("credentials");
 
             var immutableCredentials = credentials.GetCredentials();
-            return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue);
+            return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, FifteenMinutes);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
+        /// </summary>
+        /// <param name="credentials">The credentials for the token.</param>
+        /// <param name="region">The region of the DSQL database.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. If not specified on other overloads, defaults to 15 minutes.</param>
+        /// <returns></returns>
+        public static string GenerateDbConnectAuthToken(AWSCredentials credentials, RegionEndpoint region, string hostname, TimeSpan expiresIn)
+        {
+            if (credentials == null)
+                throw new ArgumentNullException("credentials");
+
+            var immutableCredentials = credentials.GetCredentials();
+            return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, expiresIn);
         }
 
         /// <summary>
@@ -182,7 +200,24 @@ namespace Amazon.DSQL.Util
                 throw new ArgumentNullException("credentials");
 
             var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
-            return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue);
+            return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, FifteenMinutes);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
+        /// </summary>
+        /// <param name="credentials">The credentials for the token.</param>
+        /// <param name="region">The region of the DSQL database.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. If not specified on other overloads, defaults to 15 minutes.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAuthTokenAsync(AWSCredentials credentials, RegionEndpoint region, string hostname, TimeSpan expiresIn)
+        {
+            if (credentials == null)
+                throw new ArgumentNullException("credentials");
+
+            var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectActionValue, expiresIn);
         }
 
         /// <summary>
@@ -248,7 +283,24 @@ namespace Amazon.DSQL.Util
                 throw new ArgumentNullException("credentials");
 
             var immutableCredentials = credentials.GetCredentials();
-            return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue);
+            return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, FifteenMinutes);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
+        /// </summary>
+        /// <param name="credentials">The credentials for the token.</param>
+        /// <param name="region">The region of the DSQL database.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. If not specified on other overloads, defaults to 15 minutes.</param>
+        /// <returns></returns>
+        public static string GenerateDbConnectAdminAuthToken(AWSCredentials credentials, RegionEndpoint region, string hostname, TimeSpan expiresIn)
+        {
+            if (credentials == null)
+                throw new ArgumentNullException("credentials");
+
+            var immutableCredentials = credentials.GetCredentials();
+            return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, expiresIn);
         }
 
         /// <summary>
@@ -314,10 +366,27 @@ namespace Amazon.DSQL.Util
                 throw new ArgumentNullException("credentials");
 
             var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
-            return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue);
+            return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, FifteenMinutes);
         }
 
-        private static string GenerateAuthToken(ImmutableCredentials immutableCredentials, RegionEndpoint region, string hostname, string actionValue)
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
+        /// </summary>
+        /// <param name="credentials">The credentials for the token.</param>
+        /// <param name="region">The region of the DSQL database.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. If not specified on other overloads, defaults to 15 minutes.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAdminAuthTokenAsync(AWSCredentials credentials, RegionEndpoint region, string hostname, TimeSpan expiresIn)
+        {
+            if (credentials == null)
+                throw new ArgumentNullException("credentials");
+
+            var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            return GenerateAuthToken(immutableCredentials, region, hostname, DBConnectAdminActionValue, expiresIn);
+        }
+
+        private static string GenerateAuthToken(ImmutableCredentials immutableCredentials, RegionEndpoint region, string hostname, string actionValue, TimeSpan expiresIn)
         {
             if (immutableCredentials == null)
                 throw new ArgumentNullException("immutableCredentials");
@@ -329,12 +398,15 @@ namespace Amazon.DSQL.Util
             if (string.IsNullOrEmpty(hostname))
                 throw new ArgumentException("Hostname must not be null or empty.");
 
+            if (expiresIn <= TimeSpan.Zero || expiresIn > MaxExpiresIn)
+                throw new ArgumentOutOfRangeException("expiresIn", "ExpiresIn must be between 0 (exclusive) and 7 days (inclusive).");
+
             GenerateDSQLAuthTokenRequest authTokenRequest = new GenerateDSQLAuthTokenRequest();
             IRequest request = new DefaultRequest(authTokenRequest, DSQLServiceName);
 
             request.UseQueryString = true;
             request.HttpMethod = HTTPGet;
-            request.Parameters.Add(XAmzExpires, FifteenMinutes.TotalSeconds.ToString(CultureInfo.InvariantCulture));
+            request.Parameters.Add(XAmzExpires, expiresIn.TotalSeconds.ToString(CultureInfo.InvariantCulture));
             request.Parameters.Add(ActionKey, actionValue);
             request.Endpoint = new UriBuilder(HTTPS, hostname).Uri;
 
