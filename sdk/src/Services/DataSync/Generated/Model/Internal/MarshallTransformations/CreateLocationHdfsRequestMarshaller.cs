@@ -98,6 +98,28 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.BlockSize.Value);
             }
 
+            if(publicRequest.IsSetCmkSecretConfig())
+            {
+                context.Writer.WritePropertyName("CmkSecretConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CmkSecretConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CmkSecretConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCustomSecretConfig())
+            {
+                context.Writer.WritePropertyName("CustomSecretConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomSecretConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomSecretConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetKerberosKeytab())
             {
                 context.Writer.WritePropertyName("KerberosKeytab");
