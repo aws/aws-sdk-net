@@ -33,7 +33,7 @@ namespace Amazon.NovaAct
     public partial class AmazonNovaActConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Nova Act", "4.0.0.10");
+            InternalSDKUtils.BuildUserAgentString("Nova Act", "4.0.0.11");
 
         private static readonly AmazonNovaActEndpointResolver EndpointResolver =
             new AmazonNovaActEndpointResolver();
