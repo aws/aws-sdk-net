@@ -45,6 +45,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putBucketRequest.IsSetBucketNamespace())
+                request.Headers["x-amz-bucket-namespace"] = putBucketRequest.BucketNamespace;
+
             if (putBucketRequest.IsSetCannedACL())
                 request.Headers.Add(HeaderKeys.XAmzAclHeader, putBucketRequest.CannedACL.Value);
             else if (putBucketRequest.Grants != null && putBucketRequest.Grants.Count > 0)

@@ -25,6 +25,158 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSession operation.
+    /// Creates a session that establishes temporary security credentials to support fast
+    /// authentication and authorization for the Zonal endpoint API operations on directory
+    /// buckets. For more information about Zonal endpoint API operations that include the
+    /// Availability Zone in the request endpoint, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-APIs.html">S3
+    /// Express One Zone APIs</a> in the <i>Amazon S3 User Guide</i>. 
+    /// 
+    ///  
+    /// <para>
+    /// To make Zonal endpoint API requests on a directory bucket, use the <c>CreateSession</c>
+    /// API operation. Specifically, you grant <c>s3express:CreateSession</c> permission to
+    /// a bucket in a bucket policy or an IAM identity-based policy. Then, you use IAM credentials
+    /// to make the <c>CreateSession</c> API request on the bucket, which returns temporary
+    /// security credentials that include the access key ID, secret access key, session token,
+    /// and expiration. These credentials have associated permissions to access the Zonal
+    /// endpoint API operations. After the session is created, you don’t need to use other
+    /// policies to grant permissions to each Zonal endpoint API individually. Instead, in
+    /// your Zonal endpoint API requests, you sign your requests by applying the temporary
+    /// security credentials of the session to the request headers and following the SigV4
+    /// protocol for authentication. You also apply the session token to the <c>x-amz-s3session-token</c>
+    /// request header for authorization. Temporary security credentials are scoped to the
+    /// bucket and expire after 5 minutes. After the expiration time, any calls that you make
+    /// with those credentials will fail. You must use IAM credentials again to make a <c>CreateSession</c>
+    /// API request that generates a new set of temporary credentials for use. Temporary credentials
+    /// cannot be extended or refreshed beyond the original specified interval.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you use Amazon Web Services SDKs, SDKs handle the session token refreshes automatically
+    /// to avoid service interruptions when a session expires. We recommend that you use the
+    /// Amazon Web Services SDKs to initiate and manage requests to the CreateSession API.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-optimizing-performance-guidelines-design-patterns.html#s3-express-optimizing-performance-session-authentication">Performance
+    /// guidelines and design patterns</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  <note> <ul> <li> 
+    /// <para>
+    /// You must make requests for this API operation to the Zonal endpoint. These endpoints
+    /// support virtual-hosted-style requests in the format <c>https://<i>bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
+    /// Path-style requests are not supported. For more information about endpoints in Availability
+    /// Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+    /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+    /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+    /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b> <c>CopyObject</c> API operation</b> - Unlike other Zonal endpoint API operations,
+    /// the <c>CopyObject</c> API operation doesn't use the temporary security credentials
+    /// returned from the <c>CreateSession</c> API operation for authentication and authorization.
+    /// For information about authentication and authorization of the <c>CopyObject</c> API
+    /// operation on directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b> <c>HeadBucket</c> API operation</b> - Unlike other Zonal endpoint API operations,
+    /// the <c>HeadBucket</c> API operation doesn't use the temporary security credentials
+    /// returned from the <c>CreateSession</c> API operation for authentication and authorization.
+    /// For information about authentication and authorization of the <c>HeadBucket</c> API
+    /// operation on directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>.
+    /// </para>
+    ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// To obtain temporary security credentials, you must create a bucket policy or an IAM
+    /// identity-based policy that grants <c>s3express:CreateSession</c> permission to the
+    /// bucket. In a policy, you can have the <c>s3express:SessionMode</c> condition key to
+    /// control who can create a <c>ReadWrite</c> or <c>ReadOnly</c> session. For more information
+    /// about <c>ReadWrite</c> or <c>ReadOnly</c> sessions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html#API_CreateSession_RequestParameters">
+    /// <c>x-amz-create-session-mode</c> </a>. For example policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-example-bucket-policies.html">Example
+    /// bucket policies for S3 Express One Zone</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam-identity-policies.html">Amazon
+    /// Web Services Identity and Access Management (IAM) identity-based policies for S3 Express
+    /// One Zone</a> in the <i>Amazon S3 User Guide</i>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// To grant cross-account access to Zonal endpoint API operations, the bucket policy
+    /// should also grant both accounts the <c>s3express:CreateSession</c> permission.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you want to encrypt objects with SSE-KMS, you must also have the <c>kms:GenerateDataKey</c>
+    /// and the <c>kms:Decrypt</c> permissions in IAM identity-based policies and KMS key
+    /// policies for the target KMS key.
+    /// </para>
+    ///  </dd> <dt>Encryption</dt> <dd> 
+    /// <para>
+    /// For directory buckets, there are only two supported options for server-side encryption:
+    /// server-side encryption with Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) and server-side
+    /// encryption with KMS keys (SSE-KMS) (<c>aws:kms</c>). We recommend that the bucket's
+    /// default encryption uses the desired encryption configuration and you don't override
+    /// the bucket default encryption in your <c>CreateSession</c> requests or <c>PUT</c>
+    /// object requests. Then, new objects are automatically encrypted with the desired encryption
+    /// settings. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+    /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>. For more
+    /// information about the encryption overriding behaviors in directory buckets, see <a
+    /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-specifying-kms-encryption.html">Specifying
+    /// server-side encryption with KMS for new object uploads</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-differences.html#s3-express-differences-api-operations">Zonal
+    /// endpoint (object-level) API operations</a> except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+    /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>,
+    /// you authenticate and authorize requests through <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">CreateSession</a>
+    /// for low latency. To encrypt new objects in a directory bucket with SSE-KMS, you must
+    /// specify SSE-KMS as the directory bucket's default encryption configuration with a
+    /// KMS key (specifically, a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+    /// managed key</a>). Then, when a session is created for Zonal endpoint API operations,
+    /// new objects are automatically encrypted and decrypted with SSE-KMS and S3 Bucket Keys
+    /// during the session.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    ///  Only 1 <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+    /// managed key</a> is supported per directory bucket for the lifetime of the bucket.
+    /// The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+    /// Web Services managed key</a> (<c>aws/s3</c>) isn't supported. After you specify SSE-KMS
+    /// as your bucket's default encryption configuration with a customer managed key, you
+    /// can't change the customer managed key for the bucket's SSE-KMS configuration. 
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// In the Zonal endpoint API calls (except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+    /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>)
+    /// using the REST API, you can't override the values of the encryption settings (<c>x-amz-server-side-encryption</c>,
+    /// <c>x-amz-server-side-encryption-aws-kms-key-id</c>, <c>x-amz-server-side-encryption-context</c>,
+    /// and <c>x-amz-server-side-encryption-bucket-key-enabled</c>) from the <c>CreateSession</c>
+    /// request. You don't need to explicitly specify these encryption settings values in
+    /// Zonal endpoint API calls, and Amazon S3 will use the encryption settings values from
+    /// the <c>CreateSession</c> request to protect new objects in the directory bucket. 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// When you use the CLI or the Amazon Web Services SDKs, for <c>CreateSession</c>, the
+    /// session token refreshes automatically to avoid service interruptions when a session
+    /// expires. The CLI or the Amazon Web Services SDKs use the bucket's default encryption
+    /// configuration for the <c>CreateSession</c> request. It's not supported to override
+    /// the encryption settings values in the <c>CreateSession</c> request. Also, in the Zonal
+    /// endpoint API calls (except <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
+    /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>),
+    /// it's not supported to override the values of the encryption settings from the <c>CreateSession</c>
+    /// request. 
+    /// </para>
+    ///  </note> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+    /// <para>
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket-name</i>.s3express-<i>zone-id</i>.<i>region-code</i>.amazonaws.com</c>.
+    /// </para>
+    ///  </dd> </dl> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateSessionRequest : AmazonWebServiceRequest
     {
@@ -51,11 +203,18 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SessionMode. 
         /// <para>
-        /// Specifies the mode of the session that will be created, either <c>ReadWrite</c> or <c>ReadOnly</c>. By default, a <c>ReadWrite</c> session is created. 
-        /// 
-        /// A <c>ReadWrite</c> session is capable of executing all the Zonal endpoint API operations on a directory bucket. 
-        /// A <c>ReadOnly</c> session is constrained to execute the following Zonal endpoint API operations: <c>GetObject</c>, <c>HeadObject</c>, <c>ListObjectsV2</c>, <c>GetObjectAttributes</c>, <c>ListParts</c>, and <c>ListMultipartUploads</c>.
+        /// Specifies the mode of the session that will be created, either <c>ReadWrite</c> or
+        /// <c>ReadOnly</c>. If no session mode is specified, the default behavior attempts to
+        /// create a session with the maximum allowable privilege. It will first attempt to create
+        /// a <c>ReadWrite</c> session, and if that is not allowed by permissions, it will attempt
+        /// to create a <c>ReadOnly</c> session. If neither session type is allowed, the request
+        /// will return an Access Denied error. A <c>ReadWrite</c> session is capable of executing
+        /// all the Zonal endpoint API operations on a directory bucket. A <c>ReadOnly</c> session
+        /// is constrained to execute the following Zonal endpoint API operations: <c>GetObject</c>,
+        /// <c>HeadObject</c>, <c>ListObjectsV2</c>, <c>GetObjectAttributes</c>, <c>ListParts</c>,
+        /// and <c>ListMultipartUploads</c>.
         /// </para>
         /// </summary>
         public SessionMode SessionMode

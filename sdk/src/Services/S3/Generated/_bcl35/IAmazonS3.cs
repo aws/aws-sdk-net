@@ -623,8 +623,10 @@ namespace Amazon.S3
         /// <para>
         /// If the source object that you want to copy is in a directory bucket, you must have
         /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-        /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
-        /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
+        /// of a policy to read the object. If no session mode is specified, the session will
+        /// be created with the maximum allowable privilege, attempting <c>ReadWrite</c> first,
+        /// then <c>ReadOnly</c> if <c>ReadWrite</c> is not permitted. If you want to explicitly
+        /// restrict the access to be read-only, you can set the <c>s3express:SessionMode</c>
         /// condition key to <c>ReadOnly</c> on the copy source bucket.
         /// </para>
         ///  </li> <li> 
@@ -854,8 +856,10 @@ namespace Amazon.S3
         /// <para>
         /// If the source object that you want to copy is in a directory bucket, you must have
         /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-        /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
-        /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
+        /// of a policy to read the object. If no session mode is specified, the session will
+        /// be created with the maximum allowable privilege, attempting <c>ReadWrite</c> first,
+        /// then <c>ReadOnly</c> if <c>ReadWrite</c> is not permitted. If you want to explicitly
+        /// restrict the access to be read-only, you can set the <c>s3express:SessionMode</c>
         /// condition key to <c>ReadOnly</c> on the copy source bucket.
         /// </para>
         ///  </li> <li> 
@@ -1086,8 +1090,10 @@ namespace Amazon.S3
         /// <para>
         /// If the source object that you want to copy is in a directory bucket, you must have
         /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-        /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
-        /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
+        /// of a policy to read the object. If no session mode is specified, the session will
+        /// be created with the maximum allowable privilege, attempting <c>ReadWrite</c> first,
+        /// then <c>ReadOnly</c> if <c>ReadWrite</c> is not permitted. If you want to explicitly
+        /// restrict the access to be read-only, you can set the <c>s3express:SessionMode</c>
         /// condition key to <c>ReadOnly</c> on the copy source bucket.
         /// </para>
         ///  </li> <li> 
@@ -1339,8 +1345,10 @@ namespace Amazon.S3
         /// <para>
         /// If the source object that you want to copy is in a directory bucket, you must have
         /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-        /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
-        /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
+        /// of a policy to read the object. If no session mode is specified, the session will
+        /// be created with the maximum allowable privilege, attempting <c>ReadWrite</c> first,
+        /// then <c>ReadOnly</c> if <c>ReadWrite</c> is not permitted. If you want to explicitly
+        /// restrict the access to be read-only, you can set the <c>s3express:SessionMode</c>
         /// condition key to <c>ReadOnly</c> on the copy source bucket.
         /// </para>
         ///  </li> <li> 
@@ -1591,8 +1599,10 @@ namespace Amazon.S3
         /// <para>
         /// If the source object that you want to copy is in a directory bucket, you must have
         /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-        /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
-        /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
+        /// of a policy to read the object. If no session mode is specified, the session will
+        /// be created with the maximum allowable privilege, attempting <c>ReadWrite</c> first,
+        /// then <c>ReadOnly</c> if <c>ReadWrite</c> is not permitted. If you want to explicitly
+        /// restrict the access to be read-only, you can set the <c>s3express:SessionMode</c>
         /// condition key to <c>ReadOnly</c> on the copy source bucket.
         /// </para>
         ///  </li> <li> 
@@ -1844,8 +1854,10 @@ namespace Amazon.S3
         /// <para>
         /// If the source object that you want to copy is in a directory bucket, you must have
         /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-        /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
-        /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
+        /// of a policy to read the object. If no session mode is specified, the session will
+        /// be created with the maximum allowable privilege, attempting <c>ReadWrite</c> first,
+        /// then <c>ReadOnly</c> if <c>ReadWrite</c> is not permitted. If you want to explicitly
+        /// restrict the access to be read-only, you can set the <c>s3express:SessionMode</c>
         /// condition key to <c>ReadOnly</c> on the copy source bucket.
         /// </para>
         ///  </li> <li> 
@@ -3662,13 +3674,6 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
-        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
-        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
-        /// instead.
-        /// </para>
-        ///  
-        /// <para>
         /// To use this operation, you must have permission to perform the <c>s3:PutBucketTagging</c>
         /// action. By default, the bucket owner has this permission and can grant this permission
         /// to others. 
@@ -3710,13 +3715,6 @@ namespace Amazon.S3
         /// <para>
         /// Deletes tags from the general purpose bucket if attribute based access control (ABAC)
         /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
-        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
-        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
-        /// instead.
-        /// </para>
-        ///  
-        /// <para>
-        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
         /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
         /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
         /// instead.
@@ -7040,13 +7038,6 @@ namespace Amazon.S3
         /// </para>
         ///  
         /// <para>
-        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
-        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
-        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html">ListTagsForResource</a>
-        /// instead.
-        /// </para>
-        ///  
-        /// <para>
         /// To use this operation, you must have permission to perform the <c>s3:GetBucketTagging</c>
         /// action. By default, the bucket owner has this permission and can grant this permission
         /// to others.
@@ -9854,9 +9845,11 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <b>Directory bucket permissions</b> - You must have the <b> <c>s3express:CreateSession</c>
-        /// </b> permission in the <c>Action</c> element of a policy. By default, the session
-        /// is in the <c>ReadWrite</c> mode. If you want to restrict the access, you can explicitly
-        /// set the <c>s3express:SessionMode</c> condition key to <c>ReadOnly</c> on the bucket.
+        /// </b> permission in the <c>Action</c> element of a policy. If no session mode is specified,
+        /// the session will be created with the maximum allowable privilege, attempting <c>ReadWrite</c>
+        /// first, then <c>ReadOnly</c> if <c>ReadWrite</c> is not permitted. If you want to explicitly
+        /// restrict the access to be read-only, you can set the <c>s3express:SessionMode</c>
+        /// condition key to <c>ReadOnly</c> on the bucket.
         /// </para>
         ///  
         /// <para>
@@ -12729,6 +12722,20 @@ namespace Amazon.S3
         /// more information about these bucket types, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating,
         /// configuring, and working with Amazon S3 buckets</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// General purpose buckets exist in a global namespace, which means that each bucket
+        /// name must be unique across all Amazon Web Services accounts in all the Amazon Web
+        /// Services Regions within a partition. A partition is a grouping of Regions. Amazon
+        /// Web Services currently has four partitions: <c>aws</c> (Standard Regions), <c>aws-cn</c>
+        /// (China Regions), <c>aws-us-gov</c> (Amazon Web Services GovCloud (US)), and <c>aws-eusc</c>
+        /// (European Sovereign Cloud). When you create a general purpose bucket, you can choose
+        /// to create a bucket in the shared global namespace or you can choose to create a bucket
+        /// in your account regional namespace. Your account regional namespace is a subdivision
+        /// of the global namespace that only your account can create buckets in. For more information
+        /// on account regional namespaces, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/gpbucketnamespaces.html">Namespaces
+        /// for general purpose buckets</a>.
+        /// </para>
         ///  <note> <ul> <li> 
         /// <para>
         ///  <b>General purpose buckets</b> - If you send your <c>CreateBucket</c> request to
@@ -12882,6 +12889,20 @@ namespace Amazon.S3
         /// There are two types of buckets: general purpose buckets and directory buckets. For
         /// more information about these bucket types, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating,
         /// configuring, and working with Amazon S3 buckets</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// General purpose buckets exist in a global namespace, which means that each bucket
+        /// name must be unique across all Amazon Web Services accounts in all the Amazon Web
+        /// Services Regions within a partition. A partition is a grouping of Regions. Amazon
+        /// Web Services currently has four partitions: <c>aws</c> (Standard Regions), <c>aws-cn</c>
+        /// (China Regions), <c>aws-us-gov</c> (Amazon Web Services GovCloud (US)), and <c>aws-eusc</c>
+        /// (European Sovereign Cloud). When you create a general purpose bucket, you can choose
+        /// to create a bucket in the shared global namespace or you can choose to create a bucket
+        /// in your account regional namespace. Your account regional namespace is a subdivision
+        /// of the global namespace that only your account can create buckets in. For more information
+        /// on account regional namespaces, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/gpbucketnamespaces.html">Namespaces
+        /// for general purpose buckets</a>.
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
