@@ -189,7 +189,11 @@ namespace AWSSDK.UnitTests
             };
 
             var json = JsonSerializer.Serialize(metadata);
-            Assert.AreEqual("{\"score\":0.5,\"source\":\"bedrock\",\"active\":true}", json);
+            var parsed = JsonSerializer.Deserialize<Dictionary<string, Document>>(json);
+            Assert.AreEqual(3, parsed.Count);
+            Assert.AreEqual(0.5, parsed["score"].AsDouble());
+            Assert.AreEqual("bedrock", parsed["source"].AsString());
+            Assert.AreEqual(true, parsed["active"].AsBool());
         }
 
         [TestMethod]
