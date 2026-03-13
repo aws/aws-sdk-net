@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace SDKDocGenerator
 {
@@ -105,6 +106,13 @@ namespace SDKDocGenerator
         /// The root folder containing SDK code samples
         /// </summary>
         public string CodeSamplesRootFolder { get; set; }
+
+        /// <summary>
+        /// Use legacy supplemental manifest approach instead of unified platform map.
+        /// DEPRECATION NOTICE: Will be removed Q3 2026 after unified approach validated.
+        /// </summary>
+        [Obsolete("Use unified platform map (default). Legacy will be removed Q3 2026.")]
+        public bool UseLegacySupplemental { get; set; }
 
         /// <summary>
         /// Returns the concatenation of the output folder and the content subfolder

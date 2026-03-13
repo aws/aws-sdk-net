@@ -233,10 +233,10 @@ namespace SDKDocGenerator
             },
             new ArgDeclaration
             {
-                OptionName = "outputfolder", 
-                ShortName = "o", 
+                OptionName = "outputfolder",
+                ShortName = "o",
                 HasValue = true,
-                Parse = (arguments, argValue) => arguments.ParsedOptions.OutputFolder = argValue, 
+                Parse = (arguments, argValue) => arguments.ParsedOptions.OutputFolder = argValue,
                 HelpText = "The root folder beneath which the generated documentation will be placed."
             },
             new ArgDeclaration
@@ -255,6 +255,13 @@ namespace SDKDocGenerator
                 Parse = (arguments, argValue) => arguments.ParsedOptions.ExamplesErrorFile = argValue,
                 HelpText = "The path and filename for the examples error file. Defaults to 'examples_failure.txt'."
             },
+            new ArgDeclaration
+            {
+                OptionName = "use-legacy-supplemental",
+                ShortName = "legacy",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.UseLegacySupplemental = true,
+                HelpText = "Uses legacy supplemental manifest approach instead of unified platform map. Provided for rollback safety."
+            }
         };
 
         static readonly char[] ArgumentPrefixes = { '-', '/' };
