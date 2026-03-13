@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
 	<TargetFramework>net472</TargetFramework>
 	<DefineConstants>$(DefineConstants);DEBUG;TRACE;BCL;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
@@ -30,9 +30,8 @@
 	<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
 	<PackageReference Include="MSTest.TestFramework" Version="1.2.1" />
 
-	<PackageReference Include="System.Data.SQLite" Version="1.0.97" />
-	<PackageReference Include="System.Data.SQLite.EF6" Version="1.0.97" />
-	<PackageReference Include="System.Data.SQLite.Linq" Version="1.0.97" />
+	<PackageReference Include="System.Data.SQLite" Version="2.0.2" />
+	<PackageReference Include="System.Data.SQLite.EF6" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
