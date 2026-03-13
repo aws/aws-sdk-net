@@ -125,6 +125,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _jiraAction;
         private CapabilityState _knowledgeBase;
         private CapabilityState _linearAction;
+        private CapabilityState _manageSharedFolders;
         private CapabilityState _mcpAction;
         private CapabilityState _mondayAction;
         private CapabilityState _msExchangeAction;
@@ -1888,6 +1889,31 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetLinearAction()
         {
             return this._linearAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManageSharedFolders. 
+        /// <para>
+        /// The ability to create, update, delete and view shared folders (both restricted and
+        /// unrestricted), ability to add any asset to shared folders, and ability to share the
+        /// folders.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This does <i>not</i> prevent inheriting access to assets that others
+        /// share with them through folder membership.
+        /// </para>
+        /// </summary>
+        public CapabilityState ManageSharedFolders
+        {
+            get { return this._manageSharedFolders; }
+            set { this._manageSharedFolders = value; }
+        }
+
+        // Check to see if ManageSharedFolders property is set
+        internal bool IsSetManageSharedFolders()
+        {
+            return this._manageSharedFolders != null;
         }
 
         /// <summary>

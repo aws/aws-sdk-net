@@ -612,6 +612,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.LinearAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManageSharedFolders", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManageSharedFolders = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MCPAction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
