@@ -132,6 +132,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property PredefinedNotificationId.
         /// </summary>
+        [Obsolete("PredefinedNotificationId is deprecated. Use ClientToken for idempotency.")]
         [AWSProperty(Min=1, Max=256)]
         public string PredefinedNotificationId
         {
