@@ -789,6 +789,67 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  CreateNetworkMigrationDefinition
+
+        /// <summary>
+        /// Creates a new network migration definition that specifies the source and target network
+        /// configuration for a migration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkMigrationDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateNetworkMigrationDefinition service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateNetworkMigrationDefinition">REST API Reference for CreateNetworkMigrationDefinition Operation</seealso>
+        public virtual CreateNetworkMigrationDefinitionResponse CreateNetworkMigrationDefinition(CreateNetworkMigrationDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNetworkMigrationDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNetworkMigrationDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkMigrationDefinition operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNetworkMigrationDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateNetworkMigrationDefinition">REST API Reference for CreateNetworkMigrationDefinition Operation</seealso>
+        public virtual IAsyncResult BeginCreateNetworkMigrationDefinition(CreateNetworkMigrationDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNetworkMigrationDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNetworkMigrationDefinition.</param>
+        /// 
+        /// <returns>Returns a  CreateNetworkMigrationDefinitionResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateNetworkMigrationDefinition">REST API Reference for CreateNetworkMigrationDefinition Operation</seealso>
+        public virtual CreateNetworkMigrationDefinitionResponse EndCreateNetworkMigrationDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateNetworkMigrationDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateReplicationConfigurationTemplate
 
         /// <summary>
@@ -1167,6 +1228,71 @@ namespace Amazon.Mgn
         public virtual DeleteLaunchConfigurationTemplateResponse EndDeleteLaunchConfigurationTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLaunchConfigurationTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteNetworkMigrationDefinition
+
+        /// <summary>
+        /// Deletes a network migration definition. This operation removes the migration definition
+        /// and all associated metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkMigrationDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNetworkMigrationDefinition service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteNetworkMigrationDefinition">REST API Reference for DeleteNetworkMigrationDefinition Operation</seealso>
+        public virtual DeleteNetworkMigrationDefinitionResponse DeleteNetworkMigrationDefinition(DeleteNetworkMigrationDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkMigrationDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNetworkMigrationDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkMigrationDefinition operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkMigrationDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteNetworkMigrationDefinition">REST API Reference for DeleteNetworkMigrationDefinition Operation</seealso>
+        public virtual IAsyncResult BeginDeleteNetworkMigrationDefinition(DeleteNetworkMigrationDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNetworkMigrationDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNetworkMigrationDefinition.</param>
+        /// 
+        /// <returns>Returns a  DeleteNetworkMigrationDefinitionResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteNetworkMigrationDefinition">REST API Reference for DeleteNetworkMigrationDefinition Operation</seealso>
+        public virtual DeleteNetworkMigrationDefinitionResponse EndDeleteNetworkMigrationDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteNetworkMigrationDefinitionResponse>(asyncResult);
         }
 
         #endregion
@@ -2138,6 +2264,131 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  GetNetworkMigrationDefinition
+
+        /// <summary>
+        /// Retrieves the details of a network migration definition including source and target
+        /// configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkMigrationDefinition service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkMigrationDefinition service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetNetworkMigrationDefinition">REST API Reference for GetNetworkMigrationDefinition Operation</seealso>
+        public virtual GetNetworkMigrationDefinitionResponse GetNetworkMigrationDefinition(GetNetworkMigrationDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkMigrationDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNetworkMigrationDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkMigrationDefinition operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkMigrationDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetNetworkMigrationDefinition">REST API Reference for GetNetworkMigrationDefinition Operation</seealso>
+        public virtual IAsyncResult BeginGetNetworkMigrationDefinition(GetNetworkMigrationDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetNetworkMigrationDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNetworkMigrationDefinition.</param>
+        /// 
+        /// <returns>Returns a  GetNetworkMigrationDefinitionResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetNetworkMigrationDefinition">REST API Reference for GetNetworkMigrationDefinition Operation</seealso>
+        public virtual GetNetworkMigrationDefinitionResponse EndGetNetworkMigrationDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetNetworkMigrationDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetNetworkMigrationMapperSegmentConstruct
+
+        /// <summary>
+        /// Retrieves detailed information about a specific construct within a mapper segment,
+        /// including its properties and configuration data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkMigrationMapperSegmentConstruct service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkMigrationMapperSegmentConstruct service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetNetworkMigrationMapperSegmentConstruct">REST API Reference for GetNetworkMigrationMapperSegmentConstruct Operation</seealso>
+        public virtual GetNetworkMigrationMapperSegmentConstructResponse GetNetworkMigrationMapperSegmentConstruct(GetNetworkMigrationMapperSegmentConstructRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNetworkMigrationMapperSegmentConstructRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkMigrationMapperSegmentConstructResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkMigrationMapperSegmentConstructResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetNetworkMigrationMapperSegmentConstruct operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkMigrationMapperSegmentConstruct operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkMigrationMapperSegmentConstruct
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetNetworkMigrationMapperSegmentConstruct">REST API Reference for GetNetworkMigrationMapperSegmentConstruct Operation</seealso>
+        public virtual IAsyncResult BeginGetNetworkMigrationMapperSegmentConstruct(GetNetworkMigrationMapperSegmentConstructRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNetworkMigrationMapperSegmentConstructRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkMigrationMapperSegmentConstructResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetNetworkMigrationMapperSegmentConstruct operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetNetworkMigrationMapperSegmentConstruct.</param>
+        /// 
+        /// <returns>Returns a  GetNetworkMigrationMapperSegmentConstructResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetNetworkMigrationMapperSegmentConstruct">REST API Reference for GetNetworkMigrationMapperSegmentConstruct Operation</seealso>
+        public virtual GetNetworkMigrationMapperSegmentConstructResponse EndGetNetworkMigrationMapperSegmentConstruct(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetNetworkMigrationMapperSegmentConstructResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetReplicationConfiguration
 
         /// <summary>
@@ -2552,6 +2803,63 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  ListImportFileEnrichments
+
+        /// <summary>
+        /// Lists import file enrichment jobs with optional filtering by job IDs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportFileEnrichments service method.</param>
+        /// 
+        /// <returns>The response from the ListImportFileEnrichments service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportFileEnrichments">REST API Reference for ListImportFileEnrichments Operation</seealso>
+        public virtual ListImportFileEnrichmentsResponse ListImportFileEnrichments(ListImportFileEnrichmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListImportFileEnrichmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportFileEnrichmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportFileEnrichmentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImportFileEnrichments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImportFileEnrichments operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImportFileEnrichments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportFileEnrichments">REST API Reference for ListImportFileEnrichments Operation</seealso>
+        public virtual IAsyncResult BeginListImportFileEnrichments(ListImportFileEnrichmentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListImportFileEnrichmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportFileEnrichmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImportFileEnrichments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImportFileEnrichments.</param>
+        /// 
+        /// <returns>Returns a  ListImportFileEnrichmentsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportFileEnrichments">REST API Reference for ListImportFileEnrichments Operation</seealso>
+        public virtual ListImportFileEnrichmentsResponse EndListImportFileEnrichments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImportFileEnrichmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListImports
 
         /// <summary>
@@ -2668,6 +2976,792 @@ namespace Amazon.Mgn
         public virtual ListManagedAccountsResponse EndListManagedAccounts(IAsyncResult asyncResult)
         {
             return EndInvoke<ListManagedAccountsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationAnalyses
+
+        /// <summary>
+        /// Lists network migration analysis jobs for a specified execution. Returns information
+        /// about analysis job status and results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationAnalyses service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationAnalyses service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationAnalyses">REST API Reference for ListNetworkMigrationAnalyses Operation</seealso>
+        public virtual ListNetworkMigrationAnalysesResponse ListNetworkMigrationAnalyses(ListNetworkMigrationAnalysesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationAnalysesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationAnalysesResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationAnalysesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkMigrationAnalyses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationAnalyses operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkMigrationAnalyses
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationAnalyses">REST API Reference for ListNetworkMigrationAnalyses Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkMigrationAnalyses(ListNetworkMigrationAnalysesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationAnalysesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationAnalysesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkMigrationAnalyses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkMigrationAnalyses.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkMigrationAnalysesResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationAnalyses">REST API Reference for ListNetworkMigrationAnalyses Operation</seealso>
+        public virtual ListNetworkMigrationAnalysesResponse EndListNetworkMigrationAnalyses(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkMigrationAnalysesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationAnalysisResults
+
+        /// <summary>
+        /// Lists the results of network migration analyses, showing connectivity and compatibility
+        /// findings for migrated resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationAnalysisResults service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationAnalysisResults service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationAnalysisResults">REST API Reference for ListNetworkMigrationAnalysisResults Operation</seealso>
+        public virtual ListNetworkMigrationAnalysisResultsResponse ListNetworkMigrationAnalysisResults(ListNetworkMigrationAnalysisResultsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationAnalysisResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationAnalysisResultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationAnalysisResultsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkMigrationAnalysisResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationAnalysisResults operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkMigrationAnalysisResults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationAnalysisResults">REST API Reference for ListNetworkMigrationAnalysisResults Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkMigrationAnalysisResults(ListNetworkMigrationAnalysisResultsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationAnalysisResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationAnalysisResultsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkMigrationAnalysisResults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkMigrationAnalysisResults.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkMigrationAnalysisResultsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationAnalysisResults">REST API Reference for ListNetworkMigrationAnalysisResults Operation</seealso>
+        public virtual ListNetworkMigrationAnalysisResultsResponse EndListNetworkMigrationAnalysisResults(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkMigrationAnalysisResultsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationCodeGenerations
+
+        /// <summary>
+        /// Lists network migration code generation jobs, which convert network mappings into
+        /// infrastructure-as-code templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationCodeGenerations service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationCodeGenerations service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationCodeGenerations">REST API Reference for ListNetworkMigrationCodeGenerations Operation</seealso>
+        public virtual ListNetworkMigrationCodeGenerationsResponse ListNetworkMigrationCodeGenerations(ListNetworkMigrationCodeGenerationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationCodeGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationCodeGenerationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationCodeGenerationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkMigrationCodeGenerations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationCodeGenerations operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkMigrationCodeGenerations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationCodeGenerations">REST API Reference for ListNetworkMigrationCodeGenerations Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkMigrationCodeGenerations(ListNetworkMigrationCodeGenerationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationCodeGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationCodeGenerationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkMigrationCodeGenerations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkMigrationCodeGenerations.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkMigrationCodeGenerationsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationCodeGenerations">REST API Reference for ListNetworkMigrationCodeGenerations Operation</seealso>
+        public virtual ListNetworkMigrationCodeGenerationsResponse EndListNetworkMigrationCodeGenerations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkMigrationCodeGenerationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationCodeGenerationSegments
+
+        /// <summary>
+        /// Lists code generation segments, which represent individual infrastructure components
+        /// generated as code templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationCodeGenerationSegments service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationCodeGenerationSegments service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationCodeGenerationSegments">REST API Reference for ListNetworkMigrationCodeGenerationSegments Operation</seealso>
+        public virtual ListNetworkMigrationCodeGenerationSegmentsResponse ListNetworkMigrationCodeGenerationSegments(ListNetworkMigrationCodeGenerationSegmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationCodeGenerationSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationCodeGenerationSegmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationCodeGenerationSegmentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkMigrationCodeGenerationSegments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationCodeGenerationSegments operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkMigrationCodeGenerationSegments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationCodeGenerationSegments">REST API Reference for ListNetworkMigrationCodeGenerationSegments Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkMigrationCodeGenerationSegments(ListNetworkMigrationCodeGenerationSegmentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationCodeGenerationSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationCodeGenerationSegmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkMigrationCodeGenerationSegments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkMigrationCodeGenerationSegments.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkMigrationCodeGenerationSegmentsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationCodeGenerationSegments">REST API Reference for ListNetworkMigrationCodeGenerationSegments Operation</seealso>
+        public virtual ListNetworkMigrationCodeGenerationSegmentsResponse EndListNetworkMigrationCodeGenerationSegments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkMigrationCodeGenerationSegmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationDefinitions
+
+        /// <summary>
+        /// Lists all network migration definitions in the account, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationDefinitions service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDefinitions">REST API Reference for ListNetworkMigrationDefinitions Operation</seealso>
+        public virtual ListNetworkMigrationDefinitionsResponse ListNetworkMigrationDefinitions(ListNetworkMigrationDefinitionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationDefinitionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkMigrationDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationDefinitions operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkMigrationDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDefinitions">REST API Reference for ListNetworkMigrationDefinitions Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkMigrationDefinitions(ListNetworkMigrationDefinitionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationDefinitionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkMigrationDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkMigrationDefinitions.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkMigrationDefinitionsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDefinitions">REST API Reference for ListNetworkMigrationDefinitions Operation</seealso>
+        public virtual ListNetworkMigrationDefinitionsResponse EndListNetworkMigrationDefinitions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkMigrationDefinitionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationDeployedStacks
+
+        /// <summary>
+        /// Lists CloudFormation stacks that have been deployed as part of the network migration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationDeployedStacks service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationDeployedStacks service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDeployedStacks">REST API Reference for ListNetworkMigrationDeployedStacks Operation</seealso>
+        public virtual ListNetworkMigrationDeployedStacksResponse ListNetworkMigrationDeployedStacks(ListNetworkMigrationDeployedStacksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationDeployedStacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationDeployedStacksResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationDeployedStacksResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkMigrationDeployedStacks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationDeployedStacks operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkMigrationDeployedStacks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDeployedStacks">REST API Reference for ListNetworkMigrationDeployedStacks Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkMigrationDeployedStacks(ListNetworkMigrationDeployedStacksRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationDeployedStacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationDeployedStacksResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkMigrationDeployedStacks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkMigrationDeployedStacks.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkMigrationDeployedStacksResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDeployedStacks">REST API Reference for ListNetworkMigrationDeployedStacks Operation</seealso>
+        public virtual ListNetworkMigrationDeployedStacksResponse EndListNetworkMigrationDeployedStacks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkMigrationDeployedStacksResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationDeployments
+
+        /// <summary>
+        /// Lists network migration deployment jobs and their current status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationDeployments service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationDeployments service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDeployments">REST API Reference for ListNetworkMigrationDeployments Operation</seealso>
+        public virtual ListNetworkMigrationDeploymentsResponse ListNetworkMigrationDeployments(ListNetworkMigrationDeploymentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationDeploymentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkMigrationDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationDeployments operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkMigrationDeployments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDeployments">REST API Reference for ListNetworkMigrationDeployments Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkMigrationDeployments(ListNetworkMigrationDeploymentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationDeploymentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkMigrationDeployments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkMigrationDeployments.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkMigrationDeploymentsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDeployments">REST API Reference for ListNetworkMigrationDeployments Operation</seealso>
+        public virtual ListNetworkMigrationDeploymentsResponse EndListNetworkMigrationDeployments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkMigrationDeploymentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationExecutions
+
+        /// <summary>
+        /// Lists network migration execution instances for a given definition, showing the status
+        /// and progress of each execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationExecutions service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationExecutions">REST API Reference for ListNetworkMigrationExecutions Operation</seealso>
+        public virtual ListNetworkMigrationExecutionsResponse ListNetworkMigrationExecutions(ListNetworkMigrationExecutionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationExecutionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkMigrationExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationExecutions operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkMigrationExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationExecutions">REST API Reference for ListNetworkMigrationExecutions Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkMigrationExecutions(ListNetworkMigrationExecutionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationExecutionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkMigrationExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkMigrationExecutions.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkMigrationExecutionsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationExecutions">REST API Reference for ListNetworkMigrationExecutions Operation</seealso>
+        public virtual ListNetworkMigrationExecutionsResponse EndListNetworkMigrationExecutions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkMigrationExecutionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationMapperSegmentConstructs
+
+        /// <summary>
+        /// Lists constructs within a mapper segment, representing individual infrastructure components
+        /// like VPCs, subnets, or security groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMapperSegmentConstructs service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationMapperSegmentConstructs service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMapperSegmentConstructs">REST API Reference for ListNetworkMigrationMapperSegmentConstructs Operation</seealso>
+        public virtual ListNetworkMigrationMapperSegmentConstructsResponse ListNetworkMigrationMapperSegmentConstructs(ListNetworkMigrationMapperSegmentConstructsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMapperSegmentConstructsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMapperSegmentConstructsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationMapperSegmentConstructsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkMigrationMapperSegmentConstructs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMapperSegmentConstructs operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkMigrationMapperSegmentConstructs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMapperSegmentConstructs">REST API Reference for ListNetworkMigrationMapperSegmentConstructs Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkMigrationMapperSegmentConstructs(ListNetworkMigrationMapperSegmentConstructsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMapperSegmentConstructsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMapperSegmentConstructsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkMigrationMapperSegmentConstructs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkMigrationMapperSegmentConstructs.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkMigrationMapperSegmentConstructsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMapperSegmentConstructs">REST API Reference for ListNetworkMigrationMapperSegmentConstructs Operation</seealso>
+        public virtual ListNetworkMigrationMapperSegmentConstructsResponse EndListNetworkMigrationMapperSegmentConstructs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkMigrationMapperSegmentConstructsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationMapperSegments
+
+        /// <summary>
+        /// Lists mapper segments, which represent logical groupings of network resources to be
+        /// migrated together.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMapperSegments service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationMapperSegments service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMapperSegments">REST API Reference for ListNetworkMigrationMapperSegments Operation</seealso>
+        public virtual ListNetworkMigrationMapperSegmentsResponse ListNetworkMigrationMapperSegments(ListNetworkMigrationMapperSegmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMapperSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMapperSegmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationMapperSegmentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkMigrationMapperSegments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMapperSegments operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkMigrationMapperSegments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMapperSegments">REST API Reference for ListNetworkMigrationMapperSegments Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkMigrationMapperSegments(ListNetworkMigrationMapperSegmentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMapperSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMapperSegmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkMigrationMapperSegments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkMigrationMapperSegments.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkMigrationMapperSegmentsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMapperSegments">REST API Reference for ListNetworkMigrationMapperSegments Operation</seealso>
+        public virtual ListNetworkMigrationMapperSegmentsResponse EndListNetworkMigrationMapperSegments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkMigrationMapperSegmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationMappings
+
+        /// <summary>
+        /// Lists network migration mapping jobs, which analyze and create relationships between
+        /// source and target network resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMappings service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationMappings service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappings">REST API Reference for ListNetworkMigrationMappings Operation</seealso>
+        public virtual ListNetworkMigrationMappingsResponse ListNetworkMigrationMappings(ListNetworkMigrationMappingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMappingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationMappingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkMigrationMappings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMappings operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkMigrationMappings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappings">REST API Reference for ListNetworkMigrationMappings Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkMigrationMappings(ListNetworkMigrationMappingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMappingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkMigrationMappings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkMigrationMappings.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkMigrationMappingsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappings">REST API Reference for ListNetworkMigrationMappings Operation</seealso>
+        public virtual ListNetworkMigrationMappingsResponse EndListNetworkMigrationMappings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkMigrationMappingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationMappingUpdates
+
+        /// <summary>
+        /// Lists mapping update jobs, which apply customer modifications to the generated network
+        /// mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMappingUpdates service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationMappingUpdates service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappingUpdates">REST API Reference for ListNetworkMigrationMappingUpdates Operation</seealso>
+        public virtual ListNetworkMigrationMappingUpdatesResponse ListNetworkMigrationMappingUpdates(ListNetworkMigrationMappingUpdatesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMappingUpdatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMappingUpdatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationMappingUpdatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNetworkMigrationMappingUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMappingUpdates operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNetworkMigrationMappingUpdates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappingUpdates">REST API Reference for ListNetworkMigrationMappingUpdates Operation</seealso>
+        public virtual IAsyncResult BeginListNetworkMigrationMappingUpdates(ListNetworkMigrationMappingUpdatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMappingUpdatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMappingUpdatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNetworkMigrationMappingUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNetworkMigrationMappingUpdates.</param>
+        /// 
+        /// <returns>Returns a  ListNetworkMigrationMappingUpdatesResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappingUpdates">REST API Reference for ListNetworkMigrationMappingUpdates Operation</seealso>
+        public virtual ListNetworkMigrationMappingUpdatesResponse EndListNetworkMigrationMappingUpdates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNetworkMigrationMappingUpdatesResponse>(asyncResult);
         }
 
         #endregion
@@ -3650,6 +4744,446 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  StartImportFileEnrichment
+
+        /// <summary>
+        /// Starts an import file enrichment job to process and enrich network migration import
+        /// files with additional metadata and IP assignment strategies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImportFileEnrichment service method.</param>
+        /// 
+        /// <returns>The response from the StartImportFileEnrichment service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImportFileEnrichment">REST API Reference for StartImportFileEnrichment Operation</seealso>
+        public virtual StartImportFileEnrichmentResponse StartImportFileEnrichment(StartImportFileEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartImportFileEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportFileEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportFileEnrichmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImportFileEnrichment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImportFileEnrichment operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartImportFileEnrichment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImportFileEnrichment">REST API Reference for StartImportFileEnrichment Operation</seealso>
+        public virtual IAsyncResult BeginStartImportFileEnrichment(StartImportFileEnrichmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartImportFileEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportFileEnrichmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartImportFileEnrichment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartImportFileEnrichment.</param>
+        /// 
+        /// <returns>Returns a  StartImportFileEnrichmentResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImportFileEnrichment">REST API Reference for StartImportFileEnrichment Operation</seealso>
+        public virtual StartImportFileEnrichmentResponse EndStartImportFileEnrichment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartImportFileEnrichmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartNetworkMigrationAnalysis
+
+        /// <summary>
+        /// Starts a network migration analysis job to evaluate connectivity and compatibility
+        /// of the migration mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationAnalysis service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationAnalysis">REST API Reference for StartNetworkMigrationAnalysis Operation</seealso>
+        public virtual StartNetworkMigrationAnalysisResponse StartNetworkMigrationAnalysis(StartNetworkMigrationAnalysisRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<StartNetworkMigrationAnalysisResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartNetworkMigrationAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationAnalysis operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartNetworkMigrationAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationAnalysis">REST API Reference for StartNetworkMigrationAnalysis Operation</seealso>
+        public virtual IAsyncResult BeginStartNetworkMigrationAnalysis(StartNetworkMigrationAnalysisRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationAnalysisResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartNetworkMigrationAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartNetworkMigrationAnalysis.</param>
+        /// 
+        /// <returns>Returns a  StartNetworkMigrationAnalysisResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationAnalysis">REST API Reference for StartNetworkMigrationAnalysis Operation</seealso>
+        public virtual StartNetworkMigrationAnalysisResponse EndStartNetworkMigrationAnalysis(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartNetworkMigrationAnalysisResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartNetworkMigrationCodeGeneration
+
+        /// <summary>
+        /// Starts a code generation job to convert network migration mappings into infrastructure-as-code
+        /// templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationCodeGeneration service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationCodeGeneration service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationCodeGeneration">REST API Reference for StartNetworkMigrationCodeGeneration Operation</seealso>
+        public virtual StartNetworkMigrationCodeGenerationResponse StartNetworkMigrationCodeGeneration(StartNetworkMigrationCodeGenerationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationCodeGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationCodeGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<StartNetworkMigrationCodeGenerationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartNetworkMigrationCodeGeneration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationCodeGeneration operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartNetworkMigrationCodeGeneration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationCodeGeneration">REST API Reference for StartNetworkMigrationCodeGeneration Operation</seealso>
+        public virtual IAsyncResult BeginStartNetworkMigrationCodeGeneration(StartNetworkMigrationCodeGenerationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationCodeGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationCodeGenerationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartNetworkMigrationCodeGeneration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartNetworkMigrationCodeGeneration.</param>
+        /// 
+        /// <returns>Returns a  StartNetworkMigrationCodeGenerationResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationCodeGeneration">REST API Reference for StartNetworkMigrationCodeGeneration Operation</seealso>
+        public virtual StartNetworkMigrationCodeGenerationResponse EndStartNetworkMigrationCodeGeneration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartNetworkMigrationCodeGenerationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartNetworkMigrationDeployment
+
+        /// <summary>
+        /// Starts a deployment job to create the target network infrastructure based on the generated
+        /// code templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationDeployment service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationDeployment service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationDeployment">REST API Reference for StartNetworkMigrationDeployment Operation</seealso>
+        public virtual StartNetworkMigrationDeploymentResponse StartNetworkMigrationDeployment(StartNetworkMigrationDeploymentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<StartNetworkMigrationDeploymentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartNetworkMigrationDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationDeployment operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartNetworkMigrationDeployment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationDeployment">REST API Reference for StartNetworkMigrationDeployment Operation</seealso>
+        public virtual IAsyncResult BeginStartNetworkMigrationDeployment(StartNetworkMigrationDeploymentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationDeploymentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartNetworkMigrationDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartNetworkMigrationDeployment.</param>
+        /// 
+        /// <returns>Returns a  StartNetworkMigrationDeploymentResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationDeployment">REST API Reference for StartNetworkMigrationDeployment Operation</seealso>
+        public virtual StartNetworkMigrationDeploymentResponse EndStartNetworkMigrationDeployment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartNetworkMigrationDeploymentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartNetworkMigrationMapping
+
+        /// <summary>
+        /// Starts the network migration mapping process for a given network migration execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationMapping service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationMapping service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationMapping">REST API Reference for StartNetworkMigrationMapping Operation</seealso>
+        public virtual StartNetworkMigrationMappingResponse StartNetworkMigrationMapping(StartNetworkMigrationMappingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationMappingResponseUnmarshaller.Instance;
+
+            return Invoke<StartNetworkMigrationMappingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartNetworkMigrationMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationMapping operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartNetworkMigrationMapping
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationMapping">REST API Reference for StartNetworkMigrationMapping Operation</seealso>
+        public virtual IAsyncResult BeginStartNetworkMigrationMapping(StartNetworkMigrationMappingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationMappingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartNetworkMigrationMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartNetworkMigrationMapping.</param>
+        /// 
+        /// <returns>Returns a  StartNetworkMigrationMappingResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationMapping">REST API Reference for StartNetworkMigrationMapping Operation</seealso>
+        public virtual StartNetworkMigrationMappingResponse EndStartNetworkMigrationMapping(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartNetworkMigrationMappingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartNetworkMigrationMappingUpdate
+
+        /// <summary>
+        /// Starts a job to apply customer modifications to network migration mappings, such as
+        /// changing properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationMappingUpdate service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationMappingUpdate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationMappingUpdate">REST API Reference for StartNetworkMigrationMappingUpdate Operation</seealso>
+        public virtual StartNetworkMigrationMappingUpdateResponse StartNetworkMigrationMappingUpdate(StartNetworkMigrationMappingUpdateRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationMappingUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationMappingUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<StartNetworkMigrationMappingUpdateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartNetworkMigrationMappingUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationMappingUpdate operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartNetworkMigrationMappingUpdate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationMappingUpdate">REST API Reference for StartNetworkMigrationMappingUpdate Operation</seealso>
+        public virtual IAsyncResult BeginStartNetworkMigrationMappingUpdate(StartNetworkMigrationMappingUpdateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationMappingUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationMappingUpdateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartNetworkMigrationMappingUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartNetworkMigrationMappingUpdate.</param>
+        /// 
+        /// <returns>Returns a  StartNetworkMigrationMappingUpdateResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationMappingUpdate">REST API Reference for StartNetworkMigrationMappingUpdate Operation</seealso>
+        public virtual StartNetworkMigrationMappingUpdateResponse EndStartNetworkMigrationMappingUpdate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartNetworkMigrationMappingUpdateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartReplication
 
         /// <summary>
@@ -4454,6 +5988,132 @@ namespace Amazon.Mgn
         public virtual UpdateLaunchConfigurationTemplateResponse EndUpdateLaunchConfigurationTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateLaunchConfigurationTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateNetworkMigrationDefinition
+
+        /// <summary>
+        /// Updates an existing network migration definition with new source or target configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkMigrationDefinition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNetworkMigrationDefinition service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationDefinition">REST API Reference for UpdateNetworkMigrationDefinition Operation</seealso>
+        public virtual UpdateNetworkMigrationDefinitionResponse UpdateNetworkMigrationDefinition(UpdateNetworkMigrationDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNetworkMigrationDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNetworkMigrationDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkMigrationDefinition operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNetworkMigrationDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationDefinition">REST API Reference for UpdateNetworkMigrationDefinition Operation</seealso>
+        public virtual IAsyncResult BeginUpdateNetworkMigrationDefinition(UpdateNetworkMigrationDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNetworkMigrationDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNetworkMigrationDefinition.</param>
+        /// 
+        /// <returns>Returns a  UpdateNetworkMigrationDefinitionResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationDefinition">REST API Reference for UpdateNetworkMigrationDefinition Operation</seealso>
+        public virtual UpdateNetworkMigrationDefinitionResponse EndUpdateNetworkMigrationDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateNetworkMigrationDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateNetworkMigrationMapperSegment
+
+        /// <summary>
+        /// Updates a mapper segment's configuration, such as changing its scope tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkMigrationMapperSegment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNetworkMigrationMapperSegment service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationMapperSegment">REST API Reference for UpdateNetworkMigrationMapperSegment Operation</seealso>
+        public virtual UpdateNetworkMigrationMapperSegmentResponse UpdateNetworkMigrationMapperSegment(UpdateNetworkMigrationMapperSegmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkMigrationMapperSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkMigrationMapperSegmentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNetworkMigrationMapperSegmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNetworkMigrationMapperSegment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkMigrationMapperSegment operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNetworkMigrationMapperSegment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationMapperSegment">REST API Reference for UpdateNetworkMigrationMapperSegment Operation</seealso>
+        public virtual IAsyncResult BeginUpdateNetworkMigrationMapperSegment(UpdateNetworkMigrationMapperSegmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkMigrationMapperSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkMigrationMapperSegmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNetworkMigrationMapperSegment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNetworkMigrationMapperSegment.</param>
+        /// 
+        /// <returns>Returns a  UpdateNetworkMigrationMapperSegmentResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationMapperSegment">REST API Reference for UpdateNetworkMigrationMapperSegment Operation</seealso>
+        public virtual UpdateNetworkMigrationMapperSegmentResponse EndUpdateNetworkMigrationMapperSegment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateNetworkMigrationMapperSegmentResponse>(asyncResult);
         }
 
         #endregion
