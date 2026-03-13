@@ -592,6 +592,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.LinearAction);
             }
 
+            if(requestObject.IsSetManageSharedFolders())
+            {
+                context.Writer.WritePropertyName("ManageSharedFolders");
+                context.Writer.WriteStringValue(requestObject.ManageSharedFolders);
+            }
+
             if(requestObject.IsSetMCPAction())
             {
                 context.Writer.WritePropertyName("MCPAction");
