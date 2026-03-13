@@ -88,7 +88,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }))
                 {
                     retryFlag = true;
-                    FailureRetryRequests(TotalRequests, RetryRequests, ExtraRequests, client);
+                    await FailureRetryRequests(TotalRequests, RetryRequests, ExtraRequests, client);
                     retryFlag = false;
                     requestCount = 0;
                     for (int i = 0; i < TotalRequests; i++)
@@ -97,18 +97,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     }
                     retryFlag = true;
                     requestCount = 0;
-                    FailureRetryRequests(TotalRequests, RetryRequests, ExtraRequests, client);
+                    await FailureRetryRequests(TotalRequests, RetryRequests, ExtraRequests, client);
                 }
             }
         }
 
-        private static void FailureRetryRequests(int totalRequests, int retryRequests, int extraRequests, AmazonS3Client client)
+        private static async Task FailureRetryRequests(int totalRequests, int retryRequests, int extraRequests, AmazonS3Client client)
         {
             for (int i = 0; i < totalRequests; i++)
             {
                 try
                 {
-                    var response = client.ListObjects("CapacityManagerTests");
+                    var response = await client.ListObjectsAsync("CapacityManagerTests");
                 }
                 catch (Exception)
                 {

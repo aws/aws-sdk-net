@@ -648,7 +648,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         }
                     });
                     Assert.IsTrue(getObjectAttributesResponse.ObjectParts.Parts.Count > 0);
-                    
+
                     // Number of Parts returned is controlled by GetObjectAttributesRequest.MaxParts.
                     Assert.AreEqual(getObjectAttributesResponse.ObjectParts.Parts.Count, getObjectAttributesResponse.ObjectParts.TotalPartsCount);
 
@@ -848,8 +848,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.AreEqual(s3Client.ChecksumValueEachRequest[0], s3Client.ChecksumValueEachRequest[1]);
             }
         }
+#endif
     }
 
+#if NETFRAMEWORK
     public class MockInspectFileStream : FileStream
     {
         public MockInspectFileStream(string path, FileMode mode, FileAccess access, FileShare share) : base(path, mode, access, share)
