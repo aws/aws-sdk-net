@@ -78,6 +78,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ac3Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ac4Settings", targetDepth))
+                {
+                    var unmarshaller = Ac4SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Ac4Settings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("aiffSettings", targetDepth))
                 {
                     var unmarshaller = AiffSettingsUnmarshaller.Instance;

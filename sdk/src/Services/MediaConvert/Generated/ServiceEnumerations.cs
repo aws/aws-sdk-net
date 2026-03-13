@@ -875,6 +875,234 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type Ac4BitstreamMode.
+    /// </summary>
+    public class Ac4BitstreamMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE_MAIN for Ac4BitstreamMode
+        /// </summary>
+        public static readonly Ac4BitstreamMode COMPLETE_MAIN = new Ac4BitstreamMode("COMPLETE_MAIN");
+        /// <summary>
+        /// Constant EMERGENCY for Ac4BitstreamMode
+        /// </summary>
+        public static readonly Ac4BitstreamMode EMERGENCY = new Ac4BitstreamMode("EMERGENCY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ac4BitstreamMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ac4BitstreamMode FindValue(string value)
+        {
+            return FindValue<Ac4BitstreamMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ac4BitstreamMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Ac4CodingMode.
+    /// </summary>
+    public class Ac4CodingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CODING_MODE_2_0 for Ac4CodingMode
+        /// </summary>
+        public static readonly Ac4CodingMode CODING_MODE_2_0 = new Ac4CodingMode("CODING_MODE_2_0");
+        /// <summary>
+        /// Constant CODING_MODE_3_2_LFE for Ac4CodingMode
+        /// </summary>
+        public static readonly Ac4CodingMode CODING_MODE_3_2_LFE = new Ac4CodingMode("CODING_MODE_3_2_LFE");
+        /// <summary>
+        /// Constant CODING_MODE_5_1_4 for Ac4CodingMode
+        /// </summary>
+        public static readonly Ac4CodingMode CODING_MODE_5_1_4 = new Ac4CodingMode("CODING_MODE_5_1_4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ac4CodingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ac4CodingMode FindValue(string value)
+        {
+            return FindValue<Ac4CodingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ac4CodingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Ac4DynamicRangeCompressionDrcProfile.
+    /// </summary>
+    public class Ac4DynamicRangeCompressionDrcProfile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILM_LIGHT for Ac4DynamicRangeCompressionDrcProfile
+        /// </summary>
+        public static readonly Ac4DynamicRangeCompressionDrcProfile FILM_LIGHT = new Ac4DynamicRangeCompressionDrcProfile("FILM_LIGHT");
+        /// <summary>
+        /// Constant FILM_STANDARD for Ac4DynamicRangeCompressionDrcProfile
+        /// </summary>
+        public static readonly Ac4DynamicRangeCompressionDrcProfile FILM_STANDARD = new Ac4DynamicRangeCompressionDrcProfile("FILM_STANDARD");
+        /// <summary>
+        /// Constant MUSIC_LIGHT for Ac4DynamicRangeCompressionDrcProfile
+        /// </summary>
+        public static readonly Ac4DynamicRangeCompressionDrcProfile MUSIC_LIGHT = new Ac4DynamicRangeCompressionDrcProfile("MUSIC_LIGHT");
+        /// <summary>
+        /// Constant MUSIC_STANDARD for Ac4DynamicRangeCompressionDrcProfile
+        /// </summary>
+        public static readonly Ac4DynamicRangeCompressionDrcProfile MUSIC_STANDARD = new Ac4DynamicRangeCompressionDrcProfile("MUSIC_STANDARD");
+        /// <summary>
+        /// Constant NONE for Ac4DynamicRangeCompressionDrcProfile
+        /// </summary>
+        public static readonly Ac4DynamicRangeCompressionDrcProfile NONE = new Ac4DynamicRangeCompressionDrcProfile("NONE");
+        /// <summary>
+        /// Constant SPEECH for Ac4DynamicRangeCompressionDrcProfile
+        /// </summary>
+        public static readonly Ac4DynamicRangeCompressionDrcProfile SPEECH = new Ac4DynamicRangeCompressionDrcProfile("SPEECH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ac4DynamicRangeCompressionDrcProfile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ac4DynamicRangeCompressionDrcProfile FindValue(string value)
+        {
+            return FindValue<Ac4DynamicRangeCompressionDrcProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ac4DynamicRangeCompressionDrcProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Ac4StereoDownmix.
+    /// </summary>
+    public class Ac4StereoDownmix : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DPL2 for Ac4StereoDownmix
+        /// </summary>
+        public static readonly Ac4StereoDownmix DPL2 = new Ac4StereoDownmix("DPL2");
+        /// <summary>
+        /// Constant LO_RO for Ac4StereoDownmix
+        /// </summary>
+        public static readonly Ac4StereoDownmix LO_RO = new Ac4StereoDownmix("LO_RO");
+        /// <summary>
+        /// Constant LT_RT for Ac4StereoDownmix
+        /// </summary>
+        public static readonly Ac4StereoDownmix LT_RT = new Ac4StereoDownmix("LT_RT");
+        /// <summary>
+        /// Constant NOT_INDICATED for Ac4StereoDownmix
+        /// </summary>
+        public static readonly Ac4StereoDownmix NOT_INDICATED = new Ac4StereoDownmix("NOT_INDICATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ac4StereoDownmix(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ac4StereoDownmix FindValue(string value)
+        {
+            return FindValue<Ac4StereoDownmix>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ac4StereoDownmix(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AccelerationMode.
     /// </summary>
     public class AccelerationMode : ConstantClass
@@ -1562,6 +1790,10 @@ namespace Amazon.MediaConvert
         /// Constant AC3 for AudioCodec
         /// </summary>
         public static readonly AudioCodec AC3 = new AudioCodec("AC3");
+        /// <summary>
+        /// Constant AC4 for AudioCodec
+        /// </summary>
+        public static readonly AudioCodec AC4 = new AudioCodec("AC4");
         /// <summary>
         /// Constant AIFF for AudioCodec
         /// </summary>
@@ -4298,6 +4530,10 @@ namespace Amazon.MediaConvert
         /// Constant FOLLOW_IFRAME for CmafIntervalCadence
         /// </summary>
         public static readonly CmafIntervalCadence FOLLOW_IFRAME = new CmafIntervalCadence("FOLLOW_IFRAME");
+        /// <summary>
+        /// Constant FOLLOW_SEGMENTATION for CmafIntervalCadence
+        /// </summary>
+        public static readonly CmafIntervalCadence FOLLOW_SEGMENTATION = new CmafIntervalCadence("FOLLOW_SEGMENTATION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5683,6 +5919,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly Codec THEORA = new Codec("THEORA");
         /// <summary>
+        /// Constant UNCOMPRESSED for Codec
+        /// </summary>
+        public static readonly Codec UNCOMPRESSED = new Codec("UNCOMPRESSED");
+        /// <summary>
         /// Constant UNKNOWN for Codec
         /// </summary>
         public static readonly Codec UNKNOWN = new Codec("UNKNOWN");
@@ -6462,6 +6702,10 @@ namespace Amazon.MediaConvert
         /// Constant FOLLOW_IFRAME for DashIsoIntervalCadence
         /// </summary>
         public static readonly DashIsoIntervalCadence FOLLOW_IFRAME = new DashIsoIntervalCadence("FOLLOW_IFRAME");
+        /// <summary>
+        /// Constant FOLLOW_SEGMENTATION for DashIsoIntervalCadence
+        /// </summary>
+        public static readonly DashIsoIntervalCadence FOLLOW_SEGMENTATION = new DashIsoIntervalCadence("FOLLOW_SEGMENTATION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -9860,6 +10104,10 @@ namespace Amazon.MediaConvert
     public class Format : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Avi for Format
+        /// </summary>
+        public static readonly Format Avi = new Format("avi");
         /// <summary>
         /// Constant Matroska for Format
         /// </summary>
@@ -13679,6 +13927,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type HlsClearLead.
+    /// </summary>
+    public class HlsClearLead : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for HlsClearLead
+        /// </summary>
+        public static readonly HlsClearLead DISABLED = new HlsClearLead("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for HlsClearLead
+        /// </summary>
+        public static readonly HlsClearLead ENABLED = new HlsClearLead("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HlsClearLead(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HlsClearLead FindValue(string value)
+        {
+            return FindValue<HlsClearLead>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HlsClearLead(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HlsClientCache.
     /// </summary>
     public class HlsClientCache : ConstantClass
@@ -14104,6 +14402,10 @@ namespace Amazon.MediaConvert
         /// Constant FOLLOW_IFRAME for HlsIntervalCadence
         /// </summary>
         public static readonly HlsIntervalCadence FOLLOW_IFRAME = new HlsIntervalCadence("FOLLOW_IFRAME");
+        /// <summary>
+        /// Constant FOLLOW_SEGMENTATION for HlsIntervalCadence
+        /// </summary>
+        public static readonly HlsIntervalCadence FOLLOW_SEGMENTATION = new HlsIntervalCadence("FOLLOW_SEGMENTATION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

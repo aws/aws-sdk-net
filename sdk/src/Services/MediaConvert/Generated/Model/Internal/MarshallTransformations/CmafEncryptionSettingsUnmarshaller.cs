@@ -66,6 +66,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("clearLead", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClearLead = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("constantInitializationVector", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

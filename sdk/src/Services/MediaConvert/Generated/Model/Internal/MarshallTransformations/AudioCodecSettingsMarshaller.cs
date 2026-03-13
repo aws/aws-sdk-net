@@ -70,6 +70,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAc4Settings())
+            {
+                context.Writer.WritePropertyName("ac4Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Ac4SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Ac4Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAiffSettings())
             {
                 context.Writer.WritePropertyName("aiffSettings");

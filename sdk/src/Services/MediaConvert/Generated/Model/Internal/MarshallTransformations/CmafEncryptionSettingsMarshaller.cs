@@ -48,6 +48,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetClearLead())
+            {
+                context.Writer.WritePropertyName("clearLead");
+                context.Writer.Write(requestObject.ClearLead);
+            }
+
             if(requestObject.IsSetConstantInitializationVector())
             {
                 context.Writer.WritePropertyName("constantInitializationVector");
