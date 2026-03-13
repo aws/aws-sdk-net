@@ -35,10 +35,27 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetPartitionRequest : AmazonGlueRequest
     {
+        private AuditContext _auditContext;
         private string _catalogId;
         private string _databaseName;
         private List<PartitionValueList> _partitionsToGet = AWSConfigs.InitializeCollections ? new List<PartitionValueList>() : null;
+        private QuerySessionContext _querySessionContext;
         private string _tableName;
+
+        /// <summary>
+        /// Gets and sets the property AuditContext.
+        /// </summary>
+        public AuditContext AuditContext
+        {
+            get { return this._auditContext; }
+            set { this._auditContext = value; }
+        }
+
+        // Check to see if AuditContext property is set
+        internal bool IsSetAuditContext()
+        {
+            return this._auditContext != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -96,6 +113,21 @@ namespace Amazon.Glue.Model
         internal bool IsSetPartitionsToGet()
         {
             return this._partitionsToGet != null && (this._partitionsToGet.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuerySessionContext.
+        /// </summary>
+        public QuerySessionContext QuerySessionContext
+        {
+            get { return this._querySessionContext; }
+            set { this._querySessionContext = value; }
+        }
+
+        // Check to see if QuerySessionContext property is set
+        internal bool IsSetQuerySessionContext()
+        {
+            return this._querySessionContext != null;
         }
 
         /// <summary>
