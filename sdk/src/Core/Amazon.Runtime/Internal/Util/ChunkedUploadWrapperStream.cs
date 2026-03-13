@@ -40,12 +40,14 @@ namespace Amazon.Runtime.Internal.Util
         private const int NEWLINE_LENGTH = 2;
         private const int HEADER_ROW_PADDING_LENGTH = 3; // additional length for each row of a trailing header, 1 for ':' between the key and value, plus 2 for CRLF
 
-        private const string CHUNK_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-PAYLOAD";
+        private const string V4_CHUNK_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-PAYLOAD";
+        private const string V4A_CHUNK_STRING_TO_SIGN_PREFIX = "AWS4-ECDSA-P256-SHA256-PAYLOAD";
         private const string CHUNK_SIGNATURE_HEADER = ";chunk-signature=";
         public const int V4_SIGNATURE_LENGTH = 64;
         public const int V4A_SIGNATURE_LENGTH = 144;
         private const string TRAILING_HEADER_SIGNATURE_KEY = "x-amz-trailer-signature";
-        private const string TRAILING_HEADER_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-TRAILER";
+        private const string V4_TRAILING_HEADER_STRING_TO_SIGN_PREFIX = "AWS4-HMAC-SHA256-TRAILER";
+        private const string V4A_TRAILING_HEADER_STRING_TO_SIGN_PREFIX = "AWS4-ECDSA-P256-SHA256-TRAILER";
 
         private byte[] _inputBuffer;
 
@@ -361,7 +363,8 @@ namespace Amazon.Runtime.Internal.Util
             // variable-length size of the embedded chunk data in hex
             chunkHeader.Append(dataLen.ToString("X", CultureInfo.InvariantCulture));
 
-            var chunkStringToSign = BuildChunkedStringToSign(CHUNK_STRING_TO_SIGN_PREFIX, HeaderSigningResult.ISO8601DateTime,
+            var prefix = HeaderSigningResult is AWS4aSigningResult ? V4A_CHUNK_STRING_TO_SIGN_PREFIX : V4_CHUNK_STRING_TO_SIGN_PREFIX;
+            var chunkStringToSign = BuildChunkedStringToSign(prefix, HeaderSigningResult.ISO8601DateTime,
                                                                 HeaderSigningResult.Scope, PreviousChunkSignature, dataLen, _inputBuffer);
 
             string chunkSignature = "";
@@ -450,8 +453,9 @@ namespace Amazon.Runtime.Internal.Util
             var sortedTrailingHeaders = AWS4Signer.SortAndPruneHeaders(_trailingHeaders);
             var canonicalizedTrailingHeaders = AWS4Signer.CanonicalizeHeaders(sortedTrailingHeaders);
 
+            var prefix = HeaderSigningResult is AWS4aSigningResult ? V4A_TRAILING_HEADER_STRING_TO_SIGN_PREFIX : V4_TRAILING_HEADER_STRING_TO_SIGN_PREFIX;
             var chunkStringToSign =
-                TRAILING_HEADER_STRING_TO_SIGN_PREFIX + "\n" +
+                prefix + "\n" +
                 HeaderSigningResult.ISO8601DateTime + "\n" +
                 HeaderSigningResult.Scope + "\n" +
                 PreviousChunkSignature + "\n" +
