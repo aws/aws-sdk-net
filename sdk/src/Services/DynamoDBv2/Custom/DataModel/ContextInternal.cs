@@ -15,6 +15,7 @@
 
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
+using Amazon.Util;
 using Amazon.Util.Internal;
 using System;
 using System.Collections;
@@ -24,7 +25,6 @@ using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Amazon.Util;
 using ThirdParty.RuntimeBackports;
 using Expression = System.Linq.Expressions.Expression;
 

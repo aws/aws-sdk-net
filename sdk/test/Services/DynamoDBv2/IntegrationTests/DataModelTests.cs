@@ -2381,6 +2381,101 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsTrue((DateTime.UtcNow - loaded.LastUpdated.Value).TotalMinutes < 1, "LastUpdated should be recent");
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_LoadAsync_WithProjectionExpression_AndReservedWords()
+        {
+            TableCache.Clear();
+            await CleanupTables();
+            TableCache.Clear();
+
+            var productReview = new ProductReviews
+            {
+                Id = 1,
+                Reviews = new List<Review>()
+                {
+                    new Review()
+                    {
+                        Comment = "Comment1",
+                        Date = DateTime.Now,
+                    },
+                    new Review()
+                    {
+                        Comment = "Comment2",
+                        Date = DateTime.Now,
+                    },
+                    new Review()
+                    {
+                        Comment = "Comment3",
+                        Date = DateTime.Now,
+                    }
+                }
+            };
+
+            await Context.SaveAsync(productReview);
+
+            var savedProduct = await Context.LoadAsync<ProductReviews>(1);
+
+            Assert.AreEqual(productReview.Reviews.Count, savedProduct.Reviews.Count);
+            Assert.AreEqual(productReview.Reviews[0].Comment, savedProduct.Reviews[0].Comment);
+            Assert.AreEqual(productReview.Reviews[1].Comment, savedProduct.Reviews[1].Comment);
+            Assert.AreEqual(productReview.Reviews[2].Comment, savedProduct.Reviews[2].Comment);
+            ApproximatelyEqual(productReview.Reviews[0].Date.ToUniversalTime(), savedProduct.Reviews[0].Date);
+            ApproximatelyEqual(productReview.Reviews[1].Date.ToUniversalTime(), savedProduct.Reviews[1].Date);
+            ApproximatelyEqual(productReview.Reviews[2].Date.ToUniversalTime(), savedProduct.Reviews[2].Date);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_LoadAsync_WithProjectionExpression()
+        {
+            TableCache.Clear();
+            await CleanupTables();
+            TableCache.Clear();
+
+            var product = new Product
+            {
+                Id = 1,
+                Name = "Product name",
+                CompanyName = "Company name",
+                Price = 123,
+                Map = new Dictionary<string, string> // M
+                {
+                    {
+                        "Position", "Position map"
+                    }
+                },
+                CompanyInfo = new CompanyInfo // L
+                {
+                    Name = "Company info name",
+                    AllProducts = new List<Product>
+                    {
+                        new Product { Id = 12, Name = "product name 2", IsPublic = true }
+                    },
+                },
+                Components = new List<string> // SS
+                {
+                    string.Empty
+                }
+            };
+
+            await Context.SaveAsync(product);
+
+            var savedProduct = await Context.LoadAsync<Product>(1);
+            Assert.AreEqual(product.CompanyName, savedProduct.CompanyName);
+            Assert.AreEqual(product.Name, savedProduct.Name);
+            Assert.AreEqual(product.Price, savedProduct.Price);
+            Assert.AreEqual(product.Map.Count, savedProduct.Map.Count);
+            Assert.AreEqual(product.Map["Position"], savedProduct.Map["Position"]);
+            Assert.AreEqual(product.CompanyInfo.Name, savedProduct.CompanyInfo.Name);
+            Assert.AreEqual(product.CompanyInfo.AllProducts.Count, savedProduct.CompanyInfo.AllProducts.Count);
+            Assert.AreEqual(product.CompanyInfo.AllProducts[0].Name, savedProduct.CompanyInfo.AllProducts[0].Name);
+            Assert.AreEqual(product.CompanyInfo.AllProducts[0].IsPublic, savedProduct.CompanyInfo.AllProducts[0].IsPublic);
+            Assert.AreEqual(product.CompanyInfo.AllProducts[0].Id, savedProduct.CompanyInfo.AllProducts[0].Id);
+            Assert.AreEqual(product.Components.Count, savedProduct.Components.Count);
+            Assert.AreEqual(product.Components[0], savedProduct.Components[0]);
+        }
+
         private static async Task TestEmptyStringsWithFeatureEnabled()
         {
             var product = new Product
@@ -4759,6 +4854,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             [DynamoDBProperty(typeof(DateTimeUtcConverter))]
             public DateTime EventDate { get; set; }
+        }
+
+        /// <summary>
+        /// A table with reserved words as property name
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class ProductReviews
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            public List<Review> Reviews { get; set; }
+        }
+
+        public class Review
+        {
+            // reserved word
+            [DynamoDBProperty(StoreAsEpoch = true)]
+            public DateTime Date { get; set; }
+
+            // reserved word
+            public string Comment { get; set; }
         }
 
 
