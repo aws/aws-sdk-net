@@ -1,3 +1,29 @@
+### 3.7.1242.0 (2026-03-13 18:27 UTC)
+* APIGateway (3.7.505.0)
+	* API Gateway now supports an additional security policy "SecurityPolicy-TLS13-1-2-FIPS-PFS-PQ-2025-09" for REST APIs and custom domain names. The new policy is compliant with TLS 1.3, Federal Information Processing Standards (FIPS), Perfect Forward Secrecy (PFS), and post-quantum (PQ) cryptography
+* ConfigService (3.7.506.0)
+	* Fix pagination support for DescribeConformancePackCompliance, and update OrganizationConfigRule InputParameters max length to match ConfigRule.
+* Connect (3.7.533.0)
+	* Deprecating PredefinedNotificationID field
+* GameLiftStreams (3.7.507.0)
+	* Feature launch that enables customers to connect streaming sessions to their own VPCs running in AWS.
+* Glue (3.7.515.0)
+	* Add QuerySessionContext to BatchGetPartitionRequest
+* IVSRealTime (3.7.505.0)
+	* Updates maximum reconnect window seconds from 60 to 300 for participant replication
+* MediaConvert (3.7.508.0)
+	* This update adds support for Dolby AC-4 audio output, frame rate conversion between non-Dolby Vision inputs to Dolby Vision outputs, and clear lead CMAF HLS output.
+* MediaLive (3.7.515.7)
+	* Documents the VideoDescription.ScalingBehavior.SMART(underscore)CROP enum value.
+* Mgn (3.7.505.0)
+	* Network Migration APIs are now publicly available for direct programmatic access. Customers can now call Network Migration APIs directly without going through AWS Transform (ATX), enabling automation, integration with existing tools, and self-service migration workflows.
+* QuickSight (3.7.514.0)
+	* The change adds a new capability named ManageSharedFolders in Custom Permissions
+* Core 3.7.500.91
+	* Fix XmlUnmarshallerContext to handle unexpected HTML response
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1241.0 (2026-03-12 18:24 UTC)
 * DataSync (3.7.506.0)
 	* DataSync's 3 location types, Hadoop Distributed File System (HDFS), FSx for Windows File Server (FSx Windows), and FSx for NetApp ONTAP (FSx ONTAP) now have credentials managed via Secrets Manager, which may be encrypted with service keys or be configured to use customer-managed keys or secret.

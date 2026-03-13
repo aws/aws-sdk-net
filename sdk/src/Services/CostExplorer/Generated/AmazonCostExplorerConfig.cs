@@ -32,7 +32,7 @@ namespace Amazon.CostExplorer
     public partial class AmazonCostExplorerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cost Explorer", "3.7.509.26");
+            InternalSDKUtils.BuildUserAgentString("Cost Explorer", "3.7.509.27");
 
         private string _userAgent = UserAgentString;
         ///<summary>
