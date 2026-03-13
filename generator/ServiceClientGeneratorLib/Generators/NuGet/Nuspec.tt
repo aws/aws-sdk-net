@@ -136,6 +136,10 @@
     <file src="<#=Path.Combine(".", "bin", "Release", "net8.0", (string)this.Session["AssemblyName"] + ".dll")#>" target="lib\net8.0" />
     <file src="<#=Path.Combine(".", "bin", "Release", "net8.0", (string)this.Session["AssemblyName"] + ".xml")#>" target="lib\net8.0" />
     <file src="<#=Path.Combine(".", "bin", "Release", "net8.0", (string)this.Session["AssemblyName"] + ".pdb")#>" target="lib\net8.0" />
+
+    <file src="<#=Path.Combine(".", "bin", "Release", "net11.0", (string)this.Session["AssemblyName"] + ".dll")#>" target="lib\net8.0" />
+    <file src="<#=Path.Combine(".", "bin", "Release", "net11.0", (string)this.Session["AssemblyName"] + ".xml")#>" target="lib\net8.0" />
+    <file src="<#=Path.Combine(".", "bin", "Release", "net11.0", (string)this.Session["AssemblyName"] + ".pdb")#>" target="lib\net8.0" />
 <#
 	}
 #>

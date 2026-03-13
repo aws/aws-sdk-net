@@ -40,6 +40,12 @@
     <DefineConstants Condition="'$(TargetFramework)' == 'net8.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
 <#
     }
+    if (this.Project.TargetFrameworks.Contains("net11.0"))
+    {
+#>
+    <DefineConstants Condition="'$(TargetFramework)' == 'net11.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+<#
+    }
 #>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -99,14 +105,16 @@
 <#
     }
 
-    if (this.Project.TargetFrameworks.Contains("net8.0"))
-    {
 #>
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+  <PropertyGroup Condition="'$(TargetFramework)' != 'net472' And '$(TargetFramework)' != 'netstandard2.0' And '$(TargetFramework)' != 'netcoreapp3.1'">
     <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' != 'net472' And '$(TargetFramework)' != 'netstandard2.0' And '$(TargetFramework)' != 'netcoreapp3.1' And '$(TargetFramework)' != 'net8.0'">
+    <Features>$(Features);runtime-async=on</Features>
+	<EnablePreviewFeatures>true</EnablePreviewFeatures>
+  </PropertyGroup>
 <#
-    }
+
     if (this.Project.AssemblyName.Contains("UnitTests") && this.Project.TargetFrameworks.Contains("net472"))
     {
 #>
@@ -120,12 +128,12 @@
     For .NET 8 LangVersion is set to 11 to allow using static interface methods. This is to allow
     the service interface factory method to exist for AWSSDK.Extensions.NETCore.Setup.
   -->
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net11.0'">
     <LangVersion>11.0</LangVersion>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
+  <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0' And '$(TargetFramework)' != 'net11.0'">
     <LangVersion>9.0</LangVersion>
-  </PropertyGroup>
+  </PropertyGroup> 
 <#
 
 #>

@@ -29,8 +29,10 @@
       <group targetFramework="netcoreapp3.1">
       </group>
       <group targetFramework="net8.0">
-      </group>		
-    </dependencies>
+      </group>
+		<group targetFramework="net11.0">
+		</group>
+	</dependencies>
   </metadata> 
   <files>
     <file src="..\..\nuget-content\AWSLogo.png" target="images\" />
@@ -51,5 +53,9 @@
     <file src=".\bin\Release\net8.0\AWSSDK.Core.dll" target="lib\net8.0"/>
     <file src=".\bin\Release\net8.0\AWSSDK.Core.xml" target="lib\net8.0"/>
     <file src=".\bin\Release\net8.0\AWSSDK.Core.pdb" target="lib\net8.0"/>
+
+    <file src=".\bin\Release\net11.0\AWSSDK.Core.dll" target="lib\net11.0"/>
+    <file src=".\bin\Release\net11.0\AWSSDK.Core.xml" target="lib\net11.0"/>
+    <file src=".\bin\Release\net11.0\AWSSDK.Core.pdb" target="lib\net11.0"/>
   </files>
 </package>

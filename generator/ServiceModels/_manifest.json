@@ -27,7 +27,7 @@
         },
         {
             "name": "NetStandard",
-            "targetFrameworks": [ "netstandard2.0", "netcoreapp3.1", "net8.0" ],
+            "targetFrameworks": [ "netstandard2.0", "netcoreapp3.1", "net8.0", "net11.0" ],
             "defineConstants": [ "NETSTANDARD"],
             "template": "VS2017ProjectFile",
             "binSubFolder" : "",

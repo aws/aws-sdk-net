@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+    #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "18.0.0.0")]
     public partial class AssemblyInfo : BaseGenerator
     {
@@ -36,43 +36,50 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle(""");
             
-            #line 12 "D:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 12 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyTitle));
             
             #line default
             #line hidden
             this.Write("\")]\r\n#if BCL\r\n[assembly: AssemblyDescription(\"");
             
-            #line 14 "D:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 14 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: "4.7.2")));
             
             #line default
             #line hidden
             this.Write("\")]\r\n#elif NETSTANDARD20\r\n[assembly: AssemblyDescription(\"");
             
-            #line 16 "D:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 16 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: "NetStandard 2.0")));
             
             #line default
             #line hidden
             this.Write("\")]\r\n#elif NETCOREAPP3_1\r\n[assembly: AssemblyDescription(\"");
             
-            #line 18 "D:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 18 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: ".NET Core 3.1")));
             
             #line default
             #line hidden
             this.Write("\")]\r\n#elif NET8_0\r\n[assembly: AssemblyDescription(\"");
             
-            #line 20 "D:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 20 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: ".NET 8.0")));
+            
+            #line default
+            #line hidden
+            this.Write("\")]\r\n#elif NET11_0\r\n[assembly: AssemblyDescription(\"");
+            
+            #line 22 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: ".NET 11.0")));
             
             #line default
             #line hidden
             this.Write("\")]\r\n#else\r\n#error Unknown platform constant - unable to set correct AssemblyDesc" +
                     "ription\r\n#endif\r\n\r\n");
             
-            #line 25 "D:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 27 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
  if (this.Config.AssemblyTitle=="AWSSDK.DynamoDBv2") { 
             
             #line default
@@ -81,13 +88,13 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo(""AWSSDK.UnitTests.NetFramework, PublicKey=0024000004800000940000000602000000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4"")]
 ");
             
-            #line 28 "D:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 30 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
  } 
             
             #line default
             #line hidden
             
-            #line 29 "D:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 31 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
  if (this.Config.AssemblyTitle=="AWSSDK.S3") { 
             
             #line default
@@ -97,7 +104,7 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo(""DynamicProxyGenAssembly2, PublicKey=0024000004800000940000000602000000240000525341310004000001000100c547cac37abd99c8db225ef2f6c8a3602f3b3606cc9891605d02baa56104f4cfc0734aa39b93bf7852f7d9266654753cc297e7d2edfe0bac1cdcf9f717241550e0a7b191195b7667bb4f64bcb8e2121380fd1d9d46ad2d92d2d15605093924cceaf74c4861eff62abf69b9291ed0a340e113be11e6a7d3113e92484cf7045cc7"")]
 ");
             
-            #line 33 "D:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 35 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
  } 
             
             #line default
@@ -126,14 +133,14 @@ using System.Runtime.CompilerServices;
 // [assembly: AssemblyVersion(""1.0.*"")]
 [assembly: AssemblyVersion(""");
             
-            #line 56 "D:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 58 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceVersion));
             
             #line default
             #line hidden
             this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
             
-            #line 57 "D:\CodeBase\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 59 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceFileVersion));
             
             #line default
