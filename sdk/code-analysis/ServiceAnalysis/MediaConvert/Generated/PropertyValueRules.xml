@@ -86,6 +86,16 @@
     <max>48000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Ac4Settings.Bitrate</property>
+    <min>192000</min>
+    <max>1024000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Ac4Settings.SampleRate</property>
+    <min>48000</min>
+    <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.AiffSettings.BitDepth</property>
     <min>16</min>
     <max>24</max>
