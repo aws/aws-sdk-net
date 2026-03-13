@@ -632,6 +632,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLiftStreams.Model.LocationState.InternalVpcIpv4CidrBlock</property>
+    <pattern>(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])/([0-9]|[1-2][0-9]|3[0-2])</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLiftStreams.Model.LocationState.LocationName</property>
     <min>1</min>
     <max>20</max>
@@ -705,5 +709,15 @@
     <min>0</min>
     <max>1024</max>
     <pattern>[-_a-zA-Z0-9/=+]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLiftStreams.Model.VpcTransitConfiguration.VpcId</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLiftStreams.Model.VpcTransitConfigurationResponse.VpcId</property>
+    <min>1</min>
+    <max>32</max>
   </property-value-rule>
 </property-value-rules>

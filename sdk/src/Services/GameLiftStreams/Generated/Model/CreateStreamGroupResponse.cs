@@ -507,48 +507,6 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b> <c>gen6n_medium_win2022</c> (NVIDIA, medium)</b> Supports applications with low
-        /// 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Reference resolution: 1080p
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Reference frame rate: 60 fps
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Workload specifications: 8 vCPUs, 32 GB RAM, 6 GB VRAM
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Tenancy: Supports 1 concurrent stream session
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <b> <c>gen6n_small_win2022</c> (NVIDIA, small)</b> Supports applications with low
-        /// 3D scene complexity. Uses NVIDIA L4 Tensor Core GPU.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Reference resolution: 1080p
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Reference frame rate: 60 fps
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Workload specifications: 2 vCPUs, 8 GB RAM, 3 GB VRAM
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Tenancy: Supports 1 concurrent stream session
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
         ///  <b> <c>gen5n_win2022</c> (NVIDIA, ultra)</b> Supports applications with extremely
         /// high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base
         /// and supports DirectX 12. Compatible with Unreal Engine versions up through 5.6, 32
