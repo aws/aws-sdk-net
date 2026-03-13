@@ -1,3 +1,27 @@
+### 4.0.210.0 (2026-03-13 18:18 UTC)
+* APIGateway (4.0.6.0)
+	* API Gateway now supports an additional security policy "SecurityPolicy-TLS13-1-2-FIPS-PFS-PQ-2025-09" for REST APIs and custom domain names. The new policy is compliant with TLS 1.3, Federal Information Processing Standards (FIPS), Perfect Forward Secrecy (PFS), and post-quantum (PQ) cryptography
+* ConfigService (4.0.7.0)
+	* Fix pagination support for DescribeConformancePackCompliance, and update OrganizationConfigRule InputParameters max length to match ConfigRule.
+* Connect (4.0.37.0)
+	* Deprecating PredefinedNotificationID field
+* GameLiftStreams (4.0.7.0)
+	* Feature launch that enables customers to connect streaming sessions to their own VPCs running in AWS.
+* Glue (4.0.26.0)
+	* Add QuerySessionContext to BatchGetPartitionRequest
+* IVSRealTime (4.0.6.0)
+	* Updates maximum reconnect window seconds from 60 to 300 for participant replication
+* MediaConvert (4.0.14.0)
+	* This update adds support for Dolby AC-4 audio output, frame rate conversion between non-Dolby Vision inputs to Dolby Vision outputs, and clear lead CMAF HLS output.
+* MediaLive (4.0.17.3)
+	* Documents the VideoDescription.ScalingBehavior.SMART(underscore)CROP enum value.
+* Mgn (4.0.5.0)
+	* Network Migration APIs are now publicly available for direct programmatic access. Customers can now call Network Migration APIs directly without going through AWS Transform (ATX), enabling automation, integration with existing tools, and self-service migration workflows.
+* QuickSight (4.0.17.0)
+	* The change adds a new capability named ManageSharedFolders in Custom Permissions
+* Core 4.0.3.18
+	* Update InstanceProfileAWSCredentials to fix flaky test (no change in functionality for existing customers)
+
 ### 4.0.209.0 (2026-03-12 18:24 UTC)
 * DataSync (4.0.9.0)
 	* DataSync's 3 location types, Hadoop Distributed File System (HDFS), FSx for Windows File Server (FSx Windows), and FSx for NetApp ONTAP (FSx ONTAP) now have credentials managed via Secrets Manager, which may be encrypted with service keys or be configured to use customer-managed keys or secret.
