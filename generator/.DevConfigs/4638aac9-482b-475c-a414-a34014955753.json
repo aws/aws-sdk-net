@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Render <important> and <note> XML doc tags as styled noteblock divs in the SDK reference documentation generator."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
