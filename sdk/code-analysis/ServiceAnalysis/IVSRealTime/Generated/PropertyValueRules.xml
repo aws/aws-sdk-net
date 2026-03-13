@@ -448,7 +448,7 @@
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.StartParticipantReplicationRequest.ReconnectWindowSeconds</property>
     <min>0</min>
-    <max>60</max>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.StartParticipantReplicationRequest.SourceStageArn</property>
