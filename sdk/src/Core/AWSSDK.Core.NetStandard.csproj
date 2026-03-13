@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild> 
-    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>    
+    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0;net11.0</TargetFrameworks>    
     <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
     <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
     <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
@@ -20,12 +20,17 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
-    <NoWarn>$(NoWarn);CS1591;CA1822</NoWarn>
+    <NoWarn>$(NoWarn);CS1591;CA1822;SYSLIB0014;CA1040</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <SignAssembly>True</SignAssembly>
 
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net11.0'">
+    <Features>$(Features);runtime-async=on</Features>
+	<EnablePreviewFeatures>true</EnablePreviewFeatures>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <WarningsAsErrors>IL2026,IL2075</WarningsAsErrors>
     <IsTrimmable>true</IsTrimmable>
@@ -41,10 +46,10 @@
     For .NET 8 LangVersion is set to 11 to allow using static interface methods. This is to allow
     the service interface factory method to exist for AWSSDK.Extensions.NETCore.Setup.
   -->
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net11.0'">
     <LangVersion>11.0</LangVersion>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
+  <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0' And '$(TargetFramework)' != 'net11.0'">
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>  
 

@@ -1382,7 +1382,7 @@ namespace Amazon.Util
 #if NETSTANDARD
             using (var client = CreateClient(uri, timeout, proxy, null))
             {
-                return AsyncHelpers.RunSync<string>(() =>
+                return Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<string>(() =>
                 {
                     return client.GetStringAsync(uri);
                 }); 
@@ -1416,7 +1416,7 @@ namespace Amazon.Util
 #if NETSTANDARD
             using (var client = CreateClient(uri, timeout, proxy, headers))
             {           
-                var response = AsyncHelpers.RunSync<HttpResponseMessage>(() =>
+                var response = Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<HttpResponseMessage>(() =>
                 {
                     var requestMessage = new HttpRequestMessage(new HttpMethod(requestType), uri);
                     if(!string.IsNullOrEmpty(content))
@@ -1442,7 +1442,7 @@ namespace Amazon.Util
                             
                 try
                 {
-                    return AsyncHelpers.RunSync<string>(() =>
+                    return Amazon.Runtime.Internal.Util.AsyncHelpers.RunSync<string>(() =>
                     {
                         return response.Content.ReadAsStringAsync();        
                     });
