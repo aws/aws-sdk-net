@@ -96,7 +96,7 @@ namespace Amazon.ConfigService.Model
         /// rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=1024)]
         public string InputParameters
         {
             get { return this._inputParameters; }
