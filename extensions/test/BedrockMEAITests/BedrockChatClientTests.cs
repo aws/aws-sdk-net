@@ -1,4 +1,4 @@
-using Amazon.BedrockRuntime.Model;
+﻿using Amazon.BedrockRuntime.Model;
 using Amazon.Runtime.Documents;
 using Amazon.Runtime.EventStreams;
 using Microsoft.Extensions.AI;
@@ -446,7 +446,7 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public void AsIChatClient_ValidArguments_CreatesIChatClientSuccessfully()
     {
-        MockBedrockRuntime mock = new();
+        IAmazonBedrockRuntime mock = CreateMock();
         IChatClient chatClient = mock.AsIChatClient();
         Assert.NotNull(chatClient);
         Assert.Same(mock, chatClient.GetService<IAmazonBedrockRuntime>());
@@ -456,7 +456,7 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public void IChatClient_GetService_InvalidArguments_Throws()
     {
-        MockBedrockRuntime mock = new();
+        IAmazonBedrockRuntime mock = CreateMock();
         IChatClient chatClient = mock.AsIChatClient();
         Assert.NotNull(chatClient);
 
@@ -469,7 +469,7 @@ public class BedrockChatClientTests
     [InlineData("anthropic.claude-3-sonnet-20240229-v1:0")]
     public void IChatClient_GetService_ReturnsExpectedInstance(string defaultModelId)
     {
-        MockBedrockRuntime mock = new();
+        IAmazonBedrockRuntime mock = CreateMock();
         IChatClient chatClient = mock.AsIChatClient(defaultModelId);
         Assert.NotNull(chatClient);
 
@@ -486,7 +486,7 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public void IChatClient_Dispose_Nop()
     {
-        MockBedrockRuntime mock = new();
+        IAmazonBedrockRuntime mock = CreateMock();
         IChatClient chatClient = mock.AsIChatClient();
         Assert.NotNull(chatClient);
 
@@ -499,10 +499,7 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_BasicRequest()
     {
-        MockBedrockRuntime mock = new()
-        {
-            OnConverseRequest = request => CreateResponse("Hello")
-        };
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request => CreateResponse("Hello"));
 
         IChatClient chatClient = mock.AsIChatClient("anthropic.claude-3-sonnet-20240229-v1:0");
         ChatResponse result = await chatClient.GetResponseAsync("Hello");
@@ -520,20 +517,17 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_TextContent()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Single(request.Messages);
-                Assert.Equal(ConversationRole.User, request.Messages[0].Role);
-                Assert.Single(request.Messages[0].Content);
-                Assert.Equal("What is the weather like?", request.Messages[0].Content[0].Text);
+            Assert.Single(request.Messages);
+            Assert.Equal(ConversationRole.User, request.Messages[0].Role);
+            Assert.Single(request.Messages[0].Content);
+            Assert.Equal("What is the weather like?", request.Messages[0].Content[0].Text);
 
-                var response = CreateResponse("It's sunny today.");
-                response.StopReason = StopReason.End_turn;
-                return response;
-            }
-        };
+            var response = CreateResponse("It's sunny today.");
+            response.StopReason = StopReason.End_turn;
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "What is the weather like?")];
@@ -559,18 +553,15 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_EmptyMessages_CreatesDefaultMessage()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Single(request.Messages);
-                Assert.Equal(ConversationRole.User, request.Messages[0].Role);
-                Assert.Single(request.Messages[0].Content);
-                Assert.Equal("\u200B", request.Messages[0].Content[0].Text);
+            Assert.Single(request.Messages);
+            Assert.Equal(ConversationRole.User, request.Messages[0].Role);
+            Assert.Single(request.Messages[0].Content);
+            Assert.Equal("\u200B", request.Messages[0].Content[0].Text);
 
-                return CreateResponse("Empty input received");
-            }
-        };
+            return CreateResponse("Empty input received");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [];
@@ -586,7 +577,7 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_NullMessages_Throws()
     {
-        MockBedrockRuntime mock = new();
+        IAmazonBedrockRuntime mock = CreateMock();
         IChatClient chatClient = mock.AsIChatClient("claude");
 
         await Assert.ThrowsAsync<ArgumentNullException>("messages", () => chatClient.GetResponseAsync(null!));
@@ -598,21 +589,18 @@ public class BedrockChatClientTests
     {
         byte[] imageData = [0x89, 0x50, 0x4E, 0x47];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Single(request.Messages);
-                Assert.Equal(ConversationRole.User, request.Messages[0].Role);
-                Assert.Equal(2, request.Messages[0].Content.Count);
-                Assert.Equal("Describe this image", request.Messages[0].Content[0].Text);
-                Assert.NotNull(request.Messages[0].Content[1].Image);
-                Assert.Equal(ImageFormat.Png, request.Messages[0].Content[1].Image.Format);
-                Assert.True(request.Messages[0].Content[1].Image.Source.Bytes.ToArray().SequenceEqual(imageData));
+            Assert.Single(request.Messages);
+            Assert.Equal(ConversationRole.User, request.Messages[0].Role);
+            Assert.Equal(2, request.Messages[0].Content.Count);
+            Assert.Equal("Describe this image", request.Messages[0].Content[0].Text);
+            Assert.NotNull(request.Messages[0].Content[1].Image);
+            Assert.Equal(ImageFormat.Png, request.Messages[0].Content[1].Image.Format);
+            Assert.True(request.Messages[0].Content[1].Image.Source.Bytes.ToArray().SequenceEqual(imageData));
 
-                return CreateResponse("I see an image.");
-            }
-        };
+            return CreateResponse("I see an image.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -648,16 +636,13 @@ public class BedrockChatClientTests
             byte[] imageData = [1, 2, 3, 4];
             bool verified = false;
 
-            MockBedrockRuntime mock = new()
+            IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
             {
-                OnConverseRequest = request =>
-                {
-                    Assert.NotNull(request.Messages[0].Content[0].Image);
-                    Assert.Equal(expectedFormat, request.Messages[0].Content[0].Image.Format);
-                    verified = true;
-                    return CreateResponse("OK");
-                }
-            };
+                Assert.NotNull(request.Messages[0].Content[0].Image);
+                Assert.Equal(expectedFormat, request.Messages[0].Content[0].Image.Format);
+                verified = true;
+                return CreateResponse("OK");
+            });
 
             IChatClient chatClient = mock.AsIChatClient("claude");
             await chatClient.GetResponseAsync([new(ChatRole.User, [new DataContent(imageData, mimeType)])]);
@@ -671,21 +656,18 @@ public class BedrockChatClientTests
     {
         byte[] pdfData = [0x25, 0x50, 0x44, 0x46];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Single(request.Messages);
-                Assert.Equal(2, request.Messages[0].Content.Count);
-                Assert.Equal("Analyze this document", request.Messages[0].Content[0].Text);
-                Assert.NotNull(request.Messages[0].Content[1].Document);
-                Assert.Equal(DocumentFormat.Pdf, request.Messages[0].Content[1].Document.Format);
-                Assert.True(request.Messages[0].Content[1].Document.Source.Bytes.ToArray().SequenceEqual(pdfData));
-                Assert.Equal("file", request.Messages[0].Content[1].Document.Name);
+            Assert.Single(request.Messages);
+            Assert.Equal(2, request.Messages[0].Content.Count);
+            Assert.Equal("Analyze this document", request.Messages[0].Content[0].Text);
+            Assert.NotNull(request.Messages[0].Content[1].Document);
+            Assert.Equal(DocumentFormat.Pdf, request.Messages[0].Content[1].Document.Format);
+            Assert.True(request.Messages[0].Content[1].Document.Source.Bytes.ToArray().SequenceEqual(pdfData));
+            Assert.Equal("file", request.Messages[0].Content[1].Document.Name);
 
-                return CreateResponse("Document analyzed.");
-            }
-        };
+            return CreateResponse("Document analyzed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -710,16 +692,13 @@ public class BedrockChatClientTests
     {
         byte[] pdfData = [1, 2, 3];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.NotNull(request.Messages[0].Content[0].Document);
-                Assert.Equal("report.pdf", request.Messages[0].Content[0].Document.Name);
+            Assert.NotNull(request.Messages[0].Content[0].Document);
+            Assert.Equal("report.pdf", request.Messages[0].Content[0].Document.Name);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         DataContent dataContent = new(pdfData, "application/pdf") { Name = "report.pdf" };
@@ -732,18 +711,15 @@ public class BedrockChatClientTests
     {
         byte[] videoData = [0x00, 0x00, 0x00, 0x18];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Single(request.Messages);
-                Assert.Equal(2, request.Messages[0].Content.Count);
-                Assert.NotNull(request.Messages[0].Content[1].Video);
-                Assert.Equal(VideoFormat.Mp4, request.Messages[0].Content[1].Video.Format);
+            Assert.Single(request.Messages);
+            Assert.Equal(2, request.Messages[0].Content.Count);
+            Assert.NotNull(request.Messages[0].Content[1].Video);
+            Assert.Equal(VideoFormat.Mp4, request.Messages[0].Content[1].Video.Format);
 
-                return CreateResponse("Video processed.");
-            }
-        };
+            return CreateResponse("Video processed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -768,37 +744,34 @@ public class BedrockChatClientTests
     {
         byte[] imageData = [1, 2, 3, 4];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    Image = new ImageBlock
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                Image = new ImageBlock
+                                {
+                                    Format = ImageFormat.Png,
+                                    Source = new ImageSource
                                     {
-                                        Format = ImageFormat.Png,
-                                        Source = new ImageSource
-                                        {
-                                            Bytes = new MemoryStream(imageData)
-                                        }
+                                        Bytes = new MemoryStream(imageData)
                                     }
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Send me an image")]);
@@ -817,37 +790,34 @@ public class BedrockChatClientTests
     {
         byte[] videoData = [5, 6, 7, 8];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    Video = new VideoBlock
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                Video = new VideoBlock
+                                {
+                                    Format = VideoFormat.Mp4,
+                                    Source = new VideoSource
                                     {
-                                        Format = VideoFormat.Mp4,
-                                        Source = new VideoSource
-                                        {
-                                            Bytes = new MemoryStream(videoData)
-                                        }
+                                        Bytes = new MemoryStream(videoData)
                                     }
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Send me a video")]);
@@ -866,38 +836,35 @@ public class BedrockChatClientTests
     {
         byte[] docData = [9, 10, 11];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    Document = new DocumentBlock
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                Document = new DocumentBlock
+                                {
+                                    Format = DocumentFormat.Pdf,
+                                    Name = "result.pdf",
+                                    Source = new DocumentSource
                                     {
-                                        Format = DocumentFormat.Pdf,
-                                        Name = "result.pdf",
-                                        Source = new DocumentSource
-                                        {
-                                            Bytes = new MemoryStream(docData)
-                                        }
+                                        Bytes = new MemoryStream(docData)
                                     }
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Send me a document")]);
@@ -915,7 +882,7 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public void IChatClient_GetService_WithServiceKey_ReturnsNull()
     {
-        MockBedrockRuntime mock = new();
+        IAmazonBedrockRuntime mock = CreateMock();
         IChatClient chatClient = mock.AsIChatClient();
 
         // When serviceKey is not null, should return null
@@ -926,7 +893,7 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public void IChatClient_GetService_UnknownType_ReturnsNull()
     {
-        MockBedrockRuntime mock = new();
+        IAmazonBedrockRuntime mock = CreateMock();
         IChatClient chatClient = mock.AsIChatClient();
 
         // Unknown type should return null
@@ -937,22 +904,19 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_UsageWithCacheTokens()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            var response = CreateResponse("OK");
+            response.Usage = new TokenUsage
             {
-                var response = CreateResponse("OK");
-                response.Usage = new TokenUsage
-                {
-                    InputTokens = 100,
-                    OutputTokens = 50,
-                    TotalTokens = 150,
-                    CacheReadInputTokens = 25,
-                    CacheWriteInputTokens = 10
-                };
-                return response;
-            }
-        };
+                InputTokens = 100,
+                OutputTokens = 50,
+                TotalTokens = 150,
+                CacheReadInputTokens = 25,
+                CacheWriteInputTokens = 10
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -970,15 +934,12 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_CustomFinishReason()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var response = CreateResponse("Custom");
-                response.StopReason = new StopReason("custom_reason");
-                return response;
-            }
-        };
+            var response = CreateResponse("Custom");
+            response.StopReason = new StopReason("custom_reason");
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -990,17 +951,14 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_StopSequences_MergesWithExisting()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                // Should have merged stop sequences
-                Assert.Contains("STOP1", request.InferenceConfig.StopSequences);
-                Assert.Contains("STOP2", request.InferenceConfig.StopSequences);
+            // Should have merged stop sequences
+            Assert.Contains("STOP1", request.InferenceConfig.StopSequences);
+            Assert.Contains("STOP2", request.InferenceConfig.StopSequences);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -1027,14 +985,11 @@ public class BedrockChatClientTests
     {
         byte[] docData = [1, 2, 3];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.NotNull(request.Messages[0].Content[0].Document);
-                return CreateResponse("OK");
-            }
-        };
+            Assert.NotNull(request.Messages[0].Content[0].Document);
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -1054,14 +1009,11 @@ public class BedrockChatClientTests
     {
         byte[] imageData = [1, 2, 3];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.NotNull(request.Messages[0].Content[0].Image);
-                return CreateResponse("OK");
-            }
-        };
+            Assert.NotNull(request.Messages[0].Content[0].Image);
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -1085,14 +1037,11 @@ public class BedrockChatClientTests
     {
         byte[] videoData = [1, 2, 3];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.NotNull(request.Messages[0].Content[0].Video);
-                return CreateResponse("OK");
-            }
-        };
+            Assert.NotNull(request.Messages[0].Content[0].Video);
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -1108,25 +1057,22 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_SendsFunctionCallContent()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Equal(2, request.Messages.Count);
+            Assert.Equal(2, request.Messages.Count);
 
-                // First message is user
-                Assert.Equal(ConversationRole.User, request.Messages[0].Role);
+            // First message is user
+            Assert.Equal(ConversationRole.User, request.Messages[0].Role);
 
-                // Second message is assistant with tool use
-                Assert.Equal(ConversationRole.Assistant, request.Messages[1].Role);
-                var toolUse = request.Messages[1].Content[0].ToolUse;
-                Assert.NotNull(toolUse);
-                Assert.Equal("call_123", toolUse.ToolUseId);
-                Assert.Equal("get_weather", toolUse.Name);
+            // Second message is assistant with tool use
+            Assert.Equal(ConversationRole.Assistant, request.Messages[1].Role);
+            var toolUse = request.Messages[1].Content[0].ToolUse;
+            Assert.NotNull(toolUse);
+            Assert.Equal("call_123", toolUse.ToolUseId);
+            Assert.Equal("get_weather", toolUse.Name);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -1157,35 +1103,32 @@ public class BedrockChatClientTests
         byte[] docData = [9, 10, 11];
         DocumentFormat format = new(formatValue);
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    Document = new DocumentBlock
-                                    {
-                                        Format = format,
-                                        Name = "result.doc",
-                                        Source = new DocumentSource { Bytes = new MemoryStream(docData) }
-                                    }
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                Document = new DocumentBlock
+                                {
+                                    Format = format,
+                                    Name = "result.doc",
+                                    Source = new DocumentSource { Bytes = new MemoryStream(docData) }
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -1204,34 +1147,31 @@ public class BedrockChatClientTests
         byte[] imageData = [1, 2, 3];
         ImageFormat format = new(formatValue);
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    Image = new ImageBlock
-                                    {
-                                        Format = format,
-                                        Source = new ImageSource { Bytes = new MemoryStream(imageData) }
-                                    }
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                Image = new ImageBlock
+                                {
+                                    Format = format,
+                                    Source = new ImageSource { Bytes = new MemoryStream(imageData) }
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -1254,34 +1194,31 @@ public class BedrockChatClientTests
         byte[] videoData = [5, 6, 7, 8];
         VideoFormat format = new(formatValue);
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    Video = new VideoBlock
-                                    {
-                                        Format = format,
-                                        Source = new VideoSource { Bytes = new MemoryStream(videoData) }
-                                    }
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                Video = new VideoBlock
+                                {
+                                    Format = format,
+                                    Source = new VideoSource { Bytes = new MemoryStream(videoData) }
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -1298,35 +1235,32 @@ public class BedrockChatClientTests
         byte[] docData = [9, 10, 11];
         DocumentFormat format = new("unknown_format");
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    Document = new DocumentBlock
-                                    {
-                                        Format = format,
-                                        Name = "result.doc",
-                                        Source = new DocumentSource { Bytes = new MemoryStream(docData) }
-                                    }
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                Document = new DocumentBlock
+                                {
+                                    Format = format,
+                                    Name = "result.doc",
+                                    Source = new DocumentSource { Bytes = new MemoryStream(docData) }
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -1344,34 +1278,31 @@ public class BedrockChatClientTests
         byte[] imageData = [1, 2, 3];
         ImageFormat format = new("unknown_format");
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    Image = new ImageBlock
-                                    {
-                                        Format = format,
-                                        Source = new ImageSource { Bytes = new MemoryStream(imageData) }
-                                    }
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                Image = new ImageBlock
+                                {
+                                    Format = format,
+                                    Source = new ImageSource { Bytes = new MemoryStream(imageData) }
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -1389,34 +1320,31 @@ public class BedrockChatClientTests
         byte[] videoData = [5, 6, 7, 8];
         VideoFormat format = new("unknown_format");
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    Video = new VideoBlock
-                                    {
-                                        Format = format,
-                                        Source = new VideoSource { Bytes = new MemoryStream(videoData) }
-                                    }
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                Video = new VideoBlock
+                                {
+                                    Format = format,
+                                    Source = new VideoSource { Bytes = new MemoryStream(videoData) }
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -1433,15 +1361,12 @@ public class BedrockChatClientTests
     {
         byte[] data = [1, 2, 3];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                // Unknown MIME type content should not be in the request
-                // since it doesn't match any known format
-                return CreateResponse("OK");
-            }
-        };
+            // Unknown MIME type content should not be in the request
+            // since it doesn't match any known format
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -1459,38 +1384,35 @@ public class BedrockChatClientTests
         string reasoningText = "Let me think step by step...";
         string signature = "sig123";
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    ReasoningContent = new ReasoningContentBlock
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                ReasoningContent = new ReasoningContentBlock
+                                {
+                                    ReasoningText = new ReasoningTextBlock
                                     {
-                                        ReasoningText = new ReasoningTextBlock
-                                        {
-                                            Text = reasoningText,
-                                            Signature = signature
-                                        }
+                                        Text = reasoningText,
+                                        Signature = signature
                                     }
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
 
-                return response;
-            }
-        };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Think step by step about this problem.")];
@@ -1514,23 +1436,20 @@ public class BedrockChatClientTests
         string reasoningText = "I reasoned about this";
         string signature = "sig456";
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Equal(2, request.Messages.Count);
-                Assert.Equal(ConversationRole.User, request.Messages[0].Role);
-                Assert.Equal(ConversationRole.Assistant, request.Messages[1].Role);
-                Assert.Single(request.Messages[1].Content);
+            Assert.Equal(2, request.Messages.Count);
+            Assert.Equal(ConversationRole.User, request.Messages[0].Role);
+            Assert.Equal(ConversationRole.Assistant, request.Messages[1].Role);
+            Assert.Single(request.Messages[1].Content);
 
-                var reasoningBlock = request.Messages[1].Content[0];
-                Assert.NotNull(reasoningBlock.ReasoningContent);
-                Assert.Equal(reasoningText, reasoningBlock.ReasoningContent.ReasoningText.Text);
-                Assert.Equal(signature, reasoningBlock.ReasoningContent.ReasoningText.Signature);
+            var reasoningBlock = request.Messages[1].Content[0];
+            Assert.NotNull(reasoningBlock.ReasoningContent);
+            Assert.Equal(reasoningText, reasoningBlock.ReasoningContent.ReasoningText.Text);
+            Assert.Equal(signature, reasoningBlock.ReasoningContent.ReasoningText.Signature);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -1550,18 +1469,15 @@ public class BedrockChatClientTests
     {
         byte[] redactedData = [1, 2, 3, 4];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var reasoningBlock = request.Messages[0].Content[0];
-                Assert.NotNull(reasoningBlock.ReasoningContent);
-                Assert.NotNull(reasoningBlock.ReasoningContent.RedactedContent);
-                Assert.True(reasoningBlock.ReasoningContent.RedactedContent.ToArray().SequenceEqual(redactedData));
+            var reasoningBlock = request.Messages[0].Content[0];
+            Assert.NotNull(reasoningBlock.ReasoningContent);
+            Assert.NotNull(reasoningBlock.ReasoningContent.RedactedContent);
+            Assert.True(reasoningBlock.ReasoningContent.RedactedContent.ToArray().SequenceEqual(redactedData));
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -1586,34 +1502,31 @@ public class BedrockChatClientTests
     {
         byte[] redactedData = [5, 6, 7];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    ReasoningContent = new ReasoningContentBlock
-                                    {
-                                        ReasoningText = new ReasoningTextBlock { Text = "Thinking...", Signature = "sig" },
-                                        RedactedContent = new MemoryStream(redactedData)
-                                    }
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                ReasoningContent = new ReasoningContentBlock
+                                {
+                                    ReasoningText = new ReasoningTextBlock { Text = "Thinking...", Signature = "sig" },
+                                    RedactedContent = new MemoryStream(redactedData)
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Think")]);
@@ -1631,55 +1544,52 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_WithCitationMetadata()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    CitationsContent = new CitationsContentBlock
-                                    {
-                                        Content =
-                                        [
-                                            new() { Text = "This is cited content." }
-                                        ],
-                                        Citations =
-                                        [
-                                            new() {
-                                                Title = "Example Source",
-                                                Source = "https://example.com",
-                                                Location = new CitationLocation
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                CitationsContent = new CitationsContentBlock
+                                {
+                                    Content =
+                                    [
+                                        new() { Text = "This is cited content." }
+                                    ],
+                                    Citations =
+                                    [
+                                        new() {
+                                            Title = "Example Source",
+                                            Source = "https://example.com",
+                                            Location = new CitationLocation
+                                            {
+                                                Web = new WebLocation
                                                 {
-                                                    Web = new WebLocation
-                                                    {
-                                                        Url = "https://example.com"
-                                                    }
-                                                },
-                                                SourceContent =
-                                                [
-                                                    new() { Text = "Source snippet" }
-                                                ]
-                                            }
-                                        ]
-                                    }
+                                                    Url = "https://example.com"
+                                                }
+                                            },
+                                            SourceContent =
+                                            [
+                                                new() { Text = "Source snippet" }
+                                            ]
+                                        }
+                                    ]
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
 
-                return response;
-            }
-        };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Cite your sources")];
@@ -1704,43 +1614,40 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_WithCitation_NoSourceContent()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    CitationsContent = new CitationsContentBlock
-                                    {
-                                        Content =
-                                        [
-                                            new() { Text = "Cited text." }
-                                        ],
-                                        Citations =
-                                        [
-                                            new() {
-                                                Title = "My Source",
-                                                Source = "fallback-source"
-                                            }
-                                        ]
-                                    }
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                CitationsContent = new CitationsContentBlock
+                                {
+                                    Content =
+                                    [
+                                        new() { Text = "Cited text." }
+                                    ],
+                                    Citations =
+                                    [
+                                        new() {
+                                            Title = "My Source",
+                                            Source = "fallback-source"
+                                        }
+                                    ]
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -1755,20 +1662,17 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_WithSystemInstructions()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.NotNull(request.System);
-                Assert.Single(request.System);
-                Assert.Equal("You are a helpful assistant.", request.System[0].Text);
+            Assert.NotNull(request.System);
+            Assert.Single(request.System);
+            Assert.Equal("You are a helpful assistant.", request.System[0].Text);
 
-                Assert.Single(request.Messages);
-                Assert.Equal(ConversationRole.User, request.Messages[0].Role);
+            Assert.Single(request.Messages);
+            Assert.Equal(ConversationRole.User, request.Messages[0].Role);
 
-                return CreateResponse("I'm here to help!");
-            }
-        };
+            return CreateResponse("I'm here to help!");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -1788,17 +1692,14 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_WithInstructions_InOptions()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.NotNull(request.System);
-                Assert.Single(request.System);
-                Assert.Equal("Be concise.", request.System[0].Text);
+            Assert.NotNull(request.System);
+            Assert.Single(request.System);
+            Assert.Equal("Be concise.", request.System[0].Text);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Hello")];
@@ -1812,22 +1713,19 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_WithChatOptions()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Equal("custom-model", request.ModelId);
+            Assert.Equal("custom-model", request.ModelId);
 
-                Assert.NotNull(request.InferenceConfig);
-                Assert.Equal(0.7f, request.InferenceConfig.Temperature);
-                Assert.Equal(0.9f, request.InferenceConfig.TopP);
-                Assert.Equal(100, request.InferenceConfig.MaxTokens);
-                Assert.NotNull(request.InferenceConfig.StopSequences);
-                Assert.Contains("STOP", request.InferenceConfig.StopSequences);
+            Assert.NotNull(request.InferenceConfig);
+            Assert.Equal(0.7f, request.InferenceConfig.Temperature);
+            Assert.Equal(0.9f, request.InferenceConfig.TopP);
+            Assert.Equal(100, request.InferenceConfig.MaxTokens);
+            Assert.NotNull(request.InferenceConfig.StopSequences);
+            Assert.Contains("STOP", request.InferenceConfig.StopSequences);
 
-                return CreateResponse("Response with options applied.");
-            }
-        };
+            return CreateResponse("Response with options applied.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("default-model");
         ChatMessage[] messages = [new(ChatRole.User, "Test message")];
@@ -1864,15 +1762,12 @@ public class BedrockChatClientTests
 
         foreach (var (stopReason, expectedFinishReason) in finishReasons)
         {
-            MockBedrockRuntime mock = new()
+            IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
             {
-                OnConverseRequest = request =>
-                {
-                    var response = CreateResponse("Test");
-                    response.StopReason = stopReason;
-                    return response;
-                }
-            };
+                var response = CreateResponse("Test");
+                response.StopReason = stopReason;
+                return response;
+            });
 
             IChatClient chatClient = mock.AsIChatClient("claude");
             ChatMessage[] messages = [new(ChatRole.User, "Test")];
@@ -1886,19 +1781,16 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_WithAdditionalModelResponseFields()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            var response = CreateResponse("Test");
+            response.AdditionalModelResponseFields = new Document(new Dictionary<string, Document>
             {
-                var response = CreateResponse("Test");
-                response.AdditionalModelResponseFields = new Document(new Dictionary<string, Document>
-                {
-                    ["custom_field"] = "custom_value",
-                    ["number_field"] = 123
-                });
-                return response;
-            }
-        };
+                ["custom_field"] = "custom_value",
+                ["number_field"] = 123
+            });
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -1916,17 +1808,14 @@ public class BedrockChatClientTests
     {
         CachePointBlock cachePoint = new() { Type = CachePointType.Default };
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                // Should have system messages including cache point
-                Assert.True(request.System.Count >= 2);
-                Assert.NotNull(request.System.Last().CachePoint);
+            // Should have system messages including cache point
+            Assert.True(request.System.Count >= 2);
+            Assert.NotNull(request.System.Last().CachePoint);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -1948,17 +1837,14 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_ToolWithoutProperties()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.NotNull(request.ToolConfig);
-                Assert.Single(request.ToolConfig.Tools);
-                Assert.Equal("simple_tool", request.ToolConfig.Tools[0].ToolSpec.Name);
+            Assert.NotNull(request.ToolConfig);
+            Assert.Single(request.ToolConfig.Tools);
+            Assert.Equal("simple_tool", request.ToolConfig.Tools[0].ToolSpec.Name);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -1978,18 +1864,15 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_WithRawRepresentationFactory()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                // Verify the custom model ID was used
-                Assert.Equal("custom-model", request.ModelId);
+            // Verify the custom model ID was used
+            Assert.Equal("custom-model", request.ModelId);
 
-                // Return empty stream
-                MemoryStream stream = new();
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            // Return empty stream
+            MemoryStream stream = new();
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("default-model");
 
@@ -2070,34 +1953,31 @@ public class BedrockChatClientTests
             }
         };
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                textBlock,
-                                imageBlock,
-                                videoBlock,
-                                docBlock,
-                                toolUseBlock,
-                                citationBlock,
-                                reasoningBlock
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            textBlock,
+                            imageBlock,
+                            videoBlock,
+                            docBlock,
+                            toolUseBlock,
+                            citationBlock,
+                            reasoningBlock
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -2121,27 +2001,24 @@ public class BedrockChatClientTests
     {
         Message rawMessage = null;
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new();
+            rawMessage = new Message
             {
-                ConverseResponse response = new();
-                rawMessage = new Message
-                {
-                    Role = ConversationRole.Assistant,
-                    Content =
-                    [
-                        new() { Text = "Test" }
-                    ]
-                };
-                response.Output = new ConverseOutput
-                {
-                    Message = rawMessage
-                };
-                response.Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 };
-                return response;
-            }
-        };
+                Role = ConversationRole.Assistant,
+                Content =
+                [
+                    new() { Text = "Test" }
+                ]
+            };
+            response.Output = new ConverseOutput
+            {
+                Message = rawMessage
+            };
+            response.Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -2156,28 +2033,25 @@ public class BedrockChatClientTests
     {
         ConverseResponse rawResponse = null;
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            rawResponse = new ConverseResponse
             {
-                rawResponse = new ConverseResponse
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() { Text = "Test" }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return rawResponse;
-            }
-        };
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() { Text = "Test" }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return rawResponse;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -2192,17 +2066,14 @@ public class BedrockChatClientTests
     {
         ContentBlock originalContentBlock = new() { Text = "Original text from raw" };
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Single(request.Messages);
-                Assert.Single(request.Messages[0].Content);
-                Assert.Same(originalContentBlock, request.Messages[0].Content[0]);
+            Assert.Single(request.Messages);
+            Assert.Single(request.Messages[0].Content);
+            Assert.Same(originalContentBlock, request.Messages[0].Content[0]);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -2221,17 +2092,14 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_HandlesWhitespaceOnlyText()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Single(request.Messages);
-                Assert.Single(request.Messages[0].Content);
-                Assert.Equal("\u200b", request.Messages[0].Content[0].Text);
+            Assert.Single(request.Messages);
+            Assert.Single(request.Messages[0].Content);
+            Assert.Equal("\u200b", request.Messages[0].Content[0].Text);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "   ")];
@@ -2244,20 +2112,17 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_TrimsAssistantText()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Equal(2, request.Messages.Count);
-                Assert.Equal(ConversationRole.User, request.Messages[0].Role);
-                Assert.Equal(ConversationRole.Assistant, request.Messages[1].Role);
+            Assert.Equal(2, request.Messages.Count);
+            Assert.Equal(ConversationRole.User, request.Messages[0].Role);
+            Assert.Equal(ConversationRole.Assistant, request.Messages[1].Role);
 
-                Assert.Single(request.Messages[1].Content);
-                Assert.Equal("Trimmed text", request.Messages[1].Content[0].Text);
+            Assert.Single(request.Messages[1].Content);
+            Assert.Equal("Trimmed text", request.Messages[1].Content[0].Text);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -2276,17 +2141,14 @@ public class BedrockChatClientTests
     {
         // When an assistant message contains only whitespace, it should be skipped entirely
         // because sending an assistant message with empty content would fail the service.
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                // Only the user message should be sent; the whitespace-only assistant message is dropped
-                Assert.Single(request.Messages);
-                Assert.Equal(ConversationRole.User, request.Messages[0].Role);
+            // Only the user message should be sent; the whitespace-only assistant message is dropped
+            Assert.Single(request.Messages);
+            Assert.Equal(ConversationRole.User, request.Messages[0].Role);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -2305,19 +2167,16 @@ public class BedrockChatClientTests
     {
         CachePointBlock cachePoint = new() { Type = CachePointType.Default };
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Single(request.Messages);
-                Assert.Equal(2, request.Messages[0].Content.Count);
-                Assert.Equal("Text before cache", request.Messages[0].Content[0].Text);
-                Assert.NotNull(request.Messages[0].Content[1].CachePoint);
-                Assert.Equal(CachePointType.Default, request.Messages[0].Content[1].CachePoint.Type);
+            Assert.Single(request.Messages);
+            Assert.Equal(2, request.Messages[0].Content.Count);
+            Assert.Equal("Text before cache", request.Messages[0].Content[0].Text);
+            Assert.NotNull(request.Messages[0].Content[1].CachePoint);
+            Assert.Equal(CachePointType.Default, request.Messages[0].Content[1].CachePoint.Type);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -2339,19 +2198,16 @@ public class BedrockChatClientTests
     {
         CachePointBlock cachePoint = new() { Type = CachePointType.Default };
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.NotNull(request.System);
-                Assert.Equal(2, request.System.Count);
-                Assert.Equal("System instruction", request.System[0].Text);
-                Assert.NotNull(request.System[1].CachePoint);
-                Assert.Equal(CachePointType.Default, request.System[1].CachePoint.Type);
+            Assert.NotNull(request.System);
+            Assert.Equal(2, request.System.Count);
+            Assert.Equal("System instruction", request.System[0].Text);
+            Assert.NotNull(request.System[1].CachePoint);
+            Assert.Equal(CachePointType.Default, request.System[1].CachePoint.Type);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -2373,19 +2229,16 @@ public class BedrockChatClientTests
     {
         CachePointBlock cachePoint = new() { Type = CachePointType.Default };
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Single(request.Messages);
-                Assert.Equal(3, request.Messages[0].Content.Count);
-                Assert.Equal("Text 1", request.Messages[0].Content[0].Text);
-                Assert.NotNull(request.Messages[0].Content[1].CachePoint);
-                Assert.Equal("Text 2", request.Messages[0].Content[2].Text);
+            Assert.Single(request.Messages);
+            Assert.Equal(3, request.Messages[0].Content.Count);
+            Assert.Equal("Text 1", request.Messages[0].Content[0].Text);
+            Assert.NotNull(request.Messages[0].Content[1].CachePoint);
+            Assert.Equal("Text 2", request.Messages[0].Content[2].Text);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -2411,18 +2264,15 @@ public class BedrockChatClientTests
     {
         ConverseRequest factoryRequest = null;
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Same(factoryRequest, request);
-                Assert.Equal("factory-model", request.ModelId);
-                Assert.NotNull(request.InferenceConfig);
-                Assert.Equal(0.5f, request.InferenceConfig.Temperature);
+            Assert.Same(factoryRequest, request);
+            Assert.Equal("factory-model", request.ModelId);
+            Assert.NotNull(request.InferenceConfig);
+            Assert.Equal(0.5f, request.InferenceConfig.Temperature);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("default-model");
 
@@ -2447,42 +2297,39 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_MultipleContentInCitations()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    CitationsContent = new CitationsContentBlock
-                                    {
-                                        Content =
-                                        [
-                                            new() { Text = "Content 1" },
-                                            new() { Text = "Content 2" }
-                                        ],
-                                        Citations =
-                                        [
-                                            new() { Title = "Citation 1" },
-                                            new() { Title = "Citation 2" }
-                                        ]
-                                    }
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                CitationsContent = new CitationsContentBlock
+                                {
+                                    Content =
+                                    [
+                                        new() { Text = "Content 1" },
+                                        new() { Text = "Content 2" }
+                                    ],
+                                    Citations =
+                                    [
+                                        new() { Title = "Citation 1" },
+                                        new() { Title = "Citation 2" }
+                                    ]
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -2505,42 +2352,39 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_MismatchedCitationCounts_UsesMinimum()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new()
             {
-                ConverseResponse response = new()
+                Output = new ConverseOutput
                 {
-                    Output = new ConverseOutput
+                    Message = new Message
                     {
-                        Message = new Message
-                        {
-                            Role = ConversationRole.Assistant,
-                            Content =
-                            [
-                                new() {
-                                    CitationsContent = new CitationsContentBlock
-                                    {
-                                        Content =
-                                        [
-                                            new() { Text = "Content 1" },
-                                            new() { Text = "Content 2" },
-                                            new() { Text = "Content 3" }
-                                        ],
-                                        Citations =
-                                        [
-                                            new() { Title = "Citation 1" }
-                                        ]
-                                    }
+                        Role = ConversationRole.Assistant,
+                        Content =
+                        [
+                            new() {
+                                CitationsContent = new CitationsContentBlock
+                                {
+                                    Content =
+                                    [
+                                        new() { Text = "Content 1" },
+                                        new() { Text = "Content 2" },
+                                        new() { Text = "Content 3" }
+                                    ],
+                                    Citations =
+                                    [
+                                        new() { Title = "Citation 1" }
+                                    ]
                                 }
-                            ]
-                        }
-                    },
-                    Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
-                };
-                return response;
-            }
-        };
+                            }
+                        ]
+                    }
+                },
+                Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 }
+            };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -2553,17 +2397,14 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_SendsFunctionCall_WithComplexArguments()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                // Verify the tool definition was created correctly
-                var toolSpec = request.ToolConfig?.Tools?[0]?.ToolSpec;
-                Assert.NotNull(toolSpec);
+            // Verify the tool definition was created correctly
+            var toolSpec = request.ToolConfig?.Tools?[0]?.ToolSpec;
+            Assert.NotNull(toolSpec);
 
-                return CreateResponse("OK");
-            }
-        };
+            return CreateResponse("OK");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -2586,26 +2427,23 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_DocumentWithArrayValues()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            var response = CreateResponse("OK");
+            response.Output.Message.Content.Add(new ContentBlock
             {
-                var response = CreateResponse("OK");
-                response.Output.Message.Content.Add(new ContentBlock
+                ToolUse = new ToolUseBlock
                 {
-                    ToolUse = new ToolUseBlock
+                    ToolUseId = "tool_arr",
+                    Name = "array_func",
+                    Input = new Document(new Dictionary<string, Document>
                     {
-                        ToolUseId = "tool_arr",
-                        Name = "array_func",
-                        Input = new Document(new Dictionary<string, Document>
-                        {
-                            ["items"] = new Document(new List<Document> { "a", "b", "c" })
-                        })
-                    }
-                });
-                return response;
-            }
-        };
+                        ["items"] = new Document(new List<Document> { "a", "b", "c" })
+                    })
+                }
+            });
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -2620,21 +2458,18 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_ReceivesNestedDictionary()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            var response = CreateResponse("OK");
+            response.AdditionalModelResponseFields = new Document(new Dictionary<string, Document>
             {
-                var response = CreateResponse("OK");
-                response.AdditionalModelResponseFields = new Document(new Dictionary<string, Document>
+                ["outer"] = new Document(new Dictionary<string, Document>
                 {
-                    ["outer"] = new Document(new Dictionary<string, Document>
-                    {
-                        ["inner"] = "nested_value"
-                    })
-                });
-                return response;
-            }
-        };
+                    ["inner"] = "nested_value"
+                })
+            });
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -2647,39 +2482,36 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_FunctionCallContent()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new();
+            Document document = new(new Dictionary<string, Document>
             {
-                ConverseResponse response = new();
-                Document document = new(new Dictionary<string, Document>
-                {
-                    ["location"] = "San Francisco"
-                });
+                ["location"] = "San Francisco"
+            });
 
-                response.Output = new ConverseOutput
+            response.Output = new ConverseOutput
+            {
+                Message = new Message
                 {
-                    Message = new Message
-                    {
-                        Role = ConversationRole.Assistant,
-                        Content =
-                        [
-                            new() {
-                                ToolUse = new ToolUseBlock
-                                {
-                                    ToolUseId = "tool_123",
-                                    Name = "get_weather",
-                                    Input = document
-                                }
+                    Role = ConversationRole.Assistant,
+                    Content =
+                    [
+                        new() {
+                            ToolUse = new ToolUseBlock
+                            {
+                                ToolUseId = "tool_123",
+                                Name = "get_weather",
+                                Input = document
                             }
-                        ]
-                    }
-                };
-                response.Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 };
+                        }
+                    ]
+                }
+            };
+            response.Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 };
 
-                return response;
-            }
-        };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "What's the weather in San Francisco?")];
@@ -2706,36 +2538,33 @@ public class BedrockChatClientTests
     {
         // Note: JSON serialization has a default max depth of 64. Documents nested deeper than that
         // will fail during conversion. This test uses depth 50 which is within limits.
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
+            ConverseResponse response = new();
+            var document = CreateDeeplyNestedDocument(50);
+
+            response.Output = new ConverseOutput
             {
-                ConverseResponse response = new();
-                var document = CreateDeeplyNestedDocument(50);
-
-                response.Output = new ConverseOutput
+                Message = new Message
                 {
-                    Message = new Message
-                    {
-                        Role = ConversationRole.Assistant,
-                        Content =
-                        [
-                            new() {
-                                ToolUse = new ToolUseBlock
-                                {
-                                    ToolUseId = "tool_nested",
-                                    Name = "nested_tool",
-                                    Input = document
-                                }
+                    Role = ConversationRole.Assistant,
+                    Content =
+                    [
+                        new() {
+                            ToolUse = new ToolUseBlock
+                            {
+                                ToolUseId = "tool_nested",
+                                Name = "nested_tool",
+                                Input = document
                             }
-                        ]
-                    }
-                };
-                response.Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 };
+                        }
+                    ]
+                }
+            };
+            response.Usage = new TokenUsage { InputTokens = 10, OutputTokens = 5, TotalTokens = 15 };
 
-                return response;
-            }
-        };
+            return response;
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatResponse result = await chatClient.GetResponseAsync([new(ChatRole.User, "Test")]);
@@ -2752,23 +2581,20 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_FunctionResultContent()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Single(request.Messages);
-                Assert.Equal(ConversationRole.User, request.Messages[0].Role);
-                Assert.Single(request.Messages[0].Content);
-                Assert.NotNull(request.Messages[0].Content[0].ToolResult);
-                Assert.Equal("call_123", request.Messages[0].Content[0].ToolResult.ToolUseId);
+            Assert.Single(request.Messages);
+            Assert.Equal(ConversationRole.User, request.Messages[0].Role);
+            Assert.Single(request.Messages[0].Content);
+            Assert.NotNull(request.Messages[0].Content[0].ToolResult);
+            Assert.Equal("call_123", request.Messages[0].Content[0].ToolResult.ToolUseId);
 
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult.Content);
-                Assert.Single(toolResult.Content);
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult.Content);
+            Assert.Single(toolResult.Content);
 
-                return CreateResponse("Based on the weather data, it's sunny.");
-            }
-        };
+            return CreateResponse("Based on the weather data, it's sunny.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -2789,19 +2615,16 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_FunctionResultContent_WithString()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult);
-                Assert.Equal("call_str", toolResult.ToolUseId);
-                Assert.Single(toolResult.Content);
-                Assert.Equal("Result text", toolResult.Content[0].Text);
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult);
+            Assert.Equal("call_str", toolResult.ToolUseId);
+            Assert.Single(toolResult.Content);
+            Assert.Equal("Result text", toolResult.Content[0].Text);
 
-                return CreateResponse("Got your result");
-            }
-        };
+            return CreateResponse("Got your result");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -2822,22 +2645,19 @@ public class BedrockChatClientTests
     {
         byte[] imageData = [0x89, 0x50, 0x4E, 0x47];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.Single(request.Messages);
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult);
-                Assert.Equal("call_456", toolResult.ToolUseId);
-                Assert.Single(toolResult.Content);
-                Assert.NotNull(toolResult.Content[0].Image);
-                Assert.Equal(ImageFormat.Png, toolResult.Content[0].Image.Format);
-                Assert.True(toolResult.Content[0].Image.Source.Bytes.ToArray().SequenceEqual(imageData));
+            Assert.Single(request.Messages);
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult);
+            Assert.Equal("call_456", toolResult.ToolUseId);
+            Assert.Single(toolResult.Content);
+            Assert.NotNull(toolResult.Content[0].Image);
+            Assert.Equal(ImageFormat.Png, toolResult.Content[0].Image.Format);
+            Assert.True(toolResult.Content[0].Image.Source.Bytes.ToArray().SequenceEqual(imageData));
 
-                return CreateResponse("Image processed.");
-            }
-        };
+            return CreateResponse("Image processed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -2857,22 +2677,19 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_FunctionResultContent_WithTextContent()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult);
-                Assert.Equal("call_text", toolResult.ToolUseId);
-                Assert.NotNull(toolResult.Content);
-                Assert.Single(toolResult.Content);
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult);
+            Assert.Equal("call_text", toolResult.ToolUseId);
+            Assert.NotNull(toolResult.Content);
+            Assert.Single(toolResult.Content);
 
-                // TextContent should be converted to ToolResultContentBlock with Text property
-                Assert.Equal("Simple text result", toolResult.Content[0].Text);
+            // TextContent should be converted to ToolResultContentBlock with Text property
+            Assert.Equal("Simple text result", toolResult.Content[0].Text);
 
-                return CreateResponse("Text result processed.");
-            }
-        };
+            return CreateResponse("Text result processed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -2894,24 +2711,21 @@ public class BedrockChatClientTests
     {
         byte[] data = [1, 2, 3];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult);
-                Assert.Equal("call_multi", toolResult.ToolUseId);
-                Assert.Equal(2, toolResult.Content.Count);
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult);
+            Assert.Equal("call_multi", toolResult.ToolUseId);
+            Assert.Equal(2, toolResult.Content.Count);
 
-                Assert.NotNull(toolResult.Content[0].Image);
-                Assert.True(toolResult.Content[0].Image.Source.Bytes.ToArray().SequenceEqual(data));
+            Assert.NotNull(toolResult.Content[0].Image);
+            Assert.True(toolResult.Content[0].Image.Source.Bytes.ToArray().SequenceEqual(data));
 
-                Assert.NotNull(toolResult.Content[1].Document);
-                Assert.Equal(DocumentFormat.Pdf, toolResult.Content[1].Document.Format);
+            Assert.NotNull(toolResult.Content[1].Document);
+            Assert.Equal(DocumentFormat.Pdf, toolResult.Content[1].Document.Format);
 
-                return CreateResponse("Multi-content processed.");
-            }
-        };
+            return CreateResponse("Multi-content processed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -2938,28 +2752,25 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_WithTools()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.NotNull(request.ToolConfig);
-                Assert.NotNull(request.ToolConfig.Tools);
-                Assert.Single(request.ToolConfig.Tools);
+            Assert.NotNull(request.ToolConfig);
+            Assert.NotNull(request.ToolConfig.Tools);
+            Assert.Single(request.ToolConfig.Tools);
 
-                var tool = request.ToolConfig.Tools[0];
-                Assert.NotNull(tool.ToolSpec);
-                Assert.Equal("get_weather", tool.ToolSpec.Name);
-                Assert.Equal("Gets weather information", tool.ToolSpec.Description);
-                Assert.NotNull(tool.ToolSpec.InputSchema);
+            var tool = request.ToolConfig.Tools[0];
+            Assert.NotNull(tool.ToolSpec);
+            Assert.Equal("get_weather", tool.ToolSpec.Name);
+            Assert.Equal("Gets weather information", tool.ToolSpec.Description);
+            Assert.NotNull(tool.ToolSpec.InputSchema);
 
-                var json = tool.ToolSpec.InputSchema.Json;
-                Assert.True(json.IsDictionary());
-                var dict = json.AsDictionary();
-                Assert.Equal("object", dict["type"].AsString());
+            var json = tool.ToolSpec.InputSchema.Json;
+            Assert.True(json.IsDictionary());
+            var dict = json.AsDictionary();
+            Assert.Equal("object", dict["type"].AsString());
 
-                return CreateResponse("I can use tools to help you.");
-            }
-        };
+            return CreateResponse("I can use tools to help you.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "What tools do you have?")];
@@ -2983,18 +2794,15 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_WithToolMode_RequireSpecific()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.NotNull(request.ToolConfig);
-                Assert.NotNull(request.ToolConfig.ToolChoice);
-                Assert.NotNull(request.ToolConfig.ToolChoice.Tool);
-                Assert.Equal("get_weather", request.ToolConfig.ToolChoice.Tool.Name);
+            Assert.NotNull(request.ToolConfig);
+            Assert.NotNull(request.ToolConfig.ToolChoice);
+            Assert.NotNull(request.ToolConfig.ToolChoice.Tool);
+            Assert.Equal("get_weather", request.ToolConfig.ToolChoice.Tool.Name);
 
-                return CreateResponse("Required mode with specific function.");
-            }
-        };
+            return CreateResponse("Required mode with specific function.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Test required tool mode")];
@@ -3016,17 +2824,14 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_WithToolMode_RequireAny()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.NotNull(request.ToolConfig);
-                Assert.NotNull(request.ToolConfig.ToolChoice);
-                Assert.NotNull(request.ToolConfig.ToolChoice.Any);
+            Assert.NotNull(request.ToolConfig);
+            Assert.NotNull(request.ToolConfig.ToolChoice);
+            Assert.NotNull(request.ToolConfig.ToolChoice.Any);
 
-                return CreateResponse("Required mode any function.");
-            }
-        };
+            return CreateResponse("Required mode any function.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Test")];
@@ -3061,19 +2866,16 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_FunctionResultContent_WithReasoningContent()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult);
-                Assert.Equal("call_reason", toolResult.ToolUseId);
-                Assert.Single(toolResult.Content);
-                Assert.NotNull(toolResult.Content[0].Text);
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult);
+            Assert.Equal("call_reason", toolResult.ToolUseId);
+            Assert.Single(toolResult.Content);
+            Assert.NotNull(toolResult.Content[0].Text);
 
-                return CreateResponse("Reasoning result processed.");
-            }
-        };
+            return CreateResponse("Reasoning result processed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -3094,18 +2896,15 @@ public class BedrockChatClientTests
     {
         byte[] videoData = [1, 2, 3, 4, 5];
 
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult);
-                Assert.NotNull(toolResult.Content[0].Video);
-                Assert.True(toolResult.Content[0].Video.Source.Bytes.ToArray().SequenceEqual(videoData));
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult);
+            Assert.NotNull(toolResult.Content[0].Video);
+            Assert.True(toolResult.Content[0].Video.Source.Bytes.ToArray().SequenceEqual(videoData));
 
-                return CreateResponse("Video result processed.");
-            }
-        };
+            return CreateResponse("Video result processed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -3124,20 +2923,17 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_FunctionResultContent_WithIntResult()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult);
-                Assert.True(toolResult.Content[0].Json.IsDictionary());
-                var dict = toolResult.Content[0].Json.AsDictionary();
-                // The value is stored as double since JsonSerializer uses double for numbers
-                Assert.True(dict["result"].IsDouble() || dict["result"].IsInt());
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult);
+            Assert.True(toolResult.Content[0].Json.IsDictionary());
+            var dict = toolResult.Content[0].Json.AsDictionary();
+            // The value is stored as double since JsonSerializer uses double for numbers
+            Assert.True(dict["result"].IsDouble() || dict["result"].IsInt());
 
-                return CreateResponse("Int result processed.");
-            }
-        };
+            return CreateResponse("Int result processed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -3156,19 +2952,16 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_FunctionResultContent_WithBoolResult()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult);
-                Assert.True(toolResult.Content[0].Json.IsDictionary());
-                var dict = toolResult.Content[0].Json.AsDictionary();
-                Assert.True(dict["result"].AsBool());
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult);
+            Assert.True(toolResult.Content[0].Json.IsDictionary());
+            var dict = toolResult.Content[0].Json.AsDictionary();
+            Assert.True(dict["result"].AsBool());
 
-                return CreateResponse("Bool result processed.");
-            }
-        };
+            return CreateResponse("Bool result processed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -3187,17 +2980,14 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_FunctionResultContent_WithNullResult()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult);
-                Assert.True(toolResult.Content[0].Json.IsDictionary());
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult);
+            Assert.True(toolResult.Content[0].Json.IsDictionary());
 
-                return CreateResponse("Null result processed.");
-            }
-        };
+            return CreateResponse("Null result processed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -3216,17 +3006,14 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_FunctionResultContent_WithJsonElementResult()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult);
-                Assert.True(toolResult.Content[0].Json.IsDictionary());
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult);
+            Assert.True(toolResult.Content[0].Json.IsDictionary());
 
-                return CreateResponse("JsonElement result processed.");
-            }
-        };
+            return CreateResponse("JsonElement result processed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -3247,19 +3034,16 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_FunctionResultContent_WithLongResult()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult);
-                Assert.True(toolResult.Content[0].Json.IsDictionary());
-                var dict = toolResult.Content[0].Json.AsDictionary();
-                Assert.True(dict["result"].IsLong() || dict["result"].IsDouble());
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult);
+            Assert.True(toolResult.Content[0].Json.IsDictionary());
+            var dict = toolResult.Content[0].Json.AsDictionary();
+            Assert.True(dict["result"].IsLong() || dict["result"].IsDouble());
 
-                return CreateResponse("Long result processed.");
-            }
-        };
+            return CreateResponse("Long result processed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -3280,17 +3064,14 @@ public class BedrockChatClientTests
     [InlineData(2.718281828)]
     public async Task IChatClient_GetResponseAsync_FunctionResultContent_WithFloatingPointResult(double value)
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var toolResult = request.Messages[0].Content[0].ToolResult;
-                Assert.NotNull(toolResult);
-                Assert.True(toolResult.Content[0].Json.IsDictionary());
+            var toolResult = request.Messages[0].Content[0].ToolResult;
+            Assert.NotNull(toolResult);
+            Assert.True(toolResult.Content[0].Json.IsDictionary());
 
-                return CreateResponse("Floating point result processed.");
-            }
-        };
+            return CreateResponse("Floating point result processed.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages =
@@ -3309,7 +3090,7 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_NullMessages_Throws()
     {
-        MockBedrockRuntime mock = new();
+        IAmazonBedrockRuntime mock = CreateMock();
         IChatClient chatClient = mock.AsIChatClient("claude");
 
         var enumerator = chatClient.GetStreamingResponseAsync(null).GetAsyncEnumerator();
@@ -3320,23 +3101,20 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_BasicTextStreaming()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEvent(0, "Hello"),
-                    CreateContentBlockDeltaEvent(0, " world"),
-                    CreateContentBlockDeltaEvent(0, "!"),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("end_turn"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEvent(0, "Hello"),
+                CreateContentBlockDeltaEvent(0, " world"),
+                CreateContentBlockDeltaEvent(0, "!"),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Say hello")];
@@ -3374,21 +3152,18 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_WithUsageMetadata()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEvent(0, "Test"),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("end_turn"),
-                    CreateMetadataEvent(100, 50)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEvent(0, "Test"),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(100, 50)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -3411,22 +3186,19 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_WithToolUse()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEventWithToolUse(0, "tool_123", "get_weather"),
-                    CreateContentBlockDeltaEventWithToolUse(0, "{\"location\":"),
-                    CreateContentBlockDeltaEventWithToolUse(0, "\"Seattle\"}"),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("tool_use"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEventWithToolUse(0, "tool_123", "get_weather"),
+                CreateContentBlockDeltaEventWithToolUse(0, "{\"location\":"),
+                CreateContentBlockDeltaEventWithToolUse(0, "\"Seattle\"}"),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("tool_use"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -3454,21 +3226,18 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_WithCitation()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEventWithCitation(0, "Cited text", "Source Title", "Source snippet"),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("end_turn"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEventWithCitation(0, "Cited text", "Source Title", "Source snippet"),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -3492,21 +3261,18 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_WithReasoningContent()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEventWithReasoning(0, "Thinking...", "sig123", null),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("end_turn"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEventWithReasoning(0, "Thinking...", "sig123", null),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -3529,21 +3295,18 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_WithReasoningContentAndRedacted()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEventWithReasoning(0, "Thinking...", null, "cmVkYWN0ZWQ="),  // base64 "redacted"
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("end_turn"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEventWithReasoning(0, "Thinking...", null, "cmVkYWN0ZWQ="),  // base64 "redacted"
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -3565,21 +3328,18 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_WithInvalidToolJson()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEventWithToolUse(0, "tool_err", "bad_tool"),
-                    CreateContentBlockDeltaEventWithToolUse(0, "not valid json {{{"),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("tool_use"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEventWithToolUse(0, "tool_err", "bad_tool"),
+                CreateContentBlockDeltaEventWithToolUse(0, "not valid json {{{"),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("tool_use"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -3601,21 +3361,18 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_WithAdditionalResponseFields()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEvent(0, "Test"),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEventWithAdditionalFields("end_turn"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEvent(0, "Test"),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEventWithAdditionalFields("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
 
@@ -3638,21 +3395,18 @@ public class BedrockChatClientTests
     [InlineData(ReasoningEffort.ExtraHigh, 32768, 131072)]
     public async Task IChatClient_GetResponseAsync_ReasoningEffort_SetsThinkingConfig_NoMaxTokens(ReasoningEffort effort, int expectedBudget, int expectedMaxTokens)
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.True(request.AdditionalModelRequestFields.IsDictionary());
-                var fields = request.AdditionalModelRequestFields.AsDictionary();
-                Assert.True(fields.ContainsKey("thinking"));
-                var thinking = fields["thinking"].AsDictionary();
-                Assert.Equal("enabled", thinking["type"].AsString());
-                Assert.Equal(expectedBudget, thinking["budget_tokens"].AsInt());
-                Assert.Equal(expectedMaxTokens, request.InferenceConfig.MaxTokens);
+            Assert.True(request.AdditionalModelRequestFields.IsDictionary());
+            var fields = request.AdditionalModelRequestFields.AsDictionary();
+            Assert.True(fields.ContainsKey("thinking"));
+            var thinking = fields["thinking"].AsDictionary();
+            Assert.Equal("enabled", thinking["type"].AsString());
+            Assert.Equal(expectedBudget, thinking["budget_tokens"].AsInt());
+            Assert.Equal(expectedMaxTokens, request.InferenceConfig.MaxTokens);
 
-                return CreateResponse("Thinking response.");
-            }
-        };
+            return CreateResponse("Thinking response.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Think about this")];
@@ -3675,17 +3429,14 @@ public class BedrockChatClientTests
     [InlineData(ReasoningEffort.ExtraHigh, 1025, 1024)]  // clamped to maxTokens - 1
     public async Task IChatClient_GetResponseAsync_ReasoningEffort_SetsThinkingConfig_WithMaxTokens(ReasoningEffort effort, int maxTokens, int expectedBudget)
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var thinking = request.AdditionalModelRequestFields.AsDictionary()["thinking"].AsDictionary();
-                Assert.Equal("enabled", thinking["type"].AsString());
-                Assert.Equal(expectedBudget, thinking["budget_tokens"].AsInt());
+            var thinking = request.AdditionalModelRequestFields.AsDictionary()["thinking"].AsDictionary();
+            Assert.Equal("enabled", thinking["type"].AsString());
+            Assert.Equal(expectedBudget, thinking["budget_tokens"].AsInt());
 
-                return CreateResponse("Thinking response.");
-            }
-        };
+            return CreateResponse("Thinking response.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Think about this")];
@@ -3703,14 +3454,11 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_ReasoningEffortNone_DoesNotSetThinkingConfig()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.True(request.AdditionalModelRequestFields.IsNull());
-                return CreateResponse("No thinking.");
-            }
-        };
+            Assert.True(request.AdditionalModelRequestFields.IsNull());
+            return CreateResponse("No thinking.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Hello")];
@@ -3727,14 +3475,11 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_NoReasoning_DoesNotSetThinkingConfig()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.True(request.AdditionalModelRequestFields.IsNull());
-                return CreateResponse("No thinking.");
-            }
-        };
+            Assert.True(request.AdditionalModelRequestFields.IsNull());
+            return CreateResponse("No thinking.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Hello")];
@@ -3748,18 +3493,15 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_ReasoningDoesNotOverrideExistingThinkingConfig()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var fields = request.AdditionalModelRequestFields.AsDictionary();
-                var thinking = fields["thinking"].AsDictionary();
-                Assert.Equal("enabled", thinking["type"].AsString());
-                Assert.Equal(99999, thinking["budget_tokens"].AsInt());
+            var fields = request.AdditionalModelRequestFields.AsDictionary();
+            var thinking = fields["thinking"].AsDictionary();
+            Assert.Equal("enabled", thinking["type"].AsString());
+            Assert.Equal(99999, thinking["budget_tokens"].AsInt());
 
-                return CreateResponse("Custom thinking.");
-            }
-        };
+            return CreateResponse("Custom thinking.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Think")];
@@ -3789,19 +3531,16 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetResponseAsync_ReasoningMergesWithExistingAdditionalFields()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                var fields = request.AdditionalModelRequestFields.AsDictionary();
-                Assert.Equal("bar", fields["foo"].AsString());
-                Assert.True(fields.ContainsKey("thinking"));
-                var thinking = fields["thinking"].AsDictionary();
-                Assert.Equal("enabled", thinking["type"].AsString());
+            var fields = request.AdditionalModelRequestFields.AsDictionary();
+            Assert.Equal("bar", fields["foo"].AsString());
+            Assert.True(fields.ContainsKey("thinking"));
+            var thinking = fields["thinking"].AsDictionary();
+            Assert.Equal("enabled", thinking["type"].AsString());
 
-                return CreateResponse("Merged fields.");
-            }
-        };
+            return CreateResponse("Merged fields.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Think")];
@@ -3829,19 +3568,16 @@ public class BedrockChatClientTests
     [InlineData(ReasoningOutput.Full)]
     public async Task IChatClient_GetResponseAsync_ReasoningOutputSummaryOrFull_EnablesThinking(ReasoningOutput output)
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseRequest: request =>
         {
-            OnConverseRequest = request =>
-            {
-                Assert.True(request.AdditionalModelRequestFields.IsDictionary());
-                var fields = request.AdditionalModelRequestFields.AsDictionary();
-                Assert.True(fields.ContainsKey("thinking"));
-                var thinking = fields["thinking"].AsDictionary();
-                Assert.Equal("enabled", thinking["type"].AsString());
+            Assert.True(request.AdditionalModelRequestFields.IsDictionary());
+            var fields = request.AdditionalModelRequestFields.AsDictionary();
+            Assert.True(fields.ContainsKey("thinking"));
+            var thinking = fields["thinking"].AsDictionary();
+            Assert.Equal("enabled", thinking["type"].AsString());
 
-                return CreateResponse("Thinking response.");
-            }
-        };
+            return CreateResponse("Thinking response.");
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Think about this")];
@@ -3862,29 +3598,26 @@ public class BedrockChatClientTests
     [InlineData(ReasoningEffort.ExtraHigh, 32768, 131072)]
     public async Task IChatClient_GetStreamingResponseAsync_ReasoningEffort_SetsThinkingConfig_NoMaxTokens(ReasoningEffort effort, int expectedBudget, int expectedMaxTokens)
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                Assert.True(request.AdditionalModelRequestFields.IsDictionary());
-                var fields = request.AdditionalModelRequestFields.AsDictionary();
-                Assert.True(fields.ContainsKey("thinking"));
-                var thinking = fields["thinking"].AsDictionary();
-                Assert.Equal("enabled", thinking["type"].AsString());
-                Assert.Equal(expectedBudget, thinking["budget_tokens"].AsInt());
-                Assert.Equal(expectedMaxTokens, request.InferenceConfig.MaxTokens);
+            Assert.True(request.AdditionalModelRequestFields.IsDictionary());
+            var fields = request.AdditionalModelRequestFields.AsDictionary();
+            Assert.True(fields.ContainsKey("thinking"));
+            var thinking = fields["thinking"].AsDictionary();
+            Assert.Equal("enabled", thinking["type"].AsString());
+            Assert.Equal(expectedBudget, thinking["budget_tokens"].AsInt());
+            Assert.Equal(expectedMaxTokens, request.InferenceConfig.MaxTokens);
 
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEvent(0, "Response."),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("end_turn"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEvent(0, "Response."),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Think about this")];
@@ -3906,25 +3639,22 @@ public class BedrockChatClientTests
     [InlineData(ReasoningEffort.ExtraHigh, 1025, 1024)]  // clamped to maxTokens - 1
     public async Task IChatClient_GetStreamingResponseAsync_ReasoningEffort_SetsThinkingConfig_WithMaxTokens(ReasoningEffort effort, int maxTokens, int expectedBudget)
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                var thinking = request.AdditionalModelRequestFields.AsDictionary()["thinking"].AsDictionary();
-                Assert.Equal("enabled", thinking["type"].AsString());
-                Assert.Equal(expectedBudget, thinking["budget_tokens"].AsInt());
+            var thinking = request.AdditionalModelRequestFields.AsDictionary()["thinking"].AsDictionary();
+            Assert.Equal("enabled", thinking["type"].AsString());
+            Assert.Equal(expectedBudget, thinking["budget_tokens"].AsInt());
 
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEvent(0, "Response."),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("end_turn"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEvent(0, "Response."),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Think about this")];
@@ -3941,23 +3671,20 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_ReasoningEffortNone_DoesNotSetThinkingConfig()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                Assert.True(request.AdditionalModelRequestFields.IsNull());
+            Assert.True(request.AdditionalModelRequestFields.IsNull());
 
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEvent(0, "No thinking."),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("end_turn"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEvent(0, "No thinking."),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Hello")];
@@ -3973,23 +3700,20 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_NoReasoning_DoesNotSetThinkingConfig()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                Assert.True(request.AdditionalModelRequestFields.IsNull());
+            Assert.True(request.AdditionalModelRequestFields.IsNull());
 
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEvent(0, "No thinking."),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("end_turn"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEvent(0, "No thinking."),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Hello")];
@@ -4002,26 +3726,23 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_ReasoningDoesNotOverrideExistingThinkingConfig()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                var fields = request.AdditionalModelRequestFields.AsDictionary();
-                var thinking = fields["thinking"].AsDictionary();
-                Assert.Equal("enabled", thinking["type"].AsString());
-                Assert.Equal(99999, thinking["budget_tokens"].AsInt());
+            var fields = request.AdditionalModelRequestFields.AsDictionary();
+            var thinking = fields["thinking"].AsDictionary();
+            Assert.Equal("enabled", thinking["type"].AsString());
+            Assert.Equal(99999, thinking["budget_tokens"].AsInt());
 
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEvent(0, "Custom thinking."),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("end_turn"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEvent(0, "Custom thinking."),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Think")];
@@ -4050,27 +3771,24 @@ public class BedrockChatClientTests
     [Trait("UnitTest", "BedrockRuntime")]
     public async Task IChatClient_GetStreamingResponseAsync_ReasoningMergesWithExistingAdditionalFields()
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                var fields = request.AdditionalModelRequestFields.AsDictionary();
-                Assert.Equal("bar", fields["foo"].AsString());
-                Assert.True(fields.ContainsKey("thinking"));
-                var thinking = fields["thinking"].AsDictionary();
-                Assert.Equal("enabled", thinking["type"].AsString());
+            var fields = request.AdditionalModelRequestFields.AsDictionary();
+            Assert.Equal("bar", fields["foo"].AsString());
+            Assert.True(fields.ContainsKey("thinking"));
+            var thinking = fields["thinking"].AsDictionary();
+            Assert.Equal("enabled", thinking["type"].AsString());
 
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEvent(0, "Merged."),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("end_turn"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEvent(0, "Merged."),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Think")];
@@ -4097,27 +3815,24 @@ public class BedrockChatClientTests
     [InlineData(ReasoningOutput.Full)]
     public async Task IChatClient_GetStreamingResponseAsync_ReasoningOutputSummaryOrFull_EnablesThinking(ReasoningOutput output)
     {
-        MockBedrockRuntime mock = new()
+        IAmazonBedrockRuntime mock = CreateMock(onConverseStreamRequest: request =>
         {
-            OnConverseStreamRequest = request =>
-            {
-                Assert.True(request.AdditionalModelRequestFields.IsDictionary());
-                var fields = request.AdditionalModelRequestFields.AsDictionary();
-                Assert.True(fields.ContainsKey("thinking"));
-                var thinking = fields["thinking"].AsDictionary();
-                Assert.Equal("enabled", thinking["type"].AsString());
+            Assert.True(request.AdditionalModelRequestFields.IsDictionary());
+            var fields = request.AdditionalModelRequestFields.AsDictionary();
+            Assert.True(fields.ContainsKey("thinking"));
+            var thinking = fields["thinking"].AsDictionary();
+            Assert.Equal("enabled", thinking["type"].AsString());
 
-                var stream = CreateEventStream(
-                    CreateMessageStartEvent(),
-                    CreateContentBlockStartEvent(0),
-                    CreateContentBlockDeltaEvent(0, "Thinking response."),
-                    CreateContentBlockStopEvent(0),
-                    CreateMessageStopEvent("end_turn"),
-                    CreateMetadataEvent(10, 5)
-                );
-                return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
-            }
-        };
+            var stream = CreateEventStream(
+                CreateMessageStartEvent(),
+                CreateContentBlockStartEvent(0),
+                CreateContentBlockDeltaEvent(0, "Thinking response."),
+                CreateContentBlockStopEvent(0),
+                CreateMessageStopEvent("end_turn"),
+                CreateMetadataEvent(10, 5)
+            );
+            return new ConverseStreamResponse { Stream = new ConverseStreamOutput(stream) };
+        });
 
         IChatClient chatClient = mock.AsIChatClient("claude");
         ChatMessage[] messages = [new(ChatRole.User, "Think about this")];
@@ -4208,6 +3923,27 @@ public class BedrockChatClientTests
         ];
 
         return new EventStreamMessage(headers, payload).ToByteArray();
+    }
+
+    private static IAmazonBedrockRuntime CreateMock(
+        Func<ConverseRequest, ConverseResponse> onConverseRequest = null,
+        Func<ConverseStreamRequest, ConverseStreamResponse> onConverseStreamRequest = null)
+    {
+        var mock = new Mock<IAmazonBedrockRuntime>();
+
+        if (onConverseRequest != null)
+        {
+            mock.Setup(m => m.ConverseAsync(It.IsAny<ConverseRequest>(), It.IsAny<CancellationToken>()))
+                .Returns<ConverseRequest, CancellationToken>((request, ct) => Task.FromResult(onConverseRequest(request)));
+        }
+
+        if (onConverseStreamRequest != null)
+        {
+            mock.Setup(m => m.ConverseStreamAsync(It.IsAny<ConverseStreamRequest>(), It.IsAny<CancellationToken>()))
+                .Returns<ConverseStreamRequest, CancellationToken>((request, ct) => Task.FromResult(onConverseStreamRequest(request)));
+        }
+
+        return mock.Object;
     }
 
     private static ConverseResponse CreateResponse(string text)
