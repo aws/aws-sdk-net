@@ -77,6 +77,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FipsEnabled);
             }
 
+            if(requestObject.IsSetInstanceMetadataTagsPropagation())
+            {
+                context.Writer.WritePropertyName("instanceMetadataTagsPropagation");
+                context.Writer.Write(requestObject.InstanceMetadataTagsPropagation);
+            }
+
             if(requestObject.IsSetInstanceRequirements())
             {
                 context.Writer.WritePropertyName("instanceRequirements");

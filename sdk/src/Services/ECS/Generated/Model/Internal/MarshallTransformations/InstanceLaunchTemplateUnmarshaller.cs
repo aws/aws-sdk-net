@@ -90,6 +90,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.FipsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instanceMetadataTagsPropagation", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.InstanceMetadataTagsPropagation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceRequirements", targetDepth))
                 {
                     var unmarshaller = InstanceRequirementsRequestUnmarshaller.Instance;
