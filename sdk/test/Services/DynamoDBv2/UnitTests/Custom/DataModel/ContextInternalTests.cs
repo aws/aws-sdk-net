@@ -165,6 +165,15 @@ namespace AWSSDK_DotNet.UnitTests
             public string GsiRange2 { get; set; }
         }
 
+        public class TestRenamableAttributeEntity
+        {
+            [DynamoDBHashKey("PK")]
+            public string Id { get; set; }
+
+            [DynamoDBRangeKey("SK")]
+            public string SortKey { get; set; }
+        }
+
         private Mock<IAmazonDynamoDB> mockClient;
         private DynamoDBContext context;
 
@@ -254,6 +263,44 @@ namespace AWSSDK_DotNet.UnitTests
                             }
                         };
                     }
+
+                    if (req.TableName == "TestRenamableAttributeEntity")
+                    {
+                        return new DescribeTableResponse
+                        {
+                            Table = new TableDescription
+                            {
+                                TableName = "TestRenamableAttributeEntity",
+                                KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                                {
+                                    new KeySchemaElement
+                                    {
+                                        AttributeName = "PK",
+                                        KeyType = KeyType.HASH
+                                    },
+                                    new KeySchemaElement
+                                    {
+                                        AttributeName = "SK",
+                                        KeyType = KeyType.RANGE
+                                    }
+                                },
+                                AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                                {
+                                    new AttributeDefinition
+                                    {
+                                        AttributeName = "PK",
+                                        AttributeType = ScalarAttributeType.S
+                                    },
+                                    new AttributeDefinition
+                                    {
+                                        AttributeName = "SK",
+                                        AttributeType = ScalarAttributeType.S
+                                    }
+                                }
+                            }
+                        };
+                    }
+
                     // Default for TestEntity
                     return new DescribeTableResponse
                     {
@@ -529,6 +576,36 @@ namespace AWSSDK_DotNet.UnitTests
             var actualRangeKeyValue = actualSearch.KeyExpression.ExpressionAttributeValues[":rangeKey0"];
             Assert.AreEqual(1, actualHashKeyValue.AsInt());
             Assert.AreEqual("test", actualRangeKeyValue.AsString());
+        }
+
+        [TestMethod]
+        public void ConvertQueryConditional_WithRenamableHashAndRangeAttributes_ReturnsValidSearch()
+        {
+            var hashKeys = new Dictionary<string, object>
+            {
+                { "PK", "id-1" }
+            };
+
+            var queryConditional = QueryConditional
+                .HashKeysEqual(hashKeys)
+                .AndRangeKeyEqualTo("SK", "sort-1");
+
+            var result = context.ConvertQueryConditional<ContextInternalTests.TestRenamableAttributeEntity>(queryConditional, null);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+
+            var actualSearch = result.Search;
+            Assert.IsNotNull(actualSearch.KeyExpression);
+            Assert.AreEqual("#hashKey0 = :hashKey0 AND #rangeKey0 = :rangeKey0", actualSearch.KeyExpression.ExpressionStatement);
+
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionAttributeNames);
+            Assert.AreEqual("PK", actualSearch.KeyExpression.ExpressionAttributeNames["#hashKey0"]);
+            Assert.AreEqual("SK", actualSearch.KeyExpression.ExpressionAttributeNames["#rangeKey0"]);
+
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionAttributeValues);
+            Assert.AreEqual("id-1", actualSearch.KeyExpression.ExpressionAttributeValues[":hashKey0"].AsString());
+            Assert.AreEqual("sort-1", actualSearch.KeyExpression.ExpressionAttributeValues[":rangeKey0"].AsString());
         }
 
         [TestMethod]
