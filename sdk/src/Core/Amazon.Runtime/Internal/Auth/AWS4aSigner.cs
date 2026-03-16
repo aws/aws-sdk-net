@@ -25,6 +25,10 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Identity;
 using System.Threading;
 
+#if NETFRAMEWORK
+using System.Buffers.Binary;
+#endif
+
 #if !NET7_0_OR_GREATER
 using System.Formats.Asn1;
 #endif
@@ -40,10 +44,13 @@ namespace Amazon.Runtime.Internal.Auth
     {
         internal const string Scheme = "AWS4A";
 
+#if !NETFRAMEWORK
         /// <summary>
         /// Represents the elliptic curve used for signing requests with the AWS4a protocol.
         /// </summary>
         private static readonly ECCurve SigningCurve = ECCurve.NamedCurves.nistP256;
+#endif
+
         /// <summary>
         /// Represents the value of <c>N-2</c>, where <c>N</c> is the order of the
         /// NIST P-256 curve group.
@@ -309,6 +316,29 @@ namespace Amazon.Runtime.Internal.Auth
             return gt + gt + eq - 1;
         }
 
+        private static ECDsa ImportECDsaP256PrivateKey(byte[] privateKey)
+        {
+            // .NET Framework does not support importing ECParameters with only the D value set, so we
+            // have to construct and import a CNG key blob ourselves.
+            // See also https://developercommunity.visualstudio.com/t/Cannot-import-elliptic-curve-parameter-s/11058177
+#if NETFRAMEWORK
+            const uint BCRYPT_ECDSA_PRIVATE_P256_MAGIC = 0x32534345;
+
+            // The CNG key blob is constructed as follows:
+            // uint32 magic || uint32 keySize || byte[keySize] X || byte[keySize] Y || byte[keySize] D
+            // Only D is set, and X and Y are left as zeroes, which is sufficient for CNG to import the key.
+            var keyBlob = new byte[sizeof(uint) * 2 + privateKey.Length * 3];
+            BinaryPrimitives.WriteUInt32LittleEndian(keyBlob, BCRYPT_ECDSA_PRIVATE_P256_MAGIC);
+            BinaryPrimitives.WriteUInt32LittleEndian(keyBlob.AsSpan(sizeof(uint)), (uint)privateKey.Length);
+            Array.Copy(privateKey, 0, keyBlob, sizeof(uint) * 2 + privateKey.Length * 2, privateKey.Length);
+
+            using var cngKey = CngKey.Import(keyBlob, CngKeyBlobFormat.EccPrivateBlob);
+            return new ECDsaCng(cngKey);
+#else
+            return ECDsa.Create(new ECParameters { Curve = SigningCurve, D = privateKey });
+#endif
+        }
+
         /// <summary>
         /// Compute and return the signing key for the request.
         /// </summary>
@@ -348,11 +378,7 @@ namespace Amazon.Runtime.Internal.Auth
                     }
 
                     AddOneConstantTime(kDerived);
-                    var ecdsa = ECDsa.Create(new ECParameters
-                    {
-                        Curve = SigningCurve,
-                        D = kDerived,
-                    });
+                    var ecdsa = ImportECDsaP256PrivateKey(kDerived);
                     Array.Clear(kDerived, 0, kDerived.Length);
                     return ecdsa;
                 }
