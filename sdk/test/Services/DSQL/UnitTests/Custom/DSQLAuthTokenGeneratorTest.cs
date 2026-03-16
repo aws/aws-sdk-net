@@ -213,7 +213,6 @@ namespace AWSSDK.UnitTests.DSQL
             }, typeof(ArgumentOutOfRangeException));
         }
 
-#if ASYNC_AWAIT
         [TestMethod]
         [TestCategory("DSQL")]
         public async System.Threading.Tasks.Task GenerateDbConnectAuthTokenCustomExpiresInAsync()
@@ -221,7 +220,6 @@ namespace AWSSDK.UnitTests.DSQL
             AssertAuthToken(await DSQLAuthTokenGenerator.GenerateDbConnectAuthTokenAsync(BasicCredentials,
                 AWSRegion, DBCluster, TimeSpan.FromSeconds(450)), AccessKey, AWSRegion, DBConnectActionValue, false, 450);
         }
-#endif
 
         // DbConnectAdmin
 
@@ -331,7 +329,6 @@ namespace AWSSDK.UnitTests.DSQL
                 AWSRegion, DBCluster, TimeSpan.FromSeconds(450)), AccessKey, AWSRegion, DBConnectAdminActionValue, false, 450);
         }
 
-#if ASYNC_AWAIT
         [TestMethod]
         [TestCategory("DSQL")]
         public async System.Threading.Tasks.Task GenerateDbConnectAdminAuthTokenCustomExpiresInAsync()
@@ -339,7 +336,6 @@ namespace AWSSDK.UnitTests.DSQL
             AssertAuthToken(await DSQLAuthTokenGenerator.GenerateDbConnectAdminAuthTokenAsync(BasicCredentials,
                 AWSRegion, DBCluster, TimeSpan.FromSeconds(450)), AccessKey, AWSRegion, DBConnectAdminActionValue, false, 450);
         }
-#endif
 
         private void AssertAuthToken(string token, string accessKey, RegionEndpoint region, string actionValue)
         {

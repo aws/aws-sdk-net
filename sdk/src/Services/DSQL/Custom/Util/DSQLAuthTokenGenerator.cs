@@ -406,7 +406,7 @@ namespace Amazon.DSQL.Util
 
             request.UseQueryString = true;
             request.HttpMethod = HTTPGet;
-            request.Parameters.Add(XAmzExpires, expiresIn.TotalSeconds.ToString(CultureInfo.InvariantCulture));
+            request.Parameters.Add(XAmzExpires, ((int)expiresIn.TotalSeconds).ToString(CultureInfo.InvariantCulture));
             request.Parameters.Add(ActionKey, actionValue);
             request.Endpoint = new UriBuilder(HTTPS, hostname).Uri;
 
