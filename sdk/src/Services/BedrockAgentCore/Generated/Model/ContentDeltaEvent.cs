@@ -30,51 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// The OAuth2.0 token or user ID that was used to generate the workload access token
-    /// used for initiating the user authorization flow to retrieve OAuth2.0 tokens.
+    /// Content event containing stdout or stderr output
     /// </summary>
-    public partial class UserIdentifier
+    public partial class ContentDeltaEvent
     {
-        private string _userId;
-        private string _userToken;
+        private string _stderr;
+        private string _stdout;
 
         /// <summary>
-        /// Gets and sets the property UserId. 
+        /// Gets and sets the property Stderr. 
         /// <para>
-        /// The ID of the user for whom you have retrieved a workload access token for
+        /// Standard error content
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string UserId
+        public string Stderr
         {
-            get { return this._userId; }
-            set { this._userId = value; }
+            get { return this._stderr; }
+            set { this._stderr = value; }
         }
 
-        // Check to see if UserId property is set
-        internal bool IsSetUserId()
+        // Check to see if Stderr property is set
+        internal bool IsSetStderr()
         {
-            return this._userId != null;
+            return this._stderr != null;
         }
 
         /// <summary>
-        /// Gets and sets the property UserToken. 
+        /// Gets and sets the property Stdout. 
         /// <para>
-        /// The OAuth2.0 token issued by the user’s identity provider that was used to generate
-        /// the workload access token
+        /// Standard output content
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=131072)]
-        public string UserToken
+        public string Stdout
         {
-            get { return this._userToken; }
-            set { this._userToken = value; }
+            get { return this._stdout; }
+            set { this._stdout = value; }
         }
 
-        // Check to see if UserToken property is set
-        internal bool IsSetUserToken()
+        // Check to see if Stdout property is set
+        internal bool IsSetStdout()
         {
-            return this._userToken != null;
+            return this._stdout != null;
         }
 
     }

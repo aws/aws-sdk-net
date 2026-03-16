@@ -30,51 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// The OAuth2.0 token or user ID that was used to generate the workload access token
-    /// used for initiating the user authorization flow to retrieve OAuth2.0 tokens.
+    /// Request body for InvokeAgentRuntimeCommand
     /// </summary>
-    public partial class UserIdentifier
+    public partial class InvokeAgentRuntimeCommandRequestBody
     {
-        private string _userId;
-        private string _userToken;
+        private string _command;
+        private int? _timeout;
 
         /// <summary>
-        /// Gets and sets the property UserId. 
+        /// Gets and sets the property Command. 
         /// <para>
-        /// The ID of the user for whom you have retrieved a workload access token for
+        /// The command to execute in the runtime container
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string UserId
+        [AWSProperty(Required=true, Min=1, Max=65536)]
+        public string Command
         {
-            get { return this._userId; }
-            set { this._userId = value; }
+            get { return this._command; }
+            set { this._command = value; }
         }
 
-        // Check to see if UserId property is set
-        internal bool IsSetUserId()
+        // Check to see if Command property is set
+        internal bool IsSetCommand()
         {
-            return this._userId != null;
+            return this._command != null;
         }
 
         /// <summary>
-        /// Gets and sets the property UserToken. 
+        /// Gets and sets the property Timeout. 
         /// <para>
-        /// The OAuth2.0 token issued by the user’s identity provider that was used to generate
-        /// the workload access token
+        /// Command timeout in seconds (default: 300, min:1, max: 3600)
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=131072)]
-        public string UserToken
+        public int? Timeout
         {
-            get { return this._userToken; }
-            set { this._userToken = value; }
+            get { return this._timeout; }
+            set { this._timeout = value; }
         }
 
-        // Check to see if UserToken property is set
-        internal bool IsSetUserToken()
+        // Check to see if Timeout property is set
+        internal bool IsSetTimeout()
         {
-            return this._userToken != null;
+            return this._timeout.HasValue; 
         }
 
     }
