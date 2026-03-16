@@ -1,3 +1,4 @@
+using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 
 namespace AWSSDK.Benchmarks.MockedDynamoDB;
@@ -12,12 +13,43 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
     private readonly BenchmarkAttributeCount _attributeCount;
     private readonly BenchmarkExpressionStyle _expressionStyle;
     private readonly BenchmarkObjectComplexity _objectComplexity;
+    private readonly BenchmarkConverterUsage _converterUsage = BenchmarkConverterUsage.Default;
     private readonly BenchmarkAnnotationStyle _annotationStyle = BenchmarkAnnotationStyle.Standard;
 
     private Amazon.DynamoDBv2.DocumentModel.Table? _table;
-    private Document? _document;
-    private QueryFilter? _tableQueryFilter;
-    private ScanFilter? _tableScanFilter;
+
+    private Func<Task>? _tableDeleteItemAsync;
+    private Func<Task>? _tableDeleteDocumentAsync;
+    private Func<Task>? _tableDeleteDocumentWithOperationConfigAsync;
+    private Func<Task>? _tableDeleteHashKeyAsync;
+    private Func<Task>? _tableDeleteHashKeyWithOperationConfigAsync;
+    private Func<Task>? _tableDeleteHashKeyRangeKeyWithOperationConfigAsync;
+    private Func<Task>? _tableDeleteWithOperationRequest;
+    private Func<Task>? _tableDeteleDynamoDbEntry;
+    private Func<Task>? _tableDeteleDynamoDbEntryWithOperationConfigAsync;
+
+    private Func<Task>? _tableGetItemAsync;
+    private Func<Task>? _tableGetHashKeyAsync;
+    private Func<Task>? _tableGetHashKeyWithOperationConfigAsync;
+    private Func<Task>? _tableGetHashKeyRangeKeyWithOperationConfigAsync;
+    private Func<Task>? _tableGetWithOperationRequest;
+    private Func<Task>? _tableGetDynamoDbEntry;
+    private Func<Task>? _tableGetDynamoDbEntryWithOperationConfigAsync;
+
+    private Func<Task>? _tablePutItemAsync;
+    private Func<Task>? _tablePutItemWithOperationConfigAsync;
+    private Func<Task>? _tablePutItemWithOperationRequestAsync;
+
+    private Func<Task>? _tableQueryAsync;
+    private Func<Task>? _tableQueryWithExpressionAsync;
+    private Func<Task>? _tableQueryWithFilterAsync;
+    private Func<Task>? _tableQueryWithOperationConfigAsync;
+    private Func<Task>? _tableQueryWithOperationRequestAsync;
+
+    private Func<Task>? _tableScanAsync;
+    private Func<Task>? _tableScanWithExpressionAsync;
+    private Func<Task>? _tableScanWithOperationConfigAsync;
+    private Func<Task>? _tableScanWithOperationRequestAsync;
 
     public DynamoDbTableBenchmarkState(
         BenchmarkItemSize itemSize,
@@ -38,27 +70,186 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
 
         _table = runtimeOptions.TableFactory(client, TableName);
 
-        _document = CreateDocument();
-        _tableQueryFilter = CreateTableQueryFilter();
-        _tableScanFilter = CreateTableScanFilter();
+        ConfigureContextDelegates(_converterUsage, _annotationStyle);
     }
 
-    public Task<Document?> TableGetItemAsync() => _table!.GetItemAsync(PartitionKeyValue, SortKeyValue);
-
-    public Task<Document> TablePutItemAsync() => _table!.PutItemAsync(_document!);
-
-    public Task TableDeleteItemAsync() => _table!.DeleteItemAsync(PartitionKeyValue, SortKeyValue);
-
-    public Task<List<Document>> TableQueryAsync()
+    protected override void ConfigureContextDelegates<T>()
     {
-        var search = _table!.Query(PartitionKeyValue, _tableQueryFilter);
-        return search.GetNextSetAsync();
+        var _dictionaryKey = new Dictionary<string, DynamoDBEntry>()
+        {
+            ["pk"] = PartitionKeyValue,
+            ["sk"] = SortKeyValue
+        };
+        var document = CreateDocument();
+        var tableQueryFilter = CreateTableQueryFilter();
+        var tableScanFilter = CreateTableScanFilter();
+        var tableExpression = CreateExpression();
+
+        var deleteConfig = new DeleteItemOperationConfig() { ReturnValues = ReturnValues.AllOldAttributes};
+        var deleteRequest = new DeleteItemDocumentOperationRequest() { Key = _dictionaryKey, ReturnValues = ReturnValues.AllOldAttributes };
+        var getItemConfig = new GetItemOperationConfig() { ConsistentRead = true };
+        var getItemRequest = new GetItemDocumentOperationRequest() { Key = _dictionaryKey };
+        var putItemConfig = new PutItemOperationConfig() { ReturnValues = ReturnValues.AllNewAttributes };
+        var putItemRequest = new PutItemDocumentOperationRequest() { Document = document };
+        var queryConfig = new QueryOperationConfig() { Filter = tableQueryFilter };
+        var queryRequest = new QueryDocumentOperationRequest() { ProjectionExpression = tableExpression };
+        var scanConfig = new ScanOperationConfig() { Filter = tableScanFilter };
+        var scanRequest = new ScanDocumentOperationRequest() { ProjectionExpression = tableExpression };
+
+        //delete
+        _tableDeleteItemAsync = () => _table!.DeleteItemAsync(PartitionKeyValue, SortKeyValue);
+        _tableDeleteDocumentAsync = () => _table!.DeleteItemAsync(document);
+        _tableDeleteDocumentWithOperationConfigAsync = () => _table!.DeleteItemAsync(document, deleteConfig);
+        //_tableDeleteHashKeyAsync = () => _table!.DeleteItemAsync(PartitionKeyValue);
+        //_tableDeleteHashKeyWithOperationConfigAsync = () => _table!.DeleteItemAsync(PartitionKeyValue, deleteConfig);
+        _tableDeleteHashKeyRangeKeyWithOperationConfigAsync = () => _table!.DeleteItemAsync(PartitionKeyValue, SortKeyValue, deleteConfig);
+        _tableDeleteWithOperationRequest = () => _table!.DeleteItemAsync(deleteRequest);
+        _tableDeteleDynamoDbEntry = () => _table!.DeleteItemAsync(_dictionaryKey);
+        _tableDeteleDynamoDbEntryWithOperationConfigAsync = () => _table!.DeleteItemAsync(_dictionaryKey, deleteConfig);
+
+        //get item
+        _tableGetItemAsync = () => _table!.GetItemAsync(PartitionKeyValue, SortKeyValue);
+        //_tableGetHashKeyAsync = () => _table!.GetItemAsync(PartitionKeyValue);
+        //_tableGetHashKeyWithOperationConfigAsync = () => _table!.GetItemAsync(PartitionKeyValue, getItemConfig);
+        _tableGetHashKeyRangeKeyWithOperationConfigAsync = () => _table!.GetItemAsync(PartitionKeyValue, SortKeyValue, getItemConfig);
+        _tableGetWithOperationRequest = () => _table!.GetItemAsync(getItemRequest);
+        _tableGetDynamoDbEntry = () => _table!.GetItemAsync(_dictionaryKey);
+        _tableGetDynamoDbEntryWithOperationConfigAsync = () => _table!.GetItemAsync(_dictionaryKey, getItemConfig);
+
+        //put item
+        _tablePutItemAsync = () => _table!.PutItemAsync(document!);
+        _tablePutItemWithOperationConfigAsync = () => _table!.PutItemAsync(document!, putItemConfig);
+        _tablePutItemWithOperationRequestAsync = () => _table!.PutItemAsync(putItemRequest);
+
+        //query
+        _tableQueryAsync = () =>
+        {
+            var search = _table!.Query(PartitionKeyValue, tableQueryFilter);
+            return search.GetNextSetAsync();
+        };
+        _tableQueryWithExpressionAsync = () =>
+        {
+            var search = _table!.Query(PartitionKeyValue, tableExpression);
+            return search.GetNextSetAsync();
+        };
+        _tableQueryWithFilterAsync = () =>
+        {
+            var search = _table!.Query(tableQueryFilter);
+            return search.GetNextSetAsync();
+        };
+        _tableQueryWithOperationConfigAsync = () =>
+        {
+            var search = _table!.Query(queryConfig);
+            return search.GetNextSetAsync();
+        };
+        _tableQueryWithOperationRequestAsync = () =>
+        {
+            var search = _table!.Query(queryRequest);
+            return search.GetNextSetAsync();
+        };
+
+        //scan
+        _tableScanAsync = () =>
+        {
+            var search = _table!.Scan(tableScanFilter);
+            return search.GetNextSetAsync();
+        };
+        _tableScanWithExpressionAsync = () =>
+        {
+            var search = _table!.Scan(tableExpression);
+            return search.GetNextSetAsync();
+        };
+        _tableScanWithOperationConfigAsync = () =>
+        {
+            var search = _table!.Scan(scanConfig);
+            return search.GetNextSetAsync();
+        };
+        _tableScanWithOperationRequestAsync = () =>
+        {
+            var search = _table!.Scan(scanRequest);
+            return search.GetNextSetAsync();
+        };
     }
 
-    public Task<List<Document>> TableScanAsync()
+    // Delete _tableDeleteItemAsync!();
+    public Task TableDeleteItemAsync() => _tableDeleteItemAsync!();
+
+    public Task TableDeleteDocumentAsync() => _tableDeleteDocumentAsync!();
+
+    public Task TableDeleteDocumentWithOperationConfigAsync() => _tableDeleteDocumentWithOperationConfigAsync!();
+
+    public Task TableDeleteHashKeyAsync() => _tableDeleteHashKeyAsync!();
+
+    public Task TableDeleteHashKeyWithOperationConfigAsync() => _tableDeleteHashKeyWithOperationConfigAsync!();
+
+    public Task TableDeleteHashKeyRangeKeyWithOperationConfigAsync() => _tableDeleteHashKeyRangeKeyWithOperationConfigAsync!();
+
+    public Task TableDeleteWithOperationRequest() => _tableDeleteWithOperationRequest!();
+
+    public Task TableDeteleDynamoDbEntry() => _tableDeteleDynamoDbEntry!();
+
+    public Task TableDeteleDynamoDbEntryWithOperationConfigAsync() => _tableDeteleDynamoDbEntryWithOperationConfigAsync!();
+
+    // Get item
+    public Task TableGetItemAsync() => _tableGetItemAsync!();
+
+    public Task TableGetHashKeyAsync() => _tableGetHashKeyAsync!();
+
+    public Task TableGetHashKeyWithOperationConfigAsync() => _tableGetHashKeyWithOperationConfigAsync!();
+
+    public Task TableGetHashKeyRangeKeyWithOperationConfigAsync() => _tableGetHashKeyRangeKeyWithOperationConfigAsync!();
+
+    public Task TableGetWithOperationRequest() => _tableGetWithOperationRequest!();
+
+    public Task TableGetDynamoDbEntry() => _tableGetDynamoDbEntry!();
+
+    public Task TableGetDynamoDbEntryWithOperationConfigAsync() => _tableGetDynamoDbEntryWithOperationConfigAsync!();
+
+    // Put item
+    public Task TablePutItemAsync() => _tablePutItemAsync!();
+
+    public Task TablePutItemWithOperationConfigAsync() => _tablePutItemWithOperationConfigAsync!();
+
+    public Task TablePutItemWithOperationRequestAsync() => _tablePutItemWithOperationRequestAsync!();
+
+    //Query
+    public Task TableQueryAsync() => _tableQueryAsync!();
+    public Task TableQueryWithExpressionAsync() => _tableQueryWithExpressionAsync!();
+
+    public Task TableQueryWithFilterAsync() => _tableQueryWithFilterAsync!();
+
+    public Task TableQueryWithOperationConfigAsync() => _tableQueryWithOperationConfigAsync!();
+
+    public Task TableQueryWithOperationRequestAsync() => _tableQueryWithOperationRequestAsync!();
+
+    //Scan
+    public Task TableScanAsync() => _tableScanAsync!();
+
+    public Task TableScanWithExpressionAsync() => _tableScanWithExpressionAsync!();
+
+    public Task TableScanWithOperationConfigAsync() => _tableScanWithOperationConfigAsync!();
+    public Task TableScanWithOperationRequestAsync() => _tableScanWithOperationRequestAsync!();
+
+    private Expression CreateExpression()
     {
-        var search = _table!.Scan(_tableScanFilter);
-        return search.GetNextSetAsync();
+        var expression = new Expression();
+        if (_expressionStyle == BenchmarkExpressionStyle.None)
+        {
+            return expression;
+        }
+
+        expression.ExpressionStatement = "#P0";
+        expression.ExpressionAttributeNames = new Dictionary<string, string>()
+        {
+            {"#P0", "Payload" }
+        };
+        if (_expressionStyle == BenchmarkExpressionStyle.Compound)
+        {
+            expression.ExpressionStatement += ", #P1";
+            expression.ExpressionAttributeNames.Add("#P1", "NumericValue");
+        }
+
+        return expression;
     }
 
     private QueryFilter CreateTableQueryFilter()
@@ -101,8 +292,8 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
         var payload = CreatePayload();
         var document = new Document
         {
-            ["PartitionKey"] = PartitionKeyValue,
-            ["SortKey"] = SortKeyValue,
+            ["pk"] = PartitionKeyValue,
+            ["sk"] = SortKeyValue,
             ["Payload"] = payload,
             ["NumericValue"] = 42,
             ["Flag"] = true,
