@@ -1,0 +1,11 @@
+{
+  "extensions": [
+    {
+      "extensionName": "Extensions.Bedrock.MEAI",
+      "type": "patch",
+      "changeLogMessages": [
+        "Revert: Update `IChatClient` with latest `BedrockRuntime` / M.E.AI (adding support for multi-modal tool returns and citations with URIs)"
+      ]
+    }
+  ]
+}
