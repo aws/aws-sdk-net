@@ -137,9 +137,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property SessionTimeoutSeconds. 
         /// <para>
-        /// The time in seconds after which the session automatically terminates if there is no
-        /// activity. The default value is 900 seconds (15 minutes). The minimum allowed value
-        /// is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).
+        /// The duration in seconds (time-to-live) after which the session automatically terminates,
+        /// regardless of ongoing activity. Defaults to 900 seconds (15 minutes). Recommended
+        /// minimum: 60 seconds. Maximum allowed: 28,800 seconds (8 hours).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=28800)]

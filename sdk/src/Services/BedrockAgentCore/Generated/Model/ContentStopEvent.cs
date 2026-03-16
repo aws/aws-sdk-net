@@ -30,51 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// The OAuth2.0 token or user ID that was used to generate the workload access token
-    /// used for initiating the user authorization flow to retrieve OAuth2.0 tokens.
+    /// Final event indicating command execution has completed
     /// </summary>
-    public partial class UserIdentifier
+    public partial class ContentStopEvent
     {
-        private string _userId;
-        private string _userToken;
+        private int? _exitCode;
+        private CommandExecutionStatus _status;
 
         /// <summary>
-        /// Gets and sets the property UserId. 
+        /// Gets and sets the property ExitCode. 
         /// <para>
-        /// The ID of the user for whom you have retrieved a workload access token for
+        /// Exit code: 0 = success, -1 = platform error, &gt;0 = command error
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string UserId
+        [AWSProperty(Required=true)]
+        public int ExitCode
         {
-            get { return this._userId; }
-            set { this._userId = value; }
+            get { return this._exitCode.GetValueOrDefault(); }
+            set { this._exitCode = value; }
         }
 
-        // Check to see if UserId property is set
-        internal bool IsSetUserId()
+        // Check to see if ExitCode property is set
+        internal bool IsSetExitCode()
         {
-            return this._userId != null;
+            return this._exitCode.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property UserToken. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The OAuth2.0 token issued by the user’s identity provider that was used to generate
-        /// the workload access token
+        /// Execution status
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=131072)]
-        public string UserToken
+        [AWSProperty(Required=true)]
+        public CommandExecutionStatus Status
         {
-            get { return this._userToken; }
-            set { this._userToken = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if UserToken property is set
-        internal bool IsSetUserToken()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._userToken != null;
+            return this._status != null;
         }
 
     }
