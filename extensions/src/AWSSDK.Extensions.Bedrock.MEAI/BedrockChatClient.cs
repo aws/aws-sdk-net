@@ -70,18 +70,11 @@ internal sealed partial class BedrockChatClient : IChatClient
 
     /// <inheritdoc />
     /// <remarks>
-    /// <para>
     /// When <see cref="ChatOptions.ResponseFormat"/> is specified, the model must support
     /// the ToolChoice feature. Models without this support will return an error from the Bedrock API
     /// (typically <see cref="Amazon.BedrockRuntime.AmazonBedrockRuntimeException"/> with ErrorCode "ValidationException").
     /// If the model fails to return the expected structured output, <see cref="InvalidOperationException"/>
     /// is thrown.
-    /// </para>
-    /// <para>
-    /// When <see cref="ChatOptions.Reasoning"/> is specified with a non-<see cref="ReasoningEffort.None"/> effort,
-    /// the model must support extended thinking (e.g. Anthropic Claude). Models without this support will return
-    /// an error from the Bedrock API.
-    /// </para>
     /// </remarks>
     public async Task<ChatResponse> GetResponseAsync(
         IEnumerable<ChatMessage> messages, ChatOptions? options = null, CancellationToken cancellationToken = default)
@@ -97,7 +90,6 @@ internal sealed partial class BedrockChatClient : IChatClient
         request.System = CreateSystem(request.System, messages, options);
         request.ToolConfig = CreateToolConfig(request.ToolConfig, options);
         request.InferenceConfig = CreateInferenceConfiguration(request.InferenceConfig, options);
-        request.AdditionalModelRequestFields = ApplyReasoningConfig(request.AdditionalModelRequestFields, request.InferenceConfig, options);
 
         ConverseResponse response = await _runtime.ConverseAsync(request, cancellationToken).ConfigureAwait(false);
 
@@ -170,9 +162,8 @@ internal sealed partial class BedrockChatClient : IChatClient
                         TextContent tc = new(citations.Content[i]?.Text) { RawRepresentation = citations.Content[i] };
                         tc.Annotations = [new CitationAnnotation()
                         {
-                            Snippet = citations.Citations[i].SourceContent?.Select(c => c.Text).FirstOrDefault() ?? citations.Citations[i].Source,
                             Title = citations.Citations[i].Title,
-                            Url = Uri.TryCreate(citations.Citations[i].Location?.Web?.Url, UriKind.Absolute, out Uri? uri) ? uri : null,
+                            Snippet = citations.Citations[i].SourceContent?.Select(c => c.Text).FirstOrDefault(),
                         }];
                         result.Contents.Add(tc);
                     }
@@ -237,13 +228,6 @@ internal sealed partial class BedrockChatClient : IChatClient
     }
 
     /// <inheritdoc />
-    /// <remarks>
-    /// <para>
-    /// When <see cref="ChatOptions.Reasoning"/> is specified with a non-<see cref="ReasoningEffort.None"/> effort,
-    /// the model must support extended thinking (e.g. Anthropic Claude). Models without this support will return
-    /// an error from the Bedrock API.
-    /// </para>
-    /// </remarks>
     public async IAsyncEnumerable<ChatResponseUpdate> GetStreamingResponseAsync(
         IEnumerable<ChatMessage> messages, ChatOptions? options = null, [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
@@ -272,7 +256,6 @@ internal sealed partial class BedrockChatClient : IChatClient
         request.System = CreateSystem(request.System, messages, options);
         request.ToolConfig = CreateToolConfig(request.ToolConfig, options);
         request.InferenceConfig = CreateInferenceConfiguration(request.InferenceConfig, options);
-        request.AdditionalModelRequestFields = ApplyReasoningConfig(request.AdditionalModelRequestFields, request.InferenceConfig, options);
 
         var result = await _runtime.ConverseStreamAsync(request, cancellationToken).ConfigureAwait(false);
 
@@ -439,10 +422,14 @@ internal sealed partial class BedrockChatClient : IChatClient
         UsageDetails ud = new()
         {
             InputTokenCount = usage.InputTokens,
-            CachedInputTokenCount = usage.CacheReadInputTokens,
             OutputTokenCount = usage.OutputTokens,
             TotalTokenCount = usage.TotalTokens,
         };
+
+        if (usage.CacheReadInputTokens is int cacheReadTokens)
+        {
+            (ud.AdditionalCounts ??= []).Add(nameof(usage.CacheReadInputTokens), cacheReadTokens);
+        }
 
         if (usage.CacheWriteInputTokens is int cacheWriteTokens)
         {
@@ -478,7 +465,8 @@ internal sealed partial class BedrockChatClient : IChatClient
             });
         }
 
-        foreach (var message in messages.Where(m => m.Role == ChatRole.System && m.Contents.Any(c => c is TextContent)))
+        foreach (var message in messages
+                     .Where(m => m.Role == ChatRole.System && m.Contents.Any(c => c is TextContent)))
         {
             system.Add(new SystemContentBlock()
             {
@@ -579,10 +567,6 @@ internal sealed partial class BedrockChatClient : IChatClient
         {
             switch (content)
             {
-                case AIContent when content.RawRepresentation is ContentBlock cb:
-                    contents.Add(cb);
-                    break;
-
                 case TextContent tc:
                     if (message.Role == ChatRole.Assistant)
                     {
@@ -665,54 +649,32 @@ internal sealed partial class BedrockChatClient : IChatClient
                     break;
 
                 case FunctionResultContent frc:
+                    Document result = frc.Result switch
+                    {
+                        int i => i,
+                        long l => l,
+                        float f => f,
+                        double d => d,
+                        string s => s,
+                        bool b => b,
+                        JsonElement json => ToDocument(json),
+                        { } other => ToDocument(JsonSerializer.SerializeToElement(other, BedrockJsonContext.DefaultOptions.GetTypeInfo(other.GetType()))),
+                        _ => default,
+                    };
+
                     contents.Add(new()
                     {
                         ToolResult = new()
                         {
                             ToolUseId = frc.CallId,
-                            Content = ToToolResultContentBlocks(frc.Result),
+                            Content = [new() { Json = new Document(new Dictionary<string, Document>() { ["result"] = result }) }],
                         },
                     });
                     break;
             }
 
-            static List<ToolResultContentBlock> ToToolResultContentBlocks(object? result) =>
-                result switch
-                {
-                    AIContent aic => [ToolResultContentBlockFromAIContent(aic)],
-                    IEnumerable<AIContent> aics => [.. aics.Select(ToolResultContentBlockFromAIContent)],
-                    string s => [new () { Text = s }],
-                    _ => [new()
-                        {
-                            Json = new Document(new Dictionary<string, Document>()
-                            {
-                                ["result"] = result switch
-                                {
-                                    int i => i,
-                                    long l => l,
-                                    float f => f,
-                                    double d => d,
-                                    bool b => b,
-                                    JsonElement json => ToDocument(json),
-                                    { } other => ToDocument(JsonSerializer.SerializeToElement(other, BedrockJsonContext.DefaultOptions.GetTypeInfo(other.GetType()))),
-                                    _ => default,
-                                }
-                            })
-                        }],
-                };
 
-            static ToolResultContentBlock ToolResultContentBlockFromAIContent(AIContent aic) =>
-                aic switch
-                {
-                    TextContent tc => new() { Text = tc.Text },
-                    TextReasoningContent trc => new() { Text = trc.Text },
-                    DataContent dc when GetImageFormat(dc.MediaType) is { } imageFormat => new() { Image = new() { Source = new() { Bytes = new(dc.Data.ToArray()) }, Format = imageFormat } },
-                    DataContent dc when GetVideoFormat(dc.MediaType) is { } videoFormat => new() { Video = new() { Source = new() { Bytes = new(dc.Data.ToArray()) }, Format = videoFormat } },
-                    DataContent dc when GetDocumentFormat(dc.MediaType) is { } docFormat => new() { Document = new() { Source = new() { Bytes = new(dc.Data.ToArray()) }, Format = docFormat, Name = dc.Name ?? "file" } },
-                    _ => ToToolResultContentBlocks(JsonSerializer.SerializeToElement(aic, BedrockJsonContext.DefaultOptions.GetTypeInfo(typeof(object)))).First(),
-                };
-
-            if (content.AdditionalProperties?.TryGetValue(nameof(ContentBlock.CachePoint), out var maybeCachePoint) is true)
+            if (content.AdditionalProperties?.TryGetValue(nameof(ContentBlock.CachePoint), out var maybeCachePoint) == true)
             {
                 if (maybeCachePoint is CachePointBlock cachePointBlock)
                 {
@@ -1135,86 +1097,5 @@ internal sealed partial class BedrockChatClient : IChatClient
         }
 
         return config;
-    }
-
-    /// <summary>Applies reasoning configuration from ChatOptions to the AdditionalModelRequestFields.</summary>
-    /// <remarks>
-    /// Maps <see cref="ChatOptions.Reasoning"/> to Bedrock's extended thinking configuration
-    /// via the <c>thinking</c> key in <c>AdditionalModelRequestFields</c>.
-    /// Budget tokens are computed as a ratio of <c>MaxTokens</c> when available, following the
-    /// approach used by the AWS bedrock-access-gateway. The constraint <c>budget_tokens &lt; max_tokens</c>
-    /// is always enforced.
-    /// See https://docs.aws.amazon.com/bedrock/latest/userguide/claude-messages-extended-thinking.html
-    /// </remarks>
-    private static Document ApplyReasoningConfig(Document additionalModelRequestFields, InferenceConfiguration inferenceConfig, ChatOptions? options)
-    {
-        // If Effort is not set or is None, there's nothing to configure.
-        if (options?.Reasoning is not { } reasoning ||
-            reasoning.Effort is not { } effort ||
-            effort is ReasoningEffort.None)
-        {
-            return additionalModelRequestFields;
-        }
-
-        // Don't override if the user already configured thinking via AdditionalModelRequestFields.
-        if (additionalModelRequestFields.IsDictionary() &&
-            additionalModelRequestFields.AsDictionary().ContainsKey("thinking"))
-        {
-            return additionalModelRequestFields;
-        }
-
-        // budget_tokens must be >= 1024 and < max_tokens.
-        // When max_tokens is known, compute budget_tokens as a ratio (similar to
-        // https://github.com/aws-samples/bedrock-access-gateway). When it isn't,
-        // pick fixed budget values and set max_tokens to satisfy the constraint,
-        // since the model-specific default for max_tokens is unspecified.
-        int budgetTokens;
-        if (inferenceConfig.MaxTokens is int maxTokens)
-        {
-            double ratio = effort switch
-            {
-                ReasoningEffort.Low => 0.25,
-                ReasoningEffort.Medium => 0.5,
-                ReasoningEffort.High => 0.75,
-                _ => 1.0, // ExtraHigh
-            };
-
-            budgetTokens = Math.Max(1024, (int)(maxTokens * ratio));
-            if (budgetTokens >= maxTokens)
-            {
-                budgetTokens = maxTokens - 1;
-            }
-        }
-        else
-        {
-            budgetTokens = effort switch
-            {
-                ReasoningEffort.Low => 1024,
-                ReasoningEffort.Medium => 8192,
-                ReasoningEffort.High => 16384,
-                _ => 32768, // ExtraHigh
-            };
-            inferenceConfig.MaxTokens = budgetTokens * 4;
-        }
-
-        Document thinkingConfig = new(new Dictionary<string, Document>
-        {
-            ["type"] = new("enabled"),
-            ["budget_tokens"] = new(budgetTokens),
-        });
-
-        if (additionalModelRequestFields.IsDictionary())
-        {
-            additionalModelRequestFields.AsDictionary()["thinking"] = thinkingConfig;
-        }
-        else
-        {
-            additionalModelRequestFields = new(new Dictionary<string, Document>
-            {
-                ["thinking"] = thinkingConfig,
-            });
-        }
-
-        return additionalModelRequestFields;
     }
 }
