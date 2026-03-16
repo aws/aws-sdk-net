@@ -1,3 +1,16 @@
+### 3.7.1243.0 (2026-03-16 18:24 UTC)
+* Bedrock (3.7.515.0)
+	* You can now generate policy scenarios on demand using the new GENERATE POLICY SCENARIOS build workflow type. Scenarios will no longer be automatically generated during INGEST CONTENT, REFINE POLICY, and IMPORT POLICY workflows, resulting in faster completion times for these operations.
+* BedrockAgentCore (3.7.512.0)
+	* Provide support to perform deterministic operations on agent runtime through shell command executions via the new InvokeAgentRuntimeCommand API
+* BedrockAgentCoreControl (3.7.520.0)
+	* Supporting hosting of public ECR Container Images in AgentCore Runtime
+* ECS (3.7.511.0)
+	* Amazon ECS now supports configuring whether tags are propagated to the EC2 Instance Metadata Service (IMDS) for instances launched by the Managed Instances capacity provider. This gives customers control over tag visibility in IMDS when using ECS Managed Instances.
+* Core 3.7.500.92
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1242.0 (2026-03-13 18:27 UTC)
 * APIGateway (3.7.505.0)
 	* API Gateway now supports an additional security policy "SecurityPolicy-TLS13-1-2-FIPS-PFS-PQ-2025-09" for REST APIs and custom domain names. The new policy is compliant with TLS 1.3, Federal Information Processing Standards (FIPS), Perfect Forward Secrecy (PFS), and post-quantum (PQ) cryptography

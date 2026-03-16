@@ -32,7 +32,7 @@ namespace Amazon.GeoRoutes
     public partial class AmazonGeoRoutesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Geo Routes", "3.7.502.56");
+            InternalSDKUtils.BuildUserAgentString("Geo Routes", "3.7.502.57");
 
         private string _userAgent = UserAgentString;
         ///<summary>
