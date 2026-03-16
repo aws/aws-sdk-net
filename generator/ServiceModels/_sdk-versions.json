@@ -1,7 +1,7 @@
 
 {
     "NewServiceVersion" : "4.0.0.0",
-    "ProductVersion"    : "4.0.211.0",
+    "ProductVersion"    : "4.0.211.1",
     "CoreVersion"       : "4.0.3.18",
     "OverrideCoreVersion" : "4.0",
     "DefaultToPreview"    : false,
@@ -3366,7 +3366,7 @@
     },
     "ExtensionVersions"   : {
         "Extensions.Bedrock.MEAI" : {
-            "Version" : "4.0.6.0",
+            "Version" : "4.0.6.1",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.3.17",

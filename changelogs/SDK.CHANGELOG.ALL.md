@@ -1,3 +1,7 @@
+### 4.0.211.1 (2026-03-16 21:26 UTC)
+* Extensions.Bedrock.MEAI (4.0.6.1)
+	* Revert: Update `IChatClient` with latest `BedrockRuntime` / M.E.AI (adding support for multi-modal tool returns and citations with URIs)
+
 ### 4.0.211.0 (2026-03-16 18:24 UTC)
 * Bedrock (4.0.23.0)
 	* You can now generate policy scenarios on demand using the new GENERATE POLICY SCENARIOS build workflow type. Scenarios will no longer be automatically generated during INGEST CONTENT, REFINE POLICY, and IMPORT POLICY workflows, resulting in faster completion times for these operations.
