@@ -30,6 +30,20 @@ namespace UnitTests.NetStandard.Core
         }
 
         [Fact]
+        public void GetParametersAsString_ProducesCorrectlySortedOutput()
+        {
+            var parameters = new ParameterCollection
+            {
+                { "key3", "value3" },
+                { "key1", "value1" },
+                { "key2", "value2" },
+            };
+
+            var result = AWSSDKUtils.GetParametersAsString(parameters);
+            Assert.Equal("key1=value1&key2=value2&key3=value3", result);
+        }
+
+        [Fact]
         public void ToHexUppercase()
         {
             var bytes = Encoding.UTF8.GetBytes("Hello World");
