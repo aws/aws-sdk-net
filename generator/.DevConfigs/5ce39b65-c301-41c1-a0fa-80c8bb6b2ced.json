@@ -1,0 +1,18 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Resolving runtime dependencies is now automatically compatible with trimming and Native AOT, without needing to use the `GlobalRuntimeDependencyRegistry` class, which was deprecated."
+    ]
+  },
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Using S3 Link is now automatically compatible with trimming and Native AOT, and no longer requires using the `GlobalRuntimeDependencyRegistry` class."
+      ]
+    }
+  ]
+}
