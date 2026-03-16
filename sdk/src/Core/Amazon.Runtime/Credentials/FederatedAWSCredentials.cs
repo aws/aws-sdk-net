@@ -320,44 +320,30 @@ namespace Amazon.Runtime
             return state;
         }
 
-        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
-           Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
         private ICoreAmazonSTS GetSTSClient(RegionEndpoint region)
         {
-            ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, 
-                new CreateInstanceContext(new SecurityTokenServiceClientContext { Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = region, ProxySettings = Options?.ProxySettings }));
-            if (coreSTSClient == null)
+            try
             {
-                try
+                var stsConfig = ServiceClientHelpers.CreateServiceConfig(
+                    ServiceClientHelpers.STS_SERVICE_CONFIG_FULL_NAME);
+
+                stsConfig.RegionEndpoint = region;
+                if (Options.ProxySettings != null)
                 {
-                    var stsConfig = ServiceClientHelpers.CreateServiceConfig(
-                        ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
-
-                    stsConfig.RegionEndpoint = region;
-                    if (Options.ProxySettings != null)
-                    {
-                        stsConfig.SetWebProxy(Options.ProxySettings);
-                    }
-
-                    coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS>(
-                        ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
-                        new AnonymousAWSCredentials(), stsConfig);
+                    stsConfig.SetWebProxy(Options.ProxySettings);
                 }
-                catch (Exception e)
-                {
-                    if (InternalSDKUtils.IsRunningNativeAot())
-                    {
-                        throw new MissingRuntimeDependencyException(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterSecurityTokenServiceClient));
-                    }
 
-                    var msg = string.Format(CultureInfo.CurrentCulture,
-                        "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use this profile class.",
-                        ServiceClientHelpers.STS_ASSEMBLY_NAME);
-                    throw new InvalidOperationException(msg, e);
-                }
+                return ServiceClientHelpers.CreateServiceFromTypeName<ICoreAmazonSTS>(
+                    ServiceClientHelpers.STS_SERVICE_CLASS_FULL_NAME,
+                    new AnonymousAWSCredentials(), stsConfig);
             }
-
-            return coreSTSClient;
+            catch (Exception e)
+            {
+                var msg = string.Format(CultureInfo.CurrentCulture,
+                    "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use this profile class.",
+                    ServiceClientHelpers.STS_ASSEMBLY_NAME);
+                throw new InvalidOperationException(msg, e);
+            }
         }
 
         private string GetRoleSessionName()

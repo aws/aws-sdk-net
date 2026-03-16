@@ -14,8 +14,6 @@ namespace Amazon.Runtime.Internal
     /// Collection of helper methods for constructing the necessary Service client to
     /// interrogate AWS Signin Service.
     /// </summary>
-    [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
-        Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
     public static class SigninServiceClientHelpers
     {
         public static ICoreAmazonSignin BuildSigninClient(
@@ -29,48 +27,43 @@ namespace Amazon.Runtime.Internal
             string serviceUrl = null
         )
         {
-            ICoreAmazonSignin coreSignin = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSignin>(ServiceClientHelpers.SIGNIN_ASSEMBLY_NAME, ServiceClientHelpers.SIGNIN_SERVICE_CLASS_NAME, new CreateInstanceContext(new SigninClientContext { Region = region, ProfileName = profileName, ProxySettings = proxySettings, ServiceURL = serviceUrl }));
-            if (coreSignin == null)
-            {
-                coreSignin = CreateClient<ICoreAmazonSignin>(
-                    region,
-                    profileName,
-                    ServiceClientHelpers.SIGNIN_SERVICE_CLASS_NAME,
-                    ServiceClientHelpers.SIGNIN_SERVICE_CONFIG_NAME,
-                    ServiceClientHelpers.SIGNIN_ASSEMBLY_NAME,
-                    nameof(GlobalRuntimeDependencyRegistry.RegisterSigninClient),
-                    proxySettings,
-                    serviceUrl);
-            }
-
-            return coreSignin;
+            return CreateClient<ICoreAmazonSignin>(
+                region,
+                profileName,
+                ServiceClientHelpers.SIGNIN_SERVICE_CLASS_FULL_NAME,
+                ServiceClientHelpers.SIGNIN_SERVICE_CONFIG_FULL_NAME,
+                ServiceClientHelpers.SIGNIN_ASSEMBLY_NAME,
+                proxySettings,
+                serviceUrl);
         }
 
         /// <summary>
         /// Attempts to get a service client at runtime which cannot be made a project reference.
         /// </summary>
-        [RequiresUnreferencedCode("Using CreateClient to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
         private static T CreateClient<T>(
             RegionEndpoint region,
             string profileName,
-            string serviceClassName, 
-            string serviceConfigName, 
+#if NET
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+#endif
+            string serviceClassName,
+#if NET
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+#endif
+            string serviceConfigName,
             string parentAssemblyName,
-            string runtimeDependencyRegistryMethod,
 #if BCL
             WebProxy proxySettings = null,
 #elif NETSTANDARD
             IWebProxy proxySettings = null,
 #endif
             string serviceUrl = null
-        ) 
+        )
             where T : class
         {
             try
             {
-                var serviceConfig = ServiceClientHelpers.CreateServiceConfig(
-                    parentAssemblyName,
-                    serviceConfigName);
+                var serviceConfig = ServiceClientHelpers.CreateServiceConfig(serviceConfigName);
 
                 serviceConfig.RegionEndpoint = region;
 
@@ -89,8 +82,7 @@ namespace Amazon.Runtime.Internal
                     serviceConfig.ServiceURL = serviceUrl;
                 }
 
-                var serviceClient = ServiceClientHelpers.CreateServiceFromAssembly<T>(
-                    parentAssemblyName,
+                var serviceClient = ServiceClientHelpers.CreateServiceFromTypeName<T>(
                     serviceClassName,
                     new AnonymousAWSCredentials(), serviceConfig) as T;
 
@@ -98,11 +90,6 @@ namespace Amazon.Runtime.Internal
             }
             catch (Exception e)
             {
-                if (InternalSDKUtils.IsRunningNativeAot())
-                {
-                    throw new MissingRuntimeDependencyException(parentAssemblyName, serviceClassName, runtimeDependencyRegistryMethod);
-                }
-
                 var msg = string.Format(CultureInfo.CurrentCulture,
                     "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use {1}.",
                     parentAssemblyName,
