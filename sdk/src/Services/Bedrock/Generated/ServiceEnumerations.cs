@@ -673,6 +673,10 @@ namespace Amazon.Bedrock
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildWorkflowType GENERATE_FIDELITY_REPORT = new AutomatedReasoningPolicyBuildWorkflowType("GENERATE_FIDELITY_REPORT");
         /// <summary>
+        /// Constant GENERATE_POLICY_SCENARIOS for AutomatedReasoningPolicyBuildWorkflowType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowType GENERATE_POLICY_SCENARIOS = new AutomatedReasoningPolicyBuildWorkflowType("GENERATE_POLICY_SCENARIOS");
+        /// <summary>
         /// Constant IMPORT_POLICY for AutomatedReasoningPolicyBuildWorkflowType
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildWorkflowType IMPORT_POLICY = new AutomatedReasoningPolicyBuildWorkflowType("IMPORT_POLICY");
