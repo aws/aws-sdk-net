@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -14,6 +14,7 @@
  */
 using System;
 using Amazon.Runtime;
+using System.ComponentModel;
 
 namespace Amazon.RuntimeDependencies
 {
@@ -25,6 +26,7 @@ namespace Amazon.RuntimeDependencies
 #if !NETSTANDARD
     [Serializable]
 #endif
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public class MissingRuntimeDependencyException : AmazonClientException
     {
 
