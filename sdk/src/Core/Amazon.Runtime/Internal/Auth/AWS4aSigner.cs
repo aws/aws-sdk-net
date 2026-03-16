@@ -30,6 +30,7 @@ using System.Buffers.Binary;
 #endif
 
 #if !NET7_0_OR_GREATER
+using System.Diagnostics;
 using System.Formats.Asn1;
 #endif
 
@@ -436,19 +437,63 @@ namespace Amazon.Runtime.Internal.Auth
 #if NET7_0_OR_GREATER
             return key.SignData(data, HashAlgorithmName.SHA256, DSASignatureFormat.Rfc3279DerSequence);
 #else
-            return ConvertToRfc3279DerSequence(key.SignData(data, HashAlgorithmName.SHA256));
+            return WriteIeee1363ToDer(key.SignData(data, HashAlgorithmName.SHA256)).Encode();
 #endif
         }
 
 #if !NET7_0_OR_GREATER
-        private static byte[] ConvertToRfc3279DerSequence(byte[] signature)
+        // https://github.com/dotnet/runtime/blob/e2f925756a62def3fb15ab4476b8ce2d9b5e75bb/src/libraries/Common/src/System/Security/Cryptography/AsymmetricAlgorithmHelpers.Der.cs#L29-L44
+        private static AsnWriter WriteIeee1363ToDer(ReadOnlySpan<byte> input)
         {
-            var writer = new AsnWriter(AsnEncodingRules.DER);
+            Debug.Assert(input.Length % 2 == 0);
+            Debug.Assert(input.Length > 1);
+
+            // Input is (r, s), each of them exactly half of the array.
+            // Output is the DER encoded value of SEQUENCE(INTEGER(r), INTEGER(s)).
+            int halfLength = input.Length / 2;
+
+            AsnWriter writer = new AsnWriter(AsnEncodingRules.DER);
             writer.PushSequence();
-            writer.WriteIntegerUnsigned(signature.AsSpan(0, signature.Length / 2)); // R value
-            writer.WriteIntegerUnsigned(signature.AsSpan(signature.Length / 2)); // S value
+            WriteKeyParameterInteger(writer, input.Slice(0, halfLength));
+            WriteKeyParameterInteger(writer, input.Slice(halfLength, halfLength));
             writer.PopSequence();
-            return writer.Encode();
+            return writer;
+        }
+
+        // https://github.com/dotnet/runtime/blob/e2f925756a62def3fb15ab4476b8ce2d9b5e75bb/src/libraries/Common/src/System/Security/Cryptography/KeyBlobHelpers.cs#L49-L82
+        private static void WriteKeyParameterInteger(AsnWriter writer, ReadOnlySpan<byte> integer)
+        {
+            Debug.Assert(!integer.IsEmpty);
+
+            if (integer[0] == 0)
+            {
+                int newStart = 1;
+
+                while (newStart < integer.Length)
+                {
+                    if (integer[newStart] >= 0x80)
+                    {
+                        newStart--;
+                        break;
+                    }
+
+                    if (integer[newStart] != 0)
+                    {
+                        break;
+                    }
+
+                    newStart++;
+                }
+
+                if (newStart == integer.Length)
+                {
+                    newStart--;
+                }
+
+                integer = integer.Slice(newStart);
+            }
+
+            writer.WriteIntegerUnsigned(integer);
         }
 #endif
         #endregion
