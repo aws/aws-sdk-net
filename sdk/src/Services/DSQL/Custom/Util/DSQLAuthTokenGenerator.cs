@@ -73,6 +73,23 @@ namespace Amazon.DSQL.Util
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
         /// <remarks>
+        /// The AWS region and credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <returns></returns>
+        public static string GenerateDbConnectAuthToken(string hostname, TimeSpan expiresIn)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return GenerateDbConnectAuthToken(region, hostname, expiresIn);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
+        /// <remarks>
         /// The AWS credentials for creating the auth token will be searched for
         /// using the SDK's standard environment search pattern. This includes using
         /// default profile configuration and AWS Compute environment settings.
@@ -90,6 +107,24 @@ namespace Amazon.DSQL.Util
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
         /// <remarks>
+        /// The AWS credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="region">The region of the DSQL database.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <returns></returns>
+        public static string GenerateDbConnectAuthToken(RegionEndpoint region, string hostname, TimeSpan expiresIn)
+        {
+            AWSCredentials credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            return GenerateDbConnectAuthToken(credentials, region, hostname, expiresIn);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
+        /// <remarks>
         /// The AWS region for creating the auth token will be searched for
         /// using the SDK's standard environment search pattern. This includes using
         /// default profile configuration and AWS Compute environment settings.
@@ -102,6 +137,24 @@ namespace Amazon.DSQL.Util
         {
             RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
             return GenerateDbConnectAuthToken(credentials, region, hostname);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
+        /// <remarks>
+        /// The AWS region for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="credentials">The credentials for the token.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <returns></returns>
+        public static string GenerateDbConnectAuthToken(AWSCredentials credentials, string hostname, TimeSpan expiresIn)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return GenerateDbConnectAuthToken(credentials, region, hostname, expiresIn);
         }
 
         /// <summary>
@@ -156,6 +209,23 @@ namespace Amazon.DSQL.Util
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
         /// <remarks>
+        /// The AWS region and credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAuthTokenAsync(string hostname, TimeSpan expiresIn)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return await GenerateDbConnectAuthTokenAsync(region, hostname, expiresIn).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
+        /// <remarks>
         /// The AWS credentials for creating the auth token will be searched for
         /// using the SDK's standard environment search pattern. This includes using
         /// default profile configuration and AWS Compute environment settings.
@@ -173,6 +243,24 @@ namespace Amazon.DSQL.Util
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
         /// <remarks>
+        /// The AWS credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="region">The region of the DSQL database.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAuthTokenAsync(RegionEndpoint region, string hostname, TimeSpan expiresIn)
+        {
+            AWSCredentials credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            return await GenerateDbConnectAuthTokenAsync(credentials, region, hostname, expiresIn).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
+        /// <remarks>
         /// The AWS region for creating the auth token will be searched for
         /// using the SDK's standard environment search pattern. This includes using
         /// default profile configuration and AWS Compute environment settings.
@@ -185,6 +273,24 @@ namespace Amazon.DSQL.Util
         {
             RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
             return await GenerateDbConnectAuthTokenAsync(credentials, region, hostname).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
+        /// <remarks>
+        /// The AWS region for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="credentials">The credentials for the token.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAuthTokenAsync(AWSCredentials credentials, string hostname, TimeSpan expiresIn)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return await GenerateDbConnectAuthTokenAsync(credentials, region, hostname, expiresIn).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -239,6 +345,23 @@ namespace Amazon.DSQL.Util
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
         /// <remarks>
+        /// The AWS region and credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <returns></returns>
+        public static string GenerateDbConnectAdminAuthToken(string hostname, TimeSpan expiresIn)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return GenerateDbConnectAdminAuthToken(region, hostname, expiresIn);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
+        /// <remarks>
         /// The AWS credentials for creating the auth token will be searched for
         /// using the SDK's standard environment search pattern. This includes using
         /// default profile configuration and AWS Compute environment settings.
@@ -256,6 +379,24 @@ namespace Amazon.DSQL.Util
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
         /// <remarks>
+        /// The AWS credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="region">The region of the DSQL database.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <returns></returns>
+        public static string GenerateDbConnectAdminAuthToken(RegionEndpoint region, string hostname, TimeSpan expiresIn)
+        {
+            AWSCredentials credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            return GenerateDbConnectAdminAuthToken(credentials, region, hostname, expiresIn);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
+        /// <remarks>
         /// The AWS region for creating the auth token will be searched for
         /// using the SDK's standard environment search pattern. This includes using
         /// default profile configuration and AWS Compute environment settings.
@@ -268,6 +409,24 @@ namespace Amazon.DSQL.Util
         {
             RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
             return GenerateDbConnectAdminAuthToken(credentials, region, hostname);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
+        /// <remarks>
+        /// The AWS region for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="credentials">The credentials for the token.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <returns></returns>
+        public static string GenerateDbConnectAdminAuthToken(AWSCredentials credentials, string hostname, TimeSpan expiresIn)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return GenerateDbConnectAdminAuthToken(credentials, region, hostname, expiresIn);
         }
 
         /// <summary>
@@ -322,6 +481,23 @@ namespace Amazon.DSQL.Util
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
         /// <remarks>
+        /// The AWS region and credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAdminAuthTokenAsync(string hostname, TimeSpan expiresIn)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return await GenerateDbConnectAdminAuthTokenAsync(region, hostname, expiresIn).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
+        /// <remarks>
         /// The AWS credentials for creating the auth token will be searched for
         /// using the SDK's standard environment search pattern. This includes using
         /// default profile configuration and AWS Compute environment settings.
@@ -339,6 +515,24 @@ namespace Amazon.DSQL.Util
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
         /// <remarks>
+        /// The AWS credentials for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="region">The region of the DSQL database.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAdminAuthTokenAsync(RegionEndpoint region, string hostname, TimeSpan expiresIn)
+        {
+            AWSCredentials credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            return await GenerateDbConnectAdminAuthTokenAsync(credentials, region, hostname, expiresIn).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
+        /// <remarks>
         /// The AWS region for creating the auth token will be searched for
         /// using the SDK's standard environment search pattern. This includes using
         /// default profile configuration and AWS Compute environment settings.
@@ -351,6 +545,24 @@ namespace Amazon.DSQL.Util
         {
             RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
             return await GenerateDbConnectAdminAuthTokenAsync(credentials, region, hostname).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnectAdmin action.
+        /// <remarks>
+        /// The AWS region for creating the auth token will be searched for
+        /// using the SDK's standard environment search pattern. This includes using
+        /// default profile configuration and AWS Compute environment settings.
+        /// </remarks>
+        /// </summary>
+        /// <param name="credentials">The credentials for the token.</param>
+        /// <param name="hostname">Hostname of the DSQL database.</param>
+        /// <param name="expiresIn">The token expiry duration. Must be between 0 (exclusive) and 7 days (inclusive).</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<string> GenerateDbConnectAdminAuthTokenAsync(AWSCredentials credentials, string hostname, TimeSpan expiresIn)
+        {
+            RegionEndpoint region = FallbackRegionFactory.GetRegionEndpoint();
+            return await GenerateDbConnectAdminAuthTokenAsync(credentials, region, hostname, expiresIn).ConfigureAwait(false);
         }
 
         /// <summary>

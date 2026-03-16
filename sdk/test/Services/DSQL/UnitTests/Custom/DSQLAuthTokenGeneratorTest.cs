@@ -185,6 +185,14 @@ namespace AWSSDK.UnitTests.DSQL
 
         [TestMethod]
         [TestCategory("DSQL")]
+        public void GenerateDbConnectAuthTokenCustomExpiresInNoRegionNoCredentials()
+        {
+            AssertAuthToken(DSQLAuthTokenGenerator.GenerateDbConnectAuthToken(DBCluster,
+                TimeSpan.FromSeconds(450)), AccessKey, FallbackRegionFactory.GetRegionEndpoint(), DBConnectActionValue, false, 450);
+        }
+
+        [TestMethod]
+        [TestCategory("DSQL")]
         public void GenerateDbConnectAuthTokenZeroExpiresIn()
         {
             AssertExtensions.ExpectException(() =>
@@ -327,6 +335,14 @@ namespace AWSSDK.UnitTests.DSQL
         {
             AssertAuthToken(DSQLAuthTokenGenerator.GenerateDbConnectAdminAuthToken(BasicCredentials,
                 AWSRegion, DBCluster, TimeSpan.FromSeconds(450)), AccessKey, AWSRegion, DBConnectAdminActionValue, false, 450);
+        }
+
+        [TestMethod]
+        [TestCategory("DSQL")]
+        public void GenerateDbConnectAdminAuthTokenCustomExpiresInNoRegionNoCredentials()
+        {
+            AssertAuthToken(DSQLAuthTokenGenerator.GenerateDbConnectAdminAuthToken(DBCluster,
+                TimeSpan.FromSeconds(450)), AccessKey, FallbackRegionFactory.GetRegionEndpoint(), DBConnectAdminActionValue, false, 450);
         }
 
         [TestMethod]
