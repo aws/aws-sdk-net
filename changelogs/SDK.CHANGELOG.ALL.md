@@ -1,3 +1,11 @@
+### 4.0.212.0 (2026-03-17 18:18 UTC)
+* BedrockAgentCoreControl (4.0.21.0)
+	* Deprecating namespaces field and adding namespaceTemplates.
+* ElasticMapReduce (4.0.8.0)
+	* Add S3LoggingConfiguration to Control LogUploads
+* Glue (4.0.27.0)
+	* Provide approval to overwrite existing Lake Formation permissions on all child resources with the default permissions specified in 'CreateTableDefaultPermissions' and 'CreateDatabaseDefaultPermissions' when updating catalog. Allowed values are ["Accept","Deny"] .
+
 ### 4.0.211.1 (2026-03-16 21:26 UTC)
 * Extensions.Bedrock.MEAI (4.0.6.1)
 	* Revert: Update `IChatClient` with latest `BedrockRuntime` / M.E.AI (adding support for multi-modal tool returns and citations with URIs)
