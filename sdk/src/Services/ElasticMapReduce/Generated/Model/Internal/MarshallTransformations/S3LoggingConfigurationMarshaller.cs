@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MonitoringConfiguration Marshaller
+    /// S3LoggingConfiguration Marshaller
     /// </summary>
-    public class MonitoringConfigurationMarshaller : IRequestMarshaller<MonitoringConfiguration, JsonMarshallerContext> 
+    public class S3LoggingConfigurationMarshaller : IRequestMarshaller<S3LoggingConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,29 +44,21 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MonitoringConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(S3LoggingConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCloudWatchLogConfiguration())
+            if(requestObject.IsSetLogTypeUploadPolicy())
             {
-                context.Writer.WritePropertyName("CloudWatchLogConfiguration");
+                context.Writer.WritePropertyName("LogTypeUploadPolicy");
                 context.Writer.WriteObjectStart();
+                foreach (var requestObjectLogTypeUploadPolicyKvp in requestObject.LogTypeUploadPolicy)
+                {
+                    context.Writer.WritePropertyName(requestObjectLogTypeUploadPolicyKvp.Key);
+                    var requestObjectLogTypeUploadPolicyValue = requestObjectLogTypeUploadPolicyKvp.Value;
 
-                var marshaller = CloudWatchLogConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.CloudWatchLogConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetS3LoggingConfiguration())
-            {
-                context.Writer.WritePropertyName("S3LoggingConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3LoggingConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3LoggingConfiguration, context);
-
+                        context.Writer.Write(requestObjectLogTypeUploadPolicyValue);
+                }
                 context.Writer.WriteObjectEnd();
             }
 
@@ -75,7 +67,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MonitoringConfigurationMarshaller Instance = new MonitoringConfigurationMarshaller();
+        public readonly static S3LoggingConfigurationMarshaller Instance = new S3LoggingConfigurationMarshaller();
 
     }
 }

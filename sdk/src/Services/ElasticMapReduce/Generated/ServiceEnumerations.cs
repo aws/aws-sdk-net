@@ -1445,6 +1445,114 @@ namespace Amazon.ElasticMapReduce
 
 
     /// <summary>
+    /// Constants used for properties of type LogType.
+    /// </summary>
+    public class LogType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ApplicationLogs for LogType
+        /// </summary>
+        public static readonly LogType ApplicationLogs = new LogType("application-logs");
+        /// <summary>
+        /// Constant PersistentUiLogs for LogType
+        /// </summary>
+        public static readonly LogType PersistentUiLogs = new LogType("persistent-ui-logs");
+        /// <summary>
+        /// Constant SystemLogs for LogType
+        /// </summary>
+        public static readonly LogType SystemLogs = new LogType("system-logs");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogType FindValue(string value)
+        {
+            return FindValue<LogType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogUploadPolicyValue.
+    /// </summary>
+    public class LogUploadPolicyValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for LogUploadPolicyValue
+        /// </summary>
+        public static readonly LogUploadPolicyValue Disabled = new LogUploadPolicyValue("disabled");
+        /// <summary>
+        /// Constant EmrManaged for LogUploadPolicyValue
+        /// </summary>
+        public static readonly LogUploadPolicyValue EmrManaged = new LogUploadPolicyValue("emr-managed");
+        /// <summary>
+        /// Constant OnCustomerS3only for LogUploadPolicyValue
+        /// </summary>
+        public static readonly LogUploadPolicyValue OnCustomerS3only = new LogUploadPolicyValue("on-customer-s3only");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogUploadPolicyValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogUploadPolicyValue FindValue(string value)
+        {
+            return FindValue<LogUploadPolicyValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogUploadPolicyValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MarketType.
     /// </summary>
     public class MarketType : ConstantClass
