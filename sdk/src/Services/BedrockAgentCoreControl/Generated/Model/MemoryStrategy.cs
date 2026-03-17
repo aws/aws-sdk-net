@@ -39,6 +39,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _description;
         private string _name;
         private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _namespaceTemplates = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MemoryStrategyStatus _status;
         private string _strategyId;
         private MemoryStrategyType _type;
@@ -124,7 +125,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The namespaces associated with the memory strategy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [Obsolete("Use namespaceTemplates instead")]
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<string> Namespaces
         {
             get { return this._namespaces; }
@@ -135,6 +137,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetNamespaces()
         {
             return this._namespaces != null && (this._namespaces.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamespaceTemplates. 
+        /// <para>
+        /// The namespaceTemplates associated with the memory strategy.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
+        public List<string> NamespaceTemplates
+        {
+            get { return this._namespaceTemplates; }
+            set { this._namespaceTemplates = value; }
+        }
+
+        // Check to see if NamespaceTemplates property is set
+        internal bool IsSetNamespaceTemplates()
+        {
+            return this._namespaceTemplates != null && (this._namespaceTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _appendToPrompt;
         private string _modelId;
         private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _namespaceTemplates = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AppendToPrompt. 
@@ -83,7 +84,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// namespaces.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [Obsolete("Use namespaceTemplates instead")]
+        [AWSProperty(Min=1, Max=1)]
         public List<string> Namespaces
         {
             get { return this._namespaces; }
@@ -94,6 +96,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetNamespaces()
         {
             return this._namespaces != null && (this._namespaces.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamespaceTemplates. 
+        /// <para>
+        /// The namespaceTemplates to use for episodic reflection. Can be less nested than the
+        /// episodic namespaces.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> NamespaceTemplates
+        {
+            get { return this._namespaceTemplates; }
+            set { this._namespaceTemplates = value; }
+        }
+
+        // Check to see if NamespaceTemplates property is set
+        internal bool IsSetNamespaceTemplates()
+        {
+            return this._namespaceTemplates != null && (this._namespaceTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
