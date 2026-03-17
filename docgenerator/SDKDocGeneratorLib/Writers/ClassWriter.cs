@@ -11,12 +11,32 @@ namespace SDKDocGenerator.Writers
     public class ClassWriter : BaseWriter
     {
         readonly TypeWrapper _versionType;
+        readonly IEnumerable<MethodInfoWrapper> _supplementalMethods;
 
         public ClassWriter(GenerationManifest artifacts, FrameworkVersion version, TypeWrapper versionType)
             : base(artifacts, version)
         {
             _versionType = versionType;
             _version = version;
+            _supplementalMethods = Enumerable.Empty<MethodInfoWrapper>();
+        }
+
+        /// <summary>
+        /// Creates a ClassWriter that includes supplemental methods from another platform.
+        /// This is used when generating documentation for types where methods differ between platforms
+        /// (e.g., H2 eventstream APIs that only exist in net8.0).
+        /// </summary>
+        /// <param name="artifacts">The generation manifest</param>
+        /// <param name="version">The framework version for documentation</param>
+        /// <param name="versionType">The type to document</param>
+        /// <param name="supplementalMethods">Additional methods to include that don't exist in the primary platform</param>
+        public ClassWriter(GenerationManifest artifacts, FrameworkVersion version, TypeWrapper versionType,
+                          IEnumerable<MethodInfoWrapper> supplementalMethods)
+            : base(artifacts, version)
+        {
+            _versionType = versionType;
+            _version = version;
+            _supplementalMethods = supplementalMethods ?? Enumerable.Empty<MethodInfoWrapper>();
         }
 
         protected override string GenerateFilename()
@@ -106,7 +126,7 @@ namespace SDKDocGenerator.Writers
                     writer.WriteLine("<li><a href=\"#properties\">Properties</a></li>");
                 
                 var methods = this._versionType.GetMethodsToDocument();
-                if (methods.Any())
+                if (methods.Any() || _supplementalMethods.Any())
                     writer.WriteLine("<li><a href=\"#methods\">Methods</a></li>");
                 
                 var events = this._versionType.GetEvents();
@@ -286,7 +306,7 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             string html = string.Empty;
-            var isInherited = !propertyInfo.DeclaringType.Equals(_versionType);
+            var isInherited = !string.Equals(propertyInfo.DeclaringType.FullName, _versionType.FullName);
             if (isInherited)
             {
                 html = string.Format("Inherited from {0}.{1}.", propertyInfo.DeclaringType.Namespace, propertyInfo.DeclaringType.Name);
@@ -304,9 +324,29 @@ namespace SDKDocGenerator.Writers
 
         void AddMethods(TextWriter writer)
         {
-            var methods = this._versionType.GetMethodsToDocument();
+            // Get methods from the type and merge with any supplemental methods
+            var methods = this._versionType.GetMethodsToDocument().ToList();
+
+            // Add supplemental methods (methods that exist only in supplemental platforms like net8.0)
+            if (_supplementalMethods.Any())
+            {
+                // Create a set of existing method signatures to avoid duplicates
+                var existingSignatures = new HashSet<string>(
+                    methods.Select(m => $"{m.Name}({string.Join(",", m.GetParameters().Select(p => p.ParameterType.FullName))})"));
+
+                foreach (var supplementalMethod in _supplementalMethods)
+                {
+                    var sig = $"{supplementalMethod.Name}({string.Join(",", supplementalMethod.GetParameters().Select(p => p.ParameterType.FullName))})";
+                    if (!existingSignatures.Contains(sig))
+                    {
+                        methods.Add(supplementalMethod);
+                    }
+                }
+            }
+
             if (!methods.Any())
                 return;
+
             AddMemberTableSectionHeader(writer, "Methods");
 
             const string netFrameworkPatternNote = "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>" +
@@ -342,7 +382,11 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             string html = string.Empty;
-            var isInherited = !info.DeclaringType.Equals(_versionType);
+            // Use FullName comparison for the inheritance check. The standard Equals()
+            // compares underlying System.Type references, which fails for supplemental
+            // methods from other assembly contexts (e.g., net8.0 methods on a net472 class page)
+            // even though they represent the same logical type.
+            var isInherited = !string.Equals(info.DeclaringType.FullName, _versionType.FullName);
             if (isInherited)
             {
                 html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
@@ -390,7 +434,7 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             string html = string.Empty;
-            var isInherited = !info.DeclaringType.Equals(_versionType);
+            var isInherited = !string.Equals(info.DeclaringType.FullName, _versionType.FullName);
             if (isInherited)
             {
                 html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
@@ -440,7 +484,7 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             string html = string.Empty;
-            var isInherited = !info.DeclaringType.Equals(_versionType);
+            var isInherited = !string.Equals(info.DeclaringType.FullName, _versionType.FullName);
             if (isInherited)
             {
                 html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
