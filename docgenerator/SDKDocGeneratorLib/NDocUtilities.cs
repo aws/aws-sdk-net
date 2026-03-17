@@ -44,6 +44,13 @@ namespace SDKDocGenerator
             { "paramref", "code" }
         };
 
+        // Callout elements that render as styled blocks with a header
+        private static readonly Dictionary<string, string> CalloutElementMapping = new Dictionary<string, string>(StringComparer.Ordinal)
+        {
+            { "important", "Important:" },
+            { "note", "Note:" }
+        };
+
         #region manage ndoc instances
         // The reason we cache the doc data on the side instead of directly referencing doc instances from
         // the type information is becasue we are loading the assemblies for reflection in a separate app domain.
@@ -604,17 +611,33 @@ namespace SDKDocGenerator
                                 // handle self-closing element, like <a />
                                 // this must be read before any other reading is done
                                 var selfClosingElement = reader.IsEmptyElement;
+                                var originalLocalName = reader.LocalName;
 
                                 // element name substitution, if necessary
                                 string elementName;
-                                if (!NdocToHtmlElementMapping.TryGetValue(reader.LocalName, out elementName))
-                                    elementName = reader.LocalName;
+                                string calloutHeader;
+                                bool isCallout = CalloutElementMapping.TryGetValue(originalLocalName, out calloutHeader);
+
+                                if (isCallout)
+                                {
+                                    elementName = "div";
+                                }
+                                else if (!NdocToHtmlElementMapping.TryGetValue(originalLocalName, out elementName))
+                                {
+                                    elementName = originalLocalName;
+                                }
 
                                 // some elements can't be empty, use this variable for that
                                 string emptyElementContents = null;
 
                                 // start element
                                 writer.WriteStartElement(elementName);
+
+                                // Add class for callout elements (attribute must be written before any content)
+                                if (isCallout)
+                                {
+                                    writer.WriteAttributeString("class", "noteblock");
+                                }
 
                                 // copy over attributes
                                 if (reader.HasAttributes)
@@ -690,6 +713,12 @@ namespace SDKDocGenerator
                                         //of the frame.
                                         writer.WriteAttributeString(targetAttributeName, "_blank");
                                     }
+                                }
+
+                                // Write callout header after all attributes are written
+                                if (isCallout)
+                                {
+                                    writer.WriteRaw("<div class=\"noteheader\">" + calloutHeader + "</div>");
                                 }
 
                                 // if this is a self-closing element, close it
