@@ -1,3 +1,11 @@
+### 3.7.1244.0 (2026-03-17 18:41 UTC)
+* BedrockAgentCoreControl (3.7.521.0)
+	* Deprecating namespaces field and adding namespaceTemplates.
+* ElasticMapReduce (3.7.506.0)
+	* Add S3LoggingConfiguration to Control LogUploads
+* Glue (3.7.516.0)
+	* Provide approval to overwrite existing Lake Formation permissions on all child resources with the default permissions specified in 'CreateTableDefaultPermissions' and 'CreateDatabaseDefaultPermissions' when updating catalog. Allowed values are ["Accept","Deny"] .
+
 ### 3.7.1243.0 (2026-03-16 18:24 UTC)
 * Bedrock (3.7.515.0)
 	* You can now generate policy scenarios on demand using the new GENERATE POLICY SCENARIOS build workflow type. Scenarios will no longer be automatically generated during INGEST CONTENT, REFINE POLICY, and IMPORT POLICY workflows, resulting in faster completion times for these operations.
