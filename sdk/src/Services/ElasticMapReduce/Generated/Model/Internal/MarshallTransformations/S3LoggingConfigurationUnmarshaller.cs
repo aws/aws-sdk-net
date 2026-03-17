@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MonitoringConfiguration Object
+    /// Response Unmarshaller for S3LoggingConfiguration Object
     /// </summary>  
-    public class MonitoringConfigurationUnmarshaller : IJsonUnmarshaller<MonitoringConfiguration, JsonUnmarshallerContext>
+    public class S3LoggingConfigurationUnmarshaller : IJsonUnmarshaller<S3LoggingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MonitoringConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public S3LoggingConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            MonitoringConfiguration unmarshalledObject = new MonitoringConfiguration();
+            S3LoggingConfiguration unmarshalledObject = new S3LoggingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchLogConfiguration", targetDepth))
+                if (context.TestExpression("LogTypeUploadPolicy", targetDepth))
                 {
-                    var unmarshaller = CloudWatchLogConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLogConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("S3LoggingConfiguration", targetDepth))
-                {
-                    var unmarshaller = S3LoggingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.S3LoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.LogTypeUploadPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         }
 
 
-        private static MonitoringConfigurationUnmarshaller _instance = new MonitoringConfigurationUnmarshaller();        
+        private static S3LoggingConfigurationUnmarshaller _instance = new S3LoggingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MonitoringConfigurationUnmarshaller Instance
+        public static S3LoggingConfigurationUnmarshaller Instance
         {
             get
             {
