@@ -115,7 +115,7 @@ namespace ServiceClientGenerator
                 if (message == null)
                     throw new Exception(string.Format("The 'message' property of the 'deprecated' trait is missing for operation {0}.\nFor example: \"OperationName\":{{\"name\":\"OperationName\", ... \"deprecated\":true, \"deprecatedMessage\":\"This operation is deprecated\"}}", this.name));          
 
-                return message;
+                return message.SanitizeDeprecationMessage();
             }
         }
 

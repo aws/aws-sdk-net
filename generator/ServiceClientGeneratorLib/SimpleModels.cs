@@ -121,6 +121,7 @@ namespace ServiceClientGenerator
                 return string.Empty;
             }
         }
+
     }
 
     #endregion
