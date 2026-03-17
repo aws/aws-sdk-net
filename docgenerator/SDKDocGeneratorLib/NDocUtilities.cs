@@ -74,9 +74,10 @@ namespace SDKDocGenerator
             if (File.Exists(platformSpecificNdocFile))
             {
                 var docId = GenerateDocId(serviceName, platform);
-                // BREADCRUMB (2026-01): Platform map feature introduced multi-platform scanning.
-                // When loading net472 and net8.0 for same service, both try to cache docs under
-                // same docId. First-wins ensures primary platform (net472) docs take precedence.
+                // De-duplication guard: LoadDocumentation may be called multiple times for
+                // the same (service, platform) pair (e.g., during Generate() and again during
+                // GenerateExclusivePagesFromMap()). Each docId is unique per service+platform,
+                // so this only prevents redundant re-parsing of the same XML file.
                 if (!_ndocCache.ContainsKey(docId))
                 {
                     _ndocCache.Add(docId, CreateNDocTable(platformSpecificNdocFile, serviceName, options));

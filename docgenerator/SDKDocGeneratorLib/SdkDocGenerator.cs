@@ -177,8 +177,11 @@ namespace SDKDocGenerator
 
                 // now all service assemblies are processed, handle core plus any types in those assemblies that
                 // we elected to defer until we processed core.
-                coreManifest.ManifestAssemblyContext.SdkAssembly.DeferredTypesProvider = deferredTypes;
-                coreManifest.Generate(null, TOCWriter);
+                if (coreManifest != null)
+                {
+                    coreManifest.ManifestAssemblyContext.SdkAssembly.DeferredTypesProvider = deferredTypes;
+                    coreManifest.Generate(null, TOCWriter);
+                }
 
                 // Generate pages for platform-exclusive APIs (e.g., H2 methods only in net8.0)
                 // The unified platform map already contains wrappers for exclusive members
