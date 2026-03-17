@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private List<PrincipalPermissions> _createTableDefaultPermissions = AWSConfigs.InitializeCollections ? new List<PrincipalPermissions>() : null;
         private string _description;
         private FederatedCatalog _federatedCatalog;
+        private OverwriteChildResourcePermissionsWithDefaultEnum _overwriteChildResourcePermissionsWithDefault;
         private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TargetRedshiftCatalog _targetRedshiftCatalog;
 
@@ -158,6 +159,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetFederatedCatalog()
         {
             return this._federatedCatalog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverwriteChildResourcePermissionsWithDefault. 
+        /// <para>
+        ///  Overwrites existing Amazon Web Services Lake Formation permissions with <c>CatalogInput$CreateTableDefaultPermissions</c>
+        /// and <c>CatalogInput$CreateDatabaseDefaultPermissions</c> for all child resources.
+        /// 
+        /// </para>
+        /// </summary>
+        public OverwriteChildResourcePermissionsWithDefaultEnum OverwriteChildResourcePermissionsWithDefault
+        {
+            get { return this._overwriteChildResourcePermissionsWithDefault; }
+            set { this._overwriteChildResourcePermissionsWithDefault = value; }
+        }
+
+        // Check to see if OverwriteChildResourcePermissionsWithDefault property is set
+        internal bool IsSetOverwriteChildResourcePermissionsWithDefault()
+        {
+            return this._overwriteChildResourcePermissionsWithDefault != null;
         }
 
         /// <summary>
