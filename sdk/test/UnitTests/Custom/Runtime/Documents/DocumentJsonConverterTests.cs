@@ -212,24 +212,38 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("[1,\"two\",true]", json);
         }
 
-        #region Customer Scenario Validation (Issues #3694, #3837, #4078)
-
+        /// <summary>
+        /// Regression test for GitHub issue #3837.
+        /// A POCO containing a Dictionary-typed Document would throw
+        /// "Cannot Convert DocumentType to List because it is Dictionary"
+        /// during STJ serialization.
+        /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void SerializeFilterAttributeScenario()
+        public void SerializeObjectContainingDictionaryDocument()
         {
-            // Issue #3694: FilterAttribute with Document string value
-            var filter = new FilterAttributeLike
+            var wrapper = new DocumentWrapper
             {
-                Key = "TeamId",
-                Value = new Document("TestTeamId")
+                Name = "test",
+                Metadata = new Document(new Dictionary<string, Document>
+                {
+                    { "key", new Document("value") },
+                    { "num", new Document(42) }
+                })
             };
 
-            var json = JsonSerializer.Serialize(filter);
-            Assert.AreEqual("{\"Key\":\"TeamId\",\"Value\":\"TestTeamId\"}", json);
+            var json = JsonSerializer.Serialize(wrapper);
+            var roundTripped = JsonSerializer.Deserialize<DocumentWrapper>(json);
+            Assert.AreEqual("test", roundTripped.Name);
+            Assert.IsTrue(roundTripped.Metadata.IsDictionary());
+            Assert.AreEqual("value", roundTripped.Metadata.AsDictionary()["key"].AsString());
+            Assert.AreEqual(42, roundTripped.Metadata.AsDictionary()["num"].AsInt());
         }
 
+        /// <summary>
+        /// Regression test for GitHub issue #4078.
+        /// </summary>
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -251,20 +265,12 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("object", roundTripped.AsDictionary()["type"].AsString());
         }
 
-        #endregion
-
         #region Helpers
 
         private class DocumentWrapper
         {
             public string Name { get; set; }
             public Document Metadata { get; set; }
-        }
-
-        private class FilterAttributeLike
-        {
-            public string Key { get; set; }
-            public Document Value { get; set; }
         }
 
         #endregion
