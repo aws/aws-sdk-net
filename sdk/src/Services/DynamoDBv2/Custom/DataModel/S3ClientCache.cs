@@ -37,10 +37,15 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 try
                 {
+                    var config = ServiceClientHelpers.CreateServiceConfigFromClient(
+                        ServiceClientHelpers.S3_CONFIG_CLASS_FULL_NAME,
+                        ddbClient,
+                        out var credentials);
+                    config.RegionEndpoint = region;
+
                     output = ServiceClientHelpers.CreateServiceFromTypeName<ICoreAmazonS3>(
                         ServiceClientHelpers.S3_SERVICE_CLASS_FULL_NAME,
-                        ServiceClientHelpers.S3_CONFIG_CLASS_FULL_NAME,
-                        this.ddbClient);
+                        credentials, config);
                 }
                 catch (Exception e)
                 {

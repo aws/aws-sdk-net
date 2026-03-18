@@ -62,7 +62,7 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
-        internal static TClient CreateServiceFromTypeName<TClient>(
+        public static TClient CreateServiceFromTypeName<TClient>(
 #if NET
             [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
 #endif
@@ -76,33 +76,6 @@ namespace Amazon.Runtime.Internal
                 ThrowTypeNotAvailable(serviceClientName);
             }
 
-            var newServiceClient = (TClient)Activator.CreateInstance(serviceClientType, new object[] { credentials, config });
-
-            return newServiceClient;
-        }
-
-        public static TClient CreateServiceFromTypeName<TClient>(
-#if NET
-            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
-#endif
-            string serviceClientName,
-#if NET
-            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
-#endif
-            string serviceConfigName,
-            AmazonServiceClient originalServiceClient)
-            where TClient : class
-        {
-            var serviceClientType = Type.GetType(serviceClientName);
-            if (serviceClientType is null)
-            {
-                ThrowTypeNotAvailable(serviceClientName);
-            }
-
-            var config = CreateServiceConfig(serviceConfigName);
-            originalServiceClient.CloneConfig(config);
-
-            var credentials = originalServiceClient.ExplicitAWSCredentials ?? originalServiceClient.Config.DefaultAWSCredentials;
             var newServiceClient = (TClient)Activator.CreateInstance(serviceClientType, new object[] { credentials, config });
 
             return newServiceClient;
@@ -180,6 +153,27 @@ namespace Amazon.Runtime.Internal
             var newServiceClient = constructor.Invoke(new object[] { credentials, config }) as TClient;
 
             return newServiceClient;
+        }
+
+        public static ClientConfig CreateServiceConfigFromClient(
+#if NET
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor)]
+#endif
+            string typeName,
+            AmazonServiceClient originalServiceClient,
+            out AWSCredentials credentials)
+        {
+            var type = Type.GetType(typeName);
+            if (type is null)
+            {
+                ThrowTypeNotAvailable(typeName);
+            }
+
+            var config = (ClientConfig)Activator.CreateInstance(type);
+            originalServiceClient.CloneConfig(config);
+
+            credentials = originalServiceClient.ExplicitAWSCredentials ?? originalServiceClient.Config.DefaultAWSCredentials;
+            return config;
         }
 
         internal static ClientConfig CreateServiceConfig(
