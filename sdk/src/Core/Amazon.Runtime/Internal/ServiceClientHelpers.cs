@@ -226,6 +226,10 @@ namespace Amazon.Runtime.Internal
             string typeName)
         {
             var type = Type.GetType(typeName);
+            if (type is null)
+            {
+                ThrowTypeNotAvailable(typeName);
+            }
 
             var config = Activator.CreateInstance(type);
 
@@ -270,7 +274,7 @@ namespace Amazon.Runtime.Internal
         private static void ThrowTypeNotAvailable(string assemblyQualifiedTypeName)
         {
             int idxOfComma = assemblyQualifiedTypeName.IndexOf(',');
-            string assemblyName = idxOfComma >= 0 ? assemblyQualifiedTypeName.Substring(idxOfComma + 1) : assemblyQualifiedTypeName;
+            string assemblyName = idxOfComma >= 0 ? assemblyQualifiedTypeName.Substring(idxOfComma + 1).Trim() : assemblyQualifiedTypeName;
             throw new AmazonClientException($"Failed to load assembly. Be sure to include a reference to {assemblyName}.");
         }
 

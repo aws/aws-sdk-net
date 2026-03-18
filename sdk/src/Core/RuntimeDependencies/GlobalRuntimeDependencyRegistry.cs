@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using AWSSDK.Runtime.Internal.Util;
 using System;
 using System.ComponentModel;
 
@@ -49,6 +52,7 @@ namespace Amazon.RuntimeDependencies
         [Obsolete("This method is no longer necessary for trimming and Native AOT compatibility. Remove calls to this method and merely reference the AWSSDK.Extensions.CrtIntegration NuGet package instead.")]
         public void RegisterChecksumProvider(object instance)
         {
+            RegisterInstance(ChecksumCRTWrapper.CRT_WRAPPER_ASSEMBLY_NAME, ChecksumCRTWrapper.CRT_WRAPPER_CLASS_NAME, instance);
         }
 
         /// <summary>
@@ -68,6 +72,7 @@ namespace Amazon.RuntimeDependencies
         [Obsolete("This method is no longer necessary for trimming and Native AOT compatibility. Remove calls to this method and merely reference the AWSSDK.Extensions.CrtIntegration NuGet package instead.")]
         public void RegisterSigV4aProvider(RuntimeDependencyFactory factory)
         {
+            RegisterInstance(AWS4aSignerCRTWrapper.CRT_WRAPPER_ASSEMBLY_NAME, AWS4aSignerCRTWrapper.CRT_WRAPPER_CLASS_NAME, factory);
         }
 
         /// <summary>
@@ -79,6 +84,7 @@ namespace Amazon.RuntimeDependencies
         [Obsolete("This method is no longer necessary for trimming and Native AOT compatibility. Remove calls to this method and merely reference the AWSSDK.SecurityToken NuGet package instead.")]
         public void RegisterSecurityTokenServiceClient(object instance)
         {
+            RegisterInstance(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, instance);
         }
 
         /// <summary>
@@ -98,6 +104,7 @@ namespace Amazon.RuntimeDependencies
         [Obsolete("This method is no longer necessary for trimming and Native AOT compatibility. Remove calls to this method and merely reference the AWSSDK.SecurityToken NuGet package instead.")]
         public void RegisterSecurityTokenServiceClient(RuntimeDependencyFactory factory)
         {
+            RegisterInstance(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, factory);
         }
 
         /// <summary>
@@ -109,10 +116,11 @@ namespace Amazon.RuntimeDependencies
         [Obsolete("This method is no longer necessary for trimming and Native AOT compatibility. Remove calls to this method and merely reference the AWSSDK.SSO NuGet package instead.")]
         public void RegisterSSOClient(object instance)
         {
+            RegisterInstance(ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME, instance);
         }
 
         /// <summary>
-        /// Register the Amazon.SecurityToken.AmazonSecurityTokenServiceClient instance from the AWSSDK.SSO package.
+        /// Register the Amazon.SSO.AmazonSSOClient instance from the AWSSDK.SSO package.
         /// 
         /// The SSO service client is used for credentials providers configured for single sign on.
         /// </summary>
@@ -120,6 +128,7 @@ namespace Amazon.RuntimeDependencies
         [Obsolete("This method is no longer necessary for trimming and Native AOT compatibility. Remove calls to this method and merely reference the AWSSDK.SSO NuGet package instead.")]
         public void RegisterSSOClient(RuntimeDependencyFactory factory)
         {
+            RegisterInstance(ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME, factory);
         }
 
         /// <summary>
@@ -131,6 +140,7 @@ namespace Amazon.RuntimeDependencies
         [Obsolete("This method is no longer necessary for trimming and Native AOT compatibility. Remove calls to this method and merely reference the AWSSDK.SSOOIDC NuGet package instead.")]
         public void RegisterSSOOIDCClient(object instance)
         {
+            RegisterInstance(ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME, instance);
         }
 
         /// <summary>
@@ -142,6 +152,7 @@ namespace Amazon.RuntimeDependencies
         [Obsolete("This method is no longer necessary for trimming and Native AOT compatibility. Remove calls to this method and merely reference the AWSSDK.SSOOIDC NuGet package instead.")]
         public void RegisterSSOOIDCClient(RuntimeDependencyFactory factory)
         {
+            RegisterInstance(ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME, factory);
         }
 
         /// <summary>
@@ -153,6 +164,7 @@ namespace Amazon.RuntimeDependencies
         [Obsolete("This method is no longer necessary for trimming and Native AOT compatibility. Remove calls to this method and merely reference the AWSSDK.Signin NuGet package instead.")]
         public void RegisterSigninClient(object instance)
         {
+            RegisterInstance(ServiceClientHelpers.SIGNIN_ASSEMBLY_NAME, ServiceClientHelpers.SIGNIN_SERVICE_CLASS_NAME, instance);
         }
 
         /// <summary>
@@ -164,6 +176,7 @@ namespace Amazon.RuntimeDependencies
         [Obsolete("This method is no longer necessary for trimming and Native AOT compatibility. Remove calls to this method and merely reference the AWSSDK.Signin NuGet package instead.")]
         public void RegisterSigninClient(RuntimeDependencyFactory factory)
         {
+            RegisterInstance(ServiceClientHelpers.SIGNIN_ASSEMBLY_NAME, ServiceClientHelpers.SIGNIN_SERVICE_CLASS_NAME, factory);
         }
 
         /// <summary>
@@ -175,6 +188,7 @@ namespace Amazon.RuntimeDependencies
         [Obsolete("This method is no longer necessary for trimming and Native AOT compatibility. Remove calls to this method and merely reference the AWSSDK.S3 NuGet package instead.")]
         public void RegisterS3Client(object instance)
         {
+            RegisterInstance(ServiceClientHelpers.S3_ASSEMBLY_NAME, ServiceClientHelpers.S3_SERVICE_CLASS_NAME, instance);
         }
 
         /// <summary>
@@ -186,6 +200,7 @@ namespace Amazon.RuntimeDependencies
         [Obsolete("This method is no longer necessary for trimming and Native AOT compatibility. Remove calls to this method and merely reference the AWSSDK.S3 NuGet package instead.")]
         public void RegisterS3Client(RuntimeDependencyFactory factory)
         {
+            RegisterInstance(ServiceClientHelpers.S3_ASSEMBLY_NAME, ServiceClientHelpers.S3_SERVICE_CLASS_NAME, factory);
         }
     }
 }

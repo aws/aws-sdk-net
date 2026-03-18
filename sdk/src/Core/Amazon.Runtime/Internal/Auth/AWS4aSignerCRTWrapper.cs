@@ -31,7 +31,9 @@ namespace Amazon.Runtime.Internal.Auth
     /// </summary>
     public class AWS4aSignerCRTWrapper : AbstractAWSSigner
     {
+        internal const string CRT_WRAPPER_ASSEMBLY_NAME = "AWSSDK.Extensions.CrtIntegration";
         internal const string CRT_WRAPPER_NUGET_PACKGE_NAME = "AWSSDK.Extensions.CrtIntegration";
+        internal const string CRT_WRAPPER_CLASS_NAME = "Amazon.Extensions.CrtIntegration.CrtAWS4aSigner";
         private const string CRT_WRAPPER_FULL_NAME = "Amazon.Extensions.CrtIntegration.CrtAWS4aSigner, AWSSDK.Extensions.CrtIntegration";
 
         private static IAWSSigV4aProvider _awsSigV4AProvider;

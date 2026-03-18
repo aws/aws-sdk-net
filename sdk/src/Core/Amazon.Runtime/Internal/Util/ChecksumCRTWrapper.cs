@@ -32,7 +32,9 @@ namespace AWSSDK.Runtime.Internal.Util
     /// </summary>
     public static class ChecksumCRTWrapper
     {
+        internal const string CRT_WRAPPER_ASSEMBLY_NAME = "AWSSDK.Extensions.CrtIntegration";
         private const string CRT_WRAPPER_NUGET_PACKAGE_NAME = "AWSSDK.Extensions.CrtIntegration";
+        internal const string CRT_WRAPPER_CLASS_NAME = "AWSSDK.Extensions.CrtIntegration.CrtChecksums";
         private const string CRT_WRAPPER_CLASS_FULL_NAME = "AWSSDK.Extensions.CrtIntegration.CrtChecksums, AWSSDK.Extensions.CrtIntegration";
 
         private static readonly object _lock = new object();
