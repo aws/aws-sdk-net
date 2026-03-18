@@ -365,12 +365,6 @@ namespace SDKDocGenerator.PlatformMap
             if (type == null)
                 return null;
 
-            // Extract method name from signature
-            // Signature format: "M:Namespace.Type.MethodName(ParamTypes)"
-            var methodName = MemberSignature.ExtractMethodName(entry.Signature);
-            if (string.IsNullOrEmpty(methodName))
-                return null;
-
             // Find matching method
             foreach (var method in type.GetMethodsToDocument())
             {

@@ -1,4 +1,5 @@
-﻿using SDKDocGenerator.Syntax;
+﻿using SDKDocGenerator.PlatformMap;
+using SDKDocGenerator.Syntax;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -332,11 +333,11 @@ namespace SDKDocGenerator.Writers
             {
                 // Create a set of existing method signatures to avoid duplicates
                 var existingSignatures = new HashSet<string>(
-                    methods.Select(m => $"{m.Name}({string.Join(",", m.GetParameters().Select(p => p.ParameterType.FullName))})"));
+                    methods.Select(m => MemberSignature.ForMethod(m)));
 
                 foreach (var supplementalMethod in _supplementalMethods)
                 {
-                    var sig = $"{supplementalMethod.Name}({string.Join(",", supplementalMethod.GetParameters().Select(p => p.ParameterType.FullName))})";
+                    var sig = MemberSignature.ForMethod(supplementalMethod);
                     if (!existingSignatures.Contains(sig))
                     {
                         methods.Add(supplementalMethod);
