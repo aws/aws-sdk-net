@@ -3,7 +3,8 @@
     "updateMinimum": false,
     "type": "patch",
     "changeLogMessages": [
-      "Resolving runtime dependencies is now automatically compatible with trimming and Native AOT, without needing to use the `GlobalRuntimeDependencyRegistry` class, which was deprecated."
+      "Resolving runtime dependencies is now automatically compatible with trimming and Native AOT, without needing to use the `GlobalRuntimeDependencyRegistry` class, which was deprecated.",
+      "Fixed AssumeRoleWithWebIdentityCredentialsOptions.ProxySettings being ignored sometimes."
     ]
   },
   "services": [
@@ -11,7 +12,8 @@
       "serviceName": "DynamoDBv2",
       "type": "patch",
       "changeLogMessages": [
-        "Using S3 Link is now automatically compatible with trimming and Native AOT, and no longer requires using the `GlobalRuntimeDependencyRegistry` class."
+        "Using S3 Link is now automatically compatible with trimming and Native AOT, and no longer requires using the `GlobalRuntimeDependencyRegistry` class.",
+        "Fixed the bucket region endpoint in S3 Link being ignored sometimes."
       ]
     }
   ]
