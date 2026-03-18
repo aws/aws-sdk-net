@@ -61,12 +61,17 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 				else
 				{
 #>
-<#=new string(' ', level * 4)#>                context.Request.Content = UTF8Encoding.UTF8.GetBytes(requestObject.<#=member.PropertyName#>));
+<#=new string(' ', level * 4)#>                context.Request.Content = UTF8Encoding.UTF8.GetBytes(requestObject.<#=member.PropertyName#>);
 <#+
 				}
 #>
 <#=new string(' ', level * 4)#>            }
 <#+
+				continue;
+			}
+			else if (member.IsEventHeader)
+			{
+				ProcessEventHeaders(level, member);
 				continue;
 			}
 			else
@@ -75,12 +80,14 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#>                context.Writer.WritePropertyName("<#=member.MarshallName#>");
 <#+
 			}
+
 			string memberProperty = variableName + "." + member.PropertyName;
 			// Only append .Value for nullable types that aren't already complex types
 			if (member.IsNullable && !member.IsStructure && !member.IsList && !member.IsMap) 
 			{
 				memberProperty += ".Value";
 			}
+
 			if(member.IsStructure || member.IsList || member.IsMap)
 			{
 				this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape);
@@ -407,5 +414,72 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 		{
 			throw new Exception ("Unknown primitive type encountered");
 		}
+	}
+#>
+<#+
+	void ProcessEventHeaders(int level, Member member)
+	{
+		var eventHeaderVariable = member.ModeledName.ToCamelCase() + "Header";
+#>
+<#=new string(' ', level * 4)#>                var <#=eventHeaderVariable#> = new Amazon.Runtime.EventStreams.EventStreamHeader("<#=member.ModeledName#>");
+<#+
+		if (member.Shape.IsString)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetString(requestObject.<#=member.PropertyName#>);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+		if (member.Shape.IsBoolean)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetBool(requestObject.<#=member.PropertyName#>.Value);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+		if (member.Shape.IsInt)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetInt32(requestObject.<#=member.PropertyName#>.Value);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+		if (member.Shape.IsLong)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetInt64(requestObject.<#=member.PropertyName#>.Value);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+		if (member.Shape.IsMemoryStream)
+		{
+#>
+<#=new string(' ', level * 4)#>				if (requestObject.<#=member.PropertyName#>.TryGetBuffer(out var segment))
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					context.Request.EventHeaders.Add(new EventStreamHeader("<#=eventHeaderVariable#>", segment.Array, segment.Offset, segment.Count));
+<#=new string(' ', level * 4)#>				}
+<#=new string(' ', level * 4)#>				else
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					headers.Add(new EventStreamHeader("<#=eventHeaderVariable#>", requestObject.<#=member.PropertyName#>.ToArray()));
+<#=new string(' ', level * 4)#>				}
+<#+
+		}
+		if (member.Shape.IsTimeStamp)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetTimestamp(requestObject.<#=member.PropertyName#>.Value);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+		if (member.Shape.IsDouble)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetDouble(requestObject.<#=member.PropertyName#>.Value);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+#>
+<#=new string(' ', level * 4)#>			}
+<#+
 	}
 #>

@@ -18,12 +18,13 @@
  *  AWS SDK for .NET
  *
  */
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Util;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Net;
 using System.Text;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime.EventStreams
 {
@@ -43,8 +44,10 @@ namespace Amazon.Runtime.EventStreams
         ByteBuf,
         String,
         Timestamp,
-        UUID
+        UUID,
+        Double
     }
+    [AWSIsBackwardsCompatible]
 
     public interface IEventStreamHeader
     {
@@ -171,6 +174,16 @@ namespace Amazon.Runtime.EventStreams
         /// Sets the current value
         /// </summary>
         void SetUUID(Guid value);
+
+        /// <summary>
+        /// Returns the current value as a double.
+        /// </summary>
+        double AsDouble();
+
+        /// <summary>
+        /// Sets the current value
+        /// </summary>
+        void SetDouble(double value);
     }
 
     /// <summary>
@@ -279,6 +292,11 @@ namespace Amazon.Runtime.EventStreams
                     newOffset += valueLength;
                     header.HeaderValue = new Guid(guidCpy);
                     break;
+                case EventStreamHeaderType.Double:
+                    var doubleBits = IPAddress.NetworkToHostOrder(BitConverter.ToInt64(buffer, newOffset));
+                    newOffset += _sizeOfInt64;
+                    header.HeaderValue = BitConverter.Int64BitsToDouble(doubleBits);
+                    break;
                 default:
                     throw new EventStreamParseException(string.Format(CultureInfo.InvariantCulture, "Header Type: {0} is an unknown type.", header.HeaderType));
             }
@@ -360,6 +378,11 @@ namespace Amazon.Runtime.EventStreams
                     Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, serializedBytes.Length);
                     newOffset += serializedBytes.Length;
                     break;
+                case EventStreamHeaderType.Double:
+                    serializedBytes = BitConverter.GetBytes(IPAddress.HostToNetworkOrder(BitConverter.DoubleToInt64Bits((double)HeaderValue)));
+                    Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, _sizeOfInt64);
+                    newOffset += _sizeOfInt64;
+                    break;
                 default:
                     throw new EventStreamParseException(string.Format(CultureInfo.InvariantCulture, "Header Type: {0} is an unknown type.", HeaderType));
             }
@@ -407,6 +430,9 @@ namespace Amazon.Runtime.EventStreams
                     break;
                 case EventStreamHeaderType.UUID:
                     len += _sizeOfGuid;
+                    break;
+                case EventStreamHeaderType.Double:
+                    len += _sizeOfInt64;
                     break;
                 default:
                     throw new EventStreamParseException(string.Format(CultureInfo.InvariantCulture, "Header Type: {0} is an unknown type.", HeaderType));
@@ -572,6 +598,23 @@ namespace Amazon.Runtime.EventStreams
         {
             HeaderValue = value;
             HeaderType = EventStreamHeaderType.UUID;
+        }
+
+        /// <summary>
+        /// Returns the current value as a double.
+        /// </summary>
+        public double AsDouble()
+        {
+            return (double)HeaderValue;
+        }
+
+        /// <summary>
+        /// Sets the current value
+        /// </summary>
+        public void SetDouble(double value)
+        {
+            HeaderValue = value;
+            HeaderType = EventStreamHeaderType.Double;
         }
     }
     #endregion

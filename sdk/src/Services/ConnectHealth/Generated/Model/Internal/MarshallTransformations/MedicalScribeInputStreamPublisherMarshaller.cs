@@ -20,6 +20,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Amazon.Runtime.EventStreams;
+using System.Collections.Generic;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
 {
@@ -53,12 +54,14 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
             byte[] eventPayload;
             string contentType;
             string eventType;
+            IList<EventStreamHeader> eventHeaders;
             if (evnt is MedicalScribeAudioEvent)
             {
                 var memoryStream = new MemoryStream();
                 var context = CreateJsonMarshallerContext(memoryStream);
                 context.Writer.WriteStartObject();
                 MedicalScribeAudioEventMarshaller.Instance.Marshall((MedicalScribeAudioEvent)evnt, context);
+                eventHeaders = context.Request.EventHeaders;
                 context.Writer.WriteEndObject();
                 context.Writer.Flush();
 
@@ -72,6 +75,7 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
                 var context = CreateJsonMarshallerContext(memoryStream);
                 context.Writer.WriteStartObject();
                 MedicalScribeConfigurationEventMarshaller.Instance.Marshall((MedicalScribeConfigurationEvent)evnt, context);
+                eventHeaders = context.Request.EventHeaders;
                 context.Writer.WriteEndObject();
                 context.Writer.Flush();
 
@@ -85,6 +89,7 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
                 var context = CreateJsonMarshallerContext(memoryStream);
                 context.Writer.WriteStartObject();
                 MedicalScribeSessionControlEventMarshaller.Instance.Marshall((MedicalScribeSessionControlEvent)evnt, context);
+                eventHeaders = context.Request.EventHeaders;
                 context.Writer.WriteEndObject();
                 context.Writer.Flush();
 
@@ -97,7 +102,7 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
                 throw new Amazon.Runtime.AmazonClientException($"Type {evnt.GetType().FullName} is not a known event type for this streaming operation");
             }
 
-            return CreateEventStreamMessage(eventType: eventType, contentType: contentType, marshalledEventHeaders: null, eventPayload: eventPayload);
+            return CreateEventStreamMessage(eventType: eventType, contentType: contentType, marshalledEventHeaders: eventHeaders, eventPayload: eventPayload);
         }
     }
 }

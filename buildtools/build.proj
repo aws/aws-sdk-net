@@ -541,6 +541,7 @@
             <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/sample.rsa.private.key.txt"/>
             <PrivateKeyException Include="extensions/test/EC2.DecryptPasswordTests/PasswordTest.cs"/>
             <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/URLSignerTest.cs"/>
+
         </ItemGroup>
 
     <ItemGroup>
@@ -556,6 +557,7 @@
       <FileException Include="sdk/src/Services/S3/bin/Release/net8.0/AWSSDK.S3.xml" />
       <FileException Include="Deployment/assemblies/net8.0/AWSSDK.Core.xml" />
       <FileException Include="Deployment/assemblies/net8.0/AWSSDK.S3.xml" />
+      <FileException Include="sdk/test/NetStandard/UnitTests/Core/EventStreamHeaderTests.cs"/>
     </ItemGroup>
 
         <ItemGroup>

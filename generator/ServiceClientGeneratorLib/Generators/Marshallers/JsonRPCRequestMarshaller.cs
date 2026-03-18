@@ -174,7 +174,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
 	}
 
 	var payload = this.Operation.RequestPayloadMember;
-	if (this.Operation.HttpMethod != "GET" && this.Operation.HttpMethod != "DELETE")
+	if (this.Operation.HttpMethod != "GET" && this.Operation.HttpMethod != "DELETE" && !this.Operation.IsEventStreamInput)
 	{
 
 		if (this.Config.ServiceModel.Customizations.OverrideContentType != null)

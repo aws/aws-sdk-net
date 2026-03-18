@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.EventStreams;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,6 +22,7 @@ using System.Text;
 
 namespace Amazon.Runtime.Internal.Transform
 {
+    [AWSIsBackwardsCompatible]
     public interface IWebResponseData
     {
         long ContentLength { get; }
@@ -32,6 +34,8 @@ namespace Amazon.Runtime.Internal.Transform
         string GetHeaderValue(string headerName);
 
         IHttpResponseBody ResponseBody { get; }
+        IEventStreamHeader GetEventStreamHeader(string headerName);
+        bool IsEventHeaderPresent(string headerName);
     }
 
     public interface IHttpResponseBody : IDisposable

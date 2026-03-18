@@ -40,6 +40,7 @@ namespace Amazon.Runtime.Internal
         readonly IDictionary<string, string> trailingHeaders = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         readonly IDictionary<string, string> subResources = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         readonly IDictionary<string, string> pathResources = new Dictionary<string, string>(StringComparer.Ordinal);
+        readonly List<EventStreamHeader> eventHeaders = new List<EventStreamHeader>();
 
         Uri endpoint;
         string resourcePath;
@@ -159,6 +160,14 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return this.headers;
+            }
+        }
+
+        public IList<EventStreamHeader> EventHeaders
+        {
+            get
+            {
+                return this.eventHeaders;
             }
         }
 
