@@ -33,7 +33,7 @@ namespace Amazon.Ivschat
     public partial class AmazonIvschatConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ivschat", "4.0.2.18");
+            InternalSDKUtils.BuildUserAgentString("ivschat", "4.0.2.19");
 
         private static readonly AmazonIvschatEndpointResolver EndpointResolver =
             new AmazonIvschatEndpointResolver();

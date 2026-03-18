@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Add DocumentJsonConverter to fix System.Text.Json serialization of Document types. Document's IEnumerable interfaces caused STJ to treat it as a collection, throwing InvalidDocumentTypeConversionException."
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}

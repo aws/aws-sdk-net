@@ -1,3 +1,17 @@
+### 4.0.213.0 (2026-03-18 18:57 UTC)
+* DSQL (4.0.9.0)
+	* Add configurable token expiry duration to DSQLAuthTokenGenerator. New overloads accept a TimeSpan parameter to set token lifetime, with validation between 0 and 7 days. Default remains 15 minutes for backwards compatibility.
+* EC2 (4.0.81.0)
+	* The DescribeInstanceTypes API now returns default connection tracking timeout values for TCP, UDP, and UDP stream via the new connectionTrackingConfiguration field on NetworkInfo.
+* MediaConvert (4.0.15.0)
+	* This update adds additional bitrate options for Dolby AC-4 audio outputs.
+* SageMakerRuntimeHTTP2 (4.0.0.1)
+	* Add support for SageMakerRuntimeHTTP2 bidirectional streaming. This is only supported in .NET8
+* Core 4.0.3.19
+	* Add DocumentJsonConverter to fix System.Text.Json serialization of Document types. Document's IEnumerable interfaces caused STJ to treat it as a collection, throwing InvalidDocumentTypeConversionException.
+	* Add support for event headers for event stream based APIs used in services like SageMakerRuntimeHttp2.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.212.0 (2026-03-17 18:18 UTC)
 * BedrockAgentCoreControl (4.0.21.0)
 	* Deprecating namespaces field and adding namespaceTemplates.
