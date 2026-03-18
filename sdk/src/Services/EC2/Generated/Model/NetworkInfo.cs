@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class NetworkInfo
     {
         private List<string> _bandwidthWeightings = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private DefaultConnectionTrackingConfiguration _connectionTrackingConfiguration;
         private int? _defaultNetworkCardIndex;
         private EfaInfo _efaInfo;
         private bool? _efaSupported;
@@ -70,6 +71,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetBandwidthWeightings()
         {
             return this._bandwidthWeightings != null && (this._bandwidthWeightings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionTrackingConfiguration. 
+        /// <para>
+        /// Indicates conntrack information for the instance type
+        /// </para>
+        /// </summary>
+        public DefaultConnectionTrackingConfiguration ConnectionTrackingConfiguration
+        {
+            get { return this._connectionTrackingConfiguration; }
+            set { this._connectionTrackingConfiguration = value; }
+        }
+
+        // Check to see if ConnectionTrackingConfiguration property is set
+        internal bool IsSetConnectionTrackingConfiguration()
+        {
+            return this._connectionTrackingConfiguration != null;
         }
 
         /// <summary>

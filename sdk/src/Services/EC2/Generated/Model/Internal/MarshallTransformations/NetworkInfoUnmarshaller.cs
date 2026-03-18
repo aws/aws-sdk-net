@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.BandwidthWeightings.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("connectionTrackingConfiguration", targetDepth))
+                    {
+                        var unmarshaller = DefaultConnectionTrackingConfigurationUnmarshaller.Instance;
+                        unmarshalledObject.ConnectionTrackingConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("defaultNetworkCardIndex", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
