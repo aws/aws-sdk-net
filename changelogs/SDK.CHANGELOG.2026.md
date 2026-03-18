@@ -1,3 +1,9 @@
+### 3.7.1245.0 (2026-03-18 18:24 UTC)
+* EC2 (3.7.555.0)
+	* The DescribeInstanceTypes API now returns default connection tracking timeout values for TCP, UDP, and UDP stream via the new connectionTrackingConfiguration field on NetworkInfo.
+* MediaConvert (3.7.509.0)
+	* This update adds additional bitrate options for Dolby AC-4 audio outputs.
+
 ### 3.7.1244.0 (2026-03-17 18:41 UTC)
 * BedrockAgentCoreControl (3.7.521.0)
 	* Deprecating namespaces field and adding namespaceTemplates.
