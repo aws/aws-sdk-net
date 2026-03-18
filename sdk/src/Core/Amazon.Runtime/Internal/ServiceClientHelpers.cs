@@ -81,7 +81,7 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
-        [RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code should use Amazon.RuntimeDependencyRegistry to use explicitly provided runtime dependencies.")]
+        [RequiresUnreferencedCode("Service client type might be removed. Use CreateServiceFromTypeName instead.")]
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName,
             RegionEndpoint region)
             where TClient : class
@@ -98,7 +98,7 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
-        [RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code should use Amazon.RuntimeDependencyRegistry to use explicitly provided runtime dependencies.")]
+        [RequiresUnreferencedCode("Service client type might be removed. Use CreateServiceFromTypeName instead.")]
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName,
             AWSCredentials credentials, RegionEndpoint region)
             where TClient : class
@@ -116,7 +116,7 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
-        [RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code should use Amazon.RuntimeDependencyRegistry to use explicitly provided runtime dependencies.")]
+        [RequiresUnreferencedCode("Service client type might be removed. Use CreateServiceFromTypeName instead.")]
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName,
             AWSCredentials credentials, ClientConfig config)
             where TClient : class
@@ -134,7 +134,7 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
-        [RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code should use Amazon.RuntimeDependencyRegistry to use explicitly provided runtime dependencies.")]
+        [RequiresUnreferencedCode("Service client and config types might be removed. Use CreateServiceConfigFromClient alongside CreateServiceFromTypeName instead.")]
         public static TClient CreateServiceFromAssembly<TClient>(string assemblyName, string serviceClientClassName, AmazonServiceClient originalServiceClient)
             where TClient : class
         {
@@ -193,7 +193,7 @@ namespace Amazon.Runtime.Internal
             return (ClientConfig)config;
         }
 
-        [RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
+        [RequiresUnreferencedCode("Config type might be removed. Use reflection with Type.GetType(string) instead.")]
         public static ClientConfig CreateServiceConfig(string assemblyName, string serviceConfigClassName)
         {
             var typeInfo = LoadServiceConfigType(assemblyName, serviceConfigClassName);
@@ -204,19 +204,19 @@ namespace Amazon.Runtime.Internal
             return config as ClientConfig;
         }
 
-        [RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
+        [RequiresUnreferencedCode("Service client type might be removed.")]
         private static Type LoadServiceClientType(string assemblyName, string serviceClientClassName)
         {
             return LoadTypeFromAssembly(assemblyName, serviceClientClassName);
         }
 
-        [RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
+        [RequiresUnreferencedCode("Service client type might be removed.")]
         private static Type LoadServiceConfigType(string assemblyName, string serviceConfigClassName)
         {
             return LoadTypeFromAssembly(assemblyName, serviceConfigClassName);
         }
 
-        [RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
+        [RequiresUnreferencedCode("Service client type might be removed.")]
         internal static Type LoadTypeFromAssembly(string assemblyName, string className)
         {
             var assembly = GetSDKAssembly(assemblyName);
@@ -235,7 +235,6 @@ namespace Amazon.Runtime.Internal
             throw new AmazonClientException($"Failed to load assembly. Be sure to include a reference to {assemblyName}.");
         }
 
-        [RequiresUnreferencedCode("Using ServiceClientHelper to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
         private static Assembly GetSDKAssembly(string assemblyName)
         {
             return AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(x => string.Equals(x.GetName().Name, assemblyName, StringComparison.Ordinal))
