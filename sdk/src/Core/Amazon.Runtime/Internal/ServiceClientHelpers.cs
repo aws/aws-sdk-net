@@ -76,13 +76,7 @@ namespace Amazon.Runtime.Internal
                 ThrowTypeNotAvailable(serviceClientName);
             }
 
-            var constructor = serviceClientType.GetConstructor(new Type[]
-                {
-                    typeof(AWSCredentials),
-                    config.GetType()
-                });
-
-            var newServiceClient = (TClient)constructor.Invoke(new object[] { credentials, config });
+            var newServiceClient = (TClient)Activator.CreateInstance(serviceClientType, new object[] { credentials, config });
 
             return newServiceClient;
         }
@@ -101,13 +95,7 @@ namespace Amazon.Runtime.Internal
                 ThrowTypeNotAvailable(serviceClientName);
             }
 
-            var constructor = serviceClientType.GetConstructor(new Type[]
-                {
-                    typeof(AWSCredentials),
-                    typeof(RegionEndpoint)
-                });
-
-            var newServiceClient = (TClient)constructor.Invoke(new object[] { credentials, region });
+            var newServiceClient = (TClient)Activator.CreateInstance(serviceClientType, new object[] { credentials, region });
 
             return newServiceClient;
         }
@@ -133,14 +121,8 @@ namespace Amazon.Runtime.Internal
             var config = CreateServiceConfig(serviceConfigName);
             originalServiceClient.CloneConfig(config);
 
-            var constructor = serviceClientType.GetConstructor(new Type[]
-                {
-                    typeof(AWSCredentials),
-                    config.GetType()
-                });
-
             var credentials = originalServiceClient.ExplicitAWSCredentials ?? originalServiceClient.Config.DefaultAWSCredentials;
-            var newServiceClient = constructor.Invoke(new object[] { credentials, config }) as TClient;
+            var newServiceClient = (TClient)Activator.CreateInstance(serviceClientType, new object[] { credentials, config });
 
             return newServiceClient;
         }
