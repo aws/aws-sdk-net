@@ -81,25 +81,6 @@ namespace Amazon.Runtime.Internal
             return newServiceClient;
         }
 
-        internal static TClient CreateServiceFromTypeName<TClient>(
-#if NET
-            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
-#endif
-            string serviceClientName,
-            AWSCredentials credentials, RegionEndpoint region)
-            where TClient : class
-        {
-            var serviceClientType = Type.GetType(serviceClientName);
-            if (serviceClientType is null)
-            {
-                ThrowTypeNotAvailable(serviceClientName);
-            }
-
-            var newServiceClient = (TClient)Activator.CreateInstance(serviceClientType, new object[] { credentials, region });
-
-            return newServiceClient;
-        }
-
         public static TClient CreateServiceFromTypeName<TClient>(
 #if NET
             [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]

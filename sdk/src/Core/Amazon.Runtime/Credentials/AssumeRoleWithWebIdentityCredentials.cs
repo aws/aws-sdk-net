@@ -249,7 +249,7 @@ namespace Amazon.Runtime
                 }
 
                 return ServiceClientHelpers.CreateServiceFromTypeName<ICoreAmazonSTS>(
-                            ServiceClientHelpers.STS_SERVICE_CLASS_FULL_NAME, new AnonymousAWSCredentials(), region);
+                            ServiceClientHelpers.STS_SERVICE_CLASS_FULL_NAME, new AnonymousAWSCredentials(), stsConfig);
             }
             catch (Exception e)
             {
