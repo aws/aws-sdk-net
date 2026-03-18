@@ -10117,6 +10117,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly Format Mp4 = new Format("mp4");
         /// <summary>
+        /// Constant Mpegts for Format
+        /// </summary>
+        public static readonly Format Mpegts = new Format("mpegts");
+        /// <summary>
         /// Constant Mxf for Format
         /// </summary>
         public static readonly Format Mxf = new Format("mxf");
