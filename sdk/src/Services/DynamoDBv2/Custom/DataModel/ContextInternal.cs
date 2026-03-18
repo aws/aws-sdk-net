@@ -15,7 +15,6 @@
 
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime.Internal.Transform;
 using Amazon.Util;
 using Amazon.Util.Internal;
 using System;
@@ -1919,7 +1918,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 return keyExpression1;
             }
 
-            void MapRangeKeyConditionExpression( RangeKeyCondition rangeKeyCondition, int index,PropertyStorage rangeKeyProperty)
+            void MapRangeKeyConditionExpression(RangeKeyCondition rangeKeyCondition, int index,PropertyStorage rangeKeyProperty)
             {
                 keyExpression.ExpressionStatement +=
                     ContextExpressionsUtils.GetRangeKeyConditionExpression(RANGE_KEY_EXPRESSION_ATTRIBUTE_NAME,
