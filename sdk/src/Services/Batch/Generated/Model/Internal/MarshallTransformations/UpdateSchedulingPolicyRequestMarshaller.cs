@@ -84,6 +84,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetQuotaSharePolicy())
+                {
+                    context.Writer.WritePropertyName("quotaSharePolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QuotaSharePolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.QuotaSharePolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

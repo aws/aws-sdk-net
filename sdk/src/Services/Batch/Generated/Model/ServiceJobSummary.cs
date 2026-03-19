@@ -40,6 +40,7 @@ namespace Amazon.Batch.Model
         private string _jobId;
         private string _jobName;
         private LatestServiceJobAttempt _latestAttempt;
+        private string _quotaShareName;
         private long? _scheduledAt;
         private ServiceJobType _serviceJobType;
         private string _shareIdentifier;
@@ -157,6 +158,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetLatestAttempt()
         {
             return this._latestAttempt != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuotaShareName. 
+        /// <para>
+        /// The quota share for the service job.
+        /// </para>
+        /// </summary>
+        public string QuotaShareName
+        {
+            get { return this._quotaShareName; }
+            set { this._quotaShareName = value; }
+        }
+
+        // Check to see if QuotaShareName property is set
+        internal bool IsSetQuotaShareName()
+        {
+            return this._quotaShareName != null;
         }
 
         /// <summary>

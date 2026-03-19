@@ -90,6 +90,23 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobQueue);
                 }
 
+                if(publicRequest.IsSetPreemptionConfiguration())
+                {
+                    context.Writer.WritePropertyName("preemptionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ServiceJobPreemptionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PreemptionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetQuotaShareName())
+                {
+                    context.Writer.WritePropertyName("quotaShareName");
+                    context.Writer.Write(publicRequest.QuotaShareName);
+                }
+
                 if(publicRequest.IsSetRetryStrategy())
                 {
                     context.Writer.WritePropertyName("retryStrategy");

@@ -58,6 +58,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     response.FrontOfQueue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("frontOfQuotaShares", targetDepth))
+                {
+                    var unmarshaller = FrontOfQuotaSharesDetailUnmarshaller.Instance;
+                    response.FrontOfQuotaShares = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("queueUtilization", targetDepth))
                 {
                     var unmarshaller = QueueSnapshotUtilizationDetailUnmarshaller.Instance;

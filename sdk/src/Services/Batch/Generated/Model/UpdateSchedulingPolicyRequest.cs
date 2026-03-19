@@ -37,6 +37,7 @@ namespace Amazon.Batch.Model
     {
         private string _arn;
         private FairsharePolicy _fairsharePolicy;
+        private QuotaSharePolicy _quotaSharePolicy;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -60,7 +61,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property FairsharePolicy. 
         /// <para>
-        /// The fair-share policy scheduling details.
+        /// The fair-share policy scheduling details. Once set during creation, a fairsharePolicy
+        /// cannot be removed or changed to a quotaSharePolicy.
         /// </para>
         /// </summary>
         public FairsharePolicy FairsharePolicy
@@ -73,6 +75,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetFairsharePolicy()
         {
             return this._fairsharePolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuotaSharePolicy. 
+        /// <para>
+        /// The quota share scheduling policy details. Once set during creation, a quotaSharePolicy
+        /// cannot be removed or changed to a fairsharePolicy.
+        /// </para>
+        /// </summary>
+        public QuotaSharePolicy QuotaSharePolicy
+        {
+            get { return this._quotaSharePolicy; }
+            set { this._quotaSharePolicy = value; }
+        }
+
+        // Check to see if QuotaSharePolicy property is set
+        internal bool IsSetQuotaSharePolicy()
+        {
+            return this._quotaSharePolicy != null;
         }
 
     }

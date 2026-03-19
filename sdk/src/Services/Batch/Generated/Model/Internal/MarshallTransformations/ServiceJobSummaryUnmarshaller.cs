@@ -102,6 +102,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.LatestAttempt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("quotaShareName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QuotaShareName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scheduledAt", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

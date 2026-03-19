@@ -78,6 +78,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("quotaShareUtilization", targetDepth))
+                {
+                    var unmarshaller = QuotaShareUtilizationDetailUnmarshaller.Instance;
+                    unmarshalledObject.QuotaShareUtilization = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("totalCapacityUsage", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<QueueSnapshotCapacityUsage, QueueSnapshotCapacityUsageUnmarshaller>(QueueSnapshotCapacityUsageUnmarshaller.Instance);
