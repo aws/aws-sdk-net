@@ -553,7 +553,7 @@ namespace Amazon.DynamoDBv2.DataModel
             };
 
             // check for projection expression
-            if (storageConfig.ProjectionExpression != null)
+            if (storageConfig.ProjectionExpression.IsSet)
             {
                 operationRequest.ProjectionExpression = storageConfig.ProjectionExpression;
             }

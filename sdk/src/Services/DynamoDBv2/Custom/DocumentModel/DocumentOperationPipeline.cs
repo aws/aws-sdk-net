@@ -228,7 +228,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     break;
                 case InternalGetItemDocumentOperationRequest internalGetItemRequest:
                     if (internalGetItemRequest.Key == null || internalGetItemRequest.Key.Count == 0)
-                        throw new InvalidOperationException("GetItemDocumentOperationRequest.Key cannot be null or empty.");
+                        throw new InvalidOperationException("InternalGetItemDocumentOperationRequest.Key cannot be null or empty.");
                     break;
                 default:
                     throw new InvalidOperationException("Unsupported type for BaseGetItemDocumentOperationRequest");

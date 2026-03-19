@@ -625,7 +625,7 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 // keep the AttributesToGet setting for flows that are not yet migrated to use ProjectionExpression
                 AttributesToGet.Add(derivedTypeAttributeName);
-                AddAtributteNameToProjectionExpression(derivedTypeAttributeName);
+                AddAttributeNameToProjectionExpression(derivedTypeAttributeName);
             }
 
             if (this.BaseTypeStorageConfig.Properties.Count == 0)
@@ -681,10 +681,20 @@ namespace Amazon.DynamoDBv2.DataModel
             this.PolymorphicTypesStorageConfig.Add(typeDiscriminator, polymorphicStorageConfig);
             this.PolymorphicConfig.Add(derivedType, typeDiscriminator);
         }
-        private void AddAtributteNameToProjectionExpression(string derivedTypeAttributeName)
+        private void AddAttributeNameToProjectionExpression(string derivedTypeAttributeName)
         {
-            var expressionAttributeName = "#P" + $"{ProjectionExpression.ExpressionAttributeNames.Count}";
-            ProjectionExpression.ExpressionStatement += ProjectionExpression.ExpressionAttributeNames.Count > 0 ? $", {expressionAttributeName}" : expressionAttributeName;
+            StringBuilder _projectionExpressionBuilder = new StringBuilder();
+            var expressionAttributeName = "#P" + ProjectionExpression.ExpressionAttributeNames.Count.ToString(CultureInfo.InvariantCulture);
+            if (_projectionExpressionBuilder.Length == 0 && !string.IsNullOrEmpty(ProjectionExpression.ExpressionStatement))
+            {
+                _projectionExpressionBuilder.Append(ProjectionExpression.ExpressionStatement);
+            }
+            if (ProjectionExpression.ExpressionAttributeNames.Count > 0)
+            {
+                _projectionExpressionBuilder.Append(", ");
+            }
+            _projectionExpressionBuilder.Append(expressionAttributeName);
+            ProjectionExpression.ExpressionStatement = _projectionExpressionBuilder.ToString();
             ProjectionExpression.ExpressionAttributeNames.Add(expressionAttributeName, derivedTypeAttributeName);
         }
 
@@ -700,7 +710,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 AttributesToGet.Add(attributeName);
 
             if (!ProjectionExpression.ExpressionAttributeNames.ContainsValue(attributeName))
-                AddAtributteNameToProjectionExpression(attributeName);
+                AddAttributeNameToProjectionExpression(attributeName);
 
             if (value.StoreAsEpoch)
                 AttributesToStoreAsEpoch.Add(attributeName);
