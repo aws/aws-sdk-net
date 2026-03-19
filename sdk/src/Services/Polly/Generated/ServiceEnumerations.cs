@@ -405,6 +405,102 @@ namespace Amazon.Polly
 
 
     /// <summary>
+    /// Constants used for properties of type QuotaCode.
+    /// </summary>
+    public class QuotaCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InputStreamInboundEventTimeout for QuotaCode
+        /// </summary>
+        public static readonly QuotaCode InputStreamInboundEventTimeout = new QuotaCode("input-stream-inbound-event-timeout");
+        /// <summary>
+        /// Constant InputStreamTimeout for QuotaCode
+        /// </summary>
+        public static readonly QuotaCode InputStreamTimeout = new QuotaCode("input-stream-timeout");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuotaCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuotaCode FindValue(string value)
+        {
+            return FindValue<QuotaCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuotaCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceCode.
+    /// </summary>
+    public class ServiceCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Polly for ServiceCode
+        /// </summary>
+        public static readonly ServiceCode Polly = new ServiceCode("polly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceCode FindValue(string value)
+        {
+            return FindValue<ServiceCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SpeechMarkType.
     /// </summary>
     public class SpeechMarkType : ConstantClass
@@ -564,6 +660,64 @@ namespace Amazon.Polly
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TextType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationExceptionReason.
+    /// </summary>
+    public class ValidationExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FieldValidationFailed for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason FieldValidationFailed = new ValidationExceptionReason("fieldValidationFailed");
+        /// <summary>
+        /// Constant InvalidInboundEvent for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason InvalidInboundEvent = new ValidationExceptionReason("invalidInboundEvent");
+        /// <summary>
+        /// Constant Other for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason Other = new ValidationExceptionReason("other");
+        /// <summary>
+        /// Constant UnsupportedOperation for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UnsupportedOperation = new ValidationExceptionReason("unsupportedOperation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationExceptionReason FindValue(string value)
+        {
+            return FindValue<ValidationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationExceptionReason(string value)
         {
             return FindValue(value);
         }

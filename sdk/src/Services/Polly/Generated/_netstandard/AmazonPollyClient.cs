@@ -630,6 +630,66 @@ namespace Amazon.Polly
         }
         #endregion
         
+        #region  StartSpeechSynthesisStream
+
+#if NET8_0_OR_GREATER
+        internal virtual StartSpeechSynthesisStreamResponse StartSpeechSynthesisStream(StartSpeechSynthesisStreamRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartSpeechSynthesisStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSpeechSynthesisStreamResponseUnmarshaller.Instance;
+
+            return Invoke<StartSpeechSynthesisStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Synthesizes UTF-8 input, plain text, or SSML over a bidirectional streaming connection.
+        /// Specify synthesis parameters in HTTP/2 headers, send text incrementally as events
+        /// on the input stream, and receive synthesized audio as it becomes available.
+        /// 
+        ///  
+        /// <para>
+        /// This operation serves as a bidirectional counterpart to <c>SynthesizeSpeech</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/polly/latest/API/API_SynthesizeSpeech.html">SynthesizeSpeech</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSpeechSynthesisStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSpeechSynthesisStream service method, as returned by Polly.</returns>
+        /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
+        /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisStream">REST API Reference for StartSpeechSynthesisStream Operation</seealso>
+        public virtual Task<StartSpeechSynthesisStreamResponse> StartSpeechSynthesisStreamAsync(StartSpeechSynthesisStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartSpeechSynthesisStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSpeechSynthesisStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSpeechSynthesisStreamResponse>(request, options, cancellationToken);
+        }
+#endif
+        #endregion
+        
         #region  StartSpeechSynthesisTask
 
         internal virtual StartSpeechSynthesisTaskResponse StartSpeechSynthesisTask(StartSpeechSynthesisTaskRequest request)
