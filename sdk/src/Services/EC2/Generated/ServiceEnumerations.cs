@@ -4811,6 +4811,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly DefaultTargetCapacityType OnDemand = new DefaultTargetCapacityType("on-demand");
         /// <summary>
+        /// Constant ReservedCapacity for DefaultTargetCapacityType
+        /// </summary>
+        public static readonly DefaultTargetCapacityType ReservedCapacity = new DefaultTargetCapacityType("reserved-capacity");
+        /// <summary>
         /// Constant Spot for DefaultTargetCapacityType
         /// </summary>
         public static readonly DefaultTargetCapacityType Spot = new DefaultTargetCapacityType("spot");
@@ -7255,6 +7259,52 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type FleetReservationType.
+    /// </summary>
+    public class FleetReservationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InterruptibleCapacityReservation for FleetReservationType
+        /// </summary>
+        public static readonly FleetReservationType InterruptibleCapacityReservation = new FleetReservationType("interruptible-capacity-reservation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetReservationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetReservationType FindValue(string value)
+        {
+            return FindValue<FleetReservationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetReservationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetStateCode.
     /// </summary>
     public class FleetStateCode : ConstantClass
@@ -9402,6 +9452,10 @@ namespace Amazon.EC2
     public class InstanceLifecycle : ConstantClass
     {
 
+        /// <summary>
+        /// Constant InterruptibleCapacityReservation for InstanceLifecycle
+        /// </summary>
+        public static readonly InstanceLifecycle InterruptibleCapacityReservation = new InstanceLifecycle("interruptible-capacity-reservation");
         /// <summary>
         /// Constant OnDemand for InstanceLifecycle
         /// </summary>

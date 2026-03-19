@@ -154,6 +154,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ReplaceUnhealthyInstances = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("reservedCapacityOptions", targetDepth))
+                    {
+                        var unmarshaller = ReservedCapacityOptionsUnmarshaller.Instance;
+                        unmarshalledObject.ReservedCapacityOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("spotOptions", targetDepth))
                     {
                         var unmarshaller = SpotOptionsUnmarshaller.Instance;
