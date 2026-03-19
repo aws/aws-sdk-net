@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Defines the capacity limit for a service environment. This structure specifies the
-    /// maximum amount of resources that can be used by service jobs in the environment.
+    /// Defines the type and maximum quantity of resources that can be allocated to service
+    /// jobs in a service environment.
     /// </summary>
     public partial class CapacityLimit
     {
@@ -41,8 +41,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property CapacityUnit. 
         /// <para>
-        /// The unit of measure for the capacity limit. This defines how the maxCapacity value
-        /// should be interpreted. For <c>SAGEMAKER_TRAINING</c> jobs, use <c>NUM_INSTANCES</c>.
+        /// The unit of measure for the capacity limit, which defines how <c>maxCapacity</c> is
+        /// interpreted. For <c>SAGEMAKER_TRAINING</c> jobs in a quota management enabled service
+        /// environment, specify the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceConfig.html#sagemaker-Type-ResourceConfig-InstanceType">instance
+        /// type</a> (for example, <c>ml.m5.large</c>). Otherwise, use <c>NUM_INSTANCES</c>.
         /// </para>
         /// </summary>
         public string CapacityUnit
@@ -60,15 +62,20 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The maximum capacity available for the service environment. This value represents
-        /// the maximum amount of resources that can be allocated to service jobs.
+        /// The maximum capacity available for the service environment. For a quota management
+        /// enabled service environment, this value represents the maximum quantity of a particular
+        /// resource type (specified by <c>capacityUnit</c>) that can be allocated to service
+        /// jobs. For other service environments, this value represents the maximum quantity of
+        /// all resources that can be allocated to service jobs.
         /// </para>
         ///  
         /// <para>
-        /// For example, <c>maxCapacity=50</c>, <c>capacityUnit=NUM_INSTANCES</c>. This indicates
-        /// that the maximum number of instances that can be run on this service environment is
-        /// 50. You could then run 5 SageMaker Training jobs that each use 10 instances. However,
-        /// if you submit another job that requires 10 instances, it will wait in the queue.
+        /// For example, if <c>maxCapacity=50</c> and <c>capacityUnit=NUM_INSTANCES</c>, you can
+        /// run up to 50 instances concurrently. If you run 5 SageMaker Training jobs that each
+        /// use 10 instances, a subsequent job requiring 10 instances waits in the queue until
+        /// capacity is available. In a quota management enabled service environment with <c>capacityUnit=ml.m5.large</c>,
+        /// only <c>ml.m5.large</c> instances count against this limit, and jobs requiring other
+        /// instance types wait until a matching capacity limit is configured.
         /// </para>
         /// </summary>
         public int? MaxCapacity

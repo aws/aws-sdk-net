@@ -39,6 +39,8 @@ namespace Amazon.Batch.Model
         private string _clientToken;
         private string _jobName;
         private string _jobQueue;
+        private ServiceJobPreemptionConfiguration _preemptionConfiguration;
+        private string _quotaShareName;
         private ServiceJobRetryStrategy _retryStrategy;
         private int? _schedulingPriority;
         private ServiceJobType _serviceJobType;
@@ -107,6 +109,44 @@ namespace Amazon.Batch.Model
         internal bool IsSetJobQueue()
         {
             return this._jobQueue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreemptionConfiguration. 
+        /// <para>
+        /// Specifies the service job behavior when preempted.
+        /// </para>
+        /// </summary>
+        public ServiceJobPreemptionConfiguration PreemptionConfiguration
+        {
+            get { return this._preemptionConfiguration; }
+            set { this._preemptionConfiguration = value; }
+        }
+
+        // Check to see if PreemptionConfiguration property is set
+        internal bool IsSetPreemptionConfiguration()
+        {
+            return this._preemptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuotaShareName. 
+        /// <para>
+        /// The quota share for the service job. Don't specify this parameter if the job queue
+        /// doesn't have a quota share scheduling policy. If the job queue has a quota share scheduling
+        /// policy, then this parameter must be specified.
+        /// </para>
+        /// </summary>
+        public string QuotaShareName
+        {
+            get { return this._quotaShareName; }
+            set { this._quotaShareName = value; }
+        }
+
+        // Check to see if QuotaShareName property is set
+        internal bool IsSetQuotaShareName()
+        {
+            return this._quotaShareName != null;
         }
 
         /// <summary>
