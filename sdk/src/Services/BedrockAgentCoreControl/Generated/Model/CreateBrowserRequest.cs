@@ -36,8 +36,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class CreateBrowserRequest : AmazonBedrockAgentCoreControlRequest
     {
         private BrowserSigningConfigInput _browserSigning;
+        private List<Certificate> _certificates = AWSConfigs.InitializeCollections ? new List<Certificate>() : null;
         private string _clientToken;
         private string _description;
+        private List<BrowserEnterprisePolicy> _enterprisePolicies = AWSConfigs.InitializeCollections ? new List<BrowserEnterprisePolicy>() : null;
         private string _executionRoleArn;
         private string _name;
         private BrowserNetworkConfiguration _networkConfiguration;
@@ -61,6 +63,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetBrowserSigning()
         {
             return this._browserSigning != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Certificates. 
+        /// <para>
+        /// A list of certificates to install in the browser.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Certificate> Certificates
+        {
+            get { return this._certificates; }
+            set { this._certificates = value; }
+        }
+
+        // Check to see if Certificates property is set
+        internal bool IsSetCertificates()
+        {
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -101,6 +122,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnterprisePolicies. 
+        /// <para>
+        /// A list of enterprise policy files for the browser.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<BrowserEnterprisePolicy> EnterprisePolicies
+        {
+            get { return this._enterprisePolicies; }
+            set { this._enterprisePolicies = value; }
+        }
+
+        // Check to see if EnterprisePolicies property is set
+        internal bool IsSetEnterprisePolicies()
+        {
+            return this._enterprisePolicies != null && (this._enterprisePolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

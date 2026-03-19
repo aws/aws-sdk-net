@@ -70,6 +70,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.BrowserSigning = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("certificates", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Certificate, CertificateUnmarshaller>(CertificateUnmarshaller.Instance);
+                    response.Certificates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("enterprisePolicies", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BrowserEnterprisePolicy, BrowserEnterprisePolicyUnmarshaller>(BrowserEnterprisePolicyUnmarshaller.Instance);
+                    response.EnterprisePolicies = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("executionRoleArn", targetDepth))
