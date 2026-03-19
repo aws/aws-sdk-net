@@ -48,6 +48,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDataSourceSelectionCriteria())
+            {
+                context.Writer.WritePropertyName("DataSourceSelectionCriteria");
+                context.Writer.Write(requestObject.DataSourceSelectionCriteria);
+            }
+
             if(requestObject.IsSetEncryptedLogGroupStrategy())
             {
                 context.Writer.WritePropertyName("EncryptedLogGroupStrategy");
