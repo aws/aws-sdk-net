@@ -494,6 +494,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ReplaceUnhealthyInstances", StringUtils.FromBool(publicRequest.ReplaceUnhealthyInstances));
                 }
+                if(publicRequest.IsSetReservedCapacityOptions())
+                {
+                    if(publicRequest.ReservedCapacityOptions.IsSetReservationTypes())
+                    {
+                        int publicRequestReservedCapacityOptionslistValueIndex = 1;
+                        foreach(var publicRequestReservedCapacityOptionslistValue in publicRequest.ReservedCapacityOptions.ReservationTypes)
+                        {
+                            request.Parameters.Add("ReservedCapacityOptions" + "." + "ReservationType" + "." + publicRequestReservedCapacityOptionslistValueIndex, StringUtils.FromString(publicRequestReservedCapacityOptionslistValue));
+                            publicRequestReservedCapacityOptionslistValueIndex++;
+                        }
+                    }
+                }
                 if(publicRequest.IsSetSpotOptions())
                 {
                     if(publicRequest.SpotOptions.IsSetAllocationStrategy())

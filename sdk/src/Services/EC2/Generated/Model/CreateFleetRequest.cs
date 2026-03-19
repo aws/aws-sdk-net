@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         private List<FleetLaunchTemplateConfigRequest> _launchTemplateConfigs = AWSConfigs.InitializeCollections ? new List<FleetLaunchTemplateConfigRequest>() : null;
         private OnDemandOptionsRequest _onDemandOptions;
         private bool? _replaceUnhealthyInstances;
+        private ReservedCapacityOptionsRequest _reservedCapacityOptions;
         private SpotOptionsRequest _spotOptions;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private TargetCapacitySpecificationRequest _targetCapacitySpecification;
@@ -182,6 +183,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetReplaceUnhealthyInstances()
         {
             return this._replaceUnhealthyInstances.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedCapacityOptions. 
+        /// <para>
+        /// Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType
+        /// is set to <c>reserved-capacity</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <c>instant</c>.
+        /// </para>
+        /// </summary>
+        public ReservedCapacityOptionsRequest ReservedCapacityOptions
+        {
+            get { return this._reservedCapacityOptions; }
+            set { this._reservedCapacityOptions = value; }
+        }
+
+        // Check to see if ReservedCapacityOptions property is set
+        internal bool IsSetReservedCapacityOptions()
+        {
+            return this._reservedCapacityOptions != null;
         }
 
         /// <summary>
