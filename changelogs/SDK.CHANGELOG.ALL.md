@@ -1,3 +1,22 @@
+### 4.0.214.0 (2026-03-19 20:24 UTC)
+* Batch (4.0.7.0)
+	* AWS Batch now supports quota management, enabling administrators to allocate shared compute resources across teams and projects through quota shares with capacity limits, resource-sharing strategies, and priority-based preemption - currently available for SageMaker Training job queues.
+* BedrockAgentCore (4.0.13.0)
+	* This release includes SDK support for the following new features on AgentCore Built In Tools.  1. Enterprise Policies for AgentCore Browser Tool. 2. Root CA Configuration Support for AgentCore Browser Tool and Code Interpreter. 3. API changes to AgentCore Browser Profile APIs
+* BedrockAgentCoreControl (4.0.22.0)
+	* Adds support for the following new features. 1. Enterprise Policies support for AgentCore Browser Tool. 2. Root CA Configuration support for AgentCore Browser Tool and Code Interpreter.
+* DynamoDBv2 (4.0.16.0)
+	* [Breaking Change] Fix DynamoDB property converter precedence when a global converter is registered.
+	* Adds support for ReturnConsumedCapacity on Query/Scan DocumentClient.
+* EC2 (4.0.82.0)
+	* Amazon EC2 Fleet instant mode now supports launching instances into Interruptible Capacity Reservations, enabling customers to use spare capacity shared by Capacity Reservation owners within their AWS Organization.
+* ObservabilityAdmin (4.0.7.0)
+	* Adding a new field in the CreateCentralizationRuleForOrganization, UpdateCentralizationRuleForOrganization API and updating the GetCentralizationRuleForOrganization API response to include the new field
+* Polly (4.0.5.0)
+	* Added bi-directional streaming functionality through a new API, StartSpeechSynthesisStream. This API allows streaming input text through inbound events and receiving audio as part of an output stream simultaneously.
+* Core 4.0.3.20
+	* Fixed AssumeRoleWithWebIdentityCredentialsOptions.ProxySettings being ignored sometimes.
+
 ### 4.0.213.0 (2026-03-18 18:57 UTC)
 * DSQL (4.0.9.0)
 	* Add configurable token expiry duration to DSQLAuthTokenGenerator. New overloads accept a TimeSpan parameter to set token lifetime, with validation between 0 and 7 days. Default remains 15 minutes for backwards compatibility.
