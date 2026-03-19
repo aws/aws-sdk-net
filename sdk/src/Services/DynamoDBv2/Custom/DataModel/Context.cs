@@ -375,7 +375,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var updateDocument = table.UpdateHelperV2(
                 storage.Document,
-                table.MakeKey(storage.Document),
                 updateConfig.opConfig.ReturnValues,
                 updateConfig.opConfig.ConditionalExpression,
                 updateConfig.counterUpdateExpression,
@@ -403,7 +402,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var updateDocument = await table.UpdateHelperV2Async(
                 storage.Document,
-                table.MakeKey(storage.Document),
                 updateConfig.opConfig.ReturnValues,
                 updateConfig.opConfig.ConditionalExpression,
                 updateConfig.counterUpdateExpression,

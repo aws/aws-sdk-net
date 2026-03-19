@@ -275,32 +275,38 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// that either a document or an update expression is provided exclusively, and manages the mapping of keys and
     /// update expressions.</remarks>
     internal sealed class UpdateItemPipeline :
-        DocumentOperationPipeline<UpdateItemDocumentOperationRequest, UpdateItemRequest, UpdateItemResponse, Document>
+        DocumentOperationPipeline<BaseUpdateItemDocumentOperationRequest, UpdateItemRequest, UpdateItemResponse, Document>
     {
         public UpdateItemPipeline(Table table) : base(table)
         {
         }
 
-        protected override void Validate(UpdateItemDocumentOperationRequest request)
+        protected override void Validate(BaseUpdateItemDocumentOperationRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
             bool docSet = request.Document != null;
             bool exprSet;
             if (request.UpdateExpression is UpdateExpression { IsSet: true })
             {
-                exprSet=true;
+                exprSet = true;
             }
             else
             {
                 exprSet = request.UpdateExpression is { IsSet: true };
             }
-           if(!docSet && request.Key == null)
-                throw new InvalidOperationException("A key must be provided when Document is not set.");
+
+            if(!docSet)
+                switch (request)
+                {
+                    case UpdateItemDocumentOperationRequest r when r.Key == null || r.Key.Count == 0:
+                        throw new InvalidOperationException("A key must be provided when Document is not set.");
+                }
+               
             if (docSet && exprSet)
                 throw new InvalidOperationException("Either Document or UpdateExpression must be set (exclusively).");
         }
 
-        protected override UpdateItemRequest Map(UpdateItemDocumentOperationRequest request)
+        protected override UpdateItemRequest Map(BaseUpdateItemDocumentOperationRequest request)
         {
             var req = new UpdateItemRequest
             {
@@ -308,7 +314,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ReturnValues = EnumMapper.Convert(request.ReturnValues)
             };
 
-            Key key = request.Key != null ? Table.MakeKey(request.Key) : null;
+            Key key = request switch
+            {
+                UpdateItemDocumentOperationRequest r => r.Key != null ? Table.MakeKey(r.Key) : null,
+                InternalUpdateItemDocumentOperationRequest ir => ir.Key,
+                _ => null
+            };
 
             if (request.Document != null)
             {
@@ -339,7 +350,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return req;
         }
 
-        protected override void ApplyExpressions(UpdateItemDocumentOperationRequest request, UpdateItemRequest lowLevel)
+        protected override void ApplyExpressions(BaseUpdateItemDocumentOperationRequest request, UpdateItemRequest lowLevel)
         {
             if(request.UpdateExpression is UpdateExpression ue && ue.IsSet)
             {
@@ -373,7 +384,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         protected override async Task<UpdateItemResponse> InvokeAsync(UpdateItemRequest lowLevel, CancellationToken ct) =>
             await Table.DDBClient.UpdateItemAsync(lowLevel, ct).ConfigureAwait(false);
 
-        protected override Document PostProcess(UpdateItemDocumentOperationRequest request,
+        protected override Document PostProcess(BaseUpdateItemDocumentOperationRequest request,
             UpdateItemResponse serviceResponse)
         {
             var resp = (UpdateItemResponse)serviceResponse;

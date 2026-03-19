@@ -1431,36 +1431,34 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        internal Document UpdateHelperV2(Document doc, Key key, ReturnValues returnValues, Expression conditionExpression,
+        internal Document UpdateHelperV2(Document doc, ReturnValues returnValues, Expression conditionExpression,
             UpdateExpression updateExpression, HashSet<string> ifNotExistAttributeNames = null)
         {
-            var request = CreateUpdateItemDocumentOperationRequest(doc, key, returnValues, conditionExpression, updateExpression, ifNotExistAttributeNames);
+            var request = CreateUpdateItemDocumentOperationRequest(doc, returnValues, conditionExpression, updateExpression, ifNotExistAttributeNames);
             var pipeline = new UpdateItemPipeline(this);
             return pipeline.ExecuteSync(request);
         }
 
-        internal async Task<Document> UpdateHelperV2Async(Document doc, Key key, ReturnValues returnValues, Expression conditionExpression,
+        internal async Task<Document> UpdateHelperV2Async(Document doc, ReturnValues returnValues, Expression conditionExpression,
             UpdateExpression updateExpression, CancellationToken cancellationToken, HashSet<string> ifNotExistAttributeNames = null)
         {
-            var request = CreateUpdateItemDocumentOperationRequest(doc, key, returnValues, conditionExpression, updateExpression, ifNotExistAttributeNames);
-            //todo: Keys only scenario
+            var request = CreateUpdateItemDocumentOperationRequest(doc, returnValues, conditionExpression, updateExpression, ifNotExistAttributeNames);
             var pipeline = new UpdateItemPipeline(this);
             return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        private UpdateItemDocumentOperationRequest CreateUpdateItemDocumentOperationRequest(Document doc, Key key, ReturnValues returnValues,
+        private InternalUpdateItemDocumentOperationRequest CreateUpdateItemDocumentOperationRequest(Document doc, ReturnValues returnValues,
             Expression conditionExpression, UpdateExpression updateExpression, HashSet<string> ifNotExistAttributeNames)
         {
-            var keyDocument = key != null ? this.FromAttributeMap(key) : null;
-
             bool haveKeysChanged = HaveKeysChanged(doc);
             bool updateChangedAttributesOnly = !haveKeysChanged;
 
-            var docUpdate=this.ToUpdateExpression(doc, updateExpression, updateChangedAttributesOnly, ifNotExistAttributeNames);
+            var docUpdate = this.ToUpdateExpression(doc, updateExpression, updateChangedAttributesOnly,
+                ifNotExistAttributeNames);
             
-            return new UpdateItemDocumentOperationRequest
+            return new InternalUpdateItemDocumentOperationRequest
             {
-                Key = keyDocument,
+                Key = this.MakeKey(doc),
                 UpdateExpression = docUpdate,
                 ConditionalExpression = conditionExpression,
                 ReturnValues = returnValues
@@ -1501,9 +1499,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     if (!createOnly)
                     {
                         updateExpression.AddStatement(UpdateExpression.OperationRemove, attributeReference);
-                        updateExpression.ExpressionAttributeNames[attributeReference] = attributeName;
+                        if (updateExpression.ExpressionAttributeNames != null)
+                            updateExpression.ExpressionAttributeNames[attributeReference] = attributeName;
                     }
-                    continue;
                 }
                 else
                 {
@@ -1517,7 +1515,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         statement = $"{attributeReference} = {attributeValueReference}";
                     }
                     updateExpression.AddStatement(UpdateExpression.OperationSet, statement);
-                    updateExpression.ExpressionAttributeNames[attributeReference] = attributeName;
+                    if (updateExpression.ExpressionAttributeNames != null)
+                        updateExpression.ExpressionAttributeNames[attributeReference] = attributeName;
                     updateExpression.AttributeValues[attributeValueReference] = update.Value;
                 }               
             }

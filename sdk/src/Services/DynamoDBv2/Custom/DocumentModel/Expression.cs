@@ -339,8 +339,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Dictionary<string, AttributeValue> AttributeValues
         {
-            get { return this._attributeValues; }
-            set { this._attributeValues = value; }
+            get => this._attributeValues;
+            set => this._attributeValues = value;
         }
         internal override bool HasStatement()
         {

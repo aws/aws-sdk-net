@@ -190,13 +190,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// Legacy parameters such as AttributeUpdates, Expected are not supported.
     /// Use UpdateExpression and ConditionalExpression instead.
     /// </summary>
-    public class UpdateItemDocumentOperationRequest : DocumentOperationRequest
+    public class UpdateItemDocumentOperationRequest : BaseUpdateItemDocumentOperationRequest
     {
         /// <summary>
         /// Gets or sets the key identifying the item in the table.
         /// </summary>
         public IDictionary<string, DynamoDBEntry> Key { get; set; }
+    }
 
+    /// <summary>
+    /// Internal version of UpdateItemDocumentOperationRequest that includes a strongly-typed Key property.
+    /// </summary>
+    public abstract class BaseUpdateItemDocumentOperationRequest : DocumentOperationRequest
+    {
         /// <summary>
         /// Gets or sets the attributes to be updated in the item.
         /// </summary>
@@ -218,6 +224,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public ReturnValues ReturnValues { get; set; }
     }
+
+    /// <summary>
+    /// Represents a request to update an item document in the internal system.
+    /// </summary>
+    /// <remarks>This class inherits from BaseUpdateItemDocumentOperationRequest and is used to encapsulate
+    /// the details required for updating an item document. It includes a key that uniquely identifies the item to be
+    /// updated.</remarks>
+    internal class InternalUpdateItemDocumentOperationRequest : BaseUpdateItemDocumentOperationRequest
+    {
+        /// <summary>
+        /// Gets or sets the key identifying the item in the table.
+        /// </summary>
+        public Key Key { get; set; }
+    }
+
 
     /// <summary>
     /// Represents a request to delete an item from a DynamoDB table using the Document Model.
