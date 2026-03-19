@@ -42,6 +42,20 @@ namespace UnitTests.NetStandard.Core
             var result = AWSSDKUtils.GetParametersAsString(parameters);
             Assert.Equal("key1=value1&key2=value2&key3=value3", result);
         }
+        [Fact]
+        public void GetParametersAsStringWithStringListParameterValueCorrectlySortsOutput()
+        {
+            var parameters = new ParameterCollection
+            {
+                {"key4", new List<string> { "value5", "value4" } },
+                {"key1", new List<string>{"value1", "value2"} }
+            };
+            //check that the original StringParameterListValue isn't mutated.
+            var originalKey4 = new List<string>(((StringListParameterValue)parameters["key4"]).Value);
+            var result = AWSSDKUtils.GetParametersAsString(parameters);
+            Assert.Equal("key1=value1&key1=value2&key4=value4&key4=value5", result);
+            Assert.Equal(originalKey4, ((StringListParameterValue)parameters["key4"]).Value);
+        }
 
         [Fact]
         public void ToHexUppercase()
