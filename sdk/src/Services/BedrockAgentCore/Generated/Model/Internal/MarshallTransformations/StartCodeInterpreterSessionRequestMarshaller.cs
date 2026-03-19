@@ -70,6 +70,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCertificates())
+                {
+                    context.Writer.WritePropertyName("certificates");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCertificatesListValue in publicRequest.Certificates)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CertificateMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCertificatesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");

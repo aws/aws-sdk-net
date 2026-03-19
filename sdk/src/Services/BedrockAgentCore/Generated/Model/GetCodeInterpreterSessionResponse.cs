@@ -34,12 +34,32 @@ namespace Amazon.BedrockAgentCore.Model
     /// </summary>
     public partial class GetCodeInterpreterSessionResponse : AmazonWebServiceResponse
     {
+        private List<Certificate> _certificates = AWSConfigs.InitializeCollections ? new List<Certificate>() : null;
         private string _codeInterpreterIdentifier;
         private DateTime? _createdAt;
         private string _name;
         private string _sessionId;
         private int? _sessionTimeoutSeconds;
         private CodeInterpreterSessionStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property Certificates. 
+        /// <para>
+        /// The list of certificates installed in the code interpreter session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Certificate> Certificates
+        {
+            get { return this._certificates; }
+            set { this._certificates = value; }
+        }
+
+        // Check to see if Certificates property is set
+        internal bool IsSetCertificates()
+        {
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CodeInterpreterIdentifier. 

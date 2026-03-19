@@ -70,6 +70,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCertificates())
+                {
+                    context.Writer.WritePropertyName("certificates");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCertificatesListValue in publicRequest.Certificates)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CertificateMarshaller.Instance;
+                        marshaller.Marshall(publicRequestCertificatesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");
@@ -81,6 +97,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetEnterprisePolicies())
+                {
+                    context.Writer.WritePropertyName("enterprisePolicies");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEnterprisePoliciesListValue in publicRequest.EnterprisePolicies)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BrowserEnterprisePolicyMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEnterprisePoliciesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetExtensions())
                 {
                     context.Writer.WritePropertyName("extensions");

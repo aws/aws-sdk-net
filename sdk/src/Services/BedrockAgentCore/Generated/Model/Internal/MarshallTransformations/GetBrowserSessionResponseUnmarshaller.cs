@@ -58,10 +58,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     response.BrowserIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("certificates", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Certificate, CertificateUnmarshaller>(CertificateUnmarshaller.Instance);
+                    response.Certificates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("enterprisePolicies", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BrowserEnterprisePolicy, BrowserEnterprisePolicyUnmarshaller>(BrowserEnterprisePolicyUnmarshaller.Instance);
+                    response.EnterprisePolicies = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("extensions", targetDepth))
