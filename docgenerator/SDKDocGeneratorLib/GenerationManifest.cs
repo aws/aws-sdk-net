@@ -282,6 +282,10 @@ namespace SDKDocGenerator
                 Trace.WriteLine($"\t\t{namespaceName} processed ({++processed} of {namespaceNames.Count()})");
             }
 
+            // Don't discard if this manifest has exclusive members that need page generation
+            if (PlatformMap?.ExclusiveMemberCount > 0)
+                discardAssemblyOnExit = false;
+
             if (discardAssemblyOnExit)
             {
                 // release artifact roots for future GC collections to operate on

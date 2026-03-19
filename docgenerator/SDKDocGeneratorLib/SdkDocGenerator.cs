@@ -373,17 +373,6 @@ namespace SDKDocGenerator
             Trace.Flush();
         }
 
-        private void InfoVerbose(string message)
-        {
-            Trace.WriteLine(message, "Verbose");
-            Trace.Flush();
-        }
-
-        private void InfoVerbose(string format, params object[] args)
-        {
-            Trace.WriteLine(String.Format(format, args), "Verbose");
-            Trace.Flush();
-        }
     }
 
     public class ConditionalConsoleTraceListener : TraceListener

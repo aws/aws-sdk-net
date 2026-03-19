@@ -317,17 +317,8 @@ namespace SDKDocGenerator.PlatformMap
                 if (entry.Platforms.Contains(primaryPlatform))
                     continue; // Available on primary, not exclusive
 
-                // Find which supplemental platform has this method
-                string exclusivePlatform = null;
-                foreach (var platform in entry.Platforms)
-                {
-                    if (!platform.Equals(primaryPlatform, StringComparison.OrdinalIgnoreCase))
-                    {
-                        exclusivePlatform = platform;
-                        break;
-                    }
-                }
-
+                // Pick any platform that has this method (all are non-primary per the filter above)
+                var exclusivePlatform = entry.Platforms.FirstOrDefault();
                 if (exclusivePlatform == null)
                     continue;
 
@@ -348,7 +339,6 @@ namespace SDKDocGenerator.PlatformMap
                 if (methodWrapper != null)
                 {
                     entry.ExclusiveMethodWrapper = methodWrapper;
-                    entry.ExclusivePlatform = exclusivePlatform;
                 }
             }
         }

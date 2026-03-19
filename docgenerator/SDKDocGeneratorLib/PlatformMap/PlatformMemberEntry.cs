@@ -39,12 +39,6 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public MethodInfoWrapper ExclusiveMethodWrapper { get; internal set; }
 
-        /// <summary>
-        /// The platform that exclusively provides this method (e.g., "net8.0" for H2-only APIs).
-        /// Set by <see cref="PlatformMapBuilder"/> after all platforms are scanned.
-        /// </summary>
-        public string ExclusivePlatform { get; internal set; }
-
         /// <summary>True if this entry represents a method (M: prefix).</summary>
         public bool IsMethod => Signature.StartsWith("M:", StringComparison.Ordinal);
         /// <summary>True if this entry represents a property (P: prefix).</summary>
