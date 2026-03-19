@@ -693,6 +693,8 @@ namespace Amazon.DynamoDBv2.DataModel
                     new DeleteItemOperationConfig { Expected = expectedDocument },
                     cancellationToken);
             }
+
+            // aici
         }
 
         #endregion
