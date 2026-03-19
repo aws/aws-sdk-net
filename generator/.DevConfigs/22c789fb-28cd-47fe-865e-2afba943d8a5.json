@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Fixed AssumeRoleWithWebIdentityCredentialsOptions.ProxySettings being ignored sometimes."
+    ]
+  }
+}
