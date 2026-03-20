@@ -53,6 +53,14 @@ namespace Amazon.VerifiedPermissions.Model
         }
 
         /// <summary>
+        /// Paginator for ListPolicyStoreAliases operation
+        ///</summary>
+        public IListPolicyStoreAliasesPaginator ListPolicyStoreAliases(ListPolicyStoreAliasesRequest request) 
+        {
+            return new ListPolicyStoreAliasesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPolicyStores operation
         ///</summary>
         public IListPolicyStoresPaginator ListPolicyStores(ListPolicyStoresRequest request) 

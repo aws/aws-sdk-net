@@ -48,6 +48,11 @@ namespace Amazon.VerifiedPermissions.Model
         /// <para>
         /// Specifies the ID of the policy store that you want to delete.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// To specify a policy store, the alias name cannot be used. Only the ID can be used.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
         public string PolicyStoreId

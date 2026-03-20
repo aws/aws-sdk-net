@@ -39,6 +39,7 @@ namespace Amazon.VerifiedPermissions.Model
         private PolicyDefinitionDetail _definition;
         private PolicyEffect _effect;
         private DateTime? _lastUpdatedDate;
+        private string _name;
         private string _policyId;
         private string _policyStoreId;
         private PolicyType _policyType;
@@ -139,6 +140,25 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetLastUpdatedDate()
         {
             return this._lastUpdatedDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the policy, if one was assigned when the policy was created or last updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=150)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>

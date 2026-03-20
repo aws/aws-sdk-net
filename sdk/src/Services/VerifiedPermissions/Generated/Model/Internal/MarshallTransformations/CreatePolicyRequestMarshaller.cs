@@ -91,6 +91,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
                 if(publicRequest.IsSetPolicyStoreId())
                 {
                     context.Writer.WritePropertyName("policyStoreId");
