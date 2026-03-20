@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DirectQueryDataSourceType Object
+    /// Response Unmarshaller for PrometheusDirectQueryDataSource Object
     /// </summary>  
-    public class DirectQueryDataSourceTypeUnmarshaller : IJsonUnmarshaller<DirectQueryDataSourceType, JsonUnmarshallerContext>
+    public class PrometheusDirectQueryDataSourceUnmarshaller : IJsonUnmarshaller<PrometheusDirectQueryDataSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DirectQueryDataSourceType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PrometheusDirectQueryDataSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DirectQueryDataSourceType unmarshalledObject = new DirectQueryDataSourceType();
+            PrometheusDirectQueryDataSource unmarshalledObject = new PrometheusDirectQueryDataSource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchLog", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth))
                 {
-                    var unmarshaller = CloudWatchDirectQueryDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLog = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Prometheus", targetDepth))
+                if (context.TestExpression("WorkspaceArn", targetDepth))
                 {
-                    var unmarshaller = PrometheusDirectQueryDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.Prometheus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SecurityLake", targetDepth))
-                {
-                    var unmarshaller = SecurityLakeDirectQueryDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.SecurityLake = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkspaceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
 
 
-        private static DirectQueryDataSourceTypeUnmarshaller _instance = new DirectQueryDataSourceTypeUnmarshaller();        
+        private static PrometheusDirectQueryDataSourceUnmarshaller _instance = new PrometheusDirectQueryDataSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DirectQueryDataSourceTypeUnmarshaller Instance
+        public static PrometheusDirectQueryDataSourceUnmarshaller Instance
         {
             get
             {

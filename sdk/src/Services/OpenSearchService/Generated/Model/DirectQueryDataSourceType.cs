@@ -36,6 +36,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class DirectQueryDataSourceType
     {
         private CloudWatchDirectQueryDataSource _cloudWatchLog;
+        private PrometheusDirectQueryDataSource _prometheus;
         private SecurityLakeDirectQueryDataSource _securityLake;
 
         /// <summary>
@@ -54,6 +55,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetCloudWatchLog()
         {
             return this._cloudWatchLog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Prometheus. 
+        /// <para>
+        ///  Specifies Prometheus as a type of data source for direct queries. 
+        /// </para>
+        /// </summary>
+        public PrometheusDirectQueryDataSource Prometheus
+        {
+            get { return this._prometheus; }
+            set { this._prometheus = value; }
+        }
+
+        // Check to see if Prometheus property is set
+        internal bool IsSetPrometheus()
+        {
+            return this._prometheus != null;
         }
 
         /// <summary>

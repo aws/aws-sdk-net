@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DirectQueryDataSourceType Marshaller
+    /// PrometheusDirectQueryDataSource Marshaller
     /// </summary>
-    public class DirectQueryDataSourceTypeMarshaller : IRequestMarshaller<DirectQueryDataSourceType, JsonMarshallerContext> 
+    public class PrometheusDirectQueryDataSourceMarshaller : IRequestMarshaller<PrometheusDirectQueryDataSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,20 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DirectQueryDataSourceType requestObject, JsonMarshallerContext context)
+        public void Marshall(PrometheusDirectQueryDataSource requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCloudWatchLog())
+            if(requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("CloudWatchLog");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CloudWatchDirectQueryDataSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.CloudWatchLog, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
-            if(requestObject.IsSetPrometheus())
+            if(requestObject.IsSetWorkspaceArn())
             {
-                context.Writer.WritePropertyName("Prometheus");
-                context.Writer.WriteStartObject();
-
-                var marshaller = PrometheusDirectQueryDataSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.Prometheus, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetSecurityLake())
-            {
-                context.Writer.WritePropertyName("SecurityLake");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SecurityLakeDirectQueryDataSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.SecurityLake, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("WorkspaceArn");
+                context.Writer.WriteStringValue(requestObject.WorkspaceArn);
             }
 
         }
@@ -84,7 +63,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DirectQueryDataSourceTypeMarshaller Instance = new DirectQueryDataSourceTypeMarshaller();
+        public readonly static PrometheusDirectQueryDataSourceMarshaller Instance = new PrometheusDirectQueryDataSourceMarshaller();
 
     }
 }
