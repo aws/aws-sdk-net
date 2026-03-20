@@ -1431,7 +1431,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        internal Document UpdateHelperV2(Document doc, ReturnValues returnValues, Expression conditionExpression,
+        internal Document UpdateHelper(Document doc, ReturnValues returnValues, Expression conditionExpression,
             UpdateExpression updateExpression, HashSet<string> ifNotExistAttributeNames = null)
         {
             var request = CreateUpdateItemDocumentOperationRequest(doc, returnValues, conditionExpression, updateExpression, ifNotExistAttributeNames);
@@ -1439,7 +1439,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return pipeline.ExecuteSync(request);
         }
 
-        internal async Task<Document> UpdateHelperV2Async(Document doc, ReturnValues returnValues, Expression conditionExpression,
+        internal async Task<Document> UpdateHelperAsync(Document doc, ReturnValues returnValues, Expression conditionExpression,
             UpdateExpression updateExpression, CancellationToken cancellationToken, HashSet<string> ifNotExistAttributeNames = null)
         {
             var request = CreateUpdateItemDocumentOperationRequest(doc, returnValues, conditionExpression, updateExpression, ifNotExistAttributeNames);

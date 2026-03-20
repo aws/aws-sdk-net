@@ -226,21 +226,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
     /// <summary>
-    /// Represents a request to update an item document in the internal system.
-    /// </summary>
-    /// <remarks>This class inherits from BaseUpdateItemDocumentOperationRequest and is used to encapsulate
-    /// the details required for updating an item document. It includes a key that uniquely identifies the item to be
-    /// updated.</remarks>
-    internal class InternalUpdateItemDocumentOperationRequest : BaseUpdateItemDocumentOperationRequest
-    {
-        /// <summary>
-        /// Gets or sets the key identifying the item in the table.
-        /// </summary>
-        public Key Key { get; set; }
-    }
-
-
-    /// <summary>
     /// Represents a request to delete an item from a DynamoDB table using the Document Model.
     /// This class introduces a modern expression-based API that replaces legacy parameter-based approaches.
     /// Legacy parameters such as Expected are not supported.

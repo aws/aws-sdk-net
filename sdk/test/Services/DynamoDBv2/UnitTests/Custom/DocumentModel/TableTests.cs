@@ -1059,6 +1059,57 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
+        public void GivenDeletedCreateOnlyAttribute_WhenUpdateHelperCalled_ThenRemoveIsSkipped()
+        {
+            var doc = new Document { ["Id"] = "1", ["Keep"] = 10, ["DeleteMe"] = "x" };
+            doc.CommitChanges();
+            doc["Keep"] = 11;
+            doc.Remove("DeleteMe");
+
+            var ifNotExistAttrs = new HashSet<string> { "DeleteMe" };
+            UpdateItemRequest capturedRequest = null;
+
+            _ddbClientMock
+                .Setup(c => c.UpdateItem(It.IsAny<UpdateItemRequest>()))
+                .Callback<UpdateItemRequest>(r => capturedRequest = r)
+                .Returns(new UpdateItemResponse { Attributes = new Dictionary<string, AttributeValue>() });
+
+            var result = _table.UpdateHelper(doc, ReturnValues.AllNewAttributes, null, null, ifNotExistAttrs);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(capturedRequest);
+            Assert.IsTrue(capturedRequest.UpdateExpression != null && capturedRequest.UpdateExpression.Contains("SET"));
+            Assert.IsFalse(capturedRequest.UpdateExpression.Contains("REMOVE"));
+            Assert.IsFalse(capturedRequest.ExpressionAttributeNames?.ContainsValue("DeleteMe") ?? false);
+            _ddbClientMock.VerifyAll();
+        }
+
+        [TestMethod]
+        public void GivenDeletedNonCreateOnlyAttribute_WhenUpdateHelperCalled_ThenRemoveIsAdded()
+        {
+            var doc = new Document { ["Id"] = "1", ["Keep"] = 10, ["DeleteMe"] = "x" };
+            doc.CommitChanges();
+            doc["Keep"] = 11;
+            doc["DeleteMe"] = null;
+            UpdateItemRequest capturedRequest = null;
+
+            _ddbClientMock
+                .Setup(c => c.UpdateItem(It.IsAny<UpdateItemRequest>()))
+                .Callback<UpdateItemRequest>(r => capturedRequest = r)
+                .Returns(new UpdateItemResponse { Attributes = new Dictionary<string, AttributeValue>() });
+
+            var result = _table.UpdateHelper(doc, ReturnValues.AllNewAttributes, null, null);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(capturedRequest);
+            Assert.IsTrue(capturedRequest.UpdateExpression != null && capturedRequest.UpdateExpression.Contains("REMOVE"));
+            Assert.IsTrue(
+                (capturedRequest.ExpressionAttributeNames?.ContainsValue("DeleteMe") ?? false) ||
+                capturedRequest.UpdateExpression.Contains("DeleteMe"));
+            _ddbClientMock.VerifyAll();
+        }
+
+        [TestMethod]
         public void GivenChangedKeys_WhenUpdateHelperCalled_ThenAllAttributesUpdated()
         {
             // Arrange

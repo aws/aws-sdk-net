@@ -373,7 +373,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var updateConfig = PrepareUpdateOperation(storage, flatConfig, table);
 
-            var updateDocument = table.UpdateHelperV2(
+            var updateDocument = table.UpdateHelper(
                 storage.Document,
                 updateConfig.opConfig.ReturnValues,
                 updateConfig.opConfig.ConditionalExpression,
@@ -400,7 +400,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var updateConfig = PrepareUpdateOperation(storage, flatConfig, table);
 
-            var updateDocument = await table.UpdateHelperV2Async(
+            var updateDocument = await table.UpdateHelperAsync(
                 storage.Document,
                 updateConfig.opConfig.ReturnValues,
                 updateConfig.opConfig.ConditionalExpression,
