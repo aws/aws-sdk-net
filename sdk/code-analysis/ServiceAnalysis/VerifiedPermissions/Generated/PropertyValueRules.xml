@@ -61,6 +61,12 @@
     <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CreatePolicyRequest.Name</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.CreatePolicyRequest.PolicyStoreId</property>
     <min>1</min>
     <max>200</max>
@@ -102,6 +108,36 @@
     <pattern>[a-zA-Z0-9-/_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CreatePolicyStoreAliasRequest.AliasName</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CreatePolicyStoreAliasRequest.PolicyStoreId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CreatePolicyStoreAliasResponse.AliasArn</property>
+    <min>1</min>
+    <max>2500</max>
+    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CreatePolicyStoreAliasResponse.AliasName</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CreatePolicyStoreAliasResponse.PolicyStoreId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.CreatePolicyTemplateRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -113,6 +149,12 @@
     <max>150</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.CreatePolicyTemplateRequest.Name</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.CreatePolicyTemplateRequest.PolicyStoreId</property>
     <min>1</min>
     <max>200</max>
@@ -121,7 +163,6 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.CreatePolicyTemplateRequest.Statement</property>
     <min>1</min>
-    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.CreatePolicyTemplateResponse.PolicyStoreId</property>
@@ -163,6 +204,12 @@
     <property>Amazon.VerifiedPermissions.Model.DeletePolicyStoreRequest.PolicyStoreId</property>
     <min>1</min>
     <max>200</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.DeletePolicyStoreAliasRequest.AliasName</property>
+    <min>0</min>
+    <max>150</max>
     <pattern>[a-zA-Z0-9-/_]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -220,6 +267,12 @@
     <pattern>[a-zA-Z0-9-/_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.GetPolicyResponse.Name</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.GetPolicyResponse.PolicyId</property>
     <min>1</min>
     <max>200</max>
@@ -255,6 +308,30 @@
     <pattern>[a-zA-Z0-9-/_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.GetPolicyStoreAliasRequest.AliasName</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.GetPolicyStoreAliasResponse.AliasArn</property>
+    <min>1</min>
+    <max>2500</max>
+    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.GetPolicyStoreAliasResponse.AliasName</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.GetPolicyStoreAliasResponse.PolicyStoreId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.GetPolicyTemplateRequest.PolicyStoreId</property>
     <min>1</min>
     <max>200</max>
@@ -272,6 +349,12 @@
     <max>150</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.GetPolicyTemplateResponse.Name</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.GetPolicyTemplateResponse.PolicyStoreId</property>
     <min>1</min>
     <max>200</max>
@@ -286,7 +369,6 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.GetPolicyTemplateResponse.Statement</property>
     <min>1</min>
-    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.GetSchemaRequest.PolicyStoreId</property>
@@ -368,6 +450,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.ListPoliciesResponse.NextToken</property>
+    <min>1</min>
+    <max>8000</max>
+    <pattern>[A-Za-z0-9-_=+/\.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.ListPolicyStoreAliasesRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.ListPolicyStoreAliasesRequest.NextToken</property>
+    <min>1</min>
+    <max>8000</max>
+    <pattern>[A-Za-z0-9-_=+/\.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.ListPolicyStoreAliasesResponse.NextToken</property>
     <min>1</min>
     <max>8000</max>
     <pattern>[A-Za-z0-9-_=+/\.]*</pattern>
@@ -468,6 +566,12 @@
     <pattern>[a-zA-Z0-9-/_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.UpdatePolicyRequest.Name</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.UpdatePolicyRequest.PolicyId</property>
     <min>1</min>
     <max>200</max>
@@ -520,6 +624,12 @@
     <max>150</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.UpdatePolicyTemplateRequest.Name</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.UpdatePolicyTemplateRequest.PolicyStoreId</property>
     <min>1</min>
     <max>200</max>
@@ -534,7 +644,6 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.UpdatePolicyTemplateRequest.Statement</property>
     <min>1</min>
-    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.UpdatePolicyTemplateResponse.PolicyStoreId</property>
@@ -594,6 +703,12 @@
     <property>Amazon.VerifiedPermissions.Model.BatchGetPolicyInputItem.PolicyStoreId</property>
     <min>1</min>
     <max>200</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.BatchGetPolicyOutputItem.Name</property>
+    <min>0</min>
+    <max>150</max>
     <pattern>[a-zA-Z0-9-/_]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -848,6 +963,12 @@
     <pattern>[a-zA-Z0-9-/_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.PolicyItem.Name</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.PolicyItem.PolicyId</property>
     <min>1</min>
     <max>200</max>
@@ -855,6 +976,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.PolicyItem.PolicyStoreId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.PolicyStoreAliasFilter.PolicyStoreId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.PolicyStoreAliasItem.AliasArn</property>
+    <min>1</min>
+    <max>2500</max>
+    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.PolicyStoreAliasItem.AliasName</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.PolicyStoreAliasItem.PolicyStoreId</property>
     <min>1</min>
     <max>200</max>
     <pattern>[a-zA-Z0-9-/_]*</pattern>
@@ -882,6 +1027,12 @@
     <max>150</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.PolicyTemplateItem.Name</property>
+    <min>0</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9-/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.PolicyTemplateItem.PolicyStoreId</property>
     <min>1</min>
     <max>200</max>
@@ -905,7 +1056,6 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.StaticPolicyDefinition.Statement</property>
     <min>1</min>
-    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.StaticPolicyDefinitionDetail.Description</property>
@@ -915,7 +1065,6 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.StaticPolicyDefinitionDetail.Statement</property>
     <min>1</min>
-    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.StaticPolicyDefinitionItem.Description</property>
@@ -994,6 +1143,5 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.UpdateStaticPolicyDefinition.Statement</property>
     <min>1</min>
-    <max>10000</max>
   </property-value-rule>
 </property-value-rules>
