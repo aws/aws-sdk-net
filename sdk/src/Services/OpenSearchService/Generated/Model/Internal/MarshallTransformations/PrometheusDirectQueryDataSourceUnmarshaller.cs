@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DirectQueryDataSourceType Object
+    /// Response Unmarshaller for PrometheusDirectQueryDataSource Object
     /// </summary>  
-    public class DirectQueryDataSourceTypeUnmarshaller : IUnmarshaller<DirectQueryDataSourceType, XmlUnmarshallerContext>, IUnmarshaller<DirectQueryDataSourceType, JsonUnmarshallerContext>
+    public class PrometheusDirectQueryDataSourceUnmarshaller : IUnmarshaller<PrometheusDirectQueryDataSource, XmlUnmarshallerContext>, IUnmarshaller<PrometheusDirectQueryDataSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DirectQueryDataSourceType IUnmarshaller<DirectQueryDataSourceType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PrometheusDirectQueryDataSource IUnmarshaller<PrometheusDirectQueryDataSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public DirectQueryDataSourceType Unmarshall(JsonUnmarshallerContext context)
+        public PrometheusDirectQueryDataSource Unmarshall(JsonUnmarshallerContext context)
         {
-            DirectQueryDataSourceType unmarshalledObject = new DirectQueryDataSourceType();
+            PrometheusDirectQueryDataSource unmarshalledObject = new PrometheusDirectQueryDataSource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CloudWatchLog", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth))
                 {
-                    var unmarshaller = CloudWatchDirectQueryDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLog = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Prometheus", targetDepth))
+                if (context.TestExpression("WorkspaceArn", targetDepth))
                 {
-                    var unmarshaller = PrometheusDirectQueryDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.Prometheus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SecurityLake", targetDepth))
-                {
-                    var unmarshaller = SecurityLakeDirectQueryDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.SecurityLake = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkspaceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
 
 
-        private static DirectQueryDataSourceTypeUnmarshaller _instance = new DirectQueryDataSourceTypeUnmarshaller();        
+        private static PrometheusDirectQueryDataSourceUnmarshaller _instance = new PrometheusDirectQueryDataSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DirectQueryDataSourceTypeUnmarshaller Instance
+        public static PrometheusDirectQueryDataSourceUnmarshaller Instance
         {
             get
             {

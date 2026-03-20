@@ -127,11 +127,11 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property OpenSearchArns. 
         /// <para>
-        ///  A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated
-        /// with the direct query data source. 
+        ///  An optional list of Amazon Resource Names (ARNs) for the OpenSearch collections that
+        /// are associated with the direct query data source. This field is required for CloudWatchLogs
+        /// and SecurityLake datasource types. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> OpenSearchArns
         {
             get { return this._openSearchArns; }
