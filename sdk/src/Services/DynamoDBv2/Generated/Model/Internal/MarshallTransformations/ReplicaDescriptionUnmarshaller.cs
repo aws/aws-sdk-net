@@ -102,6 +102,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.RegionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReplicaArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReplicaArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReplicaInaccessibleDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

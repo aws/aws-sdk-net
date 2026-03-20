@@ -40,6 +40,7 @@ namespace Amazon.DynamoDBv2.Model
         private OnDemandThroughputOverride _onDemandThroughputOverride;
         private ProvisionedThroughputOverride _provisionedThroughputOverride;
         private string _regionName;
+        private string _replicaArn;
         private DateTime? _replicaInaccessibleDateTime;
         private ReplicaStatus _replicaStatus;
         private string _replicaStatusDescription;
@@ -170,6 +171,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetRegionName()
         {
             return this._regionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the global table replica.
+        /// </para>
+        /// </summary>
+        public string ReplicaArn
+        {
+            get { return this._replicaArn; }
+            set { this._replicaArn = value; }
+        }
+
+        // Check to see if ReplicaArn property is set
+        internal bool IsSetReplicaArn()
+        {
+            return this._replicaArn != null;
         }
 
         /// <summary>
