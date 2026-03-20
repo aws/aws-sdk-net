@@ -164,6 +164,10 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For Amazon EKS, this value refers to the size of your nested EKS recovery point.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Amazon FSx does not populate this value from the operation <c>GetBackupJobStatus</c>
         /// for FSx file systems.
         /// </para>

@@ -158,6 +158,11 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-eks.html#eks-restore-backup-section">Metadata
+        /// for Amazon EKS</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/restoring-fsx.html#fsx-restore-cli">Metadata
         /// for Amazon FSx</a> 
         /// </para>
@@ -262,6 +267,10 @@ namespace Amazon.Backup.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>EFS</c> - Amazon Elastic File System
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EKS</c> - Amazon Elastic Kubernetes Service
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -172,6 +172,13 @@ namespace Amazon.Backup.Model
         /// <para>
         /// If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When using wildcards in ARN patterns for backup selections, the asterisk (*) must
+        /// appear at the end of the ARN string (prefix pattern). For example, <c>arn:aws:s3:::my-bucket-*</c>
+        /// is valid, but <c>arn:aws:s3:::*-logs</c> is not supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> Resources
         {
