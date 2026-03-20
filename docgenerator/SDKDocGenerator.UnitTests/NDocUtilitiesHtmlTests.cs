@@ -16,12 +16,12 @@ namespace SDKDocGenerator.UnitTests
         }
 
         [Fact]
-        public void ImportantTag_RendersAsNoteblock()
+        public void ImportantTag_RendersAsWarningNoteblock()
         {
             var result = TransformSummary("<important><para>text</para></important>");
 
             Assert.Equal(
-                "<p><div class=\"noteblock\"><div class=\"noteheader\">Important:</div><p>text</p></div></p>",
+                "<p><div class=\"noteblock noteblock-warning\"><p>text</p></div></p>",
                 result);
         }
 
@@ -31,7 +31,7 @@ namespace SDKDocGenerator.UnitTests
             var result = TransformSummary("<note><para>text</para></note>");
 
             Assert.Equal(
-                "<p><div class=\"noteblock\"><div class=\"noteheader\">Note:</div><p>text</p></div></p>",
+                "<p><div class=\"noteblock\"><p>text</p></div></p>",
                 result);
         }
 
@@ -44,12 +44,12 @@ namespace SDKDocGenerator.UnitTests
         }
 
         [Fact]
-        public void SelfClosingImportantTag_ProducesEmptyNoteblock()
+        public void SelfClosingImportantTag_ProducesEmptyWarningNoteblock()
         {
             var result = TransformSummary("<important />");
 
             Assert.Equal(
-                "<p><div class=\"noteblock\"><div class=\"noteheader\">Important:</div></div></p>",
+                "<p><div class=\"noteblock noteblock-warning\" /></p>",
                 result);
         }
 
@@ -59,17 +59,17 @@ namespace SDKDocGenerator.UnitTests
             var result = TransformSummary("<important><para>Use <c>X</c> instead.</para></important>");
 
             Assert.Equal(
-                "<p><div class=\"noteblock\"><div class=\"noteheader\">Important:</div><p>Use <c>X</c> instead.</p></div></p>",
+                "<p><div class=\"noteblock noteblock-warning\"><p>Use <c>X</c> instead.</p></div></p>",
                 result);
         }
 
         [Fact]
-        public void NoteTagWithTypeAttribute_DoesNotThrow()
+        public void NoteTagWithTypeAttribute_PreservesAttribute()
         {
             var result = TransformSummary("<note type=\"caution\"><para>Be careful.</para></note>");
 
             Assert.Equal(
-                "<p><div class=\"noteblock\" type=\"caution\"><div class=\"noteheader\">Note:</div><p>Be careful.</p></div></p>",
+                "<p><div class=\"noteblock\" type=\"caution\"><p>Be careful.</p></div></p>",
                 result);
         }
     }

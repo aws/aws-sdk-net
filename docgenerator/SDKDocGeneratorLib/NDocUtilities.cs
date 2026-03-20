@@ -41,14 +41,15 @@ namespace SDKDocGenerator
             { "summary", "p" },
             { "para", "p" },
             { "see", "a" },
-            { "paramref", "code" }
+            { "paramref", "code" },
+            { "important", "div" },
+            { "note", "div" }
         };
 
-        // Callout elements that render as styled blocks with a header
-        private static readonly Dictionary<string, string> CalloutElementMapping = new Dictionary<string, string>(StringComparer.Ordinal)
+        private static readonly Dictionary<string, string> NdocToHtmlClassMapping = new Dictionary<string, string>(StringComparer.Ordinal)
         {
-            { "important", "Important:" },
-            { "note", "Note:" }
+            { "important", "noteblock noteblock-warning" },
+            { "note", "noteblock" }
         };
 
         #region manage ndoc instances
@@ -615,17 +616,8 @@ namespace SDKDocGenerator
 
                                 // element name substitution, if necessary
                                 string elementName;
-                                string calloutHeader;
-                                bool isCallout = CalloutElementMapping.TryGetValue(originalLocalName, out calloutHeader);
-
-                                if (isCallout)
-                                {
-                                    elementName = "div";
-                                }
-                                else if (!NdocToHtmlElementMapping.TryGetValue(originalLocalName, out elementName))
-                                {
+                                if (!NdocToHtmlElementMapping.TryGetValue(originalLocalName, out elementName))
                                     elementName = originalLocalName;
-                                }
 
                                 // some elements can't be empty, use this variable for that
                                 string emptyElementContents = null;
@@ -633,10 +625,11 @@ namespace SDKDocGenerator
                                 // start element
                                 writer.WriteStartElement(elementName);
 
-                                // Add class for callout elements (attribute must be written before any content)
-                                if (isCallout)
+                                // Add CSS class if the original element has a class mapping
+                                string cssClass;
+                                if (NdocToHtmlClassMapping.TryGetValue(originalLocalName, out cssClass))
                                 {
-                                    writer.WriteAttributeString("class", "noteblock");
+                                    writer.WriteAttributeString("class", cssClass);
                                 }
 
                                 // copy over attributes
@@ -713,12 +706,6 @@ namespace SDKDocGenerator
                                         //of the frame.
                                         writer.WriteAttributeString(targetAttributeName, "_blank");
                                     }
-                                }
-
-                                // Write callout header after all attributes are written
-                                if (isCallout)
-                                {
-                                    writer.WriteRaw("<div class=\"noteheader\">" + calloutHeader + "</div>");
                                 }
 
                                 // if this is a self-closing element, close it
