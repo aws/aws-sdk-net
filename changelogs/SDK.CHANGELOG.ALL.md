@@ -1,3 +1,16 @@
+### 3.7.1247.0 (2026-03-20 18:24 UTC)
+* Backup (3.7.508.46)
+	* Fix Typo for S3Backup Options ( S3BackupACLs to BackupACLs)
+* DynamoDBv2 (3.7.513.0)
+	* Adding ReplicaArn to ReplicaDescription of a global table replica
+* OpenSearchService (3.7.511.0)
+	* Added support for Amazon Managed Service for Prometheus (AMP) as a connected data source in OpenSearch UI. Now users can analyze Prometheus metrics in OpenSearch UI without data copy.
+* VerifiedPermissions (3.7.506.0)
+	* Adds support for Policy Store Aliases, Policy Names, and Policy Template Names. These are customizable identifiers that can be used in place of Policy Store ids, Policy ids, and Policy Template ids respectively in Amazon Verified Permissions APIs.
+* Core 3.7.500.94
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1246.0 (2026-03-19 19:45 UTC)
 * Batch (3.7.505.0)
 	* AWS Batch now supports quota management, enabling administrators to allocate shared compute resources across teams and projects through quota shares with capacity limits, resource-sharing strategies, and priority-based preemption - currently available for SageMaker Training job queues.

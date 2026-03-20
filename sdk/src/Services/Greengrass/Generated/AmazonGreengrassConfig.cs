@@ -32,7 +32,7 @@ namespace Amazon.Greengrass
     public partial class AmazonGreengrassConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Greengrass", "3.7.502.53");
+            InternalSDKUtils.BuildUserAgentString("Greengrass", "3.7.502.54");
 
         private string _userAgent = UserAgentString;
         ///<summary>
