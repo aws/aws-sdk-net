@@ -40,6 +40,31 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
             #endregion
         }
 
+        public void VerifiedPermissionsBatchGetPolicy()
+        {
+            #region example-2
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.BatchGetPolicy(new BatchGetPolicyRequest 
+            {
+                Requests = new List<BatchGetPolicyInputItem> {
+                    new BatchGetPolicyInputItem {
+                        PolicyId = "name/example-policy",
+                        PolicyStoreId = "ERZeDpRc34dkYZeb6FZRVC"
+                    },
+                    new BatchGetPolicyInputItem {
+                        PolicyId = "name/example-policy-2",
+                        PolicyStoreId = "ERZeDpRc34dkYZeb6FZRVC"
+                    }
+                }
+            });
+
+            List<BatchGetPolicyErrorItem> errors = response.Errors;
+            List<BatchGetPolicyOutputItem> results = response.Results;
+
+            #endregion
+        }
+
         public void VerifiedPermissionsBatchIsAuthorized()
         {
             #region example-1
@@ -255,6 +280,7 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
             var client = new AmazonVerifiedPermissionsClient();
             var response = client.CreatePolicy(new CreatePolicyRequest 
             {
+                Name = "name/example-policy",
                 ClientToken = "a1b2c3d4-e5f6-a1b2-c3d4-TOKEN1111111",
                 Definition = new PolicyDefinition { Static = new StaticPolicyDefinition {
                     Description = "Grant members of janeFriends UserGroup access to the vacationFolder Album",
@@ -281,32 +307,7 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
             var client = new AmazonVerifiedPermissionsClient();
             var response = client.CreatePolicy(new CreatePolicyRequest 
             {
-                ClientToken = "a1b2c3d4-e5f6-a1b2-c3d4-TOKEN1111111",
-                Definition = new PolicyDefinition { Static = new StaticPolicyDefinition {
-                    Description = "Grant members of janeFriends UserGroup access to the vacationFolder Album",
-                    Statement = "permit( principal in UserGroup::\"janeFriends\", action, resource in Album::\"vacationFolder\" );"
-                } },
-                PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
-            });
-
-            DateTime createdDate = response.CreatedDate;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
-            string policyId = response.PolicyId;
-            string policyStoreId = response.PolicyStoreId;
-            string policyType = response.PolicyType;
-            EntityIdentifier principal = response.Principal;
-            EntityIdentifier resource = response.Resource;
-
-            #endregion
-        }
-
-        public void VerifiedPermissionsCreatePolicy()
-        {
-            #region example-3
-
-            var client = new AmazonVerifiedPermissionsClient();
-            var response = client.CreatePolicy(new CreatePolicyRequest 
-            {
+                Name = "name/example-template-linked-policy",
                 ClientToken = "a1b2c3d4-e5f6-a1b2-c3d4-TOKEN1111111",
                 Definition = new PolicyDefinition { TemplateLinked = new TemplateLinkedPolicyDefinition {
                     PolicyTemplateId = "PTEXAMPLEabcdefg111111",
@@ -373,6 +374,25 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
             #endregion
         }
 
+        public void VerifiedPermissionsCreatePolicyStoreAlias()
+        {
+            #region example-1
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.CreatePolicyStoreAlias(new CreatePolicyStoreAliasRequest 
+            {
+                AliasName = "policy-store-alias/example-policy-store",
+                PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
+            });
+
+            string aliasArn = response.AliasArn;
+            string aliasName = response.AliasName;
+            DateTime createdAt = response.CreatedAt;
+            string policyStoreId = response.PolicyStoreId;
+
+            #endregion
+        }
+
         public void VerifiedPermissionsCreatePolicyTemplate()
         {
             #region example-1
@@ -380,6 +400,7 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
             var client = new AmazonVerifiedPermissionsClient();
             var response = client.CreatePolicyTemplate(new CreatePolicyTemplateRequest 
             {
+                Name = "name/example-policy-template",
                 ClientToken = "a1b2c3d4-e5f6-a1b2-c3d4-TOKEN1111111",
                 Description = "Template for research dept",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a",
@@ -446,6 +467,20 @@ when {
             #endregion
         }
 
+        public void VerifiedPermissionsDeletePolicyStoreAlias()
+        {
+            #region example-1
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.DeletePolicyStoreAlias(new DeletePolicyStoreAliasRequest 
+            {
+                AliasName = "policy-store-alias/example-policy-store"
+            });
+
+
+            #endregion
+        }
+
         public void VerifiedPermissionsDeletePolicyTemplate()
         {
             #region example-1
@@ -504,6 +539,29 @@ when {
             #endregion
         }
 
+        public void VerifiedPermissionsGetPolicy()
+        {
+            #region example-2
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.GetPolicy(new GetPolicyRequest 
+            {
+                PolicyId = "name/example-policy",
+                PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
+            });
+
+            string name = response.Name;
+            DateTime createdDate = response.CreatedDate;
+            PolicyDefinitionDetail definition = response.Definition;
+            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            string policyId = response.PolicyId;
+            string policyStoreId = response.PolicyStoreId;
+            string policyType = response.PolicyType;
+            EntityIdentifier resource = response.Resource;
+
+            #endregion
+        }
+
         public void VerifiedPermissionsGetPolicyStore()
         {
             #region example-1
@@ -544,6 +602,25 @@ when {
             #endregion
         }
 
+        public void VerifiedPermissionsGetPolicyStoreAlias()
+        {
+            #region example-1
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.GetPolicyStoreAlias(new GetPolicyStoreAliasRequest 
+            {
+                AliasName = "policy-store-alias/example-policy-store"
+            });
+
+            string aliasArn = response.AliasArn;
+            string aliasName = response.AliasName;
+            DateTime createdAt = response.CreatedAt;
+            string policyStoreId = response.PolicyStoreId;
+            string state = response.State;
+
+            #endregion
+        }
+
         public void VerifiedPermissionsGetPolicyTemplate()
         {
             #region example-1
@@ -555,6 +632,28 @@ when {
                 PolicyTemplateId = "PTEXAMPLEabcdefg111111"
             });
 
+            DateTime createdDate = response.CreatedDate;
+            string description = response.Description;
+            DateTime lastUpdatedDate = response.LastUpdatedDate;
+            string policyStoreId = response.PolicyStoreId;
+            string policyTemplateId = response.PolicyTemplateId;
+            string statement = response.Statement;
+
+            #endregion
+        }
+
+        public void VerifiedPermissionsGetPolicyTemplate()
+        {
+            #region example-2
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.GetPolicyTemplate(new GetPolicyTemplateRequest 
+            {
+                PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a",
+                PolicyTemplateId = "name/example-policy-template"
+            });
+
+            string name = response.Name;
             DateTime createdDate = response.CreatedDate;
             string description = response.Description;
             DateTime lastUpdatedDate = response.LastUpdatedDate;
@@ -732,6 +831,35 @@ when {
             #endregion
         }
 
+        public void VerifiedPermissionsListPolicyStoreAliases()
+        {
+            #region example-1
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.ListPolicyStoreAliases(new ListPolicyStoreAliasesRequest 
+            {
+            });
+
+            List<PolicyStoreAliasItem> policyStoreAliases = response.PolicyStoreAliases;
+
+            #endregion
+        }
+
+        public void VerifiedPermissionsListPolicyStoreAliases()
+        {
+            #region example-2
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.ListPolicyStoreAliases(new ListPolicyStoreAliasesRequest 
+            {
+                Filter = new PolicyStoreAliasFilter { PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a" }
+            });
+
+            List<PolicyStoreAliasItem> policyStoreAliases = response.PolicyStoreAliases;
+
+            #endregion
+        }
+
         public void VerifiedPermissionsListPolicyStores()
         {
             #region example-1
@@ -863,6 +991,7 @@ when {
             var client = new AmazonVerifiedPermissionsClient();
             var response = client.UpdatePolicy(new UpdatePolicyRequest 
             {
+                Name = "name/example-policy-2",
                 Definition = new UpdatePolicyDefinition { Static = new UpdateStaticPolicyDefinition { Statement = "permit(principal, action, resource in Album::\"public_folder\");" } },
                 PolicyId = "9wYxMpljbbZQb5fcZHyJhY",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a"
@@ -904,6 +1033,7 @@ when {
             var client = new AmazonVerifiedPermissionsClient();
             var response = client.UpdatePolicyTemplate(new UpdatePolicyTemplateRequest 
             {
+                Name = "name/example-policy-template-2",
                 Description = "My updated template description",
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a",
                 PolicyTemplateId = "PTEXAMPLEabcdefg111111",
