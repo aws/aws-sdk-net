@@ -331,7 +331,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     {
         private const string AwsVariablePrefix = "awsavar";
 
-         public static void ConvertAttributeUpdatesToUpdateExpression(
+        public static void ConvertAttributeUpdatesToUpdateExpression(
             Dictionary<string, AttributeValueUpdate> attributesToUpdates, HashSet<string> ifNotExistAttributeNames,
             Expression updateExpression,
             Table table,

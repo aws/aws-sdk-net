@@ -115,22 +115,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(Document doc, bool changedAttributesOnly);
 
-        ///// <summary>
-        ///// Creates an update expression for the specified document, optionally including only changed attributes and
-        ///// handling attributes that should use the if-not-exist operator.
-        ///// </summary>
-        ///// <remarks>Use this method to construct complex update expressions, such as those required for
-        ///// conditional updates in document databases. The method does not modify the input document or the provided
-        ///// update expression.</remarks>
-        ///// <param name="doc">The document containing the attributes to be updated.</param>
-        ///// <param name="ifNotExistAttributeNames">A set of attribute names that should be updated using the if-not-exist operator. Cannot be null.</param>
-        ///// <param name="updateExpression">An existing update expression to which additional updates will be appended. Can be null if starting a new
-        ///// expression.</param>
-        ///// <param name="changedAttributesOnly">true to include only attributes that have changed; otherwise, false to include all attributes from the
-        ///// document.</param>
-        ///// <returns>An expression representing the update operation for the specified document and attributes.</returns>
-        //Expression ToUpdateExpression(Document doc, HashSet<string> ifNotExistAttributeNames, Expression updateExpression, bool changedAttributesOnly);
-
         #endregion
 
         #region Scan
