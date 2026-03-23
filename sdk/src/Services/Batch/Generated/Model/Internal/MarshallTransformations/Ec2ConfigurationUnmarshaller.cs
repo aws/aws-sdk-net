@@ -66,6 +66,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("batchImageStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BatchImageStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("imageIdOverride", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

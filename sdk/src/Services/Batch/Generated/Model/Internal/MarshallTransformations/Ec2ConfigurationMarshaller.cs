@@ -48,6 +48,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBatchImageStatus())
+            {
+                context.Writer.WritePropertyName("batchImageStatus");
+                context.Writer.Write(requestObject.BatchImageStatus);
+            }
+
             if(requestObject.IsSetImageIdOverride())
             {
                 context.Writer.WritePropertyName("imageIdOverride");
