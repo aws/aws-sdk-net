@@ -29,6 +29,12 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.CancelRunBatchRequest.BatchId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.CancelVariantImportJobRequest.JobId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
@@ -636,6 +642,12 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.DeleteBatchRequest.BatchId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.DeleteReferenceRequest.Id</property>
     <min>10</min>
     <max>36</max>
@@ -655,6 +667,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DeleteRunRequest.Id</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DeleteRunBatchRequest.BatchId</property>
     <min>1</min>
     <max>18</max>
     <pattern>[0-9]+</pattern>
@@ -782,6 +800,41 @@
     <min>3</min>
     <max>255</max>
     <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetBatchRequest.BatchId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetBatchResponse.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetBatchResponse.Id</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetBatchResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetBatchResponse.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetBatchResponse.Uuid</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetRequest.Id</property>
@@ -1131,6 +1184,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.BatchId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.CacheBehavior</property>
@@ -1788,6 +1847,40 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.ListBatchRequest.MaxItems</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListBatchRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListBatchRequest.RunGroupId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListBatchRequest.StartingToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListBatchRequest.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListBatchResponse.NextToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.ListMultipartReadSetUploadsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -2035,6 +2128,12 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.ListRunsRequest.BatchId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.ListRunsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -2064,6 +2163,34 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListRunsResponse.NextToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListRunsInBatchRequest.BatchId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListRunsInBatchRequest.MaxItems</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListRunsInBatchRequest.StartingToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListRunsInBatchRequest.SubmissionStatus</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListRunsInBatchResponse.NextToken</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
@@ -2501,6 +2628,41 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunBatchRequest.BatchName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunBatchRequest.RequestId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunBatchResponse.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunBatchResponse.Id</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunBatchResponse.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunBatchResponse.Uuid</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.StartVariantImportJobRequest.DestinationName</property>
     <min>3</min>
     <max>255</max>
@@ -2877,6 +3039,35 @@
     <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.BatchListItem.Id</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.BatchListItem.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.BatchListItem.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.BatchListItem.WorkflowId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.BatchRunSettings.S3UriSettings</property>
+    <min>1</min>
+    <max>750</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.CompleteReadSetUploadPartListItem.Checksum</property>
     <min>1</min>
     <max>100</max>
@@ -2886,6 +3077,93 @@
     <property>Amazon.Omics.Model.CompleteReadSetUploadPartListItem.PartNumber</property>
     <min>1</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.CacheBehavior</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.CacheId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.LogLevel</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.OutputBucketOwnerId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.OutputUri</property>
+    <min>1</min>
+    <max>750</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.Priority</property>
+    <min>0</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.RetentionMode</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.RoleArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.RunGroupId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.StorageCapacity</property>
+    <min>0</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.StorageType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.WorkflowId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.WorkflowOwnerId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.WorkflowType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.WorkflowVersionName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-\._]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DefinitionRepository.ConnectionArn</property>
@@ -3096,6 +3374,35 @@
     <property>Amazon.Omics.Model.ImportReferenceSourceItem.StatusMessage</property>
     <min>1</min>
     <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.InlineSetting.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.InlineSetting.OutputBucketOwnerId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.InlineSetting.OutputUri</property>
+    <min>1</min>
+    <max>750</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.InlineSetting.Priority</property>
+    <min>0</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.InlineSetting.RunSettingId</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3389,6 +3696,45 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.RunBatchListItem.RunArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunBatchListItem.RunId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunBatchListItem.RunInternalUuid</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunBatchListItem.RunSettingId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunBatchListItem.SubmissionFailureMessage</property>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunBatchListItem.SubmissionFailureReason</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunBatchListItem.SubmissionStatus</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.RunCacheListItem.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -3463,6 +3809,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunListItem.BatchId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.RunListItem.Id</property>

@@ -61,6 +61,14 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Paginator for ListBatch operation
+        ///</summary>
+        public IListBatchPaginator ListBatch(ListBatchRequest request) 
+        {
+            return new ListBatchPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMultipartReadSetUploads operation
         ///</summary>
         public IListMultipartReadSetUploadsPaginator ListMultipartReadSetUploads(ListMultipartReadSetUploadsRequest request) 
@@ -154,6 +162,14 @@ namespace Amazon.Omics.Model
         public IListRunsPaginator ListRuns(ListRunsRequest request) 
         {
             return new ListRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRunsInBatch operation
+        ///</summary>
+        public IListRunsInBatchPaginator ListRunsInBatch(ListRunsInBatchRequest request) 
+        {
+            return new ListRunsInBatchPaginator(this.client, request);
         }
 
         /// <summary>

@@ -60,6 +60,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetBatchId())
+                request.Parameters.Add("batchId", StringUtils.FromString(publicRequest.BatchId));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

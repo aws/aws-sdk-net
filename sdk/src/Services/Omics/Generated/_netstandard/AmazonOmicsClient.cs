@@ -467,10 +467,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -573,6 +572,75 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  CancelRunBatch
+
+        internal virtual CancelRunBatchResponse CancelRunBatch(CancelRunBatchRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelRunBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelRunBatchResponseUnmarshaller.Instance;
+
+            return Invoke<CancelRunBatchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancels all runs within a specified batch. This operation prevents not-yet-submitted
+        /// runs from starting and submits <c>CancelRun</c> requests for runs that have already
+        /// started.
+        /// 
+        ///  
+        /// <para>
+        /// Cancel is only allowed on batches in <c>PENDING</c>, <c>SUBMITTING</c>, or <c>INPROGRESS</c>
+        /// state. Cancel operations are non-atomic and may be partially successful. Use <c>GetBatch</c>
+        /// to review <c>successfulCancelSubmissionCount</c> and <c>failedCancelSubmissionCount</c>
+        /// in the <c>submissionSummary</c>. Only one cancel or delete operation per batch is
+        /// allowed at a time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelRunBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelRunBatch service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelRunBatch">REST API Reference for CancelRunBatch Operation</seealso>
+        public virtual Task<CancelRunBatchResponse> CancelRunBatchAsync(CancelRunBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelRunBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelRunBatchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelRunBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelVariantImportJob
 
         internal virtual CancelVariantImportJobResponse CancelVariantImportJob(CancelVariantImportJobRequest request)
@@ -589,10 +657,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -719,10 +786,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -1284,10 +1350,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -1533,10 +1598,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -1630,6 +1694,75 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = DeleteAnnotationStoreVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAnnotationStoreVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBatch
+
+        internal virtual DeleteBatchResponse DeleteBatch(DeleteBatchRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBatchResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBatchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a run batch resource and its associated metadata. This operation does not
+        /// delete the individual workflow runs. To delete the runs, call <c>DeleteRunBatch</c>
+        /// before calling <c>DeleteBatch</c>.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>DeleteBatch</c> requires the batch to be in a terminal state: <c>PROCESSED</c>,
+        /// <c>FAILED</c>, <c>CANCELLED</c>, or <c>RUNS_DELETED</c>. After <c>DeleteBatch</c>
+        /// completes, the batch metadata is no longer accessible. You cannot call <c>GetBatch</c>,
+        /// <c>ListRunsInBatch</c>, <c>DeleteRunBatch</c>, or <c>CancelRunBatch</c> on a deleted
+        /// batch.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBatch service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteBatch">REST API Reference for DeleteBatch Operation</seealso>
+        public virtual Task<DeleteBatchResponse> DeleteBatchAsync(DeleteBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBatchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBatchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1835,6 +1968,74 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = DeleteRunResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRunBatch
+
+        internal virtual DeleteRunBatchResponse DeleteRunBatch(DeleteRunBatchRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRunBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRunBatchResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRunBatchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the individual workflow runs within a batch. This operation is separate from
+        /// <c>DeleteBatch</c>, which removes the batch metadata.
+        /// 
+        ///  
+        /// <para>
+        /// Delete is only allowed on batches in <c>PROCESSED</c> or <c>CANCELLED</c> state. Delete
+        /// operations are non-atomic and may be partially successful. Use <c>GetBatch</c> to
+        /// review <c>successfulDeleteSubmissionCount</c> and <c>failedDeleteSubmissionCount</c>
+        /// in the <c>submissionSummary</c>. Only one cancel or delete operation per batch is
+        /// allowed at a time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRunBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRunBatch service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunBatch">REST API Reference for DeleteRunBatch Operation</seealso>
+        public virtual Task<DeleteRunBatchResponse> DeleteRunBatchAsync(DeleteRunBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRunBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRunBatchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRunBatchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2176,10 +2377,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -2380,10 +2580,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -2442,10 +2641,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -2533,6 +2731,59 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = GetAnnotationStoreVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAnnotationStoreVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBatch
+
+        internal virtual GetBatchResponse GetBatch(GetBatchRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBatchResponseUnmarshaller.Instance;
+
+            return Invoke<GetBatchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves details and current status for a specific run batch, including submission
+        /// progress and run execution counts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBatch service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetBatch">REST API Reference for GetBatch Operation</seealso>
+        public virtual Task<GetBatchResponse> GetBatchAsync(GetBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBatchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBatchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3460,10 +3711,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -3522,10 +3772,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -3712,10 +3961,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -3774,10 +4022,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -3865,6 +4112,56 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = ListAnnotationStoreVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAnnotationStoreVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBatch
+
+        internal virtual ListBatchResponse ListBatch(ListBatchRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBatchResponseUnmarshaller.Instance;
+
+            return Invoke<ListBatchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of run batches in your account, with optional filtering by status,
+        /// name, or run group. Results are paginated. Only one filter per call is supported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBatch service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListBatch">REST API Reference for ListBatch Operation</seealso>
+        public virtual Task<ListBatchResponse> ListBatchAsync(ListBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBatchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBatchResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4550,6 +4847,66 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  ListRunsInBatch
+
+        internal virtual ListRunsInBatchResponse ListRunsInBatch(ListRunsInBatchRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRunsInBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRunsInBatchResponseUnmarshaller.Instance;
+
+            return Invoke<ListRunsInBatchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a paginated list of individual workflow runs within a specific batch. Use
+        /// this operation to map each <c>runSettingId</c> to its HealthOmics-generated <c>runId</c>,
+        /// and to check the submission status of each run. Only one filter per call is supported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRunsInBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRunsInBatch service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunsInBatch">REST API Reference for ListRunsInBatch Operation</seealso>
+        public virtual Task<ListRunsInBatchResponse> ListRunsInBatchAsync(ListRunsInBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRunsInBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRunsInBatchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRunsInBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRunTasks
 
         internal virtual ListRunTasksResponse ListRunTasks(ListRunTasksRequest request)
@@ -4794,10 +5151,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -4856,10 +5212,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -5096,10 +5451,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -5530,6 +5884,74 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  StartRunBatch
+
+        internal virtual StartRunBatchResponse StartRunBatch(StartRunBatchRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartRunBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRunBatchResponseUnmarshaller.Instance;
+
+            return Invoke<StartRunBatchResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a batch of workflow runs. You can group up to 100,000 runs into a single batch
+        /// that share a common configuration defined in <c>defaultRunSetting</c>. Per-run overrides
+        /// can be provided either inline via <c>inlineSettings</c> (up to 100 runs) or via a
+        /// JSON file stored in Amazon S3 via <c>s3UriSettings</c> (up to 100,000 runs).
+        /// 
+        ///  
+        /// <para>
+        ///  <c>StartRunBatch</c> validates common fields synchronously and returns immediately
+        /// with a batch ID and status <c>PENDING</c>. Runs are submitted gradually and asynchronously
+        /// at a rate governed by your <c>StartRun</c> throughput quota.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRunBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRunBatch service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRunBatch">REST API Reference for StartRunBatch Operation</seealso>
+        public virtual Task<StartRunBatchResponse> StartRunBatchAsync(StartRunBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartRunBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRunBatchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartRunBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartVariantImportJob
 
         internal virtual StartVariantImportJobResponse StartVariantImportJob(StartVariantImportJobRequest request)
@@ -5546,10 +5968,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -5727,10 +6148,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 
@@ -6051,10 +6471,9 @@ namespace Amazon.Omics
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services HealthOmics variant stores and annotation stores will no longer
-        /// be open to new customers starting November 7, 2025. If you would like to use variant
-        /// stores or annotation stores, sign up prior to that date. Existing customers can continue
-        /// to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
+        /// Amazon Web Services HealthOmics variant stores and annotation stores are no longer
+        /// open to new customers. Existing customers can continue to use the service as normal.
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html">
         /// Amazon Web Services HealthOmics variant store and annotation store availability change</a>.
         /// 
         ///  </important> 

@@ -64,6 +64,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("batchId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BatchId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("cacheBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

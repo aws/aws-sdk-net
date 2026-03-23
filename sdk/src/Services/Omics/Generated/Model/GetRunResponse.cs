@@ -36,6 +36,7 @@ namespace Amazon.Omics.Model
     {
         private Accelerators _accelerators;
         private string _arn;
+        private string _batchId;
         private CacheBehavior _cacheBehavior;
         private string _cacheId;
         private DateTime? _creationTime;
@@ -107,6 +108,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BatchId. 
+        /// <para>
+        /// The run's batch ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=18)]
+        public string BatchId
+        {
+            get { return this._batchId; }
+            set { this._batchId = value; }
+        }
+
+        // Check to see if BatchId property is set
+        internal bool IsSetBatchId()
+        {
+            return this._batchId != null;
         }
 
         /// <summary>
