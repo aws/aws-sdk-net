@@ -17,14 +17,16 @@ using Amazon.Runtime.EventStreams;
 using Amazon.Util;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System;
 
 namespace Amazon.Runtime.Internal.Auth
 {
     /// <summary>
     /// AWS SigV4 event signer used for signing events as they are being streamed to AWS service.
     /// </summary>
-    public class AWS4EventSigner : IEventSigner
+    public class AWS4EventSigner : IEventSigner, IDisposable
     {
         private const string Sha256Payload = "AWS4-HMAC-SHA256-PAYLOAD";
         private const string HeaderDate = ":date";
@@ -35,6 +37,7 @@ namespace Amazon.Runtime.Internal.Auth
         private readonly string _service;
 
         private string _previousSignature;
+        private readonly SemaphoreSlim _signLock = new SemaphoreSlim(1, 1);
 
         /// <summary>
         /// Constructe an isntance of the event signer.
@@ -62,46 +65,75 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>The signed events that can be sent to the AWS service.</returns>
         public async Task<byte[]> SignEventAsync(byte[] eventBytes)
         {
-            var secretKey = (await _credentials.GetCredentialsAsync().ConfigureAwait(false)).SecretKey;
+            await _signLock.WaitAsync().ConfigureAwait(false);
+            try
+            {
+                var secretKey = (await _credentials.GetCredentialsAsync().ConfigureAwait(false)).SecretKey;
 
-            var timestamp = AWSSDKUtils.CorrectedUtcNow;
+                var timestamp = AWSSDKUtils.CorrectedUtcNow;
 
-            var signedHeaders = new List<IEventStreamHeader>();
+                var signedHeaders = new List<IEventStreamHeader>();
 
-            var signedDateHeader = new EventStreamHeader(HeaderDate) { HeaderType = EventStreamHeaderType.String };
-            signedDateHeader.SetTimestamp(timestamp);
-            signedHeaders.Add(signedDateHeader);
+                var signedDateHeader = new EventStreamHeader(HeaderDate) { HeaderType = EventStreamHeaderType.String };
+                signedDateHeader.SetTimestamp(timestamp);
+                signedHeaders.Add(signedDateHeader);
 
-            var dateHeaderBuffer = new byte[15];
-            signedDateHeader.WriteToBuffer(dateHeaderBuffer, 0);
+                var dateHeaderBuffer = new byte[15];
+                signedDateHeader.WriteToBuffer(dateHeaderBuffer, 0);
 
-            var formattedDateStamp = timestamp.ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
+                var formattedDateStamp = timestamp.ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
 
-            var stringToSign = new StringBuilder();
-            stringToSign.Append(Sha256Payload);
-            stringToSign.Append("\n");
-            stringToSign.Append(formattedDateStamp);
-            stringToSign.Append("\n");
-            stringToSign.Append($"{timestamp.ToString(AWSSDKUtils.ISO8601BasicDateFormat)}/{_region}/{_service}/aws4_request");
-            stringToSign.Append("\n");
-            stringToSign.Append(_previousSignature);
-            stringToSign.Append("\n");
-            stringToSign.Append(AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(dateHeaderBuffer), true));
-            stringToSign.Append("\n");
-            stringToSign.Append(AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(eventBytes), true));
+                var stringToSign = new StringBuilder();
+                stringToSign.Append(Sha256Payload);
+                stringToSign.Append("\n");
+                stringToSign.Append(formattedDateStamp);
+                stringToSign.Append("\n");
+                stringToSign.Append($"{timestamp.ToString(AWSSDKUtils.ISO8601BasicDateFormat)}/{_region}/{_service}/aws4_request");
+                stringToSign.Append("\n");
+                stringToSign.Append(_previousSignature);
+                stringToSign.Append("\n");
+                stringToSign.Append(AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(dateHeaderBuffer), true));
+                stringToSign.Append("\n");
+                stringToSign.Append(AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(eventBytes), true));
 
-            var signature = AWS4Signer.ComputeKeyedHash(AWS4Signer.SignerAlgorithm, AWS4Signer.ComposeSigningKey(secretKey, _region, timestamp.ToString(AWSSDKUtils.ISO8601BasicDateFormat), _service), UTF8Encoding.UTF8.GetBytes(stringToSign.ToString()));
+                var signature = AWS4Signer.ComputeKeyedHash(AWS4Signer.SignerAlgorithm, AWS4Signer.ComposeSigningKey(secretKey, _region, timestamp.ToString(AWSSDKUtils.ISO8601BasicDateFormat), _service), UTF8Encoding.UTF8.GetBytes(stringToSign.ToString()));
 
-            var signedSignatureHeader = new EventStreamHeader(HeaderChunkSignature) { HeaderType = EventStreamHeaderType.String };
-            signedSignatureHeader.SetByteBuf(signature);
-            signedHeaders.Add(signedSignatureHeader);
+                var signedSignatureHeader = new EventStreamHeader(HeaderChunkSignature) { HeaderType = EventStreamHeaderType.String };
+                signedSignatureHeader.SetByteBuf(signature);
+                signedHeaders.Add(signedSignatureHeader);
 
-            var signedMessage = new EventStreamMessage(signedHeaders, eventBytes);
-            var signedMessageBytes = signedMessage.ToByteArray();
+                var signedMessage = new EventStreamMessage(signedHeaders, eventBytes);
+                var signedMessageBytes = signedMessage.ToByteArray();
 
-            _previousSignature = AWSSDKUtils.ToHex(signature, true);
+                _previousSignature = AWSSDKUtils.ToHex(signature, true);
 
-            return signedMessageBytes;
+                return signedMessageBytes;
+            }
+            finally
+            {
+                _signLock.Release();
+            }
+        }
+
+        /// <summary>
+        /// Disposes of the managed resources used by the event signer.
+        /// </summary>
+        /// <param name="disposing">True if called from Dispose(), false if called from finalizer.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _signLock?.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// Disposes of the managed resources used by the event signer.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }
