@@ -137,7 +137,12 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The Type of an audit history event.
+        /// The type of audit history event.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>Case.Created</c> | <c>Case.Updated</c> | <c>RelatedItem.Created</c>
+        /// | <c>RelatedItem.Updated</c> | <c>RelatedItem.Deleted</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
