@@ -41,7 +41,15 @@ namespace SDKDocGenerator
             { "summary", "p" },
             { "para", "p" },
             { "see", "a" },
-            { "paramref", "code" }
+            { "paramref", "code" },
+            { "important", "div" },
+            { "note", "div" }
+        };
+
+        private static readonly Dictionary<string, string> NdocToHtmlClassMapping = new Dictionary<string, string>(StringComparer.Ordinal)
+        {
+            { "important", "noteblock noteblock-warning" },
+            { "note", "noteblock" }
         };
 
         #region manage ndoc instances
@@ -604,17 +612,25 @@ namespace SDKDocGenerator
                                 // handle self-closing element, like <a />
                                 // this must be read before any other reading is done
                                 var selfClosingElement = reader.IsEmptyElement;
+                                var originalLocalName = reader.LocalName;
 
                                 // element name substitution, if necessary
                                 string elementName;
-                                if (!NdocToHtmlElementMapping.TryGetValue(reader.LocalName, out elementName))
-                                    elementName = reader.LocalName;
+                                if (!NdocToHtmlElementMapping.TryGetValue(originalLocalName, out elementName))
+                                    elementName = originalLocalName;
 
                                 // some elements can't be empty, use this variable for that
                                 string emptyElementContents = null;
 
                                 // start element
                                 writer.WriteStartElement(elementName);
+
+                                // Add CSS class if the original element has a class mapping
+                                string cssClass;
+                                if (NdocToHtmlClassMapping.TryGetValue(originalLocalName, out cssClass))
+                                {
+                                    writer.WriteAttributeString("class", cssClass);
+                                }
 
                                 // copy over attributes
                                 if (reader.HasAttributes)
