@@ -33,7 +33,9 @@ namespace Amazon.Batch.Model
     /// Provides information used to select Amazon Machine Images (AMIs) for instances in
     /// the compute environment. If <c>Ec2Configuration</c> isn't specified, the default is
     /// <c>ECS_AL2</c> (<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-    /// Linux 2</a>).
+    /// ECS-optimized Amazon Linux 2</a>) for EC2 (ECS) compute environments and <c>EKS_AL2023</c>
+    /// (<a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
+    /// EKS-optimized Amazon Linux 2023 AMI</a>) for EKS compute environments.
     /// 
     ///  <note> 
     /// <para>
@@ -43,9 +45,67 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class Ec2Configuration
     {
+        private string _batchImageStatus;
         private string _imageIdOverride;
         private string _imageKubernetesVersion;
         private string _imageType;
+
+        /// <summary>
+        /// Gets and sets the property BatchImageStatus. 
+        /// <para>
+        /// The status of the Batch-provided default AMIs associated with the <c>imageType</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The field only appears after the compute environment has begun scaling instances using
+        /// the <c>imageType</c>. The field is not present when an image is specified in <c>ComputeResources.imageId</c>
+        /// (deprecated), the default launch template, or <c>Ec2Configuration.imageIdOverride</c>.
+        /// The field is also not present when the compute environment has a launch template override.
+        /// For more information on image selection, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/ami-selection-order.html">AMI
+        /// selection order</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is read-only and only appears in the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html">DescribeComputeEnvironments</a>
+        /// response.
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        ///  <c>LATEST</c> − Using the most recent AMI supported
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UPDATE_AVAILABLE</c> − An updated AMI is available
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If a compute environment has multiple AMIs for the <c>imageType</c> and any one AMI
+        /// has <c>UPDATE_AVAILABLE</c>, the status shows <c>UPDATE_AVAILABLE</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For compute environments that use <c>BEST_FIT</c> as their allocation strategy, you
+        /// can perform a <a href="https://docs.aws.amazon.com/batch/latest/userguide/blue-green-updates.html">blue/green
+        /// update</a> to update the AMI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For all other compute environments, you can perform an <a href="https://docs.aws.amazon.com/batch/latest/userguide/managing-ami-versions.html#updating-ami-versions">AMI
+        /// version update</a> to update the AMI to the latest version.
+        /// </para>
+        ///  </li> </ul> </li> </ul>
+        /// </summary>
+        public string BatchImageStatus
+        {
+            get { return this._batchImageStatus; }
+            set { this._batchImageStatus = value; }
+        }
+
+        // Check to see if BatchImageStatus property is set
+        internal bool IsSetBatchImageStatus()
+        {
+            return this._batchImageStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ImageIdOverride. 
