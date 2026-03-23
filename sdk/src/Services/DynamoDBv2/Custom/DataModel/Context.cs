@@ -681,20 +681,28 @@ namespace Amazon.DynamoDBv2.DataModel
             if (storage == null) return CompletedTask;
 
             Table table = GetTargetTable(storage.Config, flatConfig);
+            var operationRequest = new InternalDeleteItemDocumentOperationRequest()
+            {
+                Key = table.MakeKey(storage.Document)
+            };
+
             if (flatConfig.SkipVersionCheck.Value || !storage.Config.HasVersion)
             {
-                return table.DeleteHelperAsync(table.MakeKey(storage.Document), null, cancellationToken);
+                return table.DeleteHelperAsync(operationRequest, cancellationToken);
             }
             else
             {
-                Document expectedDocument = CreateExpectedDocumentForVersion(storage);
-                return table.DeleteHelperAsync(
-                    table.MakeKey(storage.Document),
-                    new DeleteItemOperationConfig { Expected = expectedDocument },
-                    cancellationToken);
+                string versionAttributeName = storage.Config.VersionPropertyStorage.AttributeName;
+                operationRequest.ConditionalExpression = new Expression()
+                {
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>()
+                    {
+                        {":attributeVersion", storage.CurrentVersion }
+                    },
+                    ExpressionStatement = $"{versionAttributeName} = :attributeVersion"
+                };
+                return table.DeleteHelperAsync(operationRequest, cancellationToken);
             }
-
-            // aici
         }
 
         #endregion
