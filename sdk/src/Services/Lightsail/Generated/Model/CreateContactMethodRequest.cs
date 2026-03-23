@@ -47,6 +47,7 @@ namespace Amazon.Lightsail.Model
     {
         private string _contactEndpoint;
         private ContactProtocol _protocol;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactEndpoint. 
@@ -133,6 +134,28 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag keys and optional values to add to the contact method during create.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>TagResource</c> action to tag a resource after it's created.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -50,6 +50,7 @@ namespace Amazon.Lightsail.Model
         private ResourceType _resourceType;
         private ContactMethodStatus _status;
         private string _supportCode;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -234,6 +235,26 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetSupportCode()
         {
             return this._supportCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag keys and optional values for the resource. For more information about tags
+        /// in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
+        /// Lightsail Developer Guide</a>.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
