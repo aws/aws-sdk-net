@@ -58,6 +58,16 @@ namespace Amazon.Omics.Model
         IListAnnotationStoreVersionsPaginator ListAnnotationStoreVersions(ListAnnotationStoreVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListBatch operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "StartingToken" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListBatchPaginator ListBatch(ListBatchRequest request);
+
+        /// <summary>
         /// Paginator for ListMultipartReadSetUploads operation
         ///</summary>
         [AWSPaginator(
@@ -176,6 +186,16 @@ namespace Amazon.Omics.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListRunsPaginator ListRuns(ListRunsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRunsInBatch operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "StartingToken" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRunsInBatchPaginator ListRunsInBatch(ListRunsInBatchRequest request);
 
         /// <summary>
         /// Paginator for ListRunTasks operation
