@@ -1,3 +1,13 @@
+### 3.7.1248.0 (2026-03-23 18:19 UTC)
+* Batch (3.7.506.0)
+	* AWS Batch AMI Visibility feature support. Adds read-only batchImageStatus to Ec2Configuration to provide visibility on the status of Batch-vended AMIs used by Compute Environments.
+* ConnectCases (3.7.510.0)
+	* You can now use the UpdateRelatedItem API to update the content of comments and custom related items associated with a case.
+* Lightsail (3.7.505.0)
+	* Add support for tagging of ContactMethod resource type
+* Omics (3.7.505.0)
+	* Adds support for batch workflow runs in Amazon Omics, enabling users to submit, manage, and monitor multiple runs as a single batch. Includes APIs to create, cancel, and delete batches, track submission statuses and counts, list runs within a batch, and configure default settings.
+
 ### 3.7.1247.0 (2026-03-20 18:24 UTC)
 * Backup (3.7.508.46)
 	* Fix Typo for S3Backup Options ( S3BackupACLs to BackupACLs)
