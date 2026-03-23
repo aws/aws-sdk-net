@@ -1,3 +1,18 @@
+### 4.0.216.0 (2026-03-23 18:18 UTC)
+* Batch (4.0.8.0)
+	* AWS Batch AMI Visibility feature support. Adds read-only batchImageStatus to Ec2Configuration to provide visibility on the status of Batch-vended AMIs used by Compute Environments.
+* ConnectCases (4.0.12.0)
+	* You can now use the UpdateRelatedItem API to update the content of comments and custom related items associated with a case.
+* DynamoDBv2 (4.0.17.1)
+	* Fix Key Expression issue with renamable sort keys.
+	* Extend Expression Builder for Projection expressions.
+* Lightsail (4.0.5.0)
+	* Add support for tagging of ContactMethod resource type
+* Omics (4.0.6.0)
+	* Adds support for batch workflow runs in Amazon Omics, enabling users to submit, manage, and monitor multiple runs as a single batch. Includes APIs to create, cancel, and delete batches, track submission statuses and counts, list runs within a batch, and configure default settings.
+* Core 4.0.3.21
+	* Render <important> and <note> XML doc tags as styled noteblock divs in the SDK reference documentation generator.
+
 ### 4.0.215.0 (2026-03-20 18:24 UTC)
 * Backup (4.0.10.14)
 	* Fix Typo for S3Backup Options ( S3BackupACLs to BackupACLs)
