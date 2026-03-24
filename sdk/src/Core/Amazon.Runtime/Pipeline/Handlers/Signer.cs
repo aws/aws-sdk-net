@@ -70,7 +70,12 @@ namespace Amazon.Runtime.Internal
             {
                 SignRequest(executionContext.RequestContext);
                 executionContext.RequestContext.IsSigned = true;
-            } 
+            }
+            else if (executionContext.RequestContext.Request.EventStreamPublisher != null
+                     && executionContext.RequestContext.Retries > 0)
+            {
+                HandleEventStreamRetry(executionContext.RequestContext);
+            }
         }
 
         protected static async System.Threading.Tasks.Task PreInvokeAsync(IExecutionContext executionContext)
@@ -79,6 +84,11 @@ namespace Amazon.Runtime.Internal
             {
                 await SignRequestAsync(executionContext.RequestContext).ConfigureAwait(false);
                 executionContext.RequestContext.IsSigned = true;
+            }
+            else if (executionContext.RequestContext.Request.EventStreamPublisher != null
+                     && executionContext.RequestContext.Retries > 0)
+            {
+                HandleEventStreamRetry(executionContext.RequestContext);
             }
         }
 
@@ -230,6 +240,32 @@ namespace Amazon.Runtime.Internal
                         eventSigner);
                 }
             }
+        }
+
+        /// <summary>
+        /// Prevents retrying event streaming requests.
+        /// 
+        /// With HTTP/2 duplex streaming, the client starts sending events concurrently with
+        /// the server processing the request (per the Event Stream SEP: "clients MUST NOT wait
+        /// for a response to begin sending available request events"). If the server rejects
+        /// the request (e.g., 429 TooManyRequests), the client has already signed and sent
+        /// events on the wire. The user's event publisher (e.g., audio source) has advanced
+        /// past the data that was sent, and that data cannot be replayed on a retry.
+        /// 
+        /// Rather than retrying with stale signer state or lost data, we throw an exception
+        /// so the error propagates to the caller, who can decide whether to start a new stream.
+        /// </summary>
+        private static void HandleEventStreamRetry(IRequestContext requestContext)
+        {
+            // Event streaming requests over HTTP/2 cannot be safely retried because:
+            // 1. The SigV4 event signer's signature chain has advanced past events sent on the
+            //    failed connection. Resetting it would work but the data is already lost.
+            // 2. The user's event publisher has advanced (e.g., live audio moved on) and cannot
+            //    replay the events that were sent during the failed attempt.
+            throw new AmazonClientException(
+                "Unable to retry the event streaming request because events were already " +
+                "sent on the previous attempt. The event data cannot be replayed. " +
+                "Start a new stream to continue.");
         }
     }
 }
