@@ -1,0 +1,10 @@
+
+{
+  "core": {
+    "changeLogMessages": [
+      "Optimize ParameterCollection sorting by leveraging ArrayPool for reduced allocations. "
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
