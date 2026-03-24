@@ -70,7 +70,12 @@ namespace Amazon.Runtime.Internal
             {
                 SignRequest(executionContext.RequestContext);
                 executionContext.RequestContext.IsSigned = true;
-            } 
+            }
+            else if (executionContext.RequestContext.Request.EventStreamPublisher != null
+                     && executionContext.RequestContext.Retries > 0)
+            {
+                RecreateEventSignerForRetry(executionContext.RequestContext);
+            }
         }
 
         protected static async System.Threading.Tasks.Task PreInvokeAsync(IExecutionContext executionContext)
@@ -79,6 +84,17 @@ namespace Amazon.Runtime.Internal
             {
                 await SignRequestAsync(executionContext.RequestContext).ConfigureAwait(false);
                 executionContext.RequestContext.IsSigned = true;
+            }
+            else if (executionContext.RequestContext.Request.EventStreamPublisher != null
+                     && executionContext.RequestContext.Retries > 0)
+            {
+                // On retry, the Signer is skipped (IsSigned=true, ResignRetries=false).
+                // But event streaming requests need a fresh AWS4EventSigner because
+                // the old signer's _previousSignature chain has advanced past event N
+                // from the failed attempt. The server on the new connection expects
+                // the chain to start from the initial request signature.
+                // We recreate just the event signer (not the full request signature).
+                RecreateEventSignerForRetry(executionContext.RequestContext);
             }
         }
 
@@ -274,6 +290,47 @@ namespace Amazon.Runtime.Internal
                         requestHashCode);
                 }
             }
+        }
+
+        /// <summary>
+        /// Recreates only the event signer and publisher for event streaming requests on retry.
+        /// The initial request signature (from AWS4SignerResult) is reused since the request
+        /// headers haven't changed. Only the event signer needs to be reset because its
+        /// _previousSignature chain has advanced past event N from the failed attempt.
+        /// </summary>
+        private static void RecreateEventSignerForRetry(IRequestContext requestContext)
+        {
+            var requestSignature = requestContext.Request.AWS4SignerResult?.Signature;
+            if (requestSignature == null)
+            {
+                return;
+            }
+
+            var signingRegion = requestContext.Request.DeterminedSigningRegion;
+            var authServiceName = requestContext.ClientConfig.AuthenticationServiceName;
+
+            var requestHashCode = System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(requestContext.Request);
+            var signerLog = Util.Logger.GetLogger(typeof(Signer));
+            signerLog.DebugFormat(
+                "Signer.RecreateEventSignerForRetry: requestHashCode={0}, requestName={1}, " +
+                "signingRegion={2}, authServiceName={3}, requestSignature={4}, retries={5}",
+                requestHashCode,
+                requestContext.RequestName,
+                signingRegion,
+                authServiceName,
+                requestSignature?.Substring(0, System.Math.Min(16, requestSignature?.Length ?? 0)) + "...",
+                requestContext.Retries);
+
+            var eventSigner = requestContext.Signer.CreateEventSigner(
+                                    requestContext.Identity,
+                                    region: signingRegion,
+                                    service: authServiceName,
+                                    requestSignature: requestSignature);
+
+            requestContext.Request.HttpRequestStreamPublisher = new EventSignerHttpRequestStreamPublisher(
+                requestContext.Request.EventStreamPublisher,
+                eventSigner,
+                requestHashCode);
         }
     }
 }
