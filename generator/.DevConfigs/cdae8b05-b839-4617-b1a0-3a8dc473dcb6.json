@@ -1,0 +1,20 @@
+{
+  "services": [
+    {
+      "serviceName": "ConnectCases",
+      "type": "patch",
+      "changeLogMessages": [
+        "Tags on TagResourceRequest is allowed to contain null values"
+      ]
+    }
+  ],
+  "extensions": [
+    {
+        "extensionName": "Extensions.CborProtocol",
+        "type": "patch",
+        "changeLogMessages": [
+            "Unmarshall  null values in CBOR maps."
+        ]
+    }
+  ]
+}

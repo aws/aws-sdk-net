@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rest-json-protocol-2019-12-16.normal.json service model.
+ * Do not modify this file. This file is generated from the rpcv2protocol-2020-07-14.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -27,12 +27,12 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
-namespace Amazon.RestJsonProtocol.Model
+namespace Amazon.RpcV2Protocol.Model
 {
     /// <summary>
-    /// This is the response object from the SparseJsonMaps operation.
+    /// This is the response object from the RpcV2CborSparseMaps operation.
     /// </summary>
-    public partial class SparseJsonMapsResponse : AmazonWebServiceResponse
+    public partial class RpcV2CborSparseMapsResponse : AmazonWebServiceResponse
     {
         private Dictionary<string, bool?> _sparseBooleanMap = AWSConfigs.InitializeCollections ? new Dictionary<string, bool?>() : null;
         private Dictionary<string, int?> _sparseNumberMap = AWSConfigs.InitializeCollections ? new Dictionary<string, int?>() : null;
@@ -42,6 +42,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property SparseBooleanMap.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, bool?> SparseBooleanMap
         {
@@ -57,6 +62,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property SparseNumberMap.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, int?> SparseNumberMap
         {
@@ -72,6 +82,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property SparseSetMap.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, List<string>> SparseSetMap
         {
@@ -87,6 +102,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property SparseStringMap.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, string> SparseStringMap
         {
@@ -102,6 +122,11 @@ namespace Amazon.RestJsonProtocol.Model
 
         /// <summary>
         /// Gets and sets the property SparseStructMap.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         public Dictionary<string, GreetingStruct> SparseStructMap
         {

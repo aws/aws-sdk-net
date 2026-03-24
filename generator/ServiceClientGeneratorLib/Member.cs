@@ -178,17 +178,6 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Determines if the member is customized to specifically use a nullable type
-        /// </summary>
-        public bool UseNullable
-        {
-            get
-            {
-                return this.model.Customizations.UseNullable(OwningShape.Name, this._name);
-            }
-        }
-
-        /// <summary>
         /// Determines if the member is customized to emit an Is[Name]Set property.
         /// </summary>
         public bool EmitIsSetProperties
@@ -536,7 +525,6 @@ namespace ServiceClientGenerator
                         return remappedShape.Type;
                 }
             }*/
-
             var overrideType = this.model.Customizations.OverrideDataType(OwningShape.Name, this._name);
             if (overrideType != null)
             {
@@ -570,9 +558,7 @@ namespace ServiceClientGenerator
 
             if (typeNode == null)
                 throw new Exception("Type is missing for shape " + extendsNode.ToString());
-
-            var nullable = useNullable || UseNullable ? "?" : "";
-
+            string nullableSuffix = useNullable || this.Shape.IsSparse ? "?" : "";
             switch (typeNode.ToString())
             {
                 case "string":
@@ -586,17 +572,17 @@ namespace ServiceClientGenerator
                         return "Stream";
                     return "MemoryStream";
                 case "boolean":
-                    return $"bool{nullable}";
+                    return $"bool{nullableSuffix}";
                 case "double":
-                    return $"double{nullable}";
+                    return $"double{nullableSuffix}";
                 case "float":
-                    return $"float{nullable}";
+                    return $"float{nullableSuffix}";
                 case "integer":
-                    return $"int{nullable}";
+                    return $"int{nullableSuffix}";
                 case "long":
-                    return $"long{nullable}";
+                    return $"long{nullableSuffix}";
                 case "timestamp":
-                    return $"DateTime{nullable}";
+                    return $"DateTime{nullableSuffix}";
                 case "structure":
                     var typeName = emitAsShapeName ?? renameShape ?? extendsNode.ToString();
                     if (IsEventInputStream)
@@ -607,11 +593,11 @@ namespace ServiceClientGenerator
                 case "map":
                     bool overrideMapTreatEnumsAsString = this.model.Customizations.OverrideTreatEnumsAsString(this.Extends) ?? true;
                     var keyType = DetermineType(memberShape["key"], overrideMapTreatEnumsAsString, false);
-                    var valueType = DetermineType(memberShape["value"], overrideMapTreatEnumsAsString, false);
+                    var valueType = DetermineType(memberShape["value"], overrideMapTreatEnumsAsString, this.Shape.IsSparse);
                     return string.Format("Dictionary<{0}, {1}>", keyType, valueType);
                 case "list":
                     bool overrideListTreatEnumsAsString = this.model.Customizations.OverrideTreatEnumsAsString(this.Extends) ?? true;
-                    var listType = DetermineType(memberShape["member"], overrideListTreatEnumsAsString, false);
+                    var listType = DetermineType(memberShape["member"], overrideListTreatEnumsAsString, this.Shape.IsSparse);
                     return string.Format("List<{0}>", listType);
 
                 case "decimal":
@@ -681,12 +667,10 @@ namespace ServiceClientGenerator
             if (typeNode == null)
                 throw new Exception("Type is missing for shape " + extendsNode.ToString());
 
-            var nullable = useNullable || UseNullable ? "Nullable" : "";
-
             var primitiveUnmarshallerPrefix = "";
             if (this.model.Type == ServiceType.Cbor)
                 primitiveUnmarshallerPrefix = "Cbor";
-
+            string nullableSuffix = useNullable || this.Shape.IsSparse ? "Nullable" : "";
             switch (typeNode.ToString())
             {
                 case "string":
@@ -694,17 +678,17 @@ namespace ServiceClientGenerator
                 case "blob":
                     return $"{primitiveUnmarshallerPrefix}MemoryStreamUnmarshaller";
                 case "boolean":
-                    return $"{primitiveUnmarshallerPrefix}{nullable}BoolUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}BoolUnmarshaller";
                 case "double":
-                    return $"{primitiveUnmarshallerPrefix}{nullable}DoubleUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}DoubleUnmarshaller";
                 case "float":
-                    return $"{primitiveUnmarshallerPrefix}{nullable}FloatUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}FloatUnmarshaller";
                 case "integer":
-                    return $"{primitiveUnmarshallerPrefix}{nullable}IntUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}IntUnmarshaller";
                 case "long":
-                    return $"{primitiveUnmarshallerPrefix}{nullable}LongUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}LongUnmarshaller";
                 case "timestamp":
-                    return $"{primitiveUnmarshallerPrefix}{nullable}DateTimeUnmarshaller";
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}DateTimeUnmarshaller";
                 case "structure":
                     var shapeName = extendsNode.ToString();
                     var renamedShape = this.model.Customizations.GetOverrideShapeName(shapeName);
@@ -721,8 +705,8 @@ namespace ServiceClientGenerator
                 case "map":
                     var keyType = DetermineType(memberShape[Shape.KeyKey], true, useNullable);
                     var keyTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.KeyKey], useNullable);
-                    var valueType = DetermineType(memberShape[Shape.ValueKey], true, useNullable);
-                    var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey], useNullable);
+                    var valueType = DetermineType(memberShape[Shape.ValueKey], true, this.Shape.IsSparse);
+                    var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey], this.Shape.IsSparse);
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
                         return string.Format("JsonDictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
@@ -735,8 +719,8 @@ namespace ServiceClientGenerator
                     else
                         throw new Exception("Unknown protocol type");
                 case "list":
-                    var listType = DetermineType(memberShape[Member.MemberKey], true, useNullable);
-                    var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Member.MemberKey], useNullable);
+                    var listType = DetermineType(memberShape[Member.MemberKey], true, this.Shape.IsSparse);
+                    var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Member.MemberKey], this.Shape.IsSparse);
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
                         return string.Format("JsonListUnmarshaller<{0},{1}>",listType, listTypeUnmarshaller);
                     else if (this.model.Type == ServiceType.Rest_Xml || this.model.Type == ServiceType.Query)
@@ -793,8 +777,6 @@ namespace ServiceClientGenerator
             if (typeNode == null)
                 throw new Exception("Type is missing for shape " + extendsNode);
 
-            var nullable = useNullable || UseNullable ? "Nullable" : "";
-
             var primitiveUnmarshallerPrefix = "";
             if (typeNode.ToString() != "structure" && typeNode.ToString() != "map" && typeNode.ToString() != "list")
             {
@@ -809,6 +791,7 @@ namespace ServiceClientGenerator
                 return $"{primitiveUnmarshallerPrefix}{overrideType.Unmarshaller}.Instance";
             }
 
+            string nullableSuffix = useNullable || this.Shape.IsSparse ? "Nullable" : "";
             switch (typeNode.ToString())
             {
                 case "string":
@@ -816,17 +799,17 @@ namespace ServiceClientGenerator
                 case "blob":
                     return $"{primitiveUnmarshallerPrefix}MemoryStreamUnmarshaller.Instance";
                 case "boolean":
-                    return $"{primitiveUnmarshallerPrefix}{nullable}BoolUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}BoolUnmarshaller.Instance";
                 case "double":
-                    return $"{primitiveUnmarshallerPrefix}{nullable}DoubleUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}DoubleUnmarshaller.Instance";
                 case "float":
-                    return $"{primitiveUnmarshallerPrefix}{nullable}FloatUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}FloatUnmarshaller.Instance";
                 case "integer":
-                    return $"{primitiveUnmarshallerPrefix}{nullable}IntUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}IntUnmarshaller.Instance";
                 case "long":
-                    return $"{primitiveUnmarshallerPrefix}{nullable}LongUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}LongUnmarshaller.Instance";
                 case "timestamp":
-                    return $"{primitiveUnmarshallerPrefix}{nullable}DateTimeUnmarshaller.Instance";
+                    return $"{primitiveUnmarshallerPrefix}{nullableSuffix}DateTimeUnmarshaller.Instance";
                 case "structure":
                     return (renameShape ?? extendsNode) + "Unmarshaller.Instance";
                 case "map":
@@ -835,10 +818,10 @@ namespace ServiceClientGenerator
                     var keyLocationName = memberShape[Shape.KeyKey][ServiceModel.LocationNameKey] == null ? "key" : memberShape[Shape.KeyKey][ServiceModel.LocationNameKey].ToString();
                     var keyTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.KeyKey], typeNode.ToString());
 
-                    var valueType = DetermineType(memberShape[Shape.ValueKey], true, false);
-                    var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey], false);
+                    var valueType = DetermineType(memberShape[Shape.ValueKey], true, this.Shape.IsSparse);
+                    var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey], this.Shape.IsSparse);
                     var valueLocationName = memberShape[Shape.ValueKey][ServiceModel.LocationNameKey] == null ? "value" : memberShape[Shape.ValueKey][ServiceModel.LocationNameKey].ToString();
-                    var valueTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.ValueKey], typeNode.ToString(), false);
+                    var valueTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.ValueKey], typeNode.ToString(), this.Shape.IsSparse);
 
                     //Direct sub maps can not be flattened. If the parent was a map then force the sub map to not be flat.
                     var isFlat = IsFlattened;
@@ -860,10 +843,9 @@ namespace ServiceClientGenerator
                         return string.Format("new XmlKeyValueUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5}, \"{6}\", \"{7}\")",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate, keyLocationName, valueLocationName);
                 case "list":
-                    var listType = DetermineType(memberShape[Shape.MemberKey], true, false);
-                    var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.MemberKey], false);
-                    var listTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.MemberKey], typeNode.ToString(), false);
-
+                    var listType = DetermineType(memberShape[Shape.MemberKey], true, this.Shape.IsSparse);
+                    var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.MemberKey], this.Shape.IsSparse);
+                    var listTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.MemberKey], typeNode.ToString(), this.Shape.IsSparse);
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
                         return string.Format("new JsonListUnmarshaller<{0}, {1}>({2})",
                             listType, listTypeUnmarshaller, listTypeUnmarshallerInstantiate);

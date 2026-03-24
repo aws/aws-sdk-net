@@ -140,7 +140,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 			var context = new JsonMarshallerContext(request, writer);
 <#		
-			ProcessStructure(0, "publicRequest." + payload.PropertyName, payload.Shape);
+			ProcessStructure(0, "publicRequest." + payload.PropertyName, payload.Shape, isSparse: requestStructure.IsSparse);
 #>
 			writer.Flush();
 <#

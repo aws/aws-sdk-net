@@ -404,7 +404,6 @@ namespace ServiceClientGenerator
         public const string ConditionKey = "condition";
         public const string NoArgOverloadsKey = "noArgOverloads";
         public const string SuppressResultGenerationKey = "suppressResultGeneration";
-        public const string UseNullableTypeKey = "useNullableType";
         public const string EmitIsSetPropertiesKey = "emitIsSetProperties";
         public const string GlobalShapeKey = "*";
         public const string ShapeSubstitutionsKey = "shapeSubstitutions";
@@ -824,30 +823,6 @@ namespace ServiceClientGenerator
             propertyModifier = null;
             propertyModifier = GetPropertyModifier(shapeName, propertyName) ?? null;
             return propertyModifier != null ? true : false;
-        }
-
-        /// <summary>
-        /// Determines if the property has a customization to be set to nullable
-        /// </summary>
-        /// <param name="shapeName">The name of the shape the property is in</param>
-        /// <param name="propertyName">The name of the property</param>
-        /// <returns>If the property is to be nullable</returns>
-        public bool UseNullable(string shapeName, string propertyName)
-        {
-            var data = _documentRoot[UseNullableTypeKey];
-            if (data == null)
-                return false;
-
-            var shape = data[shapeName] as JsonData;
-            if (shape == null || !shape.IsArray)
-                return false;
-
-            foreach (var name in shape)
-            {
-                if (string.Equals(name.ToString(), propertyName))
-                    return true;
-            }
-            return false;
         }
 
         /// <summary>

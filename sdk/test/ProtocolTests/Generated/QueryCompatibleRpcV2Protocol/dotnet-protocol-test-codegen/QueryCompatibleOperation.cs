@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.QueryCompatibleRpcV2Protocol
@@ -70,6 +71,55 @@ namespace AWSSDK.ProtocolTests.QueryCompatibleRpcV2Protocol
             Assert.AreEqual("true".Replace(" ",""), marshalledRequest.Headers["x-amzn-query-mode"].Replace(" ",""));
             Assert.IsFalse(marshalledRequest.Headers.ContainsKey("Content-Type"));
             Assert.IsFalse(marshalledRequest.Headers.ContainsKey("X-Amz-Target"));
+        }
+
+        /// <summary>
+        /// Parses simple RpcV2 CBOR errors with no query error code
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ErrorTest")]
+        [TestCategory("QueryCompatibleRpcV2Protocol")]
+        public void QueryCompatibleRpcV2CborNoCustomCodeErrorErrorResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            byte[] bytes = Convert.FromBase64String("uQACZl9fdHlwZXgtYXdzLnByb3RvY29sdGVzdHMucnBjdjJjYm9yI05vQ3VzdG9tQ29kZUVycm9yZ21lc3NhZ2ViSGk=");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+            // Act
+            var errorResponse = new QueryCompatibleOperationResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            // Assert
+            Assert.IsInstanceOfType(errorResponse, typeof(NoCustomCodeErrorException));
+            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+        }
+
+        /// <summary>
+        /// Parses simple RpcV2 CBOR errors with query error code
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ErrorTest")]
+        [TestCategory("QueryCompatibleRpcV2Protocol")]
+        public void QueryCompatibleRpcV2CborCustomCodeErrorErrorResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
+            webResponseData.Headers["Content-Type"] = "application/cbor";
+            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            webResponseData.Headers["x-amzn-query-error"] = "Customized;Sender";
+            byte[] bytes = Convert.FromBase64String("uQACZl9fdHlwZXgrYXdzLnByb3RvY29sdGVzdHMucnBjdjJjYm9yI0N1c3RvbUNvZGVFcnJvcmdtZXNzYWdlYkhp");
+            var stream = new MemoryStream(bytes);
+            var context = new CborUnmarshallerContext(stream,true,webResponseData);
+            // Act
+            var errorResponse = new QueryCompatibleOperationResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            // Assert
+            Assert.IsInstanceOfType(errorResponse, typeof(CustomCodeErrorException));
+            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
         }
 
     }
