@@ -384,6 +384,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.IAMDatabaseAuthenticationEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("InternetAccessGatewayEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.InternetAccessGatewayEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IOOptimizedNextAllowedModificationTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -613,6 +619,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.UpgradeRolloutOrder = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VPCNetworkingEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.VPCNetworkingEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth))

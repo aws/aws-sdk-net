@@ -54,6 +54,13 @@ namespace Amazon.RDS.Model
     /// For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
     /// DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// You can use the <c>WithExpressConfiguration</c> parameter to create an Aurora DB Cluster
+    /// with express configuration and create cluster in seconds. Express configuration provides
+    /// a cluster with a writer instance and feature specific values set to all other input
+    /// parameters of this API. 
+    /// </para>
     /// </summary>
     public partial class CreateDBClusterRequest : AmazonRDSRequest
     {
@@ -115,6 +122,7 @@ namespace Amazon.RDS.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _withExpressConfiguration;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
@@ -2195,6 +2203,30 @@ namespace Amazon.RDS.Model
         internal bool IsSetVpcSecurityGroupIds()
         {
             return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WithExpressConfiguration. 
+        /// <para>
+        /// Specifies to create an Aurora DB Cluster with express configuration in seconds. Express
+        /// configuration provides a cluster with a writer instance and feature specific values
+        /// set to all other input parameters of this API. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora DB clusters
+        /// </para>
+        /// </summary>
+        public bool WithExpressConfiguration
+        {
+            get { return this._withExpressConfiguration.GetValueOrDefault(); }
+            set { this._withExpressConfiguration = value; }
+        }
+
+        // Check to see if WithExpressConfiguration property is set
+        internal bool IsSetWithExpressConfiguration()
+        {
+            return this._withExpressConfiguration.HasValue; 
         }
 
     }

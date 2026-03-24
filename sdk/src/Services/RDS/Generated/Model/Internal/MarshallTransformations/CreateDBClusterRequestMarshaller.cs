@@ -387,6 +387,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetWithExpressConfiguration())
+                {
+                    request.Parameters.Add("WithExpressConfiguration", StringUtils.FromBool(publicRequest.WithExpressConfiguration));
+                }
             }
             return request;
         }

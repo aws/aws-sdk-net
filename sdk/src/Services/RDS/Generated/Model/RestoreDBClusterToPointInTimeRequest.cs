@@ -40,6 +40,18 @@ namespace Amazon.RDS.Model
     /// The AZ where RDS restores the DB cluster depends on the AZs in the specified subnet
     /// group.
     /// 
+    ///  
+    /// <para>
+    /// You can use the <c>EnableVPCNetworking</c> and <c>EnableInternetAccessGateway</c>
+    /// parameters together to restore an Aurora PostgreSQL cluster without VPC networking
+    /// and with internet-based connectivity. These two parameters must always be specified
+    /// together. Set <c>EnableVPCNetworking</c> to <c>false</c> to disable the VPC network
+    /// interface (ENI) for the cluster. <c>EnableInternetAccessGateway</c> enables internet-based
+    /// connectivity through an internet access gateway. IAM database authentication is required
+    /// and must be enabled using <c>EnableIAMDatabaseAuthentication</c>. Once the cluster
+    /// is restored, you need to modify the DB cluster to update <c>MasterUserAuthenticationType</c>
+    /// to <c>iam-db-auth</c>. 
+    /// </para>
     ///  <note> 
     /// <para>
     /// For Aurora, this operation only restores the DB cluster, not the DB instances for
@@ -74,7 +86,9 @@ namespace Amazon.RDS.Model
         private string _domainIAMRoleName;
         private List<string> _enableCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableIAMDatabaseAuthentication;
+        private bool? _enableInternetAccessGateway;
         private bool? _enablePerformanceInsights;
+        private bool? _enableVPCNetworking;
         private string _engineLifecycleSupport;
         private string _engineMode;
         private int? _iops;
@@ -513,6 +527,36 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableInternetAccessGateway. 
+        /// <para>
+        /// Specifies that the restored DB cluster should use internet-based connectivity through
+        /// an internet access gateway. This allows clients to connect to the cluster over the
+        /// internet without requiring a VPC.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter must be used together with <c>EnableVPCNetworking</c> set to <c>false</c>.
+        /// When both parameters are specified, IAM database authentication is required. You must
+        /// also specify <c>EnableIAMDatabaseAuthentication</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora PostgreSQL clusters
+        /// </para>
+        /// </summary>
+        public bool EnableInternetAccessGateway
+        {
+            get { return this._enableInternetAccessGateway.GetValueOrDefault(); }
+            set { this._enableInternetAccessGateway = value; }
+        }
+
+        // Check to see if EnableInternetAccessGateway property is set
+        internal bool IsSetEnableInternetAccessGateway()
+        {
+            return this._enableInternetAccessGateway.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnablePerformanceInsights. 
         /// <para>
         /// Specifies whether to turn on Performance Insights for the DB cluster.
@@ -528,6 +572,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetEnablePerformanceInsights()
         {
             return this._enablePerformanceInsights.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableVPCNetworking. 
+        /// <para>
+        /// Specifies whether to enable VPC networking for the restored DB cluster. Set this parameter
+        /// to <c>false</c> to create a cluster without the VPC network interface (ENI).
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter must be used together with <c>EnableInternetAccessGateway</c>. When
+        /// both parameters are specified, IAM database authentication is required. You must also
+        /// specify <c>EnableIAMDatabaseAuthentication</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Aurora PostgreSQL clusters
+        /// </para>
+        /// </summary>
+        public bool EnableVPCNetworking
+        {
+            get { return this._enableVPCNetworking.GetValueOrDefault(); }
+            set { this._enableVPCNetworking = value; }
+        }
+
+        // Check to see if EnableVPCNetworking property is set
+        internal bool IsSetEnableVPCNetworking()
+        {
+            return this._enableVPCNetworking.HasValue; 
         }
 
         /// <summary>
