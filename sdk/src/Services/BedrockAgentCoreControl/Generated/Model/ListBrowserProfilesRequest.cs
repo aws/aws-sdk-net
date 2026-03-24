@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class ListBrowserProfilesRequest : AmazonBedrockAgentCoreControlRequest
     {
         private int? _maxResults;
+        private string _name;
         private string _nextToken;
 
         /// <summary>
@@ -55,6 +56,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the browser profile to filter results by.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>

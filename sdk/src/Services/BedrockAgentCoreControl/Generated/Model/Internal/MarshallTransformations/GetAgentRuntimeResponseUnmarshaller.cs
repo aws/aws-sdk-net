@@ -112,6 +112,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("filesystemConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FilesystemConfiguration, FilesystemConfigurationUnmarshaller>(FilesystemConfigurationUnmarshaller.Instance);
+                    response.FilesystemConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

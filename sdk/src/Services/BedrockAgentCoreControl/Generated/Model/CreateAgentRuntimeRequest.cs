@@ -41,6 +41,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _clientToken;
         private string _description;
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<FilesystemConfiguration> _filesystemConfigurations = AWSConfigs.InitializeCollections ? new List<FilesystemConfiguration>() : null;
         private LifecycleConfiguration _lifecycleConfiguration;
         private NetworkConfiguration _networkConfiguration;
         private ProtocolConfiguration _protocolConfiguration;
@@ -159,6 +160,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetEnvironmentVariables()
         {
             return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilesystemConfigurations. 
+        /// <para>
+        /// The filesystem configurations to mount into the AgentCore Runtime. Use filesystem
+        /// configurations to provide persistent storage to your AgentCore Runtime sessions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<FilesystemConfiguration> FilesystemConfigurations
+        {
+            get { return this._filesystemConfigurations; }
+            set { this._filesystemConfigurations = value; }
+        }
+
+        // Check to see if FilesystemConfigurations property is set
+        internal bool IsSetFilesystemConfigurations()
+        {
+            return this._filesystemConfigurations != null && (this._filesystemConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
