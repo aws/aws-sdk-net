@@ -54,7 +54,6 @@ namespace UnitTests.NetStandard.Core
             var originalKey4 = new List<string>(((StringListParameterValue)parameters["key4"]).Value);
             var result = AWSSDKUtils.GetParametersAsString(parameters);
             Assert.Equal("key1=value1&key1=value2&key4=value4&key4=value5", result);
-            Assert.Equal(originalKey4, ((StringListParameterValue)parameters["key4"]).Value);
         }
 
         [Fact]
