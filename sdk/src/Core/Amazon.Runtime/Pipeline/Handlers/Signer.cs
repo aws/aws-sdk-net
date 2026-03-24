@@ -219,11 +219,29 @@ namespace Amazon.Runtime.Internal
 
                 if (requestContext.Request.EventStreamPublisher != null)
                 {
+                    var signingRegion = requestContext.Request.DeterminedSigningRegion;
+                    var authServiceName = requestContext.ClientConfig.AuthenticationServiceName;
+                    var requestSignature = requestContext.Request.AWS4SignerResult?.Signature;
+
+                    var signerLog = Util.Logger.GetLogger(typeof(Signer));
+                    signerLog.DebugFormat(
+                        "Signer.SignRequestAsync creating EventSigner: requestName={0}, isSigned={1}, resignRetries={2}, " +
+                        "identityType={3}, accessKeyId={4}, signingRegion={5}, authServiceName={6}, " +
+                        "requestSignature={7}",
+                        requestContext.RequestName,
+                        requestContext.IsSigned,
+                        requestContext.ClientConfig.ResignRetries,
+                        requestContext.Identity?.GetType().Name ?? "null",
+                        immutableCredentials?.AccessKey ?? "null",
+                        signingRegion,
+                        authServiceName,
+                        requestSignature?.Substring(0, System.Math.Min(16, requestSignature?.Length ?? 0)) + "...");
+
                     var eventSigner = requestContext.Signer.CreateEventSigner(
                                             requestContext.Identity,
-                                            region: requestContext.Request.DeterminedSigningRegion,
-                                            service: requestContext.ClientConfig.AuthenticationServiceName,
-                                            requestSignature: requestContext.Request.AWS4SignerResult.Signature);
+                                            region: signingRegion,
+                                            service: authServiceName,
+                                            requestSignature: requestSignature);
                     
                     requestContext.Request.HttpRequestStreamPublisher = new EventSignerHttpRequestStreamPublisher(
                         requestContext.Request.EventStreamPublisher,

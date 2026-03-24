@@ -15,6 +15,8 @@
 
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Util;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Amazon.Runtime.EventStreams.Internal
@@ -27,8 +29,12 @@ namespace Amazon.Runtime.EventStreams.Internal
     /// </summary>
     internal class EventSignerHttpRequestStreamPublisher : IHttpRequestStreamPublisher
     {
+        private readonly Logger _logger = Logger.GetLogger(typeof(EventSignerHttpRequestStreamPublisher));
         private readonly IEventStreamPublisher _eventPublisher;
         private readonly IEventSigner _eventSigner;
+        private readonly int _instanceId;
+        private static int _instanceCounter;
+        private int _eventCount;
 
         /// <summary>
         /// Create an instance of EventSignerHttpRequestStreamPublisher
@@ -39,18 +45,48 @@ namespace Amazon.Runtime.EventStreams.Internal
         {
             _eventPublisher = eventPublisher;
             _eventSigner = eventSigner;
+            _instanceId = Interlocked.Increment(ref _instanceCounter);
+            _eventCount = 0;
+
+            _logger.DebugFormat(
+                "EventSignerHttpRequestStreamPublisher created: instanceId={0}, signerType={1}, publisherType={2}",
+                _instanceId,
+                eventSigner?.GetType().Name ?? "null",
+                eventPublisher?.GetType().Name ?? "null");
         }
 
         /// <inheritdoc/>
         public async Task<byte[]> NextBytesAsync()
         {
+            var currentEvent = Interlocked.Increment(ref _eventCount);
+
+            _logger.DebugFormat(
+                "EventSignerHttpRequestStreamPublisher.NextBytesAsync starting: instanceId={0}, eventCount={1}",
+                _instanceId, currentEvent);
+
             var evnt = await _eventPublisher.NextEventAsync().ConfigureAwait(false);
             if (evnt == null)
             {
+                _logger.DebugFormat(
+                    "EventSignerHttpRequestStreamPublisher.NextBytesAsync: instanceId={0}, eventCount={1}, " +
+                    "publisher returned NULL (end-of-stream)",
+                    _instanceId, currentEvent);
                 return null;
             }
 
-            var signedBytes = await _eventSigner.SignEventAsync(evnt.ToByteArray()).ConfigureAwait(false);
+            var eventBytes = evnt.ToByteArray();
+            _logger.DebugFormat(
+                "EventSignerHttpRequestStreamPublisher.NextBytesAsync: instanceId={0}, eventCount={1}, " +
+                "eventBytesLength={2}, signing event...",
+                _instanceId, currentEvent, eventBytes?.Length ?? 0);
+
+            var signedBytes = await _eventSigner.SignEventAsync(eventBytes).ConfigureAwait(false);
+
+            _logger.DebugFormat(
+                "EventSignerHttpRequestStreamPublisher.NextBytesAsync completed: instanceId={0}, eventCount={1}, " +
+                "signedBytesLength={2}",
+                _instanceId, currentEvent, signedBytes?.Length ?? 0);
+
             return signedBytes;
         }
     }

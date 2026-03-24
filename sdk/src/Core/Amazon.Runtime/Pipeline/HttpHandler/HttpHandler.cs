@@ -242,8 +242,24 @@ namespace Amazon.Runtime.Internal
             }
             finally
             {
-                if (httpRequest != null && (_exceptionBeingThrown || executionContext.RequestContext.Request.HttpRequestStreamPublisher == null))
+                var hasStreamPublisher = executionContext.RequestContext.Request.HttpRequestStreamPublisher != null;
+                var willDispose = httpRequest != null && (_exceptionBeingThrown || !hasStreamPublisher);
+                Logger.DebugFormat(
+                    "HttpHandler.InvokeAsync finally: exceptionBeingThrown={0}, hasStreamPublisher={1}, willDisposeHttpRequest={2}, requestName={3}",
+                    _exceptionBeingThrown,
+                    hasStreamPublisher,
+                    willDispose,
+                    executionContext.RequestContext.Request?.RequestName ?? "null");
+
+                if (willDispose)
                     httpRequest.Dispose();
+                else if (_exceptionBeingThrown && hasStreamPublisher)
+                {
+                    Logger.DebugFormat(
+                        "HttpHandler.InvokeAsync finally: WARNING - exception thrown but httpRequest NOT disposed because HttpRequestStreamPublisher is set. " +
+                        "Old stream may still be running. requestName={0}",
+                        executionContext.RequestContext.Request?.RequestName ?? "null");
+                }
             }
         }
 
