@@ -51,7 +51,6 @@ namespace UnitTests.NetStandard.Core
                 {"key1", new List<string>{"value1", "value2"} }
             };
             //check that the original StringParameterListValue isn't mutated.
-            var originalKey4 = new List<string>(((StringListParameterValue)parameters["key4"]).Value);
             var result = AWSSDKUtils.GetParametersAsString(parameters);
             Assert.Equal("key1=value1&key1=value2&key4=value4&key4=value5", result);
         }
