@@ -74,6 +74,22 @@ namespace Amazon.Runtime.Internal
                 httpRequest = CreateWebRequest(executionContext.RequestContext);
                 httpRequest.SetRequestHeaders(wrappedRequest.Headers);
 
+                // Log HttpClient identity for retry correlation
+                var httpClientHash = 0;
+                var httpRequestMsgHash = 0;
+                if (httpRequest is HttpWebRequestMessage webReqMsg)
+                {
+                    httpClientHash = webReqMsg.HttpClient?.GetHashCode() ?? 0;
+                    httpRequestMsgHash = webReqMsg.Request?.GetHashCode() ?? 0;
+                }
+                Logger.DebugFormat(
+                    "HttpHandler.InvokeAsync: httpRequest created, httpClientHash={0}, httpRequestMsgHash={1}, retries={2}, requestName={3}, hasStreamPublisher={4}",
+                    httpClientHash,
+                    httpRequestMsgHash,
+                    executionContext.RequestContext.Retries,
+                    executionContext.RequestContext.Request?.RequestName ?? "null",
+                    executionContext.RequestContext.Request?.HttpRequestStreamPublisher != null);
+
                 using (executionContext.RequestContext.Metrics.StartEvent(Metric.HttpRequestTime))
                 using (var traceSpan = TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.HTTPRequestSpanName))
                 using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallAttemptDurationMetricName))
@@ -192,6 +208,22 @@ namespace Amazon.Runtime.Internal
                 httpRequest = CreateWebRequest(executionContext.RequestContext);
                 httpRequest.SetRequestHeaders(wrappedRequest.Headers);
 
+                // Log HttpClient identity for retry correlation
+                var httpClientHash2 = 0;
+                var httpRequestMsgHash2 = 0;
+                if (httpRequest is HttpWebRequestMessage webReqMsg2)
+                {
+                    httpClientHash2 = webReqMsg2.HttpClient?.GetHashCode() ?? 0;
+                    httpRequestMsgHash2 = webReqMsg2.Request?.GetHashCode() ?? 0;
+                }
+                Logger.DebugFormat(
+                    "HttpHandler.InvokeAsync: httpRequest created, httpClientHash={0}, httpRequestMsgHash={1}, retries={2}, requestName={3}, hasStreamPublisher={4}",
+                    httpClientHash2,
+                    httpRequestMsgHash2,
+                    executionContext.RequestContext.Retries,
+                    executionContext.RequestContext.Request?.RequestName ?? "null",
+                    executionContext.RequestContext.Request?.HttpRequestStreamPublisher != null);
+
                 using (executionContext.RequestContext.Metrics.StartEvent(Metric.HttpRequestTime))
                 using (var traceSpan = TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.HTTPRequestSpanName))
                 using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallAttemptDurationMetricName))
@@ -242,7 +274,17 @@ namespace Amazon.Runtime.Internal
             }
             finally
             {
-                if (httpRequest != null && (_exceptionBeingThrown || executionContext.RequestContext.Request.HttpRequestStreamPublisher == null))
+                var hasStreamPublisher = executionContext.RequestContext.Request.HttpRequestStreamPublisher != null;
+                var willDispose = httpRequest != null && (_exceptionBeingThrown || !hasStreamPublisher);
+                Logger.DebugFormat(
+                    "HttpHandler.InvokeAsync finally: exceptionBeingThrown={0}, hasStreamPublisher={1}, willDisposeHttpRequest={2}, requestName={3}, retries={4}",
+                    _exceptionBeingThrown,
+                    hasStreamPublisher,
+                    willDispose,
+                    executionContext.RequestContext.Request?.RequestName ?? "null",
+                    executionContext.RequestContext.Retries);
+
+                if (willDispose)
                     httpRequest.Dispose();
             }
         }

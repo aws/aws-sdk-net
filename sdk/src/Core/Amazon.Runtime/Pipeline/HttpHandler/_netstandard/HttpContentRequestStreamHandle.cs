@@ -15,11 +15,13 @@
 
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -41,25 +43,57 @@ namespace Amazon.Runtime.Pipeline.HttpHandler
         private bool _disposed;
         private TaskCompletionSource _tcs = new TaskCompletionSource();
         private IHttpRequestStreamPublisher _publisher;
+        private static int _instanceCounter;
+        private readonly int _instanceId;
+        private int _writeCount;
 
         public HttpContentRequestStreamHandle(HttpRequestMessage httpRequest, IHttpRequestStreamPublisher publisher)
         {
             _httpRequest = httpRequest;
             _httpRequest.Content = this;
-
             _publisher = publisher;
+            _instanceId = Interlocked.Increment(ref _instanceCounter);
+            _writeCount = 0;
+
+            _logger.DebugFormat(
+                "HttpContentRequestStreamHandle created: instanceId={0}, publisherType={1}",
+                _instanceId,
+                publisher?.GetType().Name ?? "null");
         }
 
         protected override async Task SerializeToStreamAsync( Stream stream, TransportContext context)
         {
+            _logger.DebugFormat(
+                "HttpContentRequestStreamHandle.SerializeToStreamAsync STARTED: instanceId={0}, streamType={1}",
+                _instanceId,
+                stream?.GetType().Name ?? "null");
+
             if(_publisher != null)
             {
                 Byte[] bytes;
                 while((bytes = await _publisher.NextBytesAsync().ConfigureAwait(false)) != null)
                 {
+                    var currentWrite = Interlocked.Increment(ref _writeCount);
+
+                    var wireHash = AWSSDKUtils.ToHex(SHA256.HashData(bytes), true);
+
+                    _logger.DebugFormat(
+                        "HttpContentRequestStreamHandle.SerializeToStreamAsync writing: instanceId={0}, writeCount={1}, bytesLength={2}, wireSha256={3}",
+                        _instanceId, currentWrite, bytes.Length, wireHash);
+
                     await stream.WriteAsync(bytes, 0, bytes.Length).ConfigureAwait(false);
                     await stream.FlushAsync().ConfigureAwait(false);
                 }
+
+                _logger.DebugFormat(
+                    "HttpContentRequestStreamHandle.SerializeToStreamAsync publisher ended: instanceId={0}, totalWrites={1}",
+                    _instanceId, _writeCount);
+            }
+            else
+            {
+                _logger.DebugFormat(
+                    "HttpContentRequestStreamHandle.SerializeToStreamAsync: instanceId={0}, publisher is NULL - no data to write",
+                    _instanceId);
             }
 
             // Capture the _tcs as local variable before awaiting to avoid the member variable
@@ -67,6 +101,10 @@ namespace Amazon.Runtime.Pipeline.HttpHandler
             var tcs = _tcs; 
             if (tcs != null)
             {
+                _logger.DebugFormat(
+                    "HttpContentRequestStreamHandle.SerializeToStreamAsync waiting for dispose: instanceId={0}",
+                    _instanceId);
+
                 // Even if the user has ended input streaming via returning null from the publisher
                 // we need to block the return here till the full operation is complete. Otherwise
                 // HttpClient will end the streaming session before the response has been completed streaming.
@@ -74,6 +112,10 @@ namespace Amazon.Runtime.Pipeline.HttpHandler
                 // is completed as part of disposing this class.
                 await tcs.Task.ConfigureAwait(false);
             }
+
+            _logger.DebugFormat(
+                "HttpContentRequestStreamHandle.SerializeToStreamAsync FINISHED: instanceId={0}, totalWrites={1}",
+                _instanceId, _writeCount);
         }
 
         /// <summary>
@@ -89,7 +131,8 @@ namespace Amazon.Runtime.Pipeline.HttpHandler
 
         protected override void Dispose(bool disposing)
         {
-            _logger.DebugFormat("Disposing the request stream");
+            _logger.DebugFormat("Disposing the request stream: instanceId={0}, totalWrites={1}, alreadyDisposed={2}",
+                _instanceId, _writeCount, _disposed);
             if (_disposed)
             {
                 return;
@@ -99,12 +142,13 @@ namespace Amazon.Runtime.Pipeline.HttpHandler
             {
                 if (_tcs != null)
                 {
-                    _logger.DebugFormat("Completed writing to request stream");
+                    _logger.DebugFormat("Completed writing to request stream: instanceId={0}", _instanceId);
                     _tcs.SetResult();
                     _tcs = null;
                 }
                 if (_httpRequest != null)
                 {
+                    _logger.DebugFormat("Disposing HttpRequestMessage: instanceId={0}", _instanceId);
                     _httpRequest.Dispose();
                     _httpRequest = null;
                 }

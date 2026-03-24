@@ -149,15 +149,37 @@ namespace Amazon.Runtime.Internal
 
                 if (requestContext.Request.EventStreamPublisher != null)
                 {
-                    var eventSigner = requestContext.Signer.CreateEventSigner(
-                                            requestContext.Identity, 
-                                            region: requestContext.Request.DeterminedSigningRegion, 
-                                            service: requestContext.ClientConfig.AuthenticationServiceName, 
-                                            requestSignature: requestContext.Request.AWS4SignerResult.Signature);
+                    var signingRegion = requestContext.Request.DeterminedSigningRegion;
+                    var authServiceName = requestContext.ClientConfig.AuthenticationServiceName;
+                    var requestSignature = requestContext.Request.AWS4SignerResult?.Signature;
 
+                    var requestHashCode = System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(requestContext.Request);
+                    var signerLog = Util.Logger.GetLogger(typeof(Signer));
+                    signerLog.DebugFormat(
+                        "Signer.SignRequestAsync creating EventSigner: requestHashCode={0}, requestName={1}, isSigned={2}, resignRetries={3}, " +
+                        "identityType={4}, accessKeyId={5}, signingRegion={6}, authServiceName={7}, " +
+                        "requestSignature={8}, retries={9}",
+                        requestHashCode,
+                        requestContext.RequestName,
+                        requestContext.IsSigned,
+                        requestContext.ClientConfig.ResignRetries,
+                        requestContext.Identity?.GetType().Name ?? "null",
+                        immutableCredentials?.AccessKey ?? "null",
+                        signingRegion,
+                        authServiceName,
+                        requestSignature?.Substring(0, System.Math.Min(16, requestSignature?.Length ?? 0)) + "...",
+                        requestContext.Retries);
+
+                    var eventSigner = requestContext.Signer.CreateEventSigner(
+                                            requestContext.Identity,
+                                            region: signingRegion,
+                                            service: authServiceName,
+                                            requestSignature: requestSignature);
+                    
                     requestContext.Request.HttpRequestStreamPublisher = new EventSignerHttpRequestStreamPublisher(
                         requestContext.Request.EventStreamPublisher,
-                        eventSigner);
+                        eventSigner,
+                        requestHashCode);
                 }
             }
         }
@@ -219,15 +241,37 @@ namespace Amazon.Runtime.Internal
 
                 if (requestContext.Request.EventStreamPublisher != null)
                 {
+                    var signingRegion = requestContext.Request.DeterminedSigningRegion;
+                    var authServiceName = requestContext.ClientConfig.AuthenticationServiceName;
+                    var requestSignature = requestContext.Request.AWS4SignerResult?.Signature;
+
+                    var requestHashCode = System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(requestContext.Request);
+                    var signerLog = Util.Logger.GetLogger(typeof(Signer));
+                    signerLog.DebugFormat(
+                        "Signer.SignRequestAsync creating EventSigner: requestHashCode={0}, requestName={1}, isSigned={2}, resignRetries={3}, " +
+                        "identityType={4}, accessKeyId={5}, signingRegion={6}, authServiceName={7}, " +
+                        "requestSignature={8}, retries={9}",
+                        requestHashCode,
+                        requestContext.RequestName,
+                        requestContext.IsSigned,
+                        requestContext.ClientConfig.ResignRetries,
+                        requestContext.Identity?.GetType().Name ?? "null",
+                        immutableCredentials?.AccessKey ?? "null",
+                        signingRegion,
+                        authServiceName,
+                        requestSignature?.Substring(0, System.Math.Min(16, requestSignature?.Length ?? 0)) + "...",
+                        requestContext.Retries);
+
                     var eventSigner = requestContext.Signer.CreateEventSigner(
                                             requestContext.Identity,
-                                            region: requestContext.Request.DeterminedSigningRegion,
-                                            service: requestContext.ClientConfig.AuthenticationServiceName,
-                                            requestSignature: requestContext.Request.AWS4SignerResult.Signature);
+                                            region: signingRegion,
+                                            service: authServiceName,
+                                            requestSignature: requestSignature);
                     
                     requestContext.Request.HttpRequestStreamPublisher = new EventSignerHttpRequestStreamPublisher(
                         requestContext.Request.EventStreamPublisher,
-                        eventSigner);
+                        eventSigner,
+                        requestHashCode);
                 }
             }
         }
