@@ -40,7 +40,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain name of the UDP endpoint. 
+        /// The domain name of the UDP endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -59,7 +59,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number of the UDP endpoint. 
+        /// The port number of the UDP endpoint. For Amazon GameLift Servers ping beacons, this
+        /// is typically port 7770.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

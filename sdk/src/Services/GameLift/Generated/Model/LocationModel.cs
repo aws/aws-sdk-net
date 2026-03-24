@@ -82,7 +82,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PingBeacon. 
         /// <para>
-        /// Information about the UDP ping beacon for this location. 
+        /// Information about the UDP ping beacon for this location. Ping beacons are fixed endpoints
+        /// that you can use to measure network latency between a player device and an Amazon
+        /// GameLift Servers hosting location.
         /// </para>
         /// </summary>
         public PingBeacon PingBeacon
