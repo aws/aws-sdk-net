@@ -512,7 +512,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateAccessPolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -560,7 +561,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateCollection service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -619,7 +621,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateCollectionGroup service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -669,7 +672,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateIndex service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -718,7 +722,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -767,7 +772,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateSecurityConfig service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -819,7 +825,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateSecurityPolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -868,7 +875,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the CreateVpcEndpoint service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -916,7 +924,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteAccessPolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -963,7 +972,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteCollection service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1011,7 +1021,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteCollectionGroup service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1103,7 +1114,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1151,7 +1163,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteSecurityConfig service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1197,7 +1210,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteSecurityPolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1245,7 +1259,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the DeleteVpcEndpoint service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1878,7 +1893,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the TagResource service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1930,7 +1946,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UntagResource service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -1977,7 +1994,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateAccessPolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -2068,7 +2086,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateCollection service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -2111,7 +2130,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateCollectionGroup service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -2205,7 +2225,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateLifecyclePolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -2257,7 +2278,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateSecurityConfig service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -2305,7 +2327,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateSecurityPolicy service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
@@ -2357,7 +2380,8 @@ namespace Amazon.OpenSearchServerless
         /// <returns>The response from the UpdateVpcEndpoint service method, as returned by OpenSearchServerless.</returns>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
         /// When creating a resource, thrown when a resource with the same name already exists
-        /// or is being created.
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE, FAILED, or UPDATE_FAILED state.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
