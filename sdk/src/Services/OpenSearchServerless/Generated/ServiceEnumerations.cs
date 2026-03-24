@@ -92,6 +92,14 @@ namespace Amazon.OpenSearchServerless
         /// Constant FAILED for CollectionStatus
         /// </summary>
         public static readonly CollectionStatus FAILED = new CollectionStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATE_FAILED for CollectionStatus
+        /// </summary>
+        public static readonly CollectionStatus UPDATE_FAILED = new CollectionStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for CollectionStatus
+        /// </summary>
+        public static readonly CollectionStatus UPDATING = new CollectionStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
