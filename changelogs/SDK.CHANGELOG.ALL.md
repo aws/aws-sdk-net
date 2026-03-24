@@ -1,3 +1,21 @@
+### 4.0.217.0 (2026-03-24 18:16 UTC)
+* BedrockAgentCoreControl (4.0.23.0)
+	* Adds SDK support for 1) Persist session state in AgentCore Runtime via filesystemConfigurations in CreateAgentRuntime, UpdateAgentRuntime, and GetAgentRuntime APIs, 2) Optional name-based filtering on AgentCore ListBrowserProfiles API.
+* ConnectCases (4.0.12.1)
+	* Tags on TagResourceRequest is allowed to contain null values
+* GameLift (4.0.7.4)
+	* Amazon GameLift Servers launches UDP ping beacons in the Beijing and Ningxia (China) Regions to help measure real-time network latency for multiplayer games. The ListLocations API is now available in these regions to provide endpoint domain and port information as part of the locations list.
+* MediaPackageV2 (4.0.11.0)
+	* Reduces the minimum allowed value for startOverWindowSeconds from 60 to 0, allowing customers to effectively disable the start-over window.
+* OpenSearchServerless (4.0.7.0)
+	* Adds support for updating the vector options field for existing collections.
+* PCS (4.0.13.0)
+	* This release adds support for custom slurmdbd and cgroup configuration in AWS PCS. Customers can now specify slurmdbd and cgroup settings to configure database accounting and reporting for their HPC workloads, and control resource allocation and limits for compute jobs.
+* RDS (4.0.19.0)
+	* Adds support in Aurora PostgreSQL serverless databases for express configuration based creation through WithExpressConfiguration in CreateDbCluster API, and for restoring clusters using RestoreDBClusterToPointInTime and RestoreDBClusterFromSnapshot APIs.
+* Extensions.CborProtocol (4.0.0.29)
+	* Unmarshall  null values in CBOR maps.
+
 ### 4.0.216.0 (2026-03-23 18:18 UTC)
 * Batch (4.0.8.0)
 	* AWS Batch AMI Visibility feature support. Adds read-only batchImageStatus to Ec2Configuration to provide visibility on the status of Batch-vended AMIs used by Compute Environments.
