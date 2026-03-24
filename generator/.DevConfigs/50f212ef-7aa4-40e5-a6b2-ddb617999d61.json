@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Update docs for Amazon.S3.Transfer.ITransferUtility.OpenStreamWithResponse to add performance tips"
+      ]
+    }
+  ]
+}
