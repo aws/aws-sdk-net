@@ -12,13 +12,16 @@
 <!--- Include details of your testing environment, and the tests you ran to -->
 <!--- see how your change affects other areas of the code, etc. -->
 
-### Dry-run
-- **Dry-run ID:**
-- **Status:**
+### Dry-runs
+<!--- Provide DotNet and PS dry-run IDs and check the appropriate status for each -->
+- **DotNet Dry-run ID:**
   - [ ] Pending
   - [ ] Completed successfully
   - [ ] Failed
-- **Failed bypass reason:**
+- **PowerShell Dry-run ID:**
+  - [ ] Pending
+  - [ ] Completed successfully
+  - [ ] Failed
 
 ## Breaking Changes Assessment
 
