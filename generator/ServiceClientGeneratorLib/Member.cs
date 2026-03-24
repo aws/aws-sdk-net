@@ -598,7 +598,7 @@ namespace ServiceClientGenerator
                 case "timestamp":
                     return $"DateTime{nullable}";
                 case "structure":
-                    var typeName = emitAsShapeName ?? renameShape ?? extendsNode.ToString();
+                    var typeName = emitAsShapeName ?? renameShape ?? extendsNode.ToString().ToUpperFirstCharacter();
                     if (IsEventInputStream)
                     {
                         typeName += EventInputStreamSuffix;
@@ -706,7 +706,7 @@ namespace ServiceClientGenerator
                 case "timestamp":
                     return $"{primitiveUnmarshallerPrefix}{nullable}DateTimeUnmarshaller";
                 case "structure":
-                    var shapeName = extendsNode.ToString();
+                    var shapeName = extendsNode.ToString().ToUpperFirstCharacter();
                     var renamedShape = this.model.Customizations.GetOverrideShapeName(shapeName);
                     var substitutedShape = this.model.Customizations.GetSubstituteShapeName(shapeName);
                     if (!string.IsNullOrWhiteSpace(renamedShape))
@@ -828,7 +828,7 @@ namespace ServiceClientGenerator
                 case "timestamp":
                     return $"{primitiveUnmarshallerPrefix}{nullable}DateTimeUnmarshaller.Instance";
                 case "structure":
-                    return (renameShape ?? extendsNode) + "Unmarshaller.Instance";
+                    return (renameShape ?? extendsNode.ToString().ToUpperFirstCharacter()) + "Unmarshaller.Instance";
                 case "map":
                     var keyType = DetermineType(memberShape[Shape.KeyKey], true);
                     var keyTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.KeyKey]);
