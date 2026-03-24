@@ -1275,6 +1275,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ListBrowserProfilesRequest.Name</property>
+    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.ListBrowserProfilesRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
@@ -2751,6 +2755,12 @@
     <property>Amazon.BedrockAgentCoreControl.Model.SessionConfig.SessionTimeoutMinutes</property>
     <min>1</min>
     <max>1440</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.SessionStorageConfiguration.MountPath</property>
+    <min>6</min>
+    <max>200</max>
+    <pattern>/mnt/[a-zA-Z0-9._-]+/?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.SlackOauth2ProviderConfigInput.ClientId</property>

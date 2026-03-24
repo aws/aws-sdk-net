@@ -30,33 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Wrapper for updating an optional Description field with PATCH semantics. When present
-    /// in an update request, the description is replaced with optionalValue. When absent,
-    /// the description is left unchanged. To unset the description, include the wrapper with
-    /// optionalValue set to null.
+    /// Configuration for a filesystem that can be mounted into the AgentCore Runtime.
     /// </summary>
-    public partial class UpdatedDescription
+    public partial class FilesystemConfiguration
     {
-        private string _optionalValue;
+        private SessionStorageConfiguration _sessionStorage;
 
         /// <summary>
-        /// Gets and sets the property OptionalValue. 
+        /// Gets and sets the property SessionStorage. 
         /// <para>
-        /// Represents an optional value that is used to update the human-readable description
-        /// of the resource. If set to null, it will clear the current description of the resource.
+        /// Configuration for session storage. Session storage provides persistent storage that
+        /// is preserved across AgentCore Runtime session invocations.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
-        public string OptionalValue
+        public SessionStorageConfiguration SessionStorage
         {
-            get { return this._optionalValue; }
-            set { this._optionalValue = value; }
+            get { return this._sessionStorage; }
+            set { this._sessionStorage = value; }
         }
 
-        // Check to see if OptionalValue property is set
-        internal bool IsSetOptionalValue()
+        // Check to see if SessionStorage property is set
+        internal bool IsSetSessionStorage()
         {
-            return this._optionalValue != null;
+            return this._sessionStorage != null;
         }
 
     }

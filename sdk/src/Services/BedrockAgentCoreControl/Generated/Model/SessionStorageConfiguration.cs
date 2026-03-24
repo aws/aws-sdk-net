@@ -30,33 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Wrapper for updating an optional Description field with PATCH semantics. When present
-    /// in an update request, the description is replaced with optionalValue. When absent,
-    /// the description is left unchanged. To unset the description, include the wrapper with
-    /// optionalValue set to null.
+    /// Configuration for a session storage filesystem mounted into the AgentCore Runtime.
+    /// Session storage provides persistent storage that is preserved across AgentCore Runtime
+    /// session invocations.
     /// </summary>
-    public partial class UpdatedDescription
+    public partial class SessionStorageConfiguration
     {
-        private string _optionalValue;
+        private string _mountPath;
 
         /// <summary>
-        /// Gets and sets the property OptionalValue. 
+        /// Gets and sets the property MountPath. 
         /// <para>
-        /// Represents an optional value that is used to update the human-readable description
-        /// of the resource. If set to null, it will clear the current description of the resource.
+        /// The mount path for the session storage filesystem inside the AgentCore Runtime. The
+        /// path must be under <c>/mnt</c> with exactly one subdirectory level (for example, <c>/mnt/data</c>).
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
-        public string OptionalValue
+        [AWSProperty(Required=true, Min=6, Max=200)]
+        public string MountPath
         {
-            get { return this._optionalValue; }
-            set { this._optionalValue = value; }
+            get { return this._mountPath; }
+            set { this._mountPath = value; }
         }
 
-        // Check to see if OptionalValue property is set
-        internal bool IsSetOptionalValue()
+        // Check to see if MountPath property is set
+        internal bool IsSetMountPath()
         {
-            return this._optionalValue != null;
+            return this._mountPath != null;
         }
 
     }
