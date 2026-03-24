@@ -50,6 +50,7 @@ namespace Amazon.Runtime
 
         bool CSMEnabled { get; }
         bool IsLastExceptionRetryable { get; set; }
+        bool IsLastErrorThrottling { get; set; }
 
         Guid InvocationId { get; }
 
@@ -152,6 +153,12 @@ namespace Amazon.Runtime.Internal
         /// was retryable or not.
         /// </summary>
         public bool IsLastExceptionRetryable { get; set; }
+
+        /// <summary>
+        /// Property to denote that the last error was a throttling error.
+        /// Used to determine if Equal Jitter (minimum delay) should be applied.
+        /// </summary>
+        public bool IsLastErrorThrottling { get; set; }
 
         public Guid InvocationId { get; private set; }
 

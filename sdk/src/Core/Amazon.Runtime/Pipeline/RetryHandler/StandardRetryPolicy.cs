@@ -218,33 +218,62 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
-        /// Waits before retrying a request. The default policy implements a exponential backoff with 
+        /// Waits before retrying a request. The default policy implements a exponential backoff with
         /// jitter algorithm.
         /// </summary>
         /// <param name="executionContext">Request context containing the state of the request.</param>
         public override void WaitBeforeRetry(IExecutionContext executionContext)
         {
-            StandardRetryPolicy.WaitBeforeRetry(executionContext.RequestContext.Retries, this.MaxBackoffInMilliseconds);
+            StandardRetryPolicy.WaitBeforeRetry(executionContext.RequestContext.Retries, this.MaxBackoffInMilliseconds, executionContext.RequestContext.IsLastErrorThrottling);
         }
         
         /// <summary>
         /// Waits for an amount of time using an exponential backoff with jitter algorithm.
         /// </summary>
-        /// <param name="retries">The request retry index. The first request is expected to be 0 while 
+        /// <param name="retries">The request retry index. The first request is expected to be 0 while
         /// the first retry will be 1.</param>
         /// <param name="maxBackoffInMilliseconds">The max number of milliseconds to wait</param>
-        public static void WaitBeforeRetry(int retries, int maxBackoffInMilliseconds)
+        /// <param name="isThrottlingError">Whether the error being retried is a throttling error</param>
+        public static void WaitBeforeRetry(int retries, int maxBackoffInMilliseconds, bool isThrottlingError = false)
         {
-            AWSSDKUtils.Sleep(CalculateRetryDelay(retries, maxBackoffInMilliseconds));
+            AWSSDKUtils.Sleep(CalculateRetryDelay(retries, maxBackoffInMilliseconds, isThrottlingError));
         }        
 
-        protected static int CalculateRetryDelay(int retries, int maxBackoffInMilliseconds)
+        /// <summary>
+        /// Calculates the retry delay using either Equal Jitter (for throttling errors) or Full Jitter (for transient errors).
+        /// </summary>
+        /// <param name="retries">The request retry index.</param>
+        /// <param name="maxBackoffInMilliseconds">The max number of milliseconds to wait</param>
+        /// <param name="isThrottlingError">Whether the error being retried is a throttling error.
+        /// When true, uses Equal Jitter (base/2 + random(0, base/2)) to guarantee minimum 50% of base delay.
+        /// When false, uses Full Jitter (random(0, base)) for fast retries on transient errors.</param>
+        /// <returns>The calculated delay in milliseconds</returns>
+        protected static int CalculateRetryDelay(int retries, int maxBackoffInMilliseconds, bool isThrottlingError = false)
         {
             double jitter;
-            lock (_randomJitter) {        
+            lock (_randomJitter) {
                 jitter = _randomJitter.NextDouble();
             }
-            return Convert.ToInt32(Math.Min(jitter * Math.Pow(2, retries - 1) * 1000.0, maxBackoffInMilliseconds));
+
+            double baseDelay = Math.Pow(2, retries - 1) * 1000.0;
+            double delay;
+
+            if (isThrottlingError)
+            {
+                // Issue #4341: Use Equal Jitter for throttling errors to guarantee minimum delay
+                // Equal Jitter: delay = base/2 + random(0, base/2)
+                // This ensures at least 50% of base delay, preventing near-zero delays that
+                // exhaust retries too quickly for per-minute rate limit windows
+                delay = baseDelay / 2 + jitter * baseDelay / 2;
+            }
+            else
+            {
+                // Full Jitter: delay = random(0, base)
+                // Allows fast retries for transient errors (network blips, etc.)
+                delay = jitter * baseDelay;
+            }
+
+            return Convert.ToInt32(Math.Min(delay, maxBackoffInMilliseconds));
         }
     }
 }

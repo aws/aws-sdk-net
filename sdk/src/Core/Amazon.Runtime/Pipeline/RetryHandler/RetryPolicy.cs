@@ -146,9 +146,11 @@ namespace Amazon.Runtime
                         return false;
                     }
 
-                    executionContext.RequestContext.LastCapacityType = IsServiceTimeoutError(exception) ? 
+                    executionContext.RequestContext.LastCapacityType = IsServiceTimeoutError(exception) ?
                         CapacityManager.CapacityType.Timeout : CapacityManager.CapacityType.Retry;
-                    return OnRetry(executionContext, isClockSkewError,  IsThrottlingError(exception));
+                    var isThrottlingError = IsThrottlingError(exception);
+                    executionContext.RequestContext.IsLastErrorThrottling = isThrottlingError;
+                    return OnRetry(executionContext, isClockSkewError, isThrottlingError);
                 }
             }
             return false;

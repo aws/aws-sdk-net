@@ -534,6 +534,86 @@ namespace AWSSDK.UnitTests
                     "attempt=3; max=3" });
             }, config, capacityManager: null, exponentialPower: 1, exponentialBase: 1);
         }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void ThrottlingError_UsesEqualJitter_GuaranteesMinimumDelay()
+        {
+            var config = CreateConfig();
+            config.MaxErrorRetry = 4;
+            RunRetryTest((executionContext, retryPolicy) =>
+            {
+                Tester.Reset();
+                Tester.Action = (int callCount) =>
+                {
+                    // Simulate throttling errors (429 Too Many Requests)
+                    throw new AmazonServiceException("Throttling", new WebException(),
+                        ErrorType.Receiver, "ThrottlingException", "TestRequestId",
+                        (HttpStatusCode)429);
+                };
+
+                var exception = Utils.AssertExceptionExpected<AmazonServiceException>(() =>
+                {
+                    RuntimePipeline.InvokeSync(executionContext);
+                });
+
+                Assert.AreEqual("Throttling", exception.Message);
+                Assert.AreEqual(4, executionContext.RequestContext.Retries);
+                Assert.AreEqual(5, Tester.CallCount);
+
+                // Equal Jitter: delay = base/2 + random(0, base/2)
+                // With ExponentialBase=1, ExponentialPower=2:
+                // Retry 1: 500-1000ms (base=1000ms)
+                // Retry 2: 1000-2000ms (base=2000ms)
+                // Retry 3: 2000-4000ms (base=4000ms)
+                // Retry 4: 4000-8000ms (base=8000ms)
+
+                // Verify minimum delays (50% of base)
+                Assert.IsTrue(retryPolicy.RecordedDelays[0] >= 500,
+                    $"First retry delay {retryPolicy.RecordedDelays[0]}ms should be >= 500ms (Equal Jitter for throttling)");
+                Assert.IsTrue(retryPolicy.RecordedDelays[1] >= 1000,
+                    $"Second retry delay {retryPolicy.RecordedDelays[1]}ms should be >= 1000ms (Equal Jitter for throttling)");
+                Assert.IsTrue(retryPolicy.RecordedDelays[2] >= 2000,
+                    $"Third retry delay {retryPolicy.RecordedDelays[2]}ms should be >= 2000ms (Equal Jitter for throttling)");
+                Assert.IsTrue(retryPolicy.RecordedDelays[3] >= 4000,
+                    $"Fourth retry delay {retryPolicy.RecordedDelays[3]}ms should be >= 4000ms (Equal Jitter for throttling)");
+            }, config);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TransientError_UsesFullJitter_UnchangedBehavior()
+        {
+            var config = CreateConfig();
+            config.MaxErrorRetry = 2;
+            RunRetryTest((executionContext, retryPolicy) =>
+            {
+                Tester.Reset();
+                Tester.Action = (int callCount) =>
+                {
+                    // Simulate transient network error (NOT throttling)
+                    throw new AmazonServiceException("Network error", new WebException(),
+                        HttpStatusCode.InternalServerError);
+                };
+
+                var exception = Utils.AssertExceptionExpected<AmazonServiceException>(() =>
+                {
+                    RuntimePipeline.InvokeSync(executionContext);
+                });
+
+                Assert.AreEqual("Network error", exception.Message);
+                Assert.AreEqual(2, executionContext.RequestContext.Retries);
+
+                // Full Jitter allows variable delays (no minimum guarantee)
+                // Just verify delays are within expected range
+                Assert.IsTrue(retryPolicy.RecordedDelays[0] >= 0 && retryPolicy.RecordedDelays[0] <= 1000,
+                    $"First retry delay {retryPolicy.RecordedDelays[0]}ms should be 0-1000ms (Full Jitter for transient)");
+                Assert.IsTrue(retryPolicy.RecordedDelays[1] >= 0 && retryPolicy.RecordedDelays[1] <= 2000,
+                    $"Second retry delay {retryPolicy.RecordedDelays[1]}ms should be 0-2000ms (Full Jitter for transient)");
+            }, config);
+        }
     }
 
     public class MockStandardRetryPolicy : StandardRetryPolicy
