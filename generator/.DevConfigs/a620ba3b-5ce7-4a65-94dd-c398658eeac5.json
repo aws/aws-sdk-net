@@ -3,6 +3,7 @@
     "changeLogMessages": [
       "Fixed code generator to correctly PascalCase shape names when resolving type references for structures and unmarshallers"
     ],
-    "type": "patch"
+    "type": "patch",
+    "updateMinimum": false
   }
 }
