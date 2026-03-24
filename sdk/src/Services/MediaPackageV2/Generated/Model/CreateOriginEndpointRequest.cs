@@ -313,7 +313,7 @@ namespace Amazon.MediaPackageV2.Model
         /// the window. The maximum startover window is 1,209,600 seconds (14 days).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=1209600)]
+        [AWSProperty(Min=0, Max=1209600)]
         public int? StartoverWindowSeconds
         {
             get { return this._startoverWindowSeconds; }
