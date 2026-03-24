@@ -35,8 +35,10 @@ namespace Amazon.PCS.Model
     public partial class UpdateClusterSlurmConfigurationRequest
     {
         private UpdateAccountingRequest _accounting;
+        private List<CgroupCustomSetting> _cgroupCustomSettings = AWSConfigs.InitializeCollections ? new List<CgroupCustomSetting>() : null;
         private int? _scaleDownIdleTimeInSeconds;
         private List<SlurmCustomSetting> _slurmCustomSettings = AWSConfigs.InitializeCollections ? new List<SlurmCustomSetting>() : null;
+        private List<SlurmdbdCustomSetting> _slurmdbdCustomSettings = AWSConfigs.InitializeCollections ? new List<SlurmdbdCustomSetting>() : null;
         private UpdateSlurmRestRequest _slurmRest;
 
         /// <summary>
@@ -55,6 +57,24 @@ namespace Amazon.PCS.Model
         internal bool IsSetAccounting()
         {
             return this._accounting != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CgroupCustomSettings. 
+        /// <para>
+        /// Additional Cgroup-specific configuration that directly maps to Cgroup settings.
+        /// </para>
+        /// </summary>
+        public List<CgroupCustomSetting> CgroupCustomSettings
+        {
+            get { return this._cgroupCustomSettings; }
+            set { this._cgroupCustomSettings = value; }
+        }
+
+        // Check to see if CgroupCustomSettings property is set
+        internal bool IsSetCgroupCustomSettings()
+        {
+            return this._cgroupCustomSettings != null && (this._cgroupCustomSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,6 +116,24 @@ namespace Amazon.PCS.Model
         internal bool IsSetSlurmCustomSettings()
         {
             return this._slurmCustomSettings != null && (this._slurmCustomSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlurmdbdCustomSettings. 
+        /// <para>
+        /// Additional SlurmDBD-specific configuration that directly maps to SlurmDBD settings.
+        /// </para>
+        /// </summary>
+        public List<SlurmdbdCustomSetting> SlurmdbdCustomSettings
+        {
+            get { return this._slurmdbdCustomSettings; }
+            set { this._slurmdbdCustomSettings = value; }
+        }
+
+        // Check to see if SlurmdbdCustomSettings property is set
+        internal bool IsSetSlurmdbdCustomSettings()
+        {
+            return this._slurmdbdCustomSettings != null && (this._slurmdbdCustomSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

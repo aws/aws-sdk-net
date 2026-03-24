@@ -78,6 +78,12 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                     unmarshalledObject.AuthKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cgroupCustomSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CgroupCustomSetting, CgroupCustomSettingUnmarshaller>(CgroupCustomSettingUnmarshaller.Instance);
+                    unmarshalledObject.CgroupCustomSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jwtAuth", targetDepth))
                 {
                     var unmarshaller = JwtAuthUnmarshaller.Instance;
@@ -94,6 +100,12 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<SlurmCustomSetting, SlurmCustomSettingUnmarshaller>(SlurmCustomSettingUnmarshaller.Instance);
                     unmarshalledObject.SlurmCustomSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("slurmdbdCustomSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SlurmdbdCustomSetting, SlurmdbdCustomSettingUnmarshaller>(SlurmdbdCustomSettingUnmarshaller.Instance);
+                    unmarshalledObject.SlurmdbdCustomSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("slurmRest", targetDepth))

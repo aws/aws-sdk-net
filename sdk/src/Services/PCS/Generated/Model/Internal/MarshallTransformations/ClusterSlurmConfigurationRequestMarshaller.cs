@@ -59,6 +59,22 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCgroupCustomSettings())
+            {
+                context.Writer.WritePropertyName("cgroupCustomSettings");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCgroupCustomSettingsListValue in requestObject.CgroupCustomSettings)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CgroupCustomSettingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCgroupCustomSettingsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetScaleDownIdleTimeInSeconds())
             {
                 context.Writer.WritePropertyName("scaleDownIdleTimeInSeconds");
@@ -75,6 +91,22 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
 
                     var marshaller = SlurmCustomSettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectSlurmCustomSettingsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetSlurmdbdCustomSettings())
+            {
+                context.Writer.WritePropertyName("slurmdbdCustomSettings");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSlurmdbdCustomSettingsListValue in requestObject.SlurmdbdCustomSettings)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SlurmdbdCustomSettingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSlurmdbdCustomSettingsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
