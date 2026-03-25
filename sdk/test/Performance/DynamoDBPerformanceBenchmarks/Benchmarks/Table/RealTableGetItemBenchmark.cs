@@ -8,12 +8,6 @@ public class RealTableGetItemBenchmark : LiveDynamoDbTableBenchmark
     public Task GetItemAsync() => State.TableGetItemAsync();
 
     [Benchmark]
-    public Task GetHashKeyAsync() => State.TableGetHashKeyAsync();
-
-    [Benchmark]
-    public Task GetHashKeyWithOperationConfigAsync() => State.TableGetHashKeyWithOperationConfigAsync();
-
-    [Benchmark]
     public Task GetHashKeyRangeKeyWithOperationConfigAsync() => State.TableGetHashKeyRangeKeyWithOperationConfigAsync();
 
     [Benchmark]

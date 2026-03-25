@@ -15,12 +15,6 @@ public class TableDeleteItemBenchmark : MockedDynamoDbTableBenchmark
     [Benchmark]
     public Task DeleteDocumentWithOperationConfigAsync() => State.TableDeleteDocumentWithOperationConfigAsync();
 
-    //[Benchmark]
-    //public Task DeleteHashKeyAsync() => State.TableDeleteHashKeyAsync();
-
-    //[Benchmark]
-    //public Task DeleteHashKeyWithOperationConfigAsync() => State.TableDeleteHashKeyWithOperationConfigAsync();
-
     [Benchmark]
     public Task DeleteHashKeyRangeKeyWithOperationConfigAsync() => State.TableDeleteHashKeyRangeKeyWithOperationConfigAsync();
 

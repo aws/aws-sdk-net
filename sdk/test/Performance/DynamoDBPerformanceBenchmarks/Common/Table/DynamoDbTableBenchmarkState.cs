@@ -21,16 +21,12 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
     private Func<Task>? _tableDeleteItemAsync;
     private Func<Task>? _tableDeleteDocumentAsync;
     private Func<Task>? _tableDeleteDocumentWithOperationConfigAsync;
-    private Func<Task>? _tableDeleteHashKeyAsync;
-    private Func<Task>? _tableDeleteHashKeyWithOperationConfigAsync;
     private Func<Task>? _tableDeleteHashKeyRangeKeyWithOperationConfigAsync;
     private Func<Task>? _tableDeleteWithOperationRequest;
     private Func<Task>? _tableDeteleDynamoDbEntry;
     private Func<Task>? _tableDeteleDynamoDbEntryWithOperationConfigAsync;
 
     private Func<Task>? _tableGetItemAsync;
-    private Func<Task>? _tableGetHashKeyAsync;
-    private Func<Task>? _tableGetHashKeyWithOperationConfigAsync;
     private Func<Task>? _tableGetHashKeyRangeKeyWithOperationConfigAsync;
     private Func<Task>? _tableGetWithOperationRequest;
     private Func<Task>? _tableGetDynamoDbEntry;
@@ -100,8 +96,6 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
         _tableDeleteItemAsync = () => _table!.DeleteItemAsync(PartitionKeyValue, SortKeyValue);
         _tableDeleteDocumentAsync = () => _table!.DeleteItemAsync(document);
         _tableDeleteDocumentWithOperationConfigAsync = () => _table!.DeleteItemAsync(document, deleteConfig);
-        //_tableDeleteHashKeyAsync = () => _table!.DeleteItemAsync(PartitionKeyValue);
-        //_tableDeleteHashKeyWithOperationConfigAsync = () => _table!.DeleteItemAsync(PartitionKeyValue, deleteConfig);
         _tableDeleteHashKeyRangeKeyWithOperationConfigAsync = () => _table!.DeleteItemAsync(PartitionKeyValue, SortKeyValue, deleteConfig);
         _tableDeleteWithOperationRequest = () => _table!.DeleteItemAsync(deleteRequest);
         _tableDeteleDynamoDbEntry = () => _table!.DeleteItemAsync(_dictionaryKey);
@@ -109,8 +103,6 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
 
         //get item
         _tableGetItemAsync = () => _table!.GetItemAsync(PartitionKeyValue, SortKeyValue);
-        //_tableGetHashKeyAsync = () => _table!.GetItemAsync(PartitionKeyValue);
-        //_tableGetHashKeyWithOperationConfigAsync = () => _table!.GetItemAsync(PartitionKeyValue, getItemConfig);
         _tableGetHashKeyRangeKeyWithOperationConfigAsync = () => _table!.GetItemAsync(PartitionKeyValue, SortKeyValue, getItemConfig);
         _tableGetWithOperationRequest = () => _table!.GetItemAsync(getItemRequest);
         _tableGetDynamoDbEntry = () => _table!.GetItemAsync(_dictionaryKey);
@@ -178,10 +170,6 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
 
     public Task TableDeleteDocumentWithOperationConfigAsync() => _tableDeleteDocumentWithOperationConfigAsync!();
 
-    public Task TableDeleteHashKeyAsync() => _tableDeleteHashKeyAsync!();
-
-    public Task TableDeleteHashKeyWithOperationConfigAsync() => _tableDeleteHashKeyWithOperationConfigAsync!();
-
     public Task TableDeleteHashKeyRangeKeyWithOperationConfigAsync() => _tableDeleteHashKeyRangeKeyWithOperationConfigAsync!();
 
     public Task TableDeleteWithOperationRequest() => _tableDeleteWithOperationRequest!();
@@ -192,10 +180,6 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
 
     // Get item
     public Task TableGetItemAsync() => _tableGetItemAsync!();
-
-    public Task TableGetHashKeyAsync() => _tableGetHashKeyAsync!();
-
-    public Task TableGetHashKeyWithOperationConfigAsync() => _tableGetHashKeyWithOperationConfigAsync!();
 
     public Task TableGetHashKeyRangeKeyWithOperationConfigAsync() => _tableGetHashKeyRangeKeyWithOperationConfigAsync!();
 
