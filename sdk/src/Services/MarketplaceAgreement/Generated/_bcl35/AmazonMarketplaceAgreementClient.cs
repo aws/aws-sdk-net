@@ -291,6 +291,88 @@ namespace Amazon.MarketplaceAgreement
         #endregion
 
 
+        #region  CancelAgreementPaymentRequest
+
+        /// <summary>
+        /// Allows sellers (proposers) to cancel a payment request that is in <c>PENDING_APPROVAL</c>
+        /// status. Once cancelled, the payment request transitions to <c>CANCELLED</c> status
+        /// and can no longer be accepted or rejected by the buyer.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only payment requests in <c>PENDING_APPROVAL</c> status can be cancelled. A <c>ConflictException</c>
+        /// is thrown if the payment request is in any other status.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelAgreementPaymentRequest service method.</param>
+        /// 
+        /// <returns>The response from the CancelAgreementPaymentRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/CancelAgreementPaymentRequest">REST API Reference for CancelAgreementPaymentRequest Operation</seealso>
+        public virtual CancelAgreementPaymentRequestResponse CancelAgreementPaymentRequest(CancelAgreementPaymentRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelAgreementPaymentRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelAgreementPaymentRequestResponseUnmarshaller.Instance;
+
+            return Invoke<CancelAgreementPaymentRequestResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelAgreementPaymentRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelAgreementPaymentRequest operation on AmazonMarketplaceAgreementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelAgreementPaymentRequest
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/CancelAgreementPaymentRequest">REST API Reference for CancelAgreementPaymentRequest Operation</seealso>
+        public virtual IAsyncResult BeginCancelAgreementPaymentRequest(CancelAgreementPaymentRequestRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelAgreementPaymentRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelAgreementPaymentRequestResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelAgreementPaymentRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelAgreementPaymentRequest.</param>
+        /// 
+        /// <returns>Returns a  CancelAgreementPaymentRequestResult from MarketplaceAgreement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/CancelAgreementPaymentRequest">REST API Reference for CancelAgreementPaymentRequest Operation</seealso>
+        public virtual CancelAgreementPaymentRequestResponse EndCancelAgreementPaymentRequest(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelAgreementPaymentRequestResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAgreement
 
         /// <summary>
@@ -357,6 +439,85 @@ namespace Amazon.MarketplaceAgreement
         public virtual DescribeAgreementResponse EndDescribeAgreement(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAgreementResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAgreementPaymentRequest
+
+        /// <summary>
+        /// Retrieves detailed information about a specific payment request. Both sellers (proposers)
+        /// and buyers (acceptors) can use this operation to view payment requests associated
+        /// with their agreements. The response includes the current status, charge details, timestamps,
+        /// and the charge ID if the request has been approved.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The calling identity must be either the acceptor or proposer of the payment request.
+        /// A <c>ResourceNotFoundException</c> is returned if the payment request does not exist.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementPaymentRequest service method.</param>
+        /// 
+        /// <returns>The response from the GetAgreementPaymentRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementPaymentRequest">REST API Reference for GetAgreementPaymentRequest Operation</seealso>
+        public virtual GetAgreementPaymentRequestResponse GetAgreementPaymentRequest(GetAgreementPaymentRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAgreementPaymentRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgreementPaymentRequestResponseUnmarshaller.Instance;
+
+            return Invoke<GetAgreementPaymentRequestResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAgreementPaymentRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementPaymentRequest operation on AmazonMarketplaceAgreementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAgreementPaymentRequest
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementPaymentRequest">REST API Reference for GetAgreementPaymentRequest Operation</seealso>
+        public virtual IAsyncResult BeginGetAgreementPaymentRequest(GetAgreementPaymentRequestRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAgreementPaymentRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgreementPaymentRequestResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAgreementPaymentRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAgreementPaymentRequest.</param>
+        /// 
+        /// <returns>Returns a  GetAgreementPaymentRequestResult from MarketplaceAgreement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementPaymentRequest">REST API Reference for GetAgreementPaymentRequest Operation</seealso>
+        public virtual GetAgreementPaymentRequestResponse EndGetAgreementPaymentRequest(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAgreementPaymentRequestResponse>(asyncResult);
         }
 
         #endregion
@@ -455,6 +616,82 @@ namespace Amazon.MarketplaceAgreement
         public virtual GetAgreementTermsResponse EndGetAgreementTerms(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAgreementTermsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAgreementPaymentRequests
+
+        /// <summary>
+        /// Lists payment requests available to you as a seller or buyer. Both sellers (proposers)
+        /// and buyers (acceptors) can use this operation to find payment requests by specifying
+        /// their party type and applying optional parameters.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>PartyType</c> is a required parameter. A <c>ValidationException</c> is returned
+        /// if <c>PartyType</c> is not provided. Pagination is supported through <c>maxResults</c>
+        /// (1-50, default 50) and <c>nextToken</c> parameters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreementPaymentRequests service method.</param>
+        /// 
+        /// <returns>The response from the ListAgreementPaymentRequests service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementPaymentRequests">REST API Reference for ListAgreementPaymentRequests Operation</seealso>
+        public virtual ListAgreementPaymentRequestsResponse ListAgreementPaymentRequests(ListAgreementPaymentRequestsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAgreementPaymentRequestsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgreementPaymentRequestsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAgreementPaymentRequestsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAgreementPaymentRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreementPaymentRequests operation on AmazonMarketplaceAgreementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAgreementPaymentRequests
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementPaymentRequests">REST API Reference for ListAgreementPaymentRequests Operation</seealso>
+        public virtual IAsyncResult BeginListAgreementPaymentRequests(ListAgreementPaymentRequestsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAgreementPaymentRequestsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgreementPaymentRequestsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAgreementPaymentRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAgreementPaymentRequests.</param>
+        /// 
+        /// <returns>Returns a  ListAgreementPaymentRequestsResult from MarketplaceAgreement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementPaymentRequests">REST API Reference for ListAgreementPaymentRequests Operation</seealso>
+        public virtual ListAgreementPaymentRequestsResponse EndListAgreementPaymentRequests(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAgreementPaymentRequestsResponse>(asyncResult);
         }
 
         #endregion
@@ -687,6 +924,90 @@ namespace Amazon.MarketplaceAgreement
         public virtual SearchAgreementsResponse EndSearchAgreements(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchAgreementsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SendAgreementPaymentRequest
+
+        /// <summary>
+        /// Allows sellers (proposers) to submit a payment request to buyers (acceptors) for a
+        /// specific charge amount for an agreement that includes a <c>VariablePaymentTerm</c>.
+        /// The payment request is created in <c>PENDING_APPROVAL</c> status, at which point the
+        /// buyer can accept or reject it.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The agreement must be active and have a <c>VariablePaymentTerm</c> to support payment
+        /// requests. The <c>chargeAmount</c> must not exceed the remaining available balance
+        /// under the <c>VariablePaymentTerm</c> <c>maxTotalChargeAmount</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendAgreementPaymentRequest service method.</param>
+        /// 
+        /// <returns>The response from the SendAgreementPaymentRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SendAgreementPaymentRequest">REST API Reference for SendAgreementPaymentRequest Operation</seealso>
+        public virtual SendAgreementPaymentRequestResponse SendAgreementPaymentRequest(SendAgreementPaymentRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendAgreementPaymentRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendAgreementPaymentRequestResponseUnmarshaller.Instance;
+
+            return Invoke<SendAgreementPaymentRequestResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendAgreementPaymentRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendAgreementPaymentRequest operation on AmazonMarketplaceAgreementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendAgreementPaymentRequest
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SendAgreementPaymentRequest">REST API Reference for SendAgreementPaymentRequest Operation</seealso>
+        public virtual IAsyncResult BeginSendAgreementPaymentRequest(SendAgreementPaymentRequestRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendAgreementPaymentRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendAgreementPaymentRequestResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendAgreementPaymentRequest operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendAgreementPaymentRequest.</param>
+        /// 
+        /// <returns>Returns a  SendAgreementPaymentRequestResult from MarketplaceAgreement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SendAgreementPaymentRequest">REST API Reference for SendAgreementPaymentRequest Operation</seealso>
+        public virtual SendAgreementPaymentRequestResponse EndSendAgreementPaymentRequest(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendAgreementPaymentRequestResponse>(asyncResult);
         }
 
         #endregion

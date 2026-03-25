@@ -43,7 +43,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// The AWS account ID of the proposer.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
+        [AWSProperty(Min=12, Max=12)]
         public string AccountId
         {
             get { return this._accountId; }
