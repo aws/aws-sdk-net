@@ -46,13 +46,13 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The filter to apply to the query. Only one filter can be used at a time. When the
         /// filter is used, <c>jobStatus</c> is ignored with the exception that <c>SHARE_IDENTIFIER</c>
-        /// and <c>jobStatus</c> can be used together. The results are sorted by the <c>createdAt</c>
-        /// field, with the most recent jobs being first.
+        /// or <c>QUOTA_SHARE_NAME</c> and <c>jobStatus</c> can be used together. The results
+        /// are sorted by the <c>createdAt</c> field, with the most recent jobs being first.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>SHARE_IDENTIFIER</c> filter and the <c>jobStatus</c> field can be used together
-        /// to filter results.
+        /// The <c>SHARE_IDENTIFIER</c> or <c>QUOTA_SHARE_NAME</c> filter and the <c>jobStatus</c>
+        /// field can be used together to filter results.
         /// </para>
         ///  </note> <dl> <dt>JOB_NAME</dt> <dd> 
         /// <para>
@@ -78,6 +78,10 @@ namespace Amazon.Batch.Model
         ///  </dd> <dt>SHARE_IDENTIFIER</dt> <dd> 
         /// <para>
         /// The value for the filter is the fairshare scheduling share identifier.
+        /// </para>
+        ///  </dd> <dt>QUOTA_SHARE_NAME</dt> <dd> 
+        /// <para>
+        /// The value for the filter is the quota management share name.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -116,14 +120,14 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The job status used to filter service jobs in the specified queue. If the <c>filters</c>
         /// parameter is specified, the <c>jobStatus</c> parameter is ignored and jobs with any
-        /// status are returned. The exception is the <c>SHARE_IDENTIFIER</c> filter and <c>jobStatus</c>
-        /// can be used together. If you don't specify a status, only <c>RUNNING</c> jobs are
-        /// returned.
+        /// status are returned. The exceptions are the <c>SHARE_IDENTIFIER</c> filter and <c>QUOTA_SHARE_NAME</c>
+        /// filter, which can be used with <c>jobStatus</c>. If you don't specify a status, only
+        /// <c>RUNNING</c> jobs are returned.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>SHARE_IDENTIFIER</c> filter and the <c>jobStatus</c> field can be used together
-        /// to filter results.
+        /// The <c>SHARE_IDENTIFIER</c> filter or <c>QUOTA_SHARE_NAME</c> filter can be used with
+        /// the <c>jobStatus</c> field to filter results.
         /// </para>
         ///  </note>
         /// </summary>
