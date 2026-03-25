@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceLevelIndicatorMetric Object
+    /// Response Unmarshaller for MetricSource Object
     /// </summary>  
-    public class ServiceLevelIndicatorMetricUnmarshaller : IJsonUnmarshaller<ServiceLevelIndicatorMetric, JsonUnmarshallerContext>
+    public class MetricSourceUnmarshaller : IJsonUnmarshaller<MetricSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceLevelIndicatorMetric Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MetricSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ServiceLevelIndicatorMetric unmarshalledObject = new ServiceLevelIndicatorMetric();
+            MetricSource unmarshalledObject = new MetricSource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,16 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DependencyConfig", targetDepth))
-                {
-                    var unmarshaller = DependencyConfigUnmarshaller.Instance;
-                    unmarshalledObject.DependencyConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("KeyAttributes", targetDepth))
+                if (context.TestExpression("MetricSourceAttributes", targetDepth))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.KeyAttributes = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.MetricSourceAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricDataQueries", targetDepth))
+                if (context.TestExpression("MetricSourceKeyAttributes", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<MetricDataQuery, MetricDataQueryUnmarshaller>(MetricDataQueryUnmarshaller.Instance);
-                    unmarshalledObject.MetricDataQueries = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MetricSource", targetDepth))
-                {
-                    var unmarshaller = MetricSourceUnmarshaller.Instance;
-                    unmarshalledObject.MetricSource = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MetricType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("OperationName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperationName = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.MetricSourceKeyAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +73,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceLevelIndicatorMetricUnmarshaller _instance = new ServiceLevelIndicatorMetricUnmarshaller();        
+        private static MetricSourceUnmarshaller _instance = new MetricSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceLevelIndicatorMetricUnmarshaller Instance
+        public static MetricSourceUnmarshaller Instance
         {
             get
             {

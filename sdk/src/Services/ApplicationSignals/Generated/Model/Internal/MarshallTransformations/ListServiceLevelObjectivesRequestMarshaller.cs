@@ -113,6 +113,17 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetMetricSource())
+            {
+                context.Writer.WritePropertyName("MetricSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MetricSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MetricSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetMetricSourceTypes())
             {
                 context.Writer.WritePropertyName("MetricSourceTypes");
