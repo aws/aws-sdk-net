@@ -568,6 +568,7 @@
     <Target Name="keyscan" Condition="Exists('$(InternalBuildTools)/references.targets') And $(RunKeyScan)" 
         DependsOnTargets="$(keyscan-DependsOnTargets)">
         <ItemGroup>
+            <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/MailManager/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/CertificateManager/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk/test/Services/EC2/UnitTests/Custom/PasswordTest.cs" />
             <PrivateKeyException Include="sdk/test/NetStandard/UnitTests/sample.rsa.private.key.txt" />
