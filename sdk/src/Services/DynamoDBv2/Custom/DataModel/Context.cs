@@ -650,59 +650,59 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private void DeleteHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBFlatConfig flatConfig)
         {
-            if (value == null) throw new ArgumentNullException("value");
-
-            flatConfig.IgnoreNullValues = true;
-            ItemStorage storage = ObjectToItemStorage<T>(value, true, flatConfig);
+            ItemStorage storage = GetItemStorage(value, flatConfig);
             if (storage == null) return;
 
             Table table = GetTargetTable(storage.Config, flatConfig);
-            if (flatConfig.SkipVersionCheck.Value || !storage.Config.HasVersion)
-            {
-                table.DeleteHelper(table.MakeKey(storage.Document), null);
-            }
-            else
-            {
-                Document expectedDocument = CreateExpectedDocumentForVersion(storage);
-                table.DeleteHelper(
-                    table.MakeKey(storage.Document),
-                    new DeleteItemOperationConfig { Expected = expectedDocument });
-            }
+            var operationRequest = CreateInternalDeleteItemOperationRequest(flatConfig, storage, table);
+            table.DeleteHelper(operationRequest);
         }
 
         private static readonly Task CompletedTask = Task.FromResult<object>(null);
 
         private Task DeleteHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
+            ItemStorage storage = GetItemStorage(value, flatConfig);
+            if (storage == null) return CompletedTask;
+
+            Table table = GetTargetTable(storage.Config, flatConfig);
+            var operationRequest = CreateInternalDeleteItemOperationRequest(flatConfig, storage, table);
+            return table.DeleteHelperAsync(operationRequest, cancellationToken);
+        }
+
+        private ItemStorage GetItemStorage<[DynamicallyAccessedMembers((DynamicallyAccessedMemberTypes)(-1))] T>(T value, DynamoDBFlatConfig flatConfig)
+        {
             if (value == null) throw new ArgumentNullException("value");
 
             flatConfig.IgnoreNullValues = true;
             ItemStorage storage = ObjectToItemStorage(value, true, flatConfig);
-            if (storage == null) return CompletedTask;
+            return storage;
+        }
 
-            Table table = GetTargetTable(storage.Config, flatConfig);
+        private static InternalDeleteItemDocumentOperationRequest CreateInternalDeleteItemOperationRequest(DynamoDBFlatConfig flatConfig, ItemStorage storage, Table table)
+        {
             var operationRequest = new InternalDeleteItemDocumentOperationRequest()
             {
                 Key = table.MakeKey(storage.Document)
             };
 
-            if (flatConfig.SkipVersionCheck.Value || !storage.Config.HasVersion)
+            if (!flatConfig.SkipVersionCheck.Value && storage.Config.HasVersion)
             {
-                return table.DeleteHelperAsync(operationRequest, cancellationToken);
-            }
-            else
-            {
-                string versionAttributeName = storage.Config.VersionPropertyStorage.AttributeName;
+                Document expectedDocument = CreateExpectedDocumentForVersion(storage);
+                var attributeName = expectedDocument.SingleOrDefault().Key;
+                var attributeValue = expectedDocument.SingleOrDefault().Value;
+
                 operationRequest.ConditionalExpression = new Expression()
                 {
                     ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>()
                     {
-                        {":attributeVersion", storage.CurrentVersion }
+                        {":attributeVersion", attributeValue }
                     },
-                    ExpressionStatement = $"{versionAttributeName} = :attributeVersion"
+                    ExpressionStatement = $"{attributeName} = :attributeVersion"
                 };
-                return table.DeleteHelperAsync(operationRequest, cancellationToken);
             }
+
+            return operationRequest;
         }
 
         #endregion

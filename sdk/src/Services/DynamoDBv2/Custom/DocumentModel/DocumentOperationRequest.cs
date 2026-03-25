@@ -284,20 +284,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// Legacy parameters such as Expected are not supported.
     /// Use ConditionalExpression instead.
     /// </summary>
-    public class InternalDeleteItemDocumentOperationRequest : BaseDeleteItemDocumentOperationRequest
-    {
-        /// <summary>
-        /// Gets or sets the key identifying the item in the table.
-        /// </summary>
-        public IDictionary<string, AttributeValue> Key { get; set; }
-    }
-
-    /// <summary>
-    /// Represents a request to delete an item from a DynamoDB table using the Document Model.
-    /// This class introduces a modern expression-based API that replaces legacy parameter-based approaches.
-    /// Legacy parameters such as Expected are not supported.
-    /// Use ConditionalExpression instead.
-    /// </summary>
     public class BaseDeleteItemDocumentOperationRequest : DocumentOperationRequest
     {
         /// <summary>
