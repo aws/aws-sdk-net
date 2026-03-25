@@ -349,6 +349,10 @@ namespace Amazon.Polly
     {
 
         /// <summary>
+        /// Constant Alaw for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Alaw = new OutputFormat("alaw");
+        /// <summary>
         /// Constant Json for OutputFormat
         /// </summary>
         public static readonly OutputFormat Json = new OutputFormat("json");
@@ -356,6 +360,10 @@ namespace Amazon.Polly
         /// Constant Mp3 for OutputFormat
         /// </summary>
         public static readonly OutputFormat Mp3 = new OutputFormat("mp3");
+        /// <summary>
+        /// Constant Mulaw for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Mulaw = new OutputFormat("mulaw");
         /// <summary>
         /// Constant Ogg_opus for OutputFormat
         /// </summary>
