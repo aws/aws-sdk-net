@@ -45,6 +45,14 @@ namespace Amazon.MarketplaceAgreement.Model
         }
 
         /// <summary>
+        /// Paginator for ListAgreementPaymentRequests operation
+        ///</summary>
+        public IListAgreementPaymentRequestsPaginator ListAgreementPaymentRequests(ListAgreementPaymentRequestsRequest request) 
+        {
+            return new ListAgreementPaymentRequestsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchAgreements operation
         ///</summary>
         public ISearchAgreementsPaginator SearchAgreements(SearchAgreementsRequest request) 
