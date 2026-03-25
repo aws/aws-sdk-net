@@ -1,3 +1,17 @@
+### 3.7.1250.0 (2026-03-25 18:15 UTC)
+* ApiGatewayV2 (3.7.504.0)
+	* Added DISABLE IN PROGRESS and DISABLE FAILED Portal statuses.
+* ApplicationSignals (3.7.506.0)
+	* This release adds support for creating SLOs on RUM appMonitors, Synthetics canaries and services.
+* Batch (3.7.506.1)
+	* Documentation-only update for AWS Batch.
+* MarketplaceAgreement (3.7.504.0)
+	* The Variable Payments APIs enable AWS Marketplace Sellers to perform manage their payment requests (send, get, list, cancel).
+* Polly (3.7.506.0)
+	* Add support for Mu-law and A-law codecs for output format
+* Uxc (3.7.500.0)
+	* GA release of AccountCustomizations, used to manage account color, visible services, and visible regions settings in the AWS Management Console.
+
 ### 3.7.1249.0 (2026-03-24 18:17 UTC)
 * BedrockAgentCoreControl (3.7.523.0)
 	* Adds SDK support for 1) Persist session state in AgentCore Runtime via filesystemConfigurations in CreateAgentRuntime, UpdateAgentRuntime, and GetAgentRuntime APIs, 2) Optional name-based filtering on AgentCore ListBrowserProfiles API.
