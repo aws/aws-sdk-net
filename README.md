@@ -903,6 +903,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Public preview release of Amazon Translate and the Amazon Translate Developer Guide. For more information, see the Amazon Translate Developer Guide.
 * [AWSSDK.TrustedAdvisor](https://www.nuget.org/packages/AWSSDK.TrustedAdvisor/)
 	* AWS Trusted Advisor introduces new APIs to enable you to programmatically access Trusted Advisor best practice checks, recommendations, and prioritized recommendations. Trusted Advisor APIs enable you to integrate Trusted Advisor with your operational tools to automate your workloads.
+* [AWSSDK.Uxc](https://www.nuget.org/packages/AWSSDK.Uxc/)
+	* GA release of AccountCustomizations, used to manage account color, visible services, and visible regions settings in the AWS Management Console.
 * [AWSSDK.VerifiedPermissions](https://www.nuget.org/packages/AWSSDK.VerifiedPermissions/)
 	* GA release of Amazon Verified Permissions.
 * [AWSSDK.VoiceID](https://www.nuget.org/packages/AWSSDK.VoiceID/)
