@@ -37,6 +37,8 @@ namespace Amazon.ApplicationSignals.Model
     {
         private DependencyConfig _dependencyConfig;
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _metricName;
+        private MetricSource _metricSource;
         private ServiceLevelIndicatorMetricType _metricType;
         private MonitoredRequestCountMetricDataQueries _monitoredRequestCountMetric;
         private string _operationName;
@@ -109,6 +111,44 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetKeyAttributes()
         {
             return this._keyAttributes != null && (this._keyAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricName. 
+        /// <para>
+        /// The name of the metric for SLOs on resources other than Application Signals services.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string MetricName
+        {
+            get { return this._metricName; }
+            set { this._metricName = value; }
+        }
+
+        // Check to see if MetricName property is set
+        internal bool IsSetMetricName()
+        {
+            return this._metricName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricSource. 
+        /// <para>
+        /// Identifies the metric source for SLOs on resources other than Application Signals
+        /// services.
+        /// </para>
+        /// </summary>
+        public MetricSource MetricSource
+        {
+            get { return this._metricSource; }
+            set { this._metricSource = value; }
+        }
+
+        // Check to see if MetricSource property is set
+        internal bool IsSetMetricSource()
+        {
+            return this._metricSource != null;
         }
 
         /// <summary>

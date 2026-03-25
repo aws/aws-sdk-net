@@ -40,6 +40,7 @@ namespace Amazon.ApplicationSignals.Model
         private DependencyConfig _dependencyConfig;
         private EvaluationType _evaluationType;
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private MetricSource _metricSource;
         private MetricSourceType _metricSourceType;
         private string _name;
         private string _operationName;
@@ -164,6 +165,25 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetricSource. 
+        /// <para>
+        /// Identifies the metric source for SLOs on resources other than Application Signals
+        /// services.
+        /// </para>
+        /// </summary>
+        public MetricSource MetricSource
+        {
+            get { return this._metricSource; }
+            set { this._metricSource = value; }
+        }
+
+        // Check to see if MetricSource property is set
+        internal bool IsSetMetricSource()
+        {
+            return this._metricSource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MetricSourceType. 
         /// <para>
         /// Displays the SLI metric source type for this SLO. Supported types are:
@@ -178,7 +198,19 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CloudWatch metric
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AppMonitor
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Canary
         /// </para>
         ///  </li> </ul>
         /// </summary>

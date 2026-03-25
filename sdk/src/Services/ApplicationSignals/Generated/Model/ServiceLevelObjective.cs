@@ -200,7 +200,19 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CloudWatch metric
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AppMonitor
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Canary
         /// </para>
         ///  </li> </ul>
         /// </summary>

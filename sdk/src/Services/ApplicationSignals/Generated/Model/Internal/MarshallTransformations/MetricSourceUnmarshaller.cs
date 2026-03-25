@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceLevelIndicatorMetric Object
+    /// Response Unmarshaller for MetricSource Object
     /// </summary>  
-    public class ServiceLevelIndicatorMetricUnmarshaller : IUnmarshaller<ServiceLevelIndicatorMetric, XmlUnmarshallerContext>, IUnmarshaller<ServiceLevelIndicatorMetric, JsonUnmarshallerContext>
+    public class MetricSourceUnmarshaller : IUnmarshaller<MetricSource, XmlUnmarshallerContext>, IUnmarshaller<MetricSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ServiceLevelIndicatorMetric IUnmarshaller<ServiceLevelIndicatorMetric, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MetricSource IUnmarshaller<MetricSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceLevelIndicatorMetric Unmarshall(JsonUnmarshallerContext context)
+        public MetricSource Unmarshall(JsonUnmarshallerContext context)
         {
-            ServiceLevelIndicatorMetric unmarshalledObject = new ServiceLevelIndicatorMetric();
+            MetricSource unmarshalledObject = new MetricSource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,16 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DependencyConfig", targetDepth))
-                {
-                    var unmarshaller = DependencyConfigUnmarshaller.Instance;
-                    unmarshalledObject.DependencyConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KeyAttributes", targetDepth))
+                if (context.TestExpression("MetricSourceAttributes", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.KeyAttributes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricSourceAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MetricDataQueries", targetDepth))
+                if (context.TestExpression("MetricSourceKeyAttributes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MetricDataQuery, MetricDataQueryUnmarshaller>(MetricDataQueryUnmarshaller.Instance);
-                    unmarshalledObject.MetricDataQueries = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MetricSource", targetDepth))
-                {
-                    var unmarshaller = MetricSourceUnmarshaller.Instance;
-                    unmarshalledObject.MetricSource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MetricType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OperationName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperationName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.MetricSourceKeyAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +83,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceLevelIndicatorMetricUnmarshaller _instance = new ServiceLevelIndicatorMetricUnmarshaller();        
+        private static MetricSourceUnmarshaller _instance = new MetricSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceLevelIndicatorMetricUnmarshaller Instance
+        public static MetricSourceUnmarshaller Instance
         {
             get
             {
