@@ -670,7 +670,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return table.DeleteHelperAsync(operationRequest, cancellationToken);
         }
 
-        private ItemStorage GetItemStorage<[DynamicallyAccessedMembers((DynamicallyAccessedMemberTypes)(-1))] T>(T value, DynamoDBFlatConfig flatConfig)
+        private ItemStorage GetItemStorage<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBFlatConfig flatConfig)
         {
             if (value == null) throw new ArgumentNullException("value");
 
@@ -688,18 +688,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (!flatConfig.SkipVersionCheck.Value && storage.Config.HasVersion)
             {
-                Document expectedDocument = CreateExpectedDocumentForVersion(storage);
-                var attributeName = expectedDocument.SingleOrDefault().Key;
-                var attributeValue = expectedDocument.SingleOrDefault().Value;
+                var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
+                var versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
 
-                operationRequest.ConditionalExpression = new Expression()
-                {
-                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>()
-                    {
-                        {":attributeVersion", attributeValue }
-                    },
-                    ExpressionStatement = $"{attributeName} = :attributeVersion"
-                };
+                operationRequest.ConditionalExpression = versionExpression;
             }
 
             return operationRequest;
