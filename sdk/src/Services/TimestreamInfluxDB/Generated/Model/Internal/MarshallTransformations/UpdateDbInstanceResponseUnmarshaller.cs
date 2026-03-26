@@ -130,10 +130,22 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     response.InstanceModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("lastMaintenanceTime", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.LastMaintenanceTime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("logDeliveryConfiguration", targetDepth))
                 {
                     var unmarshaller = LogDeliveryConfigurationUnmarshaller.Instance;
                     response.LogDeliveryConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("maintenanceSchedule", targetDepth))
+                {
+                    var unmarshaller = MaintenanceScheduleUnmarshaller.Instance;
+                    response.MaintenanceSchedule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -146,6 +158,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NetworkType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("nextMaintenanceTime", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.NextMaintenanceTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("port", targetDepth))
