@@ -42,6 +42,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         private DeploymentType _deploymentType;
         private string _identifier;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
+        private MaintenanceSchedule _maintenanceSchedule;
         private int? _port;
 
         /// <summary>
@@ -174,6 +175,25 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetLogDeliveryConfiguration()
         {
             return this._logDeliveryConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceSchedule. 
+        /// <para>
+        /// Specifies the maintenance schedule for the DB instance, including the preferred maintenance
+        /// window and timezone.
+        /// </para>
+        /// </summary>
+        public MaintenanceSchedule MaintenanceSchedule
+        {
+            get { return this._maintenanceSchedule; }
+            set { this._maintenanceSchedule = value; }
+        }
+
+        // Check to see if MaintenanceSchedule property is set
+        internal bool IsSetMaintenanceSchedule()
+        {
+            return this._maintenanceSchedule != null;
         }
 
         /// <summary>

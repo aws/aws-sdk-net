@@ -36,6 +36,7 @@ namespace Amazon.TimestreamInfluxDB.Model
     {
         private int? _allocatedStorage;
         private string _arn;
+        private ClusterConfiguration _clusterConfiguration;
         private DbInstanceType _dbInstanceType;
         private string _dbParameterGroupIdentifier;
         private DbStorageType _dbStorageType;
@@ -45,9 +46,12 @@ namespace Amazon.TimestreamInfluxDB.Model
         private FailoverMode _failoverMode;
         private string _id;
         private string _influxAuthParametersSecretArn;
+        private DateTime? _lastMaintenanceTime;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
+        private MaintenanceSchedule _maintenanceSchedule;
         private string _name;
         private NetworkType _networkType;
+        private DateTime? _nextMaintenanceTime;
         private int? _port;
         private bool? _publiclyAccessible;
         private string _readerEndpoint;
@@ -91,6 +95,24 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterConfiguration. 
+        /// <para>
+        /// Configuration for node modes in the DbCluster.
+        /// </para>
+        /// </summary>
+        public ClusterConfiguration ClusterConfiguration
+        {
+            get { return this._clusterConfiguration; }
+            set { this._clusterConfiguration = value; }
+        }
+
+        // Check to see if ClusterConfiguration property is set
+        internal bool IsSetClusterConfiguration()
+        {
+            return this._clusterConfiguration != null;
         }
 
         /// <summary>
@@ -261,6 +283,24 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastMaintenanceTime. 
+        /// <para>
+        /// The timestamp of the last completed maintenance operation on the DB cluster.
+        /// </para>
+        /// </summary>
+        public DateTime LastMaintenanceTime
+        {
+            get { return this._lastMaintenanceTime.GetValueOrDefault(); }
+            set { this._lastMaintenanceTime = value; }
+        }
+
+        // Check to see if LastMaintenanceTime property is set
+        internal bool IsSetLastMaintenanceTime()
+        {
+            return this._lastMaintenanceTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LogDeliveryConfiguration. 
         /// <para>
         /// Configuration for sending InfluxDB engine logs to send to specified S3 bucket.
@@ -276,6 +316,24 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetLogDeliveryConfiguration()
         {
             return this._logDeliveryConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceSchedule. 
+        /// <para>
+        /// The maintenance schedule for the DB cluster.
+        /// </para>
+        /// </summary>
+        public MaintenanceSchedule MaintenanceSchedule
+        {
+            get { return this._maintenanceSchedule; }
+            set { this._maintenanceSchedule = value; }
+        }
+
+        // Check to see if MaintenanceSchedule property is set
+        internal bool IsSetMaintenanceSchedule()
+        {
+            return this._maintenanceSchedule != null;
         }
 
         /// <summary>
@@ -315,6 +373,24 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetNetworkType()
         {
             return this._networkType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextMaintenanceTime. 
+        /// <para>
+        /// The timestamp of the next scheduled maintenance operation on the DB cluster.
+        /// </para>
+        /// </summary>
+        public DateTime NextMaintenanceTime
+        {
+            get { return this._nextMaintenanceTime.GetValueOrDefault(); }
+            set { this._nextMaintenanceTime = value; }
+        }
+
+        // Check to see if NextMaintenanceTime property is set
+        internal bool IsSetNextMaintenanceTime()
+        {
+            return this._nextMaintenanceTime.HasValue; 
         }
 
         /// <summary>
