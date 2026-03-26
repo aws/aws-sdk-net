@@ -62,6 +62,12 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("S3BucketOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3BucketOwner = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("S3OutputConfigurations", targetDepth))
                 {
                     var unmarshaller = S3OutputConfigurationsUnmarshaller.Instance;

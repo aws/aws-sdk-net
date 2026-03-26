@@ -52,6 +52,12 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.S3Bucket);
             }
 
+            if(requestObject.IsSetS3BucketOwner())
+            {
+                context.Writer.WritePropertyName("S3BucketOwner");
+                context.Writer.WriteStringValue(requestObject.S3BucketOwner);
+            }
+
             if(requestObject.IsSetS3OutputConfigurations())
             {
                 context.Writer.WritePropertyName("S3OutputConfigurations");
