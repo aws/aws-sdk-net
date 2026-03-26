@@ -2295,6 +2295,20 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryParameter.DefaultValue</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryParameter.Description</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryParameter.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z_][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.RecordField.Name</property>
     <min>1</min>
     <max>64</max>
@@ -2326,6 +2340,16 @@
     <property>Amazon.CloudWatchLogs.Model.S3Configuration.DestinationIdentifier</property>
     <max>1024</max>
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.S3Configuration.KmsKeyId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.S3Configuration.OwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.S3Configuration.RoleArn</property>

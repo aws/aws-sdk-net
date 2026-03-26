@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for QueryDefinition Object
+    /// Response Unmarshaller for QueryParameter Object
     /// </summary>  
-    public class QueryDefinitionUnmarshaller : IUnmarshaller<QueryDefinition, XmlUnmarshallerContext>, IUnmarshaller<QueryDefinition, JsonUnmarshallerContext>
+    public class QueryParameterUnmarshaller : IUnmarshaller<QueryParameter, XmlUnmarshallerContext>, IUnmarshaller<QueryParameter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        QueryDefinition IUnmarshaller<QueryDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        QueryParameter IUnmarshaller<QueryParameter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public QueryDefinition Unmarshall(JsonUnmarshallerContext context)
+        public QueryParameter Unmarshall(JsonUnmarshallerContext context)
         {
-            QueryDefinition unmarshalledObject = new QueryDefinition();
+            QueryParameter unmarshalledObject = new QueryParameter();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("lastModified", targetDepth))
+                if (context.TestExpression("defaultValue", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("logGroupNames", targetDepth))
+                if (context.TestExpression("description", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.LogGroupNames = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -84,41 +84,17 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("parameters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<QueryParameter, QueryParameterUnmarshaller>(QueryParameterUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("queryDefinitionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QueryDefinitionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("queryLanguage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QueryLanguage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("queryString", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QueryString = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static QueryDefinitionUnmarshaller _instance = new QueryDefinitionUnmarshaller();        
+        private static QueryParameterUnmarshaller _instance = new QueryParameterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static QueryDefinitionUnmarshaller Instance
+        public static QueryParameterUnmarshaller Instance
         {
             get
             {

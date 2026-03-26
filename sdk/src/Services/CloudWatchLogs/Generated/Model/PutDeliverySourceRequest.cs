@@ -119,6 +119,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For Amazon Bedrock AgentCore Memory, the valid values are <c>APPLICATION_LOGS</c>
+        /// and <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Amazon Bedrock AgentCore Gateway, the valid values are <c>APPLICATION_LOGS</c>
         /// and <c>TRACES</c>.
         /// </para>
@@ -138,6 +143,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// For Elemental MediaTailor, the valid values are <c>AD_DECISION_SERVER_LOGS</c>, <c>MANIFEST_SERVICE_LOGS</c>,
         /// and <c>TRANSCODE_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon EKS Auto Mode, the valid values are <c>AUTO_MODE_BLOCK_STORAGE_LOGS</c>,
+        /// <c>AUTO_MODE_COMPUTE_LOGS</c>, <c>AUTO_MODE_IPAM_LOGS</c>, and <c>AUTO_MODE_LOAD_BALANCING_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -162,7 +172,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Quick Suite, the valid values are <c>CHAT_LOGS</c> and <c>FEEDBACK_LOGS</c>.
+        /// For Quick, the valid values are <c>CHAT_LOGS</c> and <c>FEEDBACK_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

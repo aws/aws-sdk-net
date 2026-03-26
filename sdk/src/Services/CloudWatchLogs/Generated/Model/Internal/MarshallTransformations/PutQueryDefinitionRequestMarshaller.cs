@@ -97,6 +97,22 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetParameters())
+                {
+                    context.Writer.WritePropertyName("parameters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestParametersListValue in publicRequest.Parameters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QueryParameterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestParametersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetQueryDefinitionId())
                 {
                     context.Writer.WritePropertyName("queryDefinitionId");

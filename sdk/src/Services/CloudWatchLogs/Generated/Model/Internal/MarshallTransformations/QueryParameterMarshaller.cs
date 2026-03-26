@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3Configuration Marshaller
+    /// QueryParameter Marshaller
     /// </summary>
-    public class S3ConfigurationMarshaller : IRequestMarshaller<S3Configuration, JsonMarshallerContext> 
+    public class QueryParameterMarshaller : IRequestMarshaller<QueryParameter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,32 +44,26 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3Configuration requestObject, JsonMarshallerContext context)
+        public void Marshall(QueryParameter requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDestinationIdentifier())
+            if(requestObject.IsSetDefaultValue())
             {
-                context.Writer.WritePropertyName("destinationIdentifier");
-                context.Writer.Write(requestObject.DestinationIdentifier);
+                context.Writer.WritePropertyName("defaultValue");
+                context.Writer.Write(requestObject.DefaultValue);
             }
 
-            if(requestObject.IsSetKmsKeyId())
+            if(requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("kmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WritePropertyName("description");
+                context.Writer.Write(requestObject.Description);
             }
 
-            if(requestObject.IsSetOwnerAccountId())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("ownerAccountId");
-                context.Writer.Write(requestObject.OwnerAccountId);
-            }
-
-            if(requestObject.IsSetRoleArn())
-            {
-                context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WritePropertyName("name");
+                context.Writer.Write(requestObject.Name);
             }
 
         }
@@ -77,7 +71,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static S3ConfigurationMarshaller Instance = new S3ConfigurationMarshaller();
+        public readonly static QueryParameterMarshaller Instance = new QueryParameterMarshaller();
 
     }
 }

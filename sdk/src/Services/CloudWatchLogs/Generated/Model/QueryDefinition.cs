@@ -37,6 +37,7 @@ namespace Amazon.CloudWatchLogs.Model
         private long? _lastModified;
         private List<string> _logGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
+        private List<QueryParameter> _parameters = AWSConfigs.InitializeCollections ? new List<QueryParameter>() : null;
         private string _queryDefinitionId;
         private QueryLanguage _queryLanguage;
         private string _queryString;
@@ -96,6 +97,26 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// If this query definition contains a list of query parameters that define placeholder
+        /// variables for the query string, that list appears here.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=20)]
+        public List<QueryParameter> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
