@@ -318,6 +318,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StepConcurrencyLevel);
                 }
 
+                if(publicRequest.IsSetStepExecutionRoleArn())
+                {
+                    context.Writer.WritePropertyName("StepExecutionRoleArn");
+                    context.Writer.Write(publicRequest.StepExecutionRoleArn);
+                }
+
                 if(publicRequest.IsSetSteps())
                 {
                     context.Writer.WritePropertyName("Steps");
