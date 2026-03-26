@@ -1,3 +1,18 @@
+### 4.0.219.0 (2026-03-26 18:15 UTC)
+* BCMDataExports (4.0.3.0)
+	* With this release we are providing an option to accounts to have their export delivered to an S3 bucket that is not owned by the account.
+* CloudWatchLogs (4.0.16.0)
+	* This release adds parameter support to saved queries in CloudWatch Logs Insights. Define reusable query templates with named placeholders, invoke them using start query. Available in Console, CLI and SDK
+* ElasticMapReduce (4.0.9.0)
+	* Add StepExecutionRoleArn to RunJobFlow API
+* SageMaker (4.0.47.0)
+	* Release support for ml.r5d.16xlarge instance types for SageMaker HyperPod
+* TimestreamInfluxDB (4.0.6.0)
+	* Timestream for InfluxDB adds support for customer defined maintenance windows. This allows customers to define maintenance schedule during resource creation and updates
+* Core 4.0.3.23
+	* Fixed concurrent HTTP/2 event streaming requests (e.g., Amazon Transcribe Streaming) failing with SignatureDoesNotMatch and REFUSED_STREAM errors. The SDK now creates a dedicated HttpClient for each bidirectional event stream request to prevent HTTP/2 multiplexing, which is not supported by services like Amazon Transcribe Streaming that require one connection per stream.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.218.0 (2026-03-25 18:14 UTC)
 * ApiGatewayV2 (4.0.5.0)
 	* Added DISABLE IN PROGRESS and DISABLE FAILED Portal statuses.
