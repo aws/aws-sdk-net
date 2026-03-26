@@ -11154,7 +11154,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can have up to 30 concurrent CloudWatch Logs insights queries, including queries
+        /// You can have up to 100 concurrent CloudWatch Logs insights queries, including queries
         /// that have been added to dashboards. 
         /// </para>
         /// </summary>
@@ -11261,7 +11261,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can have up to 30 concurrent CloudWatch Logs insights queries, including queries
+        /// You can have up to 100 concurrent CloudWatch Logs insights queries, including queries
         /// that have been added to dashboards. 
         /// </para>
         /// </summary>

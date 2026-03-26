@@ -161,8 +161,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property QueryLanguage. 
         /// <para>
-        /// The query language to use for the scheduled query. Valid values are <c>LogsQL</c>,
-        /// <c>PPL</c>, and <c>SQL</c>.
+        /// The query language to use for the scheduled query. Valid values are <c>CWLI</c>, <c>PPL</c>,
+        /// and <c>SQL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

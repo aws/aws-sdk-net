@@ -55,6 +55,7 @@ namespace Amazon.CloudWatchLogs.Model
         private string _clientToken;
         private List<string> _logGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
+        private List<QueryParameter> _parameters = AWSConfigs.InitializeCollections ? new List<QueryParameter>() : null;
         private string _queryDefinitionId;
         private QueryLanguage _queryLanguage;
         private string _queryString;
@@ -130,6 +131,34 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// Use this parameter to include specific query parameters as part of your query definition.
+        /// Query parameters are supported only for Logs Insights QL queries. Query parameters
+        /// allow you to use placeholder variables in your query string that are substituted with
+        /// values at execution time. Use the <c>{{parameterName}}</c> syntax in your query string
+        /// to reference a parameter.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=20)]
+        public List<QueryParameter> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
