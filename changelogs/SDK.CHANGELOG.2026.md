@@ -1,3 +1,18 @@
+### 3.7.1251.0 (2026-03-26 18:16 UTC)
+* BCMDataExports (3.7.503.0)
+	* With this release we are providing an option to accounts to have their export delivered to an S3 bucket that is not owned by the account.
+* CloudWatchLogs (3.7.509.0)
+	* This release adds parameter support to saved queries in CloudWatch Logs Insights. Define reusable query templates with named placeholders, invoke them using start query. Available in Console, CLI and SDK
+* ElasticMapReduce (3.7.507.0)
+	* Add StepExecutionRoleArn to RunJobFlow API
+* SageMaker (3.7.533.0)
+	* Release support for ml.r5d.16xlarge instance types for SageMaker HyperPod
+* TimestreamInfluxDB (3.7.505.0)
+	* Timestream for InfluxDB adds support for customer defined maintenance windows. This allows customers to define maintenance schedule during resource creation and updates
+* Core 3.7.500.95
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1250.0 (2026-03-25 18:15 UTC)
 * ApiGatewayV2 (3.7.504.0)
 	* Added DISABLE IN PROGRESS and DISABLE FAILED Portal statuses.
