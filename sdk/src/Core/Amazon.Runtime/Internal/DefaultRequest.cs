@@ -524,6 +524,12 @@ namespace Amazon.Runtime.Internal
         /// else false.</returns>
         public bool IsRequestStreamRewindable()
         {
+            // Event stream requests (bidirectional streaming) cannot be retried by the SDK because
+            // the event publisher is a forward-only stream that cannot be rewound. Operation-level
+            // errors (e.g., throttling) are surfaced to the caller for application-level retry.
+            if (this.EventStreamPublisher != null)
+                return false;
+
             var stream = this.ContentStream;
             // Retries may not be possible with a stream
             if (stream != null)

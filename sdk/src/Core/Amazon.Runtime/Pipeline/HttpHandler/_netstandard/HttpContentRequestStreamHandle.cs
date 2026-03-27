@@ -41,6 +41,7 @@ namespace Amazon.Runtime.Pipeline.HttpHandler
         private bool _disposed;
         private TaskCompletionSource _tcs = new TaskCompletionSource();
         private IHttpRequestStreamPublisher _publisher;
+        private CancellationTokenSource _cts = new CancellationTokenSource();
 
         public HttpContentRequestStreamHandle(HttpRequestMessage httpRequest, IHttpRequestStreamPublisher publisher)
         {
@@ -50,16 +51,40 @@ namespace Amazon.Runtime.Pipeline.HttpHandler
             _publisher = publisher;
         }
 
-        protected override async Task SerializeToStreamAsync( Stream stream, TransportContext context)
+        protected override async Task SerializeToStreamAsync(Stream stream, TransportContext context)
         {
-            if(_publisher != null)
+            await SerializeToStreamAsync(stream, context, _cts.Token).ConfigureAwait(false);
+        }
+
+        protected override async Task SerializeToStreamAsync(Stream stream, TransportContext context, CancellationToken cancellationToken)
+        {
+            // Combine the provided cancellation token with our internal one so that
+            // disposal can cancel in-flight event publishing operations. This is critical
+            // for preventing the old SerializeToStreamAsync from continuing to consume
+            // events from the publisher after the request has been disposed (e.g., due to
+            // a throttle error), which would drain the event source and cause retries to
+            // receive SignatureDoesNotMatch errors or hang.
+            using var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, _cts.Token);
+            var token = linkedCts.Token;
+
+            try
             {
-                Byte[] bytes;
-                while((bytes = await _publisher.NextBytesAsync().ConfigureAwait(false)) != null)
+                if (_publisher != null)
                 {
-                    await stream.WriteAsync(bytes, 0, bytes.Length).ConfigureAwait(false);
-                    await stream.FlushAsync().ConfigureAwait(false);
+                    Byte[] bytes;
+                    while ((bytes = await _publisher.NextBytesAsync().ConfigureAwait(false)) != null)
+                    {
+                        token.ThrowIfCancellationRequested();
+                        await stream.WriteAsync(bytes, 0, bytes.Length, token).ConfigureAwait(false);
+                        await stream.FlushAsync(token).ConfigureAwait(false);
+                    }
                 }
+            }
+            catch (OperationCanceledException) when (_disposed)
+            {
+                // Request was disposed (e.g., due to throttle error before stream established).
+                // Exit gracefully without consuming more events from the publisher.
+                return;
             }
 
             // Capture the _tcs as local variable before awaiting to avoid the member variable
@@ -97,6 +122,13 @@ namespace Amazon.Runtime.Pipeline.HttpHandler
 
             if (disposing)
             {
+                // Cancel any in-flight event publishing operations so SerializeToStreamAsync
+                // can exit promptly. This is critical for retries: without cancellation, the
+                // old SerializeToStreamAsync may continue consuming events from the publisher
+                // in the background, draining the event source and causing the retry to hang
+                // or receive SignatureDoesNotMatch errors on the event stream.
+                _cts.Cancel();
+
                 if (_tcs != null)
                 {
                     _logger.DebugFormat("Completed writing to request stream");
@@ -108,6 +140,8 @@ namespace Amazon.Runtime.Pipeline.HttpHandler
                     _httpRequest.Dispose();
                     _httpRequest = null;
                 }
+
+                _cts.Dispose();
             }
 
             _disposed = true;
