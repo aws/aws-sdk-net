@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EvaluatorConfig Marshaller
+    /// CodeBasedEvaluatorConfig Marshaller
     /// </summary>
-    public class EvaluatorConfigMarshaller : IRequestMarshaller<EvaluatorConfig, JsonMarshallerContext> 
+    public class CodeBasedEvaluatorConfigMarshaller : IRequestMarshaller<CodeBasedEvaluatorConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +42,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EvaluatorConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(CodeBasedEvaluatorConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCodeBased())
+            if(requestObject.IsSetLambdaConfig())
             {
-                context.Writer.WritePropertyName("codeBased");
+                context.Writer.WritePropertyName("lambdaConfig");
                 context.Writer.WriteStartObject();
 
-                var marshaller = CodeBasedEvaluatorConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.CodeBased, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetLlmAsAJudge())
-            {
-                context.Writer.WritePropertyName("llmAsAJudge");
-                context.Writer.WriteStartObject();
-
-                var marshaller = LlmAsAJudgeEvaluatorConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.LlmAsAJudge, context);
+                var marshaller = LambdaEvaluatorConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.LambdaConfig, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -73,7 +62,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EvaluatorConfigMarshaller Instance = new EvaluatorConfigMarshaller();
+        public readonly static CodeBasedEvaluatorConfigMarshaller Instance = new CodeBasedEvaluatorConfigMarshaller();
 
     }
 }

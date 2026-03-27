@@ -30,33 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Wrapper for updating an optional Description field with PATCH semantics. When present
-    /// in an update request, the description is replaced with optionalValue. When absent,
-    /// the description is left unchanged. To unset the description, include the wrapper with
-    /// optionalValue not specified.
+    /// Configuration for a code-based evaluator. Specify the Lambda function to use for
+    /// evaluation.
     /// </summary>
-    public partial class UpdatedDescription
+    public partial class CodeBasedEvaluatorConfig
     {
-        private string _optionalValue;
+        private LambdaEvaluatorConfig _lambdaConfig;
 
         /// <summary>
-        /// Gets and sets the property OptionalValue. 
+        /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// Represents an optional value that is used to update the human-readable description
-        /// of the resource. If not specified, it will clear the current description of the resource.
+        ///  The Lambda function configuration for code-based evaluation. 
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
-        public string OptionalValue
+        public LambdaEvaluatorConfig LambdaConfig
         {
-            get { return this._optionalValue; }
-            set { this._optionalValue = value; }
+            get { return this._lambdaConfig; }
+            set { this._lambdaConfig = value; }
         }
 
-        // Check to see if OptionalValue property is set
-        internal bool IsSetOptionalValue()
+        // Check to see if LambdaConfig property is set
+        internal bool IsSetLambdaConfig()
         {
-            return this._optionalValue != null;
+            return this._lambdaConfig != null;
         }
 
     }

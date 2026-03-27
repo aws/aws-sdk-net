@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EvaluatorConfig Marshaller
+    /// LambdaEvaluatorConfig Marshaller
     /// </summary>
-    public class EvaluatorConfigMarshaller : IRequestMarshaller<EvaluatorConfig, JsonMarshallerContext> 
+    public class LambdaEvaluatorConfigMarshaller : IRequestMarshaller<LambdaEvaluatorConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,20 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EvaluatorConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(LambdaEvaluatorConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCodeBased())
+            if(requestObject.IsSetLambdaArn())
             {
-                context.Writer.WritePropertyName("codeBased");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CodeBasedEvaluatorConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.CodeBased, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("lambdaArn");
+                context.Writer.WriteStringValue(requestObject.LambdaArn);
             }
 
-            if(requestObject.IsSetLlmAsAJudge())
+            if(requestObject.IsSetLambdaTimeoutInSeconds())
             {
-                context.Writer.WritePropertyName("llmAsAJudge");
-                context.Writer.WriteStartObject();
-
-                var marshaller = LlmAsAJudgeEvaluatorConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.LlmAsAJudge, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("lambdaTimeoutInSeconds");
+                context.Writer.WriteNumberValue(requestObject.LambdaTimeoutInSeconds.Value);
             }
 
         }
@@ -73,7 +63,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EvaluatorConfigMarshaller Instance = new EvaluatorConfigMarshaller();
+        public readonly static LambdaEvaluatorConfigMarshaller Instance = new LambdaEvaluatorConfigMarshaller();
 
     }
 }

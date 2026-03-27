@@ -30,50 +30,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// The configuration that defines how an evaluator assesses agent performance, including
-    /// the evaluation method and parameters.
+    /// Configuration for a Lambda function used as a code-based evaluator.
     /// </summary>
-    public partial class EvaluatorConfig
+    public partial class LambdaEvaluatorConfig
     {
-        private CodeBasedEvaluatorConfig _codeBased;
-        private LlmAsAJudgeEvaluatorConfig _llmAsAJudge;
+        private string _lambdaArn;
+        private int? _lambdaTimeoutInSeconds;
 
         /// <summary>
-        /// Gets and sets the property CodeBased. 
+        /// Gets and sets the property LambdaArn. 
         /// <para>
-        ///  Configuration for a code-based evaluator that uses a customer-managed Lambda function
-        /// to programmatically assess agent performance. 
+        ///  The Amazon Resource Name (ARN) of the Lambda function that implements the evaluation
+        /// logic. 
         /// </para>
         /// </summary>
-        public CodeBasedEvaluatorConfig CodeBased
+        [AWSProperty(Required=true)]
+        public string LambdaArn
         {
-            get { return this._codeBased; }
-            set { this._codeBased = value; }
+            get { return this._lambdaArn; }
+            set { this._lambdaArn = value; }
         }
 
-        // Check to see if CodeBased property is set
-        internal bool IsSetCodeBased()
+        // Check to see if LambdaArn property is set
+        internal bool IsSetLambdaArn()
         {
-            return this._codeBased != null;
+            return this._lambdaArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property LlmAsAJudge. 
+        /// Gets and sets the property LambdaTimeoutInSeconds. 
         /// <para>
-        ///  The LLM-as-a-Judge configuration that uses a language model to evaluate agent performance
-        /// based on custom instructions and rating scales. 
+        ///  The timeout in seconds for the Lambda function invocation. Defaults to 60. Must be
+        /// between 1 and 300. 
         /// </para>
         /// </summary>
-        public LlmAsAJudgeEvaluatorConfig LlmAsAJudge
+        [AWSProperty(Min=1, Max=300)]
+        public int? LambdaTimeoutInSeconds
         {
-            get { return this._llmAsAJudge; }
-            set { this._llmAsAJudge = value; }
+            get { return this._lambdaTimeoutInSeconds; }
+            set { this._lambdaTimeoutInSeconds = value; }
         }
 
-        // Check to see if LlmAsAJudge property is set
-        internal bool IsSetLlmAsAJudge()
+        // Check to see if LambdaTimeoutInSeconds property is set
+        internal bool IsSetLambdaTimeoutInSeconds()
         {
-            return this._llmAsAJudge != null;
+            return this._lambdaTimeoutInSeconds.HasValue; 
         }
 
     }

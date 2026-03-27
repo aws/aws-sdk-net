@@ -1146,6 +1146,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant Custom for EvaluatorType
         /// </summary>
         public static readonly EvaluatorType Custom = new EvaluatorType("Custom");
+        /// <summary>
+        /// Constant CustomCode for EvaluatorType
+        /// </summary>
+        public static readonly EvaluatorType CustomCode = new EvaluatorType("CustomCode");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
