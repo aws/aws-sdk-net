@@ -1,3 +1,17 @@
+### 4.0.220.0 (2026-03-27 18:14 UTC)
+* BedrockAgentCore (4.0.14.0)
+	* Adding AgentCore Code Interpreter Node.js Runtime Support with an optional runtime field
+* BedrockAgentCoreControl (4.0.24.0)
+	* Adds support for custom code-based evaluators using customer-managed Lambda functions.
+* Neptunedata (4.0.4.6)
+	* Minor formatting changes to remove unnecessary symbols.
+* Omics (4.0.7.0)
+	* AWS HealthOmics now supports VPC networking, allowing users to connect runs to external resources with NAT gateway, AWS VPC resources, and more. New Configuration APIs support configuring VPC settings. StartRun API now accepts networkingMode and configurationName parameters to enable VPC networking.
+* Core 4.0.3.24
+	* Fixed HttpContentRequestStreamHandle to cancel SerializeToStreamAsync on dispose, preventing background event consumption that could drain the event publisher and cause retries to hang.
+	* Fixed SignatureDoesNotMatch errors for event stream requests (e.g., Transcribe Streaming) under concurrency by preventing SDK-level retries for event stream requests. The event publisher is a forward-only stream that cannot be rewound, and the AWS4EventSigner signature chain cannot be reset after events are signed during a failed attempt. Operation-level errors such as throttling are now surfaced to the caller for application-level retry.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.219.0 (2026-03-26 18:15 UTC)
 * BCMDataExports (4.0.3.0)
 	* With this release we are providing an option to accounts to have their export delivered to an S3 bucket that is not owned by the account.
