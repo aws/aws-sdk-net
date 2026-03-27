@@ -82,6 +82,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.CacheId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("configuration", targetDepth))
+                {
+                    var unmarshaller = ConfigurationDetailsUnmarshaller.Instance;
+                    response.Configuration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -134,6 +140,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("networkingMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NetworkingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outputUri", targetDepth))
@@ -242,6 +254,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Uuid = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("vpcConfig", targetDepth))
+                {
+                    var unmarshaller = VpcConfigResponseUnmarshaller.Instance;
+                    response.VpcConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("workflowId", targetDepth))

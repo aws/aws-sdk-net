@@ -121,6 +121,48 @@
     <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.CreateConfigurationRequest.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-\._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateConfigurationRequest.RequestId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateConfigurationResponse.Arn</property>
+    <min>1</min>
+    <max>190</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateConfigurationResponse.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateConfigurationResponse.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-\._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateConfigurationResponse.Uuid</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.CreateMultipartReadSetUploadRequest.ClientToken</property>
     <min>1</min>
     <max>127</max>
@@ -648,6 +690,12 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.DeleteConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-\._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.DeleteReferenceRequest.Id</property>
     <min>10</min>
     <max>36</max>
@@ -832,6 +880,36 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetBatchResponse.Uuid</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-\._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetConfigurationResponse.Arn</property>
+    <min>1</min>
+    <max>190</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetConfigurationResponse.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetConfigurationResponse.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-\._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetConfigurationResponse.Uuid</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
@@ -1881,6 +1959,23 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.ListConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListConfigurationsRequest.StartingToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListConfigurationsResponse.NextToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.ListMultipartReadSetUploadsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -2517,6 +2612,12 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunRequest.ConfigurationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-\._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.LogLevel</property>
     <min>1</min>
     <max>64</max>
@@ -3077,6 +3178,42 @@
     <property>Amazon.Omics.Model.CompleteReadSetUploadPartListItem.PartNumber</property>
     <min>1</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ConfigurationDetails.Arn</property>
+    <min>1</min>
+    <max>190</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ConfigurationDetails.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-\._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ConfigurationDetails.Uuid</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ConfigurationListItem.Arn</property>
+    <min>1</min>
+    <max>190</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ConfigurationListItem.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ConfigurationListItem.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9\-\._]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DefaultRunSetting.CacheBehavior</property>
@@ -4090,6 +4227,12 @@
     <min>3</min>
     <max>255</max>
     <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.VpcConfigResponse.VpcId</property>
+    <min>5</min>
+    <max>128</max>
+    <pattern>vpc-[0-9a-f]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.WorkflowListItem.Arn</property>

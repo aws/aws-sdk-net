@@ -877,6 +877,63 @@ namespace Amazon.Omics
         }
         #endregion
         
+        #region  CreateConfiguration
+
+        internal virtual CreateConfigurationResponse CreateConfiguration(CreateConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a new configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConfiguration service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateConfiguration">REST API Reference for CreateConfiguration Operation</seealso>
+        public virtual Task<CreateConfigurationResponse> CreateConfigurationAsync(CreateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateMultipartReadSetUpload
 
         internal virtual CreateMultipartReadSetUploadResponse CreateMultipartReadSetUpload(CreateMultipartReadSetUploadRequest request)
@@ -1737,6 +1794,63 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = DeleteBatchResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBatchResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteConfiguration
+
+        internal virtual DeleteConfigurationResponse DeleteConfiguration(DeleteConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete an existing configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConfiguration service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteConfiguration">REST API Reference for DeleteConfiguration Operation</seealso>
+        public virtual Task<DeleteConfigurationResponse> DeleteConfigurationAsync(DeleteConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConfigurationResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2742,6 +2856,63 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = GetBatchResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBatchResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetConfiguration
+
+        internal virtual GetConfigurationResponse GetConfiguration(GetConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve configuration details for specified name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConfiguration service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        public virtual Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConfigurationResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4096,6 +4267,63 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = ListBatchResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBatchResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListConfigurations
+
+        internal virtual ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConfigurationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List all configurations for the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConfigurations service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
+        public virtual Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConfigurationsResponse>(request, options, cancellationToken);
         }
         #endregion
         

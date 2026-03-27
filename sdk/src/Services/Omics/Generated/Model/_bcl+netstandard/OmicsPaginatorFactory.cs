@@ -69,6 +69,14 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Paginator for ListConfigurations operation
+        ///</summary>
+        public IListConfigurationsPaginator ListConfigurations(ListConfigurationsRequest request) 
+        {
+            return new ListConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMultipartReadSetUploads operation
         ///</summary>
         public IListMultipartReadSetUploadsPaginator ListMultipartReadSetUploads(ListMultipartReadSetUploadsRequest request) 

@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartRun operation
+    /// Response Unmarshaller for GetConfiguration operation
     /// </summary>  
-    public class StartRunResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartRunResponse response = new StartRunResponse();
+            GetConfigurationResponse response = new GetConfigurationResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
@@ -58,28 +58,28 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("configuration", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth))
                 {
-                    var unmarshaller = ConfigurationDetailsUnmarshaller.Instance;
-                    response.Configuration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context, ref reader);
+                    response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkingMode", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NetworkingMode = unmarshaller.Unmarshall(context, ref reader);
+                    response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("runOutputUri", targetDepth))
+                if (context.TestExpression("runConfigurations", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RunOutputUri = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = RunConfigurationsResponseUnmarshaller.Instance;
+                    response.RunConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -161,9 +161,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             return new AmazonOmicsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static StartRunResponseUnmarshaller _instance = new StartRunResponseUnmarshaller();        
+        private static GetConfigurationResponseUnmarshaller _instance = new GetConfigurationResponseUnmarshaller();        
 
-        internal static StartRunResponseUnmarshaller GetInstance()
+        internal static GetConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -171,7 +171,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartRunResponseUnmarshaller Instance
+        public static GetConfigurationResponseUnmarshaller Instance
         {
             get
             {

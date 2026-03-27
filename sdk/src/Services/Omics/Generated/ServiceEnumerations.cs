@@ -269,6 +269,72 @@ namespace Amazon.Omics
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigurationStatus.
+    /// </summary>
+    public class ConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus ACTIVE = new ConfigurationStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus CREATING = new ConfigurationStatus("CREATING");
+        /// <summary>
+        /// Constant DELETED for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus DELETED = new ConfigurationStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus DELETING = new ConfigurationStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus FAILED = new ConfigurationStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus UPDATING = new ConfigurationStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationStatus FindValue(string value)
+        {
+            return FindValue<ConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CreationType.
     /// </summary>
     public class CreationType : ConstantClass
@@ -680,6 +746,56 @@ namespace Amazon.Omics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NetworkingMode.
+    /// </summary>
+    public class NetworkingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESTRICTED for NetworkingMode
+        /// </summary>
+        public static readonly NetworkingMode RESTRICTED = new NetworkingMode("RESTRICTED");
+        /// <summary>
+        /// Constant VPC for NetworkingMode
+        /// </summary>
+        public static readonly NetworkingMode VPC = new NetworkingMode("VPC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkingMode FindValue(string value)
+        {
+            return FindValue<NetworkingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkingMode(string value)
         {
             return FindValue(value);
         }

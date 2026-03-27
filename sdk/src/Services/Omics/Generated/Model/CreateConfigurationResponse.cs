@@ -30,26 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// This is the response object from the StartRun operation.
+    /// This is the response object from the CreateConfiguration operation.
     /// </summary>
-    public partial class StartRunResponse : AmazonWebServiceResponse
+    public partial class CreateConfigurationResponse : AmazonWebServiceResponse
     {
         private string _arn;
-        private ConfigurationDetails _configuration;
-        private string _id;
-        private string _networkingMode;
-        private string _runOutputUri;
-        private RunStatus _status;
+        private DateTime? _creationTime;
+        private string _description;
+        private string _name;
+        private RunConfigurationsResponse _runConfigurations;
+        private ConfigurationStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uuid;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Unique resource identifier for the run.
+        /// Unique resource identifier for the configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=190)]
         public string Arn
         {
             get { return this._arn; }
@@ -63,87 +63,86 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Configuration. 
+        /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Configuration details for the workflow run.
+        /// Configuration creation timestamp.
         /// </para>
         /// </summary>
-        public ConfigurationDetails Configuration
+        public DateTime? CreationTime
         {
-            get { return this._configuration; }
-            set { this._configuration = value; }
+            get { return this._creationTime; }
+            set { this._creationTime = value; }
         }
 
-        // Check to see if Configuration property is set
-        internal bool IsSetConfiguration()
+        // Check to see if CreationTime property is set
+        internal bool IsSetCreationTime()
         {
-            return this._configuration != null;
+            return this._creationTime.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property Description. 
         /// <para>
-        /// The run's ID.
+        /// Description for the configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=18)]
-        public string Id
+        [AWSProperty(Min=1, Max=256)]
+        public string Description
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
         {
-            return this._id != null;
+            return this._description != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkingMode. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Networking mode for the workflow run.
+        /// User-friendly name for the configuration.
         /// </para>
         /// </summary>
-        public string NetworkingMode
+        [AWSProperty(Min=1, Max=128)]
+        public string Name
         {
-            get { return this._networkingMode; }
-            set { this._networkingMode = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if NetworkingMode property is set
-        internal bool IsSetNetworkingMode()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._networkingMode != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RunOutputUri. 
+        /// Gets and sets the property RunConfigurations. 
         /// <para>
-        /// The destination for workflow outputs.
+        /// Run-specific configurations.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=750)]
-        public string RunOutputUri
+        public RunConfigurationsResponse RunConfigurations
         {
-            get { return this._runOutputUri; }
-            set { this._runOutputUri = value; }
+            get { return this._runConfigurations; }
+            set { this._runConfigurations = value; }
         }
 
-        // Check to see if RunOutputUri property is set
-        internal bool IsSetRunOutputUri()
+        // Check to see if RunConfigurations property is set
+        internal bool IsSetRunConfigurations()
         {
-            return this._runOutputUri != null;
+            return this._runConfigurations != null;
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The run's status.
+        /// Current configuration status.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public RunStatus Status
+        public ConfigurationStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -158,7 +157,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The run's tags.
+        /// Tags for the configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -181,7 +180,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Uuid. 
         /// <para>
-        /// The universally unique identifier for a run.
+        /// Unique identifier for the configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -68,6 +68,16 @@ namespace Amazon.Omics.Model
         IListBatchPaginator ListBatch(ListBatchRequest request);
 
         /// <summary>
+        /// Paginator for ListConfigurations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "StartingToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListConfigurationsPaginator ListConfigurations(ListConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListMultipartReadSetUploads operation
         ///</summary>
         [AWSPaginator(

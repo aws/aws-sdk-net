@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartRun operation
+    /// Response Unmarshaller for ListConfigurations operation
     /// </summary>  
-    public class StartRunResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListConfigurationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,58 +46,22 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartRunResponse response = new StartRunResponse();
+            ListConfigurationsResponse response = new ListConfigurationsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("items", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ConfigurationListItem, ConfigurationListItemUnmarshaller>(ConfigurationListItemUnmarshaller.Instance);
+                    response.Items = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("configuration", targetDepth))
-                {
-                    var unmarshaller = ConfigurationDetailsUnmarshaller.Instance;
-                    response.Configuration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("networkingMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NetworkingMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("runOutputUri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RunOutputUri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("uuid", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Uuid = unmarshaller.Unmarshall(context, ref reader);
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -161,9 +125,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             return new AmazonOmicsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static StartRunResponseUnmarshaller _instance = new StartRunResponseUnmarshaller();        
+        private static ListConfigurationsResponseUnmarshaller _instance = new ListConfigurationsResponseUnmarshaller();        
 
-        internal static StartRunResponseUnmarshaller GetInstance()
+        internal static ListConfigurationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -171,7 +135,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartRunResponseUnmarshaller Instance
+        public static ListConfigurationsResponseUnmarshaller Instance
         {
             get
             {
