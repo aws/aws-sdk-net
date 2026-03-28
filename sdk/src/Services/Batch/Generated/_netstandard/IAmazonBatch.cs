@@ -227,6 +227,33 @@ namespace Amazon.Batch
 
         #endregion
                 
+        #region  CreateQuotaShare
+
+
+
+        /// <summary>
+        /// Creates an Batch quota share. Each quota share operates as a virtual queue with a
+        /// configured compute capacity, resource sharing strategy, and borrow limits.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuotaShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateQuotaShare service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateQuotaShare">REST API Reference for CreateQuotaShare Operation</seealso>
+        Task<CreateQuotaShareResponse> CreateQuotaShareAsync(CreateQuotaShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateSchedulingPolicy
 
 
@@ -349,8 +376,7 @@ namespace Amazon.Batch
         /// <summary>
         /// Deletes the specified job queue. You must first disable submissions for a queue with
         /// the <a>UpdateJobQueue</a> operation. All jobs in the queue are eventually terminated
-        /// when you delete a job queue. The jobs are terminated at a rate of about 16 jobs each
-        /// second.
+        /// when you delete a job queue.
         /// 
         ///  
         /// <para>
@@ -374,6 +400,34 @@ namespace Amazon.Batch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">REST API Reference for DeleteJobQueue Operation</seealso>
         Task<DeleteJobQueueResponse> DeleteJobQueueAsync(DeleteJobQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteQuotaShare
+
+
+
+        /// <summary>
+        /// Deletes the specified quota share. You must first disable submissions for the share
+        /// by updating the state to <c>DISABLED</c> using the <a>UpdateQuotaShare</a> operation.
+        /// All jobs in the share are eventually terminated when you delete a quota share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuotaShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQuotaShare service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteQuotaShare">REST API Reference for DeleteQuotaShare Operation</seealso>
+        Task<DeleteQuotaShareResponse> DeleteQuotaShareAsync(DeleteQuotaShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -602,6 +656,32 @@ namespace Amazon.Batch
 
         #endregion
                 
+        #region  DescribeQuotaShare
+
+
+
+        /// <summary>
+        /// Returns a description of the specified quota share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQuotaShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeQuotaShare service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeQuotaShare">REST API Reference for DescribeQuotaShare Operation</seealso>
+        Task<DescribeQuotaShareResponse> DescribeQuotaShareAsync(DescribeQuotaShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeSchedulingPolicies
 
 
@@ -685,9 +765,12 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Provides a list of the first 100 <c>RUNNABLE</c> jobs associated to a single job queue
-        /// and includes capacity utilization, including total usage and breakdown by share for
-        /// fairshare scheduling job queues.
+        /// Provides a snapshot of job queue state, including ordering of <c>RUNNABLE</c> jobs,
+        /// as well as capacity utilization for already dispatched jobs. The first 100 <c>RUNNABLE</c>
+        /// jobs in the job queue are listed in order of dispatch. For job queues with an attached
+        /// quota-share policy, the first <c>RUNNABLE</c> job in each quota share is also listed.
+        /// Capacity utilization for the job queue is provided, as well as break downs by share
+        /// for job queues with attached fair-share or quota-share scheduling policies.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobQueueSnapshot service method.</param>
         /// <param name="cancellationToken">
@@ -801,6 +884,32 @@ namespace Amazon.Batch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobsByConsumableResource">REST API Reference for ListJobsByConsumableResource Operation</seealso>
         Task<ListJobsByConsumableResourceResponse> ListJobsByConsumableResourceAsync(ListJobsByConsumableResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListQuotaShares
+
+
+
+        /// <summary>
+        /// Returns a list of Batch quota shares associated with a job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuotaShares service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListQuotaShares service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListQuotaShares">REST API Reference for ListQuotaShares Operation</seealso>
+        Task<ListQuotaSharesResponse> ListQuotaSharesAsync(ListQuotaSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1170,6 +1279,32 @@ namespace Amazon.Batch
 
         #endregion
                 
+        #region  UpdateQuotaShare
+
+
+
+        /// <summary>
+        /// Updates a quota share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuotaShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQuotaShare service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateQuotaShare">REST API Reference for UpdateQuotaShare Operation</seealso>
+        Task<UpdateQuotaShareResponse> UpdateQuotaShareAsync(UpdateQuotaShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateSchedulingPolicy
 
 
@@ -1221,6 +1356,32 @@ namespace Amazon.Batch
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateServiceEnvironment">REST API Reference for UpdateServiceEnvironment Operation</seealso>
         Task<UpdateServiceEnvironmentResponse> UpdateServiceEnvironmentAsync(UpdateServiceEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateServiceJob
+
+
+
+        /// <summary>
+        /// Updates the priority of a specified service job in an Batch job queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateServiceJob service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateServiceJob">REST API Reference for UpdateServiceJob Operation</seealso>
+        Task<UpdateServiceJobResponse> UpdateServiceJobAsync(UpdateServiceJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -17,8 +17,11 @@ package software.amazon.smithy.dotnet.codegen;
 
 import software.amazon.smithy.codegen.core.*;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.knowledge.BottomUpIndex;
 import software.amazon.smithy.model.knowledge.OperationIndex;
 import software.amazon.smithy.model.shapes.*;
+import software.amazon.smithy.model.traits.SparseTrait;
+import software.amazon.smithy.model.traits.Trait;
 import software.amazon.smithy.utils.StringUtils;
 
 import java.util.logging.Logger;
@@ -37,11 +40,13 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
     private final DotnetSettings settings;
     private final ServiceShape service;
     private final ReservedWordSymbolProvider.Escaper escaper;
+    private final BottomUpIndex bottomUpIndex;
 
     public SymbolVisitor(Model model, DotnetSettings settings) {
         this.model = model;
         this.settings = settings;
         this.service = model.expectShape(settings.getService(), ServiceShape.class);
+        this.bottomUpIndex = new BottomUpIndex(model);
         var reservedWordsNames = new ReservedWordsBuilder().loadWords(SymbolVisitor.class.getResource("reservedwords.txt"));
         escaper = ReservedWordSymbolProvider.builder()
                 .memberReservedWords(reservedWordsNames.build())
@@ -78,6 +83,13 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
     public Symbol listShape(ListShape listShape) {
         var targetShape = model.expectShape(listShape.getMember().getTarget());
         var targetSymbol = targetShape.accept(this);
+        // unfortunately there is no targetShape such as sparseIntegerShape, and since the sparse trait lives on the parent (list class)
+        // we have to visit the targetShape first, then recreate it with the "?" if the collection is sparse. It would be much cleaner
+        // if there was a sparse
+        if (listShape.getTrait(SparseTrait.class).isPresent() && !targetShape.isDocumentShape() && !targetShape.isStringShape() && !targetShape.isEnumShape()){
+            targetSymbol = Symbol.builder().name(targetSymbol.getName() + "?").putProperty("shape", targetShape).build();
+        }
+
         return createSymbolBuilder(listShape, "List<" + targetSymbol + ">")
                 .addReference(targetSymbol)
                 .build();
@@ -89,9 +101,12 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
     @Override
     public Symbol mapShape(MapShape mapShape) {
         var valueShape = model.expectShape(mapShape.getValue().getTarget());
-        var valueType = valueShape.accept(this);
-        return createSymbolBuilder(mapShape, "Dictionary<string, " + valueType + ">")
-                .addReference(valueType)
+        var valueSymbol = valueShape.accept(this);
+        if (mapShape.getTrait(SparseTrait.class).isPresent() && !valueShape.isDocumentShape() && !valueShape.isStringShape() && !valueShape.isEnumShape()){
+            valueSymbol = Symbol.builder().name(valueSymbol.getName() + "?").putProperty("shape", valueSymbol).build();
+        }
+        return createSymbolBuilder(mapShape, "Dictionary<string, " + valueSymbol + ">")
+                .addReference(valueSymbol)
                 .build();
     }
 
@@ -102,7 +117,7 @@ public class SymbolVisitor implements SymbolProvider, ShapeVisitor<Symbol> {
 
     @Override
     public Symbol shortShape(ShortShape shortShape) {
-        return createSymbolBuilder(shortShape, "short").build();
+        return createSymbolBuilder(shortShape, "int").build();
     }
 
     @Override

@@ -3275,7 +3275,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeHubContentResponse.HubContentDocument</property>
     <min>0</min>
-    <max>170391</max>
+    <max>327680</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -4965,7 +4965,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ImportHubContentRequest.HubContentDocument</property>
     <min>0</min>
-    <max>170391</max>
+    <max>327680</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>

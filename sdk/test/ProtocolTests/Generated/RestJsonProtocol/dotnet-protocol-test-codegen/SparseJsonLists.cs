@@ -32,6 +32,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.RestJson
@@ -39,5 +40,85 @@ namespace AWSSDK.ProtocolTests.RestJson
     [TestClass]
     public class SparseJsonLists
     {
+        /// <summary>
+        /// Serializes null values in sparse lists
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonSparseListsSerializeNullRequest()
+        {
+            // Arrange
+            var request = new SparseJsonListsRequest
+            {
+                SparseStringList =  new List<string>()
+                {
+                    null,
+                    "hi",
+                },
+                SparseShortList =  new List<int?>()
+                {
+                    null,
+                    2,
+                },
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new SparseJsonListsRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            var expectedBody = "{\n    \"sparseStringList\": [\n        null,\n        \"hi\"\n    ],\n    \"sparseShortList\": [\n        null,\n        2\n    ]\n}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
+            Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/SparseJsonLists", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+        }
+
+        /// <summary>
+        /// Serializes null values in sparse lists
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonSparseListsSerializeNullResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/json";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"sparseStringList\": [\n        null,\n        \"hi\"\n    ],\n    \"sparseShortList\": [\n        null,\n        2\n    ]\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new SparseJsonListsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new SparseJsonListsResponse
+            {
+                SparseStringList =  new List<string>()
+                {
+                    null,
+                    "hi",
+                },
+                SparseShortList =  new List<int?>()
+                {
+                    null,
+                    2,
+                },
+            };
+
+            // Assert
+            var actualResponse = (SparseJsonListsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<SparseJsonListsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
     }
 }

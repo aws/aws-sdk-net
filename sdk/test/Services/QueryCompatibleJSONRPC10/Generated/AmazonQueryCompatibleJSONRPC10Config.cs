@@ -54,7 +54,7 @@ namespace Amazon.QueryCompatibleJSONRPC10
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonQueryCompatibleJSONRPC10DefaultConfiguration.GetAllConfigurations()))
         {
             base.ServiceId = "Query Compatible JSON RPC 10";
-            this.AuthenticationServiceName = "query-compatible-jsonrpc10";
+            this.AuthenticationServiceName = "querycompatiblejsonrpc10";
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Amazon.QueryCompatibleJSONRPC10
         {
             get
             {
-                return "query-compatible-jsonrpc10";
+                return "querycompatiblejsonrpc10";
             }
         }
 

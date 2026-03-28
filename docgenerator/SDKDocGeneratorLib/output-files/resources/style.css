@@ -199,13 +199,20 @@ table.members img {
 
 .noteblock {
     margin-top: 8px;
-    margin-bottom: 8px;    
+    margin-bottom: 8px;
+    border-left: 3px solid #bbb;
+    padding: 6px 8px;
+    background-color: #fafafa;
 }
 
 .noteheader {
     color: #5d5d5d;
     font-size: 13px;
     font-weight: bold;
+}
+
+.noteblock-warning {
+    border-left-color: #d32f2f;
 }
 
 .verticalSep {

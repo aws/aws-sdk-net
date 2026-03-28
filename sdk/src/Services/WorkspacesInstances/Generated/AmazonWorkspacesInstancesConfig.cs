@@ -33,7 +33,7 @@ namespace Amazon.WorkspacesInstances
     public partial class AmazonWorkspacesInstancesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Workspaces Instances", "4.0.3.4");
+            InternalSDKUtils.BuildUserAgentString("Workspaces Instances", "4.0.3.7");
 
         private static readonly AmazonWorkspacesInstancesEndpointResolver EndpointResolver =
             new AmazonWorkspacesInstancesEndpointResolver();

@@ -40,7 +40,7 @@ namespace Amazon.RestJsonProtocol
     /// <summary>
     /// <para>Implementation for accessing RestJsonProtocol</para>
     ///
-    /// A REST JSON service that sends JSON requests and responses.
+    /// 
     /// </summary>
     public partial class AmazonRestJsonProtocolClient : AmazonServiceClient, IAmazonRestJsonProtocol
     {
@@ -1215,6 +1215,47 @@ namespace Amazon.RestJsonProtocol
             options.ResponseUnmarshaller = HttpPrefixHeadersInResponseResponseUnmarshaller.Instance;
             
             return InvokeAsync<HttpPrefixHeadersInResponseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  HttpQueryParamsOnlyOperation
+
+
+        /// <summary>
+        /// This example tests httpQueryParams when no other query parameters exist.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the HttpQueryParamsOnlyOperation service method.</param>
+        /// 
+        /// <returns>The response from the HttpQueryParamsOnlyOperation service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpQueryParamsOnlyOperation">REST API Reference for HttpQueryParamsOnlyOperation Operation</seealso>
+        public virtual HttpQueryParamsOnlyOperationResponse HttpQueryParamsOnlyOperation(HttpQueryParamsOnlyOperationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = HttpQueryParamsOnlyOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = HttpQueryParamsOnlyOperationResponseUnmarshaller.Instance;
+
+            return Invoke<HttpQueryParamsOnlyOperationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This example tests httpQueryParams when no other query parameters exist.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the HttpQueryParamsOnlyOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the HttpQueryParamsOnlyOperation service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpQueryParamsOnlyOperation">REST API Reference for HttpQueryParamsOnlyOperation Operation</seealso>
+        public virtual Task<HttpQueryParamsOnlyOperationResponse> HttpQueryParamsOnlyOperationAsync(HttpQueryParamsOnlyOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = HttpQueryParamsOnlyOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = HttpQueryParamsOnlyOperationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<HttpQueryParamsOnlyOperationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2551,6 +2592,88 @@ namespace Amazon.RestJsonProtocol
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
             
             return InvokeAsync<SimpleScalarPropertiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SparseJsonLists
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseJsonLists service method.</param>
+        /// 
+        /// <returns>The response from the SparseJsonLists service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SparseJsonLists">REST API Reference for SparseJsonLists Operation</seealso>
+        public virtual SparseJsonListsResponse SparseJsonLists(SparseJsonListsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SparseJsonListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SparseJsonListsResponseUnmarshaller.Instance;
+
+            return Invoke<SparseJsonListsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseJsonLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SparseJsonLists service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SparseJsonLists">REST API Reference for SparseJsonLists Operation</seealso>
+        public virtual Task<SparseJsonListsResponse> SparseJsonListsAsync(SparseJsonListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SparseJsonListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SparseJsonListsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SparseJsonListsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SparseJsonMaps
+
+
+        /// <summary>
+        /// This example tests sparse map serialization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseJsonMaps service method.</param>
+        /// 
+        /// <returns>The response from the SparseJsonMaps service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SparseJsonMaps">REST API Reference for SparseJsonMaps Operation</seealso>
+        public virtual SparseJsonMapsResponse SparseJsonMaps(SparseJsonMapsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SparseJsonMapsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SparseJsonMapsResponseUnmarshaller.Instance;
+
+            return Invoke<SparseJsonMapsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This example tests sparse map serialization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseJsonMaps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SparseJsonMaps service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SparseJsonMaps">REST API Reference for SparseJsonMaps Operation</seealso>
+        public virtual Task<SparseJsonMapsResponse> SparseJsonMapsAsync(SparseJsonMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SparseJsonMapsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SparseJsonMapsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SparseJsonMapsResponse>(request, options, cancellationToken);
         }
 
         #endregion

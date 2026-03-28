@@ -52,6 +52,18 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DestinationIdentifier);
             }
 
+            if(requestObject.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("kmsKeyId");
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
+            }
+
+            if(requestObject.IsSetOwnerAccountId())
+            {
+                context.Writer.WritePropertyName("ownerAccountId");
+                context.Writer.WriteStringValue(requestObject.OwnerAccountId);
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");

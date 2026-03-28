@@ -84,6 +84,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetCertificates())
+            {
+                context.Writer.WritePropertyName("certificates");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCertificatesListValue in publicRequest.Certificates)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CertificateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCertificatesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");
@@ -99,6 +115,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("description");
                 context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEnterprisePolicies())
+            {
+                context.Writer.WritePropertyName("enterprisePolicies");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEnterprisePoliciesListValue in publicRequest.EnterprisePolicies)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = BrowserEnterprisePolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEnterprisePoliciesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(publicRequest.IsSetExecutionRoleArn())

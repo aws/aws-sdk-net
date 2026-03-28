@@ -48,6 +48,16 @@ namespace Amazon.VerifiedPermissions.Model
         IListPoliciesPaginator ListPolicies(ListPoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListPolicyStoreAliases operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPolicyStoreAliasesPaginator ListPolicyStoreAliases(ListPolicyStoreAliasesRequest request);
+
+        /// <summary>
         /// Paginator for ListPolicyStores operation
         ///</summary>
         [AWSPaginator(

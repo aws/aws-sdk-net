@@ -74,6 +74,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("parameters", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<QueryParameter, QueryParameterUnmarshaller>(QueryParameterUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("queryDefinitionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

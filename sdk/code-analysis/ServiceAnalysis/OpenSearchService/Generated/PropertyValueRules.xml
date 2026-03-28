@@ -1360,6 +1360,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.PrometheusDirectQueryDataSource.RoleArn</property>
+    <min>32</min>
+    <max>200</max>
+    <pattern>^arn:aws[a-zA-Z-]*:iam::\d{12}:role(\/service-role)?\/[A-Za-z0-9+=,.@\-_]{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.PrometheusDirectQueryDataSource.WorkspaceArn</property>
+    <pattern>^arn:aws[a-zA-Z-]*:aps:[a-z0-9-]+:[0-9]{12}:workspace\/ws-[a-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ReservedInstance.ReservationName</property>
     <min>5</min>
     <max>64</max>

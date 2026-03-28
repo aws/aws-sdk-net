@@ -65,7 +65,6 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
             request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
             request.EventStreamPublisher = new MedicalScribeInputStreamPublisherMarshaller(publicRequest.InputStreamPublisher);
 
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2025-01-29";
             request.HttpMethod = "POST";
 

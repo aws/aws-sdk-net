@@ -90,6 +90,7 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class UpdatePolicyRequest : AmazonVerifiedPermissionsRequest
     {
         private UpdatePolicyDefinition _definition;
+        private string _name;
         private string _policyId;
         private string _policyStoreId;
 
@@ -98,6 +99,10 @@ namespace Amazon.VerifiedPermissions.Model
         /// <para>
         /// Specifies the updated policy content that you want to replace on the specified policy.
         /// The content must be valid Cedar policy language text.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify this parameter, the existing policy definition remains unchanged.
         /// </para>
         ///  
         /// <para>
@@ -146,11 +151,56 @@ namespace Amazon.VerifiedPermissions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Specifies a name for the policy that is unique among all policies within the policy
+        /// store. You can use the name in place of the policy ID in API operations that reference
+        /// the policy. The name must be prefixed with <c>name/</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you don't include the name in an update request, the existing name is unchanged.
+        /// To remove a name, set it to an empty string (<c>""</c>).
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// If you specify a name that is already associated with another policy in the policy
+        /// store, you receive a <c>ConflictException</c> error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=150)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
         /// Specifies the ID of the policy that you want to update. To find this value, you can
         /// use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the policy name in place of the policy ID. When using a name, prefix it
+        /// with <c>name/</c>. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ID: <c>SPEXAMPLEabcdefg111111</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Name: <c>name/example-policy</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
         public string PolicyId
@@ -169,6 +219,23 @@ namespace Amazon.VerifiedPermissions.Model
         /// Gets and sets the property PolicyStoreId. 
         /// <para>
         /// Specifies the ID of the policy store that contains the policy that you want to update.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify a policy store, use its ID or alias name. When using an alias name, prefix
+        /// it with <c>policy-store-alias/</c>. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ID: <c>PSEXAMPLEabcdefg111111</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name: <c>policy-store-alias/example-policy-store</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

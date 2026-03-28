@@ -30,9 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Respresents an optional value that can be provided to update the human-readable description
-    /// of the resource. If the field is omitted from the request, it will leave the current
-    /// decription value unchanged.
+    /// Wrapper for updating an optional Description field with PATCH semantics. When present
+    /// in an update request, the description is replaced with optionalValue. When absent,
+    /// the description is left unchanged. To unset the description, include the wrapper with
+    /// optionalValue not specified.
     /// </summary>
     public partial class UpdatedDescription
     {
@@ -42,7 +43,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property OptionalValue. 
         /// <para>
         /// Represents an optional value that is used to update the human-readable description
-        /// of the resource. If set to null, it will clear the current description of the resource.
+        /// of the resource. If not specified, it will clear the current description of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]

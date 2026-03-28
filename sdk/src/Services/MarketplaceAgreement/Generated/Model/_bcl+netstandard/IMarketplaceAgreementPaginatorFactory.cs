@@ -38,6 +38,16 @@ namespace Amazon.MarketplaceAgreement.Model
         IGetAgreementTermsPaginator GetAgreementTerms(GetAgreementTermsRequest request);
 
         /// <summary>
+        /// Paginator for ListAgreementPaymentRequests operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgreementPaymentRequestsPaginator ListAgreementPaymentRequests(ListAgreementPaymentRequestsRequest request);
+
+        /// <summary>
         /// Paginator for SearchAgreements operation
         ///</summary>
         [AWSPaginator(

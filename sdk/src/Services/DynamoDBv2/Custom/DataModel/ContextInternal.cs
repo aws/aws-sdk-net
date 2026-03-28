@@ -15,6 +15,7 @@
 
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
+using Amazon.Util;
 using Amazon.Util.Internal;
 using System;
 using System.Collections;
@@ -24,7 +25,6 @@ using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Amazon.Util;
 using ThirdParty.RuntimeBackports;
 using Expression = System.Linq.Expressions.Expression;
 
@@ -1853,7 +1853,7 @@ namespace Amazon.DynamoDBv2.DataModel
                                 "Only the right-most range key condition may use a non-equality operator. " +
                                 $"Operator '{rangeKeyCondition.Operator}' found on range key attribute '{rangeKeyAttributeName}' at position {i}.");
                         }
-                        MapRangeKeyConditionExpression(rangeKeyCondition, i, rangeKeyPropertyName, rangeKeyProperty);
+                        MapRangeKeyConditionExpression(rangeKeyCondition, i, rangeKeyProperty);
 
                     }
 
@@ -1918,14 +1918,13 @@ namespace Amazon.DynamoDBv2.DataModel
                 return keyExpression1;
             }
 
-            void MapRangeKeyConditionExpression( RangeKeyCondition rangeKeyCondition, int index,
-                string rangeKeyPropertyName,  PropertyStorage rangeKeyProperty)
+            void MapRangeKeyConditionExpression(RangeKeyCondition rangeKeyCondition, int index,PropertyStorage rangeKeyProperty)
             {
                 keyExpression.ExpressionStatement +=
                     ContextExpressionsUtils.GetRangeKeyConditionExpression(RANGE_KEY_EXPRESSION_ATTRIBUTE_NAME,
                         rangeKeyCondition.Operator, index);
                 keyExpression.ExpressionAttributeNames.Add($"{RANGE_KEY_EXPRESSION_ATTRIBUTE_NAME}{index}",
-                    rangeKeyPropertyName);
+                    rangeKeyProperty.AttributeName);
                 var valuesList = rangeKeyCondition.Values?.ToList();
 
                 if (rangeKeyCondition.Operator == QueryOperator.Between)

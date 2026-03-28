@@ -85,7 +85,14 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
                     var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                    if (publicRequestTagsValue == null)
+                    {
+                        context.Writer.WriteNullValue();
+                    }
+                    else
+                    {
+                            context.Writer.WriteStringValue(publicRequestTagsValue);
+                    }
                 }
                 context.Writer.WriteEndObject();
             }

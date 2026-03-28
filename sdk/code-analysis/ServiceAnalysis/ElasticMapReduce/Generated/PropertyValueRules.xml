@@ -361,6 +361,11 @@
     <max>10280</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.RunJobFlowRequest.StepExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RunJobFlowResponse.ClusterArn</property>
     <min>20</min>
     <max>2048</max>

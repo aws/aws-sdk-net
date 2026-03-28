@@ -1,3 +1,150 @@
+### 4.0.220.0 (2026-03-27 18:14 UTC)
+* BedrockAgentCore (4.0.14.0)
+	* Adding AgentCore Code Interpreter Node.js Runtime Support with an optional runtime field
+* BedrockAgentCoreControl (4.0.24.0)
+	* Adds support for custom code-based evaluators using customer-managed Lambda functions.
+* Neptunedata (4.0.4.6)
+	* Minor formatting changes to remove unnecessary symbols.
+* Omics (4.0.7.0)
+	* AWS HealthOmics now supports VPC networking, allowing users to connect runs to external resources with NAT gateway, AWS VPC resources, and more. New Configuration APIs support configuring VPC settings. StartRun API now accepts networkingMode and configurationName parameters to enable VPC networking.
+* Core 4.0.3.24
+	* Fixed HttpContentRequestStreamHandle to cancel SerializeToStreamAsync on dispose, preventing background event consumption that could drain the event publisher and cause retries to hang.
+	* Fixed SignatureDoesNotMatch errors for event stream requests (e.g., Transcribe Streaming) under concurrency by preventing SDK-level retries for event stream requests. The event publisher is a forward-only stream that cannot be rewound, and the AWS4EventSigner signature chain cannot be reset after events are signed during a failed attempt. Operation-level errors such as throttling are now surfaced to the caller for application-level retry.
+	* All service and extension packages updated to require new Core
+
+### 4.0.219.0 (2026-03-26 18:15 UTC)
+* BCMDataExports (4.0.3.0)
+	* With this release we are providing an option to accounts to have their export delivered to an S3 bucket that is not owned by the account.
+* CloudWatchLogs (4.0.16.0)
+	* This release adds parameter support to saved queries in CloudWatch Logs Insights. Define reusable query templates with named placeholders, invoke them using start query. Available in Console, CLI and SDK
+* ElasticMapReduce (4.0.9.0)
+	* Add StepExecutionRoleArn to RunJobFlow API
+* SageMaker (4.0.47.0)
+	* Release support for ml.r5d.16xlarge instance types for SageMaker HyperPod
+* TimestreamInfluxDB (4.0.6.0)
+	* Timestream for InfluxDB adds support for customer defined maintenance windows. This allows customers to define maintenance schedule during resource creation and updates
+* Core 4.0.3.23
+	* Fixed concurrent HTTP/2 event streaming requests (e.g., Amazon Transcribe Streaming) failing with SignatureDoesNotMatch and REFUSED_STREAM errors. The SDK now creates a dedicated HttpClient for each bidirectional event stream request to prevent HTTP/2 multiplexing, which is not supported by services like Amazon Transcribe Streaming that require one connection per stream.
+	* All service and extension packages updated to require new Core
+
+### 4.0.218.0 (2026-03-25 18:14 UTC)
+* ApiGatewayV2 (4.0.5.0)
+	* Added DISABLE IN PROGRESS and DISABLE FAILED Portal statuses.
+* ApplicationSignals (4.0.6.0)
+	* This release adds support for creating SLOs on RUM appMonitors, Synthetics canaries and services.
+* Batch (4.0.8.1)
+	* Documentation-only update for AWS Batch.
+* MarketplaceAgreement (4.0.4.0)
+	* The Variable Payments APIs enable AWS Marketplace Sellers to perform manage their payment requests (send, get, list, cancel).
+* Polly (4.0.6.0)
+	* Add support for Mu-law and A-law codecs for output format
+* S3 (4.0.19.2)
+	* Update docs for Amazon.S3.Transfer.ITransferUtility.OpenStreamWithResponse to add performance tips
+* Uxc (4.0.0.0)
+	* GA release of AccountCustomizations, used to manage account color, visible services, and visible regions settings in the AWS Management Console.
+* Core 4.0.3.22
+	* Optimize ParameterCollection sorting by leveraging ArrayPool for reduced allocations. 
+
+### 4.0.217.0 (2026-03-24 18:16 UTC)
+* BedrockAgentCoreControl (4.0.23.0)
+	* Adds SDK support for 1) Persist session state in AgentCore Runtime via filesystemConfigurations in CreateAgentRuntime, UpdateAgentRuntime, and GetAgentRuntime APIs, 2) Optional name-based filtering on AgentCore ListBrowserProfiles API.
+* ConnectCases (4.0.12.1)
+	* Tags on TagResourceRequest is allowed to contain null values
+* GameLift (4.0.7.4)
+	* Amazon GameLift Servers launches UDP ping beacons in the Beijing and Ningxia (China) Regions to help measure real-time network latency for multiplayer games. The ListLocations API is now available in these regions to provide endpoint domain and port information as part of the locations list.
+* MediaPackageV2 (4.0.11.0)
+	* Reduces the minimum allowed value for startOverWindowSeconds from 60 to 0, allowing customers to effectively disable the start-over window.
+* OpenSearchServerless (4.0.7.0)
+	* Adds support for updating the vector options field for existing collections.
+* PCS (4.0.13.0)
+	* This release adds support for custom slurmdbd and cgroup configuration in AWS PCS. Customers can now specify slurmdbd and cgroup settings to configure database accounting and reporting for their HPC workloads, and control resource allocation and limits for compute jobs.
+* RDS (4.0.19.0)
+	* Adds support in Aurora PostgreSQL serverless databases for express configuration based creation through WithExpressConfiguration in CreateDbCluster API, and for restoring clusters using RestoreDBClusterToPointInTime and RestoreDBClusterFromSnapshot APIs.
+* Extensions.CborProtocol (4.0.0.29)
+	* Unmarshall  null values in CBOR maps.
+
+### 4.0.216.0 (2026-03-23 18:18 UTC)
+* Batch (4.0.8.0)
+	* AWS Batch AMI Visibility feature support. Adds read-only batchImageStatus to Ec2Configuration to provide visibility on the status of Batch-vended AMIs used by Compute Environments.
+* ConnectCases (4.0.12.0)
+	* You can now use the UpdateRelatedItem API to update the content of comments and custom related items associated with a case.
+* DynamoDBv2 (4.0.17.1)
+	* Fix Key Expression issue with renamable sort keys.
+	* Extend Expression Builder for Projection expressions.
+* Lightsail (4.0.5.0)
+	* Add support for tagging of ContactMethod resource type
+* Omics (4.0.6.0)
+	* Adds support for batch workflow runs in Amazon Omics, enabling users to submit, manage, and monitor multiple runs as a single batch. Includes APIs to create, cancel, and delete batches, track submission statuses and counts, list runs within a batch, and configure default settings.
+* Core 4.0.3.21
+	* Render <important> and <note> XML doc tags as styled noteblock divs in the SDK reference documentation generator.
+
+### 4.0.215.0 (2026-03-20 18:24 UTC)
+* Backup (4.0.10.14)
+	* Fix Typo for S3Backup Options ( S3BackupACLs to BackupACLs)
+* DynamoDBv2 (4.0.17.0)
+	* Adding ReplicaArn to ReplicaDescription of a global table replica
+* OpenSearchService (4.0.13.0)
+	* Added support for Amazon Managed Service for Prometheus (AMP) as a connected data source in OpenSearch UI. Now users can analyze Prometheus metrics in OpenSearch UI without data copy.
+* VerifiedPermissions (4.0.7.0)
+	* Adds support for Policy Store Aliases, Policy Names, and Policy Template Names. These are customizable identifiers that can be used in place of Policy Store ids, Policy ids, and Policy Template ids respectively in Amazon Verified Permissions APIs.
+
+### 4.0.214.0 (2026-03-19 20:24 UTC)
+* Batch (4.0.7.0)
+	* AWS Batch now supports quota management, enabling administrators to allocate shared compute resources across teams and projects through quota shares with capacity limits, resource-sharing strategies, and priority-based preemption - currently available for SageMaker Training job queues.
+* BedrockAgentCore (4.0.13.0)
+	* This release includes SDK support for the following new features on AgentCore Built In Tools.  1. Enterprise Policies for AgentCore Browser Tool. 2. Root CA Configuration Support for AgentCore Browser Tool and Code Interpreter. 3. API changes to AgentCore Browser Profile APIs
+* BedrockAgentCoreControl (4.0.22.0)
+	* Adds support for the following new features. 1. Enterprise Policies support for AgentCore Browser Tool. 2. Root CA Configuration support for AgentCore Browser Tool and Code Interpreter.
+* DynamoDBv2 (4.0.16.0)
+	* [Breaking Change] Fix DynamoDB property converter precedence when a global converter is registered.
+	* Adds support for ReturnConsumedCapacity on Query/Scan DocumentClient.
+* EC2 (4.0.82.0)
+	* Amazon EC2 Fleet instant mode now supports launching instances into Interruptible Capacity Reservations, enabling customers to use spare capacity shared by Capacity Reservation owners within their AWS Organization.
+* ObservabilityAdmin (4.0.7.0)
+	* Adding a new field in the CreateCentralizationRuleForOrganization, UpdateCentralizationRuleForOrganization API and updating the GetCentralizationRuleForOrganization API response to include the new field
+* Polly (4.0.5.0)
+	* Added bi-directional streaming functionality through a new API, StartSpeechSynthesisStream. This API allows streaming input text through inbound events and receiving audio as part of an output stream simultaneously.
+* Core 4.0.3.20
+	* Fixed AssumeRoleWithWebIdentityCredentialsOptions.ProxySettings being ignored sometimes.
+
+### 4.0.213.0 (2026-03-18 18:57 UTC)
+* DSQL (4.0.9.0)
+	* Add configurable token expiry duration to DSQLAuthTokenGenerator. New overloads accept a TimeSpan parameter to set token lifetime, with validation between 0 and 7 days. Default remains 15 minutes for backwards compatibility.
+* EC2 (4.0.81.0)
+	* The DescribeInstanceTypes API now returns default connection tracking timeout values for TCP, UDP, and UDP stream via the new connectionTrackingConfiguration field on NetworkInfo.
+* MediaConvert (4.0.15.0)
+	* This update adds additional bitrate options for Dolby AC-4 audio outputs.
+* SageMakerRuntimeHTTP2 (4.0.0.1)
+	* Add support for SageMakerRuntimeHTTP2 bidirectional streaming. This is only supported in .NET8
+* Core 4.0.3.19
+	* Add DocumentJsonConverter to fix System.Text.Json serialization of Document types. Document's IEnumerable interfaces caused STJ to treat it as a collection, throwing InvalidDocumentTypeConversionException.
+	* Add support for event headers for event stream based APIs used in services like SageMakerRuntimeHttp2.
+	* All service and extension packages updated to require new Core
+
+### 4.0.212.0 (2026-03-17 18:18 UTC)
+* BedrockAgentCoreControl (4.0.21.0)
+	* Deprecating namespaces field and adding namespaceTemplates.
+* ElasticMapReduce (4.0.8.0)
+	* Add S3LoggingConfiguration to Control LogUploads
+* Glue (4.0.27.0)
+	* Provide approval to overwrite existing Lake Formation permissions on all child resources with the default permissions specified in 'CreateTableDefaultPermissions' and 'CreateDatabaseDefaultPermissions' when updating catalog. Allowed values are ["Accept","Deny"] .
+
+### 4.0.211.1 (2026-03-16 21:26 UTC)
+* Extensions.Bedrock.MEAI (4.0.6.1)
+	* Revert: Update `IChatClient` with latest `BedrockRuntime` / M.E.AI (adding support for multi-modal tool returns and citations with URIs)
+
+### 4.0.211.0 (2026-03-16 18:24 UTC)
+* Bedrock (4.0.23.0)
+	* You can now generate policy scenarios on demand using the new GENERATE POLICY SCENARIOS build workflow type. Scenarios will no longer be automatically generated during INGEST CONTENT, REFINE POLICY, and IMPORT POLICY workflows, resulting in faster completion times for these operations.
+* BedrockAgentCore (4.0.12.0)
+	* Provide support to perform deterministic operations on agent runtime through shell command executions via the new InvokeAgentRuntimeCommand API
+* BedrockAgentCoreControl (4.0.20.0)
+	* Supporting hosting of public ECR Container Images in AgentCore Runtime
+* ECS (4.0.15.0)
+	* Amazon ECS now supports configuring whether tags are propagated to the EC2 Instance Metadata Service (IMDS) for instances launched by the Managed Instances capacity provider. This gives customers control over tag visibility in IMDS when using ECS Managed Instances.
+* Extensions.Bedrock.MEAI (4.0.6.0)
+	* Update `IChatClient` with latest `BedrockRuntime` / M.E.AI (adding support for multi-modal tool returns and citations with URIs)
+
 ### 4.0.210.0 (2026-03-13 18:18 UTC)
 * APIGateway (4.0.6.0)
 	* API Gateway now supports an additional security policy "SecurityPolicy-TLS13-1-2-FIPS-PFS-PQ-2025-09" for REST APIs and custom domain names. The new policy is compliant with TLS 1.3, Federal Information Processing Standards (FIPS), Perfect Forward Secrecy (PFS), and post-quantum (PQ) cryptography

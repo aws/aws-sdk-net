@@ -47,6 +47,7 @@ namespace Amazon.Lightsail.Model
     {
         private string _contactEndpoint;
         private ContactProtocol _protocol;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactEndpoint. 
@@ -133,6 +134,33 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag keys and optional values to add to the contact method during create.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>TagResource</c> action to tag a resource after it's created.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

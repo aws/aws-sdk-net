@@ -725,7 +725,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3CoreParameters.DataFusionConfig</property>
-    <pattern>[a-zA-Z0-9_]+=[^,\s]+(?:,[a-zA-Z0-9_]+=[^,\s]+)*</pattern>
+    <pattern>[a-zA-Z0-9_.]+:[^,\s]+(?:,[a-zA-Z0-9_.]+:[^,\s]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3CoreParameters.DataFusionMaxParquetFanout</property>
@@ -835,7 +835,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3EnterpriseParameters.DataFusionConfig</property>
-    <pattern>[a-zA-Z0-9_]+=[^,\s]+(?:,[a-zA-Z0-9_]+=[^,\s]+)*</pattern>
+    <pattern>[a-zA-Z0-9_.]+:[^,\s]+(?:,[a-zA-Z0-9_.]+:[^,\s]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3EnterpriseParameters.DataFusionMaxParquetFanout</property>
@@ -936,6 +936,18 @@
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv3EnterpriseParameters.WalSnapshotSize</property>
     <min>1</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.MaintenanceSchedule.PreferredMaintenanceWindow</property>
+    <min>0</min>
+    <max>19</max>
+    <pattern>$|^(Mon|Tue|Wed|Thu|Fri|Sat|Sun):([01]\d|2[0-3]):[0-5]\d-(Mon|Tue|Wed|Thu|Fri|Sat|Sun):([01]\d|2[0-3]):[0-5]\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.MaintenanceSchedule.Timezone</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>(UTC|[A-Za-z_]+/[A-Za-z0-9_]+(/[A-Za-z0-9_]+)?)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.PercentOrAbsoluteLong.Absolute</property>

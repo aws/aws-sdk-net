@@ -44,8 +44,11 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// The action to take when a job is at the head of the job queue in the specified state
-        /// for the specified period of time. The only supported value is <c>CANCEL</c>, which
-        /// will cancel the job.
+        /// for the specified period of time. For job queues connected to a <c>ECS</c>, <c>FARGATE</c>
+        /// or <c>EKS</c> compute environment, the only supported value is <c>CANCEL</c>, which
+        /// will cancel the job. For job queues connected to a <c>SAGEMAKER_TRAINING</c> service
+        /// environment, the only supported value is <c>TERMINATE</c>, which will terminate the
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

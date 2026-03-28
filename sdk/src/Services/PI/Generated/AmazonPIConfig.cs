@@ -33,7 +33,7 @@ namespace Amazon.PI
     public partial class AmazonPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PI", "4.0.2.18");
+            InternalSDKUtils.BuildUserAgentString("PI", "4.0.2.21");
 
         private static readonly AmazonPIEndpointResolver EndpointResolver =
             new AmazonPIEndpointResolver();

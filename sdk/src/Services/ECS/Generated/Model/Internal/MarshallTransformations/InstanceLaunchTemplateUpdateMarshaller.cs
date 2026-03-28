@@ -63,6 +63,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Ec2InstanceProfileArn);
             }
 
+            if(requestObject.IsSetInstanceMetadataTagsPropagation())
+            {
+                context.Writer.WritePropertyName("instanceMetadataTagsPropagation");
+                context.Writer.WriteBooleanValue(requestObject.InstanceMetadataTagsPropagation.Value);
+            }
+
             if(requestObject.IsSetInstanceRequirements())
             {
                 context.Writer.WritePropertyName("instanceRequirements");

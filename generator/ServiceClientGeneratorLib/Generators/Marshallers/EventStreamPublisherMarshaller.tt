@@ -10,6 +10,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Amazon.Runtime.EventStreams;
+using System.Collections.Generic;
 <#
     if (this.Config.ServiceModel.Type == ServiceType.Cbor) 
     {
@@ -52,6 +53,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             byte[] eventPayload;
             string contentType;
             string eventType;
+            IList<EventStreamHeader> eventHeaders;
 <#
     for (var i = 0; i < this.Structure.Members.Count; i++)
     {
@@ -69,6 +71,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                     var context = CreateCborMarshallerContext(writer);
                     context.Writer.WriteStartMap(null);
                     <#=member.ModelShape.Name#>Marshaller.Instance.Marshall((<#=member.ModelShape.Name#>)evnt, context);
+                    eventHeaders = context.Request.EventHeaders;
                     context.Writer.WriteEndMap();
 <#
     }
@@ -79,6 +82,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 var context = CreateJsonMarshallerContext(memoryStream);
                 context.Writer.WriteStartObject();
                 <#=member.ModelShape.Name#>Marshaller.Instance.Marshall((<#=member.ModelShape.Name#>)evnt, context);
+                eventHeaders = context.Request.EventHeaders;
                 context.Writer.WriteEndObject();
                 context.Writer.Flush();
 <#
@@ -138,7 +142,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 throw new Amazon.Runtime.AmazonClientException($"Type {evnt.GetType().FullName} is not a known event type for this streaming operation");
             }
 
-            return CreateEventStreamMessage(eventType: eventType, contentType: contentType, marshalledEventHeaders: null, eventPayload: eventPayload);
+            return CreateEventStreamMessage(eventType: eventType, contentType: contentType, marshalledEventHeaders: eventHeaders, eventPayload: eventPayload);
         }
     }
 }

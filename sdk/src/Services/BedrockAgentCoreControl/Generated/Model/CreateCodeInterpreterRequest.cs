@@ -35,12 +35,37 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CreateCodeInterpreterRequest : AmazonBedrockAgentCoreControlRequest
     {
+        private List<Certificate> _certificates = AWSConfigs.InitializeCollections ? new List<Certificate>() : null;
         private string _clientToken;
         private string _description;
         private string _executionRoleArn;
         private string _name;
         private CodeInterpreterNetworkConfiguration _networkConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Certificates. 
+        /// <para>
+        /// A list of certificates to install in the code interpreter.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Certificate> Certificates
+        {
+            get { return this._certificates; }
+            set { this._certificates = value; }
+        }
+
+        // Check to see if Certificates property is set
+        internal bool IsSetCertificates()
+        {
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 

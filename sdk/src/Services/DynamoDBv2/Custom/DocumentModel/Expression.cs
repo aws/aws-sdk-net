@@ -13,14 +13,13 @@
 * permissions and limitations under the License.
 */
 
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Internal;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-
-using Amazon.DynamoDBv2.Model;
-using Amazon.Util;
-
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     /// <summary>
@@ -247,7 +246,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
             }
         }
-
 
         internal static void ApplyExpression(QueryRequest request, Table table,
             Expression keyExpression, Expression filterExpression)

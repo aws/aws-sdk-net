@@ -10,18 +10,5 @@
         }
       ]
     }
-  },
-  "useNullableType": {
-    "JsonMapsInputOutput": [
-      "sparseBooleanMap",
-      "sparseNumberMap"
-    ],
-    "SparseJsonMapsInputOutput": [
-      "sparseStructMap",
-      "sparseNumberMap",
-      "sparseBooleanMap",
-      "sparseStringMap",
-      "sparseSetMap"
-    ]
   }
 }

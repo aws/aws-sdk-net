@@ -3,8 +3,7 @@
     "updateMinimum": false,
     "type": "patch",
     "changeLogMessages": [
-      "Resolving runtime dependencies is now automatically compatible with trimming and Native AOT, without needing to use the `GlobalRuntimeDependencyRegistry` class, which was deprecated.",
-      "Fixed AssumeRoleWithWebIdentityCredentialsOptions.ProxySettings being ignored sometimes."
+      "Resolving runtime dependencies is now automatically compatible with trimming and Native AOT, without needing to use the `GlobalRuntimeDependencyRegistry` class, which was deprecated."
     ]
   },
   "services": [

@@ -153,6 +153,72 @@ namespace Amazon.MarketplaceAgreement
 
 
     /// <summary>
+    /// Constants used for properties of type PaymentRequestStatus.
+    /// </summary>
+    public class PaymentRequestStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for PaymentRequestStatus
+        /// </summary>
+        public static readonly PaymentRequestStatus APPROVED = new PaymentRequestStatus("APPROVED");
+        /// <summary>
+        /// Constant CANCELLED for PaymentRequestStatus
+        /// </summary>
+        public static readonly PaymentRequestStatus CANCELLED = new PaymentRequestStatus("CANCELLED");
+        /// <summary>
+        /// Constant PENDING_APPROVAL for PaymentRequestStatus
+        /// </summary>
+        public static readonly PaymentRequestStatus PENDING_APPROVAL = new PaymentRequestStatus("PENDING_APPROVAL");
+        /// <summary>
+        /// Constant REJECTED for PaymentRequestStatus
+        /// </summary>
+        public static readonly PaymentRequestStatus REJECTED = new PaymentRequestStatus("REJECTED");
+        /// <summary>
+        /// Constant VALIDATING for PaymentRequestStatus
+        /// </summary>
+        public static readonly PaymentRequestStatus VALIDATING = new PaymentRequestStatus("VALIDATING");
+        /// <summary>
+        /// Constant VALIDATION_FAILED for PaymentRequestStatus
+        /// </summary>
+        public static readonly PaymentRequestStatus VALIDATION_FAILED = new PaymentRequestStatus("VALIDATION_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentRequestStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentRequestStatus FindValue(string value)
+        {
+            return FindValue<PaymentRequestStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentRequestStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -162,6 +228,14 @@ namespace Amazon.MarketplaceAgreement
         /// Constant Agreement for ResourceType
         /// </summary>
         public static readonly ResourceType Agreement = new ResourceType("Agreement");
+        /// <summary>
+        /// Constant Charge for ResourceType
+        /// </summary>
+        public static readonly ResourceType Charge = new ResourceType("Charge");
+        /// <summary>
+        /// Constant PaymentRequest for ResourceType
+        /// </summary>
+        public static readonly ResourceType PaymentRequest = new ResourceType("PaymentRequest");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -263,6 +337,14 @@ namespace Amazon.MarketplaceAgreement
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_CATALOG = new ValidationExceptionReason("INVALID_CATALOG");
         /// <summary>
+        /// Constant INVALID_CHARGE_AMOUNT for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_CHARGE_AMOUNT = new ValidationExceptionReason("INVALID_CHARGE_AMOUNT");
+        /// <summary>
+        /// Constant INVALID_DESCRIPTION for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_DESCRIPTION = new ValidationExceptionReason("INVALID_DESCRIPTION");
+        /// <summary>
         /// Constant INVALID_FILTER_NAME for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_FILTER_NAME = new ValidationExceptionReason("INVALID_FILTER_NAME");
@@ -275,9 +357,29 @@ namespace Amazon.MarketplaceAgreement
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_MAX_RESULTS = new ValidationExceptionReason("INVALID_MAX_RESULTS");
         /// <summary>
+        /// Constant INVALID_NAME for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_NAME = new ValidationExceptionReason("INVALID_NAME");
+        /// <summary>
         /// Constant INVALID_NEXT_TOKEN for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_NEXT_TOKEN = new ValidationExceptionReason("INVALID_NEXT_TOKEN");
+        /// <summary>
+        /// Constant INVALID_PARTY_TYPE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_PARTY_TYPE = new ValidationExceptionReason("INVALID_PARTY_TYPE");
+        /// <summary>
+        /// Constant INVALID_PAYMENT_REQUEST_ID for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_PAYMENT_REQUEST_ID = new ValidationExceptionReason("INVALID_PAYMENT_REQUEST_ID");
+        /// <summary>
+        /// Constant INVALID_PAYMENT_REQUEST_STATUS for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_PAYMENT_REQUEST_STATUS = new ValidationExceptionReason("INVALID_PAYMENT_REQUEST_STATUS");
+        /// <summary>
+        /// Constant INVALID_REJECTION_REASON for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_REJECTION_REASON = new ValidationExceptionReason("INVALID_REJECTION_REASON");
         /// <summary>
         /// Constant INVALID_SORT_BY for ValidationExceptionReason
         /// </summary>
@@ -287,9 +389,33 @@ namespace Amazon.MarketplaceAgreement
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_SORT_ORDER = new ValidationExceptionReason("INVALID_SORT_ORDER");
         /// <summary>
+        /// Constant INVALID_TERM_ID for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_TERM_ID = new ValidationExceptionReason("INVALID_TERM_ID");
+        /// <summary>
         /// Constant MISSING_AGREEMENT_ID for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason MISSING_AGREEMENT_ID = new ValidationExceptionReason("MISSING_AGREEMENT_ID");
+        /// <summary>
+        /// Constant MISSING_CHARGE_AMOUNT for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_CHARGE_AMOUNT = new ValidationExceptionReason("MISSING_CHARGE_AMOUNT");
+        /// <summary>
+        /// Constant MISSING_NAME for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_NAME = new ValidationExceptionReason("MISSING_NAME");
+        /// <summary>
+        /// Constant MISSING_PARTY_TYPE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_PARTY_TYPE = new ValidationExceptionReason("MISSING_PARTY_TYPE");
+        /// <summary>
+        /// Constant MISSING_PAYMENT_REQUEST_ID for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_PAYMENT_REQUEST_ID = new ValidationExceptionReason("MISSING_PAYMENT_REQUEST_ID");
+        /// <summary>
+        /// Constant MISSING_TERM_ID for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_TERM_ID = new ValidationExceptionReason("MISSING_TERM_ID");
         /// <summary>
         /// Constant OTHER for ValidationExceptionReason
         /// </summary>

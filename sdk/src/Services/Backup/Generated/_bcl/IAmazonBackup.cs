@@ -2080,9 +2080,10 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Describes whether the Amazon Web Services account is opted in to cross-account backup.
-        /// Returns an error if the account is not a member of an Organizations organization.
-        /// Example: <c>describe-global-settings --region us-west-2</c>
+        /// Describes whether the Amazon Web Services account has enabled different cross-account
+        /// management options, including cross-account backup, multi-party approval, and delegated
+        /// administrator. Returns an error if the account is not a member of an Organizations
+        /// organization. Example: <c>describe-global-settings --region us-west-2</c>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalSettings service method.</param>
         /// 
@@ -2100,9 +2101,10 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Describes whether the Amazon Web Services account is opted in to cross-account backup.
-        /// Returns an error if the account is not a member of an Organizations organization.
-        /// Example: <c>describe-global-settings --region us-west-2</c>
+        /// Describes whether the Amazon Web Services account has enabled different cross-account
+        /// management options, including cross-account backup, multi-party approval, and delegated
+        /// administrator. Returns an error if the account is not a member of an Organizations
+        /// organization. Example: <c>describe-global-settings --region us-west-2</c>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalSettings service method.</param>
         /// <param name="cancellationToken">
@@ -6184,9 +6186,10 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates whether the Amazon Web Services account is opted in to cross-account backup.
-        /// Returns an error if the account is not an Organizations management account. Use the
-        /// <c>DescribeGlobalSettings</c> API to determine the current settings.
+        /// Updates whether the Amazon Web Services account has enabled different cross-account
+        /// management options, including cross-account backup, multi-party approval, and delegated
+        /// administrator. Returns an error if the account is not an Organizations management
+        /// account. Use the <c>DescribeGlobalSettings</c> API to determine the current settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
         /// 
@@ -6211,9 +6214,10 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates whether the Amazon Web Services account is opted in to cross-account backup.
-        /// Returns an error if the account is not an Organizations management account. Use the
-        /// <c>DescribeGlobalSettings</c> API to determine the current settings.
+        /// Updates whether the Amazon Web Services account has enabled different cross-account
+        /// management options, including cross-account backup, multi-party approval, and delegated
+        /// administrator. Returns an error if the account is not an Organizations management
+        /// account. Use the <c>DescribeGlobalSettings</c> API to determine the current settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
         /// <param name="cancellationToken">

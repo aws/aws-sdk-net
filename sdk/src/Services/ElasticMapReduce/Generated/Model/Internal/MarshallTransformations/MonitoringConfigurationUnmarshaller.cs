@@ -62,6 +62,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchLogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("S3LoggingConfiguration", targetDepth))
+                {
+                    var unmarshaller = S3LoggingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3LoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

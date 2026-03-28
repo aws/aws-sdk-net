@@ -211,7 +211,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             else
             {
                 string context = ComposeContext(parameterContext, marshallName);
-				string memberProperty = variableName + "." + member.PropertyName + (member.UseNullable ? ".Value" : string.Empty);
+				string memberProperty = variableName + "." + member.PropertyName;
 				if(string.IsNullOrEmpty(member.CustomMarshallerTransformation)) 
 				{
 #>

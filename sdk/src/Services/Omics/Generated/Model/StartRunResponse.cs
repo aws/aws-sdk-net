@@ -35,7 +35,9 @@ namespace Amazon.Omics.Model
     public partial class StartRunResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private ConfigurationDetails _configuration;
         private string _id;
+        private string _networkingMode;
         private string _runOutputUri;
         private RunStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -61,6 +63,24 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// Configuration details for the workflow run.
+        /// </para>
+        /// </summary>
+        public ConfigurationDetails Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The run's ID.
@@ -77,6 +97,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkingMode. 
+        /// <para>
+        /// Networking mode for the workflow run.
+        /// </para>
+        /// </summary>
+        public string NetworkingMode
+        {
+            get { return this._networkingMode; }
+            set { this._networkingMode = value; }
+        }
+
+        // Check to see if NetworkingMode property is set
+        internal bool IsSetNetworkingMode()
+        {
+            return this._networkingMode != null;
         }
 
         /// <summary>

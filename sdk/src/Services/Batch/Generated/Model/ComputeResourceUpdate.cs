@@ -200,7 +200,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances
         /// in the compute environment. If <c>Ec2Configuration</c> isn't specified, the default
-        /// is <c>ECS_AL2</c>.
+        /// is <c>ECS_AL2</c> for EC2 (ECS) compute environments and <c>EKS_AL2023</c> for EKS
+        /// compute environments.
         /// </para>
         ///  
         /// <para>

@@ -65,7 +65,6 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
             request.EventStreamPublisher = new ChatInputStreamPublisherMarshaller(publicRequest.InputStreamPublisher);
 
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-11-27";
             request.HttpMethod = "POST";
 

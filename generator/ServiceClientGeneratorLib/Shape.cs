@@ -41,6 +41,7 @@ namespace ServiceClientGenerator
         public const string EventKey = "event";
         public const string EventPayloadKey = "eventpayload";
         public const string EventHeaderKey = "eventheader";
+        public const string SparseKey = "sparse";
 
         public static readonly HashSet<string> NullableTypes = new HashSet<string> {
             "bool",
@@ -971,6 +972,14 @@ namespace ServiceClientGenerator
                 if (docNode == null)
                     return string.Empty;
                 return docNode.ToString();
+            }
+        }
+
+        public bool IsSparse
+        {
+            get
+            {
+                return this.data[SparseKey] != null ? (bool)this.data[SparseKey] : false;
             }
         }
     }

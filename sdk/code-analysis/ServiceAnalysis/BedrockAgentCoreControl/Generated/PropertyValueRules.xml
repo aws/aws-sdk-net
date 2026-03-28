@@ -1275,6 +1275,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ListBrowserProfilesRequest.Name</property>
+    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.ListBrowserProfilesRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
@@ -2131,7 +2135,7 @@
     <property>Amazon.BedrockAgentCoreControl.Model.ContainerConfiguration.ContainerUri</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>([0-9]{12})\.dkr\.ecr\.([a-z0-9-]+)\.amazonaws\.com/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(?::([^:@]{1,300}))?(?:@(.+))?</pattern>
+    <pattern>(([0-9]{12})\.dkr\.ecr\.([a-z0-9-]+)\.amazonaws\.com(\.cn)?|public\.ecr\.aws)/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(?::([^:@]{1,300}))?(?:@(.+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.Content.RawText</property>
@@ -2359,6 +2363,15 @@
     <min>1</min>
     <max>2048</max>
     <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.LambdaEvaluatorConfig.LambdaArn</property>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:([a-z]{2}(-gov)?-[a-z]+-\d{1}):(\d{12}):function:([a-zA-Z0-9-_.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.LambdaEvaluatorConfig.LambdaTimeoutInSeconds</property>
+    <min>1</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.LambdaInterceptorConfiguration.Arn</property>
@@ -2710,6 +2723,10 @@
     <pattern>arn:(aws|aws-us-gov):secretsmanager:[A-Za-z0-9-]{1,64}:[0-9]{12}:secret:[a-zA-Z0-9-_/+=.@!]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.SecretsManagerLocation.SecretArn</property>
+    <pattern>arn:aws(-[a-z-]+)?:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.SelfManagedConfigurationInput.HistoricalContextWindowSize</property>
     <min>0</min>
     <max>50</max>
@@ -2747,6 +2764,12 @@
     <property>Amazon.BedrockAgentCoreControl.Model.SessionConfig.SessionTimeoutMinutes</property>
     <min>1</min>
     <max>1440</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.SessionStorageConfiguration.MountPath</property>
+    <min>6</min>
+    <max>200</max>
+    <pattern>/mnt/[a-zA-Z0-9._-]+/?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.SlackOauth2ProviderConfigInput.ClientId</property>

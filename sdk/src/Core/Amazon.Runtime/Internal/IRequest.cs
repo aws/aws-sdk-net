@@ -31,6 +31,7 @@ namespace Amazon.Runtime.Internal
     /// Callers shouldn't ever interact directly with objects of this class.
     /// </para>
     /// </summary>
+    [AWSIsBackwardsCompatible]
     public interface IRequest
     {
         /// <summary>
@@ -58,6 +59,14 @@ namespace Amazon.Runtime.Internal
         /// Returns a dictionary of the headers included in this request.
         /// </summary>
         IDictionary<string, string> Headers
+        {
+            get;
+        }
+
+        /// <summary>
+        /// Returns a list of the event headers included in this request for event streaming operations
+        /// </summary>
+        IList<EventStreamHeader> EventHeaders
         {
             get;
         }

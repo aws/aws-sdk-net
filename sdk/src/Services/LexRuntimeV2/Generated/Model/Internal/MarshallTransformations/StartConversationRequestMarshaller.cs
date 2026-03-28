@@ -65,7 +65,6 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
             request.EventStreamPublisher = new StartConversationRequestEventStreamPublisherMarshaller(publicRequest.RequestEventStreamPublisher);
 
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";
             request.HttpMethod = "POST";
 

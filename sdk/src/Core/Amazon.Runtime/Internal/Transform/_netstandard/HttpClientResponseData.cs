@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.EventStreams;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,7 +31,14 @@ namespace Amazon.Runtime.Internal.Transform
         string[] _headerNames;
         Dictionary<string, string> _headers;
         HashSet<string> _headerNamesSet;
+        private Dictionary<string, IEventStreamHeader> _eventHeaders;
 
+        internal HttpClientResponseData(Dictionary<string, IEventStreamHeader> eventHeaders)
+        {
+            _response = null;
+            _eventHeaders = eventHeaders;
+            _headers = new Dictionary<string,string>();
+        }
         internal HttpClientResponseData(HttpResponseMessage response)
             : this(response, null, false)
         {
@@ -113,6 +121,18 @@ namespace Amazon.Runtime.Internal.Transform
                 return headerValues.FirstOrDefault();
 
             return string.Empty;
+        }
+
+        public IEventStreamHeader GetEventStreamHeader(string headerName)
+        {
+            if (_eventHeaders.ContainsKey(headerName))
+                return _eventHeaders[headerName];
+            return null;
+        }
+
+        public bool IsEventHeaderPresent(string headerName)
+        {
+            return _eventHeaders.ContainsKey(headerName);
         }
 
         public IHttpResponseBody ResponseBody

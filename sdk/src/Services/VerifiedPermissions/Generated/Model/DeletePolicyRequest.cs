@@ -49,6 +49,20 @@ namespace Amazon.VerifiedPermissions.Model
         /// <para>
         /// Specifies the ID of the policy that you want to delete.
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the policy name in place of the policy ID. When using a name, prefix it
+        /// with <c>name/</c>. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ID: <c>SPEXAMPLEabcdefg111111</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Name: <c>name/example-policy</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
         public string PolicyId
@@ -67,6 +81,23 @@ namespace Amazon.VerifiedPermissions.Model
         /// Gets and sets the property PolicyStoreId. 
         /// <para>
         /// Specifies the ID of the policy store that contains the policy that you want to delete.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify a policy store, use its ID or alias name. When using an alias name, prefix
+        /// it with <c>policy-store-alias/</c>. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ID: <c>PSEXAMPLEabcdefg111111</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name: <c>policy-store-alias/example-policy-store</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

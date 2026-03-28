@@ -71,6 +71,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test expressions for scan
                 await TestExpressionsOnScan(hashRangeTable);
+                await TestScanDocumentOperationRequestReturnConsumedCapacity(hashRangeTable);
 
                 // Test Query and Scan manual pagination
                 await TestPagination(hashRangeTable);
@@ -159,6 +160,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test expressions for scan
                 await TestExpressionsOnScan(hashRangeTable);
+                await TestScanDocumentOperationRequestReturnConsumedCapacity(hashRangeTable);
 
                 // Test Query and Scan manual pagination
                 await TestPagination(hashRangeTable);
@@ -2237,6 +2239,69 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             await hashRangeTable.DeleteItemAsync(doc2);
         }
 
+        private async Task TestScanDocumentOperationRequestReturnConsumedCapacity(ITable hashRangeTable)
+        {
+            await ClearTable(hashRangeTableName);
+
+            var doc1 = new Document
+            {
+                ["Name"] = "Lewis",
+                ["Age"] = 6,
+                ["School"] = "Elementary",
+                ["Company"] = "Big River",
+                ["Score"] = 110,
+                ["Manager"] = "Kirk"
+            };
+            await hashRangeTable.PutItemAsync(doc1);
+
+            var doc2 = new Document
+            {
+                ["Name"] = "Frida",
+                ["Age"] = 3,
+                ["School"] = "Preschool",
+                ["Company"] = "Big River",
+                ["Score"] = 120,
+                ["Manager"] = "Kirk"
+            };
+            await hashRangeTable.PutItemAsync(doc2);
+
+            var expression = new Expression
+            {
+                ExpressionStatement = "Age > :age",
+                ExpressionAttributeValues = { [":age"] = 5 }
+            };
+
+            var totalSearch = hashRangeTable.Scan(new ScanDocumentOperationRequest
+            {
+                FilterExpression = expression,
+                ReturnConsumedCapacity = ReturnConsumedCapacity.TOTAL
+            });
+
+            var totalDocs = await totalSearch.GetRemainingAsync();
+            Assert.AreEqual(1, totalDocs.Count);
+            Assert.IsNotNull(totalSearch.Metrics);
+            Assert.IsNotNull(totalSearch.Metrics.LastConsumedCapacity);
+            Assert.IsTrue(totalSearch.Metrics.ConsumedCapacityHistory.Count > 0);
+            Assert.IsTrue(totalSearch.Metrics.TotalCapacityUnits.HasValue || totalSearch.Metrics.TotalReadCapacityUnits.HasValue);
+
+            var indexSearch = hashRangeTable.Scan(new ScanDocumentOperationRequest
+            {
+                FilterExpression = expression,
+                IndexName = "GlobalIndex",
+                ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES
+            });
+
+            var indexDocs = await indexSearch.GetRemainingAsync();
+            Assert.AreEqual(1, indexDocs.Count);
+            Assert.IsNotNull(indexSearch.Metrics);
+            Assert.IsNotNull(indexSearch.Metrics.LastConsumedCapacity);
+            Assert.IsTrue(indexSearch.Metrics.ConsumedCapacityHistory.Count > 0);
+            Assert.IsNotNull(indexSearch.Metrics.LastConsumedCapacity.GlobalSecondaryIndexes);
+            Assert.IsTrue(indexSearch.Metrics.LastConsumedCapacity.GlobalSecondaryIndexes.ContainsKey("GlobalIndex"));
+
+            await hashRangeTable.DeleteItemAsync(doc1);
+            await hashRangeTable.DeleteItemAsync(doc2);
+        }
         private async Task TestExpressionPut(ITable hashTable)
         {
             Document doc = new Document

@@ -32,7 +32,7 @@ namespace Amazon.RestJsonProtocol
     /// <summary>
     /// <para>Interface for accessing RestJsonProtocol</para>
     ///
-    /// A REST JSON service that sends JSON requests and responses.
+    /// 
     /// </summary>
     public partial interface IAmazonRestJsonProtocol : IAmazonService, IDisposable
     {
@@ -728,6 +728,34 @@ namespace Amazon.RestJsonProtocol
         /// <returns>The response from the HttpPrefixHeadersInResponse service method, as returned by RestJsonProtocol.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpPrefixHeadersInResponse">REST API Reference for HttpPrefixHeadersInResponse Operation</seealso>
         Task<HttpPrefixHeadersInResponseResponse> HttpPrefixHeadersInResponseAsync(HttpPrefixHeadersInResponseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  HttpQueryParamsOnlyOperation
+
+
+        /// <summary>
+        /// This example tests httpQueryParams when no other query parameters exist.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the HttpQueryParamsOnlyOperation service method.</param>
+        /// 
+        /// <returns>The response from the HttpQueryParamsOnlyOperation service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpQueryParamsOnlyOperation">REST API Reference for HttpQueryParamsOnlyOperation Operation</seealso>
+        HttpQueryParamsOnlyOperationResponse HttpQueryParamsOnlyOperation(HttpQueryParamsOnlyOperationRequest request);
+
+
+
+        /// <summary>
+        /// This example tests httpQueryParams when no other query parameters exist.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the HttpQueryParamsOnlyOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the HttpQueryParamsOnlyOperation service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/HttpQueryParamsOnlyOperation">REST API Reference for HttpQueryParamsOnlyOperation Operation</seealso>
+        Task<HttpQueryParamsOnlyOperationResponse> HttpQueryParamsOnlyOperationAsync(HttpQueryParamsOnlyOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1648,6 +1676,62 @@ namespace Amazon.RestJsonProtocol
         /// <returns>The response from the SimpleScalarProperties service method, as returned by RestJsonProtocol.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SimpleScalarProperties">REST API Reference for SimpleScalarProperties Operation</seealso>
         Task<SimpleScalarPropertiesResponse> SimpleScalarPropertiesAsync(SimpleScalarPropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SparseJsonLists
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseJsonLists service method.</param>
+        /// 
+        /// <returns>The response from the SparseJsonLists service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SparseJsonLists">REST API Reference for SparseJsonLists Operation</seealso>
+        SparseJsonListsResponse SparseJsonLists(SparseJsonListsRequest request);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseJsonLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SparseJsonLists service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SparseJsonLists">REST API Reference for SparseJsonLists Operation</seealso>
+        Task<SparseJsonListsResponse> SparseJsonListsAsync(SparseJsonListsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SparseJsonMaps
+
+
+        /// <summary>
+        /// This example tests sparse map serialization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseJsonMaps service method.</param>
+        /// 
+        /// <returns>The response from the SparseJsonMaps service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SparseJsonMaps">REST API Reference for SparseJsonMaps Operation</seealso>
+        SparseJsonMapsResponse SparseJsonMaps(SparseJsonMapsRequest request);
+
+
+
+        /// <summary>
+        /// This example tests sparse map serialization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseJsonMaps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SparseJsonMaps service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/SparseJsonMaps">REST API Reference for SparseJsonMaps Operation</seealso>
+        Task<SparseJsonMapsResponse> SparseJsonMapsAsync(SparseJsonMapsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
