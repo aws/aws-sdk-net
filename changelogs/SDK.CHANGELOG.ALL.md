@@ -1,3 +1,29 @@
+### 4.0.221.0 (2026-03-30 18:27 UTC)
+* AppStream (4.0.7.0)
+	* Add support for URL Redirection
+* AutoScaling (4.0.9.0)
+	* Adds support for new instance lifecycle states introduced by the instance lifecycle policy and replace root volume features.
+* BedrockAgentCore (4.0.15.0)
+	* Adds Ground Truth support for AgentCore Evaluations (Evaluate)
+* CloudWatchLogs (4.0.17.0)
+	* Adds Lookup Tables to CloudWatch Logs for log enrichment using CSV key-value data with KMS encryption support.
+* Deadline (4.0.15.0)
+	* AWS Deadline Cloud now supports three new fleet auto scaling settings. With scale out rate, you can configure how quickly workers launch. With worker idle duration, you can set how long workers wait before shutting down. With standby worker count, you can keep idle workers ready for fast job start.
+* DevOpsAgent (4.0.0.0)
+	* AWS DevOps Agent General Availability.
+* ECS (4.0.16.0)
+	* Adding Local Storage support for ECS Managed Instances by introducing a new field "localStorageConfiguration" for CreateCapacityProvider and UpdateCapacityProvider APIs.
+* GameLift (4.0.7.7)
+	* Update CreateScript API documentation.
+* LakeFormation (4.0.4.10)
+	* Add setSourceIdentity to DataLakeSettings Parameters
+* OpenSearchService (4.0.14.0)
+	* Added Cluster Insights API's In OpenSearch Service SDK.
+* PartnerCentralAccount (4.0.2.0)
+	* KYB Supplemental Form enables partners who fail business verification to submit additional details and supporting documentation through a self-service form, triggering an automated re-verification without requiring manual intervention from support teams.
+* SageMaker (4.0.48.0)
+	* Added support for placement strategy and consolidation for SageMaker inference component endpoints. Customers can now configure how inference component copies are distributed across instances and availability zones (AZs), and enable automatic consolidation to optimizes resource utilization.
+
 ### 4.0.220.0 (2026-03-27 18:14 UTC)
 * BedrockAgentCore (4.0.14.0)
 	* Adding AgentCore Code Interpreter Node.js Runtime Support with an optional runtime field
