@@ -16,15 +16,6 @@ public class RealDynamoDbContextDeleteBenchmark : LiveDynamoDbContextDeleteBench
     public Task DeleteAsyncWithDeleteConfig() => State.ContextDeleteWithDeleteConfigAsync();
 
     [Benchmark]
-    public Task DeleteAsyncHashKey() => State.ContextDeleteHashKeyAsync();
-
-    [Benchmark]
-    public Task DeleteAsyncHashKeyWithOperationConfig() => State.ContextDeleteHashKeyWithOperationConfigAsync();
-
-    [Benchmark]
-    public Task DeleteAsyncHashKeyWithDeleteConfig() => State.ContextDeleteHashKeyWithDeleteConfigAsync();
-
-    [Benchmark]
     public Task DeleteAsyncHashKeyRangeKey() => State.ContextDeleteHashKeyRangeKeyAsync();
 
     [Benchmark]
