@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// This is the response object from the GetQueueLimitAssociation operation.
+    /// Domain fields for QueueLimitAssociation summary/response shapes, ordered before timestamps.
     /// </summary>
     public partial class GetQueueLimitAssociationResponse : AmazonWebServiceResponse
     {

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CustomerManagedFleetConfiguration Object
+    /// Response Unmarshaller for ServiceManagedEc2AutoScalingConfiguration Object
     /// </summary>  
-    public class CustomerManagedFleetConfigurationUnmarshaller : IJsonUnmarshaller<CustomerManagedFleetConfiguration, JsonUnmarshallerContext>
+    public class ServiceManagedEc2AutoScalingConfigurationUnmarshaller : IJsonUnmarshaller<ServiceManagedEc2AutoScalingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomerManagedFleetConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ServiceManagedEc2AutoScalingConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CustomerManagedFleetConfiguration unmarshalledObject = new CustomerManagedFleetConfiguration();
+            ServiceManagedEc2AutoScalingConfiguration unmarshalledObject = new ServiceManagedEc2AutoScalingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,22 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScalingConfiguration", targetDepth))
+                if (context.TestExpression("scaleOutWorkersPerMinute", targetDepth))
                 {
-                    var unmarshaller = CustomerManagedAutoScalingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AutoScalingConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.ScaleOutWorkersPerMinute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mode", targetDepth))
+                if (context.TestExpression("standbyWorkerCount", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.StandbyWorkerCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageProfileId", targetDepth))
+                if (context.TestExpression("workerIdleDurationSeconds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageProfileId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tagPropagationMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TagPropagationMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("workerCapabilities", targetDepth))
-                {
-                    var unmarshaller = CustomerManagedWorkerCapabilitiesUnmarshaller.Instance;
-                    unmarshalledObject.WorkerCapabilities = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.WorkerIdleDurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +79,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         }
 
 
-        private static CustomerManagedFleetConfigurationUnmarshaller _instance = new CustomerManagedFleetConfigurationUnmarshaller();        
+        private static ServiceManagedEc2AutoScalingConfigurationUnmarshaller _instance = new ServiceManagedEc2AutoScalingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CustomerManagedFleetConfigurationUnmarshaller Instance
+        public static ServiceManagedEc2AutoScalingConfigurationUnmarshaller Instance
         {
             get
             {

@@ -34,10 +34,29 @@ namespace Amazon.Deadline.Model
     /// </summary>
     public partial class CustomerManagedFleetConfiguration
     {
+        private CustomerManagedAutoScalingConfiguration _autoScalingConfiguration;
         private AutoScalingMode _mode;
         private string _storageProfileId;
         private TagPropagationMode _tagPropagationMode;
         private CustomerManagedWorkerCapabilities _workerCapabilities;
+
+        /// <summary>
+        /// Gets and sets the property AutoScalingConfiguration. 
+        /// <para>
+        /// The auto scaling configuration options for the customer managed fleet.
+        /// </para>
+        /// </summary>
+        public CustomerManagedAutoScalingConfiguration AutoScalingConfiguration
+        {
+            get { return this._autoScalingConfiguration; }
+            set { this._autoScalingConfiguration = value; }
+        }
+
+        // Check to see if AutoScalingConfiguration property is set
+        internal bool IsSetAutoScalingConfiguration()
+        {
+            return this._autoScalingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Mode. 

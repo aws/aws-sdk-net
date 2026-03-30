@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// This is the response object from the AssumeFleetRoleForRead operation.
+    /// Shared response body for AssumeRole operations where credentials are required. AssumeQueueRoleForWorkerResponse
+    /// is excluded because credentials is optional there because Queue.roleArn is optional,
+    /// so the mixin's @required trait would be incorrect.
     /// </summary>
     public partial class AssumeFleetRoleForReadResponse : AmazonWebServiceResponse
     {

@@ -46,6 +46,17 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAutoScalingConfiguration())
+            {
+                context.Writer.WritePropertyName("autoScalingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomerManagedAutoScalingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoScalingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("mode");
