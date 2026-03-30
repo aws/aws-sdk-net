@@ -147,6 +147,19 @@ namespace Amazon.AutoScaling.Model
         /// valid <c>StatusCode</c> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a>
         /// in the <i>Amazon EC2 Auto Scaling API Reference</i>. 
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>StartTimeLowerBound</c> and <c>StartTimeUpperBound</c> accept ISO 8601 formatted
+        /// timestamps. Timestamps without a timezone offset are assumed to be UTC. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>2000-01-18T08:15:00Z</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>2000-01-18T16:15:00+08:00</c> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string Name
