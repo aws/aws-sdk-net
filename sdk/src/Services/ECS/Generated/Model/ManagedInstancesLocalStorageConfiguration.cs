@@ -30,30 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The storage configuration for Amazon ECS Managed Instances. This defines the data
-    /// volume configuration for the instances.
+    /// The local storage configuration for Amazon ECS Managed Instances. This defines how
+    /// ECS uses and configures instance store volumes available on container instance.
     /// </summary>
-    public partial class ManagedInstancesStorageConfiguration
+    public partial class ManagedInstancesLocalStorageConfiguration
     {
-        private int? _storageSizeGiB;
+        private bool? _useLocalStorage;
 
         /// <summary>
-        /// Gets and sets the property StorageSizeGiB. 
+        /// Gets and sets the property UseLocalStorage. 
         /// <para>
-        /// The size of the data volume.
+        /// Use instance store volumes for data storage when available. EBS volumes are not provisioned
+        /// for data storage. If the container instance has multiple instance store volumes, a
+        /// single data volume is created. Consider defining instance store requirements using
+        /// the <c>localStorage</c>, <c>localStorageTypes</c> and <c>totalLocalStorageGB</c> properties.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public int? StorageSizeGiB
+        public bool? UseLocalStorage
         {
-            get { return this._storageSizeGiB; }
-            set { this._storageSizeGiB = value; }
+            get { return this._useLocalStorage; }
+            set { this._useLocalStorage = value; }
         }
 
-        // Check to see if StorageSizeGiB property is set
-        internal bool IsSetStorageSizeGiB()
+        // Check to see if UseLocalStorage property is set
+        internal bool IsSetUseLocalStorage()
         {
-            return this._storageSizeGiB.HasValue; 
+            return this._useLocalStorage.HasValue; 
         }
 
     }

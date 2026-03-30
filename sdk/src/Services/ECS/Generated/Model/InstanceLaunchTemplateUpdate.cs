@@ -47,6 +47,7 @@ namespace Amazon.ECS.Model
         private string _ec2InstanceProfileArn;
         private bool? _instanceMetadataTagsPropagation;
         private InstanceRequirementsRequest _instanceRequirements;
+        private ManagedInstancesLocalStorageConfiguration _localStorageConfiguration;
         private ManagedInstancesMonitoringOptions _monitoring;
         private ManagedInstancesNetworkConfiguration _networkConfiguration;
         private ManagedInstancesStorageConfiguration _storageConfiguration;
@@ -148,6 +149,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetInstanceRequirements()
         {
             return this._instanceRequirements != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalStorageConfiguration. 
+        /// <para>
+        /// The updated local storage configuration for Amazon ECS Managed Instances. Changes
+        /// to local storage settings apply to new instances launched after the update.
+        /// </para>
+        /// </summary>
+        public ManagedInstancesLocalStorageConfiguration LocalStorageConfiguration
+        {
+            get { return this._localStorageConfiguration; }
+            set { this._localStorageConfiguration = value; }
+        }
+
+        // Check to see if LocalStorageConfiguration property is set
+        internal bool IsSetLocalStorageConfiguration()
+        {
+            return this._localStorageConfiguration != null;
         }
 
         /// <summary>

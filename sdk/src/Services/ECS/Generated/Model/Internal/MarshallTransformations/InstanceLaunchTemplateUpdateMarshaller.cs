@@ -80,6 +80,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetLocalStorageConfiguration())
+            {
+                context.Writer.WritePropertyName("localStorageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManagedInstancesLocalStorageConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LocalStorageConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMonitoring())
             {
                 context.Writer.WritePropertyName("monitoring");

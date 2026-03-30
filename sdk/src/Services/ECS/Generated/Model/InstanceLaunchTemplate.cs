@@ -43,6 +43,7 @@ namespace Amazon.ECS.Model
         private bool? _fipsEnabled;
         private bool? _instanceMetadataTagsPropagation;
         private InstanceRequirementsRequest _instanceRequirements;
+        private ManagedInstancesLocalStorageConfiguration _localStorageConfiguration;
         private ManagedInstancesMonitoringOptions _monitoring;
         private ManagedInstancesNetworkConfiguration _networkConfiguration;
         private ManagedInstancesStorageConfiguration _storageConfiguration;
@@ -246,6 +247,25 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LocalStorageConfiguration. 
+        /// <para>
+        /// The local storage configuration for Amazon ECS Managed Instances. This defines how
+        /// ECS uses instance store volumes available on the container instance.
+        /// </para>
+        /// </summary>
+        public ManagedInstancesLocalStorageConfiguration LocalStorageConfiguration
+        {
+            get { return this._localStorageConfiguration; }
+            set { this._localStorageConfiguration = value; }
+        }
+
+        // Check to see if LocalStorageConfiguration property is set
+        internal bool IsSetLocalStorageConfiguration()
+        {
+            return this._localStorageConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Monitoring. 
         /// <para>
         /// CloudWatch provides two categories of monitoring: basic monitoring and detailed monitoring.
@@ -291,8 +311,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StorageConfiguration. 
         /// <para>
-        /// The storage configuration for Amazon ECS Managed Instances. This defines the root
-        /// volume size and type for the instances.
+        /// The storage configuration for Amazon ECS Managed Instances. This defines the data
+        /// volume properties for the instances.
         /// </para>
         /// </summary>
         public ManagedInstancesStorageConfiguration StorageConfiguration

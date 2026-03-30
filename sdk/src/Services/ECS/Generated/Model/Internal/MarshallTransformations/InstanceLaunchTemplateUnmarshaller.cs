@@ -92,6 +92,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceRequirements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("localStorageConfiguration", targetDepth))
+                {
+                    var unmarshaller = ManagedInstancesLocalStorageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LocalStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("monitoring", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
