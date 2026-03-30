@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Content event containing stdout or stderr output
+    /// An event that contains incremental output from a command execution. This event streams
+    /// standard output and standard error content as it becomes available during command
+    /// execution.
     /// </summary>
     public partial class ContentDeltaEvent
     {
@@ -40,7 +42,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Stderr. 
         /// <para>
-        /// Standard error content
+        /// The standard error content from the command execution. This field contains the incremental
+        /// output written to stderr by the executing command.
         /// </para>
         /// </summary>
         public string Stderr
@@ -58,7 +61,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Stdout. 
         /// <para>
-        /// Standard output content
+        /// The standard output content from the command execution. This field contains the incremental
+        /// output written to stdout by the executing command.
         /// </para>
         /// </summary>
         public string Stdout

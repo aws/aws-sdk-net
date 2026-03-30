@@ -30,11 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// An event that signals the start of content streaming from a command execution. This
-    /// event is sent when the command begins producing output.
+    /// A content block for ground truth data in evaluation reference inputs. Supports text
+    /// content for expected responses and assertions.
     /// </summary>
-    public partial class ContentStartEvent
+    public partial class EvaluationContent
     {
+        private string _text;
+
+        /// <summary>
+        /// Gets and sets the property Text. 
+        /// <para>
+        ///  The text content of the ground truth data. Used for expected response text and assertion
+        /// statements. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100000)]
+        public string Text
+        {
+            get { return this._text; }
+            set { this._text = value; }
+        }
+
+        // Check to see if Text property is set
+        internal bool IsSetText()
+        {
+            return this._text != null;
+        }
 
     }
 }

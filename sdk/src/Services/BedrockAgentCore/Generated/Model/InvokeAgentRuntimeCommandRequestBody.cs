@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Request body for InvokeAgentRuntimeCommand
+    /// The request body structure for the <c>InvokeAgentRuntimeCommand</c> operation, containing
+    /// the command to execute and optional configuration parameters.
     /// </summary>
     public partial class InvokeAgentRuntimeCommandRequestBody
     {
@@ -40,7 +41,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Command. 
         /// <para>
-        /// The command to execute in the runtime container
+        /// The shell command to execute on the agent runtime. This command is executed in the
+        /// runtime environment and its output is streamed back to the caller.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65536)]
@@ -59,7 +61,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// Command timeout in seconds (default: 300, min:1, max: 3600)
+        /// The maximum duration in seconds to wait for the command to complete. If the command
+        /// execution exceeds this timeout, it will be terminated. Default is 300 seconds. Minimum
+        /// is 1 second. Maximum is 3600 seconds.
         /// </para>
         /// </summary>
         public int? Timeout

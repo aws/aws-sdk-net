@@ -35,7 +35,8 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Response chunk containing exactly one of: contentStart, contentDelta, or contentStop
+    /// A structure representing a response chunk that contains exactly one of the possible
+    /// event types: <c>contentStart</c>, <c>contentDelta</c>, or <c>contentStop</c>.
     /// </summary>
     public partial class ResponseChunk
         : IEventStreamEvent
@@ -47,7 +48,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ContentDelta. 
         /// <para>
-        /// Middle chunks - stdout/stderr output
+        /// An event containing incremental output (stdout or stderr) from the command execution.
+        /// These are the middle chunks.
         /// </para>
         /// </summary>
         public ContentDeltaEvent ContentDelta
@@ -65,7 +67,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ContentStart. 
         /// <para>
-        /// First chunk - indicates command execution has started
+        /// An event indicating the start of content streaming from the command execution. This
+        /// is the first chunk received.
         /// </para>
         /// </summary>
         public ContentStartEvent ContentStart
@@ -83,7 +86,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ContentStop. 
         /// <para>
-        /// Last chunk - indicates command execution has completed
+        /// An event indicating the completion of the command execution, including the exit code
+        /// and final status. This is the last chunk received.
         /// </para>
         /// </summary>
         public ContentStopEvent ContentStop

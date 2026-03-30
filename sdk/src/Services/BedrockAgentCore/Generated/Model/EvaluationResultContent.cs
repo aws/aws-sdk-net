@@ -43,6 +43,7 @@ namespace Amazon.BedrockAgentCore.Model
         private string _evaluatorId;
         private string _evaluatorName;
         private string _explanation;
+        private List<string> _ignoredReferenceInputFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _label;
         private TokenUsage _tokenUsage;
         private double? _value;
@@ -192,6 +193,31 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetExplanation()
         {
             return this._explanation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IgnoredReferenceInputFields. 
+        /// <para>
+        ///  The list of reference input field names that were provided but not used by the evaluator.
+        /// Helps identify which ground truth data was not consumed during evaluation. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> IgnoredReferenceInputFields
+        {
+            get { return this._ignoredReferenceInputFields; }
+            set { this._ignoredReferenceInputFields = value; }
+        }
+
+        // Check to see if IgnoredReferenceInputFields property is set
+        internal bool IsSetIgnoredReferenceInputFields()
+        {
+            return this._ignoredReferenceInputFields != null && (this._ignoredReferenceInputFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

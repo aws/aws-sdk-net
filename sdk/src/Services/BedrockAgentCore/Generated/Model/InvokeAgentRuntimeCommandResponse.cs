@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Response for InvokeAgentRuntimeCommand operation
+    /// Response for InvokeAgentRuntimeCommand operation.
     /// </summary>
     public partial class InvokeAgentRuntimeCommandResponse : AmazonWebServiceResponse, IDisposable
     {
@@ -84,7 +84,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property RuntimeSessionId. 
         /// <para>
-        /// Runtime session identifier
+        /// The unique identifier of the runtime session in which the command was executed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -122,7 +122,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Stream. 
         /// <para>
-        /// Streaming output containing command execution events
+        /// The streaming output from the command execution. This stream contains events that
+        /// provide real-time updates including standard output, standard error, and completion
+        /// status.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

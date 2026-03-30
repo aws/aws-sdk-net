@@ -35,8 +35,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Streaming output for InvokeAgentRuntimeCommand operation Delivers typed events: contentStart
-    /// (first), contentDelta (middle), contentStop (last)
+    /// The streaming output union for the <c>InvokeAgentRuntimeCommand</c> operation. This
+    /// union delivers typed events: <c>contentStart</c> (first), <c>contentDelta</c> (middle),
+    /// and <c>contentStop</c> (last).
     /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "InvokeAgentRuntimeCommandStreamOutputCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventOutputStream. Users need to be able to call Dispose.")]

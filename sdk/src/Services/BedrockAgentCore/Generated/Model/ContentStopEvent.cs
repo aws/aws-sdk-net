@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Final event indicating command execution has completed
+    /// An event that signals the completion of a command execution. This event contains the
+    /// final status and exit code of the executed command.
     /// </summary>
     public partial class ContentStopEvent
     {
@@ -40,7 +41,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ExitCode. 
         /// <para>
-        /// Exit code: 0 = success, -1 = platform error, &gt;0 = command error
+        /// The exit code returned by the executed command. An exit code of 0 indicates successful
+        /// execution, -1 indicates a platform error, and values greater than 0 indicate command-specific
+        /// errors.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +62,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Execution status
+        /// The final status of the command execution. Valid values are <c>COMPLETED</c> for successful
+        /// completion or <c>TIMED_OUT</c> if the command exceeded the specified timeout.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

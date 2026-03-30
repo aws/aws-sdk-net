@@ -1616,8 +1616,22 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Executes a command in a runtime session container. Returns streaming output with contentStart,
-        /// contentDelta, and contentStop events.
+        /// Executes a command in a runtime session container and streams the output back to the
+        /// caller. This operation allows you to run shell commands within the agent runtime environment
+        /// and receive real-time streaming responses including standard output and standard error.
+        /// 
+        ///  
+        /// <para>
+        /// To invoke a command, you must specify the agent runtime ARN and a runtime session
+        /// ID. The command execution supports streaming responses, allowing you to receive output
+        /// as it becomes available through <c>contentStart</c>, <c>contentDelta</c>, and <c>contentStop</c>
+        /// events.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:InvokeAgentRuntimeCommand</c>
+        /// permission.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeAgentRuntimeCommand service method.</param>
         /// <param name="cancellationToken">

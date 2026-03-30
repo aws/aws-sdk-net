@@ -31,8 +31,22 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeAgentRuntimeCommand operation.
-    /// Executes a command in a runtime session container. Returns streaming output with contentStart,
-    /// contentDelta, and contentStop events.
+    /// Executes a command in a runtime session container and streams the output back to the
+    /// caller. This operation allows you to run shell commands within the agent runtime environment
+    /// and receive real-time streaming responses including standard output and standard error.
+    /// 
+    ///  
+    /// <para>
+    /// To invoke a command, you must specify the agent runtime ARN and a runtime session
+    /// ID. The command execution supports streaming responses, allowing you to receive output
+    /// as it becomes available through <c>contentStart</c>, <c>contentDelta</c>, and <c>contentStop</c>
+    /// events.
+    /// </para>
+    ///  
+    /// <para>
+    /// To use this operation, you must have the <c>bedrock-agentcore:InvokeAgentRuntimeCommand</c>
+    /// permission.
+    /// </para>
     /// </summary>
     public partial class InvokeAgentRuntimeCommandRequest : AmazonBedrockAgentCoreRequest
     {
@@ -72,7 +86,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// Account ID (12 digits)
+        /// The identifier of the Amazon Web Services account for the agent runtime resource.
+        /// This parameter is required when you specify an agent ID instead of the full ARN for
+        /// <c>agentRuntimeArn</c>.
         /// </para>
         /// </summary>
         public string AccountId
@@ -90,7 +106,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeArn. 
         /// <para>
-        /// ARN of the agent runtime
+        /// The Amazon Resource Name (ARN) of the agent runtime on which to execute the command.
+        /// This identifies the specific agent runtime environment where the command will run.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -128,7 +145,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// Request body containing command and timeout
+        /// The request body containing the command to execute and optional configuration parameters
+        /// such as timeout settings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -168,7 +186,9 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// Version or alias qualifier
+        /// The qualifier to use for the agent runtime. This is an endpoint name that points to
+        /// a specific version. If not specified, Amazon Bedrock AgentCore uses the default endpoint
+        /// of the agent runtime.
         /// </para>
         /// </summary>
         public string Qualifier
@@ -186,7 +206,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property RuntimeSessionId. 
         /// <para>
-        /// Runtime session identifier
+        /// The unique identifier of the runtime session in which to execute the command. This
+        /// session ID is used to maintain state and context across multiple command invocations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]

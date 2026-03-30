@@ -765,6 +765,11 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.EvaluationContent.Text</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EvaluationResultContent.ErrorCode</property>
     <min>1</min>
     <max>1024</max>
