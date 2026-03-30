@@ -1405,6 +1405,318 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type InsightEntityType.
+    /// </summary>
+    public class InsightEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Account for InsightEntityType
+        /// </summary>
+        public static readonly InsightEntityType Account = new InsightEntityType("Account");
+        /// <summary>
+        /// Constant DomainName for InsightEntityType
+        /// </summary>
+        public static readonly InsightEntityType DomainName = new InsightEntityType("DomainName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightEntityType FindValue(string value)
+        {
+            return FindValue<InsightEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InsightFieldType.
+    /// </summary>
+    public class InsightFieldType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Metric for InsightFieldType
+        /// </summary>
+        public static readonly InsightFieldType Metric = new InsightFieldType("metric");
+        /// <summary>
+        /// Constant Text for InsightFieldType
+        /// </summary>
+        public static readonly InsightFieldType Text = new InsightFieldType("text");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightFieldType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightFieldType FindValue(string value)
+        {
+            return FindValue<InsightFieldType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightFieldType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InsightPriorityLevel.
+    /// </summary>
+    public class InsightPriorityLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRITICAL for InsightPriorityLevel
+        /// </summary>
+        public static readonly InsightPriorityLevel CRITICAL = new InsightPriorityLevel("CRITICAL");
+        /// <summary>
+        /// Constant HIGH for InsightPriorityLevel
+        /// </summary>
+        public static readonly InsightPriorityLevel HIGH = new InsightPriorityLevel("HIGH");
+        /// <summary>
+        /// Constant LOW for InsightPriorityLevel
+        /// </summary>
+        public static readonly InsightPriorityLevel LOW = new InsightPriorityLevel("LOW");
+        /// <summary>
+        /// Constant MEDIUM for InsightPriorityLevel
+        /// </summary>
+        public static readonly InsightPriorityLevel MEDIUM = new InsightPriorityLevel("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightPriorityLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightPriorityLevel FindValue(string value)
+        {
+            return FindValue<InsightPriorityLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightPriorityLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InsightSortOrder.
+    /// </summary>
+    public class InsightSortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for InsightSortOrder
+        /// </summary>
+        public static readonly InsightSortOrder ASC = new InsightSortOrder("ASC");
+        /// <summary>
+        /// Constant DESC for InsightSortOrder
+        /// </summary>
+        public static readonly InsightSortOrder DESC = new InsightSortOrder("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightSortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightSortOrder FindValue(string value)
+        {
+            return FindValue<InsightSortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightSortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InsightStatus.
+    /// </summary>
+    public class InsightStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for InsightStatus
+        /// </summary>
+        public static readonly InsightStatus ACTIVE = new InsightStatus("ACTIVE");
+        /// <summary>
+        /// Constant DISMISSED for InsightStatus
+        /// </summary>
+        public static readonly InsightStatus DISMISSED = new InsightStatus("DISMISSED");
+        /// <summary>
+        /// Constant RESOLVED for InsightStatus
+        /// </summary>
+        public static readonly InsightStatus RESOLVED = new InsightStatus("RESOLVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightStatus FindValue(string value)
+        {
+            return FindValue<InsightStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InsightType.
+    /// </summary>
+    public class InsightType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EVENT for InsightType
+        /// </summary>
+        public static readonly InsightType EVENT = new InsightType("EVENT");
+        /// <summary>
+        /// Constant RECOMMENDATION for InsightType
+        /// </summary>
+        public static readonly InsightType RECOMMENDATION = new InsightType("RECOMMENDATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightType FindValue(string value)
+        {
+            return FindValue<InsightType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IPAddressType.
     /// </summary>
     public class IPAddressType : ConstantClass

@@ -1919,6 +1919,59 @@ namespace Amazon.OpenSearchService
         }
         #endregion
         
+        #region  DescribeInsightDetails
+
+        internal virtual DescribeInsightDetailsResponse DescribeInsightDetails(DescribeInsightDetailsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeInsightDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInsightDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInsightDetailsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the details of an existing insight for an Amazon OpenSearch Service domain.
+        /// Returns detailed fields associated with the specified insight, such as text descriptions
+        /// and metric data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInsightDetails service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInsightDetails">REST API Reference for DescribeInsightDetails Operation</seealso>
+        public virtual Task<DescribeInsightDetailsResponse> DescribeInsightDetailsAsync(DescribeInsightDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeInsightDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInsightDetailsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInsightDetailsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeInstanceTypeLimits
 
         internal virtual DescribeInstanceTypeLimitsResponse DescribeInstanceTypeLimits(DescribeInstanceTypeLimitsRequest request)
@@ -3106,6 +3159,59 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = ListDomainsForPackageResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDomainsForPackageResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListInsights
+
+        internal virtual ListInsightsResponse ListInsights(ListInsightsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInsightsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists insights for an Amazon OpenSearch Service domain or Amazon Web Services account.
+        /// Returns a paginated list of insights based on the specified entity, filters, time
+        /// range, and sort order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInsights service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
+        public virtual Task<ListInsightsResponse> ListInsightsAsync(ListInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListInsightsResponse>(request, options, cancellationToken);
         }
         #endregion
         

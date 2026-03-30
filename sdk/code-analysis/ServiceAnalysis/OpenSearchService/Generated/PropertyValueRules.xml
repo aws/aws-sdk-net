@@ -349,6 +349,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeInsightDetailsRequest.InsightId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DescribeInstanceTypeLimitsRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -576,6 +581,11 @@
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListDomainsForPackageRequest.PackageID</property>
     <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListInsightsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListInstanceTypeDetailsRequest.DomainName</property>
@@ -1236,6 +1246,17 @@
     <min>10</min>
     <max>256</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.Insight.InsightId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.InsightEntity.Value</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>([a-z][a-z0-9\-]+|\d{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.JWTOptionsInput.RolesKey</property>
