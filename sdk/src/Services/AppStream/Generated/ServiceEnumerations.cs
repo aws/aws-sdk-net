@@ -1959,6 +1959,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly StackAttribute ACCESS_ENDPOINTS = new StackAttribute("ACCESS_ENDPOINTS");
         /// <summary>
+        /// Constant CONTENT_REDIRECTION for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute CONTENT_REDIRECTION = new StackAttribute("CONTENT_REDIRECTION");
+        /// <summary>
         /// Constant EMBED_HOST_DOMAINS for StackAttribute
         /// </summary>
         public static readonly StackAttribute EMBED_HOST_DOMAINS = new StackAttribute("EMBED_HOST_DOMAINS");
