@@ -86,6 +86,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SchedulingConfig", targetDepth))
+                {
+                    var unmarshaller = InferenceComponentSchedulingConfigUnmarshaller.Instance;
+                    unmarshalledObject.SchedulingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("StartupParameters", targetDepth))
                 {
                     var unmarshaller = InferenceComponentStartupParametersUnmarshaller.Instance;

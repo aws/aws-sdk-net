@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProductionVariantManagedInstanceScaling Object
+    /// Response Unmarshaller for InferenceComponentSchedulingConfig Object
     /// </summary>  
-    public class ProductionVariantManagedInstanceScalingUnmarshaller : IJsonUnmarshaller<ProductionVariantManagedInstanceScaling, JsonUnmarshallerContext>
+    public class InferenceComponentSchedulingConfigUnmarshaller : IJsonUnmarshaller<InferenceComponentSchedulingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProductionVariantManagedInstanceScaling Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InferenceComponentSchedulingConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ProductionVariantManagedInstanceScaling unmarshalledObject = new ProductionVariantManagedInstanceScaling();
+            InferenceComponentSchedulingConfig unmarshalledObject = new InferenceComponentSchedulingConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxInstanceCount", targetDepth))
+                if (context.TestExpression("AvailabilityZoneBalance", targetDepth))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxInstanceCount = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = InferenceComponentAvailabilityZoneBalanceUnmarshaller.Instance;
+                    unmarshalledObject.AvailabilityZoneBalance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinInstanceCount", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinInstanceCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ScaleInPolicy", targetDepth))
-                {
-                    var unmarshaller = ProductionVariantManagedInstanceScalingScaleInPolicyUnmarshaller.Instance;
-                    unmarshalledObject.ScaleInPolicy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("PlacementStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.PlacementStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProductionVariantManagedInstanceScalingUnmarshaller _instance = new ProductionVariantManagedInstanceScalingUnmarshaller();        
+        private static InferenceComponentSchedulingConfigUnmarshaller _instance = new InferenceComponentSchedulingConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProductionVariantManagedInstanceScalingUnmarshaller Instance
+        public static InferenceComponentSchedulingConfigUnmarshaller Instance
         {
             get
             {

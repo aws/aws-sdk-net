@@ -91,6 +91,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ModelName);
             }
 
+            if(requestObject.IsSetSchedulingConfig())
+            {
+                context.Writer.WritePropertyName("SchedulingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceComponentSchedulingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.SchedulingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetStartupParameters())
             {
                 context.Writer.WritePropertyName("StartupParameters");

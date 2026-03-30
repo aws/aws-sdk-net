@@ -11488,6 +11488,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.InferenceComponentAvailabilityZoneBalance.MaxImbalance</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.InferenceComponentCapacitySize.Value</property>
     <min>1</min>
   </property-value-rule>
@@ -13709,6 +13714,16 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantManagedInstanceScaling.MinInstanceCount</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariantManagedInstanceScalingScaleInPolicy.CooldownInMinutes</property>
+    <min>5</min>
+    <max>1440</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariantManagedInstanceScalingScaleInPolicy.MaximumStepSize</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantServerlessConfig.MaxConcurrency</property>

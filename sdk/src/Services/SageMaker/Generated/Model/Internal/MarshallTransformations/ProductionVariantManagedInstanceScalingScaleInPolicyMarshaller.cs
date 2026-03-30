@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProductionVariantManagedInstanceScaling Marshaller
+    /// ProductionVariantManagedInstanceScalingScaleInPolicy Marshaller
     /// </summary>
-    public class ProductionVariantManagedInstanceScalingMarshaller : IRequestMarshaller<ProductionVariantManagedInstanceScaling, JsonMarshallerContext> 
+    public class ProductionVariantManagedInstanceScalingScaleInPolicyMarshaller : IRequestMarshaller<ProductionVariantManagedInstanceScalingScaleInPolicy, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,26 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ProductionVariantManagedInstanceScaling requestObject, JsonMarshallerContext context)
+        public void Marshall(ProductionVariantManagedInstanceScalingScaleInPolicy requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMaxInstanceCount())
+            if(requestObject.IsSetCooldownInMinutes())
             {
-                context.Writer.WritePropertyName("MaxInstanceCount");
-                context.Writer.WriteNumberValue(requestObject.MaxInstanceCount.Value);
+                context.Writer.WritePropertyName("CooldownInMinutes");
+                context.Writer.WriteNumberValue(requestObject.CooldownInMinutes.Value);
             }
 
-            if(requestObject.IsSetMinInstanceCount())
+            if(requestObject.IsSetMaximumStepSize())
             {
-                context.Writer.WritePropertyName("MinInstanceCount");
-                context.Writer.WriteNumberValue(requestObject.MinInstanceCount.Value);
+                context.Writer.WritePropertyName("MaximumStepSize");
+                context.Writer.WriteNumberValue(requestObject.MaximumStepSize.Value);
             }
 
-            if(requestObject.IsSetScaleInPolicy())
+            if(requestObject.IsSetStrategy())
             {
-                context.Writer.WritePropertyName("ScaleInPolicy");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ProductionVariantManagedInstanceScalingScaleInPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.ScaleInPolicy, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetStatus())
-            {
-                context.Writer.WritePropertyName("Status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WritePropertyName("Strategy");
+                context.Writer.WriteStringValue(requestObject.Strategy);
             }
 
         }
@@ -80,7 +69,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ProductionVariantManagedInstanceScalingMarshaller Instance = new ProductionVariantManagedInstanceScalingMarshaller();
+        public readonly static ProductionVariantManagedInstanceScalingScaleInPolicyMarshaller Instance = new ProductionVariantManagedInstanceScalingScaleInPolicyMarshaller();
 
     }
 }

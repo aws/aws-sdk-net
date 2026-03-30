@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProductionVariantManagedInstanceScaling Marshaller
+    /// InferenceComponentAvailabilityZoneBalance Marshaller
     /// </summary>
-    public class ProductionVariantManagedInstanceScalingMarshaller : IRequestMarshaller<ProductionVariantManagedInstanceScaling, JsonMarshallerContext> 
+    public class InferenceComponentAvailabilityZoneBalanceMarshaller : IRequestMarshaller<InferenceComponentAvailabilityZoneBalance, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ProductionVariantManagedInstanceScaling requestObject, JsonMarshallerContext context)
+        public void Marshall(InferenceComponentAvailabilityZoneBalance requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMaxInstanceCount())
+            if(requestObject.IsSetEnforcementMode())
             {
-                context.Writer.WritePropertyName("MaxInstanceCount");
-                context.Writer.WriteNumberValue(requestObject.MaxInstanceCount.Value);
+                context.Writer.WritePropertyName("EnforcementMode");
+                context.Writer.WriteStringValue(requestObject.EnforcementMode);
             }
 
-            if(requestObject.IsSetMinInstanceCount())
+            if(requestObject.IsSetMaxImbalance())
             {
-                context.Writer.WritePropertyName("MinInstanceCount");
-                context.Writer.WriteNumberValue(requestObject.MinInstanceCount.Value);
-            }
-
-            if(requestObject.IsSetScaleInPolicy())
-            {
-                context.Writer.WritePropertyName("ScaleInPolicy");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ProductionVariantManagedInstanceScalingScaleInPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.ScaleInPolicy, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetStatus())
-            {
-                context.Writer.WritePropertyName("Status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WritePropertyName("MaxImbalance");
+                context.Writer.WriteNumberValue(requestObject.MaxImbalance.Value);
             }
 
         }
@@ -80,7 +63,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ProductionVariantManagedInstanceScalingMarshaller Instance = new ProductionVariantManagedInstanceScalingMarshaller();
+        public readonly static InferenceComponentAvailabilityZoneBalanceMarshaller Instance = new InferenceComponentAvailabilityZoneBalanceMarshaller();
 
     }
 }
