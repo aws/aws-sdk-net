@@ -37,6 +37,7 @@ namespace Amazon.S3Tables.Model
         private IcebergPartitionSpec _partitionSpec;
         private Dictionary<string, string> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private IcebergSchema _schema;
+        private IcebergSchemaV2 _schemav2;
         private IcebergSortOrder _writeOrder;
 
         /// <summary>
@@ -86,10 +87,11 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property Schema. 
         /// <para>
-        /// The schema for an Iceberg table.
+        /// The schema for an Iceberg table. Use this property to define table schemas with primitive
+        /// types only. For schemas that include nested or complex types such as <c>struct</c>,
+        /// <c>list</c>, or <c>map</c>, use <c>schemaV2</c> instead.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public IcebergSchema Schema
         {
             get { return this._schema; }
@@ -100,6 +102,27 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetSchema()
         {
             return this._schema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaV2. 
+        /// <para>
+        /// The schema for an Iceberg table using the V2 format. Use this property to define table
+        /// schemas that include nested or complex data types such as <c>struct</c>, <c>list</c>,
+        /// or <c>map</c>, in addition to primitive types. For schemas with only primitive types,
+        /// you can use either <c>schema</c> or <c>schemaV2</c>.
+        /// </para>
+        /// </summary>
+        public IcebergSchemaV2 SchemaV2
+        {
+            get { return this._schemav2; }
+            set { this._schemav2 = value; }
+        }
+
+        // Check to see if SchemaV2 property is set
+        internal bool IsSetSchemaV2()
+        {
+            return this._schemav2 != null;
         }
 
         /// <summary>
