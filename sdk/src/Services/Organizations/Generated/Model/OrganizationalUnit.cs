@@ -39,6 +39,7 @@ namespace Amazon.Organizations.Model
         private string _arn;
         private string _id;
         private string _name;
+        private string _path;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -113,6 +114,24 @@ namespace Amazon.Organizations.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Path. 
+        /// <para>
+        /// The path in the organization where this OU exists.
+        /// </para>
+        /// </summary>
+        public string Path
+        {
+            get { return this._path; }
+            set { this._path = value; }
+        }
+
+        // Check to see if Path property is set
+        internal bool IsSetPath()
+        {
+            return this._path != null;
         }
 
     }
