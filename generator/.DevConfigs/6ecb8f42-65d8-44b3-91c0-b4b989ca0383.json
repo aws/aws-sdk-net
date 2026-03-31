@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Fix signature mismatch issue with request events for bi-directional streaming operations due to signature timestamp rounding issue"
-    ]
-  }
-}

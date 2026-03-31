@@ -1,3 +1,8 @@
+### 4.0.222.1 (2026-03-31 22:21 UTC)
+* Core 4.0.3.25
+	* Fix signature mismatch issue with request events for bi-directional streaming operations due to signature timestamp rounding issue
+	* All service and extension packages updated to require new Core
+
 ### 4.0.222.0 (2026-03-31 18:23 UTC)
 * CertificateManager (4.0.3.0)
 	* Adds support for searching for ACM certificates using the new SearchCertificates API.
