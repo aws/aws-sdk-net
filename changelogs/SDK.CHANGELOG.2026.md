@@ -1,3 +1,51 @@
+### 4.0.222.0 (2026-03-31 18:23 UTC)
+* CertificateManager (4.0.3.0)
+	* Adds support for searching for ACM certificates using the new SearchCertificates API.
+* CloudFront (4.0.13.0)
+	* This release adds bring your own IP (BYOIP) IPv6 support to CloudFront's CreateAnycastIpList and UpdateAnycastIpList API through the IpamCidrConfigs field.
+* DatabaseMigrationService (4.0.8.0)
+	* To successfully connect to the IBM DB2 LUW database server, you may need to specify additional security parameters that are passed to the JDBC driver. These parameters are EncryptionAlgorithm and SecurityMechanism. Both parameters accept integer values.
+* DataExchange (4.0.5.0)
+	* Support Tags for AWS Data Exchange resource Assets
+* DataZone (4.0.23.0)
+	* Adds environmentConfigurationName field to CreateEnvironmentInput and UpdateEnvironmentInput, so that Domain Owners can now recover orphaned environments by recreating deleted configurations with the same name, and will auto-recover orphaned environments
+* DevOpsAgent (4.0.1.0)
+	* AWS DevOps Agent service General Availability release.
+* EC2 (4.0.82.3)
+	* This release updates the examples in the documentation for DescribeRegions and DescribeAvailabilityZones.
+* GeoMaps (4.0.5.0)
+	* This release expands map customization options with adjustable contour line density, dark mode support for Hybrid and Satellite views, enhanced traffic information across multiple map styles, and transit and truck travel modes for Monochrome and Hybrid map styles.
+* KinesisAnalyticsV2 (4.0.3.0)
+	* Support for Flink 2.2 in Managed Service for Apache Flink
+* MailManager (4.0.5.0)
+	* Amazon SES Mail Manager now supports optional TLS policy for accepting unencrypted connections and mTLS authentication for ingress endpoints with configurable trust stores. Two new rule actions are available, Bounce for sending non-delivery reports and Lambda invocation for custom email processing.
+* MarketplaceAgreement (4.0.5.0)
+	* This release adds 8 new APIs for AWS Marketplace sellers. 4 APIs for Cancellations (Send, List, Get, Cancel action on AgreementCancellationRequest), 3 APIs for Billing Adjustments (BatchCreate, List, Get action on BillingAdjustmentRequest), and 1 API to List Invoices (ListAgreementInvoiceLineItems)
+* ObservabilityAdmin (4.0.8.0)
+	* This release adds the Bedrock and Security Hub resource types for Omnia Enablement launch for March 31.
+* Odb (4.0.6.0)
+	* Adds support for EC2 Placement Group integration with ODB Network. The GetOdbNetwork and ListOdbNetworks API responses now include the ec2PlacementGroupIds field.
+* OpenSearchService (4.0.15.0)
+	* Support RegisterCapability, GetCapability, DeregisterCapability API for AI Assistant feature management for OpenSearch UI Applications
+* Organizations (4.0.11.0)
+	* Added Path field to Account and OrganizationalUnit objects in AWS Organizations API responses.
+* PartnerCentralSelling (4.0.10.0)
+	* Adding EURO Currency for MRR Amount
+* PinpointSMSVoiceV2 (4.0.7.0)
+	* This release adds RCS for Business messaging and Notify support. RCS lets you create and manage agents, send and receive messages in the US and Canada via SendTextMessage API, and configure SMS fallback. Notify lets you send templated OTP messages globally in minutes with no phone number required.
+* QuickSight (4.0.18.0)
+	* Adds StartAutomationJob and DescribeAutomationJob APIs for automation jobs. Adds three custom permission capabilities that allow admins to control whether users can manage Spaces and chat agents. Adds an OAuthClientCredentials structure to provide OAuth 2.0 client credentials inline to data sources.
+* S3 (4.0.20.0)
+	* Add Bucket Metrics configuration support to directory buckets
+* S3Control (4.0.10.0)
+	* Adding an optional auditContext parameter to S3 Access Grants credential vending API GetDataAccess to enable job-level audit correlation in S3 CloudTrail logs
+* S3Tables (4.0.10.0)
+	* S3 Tables now supports nested types when creating tables. Users can define complex column schemas using struct, list, and map types. These types can be composed together to model complex, hierarchical data structures within table schemas.
+* SecurityAgent (4.0.0.0)
+	* AWS Security Agent is a service that proactively secures applications throughout the development lifecycle with automated security reviews and on-demand penetration testing.
+* Sustainability (4.0.0.0)
+	* This is the first release of the AWS Sustainability SDK, which enables customers to access their sustainability impact data via API.
+
 ### 4.0.221.0 (2026-03-30 18:27 UTC)
 * AppStream (4.0.7.0)
 	* Add support for URL Redirection
