@@ -286,6 +286,198 @@ namespace Amazon.MarketplaceAgreement
         #endregion
 
 
+        #region  BatchCreateBillingAdjustmentRequest
+
+
+        /// <summary>
+        /// Allows sellers (proposers) to submit billing adjustment requests for one or more invoices
+        /// within an agreement. Each entry in the batch specifies an invoice and the adjustment
+        /// amount. The operation returns successfully created adjustment request IDs and any
+        /// errors for entries that failed validation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Each entry requires a unique <c>clientToken</c> for idempotency. A <c>ValidationException</c>
+        /// is returned if the adjustment amount exceeds the maximum refundable amount for the
+        /// invoice.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateBillingAdjustmentRequest service method.</param>
+        /// 
+        /// <returns>The response from the BatchCreateBillingAdjustmentRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/BatchCreateBillingAdjustmentRequest">REST API Reference for BatchCreateBillingAdjustmentRequest Operation</seealso>
+        public virtual BatchCreateBillingAdjustmentRequestResponse BatchCreateBillingAdjustmentRequest(BatchCreateBillingAdjustmentRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchCreateBillingAdjustmentRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateBillingAdjustmentRequestResponseUnmarshaller.Instance;
+
+            return Invoke<BatchCreateBillingAdjustmentRequestResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Allows sellers (proposers) to submit billing adjustment requests for one or more invoices
+        /// within an agreement. Each entry in the batch specifies an invoice and the adjustment
+        /// amount. The operation returns successfully created adjustment request IDs and any
+        /// errors for entries that failed validation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Each entry requires a unique <c>clientToken</c> for idempotency. A <c>ValidationException</c>
+        /// is returned if the adjustment amount exceeds the maximum refundable amount for the
+        /// invoice.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateBillingAdjustmentRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchCreateBillingAdjustmentRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/BatchCreateBillingAdjustmentRequest">REST API Reference for BatchCreateBillingAdjustmentRequest Operation</seealso>
+        public virtual Task<BatchCreateBillingAdjustmentRequestResponse> BatchCreateBillingAdjustmentRequestAsync(BatchCreateBillingAdjustmentRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchCreateBillingAdjustmentRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateBillingAdjustmentRequestResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchCreateBillingAdjustmentRequestResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelAgreementCancellationRequest
+
+
+        /// <summary>
+        /// Allows sellers (proposers) to withdraw an existing agreement cancellation request
+        /// that is in a pending state. Once cancelled, the cancellation request transitions to
+        /// <c>CANCELLED</c> status and can no longer be approved or rejected by the buyer.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only cancellation requests in <c>PENDING_APPROVAL</c> status can be cancelled. A <c>ConflictException</c>
+        /// is thrown if the cancellation request is in any other status.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelAgreementCancellationRequest service method.</param>
+        /// 
+        /// <returns>The response from the CancelAgreementCancellationRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/CancelAgreementCancellationRequest">REST API Reference for CancelAgreementCancellationRequest Operation</seealso>
+        public virtual CancelAgreementCancellationRequestResponse CancelAgreementCancellationRequest(CancelAgreementCancellationRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelAgreementCancellationRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelAgreementCancellationRequestResponseUnmarshaller.Instance;
+
+            return Invoke<CancelAgreementCancellationRequestResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Allows sellers (proposers) to withdraw an existing agreement cancellation request
+        /// that is in a pending state. Once cancelled, the cancellation request transitions to
+        /// <c>CANCELLED</c> status and can no longer be approved or rejected by the buyer.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only cancellation requests in <c>PENDING_APPROVAL</c> status can be cancelled. A <c>ConflictException</c>
+        /// is thrown if the cancellation request is in any other status.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelAgreementCancellationRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelAgreementCancellationRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/CancelAgreementCancellationRequest">REST API Reference for CancelAgreementCancellationRequest Operation</seealso>
+        public virtual Task<CancelAgreementCancellationRequestResponse> CancelAgreementCancellationRequestAsync(CancelAgreementCancellationRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelAgreementCancellationRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelAgreementCancellationRequestResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelAgreementCancellationRequestResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelAgreementPaymentRequest
 
 
@@ -452,6 +644,95 @@ namespace Amazon.MarketplaceAgreement
             options.ResponseUnmarshaller = DescribeAgreementResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeAgreementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAgreementCancellationRequest
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific agreement cancellation request. Both
+        /// sellers (proposers) and buyers (acceptors) can use this operation to view cancellation
+        /// requests associated with their agreements.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The calling identity must be either the acceptor or proposer of the agreement. A <c>ResourceNotFoundException</c>
+        /// is returned if the cancellation request does not exist.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementCancellationRequest service method.</param>
+        /// 
+        /// <returns>The response from the GetAgreementCancellationRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementCancellationRequest">REST API Reference for GetAgreementCancellationRequest Operation</seealso>
+        public virtual GetAgreementCancellationRequestResponse GetAgreementCancellationRequest(GetAgreementCancellationRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAgreementCancellationRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgreementCancellationRequestResponseUnmarshaller.Instance;
+
+            return Invoke<GetAgreementCancellationRequestResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific agreement cancellation request. Both
+        /// sellers (proposers) and buyers (acceptors) can use this operation to view cancellation
+        /// requests associated with their agreements.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The calling identity must be either the acceptor or proposer of the agreement. A <c>ResourceNotFoundException</c>
+        /// is returned if the cancellation request does not exist.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgreementCancellationRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgreementCancellationRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetAgreementCancellationRequest">REST API Reference for GetAgreementCancellationRequest Operation</seealso>
+        public virtual Task<GetAgreementCancellationRequestResponse> GetAgreementCancellationRequestAsync(GetAgreementCancellationRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAgreementCancellationRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgreementCancellationRequestResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAgreementCancellationRequestResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -676,6 +957,269 @@ namespace Amazon.MarketplaceAgreement
 
         #endregion
         
+        #region  GetBillingAdjustmentRequest
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific billing adjustment request. Sellers
+        /// (proposers) can use this operation to view the status and details of a billing adjustment
+        /// request they submitted.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A <c>ResourceNotFoundException</c> is returned if the billing adjustment request does
+        /// not exist or the caller does not have permission to access it.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBillingAdjustmentRequest service method.</param>
+        /// 
+        /// <returns>The response from the GetBillingAdjustmentRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetBillingAdjustmentRequest">REST API Reference for GetBillingAdjustmentRequest Operation</seealso>
+        public virtual GetBillingAdjustmentRequestResponse GetBillingAdjustmentRequest(GetBillingAdjustmentRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBillingAdjustmentRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBillingAdjustmentRequestResponseUnmarshaller.Instance;
+
+            return Invoke<GetBillingAdjustmentRequestResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific billing adjustment request. Sellers
+        /// (proposers) can use this operation to view the status and details of a billing adjustment
+        /// request they submitted.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A <c>ResourceNotFoundException</c> is returned if the billing adjustment request does
+        /// not exist or the caller does not have permission to access it.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBillingAdjustmentRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBillingAdjustmentRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/GetBillingAdjustmentRequest">REST API Reference for GetBillingAdjustmentRequest Operation</seealso>
+        public virtual Task<GetBillingAdjustmentRequestResponse> GetBillingAdjustmentRequestAsync(GetBillingAdjustmentRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBillingAdjustmentRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBillingAdjustmentRequestResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetBillingAdjustmentRequestResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAgreementCancellationRequests
+
+
+        /// <summary>
+        /// Lists agreement cancellation requests available to you as a seller or buyer. Both
+        /// sellers (proposers) and buyers (acceptors) can use this operation to find cancellation
+        /// requests by specifying their party type and applying optional filters.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>PartyType</c> is a required parameter. A <c>ValidationException</c> is returned
+        /// if <c>PartyType</c> is not provided. Pagination is supported through <c>maxResults</c>
+        /// (1-50, default 20) and <c>nextToken</c> parameters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreementCancellationRequests service method.</param>
+        /// 
+        /// <returns>The response from the ListAgreementCancellationRequests service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementCancellationRequests">REST API Reference for ListAgreementCancellationRequests Operation</seealso>
+        public virtual ListAgreementCancellationRequestsResponse ListAgreementCancellationRequests(ListAgreementCancellationRequestsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAgreementCancellationRequestsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgreementCancellationRequestsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAgreementCancellationRequestsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists agreement cancellation requests available to you as a seller or buyer. Both
+        /// sellers (proposers) and buyers (acceptors) can use this operation to find cancellation
+        /// requests by specifying their party type and applying optional filters.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>PartyType</c> is a required parameter. A <c>ValidationException</c> is returned
+        /// if <c>PartyType</c> is not provided. Pagination is supported through <c>maxResults</c>
+        /// (1-50, default 20) and <c>nextToken</c> parameters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreementCancellationRequests service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAgreementCancellationRequests service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementCancellationRequests">REST API Reference for ListAgreementCancellationRequests Operation</seealso>
+        public virtual Task<ListAgreementCancellationRequestsResponse> ListAgreementCancellationRequestsAsync(ListAgreementCancellationRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAgreementCancellationRequestsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgreementCancellationRequestsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAgreementCancellationRequestsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAgreementInvoiceLineItems
+
+
+        /// <summary>
+        /// Allows sellers (proposers) to retrieve aggregated billing data from AWS Marketplace
+        /// agreements using flexible grouping. Supports invoice-level aggregation with filtering
+        /// by billing period, invoice type, and issued date.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>groupBy</c> parameter is required and currently supports only <c>INVOICE_ID</c>
+        /// as a value. The <c>agreementId</c> parameter is required.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreementInvoiceLineItems service method.</param>
+        /// 
+        /// <returns>The response from the ListAgreementInvoiceLineItems service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementInvoiceLineItems">REST API Reference for ListAgreementInvoiceLineItems Operation</seealso>
+        public virtual ListAgreementInvoiceLineItemsResponse ListAgreementInvoiceLineItems(ListAgreementInvoiceLineItemsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAgreementInvoiceLineItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgreementInvoiceLineItemsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAgreementInvoiceLineItemsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Allows sellers (proposers) to retrieve aggregated billing data from AWS Marketplace
+        /// agreements using flexible grouping. Supports invoice-level aggregation with filtering
+        /// by billing period, invoice type, and issued date.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>groupBy</c> parameter is required and currently supports only <c>INVOICE_ID</c>
+        /// as a value. The <c>agreementId</c> parameter is required.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgreementInvoiceLineItems service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAgreementInvoiceLineItems service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListAgreementInvoiceLineItems">REST API Reference for ListAgreementInvoiceLineItems Operation</seealso>
+        public virtual Task<ListAgreementInvoiceLineItemsResponse> ListAgreementInvoiceLineItemsAsync(ListAgreementInvoiceLineItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAgreementInvoiceLineItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAgreementInvoiceLineItemsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAgreementInvoiceLineItemsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAgreementPaymentRequests
 
 
@@ -757,6 +1301,85 @@ namespace Amazon.MarketplaceAgreement
             options.ResponseUnmarshaller = ListAgreementPaymentRequestsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListAgreementPaymentRequestsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBillingAdjustmentRequests
+
+
+        /// <summary>
+        /// Lists billing adjustment requests for a specific agreement. Sellers (proposers) can
+        /// use this operation to view all billing adjustment requests associated with an agreement.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Pagination is supported through <c>maxResults</c> and <c>nextToken</c> parameters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBillingAdjustmentRequests service method.</param>
+        /// 
+        /// <returns>The response from the ListBillingAdjustmentRequests service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListBillingAdjustmentRequests">REST API Reference for ListBillingAdjustmentRequests Operation</seealso>
+        public virtual ListBillingAdjustmentRequestsResponse ListBillingAdjustmentRequests(ListBillingAdjustmentRequestsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBillingAdjustmentRequestsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBillingAdjustmentRequestsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBillingAdjustmentRequestsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists billing adjustment requests for a specific agreement. Sellers (proposers) can
+        /// use this operation to view all billing adjustment requests associated with an agreement.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Pagination is supported through <c>maxResults</c> and <c>nextToken</c> parameters.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBillingAdjustmentRequests service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBillingAdjustmentRequests service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/ListBillingAdjustmentRequests">REST API Reference for ListBillingAdjustmentRequests Operation</seealso>
+        public virtual Task<ListBillingAdjustmentRequestsResponse> ListBillingAdjustmentRequestsAsync(ListBillingAdjustmentRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBillingAdjustmentRequestsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBillingAdjustmentRequestsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListBillingAdjustmentRequestsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1154,6 +1777,89 @@ namespace Amazon.MarketplaceAgreement
             options.ResponseUnmarshaller = SearchAgreementsResponseUnmarshaller.Instance;
             
             return InvokeAsync<SearchAgreementsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SendAgreementCancellationRequest
+
+
+        /// <summary>
+        /// Allows sellers (proposers) to submit a cancellation request for an active agreement.
+        /// The cancellation request is created in <c>PENDING_APPROVAL</c> status, at which point
+        /// the buyer can review it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendAgreementCancellationRequest service method.</param>
+        /// 
+        /// <returns>The response from the SendAgreementCancellationRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SendAgreementCancellationRequest">REST API Reference for SendAgreementCancellationRequest Operation</seealso>
+        public virtual SendAgreementCancellationRequestResponse SendAgreementCancellationRequest(SendAgreementCancellationRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendAgreementCancellationRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendAgreementCancellationRequestResponseUnmarshaller.Instance;
+
+            return Invoke<SendAgreementCancellationRequestResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Allows sellers (proposers) to submit a cancellation request for an active agreement.
+        /// The cancellation request is created in <c>PENDING_APPROVAL</c> status, at which point
+        /// the buyer can review it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendAgreementCancellationRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendAgreementCancellationRequest service method, as returned by MarketplaceAgreement.</returns>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceAgreement.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-agreement-2020-03-01/SendAgreementCancellationRequest">REST API Reference for SendAgreementCancellationRequest Operation</seealso>
+        public virtual Task<SendAgreementCancellationRequestResponse> SendAgreementCancellationRequestAsync(SendAgreementCancellationRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendAgreementCancellationRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendAgreementCancellationRequestResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SendAgreementCancellationRequestResponse>(request, options, cancellationToken);
         }
 
         #endregion

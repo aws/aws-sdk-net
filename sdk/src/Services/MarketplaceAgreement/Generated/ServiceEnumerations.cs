@@ -25,6 +25,142 @@ namespace Amazon.MarketplaceAgreement
 {
 
     /// <summary>
+    /// Constants used for properties of type AgreementCancellationRequestReasonCode.
+    /// </summary>
+    public class AgreementCancellationRequestReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALTERNATIVE_PROCUREMENT_CHANNEL for AgreementCancellationRequestReasonCode
+        /// </summary>
+        public static readonly AgreementCancellationRequestReasonCode ALTERNATIVE_PROCUREMENT_CHANNEL = new AgreementCancellationRequestReasonCode("ALTERNATIVE_PROCUREMENT_CHANNEL");
+        /// <summary>
+        /// Constant BUYER_DISSATISFACTION for AgreementCancellationRequestReasonCode
+        /// </summary>
+        public static readonly AgreementCancellationRequestReasonCode BUYER_DISSATISFACTION = new AgreementCancellationRequestReasonCode("BUYER_DISSATISFACTION");
+        /// <summary>
+        /// Constant INCORRECT_TERMS_ACCEPTED for AgreementCancellationRequestReasonCode
+        /// </summary>
+        public static readonly AgreementCancellationRequestReasonCode INCORRECT_TERMS_ACCEPTED = new AgreementCancellationRequestReasonCode("INCORRECT_TERMS_ACCEPTED");
+        /// <summary>
+        /// Constant OTHER for AgreementCancellationRequestReasonCode
+        /// </summary>
+        public static readonly AgreementCancellationRequestReasonCode OTHER = new AgreementCancellationRequestReasonCode("OTHER");
+        /// <summary>
+        /// Constant PRODUCT_DISCONTINUED for AgreementCancellationRequestReasonCode
+        /// </summary>
+        public static readonly AgreementCancellationRequestReasonCode PRODUCT_DISCONTINUED = new AgreementCancellationRequestReasonCode("PRODUCT_DISCONTINUED");
+        /// <summary>
+        /// Constant REPLACING_AGREEMENT for AgreementCancellationRequestReasonCode
+        /// </summary>
+        public static readonly AgreementCancellationRequestReasonCode REPLACING_AGREEMENT = new AgreementCancellationRequestReasonCode("REPLACING_AGREEMENT");
+        /// <summary>
+        /// Constant TEST_AGREEMENT for AgreementCancellationRequestReasonCode
+        /// </summary>
+        public static readonly AgreementCancellationRequestReasonCode TEST_AGREEMENT = new AgreementCancellationRequestReasonCode("TEST_AGREEMENT");
+        /// <summary>
+        /// Constant UNINTENDED_RENEWAL for AgreementCancellationRequestReasonCode
+        /// </summary>
+        public static readonly AgreementCancellationRequestReasonCode UNINTENDED_RENEWAL = new AgreementCancellationRequestReasonCode("UNINTENDED_RENEWAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgreementCancellationRequestReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgreementCancellationRequestReasonCode FindValue(string value)
+        {
+            return FindValue<AgreementCancellationRequestReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgreementCancellationRequestReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AgreementCancellationRequestStatus.
+    /// </summary>
+    public class AgreementCancellationRequestStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for AgreementCancellationRequestStatus
+        /// </summary>
+        public static readonly AgreementCancellationRequestStatus APPROVED = new AgreementCancellationRequestStatus("APPROVED");
+        /// <summary>
+        /// Constant CANCELLED for AgreementCancellationRequestStatus
+        /// </summary>
+        public static readonly AgreementCancellationRequestStatus CANCELLED = new AgreementCancellationRequestStatus("CANCELLED");
+        /// <summary>
+        /// Constant PENDING_APPROVAL for AgreementCancellationRequestStatus
+        /// </summary>
+        public static readonly AgreementCancellationRequestStatus PENDING_APPROVAL = new AgreementCancellationRequestStatus("PENDING_APPROVAL");
+        /// <summary>
+        /// Constant REJECTED for AgreementCancellationRequestStatus
+        /// </summary>
+        public static readonly AgreementCancellationRequestStatus REJECTED = new AgreementCancellationRequestStatus("REJECTED");
+        /// <summary>
+        /// Constant VALIDATION_FAILED for AgreementCancellationRequestStatus
+        /// </summary>
+        public static readonly AgreementCancellationRequestStatus VALIDATION_FAILED = new AgreementCancellationRequestStatus("VALIDATION_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgreementCancellationRequestStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgreementCancellationRequestStatus FindValue(string value)
+        {
+            return FindValue<AgreementCancellationRequestStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgreementCancellationRequestStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AgreementStatus.
     /// </summary>
     public class AgreementStatus : ConstantClass
@@ -96,6 +232,284 @@ namespace Amazon.MarketplaceAgreement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AgreementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BillingAdjustmentErrorCode.
+    /// </summary>
+    public class BillingAdjustmentErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONFLICT_EXCEPTION for BillingAdjustmentErrorCode
+        /// </summary>
+        public static readonly BillingAdjustmentErrorCode CONFLICT_EXCEPTION = new BillingAdjustmentErrorCode("CONFLICT_EXCEPTION");
+        /// <summary>
+        /// Constant INTERNAL_FAILURE for BillingAdjustmentErrorCode
+        /// </summary>
+        public static readonly BillingAdjustmentErrorCode INTERNAL_FAILURE = new BillingAdjustmentErrorCode("INTERNAL_FAILURE");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND_EXCEPTION for BillingAdjustmentErrorCode
+        /// </summary>
+        public static readonly BillingAdjustmentErrorCode RESOURCE_NOT_FOUND_EXCEPTION = new BillingAdjustmentErrorCode("RESOURCE_NOT_FOUND_EXCEPTION");
+        /// <summary>
+        /// Constant VALIDATION_EXCEPTION for BillingAdjustmentErrorCode
+        /// </summary>
+        public static readonly BillingAdjustmentErrorCode VALIDATION_EXCEPTION = new BillingAdjustmentErrorCode("VALIDATION_EXCEPTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillingAdjustmentErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingAdjustmentErrorCode FindValue(string value)
+        {
+            return FindValue<BillingAdjustmentErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillingAdjustmentErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BillingAdjustmentReasonCode.
+    /// </summary>
+    public class BillingAdjustmentReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALTERNATIVE_PROCUREMENT_CHANNEL for BillingAdjustmentReasonCode
+        /// </summary>
+        public static readonly BillingAdjustmentReasonCode ALTERNATIVE_PROCUREMENT_CHANNEL = new BillingAdjustmentReasonCode("ALTERNATIVE_PROCUREMENT_CHANNEL");
+        /// <summary>
+        /// Constant BUYER_DISSATISFACTION for BillingAdjustmentReasonCode
+        /// </summary>
+        public static readonly BillingAdjustmentReasonCode BUYER_DISSATISFACTION = new BillingAdjustmentReasonCode("BUYER_DISSATISFACTION");
+        /// <summary>
+        /// Constant INCORRECT_METERING for BillingAdjustmentReasonCode
+        /// </summary>
+        public static readonly BillingAdjustmentReasonCode INCORRECT_METERING = new BillingAdjustmentReasonCode("INCORRECT_METERING");
+        /// <summary>
+        /// Constant INCORRECT_TERMS_ACCEPTED for BillingAdjustmentReasonCode
+        /// </summary>
+        public static readonly BillingAdjustmentReasonCode INCORRECT_TERMS_ACCEPTED = new BillingAdjustmentReasonCode("INCORRECT_TERMS_ACCEPTED");
+        /// <summary>
+        /// Constant OTHER for BillingAdjustmentReasonCode
+        /// </summary>
+        public static readonly BillingAdjustmentReasonCode OTHER = new BillingAdjustmentReasonCode("OTHER");
+        /// <summary>
+        /// Constant TEST_ENVIRONMENT_CHARGES for BillingAdjustmentReasonCode
+        /// </summary>
+        public static readonly BillingAdjustmentReasonCode TEST_ENVIRONMENT_CHARGES = new BillingAdjustmentReasonCode("TEST_ENVIRONMENT_CHARGES");
+        /// <summary>
+        /// Constant UNINTENDED_RENEWAL for BillingAdjustmentReasonCode
+        /// </summary>
+        public static readonly BillingAdjustmentReasonCode UNINTENDED_RENEWAL = new BillingAdjustmentReasonCode("UNINTENDED_RENEWAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillingAdjustmentReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingAdjustmentReasonCode FindValue(string value)
+        {
+            return FindValue<BillingAdjustmentReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillingAdjustmentReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BillingAdjustmentStatus.
+    /// </summary>
+    public class BillingAdjustmentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for BillingAdjustmentStatus
+        /// </summary>
+        public static readonly BillingAdjustmentStatus COMPLETED = new BillingAdjustmentStatus("COMPLETED");
+        /// <summary>
+        /// Constant PENDING for BillingAdjustmentStatus
+        /// </summary>
+        public static readonly BillingAdjustmentStatus PENDING = new BillingAdjustmentStatus("PENDING");
+        /// <summary>
+        /// Constant VALIDATION_FAILED for BillingAdjustmentStatus
+        /// </summary>
+        public static readonly BillingAdjustmentStatus VALIDATION_FAILED = new BillingAdjustmentStatus("VALIDATION_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillingAdjustmentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingAdjustmentStatus FindValue(string value)
+        {
+            return FindValue<BillingAdjustmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillingAdjustmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InvoiceType.
+    /// </summary>
+    public class InvoiceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREDIT_MEMO for InvoiceType
+        /// </summary>
+        public static readonly InvoiceType CREDIT_MEMO = new InvoiceType("CREDIT_MEMO");
+        /// <summary>
+        /// Constant INVOICE for InvoiceType
+        /// </summary>
+        public static readonly InvoiceType INVOICE = new InvoiceType("INVOICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InvoiceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvoiceType FindValue(string value)
+        {
+            return FindValue<InvoiceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvoiceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LineItemGroupBy.
+    /// </summary>
+    public class LineItemGroupBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVOICE_ID for LineItemGroupBy
+        /// </summary>
+        public static readonly LineItemGroupBy INVOICE_ID = new LineItemGroupBy("INVOICE_ID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LineItemGroupBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LineItemGroupBy FindValue(string value)
+        {
+            return FindValue<LineItemGroupBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LineItemGroupBy(string value)
         {
             return FindValue(value);
         }
