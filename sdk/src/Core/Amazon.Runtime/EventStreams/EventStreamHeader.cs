@@ -368,8 +368,7 @@ namespace Amazon.Runtime.EventStreams
                     newOffset += valueLength;
                     break;
                 case EventStreamHeaderType.Timestamp:
-                    var dt = ((DateTime)HeaderValue).ToUniversalTime();
-                    var millis = (dt.Ticks - _unixEpoch.Ticks) / TimeSpan.TicksPerMillisecond;
+                    var millis = (((DateTime)HeaderValue).Ticks - _unixEpoch.Ticks) / TimeSpan.TicksPerMillisecond;
                     var networkOrder = IPAddress.HostToNetworkOrder(millis);
                     serializedBytes = BitConverter.GetBytes(networkOrder);
                     Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, _sizeOfInt64);
