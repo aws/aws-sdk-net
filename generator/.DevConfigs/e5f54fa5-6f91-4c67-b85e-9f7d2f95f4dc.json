@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Replace legacy parameters with Expression API in DataModel Save operations"
+      ]
+    }
+  ]
+}
