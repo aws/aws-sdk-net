@@ -31,8 +31,7 @@ namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the AllowVendedLogDeliveryForResource operation.
-    /// Authorize Ingestion Hub subscription operation. Looks to see if the derived accountId
-    /// from FAS has an AgentSpace.
+    /// Authorize Ingestion Hub subscription operation.
     /// </summary>
     public partial class AllowVendedLogDeliveryForResourceRequest : AmazonDevOpsAgentRequest
     {

@@ -168,10 +168,6 @@
     <pattern>vpc-(([0-9a-z]{8})|([0-9a-z]{17}))</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.DescribeSupportLevelRequest.AgentSpaceId</property>
-    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DisableOperatorAppRequest.AgentSpaceId</property>
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
@@ -207,10 +203,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.EnableOperatorAppResponse.AgentSpaceId</property>
-    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.EndChatForCaseRequest.AgentSpaceId</property>
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -256,10 +248,6 @@
     <min>1</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.InitiateChatForCaseRequest.AgentSpaceId</property>
-    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.ListAgentSpacesRequest.MaxResults</property>
@@ -853,49 +841,6 @@
     <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4AuthorizationConfig.Region</property>
-    <min>1</min>
-    <max>50</max>
-    <pattern>[a-z]{2,4}(-[a-z]+)+-\d+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4AuthorizationConfig.RoleArn</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4AuthorizationConfig.Service</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4ServiceDetails.Description</property>
-    <min>0</min>
-    <max>500</max>
-    <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4ServiceDetails.Endpoint</property>
-    <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4ServiceDetails.Name</property>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.MSTeamsChannel.ChannelId</property>
-    <min>0</min>
-    <max>36</max>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.MSTeamsConfiguration.TeamId</property>
-    <min>0</min>
-    <max>36</max>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.NewRelicApiKeyConfig.AccountId</property>
     <pattern>[0-9]+</pattern>
   </property-value-rule>
@@ -1015,37 +960,6 @@
     <min>1</min>
     <max>1000</max>
     <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Description</property>
-    <min>0</min>
-    <max>500</max>
-    <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Endpoint</property>
-    <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Name</property>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Region</property>
-    <min>1</min>
-    <max>50</max>
-    <pattern>[a-z]{2,4}(-[a-z]+)+-\d+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.RoleArn</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Service</property>
-    <min>1</min>
-    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisteredNewRelicDetails.Description</property>

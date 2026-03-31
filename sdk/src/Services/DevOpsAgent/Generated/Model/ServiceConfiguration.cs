@@ -44,7 +44,6 @@ namespace Amazon.DevOpsAgent.Model
         private GitLabConfiguration _gitlab;
         private MCPServerGrafanaConfiguration _mcpservergrafana;
         private MCPServerNewRelicConfiguration _mcpservernewrelic;
-        private MSTeamsConfiguration _msteams;
         private PagerDutyConfiguration _pagerduty;
         private ServiceNowConfiguration _servicenow;
         private SlackConfiguration _slack;
@@ -210,24 +209,6 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetMcpservernewrelic()
         {
             return this._mcpservernewrelic != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Msteams. 
-        /// <para>
-        /// MS Teams integration configuration
-        /// </para>
-        /// </summary>
-        public MSTeamsConfiguration Msteams
-        {
-            get { return this._msteams; }
-            set { this._msteams = value; }
-        }
-
-        // Check to see if Msteams property is set
-        internal bool IsSetMsteams()
-        {
-            return this._msteams != null;
         }
 
         /// <summary>

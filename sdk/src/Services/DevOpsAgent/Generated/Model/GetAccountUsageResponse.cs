@@ -36,6 +36,7 @@ namespace Amazon.DevOpsAgent.Model
     {
         private UsageMetric _monthlyAccountEvaluationHours;
         private UsageMetric _monthlyAccountInvestigationHours;
+        private UsageMetric _monthlyAccountOnDemandHours;
         private UsageMetric _monthlyAccountSystemLearningHours;
         private DateTime? _usagePeriodEndTime;
         private DateTime? _usagePeriodStartTime;
@@ -74,6 +75,24 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetMonthlyAccountInvestigationHours()
         {
             return this._monthlyAccountInvestigationHours != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonthlyAccountOnDemandHours. 
+        /// <para>
+        /// Monthly on-demand hours usage and limit for an account
+        /// </para>
+        /// </summary>
+        public UsageMetric MonthlyAccountOnDemandHours
+        {
+            get { return this._monthlyAccountOnDemandHours; }
+            set { this._monthlyAccountOnDemandHours = value; }
+        }
+
+        // Check to see if MonthlyAccountOnDemandHours property is set
+        internal bool IsSetMonthlyAccountOnDemandHours()
+        {
+            return this._monthlyAccountOnDemandHours != null;
         }
 
         /// <summary>

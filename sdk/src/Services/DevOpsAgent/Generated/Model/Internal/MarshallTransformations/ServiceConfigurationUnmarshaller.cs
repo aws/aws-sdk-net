@@ -110,12 +110,6 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Mcpservernewrelic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("msteams", targetDepth))
-                {
-                    var unmarshaller = MSTeamsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Msteams = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("pagerduty", targetDepth))
                 {
                     var unmarshaller = PagerDutyConfigurationUnmarshaller.Instance;

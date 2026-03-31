@@ -145,17 +145,6 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetMsteams())
-            {
-                context.Writer.WritePropertyName("msteams");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MSTeamsConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Msteams, context);
-
-                context.Writer.WriteEndObject();
-            }
-
             if(requestObject.IsSetPagerduty())
             {
                 context.Writer.WritePropertyName("pagerduty");
