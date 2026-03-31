@@ -69,6 +69,22 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeNotifyConfigurations operation
+        ///</summary>
+        public IDescribeNotifyConfigurationsPaginator DescribeNotifyConfigurations(DescribeNotifyConfigurationsRequest request) 
+        {
+            return new DescribeNotifyConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeNotifyTemplates operation
+        ///</summary>
+        public IDescribeNotifyTemplatesPaginator DescribeNotifyTemplates(DescribeNotifyTemplatesRequest request) 
+        {
+            return new DescribeNotifyTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeOptedOutNumbers operation
         ///</summary>
         public IDescribeOptedOutNumbersPaginator DescribeOptedOutNumbers(DescribeOptedOutNumbersRequest request) 
@@ -106,6 +122,22 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         public IDescribeProtectConfigurationsPaginator DescribeProtectConfigurations(DescribeProtectConfigurationsRequest request) 
         {
             return new DescribeProtectConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRcsAgentCountryLaunchStatus operation
+        ///</summary>
+        public IDescribeRcsAgentCountryLaunchStatusPaginator DescribeRcsAgentCountryLaunchStatus(DescribeRcsAgentCountryLaunchStatusRequest request) 
+        {
+            return new DescribeRcsAgentCountryLaunchStatusPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRcsAgents operation
+        ///</summary>
+        public IDescribeRcsAgentsPaginator DescribeRcsAgents(DescribeRcsAgentsRequest request) 
+        {
+            return new DescribeRcsAgentsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -186,6 +218,14 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         public IDescribeVerifiedDestinationNumbersPaginator DescribeVerifiedDestinationNumbers(DescribeVerifiedDestinationNumbersRequest request) 
         {
             return new DescribeVerifiedDestinationNumbersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNotifyCountries operation
+        ///</summary>
+        public IListNotifyCountriesPaginator ListNotifyCountries(ListNotifyCountriesRequest request) 
+        {
+            return new ListNotifyCountriesPaginator(this.client, request);
         }
 
         /// <summary>
