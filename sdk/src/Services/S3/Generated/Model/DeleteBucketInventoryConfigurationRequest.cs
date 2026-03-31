@@ -52,7 +52,12 @@ namespace Amazon.S3.Model
     /// For information about the Amazon S3 inventory feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html">Amazon
     /// S3 Inventory</a>.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// After deleting a configuration, Amazon S3 might still deliver one additional inventory
+    /// report during a brief transition period while the system processes the deletion.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Operations related to <c>DeleteBucketInventoryConfiguration</c> include: 
     /// </para>
