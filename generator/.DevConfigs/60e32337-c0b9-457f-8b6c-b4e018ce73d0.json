@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Fix credential resolution issue under high concurrency where multiple threads simultaneously walked the credential chain causing initial service calls to fail."
+    ]
+  }
+}
