@@ -103,6 +103,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _createChatAgents;
         private CapabilityState _createDashboardExecutiveSummaryWithQ;
         private CapabilityState _createSharedFolders;
+        private CapabilityState _createSpaces;
         private CapabilityState _createSPICEDataset;
         private CapabilityState _dashboard;
         private CapabilityState _editVisualWithQ;
@@ -159,6 +160,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _shareBambooHRAction;
         private CapabilityState _shareBoxAgentAction;
         private CapabilityState _shareCanvaAgentAction;
+        private CapabilityState _shareChatAgents;
         private CapabilityState _shareComprehendAction;
         private CapabilityState _shareComprehendMedicalAction;
         private CapabilityState _shareConfluenceAction;
@@ -196,6 +198,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _shareSharePointAction;
         private CapabilityState _shareSlackAction;
         private CapabilityState _shareSmartsheetAction;
+        private CapabilityState _shareSpaces;
         private CapabilityState _shareTextractAction;
         private CapabilityState _shareZendeskAction;
         private CapabilityState _slackAction;
@@ -1496,6 +1499,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateSpaces. 
+        /// <para>
+        /// The ability to create spaces.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateSpaces
+        {
+            get { return this._createSpaces; }
+            set { this._createSpaces = value; }
+        }
+
+        // Check to see if CreateSpaces property is set
+        internal bool IsSetCreateSpaces()
+        {
+            return this._createSpaces != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateSPICEDataset. 
         /// <para>
         /// The ability to create a SPICE dataset.
@@ -2511,6 +2532,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareChatAgents. 
+        /// <para>
+        /// The ability to share chat agents with other users and groups.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareChatAgents
+        {
+            get { return this._shareChatAgents; }
+            set { this._shareChatAgents = value; }
+        }
+
+        // Check to see if ShareChatAgents property is set
+        internal bool IsSetShareChatAgents()
+        {
+            return this._shareChatAgents != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareComprehendAction. 
         /// <para>
         /// The ability to share Comprehend actions.
@@ -3174,6 +3213,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareSmartsheetAction()
         {
             return this._shareSmartsheetAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareSpaces. 
+        /// <para>
+        /// The ability to share spaces with other users and groups.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareSpaces
+        {
+            get { return this._shareSpaces; }
+            set { this._shareSpaces = value; }
+        }
+
+        // Check to see if ShareSpaces property is set
+        internal bool IsSetShareSpaces()
+        {
+            return this._shareSpaces != null;
         }
 
         /// <summary>

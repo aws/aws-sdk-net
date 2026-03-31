@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TooltipOptions Object
+    /// Response Unmarshaller for SheetTooltip Object
     /// </summary>  
-    public class TooltipOptionsUnmarshaller : IJsonUnmarshaller<TooltipOptions, JsonUnmarshallerContext>
+    public class SheetTooltipUnmarshaller : IJsonUnmarshaller<SheetTooltip, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TooltipOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SheetTooltip Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            TooltipOptions unmarshalledObject = new TooltipOptions();
+            SheetTooltip unmarshalledObject = new SheetTooltip();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FieldBasedTooltip", targetDepth))
-                {
-                    var unmarshaller = FieldBasedTooltipUnmarshaller.Instance;
-                    unmarshalledObject.FieldBasedTooltip = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SelectedTooltipType", targetDepth))
+                if (context.TestExpression("SheetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelectedTooltipType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SheetTooltip", targetDepth))
-                {
-                    var unmarshaller = SheetTooltipUnmarshaller.Instance;
-                    unmarshalledObject.SheetTooltip = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TooltipVisibility", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TooltipVisibility = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.SheetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static TooltipOptionsUnmarshaller _instance = new TooltipOptionsUnmarshaller();        
+        private static SheetTooltipUnmarshaller _instance = new SheetTooltipUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TooltipOptionsUnmarshaller Instance
+        public static SheetTooltipUnmarshaller Instance
         {
             get
             {

@@ -460,6 +460,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateSharedFolders);
             }
 
+            if(requestObject.IsSetCreateSpaces())
+            {
+                context.Writer.WritePropertyName("CreateSpaces");
+                context.Writer.WriteStringValue(requestObject.CreateSpaces);
+            }
+
             if(requestObject.IsSetCreateSPICEDataset())
             {
                 context.Writer.WritePropertyName("CreateSPICEDataset");
@@ -796,6 +802,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareCanvaAgentAction);
             }
 
+            if(requestObject.IsSetShareChatAgents())
+            {
+                context.Writer.WritePropertyName("ShareChatAgents");
+                context.Writer.WriteStringValue(requestObject.ShareChatAgents);
+            }
+
             if(requestObject.IsSetShareComprehendAction())
             {
                 context.Writer.WritePropertyName("ShareComprehendAction");
@@ -1016,6 +1028,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ShareSmartsheetAction");
                 context.Writer.WriteStringValue(requestObject.ShareSmartsheetAction);
+            }
+
+            if(requestObject.IsSetShareSpaces())
+            {
+                context.Writer.WritePropertyName("ShareSpaces");
+                context.Writer.WriteStringValue(requestObject.ShareSpaces);
             }
 
             if(requestObject.IsSetShareTextractAction())

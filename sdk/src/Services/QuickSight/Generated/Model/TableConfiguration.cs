@@ -42,6 +42,7 @@ namespace Amazon.QuickSight.Model
         private TableSortConfiguration _sortConfiguration;
         private List<TableInlineVisualization> _tableInlineVisualizations = AWSConfigs.InitializeCollections ? new List<TableInlineVisualization>() : null;
         private TableOptions _tableOptions;
+        private TooltipOptions _tooltip;
         private TotalOptions _totalOptions;
 
         /// <summary>
@@ -193,6 +194,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTableOptions()
         {
             return this._tableOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tooltip.
+        /// </summary>
+        public TooltipOptions Tooltip
+        {
+            get { return this._tooltip; }
+            set { this._tooltip = value; }
+        }
+
+        // Check to see if Tooltip property is set
+        internal bool IsSetTooltip()
+        {
+            return this._tooltip != null;
         }
 
         /// <summary>

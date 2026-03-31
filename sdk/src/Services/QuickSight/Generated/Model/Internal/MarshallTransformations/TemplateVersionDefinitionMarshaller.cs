@@ -191,6 +191,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetTooltipSheets())
+            {
+                context.Writer.WritePropertyName("TooltipSheets");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectTooltipSheetsListValue in requestObject.TooltipSheets)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TooltipSheetDefinitionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTooltipSheetsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

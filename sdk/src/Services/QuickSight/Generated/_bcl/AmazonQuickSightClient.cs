@@ -7413,6 +7413,85 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DescribeAutomationJob
+
+
+        /// <summary>
+        /// Retrieves the status and details of a specified automation job, including its status
+        /// and outputs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutomationJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAutomationJob service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAutomationJob">REST API Reference for DescribeAutomationJob Operation</seealso>
+        public virtual DescribeAutomationJobResponse DescribeAutomationJob(DescribeAutomationJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAutomationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutomationJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAutomationJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the status and details of a specified automation job, including its status
+        /// and outputs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutomationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAutomationJob service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAutomationJob">REST API Reference for DescribeAutomationJob Operation</seealso>
+        public virtual Task<DescribeAutomationJobResponse> DescribeAutomationJobAsync(DescribeAutomationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAutomationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutomationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAutomationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeBrand
 
 
@@ -17505,6 +17584,91 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = StartAssetBundleImportJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartAssetBundleImportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartAutomationJob
+
+
+        /// <summary>
+        /// Starts a new job for a specified automation. The job runs the automation with the
+        /// provided input payload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomationJob service method.</param>
+        /// 
+        /// <returns>The response from the StartAutomationJob service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAutomationJob">REST API Reference for StartAutomationJob Operation</seealso>
+        public virtual StartAutomationJobResponse StartAutomationJob(StartAutomationJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartAutomationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAutomationJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartAutomationJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a new job for a specified automation. The job runs the automation with the
+        /// provided input payload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAutomationJob service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAutomationJob">REST API Reference for StartAutomationJob Operation</seealso>
+        public virtual Task<StartAutomationJobResponse> StartAutomationJobAsync(StartAutomationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartAutomationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAutomationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartAutomationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

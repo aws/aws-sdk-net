@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TooltipOptions Marshaller
+    /// OAuthClientCredentials Marshaller
     /// </summary>
-    public class TooltipOptionsMarshaller : IRequestMarshaller<TooltipOptions, JsonMarshallerContext> 
+    public class OAuthClientCredentialsMarshaller : IRequestMarshaller<OAuthClientCredentials, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,42 +42,26 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TooltipOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(OAuthClientCredentials requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetFieldBasedTooltip())
+            if(requestObject.IsSetClientId())
             {
-                context.Writer.WritePropertyName("FieldBasedTooltip");
-                context.Writer.WriteStartObject();
-
-                var marshaller = FieldBasedTooltipMarshaller.Instance;
-                marshaller.Marshall(requestObject.FieldBasedTooltip, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("ClientId");
+                context.Writer.WriteStringValue(requestObject.ClientId);
             }
 
-            if(requestObject.IsSetSelectedTooltipType())
+            if(requestObject.IsSetClientSecret())
             {
-                context.Writer.WritePropertyName("SelectedTooltipType");
-                context.Writer.WriteStringValue(requestObject.SelectedTooltipType);
+                context.Writer.WritePropertyName("ClientSecret");
+                context.Writer.WriteStringValue(requestObject.ClientSecret);
             }
 
-            if(requestObject.IsSetSheetTooltip())
+            if(requestObject.IsSetUsername())
             {
-                context.Writer.WritePropertyName("SheetTooltip");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SheetTooltipMarshaller.Instance;
-                marshaller.Marshall(requestObject.SheetTooltip, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetTooltipVisibility())
-            {
-                context.Writer.WritePropertyName("TooltipVisibility");
-                context.Writer.WriteStringValue(requestObject.TooltipVisibility);
+                context.Writer.WritePropertyName("Username");
+                context.Writer.WriteStringValue(requestObject.Username);
             }
 
         }
@@ -85,7 +69,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TooltipOptionsMarshaller Instance = new TooltipOptionsMarshaller();
+        public readonly static OAuthClientCredentialsMarshaller Instance = new OAuthClientCredentialsMarshaller();
 
     }
 }

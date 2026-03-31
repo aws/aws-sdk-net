@@ -116,6 +116,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.StaticFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TooltipSheets", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<TooltipSheetDefinition, TooltipSheetDefinitionUnmarshaller>(TooltipSheetDefinitionUnmarshaller.Instance);
+                    unmarshalledObject.TooltipSheets = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

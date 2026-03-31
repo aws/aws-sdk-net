@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TooltipOptions Marshaller
+    /// SheetTooltip Marshaller
     /// </summary>
-    public class TooltipOptionsMarshaller : IRequestMarshaller<TooltipOptions, JsonMarshallerContext> 
+    public class SheetTooltipMarshaller : IRequestMarshaller<SheetTooltip, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,42 +42,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TooltipOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(SheetTooltip requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetFieldBasedTooltip())
+            if(requestObject.IsSetSheetId())
             {
-                context.Writer.WritePropertyName("FieldBasedTooltip");
-                context.Writer.WriteStartObject();
-
-                var marshaller = FieldBasedTooltipMarshaller.Instance;
-                marshaller.Marshall(requestObject.FieldBasedTooltip, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetSelectedTooltipType())
-            {
-                context.Writer.WritePropertyName("SelectedTooltipType");
-                context.Writer.WriteStringValue(requestObject.SelectedTooltipType);
-            }
-
-            if(requestObject.IsSetSheetTooltip())
-            {
-                context.Writer.WritePropertyName("SheetTooltip");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SheetTooltipMarshaller.Instance;
-                marshaller.Marshall(requestObject.SheetTooltip, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetTooltipVisibility())
-            {
-                context.Writer.WritePropertyName("TooltipVisibility");
-                context.Writer.WriteStringValue(requestObject.TooltipVisibility);
+                context.Writer.WritePropertyName("SheetId");
+                context.Writer.WriteStringValue(requestObject.SheetId);
             }
 
         }
@@ -85,7 +57,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TooltipOptionsMarshaller Instance = new TooltipOptionsMarshaller();
+        public readonly static SheetTooltipMarshaller Instance = new SheetTooltipMarshaller();
 
     }
 }
