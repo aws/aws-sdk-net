@@ -762,6 +762,12 @@
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateEnvironmentRequest.EnvironmentConfigurationName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w -]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.CreateEnvironmentRequest.EnvironmentProfileIdentifier</property>
     <pattern>[a-zA-Z0-9_-]{0,36}</pattern>
   </property-value-rule>
@@ -793,6 +799,12 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateEnvironmentResponse.EnvironmentConfigurationId</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateEnvironmentResponse.EnvironmentConfigurationName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateEnvironmentResponse.EnvironmentProfileId</property>
@@ -2124,6 +2136,12 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetEnvironmentResponse.EnvironmentConfigurationId</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetEnvironmentResponse.EnvironmentConfigurationName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetEnvironmentResponse.EnvironmentProfileId</property>
@@ -4292,6 +4310,12 @@
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateEnvironmentRequest.EnvironmentConfigurationName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w -]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateEnvironmentRequest.Identifier</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
@@ -4319,6 +4343,12 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateEnvironmentResponse.EnvironmentConfigurationId</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateEnvironmentResponse.EnvironmentConfigurationName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateEnvironmentResponse.EnvironmentProfileId</property>
@@ -5628,6 +5658,12 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentSummary.EnvironmentConfigurationId</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.EnvironmentSummary.EnvironmentConfigurationName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentSummary.EnvironmentProfileId</property>
