@@ -36,9 +36,11 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private string _certificateArn;
         private string _databaseName;
+        private int? _encryptionAlgorithm;
         private int? _port;
         private string _s3AccessRoleArn;
         private string _s3Path;
+        private int? _securityMechanism;
         private string _serverName;
         private DmsSslModeValue _sslMode;
 
@@ -76,6 +78,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionAlgorithm. 
+        /// <para>
+        ///  The encryption algorithm used for securing the connection to the IBM DB2 LUW database
+        /// server. You can provide an integer value corresponding to a specific encryption algorithm,
+        /// or leave this parameter empty to use the default behavior. 
+        /// </para>
+        /// </summary>
+        public int? EncryptionAlgorithm
+        {
+            get { return this._encryptionAlgorithm; }
+            set { this._encryptionAlgorithm = value; }
+        }
+
+        // Check to see if EncryptionAlgorithm property is set
+        internal bool IsSetEncryptionAlgorithm()
+        {
+            return this._encryptionAlgorithm.HasValue; 
         }
 
         /// <summary>
@@ -131,6 +153,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetS3Path()
         {
             return this._s3Path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityMechanism. 
+        /// <para>
+        ///  The security mechanism used for authenticating the connection to the IBM DB2 LUW
+        /// database server. You can provide an integer value corresponding to a specific security
+        /// mechanism, or leave this parameter empty to use the default behavior. 
+        /// </para>
+        /// </summary>
+        public int? SecurityMechanism
+        {
+            get { return this._securityMechanism; }
+            set { this._securityMechanism = value; }
+        }
+
+        // Check to see if SecurityMechanism property is set
+        internal bool IsSetSecurityMechanism()
+        {
+            return this._securityMechanism.HasValue; 
         }
 
         /// <summary>
