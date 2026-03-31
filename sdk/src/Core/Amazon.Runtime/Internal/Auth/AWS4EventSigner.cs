@@ -14,7 +14,9 @@
  */
 
 using Amazon.Runtime.EventStreams;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +32,7 @@ namespace Amazon.Runtime.Internal.Auth
         private const string HeaderDate = ":date";
         private const string HeaderChunkSignature = ":chunk-signature";
 
+        private readonly Logger _logger;
         private readonly AWSCredentials _credentials;
         private readonly string _region;
         private readonly string _service;
@@ -49,6 +52,8 @@ namespace Amazon.Runtime.Internal.Auth
             _region = region;
             _service = service;
             _previousSignature = requestSignature;
+
+            _logger = Logger.GetLogger(this.GetType());
         }
 
         /// <summary>
@@ -75,7 +80,12 @@ namespace Amazon.Runtime.Internal.Auth
             var dateHeaderBuffer = new byte[15];
             signedDateHeader.WriteToBuffer(dateHeaderBuffer, 0);
 
-            var formattedDateStamp = timestamp.ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
+            // To be as accurate as possible with the date used for signing, we will read the date header back from the buffer to
+            // get the exact value that is being signed, instead of using the original timestamp which could be different from
+            // the value in the header due to precision loss when converting to and from the timestamp format used in event stream headers.
+            var ignoreNewOffSet = 0;
+            var evnt = EventStreamHeader.FromBuffer(dateHeaderBuffer, 0, ref ignoreNewOffSet);
+            var formattedDateStamp = evnt.AsTimestamp().ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
 
             var stringToSign = new StringBuilder();
             stringToSign.Append(Sha256Payload);
@@ -89,6 +99,16 @@ namespace Amazon.Runtime.Internal.Auth
             stringToSign.Append(AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(dateHeaderBuffer), true));
             stringToSign.Append("\n");
             stringToSign.Append(AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(eventBytes), true));
+
+            var logBuilder = new StringBuilder();
+
+            logBuilder.AppendLine("String to sign:\n" + stringToSign.ToString());
+            var base64DateHeader = Convert.ToBase64String(dateHeaderBuffer);
+            logBuilder.AppendLine("Date Header (Base 64): " + base64DateHeader);
+            var base64EventBytes = Convert.ToBase64String(eventBytes);
+            logBuilder.AppendLine("EventData (Base 64): " + base64EventBytes);
+            _logger.InfoFormat(logBuilder.ToString());
+
 
             var signature = AWS4Signer.ComputeKeyedHash(AWS4Signer.SignerAlgorithm, AWS4Signer.ComposeSigningKey(secretKey, _region, timestamp.ToString(AWSSDKUtils.ISO8601BasicDateFormat), _service), UTF8Encoding.UTF8.GetBytes(stringToSign.ToString()));
 
