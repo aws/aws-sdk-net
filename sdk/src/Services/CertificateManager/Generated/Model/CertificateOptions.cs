@@ -77,6 +77,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property Export. 
         /// <para>
         /// You can opt in to allow the export of your certificates by specifying <c>ENABLED</c>.
+        /// You cannot update the value of <c>Export</c> after the the certificate is created.
         /// </para>
         /// </summary>
         public CertificateExport Export
