@@ -1564,21 +1564,6 @@ namespace AWSSDK_DotNet.UnitTests
         {
             mockClient
             .Setup(m => m.DeleteItem(
-               It.Is<DeleteItemRequest>(r =>
-                   r.TableName == "ContextTestEntity" &&
-                   r.Key != null &&
-                   r.Key.Count == 2 &&
-                   r.Key["Id"].N == "1" &&
-                   r.Key["Name"].S == "foo" &&
-                   r.ReturnValues == null &&
-                   r.Expected == null &&
-                   r.ConditionExpression == null &&
-                   r.ExpressionAttributeNames == null &&
-                   r.ExpressionAttributeValues == null)))
-            .Returns(new DeleteItemResponse());
-
-            mockClient
-            .Setup(m => m.DeleteItem(
                 It.Is<DeleteItemRequest>(r =>
                     r.TableName == "ContextTestEntity" &&
                     r.Key != null &&
@@ -1605,6 +1590,31 @@ namespace AWSSDK_DotNet.UnitTests
                     r.ExpressionAttributeNames.Count == 1 &&
                     r.ExpressionAttributeNames.ContainsKey("#awsavarversion"))),
                 Times.Once);
+        }
+
+        [TestMethod]
+        public void DeteleItem_With_SkipVersion()
+        {
+            mockClient
+            .Setup(m => m.DeleteItem(
+               It.Is<DeleteItemRequest>(r =>
+                   r.TableName == "ContextTestEntity" &&
+                   r.Key != null &&
+                   r.Key.Count == 2 &&
+                   r.Key["Id"].N == "1" &&
+                   r.Key["Name"].S == "foo" &&
+                   r.ReturnValues == null &&
+                   r.Expected == null &&
+                   r.ConditionExpression == null &&
+                   r.ExpressionAttributeNames == null &&
+                   r.ExpressionAttributeValues == null)))
+            .Returns(new DeleteItemResponse());
+
+            var entity = new ContextTestEntity
+            {
+                Id = 1,
+                Name = "foo",
+            };
 
             context.Delete(entity, new DeleteConfig() { SkipVersionCheck = true });
 
@@ -1618,22 +1628,6 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public async Task DeteleItemAsync_With_ConditionalExpression()
         {
-            mockClient
-            .Setup(m => m.DeleteItemAsync(
-               It.Is<DeleteItemRequest>(r =>
-                   r.TableName == "ContextTestEntity" &&
-                   r.Key != null &&
-                   r.Key.Count == 2 &&
-                   r.Key["Id"].N == "1" &&
-                   r.Key["Name"].S == "foo" &&
-                   r.ReturnValues == null &&
-                   r.Expected == null &&
-                   r.ConditionExpression == null &&
-                   r.ExpressionAttributeNames == null &&
-                   r.ExpressionAttributeValues == null),
-               It.IsAny<CancellationToken>()))
-            .ReturnsAsync(new DeleteItemResponse());
-
             mockClient
             .Setup(m => m.DeleteItemAsync(
                 It.Is<DeleteItemRequest>(r =>
@@ -1664,6 +1658,32 @@ namespace AWSSDK_DotNet.UnitTests
                     r.ExpressionAttributeNames.ContainsKey("#awsavarversion")),
                 It.IsAny<CancellationToken>()),
                 Times.Once);
+        }
+
+        [TestMethod]
+        public async Task DeteleItemAsync_With_SkipVersion()
+        {
+            mockClient
+            .Setup(m => m.DeleteItemAsync(
+               It.Is<DeleteItemRequest>(r =>
+                   r.TableName == "ContextTestEntity" &&
+                   r.Key != null &&
+                   r.Key.Count == 2 &&
+                   r.Key["Id"].N == "1" &&
+                   r.Key["Name"].S == "foo" &&
+                   r.ReturnValues == null &&
+                   r.Expected == null &&
+                   r.ConditionExpression == null &&
+                   r.ExpressionAttributeNames == null &&
+                   r.ExpressionAttributeValues == null),
+               It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new DeleteItemResponse());
+
+            var entity = new ContextTestEntity
+            {
+                Id = 1,
+                Name = "foo",
+            };
 
             await context.DeleteAsync(entity, new DeleteConfig() { SkipVersionCheck = true });
 
