@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IngressPointConfiguration Marshaller
+    /// TlsAuthConfiguration Marshaller
     /// </summary>
-    public class IngressPointConfigurationMarshaller : IRequestMarshaller<IngressPointConfiguration, JsonMarshallerContext> 
+    public class TlsAuthConfigurationMarshaller : IRequestMarshaller<TlsAuthConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,29 +42,17 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IngressPointConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(TlsAuthConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetSecretArn())
+            if(requestObject.IsSetTrustStore())
             {
-                context.Writer.WritePropertyName("SecretArn");
-                context.Writer.WriteStringValue(requestObject.SecretArn);
-            }
-
-            if(requestObject.IsSetSmtpPassword())
-            {
-                context.Writer.WritePropertyName("SmtpPassword");
-                context.Writer.WriteStringValue(requestObject.SmtpPassword);
-            }
-
-            if(requestObject.IsSetTlsAuthConfiguration())
-            {
-                context.Writer.WritePropertyName("TlsAuthConfiguration");
+                context.Writer.WritePropertyName("TrustStore");
                 context.Writer.WriteStartObject();
 
-                var marshaller = TlsAuthConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.TlsAuthConfiguration, context);
+                var marshaller = TrustStoreMarshaller.Instance;
+                marshaller.Marshall(requestObject.TrustStore, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -74,7 +62,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static IngressPointConfigurationMarshaller Instance = new IngressPointConfigurationMarshaller();
+        public readonly static TlsAuthConfigurationMarshaller Instance = new TlsAuthConfigurationMarshaller();
 
     }
 }

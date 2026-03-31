@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IngressPointAuthConfiguration Object
+    /// Response Unmarshaller for TlsAuthConfiguration Object
     /// </summary>  
-    public class IngressPointAuthConfigurationUnmarshaller : IJsonUnmarshaller<IngressPointAuthConfiguration, JsonUnmarshallerContext>
+    public class TlsAuthConfigurationUnmarshaller : IJsonUnmarshaller<TlsAuthConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IngressPointAuthConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TlsAuthConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            IngressPointAuthConfiguration unmarshalledObject = new IngressPointAuthConfiguration();
+            TlsAuthConfiguration unmarshalledObject = new TlsAuthConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IngressPointPasswordConfiguration", targetDepth))
+                if (context.TestExpression("TrustStore", targetDepth))
                 {
-                    var unmarshaller = IngressPointPasswordConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.IngressPointPasswordConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SecretArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TlsAuthConfiguration", targetDepth))
-                {
-                    var unmarshaller = TlsAuthConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TlsAuthConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = TrustStoreUnmarshaller.Instance;
+                    unmarshalledObject.TrustStore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static IngressPointAuthConfigurationUnmarshaller _instance = new IngressPointAuthConfigurationUnmarshaller();        
+        private static TlsAuthConfigurationUnmarshaller _instance = new TlsAuthConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IngressPointAuthConfigurationUnmarshaller Instance
+        public static TlsAuthConfigurationUnmarshaller Instance
         {
             get
             {

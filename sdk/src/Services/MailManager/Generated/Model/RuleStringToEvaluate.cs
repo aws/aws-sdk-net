@@ -36,6 +36,7 @@ namespace Amazon.MailManager.Model
     {
         private Analysis _analysis;
         private RuleStringEmailAttribute _attribute;
+        private RuleClientCertificateAttribute _clientCertificateAttribute;
         private string _mimeHeaderAttribute;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.MailManager.Model
         internal bool IsSetAttribute()
         {
             return this._attribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientCertificateAttribute. 
+        /// <para>
+        /// The client certificate attribute to evaluate in a string condition expression.
+        /// </para>
+        /// </summary>
+        public RuleClientCertificateAttribute ClientCertificateAttribute
+        {
+            get { return this._clientCertificateAttribute; }
+            set { this._clientCertificateAttribute = value; }
+        }
+
+        // Check to see if ClientCertificateAttribute property is set
+        internal bool IsSetClientCertificateAttribute()
+        {
+            return this._clientCertificateAttribute != null;
         }
 
         /// <summary>

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IngressPointConfiguration Marshaller
+    /// TrustStore Marshaller
     /// </summary>
-    public class IngressPointConfigurationMarshaller : IRequestMarshaller<IngressPointConfiguration, JsonMarshallerContext> 
+    public class TrustStoreMarshaller : IRequestMarshaller<TrustStore, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,31 +42,26 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IngressPointConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(TrustStore requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetSecretArn())
+            if(requestObject.IsSetCAContent())
             {
-                context.Writer.WritePropertyName("SecretArn");
-                context.Writer.WriteStringValue(requestObject.SecretArn);
+                context.Writer.WritePropertyName("CAContent");
+                context.Writer.WriteStringValue(requestObject.CAContent);
             }
 
-            if(requestObject.IsSetSmtpPassword())
+            if(requestObject.IsSetCrlContent())
             {
-                context.Writer.WritePropertyName("SmtpPassword");
-                context.Writer.WriteStringValue(requestObject.SmtpPassword);
+                context.Writer.WritePropertyName("CrlContent");
+                context.Writer.WriteStringValue(requestObject.CrlContent);
             }
 
-            if(requestObject.IsSetTlsAuthConfiguration())
+            if(requestObject.IsSetKmsKeyArn())
             {
-                context.Writer.WritePropertyName("TlsAuthConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = TlsAuthConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.TlsAuthConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("KmsKeyArn");
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
             }
 
         }
@@ -74,7 +69,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static IngressPointConfigurationMarshaller Instance = new IngressPointConfigurationMarshaller();
+        public readonly static TrustStoreMarshaller Instance = new TrustStoreMarshaller();
 
     }
 }

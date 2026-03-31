@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RuleStringToEvaluate Object
+    /// Response Unmarshaller for BounceAction Object
     /// </summary>  
-    public class RuleStringToEvaluateUnmarshaller : IJsonUnmarshaller<RuleStringToEvaluate, JsonUnmarshallerContext>
+    public class BounceActionUnmarshaller : IJsonUnmarshaller<BounceAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuleStringToEvaluate Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public BounceAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            RuleStringToEvaluate unmarshalledObject = new RuleStringToEvaluate();
+            BounceAction unmarshalledObject = new BounceAction();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,46 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Analysis", targetDepth))
-                {
-                    var unmarshaller = AnalysisUnmarshaller.Instance;
-                    unmarshalledObject.Analysis = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Attribute", targetDepth))
+                if (context.TestExpression("ActionFailurePolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Attribute = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ActionFailurePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClientCertificateAttribute", targetDepth))
+                if (context.TestExpression("DiagnosticMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientCertificateAttribute = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DiagnosticMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MimeHeaderAttribute", targetDepth))
+                if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MimeHeaderAttribute = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Sender", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Sender = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SmtpReplyCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SmtpReplyCode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("StatusCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +103,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuleStringToEvaluateUnmarshaller _instance = new RuleStringToEvaluateUnmarshaller();        
+        private static BounceActionUnmarshaller _instance = new BounceActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleStringToEvaluateUnmarshaller Instance
+        public static BounceActionUnmarshaller Instance
         {
             get
             {

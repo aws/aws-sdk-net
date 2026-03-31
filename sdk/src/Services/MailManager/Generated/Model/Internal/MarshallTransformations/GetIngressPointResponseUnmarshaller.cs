@@ -112,6 +112,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TlsPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TlsPolicy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TrafficPolicyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

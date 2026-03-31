@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IngressPointConfiguration Marshaller
+    /// InvokeLambdaAction Marshaller
     /// </summary>
-    public class IngressPointConfigurationMarshaller : IRequestMarshaller<IngressPointConfiguration, JsonMarshallerContext> 
+    public class InvokeLambdaActionMarshaller : IRequestMarshaller<InvokeLambdaAction, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,31 +42,38 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IngressPointConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(InvokeLambdaAction requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetSecretArn())
+            if(requestObject.IsSetActionFailurePolicy())
             {
-                context.Writer.WritePropertyName("SecretArn");
-                context.Writer.WriteStringValue(requestObject.SecretArn);
+                context.Writer.WritePropertyName("ActionFailurePolicy");
+                context.Writer.WriteStringValue(requestObject.ActionFailurePolicy);
             }
 
-            if(requestObject.IsSetSmtpPassword())
+            if(requestObject.IsSetFunctionArn())
             {
-                context.Writer.WritePropertyName("SmtpPassword");
-                context.Writer.WriteStringValue(requestObject.SmtpPassword);
+                context.Writer.WritePropertyName("FunctionArn");
+                context.Writer.WriteStringValue(requestObject.FunctionArn);
             }
 
-            if(requestObject.IsSetTlsAuthConfiguration())
+            if(requestObject.IsSetInvocationType())
             {
-                context.Writer.WritePropertyName("TlsAuthConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("InvocationType");
+                context.Writer.WriteStringValue(requestObject.InvocationType);
+            }
 
-                var marshaller = TlsAuthConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.TlsAuthConfiguration, context);
+            if(requestObject.IsSetRetryTimeMinutes())
+            {
+                context.Writer.WritePropertyName("RetryTimeMinutes");
+                context.Writer.WriteNumberValue(requestObject.RetryTimeMinutes.Value);
+            }
 
-                context.Writer.WriteEndObject();
+            if(requestObject.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }
@@ -74,7 +81,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static IngressPointConfigurationMarshaller Instance = new IngressPointConfigurationMarshaller();
+        public readonly static InvokeLambdaActionMarshaller Instance = new InvokeLambdaActionMarshaller();
 
     }
 }

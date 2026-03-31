@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IngressPointAuthConfiguration Object
+    /// Response Unmarshaller for InvokeLambdaAction Object
     /// </summary>  
-    public class IngressPointAuthConfigurationUnmarshaller : IJsonUnmarshaller<IngressPointAuthConfiguration, JsonUnmarshallerContext>
+    public class InvokeLambdaActionUnmarshaller : IJsonUnmarshaller<InvokeLambdaAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IngressPointAuthConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InvokeLambdaAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            IngressPointAuthConfiguration unmarshalledObject = new IngressPointAuthConfiguration();
+            InvokeLambdaAction unmarshalledObject = new InvokeLambdaAction();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,34 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IngressPointPasswordConfiguration", targetDepth))
-                {
-                    var unmarshaller = IngressPointPasswordConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.IngressPointPasswordConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SecretArn", targetDepth))
+                if (context.TestExpression("ActionFailurePolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ActionFailurePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TlsAuthConfiguration", targetDepth))
+                if (context.TestExpression("FunctionArn", targetDepth))
                 {
-                    var unmarshaller = TlsAuthConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TlsAuthConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FunctionArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("InvocationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InvocationType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RetryTimeMinutes", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.RetryTimeMinutes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +91,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static IngressPointAuthConfigurationUnmarshaller _instance = new IngressPointAuthConfigurationUnmarshaller();        
+        private static InvokeLambdaActionUnmarshaller _instance = new InvokeLambdaActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IngressPointAuthConfigurationUnmarshaller Instance
+        public static InvokeLambdaActionUnmarshaller Instance
         {
             get
             {
