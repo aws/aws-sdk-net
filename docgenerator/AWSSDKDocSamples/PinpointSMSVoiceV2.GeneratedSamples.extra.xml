@@ -19,4 +19,194 @@
             </example>
         </value>
     </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.CreateNotifyConfiguration(Amazon.PinpointSMSVoiceV2.Model.CreateNotifyConfigurationRequest)" />
+            <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.CreateNotifyConfiguration(Amazon.PinpointSMSVoiceV2.Model.CreateNotifyConfigurationRequest)" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.CreateNotifyConfigurationRequest" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.CreateNotifyConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Create a notify configuration for OTP code verification over SMS.
+                </para>
+                <code
+                    title="CreateNotifyConfiguration"
+                    source=".\AWSSDKDocSamples\PinpointSMSVoiceV2\PinpointSMSVoiceV2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.DeleteNotifyConfiguration(Amazon.PinpointSMSVoiceV2.Model.DeleteNotifyConfigurationRequest)" />
+            <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.DeleteNotifyConfiguration(Amazon.PinpointSMSVoiceV2.Model.DeleteNotifyConfigurationRequest)" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.DeleteNotifyConfigurationRequest" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.DeleteNotifyConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Delete an existing notify configuration.
+                </para>
+                <code
+                    title="DeleteNotifyConfiguration"
+                    source=".\AWSSDKDocSamples\PinpointSMSVoiceV2\PinpointSMSVoiceV2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.DeleteNotifyMessageSpendLimitOverride(Amazon.PinpointSMSVoiceV2.Model.DeleteNotifyMessageSpendLimitOverrideRequest)" />
+            <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.DeleteNotifyMessageSpendLimitOverride(Amazon.PinpointSMSVoiceV2.Model.DeleteNotifyMessageSpendLimitOverrideRequest)" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.DeleteNotifyMessageSpendLimitOverrideRequest" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.DeleteNotifyMessageSpendLimitOverrideResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Delete the monthly spend limit override for notify messages, reverting to the default limit.
+                </para>
+                <code
+                    title="DeleteNotifyMessageSpendLimitOverride"
+                    source=".\AWSSDKDocSamples\PinpointSMSVoiceV2\PinpointSMSVoiceV2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.DescribeNotifyConfigurations(Amazon.PinpointSMSVoiceV2.Model.DescribeNotifyConfigurationsRequest)" />
+            <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.DescribeNotifyConfigurations(Amazon.PinpointSMSVoiceV2.Model.DescribeNotifyConfigurationsRequest)" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.DescribeNotifyConfigurationsRequest" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.DescribeNotifyConfigurationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Describe notify configurations filtered by status.
+                </para>
+                <code
+                    title="DescribeNotifyConfigurations"
+                    source=".\AWSSDKDocSamples\PinpointSMSVoiceV2\PinpointSMSVoiceV2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.DescribeNotifyTemplates(Amazon.PinpointSMSVoiceV2.Model.DescribeNotifyTemplatesRequest)" />
+            <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.DescribeNotifyTemplates(Amazon.PinpointSMSVoiceV2.Model.DescribeNotifyTemplatesRequest)" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.DescribeNotifyTemplatesRequest" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.DescribeNotifyTemplatesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Describe available notify templates for OTP verification over SMS.
+                </para>
+                <code
+                    title="DescribeNotifyTemplates"
+                    source=".\AWSSDKDocSamples\PinpointSMSVoiceV2\PinpointSMSVoiceV2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.ListNotifyCountries(Amazon.PinpointSMSVoiceV2.Model.ListNotifyCountriesRequest)" />
+            <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.ListNotifyCountries(Amazon.PinpointSMSVoiceV2.Model.ListNotifyCountriesRequest)" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.ListNotifyCountriesRequest" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.ListNotifyCountriesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    List countries that support notify messaging over SMS.
+                </para>
+                <code
+                    title="ListNotifyCountries"
+                    source=".\AWSSDKDocSamples\PinpointSMSVoiceV2\PinpointSMSVoiceV2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.SendNotifyTextMessage(Amazon.PinpointSMSVoiceV2.Model.SendNotifyTextMessageRequest)" />
+            <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.SendNotifyTextMessage(Amazon.PinpointSMSVoiceV2.Model.SendNotifyTextMessageRequest)" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.SendNotifyTextMessageRequest" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.SendNotifyTextMessageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Send an OTP verification code via SMS using a notify configuration.
+                </para>
+                <code
+                    title="SendNotifyTextMessage"
+                    source=".\AWSSDKDocSamples\PinpointSMSVoiceV2\PinpointSMSVoiceV2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.SendNotifyVoiceMessage(Amazon.PinpointSMSVoiceV2.Model.SendNotifyVoiceMessageRequest)" />
+            <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.SendNotifyVoiceMessage(Amazon.PinpointSMSVoiceV2.Model.SendNotifyVoiceMessageRequest)" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.SendNotifyVoiceMessageRequest" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.SendNotifyVoiceMessageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Send an OTP verification code via voice call using a notify configuration.
+                </para>
+                <code
+                    title="SendNotifyVoiceMessage"
+                    source=".\AWSSDKDocSamples\PinpointSMSVoiceV2\PinpointSMSVoiceV2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.SetNotifyMessageSpendLimitOverride(Amazon.PinpointSMSVoiceV2.Model.SetNotifyMessageSpendLimitOverrideRequest)" />
+            <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.SetNotifyMessageSpendLimitOverride(Amazon.PinpointSMSVoiceV2.Model.SetNotifyMessageSpendLimitOverrideRequest)" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.SetNotifyMessageSpendLimitOverrideRequest" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.SetNotifyMessageSpendLimitOverrideResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Set a monthly spend limit override for notify messages.
+                </para>
+                <code
+                    title="SetNotifyMessageSpendLimitOverride"
+                    source=".\AWSSDKDocSamples\PinpointSMSVoiceV2\PinpointSMSVoiceV2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.UpdateNotifyConfiguration(Amazon.PinpointSMSVoiceV2.Model.UpdateNotifyConfigurationRequest)" />
+            <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.UpdateNotifyConfiguration(Amazon.PinpointSMSVoiceV2.Model.UpdateNotifyConfigurationRequest)" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.UpdateNotifyConfigurationRequest" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.UpdateNotifyConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Update a notify configuration to add voice channel and additional countries.
+                </para>
+                <code
+                    title="UpdateNotifyConfiguration"
+                    source=".\AWSSDKDocSamples\PinpointSMSVoiceV2\PinpointSMSVoiceV2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
 </docs>
