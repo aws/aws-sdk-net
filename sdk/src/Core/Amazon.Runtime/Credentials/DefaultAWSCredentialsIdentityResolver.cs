@@ -32,6 +32,8 @@ namespace Amazon.Runtime.Credentials
     /// The default search order used is described in the <a href="https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/creds-assign.html">
     /// developer guide</a>, but it can be overwritten by setting the <see cref="AWSConfigs.AWSCredentialsGenerators"/> property.
     /// </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA1001:Types that own disposable fields should be disposable",
+        Justification = "This resolver is designed to be long-lived (singleton via DefaultIdentityResolverConfiguration). Disposing the semaphore would break concurrent callers.")]
     public class DefaultAWSCredentialsIdentityResolver : IIdentityResolver<AWSCredentials>
     {
         private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
@@ -43,8 +45,14 @@ namespace Amazon.Runtime.Credentials
         /// </summary>
         public delegate AWSCredentials CredentialsGenerator();
 
-        private static readonly ReaderWriterLockSlim _cachedCredentialsLock = new();
-        private AWSCredentials _cachedCredentials;
+        /// <summary>
+        /// SemaphoreSlim supports both synchronous Wait() and asynchronous WaitAsync(), preventing
+        /// thread pool starvation when many concurrent async requests need to resolve credentials
+        /// simultaneously. Only one caller walks the credential chain; all others wait and reuse
+        /// the cached result.
+        /// </summary>
+        private readonly SemaphoreSlim _credentialResolutionLock = new SemaphoreSlim(1, 1);
+        private volatile AWSCredentials _cachedCredentials;
         private readonly List<CredentialsGenerator> _credentialsGenerators;
         private readonly CredentialProfileStoreChain _credentialProfileChain = new();
         private readonly EnvironmentState _lastKnownEnvironmentState = new();
@@ -116,108 +124,183 @@ namespace Amazon.Runtime.Credentials
         }
 
         Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken) =>
-            Task.FromResult<BaseIdentity>(ResolveIdentity(clientConfig));
+            InternalResolveIdentityAsync(clientConfig, cancellationToken);
 
-        public Task<AWSCredentials> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default) =>
-            Task.FromResult(ResolveIdentity(clientConfig));
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "We need to catch all exceptions to be able to move the the next generator.")]
-        private AWSCredentials InternalGetCredentials()
+        public async Task<AWSCredentials> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default)
         {
-            var hasEnvironmentChanged = false;
-
-            try
+            var profile = clientConfig?.Profile;
+            if (!string.IsNullOrEmpty(profile?.Name))
             {
-                _cachedCredentialsLock.EnterReadLock();
-                if (_cachedCredentials != null)
+                var source = new CredentialProfileStoreChain(profile.Location);
+                if (source.TryGetProfile(profile.Name, out CredentialProfile storedProfile))
                 {
-                    hasEnvironmentChanged = _lastKnownEnvironmentState.HasEnvironmentChanged();
-                    if (!hasEnvironmentChanged)
-                    {
-                        return _cachedCredentials;
-                    }
+                    return storedProfile.GetAWSCredentials(source, true);
+                }
+
+                throw new AmazonClientException($"Unable to find the \"{profile.Name}\" profile specified in the client configuration.");
+            }
+
+            return await InternalGetCredentialsAsync(cancellationToken).ConfigureAwait(false);
+        }
+
+        private async Task<BaseIdentity> InternalResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken)
+        {
+            return await ResolveIdentityAsync(clientConfig, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Checks whether valid cached credentials are available without acquiring the lock.
+        /// Returns the cached credentials if they exist and the environment hasn't changed,
+        /// otherwise returns null to indicate that credentials need to be resolved.
+        /// </summary>
+        private AWSCredentials TryGetCachedCredentials(out bool hasEnvironmentChanged)
+        {
+            hasEnvironmentChanged = false;
+            var cached = _cachedCredentials;
+            if (cached != null)
+            {
+                hasEnvironmentChanged = _lastKnownEnvironmentState.HasEnvironmentChanged();
+                if (!hasEnvironmentChanged)
+                {
+                    return cached;
                 }
             }
-            finally
+            return null;
+        }
+
+        /// <summary>
+        /// Walks the credential chain and resolves credentials. This method must only be
+        /// called while holding the <see cref="_credentialResolutionLock"/>.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "We need to catch all exceptions to be able to move to the next generator.")]
+        private AWSCredentials ResolveCredentialChain()
+        {
+            List<CredentialsGenerator> providersToUse;
+            if (AWSConfigs.AWSCredentialsGenerators != null)
             {
-                _cachedCredentialsLock.ExitReadLock();
+                Logger.GetLogger(typeof(DefaultAWSCredentialsIdentityResolver)).DebugFormat("Using custom credential search order defined in {0}", nameof(AWSConfigs));
+                providersToUse = AWSConfigs.AWSCredentialsGenerators;
+            }
+            else
+            {
+                providersToUse = _credentialsGenerators;
             }
 
+            AWSCredentials resolvedCredentials = null;
+            List<Exception> errors = new List<Exception>();
+            foreach (CredentialsGenerator generator in providersToUse)
+            {
+                try
+                {
+                    resolvedCredentials = generator();
+                }
+                // Breaking the chain in case a ProcessAWSCredentialException exception 
+                // is encountered. ProcessAWSCredentialException is thrown by the ProcessAWSCredential provider
+                // when an exception is encountered when running a user provided process to obtain Basic/Session 
+                // credentials. The motivation behind this is that, if the user has provided a process to be run
+                // he expects to use the credentials obtained by running the process. Therefore the exception is
+                // surfaced to the user.
+                catch (ProcessAWSCredentialException)
+                {
+                    throw;
+                }
+                // Also breaking the chain in case a custom profile name was specified and the profile does not exist.
+                // This differs from the FallbackCredentialsFactory, which would default to the IMDS provider (and throw
+                // an error that may not be applicable when running outside of an EC2 environment).
+                catch (ProfileNotFoundException)
+                {
+                    throw;
+                }
+                catch (Exception e)
+                {
+                    resolvedCredentials = null;
+                    errors.Add(e);
+                }
+
+                if (resolvedCredentials != null)
+                {
+                    break;
+                }
+            }
+
+            if (resolvedCredentials != null)
+            {
+                _cachedCredentials = resolvedCredentials;
+                _lastKnownEnvironmentState.UpdateEnvironment();
+                return resolvedCredentials;
+            }
+
+            using var writer = new StringWriter(CultureInfo.InvariantCulture);
+            writer.WriteLine("Failed to resolve AWS credentials. The credential providers used to search for credentials returned the following errors:");
+            writer.WriteLine();
+            for (int i = 0; i < errors.Count; i++)
+            {
+                Exception e = errors[i];
+                writer.WriteLine("Exception {0} of {1}: {2}", i + 1, errors.Count, e.Message);
+            }
+
+            throw new AmazonClientException(writer.ToString());
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "We need to catch all exceptions to be able to move to the next generator.")]
+        private AWSCredentials InternalGetCredentials()
+        {
+            // Fast path: return cached credentials without acquiring the lock.
+            var cached = TryGetCachedCredentials(out var hasEnvironmentChanged);
+            if (cached != null)
+            {
+                return cached;
+            }
+
+            // Slow path: acquire the lock synchronously so only one thread walks the credential chain.
+            _credentialResolutionLock.Wait();
             try
             {
-                _cachedCredentialsLock.EnterWriteLock();
+                // Double-check: another thread may have resolved credentials while we waited.
                 if (_cachedCredentials != null && !hasEnvironmentChanged)
                 {
                     return _cachedCredentials;
                 }
 
-                List<CredentialsGenerator> providersToUse;
-                if (AWSConfigs.AWSCredentialsGenerators != null)
-                {
-                    Logger.GetLogger(typeof(DefaultAWSCredentialsIdentityResolver)).DebugFormat("Using custom credential search order defined in {0}", nameof(AWSConfigs));
-                    providersToUse = AWSConfigs.AWSCredentialsGenerators;
-                }
-                else 
-                {
-                    providersToUse = _credentialsGenerators;
-                }
-
-                List<Exception> errors = new List<Exception>();
-                foreach (CredentialsGenerator generator in providersToUse)
-                {
-                    try
-                    {
-                        _cachedCredentials = generator();
-                    }
-                    // Breaking the chain in case a ProcessAWSCredentialException exception 
-                    // is encountered. ProcessAWSCredentialException is thrown by the ProcessAWSCredential provider
-                    // when an exception is encountered when running a user provided process to obtain Basic/Session 
-                    // credentials. The motivation behind this is that, if the user has provided a process to be run
-                    // he expects to use the credentials obtained by running the process. Therefore the exception is
-                    // surfaced to the user.
-                    catch (ProcessAWSCredentialException)
-                    {
-                        throw;
-                    }
-                    // Also breaking the chain in case a custom profile name was specified and the profile does not exist.
-                    // This differs from the FallbackCredentialsFactory, which would default to the IMDS provider (and throw
-                    // an error that may not be applicable when running outside of an EC2 environment).
-                    catch (ProfileNotFoundException)
-                    {
-                        throw;
-                    }
-                    catch (Exception e)
-                    {
-                        _cachedCredentials = null;
-                        errors.Add(e);
-                    }
-
-                    if (_cachedCredentials != null)
-                    {
-                        break;
-                    }
-                }
-
-                if (_cachedCredentials != null)
-                {
-                    _lastKnownEnvironmentState.UpdateEnvironment();
-                    return _cachedCredentials;
-                }
-
-                using var writer = new StringWriter(CultureInfo.InvariantCulture);
-                writer.WriteLine("Failed to resolve AWS credentials. The credential providers used to search for credentials returned the following errors:");
-                writer.WriteLine();
-                for (int i = 0; i < errors.Count; i++)
-                {
-                    Exception e = errors[i];
-                    writer.WriteLine("Exception {0} of {1}: {2}", i + 1, errors.Count, e.Message);
-                }
-
-                throw new AmazonClientException(writer.ToString());
+                return ResolveCredentialChain();
             }
             finally
             {
-                _cachedCredentialsLock.ExitWriteLock();
+                _credentialResolutionLock.Release();
+            }
+        }
+
+        /// <summary>
+        /// Asynchronously resolves credentials using a single-flight pattern.
+        /// Only one task walks the credential chain; all other concurrent tasks
+        /// asynchronously wait on the semaphore (yielding their thread back to
+        /// the thread pool) and then reuse the cached result.  This prevents
+        /// thread pool starvation under high concurrency.
+        /// </summary>
+        private async Task<AWSCredentials> InternalGetCredentialsAsync(CancellationToken cancellationToken)
+        {
+            // Fast path: return cached credentials without acquiring the lock.
+            var cached = TryGetCachedCredentials(out var hasEnvironmentChanged);
+            if (cached != null)
+            {
+                return cached;
+            }
+
+            // Slow path: asynchronously wait for the lock so we don't block thread pool threads.
+            await _credentialResolutionLock.WaitAsync(cancellationToken).ConfigureAwait(false);
+            try
+            {
+                // Double-check: another task may have resolved credentials while we waited.
+                if (_cachedCredentials != null && !hasEnvironmentChanged)
+                {
+                    return _cachedCredentials;
+                }
+
+                return ResolveCredentialChain();
+            }
+            finally
+            {
+                _credentialResolutionLock.Release();
             }
         }
 
