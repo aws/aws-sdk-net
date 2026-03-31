@@ -32,7 +32,6 @@ namespace Amazon.Runtime.Internal.Auth
         private const string HeaderDate = ":date";
         private const string HeaderChunkSignature = ":chunk-signature";
 
-        private readonly Logger _logger;
         private readonly AWSCredentials _credentials;
         private readonly string _region;
         private readonly string _service;
@@ -52,8 +51,6 @@ namespace Amazon.Runtime.Internal.Auth
             _region = region;
             _service = service;
             _previousSignature = requestSignature;
-
-            _logger = Logger.GetLogger(this.GetType());
         }
 
         /// <summary>
@@ -99,16 +96,6 @@ namespace Amazon.Runtime.Internal.Auth
             stringToSign.Append(AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(dateHeaderBuffer), true));
             stringToSign.Append("\n");
             stringToSign.Append(AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(eventBytes), true));
-
-            var logBuilder = new StringBuilder();
-
-            logBuilder.AppendLine("String to sign:\n" + stringToSign.ToString());
-            var base64DateHeader = Convert.ToBase64String(dateHeaderBuffer);
-            logBuilder.AppendLine("Date Header (Base 64): " + base64DateHeader);
-            var base64EventBytes = Convert.ToBase64String(eventBytes);
-            logBuilder.AppendLine("EventData (Base 64): " + base64EventBytes);
-            _logger.InfoFormat(logBuilder.ToString());
-
 
             var signature = AWS4Signer.ComputeKeyedHash(AWS4Signer.SignerAlgorithm, AWS4Signer.ComposeSigningKey(secretKey, _region, timestamp.ToString(AWSSDKUtils.ISO8601BasicDateFormat), _service), UTF8Encoding.UTF8.GetBytes(stringToSign.ToString()));
 
