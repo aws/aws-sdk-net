@@ -3202,8 +3202,9 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action is not applicable for Linux/Unix instances or Windows instances that are
-        /// backed by Amazon EBS.
+        /// This action is no longer supported. To create an AMI, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
+        /// Create an Amazon EBS-backed AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3231,8 +3232,9 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action is not applicable for Linux/Unix instances or Windows instances that are
-        /// backed by Amazon EBS.
+        /// This action is no longer supported. To create an AMI, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
+        /// Create an Amazon EBS-backed AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
