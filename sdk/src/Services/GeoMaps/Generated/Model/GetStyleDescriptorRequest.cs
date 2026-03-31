@@ -85,8 +85,7 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property ColorScheme. 
         /// <para>
-        /// Sets color tone for map such as dark and light for specific map styles. It applies
-        /// to only vector map styles such as Standard and Monochrome.
+        /// Sets the color tone for the map, such as dark and light.
         /// </para>
         ///  
         /// <para>
@@ -123,8 +122,7 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is valid only for the <c>Standard</c>, <c>Monochrome</c>, and <c>Hybrid</c>
-        /// map styles.
+        /// This parameter is valid for all map styles except <c>Satellite</c>.
         /// </para>
         /// </summary>
         public ContourDensity ContourDensity
@@ -304,7 +302,7 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is valid only for the <c>Standard</c> map style.
+        /// This parameter is valid for all map styles except <c>Satellite</c>.
         /// </para>
         /// </summary>
         public Traffic Traffic
@@ -328,7 +326,7 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is valid only for the <c>Standard</c> map style.
+        /// This parameter is valid for all map styles except <c>Satellite</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

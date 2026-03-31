@@ -166,8 +166,7 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property ColorScheme. 
         /// <para>
-        /// Sets color tone for map, such as dark and light for specific map styles. It only applies
-        /// to vector map styles, such as Standard.
+        /// Sets the color tone for the map, such as dark and light.
         /// </para>
         ///  
         /// <para>
