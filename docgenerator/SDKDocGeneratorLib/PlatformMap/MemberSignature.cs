@@ -23,6 +23,7 @@ namespace SDKDocGenerator.PlatformMap
         /// Length of the NDoc member-type prefix (e.g., "T:", "M:", "P:").
         /// </summary>
         private const int MemberTypePrefixLength = 2;
+
         #region Type Signatures
 
         /// <summary>

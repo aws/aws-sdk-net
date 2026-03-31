@@ -1,5 +1,4 @@
-﻿using SDKDocGenerator.PlatformMap;
-using SDKDocGenerator.Syntax;
+﻿using SDKDocGenerator.Syntax;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,32 +11,24 @@ namespace SDKDocGenerator.Writers
     public class ClassWriter : BaseWriter
     {
         readonly TypeWrapper _versionType;
-        readonly IEnumerable<MethodInfoWrapper> _supplementalMethods;
-
-        public ClassWriter(GenerationManifest artifacts, FrameworkVersion version, TypeWrapper versionType)
-            : base(artifacts, version)
-        {
-            _versionType = versionType;
-            _version = version;
-            _supplementalMethods = Enumerable.Empty<MethodInfoWrapper>();
-        }
+        readonly IReadOnlyList<MethodInfoWrapper> _allMethods;
 
         /// <summary>
-        /// Creates a ClassWriter that includes supplemental methods from another platform.
-        /// This is used when generating documentation for types where methods differ between platforms
-        /// (e.g., H2 eventstream APIs that only exist in net8.0).
+        /// Creates a ClassWriter with the complete list of methods to document.
+        /// The caller is responsible for assembling the full method list
+        /// (including any platform-exclusive methods).
         /// </summary>
         /// <param name="artifacts">The generation manifest</param>
         /// <param name="version">The framework version for documentation</param>
         /// <param name="versionType">The type to document</param>
-        /// <param name="supplementalMethods">Additional methods to include that don't exist in the primary platform</param>
+        /// <param name="methods">The complete list of methods to render on the class page</param>
         public ClassWriter(GenerationManifest artifacts, FrameworkVersion version, TypeWrapper versionType,
-                          IEnumerable<MethodInfoWrapper> supplementalMethods)
+                          IEnumerable<MethodInfoWrapper> methods)
             : base(artifacts, version)
         {
             _versionType = versionType;
             _version = version;
-            _supplementalMethods = supplementalMethods ?? Enumerable.Empty<MethodInfoWrapper>();
+            _allMethods = (methods ?? Enumerable.Empty<MethodInfoWrapper>()).ToList();
         }
 
         protected override string GenerateFilename()
@@ -126,8 +117,7 @@ namespace SDKDocGenerator.Writers
                 if (properties.Any())
                     writer.WriteLine("<li><a href=\"#properties\">Properties</a></li>");
                 
-                var methods = this._versionType.GetMethodsToDocument();
-                if (methods.Any() || _supplementalMethods.Any())
+                if (_allMethods.Any())
                     writer.WriteLine("<li><a href=\"#methods\">Methods</a></li>");
                 
                 var events = this._versionType.GetEvents();
@@ -325,27 +315,7 @@ namespace SDKDocGenerator.Writers
 
         void AddMethods(TextWriter writer)
         {
-            // Get methods from the type and merge with any supplemental methods
-            var methods = this._versionType.GetMethodsToDocument().ToList();
-
-            // Add supplemental methods (methods that exist only in supplemental platforms like net8.0)
-            if (_supplementalMethods.Any())
-            {
-                // Create a set of existing method signatures to avoid duplicates
-                var existingSignatures = new HashSet<string>(
-                    methods.Select(m => MemberSignature.ForMethod(m)));
-
-                foreach (var supplementalMethod in _supplementalMethods)
-                {
-                    var sig = MemberSignature.ForMethod(supplementalMethod);
-                    if (!existingSignatures.Contains(sig))
-                    {
-                        methods.Add(supplementalMethod);
-                    }
-                }
-            }
-
-            if (!methods.Any())
+            if (!_allMethods.Any())
                 return;
 
             AddMemberTableSectionHeader(writer, "Methods");
@@ -354,7 +324,7 @@ namespace SDKDocGenerator.Writers
                                             "<p>Asynchronous operations (methods ending with <i>Async</i>) in the table below are for .NET 4.7.2 or higher.</p></div>";
 
             writer.WriteLine(netFrameworkPatternNote);
-            foreach (var info in methods.OrderBy(x => x.Name))
+            foreach (var info in _allMethods.OrderBy(x => x.Name))
             {
                 AddMethod(writer, info);
             }

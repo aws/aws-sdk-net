@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using SDKDocGenerator.PlatformMap;
 using SDKDocGenerator.Writers;
 using System.Diagnostics;
 using System.Reflection;
@@ -300,16 +301,12 @@ namespace SDKDocGenerator
         }
 
         /// <summary>
-        /// Generates documentation for platform-exclusive methods using the unified platform map.
-        /// This is the new approach that uses wrappers already stored in the map during
-        /// the initial scan, eliminating the need to reload supplemental assemblies.
+        /// Generates individual method pages for platform-exclusive methods.
+        /// Class pages already include exclusive methods (assembled during WriteType()),
+        /// so this method only creates the per-method detail pages.
         ///
-        /// The platform map already contains:
-        /// - Signature → Platforms mapping (for diagnostics and testing)
-        /// - MethodInfoWrapper for exclusive methods (for page generation)
-        ///
-        /// This replaces the old GenerateSupplementalPagesFromMap approach with a truly
-        /// unified flow where no assembly is scanned twice.
+        /// Uses MethodInfoWrapper instances stored in the map during the initial scan,
+        /// so no assemblies need to be reloaded.
         /// </summary>
         /// <param name="tocWriter">TOC generation handler</param>
         public void GenerateExclusivePagesFromMap(TOCWriter tocWriter)
@@ -331,7 +328,7 @@ namespace SDKDocGenerator
             }
 
             var exclusiveCount = PlatformMap.ExclusiveMemberCount;
-            Trace.WriteLine($"\tgenerating exclusive content from unified map for {ServiceName} ({exclusiveCount} methods across {typesWithExclusive.Count} types)");
+            Trace.WriteLine($"\tgenerating exclusive method pages from unified map for {ServiceName} ({exclusiveCount} methods across {typesWithExclusive.Count} types)");
 
             // Load NDoc documentation for all platforms
             foreach (var platform in AllPlatforms)
@@ -362,6 +359,7 @@ namespace SDKDocGenerator
 
                     // Generate individual method pages for each exclusive method
                     // The wrappers are already valid because assemblies are kept loaded in the map
+                    // Class pages are already generated with exclusive methods included during WriteType()
                     foreach (var method in exclusiveMethods)
                     {
                         // Only write if the method is declared in this type's namespace
@@ -373,12 +371,6 @@ namespace SDKDocGenerator
                                 Trace.WriteLine($"\t\t\tGenerated exclusive method page: {primaryType.Name}.{method.Name}");
                         }
                     }
-
-                    // Regenerate the class page to include exclusive methods
-                    // IMPORTANT: Use the PRIMARY type from net472 as the base - it has ALL methods including sync methods.
-                    var classWriter = new ClassWriter(this, frameworkVersion, primaryType, exclusiveMethods);
-                    classWriter.Write();
-                    Trace.WriteLine($"\t\t\tRegenerated class page: {primaryType.Name} with {exclusiveMethods.Count} exclusive methods");
                 }
             }
             finally
@@ -414,7 +406,21 @@ namespace SDKDocGenerator
 
         void WriteType(FrameworkVersion version, TypeWrapper type)
         {
-            var writer = new ClassWriter(this, version, type);
+            // Assemble complete method list: primary platform + any platform-exclusive methods
+            var methods = type.GetMethodsToDocument().ToList();
+            var exclusive = PlatformMap?.GetExclusiveMethodsForType(type.FullName);
+            if (exclusive != null)
+            {
+                var existingSigs = new HashSet<string>(
+                    methods.Select(m => MemberSignature.ForMethod(m)));
+                foreach (var m in exclusive)
+                {
+                    if (!existingSigs.Contains(MemberSignature.ForMethod(m)))
+                        methods.Add(m);
+                }
+            }
+
+            var writer = new ClassWriter(this, version, type, methods);
             writer.Write();
 
             foreach (var item in type.GetConstructors().Where(x => x.IsPublic))

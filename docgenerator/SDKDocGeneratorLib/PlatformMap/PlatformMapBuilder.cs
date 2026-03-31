@@ -24,11 +24,13 @@ namespace SDKDocGenerator.PlatformMap
     /// </summary>
     public class PlatformMapBuilder
     {
-        private readonly GeneratorOptions _options;
+        private readonly string _sdkAssembliesRoot;
 
-        public PlatformMapBuilder(GeneratorOptions options)
+        public PlatformMapBuilder(string sdkAssembliesRoot)
         {
-            _options = options ?? throw new ArgumentNullException(nameof(options));
+            if (string.IsNullOrEmpty(sdkAssembliesRoot))
+                throw new ArgumentNullException(nameof(sdkAssembliesRoot));
+            _sdkAssembliesRoot = sdkAssembliesRoot;
         }
 
         #region Public API
@@ -40,11 +42,15 @@ namespace SDKDocGenerator.PlatformMap
         /// <param name="serviceName">Service name (e.g., "S3", "Core")</param>
         /// <param name="assemblyName">Assembly name without extension (e.g., "AWSSDK.S3")</param>
         /// <param name="platformsToScan">List of platform folders to scan (e.g., ["net472", "net8.0"])</param>
+        /// <param name="primaryPlatform">The primary platform subfolder (e.g., "net472") used as the documentation baseline</param>
+        /// <param name="isVerbose">Whether to emit additional diagnostic messages</param>
         /// <returns>PlatformAvailabilityMap with loaded assemblies - must be disposed</returns>
         public PlatformAvailabilityMap BuildMap(
             string serviceName,
             string assemblyName,
-            IEnumerable<string> platformsToScan)
+            IEnumerable<string> platformsToScan,
+            string primaryPlatform,
+            bool isVerbose)
         {
             if (string.IsNullOrEmpty(serviceName))
                 throw new ArgumentNullException(nameof(serviceName));
@@ -52,12 +58,14 @@ namespace SDKDocGenerator.PlatformMap
                 throw new ArgumentNullException(nameof(assemblyName));
             if (platformsToScan == null)
                 throw new ArgumentNullException(nameof(platformsToScan));
+            if (string.IsNullOrEmpty(primaryPlatform))
+                throw new ArgumentNullException(nameof(primaryPlatform));
 
             var platforms = platformsToScan.ToList();
             if (!platforms.Any())
                 throw new ArgumentException("Must specify at least one platform to scan", nameof(platformsToScan));
 
-            if (_options.Verbose)
+            if (isVerbose)
                 Trace.WriteLine($"Building unified platform map for {serviceName} across {platforms.Count} platforms...");
 
             // Accumulator: { signature → PlatformMemberEntry }
@@ -65,41 +73,28 @@ namespace SDKDocGenerator.PlatformMap
             var scannedPlatforms = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             var loadedContexts = new List<PlatformAssemblyContext>();
 
-            // Primary platform is what the Options specify (usually net472)
-            var primaryPlatform = _options.Platform;
+            // Ensure primary platform is scanned first to establish baseline signatures
+            var orderedPlatforms = new List<string> { primaryPlatform };
+            orderedPlatforms.AddRange(platforms.Where(p => !p.Equals(primaryPlatform, StringComparison.OrdinalIgnoreCase)));
 
             try
             {
-                // First pass: Scan primary platform to establish baseline signatures
-                var primaryAssemblyPath = Path.GetFullPath(Path.Combine(_options.SDKAssembliesRoot, primaryPlatform, assemblyName + ".dll"));
-                if (File.Exists(primaryAssemblyPath))
+                foreach (var platform in orderedPlatforms)
                 {
-                    var context = LoadAndScanPlatform(
-                        primaryAssemblyPath,
-                        primaryPlatform,
-                        serviceName,
-                        memberIndex,
-                        isPrimary: true);
+                    var isPrimary = platform.Equals(primaryPlatform, StringComparison.OrdinalIgnoreCase);
+                    var assemblyPath = Path.GetFullPath(Path.Combine(_sdkAssembliesRoot, platform, assemblyName + ".dll"));
 
-                    if (context != null)
-                    {
-                        loadedContexts.Add(context);
-                        scannedPlatforms.Add(primaryPlatform);
-                        if (_options.Verbose)
-                            Trace.WriteLine($"  Scanned primary platform {primaryPlatform}: {memberIndex.Count} signatures");
-                    }
-                }
-
-                // Second pass: Scan supplemental platforms and capture wrappers for exclusive members
-                foreach (var platform in platforms)
-                {
-                    if (platform.Equals(primaryPlatform, StringComparison.OrdinalIgnoreCase))
-                        continue; // Already scanned
-
-                    var assemblyPath = Path.GetFullPath(Path.Combine(_options.SDKAssembliesRoot, platform, assemblyName + ".dll"));
                     if (!File.Exists(assemblyPath))
                     {
-                        if (_options.Verbose)
+                        if (isPrimary)
+                        {
+                            throw new FileNotFoundException(
+                                $"Primary platform assembly not found. The assembly for primary platform '{primaryPlatform}' " +
+                                $"is required for documentation generation. Expected path: {assemblyPath}",
+                                assemblyPath);
+                        }
+
+                        if (isVerbose)
                             Trace.WriteLine($"  Skipping {platform}: assembly not found");
                         continue;
                     }
@@ -111,20 +106,23 @@ namespace SDKDocGenerator.PlatformMap
                             platform,
                             serviceName,
                             memberIndex,
-                            isPrimary: false);
+                            isPrimary);
 
                         if (context != null)
                         {
                             loadedContexts.Add(context);
                             scannedPlatforms.Add(platform);
-                            if (_options.Verbose)
-                                Trace.WriteLine($"  Scanned {platform}: {memberIndex.Count} unique signatures total");
+                            if (isVerbose)
+                            {
+                                var label = isPrimary ? $"primary platform {platform}" : platform;
+                                Trace.WriteLine($"  Scanned {label}: {memberIndex.Count} unique signatures total");
+                            }
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception ex) when (!isPrimary)
                     {
                         Trace.WriteLine($"  WARNING: Failed to scan {platform}: {ex.Message}");
-                        // Continue with other platforms even if one fails
+                        // Continue with other platforms even if a supplemental one fails
                     }
                 }
 
@@ -136,7 +134,7 @@ namespace SDKDocGenerator.PlatformMap
                 }
 
                 // After all platforms scanned, identify and store wrappers for exclusive methods
-                IdentifyAndStoreExclusiveWrappers(memberIndex, primaryPlatform, loadedContexts);
+                IdentifyAndStoreExclusiveWrappers(memberIndex, primaryPlatform, loadedContexts, isVerbose);
 
                 var map = new PlatformAvailabilityMap(
                     serviceName,
@@ -145,7 +143,7 @@ namespace SDKDocGenerator.PlatformMap
                     scannedPlatforms,
                     loadedContexts);
 
-                if (_options.Verbose)
+                if (isVerbose)
                     map.WriteToTrace();
 
                 return map;
@@ -303,7 +301,8 @@ namespace SDKDocGenerator.PlatformMap
         private void IdentifyAndStoreExclusiveWrappers(
             Dictionary<string, PlatformMemberEntry> memberIndex,
             string primaryPlatform,
-            List<PlatformAssemblyContext> loadedContexts)
+            List<PlatformAssemblyContext> loadedContexts,
+            bool isVerbose)
         {
             // Find method entries that are not on primary platform
             foreach (var kvp in memberIndex)
@@ -328,7 +327,7 @@ namespace SDKDocGenerator.PlatformMap
 
                 if (context == null)
                 {
-                    if (_options.Verbose)
+                    if (isVerbose)
                         Trace.WriteLine($"  WARNING: No assembly context for platform '{exclusivePlatform}' while processing {entry.Signature}");
                     continue;
                 }
