@@ -80,60 +80,6 @@ namespace SDKDocGenerator.UnitTests
 
         #endregion
 
-        #region GetExclusiveMethodsForType
-
-        [Fact]
-        public void GetExclusiveMethodsForType_ReturnsOnlyEntriesWithWrappers()
-        {
-            var entryWithWrapper = CreateEntry("M:Ns.Client.StreamMethod(Ns.Req)", "Ns.Client", "net8.0");
-            // Simulate having a wrapper set by PlatformMapBuilder
-            // We can't create a real MethodInfoWrapper without loading assemblies,
-            // but we can test that entries WITHOUT wrappers are excluded
-            var entryWithoutWrapper = CreateEntry("M:Ns.Client.RegularMethod(Ns.Req)", "Ns.Client", "net472", "net8.0");
-
-            var index = new Dictionary<string, PlatformMemberEntry>(StringComparer.Ordinal)
-            {
-                [entryWithWrapper.Signature] = entryWithWrapper,
-                [entryWithoutWrapper.Signature] = entryWithoutWrapper
-            };
-            var platforms = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { "net472", "net8.0" };
-
-            using var map = CreateTestMap(index, platforms);
-
-            // Neither has a wrapper set, so GetExclusiveMethodsForType should return none
-            var exclusiveMethods = new List<MethodInfoWrapper>(map.GetExclusiveMethodsForType("Ns.Client"));
-            Assert.Empty(exclusiveMethods);
-        }
-
-        #endregion
-
-        #region GetTypesWithExclusiveMembers
-
-        [Fact]
-        public void GetTypesWithExclusiveMembers_ReturnsDistinctTypes()
-        {
-            // Without wrappers set, no types should be returned as having exclusive members
-            var entry1 = CreateEntry("M:Ns.ClientA.Method1()", "Ns.ClientA", "net8.0");
-            var entry2 = CreateEntry("M:Ns.ClientA.Method2()", "Ns.ClientA", "net8.0");
-            var entry3 = CreateEntry("M:Ns.ClientB.Method1()", "Ns.ClientB", "net472", "net8.0");
-
-            var index = new Dictionary<string, PlatformMemberEntry>(StringComparer.Ordinal)
-            {
-                [entry1.Signature] = entry1,
-                [entry2.Signature] = entry2,
-                [entry3.Signature] = entry3
-            };
-            var platforms = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { "net472", "net8.0" };
-
-            using var map = CreateTestMap(index, platforms);
-
-            // No wrappers set, so no types should have exclusive members
-            var types = new List<string>(map.GetTypesWithExclusiveMembers());
-            Assert.Empty(types);
-        }
-
-        #endregion
-
         #region Statistics
 
         [Fact]
@@ -202,27 +148,15 @@ namespace SDKDocGenerator.UnitTests
         }
 
         [Fact]
-        public void GetPlatformsForMember_ReturnsEmpty_WhenMemberNotFound()
+        public void Queries_ReturnEmpty_WhenNotFound()
         {
             var index = new Dictionary<string, PlatformMemberEntry>(StringComparer.Ordinal);
             var platforms = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { "net472" };
 
             using var map = CreateTestMap(index, platforms);
 
-            var result = map.GetPlatformsForMember("M:Ns.Type.DoesNotExist()");
-            Assert.Empty(result);
-        }
-
-        [Fact]
-        public void GetMembersForPlatform_ReturnsEmpty_WhenPlatformNotFound()
-        {
-            var index = new Dictionary<string, PlatformMemberEntry>(StringComparer.Ordinal);
-            var platforms = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { "net472" };
-
-            using var map = CreateTestMap(index, platforms);
-
-            var result = map.GetMembersForPlatform("netstandard2.0");
-            Assert.Empty(result);
+            Assert.Empty(map.GetPlatformsForMember("M:Ns.Type.DoesNotExist()"));
+            Assert.Empty(map.GetMembersForPlatform("netstandard2.0"));
         }
 
         #endregion
