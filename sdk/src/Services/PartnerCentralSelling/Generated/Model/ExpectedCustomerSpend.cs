@@ -37,7 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class ExpectedCustomerSpend
     {
         private string _amount;
-        private ExpectedCustomerSpendCurrencyCodeEnum _currencyCode;
+        private CurrencyCode _currencyCode;
         private string _estimationUrl;
         private PaymentFrequency _frequency;
         private string _targetCompany;
@@ -65,12 +65,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// Indicates the currency in which the revenue estimate is provided. This helps in understanding
-        /// the financial impact across different markets.
+        /// Currency code for the expected customer spend. Supported currencies: USD, EUR
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
-        public ExpectedCustomerSpendCurrencyCodeEnum CurrencyCode
+        public CurrencyCode CurrencyCode
         {
             get { return this._currencyCode; }
             set { this._currencyCode = value; }
