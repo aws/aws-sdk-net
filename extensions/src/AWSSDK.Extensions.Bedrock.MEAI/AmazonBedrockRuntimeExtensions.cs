@@ -25,6 +25,21 @@ public static class AmazonBedrockRuntimeExtensions
     /// <summary>The provider name to use in metadata.</summary>
     internal const string ProviderName = "aws.bedrock";
 
+#if NET8_0_OR_GREATER
+    /// <summary>Gets an <see cref="IRealtimeClient"/> for the specified <see cref="IAmazonBedrockRuntime"/> instance.</summary>
+    /// <param name="runtime">The runtime instance to be represented as an <see cref="IRealtimeClient"/>.</param>
+    /// <param name="defaultModelId">
+    /// The default model ID to use when no model is specified in session options. If not specified,
+    /// defaults to <c>amazon.nova-sonic-v1:0</c>.
+    /// </param>
+    /// <returns>An <see cref="IRealtimeClient"/> instance representing the <see cref="IAmazonBedrockRuntime"/> instance.</returns>
+    /// <exception cref="ArgumentNullException"><paramref name="runtime"/> is <see langword="null"/>.</exception>
+    [Experimental("MEAI001")]
+    public static IRealtimeClient AsIRealtimeClient(this IAmazonBedrockRuntime runtime, string? defaultModelId = null) =>
+        runtime is not null ? new BedrockNovaRealtimeClient(runtime, defaultModelId) :
+        throw new ArgumentNullException(nameof(runtime));
+#endif
+
     /// <summary>Gets an <see cref="IChatClient"/> for the specified <see cref="IAmazonBedrockRuntime"/> instance.</summary>
     /// <param name="runtime">The runtime instance to be represented as an <see cref="IChatClient"/>.</param>
     /// <param name="defaultModelId">
