@@ -14,7 +14,9 @@
  */
 
 using Amazon.Runtime.EventStreams;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,7 +77,12 @@ namespace Amazon.Runtime.Internal.Auth
             var dateHeaderBuffer = new byte[15];
             signedDateHeader.WriteToBuffer(dateHeaderBuffer, 0);
 
-            var formattedDateStamp = timestamp.ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
+            // To be as accurate as possible with the date used for signing, we will read the date header back from the buffer to
+            // get the exact value that is being signed, instead of using the original timestamp which could be different from
+            // the value in the header due to precision loss when converting to and from the timestamp format used in event stream headers.
+            var ignoreNewOffSet = 0;
+            var evnt = EventStreamHeader.FromBuffer(dateHeaderBuffer, 0, ref ignoreNewOffSet);
+            var formattedDateStamp = evnt.AsTimestamp().ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
 
             var stringToSign = new StringBuilder();
             stringToSign.Append(Sha256Payload);
