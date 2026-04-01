@@ -225,8 +225,13 @@ namespace Amazon.Runtime.Credentials
 
             if (resolvedCredentials != null)
             {
-                _cachedCredentials = resolvedCredentials;
+                // Update the environment snapshot before publishing the credentials via the
+                // volatile write. This avoids a race where a concurrent reader in
+                // TryGetCachedCredentials sees non-null _cachedCredentials but stale
+                // environment state, causing a false "environment changed" detection and
+                // an unnecessary re-resolution attempt.
                 _lastKnownEnvironmentState.UpdateEnvironment();
+                _cachedCredentials = resolvedCredentials;
                 return resolvedCredentials;
             }
 
@@ -246,7 +251,7 @@ namespace Amazon.Runtime.Credentials
         private AWSCredentials InternalGetCredentials()
         {
             // Fast path: return cached credentials without acquiring the lock.
-            var cached = TryGetCachedCredentials(out var hasEnvironmentChanged);
+            var cached = TryGetCachedCredentials(out _);
             if (cached != null)
             {
                 return cached;
@@ -256,10 +261,13 @@ namespace Amazon.Runtime.Credentials
             _credentialResolutionLock.Wait();
             try
             {
-                // Double-check: another thread may have resolved credentials while we waited.
-                if (_cachedCredentials != null && !hasEnvironmentChanged)
+                // Re-check with fresh environment state after acquiring the lock.
+                // We discard the pre-lock hasEnvironmentChanged because the environment
+                // may have changed while we were waiting on the semaphore.
+                cached = TryGetCachedCredentials(out _);
+                if (cached != null)
                 {
-                    return _cachedCredentials;
+                    return cached;
                 }
 
                 return ResolveCredentialChain();
@@ -280,7 +288,7 @@ namespace Amazon.Runtime.Credentials
         private async Task<AWSCredentials> InternalGetCredentialsAsync(CancellationToken cancellationToken)
         {
             // Fast path: return cached credentials without acquiring the lock.
-            var cached = TryGetCachedCredentials(out var hasEnvironmentChanged);
+            var cached = TryGetCachedCredentials(out _);
             if (cached != null)
             {
                 return cached;
@@ -290,10 +298,13 @@ namespace Amazon.Runtime.Credentials
             await _credentialResolutionLock.WaitAsync(cancellationToken).ConfigureAwait(false);
             try
             {
-                // Double-check: another task may have resolved credentials while we waited.
-                if (_cachedCredentials != null && !hasEnvironmentChanged)
+                // Re-check with fresh environment state after acquiring the lock.
+                // We discard the pre-lock hasEnvironmentChanged because the environment
+                // may have changed while we were waiting on the semaphore.
+                cached = TryGetCachedCredentials(out _);
+                if (cached != null)
                 {
-                    return _cachedCredentials;
+                    return cached;
                 }
 
                 return ResolveCredentialChain();

@@ -46,15 +46,21 @@ namespace AWSSDK.UnitTests
         [TestInitialize]
         public void TestInitialize()
         {
+            // Cache the current values so they can be restored in TestCleanup.
             _cachedContainersUriVariable = Environment.GetEnvironmentVariable(GenericContainerCredentials.RelativeURIEnvVariable);
-            Environment.SetEnvironmentVariable(GenericContainerCredentials.RelativeURIEnvVariable, null);
-
             _cachedProfileVariable = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
             _cachedAccessTokenVariable = Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY);
             _cachedSecretKeyVariable = Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY);
             _cachedSessionTokenVariable = Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SESSION_TOKEN);
-
             _cachedGenerators = AWSConfigs.AWSCredentialsGenerators;
+
+            // Clear all credential-related env vars so the resolver only uses the
+            // custom generator set via AWSConfigs.AWSCredentialsGenerators.
+            Environment.SetEnvironmentVariable(GenericContainerCredentials.RelativeURIEnvVariable, null);
+            Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, null);
+            Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, null);
+            Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, null);
+            Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SESSION_TOKEN, null);
         }
 
         [TestCleanup]
@@ -150,7 +156,7 @@ namespace AWSSDK.UnitTests
 
             var resolver = new DefaultAWSCredentialsIdentityResolver();
             var tasks = new Task<AWSCredentials>[concurrency];
-            var barrier = new TaskCompletionSource<bool>();
+            var barrier = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
 
             for (int i = 0; i < concurrency; i++)
             {
@@ -192,7 +198,7 @@ namespace AWSSDK.UnitTests
             {
                 () =>
                 {
-                    int count = Interlocked.Increment(ref generatorCallCount);
+                    Interlocked.Increment(ref generatorCallCount);
                     if (shouldFail)
                     {
                         throw new InvalidOperationException("Simulated IMDS failure");
