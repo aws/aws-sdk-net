@@ -30,12 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Specifies the total weight for the specified axle group. Meant for usage in countries
-    /// that have different regulations based on the axle group type.
+    /// Specifies the total weight for different axle group configurations. Used in regions
+    /// where regulations set different weight limits based on axle group types.
     /// 
     ///  
     /// <para>
-    ///  <b>Unit</b>: <c>Kilograms</c> 
+    ///  <b>Unit</b>: <c>kilograms</c> 
     /// </para>
     /// </summary>
     public partial class WeightPerAxleGroup
@@ -49,11 +49,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Quad. 
         /// <para>
-        /// Weight for quad axle group.
+        /// Total weight in kilograms for quad (four adjacent) axle configurations.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -72,11 +72,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Quint. 
         /// <para>
-        /// Weight for quad quint group.
+        /// Total weight in kilograms for quint (five adjacent) axle configurations.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -95,11 +95,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Single. 
         /// <para>
-        /// Weight for single axle group.
+        /// Total weight in kilograms for single axle configurations.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -118,11 +118,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Tandem. 
         /// <para>
-        /// Weight for tandem axle group.
+        /// Total weight in kilograms for tandem (two adjacent) axle configurations.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -141,11 +141,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Triple. 
         /// <para>
-        /// Weight for triple axle group.
+        /// Total weight in kilograms for triple (three adjacent) axle configurations.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]

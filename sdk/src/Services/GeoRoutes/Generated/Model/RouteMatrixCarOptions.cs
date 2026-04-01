@@ -64,7 +64,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>KilometersPerHour</c> 
+        ///  <b>Unit</b>: <c>kilometers per hour</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=252)]
@@ -87,7 +87,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>1</c> 
+        /// Default value: <c>1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1)]

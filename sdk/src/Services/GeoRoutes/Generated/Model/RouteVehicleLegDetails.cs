@@ -88,7 +88,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Incidents. 
         /// <para>
-        /// Incidents corresponding to this leg of the route.
+        ///  Incidents corresponding to this leg of the route. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -112,8 +114,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Notices. 
         /// <para>
-        /// Notices are additional information returned that indicate issues that occurred during
-        /// route calculation.
+        ///  Notices are additional information returned that indicate issues that occurred during
+        /// route calculation. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -162,7 +166,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Spans. 
         /// <para>
-        /// Spans that were computed for the requested SpanAdditionalFeatures.
+        ///  Spans that were computed for the requested SpanAdditionalFeatures. Not supported
+        /// in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -204,7 +210,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Tolls. 
         /// <para>
-        /// Toll related options.
+        ///  Toll related options. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -228,7 +236,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TollSystems. 
         /// <para>
-        /// Toll systems are authorities that collect payments for the toll.
+        ///  Toll systems are authorities that collect payments for the toll. Not supported in
+        /// <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -276,8 +286,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TruckRoadTypes. 
         /// <para>
-        /// Truck road type identifiers. <c>BK1</c> through <c>BK4</c> apply only to Sweden. <c>A2,A4,B2,B4,C,D,ET2,ET4</c>
-        /// apply only to Mexico.
+        ///  Truck road type identifiers. <c>BK1</c> through <c>BK4</c> apply only to Sweden.
+        /// <c>A2,A4,B2,B4,C,D,ET2,ET4</c> apply only to Mexico. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -306,7 +318,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Zones. 
         /// <para>
-        /// Zones corresponding to this leg of the route.
+        ///  Zones corresponding to this leg of the route. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

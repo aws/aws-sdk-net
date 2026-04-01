@@ -71,7 +71,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Meters</c> 
+        ///  <b>Unit</b>: <c>meters</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

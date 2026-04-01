@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// FerryLegDetails is populated when the Leg type is Ferry, and provides additional information
-    /// that is specific
+    /// FerryLegDetails is populated when the Leg type is Ferry, and provides additional
+    /// information that is specific to ferry travel.
     /// </summary>
     public partial class RouteFerryLegDetails
     {

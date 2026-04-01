@@ -98,7 +98,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property DepartureTime. 
         /// <para>
-        /// Estimated time of departure from thr origin.
+        /// Estimated time of departure from the origin.
         /// </para>
         ///  
         /// <para>
@@ -152,7 +152,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// Position defined as <c>[longitude, latitude]</c>.
+        /// Position in World Geodetic System (WGS 84) format: [longitude, latitude].
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

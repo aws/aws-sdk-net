@@ -43,7 +43,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>KilometersPerHour</c> 
+        ///  <b>Unit</b>: <c>kilometers per hour</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Travel mode options when the provided travel mode is <c>Car</c>.
+    /// Vehicle characteristics and preferences that affect routing for passenger cars. This
+    /// includes vehicle type, occupancy, and speed restrictions that may influence which
+    /// roads can be used and expected travel times.
     /// </summary>
     public partial class IsolineCarOptions
     {
@@ -42,8 +44,23 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property EngineType. 
         /// <para>
-        /// Engine type of the vehicle.
+        /// The type of engine powering the vehicle, which may affect route calculation due to
+        /// road restrictions or vehicle characteristics.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>INTERNAL_COMBUSTION</c>—Standard gasoline or diesel engine.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ELECTRIC</c>—Battery electric vehicle.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PLUGIN_HYBRID</c>—Combination of electric and internal combustion engines with
+        /// plug-in charging capability.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public IsolineEngineType EngineType
@@ -61,7 +78,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property LicensePlate. 
         /// <para>
-        /// The vehicle License Plate.
+        /// License plate information used in regions where road access or routing restrictions
+        /// are based on license plate numbers.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -80,11 +98,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property MaxSpeed. 
         /// <para>
-        /// Maximum speed.
+        /// The maximum speed of the vehicle in kilometers per hour. When specified, routes will
+        /// not include roads with higher speed limits. Valid values range from 3.6 km/h (1 m/s)
+        /// to 252 km/h (70 m/s).
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>KilometersPerHour</c> 
+        ///  <b>Unit</b>: <c>kilometers per hour</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=252)]
@@ -103,11 +123,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Occupancy. 
         /// <para>
-        /// The number of occupants in the vehicle.
+        /// The number of occupants in the vehicle. This can affect route calculations by enabling
+        /// the use of high-occupancy vehicle (HOV) lanes where minimum occupancy requirements
+        /// are met.
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>1</c> 
+        /// Default value: <c>1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1)]

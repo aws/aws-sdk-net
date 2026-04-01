@@ -33,6 +33,12 @@ namespace Amazon.GeoRoutes.Model
     /// Container for the parameters to the CalculateRoutes operation.
     /// <c>CalculateRoutes</c> computes routes given the following required parameters: <c>Origin</c>
     /// and <c>Destination</c>.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-routes.html">Calculate
+    /// routes</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CalculateRoutesRequest : AmazonGeoRoutesRequest
     {
@@ -65,7 +71,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Allow. 
         /// <para>
-        /// Features that are allowed while calculating a route.
+        ///  Features that are allowed while calculating a route. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteAllowOptions Allow
@@ -83,7 +91,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property ArrivalTime. 
         /// <para>
-        /// Time of arrival at the destination.
+        ///  Time of arrival at the destination. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  
         /// <para>
@@ -118,9 +128,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Avoid. 
         /// <para>
-        /// Features that are avoided while calculating a route. Avoidance is on a best-case basis.
-        /// If an avoidance can't be satisfied for a particular case, it violates the avoidance
-        /// and the returned response produces a notice for the violation.
+        ///  Features that are avoided while calculating a route. Avoidance is on a best-case
+        /// basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance
+        /// and the returned response produces a notice for the violation. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only <c>ControlledAccessHighways</c>,
+        /// <c>Ferries</c>, and <c>TollRoads</c> 
         /// </para>
         /// </summary>
         public RouteAvoidanceOptions Avoid
@@ -157,7 +169,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property DepartureTime. 
         /// <para>
-        /// Time of departure from thr origin.
+        /// Time of departure from the origin.
         /// </para>
         ///  
         /// <para>
@@ -217,7 +229,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property DestinationOptions. 
         /// <para>
-        /// Destination related options.
+        ///  Destination related options. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteDestinationOptions DestinationOptions
@@ -235,7 +249,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Driver. 
         /// <para>
-        /// Driver related options.
+        ///  Driver related options. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteDriverOptions Driver
@@ -253,7 +269,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Exclude. 
         /// <para>
-        /// Features to be strictly excluded while calculating the route.
+        ///  Features to be strictly excluded while calculating the route. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteExclusionOptions Exclude
@@ -309,7 +327,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Languages. 
         /// <para>
-        /// List of languages for instructions within steps in the response.
+        ///  List of languages for instructions within steps in the response. Not supported in
+        /// <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -338,8 +358,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property LegAdditionalFeatures. 
         /// <para>
-        /// A list of optional additional parameters such as timezone that can be requested for
-        /// each result.
+        ///  A list of optional additional parameters such as timezone that can be requested for
+        /// each result. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only <c>PassThroughWaypoints</c>,
+        /// <c>Summary</c>, and <c>TravelStepInstructions</c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -408,8 +430,7 @@ namespace Amazon.GeoRoutes.Model
         ///  
         /// <para>
         ///  <c>FlexiblePolyline</c>: A compact and precise encoding format for the leg geometry.
-        /// For more information on the format, see the GitHub repository for <a href="https://github.com/heremaps/flexible-polyline">
-        /// <c>FlexiblePolyline</c> </a>.
+        /// For more information on the format, see the GitHub repository for <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.
         /// </para>
         ///  
         /// <para>
@@ -433,6 +454,9 @@ namespace Amazon.GeoRoutes.Model
         /// Gets and sets the property MaxAlternatives. 
         /// <para>
         /// Maximum number of alternative routes to be provided in the response, if available.
+        /// For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only up
+        /// to 3 alternative routes. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -451,11 +475,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property OptimizeRoutingFor. 
         /// <para>
-        /// Specifies the optimization criteria for calculating a route.
+        /// Controls the trade-off between achieving the shortest travel time (<c>FastestRoute</c>)
+        /// and achieving the shortest physical distance ((<c>ShortestRoute</c>) when calculating
+        /// each route in the matrix.
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>FastestRoute</c> 
+        /// Default value: <c>FastestRoute</c> 
         /// </para>
         /// </summary>
         public RoutingObjective OptimizeRoutingFor
@@ -473,7 +499,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        /// The start position for the route.
+        /// The start position for the route in World Geodetic System (WGS 84) format: [longitude,
+        /// latitude].
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -497,7 +524,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property OriginOptions. 
         /// <para>
-        /// Origin related options.
+        ///  Specifies how the origin point should be matched to the road network and any routing
+        /// constraints that apply when the traveler is departing the origin. Not supported in
+        /// <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteOriginOptions OriginOptions
@@ -515,8 +545,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property SpanAdditionalFeatures. 
         /// <para>
-        /// A list of optional features such as SpeedLimit that can be requested for a Span. A
-        /// span is a section of a Leg for which the requested features have the same values.
+        ///  A list of optional features such as <c>SpeedLimit</c> that can be requested for a
+        /// Span. A span is a section of a Leg for which the requested features have the same
+        /// values. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for
+        /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -540,7 +573,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Tolls. 
         /// <para>
-        /// Toll related options.
+        ///  Toll related options. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteTollOptions Tolls
@@ -558,7 +593,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Traffic. 
         /// <para>
-        /// Traffic related options.
+        ///  Traffic related options. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteTrafficOptions Traffic
@@ -576,12 +613,14 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TravelMode. 
         /// <para>
-        /// Specifies the mode of transport when calculating a route. Used in estimating the speed
-        /// of travel and road compatibility.
+        ///  Specifies the mode of transport when calculating a route. Used in estimating the
+        /// speed of travel and road compatibility. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only <c>Car</c>,
+        /// <c>Pedestrian</c>, and <c>Scooter</c> values. 
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>Car</c> 
+        /// Default value: <c>Car</c> 
         /// </para>
         /// </summary>
         public RouteTravelMode TravelMode
@@ -599,7 +638,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TravelModeOptions. 
         /// <para>
-        /// Travel mode related options for the provided travel mode.
+        ///  Travel mode related options for the provided travel mode. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only <c>Car</c>
+        /// and <c>Pedestrian</c> travel mode options. 
         /// </para>
         /// </summary>
         public RouteTravelModeOptions TravelModeOptions
@@ -617,9 +658,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TravelStepType. 
         /// <para>
-        /// Type of step returned by the response. Default provides basic steps intended for web
-        /// based applications. TurnByTurn provides detailed instructions with more granularity
-        /// intended for a turn based navigation system.
+        /// Type of step returned by the response. <c>Default</c> provides basic steps intended
+        /// for web based applications. <c>TurnByTurn</c> provides detailed instructions with
+        /// more granularity intended for a turn based navigation system. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions <c>Default</c>
+        /// does not return any steps. 
         /// </para>
         /// </summary>
         public RouteTravelStepType TravelStepType
@@ -637,7 +680,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Waypoints. 
         /// <para>
-        /// List of waypoints between the Origin and Destination.
+        ///  List of waypoints between the Origin and Destination. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions max length is <c>100</c>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Max length: <c>23</c> 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

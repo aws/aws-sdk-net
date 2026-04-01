@@ -42,7 +42,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Center. 
         /// <para>
-        /// Center of the Circle defined in longitude and latitude coordinates.
+        /// Center of the Circle in World Geodetic System (WGS 84) format: [longitude, latitude].
         /// </para>
         ///  
         /// <para>

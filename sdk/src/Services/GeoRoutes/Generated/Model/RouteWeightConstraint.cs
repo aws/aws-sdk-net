@@ -34,7 +34,7 @@ namespace Amazon.GeoRoutes.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Unit</b>: <c>Kilograms</c> 
+    ///  <b>Unit</b>: <c>kilograms</c> 
     /// </para>
     /// </summary>
     public partial class RouteWeightConstraint
@@ -68,7 +68,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]
