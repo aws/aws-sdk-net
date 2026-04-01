@@ -28,6 +28,7 @@ namespace Amazon.Runtime.Internal.Auth
     /// </summary>
     public class AWS4SigningResult : AWSSigningResultBase
     {
+        private readonly string _awsSecretAccessKey;
         private readonly byte[] _signingKey;
         private readonly byte[] _signature;
 
@@ -35,12 +36,14 @@ namespace Amazon.Runtime.Internal.Auth
         /// Constructs a new signing result instance for a computed signature
         /// </summary>
         /// <param name="awsAccessKeyId">The access key that was included in the signature</param>
+        /// <param name="awsSecretAccessKey">The secret key that was used to compute the signature</param>
         /// <param name="signedAt">Date/time (UTC) that the signature was computed</param>
         /// <param name="signedHeaders">The collection of headers names that were included in the signature</param>
         /// <param name="scope">Formatted 'scope' value for signing (YYYYMMDD/region/service/aws4_request)</param>
         /// <param name="signingKey">Returns the key that was used to compute the signature</param>
         /// <param name="signature">Computed signature</param>
         public AWS4SigningResult(string awsAccessKeyId,
+                                 string  awsSecretAccessKey,
                                  DateTime signedAt,
                                  string signedHeaders,
                                  string scope,
@@ -48,6 +51,7 @@ namespace Amazon.Runtime.Internal.Auth
                                  byte[] signature) :
             base(awsAccessKeyId, signedAt, signedHeaders, scope)
         {
+            _awsSecretAccessKey = awsSecretAccessKey;
             _signingKey = signingKey;
             _signature = signature;
         }
@@ -68,6 +72,14 @@ namespace Amazon.Runtime.Internal.Auth
         public override string Signature
         {
             get { return AWSSDKUtils.ToHex(_signature, true); }
+        }
+
+        /// <summary>
+        /// The secret key that was used to compute the signature
+        /// </summary>
+        public string SecretKey
+        {
+            get { return _awsSecretAccessKey; }
         }
 
         /// <summary>
