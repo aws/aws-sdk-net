@@ -107,7 +107,6 @@ namespace UnitTests.NetStandard.Core
         public async Task SignInputEvents()
         {
             var signature = "initial-signature";
-            var identity = new BasicAWSCredentials("access-dummy", "secret-dummy");
             var aws4Signer = new AWS4Signer();
 
             var eventSigner = aws4Signer.CreateEventSigner("secret-dummy", "us-east-1", "the-service", signature);
