@@ -1,0 +1,8 @@
+{
+  "services": [],
+  "core": {
+    "updateSinceLastRelease": false,
+    "type": "enhancement",
+    "changeLogMessage": "Fix rendering of <list>, <item>, <term>, and <description> XML doc tags in generated API reference documentation."
+  }
+}
