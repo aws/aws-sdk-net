@@ -41,6 +41,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private DateTime? _lastSynchronizedAt;
         private MetadataConfiguration _metadataConfiguration;
         private string _name;
+        private PrivateEndpoint _privateEndpoint;
+        private List<ManagedResourceDetails> _privateEndpointManagedResources = AWSConfigs.InitializeCollections ? new List<ManagedResourceDetails>() : null;
         private TargetStatus _status;
         private List<string> _statusReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TargetConfiguration _targetConfiguration;
@@ -182,6 +184,47 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateEndpoint. 
+        /// <para>
+        /// The private endpoint configuration for the gateway target.
+        /// </para>
+        /// </summary>
+        public PrivateEndpoint PrivateEndpoint
+        {
+            get { return this._privateEndpoint; }
+            set { this._privateEndpoint = value; }
+        }
+
+        // Check to see if PrivateEndpoint property is set
+        internal bool IsSetPrivateEndpoint()
+        {
+            return this._privateEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateEndpointManagedResources. 
+        /// <para>
+        /// The managed resources created by the gateway for private endpoint connectivity.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ManagedResourceDetails> PrivateEndpointManagedResources
+        {
+            get { return this._privateEndpointManagedResources; }
+            set { this._privateEndpointManagedResources = value; }
+        }
+
+        // Check to see if PrivateEndpointManagedResources property is set
+        internal bool IsSetPrivateEndpointManagedResources()
+        {
+            return this._privateEndpointManagedResources != null && (this._privateEndpointManagedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

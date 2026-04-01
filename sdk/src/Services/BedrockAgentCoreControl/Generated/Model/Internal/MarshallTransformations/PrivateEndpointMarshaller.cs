@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CredentialProvider Marshaller
+    /// PrivateEndpoint Marshaller
     /// </summary>
-    public class CredentialProviderMarshaller : IRequestMarshaller<CredentialProvider, JsonMarshallerContext> 
+    public class PrivateEndpointMarshaller : IRequestMarshaller<PrivateEndpoint, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,39 +42,28 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CredentialProvider requestObject, JsonMarshallerContext context)
+        public void Marshall(PrivateEndpoint requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetApiKeyCredentialProvider())
+            if(requestObject.IsSetManagedLatticeResource())
             {
-                context.Writer.WritePropertyName("apiKeyCredentialProvider");
+                context.Writer.WritePropertyName("managedLatticeResource");
                 context.Writer.WriteStartObject();
 
-                var marshaller = ApiKeyCredentialProviderMarshaller.Instance;
-                marshaller.Marshall(requestObject.ApiKeyCredentialProvider, context);
+                var marshaller = ManagedLatticeResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManagedLatticeResource, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetIamCredentialProvider())
+            if(requestObject.IsSetSelfManagedLatticeResource())
             {
-                context.Writer.WritePropertyName("iamCredentialProvider");
+                context.Writer.WritePropertyName("selfManagedLatticeResource");
                 context.Writer.WriteStartObject();
 
-                var marshaller = IamCredentialProviderMarshaller.Instance;
-                marshaller.Marshall(requestObject.IamCredentialProvider, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetOauthCredentialProvider())
-            {
-                context.Writer.WritePropertyName("oauthCredentialProvider");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OAuthCredentialProviderMarshaller.Instance;
-                marshaller.Marshall(requestObject.OauthCredentialProvider, context);
+                var marshaller = SelfManagedLatticeResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.SelfManagedLatticeResource, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -84,7 +73,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CredentialProviderMarshaller Instance = new CredentialProviderMarshaller();
+        public readonly static PrivateEndpointMarshaller Instance = new PrivateEndpointMarshaller();
 
     }
 }

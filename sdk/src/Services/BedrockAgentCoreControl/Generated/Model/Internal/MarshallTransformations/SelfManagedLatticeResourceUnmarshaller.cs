@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CredentialProvider Object
+    /// Response Unmarshaller for SelfManagedLatticeResource Object
     /// </summary>  
-    public class CredentialProviderUnmarshaller : IJsonUnmarshaller<CredentialProvider, JsonUnmarshallerContext>
+    public class SelfManagedLatticeResourceUnmarshaller : IJsonUnmarshaller<SelfManagedLatticeResource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CredentialProvider Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SelfManagedLatticeResource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CredentialProvider unmarshalledObject = new CredentialProvider();
+            SelfManagedLatticeResource unmarshalledObject = new SelfManagedLatticeResource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("apiKeyCredentialProvider", targetDepth))
+                if (context.TestExpression("resourceConfigurationIdentifier", targetDepth))
                 {
-                    var unmarshaller = ApiKeyCredentialProviderUnmarshaller.Instance;
-                    unmarshalledObject.ApiKeyCredentialProvider = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("iamCredentialProvider", targetDepth))
-                {
-                    var unmarshaller = IamCredentialProviderUnmarshaller.Instance;
-                    unmarshalledObject.IamCredentialProvider = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("oauthCredentialProvider", targetDepth))
-                {
-                    var unmarshaller = OAuthCredentialProviderUnmarshaller.Instance;
-                    unmarshalledObject.OauthCredentialProvider = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceConfigurationIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static CredentialProviderUnmarshaller _instance = new CredentialProviderUnmarshaller();        
+        private static SelfManagedLatticeResourceUnmarshaller _instance = new SelfManagedLatticeResourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CredentialProviderUnmarshaller Instance
+        public static SelfManagedLatticeResourceUnmarshaller Instance
         {
             get
             {
