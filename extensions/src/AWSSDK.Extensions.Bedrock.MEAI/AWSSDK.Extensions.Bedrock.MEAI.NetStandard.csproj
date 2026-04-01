@@ -17,7 +17,7 @@
     <LangVersion>Latest</LangVersion>
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <NoWarn>$(NoWarn);MEAI001;IL2026</NoWarn>
+    <NoWarn>$(NoWarn);MEAI001</NoWarn>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
