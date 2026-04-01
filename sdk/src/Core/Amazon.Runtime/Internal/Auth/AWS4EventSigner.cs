@@ -60,7 +60,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="eventBytes">The bytes of the event that must be signed.</param>
         /// <returns>The signed events that can be sent to the AWS service.</returns>
-        public async Task<byte[]> SignEventAsync(byte[] eventBytes)
+        public Task<byte[]> SignEventAsync(byte[] eventBytes)
         {
             var timestamp = AWSSDKUtils.CorrectedUtcNow;
 
@@ -104,7 +104,7 @@ namespace Amazon.Runtime.Internal.Auth
 
             _previousSignature = AWSSDKUtils.ToHex(signature, true);
 
-            return signedMessageBytes;
+            return Task.FromResult(signedMessageBytes);
         }
     }
 }
