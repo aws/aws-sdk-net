@@ -1,3 +1,26 @@
+### 4.0.223.0 (2026-04-01 18:20 UTC)
+* Bedrock (4.0.24.0)
+	* Adds support for Bedrock Batch Inference Job Progress Monitoring
+* BedrockAgentCore (4.0.16.0)
+	* Added the ability to filter out empty sessions when listing sessions. Customers can now retrieve only sessions that still contain events, eliminating the need to check each session individually. No changes required for existing integrations.
+* BedrockAgentCoreControl (4.0.25.0)
+	* Adds support for VPC egress private endpoints for Amazon Bedrock AgentCore gateway targets, enabling private connectivity through managed VPC Lattice resources. Also adds IAM credential provider for gateway targets, enabling IAM-based authentication to target endpoints
+* ECS (4.0.17.0)
+	* Amazon ECS now supports Managed Daemons with dedicated APIs for registering daemon task definitions, creating daemons, and managing daemon deployments.
+* ElastiCache (4.0.3.0)
+	* Updated SnapshotRetentionLimit documentation for ServerlessCache to correctly describe the parameter as number of days (max 35) instead of number of snapshots.
+* Elasticsearch (4.0.5.0)
+	* Adding Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08 as TLS Policy in Supported Regions
+* GeoRoutes (4.0.3.0)
+	* This release makes RoutingBoundary optional in CalculateRouteMatrix, set StopDuration with a maximum value of 49999 for CalculateRoutes, set TrailerCount with a maximum value of 4, and introduces region restrictions for Grab Maps users.
+* MedicalImaging (4.0.6.0)
+	* Added new boolean flag to persist metadata updates to all primary image sets in the same study as the requested image set.
+* OpenSearchService (4.0.16.0)
+	* Adding Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08 as TLS Policy in Supported Regions
+* Core 4.0.3.26
+	* Fix issue with credentials incorrectly rotating during H2 request stream operations triggering a signature mismatch exception
+	* All service and extension packages updated to require new Core
+
 ### 4.0.222.1 (2026-03-31 22:21 UTC)
 * Core 4.0.3.25
 	* Fix signature mismatch issue with request events for bi-directional streaming operations due to signature timestamp rounding issue
