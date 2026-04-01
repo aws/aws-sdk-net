@@ -49,6 +49,33 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSCreateDaemon()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.CreateDaemon(new CreateDaemonRequest 
+            {
+                CapacityProviderArns = new List<string> {
+                    "arn:aws:ecs:us-east-1:123456789012:capacity-provider/my-capacity-provider"
+                },
+                ClusterArn = "arn:aws:ecs:us-east-1:123456789012:cluster/my-cluster",
+                DaemonName = "my-monitoring-daemon",
+                DaemonTaskDefinitionArn = "arn:aws:ecs:us-east-1:123456789012:daemon-task-definition/monitoring-agent:1",
+                DeploymentConfiguration = new DaemonDeploymentConfiguration {
+                    BakeTimeInMinutes = 5,
+                    DrainPercent = 10
+                }
+            });
+
+            DateTime createdAt = response.CreatedAt;
+            string daemonArn = response.DaemonArn;
+            string deploymentArn = response.DeploymentArn;
+            string status = response.Status;
+
+            #endregion
+        }
+
         public void ECSCreateService()
         {
             #region example-1
@@ -193,6 +220,40 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             });
 
             Cluster cluster = response.Cluster;
+
+            #endregion
+        }
+
+        public void ECSDeleteDaemon()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.DeleteDaemon(new DeleteDaemonRequest 
+            {
+                DaemonArn = "arn:aws:ecs:us-east-1:123456789012:daemon/my-cluster/my-monitoring-daemon"
+            });
+
+            DateTime createdAt = response.CreatedAt;
+            string daemonArn = response.DaemonArn;
+            string deploymentArn = response.DeploymentArn;
+            string status = response.Status;
+            DateTime updatedAt = response.UpdatedAt;
+
+            #endregion
+        }
+
+        public void ECSDeleteDaemonTaskDefinition()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.DeleteDaemonTaskDefinition(new DeleteDaemonTaskDefinitionRequest 
+            {
+                DaemonTaskDefinition = "monitoring-agent:1"
+            });
+
+            string daemonTaskDefinitionArn = response.DaemonTaskDefinitionArn;
 
             #endregion
         }
@@ -345,6 +406,72 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
             List<ContainerInstance> containerInstances = response.ContainerInstances;
             List<Failure> failures = response.Failures;
+
+            #endregion
+        }
+
+        public void ECSDescribeDaemon()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeDaemon(new DescribeDaemonRequest 
+            {
+                DaemonArn = "arn:aws:ecs:us-east-1:123456789012:daemon/my-cluster/my-monitoring-daemon"
+            });
+
+            DaemonDetail daemon = response.Daemon;
+
+            #endregion
+        }
+
+        public void ECSDescribeDaemonDeployments()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeDaemonDeployments(new DescribeDaemonDeploymentsRequest 
+            {
+                DaemonDeploymentArns = new List<string> {
+                    "arn:aws:ecs:us-east-1:123456789012:daemon-deployment/my-cluster/my-monitoring-daemon/aB1cD2eF3gH4iJ5k"
+                }
+            });
+
+            List<DaemonDeployment> daemonDeployments = response.DaemonDeployments;
+            List<Failure> failures = response.Failures;
+
+            #endregion
+        }
+
+        public void ECSDescribeDaemonRevisions()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeDaemonRevisions(new DescribeDaemonRevisionsRequest 
+            {
+                DaemonRevisionArns = new List<string> {
+                    "arn:aws:ecs:us-east-1:123456789012:daemon-revision/my-cluster/my-monitoring-daemon/4980306466373577095"
+                }
+            });
+
+            List<DaemonRevision> daemonRevisions = response.DaemonRevisions;
+            List<Failure> failures = response.Failures;
+
+            #endregion
+        }
+
+        public void ECSDescribeDaemonTaskDefinition()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeDaemonTaskDefinition(new DescribeDaemonTaskDefinitionRequest 
+            {
+                DaemonTaskDefinition = "monitoring-agent:1"
+            });
+
+            DaemonTaskDefinition daemonTaskDefinition = response.DaemonTaskDefinition;
 
             #endregion
         }
@@ -573,6 +700,54 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             });
 
             List<string> containerInstanceArns = response.ContainerInstanceArns;
+
+            #endregion
+        }
+
+        public void ECSListDaemonDeployments()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.ListDaemonDeployments(new ListDaemonDeploymentsRequest 
+            {
+                DaemonArn = "arn:aws:ecs:us-east-1:123456789012:daemon/my-cluster/my-monitoring-daemon",
+                Status = new List<string> {
+                    "SUCCESSFUL"
+                }
+            });
+
+            List<DaemonDeploymentSummary> daemonDeployments = response.DaemonDeployments;
+
+            #endregion
+        }
+
+        public void ECSListDaemons()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.ListDaemons(new ListDaemonsRequest 
+            {
+                ClusterArn = "arn:aws:ecs:us-east-1:123456789012:cluster/my-cluster"
+            });
+
+            List<DaemonSummary> daemonSummariesList = response.DaemonSummariesList;
+
+            #endregion
+        }
+
+        public void ECSListDaemonTaskDefinitions()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.ListDaemonTaskDefinitions(new ListDaemonTaskDefinitionsRequest 
+            {
+                FamilyPrefix = "monitoring"
+            });
+
+            List<DaemonTaskDefinitionSummary> daemonTaskDefinitions = response.DaemonTaskDefinitions;
 
             #endregion
         }
@@ -860,6 +1035,48 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSRegisterDaemonTaskDefinition()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.RegisterDaemonTaskDefinition(new RegisterDaemonTaskDefinitionRequest 
+            {
+                ContainerDefinitions = new List<DaemonContainerDefinition> {
+                    new DaemonContainerDefinition {
+                        Name = "cloudwatch-agent",
+                        Cpu = 128,
+                        Environment = new List<KeyValuePair> {
+                            new KeyValuePair {
+                                Name = "USE_DEFAULT_CONFIG",
+                                Value = "true"
+                            }
+                        },
+                        Essential = true,
+                        Image = "public.ecr.aws/cloudwatch-agent/cloudwatch-agent:latest",
+                        LogConfiguration = new LogConfiguration {
+                            LogDriver = "awslogs",
+                            Options = new Dictionary<string, string> {
+                                { "awslogs-group", "/ecs/daemon/monitoring-agent" },
+                                { "awslogs-region", "us-east-1" },
+                                { "awslogs-stream-prefix", "ecs" }
+                            }
+                        },
+                        Memory = 256
+                    }
+                },
+                Cpu = "128",
+                ExecutionRoleArn = "arn:aws:iam::123456789012:role/ecsTaskExecutionRole",
+                Family = "monitoring-agent",
+                Memory = "256",
+                TaskRoleArn = "arn:aws:iam::123456789012:role/ecsDaemonTaskRole"
+            });
+
+            string daemonTaskDefinitionArn = response.DaemonTaskDefinitionArn;
+
+            #endregion
+        }
+
         public void ECSRegisterTaskDefinition()
         {
             #region example-1
@@ -1108,6 +1325,33 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
             List<ContainerInstance> containerInstances = response.ContainerInstances;
             List<Failure> failures = response.Failures;
+
+            #endregion
+        }
+
+        public void ECSUpdateDaemon()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateDaemon(new UpdateDaemonRequest 
+            {
+                CapacityProviderArns = new List<string> {
+                    "arn:aws:ecs:us-east-1:123456789012:capacity-provider/my-capacity-provider"
+                },
+                DaemonArn = "arn:aws:ecs:us-east-1:123456789012:daemon/my-cluster/my-monitoring-daemon",
+                DaemonTaskDefinitionArn = "arn:aws:ecs:us-east-1:123456789012:daemon-task-definition/monitoring-agent:2",
+                DeploymentConfiguration = new DaemonDeploymentConfiguration {
+                    BakeTimeInMinutes = 5,
+                    DrainPercent = 10
+                }
+            });
+
+            DateTime createdAt = response.CreatedAt;
+            string daemonArn = response.DaemonArn;
+            string deploymentArn = response.DeploymentArn;
+            string status = response.Status;
+            DateTime updatedAt = response.UpdatedAt;
 
             #endregion
         }
