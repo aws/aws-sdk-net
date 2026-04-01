@@ -128,6 +128,26 @@ public class BedrockRealtimeSessionTests
         return (session, capturedEvents);
     }
 
+    /// <summary>
+    /// Waits until capturedEvents has at least the specified count, with a timeout.
+    /// </summary>
+    private static void WaitForEvents(List<string> events, int minCount, int timeoutMs = 5000)
+    {
+        Assert.True(
+            SpinWait.SpinUntil(() => { lock (events) { return events.Count >= minCount; } }, timeoutMs),
+            $"Timed out waiting for at least {minCount} events (got {events.Count})");
+    }
+
+    /// <summary>
+    /// Waits until capturedEvents contains an event matching the predicate, with a timeout.
+    /// </summary>
+    private static void WaitForEvent(List<string> events, Func<string, bool> predicate, int timeoutMs = 5000)
+    {
+        Assert.True(
+            SpinWait.SpinUntil(() => { lock (events) { return events.Any(predicate); } }, timeoutMs),
+            "Timed out waiting for matching event");
+    }
+
     #region GetService Tests
 
     [Fact]
@@ -304,7 +324,7 @@ public class BedrockRealtimeSessionTests
         };
 
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(options));
-        await Task.Delay(100); // Allow publisher to consume
+        WaitForEvents(capturedEvents, 2);
 
         Assert.Same(options, session.Options);
 
@@ -323,7 +343,7 @@ public class BedrockRealtimeSessionTests
         };
 
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(options));
-        await Task.Delay(200);
+        WaitForEvents(capturedEvents, 1);
 
         lock (capturedEvents)
         {
@@ -353,7 +373,7 @@ public class BedrockRealtimeSessionTests
         };
 
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(options));
-        await Task.Delay(200);
+        WaitForEvents(capturedEvents, 2);
 
         lock (capturedEvents)
         {
@@ -383,7 +403,7 @@ public class BedrockRealtimeSessionTests
         };
 
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(options));
-        await Task.Delay(200);
+        WaitForEvents(capturedEvents, 5);
 
         lock (capturedEvents)
         {
@@ -427,13 +447,13 @@ public class BedrockRealtimeSessionTests
 
         // First configure the session
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions()));
-        await Task.Delay(100);
+        WaitForEvents(capturedEvents, 2);
 
         // Then send audio
         var audioBytes = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8 };
         var audioContent = new DataContent(audioBytes, "audio/lpcm");
         await session.SendAsync(new InputAudioBufferAppendRealtimeClientMessage(audioContent));
-        await Task.Delay(300);
+        WaitForEvent(capturedEvents, e => e.Contains("\"audioInput\""));
 
         lock (capturedEvents)
         {
@@ -458,11 +478,11 @@ public class BedrockRealtimeSessionTests
 
         // Configure and open audio
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions()));
-        await Task.Delay(100);
+        WaitForEvents(capturedEvents, 2);
 
         var audioContent = new DataContent(new byte[] { 1, 2 }, "audio/lpcm");
         await session.SendAsync(new InputAudioBufferAppendRealtimeClientMessage(audioContent));
-        await Task.Delay(100);
+        WaitForEvent(capturedEvents, e => e.Contains("\"audioInput\""));
 
         int eventCountBefore;
         lock (capturedEvents)
@@ -473,7 +493,7 @@ public class BedrockRealtimeSessionTests
         // Commit sends trailing silence instead of closing the content block
         // (Nova Sonic uses VAD to detect speech boundaries)
         await session.SendAsync(new InputAudioBufferCommitRealtimeClientMessage());
-        await Task.Delay(200);
+        WaitForEvents(capturedEvents, eventCountBefore + 1);
 
         lock (capturedEvents)
         {
@@ -497,7 +517,7 @@ public class BedrockRealtimeSessionTests
 
         // Configure session
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions()));
-        await Task.Delay(100);
+        WaitForEvents(capturedEvents, 2);
 
         int eventCountBefore;
         lock (capturedEvents)
@@ -507,7 +527,7 @@ public class BedrockRealtimeSessionTests
 
         // CreateResponse sends a silence nudge to keep the bidirectional stream flowing
         await session.SendAsync(new CreateResponseRealtimeClientMessage());
-        await Task.Delay(200);
+        WaitForEvent(capturedEvents, e => e.Contains("\"audioInput\""));
 
         lock (capturedEvents)
         {
@@ -529,7 +549,7 @@ public class BedrockRealtimeSessionTests
 
         // Configure session
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions()));
-        await Task.Delay(100);
+        WaitForEvents(capturedEvents, 2);
 
         var item = new RealtimeConversationItem(
             new List<AIContent> { new TextContent("Hello world") },
@@ -537,7 +557,7 @@ public class BedrockRealtimeSessionTests
             role: ChatRole.User);
 
         await session.SendAsync(new CreateConversationItemRealtimeClientMessage(item));
-        await Task.Delay(200);
+        WaitForEvent(capturedEvents, e => e.Contains("\"textInput\"") && e.Contains("Hello world"));
 
         lock (capturedEvents)
         {
@@ -556,7 +576,7 @@ public class BedrockRealtimeSessionTests
 
         // Configure session
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions()));
-        await Task.Delay(100);
+        WaitForEvents(capturedEvents, 2);
 
         var toolResult = new FunctionResultContent("tool-call-id", "Sunny, 72°F");
         var item = new RealtimeConversationItem(
@@ -565,7 +585,7 @@ public class BedrockRealtimeSessionTests
             role: ChatRole.Tool);
 
         await session.SendAsync(new CreateConversationItemRealtimeClientMessage(item));
-        await Task.Delay(200);
+        WaitForEvent(capturedEvents, e => e.Contains("\"toolResult\""));
 
         lock (capturedEvents)
         {
@@ -613,7 +633,7 @@ public class BedrockRealtimeSessionTests
         };
 
         await session.SendAsync(message);
-        await Task.Delay(200);
+        WaitForEvent(capturedEvents, e => e.Contains("customEvent"));
 
         lock (capturedEvents)
         {
@@ -630,10 +650,10 @@ public class BedrockRealtimeSessionTests
 
         // Send two session updates
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions { MaxOutputTokens = 1024 }));
-        await Task.Delay(100);
+        WaitForEvents(capturedEvents, 2);
 
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions { MaxOutputTokens = 2048 }));
-        await Task.Delay(200);
+        WaitForEvents(capturedEvents, 2); // count shouldn't grow beyond the initial 2
 
         lock (capturedEvents)
         {
@@ -685,7 +705,7 @@ public class BedrockRealtimeSessionTests
         {
             MaxOutputTokens = 512
         }));
-        await Task.Delay(200);
+        WaitForEvents(capturedEvents, 2);
 
         lock (capturedEvents)
         {
@@ -713,7 +733,7 @@ public class BedrockRealtimeSessionTests
             Voice = "amy",
             OutputAudioFormat = new RealtimeAudioFormat("audio/lpcm", 8000)
         }));
-        await Task.Delay(200);
+        WaitForEvents(capturedEvents, 2);
 
         lock (capturedEvents)
         {
@@ -742,11 +762,11 @@ public class BedrockRealtimeSessionTests
         {
             InputAudioFormat = new RealtimeAudioFormat("audio/lpcm", 8000)
         }));
-        await Task.Delay(100);
+        WaitForEvents(capturedEvents, 2);
 
         var audioContent = new DataContent(new byte[] { 1, 2, 3 }, "audio/lpcm");
         await session.SendAsync(new InputAudioBufferAppendRealtimeClientMessage(audioContent));
-        await Task.Delay(200);
+        WaitForEvent(capturedEvents, e => e.Contains("\"contentStart\"") && e.Contains("\"AUDIO\""));
 
         lock (capturedEvents)
         {
@@ -778,7 +798,7 @@ public class BedrockRealtimeSessionTests
         var (session, capturedEvents) = await CreateConnectedSessionWithCapture();
 
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions()));
-        await Task.Delay(100);
+        WaitForEvents(capturedEvents, 2);
 
         // Send multiple audio frames concurrently
         var tasks = Enumerable.Range(0, 10).Select(i =>
@@ -788,7 +808,7 @@ public class BedrockRealtimeSessionTests
         }).ToArray();
 
         await Task.WhenAll(tasks);
-        await Task.Delay(300);
+        WaitForEvents(capturedEvents, 13);
 
         lock (capturedEvents)
         {
@@ -823,14 +843,14 @@ public class BedrockRealtimeSessionTests
     public async Task SendAsync_ChannelClosedException_DuringWrite_IsSwallowed()
     {
         // Simulate a session that's connected but the channel gets closed unexpectedly
-        var (session, _) = await CreateConnectedSessionWithCapture();
+        var (session, capturedEvents) = await CreateConnectedSessionWithCapture();
 
         // Configure the session first
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions
         {
             MaxOutputTokens = 512
         }));
-        await Task.Delay(200);
+        WaitForEvents(capturedEvents, 2);
 
         // Dispose the session, which closes the channel
         await session.DisposeAsync();
@@ -847,7 +867,6 @@ public class BedrockRealtimeSessionTests
 
         // Configure the session
         await session2.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions()));
-        await Task.Delay(200);
 
         // Dispose to trigger channel close, then verify second dispose is idempotent
         await session2.DisposeAsync();
@@ -857,11 +876,11 @@ public class BedrockRealtimeSessionTests
     [Fact]
     public async Task SendAsync_CallerCancellation_IsPropagated()
     {
-        var (session, _) = await CreateConnectedSessionWithCapture();
+        var (session, capturedEvents) = await CreateConnectedSessionWithCapture();
 
         // Configure the session first
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions()));
-        await Task.Delay(200);
+        WaitForEvents(capturedEvents, 2);
 
         using var cts = new CancellationTokenSource();
         cts.Cancel();
@@ -877,11 +896,11 @@ public class BedrockRealtimeSessionTests
     public async Task SendAsync_SemaphoreDisposedDuringRelease_DoesNotThrow()
     {
         // This verifies the ObjectDisposedException catch on _sendSemaphore.Release()
-        var (session, _) = await CreateConnectedSessionWithCapture();
+        var (session, capturedEvents) = await CreateConnectedSessionWithCapture();
 
         // Configure
         await session.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions()));
-        await Task.Delay(200);
+        WaitForEvents(capturedEvents, 2);
 
         // Send a message and then immediately dispose
         var sendTask = session.SendAsync(new CreateResponseRealtimeClientMessage());
@@ -938,7 +957,7 @@ public class BedrockRealtimeSessionTests
         };
 
         var (session, capturedEvents) = await CreateConnectedSessionWithOptionsAndCapture(options);
-        await Task.Delay(300);
+        WaitForEvents(capturedEvents, 5);
 
         try
         {
@@ -1007,7 +1026,7 @@ public class BedrockRealtimeSessionTests
         };
 
         var (session, capturedEvents) = await CreateConnectedSessionWithOptionsAndCapture(options);
-        await Task.Delay(300);
+        WaitForEvents(capturedEvents, 5);
 
         try
         {
@@ -1048,7 +1067,7 @@ public class BedrockRealtimeSessionTests
         };
 
         var (session, capturedEvents) = await CreateConnectedSessionWithOptionsAndCapture(options);
-        await Task.Delay(300);
+        WaitForEvents(capturedEvents, 5);
 
         try
         {
