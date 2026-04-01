@@ -4,6 +4,13 @@
     "type": "patch",
     "changeLogMessages": [
       "Fix issue with credentials incorrectly rotating during H2 request stream operations triggering a signature mismatch exception"
-    ]
+    ],
+    "backwardIncompatibilitiesToIgnore": [ 
+      "Amazon.Runtime.Internal.Auth.AbstractAWSSigner/MethodRemoved",
+      "Amazon.Runtime.Internal.Auth.AWS4SigningResult/MethodRemoved",
+      "Amazon.Runtime.Internal.Auth.ISigner/MethodRemoved",
+      "Amazon.Runtime.Internal.Auth.AWS4EventSigner/MethodRemoved",
+      "Amazon.Runtime.Internal.Auth.AWS4Signer/MethodRemoved"
+    ]	
   }
 }
