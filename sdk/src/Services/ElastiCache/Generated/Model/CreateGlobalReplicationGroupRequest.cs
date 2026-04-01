@@ -106,7 +106,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property PrimaryReplicationGroupId. 
         /// <para>
         /// The name of the primary cluster that accepts writes and will replicate updates to
-        /// the secondary cluster.
+        /// the secondary cluster. This value is stored as a lowercase string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
