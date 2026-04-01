@@ -179,7 +179,7 @@ namespace Amazon.Runtime.Internal.Auth
         }
 
         /// <inheritdoc/>
-        public virtual IEventSigner CreateEventSigner(BaseIdentity identity, string region, string service, string requestSignature)
+        public virtual IEventSigner CreateEventSigner(string awsSecretKey, string region, string service, string requestSignature)
         {
             throw new NotImplementedException();
         }

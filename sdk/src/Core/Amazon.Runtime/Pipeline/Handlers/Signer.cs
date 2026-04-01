@@ -150,7 +150,7 @@ namespace Amazon.Runtime.Internal
                 if (requestContext.Request.EventStreamPublisher != null)
                 {
                     var eventSigner = requestContext.Signer.CreateEventSigner(
-                                            requestContext.Identity, 
+                                            awsSecretKey: requestContext.Request.AWS4SignerResult.SecretKey, 
                                             region: requestContext.Request.DeterminedSigningRegion, 
                                             service: requestContext.ClientConfig.AuthenticationServiceName, 
                                             requestSignature: requestContext.Request.AWS4SignerResult.Signature);
@@ -220,7 +220,7 @@ namespace Amazon.Runtime.Internal
                 if (requestContext.Request.EventStreamPublisher != null)
                 {
                     var eventSigner = requestContext.Signer.CreateEventSigner(
-                                            requestContext.Identity,
+                                            awsSecretKey: requestContext.Request.AWS4SignerResult.SecretKey,
                                             region: requestContext.Request.DeterminedSigningRegion,
                                             service: requestContext.ClientConfig.AuthenticationServiceName,
                                             requestSignature: requestContext.Request.AWS4SignerResult.Signature);

@@ -110,7 +110,7 @@ namespace UnitTests.NetStandard.Core
             var identity = new BasicAWSCredentials("access-dummy", "secret-dummy");
             var aws4Signer = new AWS4Signer();
 
-            var eventSigner = aws4Signer.CreateEventSigner(identity, "us-east-1", "the-service", signature);
+            var eventSigner = aws4Signer.CreateEventSigner("secret-dummy", "us-east-1", "the-service", signature);
 
             var eventType = "Foo1";
             var contentType = "application/json";

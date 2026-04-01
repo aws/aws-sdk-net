@@ -14,9 +14,7 @@
  */
 
 using Amazon.Runtime.EventStreams;
-using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
-using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +30,7 @@ namespace Amazon.Runtime.Internal.Auth
         private const string HeaderDate = ":date";
         private const string HeaderChunkSignature = ":chunk-signature";
 
-        private readonly AWSCredentials _credentials;
+        private readonly string _secretKey;
         private readonly string _region;
         private readonly string _service;
 
@@ -41,13 +39,13 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Constructe an isntance of the event signer.
         /// </summary>
-        /// <param name="credentials">AWS Credentials used to sign the request.</param>
+        /// <param name="secretKey">The AWS secret key used to sign the initial request. All events must be signed with the same secret key.</param>
         /// <param name="region">The region to authenticate for.</param>
         /// <param name="service">The service to authenticate for.</param>
         /// <param name="requestSignature">The signature computed for the original request.</param>
-        public AWS4EventSigner(AWSCredentials credentials, string region, string service, string requestSignature)
+        public AWS4EventSigner(string secretKey, string region, string service, string requestSignature)
         {
-            _credentials = credentials;
+            _secretKey = secretKey;
             _region = region;
             _service = service;
             _previousSignature = requestSignature;
@@ -64,8 +62,6 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>The signed events that can be sent to the AWS service.</returns>
         public async Task<byte[]> SignEventAsync(byte[] eventBytes)
         {
-            var secretKey = (await _credentials.GetCredentialsAsync().ConfigureAwait(false)).SecretKey;
-
             var timestamp = AWSSDKUtils.CorrectedUtcNow;
 
             var signedHeaders = new List<IEventStreamHeader>();
@@ -97,7 +93,7 @@ namespace Amazon.Runtime.Internal.Auth
             stringToSign.Append("\n");
             stringToSign.Append(AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(eventBytes), true));
 
-            var signature = AWS4Signer.ComputeKeyedHash(AWS4Signer.SignerAlgorithm, AWS4Signer.ComposeSigningKey(secretKey, _region, timestamp.ToString(AWSSDKUtils.ISO8601BasicDateFormat), _service), UTF8Encoding.UTF8.GetBytes(stringToSign.ToString()));
+            var signature = AWS4Signer.ComputeKeyedHash(AWS4Signer.SignerAlgorithm, AWS4Signer.ComposeSigningKey(_secretKey, _region, timestamp.ToString(AWSSDKUtils.ISO8601BasicDateFormat), _service), UTF8Encoding.UTF8.GetBytes(stringToSign.ToString()));
 
             var signedSignatureHeader = new EventStreamHeader(HeaderChunkSignature) { HeaderType = EventStreamHeaderType.String };
             signedSignatureHeader.SetByteBuf(signature);
