@@ -550,7 +550,10 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
                         {
                             try
                             {
+
+#pragma warning disable IL2026 // Tool arguments are dynamic JSON
                                 toolArguments = JsonSerializer.Deserialize<Dictionary<string, object?>>(tcc.GetRawText());
+#pragma warning restore IL2026
                             }
                             catch (JsonException)
                             {
@@ -565,7 +568,9 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
                             {
                                 try
                                 {
+#pragma warning disable IL2026 // Tool arguments are dynamic JSON
                                     toolArguments = JsonSerializer.Deserialize<Dictionary<string, object?>>(innerJson);
+#pragma warning restore IL2026
                                 }
                                 catch (JsonException)
                                 {
@@ -708,23 +713,23 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
         // Send sessionStart with inference configuration
         if (!_sessionStarted)
         {
-            var sessionStartEvent = new
+            var wrapper = new NovaSonicEventWrapper
             {
-                @event = new
+                Event = new NovaSonicEvent
                 {
-                    sessionStart = new
+                    SessionStart = new NovaSonicSessionStart
                     {
-                        inferenceConfiguration = new
+                        InferenceConfiguration = new NovaSonicInferenceConfig
                         {
-                            maxTokens = opts.MaxOutputTokens ?? 1024,
-                            topP = 0.9,
-                            temperature = 0.7
+                            MaxTokens = opts.MaxOutputTokens ?? 1024,
+                            TopP = 0.9,
+                            Temperature = 0.7
                         }
                     }
                 }
             };
 
-            await WriteEventAsync(JsonSerializer.Serialize(sessionStartEvent, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+            await WriteEventAsync(JsonSerializer.Serialize(wrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
             _sessionStarted = true;
         }
 
@@ -739,8 +744,8 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
                 outputSampleRate = opts.OutputAudioFormat.SampleRate;
             }
 
-            var promptStartObj = BuildPromptStartEvent(voiceId, outputSampleRate, opts.Tools);
-            await WriteEventAsync(JsonSerializer.Serialize(promptStartObj, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+            var promptStartWrapper = BuildPromptStartEvent(voiceId, outputSampleRate, opts.Tools);
+            await WriteEventAsync(JsonSerializer.Serialize(promptStartWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
             _promptStarted = true;
         }
 
@@ -802,20 +807,20 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
                     {
                         await EnsureAudioContentStartedAsync(cancellationToken).ConfigureAwait(false);
 
-                        var audioEvent = new
+                        var audioWrapper = new NovaSonicEventWrapper
                         {
-                            @event = new
+                            Event = new NovaSonicEvent
                             {
-                                audioInput = new
+                                AudioInput = new NovaSonicAudioInput
                                 {
-                                    promptName = _promptName,
-                                    contentName = _audioContentName,
-                                    content = Convert.ToBase64String(dataContent.Data.Span)
+                                    PromptName = _promptName,
+                                    ContentName = _audioContentName,
+                                    Content = Convert.ToBase64String(dataContent.Data.Span)
                                 }
                             }
                         };
 
-                        await WriteEventAsync(JsonSerializer.Serialize(audioEvent, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+                        await WriteEventAsync(JsonSerializer.Serialize(audioWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
                     }
                     break;
                 }
@@ -839,20 +844,20 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
             return;
         }
 
-        var audioEvent = new
+        var audioWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                audioInput = new
+                AudioInput = new NovaSonicAudioInput
                 {
-                    promptName = _promptName,
-                    contentName = _audioContentName,
-                    content = Convert.ToBase64String(audioData.Span)
+                    PromptName = _promptName,
+                    ContentName = _audioContentName,
+                    Content = Convert.ToBase64String(audioData.Span)
                 }
             }
         };
 
-        await WriteEventAsync(JsonSerializer.Serialize(audioEvent, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+        await WriteEventAsync(JsonSerializer.Serialize(audioWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
     }
 
     private async Task HandleAudioCommitAsync(CancellationToken cancellationToken)
@@ -871,20 +876,20 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
         // Send ~1.5 seconds of silence for reliable VAD detection
         byte[] silence = new byte[sampleRate * 2 * 3 / 2]; // 1.5s, 16-bit mono
 
-        var silenceEvent = new
+        var silenceWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                audioInput = new
+                AudioInput = new NovaSonicAudioInput
                 {
-                    promptName = _promptName,
-                    contentName = _audioContentName,
-                    content = Convert.ToBase64String(silence)
+                    PromptName = _promptName,
+                    ContentName = _audioContentName,
+                    Content = Convert.ToBase64String(silence)
                 }
             }
         };
 
-        await WriteEventAsync(JsonSerializer.Serialize(silenceEvent, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+        await WriteEventAsync(JsonSerializer.Serialize(silenceWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
@@ -903,44 +908,44 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
         int sampleRate = Options?.InputAudioFormat?.SampleRate ?? 16000;
         byte[] silence = new byte[sampleRate * 2 / 2]; // 500ms, 16-bit mono
 
-        var silenceEvent = new
+        var silenceWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                audioInput = new
+                AudioInput = new NovaSonicAudioInput
                 {
-                    promptName = _promptName,
-                    contentName = _audioContentName,
-                    content = Convert.ToBase64String(silence)
+                    PromptName = _promptName,
+                    ContentName = _audioContentName,
+                    Content = Convert.ToBase64String(silence)
                 }
             }
         };
 
-        await WriteEventAsync(JsonSerializer.Serialize(silenceEvent, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+        await WriteEventAsync(JsonSerializer.Serialize(silenceWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
     }
 
     #endregion
 
     #region Protocol Helpers
 
-    private object BuildPromptStartEvent(string? voiceId, int outputSampleRate, IReadOnlyList<AITool>? tools)
+    private NovaSonicEventWrapper BuildPromptStartEvent(string? voiceId, int outputSampleRate, IReadOnlyList<AITool>? tools)
     {
-        var toolsList = new List<object>();
+        var toolsList = new List<NovaSonicToolSpec>();
         if (tools is not null)
         {
             foreach (var tool in tools)
             {
                 if (tool is AIFunction func)
                 {
-                    toolsList.Add(new
+                    toolsList.Add(new NovaSonicToolSpec
                     {
-                        toolSpec = new
+                        ToolSpec = new NovaSonicToolSpecDetails
                         {
-                            name = func.Name,
-                            description = func.Description ?? string.Empty,
-                            inputSchema = new
+                            Name = func.Name,
+                            Description = func.Description ?? string.Empty,
+                            InputSchema = new NovaSonicInputSchema
                             {
-                                json = func.JsonSchema.GetRawText()
+                                Json = func.JsonSchema.GetRawText()
                             }
                         }
                     });
@@ -948,26 +953,26 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
             }
         }
 
-        return new
+        return new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                promptStart = new
+                PromptStart = new NovaSonicPromptStart
                 {
-                    promptName = _promptName,
-                    textOutputConfiguration = new { mediaType = "text/plain" },
-                    audioOutputConfiguration = new
+                    PromptName = _promptName,
+                    TextOutputConfiguration = new NovaSonicMediaConfig { MediaType = "text/plain" },
+                    AudioOutputConfiguration = new NovaSonicAudioOutputConfig
                     {
-                        mediaType = "audio/lpcm",
-                        sampleRateHertz = outputSampleRate,
-                        sampleSizeBits = 16,
-                        channelCount = 1,
-                        voiceId = voiceId ?? "matthew",
-                        encoding = "base64",
-                        audioType = "SPEECH"
+                        MediaType = "audio/lpcm",
+                        SampleRateHertz = outputSampleRate,
+                        SampleSizeBits = 16,
+                        ChannelCount = 1,
+                        VoiceId = voiceId ?? "matthew",
+                        Encoding = "base64",
+                        AudioType = "SPEECH"
                     },
-                    toolUseOutputConfiguration = new { mediaType = "application/json" },
-                    toolConfiguration = toolsList.Count > 0 ? new { tools = toolsList } : null
+                    ToolUseOutputConfiguration = new NovaSonicMediaConfig { MediaType = "application/json" },
+                    ToolConfiguration = toolsList.Count > 0 ? new NovaSonicToolConfiguration { Tools = toolsList } : null
                 }
             }
         };
@@ -985,108 +990,108 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
         // Official AWS sample uses interactive = false for SYSTEM prompts,
         // interactive = true for USER text. TOOL results are handled separately.
         bool interactive = string.Equals(role, "USER", StringComparison.OrdinalIgnoreCase);
-        var contentStartEvent = new
+        var contentStartWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                contentStart = new
+                ContentStart = new NovaSonicContentStart
                 {
-                    promptName = _promptName,
-                    contentName,
-                    type = "TEXT",
-                    interactive,
-                    role,
-                    textInputConfiguration = new { mediaType = "text/plain" }
+                    PromptName = _promptName,
+                    ContentName = contentName,
+                    Type = "TEXT",
+                    Interactive = interactive,
+                    Role = role,
+                    TextInputConfiguration = new NovaSonicMediaConfig { MediaType = "text/plain" }
                 }
             }
         };
-        await WriteEventAsync(JsonSerializer.Serialize(contentStartEvent, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+        await WriteEventAsync(JsonSerializer.Serialize(contentStartWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
 
         // textInput
-        var textEvent = new
+        var textWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                textInput = new
+                TextInput = new NovaSonicTextInput
                 {
-                    promptName = _promptName,
-                    contentName,
-                    content = text
+                    PromptName = _promptName,
+                    ContentName = contentName,
+                    Content = text
                 }
             }
         };
-        await WriteEventAsync(JsonSerializer.Serialize(textEvent, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+        await WriteEventAsync(JsonSerializer.Serialize(textWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
 
         // contentEnd
-        var contentEndEvent = new
+        var contentEndWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                contentEnd = new
+                ContentEnd = new NovaSonicContentEnd
                 {
-                    promptName = _promptName,
-                    contentName
+                    PromptName = _promptName,
+                    ContentName = contentName
                 }
             }
         };
-        await WriteEventAsync(JsonSerializer.Serialize(contentEndEvent, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+        await WriteEventAsync(JsonSerializer.Serialize(contentEndWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
     }
 
     private async Task SendToolResultAsync(FunctionResultContent functionResult, string contentName, CancellationToken cancellationToken)
     {
 
         // contentStart for tool result
-        var contentStartEvent = new
+        var contentStartWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                contentStart = new
+                ContentStart = new NovaSonicContentStart
                 {
-                    promptName = _promptName,
-                    contentName,
-                    interactive = false,
-                    type = "TOOL",
-                    role = "TOOL",
-                    toolResultInputConfiguration = new
+                    PromptName = _promptName,
+                    ContentName = contentName,
+                    Interactive = false,
+                    Type = "TOOL",
+                    Role = "TOOL",
+                    ToolResultInputConfiguration = new NovaSonicToolResultInputConfig
                     {
-                        toolUseId = functionResult.CallId ?? string.Empty,
-                        type = "TEXT",
-                        textInputConfiguration = new { mediaType = "text/plain" }
+                        ToolUseId = functionResult.CallId ?? string.Empty,
+                        Type = "TEXT",
+                        TextInputConfiguration = new NovaSonicMediaConfig { MediaType = "text/plain" }
                     }
                 }
             }
         };
-        await WriteEventAsync(JsonSerializer.Serialize(contentStartEvent, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+        await WriteEventAsync(JsonSerializer.Serialize(contentStartWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
 
         // toolResult — content must be a JSON object string for Nova Sonic
         string resultContent = SerializeToolResult(functionResult.Result);
-        var toolResultEvent = new
+        var toolResultWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                toolResult = new
+                ToolResult = new NovaSonicToolResult
                 {
-                    promptName = _promptName,
-                    contentName,
-                    content = resultContent
+                    PromptName = _promptName,
+                    ContentName = contentName,
+                    Content = resultContent
                 }
             }
         };
-        await WriteEventAsync(JsonSerializer.Serialize(toolResultEvent, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+        await WriteEventAsync(JsonSerializer.Serialize(toolResultWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
 
         // contentEnd
-        var contentEndEvent = new
+        var contentEndWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                contentEnd = new
+                ContentEnd = new NovaSonicContentEnd
                 {
-                    promptName = _promptName,
-                    contentName
+                    PromptName = _promptName,
+                    ContentName = contentName
                 }
             }
         };
-        await WriteEventAsync(JsonSerializer.Serialize(contentEndEvent, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+        await WriteEventAsync(JsonSerializer.Serialize(contentEndWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
@@ -1104,58 +1109,57 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
         string? audioContentName = _audioContentName;
 
         // contentStart for tool result
-        var contentStartEvent = new
+        var contentStartWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                contentStart = new
+                ContentStart = new NovaSonicContentStart
                 {
-                    promptName,
-                    contentName,
-                    interactive = false,
-                    type = "TOOL",
-                    role = "TOOL",
-                    toolResultInputConfiguration = new
+                    PromptName = promptName,
+                    ContentName = contentName,
+                    Interactive = false,
+                    Type = "TOOL",
+                    Role = "TOOL",
+                    ToolResultInputConfiguration = new NovaSonicToolResultInputConfig
                     {
-                        toolUseId = callId ?? string.Empty,
-                        type = "TEXT",
-                        textInputConfiguration = new { mediaType = "text/plain" }
+                        ToolUseId = callId ?? string.Empty,
+                        Type = "TEXT",
+                        TextInputConfiguration = new NovaSonicMediaConfig { MediaType = "text/plain" }
                     }
                 }
             }
         };
-        WritePriorityEvent(JsonSerializer.Serialize(contentStartEvent, NovaSonicJsonOptions.Default));
+        WritePriorityEvent(JsonSerializer.Serialize(contentStartWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper));
 
         // toolResult — content must be a JSON object string for Nova Sonic
         string resultContent = SerializeToolResult(result);
-        var toolResultEvent = new
+        var toolResultWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                toolResult = new
+                ToolResult = new NovaSonicToolResult
                 {
-                    promptName,
-                    contentName,
-                    content = resultContent
+                    PromptName = promptName,
+                    ContentName = contentName,
+                    Content = resultContent
                 }
             }
         };
-        var toolResultJson = JsonSerializer.Serialize(toolResultEvent, NovaSonicJsonOptions.Default);
-        WritePriorityEvent(toolResultJson);
+        WritePriorityEvent(JsonSerializer.Serialize(toolResultWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper));
 
         // contentEnd
-        var contentEndEvent = new
+        var contentEndWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                contentEnd = new
+                ContentEnd = new NovaSonicContentEnd
                 {
-                    promptName,
-                    contentName
+                    PromptName = promptName,
+                    ContentName = contentName
                 }
             }
         };
-        WritePriorityEvent(JsonSerializer.Serialize(contentEndEvent, NovaSonicJsonOptions.Default));
+        WritePriorityEvent(JsonSerializer.Serialize(contentEndWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper));
 
         // Send a silence frame to keep the stream flowing while the model
         // generates its response with the tool result.
@@ -1163,19 +1167,19 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
         {
             int sampleRate = Options?.InputAudioFormat?.SampleRate ?? 16000;
             byte[] silence = new byte[sampleRate * 2 / 10]; // 100ms
-            var silenceEvent = new
+            var silenceWrapper = new NovaSonicEventWrapper
             {
-                @event = new
+                Event = new NovaSonicEvent
                 {
-                    audioInput = new
+                    AudioInput = new NovaSonicAudioInput
                     {
-                        promptName,
-                        contentName = audioContentName,
-                        content = Convert.ToBase64String(silence)
+                        PromptName = promptName,
+                        ContentName = audioContentName,
+                        Content = Convert.ToBase64String(silence)
                     }
                 }
             };
-            WritePriorityEvent(JsonSerializer.Serialize(silenceEvent, NovaSonicJsonOptions.Default));
+            WritePriorityEvent(JsonSerializer.Serialize(silenceWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper));
         }
     }
 
@@ -1192,31 +1196,31 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
 
         int inputSampleRate = Options?.InputAudioFormat?.SampleRate ?? 16000;
 
-        var contentStartEvent = new
+        var contentStartWrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                contentStart = new
+                ContentStart = new NovaSonicContentStart
                 {
-                    promptName = _promptName,
-                    contentName = _audioContentName,
-                    type = "AUDIO",
-                    interactive = true,
-                    role = "USER",
-                    audioInputConfiguration = new
+                    PromptName = _promptName,
+                    ContentName = _audioContentName,
+                    Type = "AUDIO",
+                    Interactive = true,
+                    Role = "USER",
+                    AudioInputConfiguration = new NovaSonicAudioInputConfig
                     {
-                        mediaType = "audio/lpcm",
-                        sampleRateHertz = inputSampleRate,
-                        sampleSizeBits = 16,
-                        channelCount = 1,
-                        audioType = "SPEECH",
-                        encoding = "base64"
+                        MediaType = "audio/lpcm",
+                        SampleRateHertz = inputSampleRate,
+                        SampleSizeBits = 16,
+                        ChannelCount = 1,
+                        AudioType = "SPEECH",
+                        Encoding = "base64"
                     }
                 }
             }
         };
 
-        await WriteEventAsync(JsonSerializer.Serialize(contentStartEvent, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+        await WriteEventAsync(JsonSerializer.Serialize(contentStartWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
@@ -1242,8 +1246,8 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
         int outputSampleRate = Options.OutputAudioFormat?.SampleRate ?? 24000;
         string? voiceId = Options.Voice;
 
-        var promptStartObj = BuildPromptStartEvent(voiceId, outputSampleRate, Options.Tools);
-        await WriteEventAsync(JsonSerializer.Serialize(promptStartObj, NovaSonicJsonOptions.Default), cancellationToken).ConfigureAwait(false);
+        var promptStartWrapper = BuildPromptStartEvent(voiceId, outputSampleRate, Options.Tools);
+        await WriteEventAsync(JsonSerializer.Serialize(promptStartWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
         _promptStarted = true;
     }
 
@@ -1254,16 +1258,17 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
             return;
         }
 
-        var json = JsonSerializer.Serialize(new
+        var wrapper = new NovaSonicEventWrapper
         {
-            @event = new
+            Event = new NovaSonicEvent
             {
-                promptEnd = new
+                PromptEnd = new NovaSonicPromptEnd
                 {
-                    promptName = _promptName
+                    PromptName = _promptName
                 }
             }
-        }, NovaSonicJsonOptions.Default);
+        };
+        var json = JsonSerializer.Serialize(wrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper);
 
         await WriteEventAsync(json, cancellationToken).ConfigureAwait(false);
         _promptStarted = false;
@@ -1344,17 +1349,18 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
 
         try
         {
-            var json = JsonSerializer.Serialize(new
+            var wrapper = new NovaSonicEventWrapper
             {
-                @event = new
+                Event = new NovaSonicEvent
                 {
-                    contentEnd = new
+                    ContentEnd = new NovaSonicContentEnd
                     {
-                        promptName = _promptName,
-                        contentName = _audioContentName
+                        PromptName = _promptName,
+                        ContentName = _audioContentName
                     }
                 }
-            }, NovaSonicJsonOptions.Default);
+            };
+            var json = JsonSerializer.Serialize(wrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper);
 
             await WriteEventAsync(json, CancellationToken.None).ConfigureAwait(false);
             _audioContentName = null;
@@ -1369,16 +1375,17 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
     {
         try
         {
-            var json = JsonSerializer.Serialize(new
+            var wrapper = new NovaSonicEventWrapper
             {
-                @event = new
+                Event = new NovaSonicEvent
                 {
-                    promptEnd = new
+                    PromptEnd = new NovaSonicPromptEnd
                     {
-                        promptName = _promptName
+                        PromptName = _promptName
                     }
                 }
-            }, NovaSonicJsonOptions.Default);
+            };
+            var json = JsonSerializer.Serialize(wrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper);
 
             await WriteEventAsync(json, CancellationToken.None).ConfigureAwait(false);
         }
@@ -1392,13 +1399,14 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
     {
         try
         {
-            var json = JsonSerializer.Serialize(new
+            var wrapper = new NovaSonicEventWrapper
             {
-                @event = new
+                Event = new NovaSonicEvent
                 {
-                    sessionEnd = new { }
+                    SessionEnd = new NovaSonicSessionEnd()
                 }
-            }, NovaSonicJsonOptions.Default);
+            };
+            var json = JsonSerializer.Serialize(wrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper);
 
             await WriteEventAsync(json, CancellationToken.None).ConfigureAwait(false);
         }
@@ -1431,7 +1439,9 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
             }
 
             // Non-object JsonElement (string, number, array, etc.) — wrap in an object
-            return JsonSerializer.Serialize(new { result = jsonElement }, NovaSonicJsonOptions.Default);
+#pragma warning disable IL2026 // Tool result values are dynamic
+            return JsonSerializer.Serialize(new NovaSonicToolResultWrapper { Result = jsonElement }, NovaSonicJsonOptions.Reflection);
+#pragma warning restore IL2026
         }
 
         if (result is string strResult)
@@ -1450,24 +1460,32 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
                 // Not valid JSON
             }
 
-            return JsonSerializer.Serialize(new { result = strResult }, NovaSonicJsonOptions.Default);
+#pragma warning disable IL2026 // Tool result values are dynamic
+            return JsonSerializer.Serialize(new NovaSonicToolResultWrapper { Result = strResult }, NovaSonicJsonOptions.Reflection);
+#pragma warning restore IL2026
         }
 
         // For other types, serialize and check if result is an object
         try
         {
-            string json = JsonSerializer.Serialize(result, NovaSonicJsonOptions.Default);
+#pragma warning disable IL2026 // Tool result values are dynamic
+            string json = JsonSerializer.Serialize(result, NovaSonicJsonOptions.Reflection);
+#pragma warning restore IL2026
             using var doc2 = JsonDocument.Parse(json);
             if (doc2.RootElement.ValueKind == JsonValueKind.Object)
             {
                 return json;
             }
 
-            return JsonSerializer.Serialize(new { result }, NovaSonicJsonOptions.Default);
+#pragma warning disable IL2026 // Tool result values are dynamic
+            return JsonSerializer.Serialize(new NovaSonicToolResultWrapper { Result = result }, NovaSonicJsonOptions.Reflection);
+#pragma warning restore IL2026
         }
         catch (JsonException)
         {
-            return JsonSerializer.Serialize(new { result = result.ToString() }, NovaSonicJsonOptions.Default);
+#pragma warning disable IL2026 // Tool result values are dynamic
+            return JsonSerializer.Serialize(new NovaSonicToolResultWrapper { Result = result.ToString() }, NovaSonicJsonOptions.Reflection);
+#pragma warning restore IL2026
         }
     }
 
@@ -1524,19 +1542,188 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
 /// <summary>Provides JSON serializer options for Nova Sonic protocol events.</summary>
 internal static class NovaSonicJsonOptions
 {
-    /// <summary>Gets the shared options configured for Nova Sonic event serialization.</summary>
+    /// <summary>Gets the source-generated context configured with <see cref="JavaScriptEncoder.UnsafeRelaxedJsonEscaping"/>.</summary>
     /// <remarks>
     /// Uses <see cref="JavaScriptEncoder.UnsafeRelaxedJsonEscaping"/> to avoid Unicode escape sequences
     /// (e.g., <c>\u0022</c>) that some downstream parsers may not handle correctly when processing
     /// nested JSON strings such as <c>inputSchema.json</c>.
     /// </remarks>
-    internal static readonly JsonSerializerOptions Default = new()
+    internal static readonly NovaSonicJsonContext Context = new(new JsonSerializerOptions
+    {
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        WriteIndented = false,
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+    });
+
+    /// <summary>Gets reflection-based options for serializing tool results with unknown types.</summary>
+    internal static readonly JsonSerializerOptions Reflection = new()
     {
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
         WriteIndented = false,
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
     };
+}
+
+#region Nova Sonic Protocol DTOs
+
+internal sealed class NovaSonicEventWrapper
+{
+    [JsonPropertyName("event")]
+    public NovaSonicEvent? Event { get; set; }
+}
+
+internal sealed class NovaSonicEvent
+{
+    public NovaSonicSessionStart? SessionStart { get; set; }
+    public NovaSonicPromptStart? PromptStart { get; set; }
+    public NovaSonicContentStart? ContentStart { get; set; }
+    public NovaSonicTextInput? TextInput { get; set; }
+    public NovaSonicAudioInput? AudioInput { get; set; }
+    public NovaSonicToolResult? ToolResult { get; set; }
+    public NovaSonicContentEnd? ContentEnd { get; set; }
+    public NovaSonicPromptEnd? PromptEnd { get; set; }
+    public NovaSonicSessionEnd? SessionEnd { get; set; }
+}
+
+internal sealed class NovaSonicSessionStart
+{
+    public NovaSonicInferenceConfig? InferenceConfiguration { get; set; }
+}
+
+internal sealed class NovaSonicInferenceConfig
+{
+    public int MaxTokens { get; set; }
+    public double TopP { get; set; }
+    public double Temperature { get; set; }
+}
+
+internal sealed class NovaSonicPromptStart
+{
+    public string? PromptName { get; set; }
+    public NovaSonicMediaConfig? TextOutputConfiguration { get; set; }
+    public NovaSonicAudioOutputConfig? AudioOutputConfiguration { get; set; }
+    public NovaSonicMediaConfig? ToolUseOutputConfiguration { get; set; }
+    public NovaSonicToolConfiguration? ToolConfiguration { get; set; }
+}
+
+internal sealed class NovaSonicMediaConfig
+{
+    public string? MediaType { get; set; }
+}
+
+internal sealed class NovaSonicAudioOutputConfig
+{
+    public string? MediaType { get; set; }
+    public int SampleRateHertz { get; set; }
+    public int SampleSizeBits { get; set; }
+    public int ChannelCount { get; set; }
+    public string? VoiceId { get; set; }
+    public string? Encoding { get; set; }
+    public string? AudioType { get; set; }
+}
+
+internal sealed class NovaSonicToolConfiguration
+{
+    public List<NovaSonicToolSpec>? Tools { get; set; }
+}
+
+internal sealed class NovaSonicToolSpec
+{
+    public NovaSonicToolSpecDetails? ToolSpec { get; set; }
+}
+
+internal sealed class NovaSonicToolSpecDetails
+{
+    public string? Name { get; set; }
+    public string? Description { get; set; }
+    public NovaSonicInputSchema? InputSchema { get; set; }
+}
+
+internal sealed class NovaSonicInputSchema
+{
+    public string? Json { get; set; }
+}
+
+internal sealed class NovaSonicContentStart
+{
+    public string? PromptName { get; set; }
+    public string? ContentName { get; set; }
+    public string? Type { get; set; }
+    public bool Interactive { get; set; }
+    public string? Role { get; set; }
+    public NovaSonicMediaConfig? TextInputConfiguration { get; set; }
+    public NovaSonicAudioInputConfig? AudioInputConfiguration { get; set; }
+    public NovaSonicToolResultInputConfig? ToolResultInputConfiguration { get; set; }
+}
+
+internal sealed class NovaSonicAudioInputConfig
+{
+    public string? MediaType { get; set; }
+    public int SampleRateHertz { get; set; }
+    public int SampleSizeBits { get; set; }
+    public int ChannelCount { get; set; }
+    public string? Encoding { get; set; }
+    public string? AudioType { get; set; }
+}
+
+internal sealed class NovaSonicToolResultInputConfig
+{
+    public string? ToolUseId { get; set; }
+    public string? Type { get; set; }
+    public NovaSonicMediaConfig? TextInputConfiguration { get; set; }
+}
+
+internal sealed class NovaSonicTextInput
+{
+    public string? PromptName { get; set; }
+    public string? ContentName { get; set; }
+    public string? Content { get; set; }
+}
+
+internal sealed class NovaSonicAudioInput
+{
+    public string? PromptName { get; set; }
+    public string? ContentName { get; set; }
+    public string? Content { get; set; }
+}
+
+internal sealed class NovaSonicToolResult
+{
+    public string? PromptName { get; set; }
+    public string? ContentName { get; set; }
+    public string? Content { get; set; }
+}
+
+internal sealed class NovaSonicContentEnd
+{
+    public string? PromptName { get; set; }
+    public string? ContentName { get; set; }
+}
+
+internal sealed class NovaSonicPromptEnd
+{
+    public string? PromptName { get; set; }
+}
+
+internal sealed class NovaSonicSessionEnd { }
+
+internal sealed class NovaSonicToolResultWrapper
+{
+    public object? Result { get; set; }
+}
+
+#endregion
+
+[JsonSourceGenerationOptions(
+    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+    PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase,
+    WriteIndented = false)]
+[JsonSerializable(typeof(NovaSonicEventWrapper))]
+[JsonSerializable(typeof(NovaSonicToolResultWrapper))]
+internal partial class NovaSonicJsonContext : JsonSerializerContext
+{
 }
 
 #endif
