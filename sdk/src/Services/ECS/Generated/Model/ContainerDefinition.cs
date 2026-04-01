@@ -1175,6 +1175,7 @@ namespace Amazon.ECS.Model
         /// The private repository authentication credentials to use.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RepositoryCredentials RepositoryCredentials
         {
             get { return this._repositoryCredentials; }

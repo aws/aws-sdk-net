@@ -164,8 +164,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions
-        /// and FIPS disabled in other regions.
+        /// If not specified, instances are launched with FIPS enabled in Amazon Web Services
+        /// GovCloud (US) regions and FIPS disabled in other regions.
         /// </para>
         /// </summary>
         public bool? FipsEnabled
