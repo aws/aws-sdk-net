@@ -19,7 +19,6 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using System.Threading.Tasks;
-using Amazon.BedrockRuntime.Model;
 using Microsoft.Extensions.AI;
 
 #pragma warning disable MEAI001 // Type is for evaluation purposes only
@@ -41,7 +40,7 @@ public sealed class BedrockNovaRealtimeClient : IRealtimeClient
     /// <summary>Initializes a new instance of the <see cref="BedrockNovaRealtimeClient"/> class.</summary>
     /// <param name="runtime">The Amazon Bedrock Runtime client.</param>
     /// <param name="defaultModelId">
-    /// The default model ID. If <see langword="null"/>, defaults to <c>amazon.nova-sonic-v1:0</c>.
+    /// The default model ID. If <see langword="null"/>, defaults to <c>amazon.nova-2-sonic-v1:0</c>.
     /// </param>
     /// <exception cref="ArgumentNullException"><paramref name="runtime"/> is <see langword="null"/>.</exception>
     public BedrockNovaRealtimeClient(IAmazonBedrockRuntime runtime, string? defaultModelId = null)
@@ -56,7 +55,7 @@ public sealed class BedrockNovaRealtimeClient : IRealtimeClient
     /// <param name="secretAccessKey">The AWS secret access key.</param>
     /// <param name="regionName">The AWS region (e.g. "us-east-1").</param>
     /// <param name="defaultModelId">
-    /// The default model ID. If <see langword="null"/>, defaults to <c>amazon.nova-sonic-v1:0</c>.
+    /// The default model ID. If <see langword="null"/>, defaults to <c>amazon.nova-2-sonic-v1:0</c>.
     /// </param>
     /// <exception cref="ArgumentNullException">
     /// <paramref name="accessKeyId"/>, <paramref name="secretAccessKey"/>, or <paramref name="regionName"/> is <see langword="null"/> or empty.
