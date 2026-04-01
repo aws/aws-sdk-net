@@ -34,11 +34,6 @@ namespace SDKDocGenerator.PlatformMap
         public string ServiceName { get; }
 
         /// <summary>
-        /// The full path to the assembly file.
-        /// </summary>
-        public string AssemblyPath { get; }
-
-        /// <summary>
         /// Whether this is the primary platform for documentation.
         /// Primary platform assemblies are used for the main doc generation pass.
         /// Non-primary (supplemental) platforms only contribute exclusive members.
@@ -51,19 +46,16 @@ namespace SDKDocGenerator.PlatformMap
         /// <param name="platform">Platform name (e.g., "net8.0")</param>
         /// <param name="assembly">The loaded assembly wrapper</param>
         /// <param name="serviceName">Service name</param>
-        /// <param name="assemblyPath">Full path to the assembly file</param>
         /// <param name="isPrimary">Whether this is the primary documentation platform</param>
         public PlatformAssemblyContext(
             string platform,
             AssemblyWrapper assembly,
             string serviceName,
-            string assemblyPath,
             bool isPrimary = false)
         {
             Platform = platform ?? throw new ArgumentNullException(nameof(platform));
             Assembly = assembly ?? throw new ArgumentNullException(nameof(assembly));
             ServiceName = serviceName ?? throw new ArgumentNullException(nameof(serviceName));
-            AssemblyPath = assemblyPath ?? throw new ArgumentNullException(nameof(assemblyPath));
             IsPrimaryPlatform = isPrimary;
         }
 

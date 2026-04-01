@@ -22,17 +22,8 @@ namespace SDKDocGenerator.PlatformMap
     /// - Caller must call map.Dispose() to release resources
     /// - For typical builds (3-4 platforms), memory usage is acceptable
     /// </summary>
-    public class PlatformMapBuilder
+    public static class PlatformMapBuilder
     {
-        private readonly string _sdkAssembliesRoot;
-
-        public PlatformMapBuilder(string sdkAssembliesRoot)
-        {
-            if (string.IsNullOrEmpty(sdkAssembliesRoot))
-                throw new ArgumentNullException(nameof(sdkAssembliesRoot));
-            _sdkAssembliesRoot = sdkAssembliesRoot;
-        }
-
         #region Public API
 
         /// <summary>
@@ -43,13 +34,15 @@ namespace SDKDocGenerator.PlatformMap
         /// <param name="assemblyName">Assembly name without extension (e.g., "AWSSDK.S3")</param>
         /// <param name="platformsToScan">List of platform folders to scan (e.g., ["net472", "net8.0"])</param>
         /// <param name="primaryPlatform">The primary platform subfolder (e.g., "net472") used as the documentation baseline</param>
+        /// <param name="sdkAssembliesRoot">Root folder containing per-platform assembly subfolders</param>
         /// <param name="isVerbose">Whether to emit additional diagnostic messages</param>
         /// <returns>PlatformAvailabilityMap with loaded assemblies - must be disposed</returns>
-        public PlatformAvailabilityMap BuildMap(
+        public static PlatformAvailabilityMap BuildMap(
             string serviceName,
             string assemblyName,
             IEnumerable<string> platformsToScan,
             string primaryPlatform,
+            string sdkAssembliesRoot,
             bool isVerbose)
         {
             if (string.IsNullOrEmpty(serviceName))
@@ -60,6 +53,8 @@ namespace SDKDocGenerator.PlatformMap
                 throw new ArgumentNullException(nameof(platformsToScan));
             if (string.IsNullOrEmpty(primaryPlatform))
                 throw new ArgumentNullException(nameof(primaryPlatform));
+            if (string.IsNullOrEmpty(sdkAssembliesRoot))
+                throw new ArgumentNullException(nameof(sdkAssembliesRoot));
 
             var platforms = platformsToScan.ToList();
             if (!platforms.Any())
@@ -82,7 +77,7 @@ namespace SDKDocGenerator.PlatformMap
                 foreach (var platform in orderedPlatforms)
                 {
                     var isPrimary = platform.Equals(primaryPlatform, StringComparison.OrdinalIgnoreCase);
-                    var assemblyPath = Path.GetFullPath(Path.Combine(_sdkAssembliesRoot, platform, assemblyName + ".dll"));
+                    var assemblyPath = Path.GetFullPath(Path.Combine(sdkAssembliesRoot, platform, assemblyName + ".dll"));
 
                     if (!File.Exists(assemblyPath))
                     {
@@ -174,7 +169,7 @@ namespace SDKDocGenerator.PlatformMap
         /// <summary>
         /// Loads a platform assembly and scans it, keeping the assembly loaded.
         /// </summary>
-        private PlatformAssemblyContext LoadAndScanPlatform(
+        private static PlatformAssemblyContext LoadAndScanPlatform(
             string assemblyPath,
             string platform,
             string serviceName,
@@ -200,7 +195,6 @@ namespace SDKDocGenerator.PlatformMap
                     platform,
                     wrapper,
                     serviceName,
-                    assemblyPath,
                     isPrimary);
             }
             catch (Exception)
@@ -214,7 +208,7 @@ namespace SDKDocGenerator.PlatformMap
         /// <summary>
         /// Scans a single type and all its members, adding to the member index.
         /// </summary>
-        private void ScanType(
+        private static void ScanType(
             TypeWrapper type,
             string platform,
             Dictionary<string, PlatformMemberEntry> memberIndex)
@@ -276,7 +270,7 @@ namespace SDKDocGenerator.PlatformMap
         /// <summary>
         /// Records that a member exists on a platform.
         /// </summary>
-        private void RecordMember(
+        private static void RecordMember(
             string signature,
             string declaringTypeFullName,
             string platform,
@@ -298,7 +292,7 @@ namespace SDKDocGenerator.PlatformMap
         /// After all platforms are scanned, identifies exclusive methods and stores their wrappers.
         /// A member is "exclusive" if it exists on some platforms but NOT on the primary platform.
         /// </summary>
-        private void IdentifyAndStoreExclusiveWrappers(
+        private static void IdentifyAndStoreExclusiveWrappers(
             Dictionary<string, PlatformMemberEntry> memberIndex,
             string primaryPlatform,
             List<PlatformAssemblyContext> loadedContexts,
@@ -345,7 +339,7 @@ namespace SDKDocGenerator.PlatformMap
         /// <summary>
         /// Finds a method wrapper in the assembly matching the signature.
         /// </summary>
-        private MethodInfoWrapper FindMethodInAssembly(AssemblyWrapper assembly, PlatformMemberEntry entry)
+        private static MethodInfoWrapper FindMethodInAssembly(AssemblyWrapper assembly, PlatformMemberEntry entry)
         {
             if (string.IsNullOrEmpty(entry.DeclaringTypeFullName))
                 return null;

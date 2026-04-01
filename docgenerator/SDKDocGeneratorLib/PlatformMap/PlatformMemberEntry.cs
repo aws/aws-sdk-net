@@ -41,14 +41,6 @@ namespace SDKDocGenerator.PlatformMap
 
         /// <summary>True if this entry represents a method (M: prefix).</summary>
         public bool IsMethod => Signature.StartsWith("M:", StringComparison.Ordinal);
-        /// <summary>True if this entry represents a property (P: prefix).</summary>
-        public bool IsProperty => Signature.StartsWith("P:", StringComparison.Ordinal);
-        /// <summary>True if this entry represents a type (T: prefix).</summary>
-        public bool IsType => Signature.StartsWith("T:", StringComparison.Ordinal);
-        /// <summary>True if this entry represents a field (F: prefix).</summary>
-        public bool IsField => Signature.StartsWith("F:", StringComparison.Ordinal);
-        /// <summary>True if this entry represents an event (E: prefix).</summary>
-        public bool IsEvent => Signature.StartsWith("E:", StringComparison.Ordinal);
 
         public PlatformMemberEntry(string signature, string declaringTypeFullName)
         {

@@ -26,7 +26,6 @@ namespace SDKDocGenerator.PlatformMap
         #region Fields
 
         private readonly Dictionary<string, PlatformMemberEntry> _memberIndex;
-        private readonly Dictionary<string, HashSet<string>> _platformToMembers;
         private readonly HashSet<string> _allPlatforms;
         private readonly List<PlatformAssemblyContext> _loadedContexts;
         private bool _disposed;
@@ -89,134 +88,11 @@ namespace SDKDocGenerator.PlatformMap
 
             // Store the member index directly - PlatformMapBuilder has already done the work
             _memberIndex = memberIndex ?? throw new ArgumentNullException(nameof(memberIndex));
-
-            // Build reverse index (platform → signatures)
-            _platformToMembers = new Dictionary<string, HashSet<string>>(StringComparer.OrdinalIgnoreCase);
-            foreach (var platform in _allPlatforms)
-            {
-                _platformToMembers[platform] = new HashSet<string>(StringComparer.Ordinal);
-            }
-
-            foreach (var kvp in _memberIndex)
-            {
-                var signature = kvp.Key;
-                var entry = kvp.Value;
-                foreach (var platform in entry.Platforms)
-                {
-                    if (_platformToMembers.ContainsKey(platform))
-                    {
-                        _platformToMembers[platform].Add(signature);
-                    }
-                }
-            }
         }
 
         #endregion
 
-        #region Query Methods - Signature Based (for diagnostics and testing)
-
-        /// <summary>
-        /// Gets all platforms where a member exists.
-        /// Returns empty set if member doesn't exist on any platform.
-        /// </summary>
-        /// <param name="memberSignature">The member signature (e.g., "M:Type.Method(Params)")</param>
-        public IReadOnlyCollection<string> GetPlatformsForMember(string memberSignature)
-        {
-            ThrowIfDisposed();
-
-            if (string.IsNullOrEmpty(memberSignature))
-                return Array.Empty<string>();
-
-            if (_memberIndex.TryGetValue(memberSignature, out var entry))
-                return entry.Platforms;
-
-            return Array.Empty<string>();
-        }
-
-        /// <summary>
-        /// Checks if a member exists on a specific platform.
-        /// </summary>
-        public bool IsMemberAvailableOnPlatform(string memberSignature, string platform)
-        {
-            ThrowIfDisposed();
-
-            if (string.IsNullOrEmpty(memberSignature) || string.IsNullOrEmpty(platform))
-                return false;
-
-            return _memberIndex.TryGetValue(memberSignature, out var entry) &&
-                   entry.Platforms.Contains(platform);
-        }
-
-        /// <summary>
-        /// Checks if a member exists on ALL platforms.
-        /// </summary>
-        public bool IsMemberAvailableOnAllPlatforms(string memberSignature)
-        {
-            ThrowIfDisposed();
-
-            if (string.IsNullOrEmpty(memberSignature))
-                return false;
-
-            if (!_memberIndex.TryGetValue(memberSignature, out var entry))
-                return false;
-
-            return entry.Platforms.Count == _allPlatforms.Count;
-        }
-
-        /// <summary>
-        /// Checks if a member is platform-restricted (not available everywhere).
-        /// Useful for diagnostics and testing.
-        /// </summary>
-        public bool IsMemberPlatformRestricted(string memberSignature)
-        {
-            ThrowIfDisposed();
-
-            if (string.IsNullOrEmpty(memberSignature))
-                return false;
-
-            if (!_memberIndex.TryGetValue(memberSignature, out var entry))
-                return false; // Doesn't exist anywhere, not "restricted"
-
-            return entry.Platforms.Count > 0 && entry.Platforms.Count < _allPlatforms.Count;
-        }
-
-        /// <summary>
-        /// Gets all member signatures available on a specific platform.
-        /// Useful for diagnostics and supplemental content generation.
-        /// </summary>
-        public IReadOnlyCollection<string> GetMembersForPlatform(string platform)
-        {
-            ThrowIfDisposed();
-
-            if (string.IsNullOrEmpty(platform))
-                return Array.Empty<string>();
-
-            if (_platformToMembers.TryGetValue(platform, out var members))
-                return members;
-
-            return Array.Empty<string>();
-        }
-
-        #endregion
-
-        #region Query Methods - Wrapper Based (for exclusive page generation)
-
-        /// <summary>
-        /// Gets the method wrapper for an exclusive member.
-        /// Returns null if the member is not exclusive or is not a method.
-        /// </summary>
-        public MethodInfoWrapper GetMethodWrapper(string signature)
-        {
-            ThrowIfDisposed();
-
-            if (string.IsNullOrEmpty(signature))
-                return null;
-
-            if (_memberIndex.TryGetValue(signature, out var entry))
-                return entry.ExclusiveMethodWrapper;
-
-            return null;
-        }
+        #region Query Methods (for exclusive page generation)
 
         /// <summary>
         /// Gets all exclusive methods for a specific type.
@@ -254,27 +130,6 @@ namespace SDKDocGenerator.PlatformMap
                 .Distinct();
         }
 
-        /// <summary>
-        /// Gets all exclusive method entries (for iteration during page generation).
-        /// </summary>
-        public IEnumerable<PlatformMemberEntry> GetExclusiveMethodEntries()
-        {
-            ThrowIfDisposed();
-
-            return _memberIndex.Values.Where(e => e.ExclusiveMethodWrapper != null);
-        }
-
-        /// <summary>
-        /// Gets the assembly context for a specific platform.
-        /// </summary>
-        public PlatformAssemblyContext GetAssemblyContext(string platform)
-        {
-            ThrowIfDisposed();
-
-            return _loadedContexts.FirstOrDefault(c =>
-                c.Platform.Equals(platform, StringComparison.OrdinalIgnoreCase));
-        }
-
         #endregion
 
         #region Statistics
@@ -294,15 +149,6 @@ namespace SDKDocGenerator.PlatformMap
         /// </summary>
         public int PlatformRestrictedMemberCount =>
             _memberIndex.Count(kvp => kvp.Value.Platforms.Count > 0 && kvp.Value.Platforms.Count < _allPlatforms.Count);
-
-        /// <summary>
-        /// Gets the count of members exclusive to a specific platform.
-        /// </summary>
-        public int GetExclusiveMemberCount(string platform)
-        {
-            var members = GetMembersForPlatform(platform);
-            return members.Count(sig => GetPlatformsForMember(sig).Count == 1);
-        }
 
         #endregion
 
@@ -325,8 +171,8 @@ namespace SDKDocGenerator.PlatformMap
 
             foreach (var platform in _allPlatforms.OrderBy(p => p))
             {
-                var totalMembers = GetMembersForPlatform(platform).Count;
-                var exclusiveMembers = GetExclusiveMemberCount(platform);
+                var totalMembers = _memberIndex.Values.Count(e => e.Platforms.Contains(platform));
+                var exclusiveMembers = _memberIndex.Values.Count(e => e.Platforms.Contains(platform) && e.Platforms.Count == 1);
                 Trace.WriteLine($"  {platform}: {totalMembers} members ({exclusiveMembers} exclusive)");
             }
 

@@ -130,18 +130,18 @@ namespace SDKDocGenerator
             var availablePlatforms = GetAvailablePlatforms();
 
             Info("Building platform availability maps for all services...");
-            var mapBuilder = new PlatformMap.PlatformMapBuilder(Options.SDKAssembliesRoot);
 
             foreach (var manifest in manifests)
             {
                 PlatformMap.PlatformAvailabilityMap map = null;
                 try
                 {
-                    map = mapBuilder.BuildMap(
+                    map = PlatformMap.PlatformMapBuilder.BuildMap(
                         manifest.ServiceName,
                         manifest.AssemblyName,
                         availablePlatforms,
                         Options.Platform,
+                        Options.SDKAssembliesRoot,
                         Options.Verbose);
 
                     manifest.AttachPlatformMap(map);

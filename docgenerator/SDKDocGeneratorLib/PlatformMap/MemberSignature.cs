@@ -19,11 +19,6 @@ namespace SDKDocGenerator.PlatformMap
     /// </summary>
     public static class MemberSignature
     {
-        /// <summary>
-        /// Length of the NDoc member-type prefix (e.g., "T:", "M:", "P:").
-        /// </summary>
-        private const int MemberTypePrefixLength = 2;
-
         #region Type Signatures
 
         /// <summary>
@@ -132,61 +127,6 @@ namespace SDKDocGenerator.PlatformMap
 
             // Delegate to NDocUtilities for consistent signature generation
             return NDocUtilities.DetermineConstructorSignature(constructor);
-        }
-
-        #endregion
-
-        #region Utilities
-
-        /// <summary>
-        /// Extracts the member type prefix from a signature.
-        /// Returns: "T", "M", "P", "F", or "E"
-        /// </summary>
-        public static string GetMemberType(string signature)
-        {
-            if (string.IsNullOrEmpty(signature) || signature.Length < MemberTypePrefixLength || signature[1] != ':')
-                throw new ArgumentException("Invalid signature format", nameof(signature));
-
-            return signature.Substring(0, 1);
-        }
-
-        /// <summary>
-        /// Extracts the fully qualified member name from a signature.
-        /// Example: "M:Amazon.S3.Client.GetObject(Request)" → "Amazon.S3.Client.GetObject"
-        /// </summary>
-        public static string GetMemberName(string signature)
-        {
-            if (string.IsNullOrEmpty(signature) || signature.Length < MemberTypePrefixLength || signature[1] != ':')
-                throw new ArgumentException("Invalid signature format", nameof(signature));
-
-            var nameStart = MemberTypePrefixLength; // Skip "T:", "M:", etc.
-            var nameEnd = signature.IndexOfAny(new[] { '(', '<' }, nameStart);
-
-            return nameEnd == -1
-                ? signature.Substring(nameStart)
-                : signature.Substring(nameStart, nameEnd - nameStart);
-        }
-
-        /// <summary>
-        /// Extracts the type portion from a member signature.
-        /// Example: "P:Amazon.Runtime.ClientConfig.ReadWriteTimeout" → "Amazon.Runtime.ClientConfig"
-        /// </summary>
-        public static string GetDeclaringTypeName(string signature)
-        {
-            var memberName = GetMemberName(signature);
-            var lastDot = memberName.LastIndexOf('.');
-            return lastDot >= 0 ? memberName.Substring(0, lastDot) : memberName;
-        }
-
-        /// <summary>
-        /// Extracts just the method/member name from a full signature.
-        /// Example: "M:Amazon.S3.Client.GetObject(Request)" → "GetObject"
-        /// </summary>
-        public static string ExtractMethodName(string signature)
-        {
-            var fullName = GetMemberName(signature);
-            var lastDot = fullName.LastIndexOf('.');
-            return lastDot >= 0 ? fullName.Substring(lastDot + 1) : fullName;
         }
 
         #endregion
