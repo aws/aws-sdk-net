@@ -1,3 +1,27 @@
+### 4.0.224.0 (2026-04-02 18:18 UTC)
+* AppStream (4.0.8.0)
+	* Amazon WorkSpaces Applications now supports drain mode for instances in multi-session fleets. This capability allows administrators to instruct individual fleet instances to stop accepting new user sessions while allowing existing sessions to continue uninterrupted.
+* BedrockAgentCoreControl (4.0.26.0)
+	* Adds support for three-legged (Authorization Code grant type) OAuth along with predefined MCP tool schema configuration for Amazon Bedrock AgentCore gateway MCP server targets.
+* BedrockDataAutomation (4.0.8.0)
+	* Data Automation Library is a BDA capability that lets you create reusable entity resources to improve extraction accuracy. Libraries support Custom Vocabulary entities that enhance speech recognition for audio and video content with domain-specific terminology shared across projects
+* BedrockRuntime (4.0.17.0)
+	* Relax ToolUseId pattern to allow dots and colons
+* CloudWatch (4.0.9.0)
+	* CloudWatch now supports OTel enrichment to make vended metrics for supported AWS resources queryable via PromQL with resource ARN and tag labels, and PromQL alarms for metrics ingested via the OTLP endpoint with multi-contributor evaluation.
+* CloudWatchLogs (4.0.18.0)
+	* We are pleased to announce that our logs transformation csv processor now has a destination field, allowing you to specify under which parent node parsed columns be placed under.
+* Connect (4.0.38.0)
+	* Include CUSTOMER to evaluation target and participant role. Support Korean, Japanese and Simplified Chinese in evaluation forms.
+* Deadline (4.0.16.0)
+	* AWS Deadline Cloud now supports configurable scheduling on each queue. The scheduling configuration controls how workers are distributed across jobs.
+* GameLift (4.0.8.0)
+	* Amazon GameLift Servers now includes a ComputeName field in game session API responses, making it easier to identify which compute is hosting a game session without cross-referencing IP addresses.
+* GeoPlaces (4.0.4.14)
+	* This release updates API reference documentation for Amazon Location Service Places APIs to reflect regional restrictions for Grab Maps users in ReverseGeocode, Suggest, SearchText, and GetPlace operations
+* Pricing (4.0.4.0)
+	* This release increases the MaxResults parameter of the GetAttributeValues API from 100 to 10000.
+
 ### 4.0.223.0 (2026-04-01 18:20 UTC)
 * Bedrock (4.0.24.0)
 	* Adds support for Bedrock Batch Inference Job Progress Monitoring
