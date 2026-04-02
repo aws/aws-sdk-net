@@ -34,6 +34,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CreateGatewayTargetResponse : AmazonWebServiceResponse
     {
+        private AuthorizationData _authorizationData;
         private DateTime? _createdAt;
         private List<CredentialProviderConfiguration> _credentialProviderConfigurations = AWSConfigs.InitializeCollections ? new List<CredentialProviderConfiguration>() : null;
         private string _description;
@@ -48,6 +49,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private TargetConfiguration _targetConfiguration;
         private string _targetId;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property AuthorizationData. 
+        /// <para>
+        /// OAuth2 authorization data for the created gateway target. This data is returned when
+        /// the target requires user authorization through an authorization code grant type.
+        /// </para>
+        /// </summary>
+        public AuthorizationData AuthorizationData
+        {
+            get { return this._authorizationData; }
+            set { this._authorizationData = value; }
+        }
+
+        // Check to see if AuthorizationData property is set
+        internal bool IsSetAuthorizationData()
+        {
+            return this._authorizationData != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

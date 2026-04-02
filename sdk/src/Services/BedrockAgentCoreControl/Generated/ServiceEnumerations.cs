@@ -2789,6 +2789,10 @@ namespace Amazon.BedrockAgentCoreControl
     {
 
         /// <summary>
+        /// Constant CREATE_PENDING_AUTH for TargetStatus
+        /// </summary>
+        public static readonly TargetStatus CREATE_PENDING_AUTH = new TargetStatus("CREATE_PENDING_AUTH");
+        /// <summary>
         /// Constant CREATING for TargetStatus
         /// </summary>
         public static readonly TargetStatus CREATING = new TargetStatus("CREATING");
@@ -2805,6 +2809,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         public static readonly TargetStatus READY = new TargetStatus("READY");
         /// <summary>
+        /// Constant SYNCHRONIZE_PENDING_AUTH for TargetStatus
+        /// </summary>
+        public static readonly TargetStatus SYNCHRONIZE_PENDING_AUTH = new TargetStatus("SYNCHRONIZE_PENDING_AUTH");
+        /// <summary>
         /// Constant SYNCHRONIZE_UNSUCCESSFUL for TargetStatus
         /// </summary>
         public static readonly TargetStatus SYNCHRONIZE_UNSUCCESSFUL = new TargetStatus("SYNCHRONIZE_UNSUCCESSFUL");
@@ -2812,6 +2820,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant SYNCHRONIZING for TargetStatus
         /// </summary>
         public static readonly TargetStatus SYNCHRONIZING = new TargetStatus("SYNCHRONIZING");
+        /// <summary>
+        /// Constant UPDATE_PENDING_AUTH for TargetStatus
+        /// </summary>
+        public static readonly TargetStatus UPDATE_PENDING_AUTH = new TargetStatus("UPDATE_PENDING_AUTH");
         /// <summary>
         /// Constant UPDATE_UNSUCCESSFUL for TargetStatus
         /// </summary>

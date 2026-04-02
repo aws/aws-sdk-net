@@ -30,50 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// The target configuration for the MCP server.
+    /// The MCP tool schema configuration for an MCP server target. The tool schema must be
+    /// aligned with the MCP specification.
     /// </summary>
-    public partial class McpServerTargetConfiguration
+    public partial class McpToolSchemaConfiguration
     {
-        private string _endpoint;
-        private McpToolSchemaConfiguration _mcpToolSchema;
+        private string _inlinePayload;
+        private S3Configuration _s3;
 
         /// <summary>
-        /// Gets and sets the property Endpoint. 
+        /// Gets and sets the property InlinePayload. 
         /// <para>
-        /// The endpoint for the MCP server target configuration.
+        /// The inline payload containing the MCP tool schema definition.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Endpoint
+        [AWSProperty(Sensitive=true)]
+        public string InlinePayload
         {
-            get { return this._endpoint; }
-            set { this._endpoint = value; }
+            get { return this._inlinePayload; }
+            set { this._inlinePayload = value; }
         }
 
-        // Check to see if Endpoint property is set
-        internal bool IsSetEndpoint()
+        // Check to see if InlinePayload property is set
+        internal bool IsSetInlinePayload()
         {
-            return this._endpoint != null;
+            return this._inlinePayload != null;
         }
 
         /// <summary>
-        /// Gets and sets the property McpToolSchema. 
+        /// Gets and sets the property S3. 
         /// <para>
-        /// The tool schema configuration for the MCP server target. Supported only when the credential
-        /// provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization
-        /// will be disabled when target is configured with mcpToolSchema.
+        /// The Amazon S3 location of the tool schema. This location contains the schema definition
+        /// file.
         /// </para>
         /// </summary>
-        public McpToolSchemaConfiguration McpToolSchema
+        public S3Configuration S3
         {
-            get { return this._mcpToolSchema; }
-            set { this._mcpToolSchema = value; }
+            get { return this._s3; }
+            set { this._s3 = value; }
         }
 
-        // Check to see if McpToolSchema property is set
-        internal bool IsSetMcpToolSchema()
+        // Check to see if S3 property is set
+        internal bool IsSetS3()
         {
-            return this._mcpToolSchema != null;
+            return this._s3 != null;
         }
 
     }

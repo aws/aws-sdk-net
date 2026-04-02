@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for McpServerTargetConfiguration Object
+    /// Response Unmarshaller for OAuth2AuthorizationData Object
     /// </summary>  
-    public class McpServerTargetConfigurationUnmarshaller : IJsonUnmarshaller<McpServerTargetConfiguration, JsonUnmarshallerContext>
+    public class OAuth2AuthorizationDataUnmarshaller : IJsonUnmarshaller<OAuth2AuthorizationData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public McpServerTargetConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public OAuth2AuthorizationData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            McpServerTargetConfiguration unmarshalledObject = new McpServerTargetConfiguration();
+            OAuth2AuthorizationData unmarshalledObject = new OAuth2AuthorizationData();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("endpoint", targetDepth))
+                if (context.TestExpression("authorizationUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AuthorizationUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mcpToolSchema", targetDepth))
+                if (context.TestExpression("userId", targetDepth))
                 {
-                    var unmarshaller = McpToolSchemaConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.McpToolSchema = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static McpServerTargetConfigurationUnmarshaller _instance = new McpServerTargetConfigurationUnmarshaller();        
+        private static OAuth2AuthorizationDataUnmarshaller _instance = new OAuth2AuthorizationDataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static McpServerTargetConfigurationUnmarshaller Instance
+        public static OAuth2AuthorizationDataUnmarshaller Instance
         {
             get
             {

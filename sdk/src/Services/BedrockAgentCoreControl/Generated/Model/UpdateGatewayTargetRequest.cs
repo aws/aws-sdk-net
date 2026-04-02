@@ -32,6 +32,13 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Container for the parameters to the UpdateGatewayTarget operation.
     /// Updates an existing gateway target.
+    /// 
+    ///  
+    /// <para>
+    /// You cannot update a target that is in a pending authorization state (<c>CREATE_PENDING_AUTH</c>,
+    /// <c>UPDATE_PENDING_AUTH</c>, or <c>SYNCHRONIZE_PENDING_AUTH</c>). Wait for the authorization
+    /// to complete or fail before updating the target.
+    /// </para>
     /// </summary>
     public partial class UpdateGatewayTargetRequest : AmazonBedrockAgentCoreControlRequest
     {

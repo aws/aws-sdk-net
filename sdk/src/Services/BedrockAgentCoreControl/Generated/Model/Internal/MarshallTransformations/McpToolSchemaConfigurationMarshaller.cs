@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// McpServerTargetConfiguration Marshaller
+    /// McpToolSchemaConfiguration Marshaller
     /// </summary>
-    public class McpServerTargetConfigurationMarshaller : IRequestMarshaller<McpServerTargetConfiguration, JsonMarshallerContext> 
+    public class McpToolSchemaConfigurationMarshaller : IRequestMarshaller<McpToolSchemaConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,23 +42,23 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(McpServerTargetConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(McpToolSchemaConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEndpoint())
+            if(requestObject.IsSetInlinePayload())
             {
-                context.Writer.WritePropertyName("endpoint");
-                context.Writer.WriteStringValue(requestObject.Endpoint);
+                context.Writer.WritePropertyName("inlinePayload");
+                context.Writer.WriteStringValue(requestObject.InlinePayload);
             }
 
-            if(requestObject.IsSetMcpToolSchema())
+            if(requestObject.IsSetS3())
             {
-                context.Writer.WritePropertyName("mcpToolSchema");
+                context.Writer.WritePropertyName("s3");
                 context.Writer.WriteStartObject();
 
-                var marshaller = McpToolSchemaConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.McpToolSchema, context);
+                var marshaller = S3ConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -68,7 +68,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static McpServerTargetConfigurationMarshaller Instance = new McpServerTargetConfigurationMarshaller();
+        public readonly static McpToolSchemaConfigurationMarshaller Instance = new McpToolSchemaConfigurationMarshaller();
 
     }
 }

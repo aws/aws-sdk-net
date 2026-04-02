@@ -30,50 +30,52 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// The target configuration for the MCP server.
+    /// OAuth2-specific authorization data, including the authorization URL and user identifier
+    /// for the authorization session.
     /// </summary>
-    public partial class McpServerTargetConfiguration
+    public partial class OAuth2AuthorizationData
     {
-        private string _endpoint;
-        private McpToolSchemaConfiguration _mcpToolSchema;
+        private string _authorizationUrl;
+        private string _userId;
 
         /// <summary>
-        /// Gets and sets the property Endpoint. 
+        /// Gets and sets the property AuthorizationUrl. 
         /// <para>
-        /// The endpoint for the MCP server target configuration.
+        /// The URL to initiate the authorization process. This URL is provided when the OAuth2
+        /// access token requires user authorization.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Endpoint
+        [AWSProperty(Required=true, Min=1)]
+        public string AuthorizationUrl
         {
-            get { return this._endpoint; }
-            set { this._endpoint = value; }
+            get { return this._authorizationUrl; }
+            set { this._authorizationUrl = value; }
         }
 
-        // Check to see if Endpoint property is set
-        internal bool IsSetEndpoint()
+        // Check to see if AuthorizationUrl property is set
+        internal bool IsSetAuthorizationUrl()
         {
-            return this._endpoint != null;
+            return this._authorizationUrl != null;
         }
 
         /// <summary>
-        /// Gets and sets the property McpToolSchema. 
+        /// Gets and sets the property UserId. 
         /// <para>
-        /// The tool schema configuration for the MCP server target. Supported only when the credential
-        /// provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization
-        /// will be disabled when target is configured with mcpToolSchema.
+        /// The user identifier associated with the OAuth2 authorization session that is defined
+        /// by AgentCore Gateway.
         /// </para>
         /// </summary>
-        public McpToolSchemaConfiguration McpToolSchema
+        [AWSProperty(Min=1, Max=128)]
+        public string UserId
         {
-            get { return this._mcpToolSchema; }
-            set { this._mcpToolSchema = value; }
+            get { return this._userId; }
+            set { this._userId = value; }
         }
 
-        // Check to see if McpToolSchema property is set
-        internal bool IsSetMcpToolSchema()
+        // Check to see if UserId property is set
+        internal bool IsSetUserId()
         {
-            return this._mcpToolSchema != null;
+            return this._userId != null;
         }
 
     }
