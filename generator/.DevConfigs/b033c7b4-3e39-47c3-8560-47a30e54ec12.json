@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Fixed GetLifecycleConfiguration to throw AmazonS3Exception with NoSuchLifecycleConfiguration error code when the bucket has no lifecycle configuration. In V4, S3 returns HTTP 200 with an empty body (due to region-specific endpoints) instead of HTTP 404, causing the SDK to silently return an empty response. The fix detects the empty response and throws the documented error to match the S3 API contract."
+            ]
+        }
+    ]
+}
