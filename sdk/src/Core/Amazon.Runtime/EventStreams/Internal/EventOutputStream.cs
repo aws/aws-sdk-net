@@ -417,16 +417,18 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// <param name="disposing">Should dispose of unmanged resources.</param>
         protected virtual void Dispose(bool disposing)
         {
-            if (_disposed) return;
+            if (_disposed) 
+                return;
+
             if (disposing)
             {
+                _disposed = true;
+
                 IsProcessing = false;
 
                 NetworkStream?.Dispose();
                 Decoder?.Dispose();
             }
-
-            _disposed = true;
         }
 
         #endregion
