@@ -43,7 +43,9 @@ namespace Amazon.GeoPlaces.Model
         /// QueryId can be used to complete a follow up query through the SearchText API. The
         /// QueryId retains context from the original Suggest request such as filters, political
         /// view and language. See the SearchText API documentation for more details <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_SearchText.html">SearchText
-        /// API docs</a>.
+        /// API docs</a>. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions
+        /// for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -67,9 +69,11 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property QueryType. 
         /// <para>
-        /// The query type. Category queries will search for places which have an entry matching
+        ///  The query type. Category queries will search for places which have an entry matching
         /// the given category, for example "doctor office". BusinessChain queries will search
-        /// for instances of a given business.
+        /// for instances of a given business. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public QueryType QueryType

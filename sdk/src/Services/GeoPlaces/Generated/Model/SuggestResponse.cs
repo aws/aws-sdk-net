@@ -65,7 +65,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property QueryRefinements. 
         /// <para>
-        /// Maximum number of query terms to be returned for use with a search text query.
+        ///  Maximum number of query terms to be returned for use with a search text query. Not
+        /// available in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

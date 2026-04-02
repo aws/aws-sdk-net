@@ -73,7 +73,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Block. 
         /// <para>
-        /// Name of the block. 
+        ///  Name of the block. Not available in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  
         /// <para>
@@ -96,7 +98,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Building. 
         /// <para>
-        /// The name of the building at the address.
+        ///  The name of the building at the address. Not available in <c>ap-southeast-1</c> and
+        /// <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=200)]
@@ -152,7 +156,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Intersection. 
         /// <para>
-        /// Name of the streets in the intersection. 
+        ///  Name of the streets in the intersection. Not available in <c>ap-southeast-1</c> and
+        /// <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  
         /// <para>
@@ -265,8 +271,10 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property SecondaryAddressComponents. 
         /// <para>
-        /// Components that correspond to secondary identifiers on an Address. Secondary address
-        /// components include information such as Suite or Unit Number, Building, or Floor.
+        ///  Components that correspond to secondary identifiers on an Address. Secondary address
+        /// components include information such as Suite or Unit Number, Building, or Floor. Not
+        /// available in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -319,11 +327,13 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property StreetComponents. 
         /// <para>
-        /// Components of the street. 
+        ///  Components of the street. Not available in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  
         /// <para>
-        /// Example: Younge from the "Younge street".
+        /// Example: Yonge from "Yonge street".
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -347,7 +357,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property SubBlock. 
         /// <para>
-        /// Name of sub-block. 
+        ///  Name of sub-block. Not available in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  
         /// <para>
