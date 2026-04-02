@@ -133,6 +133,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For DevOps Agent, the valid value is <c>APPLICATION_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Amazon CodeWhisperer, the valid value is <c>EVENT_LOGS</c>.
         /// </para>
         ///  </li> <li> 
