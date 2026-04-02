@@ -30,7 +30,8 @@ public static class AmazonBedrockRuntimeExtensions
     /// <param name="runtime">The runtime instance to be represented as an <see cref="IRealtimeClient"/>.</param>
     /// <param name="defaultModelId">
     /// The default model ID to use when no model is specified in session options. If not specified,
-    /// defaults to <c>amazon.nova-2-sonic-v1:0</c>.
+    /// a model must be provided in the <see cref="RealtimeSessionOptions.Model"/> passed to
+    /// <see cref="IRealtimeClient.CreateSessionAsync"/>.
     /// </param>
     /// <returns>An <see cref="IRealtimeClient"/> instance representing the <see cref="IAmazonBedrockRuntime"/> instance.</returns>
     /// <exception cref="ArgumentNullException"><paramref name="runtime"/> is <see langword="null"/>.</exception>
