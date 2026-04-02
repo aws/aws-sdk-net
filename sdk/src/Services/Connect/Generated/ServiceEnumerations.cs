@@ -1456,6 +1456,10 @@ namespace Amazon.Connect
         /// Constant AUTOMATED for ContactInteractionType
         /// </summary>
         public static readonly ContactInteractionType AUTOMATED = new ContactInteractionType("AUTOMATED");
+        /// <summary>
+        /// Constant CUSTOMER for ContactInteractionType
+        /// </summary>
+        public static readonly ContactInteractionType CUSTOMER = new ContactInteractionType("CUSTOMER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1606,6 +1610,10 @@ namespace Amazon.Connect
         /// Constant CUSTOM_BOT for ContactParticipantRole
         /// </summary>
         public static readonly ContactParticipantRole CUSTOM_BOT = new ContactParticipantRole("CUSTOM_BOT");
+        /// <summary>
+        /// Constant CUSTOMER for ContactParticipantRole
+        /// </summary>
+        public static readonly ContactParticipantRole CUSTOMER = new ContactParticipantRole("CUSTOMER");
         /// <summary>
         /// Constant SYSTEM for ContactParticipantRole
         /// </summary>
@@ -2895,9 +2903,21 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly EvaluationFormLanguageCode ItIT = new EvaluationFormLanguageCode("it-IT");
         /// <summary>
+        /// Constant JaJP for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode JaJP = new EvaluationFormLanguageCode("ja-JP");
+        /// <summary>
+        /// Constant KoKR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode KoKR = new EvaluationFormLanguageCode("ko-KR");
+        /// <summary>
         /// Constant PtBR for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode PtBR = new EvaluationFormLanguageCode("pt-BR");
+        /// <summary>
+        /// Constant ZhCN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ZhCN = new EvaluationFormLanguageCode("zh-CN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

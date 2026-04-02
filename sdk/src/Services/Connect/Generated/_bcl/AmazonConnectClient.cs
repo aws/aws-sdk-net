@@ -31875,6 +31875,15 @@ namespace Amazon.Connect
         /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
         /// Connect Administrator Guide</i>. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Invoke the UpdateTrafficDistribution API in the region that should handle traffic.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficDistribution service method.</param>
         /// 
@@ -31932,6 +31941,15 @@ namespace Amazon.Connect
         /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
         /// Connect Administrator Guide</i>. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Invoke the UpdateTrafficDistribution API in the region that should handle traffic.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficDistribution service method.</param>
         /// <param name="cancellationToken">
