@@ -4,7 +4,7 @@
       "extensionName": "Extensions.Bedrock.MEAI",
       "type": "minor",
       "changeLogMessages": [
-        "Add Bedrock Nova Sonic realtime provider implementing `IRealtimeClient` / `IRealtimeClientSession` for real-time bidirectional audio conversations with tool calling support."
+        "(Preview) Add Bedrock Nova Sonic realtime provider implementing `IRealtimeClient` / `IRealtimeClientSession` for real-time bidirectional audio conversations with tool calling support."
       ]
     }
   ]

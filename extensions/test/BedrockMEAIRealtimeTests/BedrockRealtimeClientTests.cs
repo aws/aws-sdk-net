@@ -40,7 +40,7 @@ public class BedrockRealtimeClientTests
 
         var metadata = (ChatClientMetadata?)((IRealtimeClient)client).GetService(typeof(ChatClientMetadata));
         Assert.NotNull(metadata);
-        Assert.Equal("amazon.nova-2-sonic-v1:0", metadata!.DefaultModelId);
+        Assert.Null(metadata!.DefaultModelId);
     }
 
     [Fact]
@@ -186,30 +186,14 @@ public class BedrockRealtimeClientTests
     }
 
     [Fact]
-    public async Task CreateSessionAsync_NullOptions_UsesDefaultModel()
+    public async Task CreateSessionAsync_NullOptions_ThrowsWithoutDefaultModel()
     {
         var mock = new Mock<IAmazonBedrockRuntime>();
-        InvokeModelWithBidirectionalStreamRequest? capturedRequest = null;
-
-        mock.Setup(r => r.InvokeModelWithBidirectionalStreamAsync(
-                It.IsAny<InvokeModelWithBidirectionalStreamRequest>(),
-                It.IsAny<CancellationToken>()))
-            .Callback<InvokeModelWithBidirectionalStreamRequest, CancellationToken>((req, _) => capturedRequest = req)
-            .ThrowsAsync(new Exception("Test exception"));
 
         using var client = new BedrockNovaRealtimeClient(mock.Object);
 
-        try
-        {
-            await client.CreateSessionAsync(null);
-        }
-        catch
-        {
-            // Expected
-        }
-
-        Assert.NotNull(capturedRequest);
-        Assert.Equal("amazon.nova-2-sonic-v1:0", capturedRequest!.ModelId);
+        var ex = await Assert.ThrowsAsync<InvalidOperationException>(() => client.CreateSessionAsync(null));
+        Assert.Contains("No model ID was provided", ex.Message);
     }
 
     [Fact]
@@ -263,7 +247,7 @@ public class BedrockRealtimeClientTests
 
         var metadata = (ChatClientMetadata?)client.GetService(typeof(ChatClientMetadata));
         Assert.NotNull(metadata);
-        Assert.Equal("amazon.nova-2-sonic-v1:0", metadata!.DefaultModelId);
+        Assert.Null(metadata!.DefaultModelId);
     }
 
     #endregion

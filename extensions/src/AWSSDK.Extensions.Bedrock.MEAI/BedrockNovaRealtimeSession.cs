@@ -282,10 +282,6 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
         UsageDetails? latestUsage = null;
         List<AIContent>? pendingToolCallContents = null;
 
-        _streamResponse.Body.ChunkReceived += (_, _) => { };
-        _streamResponse.Body.ExceptionReceived += (_, _) => { };
-        _streamResponse.Body.EventReceived += (_, _) => { };
-
         IAsyncEnumerator<IEventStreamEvent> enumerator;
         try
         {
@@ -550,10 +546,7 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
                         {
                             try
                             {
-
-#pragma warning disable IL2026 // Tool arguments are dynamic JSON
-                                toolArguments = JsonSerializer.Deserialize<Dictionary<string, object?>>(tcc.GetRawText());
-#pragma warning restore IL2026
+                                toolArguments = JsonElementToDictionary(tcc);
                             }
                             catch (JsonException)
                             {
@@ -568,9 +561,11 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
                             {
                                 try
                                 {
-#pragma warning disable IL2026 // Tool arguments are dynamic JSON
-                                    toolArguments = JsonSerializer.Deserialize<Dictionary<string, object?>>(innerJson);
-#pragma warning restore IL2026
+                                    using var innerDoc = JsonDocument.Parse(innerJson);
+                                    if (innerDoc.RootElement.ValueKind == JsonValueKind.Object)
+                                    {
+                                        toolArguments = JsonElementToDictionary(innerDoc.RootElement);
+                                    }
                                 }
                                 catch (JsonException)
                                 {
@@ -1438,10 +1433,8 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
                 return jsonElement.GetRawText();
             }
 
-            // Non-object JsonElement (string, number, array, etc.) — wrap in an object
-#pragma warning disable IL2026 // Tool result values are dynamic
-            return JsonSerializer.Serialize(new NovaSonicToolResultWrapper { Result = jsonElement }, NovaSonicJsonOptions.Reflection);
-#pragma warning restore IL2026
+            // Non-object JsonElement — wrap in {"result": value}
+            return "{\"result\":" + jsonElement.GetRawText() + "}";
         }
 
         if (result is string strResult)
@@ -1460,33 +1453,28 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
                 // Not valid JSON
             }
 
-#pragma warning disable IL2026 // Tool result values are dynamic
-            return JsonSerializer.Serialize(new NovaSonicToolResultWrapper { Result = strResult }, NovaSonicJsonOptions.Reflection);
-#pragma warning restore IL2026
+            // Wrap the string in a JSON object
+            return "{\"result\":" + JsonSerializer.Serialize(strResult, NovaSonicJsonOptions.Context.String) + "}";
         }
 
-        // For other types, serialize and check if result is an object
+        // For other types, use ToString and wrap in a JSON object
+        string text = result.ToString() ?? string.Empty;
+
+        // Check if ToString produced a JSON object
         try
         {
-#pragma warning disable IL2026 // Tool result values are dynamic
-            string json = JsonSerializer.Serialize(result, NovaSonicJsonOptions.Reflection);
-#pragma warning restore IL2026
-            using var doc2 = JsonDocument.Parse(json);
+            using var doc2 = JsonDocument.Parse(text);
             if (doc2.RootElement.ValueKind == JsonValueKind.Object)
             {
-                return json;
+                return text;
             }
-
-#pragma warning disable IL2026 // Tool result values are dynamic
-            return JsonSerializer.Serialize(new NovaSonicToolResultWrapper { Result = result }, NovaSonicJsonOptions.Reflection);
-#pragma warning restore IL2026
         }
         catch (JsonException)
         {
-#pragma warning disable IL2026 // Tool result values are dynamic
-            return JsonSerializer.Serialize(new NovaSonicToolResultWrapper { Result = result.ToString() }, NovaSonicJsonOptions.Reflection);
-#pragma warning restore IL2026
+            // Not valid JSON
         }
+
+        return "{\"result\":" + JsonSerializer.Serialize(text, NovaSonicJsonOptions.Context.String) + "}";
     }
 
     private static string MapStopReason(string? stopReason) =>
@@ -1536,10 +1524,24 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
         };
     }
 
+    /// <summary>
+    /// Converts a <see cref="JsonElement"/> object to a <see cref="Dictionary{String, Object}"/>
+    /// with <see cref="JsonElement"/> values to avoid reflection-based deserialization.
+    /// </summary>
+    private static Dictionary<string, object?> JsonElementToDictionary(JsonElement element)
+    {
+        var dict = new Dictionary<string, object?>(StringComparer.Ordinal);
+        foreach (var property in element.EnumerateObject())
+        {
+            dict[property.Name] = property.Value.Clone();
+        }
+
+        return dict;
+    }
+
     #endregion
 }
 
-/// <summary>Provides JSON serializer options for Nova Sonic protocol events.</summary>
 internal static class NovaSonicJsonOptions
 {
     /// <summary>Gets the source-generated context configured with <see cref="JavaScriptEncoder.UnsafeRelaxedJsonEscaping"/>.</summary>
@@ -1555,15 +1557,6 @@ internal static class NovaSonicJsonOptions
         WriteIndented = false,
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
     });
-
-    /// <summary>Gets reflection-based options for serializing tool results with unknown types.</summary>
-    internal static readonly JsonSerializerOptions Reflection = new()
-    {
-        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        WriteIndented = false,
-        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-    };
 }
 
 #region Nova Sonic Protocol DTOs
@@ -1709,11 +1702,6 @@ internal sealed class NovaSonicPromptEnd
 
 internal sealed class NovaSonicSessionEnd { }
 
-internal sealed class NovaSonicToolResultWrapper
-{
-    public object? Result { get; set; }
-}
-
 #endregion
 
 [JsonSourceGenerationOptions(
@@ -1721,7 +1709,7 @@ internal sealed class NovaSonicToolResultWrapper
     PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase,
     WriteIndented = false)]
 [JsonSerializable(typeof(NovaSonicEventWrapper))]
-[JsonSerializable(typeof(NovaSonicToolResultWrapper))]
+[JsonSerializable(typeof(string))]
 internal partial class NovaSonicJsonContext : JsonSerializerContext
 {
 }
