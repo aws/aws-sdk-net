@@ -345,7 +345,7 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateScriptRequest.NodeJsVersion</property>
     <max>16</max>
-    <pattern>^\d+\.[x0-9]+$</pattern>
+    <pattern>^[0-9]+\.(?:x|[0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateScriptRequest.Version</property>
@@ -2615,6 +2615,12 @@
     <pattern>^i-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSession.ComputeName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-]+(\/[a-zA-Z0-9\-]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.GameSession.CreatorId</property>
     <min>1</min>
     <max>1024</max>
@@ -3187,7 +3193,7 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.Script.NodeJsVersion</property>
     <max>16</max>
-    <pattern>^\d+\.[x0-9]+$</pattern>
+    <pattern>^[0-9]+\.(?:x|[0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Script.ScriptArn</property>
