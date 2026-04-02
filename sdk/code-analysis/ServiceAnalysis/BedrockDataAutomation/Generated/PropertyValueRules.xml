@@ -42,6 +42,30 @@
     <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.CreateDataAutomationLibraryRequest.ClientToken</property>
+    <min>33</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.CreateDataAutomationLibraryRequest.LibraryDescription</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;À-ÖØ-Üßà-öø-üẞ¿¡Œ-œ°£¥₹€§©ª®™¹±-µ✓⑆-⑉฿₽₱₦₣₩₫₺]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.CreateDataAutomationLibraryRequest.LibraryName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.CreateDataAutomationLibraryResponse.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.CreateDataAutomationProjectRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
@@ -77,6 +101,18 @@
     <pattern>[0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DeleteDataAutomationLibraryRequest.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DeleteDataAutomationLibraryResponse.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.DeleteDataAutomationProjectRequest.ProjectArn</property>
     <min>0</min>
     <max>128</max>
@@ -107,6 +143,36 @@
     <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:blueprint-optimization-invocation/[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.GetDataAutomationLibraryRequest.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.GetDataAutomationLibraryEntityRequest.EntityId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.GetDataAutomationLibraryEntityRequest.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.GetDataAutomationLibraryIngestionJobRequest.JobArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library-ingestion-job/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.GetDataAutomationLibraryIngestionJobRequest.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.GetDataAutomationProjectRequest.ProjectArn</property>
     <min>0</min>
     <max>128</max>
@@ -123,6 +189,24 @@
     <min>1</min>
     <max>128</max>
     <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:blueprint-optimization-invocation/[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.InvokeDataAutomationLibraryIngestionJobRequest.ClientToken</property>
+    <min>33</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.InvokeDataAutomationLibraryIngestionJobRequest.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.InvokeDataAutomationLibraryIngestionJobResponse.JobArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library-ingestion-job/[a-zA-Z0-9-]{12,36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.ListBlueprintsRequest.BlueprintArn</property>
@@ -148,6 +232,69 @@
     <pattern>\S*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.ListDataAutomationLibrariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.ListDataAutomationLibrariesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.ListDataAutomationLibrariesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.ListDataAutomationLibraryEntitiesRequest.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.ListDataAutomationLibraryEntitiesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.ListDataAutomationLibraryEntitiesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.ListDataAutomationLibraryEntitiesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.ListDataAutomationLibraryIngestionJobsRequest.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.ListDataAutomationLibraryIngestionJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.ListDataAutomationLibraryIngestionJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.ListDataAutomationLibraryIngestionJobsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.ListDataAutomationProjectsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -168,19 +315,19 @@
     <property>Amazon.BedrockDataAutomation.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-z0-9-]*:[0-9]{12}:(blueprint|data-automation-project|blueprint-optimization-invocation)/[a-zA-Z0-9-]{12,36}</pattern>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-z0-9-]*:[0-9]{12}:(blueprint|data-automation-project|blueprint-optimization-invocation|data-automation-library|data-automation-library-ingestion-job)/[a-zA-Z0-9-]{12,36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.TagResourceRequest.ResourceARN</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-z0-9-]*:[0-9]{12}:(blueprint|data-automation-project|blueprint-optimization-invocation)/[a-zA-Z0-9-]{12,36}</pattern>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-z0-9-]*:[0-9]{12}:(blueprint|data-automation-project|blueprint-optimization-invocation|data-automation-library|data-automation-library-ingestion-job)/[a-zA-Z0-9-]{12,36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.UntagResourceRequest.ResourceARN</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-z0-9-]*:[0-9]{12}:(blueprint|data-automation-project|blueprint-optimization-invocation)/[a-zA-Z0-9-]{12,36}</pattern>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-z0-9-]*:[0-9]{12}:(blueprint|data-automation-project|blueprint-optimization-invocation|data-automation-library|data-automation-library-ingestion-job)/[a-zA-Z0-9-]{12,36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.UpdateBlueprintRequest.BlueprintArn</property>
@@ -192,6 +339,30 @@
     <property>Amazon.BedrockDataAutomation.Model.UpdateBlueprintRequest.Schema</property>
     <min>1</min>
     <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.UpdateDataAutomationLibraryRequest.ClientToken</property>
+    <min>33</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.UpdateDataAutomationLibraryRequest.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.UpdateDataAutomationLibraryRequest.LibraryDescription</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;À-ÖØ-Üßà-öø-üẞ¿¡Œ-œ°£¥₹€§©ª®™¹±-µ✓⑆-⑉฿₽₱₦₣₩₫₺]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.UpdateDataAutomationLibraryResponse.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.UpdateDataAutomationProjectRequest.ProjectArn</property>
@@ -288,6 +459,66 @@
     <pattern>[0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DataAutomationLibrary.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DataAutomationLibrary.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DataAutomationLibrary.LibraryDescription</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;À-ÖØ-Üßà-öø-üẞ¿¡Œ-œ°£¥₹€§©ª®™¹±-µ✓⑆-⑉฿₽₱₦₣₩₫₺]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DataAutomationLibrary.LibraryName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DataAutomationLibraryFilter.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DataAutomationLibraryIngestionJob.JobArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library-ingestion-job/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DataAutomationLibraryIngestionJobSummary.JobArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library-ingestion-job/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DataAutomationLibraryItem.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DataAutomationLibrarySummary.LibraryArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>arn:aws(|-cn|-iso|-iso-[a-z]|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:data-automation-library/[a-zA-Z0-9-]{12,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.DataAutomationLibrarySummary.LibraryName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.DataAutomationProject.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -335,6 +566,24 @@
     <pattern>[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.OutputConfiguration.S3Uri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.Phrase.DisplayAsText</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*.+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.Phrase.Text</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*.+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.S3Object.S3Uri</property>
     <min>1</min>
     <max>1024</max>
@@ -362,5 +611,45 @@
   <property-value-rule>
     <property>Amazon.BedrockDataAutomation.Model.ValidationExceptionField.Name</property>
     <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.VocabularyEntity.Description</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;À-ÖØ-Üßà-öø-üẞ¿¡Œ-œ°£¥₹€§©ª®™¹±-µ✓⑆-⑉฿₽₱₦₣₩₫₺]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.VocabularyEntity.EntityId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.VocabularyEntityInfo.Description</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;À-ÖØ-Üßà-öø-üẞ¿¡Œ-œ°£¥₹€§©ª®™¹±-µ✓⑆-⑉฿₽₱₦₣₩₫₺]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.VocabularyEntityInfo.EntityId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.VocabularyEntitySummary.Description</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>[a-zA-Z0-9\s!"\#\$%'&amp;\(\)\*\+\,\-\./:;=\?@\[\\\]\^_`\{\|\}~&gt;&lt;À-ÖØ-Üßà-öø-üẞ¿¡Œ-œ°£¥₹€§©ª®™¹±-µ✓⑆-⑉฿₽₱₦₣₩₫₺]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.VocabularyEntitySummary.EntityId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockDataAutomation.Model.VocabularyEntitySummary.NumOfPhrases</property>
+    <min>1</min>
   </property-value-rule>
 </property-value-rules>
