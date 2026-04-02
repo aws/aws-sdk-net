@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// The auto scaling configuration options for a service managed EC2 fleet.
+    /// The auto scaling configuration settings for a service managed EC2 fleet.
     /// </summary>
     public partial class ServiceManagedEc2AutoScalingConfiguration
     {
@@ -41,7 +41,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property ScaleOutWorkersPerMinute. 
         /// <para>
-        /// The number of workers that can be scaled out per minute.
+        /// The number of workers that can be added per minute to the fleet. The default is a
+        /// service-defined value that balances efficiency with cost.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
@@ -60,7 +61,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property StandbyWorkerCount. 
         /// <para>
-        /// The number of standby workers to maintain for the fleet.
+        /// The number of idle workers maintained and ready to process incoming tasks. The default
+        /// is 0.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
@@ -79,7 +81,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property WorkerIdleDurationSeconds. 
         /// <para>
-        /// The duration in seconds that a worker can be idle before it is scaled down.
+        /// The number of seconds that a worker can remain idle before it is shut down. The default
+        /// is 300 seconds (5 minutes).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=86400)]
