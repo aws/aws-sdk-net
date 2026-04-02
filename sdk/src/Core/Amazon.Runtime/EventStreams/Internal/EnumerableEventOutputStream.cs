@@ -194,6 +194,9 @@ namespace Amazon.Runtime.EventStreams.Internal
                     catch (Exception ex)
                     {
                         IsProcessing = false;
+                        if (IsDisposed) 
+                            yield break;
+
                         Dispose();
 
                         // Wrap exceptions as needed to match event-driven behavior.

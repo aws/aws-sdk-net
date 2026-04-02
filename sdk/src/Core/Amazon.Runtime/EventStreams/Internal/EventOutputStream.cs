@@ -272,6 +272,9 @@ namespace Amazon.Runtime.EventStreams.Internal
             // These exceptions are raised on the background thread. They are fired as events for visibility.
             catch (Exception ex)
             {
+                if (IsDisposed)
+                    return;
+
                 IsProcessing = false;
 
                 // surfaceException means what is surfaced to the user. For example, in S3Select, that would be a S3EventStreamException.
@@ -317,19 +320,30 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         protected async Task ReadFromStreamAsync(byte[] buffer, CancellationToken cancellationToken)
         {
-#if NETCOREAPP
-            var bytesRead = await NetworkStream.ReadAsync(buffer, cancellationToken).ConfigureAwait(false);
-#else
-            var bytesRead = await NetworkStream.ReadAsync(buffer, 0, buffer.Length, cancellationToken).ConfigureAwait(false);
-#endif
-            if (bytesRead > 0)
+            try
             {
-                // Decoder raises MessageReceived for every message it encounters.
-                Decoder.ProcessData(buffer, 0, bytesRead);
+#if NETCOREAPP
+                var bytesRead = await NetworkStream.ReadAsync(buffer, cancellationToken).ConfigureAwait(false);
+#else
+                var bytesRead = await NetworkStream.ReadAsync(buffer, 0, buffer.Length, cancellationToken).ConfigureAwait(false);
+#endif
+                if (bytesRead > 0)
+                {
+                    // Decoder raises MessageReceived for every message it encounters.
+                    Decoder.ProcessData(buffer, 0, bytesRead);
+                }
+                else
+                {
+                    IsProcessing = false;
+                }
             }
-            else
+            catch
             {
                 IsProcessing = false;
+                if (IsDisposed)
+                    return;
+
+                throw;
             }
         }
 
@@ -384,7 +398,9 @@ namespace Amazon.Runtime.EventStreams.Internal
         }
 
         #region Dispose Pattern
-        private bool _disposed;
+        private volatile bool _disposed;
+
+        protected bool IsDisposed => _disposed;
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
