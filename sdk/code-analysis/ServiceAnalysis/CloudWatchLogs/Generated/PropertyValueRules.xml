@@ -2415,6 +2415,11 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryInfo.UserIdentity</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.QueryParameter.DefaultValue</property>
     <max>1024</max>
   </property-value-rule>
