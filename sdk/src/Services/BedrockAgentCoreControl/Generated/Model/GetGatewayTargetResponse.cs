@@ -53,8 +53,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizationData. 
         /// <para>
-        /// OAuth2 authorization data for the gateway target. This data is returned when the target
-        /// requires user authorization through an authorization code grant type.
+        /// OAuth2 authorization data for the gateway target. This data is returned when a target
+        /// is configured with a credential provider with authorization code grant type and requires
+        /// user federation.
         /// </para>
         /// </summary>
         public AuthorizationData AuthorizationData
