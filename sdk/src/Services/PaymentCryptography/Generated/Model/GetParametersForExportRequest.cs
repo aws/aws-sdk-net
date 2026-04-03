@@ -44,6 +44,11 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  
     /// <para>
+    /// To return a previously generated export token and signing key certificate instead
+    /// of generating new ones, set <c>ReuseLastGeneratedToken</c> to <c>true</c>.
+    /// </para>
+    ///  
+    /// <para>
     ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
     /// Services accounts.
     /// </para>
@@ -66,6 +71,7 @@ namespace Amazon.PaymentCryptography.Model
     public partial class GetParametersForExportRequest : AmazonPaymentCryptographyRequest
     {
         private KeyMaterialType _keyMaterialType;
+        private bool? _reuseLastGeneratedToken;
         private KeyAlgorithm _signingKeyAlgorithm;
 
         /// <summary>
@@ -87,6 +93,29 @@ namespace Amazon.PaymentCryptography.Model
         internal bool IsSetKeyMaterialType()
         {
             return this._keyMaterialType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReuseLastGeneratedToken. 
+        /// <para>
+        /// Specifies whether to reuse the existing export token and signing key certificate.
+        /// If set to <c>true</c> and a valid export token exists for the same key material type
+        /// and signing key algorithm with at least 7 days of remaining validity, the existing
+        /// token and signing key certificate are returned. Otherwise, a new export token and
+        /// signing key certificate are generated. The default value is <c>false</c>, which generates
+        /// a new export token and signing key certificate on every call.
+        /// </para>
+        /// </summary>
+        public bool? ReuseLastGeneratedToken
+        {
+            get { return this._reuseLastGeneratedToken; }
+            set { this._reuseLastGeneratedToken = value; }
+        }
+
+        // Check to see if ReuseLastGeneratedToken property is set
+        internal bool IsSetReuseLastGeneratedToken()
+        {
+            return this._reuseLastGeneratedToken.HasValue; 
         }
 
         /// <summary>
