@@ -33,7 +33,7 @@ namespace Amazon.SimpleDBv2
     public partial class AmazonSimpleDBv2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SimpleDBv2", "4.0.0.6");
+            InternalSDKUtils.BuildUserAgentString("SimpleDBv2", "4.0.0.7");
 
         private static readonly AmazonSimpleDBv2EndpointResolver EndpointResolver =
             new AmazonSimpleDBv2EndpointResolver();

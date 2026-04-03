@@ -1,3 +1,27 @@
+### 4.0.225.0 (2026-04-03 18:16 UTC)
+* Bedrock (4.0.25.0)
+	* Amazon Bedrock Guardrails enforcement configuration APIs now support selective guarding controls for system prompts as well as user and assistant messages, along with SDK support for Amazon Bedrock resource policy APIs.
+* BedrockAgent (4.0.8.0)
+	* Added strict parameter to ToolSpecification to allow users to enforce strict JSON schema adherence for tool input schemas.
+* BedrockAgentCoreControl (4.0.26.1)
+	* Documentation Update for Adds support for three-legged (Authorization Code grant type) OAuth along with predefined MCP tool schema configuration for Amazon Bedrock AgentCore gateway MCP server targets.
+* CloudWatchLogs (4.0.19.0)
+	* Added queryDuration, bytesScanned, and userIdentity fields to the QueryInfo response object returned by DescribeQueries. Customers can now view detailed query cost information including who ran the query, how long it took, and the volume of data scanned.
+* Imagebuilder (4.0.8.0)
+	* Updated pagination token validation for ListContainerRecipes API to support maximum size of 65K characters
+* Lightsail (4.0.6.0)
+	* Add support for tagging of Alarm resource type
+* MediaLive (4.0.18.0)
+	* AWS Elemental MediaLive released a new features that allows customers to use HLG 2020 as a color space for AV1 video codec.
+* Organizations (4.0.11.3)
+	* Updates close Account quota for member accounts in an Organization.
+* PaymentCryptography (4.0.8.0)
+	* Adds optional support to retrieve previously generated import and export tokens to simplify import and export functions
+* Core 4.0.3.27
+	* Fix issue with unexpected exceptions when disposing event stream responses
+	* Fix rendering of <list>, <item>, <term>, and <description> XML doc tags in generated API reference documentation.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.224.0 (2026-04-02 18:18 UTC)
 * AppStream (4.0.8.0)
 	* Amazon WorkSpaces Applications now supports drain mode for instances in multi-session fleets. This capability allows administrators to instruct individual fleet instances to stop accepting new user sessions while allowing existing sessions to continue uninterrupted.

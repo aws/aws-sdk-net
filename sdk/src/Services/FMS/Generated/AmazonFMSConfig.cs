@@ -33,7 +33,7 @@ namespace Amazon.FMS
     public partial class AmazonFMSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("FMS", "4.0.2.21");
+            InternalSDKUtils.BuildUserAgentString("FMS", "4.0.2.22");
 
         private static readonly AmazonFMSEndpointResolver EndpointResolver =
             new AmazonFMSEndpointResolver();

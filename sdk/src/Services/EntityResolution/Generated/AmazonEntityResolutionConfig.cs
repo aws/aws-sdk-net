@@ -33,7 +33,7 @@ namespace Amazon.EntityResolution
     public partial class AmazonEntityResolutionConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EntityResolution", "4.0.6.13");
+            InternalSDKUtils.BuildUserAgentString("EntityResolution", "4.0.6.14");
 
         private static readonly AmazonEntityResolutionEndpointResolver EndpointResolver =
             new AmazonEntityResolutionEndpointResolver();

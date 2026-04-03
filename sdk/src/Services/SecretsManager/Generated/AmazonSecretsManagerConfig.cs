@@ -33,7 +33,7 @@ namespace Amazon.SecretsManager
     public partial class AmazonSecretsManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Secrets Manager", "4.0.4.14");
+            InternalSDKUtils.BuildUserAgentString("Secrets Manager", "4.0.4.15");
 
         private static readonly AmazonSecretsManagerEndpointResolver EndpointResolver =
             new AmazonSecretsManagerEndpointResolver();
