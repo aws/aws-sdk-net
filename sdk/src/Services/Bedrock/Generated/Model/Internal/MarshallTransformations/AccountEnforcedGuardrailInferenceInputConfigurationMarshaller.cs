@@ -58,12 +58,6 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.GuardrailVersion);
             }
 
-            if(requestObject.IsSetInputTags())
-            {
-                context.Writer.WritePropertyName("inputTags");
-                context.Writer.WriteStringValue(requestObject.InputTags);
-            }
-
             if(requestObject.IsSetModelEnforcement())
             {
                 context.Writer.WritePropertyName("modelEnforcement");
@@ -71,6 +65,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 
                 var marshaller = ModelEnforcementMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModelEnforcement, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSelectiveContentGuarding())
+            {
+                context.Writer.WritePropertyName("selectiveContentGuarding");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SelectiveContentGuardingMarshaller.Instance;
+                marshaller.Marshall(requestObject.SelectiveContentGuarding, context);
 
                 context.Writer.WriteEndObject();
             }
