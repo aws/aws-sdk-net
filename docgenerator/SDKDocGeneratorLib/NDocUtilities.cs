@@ -43,7 +43,10 @@ namespace SDKDocGenerator
             { "see", "a" },
             { "paramref", "code" },
             { "important", "div" },
-            { "note", "div" }
+            { "note", "div" },
+            { "item", "li" },
+            { "term", "span" },
+            { "description", "span" }
         };
 
         private static readonly Dictionary<string, string> NdocToHtmlClassMapping = new Dictionary<string, string>(StringComparer.Ordinal)
@@ -616,7 +619,14 @@ namespace SDKDocGenerator
 
                                 // element name substitution, if necessary
                                 string elementName;
-                                if (!NdocToHtmlElementMapping.TryGetValue(originalLocalName, out elementName))
+                                var isList = originalLocalName == "list";
+                                if (isList)
+                                {
+                                    // <list type="bullet"> → <ul>, <list type="number"> → <ol>
+                                    var listType = reader.GetAttribute("type");
+                                    elementName = (listType == "number") ? "ol" : "ul";
+                                }
+                                else if (!NdocToHtmlElementMapping.TryGetValue(originalLocalName, out elementName))
                                     elementName = originalLocalName;
 
                                 // some elements can't be empty, use this variable for that
@@ -632,8 +642,8 @@ namespace SDKDocGenerator
                                     writer.WriteAttributeString("class", cssClass);
                                 }
 
-                                // copy over attributes
-                                if (reader.HasAttributes)
+                                // copy over attributes (skip for list elements — type attribute already consumed)
+                                if (reader.HasAttributes && !isList)
                                 {
                                     var isAbsoluteLink = false;
                                     var hasTarget = false;
