@@ -8,4 +8,16 @@ public class TableQueryBenchmark : MockedDynamoDbTableBenchmark
 {
     [Benchmark]
     public Task QueryAsync() => State.TableQueryAsync();
+
+    [Benchmark]
+    public Task QueryWithExpressionAsync() => State.TableQueryWithExpressionAsync();
+
+    [Benchmark]
+    public Task QueryWithFilterAsync() => State.TableQueryWithFilterAsync();
+
+    [Benchmark]
+    public Task QueryWithOperationConfigAsync() => State.TableQueryWithOperationConfigAsync();
+
+    [Benchmark]
+    public Task QueryWithOperationRequestAsync() => State.TableQueryWithOperationRequestAsync();
 }
