@@ -150,6 +150,40 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
                 
+        #region  CancelPolicyPreviewJob
+
+
+
+        /// <summary>
+        /// Cancels an in-progress policy preview job. Jobs that are already completed, failed,
+        /// or canceled cannot be canceled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelPolicyPreviewJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelPolicyPreviewJob service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CancelPolicyPreviewJob">REST API Reference for CancelPolicyPreviewJob Operation</seealso>
+        Task<CancelPolicyPreviewJobResponse> CancelPolicyPreviewJobAsync(CancelPolicyPreviewJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CheckAccessNotGranted
 
 
@@ -391,6 +425,44 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
                 
+        #region  CreatePolicyPreviewConfiguration
+
+
+
+        /// <summary>
+        /// Creates a policy preview configuration for your account. The configuration enables
+        /// IAM Access Analyzer to collect and store CloudTrail authorization events needed for
+        /// policy preview analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicyPreviewConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePolicyPreviewConfiguration service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ConflictException">
+        /// A conflict exception error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ServiceQuotaExceededException">
+        /// Service quote met error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreatePolicyPreviewConfiguration">REST API Reference for CreatePolicyPreviewConfiguration Operation</seealso>
+        Task<CreatePolicyPreviewConfigurationResponse> CreatePolicyPreviewConfigurationAsync(CreatePolicyPreviewConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteAnalyzer
 
 
@@ -456,6 +528,40 @@ namespace Amazon.AccessAnalyzer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/DeleteArchiveRule">REST API Reference for DeleteArchiveRule Operation</seealso>
         Task<DeleteArchiveRuleResponse> DeleteArchiveRuleAsync(DeleteArchiveRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeletePolicyPreviewConfiguration
+
+
+
+        /// <summary>
+        /// Deletes the policy preview configuration for your account. After deletion, IAM Access
+        /// Analyzer will stop collecting CloudTrail authorization events for policy preview analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyPreviewConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePolicyPreviewConfiguration service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/DeletePolicyPreviewConfiguration">REST API Reference for DeletePolicyPreviewConfiguration Operation</seealso>
+        Task<DeletePolicyPreviewConfigurationResponse> DeletePolicyPreviewConfigurationAsync(DeletePolicyPreviewConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -809,6 +915,80 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
                 
+        #region  GetPolicyPreviewConfiguration
+
+
+
+        /// <summary>
+        /// Retrieves the policy preview configuration for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyPreviewConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPolicyPreviewConfiguration service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetPolicyPreviewConfiguration">REST API Reference for GetPolicyPreviewConfiguration Operation</seealso>
+        Task<GetPolicyPreviewConfigurationResponse> GetPolicyPreviewConfigurationAsync(GetPolicyPreviewConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetPolicyPreviewJob
+
+
+
+        /// <summary>
+        /// Retrieves the metadata, parameters, and status for a policy preview job. Use this
+        /// operation to monitor job progress and retrieve the Amazon S3 location of the completed
+        /// analysis report.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Job data has a time-to-live (TTL) of 14 days and will be deleted after expiration.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyPreviewJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPolicyPreviewJob service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetPolicyPreviewJob">REST API Reference for GetPolicyPreviewJob Operation</seealso>
+        Task<GetPolicyPreviewJobResponse> GetPolicyPreviewJobAsync(GetPolicyPreviewJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListAccessPreviewFindings
 
 
@@ -1094,6 +1274,37 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
                 
+        #region  ListPolicyPreviewJobs
+
+
+
+        /// <summary>
+        /// Lists all policy preview jobs with optional filtering by job status or target ID.
+        /// Results are paginated for efficient retrieval of large result sets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyPreviewJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicyPreviewJobs service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListPolicyPreviewJobs">REST API Reference for ListPolicyPreviewJobs Operation</seealso>
+        Task<ListPolicyPreviewJobsResponse> ListPolicyPreviewJobsAsync(ListPolicyPreviewJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTagsForResource
 
 
@@ -1160,6 +1371,51 @@ namespace Amazon.AccessAnalyzer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartPolicyGeneration">REST API Reference for StartPolicyGeneration Operation</seealso>
         Task<StartPolicyGenerationResponse> StartPolicyGenerationAsync(StartPolicyGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartPolicyPreviewJob
+
+
+
+        /// <summary>
+        /// Creates a policy preview analysis job to evaluate the impact of Service Control Policies
+        /// (SCPs) before deployment. The analysis uses historical CloudTrail authorization events
+        /// to identify potential access denials, helping you prevent service disruptions.
+        /// 
+        ///  
+        /// <para>
+        /// The job analyzes CloudTrail events within a specified time window and generates a
+        /// report identifying which events would be denied by the proposed policy. The report
+        /// is stored in the specified Amazon S3 location.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPolicyPreviewJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartPolicyPreviewJob service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ConflictException">
+        /// A conflict exception error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ServiceQuotaExceededException">
+        /// Service quote met error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartPolicyPreviewJob">REST API Reference for StartPolicyPreviewJob Operation</seealso>
+        Task<StartPolicyPreviewJobResponse> StartPolicyPreviewJobAsync(StartPolicyPreviewJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

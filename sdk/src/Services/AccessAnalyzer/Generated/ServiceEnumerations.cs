@@ -877,6 +877,114 @@ namespace Amazon.AccessAnalyzer
 
 
     /// <summary>
+    /// Constants used for properties of type ImpactAnalysisJobStatus.
+    /// </summary>
+    public class ImpactAnalysisJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELED for ImpactAnalysisJobStatus
+        /// </summary>
+        public static readonly ImpactAnalysisJobStatus CANCELED = new ImpactAnalysisJobStatus("CANCELED");
+        /// <summary>
+        /// Constant COMPLETED for ImpactAnalysisJobStatus
+        /// </summary>
+        public static readonly ImpactAnalysisJobStatus COMPLETED = new ImpactAnalysisJobStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ImpactAnalysisJobStatus
+        /// </summary>
+        public static readonly ImpactAnalysisJobStatus FAILED = new ImpactAnalysisJobStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ImpactAnalysisJobStatus
+        /// </summary>
+        public static readonly ImpactAnalysisJobStatus IN_PROGRESS = new ImpactAnalysisJobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUBMITTED for ImpactAnalysisJobStatus
+        /// </summary>
+        public static readonly ImpactAnalysisJobStatus SUBMITTED = new ImpactAnalysisJobStatus("SUBMITTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImpactAnalysisJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImpactAnalysisJobStatus FindValue(string value)
+        {
+            return FindValue<ImpactAnalysisJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImpactAnalysisJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImpactAnalysisJobType.
+    /// </summary>
+    public class ImpactAnalysisJobType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SCP for ImpactAnalysisJobType
+        /// </summary>
+        public static readonly ImpactAnalysisJobType SCP = new ImpactAnalysisJobType("SCP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImpactAnalysisJobType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImpactAnalysisJobType FindValue(string value)
+        {
+            return FindValue<ImpactAnalysisJobType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImpactAnalysisJobType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InternalAccessType.
     /// </summary>
     public class InternalAccessType : ConstantClass
@@ -937,9 +1045,45 @@ namespace Amazon.AccessAnalyzer
         /// </summary>
         public static readonly JobErrorCode AUTHORIZATION_ERROR = new JobErrorCode("AUTHORIZATION_ERROR");
         /// <summary>
+        /// Constant CANCELED_JOB_ERROR for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode CANCELED_JOB_ERROR = new JobErrorCode("CANCELED_JOB_ERROR");
+        /// <summary>
+        /// Constant INSUFFICIENT_PERMISSIONS_ERROR for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode INSUFFICIENT_PERMISSIONS_ERROR = new JobErrorCode("INSUFFICIENT_PERMISSIONS_ERROR");
+        /// <summary>
+        /// Constant INVALID_ORGANIZATION_CONFIGURATION for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode INVALID_ORGANIZATION_CONFIGURATION = new JobErrorCode("INVALID_ORGANIZATION_CONFIGURATION");
+        /// <summary>
+        /// Constant INVALID_POLICY_PREVIEW_CONFIGURATION for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode INVALID_POLICY_PREVIEW_CONFIGURATION = new JobErrorCode("INVALID_POLICY_PREVIEW_CONFIGURATION");
+        /// <summary>
+        /// Constant INVALID_SERVICE_LINKED_ROLE for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode INVALID_SERVICE_LINKED_ROLE = new JobErrorCode("INVALID_SERVICE_LINKED_ROLE");
+        /// <summary>
+        /// Constant INVALID_TARGET_ERROR for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode INVALID_TARGET_ERROR = new JobErrorCode("INVALID_TARGET_ERROR");
+        /// <summary>
+        /// Constant ORGANIZATION_ACCESS_DENIED_ERROR for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode ORGANIZATION_ACCESS_DENIED_ERROR = new JobErrorCode("ORGANIZATION_ACCESS_DENIED_ERROR");
+        /// <summary>
         /// Constant RESOURCE_NOT_FOUND_ERROR for JobErrorCode
         /// </summary>
         public static readonly JobErrorCode RESOURCE_NOT_FOUND_ERROR = new JobErrorCode("RESOURCE_NOT_FOUND_ERROR");
+        /// <summary>
+        /// Constant S3_BUCKET_NOT_FOUND_ERROR for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode S3_BUCKET_NOT_FOUND_ERROR = new JobErrorCode("S3_BUCKET_NOT_FOUND_ERROR");
+        /// <summary>
+        /// Constant S3_BUCKET_PERMISSION_ERROR for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode S3_BUCKET_PERMISSION_ERROR = new JobErrorCode("S3_BUCKET_PERMISSION_ERROR");
         /// <summary>
         /// Constant SERVICE_ERROR for JobErrorCode
         /// </summary>
@@ -1266,6 +1410,156 @@ namespace Amazon.AccessAnalyzer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OrderBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyPreviewJobFilterName.
+    /// </summary>
+    public class PolicyPreviewJobFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JobStatus for PolicyPreviewJobFilterName
+        /// </summary>
+        public static readonly PolicyPreviewJobFilterName JobStatus = new PolicyPreviewJobFilterName("jobStatus");
+        /// <summary>
+        /// Constant TargetId for PolicyPreviewJobFilterName
+        /// </summary>
+        public static readonly PolicyPreviewJobFilterName TargetId = new PolicyPreviewJobFilterName("targetId");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyPreviewJobFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyPreviewJobFilterName FindValue(string value)
+        {
+            return FindValue<PolicyPreviewJobFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyPreviewJobFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyPreviewScope.
+    /// </summary>
+    public class PolicyPreviewScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GLOBAL for PolicyPreviewScope
+        /// </summary>
+        public static readonly PolicyPreviewScope GLOBAL = new PolicyPreviewScope("GLOBAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyPreviewScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyPreviewScope FindValue(string value)
+        {
+            return FindValue<PolicyPreviewScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyPreviewScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyPreviewStatus.
+    /// </summary>
+    public class PolicyPreviewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for PolicyPreviewStatus
+        /// </summary>
+        public static readonly PolicyPreviewStatus ACTIVE = new PolicyPreviewStatus("ACTIVE");
+        /// <summary>
+        /// Constant FAILED for PolicyPreviewStatus
+        /// </summary>
+        public static readonly PolicyPreviewStatus FAILED = new PolicyPreviewStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING_CREATION for PolicyPreviewStatus
+        /// </summary>
+        public static readonly PolicyPreviewStatus PENDING_CREATION = new PolicyPreviewStatus("PENDING_CREATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyPreviewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyPreviewStatus FindValue(string value)
+        {
+            return FindValue<PolicyPreviewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyPreviewStatus(string value)
         {
             return FindValue(value);
         }

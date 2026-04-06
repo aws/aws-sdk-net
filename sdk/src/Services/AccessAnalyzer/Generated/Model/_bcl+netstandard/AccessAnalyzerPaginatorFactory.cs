@@ -117,6 +117,14 @@ namespace Amazon.AccessAnalyzer.Model
         }
 
         /// <summary>
+        /// Paginator for ListPolicyPreviewJobs operation
+        ///</summary>
+        public IListPolicyPreviewJobsPaginator ListPolicyPreviewJobs(ListPolicyPreviewJobsRequest request) 
+        {
+            return new ListPolicyPreviewJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ValidatePolicy operation
         ///</summary>
         public IValidatePolicyPaginator ValidatePolicy(ValidatePolicyRequest request) 
