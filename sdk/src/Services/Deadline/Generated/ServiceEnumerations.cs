@@ -233,6 +233,486 @@ namespace Amazon.Deadline
 
 
     /// <summary>
+    /// Constants used for properties of type BatchGetJobErrorCode.
+    /// </summary>
+    public class BatchGetJobErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDeniedException for BatchGetJobErrorCode
+        /// </summary>
+        public static readonly BatchGetJobErrorCode AccessDeniedException = new BatchGetJobErrorCode("AccessDeniedException");
+        /// <summary>
+        /// Constant InternalServerErrorException for BatchGetJobErrorCode
+        /// </summary>
+        public static readonly BatchGetJobErrorCode InternalServerErrorException = new BatchGetJobErrorCode("InternalServerErrorException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchGetJobErrorCode
+        /// </summary>
+        public static readonly BatchGetJobErrorCode ResourceNotFoundException = new BatchGetJobErrorCode("ResourceNotFoundException");
+        /// <summary>
+        /// Constant ThrottlingException for BatchGetJobErrorCode
+        /// </summary>
+        public static readonly BatchGetJobErrorCode ThrottlingException = new BatchGetJobErrorCode("ThrottlingException");
+        /// <summary>
+        /// Constant ValidationException for BatchGetJobErrorCode
+        /// </summary>
+        public static readonly BatchGetJobErrorCode ValidationException = new BatchGetJobErrorCode("ValidationException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchGetJobErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchGetJobErrorCode FindValue(string value)
+        {
+            return FindValue<BatchGetJobErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchGetJobErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchGetSessionActionErrorCode.
+    /// </summary>
+    public class BatchGetSessionActionErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InternalServerErrorException for BatchGetSessionActionErrorCode
+        /// </summary>
+        public static readonly BatchGetSessionActionErrorCode InternalServerErrorException = new BatchGetSessionActionErrorCode("InternalServerErrorException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchGetSessionActionErrorCode
+        /// </summary>
+        public static readonly BatchGetSessionActionErrorCode ResourceNotFoundException = new BatchGetSessionActionErrorCode("ResourceNotFoundException");
+        /// <summary>
+        /// Constant ValidationException for BatchGetSessionActionErrorCode
+        /// </summary>
+        public static readonly BatchGetSessionActionErrorCode ValidationException = new BatchGetSessionActionErrorCode("ValidationException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchGetSessionActionErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchGetSessionActionErrorCode FindValue(string value)
+        {
+            return FindValue<BatchGetSessionActionErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchGetSessionActionErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchGetSessionErrorCode.
+    /// </summary>
+    public class BatchGetSessionErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InternalServerErrorException for BatchGetSessionErrorCode
+        /// </summary>
+        public static readonly BatchGetSessionErrorCode InternalServerErrorException = new BatchGetSessionErrorCode("InternalServerErrorException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchGetSessionErrorCode
+        /// </summary>
+        public static readonly BatchGetSessionErrorCode ResourceNotFoundException = new BatchGetSessionErrorCode("ResourceNotFoundException");
+        /// <summary>
+        /// Constant ValidationException for BatchGetSessionErrorCode
+        /// </summary>
+        public static readonly BatchGetSessionErrorCode ValidationException = new BatchGetSessionErrorCode("ValidationException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchGetSessionErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchGetSessionErrorCode FindValue(string value)
+        {
+            return FindValue<BatchGetSessionErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchGetSessionErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchGetStepErrorCode.
+    /// </summary>
+    public class BatchGetStepErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDeniedException for BatchGetStepErrorCode
+        /// </summary>
+        public static readonly BatchGetStepErrorCode AccessDeniedException = new BatchGetStepErrorCode("AccessDeniedException");
+        /// <summary>
+        /// Constant InternalServerErrorException for BatchGetStepErrorCode
+        /// </summary>
+        public static readonly BatchGetStepErrorCode InternalServerErrorException = new BatchGetStepErrorCode("InternalServerErrorException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchGetStepErrorCode
+        /// </summary>
+        public static readonly BatchGetStepErrorCode ResourceNotFoundException = new BatchGetStepErrorCode("ResourceNotFoundException");
+        /// <summary>
+        /// Constant ThrottlingException for BatchGetStepErrorCode
+        /// </summary>
+        public static readonly BatchGetStepErrorCode ThrottlingException = new BatchGetStepErrorCode("ThrottlingException");
+        /// <summary>
+        /// Constant ValidationException for BatchGetStepErrorCode
+        /// </summary>
+        public static readonly BatchGetStepErrorCode ValidationException = new BatchGetStepErrorCode("ValidationException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchGetStepErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchGetStepErrorCode FindValue(string value)
+        {
+            return FindValue<BatchGetStepErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchGetStepErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchGetTaskErrorCode.
+    /// </summary>
+    public class BatchGetTaskErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDeniedException for BatchGetTaskErrorCode
+        /// </summary>
+        public static readonly BatchGetTaskErrorCode AccessDeniedException = new BatchGetTaskErrorCode("AccessDeniedException");
+        /// <summary>
+        /// Constant InternalServerErrorException for BatchGetTaskErrorCode
+        /// </summary>
+        public static readonly BatchGetTaskErrorCode InternalServerErrorException = new BatchGetTaskErrorCode("InternalServerErrorException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchGetTaskErrorCode
+        /// </summary>
+        public static readonly BatchGetTaskErrorCode ResourceNotFoundException = new BatchGetTaskErrorCode("ResourceNotFoundException");
+        /// <summary>
+        /// Constant ThrottlingException for BatchGetTaskErrorCode
+        /// </summary>
+        public static readonly BatchGetTaskErrorCode ThrottlingException = new BatchGetTaskErrorCode("ThrottlingException");
+        /// <summary>
+        /// Constant ValidationException for BatchGetTaskErrorCode
+        /// </summary>
+        public static readonly BatchGetTaskErrorCode ValidationException = new BatchGetTaskErrorCode("ValidationException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchGetTaskErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchGetTaskErrorCode FindValue(string value)
+        {
+            return FindValue<BatchGetTaskErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchGetTaskErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchGetWorkerErrorCode.
+    /// </summary>
+    public class BatchGetWorkerErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InternalServerErrorException for BatchGetWorkerErrorCode
+        /// </summary>
+        public static readonly BatchGetWorkerErrorCode InternalServerErrorException = new BatchGetWorkerErrorCode("InternalServerErrorException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchGetWorkerErrorCode
+        /// </summary>
+        public static readonly BatchGetWorkerErrorCode ResourceNotFoundException = new BatchGetWorkerErrorCode("ResourceNotFoundException");
+        /// <summary>
+        /// Constant ValidationException for BatchGetWorkerErrorCode
+        /// </summary>
+        public static readonly BatchGetWorkerErrorCode ValidationException = new BatchGetWorkerErrorCode("ValidationException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchGetWorkerErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchGetWorkerErrorCode FindValue(string value)
+        {
+            return FindValue<BatchGetWorkerErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchGetWorkerErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchUpdateJobErrorCode.
+    /// </summary>
+    public class BatchUpdateJobErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDeniedException for BatchUpdateJobErrorCode
+        /// </summary>
+        public static readonly BatchUpdateJobErrorCode AccessDeniedException = new BatchUpdateJobErrorCode("AccessDeniedException");
+        /// <summary>
+        /// Constant ConflictException for BatchUpdateJobErrorCode
+        /// </summary>
+        public static readonly BatchUpdateJobErrorCode ConflictException = new BatchUpdateJobErrorCode("ConflictException");
+        /// <summary>
+        /// Constant InternalServerErrorException for BatchUpdateJobErrorCode
+        /// </summary>
+        public static readonly BatchUpdateJobErrorCode InternalServerErrorException = new BatchUpdateJobErrorCode("InternalServerErrorException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchUpdateJobErrorCode
+        /// </summary>
+        public static readonly BatchUpdateJobErrorCode ResourceNotFoundException = new BatchUpdateJobErrorCode("ResourceNotFoundException");
+        /// <summary>
+        /// Constant ThrottlingException for BatchUpdateJobErrorCode
+        /// </summary>
+        public static readonly BatchUpdateJobErrorCode ThrottlingException = new BatchUpdateJobErrorCode("ThrottlingException");
+        /// <summary>
+        /// Constant ValidationException for BatchUpdateJobErrorCode
+        /// </summary>
+        public static readonly BatchUpdateJobErrorCode ValidationException = new BatchUpdateJobErrorCode("ValidationException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchUpdateJobErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchUpdateJobErrorCode FindValue(string value)
+        {
+            return FindValue<BatchUpdateJobErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchUpdateJobErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchUpdateTaskErrorCode.
+    /// </summary>
+    public class BatchUpdateTaskErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDeniedException for BatchUpdateTaskErrorCode
+        /// </summary>
+        public static readonly BatchUpdateTaskErrorCode AccessDeniedException = new BatchUpdateTaskErrorCode("AccessDeniedException");
+        /// <summary>
+        /// Constant ConflictException for BatchUpdateTaskErrorCode
+        /// </summary>
+        public static readonly BatchUpdateTaskErrorCode ConflictException = new BatchUpdateTaskErrorCode("ConflictException");
+        /// <summary>
+        /// Constant InternalServerErrorException for BatchUpdateTaskErrorCode
+        /// </summary>
+        public static readonly BatchUpdateTaskErrorCode InternalServerErrorException = new BatchUpdateTaskErrorCode("InternalServerErrorException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchUpdateTaskErrorCode
+        /// </summary>
+        public static readonly BatchUpdateTaskErrorCode ResourceNotFoundException = new BatchUpdateTaskErrorCode("ResourceNotFoundException");
+        /// <summary>
+        /// Constant ThrottlingException for BatchUpdateTaskErrorCode
+        /// </summary>
+        public static readonly BatchUpdateTaskErrorCode ThrottlingException = new BatchUpdateTaskErrorCode("ThrottlingException");
+        /// <summary>
+        /// Constant ValidationException for BatchUpdateTaskErrorCode
+        /// </summary>
+        public static readonly BatchUpdateTaskErrorCode ValidationException = new BatchUpdateTaskErrorCode("ValidationException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchUpdateTaskErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchUpdateTaskErrorCode FindValue(string value)
+        {
+            return FindValue<BatchUpdateTaskErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchUpdateTaskErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BudgetActionType.
     /// </summary>
     public class BudgetActionType : ConstantClass

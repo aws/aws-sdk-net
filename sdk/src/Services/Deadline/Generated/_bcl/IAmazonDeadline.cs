@@ -646,6 +646,78 @@ namespace Amazon.Deadline
 
         #endregion
         
+        #region  BatchGetJob
+
+
+        /// <summary>
+        /// Retrieves multiple jobs in a single request. This is a batch version of the <c>GetJob</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each job is reported individually in the response. Because the
+        /// batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetJob service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetJob service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetJob">REST API Reference for BatchGetJob Operation</seealso>
+        BatchGetJobResponse BatchGetJob(BatchGetJobRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves multiple jobs in a single request. This is a batch version of the <c>GetJob</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each job is reported individually in the response. Because the
+        /// batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetJob service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetJob">REST API Reference for BatchGetJob Operation</seealso>
+        Task<BatchGetJobResponse> BatchGetJobAsync(BatchGetJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchGetJobEntity
 
 
@@ -703,6 +775,532 @@ namespace Amazon.Deadline
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetJobEntity">REST API Reference for BatchGetJobEntity Operation</seealso>
         Task<BatchGetJobEntityResponse> BatchGetJobEntityAsync(BatchGetJobEntityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchGetSession
+
+
+        /// <summary>
+        /// Retrieves multiple sessions in a single request. This is a batch version of the <c>GetSession</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each session is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSession service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetSession service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetSession">REST API Reference for BatchGetSession Operation</seealso>
+        BatchGetSessionResponse BatchGetSession(BatchGetSessionRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves multiple sessions in a single request. This is a batch version of the <c>GetSession</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each session is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetSession service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetSession">REST API Reference for BatchGetSession Operation</seealso>
+        Task<BatchGetSessionResponse> BatchGetSessionAsync(BatchGetSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchGetSessionAction
+
+
+        /// <summary>
+        /// Retrieves multiple session actions in a single request. This is a batch version of
+        /// the <c>GetSessionAction</c> API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each session action is reported individually in the response.
+        /// Because the batch request can result in a combination of successful and unsuccessful
+        /// actions, you should check for batch errors even when the call returns an HTTP status
+        /// code of 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSessionAction service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetSessionAction service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetSessionAction">REST API Reference for BatchGetSessionAction Operation</seealso>
+        BatchGetSessionActionResponse BatchGetSessionAction(BatchGetSessionActionRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves multiple session actions in a single request. This is a batch version of
+        /// the <c>GetSessionAction</c> API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each session action is reported individually in the response.
+        /// Because the batch request can result in a combination of successful and unsuccessful
+        /// actions, you should check for batch errors even when the call returns an HTTP status
+        /// code of 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSessionAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetSessionAction service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetSessionAction">REST API Reference for BatchGetSessionAction Operation</seealso>
+        Task<BatchGetSessionActionResponse> BatchGetSessionActionAsync(BatchGetSessionActionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchGetStep
+
+
+        /// <summary>
+        /// Retrieves multiple steps in a single request. This is a batch version of the <c>GetStep</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each step is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetStep service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetStep service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetStep">REST API Reference for BatchGetStep Operation</seealso>
+        BatchGetStepResponse BatchGetStep(BatchGetStepRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves multiple steps in a single request. This is a batch version of the <c>GetStep</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each step is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetStep service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetStep">REST API Reference for BatchGetStep Operation</seealso>
+        Task<BatchGetStepResponse> BatchGetStepAsync(BatchGetStepRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchGetTask
+
+
+        /// <summary>
+        /// Retrieves multiple tasks in a single request. This is a batch version of the <c>GetTask</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each task is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTask service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetTask service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetTask">REST API Reference for BatchGetTask Operation</seealso>
+        BatchGetTaskResponse BatchGetTask(BatchGetTaskRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves multiple tasks in a single request. This is a batch version of the <c>GetTask</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each task is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetTask service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetTask">REST API Reference for BatchGetTask Operation</seealso>
+        Task<BatchGetTaskResponse> BatchGetTaskAsync(BatchGetTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchGetWorker
+
+
+        /// <summary>
+        /// Retrieves multiple workers in a single request. This is a batch version of the <c>GetWorker</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each worker is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetWorker service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetWorker service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetWorker">REST API Reference for BatchGetWorker Operation</seealso>
+        BatchGetWorkerResponse BatchGetWorker(BatchGetWorkerRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves multiple workers in a single request. This is a batch version of the <c>GetWorker</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of getting each worker is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetWorker service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetWorker service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchGetWorker">REST API Reference for BatchGetWorker Operation</seealso>
+        Task<BatchGetWorkerResponse> BatchGetWorkerAsync(BatchGetWorkerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchUpdateJob
+
+
+        /// <summary>
+        /// Updates multiple jobs in a single request. This is a batch version of the <c>UpdateJob</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of updating each job is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you change the status of a job to <c>ARCHIVED</c>, the job can't be scheduled
+        /// or archived.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// An archived job and its steps and tasks are deleted after 120 days. The job can't
+        /// be recovered.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateJob service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateJob service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchUpdateJob">REST API Reference for BatchUpdateJob Operation</seealso>
+        BatchUpdateJobResponse BatchUpdateJob(BatchUpdateJobRequest request);
+
+
+
+        /// <summary>
+        /// Updates multiple jobs in a single request. This is a batch version of the <c>UpdateJob</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of updating each job is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you change the status of a job to <c>ARCHIVED</c>, the job can't be scheduled
+        /// or archived.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// An archived job and its steps and tasks are deleted after 120 days. The job can't
+        /// be recovered.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateJob service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchUpdateJob">REST API Reference for BatchUpdateJob Operation</seealso>
+        Task<BatchUpdateJobResponse> BatchUpdateJobAsync(BatchUpdateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchUpdateTask
+
+
+        /// <summary>
+        /// Updates multiple tasks in a single request. This is a batch version of the <c>UpdateTask</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of updating each task is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateTask service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateTask service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchUpdateTask">REST API Reference for BatchUpdateTask Operation</seealso>
+        BatchUpdateTaskResponse BatchUpdateTask(BatchUpdateTaskRequest request);
+
+
+
+        /// <summary>
+        /// Updates multiple tasks in a single request. This is a batch version of the <c>UpdateTask</c>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        /// The result of updating each task is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateTask service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/BatchUpdateTask">REST API Reference for BatchUpdateTask Operation</seealso>
+        Task<BatchUpdateTaskResponse> BatchUpdateTaskAsync(BatchUpdateTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
