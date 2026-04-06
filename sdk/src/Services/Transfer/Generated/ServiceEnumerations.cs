@@ -379,6 +379,56 @@ namespace Amazon.Transfer
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectorsIpAddressType.
+    /// </summary>
+    public class ConnectorsIpAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUALSTACK for ConnectorsIpAddressType
+        /// </summary>
+        public static readonly ConnectorsIpAddressType DUALSTACK = new ConnectorsIpAddressType("DUALSTACK");
+        /// <summary>
+        /// Constant IPV4 for ConnectorsIpAddressType
+        /// </summary>
+        public static readonly ConnectorsIpAddressType IPV4 = new ConnectorsIpAddressType("IPV4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorsIpAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorsIpAddressType FindValue(string value)
+        {
+            return FindValue<ConnectorsIpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorsIpAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectorStatus.
     /// </summary>
     public class ConnectorStatus : ConstantClass
