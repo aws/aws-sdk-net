@@ -72,7 +72,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("__type", targetDepth))
+                    if (context.TestExpression("type", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

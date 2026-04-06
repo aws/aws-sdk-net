@@ -64,7 +64,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetDetectorId())
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
-            request.AddPathResource("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
+            request.AddPathResource("{DetectorId}", StringUtils.FromString(publicRequest.DetectorId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -74,7 +74,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetOnlyAssociated())
                 request.Parameters.Add("onlyAssociated", StringUtils.FromString(publicRequest.OnlyAssociated));
-            request.ResourcePath = "/detector/{detectorId}/member";
+            request.ResourcePath = "/detector/{DetectorId}/member";
             request.UseQueryString = true;
 
             return request;
