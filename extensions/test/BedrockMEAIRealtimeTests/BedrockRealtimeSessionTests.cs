@@ -1098,4 +1098,131 @@ public class BedrockRealtimeSessionTests
     }
 
     #endregion
+
+    #region Concurrent Enumeration Guard Tests
+
+    [Fact]
+    public async Task GetStreamingResponseAsync_ConcurrentEnumeration_ThrowsInvalidOperationException()
+    {
+        var runtimeMock = new Mock<IAmazonBedrockRuntime>();
+        runtimeMock.Setup(r => r.InvokeModelWithBidirectionalStreamAsync(
+                It.IsAny<InvokeModelWithBidirectionalStreamRequest>(),
+                It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new Mock<InvokeModelWithBidirectionalStreamResponse>().Object);
+
+        var client = new BedrockNovaRealtimeClient(runtimeMock.Object, "test-model");
+        var session = await client.CreateSessionAsync();
+
+        // Simulate an active enumeration by setting the guard field via reflection
+        var field = typeof(BedrockNovaRealtimeSession).GetField(
+            "_activeStreamingEnumeration",
+            System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+        Assert.NotNull(field);
+        field!.SetValue(session, 1);
+
+        // Second enumeration should throw immediately
+        await Assert.ThrowsAsync<InvalidOperationException>(async () =>
+        {
+            await foreach (var _ in session.GetStreamingResponseAsync())
+            {
+            }
+        });
+
+        await session.DisposeAsync();
+    }
+
+    #endregion
+
+    #region Normalization Tests
+
+    [Fact]
+    public void NormalizeToolPayload_Null_ReturnsNull()
+    {
+        Assert.Null(BedrockNovaRealtimeSession.NormalizeToolPayload(null));
+    }
+
+    [Fact]
+    public void NormalizeToolPayload_String_ReturnsString()
+    {
+        Assert.Equal("hello", BedrockNovaRealtimeSession.NormalizeToolPayload("hello"));
+    }
+
+    [Fact]
+    public void NormalizeToolPayload_ByteArray_ReturnsBase64()
+    {
+        var bytes = new byte[] { 1, 2, 3 };
+        Assert.Equal(Convert.ToBase64String(bytes), BedrockNovaRealtimeSession.NormalizeToolPayload(bytes));
+    }
+
+    [Fact]
+    public void NormalizeToolPayload_JsonElement_ConvertsToNative()
+    {
+        using var doc = JsonDocument.Parse("{\"key\": \"value\", \"num\": 42}");
+        var result = BedrockNovaRealtimeSession.NormalizeToolPayload(doc.RootElement);
+
+        var dict = Assert.IsType<Dictionary<string, object?>>(result);
+        Assert.Equal("value", dict["key"]);
+        // JSON numbers may be parsed as long or double depending on TryGetInt64 behavior
+        Assert.True(dict["num"] is long or double, $"Expected long or double, got {dict["num"]?.GetType()}");
+        Assert.Equal(42.0, Convert.ToDouble(dict["num"]));
+    }
+
+    [Fact]
+    public void NormalizeToolPayload_DeepNesting_ThrowsAtMaxDepth()
+    {
+        // Build a deeply nested dictionary that exceeds MaxToolPayloadDepth (64)
+        object? current = "leaf";
+        for (int i = 0; i < 70; i++)
+        {
+            current = new Dictionary<string, object?> { ["level"] = current };
+        }
+
+        Assert.Throws<InvalidOperationException>(() =>
+            BedrockNovaRealtimeSession.NormalizeToolPayload(current));
+    }
+
+    [Fact]
+    public void NormalizeToolArguments_NormalizesNestedJsonElements()
+    {
+        using var doc = JsonDocument.Parse("{\"inner\": 123}");
+        var args = new Dictionary<string, object?>
+        {
+            ["name"] = "test",
+            ["nested"] = doc.RootElement.Clone()
+        };
+
+        var normalized = BedrockNovaRealtimeSession.NormalizeToolArguments(args);
+
+        Assert.Equal("test", normalized["name"]);
+        var nestedDict = Assert.IsType<Dictionary<string, object?>>(normalized["nested"]);
+        Assert.True(nestedDict["inner"] is long or double, $"Expected long or double, got {nestedDict["inner"]?.GetType()}");
+        Assert.Equal(123.0, Convert.ToDouble(nestedDict["inner"]));
+    }
+
+    #endregion
+
+    #region SendAsync ODE Propagation Tests
+
+    [Fact]
+    public async Task SendAsync_ObjectDisposedDuringSend_PropagatesAsNamedODE()
+    {
+        var runtimeMock = new Mock<IAmazonBedrockRuntime>();
+        runtimeMock.Setup(r => r.InvokeModelWithBidirectionalStreamAsync(
+                It.IsAny<InvokeModelWithBidirectionalStreamRequest>(),
+                It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new Mock<InvokeModelWithBidirectionalStreamResponse>().Object);
+
+        var client = new BedrockNovaRealtimeClient(runtimeMock.Object, "test-model");
+        var session = await client.CreateSessionAsync();
+
+        // Dispose to cause ODE on any future send that gets past the initial check
+        await session.DisposeAsync();
+
+        var ex = await Assert.ThrowsAsync<ObjectDisposedException>(
+            () => session.SendAsync(new SessionUpdateRealtimeClientMessage(new RealtimeSessionOptions())));
+
+        Assert.Contains("BedrockNovaRealtimeSession", ex.ObjectName);
+    }
+
+    #endregion
 }

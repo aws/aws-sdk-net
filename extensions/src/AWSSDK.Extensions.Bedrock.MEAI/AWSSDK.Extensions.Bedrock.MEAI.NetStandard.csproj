@@ -19,6 +19,10 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn>$(NoWarn);MEAI001</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="BedrockMEAIRealtimeTests" />
+  </ItemGroup>
   
   <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <IsTrimmable>true</IsTrimmable>

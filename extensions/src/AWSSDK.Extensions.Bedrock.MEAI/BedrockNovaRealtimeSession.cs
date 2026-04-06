@@ -16,12 +16,14 @@
 #if NET8_0_OR_GREATER
 
 using System;
+using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
@@ -60,6 +62,13 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
     private string? _audioContentName;
     private int _disposed; // 0 = not disposed, 1 = disposed (for Interlocked)
 
+    // Guards against multiple concurrent GetStreamingResponseAsync enumerations. A single
+    // bidirectional stream can't safely serve two concurrent readers.
+    private int _activeStreamingEnumeration;
+
+    /// <summary>Maximum nesting depth for tool payloads to prevent stack overflow from malicious/malformed data.</summary>
+    private const int MaxToolPayloadDepth = 64;
+
     /// <summary>Initializes a new instance of the <see cref="BedrockNovaRealtimeSession"/> class.</summary>
     /// <param name="runtime">The Amazon Bedrock Runtime client.</param>
     /// <param name="modelId">The model ID to use.</param>
@@ -79,8 +88,12 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
     /// <param name="cancellationToken">Cancellation token.</param>
     internal async Task ConnectAsync(RealtimeSessionOptions? options = null, CancellationToken cancellationToken = default)
     {
+        if (Volatile.Read(ref _disposed) != 0)
+        {
+            throw new ObjectDisposedException(nameof(BedrockNovaRealtimeSession));
+        }
+
         cancellationToken.ThrowIfCancellationRequested();
-        ObjectDisposedException.ThrowIf(Volatile.Read(ref _disposed) != 0, this);
 
         _outboundChannel = Channel.CreateUnbounded<BidirectionalInputPayloadPart>(
             new UnboundedChannelOptions { SingleReader = true });
@@ -177,8 +190,13 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
     public async Task SendAsync(RealtimeClientMessage message, CancellationToken cancellationToken = default)
     {
         _ = message ?? throw new ArgumentNullException(nameof(message));
+
+        if (Volatile.Read(ref _disposed) != 0)
+        {
+            throw new ObjectDisposedException(nameof(BedrockNovaRealtimeSession));
+        }
+
         cancellationToken.ThrowIfCancellationRequested();
-        ObjectDisposedException.ThrowIf(Volatile.Read(ref _disposed) != 0, this);
 
         if (_outboundChannel is null)
         {
@@ -197,7 +215,10 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
         try
         {
             // Recheck after acquiring semaphore to avoid race with DisposeAsync
-            ObjectDisposedException.ThrowIf(Volatile.Read(ref _disposed) != 0, this);
+            if (Volatile.Read(ref _disposed) != 0)
+            {
+                throw new ObjectDisposedException(nameof(BedrockNovaRealtimeSession));
+            }
             switch (message)
             {
                 case SessionUpdateRealtimeClientMessage sessionUpdate:
@@ -241,12 +262,18 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
             // The caller explicitly cancelled via their token — propagate.
             throw;
         }
-        catch (Exception ex) when (ex is OperationCanceledException or ObjectDisposedException or ChannelClosedException)
+        catch (ObjectDisposedException)
         {
-            // These exceptions are expected during session teardown and are swallowed:
-            //   - OperationCanceledException: internal cancellation from disposal (not the caller's token).
-            //   - ObjectDisposedException: DisposeAsync was called on another thread.
-            //   - ChannelClosedException: the outbound channel was completed during shutdown.
+            // Re-surface with the session type name for a clear diagnostic.
+            throw new ObjectDisposedException(nameof(BedrockNovaRealtimeSession));
+        }
+        catch (ChannelClosedException) when (Volatile.Read(ref _disposed) != 0)
+        {
+            // The outbound channel was completed during shutdown — swallow only when disposed.
+        }
+        catch (OperationCanceledException) when (Volatile.Read(ref _disposed) != 0)
+        {
+            // Internal cancellation from disposal (not the caller's token) — swallow only when disposed.
         }
         finally
         {
@@ -265,13 +292,25 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
     public async IAsyncEnumerable<RealtimeServerMessage> GetStreamingResponseAsync(
         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        ObjectDisposedException.ThrowIf(Volatile.Read(ref _disposed) != 0, this);
+        if (Volatile.Read(ref _disposed) != 0)
+        {
+            throw new ObjectDisposedException(nameof(BedrockNovaRealtimeSession));
+        }
 
         if (_streamResponse is null)
         {
             throw new InvalidOperationException("Session is not connected. Call ConnectAsync first.");
         }
 
+        if (Interlocked.CompareExchange(ref _activeStreamingEnumeration, 1, 0) != 0)
+        {
+            throw new InvalidOperationException(
+                "Only one active streaming enumeration is allowed at a time. " +
+                "Await or cancel the existing enumeration before starting a new one.");
+        }
+
+        try
+        {
         string? currentCompletionId = null;
         string? currentContentId = null;
         string? currentContentType = null;
@@ -539,19 +578,12 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
                     string? toolUseId = toolUse.TryGetProperty("toolUseId", out var tuid) ? tuid.GetString() : null;
                     string? itemId = toolUse.TryGetProperty("contentId", out var tcid) ? tcid.GetString() : null;
 
-                    IDictionary<string, object?>? toolArguments = null;
+                    string? argsJson = null;
                     if (toolUse.TryGetProperty("content", out var tcc))
                     {
                         if (tcc.ValueKind == JsonValueKind.Object)
                         {
-                            try
-                            {
-                                toolArguments = JsonElementToDictionary(tcc);
-                            }
-                            catch (JsonException)
-                            {
-                                // If deserialization fails, leave arguments as null
-                            }
+                            argsJson = tcc.GetRawText();
                         }
                         else if (tcc.ValueKind == JsonValueKind.String)
                         {
@@ -564,18 +596,48 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
                                     using var innerDoc = JsonDocument.Parse(innerJson);
                                     if (innerDoc.RootElement.ValueKind == JsonValueKind.Object)
                                     {
-                                        toolArguments = JsonElementToDictionary(innerDoc.RootElement);
+                                        argsJson = innerJson;
                                     }
                                 }
                                 catch (JsonException)
                                 {
-                                    // Not a JSON object string; leave arguments as null
+                                    // Not a JSON object string; leave argsJson as null
                                 }
                             }
                         }
                     }
 
-                    var functionCall = new FunctionCallContent(toolUseId ?? string.Empty, toolName ?? string.Empty, toolArguments);
+                    FunctionCallContent functionCall;
+                    if (argsJson is not null)
+                    {
+                        try
+                        {
+                            functionCall = FunctionCallContent.CreateFromParsedArguments(
+                                argsJson, toolUseId ?? string.Empty, toolName ?? string.Empty,
+                                static json =>
+                                {
+                                    try
+                                    {
+                                        using var argDoc = JsonDocument.Parse(json);
+                                        if (argDoc.RootElement.ValueKind == JsonValueKind.Object)
+                                        {
+                                            return ConvertJsonElementToToolPayload(argDoc.RootElement, 0)
+                                                as Dictionary<string, object?>;
+                                        }
+                                    }
+                                    catch (JsonException) { }
+                                    return null;
+                                });
+                        }
+                        catch (JsonException)
+                        {
+                            functionCall = new FunctionCallContent(toolUseId ?? string.Empty, toolName ?? string.Empty);
+                        }
+                    }
+                    else
+                    {
+                        functionCall = new FunctionCallContent(toolUseId ?? string.Empty, toolName ?? string.Empty);
+                    }
 
                     // Store for inline invocation at contentEnd(TOOL).
                     // Do NOT yield here — yielding would cause a round-trip through the consumer
@@ -604,6 +666,11 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
                 }
             }
             }
+        }
+        }
+        finally
+        {
+            Volatile.Write(ref _activeStreamingEnumeration, 0);
         }
     }
 
@@ -691,10 +758,41 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
         }
         finally
         {
+            Exception? firstException = null;
+
             _outboundChannel?.Writer.TryComplete();
-            _streamResponse?.Dispose();
-            _sendSemaphore.Dispose();
-            _sessionCts.Dispose();
+
+            try
+            {
+                _streamResponse?.Dispose();
+            }
+            catch (Exception ex)
+            {
+                firstException = ex;
+            }
+
+            try
+            {
+                _sendSemaphore.Dispose();
+            }
+            catch (Exception ex) when (firstException is null)
+            {
+                firstException = ex;
+            }
+
+            try
+            {
+                _sessionCts.Dispose();
+            }
+            catch (Exception ex) when (firstException is null)
+            {
+                firstException = ex;
+            }
+
+            if (firstException is not null)
+            {
+                ExceptionDispatchInfo.Capture(firstException).Throw();
+            }
         }
     }
 
@@ -1415,68 +1513,6 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
 
     #region Mapping Helpers
 
-    /// <summary>
-    /// Serializes a function result into a JSON object string for Nova Sonic's toolResult.content.
-    /// Nova Sonic requires this to be a JSON object (starting with '{'), not a primitive or array.
-    /// </summary>
-    private static string SerializeToolResult(object? result)
-    {
-        if (result is null)
-        {
-            return "{}";
-        }
-
-        if (result is JsonElement jsonElement)
-        {
-            if (jsonElement.ValueKind == JsonValueKind.Object)
-            {
-                return jsonElement.GetRawText();
-            }
-
-            // Non-object JsonElement — wrap in {"result": value}
-            return "{\"result\":" + jsonElement.GetRawText() + "}";
-        }
-
-        if (result is string strResult)
-        {
-            // Try to parse as JSON object first
-            try
-            {
-                using var doc = JsonDocument.Parse(strResult);
-                if (doc.RootElement.ValueKind == JsonValueKind.Object)
-                {
-                    return strResult;
-                }
-            }
-            catch (JsonException)
-            {
-                // Not valid JSON
-            }
-
-            // Wrap the string in a JSON object
-            return "{\"result\":" + JsonSerializer.Serialize(strResult, NovaSonicJsonOptions.Context.String) + "}";
-        }
-
-        // For other types, use ToString and wrap in a JSON object
-        string text = result.ToString() ?? string.Empty;
-
-        // Check if ToString produced a JSON object
-        try
-        {
-            using var doc2 = JsonDocument.Parse(text);
-            if (doc2.RootElement.ValueKind == JsonValueKind.Object)
-            {
-                return text;
-            }
-        }
-        catch (JsonException)
-        {
-            // Not valid JSON
-        }
-
-        return "{\"result\":" + JsonSerializer.Serialize(text, NovaSonicJsonOptions.Context.String) + "}";
-    }
-
     private static string MapStopReason(string? stopReason) =>
         stopReason?.ToUpperInvariant() switch
         {
@@ -1525,18 +1561,233 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
     }
 
     /// <summary>
-    /// Converts a <see cref="JsonElement"/> object to a <see cref="Dictionary{String, Object}"/>
-    /// with <see cref="JsonElement"/> values to avoid reflection-based deserialization.
+    /// Serializes a function result into a JSON object string for Nova Sonic's toolResult.content.
+    /// Nova Sonic requires this to be a JSON object (starting with '{'), not a primitive or array.
+    /// Normalizes the input first to handle JsonElement, byte[], nested dicts/lists, etc.
     /// </summary>
-    private static Dictionary<string, object?> JsonElementToDictionary(JsonElement element)
+    private static string SerializeToolResult(object? result)
     {
-        var dict = new Dictionary<string, object?>(StringComparer.Ordinal);
-        foreach (var property in element.EnumerateObject())
+        // Normalize first to handle JsonElement, byte[], nested dicts, etc.
+        result = NormalizeToolPayload(result);
+
+        if (result is null)
         {
-            dict[property.Name] = property.Value.Clone();
+            return "{}";
         }
 
-        return dict;
+        if (result is string strResult)
+        {
+            // Try to parse as JSON object first
+            try
+            {
+                using var doc = JsonDocument.Parse(strResult);
+                if (doc.RootElement.ValueKind == JsonValueKind.Object)
+                {
+                    return strResult;
+                }
+            }
+            catch (JsonException)
+            {
+                // Not valid JSON
+            }
+
+            // Wrap the string in a JSON object
+            return "{\"result\":" + JsonSerializer.Serialize(strResult, NovaSonicJsonOptions.Context.String) + "}";
+        }
+
+        if (result is Dictionary<string, object?> dict)
+        {
+            // Serialize the normalized dictionary using Utf8JsonWriter (AOT-safe)
+            using var buffer = new MemoryStream();
+            using (var writer = new Utf8JsonWriter(buffer))
+            {
+                WriteNormalizedValue(dict, writer);
+            }
+
+            return Encoding.UTF8.GetString(buffer.ToArray());
+        }
+
+        // For lists and primitives, wrap in {"result": ...}
+        using var wrapBuffer = new MemoryStream();
+        using (var writer = new Utf8JsonWriter(wrapBuffer))
+        {
+            writer.WriteStartObject();
+            writer.WritePropertyName("result");
+            WriteNormalizedValue(result, writer);
+            writer.WriteEndObject();
+        }
+
+        return Encoding.UTF8.GetString(wrapBuffer.ToArray());
+    }
+
+    /// <summary>
+    /// Writes a normalized value (produced by <see cref="NormalizeToolPayload"/>) to a <see cref="Utf8JsonWriter"/>.
+    /// Handles null, string, bool, numeric primitives, Dictionary, and List without reflection.
+    /// </summary>
+    private static void WriteNormalizedValue(object? value, Utf8JsonWriter writer)
+    {
+        switch (value)
+        {
+            case null:
+                writer.WriteNullValue();
+                break;
+            case string s:
+                writer.WriteStringValue(s);
+                break;
+            case bool b:
+                writer.WriteBooleanValue(b);
+                break;
+            case int i:
+                writer.WriteNumberValue(i);
+                break;
+            case long l:
+                writer.WriteNumberValue(l);
+                break;
+            case float f:
+                writer.WriteNumberValue(f);
+                break;
+            case double d:
+                writer.WriteNumberValue(d);
+                break;
+            case decimal m:
+                writer.WriteNumberValue(m);
+                break;
+            case Dictionary<string, object?> dict:
+                writer.WriteStartObject();
+                foreach (var kvp in dict)
+                {
+                    writer.WritePropertyName(kvp.Key);
+                    WriteNormalizedValue(kvp.Value, writer);
+                }
+                writer.WriteEndObject();
+                break;
+            case List<object?> list:
+                writer.WriteStartArray();
+                foreach (var item in list)
+                {
+                    WriteNormalizedValue(item, writer);
+                }
+                writer.WriteEndArray();
+                break;
+            default:
+                writer.WriteStringValue(value.ToString());
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Recursively normalizes a tool payload into a tree of primitives, dictionaries, and lists.
+    /// Handles JsonElement, byte[], nested dicts/lists, and enforces a maximum nesting depth.
+    /// </summary>
+    internal static object? NormalizeToolPayload(object? value, int depth = 0)
+    {
+        ValidateToolPayloadDepth(depth);
+
+        switch (value)
+        {
+            case null:
+                return null;
+            case byte[] bytes:
+                return Convert.ToBase64String(bytes);
+            case JsonElement element:
+                return ConvertJsonElementToToolPayload(element, depth + 1);
+            case JsonDocument document:
+                return ConvertJsonElementToToolPayload(document.RootElement, depth + 1);
+            case string:
+            case bool:
+            case int:
+            case long:
+            case float:
+            case double:
+            case decimal:
+                return value;
+            case IReadOnlyDictionary<string, object?> roDict:
+                return NormalizeToolArguments(roDict, depth + 1);
+            case IEnumerable<KeyValuePair<string, object?>> pairs:
+                return NormalizeToolArguments(
+                    new Dictionary<string, object?>(pairs.Select(p => p), StringComparer.Ordinal), depth + 1);
+            case IDictionary dict:
+                var mapped = new Dictionary<string, object?>(StringComparer.Ordinal);
+                foreach (DictionaryEntry entry in dict)
+                {
+                    string key = entry.Key.ToString()!;
+                    mapped[key] = NormalizeToolPayload(entry.Value, depth + 1);
+                }
+                return mapped;
+            case IEnumerable<AIContent> aiContents:
+                return aiContents.Select(content => NormalizeToolPayload(content, depth + 1)).ToList();
+            case IEnumerable<object?> enumerable:
+                var list = new List<object?>();
+                foreach (var item in enumerable)
+                {
+                    list.Add(NormalizeToolPayload(item, depth + 1));
+                }
+                return list;
+            default:
+                return value.ToString();
+        }
+    }
+
+    /// <summary>
+    /// Normalizes a dictionary of tool arguments, recursively normalizing each value.
+    /// </summary>
+    internal static Dictionary<string, object?> NormalizeToolArguments(IReadOnlyDictionary<string, object?> arguments, int depth = 0)
+    {
+        ValidateToolPayloadDepth(depth);
+
+        var normalized = new Dictionary<string, object?>(arguments.Count, StringComparer.Ordinal);
+        foreach (var pair in arguments)
+        {
+            normalized[pair.Key] = NormalizeToolPayload(pair.Value, depth + 1);
+        }
+        return normalized;
+    }
+
+    /// <summary>
+    /// Converts a <see cref="JsonElement"/> to a tree of primitives, dictionaries, and lists.
+    /// </summary>
+    private static object? ConvertJsonElementToToolPayload(JsonElement element, int depth)
+    {
+        ValidateToolPayloadDepth(depth);
+
+        switch (element.ValueKind)
+        {
+            case JsonValueKind.Object:
+                var dictionary = new Dictionary<string, object?>(StringComparer.Ordinal);
+                foreach (var property in element.EnumerateObject())
+                {
+                    dictionary[property.Name] = ConvertJsonElementToToolPayload(property.Value, depth + 1);
+                }
+                return dictionary;
+            case JsonValueKind.Array:
+                var arrayList = new List<object?>();
+                foreach (var item in element.EnumerateArray())
+                {
+                    arrayList.Add(ConvertJsonElementToToolPayload(item, depth + 1));
+                }
+                return arrayList;
+            case JsonValueKind.String:
+                return element.GetString();
+            case JsonValueKind.Number:
+                return element.TryGetInt64(out long l) ? l : element.GetDouble();
+            case JsonValueKind.True:
+                return true;
+            case JsonValueKind.False:
+                return false;
+            case JsonValueKind.Null:
+            case JsonValueKind.Undefined:
+            default:
+                return null;
+        }
+    }
+
+    private static void ValidateToolPayloadDepth(int depth)
+    {
+        if (depth > MaxToolPayloadDepth)
+        {
+            throw new InvalidOperationException(
+                $"Realtime tool payloads exceed the maximum supported nesting depth of {MaxToolPayloadDepth}.");
+        }
     }
 
     #endregion
