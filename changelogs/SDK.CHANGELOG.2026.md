@@ -1,3 +1,26 @@
+### 4.0.226.0 (2026-04-06 18:29 UTC)
+* AccessAnalyzer (4.0.5.0)
+	* Brookie helps customers preview the impact of SCPs before deployment using historical access activity. It evaluates attached policies and proposed policy updates using collected access activity through CloudTrail authorization events and reports where currently allowed access will be denied.
+* Deadline (4.0.17.0)
+	* Added 8 batch APIs (BatchGetJob, BatchGetStep, BatchGetTask, BatchGetSession, BatchGetSessionAction, BatchGetWorker, BatchUpdateJob, BatchUpdateTask) for bulk operations. Monitors can now use an Identity Center instance in a different region via the identityCenterRegion parameter.
+* DLM (4.0.3.0)
+	* This release adds support for Fast Snapshot Restore AvailabilityZone Ids in Amazon Data Lifecycle Manager EBS snapshot lifecycle policies.
+* GeoMaps (4.0.5.4)
+	* This release updates API reference documentation for Amazon Location Service Maps APIs to reflect regional restrictions for Grab Maps users
+* GuardDuty (4.0.18.0)
+	* Migrated to Smithy. No functional changes
+* Lightsail (4.0.7.0)
+	* This release adds support for the Asia Pacific (Malaysia) (ap-southeast-5) Region.
+* MediaTailor (4.0.7.0)
+	* This change adds support for Tagging the resource types Programs and Prefetch Schedules
+* QConnect (4.0.9.0)
+	* Added optional originRequestId parameter to SendMessageRequest and ListSpans response in Amazon Q in Connect to support request tracing across service boundaries.
+* Transfer (4.0.7.0)
+	* AWS Transfer Family Connectors now support IPv6 connectivity, enabling outbound connections to remote SFTP or AS2 servers using IPv4-only or dual-stack (IPv4 and IPv6) configurations based on network requirements.
+* Core 4.0.3.28
+	* Added unified platform map for cross-platform API documentation generation
+	* All service and extension packages updated to require new Core
+
 ### 4.0.225.0 (2026-04-03 18:16 UTC)
 * Bedrock (4.0.25.0)
 	* Amazon Bedrock Guardrails enforcement configuration APIs now support selective guarding controls for system prompts as well as user and assistant messages, along with SDK support for Amazon Bedrock resource policy APIs.

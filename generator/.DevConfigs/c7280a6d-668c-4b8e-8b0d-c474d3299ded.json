@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Added unified platform map for cross-platform API documentation generation"
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}
