@@ -35,7 +35,12 @@ namespace Amazon.Runtime
         protected RefreshingAWSCredentials(ITimeProvider timeProvider) 
             => _timeProvider = timeProvider ?? DefaultTimeProvider.Instance;
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Expiration may be updated if credentials are updated during a background credential refresh. 
+        /// A background credential refresh can happen if the credentials are in the preempt expiry window.
+        /// Always call <see cref="GetCredentialsAsync"/> before reading Expiration to ensure the updated 
+        /// Expiration value is read.
+        /// </summary>
         public override DateTime? Expiration
         {
             get
