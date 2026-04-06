@@ -80,6 +80,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ThreadsPerCore", StringUtils.FromInt(publicRequest.ThreadsPerCore));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyInstanceCpuOptionsRequestMarshaller _instance = new ModifyInstanceCpuOptionsRequestMarshaller();        

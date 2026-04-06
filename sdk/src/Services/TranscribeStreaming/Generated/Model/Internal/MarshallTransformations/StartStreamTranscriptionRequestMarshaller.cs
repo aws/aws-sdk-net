@@ -65,7 +65,6 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
             request.EventStreamPublisher = new AudioStreamPublisherMarshaller(publicRequest.AudioStreamPublisher);
 
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";
             request.HttpMethod = "POST";
 
@@ -149,6 +148,11 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetSessionId()) 
             {
                 request.Headers["x-amzn-transcribe-session-id"] = publicRequest.SessionId;
+            }
+        
+            if (publicRequest.IsSetSessionResumeWindow()) 
+            {
+                request.Headers["x-amzn-transcribe-session-resume-window"] = StringUtils.FromInt(publicRequest.SessionResumeWindow);
             }
         
             if (publicRequest.IsSetShowSpeakerLabel()) 

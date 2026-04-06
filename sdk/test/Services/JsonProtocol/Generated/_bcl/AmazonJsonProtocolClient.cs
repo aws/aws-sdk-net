@@ -986,5 +986,46 @@ namespace Amazon.JsonProtocol
 
         #endregion
         
+        #region  SparseNullsOperation
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseNullsOperation service method.</param>
+        /// 
+        /// <returns>The response from the SparseNullsOperation service method, as returned by JsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/SparseNullsOperation">REST API Reference for SparseNullsOperation Operation</seealso>
+        public virtual SparseNullsOperationResponse SparseNullsOperation(SparseNullsOperationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SparseNullsOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SparseNullsOperationResponseUnmarshaller.Instance;
+
+            return Invoke<SparseNullsOperationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseNullsOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SparseNullsOperation service method, as returned by JsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/SparseNullsOperation">REST API Reference for SparseNullsOperation Operation</seealso>
+        public virtual Task<SparseNullsOperationResponse> SparseNullsOperationAsync(SparseNullsOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SparseNullsOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SparseNullsOperationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SparseNullsOperationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
     }
 }

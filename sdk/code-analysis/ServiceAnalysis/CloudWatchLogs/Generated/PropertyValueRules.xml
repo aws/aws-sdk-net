@@ -153,6 +153,30 @@
     <pattern>[^:*]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.CreateLookupTableRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.CreateLookupTableRequest.KmsKeyId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.CreateLookupTableRequest.LookupTableName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.CreateLookupTableRequest.TableBody</property>
+    <min>1</min>
+    <max>10485760</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.CreateLookupTableResponse.CreatedAt</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.CreateScheduledQueryRequest.Description</property>
     <max>1024</max>
   </property-value-rule>
@@ -527,6 +551,24 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeLookupTablesRequest.LookupTableNamePrefix</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeLookupTablesRequest.MaxResults</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeLookupTablesRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeLookupTablesResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DescribeMetricFiltersRequest.FilterNamePrefix</property>
     <min>1</min>
     <max>512</max>
@@ -850,6 +892,34 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetLookupTableResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetLookupTableResponse.KmsKeyId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetLookupTableResponse.LastUpdatedTime</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetLookupTableResponse.LookupTableName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetLookupTableResponse.SizeBytes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetLookupTableResponse.TableBody</property>
+    <min>1</min>
+    <max>10485760</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetQueryResultsRequest.QueryId</property>
     <min>1</min>
     <max>256</max>
@@ -1098,6 +1168,12 @@
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.PutBearerTokenAuthenticationRequest.LogGroupIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w#+=/:,.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutDataProtectionPolicyRequest.LogGroupIdentifier</property>
     <min>1</min>
     <max>2048</max>
@@ -1175,7 +1251,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutIndexPolicyRequest.PolicyDocument</property>
     <min>1</min>
-    <max>5120</max>
+    <max>51200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutIntegrationRequest.IntegrationName</property>
@@ -1270,7 +1346,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutResourcePolicyRequest.PolicyDocument</property>
     <min>1</min>
-    <max>5120</max>
+    <max>51200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutResourcePolicyResponse.RevisionId</property>
@@ -1426,6 +1502,24 @@
     <property>Amazon.CloudWatchLogs.Model.UpdateLogAnomalyDetectorRequest.FilterPattern</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.UpdateLookupTableRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.UpdateLookupTableRequest.KmsKeyId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.UpdateLookupTableRequest.TableBody</property>
+    <min>1</min>
+    <max>10485760</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.UpdateLookupTableResponse.LastUpdatedTime</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.UpdateScheduledQueryRequest.Description</property>
@@ -1642,6 +1736,11 @@
     <property>Amazon.CloudWatchLogs.Model.CSV.Delimiter</property>
     <min>1</min>
     <max>2</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.CSV.Destination</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.CSV.QuoteCharacter</property>
@@ -1880,7 +1979,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.IndexPolicy.PolicyDocument</property>
     <min>1</min>
-    <max>5120</max>
+    <max>51200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.InputLogEvent.Message</property>
@@ -2030,6 +2129,33 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.LogStream.UploadSequenceToken</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LookupTable.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LookupTable.KmsKeyId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LookupTable.LastUpdatedTime</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LookupTable.LookupTableName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LookupTable.RecordsCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LookupTable.SizeBytes</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.MetricFilter.CreationTime</property>
@@ -2289,6 +2415,25 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryInfo.UserIdentity</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryParameter.DefaultValue</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryParameter.Description</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryParameter.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z_][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.RecordField.Name</property>
     <min>1</min>
     <max>64</max>
@@ -2310,7 +2455,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ResourcePolicy.PolicyDocument</property>
     <min>1</min>
-    <max>5120</max>
+    <max>51200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ResourcePolicy.RevisionId</property>
@@ -2320,6 +2465,16 @@
     <property>Amazon.CloudWatchLogs.Model.S3Configuration.DestinationIdentifier</property>
     <max>1024</max>
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.S3Configuration.KmsKeyId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.S3Configuration.OwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.S3Configuration.RoleArn</property>

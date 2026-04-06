@@ -61,7 +61,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPayload())
             {
                 context.Writer.WritePropertyName("payload");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Payload));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Payload);
             }
 
             if(requestObject.IsSetTimestamp())

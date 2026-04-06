@@ -62,6 +62,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.CapacityOptionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("capacityReservations", targetDepth))
+                {
+                    var unmarshaller = CapacityReservationRequestUnmarshaller.Instance;
+                    unmarshalledObject.CapacityReservations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ec2InstanceProfileArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,10 +80,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.FipsEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("instanceMetadataTagsPropagation", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.InstanceMetadataTagsPropagation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("instanceRequirements", targetDepth))
                 {
                     var unmarshaller = InstanceRequirementsRequestUnmarshaller.Instance;
                     unmarshalledObject.InstanceRequirements = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("localStorageConfiguration", targetDepth))
+                {
+                    var unmarshaller = ManagedInstancesLocalStorageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LocalStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("monitoring", targetDepth))

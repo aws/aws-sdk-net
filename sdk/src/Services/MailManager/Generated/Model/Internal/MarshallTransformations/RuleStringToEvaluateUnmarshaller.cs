@@ -68,6 +68,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ClientCertificateAttribute", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClientCertificateAttribute = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("MimeHeaderAttribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

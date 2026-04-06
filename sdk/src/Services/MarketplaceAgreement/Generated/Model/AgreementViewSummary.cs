@@ -104,7 +104,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property AgreementType. 
         /// <para>
-        /// The type of agreement. Value is <c>PurchaseAgreement</c>.
+        /// The type of agreement.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// This is the response object from the GetQueue operation.
+    /// Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins
+    /// (flows into Get, Summary, and BatchGet) and Create outputs.
     /// </summary>
     public partial class GetQueueResponse : AmazonWebServiceResponse
     {
@@ -47,6 +48,7 @@ namespace Amazon.Deadline.Model
         private string _queueId;
         private List<string> _requiredFileSystemLocationNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
+        private SchedulingConfiguration _schedulingConfiguration;
         private QueueStatus _status;
         private DateTime? _updatedAt;
         private string _updatedBy;
@@ -314,6 +316,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingConfiguration. 
+        /// <para>
+        /// The scheduling configuration for the queue. This configuration determines how workers
+        /// are assigned to jobs in the queue.
+        /// </para>
+        /// </summary>
+        public SchedulingConfiguration SchedulingConfiguration
+        {
+            get { return this._schedulingConfiguration; }
+            set { this._schedulingConfiguration = value; }
+        }
+
+        // Check to see if SchedulingConfiguration property is set
+        internal bool IsSetSchedulingConfiguration()
+        {
+            return this._schedulingConfiguration != null;
         }
 
         /// <summary>

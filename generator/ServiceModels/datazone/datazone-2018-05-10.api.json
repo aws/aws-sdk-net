@@ -2723,6 +2723,23 @@
       ],
       "idempotent":true
     },
+    "QueryGraph":{
+      "name":"QueryGraph",
+      "http":{
+        "method":"POST",
+        "requestUri":"/v2/domains/{domainIdentifier}/graph/query",
+        "responseCode":200
+      },
+      "input":{"shape":"QueryGraphInput"},
+      "output":{"shape":"QueryGraphOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"UnauthorizedException"}
+      ]
+    },
     "RejectPredictions":{
       "name":"RejectPredictions",
       "http":{
@@ -3720,6 +3737,12 @@
       "type":"structure",
       "members":{
         "includeChildDomainUnits":{"shape":"Boolean"}
+      }
+    },
+    "AdditionalAttributes":{
+      "type":"structure",
+      "members":{
+        "formNames":{"shape":"FormNameList"}
       }
     },
     "AggregationAttributeDisplayValue":{"type":"string"},
@@ -4725,7 +4748,9 @@
         "sparkGlueProperties":{"shape":"SparkGluePropertiesInput"},
         "s3Properties":{"shape":"S3PropertiesInput"},
         "amazonQProperties":{"shape":"AmazonQPropertiesInput"},
-        "mlflowProperties":{"shape":"MlflowPropertiesInput"}
+        "mlflowProperties":{"shape":"MlflowPropertiesInput"},
+        "workflowsMwaaProperties":{"shape":"WorkflowsMwaaPropertiesInput"},
+        "workflowsServerlessProperties":{"shape":"WorkflowsServerlessPropertiesInput"}
       },
       "union":true
     },
@@ -4741,7 +4766,9 @@
         "sparkGlueProperties":{"shape":"SparkGluePropertiesOutput"},
         "s3Properties":{"shape":"S3PropertiesOutput"},
         "amazonQProperties":{"shape":"AmazonQPropertiesOutput"},
-        "mlflowProperties":{"shape":"MlflowPropertiesOutput"}
+        "mlflowProperties":{"shape":"MlflowPropertiesOutput"},
+        "workflowsMwaaProperties":{"shape":"WorkflowsMwaaPropertiesOutput"},
+        "workflowsServerlessProperties":{"shape":"WorkflowsServerlessPropertiesOutput"}
       },
       "union":true
     },
@@ -5552,7 +5579,8 @@
         "environmentAccountRegion":{"shape":"String"},
         "environmentBlueprintIdentifier":{"shape":"String"},
         "deploymentOrder":{"shape":"Integer"},
-        "environmentConfigurationId":{"shape":"String"}
+        "environmentConfigurationId":{"shape":"String"},
+        "environmentConfigurationName":{"shape":"EnvironmentConfigurationName"}
       }
     },
     "CreateEnvironmentOutput":{
@@ -5586,7 +5614,8 @@
         "provisioningProperties":{"shape":"ProvisioningProperties"},
         "deploymentProperties":{"shape":"DeploymentProperties"},
         "environmentBlueprintId":{"shape":"EnvironmentBlueprintId"},
-        "environmentConfigurationId":{"shape":"EnvironmentConfigurationId"}
+        "environmentConfigurationId":{"shape":"EnvironmentConfigurationId"},
+        "environmentConfigurationName":{"shape":"EnvironmentConfigurationName"}
       }
     },
     "CreateEnvironmentProfileInput":{
@@ -7712,6 +7741,23 @@
       "type":"list",
       "member":{"shape":"OwnerPropertiesOutput"}
     },
+    "EntityPattern":{
+      "type":"structure",
+      "required":[
+        "entityType",
+        "identifier"
+      ],
+      "members":{
+        "entityType":{"shape":"GraphEntityType"},
+        "identifier":{"shape":"EntityPatternIdentifierString"},
+        "filters":{"shape":"FilterClause"}
+      }
+    },
+    "EntityPatternIdentifierString":{
+      "type":"string",
+      "max":2086,
+      "min":1
+    },
     "EntityType":{
       "type":"string",
       "enum":[
@@ -8013,7 +8059,8 @@
         "awsAccountRegion":{"shape":"AwsRegion"},
         "provider":{"shape":"String"},
         "status":{"shape":"EnvironmentStatus"},
-        "environmentConfigurationId":{"shape":"EnvironmentConfigurationId"}
+        "environmentConfigurationId":{"shape":"EnvironmentConfigurationId"},
+        "environmentConfigurationName":{"shape":"EnvironmentConfigurationName"}
       }
     },
     "EqualToExpression":{
@@ -8206,6 +8253,12 @@
       "max":128,
       "min":1,
       "pattern":"(?![0-9_])\\w+$|^_\\w*[a-zA-Z0-9]\\w*"
+    },
+    "FormNameList":{
+      "type":"list",
+      "member":{"shape":"FormName"},
+      "max":10,
+      "min":1
     },
     "FormOutput":{
       "type":"structure",
@@ -8979,7 +9032,8 @@
         "provisioningProperties":{"shape":"ProvisioningProperties"},
         "deploymentProperties":{"shape":"DeploymentProperties"},
         "environmentBlueprintId":{"shape":"EnvironmentBlueprintId"},
-        "environmentConfigurationId":{"shape":"EnvironmentConfigurationId"}
+        "environmentConfigurationId":{"shape":"EnvironmentConfigurationId"},
+        "environmentConfigurationName":{"shape":"EnvironmentConfigurationName"}
       }
     },
     "GetEnvironmentProfileInput":{
@@ -10250,6 +10304,10 @@
       },
       "union":true
     },
+    "GraphEntityType":{
+      "type":"string",
+      "enum":["LINEAGE_NODE"]
+    },
     "GreaterThanExpression":{
       "type":"structure",
       "required":[
@@ -10647,6 +10705,35 @@
       "type":"string",
       "max":2086,
       "min":1
+    },
+    "LineageNodeIds":{
+      "type":"list",
+      "member":{"shape":"LineageNodeId"}
+    },
+    "LineageNodeItem":{
+      "type":"structure",
+      "required":[
+        "domainId",
+        "id",
+        "typeName"
+      ],
+      "members":{
+        "domainId":{"shape":"DomainId"},
+        "name":{"shape":"String"},
+        "description":{"shape":"String"},
+        "createdAt":{"shape":"CreatedAt"},
+        "createdBy":{"shape":"CreatedBy"},
+        "updatedAt":{"shape":"UpdatedAt"},
+        "updatedBy":{"shape":"UpdatedBy"},
+        "id":{"shape":"LineageNodeId"},
+        "typeName":{"shape":"String"},
+        "typeRevision":{"shape":"Revision"},
+        "sourceIdentifier":{"shape":"String"},
+        "eventTimestamp":{"shape":"Timestamp"},
+        "formsOutput":{"shape":"FormOutputList"},
+        "upstreamLineageNodeIds":{"shape":"LineageNodeIds"},
+        "downstreamLineageNodeIds":{"shape":"LineageNodeIds"}
+      }
     },
     "LineageNodeReference":{
       "type":"structure",
@@ -12467,6 +12554,20 @@
         "USE_ASSET_TYPE"
       ]
     },
+    "MatchClause":{
+      "type":"structure",
+      "members":{
+        "relationPattern":{"shape":"RelationPattern"},
+        "entityPattern":{"shape":"EntityPattern"}
+      },
+      "union":true
+    },
+    "MatchClauses":{
+      "type":"list",
+      "member":{"shape":"MatchClause"},
+      "max":2,
+      "min":2
+    },
     "MatchCriteria":{
       "type":"list",
       "member":{"shape":"String"},
@@ -13383,6 +13484,39 @@
         "provisioningConfigurations":{"shape":"ProvisioningConfigurationList"}
       }
     },
+    "QueryGraphInput":{
+      "type":"structure",
+      "required":[
+        "domainIdentifier",
+        "match"
+      ],
+      "members":{
+        "domainIdentifier":{
+          "shape":"DomainId",
+          "location":"uri",
+          "locationName":"domainIdentifier"
+        },
+        "match":{"shape":"MatchClauses"},
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "additionalAttributes":{"shape":"AdditionalAttributes"}
+      }
+    },
+    "QueryGraphOutput":{
+      "type":"structure",
+      "members":{
+        "items":{"shape":"ResultItemList"},
+        "nextToken":{"shape":"PaginationToken"}
+      }
+    },
     "RecommendationConfiguration":{
       "type":"structure",
       "members":{
@@ -13745,6 +13879,35 @@
       "max":1,
       "min":1
     },
+    "RelationDirection":{
+      "type":"string",
+      "enum":[
+        "IN",
+        "OUT"
+      ]
+    },
+    "RelationPattern":{
+      "type":"structure",
+      "required":[
+        "relationType",
+        "relationDirection"
+      ],
+      "members":{
+        "relationType":{"shape":"RelationType"},
+        "relationDirection":{"shape":"RelationDirection"},
+        "maxPathLength":{"shape":"RelationPatternMaxPathLengthInteger"}
+      }
+    },
+    "RelationPatternMaxPathLengthInteger":{
+      "type":"integer",
+      "box":true,
+      "max":5,
+      "min":1
+    },
+    "RelationType":{
+      "type":"string",
+      "enum":["LINEAGE"]
+    },
     "RelationalFilterConfiguration":{
       "type":"structure",
       "required":["databaseName"],
@@ -13924,6 +14087,17 @@
       "member":{"shape":"ResourceTag"},
       "max":25,
       "min":0
+    },
+    "ResultItem":{
+      "type":"structure",
+      "members":{
+        "lineageNode":{"shape":"LineageNodeItem"}
+      },
+      "union":true
+    },
+    "ResultItemList":{
+      "type":"list",
+      "member":{"shape":"ResultItem"}
     },
     "Revision":{
       "type":"string",
@@ -16056,7 +16230,8 @@
         "description":{"shape":"String"},
         "glossaryTerms":{"shape":"GlossaryTerms"},
         "blueprintVersion":{"shape":"String"},
-        "userParameters":{"shape":"EnvironmentParametersList"}
+        "userParameters":{"shape":"EnvironmentParametersList"},
+        "environmentConfigurationName":{"shape":"EnvironmentConfigurationName"}
       }
     },
     "UpdateEnvironmentOutput":{
@@ -16090,7 +16265,8 @@
         "provisioningProperties":{"shape":"ProvisioningProperties"},
         "deploymentProperties":{"shape":"DeploymentProperties"},
         "environmentBlueprintId":{"shape":"EnvironmentBlueprintId"},
-        "environmentConfigurationId":{"shape":"EnvironmentConfigurationId"}
+        "environmentConfigurationId":{"shape":"EnvironmentConfigurationId"},
+        "environmentConfigurationName":{"shape":"EnvironmentConfigurationName"}
       }
     },
     "UpdateEnvironmentProfileInput":{
@@ -16819,6 +16995,26 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "WorkflowsMwaaPropertiesInput":{
+      "type":"structure",
+      "members":{
+        "mwaaEnvironmentName":{"shape":"String"}
+      }
+    },
+    "WorkflowsMwaaPropertiesOutput":{
+      "type":"structure",
+      "members":{
+        "mwaaEnvironmentName":{"shape":"String"}
+      }
+    },
+    "WorkflowsServerlessPropertiesInput":{
+      "type":"structure",
+      "members":{}
+    },
+    "WorkflowsServerlessPropertiesOutput":{
+      "type":"structure",
+      "members":{}
     }
   }
 }

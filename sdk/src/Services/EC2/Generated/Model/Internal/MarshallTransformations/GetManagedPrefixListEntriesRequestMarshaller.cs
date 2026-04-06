@@ -80,6 +80,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetVersion", StringUtils.FromLong(publicRequest.TargetVersion));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetManagedPrefixListEntriesRequestMarshaller _instance = new GetManagedPrefixListEntriesRequestMarshaller();        

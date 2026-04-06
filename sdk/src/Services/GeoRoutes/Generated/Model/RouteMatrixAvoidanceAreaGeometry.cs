@@ -94,7 +94,7 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it contains PolylinePolygon
         /// of the first linear ring (the outer ring) and from second item to the last item (the
-        /// inner rings). For more information on polyline encoding, see <a href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.
+        /// inner rings). For more information on polyline encoding, see <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

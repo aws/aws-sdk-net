@@ -118,6 +118,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                     request.Parameters.Add("street3", StringUtils.FromString(publicRequest.Street3));
                 }
             }
+
             return request;
         }
                     private static GetShippingLabelRequestMarshaller _instance = new GetShippingLabelRequestMarshaller();        

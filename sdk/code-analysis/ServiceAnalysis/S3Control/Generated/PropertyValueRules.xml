@@ -814,6 +814,11 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.GetDataAccessRequest.AuditContext</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.GetDataAccessRequest.DurationSeconds</property>
     <min>900</min>
     <max>43200</max>

@@ -90,6 +90,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("S3KeyPrefix", StringUtils.FromString(publicRequest.S3KeyPrefix));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static EnableLoggingRequestMarshaller _instance = new EnableLoggingRequestMarshaller();        

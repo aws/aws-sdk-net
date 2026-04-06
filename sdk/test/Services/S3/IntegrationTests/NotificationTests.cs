@@ -6,6 +6,7 @@ using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
 
             snsClient = new AmazonSimpleNotificationServiceClient(region: Client.Config.RegionEndpoint);
-            var snsCreateResponse = await snsClient.CreateTopicAsync("events-test-" + DateTime.UtcNow.Ticks);
+            var snsCreateResponse = await snsClient.CreateTopicAsync(UtilityMethods.GenerateName("events-test-"));
             topicArn = snsCreateResponse.TopicArn;
         }
 

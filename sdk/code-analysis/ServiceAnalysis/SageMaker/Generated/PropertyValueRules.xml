@@ -1000,6 +1000,12 @@
     <pattern>arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateMlflowTrackingServerRequest.S3BucketOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateMlflowTrackingServerRequest.TrackingServerName</property>
     <min>1</min>
     <max>256</max>
@@ -3269,7 +3275,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeHubContentResponse.HubContentDocument</property>
     <min>0</min>
-    <max>170391</max>
+    <max>327680</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -3712,6 +3718,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeMlflowTrackingServerResponse.S3BucketOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeMlflowTrackingServerResponse.TrackingServerArn</property>
@@ -4587,6 +4599,29 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingPlanExtensionHistoryRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingPlanExtensionHistoryRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingPlanExtensionHistoryRequest.TrainingPlanArn</property>
+    <min>50</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-plan/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeTrainingPlanExtensionHistoryResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTransformJobRequest.TransformJobName</property>
     <min>1</min>
     <max>63</max>
@@ -4930,7 +4965,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ImportHubContentRequest.HubContentDocument</property>
     <min>0</min>
-    <max>170391</max>
+    <max>327680</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -8059,6 +8094,12 @@
     <min>0</min>
     <max>1024</max>
     <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateMlflowTrackingServerRequest.S3BucketOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateMlflowTrackingServerRequest.TrackingServerName</property>
@@ -11447,6 +11488,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.InferenceComponentAvailabilityZoneBalance.MaxImbalance</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.InferenceComponentCapacitySize.Value</property>
     <min>1</min>
   </property-value-rule>
@@ -13670,6 +13716,16 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariantManagedInstanceScalingScaleInPolicy.CooldownInMinutes</property>
+    <min>5</min>
+    <max>1440</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariantManagedInstanceScalingScaleInPolicy.MaximumStepSize</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantServerlessConfig.MaxConcurrency</property>
     <min>1</min>
     <max>200</max>
@@ -14706,6 +14762,50 @@
     <min>50</min>
     <max>2048</max>
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-plan/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtension.AvailabilityZone</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtension.AvailabilityZoneId</property>
+    <pattern>[a-z]{3}\d-az\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtension.DurationHours</property>
+    <min>0</min>
+    <max>4368</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtension.PaymentStatus</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtension.Status</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtension.UpfrontFee</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtensionOffering.AvailabilityZone</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtensionOffering.DurationHours</property>
+    <min>0</min>
+    <max>4368</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.TrainingPlanExtensionOffering.UpfrontFee</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TrainingPlanFilter.Value</property>

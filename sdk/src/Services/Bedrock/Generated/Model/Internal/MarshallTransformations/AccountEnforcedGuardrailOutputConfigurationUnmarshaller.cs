@@ -98,10 +98,22 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.InputTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("modelEnforcement", targetDepth))
+                {
+                    var unmarshaller = ModelEnforcementUnmarshaller.Instance;
+                    unmarshalledObject.ModelEnforcement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("owner", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Owner = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("selectiveContentGuarding", targetDepth))
+                {
+                    var unmarshaller = SelectiveContentGuardingUnmarshaller.Instance;
+                    unmarshalledObject.SelectiveContentGuarding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updatedAt", targetDepth))

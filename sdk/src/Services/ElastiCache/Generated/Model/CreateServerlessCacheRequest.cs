@@ -41,6 +41,7 @@ namespace Amazon.ElastiCache.Model
         private string _engine;
         private string _kmsKeyId;
         private string _majorEngineVersion;
+        private NetworkType _networkType;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serverlessCacheName;
         private List<string> _snapshotArnsToRestore = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -164,6 +165,27 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The IP protocol version used by the serverless cache. Must be either <c>ipv4</c> |
+        /// <c>ipv6</c> | <c>dual_stack</c>. <c>ipv6</c> is only supported with ipv6-only subnets.
+        /// If not specified, defaults to <c>ipv4</c>, unless all provided subnets are IPv6-only,
+        /// in which case it defaults to <c>ipv6</c>. 
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// A list of the one or more VPC security groups to be associated with the serverless
@@ -236,10 +258,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
-        /// The number of snapshots that will be retained for the serverless cache that is being
-        /// created. As new snapshots beyond this limit are added, the oldest snapshots will be
-        /// deleted on a rolling basis. Available for Valkey, Redis OSS and Serverless Memcached
-        /// only.
+        /// The number of days for which ElastiCache retains automatic snapshots before deleting
+        /// them. Available for Valkey, Redis OSS and Serverless Memcached only. The maximum value
+        /// allowed is 35 days.
         /// </para>
         /// </summary>
         public int? SnapshotRetentionLimit

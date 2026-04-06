@@ -76,6 +76,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UniqueId", StringUtils.FromString(publicRequest.UniqueId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SignalResourceRequestMarshaller _instance = new SignalResourceRequestMarshaller();        

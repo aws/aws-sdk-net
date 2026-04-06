@@ -10,12 +10,20 @@ namespace AWSSDK.UnitTests.Runtime
     public class CachingWrapperStreamTests
     {
         private Stream _baseStream;
+        private int _originalLogResponsesSizeLimit;
 
         [TestInitialize]
         public void Init()
         {
             _baseStream = new MemoryStream(Enumerable.Repeat((byte) 0x20, 10).ToArray());
+            _originalLogResponsesSizeLimit = AWSConfigs.LoggingConfig.LogResponsesSizeLimit;
             AWSConfigs.LoggingConfig.LogResponsesSizeLimit = 5;
+        }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            AWSConfigs.LoggingConfig.LogResponsesSizeLimit = _originalLogResponsesSizeLimit;
         }
 
         [TestMethod]

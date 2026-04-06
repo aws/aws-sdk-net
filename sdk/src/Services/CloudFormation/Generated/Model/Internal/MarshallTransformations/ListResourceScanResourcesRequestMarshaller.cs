@@ -88,6 +88,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TagValue", StringUtils.FromString(publicRequest.TagValue));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListResourceScanResourcesRequestMarshaller _instance = new ListResourceScanResourcesRequestMarshaller();        

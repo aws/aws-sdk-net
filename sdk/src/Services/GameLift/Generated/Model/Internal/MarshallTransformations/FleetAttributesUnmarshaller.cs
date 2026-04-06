@@ -164,6 +164,18 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PlayerGatewayConfiguration", targetDepth))
+                {
+                    var unmarshaller = PlayerGatewayConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PlayerGatewayConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("PlayerGatewayMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlayerGatewayMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ResourceCreationLimitPolicy", targetDepth))
                 {
                     var unmarshaller = ResourceCreationLimitPolicyUnmarshaller.Instance;

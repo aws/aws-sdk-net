@@ -366,6 +366,16 @@ namespace Amazon.Runtime
         private static string RolesPath = "/latest/meta-data/iam/security-credentials/";
         private static string InfoPath = "/latest/meta-data/iam/info";
 
+        /// <summary>
+        /// Resets the cached IMDS service endpoint so that the next credential fetch picks up
+        /// any change to <see cref="EC2InstanceMetadata.ServiceEndpoint"/> (e.g. a change to
+        /// the <c>AWS_EC2_METADATA_SERVICE_ENDPOINT</c> environment variable).
+        /// </summary>
+        internal static void ResetServiceEndpoint()
+        {
+            Server = EC2InstanceMetadata.ServiceEndpoint;
+        }
+
         private static Uri RolesUri
         {
             get

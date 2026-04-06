@@ -125,6 +125,14 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Paginator for ListImportFileEnrichments operation
+        ///</summary>
+        public IListImportFileEnrichmentsPaginator ListImportFileEnrichments(ListImportFileEnrichmentsRequest request) 
+        {
+            return new ListImportFileEnrichmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListImports operation
         ///</summary>
         public IListImportsPaginator ListImports(ListImportsRequest request) 
@@ -138,6 +146,102 @@ namespace Amazon.Mgn.Model
         public IListManagedAccountsPaginator ListManagedAccounts(ListManagedAccountsRequest request) 
         {
             return new ListManagedAccountsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationAnalyses operation
+        ///</summary>
+        public IListNetworkMigrationAnalysesPaginator ListNetworkMigrationAnalyses(ListNetworkMigrationAnalysesRequest request) 
+        {
+            return new ListNetworkMigrationAnalysesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationAnalysisResults operation
+        ///</summary>
+        public IListNetworkMigrationAnalysisResultsPaginator ListNetworkMigrationAnalysisResults(ListNetworkMigrationAnalysisResultsRequest request) 
+        {
+            return new ListNetworkMigrationAnalysisResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationCodeGenerations operation
+        ///</summary>
+        public IListNetworkMigrationCodeGenerationsPaginator ListNetworkMigrationCodeGenerations(ListNetworkMigrationCodeGenerationsRequest request) 
+        {
+            return new ListNetworkMigrationCodeGenerationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationCodeGenerationSegments operation
+        ///</summary>
+        public IListNetworkMigrationCodeGenerationSegmentsPaginator ListNetworkMigrationCodeGenerationSegments(ListNetworkMigrationCodeGenerationSegmentsRequest request) 
+        {
+            return new ListNetworkMigrationCodeGenerationSegmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationDefinitions operation
+        ///</summary>
+        public IListNetworkMigrationDefinitionsPaginator ListNetworkMigrationDefinitions(ListNetworkMigrationDefinitionsRequest request) 
+        {
+            return new ListNetworkMigrationDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationDeployedStacks operation
+        ///</summary>
+        public IListNetworkMigrationDeployedStacksPaginator ListNetworkMigrationDeployedStacks(ListNetworkMigrationDeployedStacksRequest request) 
+        {
+            return new ListNetworkMigrationDeployedStacksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationDeployments operation
+        ///</summary>
+        public IListNetworkMigrationDeploymentsPaginator ListNetworkMigrationDeployments(ListNetworkMigrationDeploymentsRequest request) 
+        {
+            return new ListNetworkMigrationDeploymentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationExecutions operation
+        ///</summary>
+        public IListNetworkMigrationExecutionsPaginator ListNetworkMigrationExecutions(ListNetworkMigrationExecutionsRequest request) 
+        {
+            return new ListNetworkMigrationExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationMapperSegmentConstructs operation
+        ///</summary>
+        public IListNetworkMigrationMapperSegmentConstructsPaginator ListNetworkMigrationMapperSegmentConstructs(ListNetworkMigrationMapperSegmentConstructsRequest request) 
+        {
+            return new ListNetworkMigrationMapperSegmentConstructsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationMapperSegments operation
+        ///</summary>
+        public IListNetworkMigrationMapperSegmentsPaginator ListNetworkMigrationMapperSegments(ListNetworkMigrationMapperSegmentsRequest request) 
+        {
+            return new ListNetworkMigrationMapperSegmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationMappings operation
+        ///</summary>
+        public IListNetworkMigrationMappingsPaginator ListNetworkMigrationMappings(ListNetworkMigrationMappingsRequest request) 
+        {
+            return new ListNetworkMigrationMappingsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationMappingUpdates operation
+        ///</summary>
+        public IListNetworkMigrationMappingUpdatesPaginator ListNetworkMigrationMappingUpdates(ListNetworkMigrationMappingUpdatesRequest request) 
+        {
+            return new ListNetworkMigrationMappingUpdatesPaginator(this.client, request);
         }
 
         /// <summary>

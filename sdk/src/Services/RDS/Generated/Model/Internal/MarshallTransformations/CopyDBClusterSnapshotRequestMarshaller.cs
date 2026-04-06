@@ -101,6 +101,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetDBClusterSnapshotIdentifier", StringUtils.FromString(publicRequest.TargetDBClusterSnapshotIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CopyDBClusterSnapshotRequestMarshaller _instance = new CopyDBClusterSnapshotRequestMarshaller();        

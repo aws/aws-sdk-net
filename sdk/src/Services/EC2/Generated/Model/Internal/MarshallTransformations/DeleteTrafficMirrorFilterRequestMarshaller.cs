@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TrafficMirrorFilterId", StringUtils.FromString(publicRequest.TrafficMirrorFilterId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteTrafficMirrorFilterRequestMarshaller _instance = new DeleteTrafficMirrorFilterRequestMarshaller();        

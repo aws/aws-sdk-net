@@ -281,7 +281,7 @@
       }
     },
     "AssociateMemberToFarmRequest": {
-      "base": null,
+      "base": "<p>Shared member fields for Associate inputs and {Resource}Member response structures. principalId is excluded because it has @httpLabel on inputs but not on responses.</p>",
       "refs": {}
     },
     "AssociateMemberToFarmResponse": {
@@ -289,7 +289,7 @@
       "refs": {}
     },
     "AssociateMemberToFleetRequest": {
-      "base": null,
+      "base": "<p>Shared member fields for Associate inputs and {Resource}Member response structures. principalId is excluded because it has @httpLabel on inputs but not on responses.</p>",
       "refs": {}
     },
     "AssociateMemberToFleetResponse": {
@@ -297,7 +297,7 @@
       "refs": {}
     },
     "AssociateMemberToJobRequest": {
-      "base": null,
+      "base": "<p>Shared member fields for Associate inputs and {Resource}Member response structures. principalId is excluded because it has @httpLabel on inputs but not on responses.</p>",
       "refs": {}
     },
     "AssociateMemberToJobResponse": {
@@ -305,7 +305,7 @@
       "refs": {}
     },
     "AssociateMemberToQueueRequest": {
-      "base": null,
+      "base": "<p>Shared member fields for Associate inputs and {Resource}Member response structures. principalId is excluded because it has @httpLabel on inputs but not on responses.</p>",
       "refs": {}
     },
     "AssociateMemberToQueueResponse": {
@@ -317,7 +317,7 @@
       "refs": {}
     },
     "AssumeFleetRoleForReadResponse": {
-      "base": null,
+      "base": "<p>Shared response body for AssumeRole operations where credentials are required. AssumeQueueRoleForWorkerResponse is excluded because credentials is optional there because Queue.roleArn is optional, so the mixin's @required trait would be incorrect.</p>",
       "refs": {}
     },
     "AssumeFleetRoleForWorkerRequest": {
@@ -325,7 +325,7 @@
       "refs": {}
     },
     "AssumeFleetRoleForWorkerResponse": {
-      "base": null,
+      "base": "<p>Shared response body for AssumeRole operations where credentials are required. AssumeQueueRoleForWorkerResponse is excluded because credentials is optional there because Queue.roleArn is optional, so the mixin's @required trait would be incorrect.</p>",
       "refs": {}
     },
     "AssumeQueueRoleForReadRequest": {
@@ -333,7 +333,7 @@
       "refs": {}
     },
     "AssumeQueueRoleForReadResponse": {
-      "base": null,
+      "base": "<p>Shared response body for AssumeRole operations where credentials are required. AssumeQueueRoleForWorkerResponse is excluded because credentials is optional there because Queue.roleArn is optional, so the mixin's @required trait would be incorrect.</p>",
       "refs": {}
     },
     "AssumeQueueRoleForUserRequest": {
@@ -341,7 +341,7 @@
       "refs": {}
     },
     "AssumeQueueRoleForUserResponse": {
-      "base": null,
+      "base": "<p>Shared response body for AssumeRole operations where credentials are required. AssumeQueueRoleForWorkerResponse is excluded because credentials is optional there because Queue.roleArn is optional, so the mixin's @required trait would be incorrect.</p>",
       "refs": {}
     },
     "AssumeQueueRoleForWorkerRequest": {
@@ -592,6 +592,14 @@
       "base": null,
       "refs": {}
     },
+    "CostScaleFactor": {
+      "base": "<p>A multiplier applied to calculated costs. Valid range is 0 to 100. Values less than 1.0 represent discounts, values greater than 1.0 represent markups, and a value of 1.0 represents no adjustment.</p>",
+      "refs": {
+        "CreateFarmRequest$costScaleFactor": "<p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment. The default value is 1.</p>",
+        "GetFarmResponse$costScaleFactor": "<p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.</p>",
+        "UpdateFarmRequest$costScaleFactor": "<p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.</p>"
+      }
+    },
     "CpuArchitectureType": {
       "base": null,
       "refs": {
@@ -600,27 +608,27 @@
       }
     },
     "CreateBudgetRequest": {
-      "base": null,
+      "base": "<p>Shared displayName + description for Create operations where both are present. displayName is @required here - this mixin is Create-only by design (Update has optional displayName).</p>",
       "refs": {}
     },
     "CreateBudgetResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "CreateFarmRequest": {
-      "base": null,
+      "base": "<p>Shared displayName + description for Create operations where both are present. displayName is @required here - this mixin is Create-only by design (Update has optional displayName).</p>",
       "refs": {}
     },
     "CreateFarmResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "CreateFleetRequest": {
-      "base": null,
+      "base": "<p>Shared displayName + description for Create operations where both are present. displayName is @required here - this mixin is Create-only by design (Update has optional displayName).</p>",
       "refs": {}
     },
     "CreateFleetResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "CreateJobRequest": {
@@ -628,7 +636,7 @@
       "refs": {}
     },
     "CreateJobResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "CreateJobTargetTaskRunStatus": {
@@ -654,7 +662,7 @@
       }
     },
     "CreateLicenseEndpointResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "CreateLimitRequest": {
@@ -670,7 +678,7 @@
       "refs": {}
     },
     "CreateMonitorResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "CreateQueueEnvironmentRequest": {
@@ -698,11 +706,11 @@
       "refs": {}
     },
     "CreateQueueRequest": {
-      "base": null,
+      "base": "<p>Shared displayName + description for Create operations where both are present. displayName is @required here - this mixin is Create-only by design (Update has optional displayName).</p>",
       "refs": {}
     },
     "CreateQueueResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "CreateStorageProfileRequest": {
@@ -718,7 +726,7 @@
       "refs": {}
     },
     "CreateWorkerResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "CreatedAt": {
@@ -801,6 +809,12 @@
       "refs": {
         "CustomerManagedWorkerCapabilities$customAttributes": "<p>Custom attributes for the customer manged worker capabilities.</p>",
         "ServiceManagedEc2InstanceCapabilities$customAttributes": "<p>The custom capability attributes to require for instances in this fleet.</p>"
+      }
+    },
+    "CustomerManagedAutoScalingConfiguration": {
+      "base": "<p>The auto scaling configuration settings for a customer managed fleet.</p>",
+      "refs": {
+        "CustomerManagedFleetConfiguration$autoScalingConfiguration": "<p>The auto scaling configuration settings for the customer managed fleet.</p>"
       }
     },
     "CustomerManagedFleetConfiguration": {
@@ -907,7 +921,7 @@
       "refs": {}
     },
     "DeleteQueueFleetAssociationRequest": {
-      "base": null,
+      "base": "<p>Identifier mixin for queue-fleet association operations. Composes QueueIdentifierMixin (farmId + queueId) and adds fleetId.</p>",
       "refs": {}
     },
     "DeleteQueueFleetAssociationResponse": {
@@ -1507,7 +1521,7 @@
       "refs": {}
     },
     "GetBudgetResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "GetFarmRequest": {
@@ -1515,7 +1529,7 @@
       "refs": {}
     },
     "GetFarmResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "GetFleetRequest": {
@@ -1523,7 +1537,7 @@
       "refs": {}
     },
     "GetFleetResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "GetJobEntityError": {
@@ -1537,7 +1551,7 @@
       "refs": {}
     },
     "GetJobResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "GetLicenseEndpointRequest": {
@@ -1545,7 +1559,7 @@
       "refs": {}
     },
     "GetLicenseEndpointResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "GetLicenseEndpointResponseSecurityGroupIdsList": {
@@ -1565,7 +1579,7 @@
       "refs": {}
     },
     "GetLimitResponse": {
-      "base": null,
+      "base": "<p>Domain fields for Limit summary/response shapes, ordered before timestamps.</p>",
       "refs": {}
     },
     "GetMonitorRequest": {
@@ -1573,7 +1587,7 @@
       "refs": {}
     },
     "GetMonitorResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "GetQueueEnvironmentRequest": {
@@ -1585,11 +1599,11 @@
       "refs": {}
     },
     "GetQueueFleetAssociationRequest": {
-      "base": null,
+      "base": "<p>Identifier mixin for queue-fleet association operations. Composes QueueIdentifierMixin (farmId + queueId) and adds fleetId.</p>",
       "refs": {}
     },
     "GetQueueFleetAssociationResponse": {
-      "base": null,
+      "base": "<p>Domain fields for QueueFleetAssociation summary/response shapes, ordered before timestamps.</p>",
       "refs": {}
     },
     "GetQueueLimitAssociationRequest": {
@@ -1597,7 +1611,7 @@
       "refs": {}
     },
     "GetQueueLimitAssociationResponse": {
-      "base": null,
+      "base": "<p>Domain fields for QueueLimitAssociation summary/response shapes, ordered before timestamps.</p>",
       "refs": {}
     },
     "GetQueueRequest": {
@@ -1605,7 +1619,7 @@
       "refs": {}
     },
     "GetQueueResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "GetSessionActionRequest": {
@@ -1621,15 +1635,15 @@
       "refs": {}
     },
     "GetSessionResponse": {
-      "base": null,
+      "base": "<p>Session lifecycle/status fields, ordered after IDs in session shapes.</p>",
       "refs": {}
     },
     "GetSessionsStatisticsAggregationRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "GetSessionsStatisticsAggregationResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "GetStepRequest": {
@@ -1669,7 +1683,7 @@
       "refs": {}
     },
     "GetWorkerResponse": {
-      "base": null,
+      "base": "<p>Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins (flows into Get, Summary, and BatchGet) and Create outputs.</p>",
       "refs": {}
     },
     "HostConfiguration": {
@@ -2215,163 +2229,163 @@
       }
     },
     "ListAvailableMeteredProductsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListAvailableMeteredProductsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListBudgetsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListBudgetsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListFarmMembersRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListFarmMembersResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListFarmsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListFarmsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListFleetMembersRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListFleetMembersResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListFleetsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListFleetsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListJobMembersRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListJobMembersResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListJobParameterDefinitionsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListJobParameterDefinitionsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListJobsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListJobsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListLicenseEndpointsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListLicenseEndpointsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListLimitsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListLimitsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListMeteredProductsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListMeteredProductsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListMonitorsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListMonitorsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListQueueEnvironmentsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListQueueEnvironmentsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListQueueFleetAssociationsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListQueueFleetAssociationsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListQueueLimitAssociationsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListQueueLimitAssociationsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListQueueMembersRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListQueueMembersResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListQueuesRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListQueuesResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListSessionActionsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListSessionActionsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListSessionsForWorkerRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListSessionsForWorkerResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListSessionsForWorkerSummaries": {
@@ -2381,11 +2395,11 @@
       }
     },
     "ListSessionsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListSessionsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListStepConsumersRequest": {
@@ -2399,7 +2413,7 @@
       }
     },
     "ListStepConsumersResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListStepDependenciesRequest": {
@@ -2413,31 +2427,31 @@
       }
     },
     "ListStepDependenciesResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListStepsRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListStepsResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListStorageProfilesForQueueRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListStorageProfilesForQueueResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListStorageProfilesRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListStorageProfilesResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListTagsForResourceRequest": {
@@ -2449,19 +2463,19 @@
       "refs": {}
     },
     "ListTasksRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListTasksResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "ListWorkersRequest": {
-      "base": null,
+      "base": "<p>Shared pagination fields for List operation inputs (nextToken + maxResults).</p>",
       "refs": {}
     },
     "ListWorkersResponse": {
-      "base": null,
+      "base": "<p>Shared pagination field for List operation outputs (nextToken).</p>",
       "refs": {}
     },
     "LogConfiguration": {
@@ -2657,7 +2671,9 @@
     "MinOneMaxInteger": {
       "base": null,
       "refs": {
-        "AcquiredLimit$count": "<p>The number of limit resources used.</p>"
+        "AcquiredLimit$count": "<p>The number of limit resources used.</p>",
+        "CustomerManagedAutoScalingConfiguration$scaleOutWorkersPerMinute": "<p>The number of workers that can be added per minute to the fleet. The default is a service-defined value that balances efficiency with cost.</p>",
+        "ServiceManagedEc2AutoScalingConfiguration$scaleOutWorkersPerMinute": "<p>The number of workers that can be added per minute to the fleet. The default is a service-defined value that balances efficiency with cost.</p>"
       }
     },
     "MinOneMaxTenThousand": {
@@ -2676,12 +2692,15 @@
         "AcceleratorTotalMemoryMiBRange$max": "<p>The maximum amount of memory to use for the accelerator, measured in MiB.</p>",
         "CreateFleetRequest$minWorkerCount": "<p>The minimum number of workers for the fleet.</p>",
         "CreateFleetRequest$maxWorkerCount": "<p>The maximum number of workers for the fleet.</p> <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>",
+        "CustomerManagedAutoScalingConfiguration$standbyWorkerCount": "<p>The number of idle workers maintained and ready to process incoming tasks. The default is 0.</p>",
+        "CustomerManagedAutoScalingConfiguration$workerIdleDurationSeconds": "<p>The number of seconds that a worker can remain idle before it is shut down. The default is 300 seconds (5 minutes).</p>",
         "FleetSummary$minWorkerCount": "<p>The minimum number of workers in the fleet.</p>",
         "FleetSummary$maxWorkerCount": "<p>The maximum number of workers specified in the fleet.</p>",
         "GetFleetResponse$minWorkerCount": "<p>The minimum number of workers specified in the fleet.</p>",
         "GetFleetResponse$maxWorkerCount": "<p>The maximum number of workers specified in the fleet.</p>",
         "GetLimitResponse$currentCount": "<p>The number of resources from the limit that are being used by jobs. The result is delayed and may not be the count at the time that you called the operation.</p>",
         "LimitSummary$currentCount": "<p>The number of resources from the limit that are being used by jobs. The result is delayed and may not be the count at the time that you called the operation.</p>",
+        "ServiceManagedEc2AutoScalingConfiguration$standbyWorkerCount": "<p>The number of idle workers maintained and ready to process incoming tasks. The default is 0.</p>",
         "UpdateFleetRequest$minWorkerCount": "<p>The minimum number of workers in the fleet.</p>",
         "UpdateFleetRequest$maxWorkerCount": "<p>The maximum number of workers in the fleet.</p> <p>Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.</p>"
       }
@@ -2902,6 +2921,18 @@
         "GetQueueEnvironmentResponse$priority": "<p>The priority of the queue environment.</p>",
         "QueueEnvironmentSummary$priority": "<p>The queue environment's priority.</p>",
         "UpdateQueueEnvironmentRequest$priority": "<p>The priority to update.</p>"
+      }
+    },
+    "PriorityBalancedSchedulingConfiguration": {
+      "base": "<p>Configuration for priority balanced scheduling. Workers are distributed evenly across all jobs at the highest priority level.</p>",
+      "refs": {
+        "SchedulingConfiguration$priorityBalanced": "<p>Workers are distributed evenly across all jobs at the highest priority level. When workers cannot be evenly divided, the extra workers are assigned to the jobs submitted earliest. If a job has fewer remaining tasks than its share of workers, the surplus workers are redistributed to other jobs at the same priority level.</p>"
+      }
+    },
+    "PriorityFifoSchedulingConfiguration": {
+      "base": "<p>Configuration for priority first-in, first-out (FIFO) scheduling. Workers are assigned to the highest-priority job first. When multiple jobs share the same priority, the job submitted earliest receives workers first.</p>",
+      "refs": {
+        "SchedulingConfiguration$priorityFifo": "<p>Workers are assigned to the highest-priority job first. When multiple jobs share the same priority, the job submitted earliest receives workers first. This is the default scheduling configuration for new queues.</p>"
       }
     },
     "ProcessExitCode": {
@@ -3189,6 +3220,69 @@
         "JobAttachmentSettings$rootPrefix": "<p>The root prefix.</p>"
       }
     },
+    "SchedulingConfiguration": {
+      "base": "<p>The scheduling configuration for a queue. Defines the strategy used to assign workers to jobs.</p>",
+      "refs": {
+        "CreateQueueRequest$schedulingConfiguration": "<p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p> <p>If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.</p>",
+        "GetQueueResponse$schedulingConfiguration": "<p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>",
+        "UpdateQueueRequest$schedulingConfiguration": "<p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p> <p>When updating the scheduling configuration, the entire configuration is replaced.</p> <p>In-progress tasks run to completion before the new scheduling configuration takes effect.</p>"
+      }
+    },
+    "SchedulingErrorWeight": {
+      "base": "<p>The weight applied to the number of errors on a job in the weighted balanced scheduling formula.</p>",
+      "refs": {
+        "WeightedBalancedSchedulingConfiguration$errorWeight": "<p>The weight applied to the number of errors on a job. A negative value means jobs without errors are scheduled first. A value of <code>0</code> means errors are ignored. The default value is <code>-10.0</code>.</p>"
+      }
+    },
+    "SchedulingMaxPriorityOverride": {
+      "base": "<p>Defines the override behavior for jobs at the maximum priority (100) in weighted balanced scheduling.</p>",
+      "refs": {
+        "WeightedBalancedSchedulingConfiguration$maxPriorityOverride": "<p>Overrides the weighted scheduling formula for jobs at the maximum priority (100). When set, jobs with priority 100 are always scheduled first regardless of their calculated weight. When absent, maximum priority jobs use the standard weighted formula.</p>"
+      }
+    },
+    "SchedulingMaxPriorityOverrideAlwaysScheduleFirst": {
+      "base": "<p>Specifies that jobs at the maximum priority (100) are always scheduled first.</p>",
+      "refs": {
+        "SchedulingMaxPriorityOverride$alwaysScheduleFirst": "<p>Jobs at the maximum priority (100) are always scheduled before other jobs, regardless of the weighted scheduling formula. If multiple jobs have priority 100, ties are broken using the standard weighted formula.</p>"
+      }
+    },
+    "SchedulingMinPriorityOverride": {
+      "base": "<p>Defines the override behavior for jobs at the minimum priority (0) in weighted balanced scheduling.</p>",
+      "refs": {
+        "WeightedBalancedSchedulingConfiguration$minPriorityOverride": "<p>Overrides the weighted scheduling formula for jobs at the minimum priority (0). When set, jobs with priority 0 are always scheduled last regardless of their calculated weight. When absent, minimum priority jobs use the standard weighted formula.</p>"
+      }
+    },
+    "SchedulingMinPriorityOverrideAlwaysScheduleLast": {
+      "base": "<p>Specifies that jobs at the minimum priority (0) are always scheduled last.</p>",
+      "refs": {
+        "SchedulingMinPriorityOverride$alwaysScheduleLast": "<p>Jobs at the minimum priority (0) are always scheduled after all other jobs, regardless of the weighted scheduling formula. If multiple jobs have priority 0, ties are broken using the standard weighted formula.</p>"
+      }
+    },
+    "SchedulingPriorityWeight": {
+      "base": "<p>The weight applied to job priority in the weighted balanced scheduling formula.</p>",
+      "refs": {
+        "WeightedBalancedSchedulingConfiguration$priorityWeight": "<p>The weight applied to job priority in the scheduling formula. Higher values give more influence to job priority. A value of <code>0</code> means priority is ignored. The default value is <code>100.0</code>.</p>"
+      }
+    },
+    "SchedulingRenderingTaskBuffer": {
+      "base": "<p>The rendering task buffer used in balanced scheduling.</p>",
+      "refs": {
+        "PriorityBalancedSchedulingConfiguration$renderingTaskBuffer": "<p>The rendering task buffer controls worker stickiness. A worker only switches from its current job to another job at the same priority if the other job has fewer rendering tasks by more than this buffer value. Higher values make workers stickier to their current jobs. The default value is <code>1</code>.</p>",
+        "WeightedBalancedSchedulingConfiguration$renderingTaskBuffer": "<p>The rendering task buffer is subtracted from the number of rendering tasks before applying the rendering task weight. This creates a stickiness effect where workers prefer to stay with their current job. Higher values make workers stickier. The default value is <code>1</code>. The buffer is only applied in the weight calculation for a job if the worker is currently assigned to that job.</p>"
+      }
+    },
+    "SchedulingRenderingTaskWeight": {
+      "base": "<p>The weight applied to the number of rendering tasks in the weighted balanced scheduling formula.</p>",
+      "refs": {
+        "WeightedBalancedSchedulingConfiguration$renderingTaskWeight": "<p>The weight applied to the number of tasks currently rendering on a job. A negative value means jobs that are not already rendering are scheduled next. A value of <code>0</code> means the rendering state is ignored. The default value is <code>-100.0</code>.</p>"
+      }
+    },
+    "SchedulingSubmissionTimeWeight": {
+      "base": "<p>The weight applied to job submission time in the weighted balanced scheduling formula.</p>",
+      "refs": {
+        "WeightedBalancedSchedulingConfiguration$submissionTimeWeight": "<p>The weight applied to job submission time. A positive value means earlier jobs are scheduled first. A value of <code>0</code> means submission time is ignored. The default value is <code>3.0</code>.</p>"
+      }
+    },
     "SearchFilterExpression": {
       "base": "<p>The type of search filter to apply.</p>",
       "refs": {
@@ -3212,7 +3306,7 @@
       }
     },
     "SearchJobsRequest": {
-      "base": null,
+      "base": "<p>Shared input fields for all Search operations (filterExpressions, sortExpressions, itemOffset, pageSize).</p>",
       "refs": {}
     },
     "SearchJobsRequestItemOffsetInteger": {
@@ -3234,7 +3328,7 @@
       }
     },
     "SearchJobsResponse": {
-      "base": null,
+      "base": "<p>Shared output fields for all Search operations (nextItemOffset, totalResults).</p>",
       "refs": {}
     },
     "SearchSortExpression": {
@@ -3253,7 +3347,7 @@
       }
     },
     "SearchStepsRequest": {
-      "base": null,
+      "base": "<p>Shared input fields for all Search operations (filterExpressions, sortExpressions, itemOffset, pageSize).</p>",
       "refs": {}
     },
     "SearchStepsRequestItemOffsetInteger": {
@@ -3275,11 +3369,11 @@
       }
     },
     "SearchStepsResponse": {
-      "base": null,
+      "base": "<p>Shared output fields for all Search operations (nextItemOffset, totalResults).</p>",
       "refs": {}
     },
     "SearchTasksRequest": {
-      "base": null,
+      "base": "<p>Shared input fields for all Search operations (filterExpressions, sortExpressions, itemOffset, pageSize).</p>",
       "refs": {}
     },
     "SearchTasksRequestItemOffsetInteger": {
@@ -3301,7 +3395,7 @@
       }
     },
     "SearchTasksResponse": {
-      "base": null,
+      "base": "<p>Shared output fields for all Search operations (nextItemOffset, totalResults).</p>",
       "refs": {}
     },
     "SearchTerm": {
@@ -3323,7 +3417,7 @@
       }
     },
     "SearchWorkersRequest": {
-      "base": null,
+      "base": "<p>Shared input fields for all Search operations (filterExpressions, sortExpressions, itemOffset, pageSize).</p>",
       "refs": {}
     },
     "SearchWorkersRequestFleetIdsList": {
@@ -3345,7 +3439,7 @@
       }
     },
     "SearchWorkersResponse": {
-      "base": null,
+      "base": "<p>Shared output fields for all Search operations (nextItemOffset, totalResults).</p>",
       "refs": {}
     },
     "SecretAccessKey": {
@@ -3359,6 +3453,12 @@
       "refs": {
         "CreateLicenseEndpointRequestSecurityGroupIdsList$member": null,
         "GetLicenseEndpointResponseSecurityGroupIdsList$member": null
+      }
+    },
+    "ServiceManagedEc2AutoScalingConfiguration": {
+      "base": "<p>The auto scaling configuration settings for a service managed EC2 fleet.</p>",
+      "refs": {
+        "ServiceManagedEc2FleetConfiguration$autoScalingConfiguration": "<p>The auto scaling configuration settings for the service managed EC2 fleet.</p>"
       }
     },
     "ServiceManagedEc2FleetConfiguration": {
@@ -3377,6 +3477,12 @@
       "base": "<p>The details of the Amazon EC2 instance market options for a service managed fleet.</p>",
       "refs": {
         "ServiceManagedEc2FleetConfiguration$instanceMarketOptions": "<p>The instance market options for the service managed EC2 fleet.</p>"
+      }
+    },
+    "ServiceManagedEc2WorkerIdleDurationSeconds": {
+      "base": "<p>The duration in seconds that a service managed EC2 worker can be idle before it is scaled down.</p>",
+      "refs": {
+        "ServiceManagedEc2AutoScalingConfiguration$workerIdleDurationSeconds": "<p>The number of seconds that a worker can remain idle before it is shut down. The default is 300 seconds (5 minutes).</p>"
       }
     },
     "ServiceManagedFleetOperatingSystemFamily": {
@@ -4264,7 +4370,7 @@
       "refs": {}
     },
     "UpdateQueueFleetAssociationRequest": {
-      "base": null,
+      "base": "<p>Identifier mixin for queue-fleet association operations. Composes QueueIdentifierMixin (farmId + queueId) and adds fleetId.</p>",
       "refs": {}
     },
     "UpdateQueueFleetAssociationResponse": {
@@ -4556,6 +4662,12 @@
       "base": null,
       "refs": {
         "VpcConfiguration$resourceConfigurationArns": "<p>The ARNs of the VPC Lattice resource configurations attached to the fleet.</p>"
+      }
+    },
+    "WeightedBalancedSchedulingConfiguration": {
+      "base": "<p>Configuration for weighted balanced scheduling. Workers are assigned to jobs based on a weighted formula:</p> <p> <code>weight = (priority * priorityWeight) + (errors * errorWeight) + ((currentTime - submissionTime) * submissionTimeWeight) + ((renderingTasks - renderingTaskBuffer) * renderingTaskWeight)</code> </p> <p>The job with the highest calculated weight is scheduled first. Workers are distributed evenly amongst jobs with the same weight.</p>",
+      "refs": {
+        "SchedulingConfiguration$weightedBalanced": "<p>Workers are assigned to jobs based on a weighted formula that considers job priority, error count, submission time, and the number of tasks currently rendering. Each factor has a configurable weight that determines its influence on scheduling decisions.</p>"
       }
     },
     "WindowsUser": {

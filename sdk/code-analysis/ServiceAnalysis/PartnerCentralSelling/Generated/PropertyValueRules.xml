@@ -864,10 +864,6 @@
     <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralSelling.Model.AwsProductInsights.CurrencyCode</property>
-    <pattern>USD</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AwsProductInsights.TotalAmount</property>
     <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
   </property-value-rule>
@@ -1016,12 +1012,8 @@
     <pattern>((0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?)?</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.CurrencyCode</property>
-    <pattern>USD</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.EstimationUrl</property>
-    <pattern>https://calculator\.aws/#/estimate\?id=[a-f0-9]{32,64}</pattern>
+    <pattern>https://(calculator\.aws|pricing\.calculator\.aws\.eu)/#/estimate\?id=[a-f0-9]{32,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.TargetCompany</property>
@@ -1350,6 +1342,14 @@
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.Tag.Value</property>
     <pattern>(?=.{0,256}$)([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.TargetCloseDateFilter.AfterTargetCloseDate</property>
+    <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.TargetCloseDateFilter.BeforeTargetCloseDate</property>
+    <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.UpdateLeadContext.QualificationStatus</property>

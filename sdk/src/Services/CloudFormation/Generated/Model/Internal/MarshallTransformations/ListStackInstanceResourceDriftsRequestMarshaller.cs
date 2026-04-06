@@ -102,6 +102,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("StackSetName", StringUtils.FromString(publicRequest.StackSetName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListStackInstanceResourceDriftsRequestMarshaller _instance = new ListStackInstanceResourceDriftsRequestMarshaller();        

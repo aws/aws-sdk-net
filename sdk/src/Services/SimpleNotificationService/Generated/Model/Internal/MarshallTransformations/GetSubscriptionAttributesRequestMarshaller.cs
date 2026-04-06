@@ -64,6 +64,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     request.Parameters.Add("SubscriptionArn", StringUtils.FromString(publicRequest.SubscriptionArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetSubscriptionAttributesRequestMarshaller _instance = new GetSubscriptionAttributesRequestMarshaller();        

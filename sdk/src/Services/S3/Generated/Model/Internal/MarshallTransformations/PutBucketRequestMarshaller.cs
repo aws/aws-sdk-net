@@ -59,6 +59,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
+            if (publicRequest.IsSetBucketNamespace()) 
+            {
+                request.Headers["x-amz-bucket-namespace"] = publicRequest.BucketNamespace;
+            }
+        
             if (publicRequest.IsSetObjectLockEnabledForBucket()) 
             {
                 request.Headers["x-amz-bucket-object-lock-enabled"] = StringUtils.FromBool(publicRequest.ObjectLockEnabledForBucket);

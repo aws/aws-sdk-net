@@ -32,6 +32,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.RestJson
@@ -39,5 +40,255 @@ namespace AWSSDK.ProtocolTests.RestJson
     [TestClass]
     public class JsonMaps
     {
+        /// <summary>
+        /// Serializes JSON maps
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonJsonMapsRequest()
+        {
+            // Arrange
+            var request = new JsonMapsRequest
+            {
+                DenseStructMap = new Dictionary<string, GreetingStruct>()
+                {
+
+                    { "foo", new GreetingStruct
+                    {
+                        Hi = "there",
+                    } },
+                    { "baz", new GreetingStruct
+                    {
+                        Hi = "bye",
+                    } },
+                },
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new JsonMapsRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            var expectedBody = "{\n    \"denseStructMap\": {\n        \"foo\": {\n            \"hi\": \"there\"\n        },\n        \"baz\": {\n            \"hi\": \"bye\"\n        }\n    }\n}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/JsonMaps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+        }
+
+        /// <summary>
+        /// Ensure that 0 and false are sent over the wire in all maps and
+        /// lists
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonSerializesZeroValuesInMapsRequest()
+        {
+            // Arrange
+            var request = new JsonMapsRequest
+            {
+                DenseNumberMap = new Dictionary<string, int>()
+                {
+
+                    { "x", 0 },
+                },
+                DenseBooleanMap = new Dictionary<string, bool>()
+                {
+
+                    { "x", false },
+                },
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new JsonMapsRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            var expectedBody = "{\n    \"denseNumberMap\": {\n        \"x\": 0\n    },\n    \"denseBooleanMap\": {\n        \"x\": false\n    }\n}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/JsonMaps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+        }
+
+        /// <summary>
+        /// A request that contains a dense map of sets.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonSerializesDenseSetMapRequest()
+        {
+            // Arrange
+            var request = new JsonMapsRequest
+            {
+                DenseSetMap = new Dictionary<string, List<string>>()
+                {
+
+                    { "x",  new List<string>()
+                    {
+                    } },
+                    { "y",  new List<string>()
+                    {
+                        "a",
+                        "b",
+                    } },
+                },
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new JsonMapsRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            var expectedBody = "{\n    \"denseSetMap\": {\n        \"x\": [],\n        \"y\": [\"a\", \"b\"]\n    }\n}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/JsonMaps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+        }
+
+        /// <summary>
+        /// Deserializes JSON maps
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonJsonMapsResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/json";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"denseStructMap\": {\n        \"foo\": {\n            \"hi\": \"there\"\n        },\n        \"baz\": {\n            \"hi\": \"bye\"\n        }\n    }\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new JsonMapsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new JsonMapsResponse
+            {
+                DenseStructMap = new Dictionary<string, GreetingStruct>()
+                {
+
+                    { "foo", new GreetingStruct
+                    {
+                        Hi = "there",
+                    } },
+                    { "baz", new GreetingStruct
+                    {
+                        Hi = "bye",
+                    } },
+                },
+            };
+
+            // Assert
+            var actualResponse = (JsonMapsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<JsonMapsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// Ensure that 0 and false are sent over the wire in all maps and
+        /// lists
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonDeserializesZeroValuesInMapsResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/json";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"denseNumberMap\": {\n        \"x\": 0\n    },\n    \"denseBooleanMap\": {\n        \"x\": false\n    }\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new JsonMapsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new JsonMapsResponse
+            {
+                DenseNumberMap = new Dictionary<string, int>()
+                {
+
+                    { "x", 0 },
+                },
+                DenseBooleanMap = new Dictionary<string, bool>()
+                {
+
+                    { "x", false },
+                },
+            };
+
+            // Assert
+            var actualResponse = (JsonMapsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<JsonMapsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// A response that contains a dense map of sets.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonDeserializesDenseSetMapResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/json";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"denseSetMap\": {\n        \"x\": [],\n        \"y\": [\"a\", \"b\"]\n    }\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new JsonMapsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new JsonMapsResponse
+            {
+                DenseSetMap = new Dictionary<string, List<string>>()
+                {
+
+                    { "x",  new List<string>()
+                    {
+                    } },
+                    { "y",  new List<string>()
+                    {
+                        "a",
+                        "b",
+                    } },
+                },
+            };
+
+            // Assert
+            var actualResponse = (JsonMapsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<JsonMapsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
     }
 }

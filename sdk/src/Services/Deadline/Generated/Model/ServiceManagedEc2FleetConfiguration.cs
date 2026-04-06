@@ -34,10 +34,29 @@ namespace Amazon.Deadline.Model
     /// </summary>
     public partial class ServiceManagedEc2FleetConfiguration
     {
+        private ServiceManagedEc2AutoScalingConfiguration _autoScalingConfiguration;
         private ServiceManagedEc2InstanceCapabilities _instanceCapabilities;
         private ServiceManagedEc2InstanceMarketOptions _instanceMarketOptions;
         private string _storageProfileId;
         private VpcConfiguration _vpcConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AutoScalingConfiguration. 
+        /// <para>
+        /// The auto scaling configuration settings for the service managed EC2 fleet.
+        /// </para>
+        /// </summary>
+        public ServiceManagedEc2AutoScalingConfiguration AutoScalingConfiguration
+        {
+            get { return this._autoScalingConfiguration; }
+            set { this._autoScalingConfiguration = value; }
+        }
+
+        // Check to see if AutoScalingConfiguration property is set
+        internal bool IsSetAutoScalingConfiguration()
+        {
+            return this._autoScalingConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceCapabilities. 

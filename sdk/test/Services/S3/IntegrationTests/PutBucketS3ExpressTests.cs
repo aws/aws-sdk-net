@@ -33,7 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task PutS3ExpressBucketUsingS3ExpressConfiguration()
         {
-            string bucketName = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks}--use1-az5--x-s3";
+            string bucketName = UtilityMethods.GenerateName(UtilityMethods.SDK_TEST_PREFIX) + "--use1-az5--x-s3";
             var response = await _usEast1Client.PutBucketAsync(new PutBucketRequest
             {
                 BucketName = bucketName,
@@ -51,7 +51,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task PutRegularBucketUsingNoConfiguration()
         {
-            string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks;
+            string bucketName = UtilityMethods.GenerateName(UtilityMethods.SDK_TEST_PREFIX);
             var response = await _usEast1Client.PutBucketAsync(new PutBucketRequest
             {
                 BucketName = bucketName,

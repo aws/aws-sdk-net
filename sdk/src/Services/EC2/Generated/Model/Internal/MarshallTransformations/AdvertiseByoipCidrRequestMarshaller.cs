@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NetworkBorderGroup", StringUtils.FromString(publicRequest.NetworkBorderGroup));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static AdvertiseByoipCidrRequestMarshaller _instance = new AdvertiseByoipCidrRequestMarshaller();        

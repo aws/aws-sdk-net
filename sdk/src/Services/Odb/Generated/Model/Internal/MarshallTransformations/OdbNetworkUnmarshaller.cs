@@ -104,6 +104,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ec2PlacementGroupIds", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Ec2PlacementGroupIds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("managedServices", targetDepth))
                 {
                     var unmarshaller = ManagedServicesUnmarshaller.Instance;

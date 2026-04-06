@@ -102,10 +102,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property IsoCountryCode. 
         /// <para>
         /// The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region
-        /// of the new pool.
+        /// of the new pool. This field is optional and is not required for origination identity
+        /// types that are not country-specific, such as RCS agents.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Min=2, Max=2)]
         public string IsoCountryCode
         {
             get { return this._isoCountryCode; }

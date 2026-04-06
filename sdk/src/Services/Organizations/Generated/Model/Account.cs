@@ -40,6 +40,7 @@ namespace Amazon.Organizations.Model
         private AccountJoinedMethod _joinedMethod;
         private DateTime? _joinedTimestamp;
         private string _name;
+        private List<string> _paths = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AccountState _state;
         private AccountStatus _status;
 
@@ -173,6 +174,29 @@ namespace Amazon.Organizations.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Paths. 
+        /// <para>
+        /// The paths in the organization where the account exists.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Paths
+        {
+            get { return this._paths; }
+            set { this._paths = value; }
+        }
+
+        // Check to see if Paths property is set
+        internal bool IsSetPaths()
+        {
+            return this._paths != null && (this._paths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

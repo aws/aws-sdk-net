@@ -103,51 +103,152 @@ namespace SDKDocGenerator
             GenerationManifest coreManifest = null;
             DeferredTypesProvider deferredTypes = new DeferredTypesProvider(null);
 
-            // Generate the Code Examples fragments for all services            
+            // Generate the Code Examples fragments for all services
             ExampleMetadataParser.GenerateExampleFragments(options.ExampleMetaJson, options.ExamplesErrorFile);
 
-            // Process the service manifests
+            // Find Core manifest first - we need to pre-load its documentation
+            // because service types may inherit from Core types and need to look up
+            // documentation for inherited members (e.g., ReadWriteTimeout on ClientConfig)
             foreach (var m in manifests)
             {
                 if (m.ServiceName.Equals("Core", StringComparison.InvariantCultureIgnoreCase))
                 {
                     coreManifest = m;
-                    continue;
+                    break;
+                }
+            }
+
+            // Pre-load Core documentation for all platforms before generating service docs
+            if (coreManifest != null)
+            {
+                coreManifest.PreloadDocumentation();
+            }
+
+            // Build platform availability maps for all services
+            // This scans ALL platforms upfront and creates { memberSignature → Set<platforms> } maps
+            // that are used for page generation decisions.
+            var availablePlatforms = GetAvailablePlatforms();
+
+            Info("Building platform availability maps for all services...");
+
+            foreach (var manifest in manifests)
+            {
+                PlatformMap.PlatformAvailabilityMap map = null;
+                try
+                {
+                    map = PlatformMap.PlatformMapBuilder.BuildMap(
+                        manifest.ServiceName,
+                        manifest.AssemblyName,
+                        availablePlatforms,
+                        Options.Platform,
+                        Options.SDKAssembliesRoot,
+                        Options.Verbose);
+
+                    manifest.AttachPlatformMap(map);
+
+                    if (Options.Verbose)
+                    {
+                        Info("  Built platform map for {0}: {1} members across {2} platforms ({3} restricted)",
+                            manifest.ServiceName,
+                            map.MemberCount,
+                            map.AllPlatforms.Count,
+                            map.PlatformRestrictedMemberCount);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Dispose the map if it was built but attachment failed (C2)
+                    map?.Dispose();
+                    // Log but don't fail entire generation if one service fails
+                    Info("  WARNING: Failed to build platform map for {0}: {1}",
+                        manifest.ServiceName, ex.Message);
+                }
+            }
+
+            try
+            {
+                foreach (var m in manifests)
+                {
+                    if (m.ServiceName.Equals("Core", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        continue;
+                    }
+
+                    m.Generate(deferredTypes, TOCWriter);
                 }
 
-                m.Generate(deferredTypes, TOCWriter);
+                // now all service assemblies are processed, handle core plus any types in those assemblies that
+                // we elected to defer until we processed core.
+                if (coreManifest != null)
+                {
+                    coreManifest.ManifestAssemblyContext.SdkAssembly.DeferredTypesProvider = deferredTypes;
+                    coreManifest.Generate(null, TOCWriter);
+                }
+
+                // Generate pages for platform-exclusive APIs (e.g., H2 methods only in net8.0)
+                // The unified platform map already contains wrappers for exclusive members
+                Info("Generating exclusive member pages from unified platform map...");
+
+                // Re-load Core documentation before exclusive page generation.
+                // Class pages may contain properties inherited from Core (e.g., ReadWriteTimeout).
+                if (coreManifest != null)
+                {
+                    coreManifest.PreloadDocumentation();
+                }
+
+                // Process service manifests first, then Core.
+                // Core is processed last because it may depend on deferred types
+                // from service assemblies, and its exclusive members (e.g.,
+                // ClientConfig.SetWebProxy(IWebProxy)) need page generation too.
+                foreach (var manifest in manifests)
+                {
+                    if (manifest.ServiceName.Equals("Core", StringComparison.OrdinalIgnoreCase))
+                        continue;
+
+                    manifest.GenerateExclusivePagesFromMap(TOCWriter);
+                }
+
+                // Now process Core's exclusive members
+                if (coreManifest != null)
+                {
+                    coreManifest.GenerateExclusivePagesFromMap(TOCWriter);
+                }
+
+                Info("Generating table of contents entries...");
+                TOCWriter.Write();
+
+                CopyVersionInfoManifest();
+
+                if (options.WriteStaticContent)
+                {
+                    Info("Generating/copying static content:");
+                    Info("...creating landing page");
+                    var lpWriter = new LandingPageWriter(options);
+                    lpWriter.Write();
+
+                    Info("...copying static resources");
+                    var sourceLocation = Directory.GetParent(typeof(SdkDocGenerator).Assembly.Location).FullName;
+                    FileUtilties.FolderCopy(Path.Combine(sourceLocation, "output-files"), options.OutputFolder, true);
+                }
+
+                // Write out all the redirect rules for doc cross-linking.
+                using (Stream stream = File.Open(Path.Combine(options.OutputFolder, SDKDocRedirectWriter.RedirectFileName), FileMode.Create))
+                {
+                    SDKDocRedirectWriter.Write(stream);
+                }
+
+                // Remove example fragments
+                ExampleMetadataParser.CleanupExampleFragments();
             }
-
-            // now all service assemblies are processed, handle core plus any types in those assemblies that 
-            // we elected to defer until we processed core.
-            coreManifest.ManifestAssemblyContext.SdkAssembly.DeferredTypesProvider = deferredTypes;
-            coreManifest.Generate(null, TOCWriter);
-
-            Info("Generating table of contents entries...");
-            TOCWriter.Write();
-
-            CopyVersionInfoManifest();
-
-            if (options.WriteStaticContent)
+            finally
             {
-                Info("Generating/copying static content:");
-                Info("...creating landing page");
-                var lpWriter = new LandingPageWriter(options);
-                lpWriter.Write();
-
-                Info("...copying static resources");
-                var sourceLocation = Directory.GetParent(typeof(SdkDocGenerator).Assembly.Location).FullName;
-                FileUtilties.FolderCopy(Path.Combine(sourceLocation, "output-files"), options.OutputFolder, true);
+                // Dispose all platform maps to release assembly contexts (C1: ensures cleanup on exception)
+                Info("Releasing platform map resources...");
+                foreach (var manifest in manifests)
+                {
+                    manifest.DisposePlatformMap();
+                }
             }
-
-            // Write out all the redirect rules for doc cross-linking.
-            using (Stream stream = File.Open(Path.Combine(options.OutputFolder, SDKDocRedirectWriter.RedirectFileName), FileMode.Create))
-            {
-                SDKDocRedirectWriter.Write(stream);
-            }
-
-            // Remove example fragments
-            ExampleMetadataParser.CleanupExampleFragments();
 
             return 0;
         }
@@ -253,6 +354,15 @@ namespace SDKDocGenerator
             return manifests;
         }
 
+        /// <summary>
+        /// Returns the list of available platform folder names under the SDK assemblies root.
+        /// </summary>
+        private List<string> GetAvailablePlatforms()
+        {
+            var platformSubfolders = Directory.GetDirectories(Options.SDKAssembliesRoot, "*", SearchOption.TopDirectoryOnly);
+            return platformSubfolders.Select(Path.GetFileName).ToList();
+        }
+
         private void Info(string message)
         {
             Trace.WriteLine(message);
@@ -265,17 +375,6 @@ namespace SDKDocGenerator
             Trace.Flush();
         }
 
-        private void InfoVerbose(string message)
-        {
-            Trace.WriteLine(message, "Verbose");
-            Trace.Flush();
-        }
-
-        private void InfoVerbose(string format, params object[] args)
-        {
-            Trace.WriteLine(String.Format(format, args), "Verbose");
-            Trace.Flush();
-        }
     }
 
     public class ConditionalConsoleTraceListener : TraceListener

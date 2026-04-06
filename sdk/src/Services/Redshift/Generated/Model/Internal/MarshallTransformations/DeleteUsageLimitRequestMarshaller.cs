@@ -64,6 +64,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UsageLimitId", StringUtils.FromString(publicRequest.UsageLimitId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteUsageLimitRequestMarshaller _instance = new DeleteUsageLimitRequestMarshaller();        

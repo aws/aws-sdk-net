@@ -28,6 +28,16 @@ namespace Amazon.LexModelsV2.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeBotAnalyzerRecommendation operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeBotAnalyzerRecommendationPaginator DescribeBotAnalyzerRecommendation(DescribeBotAnalyzerRecommendationRequest request);
+
+        /// <summary>
         /// Paginator for ListAggregatedUtterances operation
         ///</summary>
         [AWSPaginator(
@@ -56,6 +66,16 @@ namespace Amazon.LexModelsV2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListBotAliasReplicasPaginator ListBotAliasReplicas(ListBotAliasReplicasRequest request);
+
+        /// <summary>
+        /// Paginator for ListBotAnalyzerHistory operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListBotAnalyzerHistoryPaginator ListBotAnalyzerHistory(ListBotAnalyzerHistoryRequest request);
 
         /// <summary>
         /// Paginator for ListBotLocales operation

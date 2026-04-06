@@ -74,6 +74,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeTagsRequestMarshaller _instance = new DescribeTagsRequestMarshaller();        

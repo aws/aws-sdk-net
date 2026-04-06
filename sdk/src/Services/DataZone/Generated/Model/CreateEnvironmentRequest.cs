@@ -42,6 +42,7 @@ namespace Amazon.DataZone.Model
         private string _environmentAccountRegion;
         private string _environmentBlueprintIdentifier;
         private string _environmentConfigurationId;
+        private string _environmentConfigurationName;
         private string _environmentProfileIdentifier;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
@@ -173,6 +174,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetEnvironmentConfigurationId()
         {
             return this._environmentConfigurationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentConfigurationName. 
+        /// <para>
+        /// The configuration name of the environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
+        public string EnvironmentConfigurationName
+        {
+            get { return this._environmentConfigurationName; }
+            set { this._environmentConfigurationName = value; }
+        }
+
+        // Check to see if EnvironmentConfigurationName property is set
+        internal bool IsSetEnvironmentConfigurationName()
+        {
+            return this._environmentConfigurationName != null;
         }
 
         /// <summary>

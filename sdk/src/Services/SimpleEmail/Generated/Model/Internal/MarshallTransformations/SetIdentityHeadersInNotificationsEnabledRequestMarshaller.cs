@@ -72,6 +72,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NotificationType", StringUtils.FromString(publicRequest.NotificationType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SetIdentityHeadersInNotificationsEnabledRequestMarshaller _instance = new SetIdentityHeadersInNotificationsEnabledRequestMarshaller();        

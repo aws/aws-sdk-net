@@ -46,6 +46,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant PYTHON_3_13 for AgentManagedRuntimeType
         /// </summary>
         public static readonly AgentManagedRuntimeType PYTHON_3_13 = new AgentManagedRuntimeType("PYTHON_3_13");
+        /// <summary>
+        /// Constant PYTHON_3_14 for AgentManagedRuntimeType
+        /// </summary>
+        public static readonly AgentManagedRuntimeType PYTHON_3_14 = new AgentManagedRuntimeType("PYTHON_3_14");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -312,6 +316,56 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AuthorizerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BrowserEnterprisePolicyType.
+    /// </summary>
+    public class BrowserEnterprisePolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANAGED for BrowserEnterprisePolicyType
+        /// </summary>
+        public static readonly BrowserEnterprisePolicyType MANAGED = new BrowserEnterprisePolicyType("MANAGED");
+        /// <summary>
+        /// Constant RECOMMENDED for BrowserEnterprisePolicyType
+        /// </summary>
+        public static readonly BrowserEnterprisePolicyType RECOMMENDED = new BrowserEnterprisePolicyType("RECOMMENDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BrowserEnterprisePolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrowserEnterprisePolicyType FindValue(string value)
+        {
+            return FindValue<BrowserEnterprisePolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrowserEnterprisePolicyType(string value)
         {
             return FindValue(value);
         }
@@ -667,6 +721,102 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type ContentLevel.
+    /// </summary>
+    public class ContentLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_CONTENT for ContentLevel
+        /// </summary>
+        public static readonly ContentLevel FULL_CONTENT = new ContentLevel("FULL_CONTENT");
+        /// <summary>
+        /// Constant METADATA_ONLY for ContentLevel
+        /// </summary>
+        public static readonly ContentLevel METADATA_ONLY = new ContentLevel("METADATA_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentLevel FindValue(string value)
+        {
+            return FindValue<ContentLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContentType.
+    /// </summary>
+    public class ContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MEMORY_RECORDS for ContentType
+        /// </summary>
+        public static readonly ContentType MEMORY_RECORDS = new ContentType("MEMORY_RECORDS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentType FindValue(string value)
+        {
+            return FindValue<ContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CredentialProviderType.
     /// </summary>
     public class CredentialProviderType : ConstantClass
@@ -863,6 +1013,56 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type EndpointIpAddressType.
+    /// </summary>
+    public class EndpointIpAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IPV4 for EndpointIpAddressType
+        /// </summary>
+        public static readonly EndpointIpAddressType IPV4 = new EndpointIpAddressType("IPV4");
+        /// <summary>
+        /// Constant IPV6 for EndpointIpAddressType
+        /// </summary>
+        public static readonly EndpointIpAddressType IPV6 = new EndpointIpAddressType("IPV6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointIpAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointIpAddressType FindValue(string value)
+        {
+            return FindValue<EndpointIpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointIpAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EvaluatorLevel.
     /// </summary>
     public class EvaluatorLevel : ConstantClass
@@ -996,6 +1196,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant Custom for EvaluatorType
         /// </summary>
         public static readonly EvaluatorType Custom = new EvaluatorType("Custom");
+        /// <summary>
+        /// Constant CustomCode for EvaluatorType
+        /// </summary>
+        public static readonly EvaluatorType CustomCode = new EvaluatorType("CustomCode");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2531,6 +2735,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         public static readonly ServerProtocol A2A = new ServerProtocol("A2A");
         /// <summary>
+        /// Constant AGUI for ServerProtocol
+        /// </summary>
+        public static readonly ServerProtocol AGUI = new ServerProtocol("AGUI");
+        /// <summary>
         /// Constant HTTP for ServerProtocol
         /// </summary>
         public static readonly ServerProtocol HTTP = new ServerProtocol("HTTP");
@@ -2581,6 +2789,10 @@ namespace Amazon.BedrockAgentCoreControl
     {
 
         /// <summary>
+        /// Constant CREATE_PENDING_AUTH for TargetStatus
+        /// </summary>
+        public static readonly TargetStatus CREATE_PENDING_AUTH = new TargetStatus("CREATE_PENDING_AUTH");
+        /// <summary>
         /// Constant CREATING for TargetStatus
         /// </summary>
         public static readonly TargetStatus CREATING = new TargetStatus("CREATING");
@@ -2597,6 +2809,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         public static readonly TargetStatus READY = new TargetStatus("READY");
         /// <summary>
+        /// Constant SYNCHRONIZE_PENDING_AUTH for TargetStatus
+        /// </summary>
+        public static readonly TargetStatus SYNCHRONIZE_PENDING_AUTH = new TargetStatus("SYNCHRONIZE_PENDING_AUTH");
+        /// <summary>
         /// Constant SYNCHRONIZE_UNSUCCESSFUL for TargetStatus
         /// </summary>
         public static readonly TargetStatus SYNCHRONIZE_UNSUCCESSFUL = new TargetStatus("SYNCHRONIZE_UNSUCCESSFUL");
@@ -2604,6 +2820,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant SYNCHRONIZING for TargetStatus
         /// </summary>
         public static readonly TargetStatus SYNCHRONIZING = new TargetStatus("SYNCHRONIZING");
+        /// <summary>
+        /// Constant UPDATE_PENDING_AUTH for TargetStatus
+        /// </summary>
+        public static readonly TargetStatus UPDATE_PENDING_AUTH = new TargetStatus("UPDATE_PENDING_AUTH");
         /// <summary>
         /// Constant UPDATE_UNSUCCESSFUL for TargetStatus
         /// </summary>

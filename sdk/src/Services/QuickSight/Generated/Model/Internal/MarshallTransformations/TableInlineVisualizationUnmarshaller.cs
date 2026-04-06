@@ -62,6 +62,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataBars = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Sparklines", targetDepth))
+                {
+                    var unmarshaller = SparklinesOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Sparklines = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

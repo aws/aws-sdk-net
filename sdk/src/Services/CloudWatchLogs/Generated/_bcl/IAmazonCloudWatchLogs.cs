@@ -817,11 +817,11 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (If source has an associated AWS KMS Key) kms:Decrypt
+        /// (If source has an associated Amazon Web Services KMS Key) kms:Decrypt
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (If source has an associated AWS KMS Key) kms:GenerateDataKey
+        /// (If source has an associated Amazon Web Services KMS Key) kms:GenerateDataKey
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -929,11 +929,11 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (If source has an associated AWS KMS Key) kms:Decrypt
+        /// (If source has an associated Amazon Web Services KMS Key) kms:Decrypt
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (If source has an associated AWS KMS Key) kms:GenerateDataKey
+        /// (If source has an associated Amazon Web Services KMS Key) kms:GenerateDataKey
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1403,6 +1403,86 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream">REST API Reference for CreateLogStream Operation</seealso>
         Task<CreateLogStreamResponse> CreateLogStreamAsync(CreateLogStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateLookupTable
+
+
+        /// <summary>
+        /// Creates a lookup table by uploading CSV data. You can use lookup tables to enrich
+        /// log data in CloudWatch Logs Insights queries with reference data such as user details,
+        /// application names, or error descriptions.
+        /// 
+        ///  
+        /// <para>
+        /// The table name must be unique within your account and Region. The CSV content must
+        /// include a header row with column names, use UTF-8 encoding, and not exceed 10 MB.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLookupTable service method.</param>
+        /// 
+        /// <returns>The response from the CreateLookupTable service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLookupTable">REST API Reference for CreateLookupTable Operation</seealso>
+        CreateLookupTableResponse CreateLookupTable(CreateLookupTableRequest request);
+
+
+
+        /// <summary>
+        /// Creates a lookup table by uploading CSV data. You can use lookup tables to enrich
+        /// log data in CloudWatch Logs Insights queries with reference data such as user details,
+        /// application names, or error descriptions.
+        /// 
+        ///  
+        /// <para>
+        /// The table name must be unique within your account and Region. The CSV content must
+        /// include a header row with column names, use UTF-8 encoding, and not exceed 10 MB.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLookupTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLookupTable service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLookupTable">REST API Reference for CreateLookupTable Operation</seealso>
+        Task<CreateLookupTableResponse> CreateLookupTableAsync(CreateLookupTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2359,6 +2439,70 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream">REST API Reference for DeleteLogStream Operation</seealso>
         Task<DeleteLogStreamResponse> DeleteLogStreamAsync(DeleteLogStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLookupTable
+
+
+        /// <summary>
+        /// Deletes a lookup table permanently. This operation cannot be undone.
+        /// 
+        ///  
+        /// <para>
+        /// Queries that reference a deleted table will return an error. Before deleting a lookup
+        /// table, review any saved queries or dashboards that may reference it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLookupTable service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLookupTable service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLookupTable">REST API Reference for DeleteLookupTable Operation</seealso>
+        DeleteLookupTableResponse DeleteLookupTable(DeleteLookupTableRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a lookup table permanently. This operation cannot be undone.
+        /// 
+        ///  
+        /// <para>
+        /// Queries that reference a deleted table will return an error. Before deleting a lookup
+        /// table, review any saved queries or dashboards that may reference it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLookupTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLookupTable service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLookupTable">REST API Reference for DeleteLookupTable Operation</seealso>
+        Task<DeleteLookupTableResponse> DeleteLookupTableAsync(DeleteLookupTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3731,6 +3875,60 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  DescribeLookupTables
+
+
+        /// <summary>
+        /// Retrieves metadata about lookup tables in your account. You can optionally filter
+        /// the results by table name prefix. Results are sorted by table name in ascending order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLookupTables service method.</param>
+        /// 
+        /// <returns>The response from the DescribeLookupTables service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLookupTables">REST API Reference for DescribeLookupTables Operation</seealso>
+        DescribeLookupTablesResponse DescribeLookupTables(DescribeLookupTablesRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves metadata about lookup tables in your account. You can optionally filter
+        /// the results by table name prefix. Results are sorted by table name in ascending order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLookupTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLookupTables service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLookupTables">REST API Reference for DescribeLookupTables Operation</seealso>
+        Task<DescribeLookupTablesResponse> DescribeLookupTablesAsync(DescribeLookupTablesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeMetricFilters
 
 
@@ -5090,6 +5288,17 @@ namespace Amazon.CloudWatchLogs
         /// the large field was located. For example, this could be <c>@ptr.$['input']['message']</c>,
         /// <c>@ptr.$['AAA']['BBB']['CCC']['DDD']</c>, <c>@ptr.$['AAA']</c>, or any other path
         /// matching your log structure.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>GetLogObject</c> API routes requests using SDK host prefix injection. SDK versions
+        /// released before April 1, 2026 route to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>,
+        /// which does not support VPC endpoints. SDK versions released on or after April 1, 2026
+        /// route to <c>stream-logs.<i>Region</i>.amazonaws.com</c>, which supports VPC endpoints.
+        /// To set up a VPC endpoint for this API, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs">Creating
+        /// a VPC endpoint for CloudWatch Logs </a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogObject service method.</param>
         /// 
@@ -5126,6 +5335,17 @@ namespace Amazon.CloudWatchLogs
         /// the large field was located. For example, this could be <c>@ptr.$['input']['message']</c>,
         /// <c>@ptr.$['AAA']['BBB']['CCC']['DDD']</c>, <c>@ptr.$['AAA']</c>, or any other path
         /// matching your log structure.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>GetLogObject</c> API routes requests using SDK host prefix injection. SDK versions
+        /// released before April 1, 2026 route to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>,
+        /// which does not support VPC endpoints. SDK versions released on or after April 1, 2026
+        /// route to <c>stream-logs.<i>Region</i>.amazonaws.com</c>, which supports VPC endpoints.
+        /// To set up a VPC endpoint for this API, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs">Creating
+        /// a VPC endpoint for CloudWatch Logs </a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogObject service method.</param>
         /// <param name="cancellationToken">
@@ -5216,6 +5436,58 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogRecord">REST API Reference for GetLogRecord Operation</seealso>
         Task<GetLogRecordResponse> GetLogRecordAsync(GetLogRecordRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetLookupTable
+
+
+        /// <summary>
+        /// Retrieves the full content of a lookup table, including the CSV data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLookupTable service method.</param>
+        /// 
+        /// <returns>The response from the GetLookupTable service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLookupTable">REST API Reference for GetLookupTable Operation</seealso>
+        GetLookupTableResponse GetLookupTable(GetLookupTableRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the full content of a lookup table, including the CSV data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLookupTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLookupTable service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLookupTable">REST API Reference for GetLookupTable Operation</seealso>
+        Task<GetLookupTableResponse> GetLookupTableAsync(GetLookupTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6574,11 +6846,11 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <important> 
         /// <para>
-        /// Creating a policy disables metrics for AWS features that use EMF to create metrics,
-        /// such as CloudWatch Container Insights and CloudWatch Application Signals. To prevent
-        /// turning off those features by accident, we recommend that you exclude the underlying
-        /// log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT IN ["/aws/containerinsights",
-        /// "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
+        /// Creating a policy disables metrics for Amazon Web Services features that use EMF to
+        /// create metrics, such as CloudWatch Container Insights and CloudWatch Application Signals.
+        /// To prevent turning off those features by accident, we recommend that you exclude the
+        /// underlying log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT
+        /// IN ["/aws/containerinsights", "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -7100,11 +7372,11 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <important> 
         /// <para>
-        /// Creating a policy disables metrics for AWS features that use EMF to create metrics,
-        /// such as CloudWatch Container Insights and CloudWatch Application Signals. To prevent
-        /// turning off those features by accident, we recommend that you exclude the underlying
-        /// log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT IN ["/aws/containerinsights",
-        /// "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
+        /// Creating a policy disables metrics for Amazon Web Services features that use EMF to
+        /// create metrics, such as CloudWatch Container Insights and CloudWatch Application Signals.
+        /// To prevent turning off those features by accident, we recommend that you exclude the
+        /// underlying log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT
+        /// IN ["/aws/containerinsights", "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -7184,6 +7456,86 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutAccountPolicy">REST API Reference for PutAccountPolicy Operation</seealso>
         Task<PutAccountPolicyResponse> PutAccountPolicyAsync(PutAccountPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBearerTokenAuthentication
+
+
+        /// <summary>
+        /// Enables or disables bearer token authentication for the specified log group. When
+        /// enabled on a log group, bearer token authentication is enabled on operations until
+        /// it is explicitly disabled.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the parameters that are common to all actions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common
+        /// Parameters</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBearerTokenAuthentication service method.</param>
+        /// 
+        /// <returns>The response from the PutBearerTokenAuthentication service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutBearerTokenAuthentication">REST API Reference for PutBearerTokenAuthentication Operation</seealso>
+        PutBearerTokenAuthenticationResponse PutBearerTokenAuthentication(PutBearerTokenAuthenticationRequest request);
+
+
+
+        /// <summary>
+        /// Enables or disables bearer token authentication for the specified log group. When
+        /// enabled on a log group, bearer token authentication is enabled on operations until
+        /// it is explicitly disabled.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the parameters that are common to all actions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common
+        /// Parameters</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBearerTokenAuthentication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutBearerTokenAuthentication service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutBearerTokenAuthentication">REST API Reference for PutBearerTokenAuthentication Operation</seealso>
+        Task<PutBearerTokenAuthenticationResponse> PutBearerTokenAuthenticationAsync(PutBearerTokenAuthenticationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9370,8 +9722,12 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <c>StartLiveTail</c> API routes requests to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>
-        /// using SDK host prefix injection. VPC endpoint support is not available for this API.
+        /// The <c>StartLiveTail</c> API routes requests using SDK host prefix injection. SDK
+        /// versions released before April 1, 2026 route to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>,
+        /// which does not support VPC endpoints. SDK versions released on or after April 1, 2026
+        /// route to <c>stream-logs.<i>Region</i>.amazonaws.com</c>, which supports VPC endpoints.
+        /// To set up a VPC endpoint for this API, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs">Creating
+        /// a VPC endpoint for CloudWatch Logs </a>.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -9464,8 +9820,12 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <c>StartLiveTail</c> API routes requests to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>
-        /// using SDK host prefix injection. VPC endpoint support is not available for this API.
+        /// The <c>StartLiveTail</c> API routes requests using SDK host prefix injection. SDK
+        /// versions released before April 1, 2026 route to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>,
+        /// which does not support VPC endpoints. SDK versions released on or after April 1, 2026
+        /// route to <c>stream-logs.<i>Region</i>.amazonaws.com</c>, which supports VPC endpoints.
+        /// To set up a VPC endpoint for this API, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs">Creating
+        /// a VPC endpoint for CloudWatch Logs </a>.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -9575,7 +9935,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can have up to 30 concurrent CloudWatch Logs insights queries, including queries
+        /// You can have up to 100 concurrent CloudWatch Logs insights queries, including queries
         /// that have been added to dashboards. 
         /// </para>
         /// </summary>
@@ -9676,7 +10036,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can have up to 30 concurrent CloudWatch Logs insights queries, including queries
+        /// You can have up to 100 concurrent CloudWatch Logs insights queries, including queries
         /// that have been added to dashboards. 
         /// </para>
         /// </summary>
@@ -10390,6 +10750,78 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLogAnomalyDetector">REST API Reference for UpdateLogAnomalyDetector Operation</seealso>
         Task<UpdateLogAnomalyDetectorResponse> UpdateLogAnomalyDetectorAsync(UpdateLogAnomalyDetectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateLookupTable
+
+
+        /// <summary>
+        /// Updates an existing lookup table by replacing all of its CSV content. After the update
+        /// completes, queries that use this table will use the new data.
+        /// 
+        ///  
+        /// <para>
+        /// This is a full replacement operation. All existing content is replaced with the new
+        /// CSV data.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLookupTable service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLookupTable service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLookupTable">REST API Reference for UpdateLookupTable Operation</seealso>
+        UpdateLookupTableResponse UpdateLookupTable(UpdateLookupTableRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing lookup table by replacing all of its CSV content. After the update
+        /// completes, queries that use this table will use the new data.
+        /// 
+        ///  
+        /// <para>
+        /// This is a full replacement operation. All existing content is replaced with the new
+        /// CSV data.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLookupTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLookupTable service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateLookupTable">REST API Reference for UpdateLookupTable Operation</seealso>
+        Task<UpdateLookupTableResponse> UpdateLookupTableAsync(UpdateLookupTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

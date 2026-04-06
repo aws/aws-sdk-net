@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// This is the response object from the ListQueueFleetAssociations operation.
+    /// Shared pagination field for List operation outputs (nextToken).
     /// </summary>
     public partial class ListQueueFleetAssociationsResponse : AmazonWebServiceResponse
     {

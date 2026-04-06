@@ -54,7 +54,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Areas. 
         /// <para>
-        /// Areas to be avoided.
+        ///  Areas to be avoided. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -77,7 +79,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property CarShuttleTrains. 
         /// <para>
-        /// Avoid car-shuttle-trains while calculating the route.
+        ///  Avoid car-shuttle-trains while calculating the route. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -115,7 +119,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property DirtRoads. 
         /// <para>
-        /// Avoid dirt roads while calculating the route.
+        ///  Avoid dirt roads while calculating the route. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -153,7 +159,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property SeasonalClosure. 
         /// <para>
-        /// Avoid roads that have seasonal closure while calculating the route.
+        ///  Avoid roads that have seasonal closure while calculating the route. Not supported
+        /// in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -191,7 +199,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TollTransponders. 
         /// <para>
-        /// Avoids roads where the specified toll transponders are the only mode of payment.
+        ///  Avoids roads where the specified toll transponders are the only mode of payment.
+        /// Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -210,8 +220,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TruckRoadTypes. 
         /// <para>
-        /// Truck road type identifiers. <c>BK1</c> through <c>BK4</c> apply only to Sweden. <c>A2,A4,B2,B4,C,D,ET2,ET4</c>
-        /// apply only to Mexico.
+        ///  Truck road type identifiers. <c>BK1</c> through <c>BK4</c> apply only to Sweden.
+        /// <c>A2,A4,B2,B4,C,D,ET2,ET4</c> apply only to Mexico. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -240,7 +252,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Tunnels. 
         /// <para>
-        /// Avoid tunnels while calculating the route.
+        ///  Avoid tunnels while calculating the route. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -259,7 +273,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property UTurns. 
         /// <para>
-        /// Avoid U-turns for calculation on highways and motorways.
+        ///  Avoid U-turns for calculation on highways and motorways. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -278,7 +294,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property ZoneCategories. 
         /// <para>
-        /// Zone categories to be avoided.
+        ///  Zone categories to be avoided. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

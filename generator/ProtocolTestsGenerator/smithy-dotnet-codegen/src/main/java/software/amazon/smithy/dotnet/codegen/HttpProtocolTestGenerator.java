@@ -16,6 +16,8 @@
 package software.amazon.smithy.dotnet.codegen;
 
 import software.amazon.smithy.aws.traits.ServiceTrait;
+import software.amazon.smithy.codegen.core.Symbol;
+import software.amazon.smithy.model.traits.SparseTrait;
 import software.amazon.smithy.model.traits.TitleTrait;
 import software.amazon.smithy.codegen.core.CodegenException;
 import software.amazon.smithy.dotnet.codegen.utils.ProtocolTestUtils;
@@ -177,11 +179,6 @@ public final class HttpProtocolTestGenerator implements Runnable {
         if (httpRequestTestCase.getDocumentation().isPresent()) {
             writer.writeXmlDocs(httpRequestTestCase.getDocumentation().get());
         }
-        if (ProtocolTestCustomizations.VNextTests.contains(httpRequestTestCase.getId())) {
-            writer.writeMultiLineComment("This test either requires a breaking change and will be addressed in V4, or has a backlog item to be fixed" +
-                    " in the future. Please refer to the VNextTests list to see which it is.");
-            writer.write("[Ignore]");
-        }
         writer.write("[TestMethod]");
 
         writer.write("[TestCategory(\"ProtocolTest\")]");
@@ -323,10 +320,6 @@ public final class HttpProtocolTestGenerator implements Runnable {
     private void generateResponseTest(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {
         if (httpResponseTestCase.getDocumentation().isPresent()) {
             writer.writeXmlDocs(httpResponseTestCase.getDocumentation().get());
-        }
-        if (ProtocolTestCustomizations.VNextTests.contains(httpResponseTestCase.getId())) {
-            writer.writeSingleLineComment("This test requires a breaking change, and will be addressed in V4");
-            writer.write("[Ignore]");
         }
         writer.write("[TestMethod]");
         writer.write("[TestCategory(\"ProtocolTest\")]");
@@ -508,10 +501,8 @@ public final class HttpProtocolTestGenerator implements Runnable {
         private Void getMap(MapShape shape, ObjectNode node) {
             var valueTargetShape = model.expectShape(shape.getValue().getTarget());
             var valueTargetSymbol = context.symbolProvider().toSymbol(valueTargetShape);
-            if (!generatedInputOutputShapeName.isEmpty()) {
-                if (ProtocolTestCustomizations.RestJsonNullMapValueOperations.contains(generatedInputOutputShapeName) && ProtocolTestCustomizations.RestJsonNullMapValueStructures.contains(shape.getId().getName())) {
-                    valueTargetSymbol = valueTargetSymbol.toBuilder().name(valueTargetSymbol.getName() + "?").build();
-                }
+            if (shape.getTrait(SparseTrait.class).isPresent() && !valueTargetShape.isDocumentShape() && !valueTargetShape.isStringShape() && !valueTargetShape.isEnumShape() && !valueTargetShape.isStructureShape() && !valueTargetShape.isListShape()){
+                valueTargetSymbol = valueTargetSymbol.toBuilder().name(valueTargetSymbol.getName() + "?").build();
             }
             writer.write("new Dictionary<string, $L>()",
                     valueTargetSymbol);

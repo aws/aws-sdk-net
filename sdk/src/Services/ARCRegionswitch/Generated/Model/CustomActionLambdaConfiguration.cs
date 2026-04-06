@@ -68,7 +68,10 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property RegionToRun. 
         /// <para>
-        /// The Amazon Web Services Region for the function to run in.
+        /// The Amazon Web Services Region for the function to run in. For recovery workflows
+        /// use <c>activatingRegion</c> or <c>deactivatingRegion</c>. For post-recovery workflows,
+        /// use <c>activeRegion</c> (the Region with customer traffic) or <c>inactiveRegion</c>
+        /// (the Region with no customer traffic).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

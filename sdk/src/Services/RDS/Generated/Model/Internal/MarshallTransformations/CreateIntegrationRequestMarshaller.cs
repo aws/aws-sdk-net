@@ -120,6 +120,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetArn", StringUtils.FromString(publicRequest.TargetArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateIntegrationRequestMarshaller _instance = new CreateIntegrationRequestMarshaller();        

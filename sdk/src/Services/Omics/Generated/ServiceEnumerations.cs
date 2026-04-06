@@ -141,6 +141,84 @@ namespace Amazon.Omics
 
 
     /// <summary>
+    /// Constants used for properties of type BatchStatus.
+    /// </summary>
+    public class BatchStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for BatchStatus
+        /// </summary>
+        public static readonly BatchStatus CANCELLED = new BatchStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for BatchStatus
+        /// </summary>
+        public static readonly BatchStatus FAILED = new BatchStatus("FAILED");
+        /// <summary>
+        /// Constant INPROGRESS for BatchStatus
+        /// </summary>
+        public static readonly BatchStatus INPROGRESS = new BatchStatus("INPROGRESS");
+        /// <summary>
+        /// Constant PENDING for BatchStatus
+        /// </summary>
+        public static readonly BatchStatus PENDING = new BatchStatus("PENDING");
+        /// <summary>
+        /// Constant PROCESSED for BatchStatus
+        /// </summary>
+        public static readonly BatchStatus PROCESSED = new BatchStatus("PROCESSED");
+        /// <summary>
+        /// Constant RUNS_DELETED for BatchStatus
+        /// </summary>
+        public static readonly BatchStatus RUNS_DELETED = new BatchStatus("RUNS_DELETED");
+        /// <summary>
+        /// Constant RUNS_DELETING for BatchStatus
+        /// </summary>
+        public static readonly BatchStatus RUNS_DELETING = new BatchStatus("RUNS_DELETING");
+        /// <summary>
+        /// Constant STOPPING for BatchStatus
+        /// </summary>
+        public static readonly BatchStatus STOPPING = new BatchStatus("STOPPING");
+        /// <summary>
+        /// Constant SUBMITTING for BatchStatus
+        /// </summary>
+        public static readonly BatchStatus SUBMITTING = new BatchStatus("SUBMITTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchStatus FindValue(string value)
+        {
+            return FindValue<BatchStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CacheBehavior.
     /// </summary>
     public class CacheBehavior : ConstantClass
@@ -184,6 +262,72 @@ namespace Amazon.Omics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CacheBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfigurationStatus.
+    /// </summary>
+    public class ConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus ACTIVE = new ConfigurationStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus CREATING = new ConfigurationStatus("CREATING");
+        /// <summary>
+        /// Constant DELETED for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus DELETED = new ConfigurationStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus DELETING = new ConfigurationStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus FAILED = new ConfigurationStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for ConfigurationStatus
+        /// </summary>
+        public static readonly ConfigurationStatus UPDATING = new ConfigurationStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationStatus FindValue(string value)
+        {
+            return FindValue<ConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationStatus(string value)
         {
             return FindValue(value);
         }
@@ -602,6 +746,56 @@ namespace Amazon.Omics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NetworkingMode.
+    /// </summary>
+    public class NetworkingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESTRICTED for NetworkingMode
+        /// </summary>
+        public static readonly NetworkingMode RESTRICTED = new NetworkingMode("RESTRICTED");
+        /// <summary>
+        /// Constant VPC for NetworkingMode
+        /// </summary>
+        public static readonly NetworkingMode VPC = new NetworkingMode("VPC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkingMode FindValue(string value)
+        {
+            return FindValue<NetworkingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkingMode(string value)
         {
             return FindValue(value);
         }
@@ -2288,6 +2482,72 @@ namespace Amazon.Omics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StoreType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SubmissionStatus.
+    /// </summary>
+    public class SubmissionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCEL_FAILED for SubmissionStatus
+        /// </summary>
+        public static readonly SubmissionStatus CANCEL_FAILED = new SubmissionStatus("CANCEL_FAILED");
+        /// <summary>
+        /// Constant CANCEL_SUCCESS for SubmissionStatus
+        /// </summary>
+        public static readonly SubmissionStatus CANCEL_SUCCESS = new SubmissionStatus("CANCEL_SUCCESS");
+        /// <summary>
+        /// Constant DELETE_FAILED for SubmissionStatus
+        /// </summary>
+        public static readonly SubmissionStatus DELETE_FAILED = new SubmissionStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_SUCCESS for SubmissionStatus
+        /// </summary>
+        public static readonly SubmissionStatus DELETE_SUCCESS = new SubmissionStatus("DELETE_SUCCESS");
+        /// <summary>
+        /// Constant FAILED for SubmissionStatus
+        /// </summary>
+        public static readonly SubmissionStatus FAILED = new SubmissionStatus("FAILED");
+        /// <summary>
+        /// Constant SUCCESS for SubmissionStatus
+        /// </summary>
+        public static readonly SubmissionStatus SUCCESS = new SubmissionStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SubmissionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubmissionStatus FindValue(string value)
+        {
+            return FindValue<SubmissionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubmissionStatus(string value)
         {
             return FindValue(value);
         }

@@ -56,10 +56,28 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("CmkSecretConfig", targetDepth))
+                {
+                    var unmarshaller = CmkSecretConfigUnmarshaller.Instance;
+                    unmarshalledObject.CmkSecretConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("CustomSecretConfig", targetDepth))
+                {
+                    var unmarshaller = CustomSecretConfigUnmarshaller.Instance;
+                    unmarshalledObject.CustomSecretConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Domain", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Domain = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ManagedSecretConfig", targetDepth))
+                {
+                    var unmarshaller = ManagedSecretConfigUnmarshaller.Instance;
+                    unmarshalledObject.ManagedSecretConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MountOptions", targetDepth))

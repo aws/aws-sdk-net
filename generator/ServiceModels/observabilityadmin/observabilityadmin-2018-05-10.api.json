@@ -961,6 +961,11 @@
         "Type":{"shape":"String"}
       }
     },
+    "DataSourceFilterString":{
+      "type":"string",
+      "max":2000,
+      "min":1
+    },
     "DataSources":{
       "type":"list",
       "member":{"shape":"DataSource"}
@@ -1008,7 +1013,8 @@
       "type":"structure",
       "members":{
         "LogsEncryptionConfiguration":{"shape":"LogsEncryptionConfiguration"},
-        "BackupConfiguration":{"shape":"LogsBackupConfiguration"}
+        "BackupConfiguration":{"shape":"LogsBackupConfiguration"},
+        "LogGroupNameConfiguration":{"shape":"LogGroupNameConfiguration"}
       }
     },
     "DestinationType":{
@@ -1448,11 +1454,27 @@
         "LogTypes":{"shape":"LogTypes"}
       }
     },
+    "LogGroupNameConfiguration":{
+      "type":"structure",
+      "required":["LogGroupNamePattern"],
+      "members":{
+        "LogGroupNamePattern":{"shape":"LogGroupNamePattern"}
+      }
+    },
+    "LogGroupNamePattern":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "pattern":"(?:[\\._\\-/#A-Za-z0-9]+|\\$\\{[A-Za-z]+(?:\\.[A-Za-z]+){1,2}\\})+"
+    },
     "LogType":{
       "type":"string",
       "enum":[
         "APPLICATION_LOGS",
-        "USAGE_LOGS"
+        "USAGE_LOGS",
+        "SECURITY_FINDING_LOGS",
+        "ACCESS_LOGS",
+        "CONNECTION_LOGS"
       ]
     },
     "LogTypes":{
@@ -1601,7 +1623,11 @@
         "AWS::Route53Resolver::ResolverEndpoint",
         "AWS::BedrockAgentCore::Runtime",
         "AWS::BedrockAgentCore::Browser",
-        "AWS::BedrockAgentCore::CodeInterpreter"
+        "AWS::BedrockAgentCore::CodeInterpreter",
+        "AWS::BedrockAgentCore::Gateway",
+        "AWS::BedrockAgentCore::Memory",
+        "AWS::SecurityHub::Hub",
+        "AWS::CloudFront::Distribution"
       ]
     },
     "ResourceTypes":{
@@ -1690,12 +1716,10 @@
     },
     "SourceLogsConfiguration":{
       "type":"structure",
-      "required":[
-        "LogGroupSelectionCriteria",
-        "EncryptedLogGroupStrategy"
-      ],
+      "required":["EncryptedLogGroupStrategy"],
       "members":{
         "LogGroupSelectionCriteria":{"shape":"LogsFilterString"},
+        "DataSourceSelectionCriteria":{"shape":"DataSourceFilterString"},
         "EncryptedLogGroupStrategy":{"shape":"EncryptedLogGroupStrategy"}
       }
     },
@@ -1782,7 +1806,8 @@
         "ResourceType":{"shape":"ResourceType"},
         "ResourceIdentifier":{"shape":"ResourceIdentifier"},
         "ResourceTags":{"shape":"TagMapOutput"},
-        "LastUpdateTimeStamp":{"shape":"Long"}
+        "LastUpdateTimeStamp":{"shape":"Long"},
+        "TelemetrySourceType":{"shape":"TelemetrySourceType"}
       }
     },
     "TelemetryConfigurationState":{

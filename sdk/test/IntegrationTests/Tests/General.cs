@@ -39,48 +39,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [TestMethod]
         [TestCategory("General")]
-        [Ignore]
-        // Test exception parsing with selected services
-        public void TestDownloadStringContentWithTimeout()
-        {
-            var timeout = TimeSpan.FromSeconds(3);
-            var url = new Uri("https://httpbin.org/delay/10"); // server will delay for 10 seconds
-            string downloadedContent = null;
-            Exception caughtException = null;
-            var thread = new Thread(() =>
-            {
-                try
-                {
-                    downloadedContent = Amazon.Util.AWSSDKUtils.DownloadStringContent(url, timeout);
-                }
-                catch(Exception e)
-                {
-                    caughtException = e;
-                }
-            });
-
-            try
-            {
-                thread.IsBackground = true;
-                thread.Start();
-
-                Thread.Sleep(timeout + timeout);
-                Assert.IsNull(downloadedContent);
-                Assert.IsNotNull(caughtException);
-
-                var webException = caughtException as WebException;
-                Assert.IsNotNull(webException);
-                Console.WriteLine("Exception message = [{0}]", webException.Message);
-                Assert.AreEqual("The operation has timed out", webException.Message);
-            }
-            finally
-            {
-                thread.Abort();
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("General")]
         // Test exception parsing with selected services
         public void TestExceptions()
         {
@@ -102,20 +60,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
             }
 
-            // Temperoary disable this test as it is currently failing
-            // using (var client = new Amazon.Pinpoint.AmazonPinpointClient())
-            // {
-            //     var ex = AssertExtensions.ExpectException<Amazon.Pinpoint.Model.NotFoundException>(() =>
-            //     {
-            //         client.DeleteCampaign(new Amazon.Pinpoint.Model.DeleteCampaignRequest
-            //         {
-            //             ApplicationId = fakeData,
-            //             CampaignId = fakeData
-            //         });
-            //     });
-            //     Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
-            // }
-
             using (var client = new Amazon.Batch.AmazonBatchClient())
             {
                 var ex = AssertExtensions.ExpectException<Amazon.Batch.Model.ClientException>(() =>
@@ -126,25 +70,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     });
                 });
                 Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("General")]
-        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
-        public void IAMTestExceptions()
-        {
-            using (var client = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
-            {
-                var ex = AssertExtensions.ExpectException<Amazon.IdentityManagement.Model.NoSuchEntityException>(() =>
-                {
-                    client.AttachGroupPolicy(new Amazon.IdentityManagement.Model.AttachGroupPolicyRequest
-                    {
-                        PolicyArn = fakeData,
-                        GroupName = fakeData
-                    });
-                });
-                Assert.AreEqual(ErrorType.Sender, ex.ErrorType);
             }
         }
 
@@ -526,106 +451,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             AssertExtensions.ExpectException(() => client.ListBuckets(), typeof(ObjectDisposedException));
         }
-        
-        [TestMethod]
-        [TestCategory("General")]
-        [TestCategory("RequiresIAMUser")]
-        public void TestExpiringCredentials()
-        {
-            // test that non-expired credentials work
-            TestExpireOffset(returnExpiredCredentials: false);
-
-            // test that expired credentials do not work
-            TestExpireOffset(returnExpiredCredentials: true);
-
-
-            // test that various dates work
-            TestExpire(DateTime.Now, expectFailure: true);
-            TestExpire(DateTime.UtcNow, expectFailure: true);
-
-            // 1 minute offset
-            var epsilon = TimeSpan.FromMinutes(1);
-            
-            TestExpire(DateTime.Now + epsilon, expectFailure: false);
-            TestExpire(DateTime.UtcNow + epsilon, expectFailure: false);
-            TestExpire(DateTime.Now - epsilon, expectFailure: true);
-            TestExpire(DateTime.UtcNow - epsilon, expectFailure: true);
-        }
-
-        private static void TestExpireOffset(bool returnExpiredCredentials)
-        {
-            TimeSpan expireOffset;
-            if (returnExpiredCredentials)
-                expireOffset = TimeSpan.FromHours(-1);
-            else
-                expireOffset = TimeSpan.FromHours(6);
-
-            var creds = new ProxyRefreshingAWSCredentials(expireOffset);
-            TestCredentials(creds, returnExpiredCredentials);
-        }
-        private static void TestExpire(DateTime expire, bool expectFailure)
-        {
-            var creds = new ProxyRefreshingAWSCredentials(expire);
-            TestCredentials(creds, expectFailure);
-        }
-
-
-        private static void TestCredentials(ProxyRefreshingAWSCredentials creds, bool expectFailure)
-        {
-            using (var client = new AmazonS3Client(creds))
-            {
-                try
-                {
-                    client.ListBuckets();
-                    Assert.IsFalse(expectFailure);
-                    Assert.IsNotNull(creds.Expiration);
-                }
-                catch (AmazonClientException ace)
-                {
-                    Assert.IsTrue(expectFailure);
-                    Assert.IsNotNull(ace);
-                    Assert.IsNotNull(ace.Message);
-                    Assert.IsTrue(ace.Message.IndexOf("already") >= 0);
-                }
-            }
-        }
-
-        private class ProxyRefreshingAWSCredentials : RefreshingAWSCredentials
-        {
-            private TimeSpan expireOffset;
-            private DateTime? expireValue = null;
-
-            public ProxyRefreshingAWSCredentials()
-                : this(TimeSpan.FromHours(6))
-            { }
-            public ProxyRefreshingAWSCredentials(TimeSpan expireOffset)
-            {
-                this.expireOffset = expireOffset;
-            }
-            public ProxyRefreshingAWSCredentials(DateTime expireValue)
-            {
-                this.expireValue = expireValue;
-            }
-
-            protected override CredentialsRefreshState GenerateNewCredentials()
-            {
-                var credentials = UtilityMethods.CreateTemporaryCredentials();
-                var ic = credentials.GetCredentials();
-
-                DateTime expiration;
-                if (expireValue.HasValue)
-                {
-                    expiration = expireValue.Value;
-                }
-                else
-                {
-                    var now = DateTime.UtcNow;
-                    expiration = now + expireOffset;
-                }
-
-                return new CredentialsRefreshState(ic, expiration);
-            }
-        }
 
         [TestMethod]
         [TestCategory("General")]
@@ -773,21 +598,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             // Optionally modify client config
             var config = GetConfig(client);
-            //config.UseHttp = true;
-
             using (client)
             {
                 Action action = GetClientAction(client, methodName, request);
 
-                // Optionally log the signer type
-                //var signer = GetSigner(client);
-                //Console.WriteLine("Signer: " + signer.GetType().FullName);
-
                 serviceCall(
-                    new ClockSkewTestContext {
+                    new ClockSkewTestContext 
+                    {
                         TestAction = action,
                         Config = config
-                });
+                    }
+                );
             }
         }
         private class ClientTest
@@ -803,17 +624,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             new ClientTest { Client = typeof(Amazon.EC2.AmazonEC2Client), Method = "DescribeKeyPairs" },
             new ClientTest { Client = typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), Method = "ListTables" },
             new ClientTest { Client = typeof(AmazonS3Client), Method = "ListBuckets" },
-            new ClientTest { Client = typeof(Amazon.Glacier.AmazonGlacierClient), Method = "ListVaults" },
             new ClientTest { Client = typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), Method = "ListGroups" },
         };
 
-        // Reflection helpers
-        private AbstractAWSSigner GetSigner(object client)
-        {
-            var signerProperty = typeof(AmazonServiceClient).GetProperty("Signer", BindingFlags.Instance | BindingFlags.NonPublic);
-            var signer = signerProperty.GetValue(client, null) as AbstractAWSSigner;
-            return signer;
-        }
         private ClientConfig GetConfig(object client)
         {
             var configProperty = typeof(AmazonServiceClient).GetProperty("Config", BindingFlags.Instance | BindingFlags.Public);

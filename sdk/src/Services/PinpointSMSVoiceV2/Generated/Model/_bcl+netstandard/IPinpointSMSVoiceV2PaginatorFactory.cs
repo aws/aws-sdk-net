@@ -68,6 +68,26 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         IDescribeKeywordsPaginator DescribeKeywords(DescribeKeywordsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeNotifyConfigurations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeNotifyConfigurationsPaginator DescribeNotifyConfigurations(DescribeNotifyConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeNotifyTemplates operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeNotifyTemplatesPaginator DescribeNotifyTemplates(DescribeNotifyTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeOptedOutNumbers operation
         ///</summary>
         [AWSPaginator(
@@ -116,6 +136,26 @@ namespace Amazon.PinpointSMSVoiceV2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IDescribeProtectConfigurationsPaginator DescribeProtectConfigurations(DescribeProtectConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRcsAgentCountryLaunchStatus operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeRcsAgentCountryLaunchStatusPaginator DescribeRcsAgentCountryLaunchStatus(DescribeRcsAgentCountryLaunchStatusRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRcsAgents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeRcsAgentsPaginator DescribeRcsAgents(DescribeRcsAgentsRequest request);
 
         /// <summary>
         /// Paginator for DescribeRegistrationAttachments operation
@@ -216,6 +256,16 @@ namespace Amazon.PinpointSMSVoiceV2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IDescribeVerifiedDestinationNumbersPaginator DescribeVerifiedDestinationNumbers(DescribeVerifiedDestinationNumbersRequest request);
+
+        /// <summary>
+        /// Paginator for ListNotifyCountries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNotifyCountriesPaginator ListNotifyCountries(ListNotifyCountriesRequest request);
 
         /// <summary>
         /// Paginator for ListPoolOriginationIdentities operation

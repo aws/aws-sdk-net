@@ -35,6 +35,7 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;
 using Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations;
 using Amazon.ElasticMapReduce.Model;
+using Amazon.Runtime.EventStreams;
 
 namespace AWSSDK.UnitTests
 {
@@ -329,6 +330,12 @@ namespace AWSSDK.UnitTests
             public IHttpResponseBody ResponseBody { get; set; }
 
             public HttpStatusCode StatusCode { get; set; }
+            public Dictionary<string, IEventStreamHeader> EventHeaders { get; set; }
+
+            public IEventStreamHeader GetEventStreamHeader(string headerName)
+            {
+                return null;
+            }
 
             public string[] GetHeaderNames()
             {
@@ -338,6 +345,11 @@ namespace AWSSDK.UnitTests
             public string GetHeaderValue(string headerName)
             {
                 return null;
+            }
+
+            public bool IsEventHeaderPresent(string headerName)
+            {
+                return false;
             }
 
             public bool IsHeaderPresent(string headerName)

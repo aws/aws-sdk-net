@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The storage configuration for Amazon ECS Managed Instances. This defines the root
+    /// The storage configuration for Amazon ECS Managed Instances. This defines the data
     /// volume configuration for the instances.
     /// </summary>
     public partial class ManagedInstancesStorageConfiguration
@@ -40,7 +40,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StorageSizeGiB. 
         /// <para>
-        /// The size of the tasks volume.
+        /// The size of the data volume.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

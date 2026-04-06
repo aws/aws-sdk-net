@@ -1,5 +1,6 @@
 ﻿using Amazon.WAF;
 using Amazon.WAF.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(token1, token2);
 
             var tokenStatus = (await Client.GetChangeTokenStatusAsync(token1)).ChangeTokenStatus;
-            var setName = "BMS-net-test-" + DateTime.UtcNow.ToFileTime();
+            var setName = UtilityMethods.GenerateName("BMS-net-test-");
             var tupleTargetString = "aws";
             var tuple = new ByteMatchTuple
             {

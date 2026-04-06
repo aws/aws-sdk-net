@@ -62,7 +62,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Users. 
         /// <para>
-        /// An array of user pool users who match your query, and their attributes.
+        /// An array of user pool users who match your query, and their attributes. Between different
+        /// requests, you might observe variations in the sequence that users in this response
+        /// object are sorted into. The sort order of users isn't guaranteed to follow a single
+        /// pattern, but the paginated list from a single chain of requests won't return duplicates.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

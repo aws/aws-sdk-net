@@ -32,6 +32,12 @@ namespace Amazon.GeoRoutes.Model
     /// <summary>
     /// Container for the parameters to the SnapToRoads operation.
     /// <c>SnapToRoads</c> matches GPS trace to roads most likely traveled on.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-roads.html">Snap
+    /// to Roads</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class SnapToRoadsRequest : AmazonGeoRoutesRequest
     {
@@ -69,7 +75,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>FlexiblePolyline</c> 
+        /// Default value: <c>FlexiblePolyline</c> 
         /// </para>
         /// </summary>
         public GeometryFormat SnappedGeometryFormat
@@ -143,7 +149,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>Car</c> 
+        /// Default value: <c>Car</c> 
         /// </para>
         /// </summary>
         public RoadSnapTravelMode TravelMode

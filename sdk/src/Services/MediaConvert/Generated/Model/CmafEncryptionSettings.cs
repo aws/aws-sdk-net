@@ -34,12 +34,39 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class CmafEncryptionSettings
     {
+        private HlsClearLead _clearLead;
         private string _constantInitializationVector;
         private CmafEncryptionType _encryptionMethod;
         private CmafInitializationVectorInManifest _initializationVectorInManifest;
         private SpekeKeyProviderCmaf _spekeKeyProvider;
         private StaticKeyProvider _staticKeyProvider;
         private CmafKeyProviderType _type;
+
+        /// <summary>
+        /// Gets and sets the property ClearLead. Enable Clear Lead DRM to reduce video startup
+        /// latency by leaving the first segment unencrypted while DRM license retrieval occurs
+        /// in parallel. This optimization allows immediate playback startup while maintaining
+        /// content protection for the remainder of the stream. When enabled, the first output
+        /// segment remains fully unencrypted, and encryption begins at the start of the second
+        /// segment. The HLS manifest will omit #EXT-X-KEY tags during the clear segment and insert
+        /// the first #EXT-X-KEY immediately before the first encrypted fragment. This feature
+        /// is supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all existing
+        /// key provider integrations (SPEKE v1, SPEKE v2, and Static Key encryption). Supported
+        /// codecs: H.264 and H.265 video codecs, and AAC audio codec. Choose Enabled to activate
+        /// Clear Lead DRM optimization. Choose Disabled to use standard encryption where all
+        /// segments are encrypted from the beginning.
+        /// </summary>
+        public HlsClearLead ClearLead
+        {
+            get { return this._clearLead; }
+            set { this._clearLead = value; }
+        }
+
+        // Check to see if ClearLead property is set
+        internal bool IsSetClearLead()
+        {
+            return this._clearLead != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConstantInitializationVector. This is a 128-bit, 16-byte

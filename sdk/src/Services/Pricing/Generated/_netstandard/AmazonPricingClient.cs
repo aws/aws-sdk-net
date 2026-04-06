@@ -327,6 +327,9 @@ namespace Amazon.Pricing
         /// </param>
         /// 
         /// <returns>The response from the DescribeServices service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
         /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
         /// The pagination token expired. Try again without a pagination token.
         /// </exception>
@@ -381,6 +384,9 @@ namespace Amazon.Pricing
         /// </param>
         /// 
         /// <returns>The response from the GetAttributeValues service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
         /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
         /// The pagination token expired. Try again without a pagination token.
         /// </exception>
@@ -494,6 +500,9 @@ namespace Amazon.Pricing
         /// </param>
         /// 
         /// <returns>The response from the GetProducts service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
         /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
         /// The pagination token expired. Try again without a pagination token.
         /// </exception>

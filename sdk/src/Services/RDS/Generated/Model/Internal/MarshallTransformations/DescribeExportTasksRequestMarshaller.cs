@@ -111,6 +111,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SourceType", StringUtils.FromString(publicRequest.SourceType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeExportTasksRequestMarshaller _instance = new DescribeExportTasksRequestMarshaller();        

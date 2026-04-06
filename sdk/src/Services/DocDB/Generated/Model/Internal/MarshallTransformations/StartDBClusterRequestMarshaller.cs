@@ -64,6 +64,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DBClusterIdentifier", StringUtils.FromString(publicRequest.DBClusterIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static StartDBClusterRequestMarshaller _instance = new StartDBClusterRequestMarshaller();        

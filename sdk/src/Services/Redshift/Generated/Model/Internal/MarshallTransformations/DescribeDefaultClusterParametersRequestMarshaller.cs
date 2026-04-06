@@ -72,6 +72,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ParameterGroupFamily", StringUtils.FromString(publicRequest.ParameterGroupFamily));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeDefaultClusterParametersRequestMarshaller _instance = new DescribeDefaultClusterParametersRequestMarshaller();        

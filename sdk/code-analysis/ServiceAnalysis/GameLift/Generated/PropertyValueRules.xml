@@ -345,7 +345,7 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateScriptRequest.NodeJsVersion</property>
     <max>16</max>
-    <pattern>^\d+\.[x0-9]+$</pattern>
+    <pattern>^[0-9]+\.(?:x|[0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateScriptRequest.Version</property>
@@ -1102,6 +1102,18 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.GetInstanceAccessRequest.InstanceId</property>
     <pattern>[a-zA-Z0-9\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GetPlayerConnectionDetailsRequest.GameSessionId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GetPlayerConnectionDetailsResponse.GameSessionId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.ListAliasesRequest.Limit</property>
@@ -1965,7 +1977,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Build.SizeOnDisk</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Compute.ComputeArn</property>
@@ -2603,6 +2615,12 @@
     <pattern>^i-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSession.ComputeName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9\-]+(\/[a-zA-Z0-9\-]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.GameSession.CreatorId</property>
     <min>1</min>
     <max>1024</max>
@@ -3020,6 +3038,27 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.PlayerConnectionDetail.PlayerGatewayToken</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PlayerConnectionDetail.PlayerId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PlayerConnectionEndpoint.IpAddress</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9A-Fa-f\:\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PlayerConnectionEndpoint.Port</property>
+    <min>1</min>
+    <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.PlayerLatency.PlayerId</property>
     <min>1</min>
     <max>1024</max>
@@ -3154,7 +3193,7 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.Script.NodeJsVersion</property>
     <max>16</max>
-    <pattern>^\d+\.[x0-9]+$</pattern>
+    <pattern>^[0-9]+\.(?:x|[0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Script.ScriptArn</property>
@@ -3166,7 +3205,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Script.SizeOnDisk</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Script.Version</property>

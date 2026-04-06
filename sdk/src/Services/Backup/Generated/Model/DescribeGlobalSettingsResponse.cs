@@ -43,6 +43,22 @@ namespace Amazon.Backup.Model
         /// The status of the flags <c>isCrossAccountBackupEnabled</c>, <c>isMpaEnabled</c> ('Mpa'
         /// refers to multi-party approval), and <c>isDelegatedAdministratorEnabled</c>.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>isCrossAccountBackupEnabled</c>: Allow accounts in your organization to copy backups
+        /// to other accounts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>isMpaEnabled</c>: Add cross-account access to your organization with the option
+        /// to assign a Multi-party approval team to a logically air-gapped vault.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>isDelegatedAdministratorEnabled</c>: Allow Backup to automatically synchronize
+        /// delegated administrator permissions with Organizations.
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -64,9 +80,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property LastUpdateTime. 
         /// <para>
-        /// The date and time that the flag <c>isCrossAccountBackupEnabled</c> was last updated.
-        /// This update is in Unix format and Coordinated Universal Time (UTC). The value of <c>LastUpdateTime</c>
-        /// is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+        /// The date and time that the supported flags were last updated. This update is in Unix
+        /// format and Coordinated Universal Time (UTC). The value of <c>LastUpdateTime</c> is
+        /// accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
         /// January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>

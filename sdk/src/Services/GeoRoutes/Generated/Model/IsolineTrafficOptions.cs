@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Options related to traffic.
+    /// Controls how real-time and historical traffic data is used when calculating reachable
+    /// areas. This affects both the size and shape of isolines by accounting for expected
+    /// travel speeds based on congestion patterns.
     /// </summary>
     public partial class IsolineTrafficOptions
     {
@@ -40,11 +42,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property FlowEventThresholdOverride. 
         /// <para>
-        /// Duration for which flow traffic is considered valid. For this period, the flow traffic
-        /// is used over historical traffic data. Flow traffic refers to congestion, which changes
-        /// very quickly. Duration in seconds for which flow traffic event would be considered
-        /// valid. While flow traffic event is valid it will be used over the historical traffic
-        /// data. 
+        /// The duration in seconds that real-time congestion data is considered valid before
+        /// reverting to historical traffic patterns. This helps balance between using current
+        /// conditions and more predictable historical data when calculating travel times.
         /// </para>
         ///  
         /// <para>
@@ -67,11 +67,15 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Usage. 
         /// <para>
-        /// Determines if traffic should be used or ignored while calculating the route.
+        /// Controls whether traffic data is used in calculations. <c>UseTrafficData</c> considers
+        /// both real-time congestion and historical patterns, while <c>IgnoreTrafficData</c>
+        /// calculates routes based solely on road types and speed limits. Using traffic data
+        /// provides more accurate real-world estimates but may produce different results at different
+        /// times of day.
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>UseTrafficData</c> 
+        /// Default value: <c>UseTrafficData</c> 
         /// </para>
         /// </summary>
         public TrafficUsage Usage

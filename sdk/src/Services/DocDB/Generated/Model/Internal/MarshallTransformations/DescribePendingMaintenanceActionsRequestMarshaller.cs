@@ -103,6 +103,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ResourceIdentifier", StringUtils.FromString(publicRequest.ResourceIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribePendingMaintenanceActionsRequestMarshaller _instance = new DescribePendingMaintenanceActionsRequestMarshaller();        

@@ -58,6 +58,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
+            if(requestObject.IsSetEncryptionAlgorithm())
+            {
+                context.Writer.WritePropertyName("EncryptionAlgorithm");
+                context.Writer.WriteNumberValue(requestObject.EncryptionAlgorithm.Value);
+            }
+
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
@@ -74,6 +80,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("S3Path");
                 context.Writer.WriteStringValue(requestObject.S3Path);
+            }
+
+            if(requestObject.IsSetSecurityMechanism())
+            {
+                context.Writer.WritePropertyName("SecurityMechanism");
+                context.Writer.WriteNumberValue(requestObject.SecurityMechanism.Value);
             }
 
             if(requestObject.IsSetServerName())

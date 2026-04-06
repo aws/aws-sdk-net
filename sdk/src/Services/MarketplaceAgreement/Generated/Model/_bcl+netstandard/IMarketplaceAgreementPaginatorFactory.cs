@@ -38,6 +38,46 @@ namespace Amazon.MarketplaceAgreement.Model
         IGetAgreementTermsPaginator GetAgreementTerms(GetAgreementTermsRequest request);
 
         /// <summary>
+        /// Paginator for ListAgreementCancellationRequests operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgreementCancellationRequestsPaginator ListAgreementCancellationRequests(ListAgreementCancellationRequestsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgreementInvoiceLineItems operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgreementInvoiceLineItemsPaginator ListAgreementInvoiceLineItems(ListAgreementInvoiceLineItemsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgreementPaymentRequests operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgreementPaymentRequestsPaginator ListAgreementPaymentRequests(ListAgreementPaymentRequestsRequest request);
+
+        /// <summary>
+        /// Paginator for ListBillingAdjustmentRequests operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListBillingAdjustmentRequestsPaginator ListBillingAdjustmentRequests(ListBillingAdjustmentRequestsRequest request);
+
+        /// <summary>
         /// Paginator for SearchAgreements operation
         ///</summary>
         [AWSPaginator(

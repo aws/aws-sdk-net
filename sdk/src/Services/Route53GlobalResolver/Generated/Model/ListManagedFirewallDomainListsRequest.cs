@@ -31,8 +31,17 @@ namespace Amazon.Route53GlobalResolver.Model
 {
     /// <summary>
     /// Container for the parameters to the ListManagedFirewallDomainLists operation.
-    /// Returns a paginated list of the AWS Managed DNS Lists and the categories for DNS Firewall.
-    /// The categories are either <c>THREAT</c> or <c>CONTENT</c>.
+    /// Returns a paginated list of the Amazon Web Services Managed DNS Lists and the categories
+    /// for DNS Firewall. The categories are either <c>THREAT</c> or <c>CONTENT</c>.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+    /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+    /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+    /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ListManagedFirewallDomainListsRequest : AmazonRoute53GlobalResolverRequest
     {

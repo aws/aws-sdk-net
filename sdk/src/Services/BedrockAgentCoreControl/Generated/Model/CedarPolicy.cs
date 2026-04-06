@@ -46,7 +46,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// when access should be allowed or denied.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=35, Max=153600)]
+        [AWSProperty(Required=true, Min=35, Max=10000)]
         public string Statement
         {
             get { return this._statement; }

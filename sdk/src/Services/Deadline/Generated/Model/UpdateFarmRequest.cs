@@ -35,9 +35,31 @@ namespace Amazon.Deadline.Model
     /// </summary>
     public partial class UpdateFarmRequest : AmazonDeadlineRequest
     {
+        private float? _costScaleFactor;
         private string _description;
         private string _displayName;
         private string _farmId;
+
+        /// <summary>
+        /// Gets and sets the property CostScaleFactor. 
+        /// <para>
+        /// A multiplier applied to the farm's calculated costs for usage data and budget tracking.
+        /// A value less than 1 represents a discount, a value greater than 1 represents a premium,
+        /// and a value of 1 represents no adjustment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public float? CostScaleFactor
+        {
+            get { return this._costScaleFactor; }
+            set { this._costScaleFactor = value; }
+        }
+
+        // Check to see if CostScaleFactor property is set
+        internal bool IsSetCostScaleFactor()
+        {
+            return this._costScaleFactor.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

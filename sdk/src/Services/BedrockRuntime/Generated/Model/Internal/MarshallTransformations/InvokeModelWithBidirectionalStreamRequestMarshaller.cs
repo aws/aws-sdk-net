@@ -65,7 +65,6 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
             request.EventStreamPublisher = new InvokeModelWithBidirectionalStreamInputPublisherMarshaller(publicRequest.BodyPublisher);
 
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-09-30";
             request.HttpMethod = "POST";
 

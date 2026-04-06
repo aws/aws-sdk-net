@@ -71,6 +71,8 @@ namespace Amazon.GameLift.Model
         private string _name;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
         private OperatingSystem _operatingSystem;
+        private PlayerGatewayConfiguration _playerGatewayConfiguration;
+        private PlayerGatewayMode _playerGatewayMode;
         private ResourceCreationLimitPolicy _resourceCreationLimitPolicy;
         private string _scriptArn;
         private string _scriptId;
@@ -481,6 +483,49 @@ namespace Amazon.GameLift.Model
         internal bool IsSetOperatingSystem()
         {
             return this._operatingSystem != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlayerGatewayConfiguration. 
+        /// <para>
+        /// Configuration settings for player gateway on this fleet.
+        /// </para>
+        /// </summary>
+        public PlayerGatewayConfiguration PlayerGatewayConfiguration
+        {
+            get { return this._playerGatewayConfiguration; }
+            set { this._playerGatewayConfiguration = value; }
+        }
+
+        // Check to see if PlayerGatewayConfiguration property is set
+        internal bool IsSetPlayerGatewayConfiguration()
+        {
+            return this._playerGatewayConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlayerGatewayMode. 
+        /// <para>
+        /// Indicates whether player gateway is enabled for this fleet. Player gateway provides
+        /// benefits such as DDoS protection with negligible impact to latency.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <c>ENABLED</c> or <c>REQUIRED</c>, game clients can use player gateway to connect
+        /// with the game server. If <c>DISABLED</c>, game clients cannot use player gateway.
+        /// Instead, they have to directly connect to the game server.
+        /// </para>
+        /// </summary>
+        public PlayerGatewayMode PlayerGatewayMode
+        {
+            get { return this._playerGatewayMode; }
+            set { this._playerGatewayMode = value; }
+        }
+
+        // Check to see if PlayerGatewayMode property is set
+        internal bool IsSetPlayerGatewayMode()
+        {
+            return this._playerGatewayMode != null;
         }
 
         /// <summary>

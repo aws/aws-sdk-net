@@ -222,6 +222,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UserData", StringUtils.FromString(publicRequest.UserData));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateLaunchConfigurationRequestMarshaller _instance = new CreateLaunchConfigurationRequestMarshaller();        

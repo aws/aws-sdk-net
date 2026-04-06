@@ -72,6 +72,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ReplicationGroupRegion", StringUtils.FromString(publicRequest.ReplicationGroupRegion));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DisassociateGlobalReplicationGroupRequestMarshaller _instance = new DisassociateGlobalReplicationGroupRequestMarshaller();        

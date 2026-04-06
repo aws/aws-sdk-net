@@ -45,6 +45,38 @@ namespace Amazon.MarketplaceAgreement.Model
         }
 
         /// <summary>
+        /// Paginator for ListAgreementCancellationRequests operation
+        ///</summary>
+        public IListAgreementCancellationRequestsPaginator ListAgreementCancellationRequests(ListAgreementCancellationRequestsRequest request) 
+        {
+            return new ListAgreementCancellationRequestsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgreementInvoiceLineItems operation
+        ///</summary>
+        public IListAgreementInvoiceLineItemsPaginator ListAgreementInvoiceLineItems(ListAgreementInvoiceLineItemsRequest request) 
+        {
+            return new ListAgreementInvoiceLineItemsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgreementPaymentRequests operation
+        ///</summary>
+        public IListAgreementPaymentRequestsPaginator ListAgreementPaymentRequests(ListAgreementPaymentRequestsRequest request) 
+        {
+            return new ListAgreementPaymentRequestsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBillingAdjustmentRequests operation
+        ///</summary>
+        public IListBillingAdjustmentRequestsPaginator ListBillingAdjustmentRequests(ListBillingAdjustmentRequestsRequest request) 
+        {
+            return new ListBillingAdjustmentRequestsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchAgreements operation
         ///</summary>
         public ISearchAgreementsPaginator SearchAgreements(SearchAgreementsRequest request) 

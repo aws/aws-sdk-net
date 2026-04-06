@@ -62,6 +62,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchLog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Prometheus", targetDepth))
+                {
+                    var unmarshaller = PrometheusDirectQueryDataSourceUnmarshaller.Instance;
+                    unmarshalledObject.Prometheus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SecurityLake", targetDepth))
                 {
                     var unmarshaller = SecurityLakeDirectQueryDataSourceUnmarshaller.Instance;

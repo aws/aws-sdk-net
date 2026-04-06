@@ -92,6 +92,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("GlobalReplicationGroupId", StringUtils.FromString(publicRequest.GlobalReplicationGroupId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyGlobalReplicationGroupRequestMarshaller _instance = new ModifyGlobalReplicationGroupRequestMarshaller();        

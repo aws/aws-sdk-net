@@ -82,6 +82,11 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
                 request.Headers["X-Amzn-SageMaker-Custom-Attributes"] = publicRequest.CustomAttributes;
             }
         
+            if (publicRequest.IsSetFilename()) 
+            {
+                request.Headers["X-Amzn-SageMaker-Filename"] = publicRequest.Filename;
+            }
+        
             if (publicRequest.IsSetInferenceId()) 
             {
                 request.Headers["X-Amzn-SageMaker-Inference-Id"] = publicRequest.InferenceId;
@@ -100,6 +105,11 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetRequestTTLSeconds()) 
             {
                 request.Headers["X-Amzn-SageMaker-RequestTTLSeconds"] = StringUtils.FromInt(publicRequest.RequestTTLSeconds);
+            }
+        
+            if (publicRequest.IsSetS3OutputPathExtension()) 
+            {
+                request.Headers["X-Amzn-SageMaker-S3OutputPathExtension"] = publicRequest.S3OutputPathExtension;
             }
 
             return request;

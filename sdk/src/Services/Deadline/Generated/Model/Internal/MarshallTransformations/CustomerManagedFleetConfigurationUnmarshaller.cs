@@ -56,6 +56,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("autoScalingConfiguration", targetDepth))
+                {
+                    var unmarshaller = CustomerManagedAutoScalingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AutoScalingConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("mode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

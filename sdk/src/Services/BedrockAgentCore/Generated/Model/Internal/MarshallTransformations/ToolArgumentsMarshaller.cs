@@ -109,6 +109,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetRuntime())
+            {
+                context.Writer.WritePropertyName("runtime");
+                context.Writer.WriteStringValue(requestObject.Runtime);
+            }
+
             if(requestObject.IsSetTaskId())
             {
                 context.Writer.WritePropertyName("taskId");

@@ -72,6 +72,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PolicyArn", StringUtils.FromString(publicRequest.PolicyArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListPolicyTagsRequestMarshaller _instance = new ListPolicyTagsRequestMarshaller();        

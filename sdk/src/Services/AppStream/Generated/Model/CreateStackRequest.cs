@@ -38,6 +38,7 @@ namespace Amazon.AppStream.Model
     {
         private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
         private ApplicationSettings _applicationSettings;
+        private ContentRedirection _contentRedirection;
         private string _description;
         private string _displayName;
         private List<string> _embedHostDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -92,6 +93,21 @@ namespace Amazon.AppStream.Model
         internal bool IsSetApplicationSettings()
         {
             return this._applicationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentRedirection.
+        /// </summary>
+        public ContentRedirection ContentRedirection
+        {
+            get { return this._contentRedirection; }
+            set { this._contentRedirection = value; }
+        }
+
+        // Check to see if ContentRedirection property is set
+        internal bool IsSetContentRedirection()
+        {
+            return this._contentRedirection != null;
         }
 
         /// <summary>

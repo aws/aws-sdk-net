@@ -64,6 +64,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("StackDriftDetectionId", StringUtils.FromString(publicRequest.StackDriftDetectionId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeStackDriftDetectionStatusRequestMarshaller _instance = new DescribeStackDriftDetectionStatusRequestMarshaller();        

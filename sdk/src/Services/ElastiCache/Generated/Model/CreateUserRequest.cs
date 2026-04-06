@@ -171,7 +171,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The ID of the user.
+        /// The ID of the user. This value is stored as a lowercase string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

@@ -50,8 +50,8 @@ namespace Amazon.QuickSight.Model
         /// In the Quick Sight console, the Amazon Quick Sight subscription is sometimes referred
         /// to as a Quick Sight "account" even though it's technically not an account by itself.
         /// Instead, it's a subscription to the Amazon Quick Sight service for your Amazon Web
-        /// Services account. The edition that you subscribe to applies to Quick Suite in every
-        /// Amazon Web Services Region where you use it.
+        /// Services account. The edition that you subscribe to applies to Quick in every Amazon
+        /// Web Services Region where you use it.
         /// </para>
         /// </summary>
         public AccountSettings AccountSettings

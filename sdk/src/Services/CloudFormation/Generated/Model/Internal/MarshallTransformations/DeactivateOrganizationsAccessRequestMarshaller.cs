@@ -60,6 +60,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             if(publicRequest != null)
             {
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeactivateOrganizationsAccessRequestMarshaller _instance = new DeactivateOrganizationsAccessRequestMarshaller();        

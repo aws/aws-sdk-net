@@ -41,7 +41,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _clientToken;
         private string _description;
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<FilesystemConfiguration> _filesystemConfigurations = AWSConfigs.InitializeCollections ? new List<FilesystemConfiguration>() : null;
         private LifecycleConfiguration _lifecycleConfiguration;
+        private RuntimeMetadataConfiguration _metadataConfiguration;
         private NetworkConfiguration _networkConfiguration;
         private ProtocolConfiguration _protocolConfiguration;
         private RequestHeaderConfiguration _requestHeaderConfiguration;
@@ -166,6 +168,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FilesystemConfigurations. 
+        /// <para>
+        /// The updated filesystem configurations to mount into the AgentCore Runtime.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<FilesystemConfiguration> FilesystemConfigurations
+        {
+            get { return this._filesystemConfigurations; }
+            set { this._filesystemConfigurations = value; }
+        }
+
+        // Check to see if FilesystemConfigurations property is set
+        internal bool IsSetFilesystemConfigurations()
+        {
+            return this._filesystemConfigurations != null && (this._filesystemConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property LifecycleConfiguration. 
         /// <para>
         /// The updated life cycle configuration for the AgentCore Runtime.
@@ -181,6 +207,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetLifecycleConfiguration()
         {
             return this._lifecycleConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataConfiguration. 
+        /// <para>
+        /// The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore
+        /// Runtime.
+        /// </para>
+        /// </summary>
+        public RuntimeMetadataConfiguration MetadataConfiguration
+        {
+            get { return this._metadataConfiguration; }
+            set { this._metadataConfiguration = value; }
+        }
+
+        // Check to see if MetadataConfiguration property is set
+        internal bool IsSetMetadataConfiguration()
+        {
+            return this._metadataConfiguration != null;
         }
 
         /// <summary>

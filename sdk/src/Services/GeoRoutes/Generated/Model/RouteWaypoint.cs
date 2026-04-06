@@ -46,9 +46,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property AvoidActionsForDistance. 
         /// <para>
-        /// Avoids actions for the provided distance. This is typically to consider for users
+        ///  Avoids actions for the provided distance. This is typically to consider for users
         /// in moving vehicles who may not have sufficient time to make an action at an origin
-        /// or a destination.
+        /// or a destination. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=2000)]
@@ -67,7 +69,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property AvoidUTurns. 
         /// <para>
-        /// Avoid U-turns for calculation on highways and motorways.
+        ///  Avoid U-turns for calculation on highways and motorways. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -86,7 +90,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Heading. 
         /// <para>
-        /// GPS Heading at the position.
+        ///  GPS Heading at the position. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=360)]
@@ -105,7 +111,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Matching. 
         /// <para>
-        /// Options to configure matching the provided position to the road network.
+        ///  Options to configure matching the provided position to the road network. Not supported
+        /// in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteMatchingOptions Matching
@@ -123,8 +131,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property PassThrough. 
         /// <para>
-        /// If the waypoint should not be treated as a stop. If yes, the waypoint is passed through
-        /// and doesn't split the route into different legs.
+        ///  If the waypoint should not be treated as a stop. If yes, the waypoint is passed through
+        /// and doesn't split the route into different legs. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -143,7 +153,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// Position defined as <c>[longitude, latitude]</c>.
+        /// Position in World Geodetic System (WGS 84) format: [longitude, latitude].
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -167,7 +177,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property SideOfStreet. 
         /// <para>
-        /// Options to configure matching the provided position to a side of the street.
+        ///  Options to configure matching the provided position to a side of the street. Not
+        /// supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteSideOfStreetOptions SideOfStreet
@@ -185,14 +197,16 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property StopDuration. 
         /// <para>
-        /// Duration of the stop.
+        ///  Duration of the stop. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  
         /// <para>
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Max=49999)]
         public long? StopDuration
         {
             get { return this._stopDuration; }

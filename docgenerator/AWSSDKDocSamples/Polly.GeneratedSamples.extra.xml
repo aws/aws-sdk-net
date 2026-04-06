@@ -97,6 +97,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Polly.IAmazonPolly.StartSpeechSynthesisStream(Amazon.Polly.Model.StartSpeechSynthesisStreamRequest)" />
+            <member name="M:Amazon.Polly.AmazonPollyClient.StartSpeechSynthesisStream(Amazon.Polly.Model.StartSpeechSynthesisStreamRequest)" />
+            <member name="T:Amazon.Polly.Model.StartSpeechSynthesisStreamRequest" />
+            <member name="T:Amazon.Polly.Model.StartSpeechSynthesisStreamResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to use the StartSpeechSynthesisStream operation to send text events over an input stream and receive audio events over an output stream.
+                </para>
+                <code
+                    title="To synthesize speech using a bidirectional stream"
+                    source=".\AWSSDKDocSamples\Polly\Polly.GeneratedSamples.cs"
+                    region="to-start-speech-synthesis-stream-1741791835844" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Polly.IAmazonPolly.SynthesizeSpeech(Amazon.Polly.Model.SynthesizeSpeechRequest)" />
             <member name="M:Amazon.Polly.AmazonPollyClient.SynthesizeSpeech(Amazon.Polly.Model.SynthesizeSpeechRequest)" />
             <member name="T:Amazon.Polly.Model.SynthesizeSpeechRequest" />

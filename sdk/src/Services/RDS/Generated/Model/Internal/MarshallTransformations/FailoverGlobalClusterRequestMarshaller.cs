@@ -76,6 +76,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetDbClusterIdentifier", StringUtils.FromString(publicRequest.TargetDbClusterIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static FailoverGlobalClusterRequestMarshaller _instance = new FailoverGlobalClusterRequestMarshaller();        

@@ -96,6 +96,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeTrustStoresRequestMarshaller _instance = new DescribeTrustStoresRequestMarshaller();        

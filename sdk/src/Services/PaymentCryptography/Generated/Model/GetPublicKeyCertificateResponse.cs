@@ -41,8 +41,10 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property KeyCertificate. 
         /// <para>
         /// The public key component of the asymmetric key pair in a certificate PEM format (base64
-        /// encoded). It is signed by the root certificate authority (CA). The certificate expires
-        /// in 90 days.
+        /// encoded). It is signed by the root certificate authority (CA). The certificate is
+        /// valid for 90 days from the time it is issued. The service returns a cached certificate
+        /// if one exists with at least 30 days of remaining validity. Otherwise, a new 90-day
+        /// certificate is issued.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32768)]

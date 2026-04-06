@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetVpcSubnetId", StringUtils.FromString(publicRequest.TargetVpcSubnetId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteClientVpnRouteRequestMarshaller _instance = new DeleteClientVpnRouteRequestMarshaller();        

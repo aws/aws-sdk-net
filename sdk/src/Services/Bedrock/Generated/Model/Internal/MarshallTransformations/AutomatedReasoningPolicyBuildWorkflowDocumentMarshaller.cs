@@ -49,7 +49,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocument())
             {
                 context.Writer.WritePropertyName("document");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Document));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Document);
             }
 
             if(requestObject.IsSetDocumentContentType())

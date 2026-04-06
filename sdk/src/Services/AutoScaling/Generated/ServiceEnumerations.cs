@@ -855,6 +855,22 @@ namespace Amazon.AutoScaling
         /// </summary>
         public static readonly LifecycleState Quarantined = new LifecycleState("Quarantined");
         /// <summary>
+        /// Constant ReplacingRootVolume for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState ReplacingRootVolume = new LifecycleState("ReplacingRootVolume");
+        /// <summary>
+        /// Constant ReplacingRootVolumeProceed for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState ReplacingRootVolumeProceed = new LifecycleState("ReplacingRootVolume:Proceed");
+        /// <summary>
+        /// Constant ReplacingRootVolumeWait for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState ReplacingRootVolumeWait = new LifecycleState("ReplacingRootVolume:Wait");
+        /// <summary>
+        /// Constant RootVolumeReplaced for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState RootVolumeReplaced = new LifecycleState("RootVolumeReplaced");
+        /// <summary>
         /// Constant Standby for LifecycleState
         /// </summary>
         public static readonly LifecycleState Standby = new LifecycleState("Standby");
@@ -871,6 +887,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         public static readonly LifecycleState TerminatingProceed = new LifecycleState("Terminating:Proceed");
         /// <summary>
+        /// Constant TerminatingRetained for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState TerminatingRetained = new LifecycleState("Terminating:Retained");
+        /// <summary>
         /// Constant TerminatingWait for LifecycleState
         /// </summary>
         public static readonly LifecycleState TerminatingWait = new LifecycleState("Terminating:Wait");
@@ -886,6 +906,10 @@ namespace Amazon.AutoScaling
         /// Constant WarmedPendingProceed for LifecycleState
         /// </summary>
         public static readonly LifecycleState WarmedPendingProceed = new LifecycleState("Warmed:Pending:Proceed");
+        /// <summary>
+        /// Constant WarmedPendingRetained for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState WarmedPendingRetained = new LifecycleState("Warmed:Pending:Retained");
         /// <summary>
         /// Constant WarmedPendingWait for LifecycleState
         /// </summary>
@@ -910,6 +934,10 @@ namespace Amazon.AutoScaling
         /// Constant WarmedTerminatingProceed for LifecycleState
         /// </summary>
         public static readonly LifecycleState WarmedTerminatingProceed = new LifecycleState("Warmed:Terminating:Proceed");
+        /// <summary>
+        /// Constant WarmedTerminatingRetained for LifecycleState
+        /// </summary>
+        public static readonly LifecycleState WarmedTerminatingRetained = new LifecycleState("Warmed:Terminating:Retained");
         /// <summary>
         /// Constant WarmedTerminatingWait for LifecycleState
         /// </summary>

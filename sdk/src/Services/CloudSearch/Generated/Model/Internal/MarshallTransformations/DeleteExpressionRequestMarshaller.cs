@@ -68,6 +68,8 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ExpressionName", StringUtils.FromString(publicRequest.ExpressionName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteExpressionRequestMarshaller _instance = new DeleteExpressionRequestMarshaller();        

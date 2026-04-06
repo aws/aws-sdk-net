@@ -669,6 +669,31 @@ namespace Amazon.S3.Transfer
         /// 	Adjust <see cref="TransferUtilityOpenStreamRequest.MaxInMemoryParts"/> if you need to limit memory usage, 
         /// 	especially when downloading very large files or multiple files concurrently.
         /// 	</para>
+        /// 	<para>
+        /// 	<b>Performance Tip - Using Smaller Part Sizes:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	When downloading objects that were uploaded with large part sizes (e.g., 5GB parts), consider using 
+        /// 	<see cref="BaseDownloadRequest.MultipartDownloadType"/> set to <c>MultipartDownloadType.RANGE</c> with 
+        /// 	smaller part sizes (e.g., 8MB-64MB) via <see cref="BaseDownloadRequest.PartSize"/>. Smaller part sizes 
+        /// 	can improve download throughput by enabling more efficient parallel downloads.
+        /// 	</para>
+        /// 	<para>
+        /// 	<b>Note:</b> When using RANGE mode with custom part sizes, downloads will not use the original S3 multipart 
+        /// 	upload boundaries, which means S3's part-level integrity verification is not available.
+        /// 	</para>
+        /// 	<para>
+        /// 	<b>Linux Memory Map Limits:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	On Linux systems, downloading large objects with large parts may result in a 
+        /// 	"Fatal error. Failed to create RW mapping for RX memory" error. This occurs when the number of 
+        /// 	memory-mapped regions exceeds the system's <c>vm.max_map_count</c> limit (default: 65,530).
+        /// 	</para>
+        /// 	<para>
+        /// 	If you encounter this error, use RANGE mode with smaller part sizes as described above, and consider 
+        /// 	reducing <see cref="TransferUtilityOpenStreamRequest.MaxInMemoryParts"/> to limit concurrent memory allocations.
+        /// 	</para>
         /// </remarks>
         /// <param name="bucketName">
         /// 	The name of the bucket.
@@ -775,6 +800,31 @@ namespace Amazon.S3.Transfer
         /// 	<b>Memory Considerations:</b> The buffering mechanism uses memory to store downloaded parts. 
         /// 	Adjust <see cref="TransferUtilityOpenStreamRequest.MaxInMemoryParts"/> if you need to limit memory usage, 
         /// 	especially when downloading very large files or multiple files concurrently.
+        /// 	</para>
+        /// 	<para>
+        /// 	<b>Performance Tip - Using Smaller Part Sizes:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	When downloading objects that were uploaded with large part sizes (e.g., 5GB parts), consider using 
+        /// 	<see cref="BaseDownloadRequest.MultipartDownloadType"/> set to <c>MultipartDownloadType.RANGE</c> with 
+        /// 	smaller part sizes (e.g., 8MB-64MB) via <see cref="BaseDownloadRequest.PartSize"/>. Smaller part sizes 
+        /// 	can improve download throughput by enabling more efficient parallel downloads.
+        /// 	</para>
+        /// 	<para>
+        /// 	<b>Note:</b> When using RANGE mode with custom part sizes, downloads will not use the original S3 multipart 
+        /// 	upload boundaries, which means S3's part-level integrity verification is not available.
+        /// 	</para>
+        /// 	<para>
+        /// 	<b>Linux Memory Map Limits:</b>
+        /// 	</para>
+        /// 	<para>
+        /// 	On Linux systems, downloading large objects with large parts may result in a 
+        /// 	"Fatal error. Failed to create RW mapping for RX memory" error. This occurs when the number of 
+        /// 	memory-mapped regions exceeds the system's <c>vm.max_map_count</c> limit (default: 65,530).
+        /// 	</para>
+        /// 	<para>
+        /// 	If you encounter this error, use RANGE mode with smaller part sizes as described above, and consider 
+        /// 	reducing <see cref="TransferUtilityOpenStreamRequest.MaxInMemoryParts"/> to limit concurrent memory allocations.
         /// 	</para>
         /// </remarks>
         /// <param name="request">

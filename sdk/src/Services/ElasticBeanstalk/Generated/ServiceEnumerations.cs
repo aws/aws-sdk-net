@@ -627,6 +627,10 @@ namespace Amazon.ElasticBeanstalk
     {
 
         /// <summary>
+        /// Constant Analyze for EnvironmentInfoType
+        /// </summary>
+        public static readonly EnvironmentInfoType Analyze = new EnvironmentInfoType("analyze");
+        /// <summary>
         /// Constant Bundle for EnvironmentInfoType
         /// </summary>
         public static readonly EnvironmentInfoType Bundle = new EnvironmentInfoType("bundle");

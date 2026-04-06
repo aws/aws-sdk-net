@@ -35,15 +35,16 @@ namespace Amazon.Batch.Model
     public partial class GetJobQueueSnapshotResponse : AmazonWebServiceResponse
     {
         private FrontOfQueueDetail _frontOfQueue;
+        private FrontOfQuotaSharesDetail _frontOfQuotaShares;
         private QueueSnapshotUtilizationDetail _queueUtilization;
 
         /// <summary>
         /// Gets and sets the property FrontOfQueue. 
         /// <para>
         /// The list of the first 100 <c>RUNNABLE</c> jobs in each job queue. For first-in-first-out
-        /// (FIFO) job queues, jobs are ordered based on their submission time. For fair-share
-        /// scheduling (FSS) job queues, jobs are ordered based on their job priority and share
-        /// usage.
+        /// (FIFO) job queues, jobs are ordered based on their submission time. For job queues
+        /// with an attached fair-share scheduling (FSS) or quota-share policy, jobs are ordered
+        /// based on their job priority and share usage.
         /// </para>
         /// </summary>
         public FrontOfQueueDetail FrontOfQueue
@@ -59,10 +60,29 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FrontOfQuotaShares. 
+        /// <para>
+        /// The first <c>RUNNABLE</c> job in each quota share. Jobs are ordered based on their
+        /// job priority and share usage.
+        /// </para>
+        /// </summary>
+        public FrontOfQuotaSharesDetail FrontOfQuotaShares
+        {
+            get { return this._frontOfQuotaShares; }
+            set { this._frontOfQuotaShares = value; }
+        }
+
+        // Check to see if FrontOfQuotaShares property is set
+        internal bool IsSetFrontOfQuotaShares()
+        {
+            return this._frontOfQuotaShares != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QueueUtilization. 
         /// <para>
-        /// The job queue's capacity utilization, including total usage and breakdown by fairshare
-        /// scheduling queue.
+        /// The job queue's capacity utilization, including total usage and breakdown per given
+        /// share.
         /// </para>
         /// </summary>
         public QueueSnapshotUtilizationDetail QueueUtilization

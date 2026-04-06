@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// The area to be avoided.
+    /// Defines an area to avoid when calculating routes. Consists of a primary geometry to
+    /// avoid, with the ability to specify exception areas within that geometry where travel
+    /// is permitted.
     /// </summary>
     public partial class IsolineAvoidanceArea
     {
@@ -40,8 +42,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Except. 
         /// <para>
-        /// Exceptions to the provided avoidance geometry, to be included while calculating an
-        /// isoline.
+        /// Areas within the primary avoidance geometry where travel is allowed. For example,
+        /// you might want to avoid a neighborhood but allow travel on a major road that passes
+        /// through it.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -64,7 +67,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Geometry. 
         /// <para>
-        /// Geometry of the area to be avoided.
+        /// The primary area to avoid, specified using a bounding box, corridor, polygon, or polyline
+        /// corridor.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

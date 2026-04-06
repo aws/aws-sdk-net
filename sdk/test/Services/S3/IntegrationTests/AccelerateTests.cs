@@ -23,7 +23,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static readonly string testContent = "This is the content body!";
         private static IAmazonS3 s3Client = null;
         private static readonly List<string> leftoverBuckets = new List<string>();
-        private readonly Random random = new Random();
+        private string _testId;
+
+        [TestInitialize]
+        public void SetTestId()
+        {
+            _testId = Guid.NewGuid().ToString("N");
+        }
 
         [ClassInitialize]
         public static async Task Initialize(TestContext a)
@@ -187,7 +193,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         async Task TestDataPlaneOperations(IAmazonS3 client)
         {
-            var key = "contentBodyPut" + random.Next();
+            var key = _testId + "-contentBodyPut";
             await client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = bucketName,

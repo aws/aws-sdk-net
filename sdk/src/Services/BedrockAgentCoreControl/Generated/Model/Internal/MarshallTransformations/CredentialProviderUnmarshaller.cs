@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApiKeyCredentialProvider = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("iamCredentialProvider", targetDepth))
+                {
+                    var unmarshaller = IamCredentialProviderUnmarshaller.Instance;
+                    unmarshalledObject.IamCredentialProvider = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("oauthCredentialProvider", targetDepth))
                 {
                     var unmarshaller = OAuthCredentialProviderUnmarshaller.Instance;

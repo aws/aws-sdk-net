@@ -187,7 +187,7 @@ namespace Amazon.CertificateManager.Model
         /// only support ECDSA keys of a particular size, while others allow the use of either
         /// RSA and ECDSA keys to ensure that compatibility is not broken. Check the requirements
         /// for the Amazon Web Services service where you plan to deploy your certificate. For
-        /// more information about selecting an algorithm, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html#algorithms">Key
+        /// more information about selecting an algorithm, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate-characteristics.html#algorithms-term">Key
         /// algorithms</a>.
         /// </para>
         ///  <note> 

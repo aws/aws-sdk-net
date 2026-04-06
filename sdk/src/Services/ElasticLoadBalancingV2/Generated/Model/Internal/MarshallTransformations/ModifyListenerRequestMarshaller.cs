@@ -390,6 +390,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SslPolicy", StringUtils.FromString(publicRequest.SslPolicy));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyListenerRequestMarshaller _instance = new ModifyListenerRequestMarshaller();        

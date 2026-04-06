@@ -850,7 +850,7 @@ namespace Amazon.BackupGateway
         /// <summary>
         /// This action retrieves the property mappings for the specified hypervisor. A hypervisor
         /// property mapping displays the relationship of entity properties available from the
-        /// on-premises hypervisor to the properties available in Amazon Web Services.
+        /// hypervisor to the properties available in Amazon Web Services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHypervisorPropertyMappings service method.</param>
         /// 
@@ -882,7 +882,7 @@ namespace Amazon.BackupGateway
         /// <summary>
         /// This action retrieves the property mappings for the specified hypervisor. A hypervisor
         /// property mapping displays the relationship of entity properties available from the
-        /// on-premises hypervisor to the properties available in Amazon Web Services.
+        /// hypervisor to the properties available in Amazon Web Services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHypervisorPropertyMappings service method.</param>
         /// <param name="cancellationToken">
@@ -1384,7 +1384,7 @@ namespace Amazon.BackupGateway
         /// <summary>
         /// This action sets the property mappings for the specified hypervisor. A hypervisor
         /// property mapping displays the relationship of entity properties available from the
-        /// on-premises hypervisor to the properties available in Amazon Web Services.
+        /// hypervisor to the properties available in Amazon Web Services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutHypervisorPropertyMappings service method.</param>
         /// 
@@ -1422,7 +1422,7 @@ namespace Amazon.BackupGateway
         /// <summary>
         /// This action sets the property mappings for the specified hypervisor. A hypervisor
         /// property mapping displays the relationship of entity properties available from the
-        /// on-premises hypervisor to the properties available in Amazon Web Services.
+        /// hypervisor to the properties available in Amazon Web Services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutHypervisorPropertyMappings service method.</param>
         /// <param name="cancellationToken">

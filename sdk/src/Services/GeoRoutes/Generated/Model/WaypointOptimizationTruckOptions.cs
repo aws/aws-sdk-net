@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Travel mode options when the provided travel mode is "Truck"
+    /// Travel mode options when the provided travel mode is <c>Truck</c>.
     /// </summary>
     public partial class WaypointOptimizationTruckOptions
     {
@@ -51,7 +51,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -157,7 +157,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TruckType. 
         /// <para>
-        /// Type of the truck.
+        /// The type of truck: <c>LightTruck</c> for smaller delivery vehicles, <c> StraightTruck</c>
+        /// for rigid body trucks, or <c>Tractor</c> for tractor-trailer combinations.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -255,7 +256,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]

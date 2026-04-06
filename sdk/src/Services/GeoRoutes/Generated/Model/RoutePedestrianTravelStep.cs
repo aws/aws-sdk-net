@@ -327,7 +327,7 @@ namespace Amazon.GeoRoutes.Model
         /// Type of the step.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Required=true)]
         public RoutePedestrianTravelStepType Type
         {
             get { return this._type; }

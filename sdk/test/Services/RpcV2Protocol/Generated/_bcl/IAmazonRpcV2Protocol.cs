@@ -339,6 +339,42 @@ namespace Amazon.RpcV2Protocol
 
         #endregion
         
+        #region  RpcV2CborSparseMaps
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RpcV2CborSparseMaps service method.</param>
+        /// 
+        /// <returns>The response from the RpcV2CborSparseMaps service method, as returned by RpcV2Protocol.</returns>
+        /// <exception cref="Amazon.RpcV2Protocol.Model.ValidationException">
+        /// A standard error for input validation failures. This should be thrown by services
+        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/RpcV2CborSparseMaps">REST API Reference for RpcV2CborSparseMaps Operation</seealso>
+        RpcV2CborSparseMapsResponse RpcV2CborSparseMaps(RpcV2CborSparseMapsRequest request);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RpcV2CborSparseMaps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RpcV2CborSparseMaps service method, as returned by RpcV2Protocol.</returns>
+        /// <exception cref="Amazon.RpcV2Protocol.Model.ValidationException">
+        /// A standard error for input validation failures. This should be thrown by services
+        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/RpcV2CborSparseMaps">REST API Reference for RpcV2CborSparseMaps Operation</seealso>
+        Task<RpcV2CborSparseMapsResponse> RpcV2CborSparseMapsAsync(RpcV2CborSparseMapsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SimpleScalarProperties
 
 
@@ -364,6 +400,34 @@ namespace Amazon.RpcV2Protocol
         /// <returns>The response from the SimpleScalarProperties service method, as returned by RpcV2Protocol.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/SimpleScalarProperties">REST API Reference for SimpleScalarProperties Operation</seealso>
         Task<SimpleScalarPropertiesResponse> SimpleScalarPropertiesAsync(SimpleScalarPropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SparseNullsOperation
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseNullsOperation service method.</param>
+        /// 
+        /// <returns>The response from the SparseNullsOperation service method, as returned by RpcV2Protocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/SparseNullsOperation">REST API Reference for SparseNullsOperation Operation</seealso>
+        SparseNullsOperationResponse SparseNullsOperation(SparseNullsOperationRequest request);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseNullsOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SparseNullsOperation service method, as returned by RpcV2Protocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/SparseNullsOperation">REST API Reference for SparseNullsOperation Operation</seealso>
+        Task<SparseNullsOperationResponse> SparseNullsOperationAsync(SparseNullsOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

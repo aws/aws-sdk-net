@@ -38,6 +38,7 @@ namespace Amazon.DataExchange.Model
     public partial class JobEntry
     {
         private string _arn;
+        private AssetConfiguration _assetConfiguration;
         private DateTime? _createdAt;
         private ResponseDetails _details;
         private List<JobError> _errors = AWSConfigs.InitializeCollections ? new List<JobError>() : null;
@@ -63,6 +64,24 @@ namespace Amazon.DataExchange.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetConfiguration. 
+        /// <para>
+        /// The configuration for the asset, including tags applied to assets created by the job.
+        /// </para>
+        /// </summary>
+        public AssetConfiguration AssetConfiguration
+        {
+            get { return this._assetConfiguration; }
+            set { this._assetConfiguration = value; }
+        }
+
+        // Check to see if AssetConfiguration property is set
+        internal bool IsSetAssetConfiguration()
+        {
+            return this._assetConfiguration != null;
         }
 
         /// <summary>

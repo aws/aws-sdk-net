@@ -41,8 +41,8 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Tier. 
         /// <para>
         /// The control plane scaling tier configuration. Available options are <c>standard</c>,
-        /// <c>tier-xl</c>, <c>tier-2xl</c>, or <c>tier-4xl</c>. For more information, see EKS
-        /// Provisioned Control Plane in the Amazon EKS User Guide.
+        /// <c>tier-xl</c>, <c>tier-2xl</c>, <c>tier-4xl, or tier-8xl</c>. For more information,
+        /// see EKS Provisioned Control Plane in the Amazon EKS User Guide.
         /// </para>
         /// </summary>
         public ProvisionedControlPlaneTier Tier

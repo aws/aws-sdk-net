@@ -212,7 +212,7 @@ namespace Amazon.TrustedAdvisor.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> Pillars
         {
             get { return this._pillars; }

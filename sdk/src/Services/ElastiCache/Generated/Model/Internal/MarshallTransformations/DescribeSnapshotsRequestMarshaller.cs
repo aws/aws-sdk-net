@@ -88,6 +88,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SnapshotSource", StringUtils.FromString(publicRequest.SnapshotSource));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeSnapshotsRequestMarshaller _instance = new DescribeSnapshotsRequestMarshaller();        

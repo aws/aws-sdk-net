@@ -55,7 +55,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFile())
             {
                 context.Writer.WritePropertyName("File");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.File));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.File);
             }
 
             if(requestObject.IsSetFormat())

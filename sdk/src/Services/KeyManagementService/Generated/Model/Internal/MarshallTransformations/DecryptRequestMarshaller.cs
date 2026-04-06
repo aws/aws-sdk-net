@@ -78,7 +78,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCiphertextBlob())
             {
                 context.Writer.WritePropertyName("CiphertextBlob");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.CiphertextBlob));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.CiphertextBlob);
             }
 
             if(publicRequest.IsSetDryRun())

@@ -48,7 +48,7 @@ namespace Amazon.Bedrock.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=0, Max=1)]
         public List<AccountEnforcedGuardrailOutputConfiguration> GuardrailsConfig
         {
             get { return this._guardrailsConfig; }

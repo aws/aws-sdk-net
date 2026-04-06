@@ -31,7 +31,8 @@ namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
     /// Container for the parameters to the ListChecks operation.
-    /// List a filterable set of Checks
+    /// List a filterable set of Checks. This API provides global recommendations, eliminating
+    /// the need to call the API in each AWS Region.
     /// </summary>
     public partial class ListChecksRequest : AmazonTrustedAdvisorRequest
     {

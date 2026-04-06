@@ -76,6 +76,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SkipFinalSnapshot", StringUtils.FromBool(publicRequest.SkipFinalSnapshot));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteDBInstanceRequestMarshaller _instance = new DeleteDBInstanceRequestMarshaller();        

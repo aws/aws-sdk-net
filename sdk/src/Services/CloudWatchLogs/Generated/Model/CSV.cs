@@ -43,6 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private List<string> _columns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _delimiter;
+        private string _destination;
         private string _quoteCharacter;
         private string _source;
 
@@ -93,6 +94,26 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetDelimiter()
         {
             return this._delimiter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Destination. 
+        /// <para>
+        /// The path to the parent field to put transformed key value pairs under. If you omit
+        /// this value, the key value pairs will be placed under the root node.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string Destination
+        {
+            get { return this._destination; }
+            set { this._destination = value; }
+        }
+
+        // Check to see if Destination property is set
+        internal bool IsSetDestination()
+        {
+            return this._destination != null;
         }
 
         /// <summary>

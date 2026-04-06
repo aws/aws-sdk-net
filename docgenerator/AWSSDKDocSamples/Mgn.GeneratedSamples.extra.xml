@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.CreateNetworkMigrationDefinition(Amazon.Mgn.Model.CreateNetworkMigrationDefinitionRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.CreateNetworkMigrationDefinition(Amazon.Mgn.Model.CreateNetworkMigrationDefinitionRequest)" />
+            <member name="T:Amazon.Mgn.Model.CreateNetworkMigrationDefinitionRequest" />
+            <member name="T:Amazon.Mgn.Model.CreateNetworkMigrationDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample CreateNetworkMigrationDefinition call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.DeleteNetworkMigrationDefinition(Amazon.Mgn.Model.DeleteNetworkMigrationDefinitionRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.DeleteNetworkMigrationDefinition(Amazon.Mgn.Model.DeleteNetworkMigrationDefinitionRequest)" />
+            <member name="T:Amazon.Mgn.Model.DeleteNetworkMigrationDefinitionRequest" />
+            <member name="T:Amazon.Mgn.Model.DeleteNetworkMigrationDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample DeleteNetworkMigrationDefinition call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.GetNetworkMigrationDefinition(Amazon.Mgn.Model.GetNetworkMigrationDefinitionRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.GetNetworkMigrationDefinition(Amazon.Mgn.Model.GetNetworkMigrationDefinitionRequest)" />
+            <member name="T:Amazon.Mgn.Model.GetNetworkMigrationDefinitionRequest" />
+            <member name="T:Amazon.Mgn.Model.GetNetworkMigrationDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample GetNetworkMigrationDefinition call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.GetNetworkMigrationMapperSegmentConstruct(Amazon.Mgn.Model.GetNetworkMigrationMapperSegmentConstructRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.GetNetworkMigrationMapperSegmentConstruct(Amazon.Mgn.Model.GetNetworkMigrationMapperSegmentConstructRequest)" />
+            <member name="T:Amazon.Mgn.Model.GetNetworkMigrationMapperSegmentConstructRequest" />
+            <member name="T:Amazon.Mgn.Model.GetNetworkMigrationMapperSegmentConstructResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample GetNetworkMigrationMapperSegmentConstruct call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListImportFileEnrichments(Amazon.Mgn.Model.ListImportFileEnrichmentsRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListImportFileEnrichments(Amazon.Mgn.Model.ListImportFileEnrichmentsRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListImportFileEnrichmentsRequest" />
+            <member name="T:Amazon.Mgn.Model.ListImportFileEnrichmentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListImportFileEnrichments call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationAnalyses(Amazon.Mgn.Model.ListNetworkMigrationAnalysesRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationAnalyses(Amazon.Mgn.Model.ListNetworkMigrationAnalysesRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationAnalysesRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationAnalysesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationAnalyses call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationAnalysisResults(Amazon.Mgn.Model.ListNetworkMigrationAnalysisResultsRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationAnalysisResults(Amazon.Mgn.Model.ListNetworkMigrationAnalysisResultsRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationAnalysisResultsRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationAnalysisResultsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationAnalysisResults call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationCodeGenerations(Amazon.Mgn.Model.ListNetworkMigrationCodeGenerationsRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationCodeGenerations(Amazon.Mgn.Model.ListNetworkMigrationCodeGenerationsRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationCodeGenerationsRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationCodeGenerationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationCodeGenerations call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationCodeGenerationSegments(Amazon.Mgn.Model.ListNetworkMigrationCodeGenerationSegmentsRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationCodeGenerationSegments(Amazon.Mgn.Model.ListNetworkMigrationCodeGenerationSegmentsRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationCodeGenerationSegmentsRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationCodeGenerationSegmentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationCodeGenerationSegments call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationDefinitions(Amazon.Mgn.Model.ListNetworkMigrationDefinitionsRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationDefinitions(Amazon.Mgn.Model.ListNetworkMigrationDefinitionsRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationDefinitionsRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationDefinitionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationDefinitions call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationDeployedStacks(Amazon.Mgn.Model.ListNetworkMigrationDeployedStacksRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationDeployedStacks(Amazon.Mgn.Model.ListNetworkMigrationDeployedStacksRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationDeployedStacksRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationDeployedStacksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationDeployedStacks call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationDeployments(Amazon.Mgn.Model.ListNetworkMigrationDeploymentsRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationDeployments(Amazon.Mgn.Model.ListNetworkMigrationDeploymentsRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationDeploymentsRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationDeploymentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationDeployments call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationExecutions(Amazon.Mgn.Model.ListNetworkMigrationExecutionsRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationExecutions(Amazon.Mgn.Model.ListNetworkMigrationExecutionsRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationExecutionsRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationExecutionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationExecutions call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationMapperSegmentConstructs(Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentConstructsRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationMapperSegmentConstructs(Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentConstructsRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentConstructsRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentConstructsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationMapperSegmentConstructs call with properties enabled"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationMapperSegmentConstructs(Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentConstructsRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationMapperSegmentConstructs(Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentConstructsRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentConstructsRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentConstructsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationMapperSegmentConstructs call with properties disabled (default)"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationMapperSegments(Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentsRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationMapperSegments(Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentsRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentsRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationMapperSegmentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationMapperSegments call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationMappings(Amazon.Mgn.Model.ListNetworkMigrationMappingsRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationMappings(Amazon.Mgn.Model.ListNetworkMigrationMappingsRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationMappingsRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationMappingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationMappings call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.ListNetworkMigrationMappingUpdates(Amazon.Mgn.Model.ListNetworkMigrationMappingUpdatesRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.ListNetworkMigrationMappingUpdates(Amazon.Mgn.Model.ListNetworkMigrationMappingUpdatesRequest)" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationMappingUpdatesRequest" />
+            <member name="T:Amazon.Mgn.Model.ListNetworkMigrationMappingUpdatesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample ListNetworkMigrationMappingUpdates call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.StartImportFileEnrichment(Amazon.Mgn.Model.StartImportFileEnrichmentRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.StartImportFileEnrichment(Amazon.Mgn.Model.StartImportFileEnrichmentRequest)" />
+            <member name="T:Amazon.Mgn.Model.StartImportFileEnrichmentRequest" />
+            <member name="T:Amazon.Mgn.Model.StartImportFileEnrichmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample StartImportFileEnrichment call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.StartNetworkMigrationAnalysis(Amazon.Mgn.Model.StartNetworkMigrationAnalysisRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.StartNetworkMigrationAnalysis(Amazon.Mgn.Model.StartNetworkMigrationAnalysisRequest)" />
+            <member name="T:Amazon.Mgn.Model.StartNetworkMigrationAnalysisRequest" />
+            <member name="T:Amazon.Mgn.Model.StartNetworkMigrationAnalysisResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample StartNetworkMigrationAnalysis call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.StartNetworkMigrationCodeGeneration(Amazon.Mgn.Model.StartNetworkMigrationCodeGenerationRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.StartNetworkMigrationCodeGeneration(Amazon.Mgn.Model.StartNetworkMigrationCodeGenerationRequest)" />
+            <member name="T:Amazon.Mgn.Model.StartNetworkMigrationCodeGenerationRequest" />
+            <member name="T:Amazon.Mgn.Model.StartNetworkMigrationCodeGenerationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample StartNetworkMigrationCodeGeneration call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.StartNetworkMigrationDeployment(Amazon.Mgn.Model.StartNetworkMigrationDeploymentRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.StartNetworkMigrationDeployment(Amazon.Mgn.Model.StartNetworkMigrationDeploymentRequest)" />
+            <member name="T:Amazon.Mgn.Model.StartNetworkMigrationDeploymentRequest" />
+            <member name="T:Amazon.Mgn.Model.StartNetworkMigrationDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample StartNetworkMigrationDeployment call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.StartNetworkMigrationMapping(Amazon.Mgn.Model.StartNetworkMigrationMappingRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.StartNetworkMigrationMapping(Amazon.Mgn.Model.StartNetworkMigrationMappingRequest)" />
+            <member name="T:Amazon.Mgn.Model.StartNetworkMigrationMappingRequest" />
+            <member name="T:Amazon.Mgn.Model.StartNetworkMigrationMappingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample StartNetworkMigrationMapping call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.StartNetworkMigrationMappingUpdate(Amazon.Mgn.Model.StartNetworkMigrationMappingUpdateRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.StartNetworkMigrationMappingUpdate(Amazon.Mgn.Model.StartNetworkMigrationMappingUpdateRequest)" />
+            <member name="T:Amazon.Mgn.Model.StartNetworkMigrationMappingUpdateRequest" />
+            <member name="T:Amazon.Mgn.Model.StartNetworkMigrationMappingUpdateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample StartNetworkMigrationMappingUpdate call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.UpdateNetworkMigrationDefinition(Amazon.Mgn.Model.UpdateNetworkMigrationDefinitionRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.UpdateNetworkMigrationDefinition(Amazon.Mgn.Model.UpdateNetworkMigrationDefinitionRequest)" />
+            <member name="T:Amazon.Mgn.Model.UpdateNetworkMigrationDefinitionRequest" />
+            <member name="T:Amazon.Mgn.Model.UpdateNetworkMigrationDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample UpdateNetworkMigrationDefinition call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Mgn.IAmazonMgn.UpdateNetworkMigrationMapperSegment(Amazon.Mgn.Model.UpdateNetworkMigrationMapperSegmentRequest)" />
+            <member name="M:Amazon.Mgn.AmazonMgnClient.UpdateNetworkMigrationMapperSegment(Amazon.Mgn.Model.UpdateNetworkMigrationMapperSegmentRequest)" />
+            <member name="T:Amazon.Mgn.Model.UpdateNetworkMigrationMapperSegmentRequest" />
+            <member name="T:Amazon.Mgn.Model.UpdateNetworkMigrationMapperSegmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample UpdateNetworkMigrationMapperSegment call"
+                    source=".\AWSSDKDocSamples\Mgn\Mgn.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

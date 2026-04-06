@@ -38,6 +38,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     {
         private string _clientToken;
         private string _destinationPhoneNumber;
+        private string _rcsAgentId;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -78,6 +79,26 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetDestinationPhoneNumber()
         {
             return this._destinationPhoneNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RcsAgentId. 
+        /// <para>
+        /// The unique identifier of the RCS agent to associate with the verified destination
+        /// number. You can use either the RcsAgentId or RcsAgentArn.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RcsAgentId
+        {
+            get { return this._rcsAgentId; }
+            set { this._rcsAgentId = value; }
+        }
+
+        // Check to see if RcsAgentId property is set
+        internal bool IsSetRcsAgentId()
+        {
+            return this._rcsAgentId != null;
         }
 
         /// <summary>

@@ -88,6 +88,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Analysis);
             }
 
+            if(requestObject.IsSetApproveFlowShareRequests())
+            {
+                context.Writer.WritePropertyName("ApproveFlowShareRequests");
+                context.Writer.WriteStringValue(requestObject.ApproveFlowShareRequests);
+            }
+
             if(requestObject.IsSetAsanaAction())
             {
                 context.Writer.WritePropertyName("AsanaAction");
@@ -110,6 +116,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("BoxAgentAction");
                 context.Writer.WriteStringValue(requestObject.BoxAgentAction);
+            }
+
+            if(requestObject.IsSetBuildCalculatedFieldWithQ())
+            {
+                context.Writer.WritePropertyName("BuildCalculatedFieldWithQ");
+                context.Writer.WriteStringValue(requestObject.BuildCalculatedFieldWithQ);
             }
 
             if(requestObject.IsSetCanvaAgentAction())
@@ -436,10 +448,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateChatAgents);
             }
 
+            if(requestObject.IsSetCreateDashboardExecutiveSummaryWithQ())
+            {
+                context.Writer.WritePropertyName("CreateDashboardExecutiveSummaryWithQ");
+                context.Writer.WriteStringValue(requestObject.CreateDashboardExecutiveSummaryWithQ);
+            }
+
             if(requestObject.IsSetCreateSharedFolders())
             {
                 context.Writer.WritePropertyName("CreateSharedFolders");
                 context.Writer.WriteStringValue(requestObject.CreateSharedFolders);
+            }
+
+            if(requestObject.IsSetCreateSpaces())
+            {
+                context.Writer.WritePropertyName("CreateSpaces");
+                context.Writer.WriteStringValue(requestObject.CreateSpaces);
             }
 
             if(requestObject.IsSetCreateSPICEDataset())
@@ -452,6 +476,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Dashboard");
                 context.Writer.WriteStringValue(requestObject.Dashboard);
+            }
+
+            if(requestObject.IsSetEditVisualWithQ())
+            {
+                context.Writer.WritePropertyName("EditVisualWithQ");
+                context.Writer.WriteStringValue(requestObject.EditVisualWithQ);
             }
 
             if(requestObject.IsSetExportToCsv())
@@ -488,6 +518,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ExportToPdfInScheduledReports");
                 context.Writer.WriteStringValue(requestObject.ExportToPdfInScheduledReports);
+            }
+
+            if(requestObject.IsSetExtension())
+            {
+                context.Writer.WritePropertyName("Extension");
+                context.Writer.WriteStringValue(requestObject.Extension);
             }
 
             if(requestObject.IsSetFactSetAction())
@@ -560,6 +596,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("LinearAction");
                 context.Writer.WriteStringValue(requestObject.LinearAction);
+            }
+
+            if(requestObject.IsSetManageSharedFolders())
+            {
+                context.Writer.WritePropertyName("ManageSharedFolders");
+                context.Writer.WriteStringValue(requestObject.ManageSharedFolders);
             }
 
             if(requestObject.IsSetMCPAction())
@@ -758,6 +800,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ShareCanvaAgentAction");
                 context.Writer.WriteStringValue(requestObject.ShareCanvaAgentAction);
+            }
+
+            if(requestObject.IsSetShareChatAgents())
+            {
+                context.Writer.WritePropertyName("ShareChatAgents");
+                context.Writer.WriteStringValue(requestObject.ShareChatAgents);
             }
 
             if(requestObject.IsSetShareComprehendAction())
@@ -982,6 +1030,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareSmartsheetAction);
             }
 
+            if(requestObject.IsSetShareSpaces())
+            {
+                context.Writer.WritePropertyName("ShareSpaces");
+                context.Writer.WriteStringValue(requestObject.ShareSpaces);
+            }
+
             if(requestObject.IsSetShareTextractAction())
             {
                 context.Writer.WritePropertyName("ShareTextractAction");
@@ -1022,6 +1076,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("TextractAction");
                 context.Writer.WriteStringValue(requestObject.TextractAction);
+            }
+
+            if(requestObject.IsSetTopic())
+            {
+                context.Writer.WritePropertyName("Topic");
+                context.Writer.WriteStringValue(requestObject.Topic);
             }
 
             if(requestObject.IsSetUseAgentWebSearch())

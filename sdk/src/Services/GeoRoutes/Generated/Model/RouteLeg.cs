@@ -49,8 +49,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property FerryLegDetails. 
         /// <para>
-        /// FerryLegDetails is populated when the Leg type is Ferry, and provides additional information
-        /// that is specific
+        ///  FerryLegDetails is populated when the Leg type is Ferry, and provides additional
+        /// information that is specific to ferry travel. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteFerryLegDetails FerryLegDetails
@@ -87,7 +89,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// List of languages for instructions within steps in the response.
+        ///  List of languages for instructions within steps in the response. Not supported in
+        /// <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=35)]
@@ -129,7 +133,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>Car</c> 
+        /// Default value: <c>Car</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

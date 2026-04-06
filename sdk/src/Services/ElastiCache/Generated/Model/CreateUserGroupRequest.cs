@@ -89,7 +89,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UserGroupId. 
         /// <para>
-        /// The ID of the user group.
+        /// The ID of the user group. This value is stored as a lowercase string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

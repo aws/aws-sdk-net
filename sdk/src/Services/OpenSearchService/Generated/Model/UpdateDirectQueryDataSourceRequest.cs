@@ -36,10 +36,33 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class UpdateDirectQueryDataSourceRequest : AmazonOpenSearchServiceRequest
     {
+        private string _dataSourceAccessPolicy;
         private string _dataSourceName;
         private DirectQueryDataSourceType _dataSourceType;
         private string _description;
         private List<string> _openSearchArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property DataSourceAccessPolicy. 
+        /// <para>
+        ///  An optional IAM access policy document that defines the updated permissions for accessing
+        /// the direct query data source. The policy document must be in valid JSON format and
+        /// follow IAM policy syntax. If not specified, the existing access policy if present
+        /// remains unchanged. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=102400)]
+        public string DataSourceAccessPolicy
+        {
+            get { return this._dataSourceAccessPolicy; }
+            set { this._dataSourceAccessPolicy = value; }
+        }
+
+        // Check to see if DataSourceAccessPolicy property is set
+        internal bool IsSetDataSourceAccessPolicy()
+        {
+            return this._dataSourceAccessPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataSourceName. 
@@ -104,8 +127,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property OpenSearchArns. 
         /// <para>
-        ///  A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated
-        /// with the direct query data source. 
+        ///  An optional list of Amazon Resource Names (ARNs) for the OpenSearch collections that
+        /// are associated with the direct query data source. This field is required for CloudWatchLogs
+        /// and SecurityLake datasource types. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -113,7 +137,6 @@ namespace Amazon.OpenSearchService.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> OpenSearchArns
         {
             get { return this._openSearchArns; }

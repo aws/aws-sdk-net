@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Text;
-using Amazon.Runtime.Internal;
+using System.Text.Json;
 using Xunit;
 
 namespace UnitTests.NetStandard.Core
@@ -23,6 +27,31 @@ namespace UnitTests.NetStandard.Core
             var parametersString = AWSSDKUtils.GetParametersAsString(parameters);
 
             Assert.Equal("key1=value1&key2=value2&key3=value3&key3=value4&key4=1.1&key4=2.1", parametersString);
+        }
+
+        [Fact]
+        public void GetParametersAsString_ProducesCorrectlySortedOutput()
+        {
+            var parameters = new ParameterCollection
+            {
+                { "key3", "value3" },
+                { "key1", "value1" },
+                { "key2", "value2" },
+            };
+
+            var result = AWSSDKUtils.GetParametersAsString(parameters);
+            Assert.Equal("key1=value1&key2=value2&key3=value3", result);
+        }
+        [Fact]
+        public void GetParametersAsStringWithStringListParameterValueCorrectlySortsOutput()
+        {
+            var parameters = new ParameterCollection
+            {
+                {"key4", new List<string> { "value5", "value4" } },
+                {"key1", new List<string>{"value1", "value2"} }
+            };
+            var result = AWSSDKUtils.GetParametersAsString(parameters);
+            Assert.Equal("key1=value1&key1=value2&key4=value4&key4=value5", result);
         }
 
         [Fact]
@@ -103,6 +132,85 @@ namespace UnitTests.NetStandard.Core
             var actual = AWSSDKUtils.GetExtension(input);
 
             Assert.Equal(expected, actual);
+        }
+
+        private static string WriteJsonUsingFromMemoryStream(MemoryStream stream)
+        {
+            using (var outputStream = new MemoryStream())
+            {
+                using (var writer = new Utf8JsonWriter(outputStream))
+                {
+                    writer.WriteStartObject();
+                    writer.WritePropertyName("Data");
+                    writer.WriteStringValue(StringUtils.FromMemoryStream(stream));
+                    writer.WriteEndObject();
+                }
+                return Encoding.UTF8.GetString(outputStream.ToArray());
+            }
+        }
+
+        private static string WriteJsonUsingWriteBase64StringValue(MemoryStream stream)
+        {
+            using (var outputStream = new MemoryStream())
+            {
+                using (var writer = new Utf8JsonWriter(outputStream))
+                {
+                    writer.WriteStartObject();
+                    writer.WritePropertyName("Data");
+                    StringUtils.WriteBase64StringValue(writer, stream);
+                    writer.WriteEndObject();
+                }
+                return Encoding.UTF8.GetString(outputStream.ToArray());
+            }
+        }
+
+        [Theory]
+        [InlineData("", true)]
+        [InlineData("Hello, AWS SDK!", true)]
+        [InlineData("{\"key\": \"value\"}", true)]
+        [InlineData("", false)]
+        [InlineData("Hello, AWS SDK!", false)]
+        [InlineData("{\"key\": \"value\"}", false)]
+        public void WriteBase64StringValue_MatchesFromMemoryStream(string data, bool writable)
+        {
+            // MemoryStream wrapping a byte array does NOT expose its buffer via TryGetBuffer when writable is false,
+            // which goes to the fallback path that uses ArrayPool
+            var bytes = Encoding.UTF8.GetBytes(data);
+            using (var stream = new MemoryStream(bytes, writable))
+            {
+                var expected = WriteJsonUsingFromMemoryStream(stream);
+                var actual = WriteJsonUsingWriteBase64StringValue(stream);
+
+                Assert.Equal(expected, actual);
+            }
+        }
+
+        public static IEnumerable<object[]> BinaryTestData()
+        {
+            // Single byte
+            yield return new object[] { new byte[] { 0x42 }, true };
+            yield return new object[] { new byte[] { 0x42 }, false };
+            // Bytes with null, max value, and non-UTF-8 values
+            yield return new object[] { new byte[] { 0x00, 0x01, 0x02, 0xFF, 0xFE, 0xFD }, true };
+            yield return new object[] { new byte[] { 0x00, 0x01, 0x02, 0xFF, 0xFE, 0xFD }, false };
+            // Empty array
+            yield return new object[] { new byte[0], true };
+            yield return new object[] { new byte[0], false };
+        }
+
+        [Theory]
+        [MemberData(nameof(BinaryTestData))]
+        public void WriteBase64StringValue_BinaryData_MatchesFromMemoryStream(byte[] data, bool writable)
+        {
+            // MemoryStream wrapping a byte array does NOT expose its buffer via TryGetBuffer when writable is false,
+            // which goes to the fallback path that uses ArrayPool
+            using (var stream = new MemoryStream(data, writable))
+            {
+                var expected = WriteJsonUsingFromMemoryStream(stream);
+                var actual = WriteJsonUsingWriteBase64StringValue(stream);
+
+                Assert.Equal(expected, actual);
+            }
         }
     }
 }

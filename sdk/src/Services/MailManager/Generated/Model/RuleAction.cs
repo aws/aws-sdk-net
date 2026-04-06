@@ -36,9 +36,11 @@ namespace Amazon.MailManager.Model
     {
         private AddHeaderAction _addHeader;
         private ArchiveAction _archive;
+        private BounceAction _bounce;
         private DeliverToMailboxAction _deliverToMailbox;
         private DeliverToQBusinessAction _deliverToQBusiness;
         private DropAction _drop;
+        private InvokeLambdaAction _invokeLambda;
         private SnsAction _publishToSns;
         private RelayAction _relay;
         private ReplaceRecipientAction _replaceRecipient;
@@ -79,6 +81,24 @@ namespace Amazon.MailManager.Model
         internal bool IsSetArchive()
         {
             return this._archive != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Bounce. 
+        /// <para>
+        /// This action sends a bounce response for the email.
+        /// </para>
+        /// </summary>
+        public BounceAction Bounce
+        {
+            get { return this._bounce; }
+            set { this._bounce = value; }
+        }
+
+        // Check to see if Bounce property is set
+        internal bool IsSetBounce()
+        {
+            return this._bounce != null;
         }
 
         /// <summary>
@@ -134,6 +154,24 @@ namespace Amazon.MailManager.Model
         internal bool IsSetDrop()
         {
             return this._drop != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvokeLambda. 
+        /// <para>
+        /// This action invokes an Amazon Web Services Lambda function to process the email.
+        /// </para>
+        /// </summary>
+        public InvokeLambdaAction InvokeLambda
+        {
+            get { return this._invokeLambda; }
+            set { this._invokeLambda = value; }
+        }
+
+        // Check to see if InvokeLambda property is set
+        internal bool IsSetInvokeLambda()
+        {
+            return this._invokeLambda != null;
         }
 
         /// <summary>

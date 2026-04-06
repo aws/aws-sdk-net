@@ -41,10 +41,12 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _amazonBedrockKRSAction;
         private CapabilityState _amazonSThreeAction;
         private CapabilityState _analysis;
+        private CapabilityState _approveFlowShareRequests;
         private CapabilityState _asanaAction;
         private CapabilityState _automate;
         private CapabilityState _bambooHRAction;
         private CapabilityState _boxAgentAction;
+        private CapabilityState _buildCalculatedFieldWithQ;
         private CapabilityState _canvaAgentAction;
         private CapabilityState _chatAgent;
         private CapabilityState _comprehendAction;
@@ -99,15 +101,19 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _createAndUpdateThresholdAlerts;
         private CapabilityState _createAndUpdateZendeskAction;
         private CapabilityState _createChatAgents;
+        private CapabilityState _createDashboardExecutiveSummaryWithQ;
         private CapabilityState _createSharedFolders;
+        private CapabilityState _createSpaces;
         private CapabilityState _createSPICEDataset;
         private CapabilityState _dashboard;
+        private CapabilityState _editVisualWithQ;
         private CapabilityState _exportToCsv;
         private CapabilityState _exportToCsvInScheduledReports;
         private CapabilityState _exportToExcel;
         private CapabilityState _exportToExcelInScheduledReports;
         private CapabilityState _exportToPdf;
         private CapabilityState _exportToPdfInScheduledReports;
+        private CapabilityState _extension;
         private CapabilityState _factSetAction;
         private CapabilityState _flow;
         private CapabilityState _genericHTTPAction;
@@ -120,6 +126,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _jiraAction;
         private CapabilityState _knowledgeBase;
         private CapabilityState _linearAction;
+        private CapabilityState _manageSharedFolders;
         private CapabilityState _mcpAction;
         private CapabilityState _mondayAction;
         private CapabilityState _msExchangeAction;
@@ -153,6 +160,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _shareBambooHRAction;
         private CapabilityState _shareBoxAgentAction;
         private CapabilityState _shareCanvaAgentAction;
+        private CapabilityState _shareChatAgents;
         private CapabilityState _shareComprehendAction;
         private CapabilityState _shareComprehendMedicalAction;
         private CapabilityState _shareConfluenceAction;
@@ -190,6 +198,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _shareSharePointAction;
         private CapabilityState _shareSlackAction;
         private CapabilityState _shareSmartsheetAction;
+        private CapabilityState _shareSpaces;
         private CapabilityState _shareTextractAction;
         private CapabilityState _shareZendeskAction;
         private CapabilityState _slackAction;
@@ -197,6 +206,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _space;
         private CapabilityState _subscribeDashboardEmailReports;
         private CapabilityState _textractAction;
+        private CapabilityState _topic;
         private CapabilityState _useAgentWebSearch;
         private CapabilityState _useAmazonBedrockARSAction;
         private CapabilityState _useAmazonBedrockFSAction;
@@ -373,6 +383,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ApproveFlowShareRequests. 
+        /// <para>
+        /// The ability to review and approve sharing requests of Flows.
+        /// </para>
+        /// </summary>
+        public CapabilityState ApproveFlowShareRequests
+        {
+            get { return this._approveFlowShareRequests; }
+            set { this._approveFlowShareRequests = value; }
+        }
+
+        // Check to see if ApproveFlowShareRequests property is set
+        internal bool IsSetApproveFlowShareRequests()
+        {
+            return this._approveFlowShareRequests != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AsanaAction. 
         /// <para>
         /// The ability to perform actions using Asana connectors.
@@ -442,6 +470,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetBoxAgentAction()
         {
             return this._boxAgentAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuildCalculatedFieldWithQ. 
+        /// <para>
+        /// The ability to Build Calculation with AI
+        /// </para>
+        /// </summary>
+        public CapabilityState BuildCalculatedFieldWithQ
+        {
+            get { return this._buildCalculatedFieldWithQ; }
+            set { this._buildCalculatedFieldWithQ = value; }
+        }
+
+        // Check to see if BuildCalculatedFieldWithQ property is set
+        internal bool IsSetBuildCalculatedFieldWithQ()
+        {
+            return this._buildCalculatedFieldWithQ != null;
         }
 
         /// <summary>
@@ -1417,6 +1463,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateDashboardExecutiveSummaryWithQ. 
+        /// <para>
+        /// The ability to Create Executive Summary
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateDashboardExecutiveSummaryWithQ
+        {
+            get { return this._createDashboardExecutiveSummaryWithQ; }
+            set { this._createDashboardExecutiveSummaryWithQ = value; }
+        }
+
+        // Check to see if CreateDashboardExecutiveSummaryWithQ property is set
+        internal bool IsSetCreateDashboardExecutiveSummaryWithQ()
+        {
+            return this._createDashboardExecutiveSummaryWithQ != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateSharedFolders. 
         /// <para>
         /// The ability to create shared folders.
@@ -1432,6 +1496,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateSharedFolders()
         {
             return this._createSharedFolders != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateSpaces. 
+        /// <para>
+        /// The ability to create spaces.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateSpaces
+        {
+            get { return this._createSpaces; }
+            set { this._createSpaces = value; }
+        }
+
+        // Check to see if CreateSpaces property is set
+        internal bool IsSetCreateSpaces()
+        {
+            return this._createSpaces != null;
         }
 
         /// <summary>
@@ -1468,6 +1550,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDashboard()
         {
             return this._dashboard != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EditVisualWithQ. 
+        /// <para>
+        /// The ability to Edit Visual with AI
+        /// </para>
+        /// </summary>
+        public CapabilityState EditVisualWithQ
+        {
+            get { return this._editVisualWithQ; }
+            set { this._editVisualWithQ = value; }
+        }
+
+        // Check to see if EditVisualWithQ property is set
+        internal bool IsSetEditVisualWithQ()
+        {
+            return this._editVisualWithQ != null;
         }
 
         /// <summary>
@@ -1576,6 +1676,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetExportToPdfInScheduledReports()
         {
             return this._exportToPdfInScheduledReports != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Extension. 
+        /// <para>
+        /// The ability to perform Extension-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Extension
+        {
+            get { return this._extension; }
+            set { this._extension = value; }
+        }
+
+        // Check to see if Extension property is set
+        internal bool IsSetExtension()
+        {
+            return this._extension != null;
         }
 
         /// <summary>
@@ -1792,6 +1910,31 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetLinearAction()
         {
             return this._linearAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManageSharedFolders. 
+        /// <para>
+        /// The ability to create, update, delete and view shared folders (both restricted and
+        /// unrestricted), ability to add any asset to shared folders, and ability to share the
+        /// folders.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This does <i>not</i> prevent inheriting access to assets that others
+        /// share with them through folder membership.
+        /// </para>
+        /// </summary>
+        public CapabilityState ManageSharedFolders
+        {
+            get { return this._manageSharedFolders; }
+            set { this._manageSharedFolders = value; }
+        }
+
+        // Check to see if ManageSharedFolders property is set
+        internal bool IsSetManageSharedFolders()
+        {
+            return this._manageSharedFolders != null;
         }
 
         /// <summary>
@@ -2386,6 +2529,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareCanvaAgentAction()
         {
             return this._shareCanvaAgentAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareChatAgents. 
+        /// <para>
+        /// The ability to share chat agents with other users and groups.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareChatAgents
+        {
+            get { return this._shareChatAgents; }
+            set { this._shareChatAgents = value; }
+        }
+
+        // Check to see if ShareChatAgents property is set
+        internal bool IsSetShareChatAgents()
+        {
+            return this._shareChatAgents != null;
         }
 
         /// <summary>
@@ -3055,6 +3216,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareSpaces. 
+        /// <para>
+        /// The ability to share spaces with other users and groups.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareSpaces
+        {
+            get { return this._shareSpaces; }
+            set { this._shareSpaces = value; }
+        }
+
+        // Check to see if ShareSpaces property is set
+        internal bool IsSetShareSpaces()
+        {
+            return this._shareSpaces != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareTextractAction. 
         /// <para>
         /// The ability to share Textract actions.
@@ -3178,6 +3357,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTextractAction()
         {
             return this._textractAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Topic. 
+        /// <para>
+        /// The ability to perform Topic-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Topic
+        {
+            get { return this._topic; }
+            set { this._topic = value; }
+        }
+
+        // Check to see if Topic property is set
+        internal bool IsSetTopic()
+        {
+            return this._topic != null;
         }
 
         /// <summary>

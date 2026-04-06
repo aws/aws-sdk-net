@@ -2943,6 +2943,52 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type AvailabilityZoneBalanceEnforcementMode.
+    /// </summary>
+    public class AvailabilityZoneBalanceEnforcementMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PERMISSIVE for AvailabilityZoneBalanceEnforcementMode
+        /// </summary>
+        public static readonly AvailabilityZoneBalanceEnforcementMode PERMISSIVE = new AvailabilityZoneBalanceEnforcementMode("PERMISSIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AvailabilityZoneBalanceEnforcementMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AvailabilityZoneBalanceEnforcementMode FindValue(string value)
+        {
+            return FindValue<AvailabilityZoneBalanceEnforcementMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AvailabilityZoneBalanceEnforcementMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AwsManagedHumanLoopRequestSource.
     /// </summary>
     public class AwsManagedHumanLoopRequestSource : ConstantClass
@@ -4866,6 +4912,10 @@ namespace Amazon.SageMaker
         /// Constant MlP6eGb20036xlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlP6eGb20036xlarge = new ClusterInstanceType("ml.p6e-gb200.36xlarge");
+        /// <summary>
+        /// Constant MlR5d16xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlR5d16xlarge = new ClusterInstanceType("ml.r5d.16xlarge");
         /// <summary>
         /// Constant MlR6i12xlarge for ClusterInstanceType
         /// </summary>
@@ -9119,6 +9169,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type InferenceComponentPlacementStrategy.
+    /// </summary>
+    public class InferenceComponentPlacementStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BINPACK for InferenceComponentPlacementStrategy
+        /// </summary>
+        public static readonly InferenceComponentPlacementStrategy BINPACK = new InferenceComponentPlacementStrategy("BINPACK");
+        /// <summary>
+        /// Constant SPREAD for InferenceComponentPlacementStrategy
+        /// </summary>
+        public static readonly InferenceComponentPlacementStrategy SPREAD = new InferenceComponentPlacementStrategy("SPREAD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InferenceComponentPlacementStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InferenceComponentPlacementStrategy FindValue(string value)
+        {
+            return FindValue<InferenceComponentPlacementStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InferenceComponentPlacementStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InferenceComponentSortKey.
     /// </summary>
     public class InferenceComponentSortKey : ConstantClass
@@ -11270,6 +11370,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MaintenanceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ManagedInstanceScalingScaleInStrategy.
+    /// </summary>
+    public class ManagedInstanceScalingScaleInStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONSOLIDATION for ManagedInstanceScalingScaleInStrategy
+        /// </summary>
+        public static readonly ManagedInstanceScalingScaleInStrategy CONSOLIDATION = new ManagedInstanceScalingScaleInStrategy("CONSOLIDATION");
+        /// <summary>
+        /// Constant IDLE_RELEASE for ManagedInstanceScalingScaleInStrategy
+        /// </summary>
+        public static readonly ManagedInstanceScalingScaleInStrategy IDLE_RELEASE = new ManagedInstanceScalingScaleInStrategy("IDLE_RELEASE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedInstanceScalingScaleInStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedInstanceScalingScaleInStrategy FindValue(string value)
+        {
+            return FindValue<ManagedInstanceScalingScaleInStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedInstanceScalingScaleInStrategy(string value)
         {
             return FindValue(value);
         }
@@ -15911,6 +16061,10 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant Al2023AmiSagemakerInferenceGpu41 for ProductionVariantInferenceAmiVersion
+        /// </summary>
+        public static readonly ProductionVariantInferenceAmiVersion Al2023AmiSagemakerInferenceGpu41 = new ProductionVariantInferenceAmiVersion("al2023-ami-sagemaker-inference-gpu-4-1");
+        /// <summary>
         /// Constant Al2AmiSagemakerInferenceGpu2 for ProductionVariantInferenceAmiVersion
         /// </summary>
         public static readonly ProductionVariantInferenceAmiVersion Al2AmiSagemakerInferenceGpu2 = new ProductionVariantInferenceAmiVersion("al2-ami-sagemaker-inference-gpu-2");
@@ -16421,6 +16575,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProductionVariantInstanceType MlG6Xlarge = new ProductionVariantInstanceType("ml.g6.xlarge");
         /// <summary>
+        /// Constant MlG7e12xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG7e12xlarge = new ProductionVariantInstanceType("ml.g7e.12xlarge");
+        /// <summary>
+        /// Constant MlG7e24xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG7e24xlarge = new ProductionVariantInstanceType("ml.g7e.24xlarge");
+        /// <summary>
+        /// Constant MlG7e2xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG7e2xlarge = new ProductionVariantInstanceType("ml.g7e.2xlarge");
+        /// <summary>
+        /// Constant MlG7e48xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG7e48xlarge = new ProductionVariantInstanceType("ml.g7e.48xlarge");
+        /// <summary>
+        /// Constant MlG7e4xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG7e4xlarge = new ProductionVariantInstanceType("ml.g7e.4xlarge");
+        /// <summary>
+        /// Constant MlG7e8xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlG7e8xlarge = new ProductionVariantInstanceType("ml.g7e.8xlarge");
+        /// <summary>
         /// Constant MlInf124xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlInf124xlarge = new ProductionVariantInstanceType("ml.inf1.24xlarge");
@@ -16740,6 +16918,10 @@ namespace Amazon.SageMaker
         /// Constant MlP6B20048xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlP6B20048xlarge = new ProductionVariantInstanceType("ml.p6-b200.48xlarge");
+        /// <summary>
+        /// Constant MlP6B30048xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlP6B30048xlarge = new ProductionVariantInstanceType("ml.p6-b300.48xlarge");
         /// <summary>
         /// Constant MlP6eGb20036xlarge for ProductionVariantInstanceType
         /// </summary>

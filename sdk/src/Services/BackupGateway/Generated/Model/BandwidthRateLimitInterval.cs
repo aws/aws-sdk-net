@@ -51,11 +51,6 @@ namespace Amazon.BackupGateway.Model
         /// per second. This field does not appear in the response if the upload rate limit is
         /// not set.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// For Backup Gateway, the minimum value is <c>(Value)</c>.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=51200, Max=8000000000000)]
         public long? AverageUploadRateLimitInBitsPerSec

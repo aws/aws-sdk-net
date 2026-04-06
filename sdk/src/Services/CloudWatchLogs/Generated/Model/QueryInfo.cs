@@ -35,12 +35,34 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class QueryInfo
     {
+        private double? _bytesScanned;
         private long? _createTime;
         private string _logGroupName;
+        private long? _queryDuration;
         private string _queryId;
         private QueryLanguage _queryLanguage;
         private string _queryString;
         private QueryStatus _status;
+        private string _userIdentity;
+
+        /// <summary>
+        /// Gets and sets the property BytesScanned. 
+        /// <para>
+        /// The total number of bytes scanned by the query. This indicates the cost associated
+        /// with the query.
+        /// </para>
+        /// </summary>
+        public double? BytesScanned
+        {
+            get { return this._bytesScanned; }
+            set { this._bytesScanned = value; }
+        }
+
+        // Check to see if BytesScanned property is set
+        internal bool IsSetBytesScanned()
+        {
+            return this._bytesScanned.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreateTime. 
@@ -78,6 +100,24 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetLogGroupName()
         {
             return this._logGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryDuration. 
+        /// <para>
+        /// The duration in milliseconds that the query took to execute.
+        /// </para>
+        /// </summary>
+        public long? QueryDuration
+        {
+            get { return this._queryDuration; }
+            set { this._queryDuration = value; }
+        }
+
+        // Check to see if QueryDuration property is set
+        internal bool IsSetQueryDuration()
+        {
+            return this._queryDuration.HasValue; 
         }
 
         /// <summary>
@@ -155,6 +195,25 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserIdentity. 
+        /// <para>
+        /// The ARN of the user who ran the query.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string UserIdentity
+        {
+            get { return this._userIdentity; }
+            set { this._userIdentity = value; }
+        }
+
+        // Check to see if UserIdentity property is set
+        internal bool IsSetUserIdentity()
+        {
+            return this._userIdentity != null;
         }
 
     }

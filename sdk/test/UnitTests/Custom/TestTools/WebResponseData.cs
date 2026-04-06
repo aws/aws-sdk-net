@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.Internal.Transform;
 using System;
 using System.Collections.Generic;
@@ -32,8 +33,9 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             this.IsSuccessStatusCode = true;
             // RFC 9110 states headers must be case insensitive
             this.Headers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            this.EventHeaders = new Dictionary<string, IEventStreamHeader>();
         }
-
+        public Dictionary<string, IEventStreamHeader> EventHeaders { get; set; }
         public Dictionary<string,string> Headers { get; set; }
 
         public string ContentType { get; set; }
@@ -59,7 +61,19 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             else
                 return null;
         }
-        
+
+        public IEventStreamHeader GetEventStreamHeader(string headerName)
+        {
+            if (EventHeaders.ContainsKey(headerName))
+                return EventHeaders[headerName];
+            return null;
+        }
+
+        public bool IsEventHeaderPresent(string headerName)
+        {
+            return EventHeaders.ContainsKey(headerName);
+        }
+
         public long ContentLength { get; set; }
 
 

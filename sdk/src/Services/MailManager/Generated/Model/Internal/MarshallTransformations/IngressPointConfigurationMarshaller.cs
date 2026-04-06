@@ -58,6 +58,17 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SmtpPassword);
             }
 
+            if(requestObject.IsSetTlsAuthConfiguration())
+            {
+                context.Writer.WritePropertyName("TlsAuthConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TlsAuthConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TlsAuthConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

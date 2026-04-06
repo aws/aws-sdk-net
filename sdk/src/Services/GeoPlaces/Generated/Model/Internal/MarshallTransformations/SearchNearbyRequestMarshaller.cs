@@ -66,7 +66,7 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
-            request.ResourcePath = "/search-nearby";
+            request.ResourcePath = "/v2/search-nearby";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);

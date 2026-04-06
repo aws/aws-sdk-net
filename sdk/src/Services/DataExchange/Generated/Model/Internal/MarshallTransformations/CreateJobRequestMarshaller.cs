@@ -73,6 +73,17 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssetConfiguration())
+            {
+                context.Writer.WritePropertyName("AssetConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AssetConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AssetConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDetails())
             {
                 context.Writer.WritePropertyName("Details");

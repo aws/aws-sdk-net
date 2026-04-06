@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
     {
         private AacSettings _aacSettings;
         private Ac3Settings _ac3Settings;
+        private Ac4Settings _ac4Settings;
         private AiffSettings _aiffSettings;
         private AudioCodec _codec;
         private Eac3AtmosSettings _eac3AtmosSettings;
@@ -81,6 +82,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAc3Settings()
         {
             return this._ac3Settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ac4Settings. Required when you set Codec to the value AC4.
+        /// </summary>
+        public Ac4Settings Ac4Settings
+        {
+            get { return this._ac4Settings; }
+            set { this._ac4Settings = value; }
+        }
+
+        // Check to see if Ac4Settings property is set
+        internal bool IsSetAc4Settings()
+        {
+            return this._ac4Settings != null;
         }
 
         /// <summary>

@@ -144,6 +144,17 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.RoleArn);
             }
 
+            if(publicRequest.IsSetSchedulingConfiguration())
+            {
+                context.Writer.WritePropertyName("schedulingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SchedulingConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SchedulingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

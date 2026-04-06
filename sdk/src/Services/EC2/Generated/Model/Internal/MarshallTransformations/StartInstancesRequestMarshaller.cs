@@ -82,6 +82,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static StartInstancesRequestMarshaller _instance = new StartInstancesRequestMarshaller();        

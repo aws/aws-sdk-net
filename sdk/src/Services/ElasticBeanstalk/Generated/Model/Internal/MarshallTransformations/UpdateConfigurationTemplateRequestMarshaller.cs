@@ -126,6 +126,8 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TemplateName", StringUtils.FromString(publicRequest.TemplateName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static UpdateConfigurationTemplateRequestMarshaller _instance = new UpdateConfigurationTemplateRequestMarshaller();        

@@ -72,6 +72,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateLBCookieStickinessPolicyRequestMarshaller _instance = new CreateLBCookieStickinessPolicyRequestMarshaller();        

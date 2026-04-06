@@ -44,7 +44,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var currentTopicCount = allTopics.Count;
 
             // create new topic
-            var name = "dotnetsdk" + DateTime.UtcNow.Ticks;
+            var name = UtilityMethods.GenerateName("dotnetsdk");
             var createTopicRequest = new CreateTopicRequest
             {
                 Name = name
@@ -97,7 +97,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public async Task TestPublishAsJson()
         {
             // create new topic
-            var name = "dotnetsdk" + DateTime.UtcNow.Ticks;
+            var name = UtilityMethods.GenerateName("dotnetsdk");
             var createTopicRequest = new CreateTopicRequest
             {
                 Name = name
@@ -320,13 +320,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var topicArns = new List<string>();
 
-            var topicName1 = "dotnetsdkTopic" + DateTime.UtcNow.Ticks;
+            var topicName1 = UtilityMethods.GenerateName("dotnetsdkTopic");
             topicArns.Add((await Client.CreateTopicAsync(topicName1)).TopicArn);
 
-            var topicName2 = "dotnetsdkTopic" + DateTime.UtcNow.Ticks;
+            var topicName2 = UtilityMethods.GenerateName("dotnetsdkTopic");
             topicArns.Add((await Client.CreateTopicAsync(topicName2)).TopicArn);
 
-            var queueName = "dotnetsdkQueue-" + DateTime.UtcNow.Ticks;
+            var queueName = UtilityMethods.GenerateName("dotnetsdkQueue-");
             var queueUrl = (await sqsClient.CreateQueueAsync(queueName)).QueueUrl;
 
             try
@@ -353,7 +353,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestMethod]
         public async Task FindTopic()
         {
-            var name = "dotnetsdk" + DateTime.UtcNow.Ticks;
+            var name = UtilityMethods.GenerateName("dotnetsdk");
             var createTopicRequest = new CreateTopicRequest
             {
                 Name = name
@@ -456,7 +456,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         private async Task<string> CreateTopic()
         {
-            // create new topic
             var topicName = UtilityMethods.GenerateName("TestQueueSubscription");
             var createTopicRequest = new CreateTopicRequest
             {

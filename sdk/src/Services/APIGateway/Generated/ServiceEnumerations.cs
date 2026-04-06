@@ -1405,6 +1405,10 @@ namespace Amazon.APIGateway
         /// </summary>
         public static readonly SecurityPolicy SecurityPolicy_TLS13_1_2_2021_06 = new SecurityPolicy("SecurityPolicy_TLS13_1_2_2021_06");
         /// <summary>
+        /// Constant SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09 for SecurityPolicy
+        /// </summary>
+        public static readonly SecurityPolicy SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09 = new SecurityPolicy("SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09");
+        /// <summary>
         /// Constant SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09 for SecurityPolicy
         /// </summary>
         public static readonly SecurityPolicy SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09 = new SecurityPolicy("SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09");

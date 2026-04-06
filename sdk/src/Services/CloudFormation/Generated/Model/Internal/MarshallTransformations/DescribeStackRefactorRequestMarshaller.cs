@@ -64,6 +64,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("StackRefactorId", StringUtils.FromString(publicRequest.StackRefactorId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeStackRefactorRequestMarshaller _instance = new DescribeStackRefactorRequestMarshaller();        

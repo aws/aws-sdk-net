@@ -68,6 +68,17 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetBounce())
+            {
+                context.Writer.WritePropertyName("Bounce");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BounceActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Bounce, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDeliverToMailbox())
             {
                 context.Writer.WritePropertyName("DeliverToMailbox");
@@ -97,6 +108,17 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 
                 var marshaller = DropActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Drop, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetInvokeLambda())
+            {
+                context.Writer.WritePropertyName("InvokeLambda");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InvokeLambdaActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.InvokeLambda, context);
 
                 context.Writer.WriteEndObject();
             }

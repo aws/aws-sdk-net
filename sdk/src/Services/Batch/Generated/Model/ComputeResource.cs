@@ -48,6 +48,7 @@ namespace Amazon.Batch.Model
         private int? _maxvCpus;
         private int? _minvCpus;
         private string _placementGroup;
+        private ComputeScalingPolicy _scalingPolicy;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _spotIamFleetRole;
         private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -183,7 +184,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Provides information that's used to select Amazon Machine Images (AMIs) for Amazon
         /// EC2 instances in the compute environment. If <c>Ec2Configuration</c> isn't specified,
-        /// the default is <c>ECS_AL2</c>.
+        /// the default is <c>ECS_AL2</c> for EC2 (ECS) compute environments and <c>EKS_AL2023</c>
+        /// for EKS compute environments.
         /// </para>
         ///  
         /// <para>
@@ -505,6 +507,30 @@ namespace Amazon.Batch.Model
         internal bool IsSetPlacementGroup()
         {
             return this._placementGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalingPolicy. 
+        /// <para>
+        /// The scaling policy configuration for the compute environment.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+        /// specify it.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ComputeScalingPolicy ScalingPolicy
+        {
+            get { return this._scalingPolicy; }
+            set { this._scalingPolicy = value; }
+        }
+
+        // Check to see if ScalingPolicy property is set
+        internal bool IsSetScalingPolicy()
+        {
+            return this._scalingPolicy != null;
         }
 
         /// <summary>

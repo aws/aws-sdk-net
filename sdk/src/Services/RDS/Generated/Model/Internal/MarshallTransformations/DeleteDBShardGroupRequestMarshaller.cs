@@ -64,6 +64,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DBShardGroupIdentifier", StringUtils.FromString(publicRequest.DBShardGroupIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteDBShardGroupRequestMarshaller _instance = new DeleteDBShardGroupRequestMarshaller();        

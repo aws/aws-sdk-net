@@ -79,7 +79,7 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCrlData())
             {
                 context.Writer.WritePropertyName("crlData");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.CrlData));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.CrlData);
             }
 
             if(publicRequest.IsSetName())

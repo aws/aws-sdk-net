@@ -55,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPayload())
             {
                 context.Writer.WritePropertyName("Payload");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Payload));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Payload);
             }
 
             if(requestObject.IsSetQualifier())

@@ -338,6 +338,51 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequest.Accept</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequest.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequest.Baggage</property>
+    <min>0</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequest.ContentType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequest.RuntimeSessionId</property>
+    <min>33</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequest.TraceId</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequest.TraceParent</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequest.TraceState</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandResponse.RuntimeSessionId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeCodeInterpreterRequest.SessionId</property>
     <pattern>[0-9a-zA-Z]{1,40}</pattern>
   </property-value-rule>
@@ -674,7 +719,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BasicAuth.SecretArn</property>
-    <pattern>arn:aws:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+</pattern>
+    <pattern>arn:aws(-[a-z-]+)?:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Branch.Name</property>
@@ -716,6 +761,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Content.Text</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.EvaluationContent.Text</property>
     <min>1</min>
     <max>100000</max>
   </property-value-rule>
@@ -792,6 +842,11 @@
     <property>Amazon.BedrockAgentCore.Model.InputContentBlock.Text</property>
     <min>0</min>
     <max>100000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequestBody.Command</property>
+    <min>1</min>
+    <max>65536</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.LeftExpression.MetadataKey</property>
@@ -912,6 +967,10 @@
     <property>Amazon.BedrockAgentCore.Model.SearchCriteria.TopK</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.SecretsManagerLocation.SecretArn</property>
+    <pattern>arn:aws(-[a-z-]+)?:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SessionSummary.ActorId</property>

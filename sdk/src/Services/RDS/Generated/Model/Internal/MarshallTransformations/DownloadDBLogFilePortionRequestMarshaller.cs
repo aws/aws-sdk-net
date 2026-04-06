@@ -76,6 +76,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NumberOfLines", StringUtils.FromInt(publicRequest.NumberOfLines));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DownloadDBLogFilePortionRequestMarshaller _instance = new DownloadDBLogFilePortionRequestMarshaller();        

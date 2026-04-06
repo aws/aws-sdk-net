@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.BatchUpdateRecommendationResourceExclusion(Amazon.TrustedAdvisor.Model.BatchUpdateRecommendationResourceExclusionRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.BatchUpdateRecommendationResourceExclusion(Amazon.TrustedAdvisor.Model.BatchUpdateRecommendationResourceExclusionRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.BatchUpdateRecommendationResourceExclusionRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.BatchUpdateRecommendationResourceExclusionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Batch updates the exclusion status for a list of recommendation resources"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.GetOrganizationRecommendation(Amazon.TrustedAdvisor.Model.GetOrganizationRecommendationRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.GetOrganizationRecommendation(Amazon.TrustedAdvisor.Model.GetOrganizationRecommendationRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.GetOrganizationRecommendationRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.GetOrganizationRecommendationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get an AWS Organization's Recommendation by ARN"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.GetRecommendation(Amazon.TrustedAdvisor.Model.GetRecommendationRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.GetRecommendation(Amazon.TrustedAdvisor.Model.GetRecommendationRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.GetRecommendationRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.GetRecommendationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get a Recommendation by ARN"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.ListChecks(Amazon.TrustedAdvisor.Model.ListChecksRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.ListChecks(Amazon.TrustedAdvisor.Model.ListChecksRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListChecksRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListChecksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all AWS Trusted Advisor Checks"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.ListOrganizationRecommendationAccounts(Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationAccountsRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.ListOrganizationRecommendationAccounts(Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationAccountsRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationAccountsRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationAccountsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all Accounts for an AWS Organization's Recommendation"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.ListOrganizationRecommendationResources(Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationResourcesRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.ListOrganizationRecommendationResources(Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationResourcesRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationResourcesRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationResourcesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all Resources for an AWS Organization's Recommendation"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.ListOrganizationRecommendations(Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationsRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.ListOrganizationRecommendations(Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationsRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationsRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all of an AWS Organization's Recommendations"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.ListOrganizationRecommendations(Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationsRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.ListOrganizationRecommendations(Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationsRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationsRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Filter and return a max of one AWS Organization Recommendation that is a part of the &quot;security&quot; pillar"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.ListOrganizationRecommendations(Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationsRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.ListOrganizationRecommendations(Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationsRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationsRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListOrganizationRecommendationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Use the &quot;nextToken&quot; returned from a previous request to fetch the next page of filtered AWS Organization Recommendations that are a part of the &quot;security&quot; pillar"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.ListRecommendationResources(Amazon.TrustedAdvisor.Model.ListRecommendationResourcesRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.ListRecommendationResources(Amazon.TrustedAdvisor.Model.ListRecommendationResourcesRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListRecommendationResourcesRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListRecommendationResourcesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all Resources for a Recommendation"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.ListRecommendations(Amazon.TrustedAdvisor.Model.ListRecommendationsRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.ListRecommendations(Amazon.TrustedAdvisor.Model.ListRecommendationsRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListRecommendationsRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListRecommendationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all Recommendations"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.ListRecommendations(Amazon.TrustedAdvisor.Model.ListRecommendationsRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.ListRecommendations(Amazon.TrustedAdvisor.Model.ListRecommendationsRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListRecommendationsRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListRecommendationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Filter and return a max of one Recommendation that is a part of AWS IAM"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.ListRecommendations(Amazon.TrustedAdvisor.Model.ListRecommendationsRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.ListRecommendations(Amazon.TrustedAdvisor.Model.ListRecommendationsRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListRecommendationsRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListRecommendationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Use the &quot;nextToken&quot; returned from a previous request to fetch the next page of filtered Recommendations"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.UpdateOrganizationRecommendationLifecycle(Amazon.TrustedAdvisor.Model.UpdateOrganizationRecommendationLifecycleRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.UpdateOrganizationRecommendationLifecycle(Amazon.TrustedAdvisor.Model.UpdateOrganizationRecommendationLifecycleRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.UpdateOrganizationRecommendationLifecycleRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.UpdateOrganizationRecommendationLifecycleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update the lifecycle stage of an AWS Organization's Recommendation that is managed by AWS Trusted Advisor Priority"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.UpdateRecommendationLifecycle(Amazon.TrustedAdvisor.Model.UpdateRecommendationLifecycleRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.UpdateRecommendationLifecycle(Amazon.TrustedAdvisor.Model.UpdateRecommendationLifecycleRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.UpdateRecommendationLifecycleRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.UpdateRecommendationLifecycleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update the lifecycle stage of a Recommendation managed by AWS Trusted Advisor Priority"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -116,6 +116,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetTrainingPlanArn())
+            {
+                context.Writer.WritePropertyName("TrainingPlanArn");
+                context.Writer.WriteStringValue(publicRequest.TrainingPlanArn);
+            }
+
             if(publicRequest.IsSetUltraServerCount())
             {
                 context.Writer.WritePropertyName("UltraServerCount");

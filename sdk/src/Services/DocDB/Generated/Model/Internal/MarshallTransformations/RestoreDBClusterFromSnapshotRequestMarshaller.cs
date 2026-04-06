@@ -178,6 +178,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RestoreDBClusterFromSnapshotRequestMarshaller _instance = new RestoreDBClusterFromSnapshotRequestMarshaller();        

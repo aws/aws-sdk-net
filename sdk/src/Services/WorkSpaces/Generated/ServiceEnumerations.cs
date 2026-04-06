@@ -2360,6 +2360,10 @@ namespace Amazon.WorkSpaces
         /// Constant WINDOWS_SERVER_2022 for OperatingSystemName
         /// </summary>
         public static readonly OperatingSystemName WINDOWS_SERVER_2022 = new OperatingSystemName("WINDOWS_SERVER_2022");
+        /// <summary>
+        /// Constant WINDOWS_SERVER_2025 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName WINDOWS_SERVER_2025 = new OperatingSystemName("WINDOWS_SERVER_2025");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

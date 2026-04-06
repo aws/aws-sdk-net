@@ -17,12 +17,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     [TestCategory("S3")]
     public class MetadataTests : TestBase<AmazonS3Client>
     {
-        private readonly Random random = new Random();
         private static string bucketName;
         private const string tempFile = "tempFile.txt";
         private static readonly long smallFileSize = TransferUtilityTests.KILO_SIZE * 100;
         private static readonly long largeFileSize = TransferUtilityTests.MEG_SIZE * 20;
         private static readonly List<string> keysToValidate = new List<string>();
+        private string _testId;
+
+        [TestInitialize]
+        public void SetTestId()
+        {
+            _testId = Guid.NewGuid().ToString("N");
+        }
 
         private static readonly Dictionary<string, string> metadata = new Dictionary<string, string>(StringComparer.Ordinal)
         {
@@ -73,7 +79,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task TestSingleUploads()
         {
-            var key = "contentBodyPut" + random.Next();
+            var key = _testId + "-contentBodyPut";
             var putObjectRequest = new PutObjectRequest
             {
                 BucketName = bucketName,
@@ -88,7 +94,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var tu = new TransferUtility(Client))
             {
                 // Test small TransferUtility upload
-                key = "transferUtilitySmall" + random.Next();
+                key = _testId + "-transferUtilitySmall";
                 UtilityMethods.GenerateFile(tempFile, smallFileSize);
                 var smallRequest = new TransferUtilityUploadRequest
                 {
@@ -104,7 +110,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // disable clock skew testing, this is a multithreaded operation
                 using (RetryUtilities.DisableClockSkewCorrection())
                 {
-                    key = "transferUtilityLarge" + random.Next();
+                    key = _testId + "-transferUtilityLarge";
                     UtilityMethods.GenerateFile(tempFile, largeFileSize);
                     var largeRequest = new TransferUtilityUploadRequest
                     {
@@ -130,7 +136,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 AWSConfigsS3.EnableUnicodeEncodingForObjectMetadata = true;
 
-                var key = "contentBodyPut" + random.Next();
+                var key = _testId + "-contentBodyPut";
                 var putObjectRequest = new PutObjectRequest
                 {
                     BucketName = bucketName,
@@ -169,7 +175,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             string metadataName = "document";
             string metadataValue = " A  B  C  ";
-            var key = "contentBodyPut" + random.Next();
+            var key = _testId + "-contentBodyPut";
 
             var putObjectRequest = new PutObjectRequest
             {
@@ -188,7 +194,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var tu = new TransferUtility(Client))
             {
                 // Test small TransferUtility upload
-                key = "transferUtilitySmall" + random.Next();
+                key = _testId + "-transferUtilitySmall";
                 UtilityMethods.GenerateFile(tempFile, smallFileSize);
                 var smallRequest = new TransferUtilityUploadRequest
                 {
@@ -208,7 +214,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // disable clock skew testing, this is a multithreaded operation
                 using (RetryUtilities.DisableClockSkewCorrection())
                 {
-                    key = "transferUtilityLarge" + random.Next();
+                    key = _testId + "-transferUtilityLarge";
                     UtilityMethods.GenerateFile(tempFile, largeFileSize);
                     var largeRequest = new TransferUtilityUploadRequest
                     {

@@ -46,7 +46,7 @@
     "AuthorizeClientVpnIngress": "<p>Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization rules act as firewall rules that grant access to networks. You must configure ingress authorization rules to enable clients to access resources in Amazon Web Services or on-premises networks.</p>",
     "AuthorizeSecurityGroupEgress": "<p>Adds the specified outbound (egress) rules to a security group.</p> <p>An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 address ranges, the IP address ranges specified by a prefix list, or the instances that are associated with a source security group. For more information, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html\">Security group rules</a>.</p> <p>You must specify exactly one of the following destinations: an IPv4 or IPv6 address range, a prefix list, or a security group. You must specify a protocol for each rule (for example, TCP). If the protocol is TCP or UDP, you must also specify a port or port range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP type and code.</p> <p>Rule changes are propagated to instances associated with the security group as quickly as possible. However, a small delay might occur.</p> <p>For examples of rules that you can add to security groups for specific access scenarios, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html\">Security group rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For information about security group quotas, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html\">Amazon VPC quotas</a> in the <i>Amazon VPC User Guide</i>.</p>",
     "AuthorizeSecurityGroupIngress": "<p>Adds the specified inbound (ingress) rules to a security group.</p> <p>An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 address range, the IP address ranges that are specified by a prefix list, or the instances that are associated with a destination security group. For more information, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html\">Security group rules</a>.</p> <p>You must specify exactly one of the following sources: an IPv4 or IPv6 address range, a prefix list, or a security group. You must specify a protocol for each rule (for example, TCP). If the protocol is TCP or UDP, you must also specify a port or port range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP/ICMPv6 type and code.</p> <p>Rule changes are propagated to instances associated with the security group as quickly as possible. However, a small delay might occur.</p> <p>For examples of rules that you can add to security groups for specific access scenarios, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html\">Security group rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For more information about security group quotas, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html\">Amazon VPC quotas</a> in the <i>Amazon VPC User Guide</i>.</p>",
-    "BundleInstance": "<p>Bundles an Amazon instance store-backed Windows instance.</p> <p>During bundling, only the root device volume (C:\\) is bundled. Data on other instance store volumes is not preserved.</p> <note> <p>This action is not applicable for Linux/Unix instances or Windows instances that are backed by Amazon EBS.</p> </note>",
+    "BundleInstance": "<p>Bundles an Amazon instance store-backed Windows instance.</p> <p>During bundling, only the root device volume (C:\\) is bundled. Data on other instance store volumes is not preserved.</p> <note> <p>This action is no longer supported. To create an AMI, use <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html\">CreateImage</a>. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html\"> Create an Amazon EBS-backed AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> </note>",
     "CancelBundleTask": "<p>Cancels a bundling operation for an instance store-backed Windows instance.</p>",
     "CancelCapacityReservation": "<p>Cancels the specified Capacity Reservation, releases the reserved capacity, and changes the Capacity Reservation's state to <code>cancelled</code>.</p> <p>You can cancel a Capacity Reservation that is in the following states:</p> <ul> <li> <p> <code>assessing</code> </p> </li> <li> <p> <code>active</code> and there is no commitment duration or the commitment duration has elapsed. You can't cancel a future-dated Capacity Reservation during the commitment duration.</p> </li> </ul> <note> <p>You can't modify or cancel a Capacity Block. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html\">Capacity Blocks for ML</a>.</p> </note> <p>If a future-dated Capacity Reservation enters the <code>delayed</code> state, the commitment duration is waived, and you can cancel it as soon as it enters the <code>active</code> state.</p> <p>Instances running in the reserved capacity continue running until you stop them. Stopped instances that target the Capacity Reservation can no longer launch. Modify these instances to either target a different Capacity Reservation, launch On-Demand Instance capacity, or run in any open Capacity Reservation that has matching attributes and sufficient capacity.</p>",
     "CancelCapacityReservationFleets": "<p>Cancels one or more Capacity Reservation Fleets. When you cancel a Capacity Reservation Fleet, the following happens:</p> <ul> <li> <p>The Capacity Reservation Fleet's status changes to <code>cancelled</code>.</p> </li> <li> <p>The individual Capacity Reservations in the Fleet are cancelled. Instances running in the Capacity Reservations at the time of cancelling the Fleet continue to run in shared capacity.</p> </li> <li> <p>The Fleet stops creating new Capacity Reservations.</p> </li> </ul>",
@@ -2145,6 +2145,7 @@
     "AvailabilityZoneName": {
       "base": null,
       "refs": {
+        "AllocateHostsRequest$AvailabilityZone": "<p>The Availability Zone in which to allocate the Dedicated Host.</p>",
         "AssociateNatGatewayAddressRequest$AvailabilityZone": "<p>For regional NAT gateways only: The Availability Zone where you want to associate an Elastic IP address (EIP). The regional NAT gateway uses a separate EIP in each AZ to handle outbound NAT traffic from that AZ.</p> <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>",
         "AvailabilityZoneAddress$AvailabilityZone": "<p>For regional NAT gateways only: The Availability Zone where this specific NAT gateway configuration will be active. Each AZ in a regional NAT gateway has its own configuration to handle outbound NAT traffic from that AZ. </p> <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>",
         "CapacityBlockExtension$AvailabilityZone": "<p>The Availability Zone of the Capacity Block extension.</p>",
@@ -2721,6 +2722,7 @@
         "DescribeCapacityBlockExtensionHistoryRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeCapacityBlockExtensionOfferingsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeCapacityBlockOfferingsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
+        "DescribeCapacityBlockOfferingsRequest$AllAvailabilityZones": "<p> Include all Availability Zones and Local Zones, regardless of your opt-in status. If you do not use this parameter, the results include available offerings from all Availability Zones in the Amazon Web Services Region and Local Zones you are opted into. </p>",
         "DescribeCapacityBlockStatusRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeCapacityBlocksRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeCapacityManagerDataExportsRequest$DryRun": "<p> Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>. </p>",
@@ -3863,6 +3865,18 @@
       "base": "<p>Information about instance capacity usage for a Capacity Reservation.</p>",
       "refs": {
         "CapacityAllocations$member": null
+      }
+    },
+    "CapacityAllocationMetadataEntry": {
+      "base": "<p>A key-value pair that provides additional metadata about a capacity allocation.</p>",
+      "refs": {
+        "CapacityAllocationMetadataList$member": null
+      }
+    },
+    "CapacityAllocationMetadataList": {
+      "base": null,
+      "refs": {
+        "CapacityAllocation$AllocationMetadata": "<p>Additional metadata associated with the capacity allocation. Each entry contains a key-value pair providing context about the allocation.</p>"
       }
     },
     "CapacityAllocations": {
@@ -6440,10 +6454,22 @@
         "InstanceEventWindowDisassociationRequest$DedicatedHostIds": "<p>The IDs of the Dedicated Hosts to disassociate from the event window.</p>"
       }
     },
+    "DefaultConnectionTrackingConfiguration": {
+      "base": "<p>Indicates default conntrack information for the instance type. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts\"> Connection tracking timeouts </a> in the Amazon EC2 User Guide. </p>",
+      "refs": {
+        "NetworkInfo$ConnectionTrackingConfiguration": "<p>Indicates conntrack information for the instance type</p>"
+      }
+    },
     "DefaultEnaQueueCountPerInterface": {
       "base": null,
       "refs": {
         "NetworkCardInfo$DefaultEnaQueueCountPerInterface": "<p>The default number of the ENA queues for each interface.</p>"
+      }
+    },
+    "DefaultHttpTokensEnforcedState": {
+      "base": null,
+      "refs": {
+        "ModifyInstanceMetadataDefaultsRequest$HttpTokensEnforced": "<p>Specifies whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#enforce-imdsv2-at-the-account-level\">Enforce IMDSv2 at the account level</a> in the <i>Amazon EC2 User Guide</i>.</p>"
       }
     },
     "DefaultInstanceMetadataEndpointState": {
@@ -6485,6 +6511,24 @@
       "refs": {
         "TargetCapacitySpecification$DefaultTargetCapacityType": "<p>The default target capacity type.</p>",
         "TargetCapacitySpecificationRequest$DefaultTargetCapacityType": "<p>The default target capacity type.</p>"
+      }
+    },
+    "DefaultTcpEstablishedTimeout": {
+      "base": null,
+      "refs": {
+        "DefaultConnectionTrackingConfiguration$DefaultTcpEstablishedTimeout": "<p>Default timeout (in seconds) for idle TCP connections in an established state.</p>"
+      }
+    },
+    "DefaultUdpStreamTimeout": {
+      "base": null,
+      "refs": {
+        "DefaultConnectionTrackingConfiguration$DefaultUdpStreamTimeout": "<p>Default timeout (in seconds) for idle UDP flows classified as streams which have seen more than one request-response transaction.</p>"
+      }
+    },
+    "DefaultUdpTimeout": {
+      "base": null,
+      "refs": {
+        "DefaultConnectionTrackingConfiguration$DefaultUdpTimeout": "<p>Default timeout (in seconds) for idle UDP flows that have seen traffic only in a single direction or a single request-response transaction.</p>"
       }
     },
     "DefaultingDhcpOptionsId": {
@@ -12036,6 +12080,13 @@
         "FleetSpotCapacityRebalanceRequest$ReplacementStrategy": "<p>The replacement strategy to use. Only available for fleets of type <code>maintain</code>.</p> <p> <code>launch</code> - EC2 Fleet launches a replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet. EC2 Fleet does not terminate the instances that receive a rebalance notification. You can terminate the old instances, or you can leave them running. You are charged for all instances while they are running. </p> <p> <code>launch-before-terminate</code> - EC2 Fleet launches a replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet, and then, after a delay that you specify (in <code>TerminationDelay</code>), terminates the instances that received a rebalance notification.</p>"
       }
     },
+    "FleetReservationType": {
+      "base": null,
+      "refs": {
+        "ReservationTypeList$member": null,
+        "ReservationTypeListRequest$member": null
+      }
+    },
     "FleetSet": {
       "base": null,
       "refs": {
@@ -13273,6 +13324,12 @@
         "InstanceEventWindowTimeRangeRequest$EndHour": "<p>The hour when the time range ends.</p>"
       }
     },
+    "HttpTokensEnforcedState": {
+      "base": null,
+      "refs": {
+        "InstanceMetadataDefaultsResponse$HttpTokensEnforced": "<p>Indicates whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>.</p>"
+      }
+    },
     "HttpTokensState": {
       "base": null,
       "refs": {
@@ -14505,10 +14562,10 @@
     "InstanceLifecycle": {
       "base": null,
       "refs": {
-        "CreateFleetError$Lifecycle": "<p>Indicates if the instance that could not be launched was a Spot Instance or On-Demand Instance.</p>",
-        "CreateFleetInstance$Lifecycle": "<p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>",
-        "DescribeFleetError$Lifecycle": "<p>Indicates if the instance that could not be launched was a Spot Instance or On-Demand Instance.</p>",
-        "DescribeFleetsInstances$Lifecycle": "<p>Indicates if the instance that was launched is a Spot Instance or On-Demand Instance.</p>"
+        "CreateFleetError$Lifecycle": "<p>Indicates if the instance that could not be launched was a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>",
+        "CreateFleetInstance$Lifecycle": "<p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>",
+        "DescribeFleetError$Lifecycle": "<p>Indicates if the instance that could not be launched was a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>",
+        "DescribeFleetsInstances$Lifecycle": "<p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>"
       }
     },
     "InstanceLifecycleType": {
@@ -21956,6 +22013,18 @@
         "CapacityManagerDimension$ReservationType": "<p> The type of capacity reservation. </p>"
       }
     },
+    "ReservationTypeList": {
+      "base": null,
+      "refs": {
+        "ReservedCapacityOptions$ReservationTypes": "<p>The types of Capacity Reservations used for fulfilling the EC2 Fleet request.</p>"
+      }
+    },
+    "ReservationTypeListRequest": {
+      "base": null,
+      "refs": {
+        "ReservedCapacityOptionsRequest$ReservationTypes": "<p>The types of Capacity Reservations to use for fulfilling the EC2 Fleet request.</p>"
+      }
+    },
     "ReservationValue": {
       "base": "<p>The cost associated with the Reserved Instance.</p>",
       "refs": {
@@ -21963,6 +22032,18 @@
         "GetReservedInstancesExchangeQuoteResult$TargetConfigurationValueRollup": "<p>The cost associated with the Reserved Instance.</p>",
         "ReservedInstanceReservationValue$ReservationValue": "<p>The total value of the Convertible Reserved Instance that you are exchanging.</p>",
         "TargetReservationValue$ReservationValue": "<p>The total value of the Convertible Reserved Instances that make up the exchange. This is the sum of the list value, remaining upfront price, and additional upfront cost of the exchange.</p>"
+      }
+    },
+    "ReservedCapacityOptions": {
+      "base": "<p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>",
+      "refs": {
+        "FleetData$ReservedCapacityOptions": "<p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>"
+      }
+    },
+    "ReservedCapacityOptionsRequest": {
+      "base": "<p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p> <note> <p>This configuration can only be used if the EC2 Fleet is of type <code>instant</code>.</p> </note> <p>When you specify <code>ReservedCapacityOptions</code>, you must also set <code>DefaultTargetCapacityType</code> to <code>reserved-capacity</code> in the <code>TargetCapacitySpecification</code>.</p> <p>For more information about Interruptible Capacity Reservations, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-launch-instances-interruptible-cr-walkthrough.html\">Launch instances into an Interruptible Capacity Reservation</a> in the <i>Amazon EC2 User Guide</i>.</p>",
+      "refs": {
+        "CreateFleetRequest$ReservedCapacityOptions": "<p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p> <p>Supported only for fleets of type <code>instant</code>.</p>"
       }
     },
     "ReservedInstanceIdSet": {
@@ -24358,7 +24439,6 @@
         "AllocateHostsRequest$OutpostArn": "<p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can optionally specify <b>AssetIds</b>.</p> <p>If you are allocating the Dedicated Host in a Region, omit this parameter.</p>",
         "AllocateHostsRequest$ClientToken": "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring Idempotency</a>.</p>",
         "AllocateHostsRequest$InstanceType": "<p>Specifies the instance type to be supported by the Dedicated Hosts. If you specify an instance type, the Dedicated Hosts support instances of the specified instance type only.</p> <p>If you want the Dedicated Hosts to support multiple instance types in a specific instance family, omit this parameter and specify <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and <b>InstanceFamily</b> in the same request.</p>",
-        "AllocateHostsRequest$AvailabilityZone": "<p>The Availability Zone in which to allocate the Dedicated Host.</p>",
         "AllocateIpamPoolCidrRequest$Cidr": "<p>The CIDR you would like to allocate from the IPAM pool. Note the following:</p> <ul> <li> <p>If there is no DefaultNetmaskLength allocation rule set on the pool, you must specify either the NetmaskLength or the CIDR.</p> </li> <li> <p>If the DefaultNetmaskLength allocation rule is set on the pool, you can specify either the NetmaskLength or the CIDR and the DefaultNetmaskLength allocation rule will be ignored.</p> </li> </ul> <p>Possible values: Any available IPv4 or IPv6 CIDR.</p>",
         "AllocateIpamPoolCidrRequest$ClientToken": "<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href=\"https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html\">Ensuring idempotency</a>.</p>",
         "AllocateIpamPoolCidrRequest$Description": "<p>A description for the allocation.</p>",
@@ -24492,20 +24572,25 @@
         "CancelSpotFleetRequestsErrorItem$SpotFleetRequestId": "<p>The ID of the Spot Fleet request.</p>",
         "CancelSpotFleetRequestsSuccessItem$SpotFleetRequestId": "<p>The ID of the Spot Fleet request.</p>",
         "CancelledSpotInstanceRequest$SpotInstanceRequestId": "<p>The ID of the Spot Instance request.</p>",
+        "CapacityAllocationMetadataEntry$Key": "<p>The key of the metadata entry.</p>",
+        "CapacityAllocationMetadataEntry$Value": "<p>The value of the metadata entry.</p>",
         "CapacityBlock$UltraserverType": "<p>The EC2 UltraServer type of the Capacity Block.</p>",
         "CapacityBlock$AvailabilityZone": "<p>The Availability Zone of the Capacity Block.</p>",
         "CapacityBlock$AvailabilityZoneId": "<p>The Availability Zone ID of the Capacity Block.</p>",
         "CapacityBlockExtension$InstanceType": "<p>The instance type of the Capacity Block extension.</p>",
         "CapacityBlockExtension$UpfrontFee": "<p>The total price to be paid up front.</p>",
         "CapacityBlockExtension$CurrencyCode": "<p>The currency of the payment for the Capacity Block extension.</p>",
+        "CapacityBlockExtension$ZoneType": "<p>The type of zone where the Capacity Block extension is located.</p>",
         "CapacityBlockExtensionOffering$InstanceType": "<p>The instance type of the Capacity Block that will be extended.</p>",
         "CapacityBlockExtensionOffering$UpfrontFee": "<p>The total price of the Capacity Block extension offering, to be paid up front.</p>",
         "CapacityBlockExtensionOffering$CurrencyCode": "<p>The currency of the payment for the Capacity Block extension offering.</p>",
+        "CapacityBlockExtensionOffering$ZoneType": "<p>The type of zone where the Capacity Block extension offering is available.</p>",
         "CapacityBlockOffering$InstanceType": "<p>The instance type of the Capacity Block offering.</p>",
         "CapacityBlockOffering$AvailabilityZone": "<p>The Availability Zone of the Capacity Block offering.</p>",
         "CapacityBlockOffering$UpfrontFee": "<p>The total price to be paid up front.</p>",
         "CapacityBlockOffering$CurrencyCode": "<p>The currency of the payment for the Capacity Block.</p>",
         "CapacityBlockOffering$UltraserverType": "<p>The EC2 UltraServer type of the Capacity Block offering.</p>",
+        "CapacityBlockOffering$ZoneType": "<p>The type of zone where the Capacity Block offering is available.</p>",
         "CapacityManagerDataExportResponse$S3BucketName": "<p> The name of the S3 bucket where export files are delivered. </p>",
         "CapacityManagerDataExportResponse$S3BucketPrefix": "<p> The S3 key prefix used for organizing export files within the bucket. </p>",
         "CapacityManagerDataExportResponse$LatestDeliveryStatusMessage": "<p> A message describing the status of the most recent export delivery, including any error details if the delivery failed. </p>",

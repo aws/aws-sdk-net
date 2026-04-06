@@ -84,6 +84,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PolicyUsageFilter", StringUtils.FromString(publicRequest.PolicyUsageFilter));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListEntitiesForPolicyRequestMarshaller _instance = new ListEntitiesForPolicyRequestMarshaller();        

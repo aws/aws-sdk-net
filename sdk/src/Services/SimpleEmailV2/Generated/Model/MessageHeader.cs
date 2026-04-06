@@ -78,11 +78,15 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can contain no more than 870 characters.
+        /// Can contain no more than 995 characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The combined length of the header name and value must not exceed 996 characters.
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=870)]
+        [AWSProperty(Required=true, Min=1, Max=995)]
         public string Value
         {
             get { return this._value; }

@@ -43,6 +43,7 @@ namespace Amazon.MediaLive.Model
         private List<OutputDestination> _destinations = AWSConfigs.InitializeCollections ? new List<OutputDestination>() : null;
         private List<ChannelEgressEndpoint> _egressEndpoints = AWSConfigs.InitializeCollections ? new List<ChannelEgressEndpoint>() : null;
         private string _id;
+        private DescribeInferenceSettings _inferenceSettings;
         private List<InputAttachment> _inputAttachments = AWSConfigs.InitializeCollections ? new List<InputAttachment>() : null;
         private InputSpecification _inputSpecification;
         private DescribeLinkedChannelSettings _linkedChannelSettings;
@@ -211,6 +212,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceSettings. Include this setting to include Elemental
+        /// Inference features in this channel.
+        /// </summary>
+        public DescribeInferenceSettings InferenceSettings
+        {
+            get { return this._inferenceSettings; }
+            set { this._inferenceSettings = value; }
+        }
+
+        // Check to see if InferenceSettings property is set
+        internal bool IsSetInferenceSettings()
+        {
+            return this._inferenceSettings != null;
         }
 
         /// <summary>

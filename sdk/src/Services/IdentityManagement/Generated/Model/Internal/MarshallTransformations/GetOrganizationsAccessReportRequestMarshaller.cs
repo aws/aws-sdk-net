@@ -76,6 +76,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SortKey", StringUtils.FromString(publicRequest.SortKey));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetOrganizationsAccessReportRequestMarshaller _instance = new GetOrganizationsAccessReportRequestMarshaller();        

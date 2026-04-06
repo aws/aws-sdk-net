@@ -60,7 +60,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property UserToken. 
         /// <para>
-        /// The OAuth2.0 token issued by the user’s identity provider
+        /// The OAuth2.0 token issued by the user’s identity provider that was used to generate
+        /// the workload access token
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=131072)]

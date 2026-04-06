@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Zone categories to be avoided.
+    /// Zone categories to be avoided. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+    /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+    /// customers.
     /// </summary>
     public partial class RouteAvoidanceZoneCategory
     {

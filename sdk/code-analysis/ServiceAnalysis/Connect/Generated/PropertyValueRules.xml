@@ -148,6 +148,15 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateQueueEmailAddressesRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateQueueEmailAddressesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AssociateQueueQuickConnectsRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -1882,6 +1891,15 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateQueueEmailAddressesRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateQueueEmailAddressesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateQueueQuickConnectsRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -2654,6 +2672,20 @@
     <property>Amazon.Connect.Model.ListPromptsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListQueueEmailAddressesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListQueueEmailAddressesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListQueueEmailAddressesResponse.LastModifiedRegion</property>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListQueueQuickConnectsRequest.InstanceId</property>
@@ -5420,6 +5452,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ChatEntryPointParameters.FlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ChatEvent.Content</property>
     <min>1</min>
     <max>16384</max>
@@ -5940,6 +5976,11 @@
     <pattern>^\d{4}-\d{2}-\d{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.EmailAddressConfig.EmailAddressId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.EmailAddressInfo.DisplayName</property>
     <min>0</min>
     <max>256</max>
@@ -5973,6 +6014,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EmailAddressMetadata.EmailAddressId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EmailAddressSummary.Arn</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EmailAddressSummary.Id</property>
     <min>1</min>
     <max>500</max>
   </property-value-rule>

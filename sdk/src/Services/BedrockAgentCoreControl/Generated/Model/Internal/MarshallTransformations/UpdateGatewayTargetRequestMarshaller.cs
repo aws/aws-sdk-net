@@ -118,6 +118,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetPrivateEndpoint())
+            {
+                context.Writer.WritePropertyName("privateEndpoint");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PrivateEndpointMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PrivateEndpoint, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTargetConfiguration())
             {
                 context.Writer.WritePropertyName("targetConfiguration");

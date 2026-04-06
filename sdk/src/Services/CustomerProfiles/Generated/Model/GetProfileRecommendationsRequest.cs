@@ -36,11 +36,41 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class GetProfileRecommendationsRequest : AmazonCustomerProfilesRequest
     {
+        private List<string> _candidateIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _context = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _domainName;
         private int? _maxResults;
+        private MetadataConfig _metadataConfig;
         private string _profileId;
+        private List<RecommenderFilter> _recommenderFilters = AWSConfigs.InitializeCollections ? new List<RecommenderFilter>() : null;
         private string _recommenderName;
+        private List<RecommenderPromotionalFilter> _recommenderPromotionalFilters = AWSConfigs.InitializeCollections ? new List<RecommenderPromotionalFilter>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CandidateIds. 
+        /// <para>
+        /// A list of item IDs to rank for the user. Use this when you want to re-rank a specific
+        /// set of items rather than getting recommendations from the full item catalog. Required
+        /// for personalized-ranking use cases.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<string> CandidateIds
+        {
+            get { return this._candidateIds; }
+            set { this._candidateIds = value; }
+        }
+
+        // Check to see if CandidateIds property is set
+        internal bool IsSetCandidateIds()
+        {
+            return this._candidateIds != null && (this._candidateIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Context. 
@@ -91,7 +121,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The maximum number of recommendations to return. The default value is 10.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=500)]
         public int? MaxResults
         {
             get { return this._maxResults; }
@@ -102,6 +132,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataConfig. 
+        /// <para>
+        /// Configuration for including item metadata in the recommendation response. Use this
+        /// to specify which metadata columns to return alongside recommended items.
+        /// </para>
+        /// </summary>
+        public MetadataConfig MetadataConfig
+        {
+            get { return this._metadataConfig; }
+            set { this._metadataConfig = value; }
+        }
+
+        // Check to see if MetadataConfig property is set
+        internal bool IsSetMetadataConfig()
+        {
+            return this._metadataConfig != null;
         }
 
         /// <summary>
@@ -124,6 +173,31 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecommenderFilters. 
+        /// <para>
+        /// A list of filters to apply to the returned recommendations. Filters define criteria
+        /// for including or excluding items from the recommendation results.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<RecommenderFilter> RecommenderFilters
+        {
+            get { return this._recommenderFilters; }
+            set { this._recommenderFilters = value; }
+        }
+
+        // Check to see if RecommenderFilters property is set
+        internal bool IsSetRecommenderFilters()
+        {
+            return this._recommenderFilters != null && (this._recommenderFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property RecommenderName. 
         /// <para>
         /// The unique name of the recommender.
@@ -140,6 +214,32 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetRecommenderName()
         {
             return this._recommenderName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommenderPromotionalFilters. 
+        /// <para>
+        /// A list of promotional filters to apply to the recommendations. Promotional filters
+        /// allow you to promote specific items within a configurable subset of recommendation
+        /// results.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<RecommenderPromotionalFilter> RecommenderPromotionalFilters
+        {
+            get { return this._recommenderPromotionalFilters; }
+            set { this._recommenderPromotionalFilters = value; }
+        }
+
+        // Check to see if RecommenderPromotionalFilters property is set
+        internal bool IsSetRecommenderPromotionalFilters()
+        {
+            return this._recommenderPromotionalFilters != null && (this._recommenderPromotionalFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

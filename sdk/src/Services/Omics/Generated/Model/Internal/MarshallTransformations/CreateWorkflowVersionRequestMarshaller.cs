@@ -119,7 +119,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetDefinitionZip())
             {
                 context.Writer.WritePropertyName("definitionZip");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.DefinitionZip));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.DefinitionZip);
             }
 
             if(publicRequest.IsSetDescription())

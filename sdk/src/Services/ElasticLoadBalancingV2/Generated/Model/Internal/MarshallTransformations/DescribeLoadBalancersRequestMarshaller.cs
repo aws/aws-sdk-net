@@ -96,6 +96,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeLoadBalancersRequestMarshaller _instance = new DescribeLoadBalancersRequestMarshaller();        

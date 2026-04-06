@@ -170,6 +170,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetTargetCloseDate())
+            {
+                context.Writer.WritePropertyName("TargetCloseDate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TargetCloseDateFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TargetCloseDate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

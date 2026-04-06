@@ -80,6 +80,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PrivateDnsHostnameType", StringUtils.FromString(publicRequest.PrivateDnsHostnameType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyPrivateDnsNameOptionsRequestMarshaller _instance = new ModifyPrivateDnsNameOptionsRequestMarshaller();        

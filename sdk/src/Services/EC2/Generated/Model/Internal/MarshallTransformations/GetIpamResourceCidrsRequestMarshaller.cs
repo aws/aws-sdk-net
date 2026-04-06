@@ -134,6 +134,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ResourceType", StringUtils.FromString(publicRequest.ResourceType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetIpamResourceCidrsRequestMarshaller _instance = new GetIpamResourceCidrsRequestMarshaller();        

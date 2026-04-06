@@ -8,7 +8,7 @@
     "CreateBrowser": "<p>Creates a custom browser.</p>",
     "CreateBrowserProfile": "<p>Creates a browser profile in Amazon Bedrock AgentCore. A browser profile stores persistent browser data such as cookies, local storage, session storage, and browsing history that can be saved from browser sessions and reused in subsequent sessions.</p>",
     "CreateCodeInterpreter": "<p>Creates a custom code interpreter.</p>",
-    "CreateEvaluator": "<p> Creates a custom evaluator for agent quality assessment. Custom evaluators use LLM-as-a-Judge configurations with user-defined prompts, rating scales, and model settings to evaluate agent performance at tool call, trace, or session levels. </p>",
+    "CreateEvaluator": "<p> Creates a custom evaluator for agent quality assessment. Custom evaluators can use either LLM-as-a-Judge configurations with user-defined prompts, rating scales, and model settings, or code-based configurations with customer-managed Lambda functions to evaluate agent performance at tool call, trace, or session levels. </p>",
     "CreateGateway": "<p>Creates a gateway for Amazon Bedrock Agent. A gateway serves as an integration point between your agent and external services.</p> <p>If you specify <code>CUSTOM_JWT</code> as the <code>authorizerType</code>, you must provide an <code>authorizerConfiguration</code>.</p>",
     "CreateGatewayTarget": "<p>Creates a target for a gateway. A target defines an endpoint that the gateway can connect to.</p>",
     "CreateMemory": "<p>Creates a new Amazon Bedrock AgentCore Memory resource.</p>",
@@ -25,7 +25,7 @@
     "DeleteCodeInterpreter": "<p>Deletes a custom code interpreter.</p>",
     "DeleteEvaluator": "<p> Deletes a custom evaluator. Builtin evaluators cannot be deleted. The evaluator must not be referenced by any active online evaluation configurations. </p>",
     "DeleteGateway": "<p>Deletes a gateway.</p>",
-    "DeleteGatewayTarget": "<p>Deletes a gateway target.</p>",
+    "DeleteGatewayTarget": "<p>Deletes a gateway target.</p> <p>You cannot delete a target that is in a pending authorization state (<code>CREATE_PENDING_AUTH</code>, <code>UPDATE_PENDING_AUTH</code>, or <code>SYNCHRONIZE_PENDING_AUTH</code>). Wait for the authorization to complete or fail before deleting the target.</p>",
     "DeleteMemory": "<p>Deletes an Amazon Bedrock AgentCore Memory resource.</p>",
     "DeleteOauth2CredentialProvider": "<p>Deletes an OAuth2 credential provider.</p>",
     "DeleteOnlineEvaluationConfig": "<p> Deletes an online evaluation configuration and stops any ongoing evaluation processes associated with it. </p>",
@@ -73,7 +73,7 @@
     "PutResourcePolicy": "<p>Creates or updates a resource-based policy for a resource with the specified resourceArn.</p> <note> <p>This feature is currently available only for AgentCore Runtime and Gateway.</p> </note>",
     "SetTokenVaultCMK": "<p>Sets the customer master key (CMK) for a token vault.</p>",
     "StartPolicyGeneration": "<p>Initiates the AI-powered generation of Cedar policies from natural language descriptions within the AgentCore Policy system. This feature enables both technical and non-technical users to create policies by describing their authorization requirements in plain English, which is then automatically translated into formal Cedar policy statements. The generation process analyzes the natural language input along with the Gateway's tool context to produce validated policy options. Generated policy assets are automatically deleted after 7 days, so you should review and create policies from the generated assets within this timeframe. Once created, policies are permanent and not subject to this expiration. Generated policies should be reviewed and tested in log-only mode before deploying to production. Use this when you want to describe policy intent naturally rather than learning Cedar syntax, though generated policies may require refinement for complex scenarios.</p>",
-    "SynchronizeGatewayTargets": "<p>The gateway targets.</p>",
+    "SynchronizeGatewayTargets": "<p>Synchronizes the gateway targets by fetching the latest tool definitions from the target endpoints.</p> <p>You cannot synchronize a target that is in a pending authorization state (<code>CREATE_PENDING_AUTH</code>, <code>UPDATE_PENDING_AUTH</code>, or <code>SYNCHRONIZE_PENDING_AUTH</code>). Wait for the authorization to complete or fail before synchronizing.</p> <p>You cannot synchronize a target that has a static tool schema (<code>mcpToolSchema</code>) configured. Remove the static schema through an <code>UpdateGatewayTarget</code> call to enable dynamic tool synchronization.</p>",
     "TagResource": "<p>Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are also deleted.</p> <note> <p>This feature is currently available only for AgentCore Runtime, Browser, Browser Profile, Code Interpreter tool, and Gateway.</p> </note>",
     "UntagResource": "<p>Removes the specified tags from the specified resource.</p> <note> <p>This feature is currently available only for AgentCore Runtime, Browser, Browser Profile, Code Interpreter tool, and Gateway.</p> </note>",
     "UpdateAgentRuntime": "<p>Updates an existing Amazon Secure Agent.</p>",
@@ -81,7 +81,7 @@
     "UpdateApiKeyCredentialProvider": "<p>Updates an existing API key credential provider.</p>",
     "UpdateEvaluator": "<p> Updates a custom evaluator's configuration, description, or evaluation level. Built-in evaluators cannot be updated. The evaluator must not be locked for modification. </p>",
     "UpdateGateway": "<p>Updates an existing gateway.</p>",
-    "UpdateGatewayTarget": "<p>Updates an existing gateway target.</p>",
+    "UpdateGatewayTarget": "<p>Updates an existing gateway target.</p> <p>You cannot update a target that is in a pending authorization state (<code>CREATE_PENDING_AUTH</code>, <code>UPDATE_PENDING_AUTH</code>, or <code>SYNCHRONIZE_PENDING_AUTH</code>). Wait for the authorization to complete or fail before updating the target.</p>",
     "UpdateMemory": "<p>Update an Amazon Bedrock AgentCore Memory resource memory.</p>",
     "UpdateOauth2CredentialProvider": "<p>Updates an existing OAuth2 credential provider.</p>",
     "UpdateOnlineEvaluationConfig": "<p> Updates an online evaluation configuration's settings, including rules, data sources, evaluators, and execution status. Changes take effect immediately for ongoing evaluations. </p>",
@@ -407,6 +407,7 @@
         "CreateMemoryInput$memoryExecutionRoleArn": "<p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the memory to access Amazon Web Services services.</p>",
         "InvocationConfiguration$topicArn": "<p>The ARN of the SNS topic for job notifications.</p>",
         "InvocationConfigurationInput$topicArn": "<p>The ARN of the SNS topic for job notifications.</p>",
+        "KinesisResource$dataStreamArn": "<p>ARN of the Kinesis Data Stream.</p>",
         "Memory$encryptionKeyArn": "<p>The ARN of the KMS key used to encrypt the memory.</p>",
         "Memory$memoryExecutionRoleArn": "<p>The ARN of the IAM role that provides permissions for the memory.</p>",
         "ModifyInvocationConfigurationInput$topicArn": "<p>The updated ARN of the SNS topic for job notifications.</p>",
@@ -423,6 +424,15 @@
       "base": "<p>The configuration details returned for an Atlassian OAuth2 provider, including the client ID and OAuth2 discovery information.</p>",
       "refs": {
         "Oauth2ProviderConfigOutput$atlassianOauth2ProviderConfig": "<p>The configuration details for the Atlassian OAuth2 provider.</p>"
+      }
+    },
+    "AuthorizationData": {
+      "base": "<p>Contains the authorization data that is returned when a gateway target is configured with a credential provider with authorization code grant type and requires user federation.</p>",
+      "refs": {
+        "CreateGatewayTargetResponse$authorizationData": "<p>OAuth2 authorization data for the created gateway target. This data is returned when a target is configured with a credential provider with authorization code grant type and requires user federation.</p>",
+        "GatewayTarget$authorizationData": "<p>OAuth2 authorization data for the gateway target. This data is returned when a target is configured with a credential provider with authorization code grant type and requires user federation.</p>",
+        "GetGatewayTargetResponse$authorizationData": "<p>OAuth2 authorization data for the gateway target. This data is returned when a target is configured with a credential provider with authorization code grant type and requires user federation.</p>",
+        "UpdateGatewayTargetResponse$authorizationData": "<p>OAuth2 authorization data for the updated gateway target. This data is returned when a target is configured with a credential provider with authorization code grant type and requires user federation.</p>"
       }
     },
     "AuthorizationEndpointType": {
@@ -494,7 +504,8 @@
         "FilterValue$booleanValue": "<p> The boolean value for true/false filtering conditions. </p>",
         "GetEvaluatorResponse$lockedForModification": "<p> Whether the evaluator is locked for modification due to being referenced by active online evaluation configurations. </p>",
         "InterceptorInputConfiguration$passRequestHeaders": "<p>Indicates whether to pass request headers as input into the interceptor. When set to true, request headers will be passed.</p>",
-        "RecordingConfig$enabled": "<p>Indicates whether recording is enabled for the browser. When set to true, browser sessions are recorded.</p>"
+        "RecordingConfig$enabled": "<p>Indicates whether recording is enabled for the browser. When set to true, browser sessions are recorded.</p>",
+        "RuntimeMetadataConfiguration$requireMMDSV2": "<p>Enables MMDSv2 (microVM Metadata Service Version 2) requirement for the agent runtime. When set to <code>true</code>, the runtime microVM will only accept MMDSv2 requests.</p>"
       }
     },
     "BrowserArn": {
@@ -503,6 +514,25 @@
         "BrowserSummary$browserArn": "<p>The Amazon Resource Name (ARN) of the browser.</p>",
         "CreateBrowserResponse$browserArn": "<p>The Amazon Resource Name (ARN) of the created browser.</p>",
         "GetBrowserResponse$browserArn": "<p>The Amazon Resource Name (ARN) of the browser.</p>"
+      }
+    },
+    "BrowserEnterprisePolicies": {
+      "base": null,
+      "refs": {
+        "CreateBrowserRequest$enterprisePolicies": "<p>A list of enterprise policy files for the browser.</p>",
+        "GetBrowserResponse$enterprisePolicies": "<p>The list of enterprise policy files configured for the browser.</p>"
+      }
+    },
+    "BrowserEnterprisePolicy": {
+      "base": "<p>Browser enterprise policy configuration.</p>",
+      "refs": {
+        "BrowserEnterprisePolicies$member": null
+      }
+    },
+    "BrowserEnterprisePolicyType": {
+      "base": null,
+      "refs": {
+        "BrowserEnterprisePolicy$type": "<p>The type of browser enterprise policy. Available values are <code>MANAGED</code> and <code>RECOMMENDED</code>.</p>"
       }
     },
     "BrowserId": {
@@ -556,7 +586,8 @@
       "refs": {
         "BrowserProfileSummary$name": "<p>The name of the browser profile.</p>",
         "CreateBrowserProfileRequest$name": "<p>The name of the browser profile. The name must be unique within your account and can contain alphanumeric characters and underscores.</p>",
-        "GetBrowserProfileResponse$name": "<p>The name of the browser profile.</p>"
+        "GetBrowserProfileResponse$name": "<p>The name of the browser profile.</p>",
+        "ListBrowserProfilesRequest$name": "<p>The name of the browser profile to filter results by.</p>"
       }
     },
     "BrowserProfileStatus": {
@@ -642,6 +673,27 @@
       "base": "<p>Represents a Cedar policy statement within the AgentCore Policy system. Cedar is a policy language designed for authorization that provides human-readable, analyzable, and high-performance policy evaluation for controlling agent behavior and access decisions. </p>",
       "refs": {
         "PolicyDefinition$cedar": "<p>The Cedar policy definition within the policy definition structure. This contains the Cedar policy statement that defines the authorization logic using Cedar's human-readable, analyzable policy language. Cedar policies specify principals (who can access), actions (what operations are allowed), resources (what can be accessed), and optional conditions for fine-grained control. Cedar provides a formal policy language designed for authorization with deterministic evaluation, making policies testable, reviewable, and auditable. All Cedar policies follow a default-deny model where actions are denied unless explicitly permitted, and forbid policies always override permit policies.</p>"
+      }
+    },
+    "Certificate": {
+      "base": "<p>A certificate to install in the browser or code interpreter.</p>",
+      "refs": {
+        "Certificates$member": null
+      }
+    },
+    "CertificateLocation": {
+      "base": "<p>The location from which to retrieve a certificate.</p>",
+      "refs": {
+        "Certificate$location": "<p>The location of the certificate.</p>"
+      }
+    },
+    "Certificates": {
+      "base": null,
+      "refs": {
+        "CreateBrowserRequest$certificates": "<p>A list of certificates to install in the browser.</p>",
+        "CreateCodeInterpreterRequest$certificates": "<p>A list of certificates to install in the code interpreter.</p>",
+        "GetBrowserResponse$certificates": "<p>The list of certificates configured for the browser.</p>",
+        "GetCodeInterpreterResponse$certificates": "<p>The list of certificates configured for the code interpreter.</p>"
       }
     },
     "ClaimMatchOperatorType": {
@@ -749,6 +801,12 @@
         "CodeConfiguration$code": "<p>The source code location and configuration details.</p>"
       }
     },
+    "CodeBasedEvaluatorConfig": {
+      "base": "<p> Configuration for a code-based evaluator. Specify the Lambda function to use for evaluation. </p>",
+      "refs": {
+        "EvaluatorConfig$codeBased": "<p> Configuration for a code-based evaluator that uses a customer-managed Lambda function to programmatically assess agent performance. </p>"
+      }
+    },
     "CodeConfiguration": {
       "base": "<p>The configuration for the source code that defines how the agent runtime code should be executed, including the code location, runtime environment, and entry point.</p>",
       "refs": {
@@ -838,6 +896,24 @@
       "base": "<p>Represents content input for policy generation operations. This structure encapsulates the natural language descriptions or other content formats that are used as input for AI-powered policy generation.</p>",
       "refs": {
         "StartPolicyGenerationRequest$content": "<p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Cedar policy statements that match the described intent.</p>"
+      }
+    },
+    "ContentConfiguration": {
+      "base": "<p>Defines what content to stream and at what level of detail.</p>",
+      "refs": {
+        "KinesisResourceContentConfigurationsList$member": null
+      }
+    },
+    "ContentLevel": {
+      "base": null,
+      "refs": {
+        "ContentConfiguration$level": "<p>Level of detail for streamed content.</p>"
+      }
+    },
+    "ContentType": {
+      "base": null,
+      "refs": {
+        "ContentConfiguration$type": "<p>Type of content to stream.</p>"
       }
     },
     "CreateAgentRuntimeEndpointRequest": {
@@ -1411,10 +1487,9 @@
         "SummaryMemoryStrategyInput$description": "<p>The description of the summary memory strategy.</p>",
         "UpdateAgentRuntimeRequest$description": "<p>The updated description of the AgentCore Runtime.</p>",
         "UpdateMemoryInput$description": "<p>The updated description of the AgentCore Memory resource.</p>",
-        "UpdatePolicyEngineRequest$description": "<p>The new description for the policy engine.</p>",
         "UpdatePolicyEngineResponse$description": "<p>The updated description of the policy engine.</p>",
-        "UpdatePolicyRequest$description": "<p>The new human-readable description for the policy. This optional field allows updating the policy's documentation while keeping the same policy logic.</p>",
         "UpdatePolicyResponse$description": "<p>The updated description of the policy.</p>",
+        "UpdatedDescription$optionalValue": "<p>Represents an optional value that is used to update the human-readable description of the resource. If not specified, it will clear the current description of the resource.</p>",
         "UserPreferenceMemoryStrategyInput$description": "<p>The description of the user preference memory strategy.</p>"
       }
     },
@@ -1430,6 +1505,12 @@
         "Oauth2Discovery$discoveryUrl": "<p>The discovery URL for the OAuth2 provider.</p>"
       }
     },
+    "DomainName": {
+      "base": null,
+      "refs": {
+        "ManagedResourceDetails$domain": "<p>The domain associated with this managed resource.</p>"
+      }
+    },
     "Double": {
       "base": null,
       "refs": {
@@ -1439,6 +1520,12 @@
     "EncryptionFailure": {
       "base": "<p>Exception thrown when encryption of a secret fails.</p>",
       "refs": {}
+    },
+    "EndpointIpAddressType": {
+      "base": null,
+      "refs": {
+        "ManagedLatticeResource$endpointIpAddressType": "<p>The IP address type for the resource configuration endpoint.</p>"
+      }
     },
     "EndpointName": {
       "base": null,
@@ -1566,9 +1653,9 @@
     "EvaluatorConfig": {
       "base": "<p> The configuration that defines how an evaluator assesses agent performance, including the evaluation method and parameters. </p>",
       "refs": {
-        "CreateEvaluatorRequest$evaluatorConfig": "<p> The configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration. </p>",
-        "GetEvaluatorResponse$evaluatorConfig": "<p> The configuration of the evaluator, including LLM-as-a-Judge settings for custom evaluators. </p>",
-        "UpdateEvaluatorRequest$evaluatorConfig": "<p> The updated configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration. </p>"
+        "CreateEvaluatorRequest$evaluatorConfig": "<p> The configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function. </p>",
+        "GetEvaluatorResponse$evaluatorConfig": "<p> The configuration of the evaluator, including LLM-as-a-Judge or code-based settings. </p>",
+        "UpdateEvaluatorRequest$evaluatorConfig": "<p> The updated configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function. </p>"
       }
     },
     "EvaluatorDescription": {
@@ -1678,6 +1765,20 @@
       "base": "<p>Contains extraction configuration information for a memory strategy.</p>",
       "refs": {
         "StrategyConfiguration$extraction": "<p>The extraction configuration for the memory strategy.</p>"
+      }
+    },
+    "FilesystemConfiguration": {
+      "base": "<p>Configuration for a filesystem that can be mounted into the AgentCore Runtime.</p>",
+      "refs": {
+        "FilesystemConfigurations$member": null
+      }
+    },
+    "FilesystemConfigurations": {
+      "base": null,
+      "refs": {
+        "CreateAgentRuntimeRequest$filesystemConfigurations": "<p>The filesystem configurations to mount into the AgentCore Runtime. Use filesystem configurations to provide persistent storage to your AgentCore Runtime sessions.</p>",
+        "GetAgentRuntimeResponse$filesystemConfigurations": "<p>The filesystem configurations mounted into the AgentCore Runtime.</p>",
+        "UpdateAgentRuntimeRequest$filesystemConfigurations": "<p>The updated filesystem configurations to mount into the AgentCore Runtime.</p>"
       }
     },
     "Filter": {
@@ -2106,6 +2207,24 @@
         "AllowedQueryParameters$member": null
       }
     },
+    "IamCredentialProvider": {
+      "base": "<p>An IAM credential provider for gateway authentication. This structure contains the configuration for authenticating with the target endpoint using IAM credentials and SigV4 signing.</p>",
+      "refs": {
+        "CredentialProvider$iamCredentialProvider": "<p>The IAM credential provider. This provider uses IAM authentication with SigV4 signing to access the target endpoint.</p>"
+      }
+    },
+    "IamCredentialProviderRegionString": {
+      "base": null,
+      "refs": {
+        "IamCredentialProvider$region": "<p>The Amazon Web Services Region used for SigV4 signing. If not specified, defaults to the gateway's Region.</p>"
+      }
+    },
+    "IamCredentialProviderServiceString": {
+      "base": null,
+      "refs": {
+        "IamCredentialProvider$service": "<p>The target Amazon Web Services service name used for SigV4 signing. This value identifies the service that the gateway authenticates with when making requests to the target endpoint.</p>"
+      }
+    },
     "InboundTokenClaimNameType": {
       "base": null,
       "refs": {
@@ -2163,7 +2282,8 @@
     "InlinePayload": {
       "base": null,
       "refs": {
-        "ApiSchemaConfiguration$inlinePayload": "<p>The inline payload containing the API schema definition.</p>"
+        "ApiSchemaConfiguration$inlinePayload": "<p>The inline payload containing the API schema definition.</p>",
+        "McpToolSchemaConfiguration$inlinePayload": "<p>The inline payload containing the MCP tool schema definition.</p>"
       }
     },
     "Integer": {
@@ -2222,6 +2342,18 @@
         "KmsConfiguration$keyType": "<p>The type of KMS key (CustomerManagedKey or ServiceManagedKey).</p>"
       }
     },
+    "KinesisResource": {
+      "base": "<p>Configuration for Kinesis Data Stream delivery.</p>",
+      "refs": {
+        "StreamDeliveryResource$kinesis": "<p>Kinesis Data Stream configuration.</p>"
+      }
+    },
+    "KinesisResourceContentConfigurationsList": {
+      "base": null,
+      "refs": {
+        "KinesisResource$contentConfigurations": "<p>Content configurations for stream delivery.</p>"
+      }
+    },
     "KmsConfiguration": {
       "base": "<p>Contains the KMS configuration for a resource.</p>",
       "refs": {
@@ -2235,10 +2367,34 @@
       "refs": {
         "CreateGatewayRequest$kmsKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt data associated with the gateway.</p>",
         "CreateGatewayResponse$kmsKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt data associated with the gateway.</p>",
+        "CreatePolicyEngineRequest$encryptionKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>",
+        "CreatePolicyEngineResponse$encryptionKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>",
+        "DeletePolicyEngineResponse$encryptionKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>",
         "GetGatewayResponse$kmsKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the gateway.</p>",
+        "GetPolicyEngineResponse$encryptionKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>",
         "KmsConfiguration$kmsKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key.</p>",
+        "PolicyEngine$encryptionKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>",
         "UpdateGatewayRequest$kmsKeyArn": "<p>The updated ARN of the KMS key used to encrypt the gateway.</p>",
-        "UpdateGatewayResponse$kmsKeyArn": "<p>The updated ARN of the KMS key used to encrypt the gateway.</p>"
+        "UpdateGatewayResponse$kmsKeyArn": "<p>The updated ARN of the KMS key used to encrypt the gateway.</p>",
+        "UpdatePolicyEngineResponse$encryptionKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>"
+      }
+    },
+    "LambdaArn": {
+      "base": null,
+      "refs": {
+        "LambdaEvaluatorConfig$lambdaArn": "<p> The Amazon Resource Name (ARN) of the Lambda function that implements the evaluation logic. </p>"
+      }
+    },
+    "LambdaEvaluatorConfig": {
+      "base": "<p> Configuration for a Lambda function used as a code-based evaluator. </p>",
+      "refs": {
+        "CodeBasedEvaluatorConfig$lambdaConfig": "<p> The Lambda function configuration for code-based evaluation. </p>"
+      }
+    },
+    "LambdaEvaluatorConfigLambdaTimeoutInSecondsInteger": {
+      "base": null,
+      "refs": {
+        "LambdaEvaluatorConfig$lambdaTimeoutInSeconds": "<p> The timeout in seconds for the Lambda function invocation. Defaults to 60. Must be between 1 and 300. </p>"
       }
     },
     "LambdaFunctionArn": {
@@ -2487,6 +2643,18 @@
         "GatewayProtocolConfiguration$mcp": "<p>The configuration for the Model Context Protocol (MCP). This protocol enables communication between Amazon Bedrock Agent and external tools.</p>"
       }
     },
+    "ManagedLatticeResource": {
+      "base": "<p>Configuration for a managed VPC Lattice resource. The gateway creates and manages the VPC Lattice resource gateway and resource configuration on your behalf using a service-linked role.</p>",
+      "refs": {
+        "PrivateEndpoint$managedLatticeResource": "<p>Configuration for connecting to a private resource using a managed VPC Lattice resource. The gateway creates and manages the VPC Lattice resources on your behalf.</p>"
+      }
+    },
+    "ManagedResourceDetails": {
+      "base": "<p>Details of a resource created and managed by the gateway for private endpoint connectivity.</p>",
+      "refs": {
+        "PrivateEndpointManagedResources$member": null
+      }
+    },
     "MatchValueString": {
       "base": null,
       "refs": {
@@ -2550,6 +2718,12 @@
       "base": "<p>The Model Context Protocol (MCP) configuration for a target. This structure defines how the gateway uses MCP to communicate with the target.</p>",
       "refs": {
         "TargetConfiguration$mcp": "<p>The Model Context Protocol (MCP) configuration for the target. This configuration defines how the gateway uses MCP to communicate with the target.</p>"
+      }
+    },
+    "McpToolSchemaConfiguration": {
+      "base": "<p>The MCP tool schema configuration for an MCP server target. The tool schema must be aligned with the MCP specification.</p>",
+      "refs": {
+        "McpServerTargetConfiguration$mcpToolSchema": "<p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>"
       }
     },
     "McpVersion": {
@@ -2772,6 +2946,12 @@
         "ModifyMemoryStrategyInput$configuration": "<p>The updated configuration for the memory strategy.</p>"
       }
     },
+    "MountPath": {
+      "base": null,
+      "refs": {
+        "SessionStorageConfiguration$mountPath": "<p>The mount path for the session storage filesystem inside the AgentCore Runtime. The path must be under <code>/mnt</code> with exactly one subdirectory level (for example, <code>/mnt/data</code>).</p>"
+      }
+    },
     "Name": {
       "base": null,
       "refs": {
@@ -2795,16 +2975,27 @@
       "base": null,
       "refs": {
         "CustomMemoryStrategyInput$namespaces": "<p>The namespaces associated with the custom memory strategy.</p>",
+        "CustomMemoryStrategyInput$namespaceTemplates": "<p>The namespaceTemplates associated with the custom memory strategy.</p>",
         "EpisodicMemoryStrategyInput$namespaces": "<p>The namespaces for which to create episodes.</p>",
+        "EpisodicMemoryStrategyInput$namespaceTemplates": "<p>The namespaceTemplates for which to create episodes.</p>",
         "EpisodicOverrideReflectionConfigurationInput$namespaces": "<p>The namespaces to use for episodic reflection. Can be less nested than the episodic namespaces.</p>",
+        "EpisodicOverrideReflectionConfigurationInput$namespaceTemplates": "<p>The namespaceTemplates to use for episodic reflection. Can be less nested than the episodic namespaces.</p>",
         "EpisodicReflectionConfiguration$namespaces": "<p>The namespaces for which to create reflections. Can be less nested than the episodic namespaces.</p>",
+        "EpisodicReflectionConfiguration$namespaceTemplates": "<p>The namespaceTemplates for which to create reflections. Can be less nested than the episodic namespaces.</p>",
         "EpisodicReflectionConfigurationInput$namespaces": "<p>The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>",
+        "EpisodicReflectionConfigurationInput$namespaceTemplates": "<p>The namespaceTemplates over which to create reflections. Can be less nested than episode namespaces.</p>",
         "EpisodicReflectionOverride$namespaces": "<p>The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>",
+        "EpisodicReflectionOverride$namespaceTemplates": "<p>The namespaceTemplates over which reflections were created. Can be less nested than the episodic namespaces.</p>",
         "MemoryStrategy$namespaces": "<p>The namespaces associated with the memory strategy.</p>",
+        "MemoryStrategy$namespaceTemplates": "<p>The namespaceTemplates associated with the memory strategy.</p>",
         "ModifyMemoryStrategyInput$namespaces": "<p>The updated namespaces for the memory strategy.</p>",
+        "ModifyMemoryStrategyInput$namespaceTemplates": "<p>The updated namespaceTemplates for the memory strategy.</p>",
         "SemanticMemoryStrategyInput$namespaces": "<p>The namespaces associated with the semantic memory strategy.</p>",
+        "SemanticMemoryStrategyInput$namespaceTemplates": "<p>The namespaceTemplates associated with the semantic memory strategy.</p>",
         "SummaryMemoryStrategyInput$namespaces": "<p>The namespaces associated with the summary memory strategy.</p>",
-        "UserPreferenceMemoryStrategyInput$namespaces": "<p>The namespaces associated with the user preference memory strategy.</p>"
+        "SummaryMemoryStrategyInput$namespaceTemplates": "<p>The namespaceTemplates associated with the summary memory strategy.</p>",
+        "UserPreferenceMemoryStrategyInput$namespaces": "<p>The namespaces associated with the user preference memory strategy.</p>",
+        "UserPreferenceMemoryStrategyInput$namespaceTemplates": "<p>The namespaceTemplates associated with the user preference memory strategy.</p>"
       }
     },
     "NaturalLanguage": {
@@ -2893,6 +3084,24 @@
       "base": null,
       "refs": {
         "RatingScale$numerical": "<p> The numerical rating scale with defined score values and descriptions for quantitative evaluation. </p>"
+      }
+    },
+    "OAuth2AuthorizationData": {
+      "base": "<p>OAuth2-specific authorization data, including the authorization URL and user identifier for the authorization session.</p>",
+      "refs": {
+        "AuthorizationData$oauth2": "<p>OAuth2 authorization data for the gateway target.</p>"
+      }
+    },
+    "OAuth2AuthorizationDataAuthorizationUrlString": {
+      "base": null,
+      "refs": {
+        "OAuth2AuthorizationData$authorizationUrl": "<p>The URL to initiate the authorization process. This URL is provided when the OAuth2 access token requires user authorization.</p>"
+      }
+    },
+    "OAuth2AuthorizationDataUserIdString": {
+      "base": null,
+      "refs": {
+        "OAuth2AuthorizationData$userId": "<p>The user identifier associated with the OAuth2 authorization session that is defined by AgentCore Gateway.</p>"
       }
     },
     "OAuthCredentialProvider": {
@@ -3169,6 +3378,12 @@
         "ListPolicyGenerationAssetsResponse$policyGenerationAssets": "<p>An array of generated policy assets including Cedar policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>"
       }
     },
+    "PolicyGenerationDetails": {
+      "base": "<p>Represents the information identifying a generated policy asset from the AI-powered policy generation process within the AgentCore Policy system. Each asset contains a Cedar policy statement generated from natural language input, along with associated metadata and analysis findings to help users evaluate and select the most appropriate policy option.</p>",
+      "refs": {
+        "PolicyDefinition$policyGeneration": "<p>The generated policy asset information within the policy definition structure. This contains information identifying a generated policy asset from the AI-powered policy generation process within the AgentCore Policy system. Each asset contains a Cedar policy statement generated from natural language input, along with associated metadata and analysis findings to help users evaluate and select the most appropriate policy option.</p>"
+      }
+    },
     "PolicyGenerationName": {
       "base": null,
       "refs": {
@@ -3236,6 +3451,26 @@
       "refs": {
         "CreatePolicyRequest$validationMode": "<p>The validation mode for the policy creation. Determines how Cedar analyzer validation results are handled during policy creation. FAIL_ON_ANY_FINDINGS (default) runs the Cedar analyzer to validate the policy against the Cedar schema and tool context, failing creation if the analyzer detects any validation issues to ensure strict conformance. IGNORE_ALL_FINDINGS runs the Cedar analyzer but allows policy creation even if validation issues are detected, useful for testing or when the policy schema is evolving. Use FAIL_ON_ANY_FINDINGS for production policies to ensure correctness, and IGNORE_ALL_FINDINGS only when you understand and accept the analyzer findings.</p>",
         "UpdatePolicyRequest$validationMode": "<p>The validation mode for the policy update. Determines how Cedar analyzer validation results are handled during policy updates. FAIL_ON_ANY_FINDINGS runs the Cedar analyzer and fails the update if validation issues are detected, ensuring the policy conforms to the Cedar schema and tool context. IGNORE_ALL_FINDINGS runs the Cedar analyzer but allows updates despite validation warnings. Use FAIL_ON_ANY_FINDINGS to ensure policy correctness during updates, especially when modifying policy logic or conditions.</p>"
+      }
+    },
+    "PrivateEndpoint": {
+      "base": "<p>The private endpoint configuration for a gateway target. Defines how the gateway connects to private resources in your VPC.</p>",
+      "refs": {
+        "CreateGatewayTargetRequest$privateEndpoint": "<p>The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.</p>",
+        "CreateGatewayTargetResponse$privateEndpoint": "<p>The private endpoint configuration for the gateway target.</p>",
+        "GatewayTarget$privateEndpoint": null,
+        "GetGatewayTargetResponse$privateEndpoint": "<p>The private endpoint configuration for the gateway target.</p>",
+        "UpdateGatewayTargetRequest$privateEndpoint": "<p>The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.</p>",
+        "UpdateGatewayTargetResponse$privateEndpoint": "<p>The private endpoint configuration for the gateway target.</p>"
+      }
+    },
+    "PrivateEndpointManagedResources": {
+      "base": "<p>A list of managed resources created by the gateway for private endpoint connectivity.</p>",
+      "refs": {
+        "CreateGatewayTargetResponse$privateEndpointManagedResources": "<p>The managed resources created by the gateway for private endpoint connectivity.</p>",
+        "GatewayTarget$privateEndpointManagedResources": "<p>A list of managed resources created by the gateway for private endpoint connectivity. These resources are created in your account when you use a managed VPC Lattice resource configuration.</p>",
+        "GetGatewayTargetResponse$privateEndpointManagedResources": "<p>The managed resources created by the gateway for private endpoint connectivity.</p>",
+        "UpdateGatewayTargetResponse$privateEndpointManagedResources": "<p>The managed resources created by the gateway for private endpoint connectivity.</p>"
       }
     },
     "Prompt": {
@@ -3323,6 +3558,24 @@
         "StartPolicyGenerationResponse$resource": "<p>The resource information associated with the policy generation request.</p>"
       }
     },
+    "ResourceAssociationArn": {
+      "base": null,
+      "refs": {
+        "ManagedResourceDetails$resourceAssociationArn": "<p>The ARN of the service network resource association.</p>"
+      }
+    },
+    "ResourceConfigurationIdentifier": {
+      "base": null,
+      "refs": {
+        "SelfManagedLatticeResource$resourceConfigurationIdentifier": "<p>The ARN or ID of the VPC Lattice resource configuration.</p>"
+      }
+    },
+    "ResourceGatewayArn": {
+      "base": null,
+      "refs": {
+        "ManagedResourceDetails$resourceGatewayArn": "<p>The ARN of the VPC Lattice resource gateway created in your account.</p>"
+      }
+    },
     "ResourceId": {
       "base": null,
       "refs": {
@@ -3356,6 +3609,8 @@
         "PolicyGeneration$policyEngineId": "<p>The identifier of the policy engine associated with this generation request.</p>",
         "PolicyGeneration$policyGenerationId": "<p>The unique identifier for this policy generation request.</p>",
         "PolicyGenerationAsset$policyGenerationAssetId": "<p>The unique identifier for this generated policy asset within the policy generation request. This ID can be used to reference specific generated policy options when creating actual policies from the generation results.</p>",
+        "PolicyGenerationDetails$policyGenerationId": "<p>The unique identifier for this policy generation request.</p>",
+        "PolicyGenerationDetails$policyGenerationAssetId": "<p>The unique identifier for this generated policy asset within the policy generation request.</p>",
         "StartPolicyGenerationRequest$policyEngineId": "<p>The identifier of the policy engine that provides the context for policy generation. This engine's schema and tool context are used to ensure generated policies are valid and applicable.</p>",
         "StartPolicyGenerationResponse$policyEngineId": "<p>The identifier of the policy engine associated with the started policy generation. </p>",
         "StartPolicyGenerationResponse$policyGenerationId": "<p>The unique identifier assigned to the policy generation request for tracking progress. </p>",
@@ -3370,6 +3625,12 @@
     "ResourceLimitExceededException": {
       "base": "<p>Exception thrown when a resource limit is exceeded.</p>",
       "refs": {}
+    },
+    "ResourceLocation": {
+      "base": "<p>The location of a resource.</p>",
+      "refs": {
+        "BrowserEnterprisePolicy$location": "<p>The location of the enterprise policy file.</p>"
+      }
     },
     "ResourceNotFoundException": {
       "base": "<p>This exception is thrown when a resource referenced by the operation does not exist</p>",
@@ -3451,6 +3712,12 @@
         "UpdateOnlineEvaluationConfigRequest$evaluationExecutionRoleArn": "<p> The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution. </p>"
       }
     },
+    "RoutingDomain": {
+      "base": null,
+      "refs": {
+        "ManagedLatticeResource$routingDomain": "<p>An intermediate publicly resolvable domain used as the VPC Lattice resource configuration endpoint. Required when your private endpoint uses a domain that is not publicly resolvable.</p>"
+      }
+    },
     "Rule": {
       "base": "<p> The evaluation rule that defines sampling configuration, filtering criteria, and session detection settings for online evaluation. </p>",
       "refs": {
@@ -3465,6 +3732,13 @@
         "ContainerConfiguration$containerUri": "<p>The ECR URI of the container.</p>"
       }
     },
+    "RuntimeMetadataConfiguration": {
+      "base": "<p>Configuration for microVM metadata service settings.</p>",
+      "refs": {
+        "GetAgentRuntimeResponse$metadataConfiguration": "<p>Configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>",
+        "UpdateAgentRuntimeRequest$metadataConfiguration": "<p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>"
+      }
+    },
     "S3BucketUri": {
       "base": null,
       "refs": {
@@ -3475,6 +3749,7 @@
       "base": "<p>The Amazon S3 configuration for a gateway. This structure defines how the gateway accesses files in Amazon S3.</p>",
       "refs": {
         "ApiSchemaConfiguration$s3": null,
+        "McpToolSchemaConfiguration$s3": "<p>The Amazon S3 location of the tool schema. This location contains the schema definition file.</p>",
         "ToolSchema$s3": "<p>The Amazon S3 location of the tool schema. This location contains the schema definition file.</p>"
       }
     },
@@ -3482,7 +3757,8 @@
       "base": "<p>The Amazon S3 location for storing data. This structure defines where in Amazon S3 data is stored.</p>",
       "refs": {
         "Code$s3": "<p>The Amazon Amazon S3 object that contains the source code for the agent runtime.</p>",
-        "RecordingConfig$s3Location": "<p>The Amazon S3 location where browser recordings are stored. This location contains the recorded browser sessions.</p>"
+        "RecordingConfig$s3Location": "<p>The Amazon S3 location where browser recordings are stored. This location contains the recorded browser sessions.</p>",
+        "ResourceLocation$s3": null
       }
     },
     "S3LocationBucketString": {
@@ -3582,10 +3858,28 @@
         "Secret$secretArn": "<p>The Amazon Resource Name (ARN) of the secret in AWS Secrets Manager.</p>"
       }
     },
+    "SecretsManagerLocation": {
+      "base": "<p>The Amazon Web Services Secrets Manager location configuration.</p>",
+      "refs": {
+        "CertificateLocation$secretsManager": "<p>The Amazon Web Services Secrets Manager location of the certificate.</p>"
+      }
+    },
     "SecurityGroupId": {
       "base": null,
       "refs": {
         "SecurityGroups$member": null
+      }
+    },
+    "SecurityGroupIdentifier": {
+      "base": null,
+      "refs": {
+        "SecurityGroupIds$member": null
+      }
+    },
+    "SecurityGroupIds": {
+      "base": null,
+      "refs": {
+        "ManagedLatticeResource$securityGroupIds": "<p>The security group IDs to associate with the VPC Lattice resource gateway. If not specified, the default security group for the VPC is used.</p>"
       }
     },
     "SecurityGroups": {
@@ -3610,6 +3904,12 @@
       "base": null,
       "refs": {
         "SelfManagedConfigurationInput$historicalContextWindowSize": "<p>Number of historical messages to include in processing context.</p>"
+      }
+    },
+    "SelfManagedLatticeResource": {
+      "base": "<p>Configuration for a self-managed VPC Lattice resource. You create and manage the VPC Lattice resource gateway and resource configuration, then provide the resource configuration identifier.</p>",
+      "refs": {
+        "PrivateEndpoint$selfManagedLatticeResource": "<p>Configuration for connecting to a private resource using a self-managed VPC Lattice resource configuration.</p>"
       }
     },
     "SemanticConsolidationOverride": {
@@ -3682,6 +3982,12 @@
         "SessionConfig$sessionTimeoutMinutes": "<p> The number of minutes of inactivity after which an agent session is considered complete and ready for evaluation. Default is 15 minutes. </p>"
       }
     },
+    "SessionStorageConfiguration": {
+      "base": "<p>Configuration for a session storage filesystem mounted into the AgentCore Runtime. Session storage provides persistent storage that is preserved across AgentCore Runtime session invocations.</p>",
+      "refs": {
+        "FilesystemConfiguration$sessionStorage": "<p>Configuration for session storage. Session storage provides persistent storage that is preserved across AgentCore Runtime session invocations.</p>"
+      }
+    },
     "SetTokenVaultCMKRequest": {
       "base": null,
       "refs": {}
@@ -3740,6 +4046,26 @@
       "base": "<p>Contains configuration information for a memory strategy.</p>",
       "refs": {
         "MemoryStrategy$configuration": "<p>The configuration of the memory strategy.</p>"
+      }
+    },
+    "StreamDeliveryResource": {
+      "base": "<p>Supported stream delivery resource types.</p>",
+      "refs": {
+        "StreamDeliveryResourcesList$member": null
+      }
+    },
+    "StreamDeliveryResources": {
+      "base": "<p>Configuration for streaming memory record data to external resources.</p>",
+      "refs": {
+        "CreateMemoryInput$streamDeliveryResources": "<p>Configuration for streaming memory record data to external resources.</p>",
+        "Memory$streamDeliveryResources": "<p>Configuration for streaming memory record data to external resources.</p>",
+        "UpdateMemoryInput$streamDeliveryResources": "<p>Configuration for streaming memory record data to external resources.</p>"
+      }
+    },
+    "StreamDeliveryResourcesList": {
+      "base": null,
+      "refs": {
+        "StreamDeliveryResources$resources": "<p>List of stream delivery resource configurations.</p>"
       }
     },
     "String": {
@@ -3820,7 +4146,14 @@
     "SubnetId": {
       "base": null,
       "refs": {
+        "SubnetIds$member": null,
         "Subnets$member": null
+      }
+    },
+    "SubnetIds": {
+      "base": null,
+      "refs": {
+        "ManagedLatticeResource$subnetIds": "<p>The subnet IDs within the VPC where the VPC Lattice resource gateway is placed.</p>"
       }
     },
     "Subnets": {
@@ -3911,8 +4244,10 @@
         "CreateMemoryInput$tags": "<p>A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>",
         "CreateOauth2CredentialProviderRequest$tags": "<p>A map of tag keys and values to assign to the OAuth2 credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>",
         "CreateOnlineEvaluationConfigRequest$tags": "<p>A map of tag keys and values to assign to an AgentCore Online Evaluation Config. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>",
+        "CreatePolicyEngineRequest$tags": "<p>A map of tag keys and values to assign to an AgentCore Policy. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>",
         "CreateWorkloadIdentityRequest$tags": "<p>A map of tag keys and values to assign to the workload identity. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>",
         "ListTagsForResourceResponse$tags": "<p>The tags associated with the resource.</p>",
+        "ManagedLatticeResource$tags": "<p>Tags to apply to the managed VPC Lattice resource gateway.</p>",
         "TagResourceRequest$tags": "<p>The tags to add to the resource. A tag is a key-value pair.</p>"
       }
     },
@@ -4145,6 +4480,12 @@
         "McpLambdaTargetConfiguration$toolSchema": "<p>The tool schema for the Lambda function. This schema defines the structure of the tools that the Lambda function provides.</p>"
       }
     },
+    "ToolSecretArn": {
+      "base": null,
+      "refs": {
+        "SecretsManagerLocation$secretArn": "<p>The ARN of the Amazon Web Services Secrets Manager secret containing the certificate.</p>"
+      }
+    },
     "TriggerCondition": {
       "base": "<p>Condition that triggers memory processing.</p>",
       "refs": {
@@ -4290,6 +4631,13 @@
       "base": null,
       "refs": {}
     },
+    "UpdatedDescription": {
+      "base": "<p>Wrapper for updating an optional Description field with PATCH semantics. When present in an update request, the description is replaced with optionalValue. When absent, the description is left unchanged. To unset the description, include the wrapper with optionalValue not specified.</p>",
+      "refs": {
+        "UpdatePolicyEngineRequest$description": "<p>The new description for the policy engine.</p>",
+        "UpdatePolicyRequest$description": "<p>The new human-readable description for the policy. This optional field allows updating the policy's documentation while keeping the same policy logic.</p>"
+      }
+    },
     "UserPreferenceConsolidationOverride": {
       "base": "<p>Contains user preference consolidation override configuration.</p>",
       "refs": {
@@ -4356,6 +4704,12 @@
         "BrowserNetworkConfiguration$vpcConfig": null,
         "CodeInterpreterNetworkConfiguration$vpcConfig": null,
         "NetworkConfiguration$networkModeConfig": "<p>The network mode configuration for the AgentCore Runtime.</p>"
+      }
+    },
+    "VpcIdentifier": {
+      "base": null,
+      "refs": {
+        "ManagedLatticeResource$vpcIdentifier": "<p>The ID of the VPC that contains your private resource.</p>"
       }
     },
     "WorkloadIdentityArn": {

@@ -32,6 +32,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.JsonProtocol
@@ -39,5 +40,67 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
     [TestClass]
     public class NullOperation
     {
+        /// <summary>
+        /// Null structure values are dropped
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("JsonProtocol")]
+        public void AwsJson11StructuresDontSerializeNullValuesRequest()
+        {
+            // Arrange
+            var request = new NullOperationRequest
+            {
+                String = null,
+            };
+            var config = new AmazonJsonProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new NullOperationRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            var expectedBody = "{}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("application/x-amz-json-1.1".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonProtocol.NullOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+        }
+
+        /// <summary>
+        /// Null structure values are dropped
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("JsonProtocol")]
+        public void AwsJson11StructuresDontDeserializeNullValuesResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"string\": null\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new NullOperationResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new NullOperationResponse
+            {
+            };
+
+            // Assert
+            var actualResponse = (NullOperationResponse)unmarshalledResponse;
+            Comparer.CompareObjects<NullOperationResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
     }
 }

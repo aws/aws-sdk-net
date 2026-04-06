@@ -37,12 +37,14 @@ namespace Amazon.GameLiftStreams.Model
         private int? _allocatedCapacity;
         private int? _alwaysOnCapacity;
         private int? _idleCapacity;
+        private string _internalVpcIpv4CidrBlock;
         private string _locationName;
         private int? _maximumCapacity;
         private int? _onDemandCapacity;
         private int? _requestedCapacity;
         private StreamGroupLocationStatus _status;
         private int? _targetIdleCapacity;
+        private VpcTransitConfigurationResponse _vpcTransitConfiguration;
 
         /// <summary>
         /// Gets and sets the property AllocatedCapacity. 
@@ -111,6 +113,25 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetIdleCapacity()
         {
             return this._idleCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InternalVpcIpv4CidrBlock. 
+        /// <para>
+        /// The CIDR block of the service VPC for this location. Add this CIDR block to your VPC
+        /// route table to enable traffic routing through the Transit Gateway.
+        /// </para>
+        /// </summary>
+        public string InternalVpcIpv4CidrBlock
+        {
+            get { return this._internalVpcIpv4CidrBlock; }
+            set { this._internalVpcIpv4CidrBlock = value; }
+        }
+
+        // Check to see if InternalVpcIpv4CidrBlock property is set
+        internal bool IsSetInternalVpcIpv4CidrBlock()
+        {
+            return this._internalVpcIpv4CidrBlock != null;
         }
 
         /// <summary>
@@ -265,6 +286,25 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetTargetIdleCapacity()
         {
             return this._targetIdleCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcTransitConfiguration. 
+        /// <para>
+        /// The VPC transit configuration for this location, including the Transit Gateway details
+        /// needed to complete the VPC attachment setup.
+        /// </para>
+        /// </summary>
+        public VpcTransitConfigurationResponse VpcTransitConfiguration
+        {
+            get { return this._vpcTransitConfiguration; }
+            set { this._vpcTransitConfiguration = value; }
+        }
+
+        // Check to see if VpcTransitConfiguration property is set
+        internal bool IsSetVpcTransitConfiguration()
+        {
+            return this._vpcTransitConfiguration != null;
         }
 
     }

@@ -156,6 +156,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetInferenceSettings())
+            {
+                context.Writer.WritePropertyName("inferenceSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InferenceSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetInputAttachments())
             {
                 context.Writer.WritePropertyName("inputAttachments");

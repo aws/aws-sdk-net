@@ -38,6 +38,7 @@ namespace Amazon.OpenSearchServerless.Model
         private string _clientToken;
         private string _description;
         private string _id;
+        private VectorOptions _vectorOptions;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -94,6 +95,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorOptions. 
+        /// <para>
+        /// Configuration options for vector search capabilities in the collection.
+        /// </para>
+        /// </summary>
+        public VectorOptions VectorOptions
+        {
+            get { return this._vectorOptions; }
+            set { this._vectorOptions = value; }
+        }
+
+        // Check to see if VectorOptions property is set
+        internal bool IsSetVectorOptions()
+        {
+            return this._vectorOptions != null;
         }
 
     }

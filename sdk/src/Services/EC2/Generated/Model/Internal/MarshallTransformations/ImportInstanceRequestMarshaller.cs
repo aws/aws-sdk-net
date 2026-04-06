@@ -220,6 +220,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Platform", StringUtils.FromString(publicRequest.Platform));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ImportInstanceRequestMarshaller _instance = new ImportInstanceRequestMarshaller();        

@@ -332,7 +332,8 @@
     "AudioDolbyEDecode": {
       "base": "Audio Dolby EDecode",
       "refs": {
-        "AudioTrackSelection$DolbyEDecode": "Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337"
+        "AudioTrackSelection$DolbyEDecode": "Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337",
+        "AudioPid$DolbyEDecode": "Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337.\nWhen using the 'pids' array, if this field is not specified and Dolby E content is present,\nthe decoder will extract the specified program. To maintain legacy behavior (allPrograms),\nexplicitly set programSelection to \"allChannels\"."
       }
     },
     "AudioHlsRenditionSelection": {
@@ -3706,7 +3707,7 @@
     "VideoDescriptionScalingBehavior": {
       "base": "Video Description Scaling Behavior",
       "refs": {
-        "VideoDescription$ScalingBehavior": "STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution."
+        "VideoDescription$ScalingBehavior": "Configures how MediaLive transforms the video picture to match the output frame.\nUse STRETCH_TO_OUTPUT to stretch the video to fill the output frame. The video might get distorted.\nUse DEFAULT to insert pillar boxes or letter boxes around the video to fill the output frame. The video won't get distorted.\nUse SMART_CROP to enable the smart crop feature that uses the Elemental Inference service to crop the frame using AI - see the MediaLive User Guide for more information."
       }
     },
     "VideoSelector": {
@@ -5304,7 +5305,9 @@
         "SrtListenerDecryption$PassphraseSecretArn": "The ARN for the secret in Secrets Manager that holds the passphrase for decryption.",
         "SrtListenerDecryptionRequest$PassphraseSecretArn": "Required. The ARN for the secret in Secrets Manager that holds the passphrase.",
         "SrtListenerSettings$StreamId": "The stream ID, if the upstream system uses this identifier.",
-        "SrtListenerSettingsRequest$StreamId": "Optional. The stream ID if the upstream system uses this identifier."
+        "SrtListenerSettingsRequest$StreamId": "Optional. The stream ID if the upstream system uses this identifier.",
+        "DescribeInferenceSettings$FeedArn": "The ARN of the feed resource that is associated with this channel. The feed is a resource in the Elemental Inference service.",
+        "InferenceSettings$FeedArn": "The ARN of the feed resource that is associated with this channel. The feed is a resource in the Elemental Inference service."
       }
     },
     "__stringMax1000": {
@@ -7390,7 +7393,8 @@
     "Hlg2020Settings": {
       "base": "Hlg2020 Settings",
       "refs": {
-        "H265ColorSpaceSettings$Hlg2020Settings": null
+        "H265ColorSpaceSettings$Hlg2020Settings": null,
+        "Av1ColorSpaceSettings$Hlg2020Settings": null
       }
     },
     "RouterDestination": {
@@ -7559,6 +7563,20 @@
       "base": "Av1 Bit Depth",
       "refs": {
         "Av1Settings$BitDepth": "Specifies the bit depth for the output encode. Choose a value. Or leave the field empty to use the default, which is 8 bit."
+      }
+    },
+    "DescribeInferenceSettings": {
+      "base": "Configures Elemental Inference features in a channel.",
+      "refs": {
+        "Channel$InferenceSettings": "Include this setting to include Elemental Inference features in this channel.",
+        "ChannelSummary$InferenceSettings": "Include this setting to include Elemental Inference features in this channel."
+      }
+    },
+    "InferenceSettings": {
+      "base": "Configures Elemental Inference features in a channel.",
+      "refs": {
+        "CreateChannel$InferenceSettings": "Include this setting to include Elemental Inference features in this channel.",
+        "UpdateChannel$InferenceSettings": "Include this setting to include Elemental Inference features in this channel."
       }
     }
   },

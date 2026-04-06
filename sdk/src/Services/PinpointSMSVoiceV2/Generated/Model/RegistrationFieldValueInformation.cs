@@ -62,8 +62,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property Feedback. 
         /// <para>
-        /// Feedback provided for this specific field during the registration review process.
-        /// This may include validation errors, suggestions for improvement, or additional requirements.
+        /// Generative AI feedback information provided for this specific field during the registration
+        /// review process. This may include validation errors, suggestions for improvement, or
+        /// additional requirements.
         /// </para>
         /// </summary>
         public string Feedback

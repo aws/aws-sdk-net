@@ -72,7 +72,7 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogoImageBlob())
             {
                 context.Writer.WritePropertyName("logoImageBlob");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.LogoImageBlob));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.LogoImageBlob);
             }
 
             if(requestObject.IsSetOperatingSystems())

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Calculated isolines and associated properties.
+    /// Represents a single reachable area calculated for a specific threshold.
     /// </summary>
     public partial class Isoline
     {
@@ -42,9 +42,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Connections. 
         /// <para>
-        /// Isolines may contain multiple components, if these components are connected by ferry
-        /// links. These components are returned as separate polygons while the ferry links are
-        /// returned as connections.
+        /// Lines connecting separate parts of the reachable area that can be reached within the
+        /// same threshold. These occur when areas are reachable but not contiguous, such as when
+        /// separated by water or unroutable areas. When present, these lines represent actual
+        /// transportation network segments (such as ferry routes or bridges) that connect the
+        /// separated areas.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -68,7 +70,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property DistanceThreshold. 
         /// <para>
-        /// Distance threshold corresponding to the calculated Isoline.
+        /// The travel distance in meters used to calculate this isoline, if distance-based thresholds
+        /// were specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -87,7 +90,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Geometries. 
         /// <para>
-        /// Geometries for the Calculated isolines.
+        /// The shapes that define the reachable area, provided in the requested geometry format.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -111,7 +114,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TimeThreshold. 
         /// <para>
-        /// Time threshold corresponding to the calculated isoline.
+        /// The travel time in seconds used to calculate this isoline, if time-based thresholds
+        /// were specified in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]

@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PrefixListId", StringUtils.FromString(publicRequest.PrefixListId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteManagedPrefixListRequestMarshaller _instance = new DeleteManagedPrefixListRequestMarshaller();        

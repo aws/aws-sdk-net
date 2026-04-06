@@ -605,9 +605,10 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Creates a custom evaluator for agent quality assessment. Custom evaluators use LLM-as-a-Judge
-        /// configurations with user-defined prompts, rating scales, and model settings to evaluate
-        /// agent performance at tool call, trace, or session levels.
+        /// Creates a custom evaluator for agent quality assessment. Custom evaluators can use
+        /// either LLM-as-a-Judge configurations with user-defined prompts, rating scales, and
+        /// model settings, or code-based configurations with customer-managed Lambda functions
+        /// to evaluate agent performance at tool call, trace, or session levels.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEvaluator service method.</param>
         /// <param name="cancellationToken">
@@ -1527,6 +1528,13 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Deletes a gateway target.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a target that is in a pending authorization state (<c>CREATE_PENDING_AUTH</c>,
+        /// <c>UPDATE_PENDING_AUTH</c>, or <c>SYNCHRONIZE_PENDING_AUTH</c>). Wait for the authorization
+        /// to complete or fail before deleting the target.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayTarget service method.</param>
         /// <param name="cancellationToken">
@@ -3934,7 +3942,21 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// The gateway targets.
+        /// Synchronizes the gateway targets by fetching the latest tool definitions from the
+        /// target endpoints.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot synchronize a target that is in a pending authorization state (<c>CREATE_PENDING_AUTH</c>,
+        /// <c>UPDATE_PENDING_AUTH</c>, or <c>SYNCHRONIZE_PENDING_AUTH</c>). Wait for the authorization
+        /// to complete or fail before synchronizing.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot synchronize a target that has a static tool schema (<c>mcpToolSchema</c>)
+        /// configured. Remove the static schema through an <c>UpdateGatewayTarget</c> call to
+        /// enable dynamic tool synchronization.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SynchronizeGatewayTargets service method.</param>
         /// <param name="cancellationToken">
@@ -4385,6 +4407,13 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Updates an existing gateway target.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot update a target that is in a pending authorization state (<c>CREATE_PENDING_AUTH</c>,
+        /// <c>UPDATE_PENDING_AUTH</c>, or <c>SYNCHRONIZE_PENDING_AUTH</c>). Wait for the authorization
+        /// to complete or fail before updating the target.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayTarget service method.</param>
         /// <param name="cancellationToken">

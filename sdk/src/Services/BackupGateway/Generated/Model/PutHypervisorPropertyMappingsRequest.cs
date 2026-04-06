@@ -33,7 +33,7 @@ namespace Amazon.BackupGateway.Model
     /// Container for the parameters to the PutHypervisorPropertyMappings operation.
     /// This action sets the property mappings for the specified hypervisor. A hypervisor
     /// property mapping displays the relationship of entity properties available from the
-    /// on-premises hypervisor to the properties available in Amazon Web Services.
+    /// hypervisor to the properties available in Amazon Web Services.
     /// </summary>
     public partial class PutHypervisorPropertyMappingsRequest : AmazonBackupGatewayRequest
     {
@@ -82,8 +82,7 @@ namespace Amazon.BackupGateway.Model
         /// <summary>
         /// Gets and sets the property VmwareToAwsTagMappings. 
         /// <para>
-        /// This action requests the mappings of on-premises VMware tags to the Amazon Web Services
-        /// tags.
+        /// This action requests the mappings of VMware tags to the Amazon Web Services tags.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

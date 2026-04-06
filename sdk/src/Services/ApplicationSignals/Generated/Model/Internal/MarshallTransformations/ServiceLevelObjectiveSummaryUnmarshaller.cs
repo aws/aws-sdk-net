@@ -86,6 +86,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MetricSource", targetDepth))
+                {
+                    var unmarshaller = MetricSourceUnmarshaller.Instance;
+                    unmarshalledObject.MetricSource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("MetricSourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

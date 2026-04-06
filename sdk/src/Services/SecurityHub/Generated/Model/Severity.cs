@@ -40,8 +40,8 @@ namespace Amazon.SecurityHub.Model
     ///  
     /// <para>
     /// The finding must have either <c>Label</c> or <c>Normalized</c> populated. If only
-    /// one of these attributes is populated, then Security Hub automatically populates the
-    /// other one. If neither attribute is populated, then the finding is invalid. <c>Label</c>
+    /// one of these attributes is populated, then Security Hub CSPM automatically populates
+    /// the other one. If neither attribute is populated, then the finding is invalid. <c>Label</c>
     /// is the preferred attribute.
     /// </para>
     /// </summary>

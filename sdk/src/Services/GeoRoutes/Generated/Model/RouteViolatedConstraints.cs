@@ -207,7 +207,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         public RouteWeightConstraint MaxWeight
@@ -229,7 +229,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -252,7 +252,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         public WeightPerAxleGroup MaxWeightPerAxleGroup
@@ -293,7 +293,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>1</c> 
+        /// Default value: <c>1</c> 
         /// </para>
         /// </summary>
         public RouteNoticeDetailRange Occupancy
@@ -352,7 +352,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>0</c> 
+        /// Default value: <c>0</c> 
         /// </para>
         /// </summary>
         public RouteNoticeDetailRange TrailerCount
@@ -413,7 +413,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TruckType. 
         /// <para>
-        /// Type of the truck.
+        /// The type of truck: <c>LightTruck</c> for smaller delivery vehicles, <c> StraightTruck</c>
+        /// for rigid body trucks, or <c>Tractor</c> for tractor-trailer combinations.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

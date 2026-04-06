@@ -158,7 +158,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3)]
+        [AWSProperty(Required=true, Min=1, Max=4)]
         public List<string> NumberCapabilities
         {
             get { return this._numberCapabilities; }
@@ -233,7 +233,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string PoolId
         {
             get { return this._poolId; }

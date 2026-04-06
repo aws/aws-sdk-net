@@ -76,6 +76,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NodeType", StringUtils.FromString(publicRequest.NodeType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeOrderableClusterOptionsRequestMarshaller _instance = new DescribeOrderableClusterOptionsRequestMarshaller();        

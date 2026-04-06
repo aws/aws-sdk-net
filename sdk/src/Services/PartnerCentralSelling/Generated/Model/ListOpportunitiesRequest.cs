@@ -75,6 +75,7 @@ namespace Amazon.PartnerCentralSelling.Model
         private int? _maxResults;
         private string _nextToken;
         private OpportunitySort _sort;
+        private TargetCloseDateFilter _targetCloseDate;
 
         /// <summary>
         /// Gets and sets the property Catalog. 
@@ -302,6 +303,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetSort()
         {
             return this._sort != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetCloseDate. 
+        /// <para>
+        /// Filters opportunities based on their target close date. This filter helps retrieve
+        /// opportunities with an expected close date before or after a specified date.
+        /// </para>
+        /// </summary>
+        public TargetCloseDateFilter TargetCloseDate
+        {
+            get { return this._targetCloseDate; }
+            set { this._targetCloseDate = value; }
+        }
+
+        // Check to see if TargetCloseDate property is set
+        internal bool IsSetTargetCloseDate()
+        {
+            return this._targetCloseDate != null;
         }
 
     }

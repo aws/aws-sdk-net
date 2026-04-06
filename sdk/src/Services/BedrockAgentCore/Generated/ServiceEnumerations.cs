@@ -75,6 +75,56 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type BrowserEnterprisePolicyType.
+    /// </summary>
+    public class BrowserEnterprisePolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANAGED for BrowserEnterprisePolicyType
+        /// </summary>
+        public static readonly BrowserEnterprisePolicyType MANAGED = new BrowserEnterprisePolicyType("MANAGED");
+        /// <summary>
+        /// Constant RECOMMENDED for BrowserEnterprisePolicyType
+        /// </summary>
+        public static readonly BrowserEnterprisePolicyType RECOMMENDED = new BrowserEnterprisePolicyType("RECOMMENDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BrowserEnterprisePolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrowserEnterprisePolicyType FindValue(string value)
+        {
+            return FindValue<BrowserEnterprisePolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrowserEnterprisePolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BrowserSessionStatus.
     /// </summary>
     public class BrowserSessionStatus : ConstantClass
@@ -175,6 +225,56 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type CommandExecutionStatus.
+    /// </summary>
+    public class CommandExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for CommandExecutionStatus
+        /// </summary>
+        public static readonly CommandExecutionStatus COMPLETED = new CommandExecutionStatus("COMPLETED");
+        /// <summary>
+        /// Constant TIMED_OUT for CommandExecutionStatus
+        /// </summary>
+        public static readonly CommandExecutionStatus TIMED_OUT = new CommandExecutionStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CommandExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CommandExecutionStatus FindValue(string value)
+        {
+            return FindValue<CommandExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CommandExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContentBlockType.
     /// </summary>
     public class ContentBlockType : ConstantClass
@@ -233,6 +333,52 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type EventFilterCondition.
+    /// </summary>
+    public class EventFilterCondition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HAS_EVENTS for EventFilterCondition
+        /// </summary>
+        public static readonly EventFilterCondition HAS_EVENTS = new EventFilterCondition("HAS_EVENTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventFilterCondition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventFilterCondition FindValue(string value)
+        {
+            return FindValue<EventFilterCondition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventFilterCondition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExtractionJobStatus.
     /// </summary>
     public class ExtractionJobStatus : ConstantClass
@@ -272,6 +418,60 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExtractionJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LanguageRuntime.
+    /// </summary>
+    public class LanguageRuntime : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Deno for LanguageRuntime
+        /// </summary>
+        public static readonly LanguageRuntime Deno = new LanguageRuntime("deno");
+        /// <summary>
+        /// Constant Nodejs for LanguageRuntime
+        /// </summary>
+        public static readonly LanguageRuntime Nodejs = new LanguageRuntime("nodejs");
+        /// <summary>
+        /// Constant Python for LanguageRuntime
+        /// </summary>
+        public static readonly LanguageRuntime Python = new LanguageRuntime("python");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LanguageRuntime(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LanguageRuntime FindValue(string value)
+        {
+            return FindValue<LanguageRuntime>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LanguageRuntime(string value)
         {
             return FindValue(value);
         }

@@ -301,6 +301,23 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             #endregion
         }
 
+        public void RDSCreateDBCluster()
+        {
+            #region example-3
+
+            var client = new AmazonRDSClient();
+            var response = client.CreateDBCluster(new CreateDBClusterRequest 
+            {
+                DBClusterIdentifier = "sample-cluster",
+                Engine = "aurora-postgresql",
+                WithExpressConfiguration = true
+            });
+
+            DBCluster dbCluster = response.DBCluster;
+
+            #endregion
+        }
+
         public void RDSCreateDBClusterEndpoint()
         {
             #region example-1
@@ -960,6 +977,21 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             var response = client.DescribeDBClusters(new DescribeDBClustersRequest 
             {
                 DBClusterIdentifier = "mydbcluster"
+            });
+
+            List<DBCluster> dbClusters = response.DBClusters;
+
+            #endregion
+        }
+
+        public void RDSDescribeDBClusters()
+        {
+            #region example-2
+
+            var client = new AmazonRDSClient();
+            var response = client.DescribeDBClusters(new DescribeDBClustersRequest 
+            {
+                DBClusterIdentifier = "my-vpcless-cluster"
             });
 
             List<DBCluster> dbClusters = response.DBClusters;
@@ -1940,6 +1972,26 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             #endregion
         }
 
+        public void RDSRestoreDBClusterFromSnapshot()
+        {
+            #region example-2
+
+            var client = new AmazonRDSClient();
+            var response = client.RestoreDBClusterFromSnapshot(new RestoreDBClusterFromSnapshotRequest 
+            {
+                DBClusterIdentifier = "restored-cluster",
+                EnableIAMDatabaseAuthentication = true,
+                EnableInternetAccessGateway = true,
+                EnableVPCNetworking = false,
+                Engine = "aurora-postgresql",
+                SnapshotIdentifier = "sample-cluster-snapshot"
+            });
+
+            DBCluster dbCluster = response.DBCluster;
+
+            #endregion
+        }
+
         public void RDSRestoreDBClusterToPointInTime()
         {
             #region example-1
@@ -1950,6 +2002,27 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
                 DBClusterIdentifier = "sample-cluster-clone",
                 RestoreType = "copy-on-write",
                 SourceDBClusterIdentifier = "database-4",
+                UseLatestRestorableTime = true
+            });
+
+            DBCluster dbCluster = response.DBCluster;
+
+            #endregion
+        }
+
+        public void RDSRestoreDBClusterToPointInTime()
+        {
+            #region example-2
+
+            var client = new AmazonRDSClient();
+            var response = client.RestoreDBClusterToPointInTime(new RestoreDBClusterToPointInTimeRequest 
+            {
+                DBClusterIdentifier = "sample-cluster-restored",
+                EnableIAMDatabaseAuthentication = true,
+                EnableInternetAccessGateway = true,
+                EnableVPCNetworking = false,
+                RestoreType = "copy-on-write",
+                SourceDBClusterIdentifier = "sample-cluster",
                 UseLatestRestorableTime = true
             });
 

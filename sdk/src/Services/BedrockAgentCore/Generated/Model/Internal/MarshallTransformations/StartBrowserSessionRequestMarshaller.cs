@@ -76,6 +76,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCertificates())
+            {
+                context.Writer.WritePropertyName("certificates");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCertificatesListValue in publicRequest.Certificates)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CertificateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCertificatesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");
@@ -87,6 +103,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetEnterprisePolicies())
+            {
+                context.Writer.WritePropertyName("enterprisePolicies");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEnterprisePoliciesListValue in publicRequest.EnterprisePolicies)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = BrowserEnterprisePolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEnterprisePoliciesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetExtensions())
             {
                 context.Writer.WritePropertyName("extensions");

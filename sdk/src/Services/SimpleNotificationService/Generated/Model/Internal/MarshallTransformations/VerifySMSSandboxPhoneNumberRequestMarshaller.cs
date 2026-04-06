@@ -68,6 +68,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     request.Parameters.Add("PhoneNumber", StringUtils.FromString(publicRequest.PhoneNumber));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static VerifySMSSandboxPhoneNumberRequestMarshaller _instance = new VerifySMSSandboxPhoneNumberRequestMarshaller();        

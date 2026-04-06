@@ -52,7 +52,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteStartArray();
                 foreach(var requestObjectCanDbcFilesListValue in requestObject.CanDbcFiles)
                 {
-                    context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObjectCanDbcFilesListValue));
+                    StringUtils.WriteBase64StringValue(context.Writer, requestObjectCanDbcFilesListValue);
                 }
                 context.Writer.WriteEndArray();
             }

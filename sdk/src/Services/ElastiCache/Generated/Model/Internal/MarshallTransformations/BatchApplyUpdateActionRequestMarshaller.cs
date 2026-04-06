@@ -92,6 +92,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ServiceUpdateName", StringUtils.FromString(publicRequest.ServiceUpdateName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static BatchApplyUpdateActionRequestMarshaller _instance = new BatchApplyUpdateActionRequestMarshaller();        

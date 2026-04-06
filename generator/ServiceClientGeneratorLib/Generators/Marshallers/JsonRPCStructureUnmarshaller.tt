@@ -29,33 +29,48 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             if (context.IsEmptyResponse)
                 return null;
 <#
-    Member eventPayloadMember = this.Structure.GetExplicitEventPayloadMember();
-    //HasImplicitEventPayloadMembers means that the structure does not have a member with the EventPayload trait
-    if(this.Structure != null && this.Structure.IsEvent && !this.Structure.HasImplicitEventPayloadMembers() && eventPayloadMember != null)
+    // Determine the unmarshalling strategy based on structure type
+    bool isEventWithExplicitPayload = false;
+    Member eventPayloadMember = null;
+    
+    if(this.Structure != null)
     {
-        if(eventPayloadMember.ModelShape.IsString)
+        eventPayloadMember = this.Structure.GetExplicitEventPayloadMember();
+        // HasImplicitEventPayloadMembers means that the structure does not have a member with the EventPayload trait
+        isEventWithExplicitPayload = this.Structure.IsEvent && !this.Structure.HasImplicitEventPayloadMembers() && eventPayloadMember != null;
+    }
+
+    // Handle event structures with explicit payload members (stream-based)
+    if(isEventWithExplicitPayload)
+    {
+        foreach (var member in this.Structure.Members)
         {
+            if (member.IsEventPayload)
+            {
+                if(eventPayloadMember.ModelShape.IsString)
+                {
 #>
             using (var sr = new StreamReader(context.Stream))
             {
                 unmarshalledObject.<#=eventPayloadMember.PropertyName#> = sr.ReadToEnd();
             }
 <#
-        }
-#>
-<#
-        else
-        {
+
+                }
+                else
+                {
 #>
             unmarshalledObject.<#=eventPayloadMember.PropertyName#> = context.Stream as MemoryStream;
 <#
+                }
+            }
+            else
+            {
+                ProcessEventHeader(member);
+            }
         }
-#>
-<#
     }
-#>
-<#
-    if(this.Structure != null && (this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent))
+    else
     {
 #>
             context.Read(ref reader);
@@ -66,11 +81,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
 <#
-    }
-#>
-<#
-    if(this.Structure != null && (!this.Structure.IsEvent ||  this.Structure.HasImplicitEventPayloadMembers()))
-    {
         foreach (var member in this.Structure.Members)
         {
 #>
@@ -81,12 +91,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                     continue;
                 }
 <#
+            
         }
-    }
-#>
-<#
-    if(this.Structure != null && (!this.Structure.IsEvent || this.Structure.HasImplicitEventPayloadMembers()))
-    {
 #>
             }
 <#
@@ -101,3 +107,59 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
     }
 }
+
+<#
+    void ProcessEventHeader(Member member)
+    {
+#>
+            if (context.ResponseData.IsEventHeaderPresent("<#=member.ModeledName#>"))
+            {
+<#
+        if (member.Shape.IsBoolean)
+        {
+#>
+                unmarshalledObject.<#=member.PropertyName#> = context.ResponseData.GetEventStreamHeader("<#=member.ModeledName#>").AsBool();
+<#
+        }
+        else if (member.Shape.IsInt)
+        {
+#>
+                unmarshalledObject.<#=member.PropertyName#> = context.ResponseData.GetEventStreamHeader("<#=member.ModeledName#>").AsInt();
+<#
+        }
+        else if (member.Shape.IsLong)
+        {
+#>
+                unmarshalledObject.<#=member.PropertyName#> = context.ResponseData.GetEventStreamHeader("<#=member.ModeledName#>").AsLong();
+<#
+        }
+        else if (member.Shape.IsString)
+        {
+#>
+                unmarshalledObject.<#=member.PropertyName#> = context.ResponseData.GetEventStreamHeader("<#=member.ModeledName#>").AsString();
+<#
+        }
+        else if (member.Shape.IsTimeStamp)
+        {
+#>
+                unmarshalledObject.<#=member.PropertyName#> = context.ResponseData.GetEventStreamHeader("<#=member.ModeledName#>").AsTimestamp();
+<#
+        }
+        else if (member.Shape.IsMemoryStream)
+        {
+#>
+                var s = context.ResponseData.GetEventStreamHeader("<#=member.ModeledName#>");
+                unmarshalledObject.<#=member.PropertyName#> = new MemoryStream(s.GetBuffer(), 0, (int)s.Length, writable: false);
+<#
+        }
+        else if (member.Shape.IsDouble)
+        {
+#>
+                unmarshalledObject.<#=member.PropertyName#> = context.ResponseData.GetEventStreamHeader("<#=member.ModeledName#>").AsDouble();
+<#
+        }
+#>
+            }
+<#
+    }
+#>

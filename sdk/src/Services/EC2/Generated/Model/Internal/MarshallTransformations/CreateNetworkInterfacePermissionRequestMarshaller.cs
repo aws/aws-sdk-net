@@ -80,6 +80,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Permission", StringUtils.FromString(publicRequest.Permission));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateNetworkInterfacePermissionRequestMarshaller _instance = new CreateNetworkInterfacePermissionRequestMarshaller();        

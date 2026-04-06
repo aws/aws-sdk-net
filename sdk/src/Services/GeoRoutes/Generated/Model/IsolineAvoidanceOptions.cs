@@ -30,9 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Features that are avoided while calculating isolines. Avoidance is on a best-case
-    /// basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance
-    /// and the returned response produces a notice for the violation.
+    /// Specifies features of the road network to avoid when calculating reachable areas.
+    /// These preferences guide route calculations but may be overridden when no reasonable
+    /// alternative exists. For example, if avoiding toll roads would make an area unreachable,
+    /// toll roads may still be used.
+    /// 
+    ///  
+    /// <para>
+    /// Avoidance options include physical features (like ferries and tunnels), road characteristics
+    /// (like dirt roads and highways), and regulated areas (like congestion zones). They
+    /// can be combined to match specific routing needs, such as avoiding both toll roads
+    /// and ferries.
+    /// </para>
     /// </summary>
     public partial class IsolineAvoidanceOptions
     {
@@ -52,7 +61,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Areas. 
         /// <para>
-        /// Areas to be avoided.
+        /// Specifies geographic areas to avoid where possible. Routes may still pass through
+        /// these areas if no reasonable alternative exists.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -75,7 +85,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property CarShuttleTrains. 
         /// <para>
-        /// Avoid car-shuttle-trains while calculating an isoline.
+        /// Indicates a preference to avoid car shuttle trains (auto trains) where possible. These
+        /// may still be included if no reasonable alternative route exists.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -94,7 +105,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property ControlledAccessHighways. 
         /// <para>
-        /// Avoid controlled access highways while calculating an isoline.
+        /// Indicates a preference to avoid controlled-access highways (such as interstate highways
+        /// or motorways) where possible. If a viable route cannot be calculated using only local
+        /// roads, controlled-access highways may still be included.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -113,7 +126,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property DirtRoads. 
         /// <para>
-        /// Avoid dirt roads while calculating an isoline.
+        /// Indicates a preference to avoid unpaved or dirt roads where possible. Routes may still
+        /// include dirt roads if no reasonable paved alternative exists.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -132,7 +146,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Ferries. 
         /// <para>
-        /// Avoid ferries while calculating an isoline.
+        /// Indicates a preference to avoid ferries where possible. If a viable route cannot be
+        /// calculated without using ferries, they may still be included.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -151,7 +166,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property SeasonalClosure. 
         /// <para>
-        /// Avoid roads that have seasonal closure while calculating an isoline.
+        /// Indicates a preference to avoid roads that may be subject to seasonal closures where
+        /// possible. These roads may still be included if no reasonable year-round alternative
+        /// exists.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -170,7 +187,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TollRoads. 
         /// <para>
-        /// Avoids roads where the specified toll transponders are the only mode of payment.
+        /// Indicates a preference to avoid toll roads where possible. If a viable route cannot
+        /// be calculated without using toll roads, they may still be included.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -189,7 +207,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TollTransponders. 
         /// <para>
-        /// Avoids roads where the specified toll transponders are the only mode of payment.
+        /// Indicates a preference to avoid roads that require electronic toll collection transponders
+        /// where possible. These roads may still be included if no viable alternative route exists.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -208,8 +227,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TruckRoadTypes. 
         /// <para>
-        /// Truck road type identifiers. <c>BK1</c> through <c>BK4</c> apply only to Sweden. <c>A2,A4,B2,B4,C,D,ET2,ET4</c>
-        /// apply only to Mexico.
+        /// For truck travel modes, indicates specific road classification types in Sweden (<c>
+        /// BK1</c> through <c>BK4</c>) and Mexico (<c>A2, A4, B2, B4, C, D, ET2, ET4</c>) to
+        /// avoid where possible. These road types may still be used if no reasonable alternative
+        /// exists.
         /// </para>
         ///  <note> 
         /// <para>
@@ -238,7 +259,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Tunnels. 
         /// <para>
-        /// Avoid tunnels while calculating an isoline.
+        /// Indicates a preference to avoid tunnels where possible. If a viable route cannot be
+        /// calculated without using tunnels, they may still be included.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -257,7 +279,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property UTurns. 
         /// <para>
-        /// Avoid U-turns for calculation on highways and motorways.
+        /// Indicates a preference to avoid U-turns where possible. U-turns may still be included
+        /// if necessary to reach certain areas or when no reasonable alternative exists.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -276,7 +299,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property ZoneCategories. 
         /// <para>
-        /// Zone categories to be avoided.
+        /// Indicates types of regulated zones (such as congestion pricing or environmental zones)
+        /// to avoid where possible. Routes may still pass through these zones if no reasonable
+        /// alternative exists.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

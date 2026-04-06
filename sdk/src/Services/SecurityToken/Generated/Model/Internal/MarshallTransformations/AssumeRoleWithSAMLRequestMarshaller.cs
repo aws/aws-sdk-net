@@ -97,6 +97,8 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SAMLAssertion", StringUtils.FromString(publicRequest.SAMLAssertion));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static AssumeRoleWithSAMLRequestMarshaller _instance = new AssumeRoleWithSAMLRequestMarshaller();        

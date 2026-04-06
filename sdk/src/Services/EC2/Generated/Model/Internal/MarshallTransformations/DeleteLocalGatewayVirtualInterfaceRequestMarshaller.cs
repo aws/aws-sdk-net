@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("LocalGatewayVirtualInterfaceId", StringUtils.FromString(publicRequest.LocalGatewayVirtualInterfaceId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteLocalGatewayVirtualInterfaceRequestMarshaller _instance = new DeleteLocalGatewayVirtualInterfaceRequestMarshaller();        

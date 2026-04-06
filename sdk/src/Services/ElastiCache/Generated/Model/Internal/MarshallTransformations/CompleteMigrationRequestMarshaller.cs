@@ -68,6 +68,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CompleteMigrationRequestMarshaller _instance = new CompleteMigrationRequestMarshaller();        
