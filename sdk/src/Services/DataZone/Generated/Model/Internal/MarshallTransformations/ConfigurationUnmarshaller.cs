@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3PropertiesOutput Object
+    /// Response Unmarshaller for Configuration Object
     /// </summary>  
-    public class S3PropertiesOutputUnmarshaller : IJsonUnmarshaller<S3PropertiesOutput, JsonUnmarshallerContext>
+    public class ConfigurationUnmarshaller : IJsonUnmarshaller<Configuration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public S3PropertiesOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Configuration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            S3PropertiesOutput unmarshalledObject = new S3PropertiesOutput();
+            Configuration unmarshalledObject = new Configuration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,16 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errorMessage", targetDepth))
+                if (context.TestExpression("classification", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Classification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("registerS3AccessGrantLocation", targetDepth))
+                if (context.TestExpression("properties", targetDepth))
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RegisterS3AccessGrantLocation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("s3AccessGrantLocationId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3AccessGrantLocationId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("s3Uri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +73,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3PropertiesOutputUnmarshaller _instance = new S3PropertiesOutputUnmarshaller();        
+        private static ConfigurationUnmarshaller _instance = new ConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3PropertiesOutputUnmarshaller Instance
+        public static ConfigurationUnmarshaller Instance
         {
             get
             {

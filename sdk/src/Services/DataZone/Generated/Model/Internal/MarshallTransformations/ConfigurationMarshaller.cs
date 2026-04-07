@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// S3PropertiesPatch Marshaller
+    /// Configuration Marshaller
     /// </summary>
-    public class S3PropertiesPatchMarshaller : IRequestMarshaller<S3PropertiesPatch, JsonMarshallerContext> 
+    public class ConfigurationMarshaller : IRequestMarshaller<Configuration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,28 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3PropertiesPatch requestObject, JsonMarshallerContext context)
+        public void Marshall(Configuration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetRegisterS3AccessGrantLocation())
+            if(requestObject.IsSetClassification())
             {
-                context.Writer.WritePropertyName("registerS3AccessGrantLocation");
-                context.Writer.WriteBooleanValue(requestObject.RegisterS3AccessGrantLocation.Value);
+                context.Writer.WritePropertyName("classification");
+                context.Writer.WriteStringValue(requestObject.Classification);
             }
 
-            if(requestObject.IsSetS3AccessGrantLocationId())
+            if(requestObject.IsSetProperties())
             {
-                context.Writer.WritePropertyName("s3AccessGrantLocationId");
-                context.Writer.WriteStringValue(requestObject.S3AccessGrantLocationId);
-            }
+                context.Writer.WritePropertyName("properties");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectPropertiesKvp in requestObject.Properties)
+                {
+                    context.Writer.WritePropertyName(requestObjectPropertiesKvp.Key);
+                    var requestObjectPropertiesValue = requestObjectPropertiesKvp.Value;
 
-            if(requestObject.IsSetS3Uri())
-            {
-                context.Writer.WritePropertyName("s3Uri");
-                context.Writer.WriteStringValue(requestObject.S3Uri);
+                        context.Writer.WriteStringValue(requestObjectPropertiesValue);
+                }
+                context.Writer.WriteEndObject();
             }
 
         }
@@ -69,7 +71,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static S3PropertiesPatchMarshaller Instance = new S3PropertiesPatchMarshaller();
+        public readonly static ConfigurationMarshaller Instance = new ConfigurationMarshaller();
 
     }
 }

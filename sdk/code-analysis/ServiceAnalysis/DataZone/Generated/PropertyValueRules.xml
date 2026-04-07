@@ -5256,6 +5256,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.Configuration.Classification</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.ConnectionSummary.ConnectionId</property>
     <min>0</min>
     <max>128</max>
