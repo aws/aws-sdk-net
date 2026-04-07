@@ -66,6 +66,9 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 throw new AmazonOutpostsException("Request object does not have required field OutpostIdentifier set");
             request.AddPathResource("{OutpostId}", StringUtils.FromString(publicRequest.OutpostIdentifier));
             
+            if (publicRequest.IsSetAssetTypeFilter())
+                request.ParameterCollection.Add("AssetTypeFilter", publicRequest.AssetTypeFilter);
+            
             if (publicRequest.IsSetHostIdFilter())
                 request.ParameterCollection.Add("HostIdFilter", publicRequest.HostIdFilter);
             

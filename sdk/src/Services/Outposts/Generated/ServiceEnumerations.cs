@@ -85,6 +85,10 @@ namespace Amazon.Outposts
         /// </summary>
         public static readonly AssetState ACTIVE = new AssetState("ACTIVE");
         /// <summary>
+        /// Constant INSTALLING for AssetState
+        /// </summary>
+        public static readonly AssetState INSTALLING = new AssetState("INSTALLING");
+        /// <summary>
         /// Constant ISOLATED for AssetState
         /// </summary>
         public static readonly AssetState ISOLATED = new AssetState("ISOLATED");
@@ -138,6 +142,22 @@ namespace Amazon.Outposts
         /// Constant COMPUTE for AssetType
         /// </summary>
         public static readonly AssetType COMPUTE = new AssetType("COMPUTE");
+        /// <summary>
+        /// Constant NETWORKING for AssetType
+        /// </summary>
+        public static readonly AssetType NETWORKING = new AssetType("NETWORKING");
+        /// <summary>
+        /// Constant POWERSHELF for AssetType
+        /// </summary>
+        public static readonly AssetType POWERSHELF = new AssetType("POWERSHELF");
+        /// <summary>
+        /// Constant STORAGE for AssetType
+        /// </summary>
+        public static readonly AssetType STORAGE = new AssetType("STORAGE");
+        /// <summary>
+        /// Constant SWITCH for AssetType
+        /// </summary>
+        public static readonly AssetType SWITCH = new AssetType("SWITCH");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -552,6 +572,10 @@ namespace Amazon.Outposts
         /// Constant ACTIVE for ComputeAssetState
         /// </summary>
         public static readonly ComputeAssetState ACTIVE = new ComputeAssetState("ACTIVE");
+        /// <summary>
+        /// Constant INSTALLING for ComputeAssetState
+        /// </summary>
+        public static readonly ComputeAssetState INSTALLING = new ComputeAssetState("INSTALLING");
         /// <summary>
         /// Constant ISOLATED for ComputeAssetState
         /// </summary>
