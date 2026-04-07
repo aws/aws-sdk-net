@@ -59,9 +59,20 @@ namespace Amazon.Runtime.Internal
         /// <returns>True if retry throttling is disabled or retry throttling is enabled and capacity can be obtained.</returns>
         public override bool OnRetry(IExecutionContext executionContext, bool bypassAcquireCapacity, bool isThrottlingError)        
         {
-            TokenBucket.UpdateClientSendingRate(isThrottlingError);
-
             return base.OnRetry(executionContext, bypassAcquireCapacity, isThrottlingError);
+        }
+
+        /// <summary>
+        /// Called for every error response, regardless of whether the request will be retried.
+        /// Updates the client sending rate based on whether the error was a throttling error,
+        /// ensuring the token bucket rate is adjusted even when retries are disabled.
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        /// <param name="exception">The exception from the failed request.</param>
+        public override void NotifyError(IExecutionContext executionContext, Exception exception)
+        {
+            TokenBucket.UpdateClientSendingRate(IsThrottlingError(exception));
         }
 
         /// <summary>

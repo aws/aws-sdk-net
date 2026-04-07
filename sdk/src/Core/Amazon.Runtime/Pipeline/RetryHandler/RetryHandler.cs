@@ -111,6 +111,12 @@ namespace Amazon.Runtime.Internal
                         continue;
                     }
                     
+                    // Notify the retry policy of the error so it can update its rate limiting
+                    // state (e.g. adaptive retry token bucket). This must be called for every
+                    // error, regardless of whether the request will be retried, to ensure the
+                    // client send rate is adjusted even when retries are disabled.
+                    this.RetryPolicy.NotifyError(executionContext, exception);
+
                     // Standard retry logic
                     shouldRetry = this.RetryPolicy.Retry(executionContext, exception);
                     if (!shouldRetry)
@@ -199,6 +205,12 @@ namespace Amazon.Runtime.Internal
                         continue;
                     }
                     
+                    // Notify the retry policy of the error so it can update its rate limiting
+                    // state (e.g. adaptive retry token bucket). This must be called for every
+                    // error, regardless of whether the request will be retried, to ensure the
+                    // client send rate is adjusted even when retries are disabled.
+                    this.RetryPolicy.NotifyError(executionContext, capturedException.SourceException);
+
                     // Standard retry logic
                     shouldRetry = await this.RetryPolicy.RetryAsync(executionContext, capturedException.SourceException).ConfigureAwait(false);
                     if (!shouldRetry)
