@@ -2,25 +2,6 @@
 <docs>
     <doc>
         <members>
-            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.CancelPolicyPreviewJob(Amazon.AccessAnalyzer.Model.CancelPolicyPreviewJobRequest)" />
-            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.CancelPolicyPreviewJob(Amazon.AccessAnalyzer.Model.CancelPolicyPreviewJobRequest)" />
-            <member name="T:Amazon.AccessAnalyzer.Model.CancelPolicyPreviewJobRequest" />
-            <member name="T:Amazon.AccessAnalyzer.Model.CancelPolicyPreviewJobResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Successfully canceled policy preview job"
-                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
             <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.CheckAccessNotGranted(Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedRequest)" />
             <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.CheckAccessNotGranted(Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedRequest)" />
             <member name="T:Amazon.AccessAnalyzer.Model.CheckAccessNotGrantedRequest" />
@@ -111,44 +92,6 @@
                     title="Failing check. S3 Bucket policy with public access."
                     source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
                     region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.CreatePolicyPreviewConfiguration(Amazon.AccessAnalyzer.Model.CreatePolicyPreviewConfigurationRequest)" />
-            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.CreatePolicyPreviewConfiguration(Amazon.AccessAnalyzer.Model.CreatePolicyPreviewConfigurationRequest)" />
-            <member name="T:Amazon.AccessAnalyzer.Model.CreatePolicyPreviewConfigurationRequest" />
-            <member name="T:Amazon.AccessAnalyzer.Model.CreatePolicyPreviewConfigurationResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Successfully created policy preview configuration"
-                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.DeletePolicyPreviewConfiguration(Amazon.AccessAnalyzer.Model.DeletePolicyPreviewConfigurationRequest)" />
-            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.DeletePolicyPreviewConfiguration(Amazon.AccessAnalyzer.Model.DeletePolicyPreviewConfigurationRequest)" />
-            <member name="T:Amazon.AccessAnalyzer.Model.DeletePolicyPreviewConfigurationRequest" />
-            <member name="T:Amazon.AccessAnalyzer.Model.DeletePolicyPreviewConfigurationResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Successfully deleted policy preview configuration"
-                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
-                    region="example-1" />
             </example>
         </value>
     </doc>
@@ -263,120 +206,6 @@
                     title="Failed field validation for id value"
                     source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
                     region="example-4" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.GetPolicyPreviewConfiguration(Amazon.AccessAnalyzer.Model.GetPolicyPreviewConfigurationRequest)" />
-            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.GetPolicyPreviewConfiguration(Amazon.AccessAnalyzer.Model.GetPolicyPreviewConfigurationRequest)" />
-            <member name="T:Amazon.AccessAnalyzer.Model.GetPolicyPreviewConfigurationRequest" />
-            <member name="T:Amazon.AccessAnalyzer.Model.GetPolicyPreviewConfigurationResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Successfully retrieved policy preview configuration"
-                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.GetPolicyPreviewJob(Amazon.AccessAnalyzer.Model.GetPolicyPreviewJobRequest)" />
-            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.GetPolicyPreviewJob(Amazon.AccessAnalyzer.Model.GetPolicyPreviewJobRequest)" />
-            <member name="T:Amazon.AccessAnalyzer.Model.GetPolicyPreviewJobRequest" />
-            <member name="T:Amazon.AccessAnalyzer.Model.GetPolicyPreviewJobResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Successfully fetched completed policy preview job"
-                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.GetPolicyPreviewJob(Amazon.AccessAnalyzer.Model.GetPolicyPreviewJobRequest)" />
-            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.GetPolicyPreviewJob(Amazon.AccessAnalyzer.Model.GetPolicyPreviewJobRequest)" />
-            <member name="T:Amazon.AccessAnalyzer.Model.GetPolicyPreviewJobRequest" />
-            <member name="T:Amazon.AccessAnalyzer.Model.GetPolicyPreviewJobResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Failed policy preview job"
-                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.ListPolicyPreviewJobs(Amazon.AccessAnalyzer.Model.ListPolicyPreviewJobsRequest)" />
-            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.ListPolicyPreviewJobs(Amazon.AccessAnalyzer.Model.ListPolicyPreviewJobsRequest)" />
-            <member name="T:Amazon.AccessAnalyzer.Model.ListPolicyPreviewJobsRequest" />
-            <member name="T:Amazon.AccessAnalyzer.Model.ListPolicyPreviewJobsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Successfully listed policy preview jobs with filters"
-                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.StartPolicyPreviewJob(Amazon.AccessAnalyzer.Model.StartPolicyPreviewJobRequest)" />
-            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.StartPolicyPreviewJob(Amazon.AccessAnalyzer.Model.StartPolicyPreviewJobRequest)" />
-            <member name="T:Amazon.AccessAnalyzer.Model.StartPolicyPreviewJobRequest" />
-            <member name="T:Amazon.AccessAnalyzer.Model.StartPolicyPreviewJobResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Successfully started policy preview job"
-                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.AccessAnalyzer.IAmazonAccessAnalyzer.StartPolicyPreviewJob(Amazon.AccessAnalyzer.Model.StartPolicyPreviewJobRequest)" />
-            <member name="M:Amazon.AccessAnalyzer.AmazonAccessAnalyzerClient.StartPolicyPreviewJob(Amazon.AccessAnalyzer.Model.StartPolicyPreviewJobRequest)" />
-            <member name="T:Amazon.AccessAnalyzer.Model.StartPolicyPreviewJobRequest" />
-            <member name="T:Amazon.AccessAnalyzer.Model.StartPolicyPreviewJobResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Failed field validation for invalid targetId"
-                    source=".\AWSSDKDocSamples\AccessAnalyzer\AccessAnalyzer.GeneratedSamples.cs"
-                    region="example-2" />
             </example>
         </value>
     </doc>
