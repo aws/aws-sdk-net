@@ -39,6 +39,7 @@ namespace Amazon.RTBFabric.Model
         private string _description;
         private string _domainName;
         private string _gatewayId;
+        private ListenerConfig _listenerConfig;
         private ManagedEndpointConfiguration _managedEndpointConfiguration;
         private int? _port;
         private Protocol _protocol;
@@ -105,7 +106,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=8, Max=32)]
         public string GatewayId
         {
             get { return this._gatewayId; }
@@ -116,6 +117,24 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetGatewayId()
         {
             return this._gatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListenerConfig. 
+        /// <para>
+        /// The listener configuration for the responder gateway.
+        /// </para>
+        /// </summary>
+        public ListenerConfig ListenerConfig
+        {
+            get { return this._listenerConfig; }
+            set { this._listenerConfig = value; }
+        }
+
+        // Check to see if ListenerConfig property is set
+        internal bool IsSetListenerConfig()
+        {
+            return this._listenerConfig != null;
         }
 
         /// <summary>
