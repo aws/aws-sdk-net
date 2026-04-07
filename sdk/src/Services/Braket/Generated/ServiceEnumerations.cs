@@ -457,6 +457,70 @@ namespace Amazon.Braket
         /// </summary>
         public static readonly InstanceType MlG4dnXlarge = new InstanceType("ml.g4dn.xlarge");
         /// <summary>
+        /// Constant MlG612xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG612xlarge = new InstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG616xlarge = new InstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG624xlarge = new InstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG62xlarge = new InstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG648xlarge = new InstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG64xlarge = new InstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG68xlarge = new InstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6e12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e12xlarge = new InstanceType("ml.g6e.12xlarge");
+        /// <summary>
+        /// Constant MlG6e16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e16xlarge = new InstanceType("ml.g6e.16xlarge");
+        /// <summary>
+        /// Constant MlG6e24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e24xlarge = new InstanceType("ml.g6e.24xlarge");
+        /// <summary>
+        /// Constant MlG6e2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e2xlarge = new InstanceType("ml.g6e.2xlarge");
+        /// <summary>
+        /// Constant MlG6e48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e48xlarge = new InstanceType("ml.g6e.48xlarge");
+        /// <summary>
+        /// Constant MlG6e4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e4xlarge = new InstanceType("ml.g6e.4xlarge");
+        /// <summary>
+        /// Constant MlG6e8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e8xlarge = new InstanceType("ml.g6e.8xlarge");
+        /// <summary>
+        /// Constant MlG6eXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6eXlarge = new InstanceType("ml.g6e.xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6Xlarge = new InstanceType("ml.g6.xlarge");
+        /// <summary>
         /// Constant MlM410xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlM410xlarge = new InstanceType("ml.m4.10xlarge");
@@ -532,6 +596,18 @@ namespace Amazon.Braket
         /// Constant MlP4d24xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlP4d24xlarge = new InstanceType("ml.p4d.24xlarge");
+        /// <summary>
+        /// Constant MlT32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlT32xlarge = new InstanceType("ml.t3.2xlarge");
+        /// <summary>
+        /// Constant MlT3Large for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlT3Large = new InstanceType("ml.t3.large");
+        /// <summary>
+        /// Constant MlT3Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlT3Xlarge = new InstanceType("ml.t3.xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
