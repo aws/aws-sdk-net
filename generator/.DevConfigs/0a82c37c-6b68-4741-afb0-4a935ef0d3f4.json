@@ -1,0 +1,18 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Add customization-hooks.md to document customization hooks added and how to use them"
+    ]
+  },
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Update customization hook used in GetLifecycleConfigurationOutput"
+      ]
+    }
+  ]
+}

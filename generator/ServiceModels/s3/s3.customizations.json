@@ -842,6 +842,14 @@
             "exclude":[
                 "Rules"
             ],
+            "modify":[
+                {
+                    "Configuration" : {
+                        "injectXmlPropertyGetter":[
+                            "get { return this._configuration ?? new LifecycleConfiguration();}"]
+                    }
+                }
+            ],
             "inject":[
                 {
                     "Configuration" : {
@@ -853,10 +861,8 @@
             ],
             "skipXmlTestExpression":[
                 "Configuration"
-            ],
-            "newObjectIfNull":[
-                "Configuration"
             ]
+
         },
         "TopicConfiguration":{
             "modify":[
