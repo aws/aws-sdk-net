@@ -1,3 +1,33 @@
+### 4.0.227.0 (2026-04-07 18:24 UTC)
+* AccessAnalyzer (4.0.6.0)
+	* Revert previous additions of API changes.
+* BedrockAgentCore (4.0.17.0)
+	* This release includes support for 1) InvokeBrowser API, enabling OS-level control of AgentCore Browser Tool sessions through mouse actions, keyboard input, and screenshots. 2) Added documentation noting that empty sessions are automatically deleted after one day in the ListSessions API.
+* Braket (4.0.5.0)
+	* Added support for t3, g6, and g6e instance types for Hybrid Jobs.
+* Connect (4.0.39.0)
+	* The voice enhancement mode used by the agent can now be viewed on the contact record via the DescribeContact api.
+* DataSync (4.0.10.0)
+	* Allow IAM role ARNs with IAM Paths for "SecretAccessRoleArn" field in "CustomSecretConfig"
+* DataZone (4.0.24.0)
+	* Update Configurations and registerS3AccessGrantLocation as public attributes for cfn
+* EC2 (4.0.83.0)
+	* EC2 Capacity Manager adds new dimensions for grouping and filtering capacity metrics, including tag-based dimensions and Account Name.
+* ECS (4.0.18.0)
+	* This release provides the functionality of mounting Amazon S3 Files to Amazon ECS tasks by adding support for the new S3FilesVolumeConfiguration parameter in ECS RegisterTaskDefinition API.
+* EKS (4.0.15.0)
+	* EKS MNG WarmPool feature to support ASG WarmPool feature.
+* Lambda (4.0.14.0)
+	* Launching Lambda integration with S3 Files as a new file system configuration.
+* Outposts (4.0.5.0)
+	* This change allows listAssets to surface pending and non-compute asset information. Adds the INSTALLING asset state enum and the STORAGE, POWERSHELF, SWITCH, and NETWORKING AssetTypes.
+* RTBFabric (4.0.3.0)
+	* AWS RTB Fabric External Responder gateways now support HTTP in addition to HTTPS for inbound external links. Gateways can accept bid requests on port 80 or serve both protocols simultaneously via listener configuration, giving customers flexible transport options for their bidding infrastructure
+* S3 (4.0.21.0)
+	* Updated list of the valid AWS Region values for the LocationConstraint parameter for general purpose buckets.
+* S3Files (4.0.0.0)
+	* Support for S3 Files, a new shared file system that connects any AWS compute directly with your data in Amazon S3. It provides fast, direct access to all of your S3 data as files with full file system semantics and low-latency performance, without your data ever leaving S3.
+
 ### 4.0.226.0 (2026-04-06 18:29 UTC)
 * AccessAnalyzer (4.0.5.0)
 	* Brookie helps customers preview the impact of SCPs before deployment using historical access activity. It evaluates attached policies and proposed policy updates using collected access activity through CloudTrail authorization events and reports where currently allowed access will be denied.
