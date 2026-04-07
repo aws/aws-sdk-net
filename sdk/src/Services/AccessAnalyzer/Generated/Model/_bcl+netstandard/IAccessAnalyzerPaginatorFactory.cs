@@ -128,16 +128,6 @@ namespace Amazon.AccessAnalyzer.Model
         IListPolicyGenerationsPaginator ListPolicyGenerations(ListPolicyGenerationsRequest request);
 
         /// <summary>
-        /// Paginator for ListPolicyPreviewJobs operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IListPolicyPreviewJobsPaginator ListPolicyPreviewJobs(ListPolicyPreviewJobsRequest request);
-
-        /// <summary>
         /// Paginator for ValidatePolicy operation
         ///</summary>
         [AWSPaginator(
