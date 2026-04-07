@@ -2126,6 +2126,154 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
         
+        #region  InvokeBrowser
+
+
+        /// <summary>
+        /// Invokes an operating system-level action on a browser session in Amazon Bedrock AgentCore.
+        /// This operation provides direct OS-level control over browser sessions, enabling mouse
+        /// actions, keyboard input, and screenshots that the WebSocket-based Chrome DevTools
+        /// Protocol (CDP) cannot handle — such as interacting with print dialogs, context menus,
+        /// and JavaScript alerts.
+        /// 
+        ///  
+        /// <para>
+        /// You send a request with exactly one action in the <c>BrowserAction</c> union, and
+        /// receive a corresponding result in the <c>BrowserActionResult</c> union.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following operations are related to <c>InvokeBrowser</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeBrowser service method.</param>
+        /// 
+        /// <returns>The response from the InvokeBrowser service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeBrowser">REST API Reference for InvokeBrowser Operation</seealso>
+        InvokeBrowserResponse InvokeBrowser(InvokeBrowserRequest request);
+
+
+
+        /// <summary>
+        /// Invokes an operating system-level action on a browser session in Amazon Bedrock AgentCore.
+        /// This operation provides direct OS-level control over browser sessions, enabling mouse
+        /// actions, keyboard input, and screenshots that the WebSocket-based Chrome DevTools
+        /// Protocol (CDP) cannot handle — such as interacting with print dialogs, context menus,
+        /// and JavaScript alerts.
+        /// 
+        ///  
+        /// <para>
+        /// You send a request with exactly one action in the <c>BrowserAction</c> union, and
+        /// receive a corresponding result in the <c>BrowserActionResult</c> union.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following operations are related to <c>InvokeBrowser</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StartBrowserSession.html">StartBrowserSession</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_GetBrowserSession.html">GetBrowserSession</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeBrowser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeBrowser service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeBrowser">REST API Reference for InvokeBrowser Operation</seealso>
+        Task<InvokeBrowserResponse> InvokeBrowserAsync(InvokeBrowserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  InvokeCodeInterpreter
 
 
@@ -2963,6 +3111,10 @@ namespace Amazon.BedrockAgentCore
         /// 
         ///  
         /// <para>
+        /// Empty sessions are automatically deleted after one day.
+        /// </para>
+        ///  
+        /// <para>
         /// To use this operation, you must have the <c>bedrock-agentcore:ListSessions</c> permission.
         /// </para>
         /// </summary>
@@ -3009,6 +3161,10 @@ namespace Amazon.BedrockAgentCore
         /// Lists sessions in an AgentCore Memory resource based on specified criteria. We recommend
         /// using pagination to ensure that the operation returns quickly and successfully.
         /// 
+        ///  
+        /// <para>
+        /// Empty sessions are automatically deleted after one day.
+        /// </para>
         ///  
         /// <para>
         /// To use this operation, you must have the <c>bedrock-agentcore:ListSessions</c> permission.
@@ -3353,6 +3509,11 @@ namespace Amazon.BedrockAgentCore
         ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeBrowser.html">InvokeBrowser</a>
+        /// 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartBrowserSession service method.</param>
@@ -3432,6 +3593,11 @@ namespace Amazon.BedrockAgentCore
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeBrowser.html">InvokeBrowser</a>
         /// 
         /// </para>
         ///  </li> </ul>

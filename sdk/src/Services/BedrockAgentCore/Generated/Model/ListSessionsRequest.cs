@@ -36,6 +36,10 @@ namespace Amazon.BedrockAgentCore.Model
     /// 
     ///  
     /// <para>
+    /// Empty sessions are automatically deleted after one day.
+    /// </para>
+    ///  
+    /// <para>
     /// To use this operation, you must have the <c>bedrock-agentcore:ListSessions</c> permission.
     /// </para>
     /// </summary>

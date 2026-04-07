@@ -75,6 +75,56 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type BrowserActionStatus.
+    /// </summary>
+    public class BrowserActionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for BrowserActionStatus
+        /// </summary>
+        public static readonly BrowserActionStatus FAILED = new BrowserActionStatus("FAILED");
+        /// <summary>
+        /// Constant SUCCESS for BrowserActionStatus
+        /// </summary>
+        public static readonly BrowserActionStatus SUCCESS = new BrowserActionStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BrowserActionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrowserActionStatus FindValue(string value)
+        {
+            return FindValue<BrowserActionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrowserActionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BrowserEnterprisePolicyType.
     /// </summary>
     public class BrowserEnterprisePolicyType : ConstantClass
@@ -529,6 +579,60 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type MouseButton.
+    /// </summary>
+    public class MouseButton : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LEFT for MouseButton
+        /// </summary>
+        public static readonly MouseButton LEFT = new MouseButton("LEFT");
+        /// <summary>
+        /// Constant MIDDLE for MouseButton
+        /// </summary>
+        public static readonly MouseButton MIDDLE = new MouseButton("MIDDLE");
+        /// <summary>
+        /// Constant RIGHT for MouseButton
+        /// </summary>
+        public static readonly MouseButton RIGHT = new MouseButton("RIGHT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MouseButton(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MouseButton FindValue(string value)
+        {
+            return FindValue<MouseButton>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MouseButton(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Oauth2FlowType.
     /// </summary>
     public class Oauth2FlowType : ConstantClass
@@ -788,6 +892,52 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Role(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScreenshotFormat.
+    /// </summary>
+    public class ScreenshotFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PNG for ScreenshotFormat
+        /// </summary>
+        public static readonly ScreenshotFormat PNG = new ScreenshotFormat("PNG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScreenshotFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScreenshotFormat FindValue(string value)
+        {
+            return FindValue<ScreenshotFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScreenshotFormat(string value)
         {
             return FindValue(value);
         }

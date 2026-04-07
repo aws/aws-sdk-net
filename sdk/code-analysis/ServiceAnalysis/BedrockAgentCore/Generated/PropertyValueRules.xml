@@ -383,6 +383,14 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeBrowserRequest.SessionId</property>
+    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.InvokeBrowserResponse.SessionId</property>
+    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeCodeInterpreterRequest.SessionId</property>
     <pattern>[0-9a-zA-Z]{1,40}</pattern>
   </property-value-rule>
@@ -849,6 +857,16 @@
     <max>65536</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.KeyPressArguments.Presses</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.KeyTypeArguments.Text</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.LeftExpression.MetadataKey</property>
     <min>1</min>
     <max>128</max>
@@ -935,6 +953,21 @@
     <min>0</min>
     <max>256</max>
     <pattern>[a-zA-Z0-9\s._:/=+@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.MouseClickArguments.ClickCount</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.MouseScrollArguments.DeltaX</property>
+    <min>-1000</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.MouseScrollArguments.DeltaY</property>
+    <min>-1000</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.S3Location.Bucket</property>
