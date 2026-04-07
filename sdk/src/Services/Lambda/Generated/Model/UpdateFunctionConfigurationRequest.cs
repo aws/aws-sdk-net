@@ -200,7 +200,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FileSystemConfigs. 
         /// <para>
-        /// Connection settings for an Amazon EFS file system.
+        /// Connection settings for an Amazon EFS file system or an Amazon S3 Files file system.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
