@@ -1,3 +1,19 @@
+### 4.0.228.0 (2026-04-08 20:03 UTC)
+* Backup (4.0.11.0)
+	* Adding EKS specific backup vault notification types for AWS Backup.
+* Drs (4.0.3.0)
+	* This changes adds support for modifying the replication configuration to support data replication using IPv6.
+* ECR (4.0.13.0)
+	* Add UnableToListUpstreamImageReferrersException in ListImageReferrers
+* IVSRealTime (4.0.7.0)
+	* Adds support for Amazon IVS real-time streaming redundant ingest.
+* MarketplaceDiscovery (4.0.0.0)
+	* AWS Marketplace Discovery API provides an interface that enables programmatic access to the AWS Marketplace catalog, including searching and browsing listings, retrieving product details and fulfillment options, and accessing public and private offer pricing and terms.
+* MediaLive (4.0.19.0)
+	* MediaLive is adding support for MediaConnect Router by supporting a new output type called MEDIACONNECT ROUTER. This new output type will provide seamless encrypted transport between your MediaLive channel and MediaConnect Router.
+* Outposts (4.0.6.0)
+	* Add AWS Outposts APIs to view renewal pricing options and submit renewal requests for Outpost contracts
+
 ### 4.0.227.0 (2026-04-07 18:24 UTC)
 * AccessAnalyzer (4.0.6.0)
 	* Revert previous additions of API changes.
