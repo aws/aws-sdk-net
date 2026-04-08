@@ -35,12 +35,7 @@ namespace Amazon.Runtime
         protected RefreshingAWSCredentials(ITimeProvider timeProvider) 
             => _timeProvider = timeProvider ?? DefaultTimeProvider.Instance;
 
-        /// <summary>
-        /// Expiration may be updated if credentials are updated during a background credential refresh. 
-        /// A background credential refresh can happen if the credentials are in the preempt expiry window.
-        /// Always call <see cref="GetCredentialsAsync"/> before reading Expiration to ensure the updated 
-        /// Expiration value is read.
-        /// </summary>
+        /// <inheritdoc/>
         public override DateTime? Expiration
         {
             get
@@ -165,9 +160,12 @@ namespace Amazon.Runtime
         #region Override methods
 
         /// <summary>
-        /// Returns an instance of ImmutableCredentials for this instance
+        /// GetCredentials may refresh credentials if the credentials are in the pre-empt expiration window. This will trigger
+        /// a background refresh of the credentials and could force an update to the credentials and to the expiration. Users should
+        /// not rely on the <see cref="Expiration"/> property before calling <see cref="GetCredentials"/> because the <see cref="Expiration"/>
+        /// could be updated.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>An instance of ImmutableCredentials</returns>
         public override sealed ImmutableCredentials GetCredentials()
         {
             // We save the currentState as it might be modified or cleared.
@@ -233,6 +231,13 @@ namespace Amazon.Runtime
             return tempState.Credentials;
         }
 
+        /// <summary>
+        /// GetCredentialsAsync may refresh credentials if the credentials are in the pre-empt expiration window. This will trigger
+        /// a background refresh of the credentials and could force an update to the credentials and to the expiration. Users should
+        /// not rely on the <see cref="Expiration"/> property before calling <see cref="GetCredentialsAsync"/> because the <see cref="Expiration"/>
+        /// could be updated.
+        /// </summary>
+        /// <returns>A task whose result is an ImmutableCredentials instance.</returns>
         public override sealed async Task<ImmutableCredentials> GetCredentialsAsync()
         {
             // NOTICE: Before modifying any of the logic read the comments in the synchronous GetCredentials method to 
