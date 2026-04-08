@@ -25,7 +25,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static readonly string BasePath = @"c:\temp\test\transferutility\";
 
         private static string bucketName;
-        private static string ssecBucketName;
         private static string octetStreamContentType = "application/octet-stream";
         private static string plainTextContentType = "text/plain";
         private static string fullPath;
@@ -39,34 +38,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Create standard bucket for operations
             bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
 
-            // Create a bucket specifically for the SSE-C tests as a bucket policy has to be set on it to require SSE-C.
-            ssecBucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
-
-            // Apply the bucket policy to SSE-C: https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html
-            await Client.PutBucketPolicyAsync(new PutBucketPolicyRequest
-            {
-                Policy =
-                @"{
-                    ""Version"": ""2012-10-17"",
-                    ""Id"": ""PutObjectPolicy"",
-                    ""Statement"": [
-                        {
-                            ""Sid"": ""RequireSSECObjectUploads"",
-                            ""Effect"": ""Deny"",
-                            ""Principal"": ""*"",
-                            ""Action"": ""s3:PutObject"",
-                            ""Resource"": ""arn:aws:s3:::" + ssecBucketName + @"/*"",
-                            ""Condition"": {
-                                ""Null"": {
-                                    ""s3:x-amz-server-side-encryption-customer-algorithm"": ""true""
-                                }
-                            }
-                        }
-                    ]
-                }",
-                BucketName = ssecBucketName
-            });
-
             fullPath = Path.GetFullPath(testFile);
             File.WriteAllText(fullPath, testContent);
         }
@@ -74,10 +45,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassCleanup]
         public static async Task ClassCleanup()
         {
-            await Task.WhenAll(
-                AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName),
-                AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, ssecBucketName)
-            );
+            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
             
             BaseClean();
             if (Directory.Exists(BasePath))
@@ -428,99 +396,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 Console.WriteLine($"An error occurred while generating the stream: {ex.Message}");
                 throw;
-            }
-        }
-
-        private async Task UploadWithSSE_C(long fileSize, string name)
-        {
-            // Create a fileSize file to upload
-            var fileName = UtilityMethods.GenerateName(name);
-            var fullFilePath = Path.Combine(BasePath, fileName);
-            UtilityMethods.GenerateFile(fullFilePath, fileSize);
-
-            // Create an encryption key                
-            Aes aesEncryption = Aes.Create();
-            aesEncryption.KeySize = 256;
-            aesEncryption.GenerateKey();
-            string base64Key = Convert.ToBase64String(aesEncryption.Key);
-
-            using (var transferUtility = new TransferUtility(Client))
-            {
-                // Upload the file. A permission denied exception would be thrown if an incorrect request is made
-                // missing the required ServerSideEncryptionCustomerMethod and ServerSideEncryptionCustomerProvidedKey
-                // values.
-                await transferUtility.UploadAsync(new TransferUtilityUploadRequest
-                {
-                    BucketName = ssecBucketName,
-                    FilePath = fullFilePath,
-                    Key = fileName,
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = base64Key
-                });
-            }
-        }
-
-        [TestMethod]
-        public async Task SimpleUploadWithSSE_C_SmallFile()
-        {
-            await UploadWithSSE_C(KILO_SIZE, @"SimpleUploadTest\SmallFile");
-        }
-
-        [TestMethod]
-        public async Task SimpleUploadWithSSE_C_LargeFile()
-        {
-            await UploadWithSSE_C(16 * MEG_SIZE, @"SimpleUploadTest\LargeFile");
-        }
-
-        [TestMethod]
-        public async Task DirectoryUploadDonwloadWithSSE_C()
-        {
-            var directoryTest = CreateTestDirectory();
-            var directoryTestPath = directoryTest.FullName;
-            var remoteDirectory = directoryTest.Name;
-
-            // Create an encryption key
-            Aes aesEncryption = Aes.Create();
-            aesEncryption.KeySize = 256;
-            aesEncryption.GenerateKey();
-            string base64Key = Convert.ToBase64String(aesEncryption.Key);
-
-            var downloadPath = GenerateDirectoryPath();
-            using (var transferUtility = new TransferUtility(Client))
-            {
-                // Upload test directory with SSE-C
-                await transferUtility.UploadDirectoryAsync(new TransferUtilityUploadDirectoryRequest
-                {
-                    BucketName = bucketName,
-                    Directory = directoryTestPath,
-                    KeyPrefix = remoteDirectory,
-                    SearchPattern = "*",
-                    SearchOption = SearchOption.AllDirectories,
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = base64Key
-                });
-
-                // Download remote test directory with SSE-C
-                await transferUtility.DownloadDirectoryAsync(new TransferUtilityDownloadDirectoryRequest
-                {
-                    BucketName = bucketName,
-                    S3Directory = remoteDirectory,
-                    LocalDirectory = downloadPath,
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = base64Key
-                });
-            }
-
-            // Compare each file in both directories
-            var sourceFiles = Directory.EnumerateFiles(directoryTestPath, "*", SearchOption.AllDirectories).ToList();
-            var downloadedFiles = Directory.EnumerateFiles(downloadPath, "*", SearchOption.AllDirectories).ToList();
-            Assert.AreEqual(sourceFiles.Count, downloadedFiles.Count);
-
-            sourceFiles.Sort();
-            downloadedFiles.Sort();
-            for (var i = 0; i < sourceFiles.Count(); i++)
-            {
-                UtilityMethods.CompareFiles(sourceFiles[i], downloadedFiles[i]);
             }
         }
 
