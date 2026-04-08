@@ -121,6 +121,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.EbsEncryptionKeyArn);
             }
 
+            if(publicRequest.IsSetInternetProtocol())
+            {
+                context.Writer.WritePropertyName("internetProtocol");
+                context.Writer.WriteStringValue(publicRequest.InternetProtocol);
+            }
+
             if(publicRequest.IsSetPitPolicy())
             {
                 context.Writer.WritePropertyName("pitPolicy");
