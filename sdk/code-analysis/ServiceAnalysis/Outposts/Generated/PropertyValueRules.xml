@@ -55,6 +55,24 @@
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.CreateRenewalRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.CreateRenewalRequest.OutpostIdentifier</property>
+    <min>1</min>
+    <max>180</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.CreateRenewalResponse.OutpostId</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.CreateSiteRequest.Description</property>
     <min>1</min>
     <max>1001</max>
@@ -248,6 +266,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.GetRenewalPricingRequest.OutpostIdentifier</property>
+    <min>1</min>
+    <max>180</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetSiteRequest.SiteId</property>
@@ -801,7 +825,7 @@
     <property>Amazon.Outposts.Model.EC2Capacity.Family</property>
     <min>1</min>
     <max>10</max>
-    <pattern>[a-z0-9]+</pattern>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.InstanceTypeCapacity.Count</property>

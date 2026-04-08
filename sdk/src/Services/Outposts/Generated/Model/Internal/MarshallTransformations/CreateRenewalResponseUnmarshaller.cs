@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetOutpostBillingInformation operation
+    /// Response Unmarshaller for CreateRenewal operation
     /// </summary>  
-    public class GetOutpostBillingInformationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateRenewalResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,22 +46,22 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetOutpostBillingInformationResponse response = new GetOutpostBillingInformationResponse();
+            CreateRenewalResponse response = new CreateRenewalResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContractEndDate", targetDepth))
+                if (context.TestExpression("MonthlyRecurringPrice", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ContractEndDate = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
+                    response.MonthlyRecurringPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("OutpostId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
+                    response.OutpostId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PaymentOption", targetDepth))
@@ -76,10 +76,10 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     response.PaymentTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Subscriptions", targetDepth))
+                if (context.TestExpression("UpfrontPrice", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<Subscription, SubscriptionUnmarshaller>(SubscriptionUnmarshaller.Instance);
-                    response.Subscriptions = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
+                    response.UpfrontPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -119,13 +119,17 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 {
                     return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
             }
             return new AmazonOutpostsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetOutpostBillingInformationResponseUnmarshaller _instance = new GetOutpostBillingInformationResponseUnmarshaller();        
+        private static CreateRenewalResponseUnmarshaller _instance = new CreateRenewalResponseUnmarshaller();        
 
-        internal static GetOutpostBillingInformationResponseUnmarshaller GetInstance()
+        internal static CreateRenewalResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +137,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetOutpostBillingInformationResponseUnmarshaller Instance
+        public static CreateRenewalResponseUnmarshaller Instance
         {
             get
             {
