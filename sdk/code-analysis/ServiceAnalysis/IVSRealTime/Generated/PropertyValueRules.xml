@@ -723,6 +723,12 @@
     <pattern>[a-zA-Z0-9-_.,:;\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.Participant.IngestConfigurationArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:ingest-configuration/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.Participant.IspName</property>
     <min>0</min>
     <max>128</max>
@@ -815,6 +821,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.ParticipantSummary.IngestConfigurationArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws:ivs:[a-z0-9-]+:[0-9]+:ingest-configuration/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ParticipantSummary.ParticipantId</property>
@@ -931,6 +943,16 @@
     <min>0</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.RedundantIngestCredential.ParticipantId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.RedundantIngestCredential.StreamKey</property>
+    <pattern>rt_[0-9]+_[a-z0-9-]+_[a-zA-Z0-9-]+_.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.S3DestinationConfiguration.StorageConfigurationArn</property>

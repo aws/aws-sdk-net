@@ -40,6 +40,7 @@ namespace Amazon.IVSRealTime.Model
         private IngestProtocol _ingestProtocol;
         private bool? _insecureIngest;
         private string _name;
+        private bool? _redundantIngest;
         private string _stageArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _userId;
@@ -127,6 +128,25 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedundantIngest. 
+        /// <para>
+        /// Indicates whether redundant ingest is enabled for the ingest configuration. Default:
+        /// <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? RedundantIngest
+        {
+            get { return this._redundantIngest; }
+            set { this._redundantIngest = value; }
+        }
+
+        // Check to see if RedundantIngest property is set
+        internal bool IsSetRedundantIngest()
+        {
+            return this._redundantIngest.HasValue; 
         }
 
         /// <summary>

@@ -35,9 +35,11 @@ namespace Amazon.IVSRealTime.Model
     public partial class ParticipantSummary
     {
         private DateTime? _firstJoinTime;
+        private string _ingestConfigurationArn;
         private string _participantId;
         private bool? _published;
         private ParticipantRecordingState _recordingState;
+        private bool? _redundantIngest;
         private ReplicationState _replicationState;
         private ReplicationType _replicationType;
         private string _sourceSessionId;
@@ -62,6 +64,25 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetFirstJoinTime()
         {
             return this._firstJoinTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngestConfigurationArn. 
+        /// <para>
+        /// The participant’s ingest configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string IngestConfigurationArn
+        {
+            get { return this._ingestConfigurationArn; }
+            set { this._ingestConfigurationArn = value; }
+        }
+
+        // Check to see if IngestConfigurationArn property is set
+        internal bool IsSetIngestConfigurationArn()
+        {
+            return this._ingestConfigurationArn != null;
         }
 
         /// <summary>
@@ -117,6 +138,24 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetRecordingState()
         {
             return this._recordingState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedundantIngest. 
+        /// <para>
+        /// Indicates whether redundant ingest is enabled for the participant.
+        /// </para>
+        /// </summary>
+        public bool? RedundantIngest
+        {
+            get { return this._redundantIngest; }
+            set { this._redundantIngest = value; }
+        }
+
+        // Check to see if RedundantIngest property is set
+        internal bool IsSetRedundantIngest()
+        {
+            return this._redundantIngest.HasValue; 
         }
 
         /// <summary>

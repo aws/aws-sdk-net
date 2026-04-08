@@ -38,6 +38,7 @@ namespace Amazon.IVSRealTime.Model
         private IngestProtocol _ingestProtocol;
         private string _name;
         private string _participantId;
+        private bool? _redundantIngest;
         private string _stageArn;
         private IngestConfigurationState _state;
         private string _userId;
@@ -116,6 +117,24 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetParticipantId()
         {
             return this._participantId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedundantIngest. 
+        /// <para>
+        /// Indicates whether redundant ingest is enabled for the ingest configuration.
+        /// </para>
+        /// </summary>
+        public bool? RedundantIngest
+        {
+            get { return this._redundantIngest; }
+            set { this._redundantIngest = value; }
+        }
+
+        // Check to see if RedundantIngest property is set
+        internal bool IsSetRedundantIngest()
+        {
+            return this._redundantIngest.HasValue; 
         }
 
         /// <summary>
