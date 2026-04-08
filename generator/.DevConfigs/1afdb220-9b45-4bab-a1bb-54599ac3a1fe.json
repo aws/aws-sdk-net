@@ -3,7 +3,7 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "Update docs on RefreshingAWSCredentials."
+      "Update docs on GetCredentials and GetCredentialsAsync to clarify background refresh behavior"
     ]
   }
 }
