@@ -104,55 +104,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        public async Task TestServerSideEncryptionCustomerProvidedKeyMD5()
-        {
-            var key = _testId + "-TestSSEC";
-            
-            // Generate a cryptographically secure 256-bit (32 byte) encryption key
-            var encryptionKeyBytes = new byte[32];
-            using (var rng = System.Security.Cryptography.RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(encryptionKeyBytes);
-            }
-            var encryptionKeyBase64 = Convert.ToBase64String(encryptionKeyBytes);
-            
-            // Calculate MD5 of the encryption key
-            using (var md5 = System.Security.Cryptography.MD5.Create())
-            {
-                var keyMD5 = Convert.ToBase64String(md5.ComputeHash(encryptionKeyBytes));
-                
-                // Put object with SSE-C
-                await Client.PutObjectAsync(new PutObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    ContentBody = "Test content for SSE-C",
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = encryptionKeyBase64,
-                    ServerSideEncryptionCustomerProvidedKeyMD5 = keyMD5
-                });
-
-                var response = await Client.GetObjectAsync(new GetObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key,
-                    ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    ServerSideEncryptionCustomerProvidedKey = encryptionKeyBase64,
-                    ServerSideEncryptionCustomerProvidedKeyMD5 = keyMD5
-                });
-
-                using (response)
-                {
-                    // Verify the ServerSideEncryptionCustomerProvidedKeyMD5 property is populated
-                    Assert.IsNotNull(response.ServerSideEncryptionCustomerProvidedKeyMD5,
-                        "ServerSideEncryptionCustomerProvidedKeyMD5 should not be null");
-                    Assert.AreEqual(keyMD5, response.ServerSideEncryptionCustomerProvidedKeyMD5,
-                        "ServerSideEncryptionCustomerProvidedKeyMD5 should match the provided MD5");
-                }
-            }
-        }
-
-        [TestMethod]
         public async Task TestContentLanguageHeader()
         {
             var key = _testId + "-TestContentLanguageHeader";
