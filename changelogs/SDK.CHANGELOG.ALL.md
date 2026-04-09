@@ -1,3 +1,17 @@
+### 4.0.229.0 (2026-04-09 18:27 UTC)
+* BCMDashboards (4.0.3.0)
+	* Scheduled email reports of Billing and Cost Management Dashboards
+* BedrockAgentCore (4.0.18.0)
+	* Introducing support for SearchRegistryRecords API on AgentCoreRegistry
+* BedrockAgentCoreControl (4.0.27.0)
+	* Initial release for CRUDL in AgentCore Registry Service
+* MediaConnect (4.0.7.0)
+	* Adds support for MediaLive Channel-type Router Inputs.
+* RedshiftDataAPIService (4.0.4.0)
+	* The BatchExecuteStatement API now supports named SQL parameters, enabling secure batch queries with parameterized values. This enhancement helps prevent SQL injection vulnerabilities and improves query reusability.
+* SageMaker (4.0.49.0)
+	* Release support for g7e instance types for SageMaker HyperPod
+
 ### 4.0.228.0 (2026-04-08 20:03 UTC)
 * Backup (4.0.11.0)
 	* Adding EKS specific backup vault notification types for AWS Backup.
