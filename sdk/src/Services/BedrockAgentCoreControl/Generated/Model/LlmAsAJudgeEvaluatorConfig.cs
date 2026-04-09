@@ -86,7 +86,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// numerical or categorical. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public RatingScale RatingScale
         {
             get { return this._ratingScale; }

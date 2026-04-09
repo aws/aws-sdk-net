@@ -198,6 +198,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         IListPolicyGenerationsPaginator ListPolicyGenerations(ListPolicyGenerationsRequest request);
 
         /// <summary>
+        /// Paginator for ListRegistries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRegistriesPaginator ListRegistries(ListRegistriesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRegistryRecords operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRegistryRecordsPaginator ListRegistryRecords(ListRegistryRecordsRequest request);
+
+        /// <summary>
         /// Paginator for ListWorkloadIdentities operation
         ///</summary>
         [AWSPaginator(

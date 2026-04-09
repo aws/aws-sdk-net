@@ -1051,6 +1051,127 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  CreateRegistry
+
+        internal virtual CreateRegistryResponse CreateRegistry(CreateRegistryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRegistryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRegistryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new registry in your Amazon Web Services account. A registry serves as a
+        /// centralized catalog for organizing and managing registry records, including MCP servers,
+        /// A2A agents, agent skills, and custom resource types.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify <c>CUSTOM_JWT</c> as the <c>authorizerType</c>, you must provide an
+        /// <c>authorizerConfiguration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRegistry service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
+        public virtual Task<CreateRegistryResponse> CreateRegistryAsync(CreateRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRegistryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRegistryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateRegistryRecord
+
+        internal virtual CreateRegistryRecordResponse CreateRegistryRecord(CreateRegistryRecordRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRegistryRecordResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRegistryRecordResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new registry record within the specified registry. A registry record represents
+        /// an individual AI resource's metadata in the registry. This could be an MCP server
+        /// (and associated tools), A2A agent, agent skill, or a custom resource with a custom
+        /// schema.
+        /// 
+        ///  
+        /// <para>
+        /// The record is processed asynchronously and returns HTTP 202 Accepted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegistryRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRegistryRecord service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateRegistryRecord">REST API Reference for CreateRegistryRecord Operation</seealso>
+        public virtual Task<CreateRegistryRecordResponse> CreateRegistryRecordAsync(CreateRegistryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRegistryRecordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRegistryRecordResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateWorkloadIdentity
 
         internal virtual CreateWorkloadIdentityResponse CreateWorkloadIdentity(CreateWorkloadIdentityRequest request)
@@ -1832,6 +1953,110 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = DeletePolicyEngineResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePolicyEngineResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteRegistry
+
+        internal virtual DeleteRegistryResponse DeleteRegistry(DeleteRegistryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRegistryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a registry. The registry must contain zero records before it can be deleted.
+        /// This operation initiates the deletion process asynchronously.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRegistry service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
+        public virtual Task<DeleteRegistryResponse> DeleteRegistryAsync(DeleteRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRegistryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteRegistryRecord
+
+        internal virtual DeleteRegistryRecordResponse DeleteRegistryRecord(DeleteRegistryRecordRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRegistryRecordResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRegistryRecordResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a registry record. The record's status transitions to <c>DELETING</c> and
+        /// the record is removed asynchronously.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistryRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRegistryRecord service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteRegistryRecord">REST API Reference for DeleteRegistryRecord Operation</seealso>
+        public virtual Task<DeleteRegistryRecordResponse> DeleteRegistryRecordAsync(DeleteRegistryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRegistryRecordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRegistryRecordResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2680,6 +2905,105 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = GetPolicyGenerationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPolicyGenerationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetRegistry
+
+        internal virtual GetRegistryResponse GetRegistry(GetRegistryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistryResponseUnmarshaller.Instance;
+
+            return Invoke<GetRegistryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRegistry service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetRegistry">REST API Reference for GetRegistry Operation</seealso>
+        public virtual Task<GetRegistryResponse> GetRegistryAsync(GetRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRegistryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetRegistryRecord
+
+        internal virtual GetRegistryRecordResponse GetRegistryRecord(GetRegistryRecordRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistryRecordResponseUnmarshaller.Instance;
+
+            return Invoke<GetRegistryRecordResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific registry record.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistryRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRegistryRecord service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetRegistryRecord">REST API Reference for GetRegistryRecord Operation</seealso>
+        public virtual Task<GetRegistryRecordResponse> GetRegistryRecordAsync(GetRegistryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistryRecordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRegistryRecordResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -3647,6 +3971,105 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  ListRegistries
+
+        internal virtual ListRegistriesResponse ListRegistries(ListRegistriesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRegistriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegistriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRegistriesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all registries in the account. You can optionally filter results by status using
+        /// the <c>status</c> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegistries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRegistries service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
+        public virtual Task<ListRegistriesResponse> ListRegistriesAsync(ListRegistriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRegistriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegistriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRegistriesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListRegistryRecords
+
+        internal virtual ListRegistryRecordsResponse ListRegistryRecords(ListRegistryRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRegistryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegistryRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRegistryRecordsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists registry records within a registry. You can optionally filter results using
+        /// the <c>name</c>, <c>status</c>, and <c>descriptorType</c> parameters. When multiple
+        /// filters are specified, they are combined using AND logic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegistryRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRegistryRecords service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListRegistryRecords">REST API Reference for ListRegistryRecords Operation</seealso>
+        public virtual Task<ListRegistryRecordsResponse> ListRegistryRecordsAsync(ListRegistryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRegistryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegistryRecordsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRegistryRecordsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -3925,6 +4348,59 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = StartPolicyGenerationResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartPolicyGenerationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  SubmitRegistryRecordForApproval
+
+        internal virtual SubmitRegistryRecordForApprovalResponse SubmitRegistryRecordForApproval(SubmitRegistryRecordForApprovalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SubmitRegistryRecordForApprovalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubmitRegistryRecordForApprovalResponseUnmarshaller.Instance;
+
+            return Invoke<SubmitRegistryRecordForApprovalResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Submits a registry record for approval. This transitions the record from <c>DRAFT</c>
+        /// status to <c>PENDING_APPROVAL</c> status. If the registry has auto-approval enabled,
+        /// the record is automatically approved.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitRegistryRecordForApproval service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SubmitRegistryRecordForApproval service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/SubmitRegistryRecordForApproval">REST API Reference for SubmitRegistryRecordForApproval Operation</seealso>
+        public virtual Task<SubmitRegistryRecordForApprovalResponse> SubmitRegistryRecordForApprovalAsync(SubmitRegistryRecordForApprovalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SubmitRegistryRecordForApprovalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubmitRegistryRecordForApprovalResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SubmitRegistryRecordForApprovalResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4732,6 +5208,166 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = UpdatePolicyEngineResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdatePolicyEngineResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateRegistry
+
+        internal virtual UpdateRegistryResponse UpdateRegistry(UpdateRegistryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRegistryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing registry. This operation uses PATCH semantics, so you only need
+        /// to specify the fields you want to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRegistry service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
+        public virtual Task<UpdateRegistryResponse> UpdateRegistryAsync(UpdateRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRegistryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateRegistryRecord
+
+        internal virtual UpdateRegistryRecordResponse UpdateRegistryRecord(UpdateRegistryRecordRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryRecordResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRegistryRecordResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing registry record. This operation uses PATCH semantics, so you only
+        /// need to specify the fields you want to change. The update is processed asynchronously
+        /// and returns HTTP 202 Accepted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistryRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRegistryRecord service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateRegistryRecord">REST API Reference for UpdateRegistryRecord Operation</seealso>
+        public virtual Task<UpdateRegistryRecordResponse> UpdateRegistryRecordAsync(UpdateRegistryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryRecordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRegistryRecordResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateRegistryRecordStatus
+
+        internal virtual UpdateRegistryRecordStatusResponse UpdateRegistryRecordStatus(UpdateRegistryRecordStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRecordStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryRecordStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRegistryRecordStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the status of a registry record. Use this operation to approve, reject, or
+        /// deprecate a registry record.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistryRecordStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRegistryRecordStatus service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateRegistryRecordStatus">REST API Reference for UpdateRegistryRecordStatus Operation</seealso>
+        public virtual Task<UpdateRegistryRecordStatusResponse> UpdateRegistryRecordStatusAsync(UpdateRegistryRecordStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRecordStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryRecordStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRegistryRecordStatusResponse>(request, options, cancellationToken);
         }
         #endregion
         
