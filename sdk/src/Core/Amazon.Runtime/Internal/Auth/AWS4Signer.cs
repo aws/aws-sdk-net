@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -31,7 +31,6 @@ namespace Amazon.Runtime.Internal.Auth
     /// </summary>
     public class AWS4Signer : AbstractAWSSigner
     {
-        
         public const string Scheme = "AWS4";
         public const string Algorithm = "HMAC-SHA256";
         public const string Sigv4aAlgorithm = "ECDSA-P256-SHA256";
@@ -296,7 +295,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
-        private static void ValidateRequest(IRequest request)
+        internal static void ValidateRequest(IRequest request)
         {
             Uri url = request.Endpoint;
 
@@ -634,7 +633,7 @@ namespace Amazon.Runtime.Internal.Auth
         #endregion
 
         #region Private Signing Helpers
-        static string SetPayloadSignatureHeader(IRequest request, string payloadHash)
+        internal static string SetPayloadSignatureHeader(IRequest request, string payloadHash)
         {
             if (request.Headers.ContainsKey(HeaderKeys.XAmzContentSha256Header))
                 request.Headers[HeaderKeys.XAmzContentSha256Header] = payloadHash;
@@ -708,7 +707,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// will look for the hash as a header on the request.
         /// </param>
         /// <returns>Canonicalised request as a string</returns>
-        protected static string CanonicalizeRequest(Uri endpoint,
+        protected internal static string CanonicalizeRequest(Uri endpoint,
                                                     string resourcePath,
                                                     string httpMethod,
                                                     IDictionary<string, string> sortedHeaders,
@@ -732,7 +731,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// will look for the hash as a header on the request.
         /// </param>
         /// <returns>Canonicalised request as a string</returns>
-        protected static string CanonicalizeRequest(Uri endpoint,
+        protected internal static string CanonicalizeRequest(Uri endpoint,
                                                     string resourcePath,
                                                     string httpMethod,
                                                     IDictionary<string, string> sortedHeaders,
@@ -765,7 +764,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// </param>
         /// <param name="doubleEncode">Encode "/" when canonicalize resource path</param>
         /// <returns>Canonicalised request as a string</returns>
-        protected static string CanonicalizeRequest(Uri endpoint,
+        protected internal static string CanonicalizeRequest(Uri endpoint,
                                                     string resourcePath,
                                                     string httpMethod,
                                                     IDictionary<string, string> sortedHeaders,
@@ -870,7 +869,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="sortedHeaders">The headers included in the signature</param>
         /// <returns>Formatted string of header names</returns>
-        protected static string CanonicalizeHeaderNames(IEnumerable<KeyValuePair<string, string>> sortedHeaders)
+        protected internal static string CanonicalizeHeaderNames(IEnumerable<KeyValuePair<string, string>> sortedHeaders)
         {
             var builder = new ValueStringBuilder(512);
 
@@ -890,7 +889,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="request">The in-flight request being signed</param>
         /// <returns>The fused set of parameters</returns>
-        protected static List<KeyValuePair<string, string>> GetParametersToCanonicalize(IRequest request)
+        protected internal static List<KeyValuePair<string, string>> GetParametersToCanonicalize(IRequest request)
         {
             var parametersToCanonicalize = new List<KeyValuePair<string, string>>();
 
@@ -972,7 +971,7 @@ namespace Amazon.Runtime.Internal.Auth
             return CanonicalizeQueryParameters(queryParams, uriEncodeParameters: uriEncodeParameters);
         }
 
-        protected static string CanonicalizeQueryParameters(IEnumerable<KeyValuePair<string, string>> parameters)
+        protected internal static string CanonicalizeQueryParameters(IEnumerable<KeyValuePair<string, string>> parameters)
         {
             return CanonicalizeQueryParameters(parameters, true);
         }

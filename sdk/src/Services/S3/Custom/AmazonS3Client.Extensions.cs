@@ -388,15 +388,14 @@ namespace Amazon.S3
             switch (signatureVersionToUse)
             {
                 case SignatureVersion.SigV4a:
-                    var aws4aSigner = new AWS4aSignerCRTWrapper();
-
-                    var signingResult4a = aws4aSigner.Presign4a(iRequest,
+                    var signingResult4a = AWS4aPreSignedUrlSigner.SignRequest(iRequest,
                                                             config,
                                                             metrics,
                                                             immutableCredentials,
                                                             "s3",
                                                             arn.IsMRAPArn() ? "*" : "");
-                    signingResult.Result = signingResult4a.PresignedUri;
+                    signingResult.Authorization = "&" + signingResult4a.ForQueryParameters;
+                    signingResult.Result = ComposeUrl(iRequest).AbsoluteUri + signingResult.Authorization;
                     break;
                 case SignatureVersion.SigV4:
                     var aws4Signer = new AWS4PreSignedUrlSigner();

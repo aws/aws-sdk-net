@@ -196,7 +196,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#DetermineSigningRegion(Amazon.Runtime.IClientConfig,System.String,Amazon.RegionEndpoint,Amazon.Runtime.Internal.IRequest)")]
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#CanonicalizeHeaders(System.Collections.Generic.IDictionary`2<System.String,System.String>)")]
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#CanonicalizeHeaderNames(System.Collections.Generic.IDictionary`2<System.String,System.String>)")]
-[module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Runtime.Internal.Marshaller.#ToUserAgentHeaderString(Amazon.Runtime.RequestRetryMode)")]
+[module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4aSigner")]
 [assembly: SuppressMessage("Globalization", "CA1308:Normalize strings to uppercase", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Util.IniFile.SeekProperty(System.Int32@,System.String@,System.String@,Amazon.Runtime.Internal.Util.NestedProperty@)~System.Boolean")]
 [assembly: SuppressMessage("Globalization", "CA1308:Normalize strings to uppercase", Scope = "member", Target = "~M:Amazon.Runtime.Internal.Util.IniFile.TryParseSubproperties(System.Int32@,System.String,Amazon.Runtime.Internal.Util.NestedProperty@)~System.Boolean")]
 

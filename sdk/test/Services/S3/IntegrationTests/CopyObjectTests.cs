@@ -39,14 +39,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             eastBucketName = await S3TestUtils.CreateBucketWithWaitAsync(usEastClient);
 
-            usEastClient.PutObject(new PutObjectRequest
+            await usEastClient.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = eastBucketName,
                 Key = testKey,
                 ContentBody = testContent
             });
 
-            usEastClient.PutObject(new PutObjectRequest
+            await usEastClient.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = eastBucketName,
                 Key = testKeyWithSlash,
