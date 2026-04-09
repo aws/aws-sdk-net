@@ -105,7 +105,7 @@ namespace Amazon.MediaConnect.Model
         /// The source port number for the SRT protocol in caller mode.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=65535)]
+        [AWSProperty(Required=true, Min=1024, Max=65535)]
         public int? SourcePort
         {
             get { return this._sourcePort; }

@@ -36,6 +36,7 @@ namespace Amazon.MediaConnect.Model
     {
         private FailoverRouterInputStreamDetails _failover;
         private MediaConnectFlowRouterInputStreamDetails _mediaConnectFlow;
+        private MediaLiveChannelRouterInputStreamDetails _mediaLiveChannel;
         private MergeRouterInputStreamDetails _merge;
         private StandardRouterInputStreamDetails _standard;
 
@@ -67,6 +68,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetMediaConnectFlow()
         {
             return this._mediaConnectFlow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaLiveChannel.
+        /// </summary>
+        public MediaLiveChannelRouterInputStreamDetails MediaLiveChannel
+        {
+            get { return this._mediaLiveChannel; }
+            set { this._mediaLiveChannel = value; }
+        }
+
+        // Check to see if MediaLiveChannel property is set
+        internal bool IsSetMediaLiveChannel()
+        {
+            return this._mediaLiveChannel != null;
         }
 
         /// <summary>

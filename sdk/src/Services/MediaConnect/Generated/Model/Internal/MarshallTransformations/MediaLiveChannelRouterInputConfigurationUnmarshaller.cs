@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RouterInputConfiguration Object
+    /// Response Unmarshaller for MediaLiveChannelRouterInputConfiguration Object
     /// </summary>  
-    public class RouterInputConfigurationUnmarshaller : IJsonUnmarshaller<RouterInputConfiguration, JsonUnmarshallerContext>
+    public class MediaLiveChannelRouterInputConfigurationUnmarshaller : IJsonUnmarshaller<MediaLiveChannelRouterInputConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RouterInputConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MediaLiveChannelRouterInputConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            RouterInputConfiguration unmarshalledObject = new RouterInputConfiguration();
+            MediaLiveChannelRouterInputConfiguration unmarshalledObject = new MediaLiveChannelRouterInputConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,28 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failover", targetDepth))
+                if (context.TestExpression("mediaLiveChannelArn", targetDepth))
                 {
-                    var unmarshaller = FailoverRouterInputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Failover = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MediaLiveChannelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaConnectFlow", targetDepth))
+                if (context.TestExpression("mediaLiveChannelOutputName", targetDepth))
                 {
-                    var unmarshaller = MediaConnectFlowRouterInputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.MediaConnectFlow = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MediaLiveChannelOutputName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaLiveChannel", targetDepth))
+                if (context.TestExpression("mediaLivePipelineId", targetDepth))
                 {
-                    var unmarshaller = MediaLiveChannelRouterInputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.MediaLiveChannel = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MediaLivePipelineId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("merge", targetDepth))
+                if (context.TestExpression("sourceTransitDecryption", targetDepth))
                 {
-                    var unmarshaller = MergeRouterInputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Merge = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("standard", targetDepth))
-                {
-                    var unmarshaller = StandardRouterInputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Standard = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = MediaLiveTransitEncryptionUnmarshaller.Instance;
+                    unmarshalledObject.SourceTransitDecryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +85,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static RouterInputConfigurationUnmarshaller _instance = new RouterInputConfigurationUnmarshaller();        
+        private static MediaLiveChannelRouterInputConfigurationUnmarshaller _instance = new MediaLiveChannelRouterInputConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RouterInputConfigurationUnmarshaller Instance
+        public static MediaLiveChannelRouterInputConfigurationUnmarshaller Instance
         {
             get
             {
