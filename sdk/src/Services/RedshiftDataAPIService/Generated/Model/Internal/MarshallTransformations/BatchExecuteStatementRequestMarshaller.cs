@@ -104,6 +104,22 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DbUser);
             }
 
+            if(publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("Parameters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestParametersListValue in publicRequest.Parameters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SqlParameterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestParametersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetResultFormat())
             {
                 context.Writer.WritePropertyName("ResultFormat");

@@ -195,7 +195,8 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property Precision. 
         /// <para>
-        /// The precision value of a decimal number column. 
+        /// The precision value of a decimal number column, or the column length for a non-numeric
+        /// column. 
         /// </para>
         /// </summary>
         public int? Precision
