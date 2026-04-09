@@ -16,40 +16,45 @@
 /*
  * Do not modify this file. This file is generated from the bcm-dashboards-2025-08-18.normal.json service model.
  */
-
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
-#pragma warning disable CS0612,CS0618
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BCMDashboards.Model
 {
     /// <summary>
-    /// Paginators for the BCMDashboards service
-    ///</summary>
-    public class BCMDashboardsPaginatorFactory : IBCMDashboardsPaginatorFactory
+    /// Container for the parameters to the DeleteScheduledReport operation.
+    /// Deletes a specified scheduled report. This is an irreversible operation.
+    /// </summary>
+    public partial class DeleteScheduledReportRequest : AmazonBCMDashboardsRequest
     {
-        private readonly IAmazonBCMDashboards client;
-
-        internal BCMDashboardsPaginatorFactory(IAmazonBCMDashboards client) 
-        {
-            this.client = client;
-        }
+        private string _arn;
 
         /// <summary>
-        /// Paginator for ListDashboards operation
-        ///</summary>
-        public IListDashboardsPaginator ListDashboards(ListDashboardsRequest request) 
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The ARN of the scheduled report to delete.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
+        public string Arn
         {
-            return new ListDashboardsPaginator(this.client, request);
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        /// <summary>
-        /// Paginator for ListScheduledReports operation
-        ///</summary>
-        public IListScheduledReportsPaginator ListScheduledReports(ListScheduledReportsRequest request) 
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return new ListScheduledReportsPaginator(this.client, request);
+            return this._arn != null;
         }
+
     }
 }

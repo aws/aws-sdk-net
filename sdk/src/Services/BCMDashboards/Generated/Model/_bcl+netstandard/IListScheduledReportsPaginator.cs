@@ -16,35 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the bcm-dashboards-2025-08-18.normal.json service model.
  */
-using Amazon.Runtime.Internal;
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMDashboards.Model
 {
     /// <summary>
-    /// Paginators for the BCMDashboards service
+    /// Paginator for the ListScheduledReports operation
     ///</summary>
-    public interface IBCMDashboardsPaginatorFactory
+    public interface IListScheduledReportsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListScheduledReportsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListDashboards operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IListDashboardsPaginator ListDashboards(ListDashboardsRequest request);
-
-        /// <summary>
-        /// Paginator for ListScheduledReports operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IListScheduledReportsPaginator ListScheduledReports(ListScheduledReportsRequest request);
+        /// Enumerable containing all of the ScheduledReports
+        /// </summary>
+        IPaginatedEnumerable<ScheduledReportSummary> ScheduledReports { get; }
     }
 }

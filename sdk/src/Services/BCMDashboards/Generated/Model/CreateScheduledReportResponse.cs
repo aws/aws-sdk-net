@@ -16,40 +16,44 @@
 /*
  * Do not modify this file. This file is generated from the bcm-dashboards-2025-08-18.normal.json service model.
  */
-
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
-#pragma warning disable CS0612,CS0618
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BCMDashboards.Model
 {
     /// <summary>
-    /// Paginators for the BCMDashboards service
-    ///</summary>
-    public class BCMDashboardsPaginatorFactory : IBCMDashboardsPaginatorFactory
+    /// This is the response object from the CreateScheduledReport operation.
+    /// </summary>
+    public partial class CreateScheduledReportResponse : AmazonWebServiceResponse
     {
-        private readonly IAmazonBCMDashboards client;
-
-        internal BCMDashboardsPaginatorFactory(IAmazonBCMDashboards client) 
-        {
-            this.client = client;
-        }
+        private string _arn;
 
         /// <summary>
-        /// Paginator for ListDashboards operation
-        ///</summary>
-        public IListDashboardsPaginator ListDashboards(ListDashboardsRequest request) 
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The ARN of the newly created scheduled report.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=20, Max=2048)]
+        public string Arn
         {
-            return new ListDashboardsPaginator(this.client, request);
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        /// <summary>
-        /// Paginator for ListScheduledReports operation
-        ///</summary>
-        public IListScheduledReportsPaginator ListScheduledReports(ListScheduledReportsRequest request) 
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return new ListScheduledReportsPaginator(this.client, request);
+            return this._arn != null;
         }
+
     }
 }

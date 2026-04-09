@@ -63,8 +63,7 @@ namespace Amazon.BCMDashboards.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The new description for the dashboard. If not specified, the existing description
-        /// is retained.
+        /// The new description for the dashboard.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -83,10 +82,10 @@ namespace Amazon.BCMDashboards.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The new name for the dashboard. If not specified, the existing name is retained.
+        /// The new name for the dashboard.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=50)]
+        [AWSProperty(Required=true, Min=2, Max=50)]
         public string Name
         {
             get { return this._name; }

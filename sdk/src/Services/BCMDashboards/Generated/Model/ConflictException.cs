@@ -30,49 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BCMDashboards.Model
 {
     /// <summary>
-    /// The request would exceed a service quota. Review the service quotas for Amazon Web
-    /// Services Billing and Cost Management Dashboards and retry your request.
+    /// The request could not be completed due to a conflict with the current state of the
+    /// resource. For example, attempting to create a resource that already exists or is being
+    /// created.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class ServiceQuotaExceededException : AmazonBCMDashboardsException
+    public partial class ConflictException : AmazonBCMDashboardsException
     {
 
         /// <summary>
-        /// Default constructor for ServiceQuotaExceededException
+        /// Default constructor for ConflictException
         /// message.
         /// </summary>
-        public ServiceQuotaExceededException() 
+        public ConflictException() 
             : base() {}
 
         /// <summary>
-        /// Constructs a new ServiceQuotaExceededException with the specified error
+        /// Constructs a new ConflictException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public ServiceQuotaExceededException(string message) 
+        public ConflictException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of ServiceQuotaExceededException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public ServiceQuotaExceededException(string message, Exception innerException) 
+        public ConflictException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of ServiceQuotaExceededException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="innerException"></param>
-        public ServiceQuotaExceededException(Exception innerException) 
+        public ConflictException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of ServiceQuotaExceededException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -80,30 +81,30 @@ namespace Amazon.BCMDashboards.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ServiceQuotaExceededException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ConflictException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of ServiceQuotaExceededException
+        /// Construct instance of ConflictException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public ServiceQuotaExceededException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public ConflictException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the ServiceQuotaExceededException class with serialized data.
+        /// Constructs a new instance of the ConflictException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected ServiceQuotaExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }
