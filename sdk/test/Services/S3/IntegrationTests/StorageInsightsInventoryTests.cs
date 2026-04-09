@@ -1,50 +1,30 @@
-/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
 using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class StorageInsightsInventoryTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class StorageInsightsInventoryTests : IClassFixture<S3BucketFixture>
     {
-        public static string bucketName;
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
 
-        [TestInitialize]
-        public async Task Init()
+        public StorageInsightsInventoryTests(S3BucketFixture fixture)
         {
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
+            _client = fixture.Client;
+            _bucketName = fixture.BucketName;
         }
 
-        [TestCleanup]
-        public async Task Cleanup()
-        {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
-        }
-
-        [TestMethod]
+        [Fact]
         public async Task BucketAnalyticsConfigurationsTestWithSigV4()
         {
             var putBucketInventoryConfigurationRequest = new PutBucketInventoryConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 InventoryId = "configId",
                 InventoryConfiguration = new InventoryConfiguration
                 {
@@ -53,7 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         S3BucketDestination = new InventoryS3BucketDestination
                         {
                             AccountId = "599169622985",
-                            BucketName = "arn:aws:s3:::" + bucketName,
+                            BucketName = "arn:aws:s3:::" + _bucketName,
                             InventoryFormat = InventoryFormat.CSV,
                             Prefix = "prefix"
                         }
@@ -85,17 +65,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            var putBucketInventoryConfigurationResponse = await Client.PutBucketInventoryConfigurationAsync(putBucketInventoryConfigurationRequest);
+            var putBucketInventoryConfigurationResponse = await _client.PutBucketInventoryConfigurationAsync(putBucketInventoryConfigurationRequest);
 
             var getBucketInventoryConfigurationRequest = new GetBucketInventoryConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 InventoryId = "configId"
             };
 
             var getBucketInventoryConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetBucketInventoryConfigurationAsync(getBucketInventoryConfigurationRequest);
+                var res = await _client.GetBucketInventoryConfigurationAsync(getBucketInventoryConfigurationRequest);
                 return res.InventoryConfiguration?.InventoryId == putBucketInventoryConfigurationRequest.InventoryConfiguration.InventoryId ? res : null;
             });
 
@@ -107,25 +87,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         
         private static void GetBucketInventoryAndValidate(InventoryConfiguration getInventoryConfiguration, InventoryConfiguration putInventoryConfiguration)
         {
-            Assert.AreEqual(getInventoryConfiguration.InventoryId, putInventoryConfiguration.InventoryId);
-            Assert.IsTrue(getInventoryConfiguration.IsEnabled.Value);
-            Assert.AreEqual(getInventoryConfiguration.Schedule.Frequency, putInventoryConfiguration.Schedule.Frequency);
-            Assert.AreEqual(((InventoryPrefixPredicate)getInventoryConfiguration.InventoryFilter.InventoryFilterPredicate).Prefix, "string");
-            Assert.AreEqual(getInventoryConfiguration.IncludedObjectVersions, putInventoryConfiguration.IncludedObjectVersions);
-            CollectionAssert.AreEqual(getInventoryConfiguration.InventoryOptionalFields, putInventoryConfiguration.InventoryOptionalFields);
+            Assert.Equal(getInventoryConfiguration.InventoryId, putInventoryConfiguration.InventoryId);
+            Assert.True(getInventoryConfiguration.IsEnabled.Value);
+            Assert.Equal(getInventoryConfiguration.Schedule.Frequency, putInventoryConfiguration.Schedule.Frequency);
+            Assert.Equal(((InventoryPrefixPredicate)getInventoryConfiguration.InventoryFilter.InventoryFilterPredicate).Prefix, "string");
+            Assert.Equal(getInventoryConfiguration.IncludedObjectVersions, putInventoryConfiguration.IncludedObjectVersions);
+            Assert.Equal(getInventoryConfiguration.InventoryOptionalFields, putInventoryConfiguration.InventoryOptionalFields);
         }
 
-        private static async Task DeleteInventoryAndValidate()
+        private async Task DeleteInventoryAndValidate()
         {
-            await Client.DeleteBucketInventoryConfigurationAsync(new DeleteBucketInventoryConfigurationRequest
+            await _client.DeleteBucketInventoryConfigurationAsync(new DeleteBucketInventoryConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 InventoryId = "configId"
             });
 
-            var response = await Client.ListObjectsAsync(new ListObjectsRequest
+            var response = await _client.ListObjectsAsync(new ListObjectsRequest
             {
-                BucketName = bucketName
+                BucketName = _bucketName
             });
 
             var successFlag = true;
@@ -134,7 +114,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 successFlag = false;
             }
 
-            Assert.IsTrue(successFlag);
+            Assert.True(successFlag);
         }
     }
 }

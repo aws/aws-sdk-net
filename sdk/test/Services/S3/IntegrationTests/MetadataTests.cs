@@ -2,33 +2,27 @@
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
-using Amazon.S3.Util;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class MetadataTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class MetadataTests : IClassFixture<S3BucketFixture>, IAsyncLifetime
     {
-        private static string bucketName;
         private const string tempFile = "tempFile.txt";
-        private static readonly long smallFileSize = TransferUtilityTests.KILO_SIZE * 100;
-        private static readonly long largeFileSize = TransferUtilityTests.MEG_SIZE * 20;
-        private static readonly List<string> keysToValidate = new List<string>();
-        private string _testId;
+        private static readonly long smallFileSize = TransferUtilityTestHelpers.KILO_SIZE * 100;
+        private static readonly long largeFileSize = TransferUtilityTestHelpers.MEG_SIZE * 6;
 
-        [TestInitialize]
-        public void SetTestId()
-        {
-            _testId = Guid.NewGuid().ToString("N");
-        }
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
+        private readonly string _testId;
 
         private static readonly Dictionary<string, string> metadata = new Dictionary<string, string>(StringComparer.Ordinal)
         {
@@ -55,13 +49,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             { "Content-Disposition", "attachment; filename=\"fname.ext\"" }
         };
 
-        [ClassInitialize]
-        public static async Task Initialize(TestContext a)
+        public MetadataTests(S3BucketFixture bucket)
         {
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
-            await Client.PutBucketVersioningAsync(new PutBucketVersioningRequest 
+            _client = bucket.Client;
+            _bucketName = bucket.BucketName;
+            _testId = Guid.NewGuid().ToString("N");
+        }
+
+        public async ValueTask InitializeAsync()
+        {
+            // Enable versioning once for the class-level bucket
+            await _client.PutBucketVersioningAsync(new PutBucketVersioningRequest
             {
-                BucketName = bucketName ,
+                BucketName = _bucketName,
                 VersioningConfig = new S3BucketVersioningConfig
                 {
                     Status = VersionStatus.Enabled
@@ -69,36 +69,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
         }
 
-        [ClassCleanup]
-        public static async Task ClassCleanup()
-        {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
-            BaseClean();
-        }
+        public ValueTask DisposeAsync() => new ValueTask();
 
-        [TestMethod]
+        [Fact]
         public async Task TestSingleUploads()
         {
             var key = _testId + "-contentBodyPut";
             var putObjectRequest = new PutObjectRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Key = key,
                 ContentBody = "This is the content body!",
             };
 
             SetMetadataAndHeaders(putObjectRequest);
-            await Client.PutObjectAsync(putObjectRequest);
+            await _client.PutObjectAsync(putObjectRequest);
             await ValidateObjectMetadataAndHeaders(key);
 
-            using (var tu = new TransferUtility(Client))
+            using (var tu = new TransferUtility(_client, new TransferUtilityConfig { MinSizeBeforePartUpload = 5_000_000 }))
             {
                 // Test small TransferUtility upload
                 key = _testId + "-transferUtilitySmall";
                 UtilityMethods.GenerateFile(tempFile, smallFileSize);
                 var smallRequest = new TransferUtilityUploadRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     Key = key,
                     FilePath = tempFile
                 };
@@ -114,7 +109,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     UtilityMethods.GenerateFile(tempFile, largeFileSize);
                     var largeRequest = new TransferUtilityUploadRequest
                     {
-                        BucketName = bucketName,
+                        BucketName = _bucketName,
                         Key = key,
                         FilePath = tempFile
                     };
@@ -129,7 +124,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <summary>
         /// Ensure that when escaped, a SigV4 request with unicode metadata succeeds.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task TestSingleUploadWithUnicodeMetadata()
         {
             try
@@ -139,13 +134,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var key = _testId + "-contentBodyPut";
                 var putObjectRequest = new PutObjectRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     Key = key,
                     ContentBody = "This is the content body!",
                 };
 
                 SetMetadataAndHeaders(putObjectRequest, true);
-                await Client.PutObjectAsync(putObjectRequest);
+                await _client.PutObjectAsync(putObjectRequest);
                 await ValidateObjectMetadataAndHeaders(key, true);
             }
             finally
@@ -154,15 +149,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestDirectoryUploads()
         {
-            var progressValidator = new TransferUtilityTests.DirectoryProgressValidator<UploadDirectoryProgressArgs>();
-            TransferUtilityTests.ConfigureProgressValidator(progressValidator);
+            var progressValidator = new DirectoryProgressValidator<UploadDirectoryProgressArgs>();
+            TransferUtilityTestHelpers.ConfigureProgressValidator(progressValidator);
 
-            keysToValidate.Clear();
-            await UploadDirectory(10 * TransferUtilityTests.MEG_SIZE, progressValidator, validate: true);
-            progressValidator.AssertOnCompletion();
+            var keysToValidate = new List<string>();
+            await UploadDirectory(1 * TransferUtilityTestHelpers.MEG_SIZE, progressValidator, keysToValidate, validate: true);
+            await progressValidator.AssertOnCompletionAsync();
 
             foreach (var key in keysToValidate)
             {
@@ -170,7 +165,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestSingleUploadWithSpacesInMetadata()
         {
             string metadataName = "document";
@@ -179,35 +174,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             var putObjectRequest = new PutObjectRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Key = key,
                 ContentBody = "This is the content body!",
             };
             putObjectRequest.Metadata[metadataName] = metadataValue;
-            await Client.PutObjectAsync(putObjectRequest);
+            await _client.PutObjectAsync(putObjectRequest);
 
-            using (var response = await Client.GetObjectAsync(bucketName, key))
+            using (var response = await _client.GetObjectAsync(_bucketName, key))
             {
-                Assert.AreEqual(metadataValue.Trim(), response.Metadata[metadataName]);
+                Assert.Equal(metadataValue.Trim(), response.Metadata[metadataName]);
             }
 
-            using (var tu = new TransferUtility(Client))
+            using (var tu = new TransferUtility(_client, new TransferUtilityConfig { MinSizeBeforePartUpload = 5_000_000 }))
             {
                 // Test small TransferUtility upload
                 key = _testId + "-transferUtilitySmall";
                 UtilityMethods.GenerateFile(tempFile, smallFileSize);
                 var smallRequest = new TransferUtilityUploadRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     Key = key,
                     FilePath = tempFile
                 };
                 smallRequest.Metadata[metadataName] = metadataValue;
                 await tu.UploadAsync(smallRequest);
                 
-                using (var response = await Client.GetObjectAsync(bucketName, key))
+                using (var response = await _client.GetObjectAsync(_bucketName, key))
                 {
-                    Assert.AreEqual(metadataValue.Trim(), response.Metadata[metadataName]);
+                    Assert.Equal(metadataValue.Trim(), response.Metadata[metadataName]);
                 }
 
                 // Test large TransferUtility upload
@@ -218,67 +213,68 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     UtilityMethods.GenerateFile(tempFile, largeFileSize);
                     var largeRequest = new TransferUtilityUploadRequest
                     {
-                        BucketName = bucketName,
+                        BucketName = _bucketName,
                         Key = key,
                         FilePath = tempFile
                     };
                     largeRequest.Metadata[metadataName] = metadataValue;
                     await tu.UploadAsync(largeRequest);
                     
-                    using (var response = await Client.GetObjectAsync(bucketName, key))
+                    using (var response = await _client.GetObjectAsync(_bucketName, key))
                     {
-                        Assert.AreEqual(metadataValue.Trim(), response.Metadata[metadataName]);
+                        Assert.Equal(metadataValue.Trim(), response.Metadata[metadataName]);
                     }
                 }
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task GetObjectMetadataTest()
         {
-            string key = Guid.NewGuid().ToString() + ".txt";
-            var putObjectResponse = await Client.PutObjectAsync(new PutObjectRequest
+            string key = _testId + "-" + Guid.NewGuid().ToString() + ".txt";
+            var putObjectResponse = await _client.PutObjectAsync(new PutObjectRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Key = key,
                 ContentBody = "Hello world!",
             });
 
             var responseExpires = DateTime.UtcNow.AddDays(2);
-            var getObjectMetadataResponse = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+            var getObjectMetadataResponse = await _client.GetObjectMetadataAsync(new GetObjectMetadataRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Key = key,
                 ResponseExpires = responseExpires,
                 ResponseContentType = "text/plain",
                 VersionId = putObjectResponse.VersionId,
             });
-            Assert.AreEqual(HttpStatusCode.OK, getObjectMetadataResponse.HttpStatusCode);
-            Assert.IsFalse(string.IsNullOrEmpty(getObjectMetadataResponse.ExpiresString));
+            Assert.Equal(HttpStatusCode.OK, getObjectMetadataResponse.HttpStatusCode);
+            Assert.False(string.IsNullOrEmpty(getObjectMetadataResponse.ExpiresString));
 
             var actualExpires = DateTime.Parse(getObjectMetadataResponse.ExpiresString).ToUniversalTime();
-            Assert.AreEqual(responseExpires.Date, actualExpires.Date);
-            Assert.IsFalse(string.IsNullOrEmpty(getObjectMetadataResponse.VersionId));
+            Assert.Equal(responseExpires.Date, actualExpires.Date);
+            Assert.False(string.IsNullOrEmpty(getObjectMetadataResponse.VersionId));
         }
         
         async Task UploadDirectory(
             long size,
-            TransferUtilityTests.DirectoryProgressValidator<UploadDirectoryProgressArgs> progressValidator, 
+            DirectoryProgressValidator<UploadDirectoryProgressArgs> progressValidator,
+            List<string> keysToValidate,
             bool validate = true
         )
         {
-            var directory = TransferUtilityTests.CreateTestDirectory(size);
+            var directory = TransferUtilityTestHelpers.CreateTestDirectory(size);
             var directoryPath = directory.FullName;
             var keyPrefix = directory.Name;
 
-            var transferUtility = new TransferUtility(Client, new TransferUtilityConfig
+            var transferUtility = new TransferUtility(_client, new TransferUtilityConfig
             {
                 ConcurrentServiceRequests = 10,
             });
 
             var request = new TransferUtilityUploadDirectoryRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Directory = directoryPath,
                 KeyPrefix = keyPrefix,
                 SearchPattern = "*",
@@ -306,17 +302,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
 
             await transferUtility.UploadDirectoryAsync(request);
-            Assert.AreEqual(5, files.Count);
+            Assert.Equal(5, files.Count);
 
             if (validate)
             {
-                await TransferUtilityTests.ValidateDirectoryContents(bucketName, keyPrefix, directory);
+                await TransferUtilityTestHelpers.ValidateDirectoryContents(_bucketName, keyPrefix, directory);
             }
         }
 
-        private static async Task ValidateObjectMetadataAndHeaders(string key, bool unicode = false)
+        private async Task ValidateObjectMetadataAndHeaders(string key, bool unicode = false)
         {
-            using (var response = await Client.GetObjectAsync(bucketName, key))
+            using (var response = await _client.GetObjectAsync(_bucketName, key))
             {
                 ValidateMetadataAndHeaders(response, unicode);
             }
@@ -357,7 +353,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var name = kvp.Key;
                 var expectedValue = kvp.Value ?? "";   // putting a null value comes back as an empty string
                 var actualValue = response.Metadata[name];
-                Assert.AreEqual(expectedValue, actualValue);
+                Assert.Equal(expectedValue, actualValue);
             }
 
             foreach (var kvp in headers)
@@ -365,7 +361,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var name = kvp.Key;
                 var expectedValue = (kvp.Value == null) ? "" : kvp.Value;
                 var actualValue = response.Headers[name];
-                Assert.AreEqual(expectedValue, actualValue);
+                Assert.Equal(expectedValue, actualValue);
             }
         }
     }

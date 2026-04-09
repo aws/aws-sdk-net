@@ -5,18 +5,17 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
+    [Trait("Category", "S3")]
     public class RegionsTest
     {
         /// <summary>
@@ -25,7 +24,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// requiring AWS4 signing when using a client initially configured
         /// to us-east-1.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task TestAWS2ToAWS4RedirectBeforeDNSPropagation()
         {
             var useast1Client = new AmazonS3Client(new AmazonS3Config
@@ -45,8 +44,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     ContentBody = "some stuff"
                 });
 
-                Assert.IsNotNull(response);
-                Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
+                Assert.NotNull(response);
+                Assert.Equal(HttpStatusCode.OK, response.HttpStatusCode);
             }
             finally
             {
@@ -58,20 +57,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// Tests that the SDK handling for 400/307 responses when trying to access
         /// buckets in AWS4 regions does not affect the exception thrown when a 301
         /// is issued. This can happen if you use a non-US East 1-client to access
-        /// a bucket in a region such as us-west-2. 
+        /// a bucket in a region such as us-west-2.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task Test301RedirectTriggersException()
         {
             var uswest2Client = new AmazonS3Client(RegionEndpoint.USWest2);
             var eucentral1Client = new AmazonS3Client(RegionEndpoint.EUCentral1);
 
-            // there is no distinction given for buckets that have not had DNS
-            // propagated yet so a new bucket will suffice
             var bucketName = await S3TestUtils.CreateBucketWithWaitAsync(eucentral1Client);
             try
             {
-                var actual = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() =>
+                var actual = await Assert.ThrowsAsync<AmazonS3Exception>(() =>
                     uswest2Client.PutObjectAsync(new PutObjectRequest
                     {
                         BucketName = bucketName,
@@ -80,7 +77,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     })
                 );
 
-                Assert.AreEqual("The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.", actual.Message);
+                Assert.Equal("The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.", actual.Message);
             }
             finally
             {
@@ -92,7 +89,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <remarks>
         /// <see cref="AmazonS3Util.PostUpload"/> is only available on .NET Framework.
         /// </remarks>
-        [TestMethod]
+        [Fact]
         public async Task TestPostUpload()
         {
             var region = RegionEndpoint.USWest1;
@@ -111,9 +108,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     var contentStream = new MemoryStream(Encoding.UTF8.GetBytes("Line one\nLine two\nLine three\n"), false);
                     var response = TestPost("foo/bar/content.txt", bucketName, contentStream, "", credentials, region);
-                    Assert.IsNotNull(response.RequestId);
-                    Assert.IsNotNull(response.HostId);
-                    Assert.AreEqual(HttpStatusCode.NoContent, response.StatusCode);
+                    Assert.NotNull(response.RequestId);
+                    Assert.NotNull(response.HostId);
+                    Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
                 }
                 finally
                 {

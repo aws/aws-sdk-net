@@ -336,7 +336,7 @@
     <Target Name="run-integ-tests" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'" DependsOnTargets="init;build-sdk;">
         <MsTestWrapperTask
             TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\IntegrationTests\AWSSDK.IntegrationTests.NetFramework.csproj"
+            TestContainer="..\sdk\test\IntegrationTests\AWSSDK.IntegrationTests.csproj"
             Configuration="$(Configuration)"
             Categories="$(IntegCategoriesToTest)"
             TestExecutionProfile="test-runner"/>

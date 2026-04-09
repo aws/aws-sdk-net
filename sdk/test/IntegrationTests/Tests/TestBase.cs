@@ -2,7 +2,6 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Net;

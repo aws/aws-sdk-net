@@ -3,102 +3,124 @@ using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Net;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class CopyObjectTests : TestBase<AmazonS3Client>
+    public class CopyObjectTestsFixture : IAsyncLifetime
     {
-        private const string testContent = "This is the content body!";
-        private const string testKey = "testKey.txt";
-        private const string testKeyWithTag = "testKeyWithTag.txt";
-        private const string testKeyWithSlash = "/sourceTestKey.txt";
+        public const string TestContent = "This is the content body!";
+        public const string TestKey = "testKey.txt";
+        public const string TestKeyWithSlash = "/sourceTestKey.txt";
 
-        private string eastBucketName;
-        private string westBucketName;
+        public AmazonS3Client UsEast1Client { get; private set; }
+        public AmazonS3Client UsWest1Client { get; private set; }
+        public string UsEast1BucketName { get; private set; }
+        public string UsWest1BucketName { get; private set; }
 
-        private AmazonS3Client usEastClient;
-        private AmazonS3Client usWestClient;
-
-        [TestInitialize]
-        public async Task Initialize()
+        public async ValueTask InitializeAsync()
         {
-            usEastClient = new AmazonS3Client(new AmazonS3Config
+            UsEast1Client = new AmazonS3Client(new AmazonS3Config
             {
                 RegionEndpoint = RegionEndpoint.USEast1,
                 USEast1RegionalEndpointValue = S3UsEast1RegionalEndpointValue.Legacy,
             });
 
-            eastBucketName = await S3TestUtils.CreateBucketWithWaitAsync(usEastClient);
-
-            usEastClient.PutObject(new PutObjectRequest
+            UsEast1BucketName = await S3TestUtils.CreateBucketWithWaitAsync(UsEast1Client);
+            await UsEast1Client.PutObjectAsync(new PutObjectRequest
             {
-                BucketName = eastBucketName,
-                Key = testKey,
-                ContentBody = testContent
+                BucketName = UsEast1BucketName,
+                Key = TestKey,
+                ContentBody = TestContent
+            });
+            await UsEast1Client.PutObjectAsync(new PutObjectRequest
+            {
+                BucketName = UsEast1BucketName,
+                Key = TestKeyWithSlash,
+                ContentBody = TestContent
             });
 
-            usEastClient.PutObject(new PutObjectRequest
-            {
-                BucketName = eastBucketName,
-                Key = testKeyWithSlash,
-                ContentBody = testContent
-            });
-
-            usWestClient = new AmazonS3Client(RegionEndpoint.USWest1);
-            westBucketName = await S3TestUtils.CreateBucketWithWaitAsync(usWestClient);
+            UsWest1Client = new AmazonS3Client(RegionEndpoint.USWest1);
+            UsWest1BucketName = await S3TestUtils.CreateBucketWithWaitAsync(UsWest1Client);
         }
 
-        [TestCleanup]
-        public async Task TestCleanup()
+        public async ValueTask DisposeAsync()
         {
-            if (usEastClient != null)
+            if (UsEast1Client != null)
             {
-                await AmazonS3Util.DeleteS3BucketWithObjectsAsync(usEastClient, eastBucketName);
-                usEastClient.Dispose();
+                if (UsEast1BucketName != null)
+                {
+                    await AmazonS3Util.DeleteS3BucketWithObjectsAsync(UsEast1Client, UsEast1BucketName);
+                }
+
+                UsEast1Client.Dispose();
             }
 
-            if (usWestClient != null)
+            if (UsWest1Client != null)
             {
-                await AmazonS3Util.DeleteS3BucketWithObjectsAsync(usWestClient, westBucketName);
-                usWestClient.Dispose();
+                if (UsWest1BucketName != null)
+                {
+                    await AmazonS3Util.DeleteS3BucketWithObjectsAsync(UsWest1Client, UsWest1BucketName);
+                }
+
+                UsWest1Client.Dispose();
             }
-            
-            BaseClean();
+        }
+    }
+
+    [Trait("Category", "S3")]
+    public class CopyObjectTests : IClassFixture<CopyObjectTestsFixture>
+    {
+        private const string testKeyWithTag = "testKeyWithTag.txt";
+
+        private const string testContent = CopyObjectTestsFixture.TestContent;
+        private const string testKey = CopyObjectTestsFixture.TestKey;
+        private const string testKeyWithSlash = CopyObjectTestsFixture.TestKeyWithSlash;
+
+        private readonly string _eastBucketName;
+        private readonly string _westBucketName;
+
+        private readonly AmazonS3Client _usEastClient;
+        private readonly AmazonS3Client _usWestClient;
+
+        public CopyObjectTests(CopyObjectTestsFixture fixture)
+        {
+            _usEastClient = fixture.UsEast1Client;
+            _usWestClient = fixture.UsWest1Client;
+            _eastBucketName = fixture.UsEast1BucketName;
+            _westBucketName = fixture.UsWest1BucketName;
         }
 
-        [DataTestMethod]
-        [DataRow(testKey, testKey)]
-        [DataRow("ObjectWithAllSpecialCharacters/'()!*$+,;=&", "DestinationObjectWithAllSpecialCharacters/'()!*$+,;=&")]
+        [Theory]
+        [InlineData(testKey, testKey)]
+        [InlineData("ObjectWithAllSpecialCharacters/'()!*$+,;=&", "DestinationObjectWithAllSpecialCharacters/'()!*$+,;=&")]
         public async Task TestCopyObject(string sourceKey, string destinationKey)
         {
-            await usEastClient.PutObjectAsync(new PutObjectRequest
+            await _usEastClient.PutObjectAsync(new PutObjectRequest
             {
-                BucketName = eastBucketName,
+                BucketName = _eastBucketName,
                 Key = sourceKey,
                 ContentBody = testContent
             });
 
-            var response = await usEastClient.CopyObjectAsync(new CopyObjectRequest
+            var response = await _usEastClient.CopyObjectAsync(new CopyObjectRequest
             {
-                SourceBucket = eastBucketName,
+                SourceBucket = _eastBucketName,
                 SourceKey = sourceKey,
-                DestinationBucket = westBucketName,
+                DestinationBucket = _westBucketName,
                 DestinationKey = destinationKey
             });
-            Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
+            Assert.Equal(HttpStatusCode.OK, response.HttpStatusCode);
 
-            var getObjectResponse = await usWestClient.GetObjectAsync(new GetObjectRequest
+            var getObjectResponse = await _usWestClient.GetObjectAsync(new GetObjectRequest
             {
-                BucketName = westBucketName,
+                BucketName = _westBucketName,
                 Key = destinationKey
             });
 
@@ -106,16 +128,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var reader = new StreamReader(getObjectResponse.ResponseStream))
             {
                 var actualText = await reader.ReadToEndAsync();
-                Assert.AreEqual(testContent, actualText);
+                Assert.Equal(testContent, actualText);
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestCopyObjectWithTags()
         {
-            await usEastClient.PutObjectAsync(new PutObjectRequest
+            await _usEastClient.PutObjectAsync(new PutObjectRequest
             {
-                BucketName = eastBucketName,
+                BucketName = _eastBucketName,
                 Key = testKeyWithTag,
                 ContentBody = testContent,
                 TagSet = new List<Tag>
@@ -125,30 +147,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             });
             
-            await usEastClient.CopyObjectAsync(new CopyObjectRequest
+            await _usEastClient.CopyObjectAsync(new CopyObjectRequest
             {
-                SourceBucket = eastBucketName,
+                SourceBucket = _eastBucketName,
                 SourceKey = testKeyWithTag,
-                DestinationBucket = westBucketName,
+                DestinationBucket = _westBucketName,
                 DestinationKey = testKeyWithTag,
             });
 
-            var taggingMetadata = await usWestClient.GetObjectTaggingAsync(new GetObjectTaggingRequest
+            var taggingMetadata = await _usWestClient.GetObjectTaggingAsync(new GetObjectTaggingRequest
             {
-                BucketName = westBucketName,
+                BucketName = _westBucketName,
                 Key = testKeyWithTag
             });
-            Assert.IsTrue(taggingMetadata.Tagging.Count == 2);
-            Assert.IsTrue(taggingMetadata.Tagging.Any(tag => tag.Key == "foo" && tag.Value == "bar"));
-            Assert.IsTrue(taggingMetadata.Tagging.Any(tag => tag.Key == "baz" && tag.Value == "qux"));
+            Assert.True(taggingMetadata.Tagging.Count == 2);
+            Assert.True(taggingMetadata.Tagging.Any(tag => tag.Key == "foo" && tag.Value == "bar"));
+            Assert.True(taggingMetadata.Tagging.Any(tag => tag.Key == "baz" && tag.Value == "qux"));
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestCopyObjectWithTagsReplace()
         {
-            await usEastClient.PutObjectAsync(new PutObjectRequest
+            await _usEastClient.PutObjectAsync(new PutObjectRequest
             {
-                BucketName = eastBucketName,
+                BucketName = _eastBucketName,
                 Key = testKeyWithTag,
                 ContentBody = testContent,
                 TagSet = new List<Tag>
@@ -158,50 +180,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             });
 
-            await usEastClient.CopyObjectAsync(new CopyObjectRequest
+            await _usEastClient.CopyObjectAsync(new CopyObjectRequest
             {
-                SourceBucket = eastBucketName,
+                SourceBucket = _eastBucketName,
                 SourceKey = testKeyWithTag,
-                DestinationBucket = westBucketName,
+                DestinationBucket = _westBucketName,
                 DestinationKey = testKeyWithTag,
                 TaggingDirective = TaggingDirective.REPLACE,
                 TagSet = new List<Tag>
                 {
                     new Tag { Key = "newtag1", Value = "1" },
                 }
-
             });
 
-            var taggingMetadata = await usWestClient.GetObjectTaggingAsync(new GetObjectTaggingRequest
+            var taggingMetadata = await _usWestClient.GetObjectTaggingAsync(new GetObjectTaggingRequest
             {
-                BucketName = westBucketName,
+                BucketName = _westBucketName,
                 Key = testKeyWithTag
             });
-            Assert.IsTrue(taggingMetadata.Tagging.Count == 1);
-            Assert.IsFalse(taggingMetadata.Tagging.Any(tag => tag.Key == "foo" && tag.Value == "bar"));
-            Assert.IsFalse(taggingMetadata.Tagging.Any(tag => tag.Key == "baz" && tag.Value == "qux"));
-            Assert.IsTrue(taggingMetadata.Tagging.Any(tag => tag.Key == "newtag1" && tag.Value == "1"));
+            Assert.True(taggingMetadata.Tagging.Count == 1);
+            Assert.False(taggingMetadata.Tagging.Any(tag => tag.Key == "foo" && tag.Value == "bar"));
+            Assert.False(taggingMetadata.Tagging.Any(tag => tag.Key == "baz" && tag.Value == "qux"));
+            Assert.True(taggingMetadata.Tagging.Any(tag => tag.Key == "newtag1" && tag.Value == "1"));
         }
 
-        [DataRow(testKey, "destinationTestKey1.txt", "destinationTestKey1.txt")]
-        [DataRow(testKeyWithSlash, "/destinationTestKey2.txt", "/destinationTestKey2.txt")]
-        [DataRow(testKeyWithSlash, "/", "/")]
-        [DataTestMethod]
+        [Theory]
+        [InlineData(testKey, "destinationTestKey1.txt", "destinationTestKey1.txt")]
+        [InlineData(testKeyWithSlash, "/destinationTestKey2.txt", "/destinationTestKey2.txt")]
+        [InlineData(testKeyWithSlash, "/", "/")]
         public async Task TestCopyObjectWithLeadingSlash(string sourceKey, string destinationKey, string expectedKey)
         {
-            var copyObjectResponse = await usEastClient.CopyObjectAsync(new CopyObjectRequest
+            var copyObjectResponse = await _usEastClient.CopyObjectAsync(new CopyObjectRequest
             {
-                SourceBucket = eastBucketName,
+                SourceBucket = _eastBucketName,
                 SourceKey = sourceKey,
-                DestinationBucket = westBucketName,
+                DestinationBucket = _westBucketName,
                 DestinationKey = destinationKey,
-
             });
-            Assert.AreEqual(HttpStatusCode.OK, copyObjectResponse.HttpStatusCode);
+            Assert.Equal(HttpStatusCode.OK, copyObjectResponse.HttpStatusCode);
 
-            var getObjectResponse = await usWestClient.GetObjectAsync(new GetObjectRequest
+            var getObjectResponse = await _usWestClient.GetObjectAsync(new GetObjectRequest
             {
-                BucketName = westBucketName,
+                BucketName = _westBucketName,
                 Key = expectedKey
             });
 
@@ -209,34 +229,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var reader = new StreamReader(getObjectResponse.ResponseStream))
             {
                 var actualText = await reader.ReadToEndAsync();
-                Assert.AreEqual(testContent, actualText);
+                Assert.Equal(testContent, actualText);
             }
         }
 
-        [DataRow(testKey, true, "/destinationTestKey1.txt", true, null)]
-        [DataRow(null, true, "/destinationTestKey1.txt", true, "CopyObjectRequest.SourceKey")]
-        [DataRow(testKey, false, "/destinationTestKey1.txt", true, "CopyObjectRequest.SourceBucket")]
-        [DataRow(testKey, true, null, true, "CopyObjectRequest.DestinationKey")]
-        [DataRow(testKey, true, "/destinationTestKey1.txt", false, "CopyObjectRequest.DestinationBucket")]
-        [DataTestMethod]
+        [Theory]
+        [InlineData(testKey, true, "/destinationTestKey1.txt", true, null)]
+        [InlineData(null, true, "/destinationTestKey1.txt", true, "CopyObjectRequest.SourceKey")]
+        [InlineData(testKey, false, "/destinationTestKey1.txt", true, "CopyObjectRequest.SourceBucket")]
+        [InlineData(testKey, true, null, true, "CopyObjectRequest.DestinationKey")]
+        [InlineData(testKey, true, "/destinationTestKey1.txt", false, "CopyObjectRequest.DestinationBucket")]
         public async Task TestCopyObjectWithMissingParameters(string sourceKey, bool includeSourceBucket, string destinationKey, bool includeDestinationBucket, string expectedMissingParameter)
         {
             string missingParameter = null;
             try
             {
-                await usEastClient.CopyObjectAsync(new CopyObjectRequest
+                await _usEastClient.CopyObjectAsync(new CopyObjectRequest
                 {
                     SourceKey = sourceKey,
-                    SourceBucket = includeSourceBucket ? eastBucketName : null,
+                    SourceBucket = includeSourceBucket ? _eastBucketName : null,
                     DestinationKey = destinationKey,
-                    DestinationBucket = includeDestinationBucket ? eastBucketName : null,
+                    DestinationBucket = includeDestinationBucket ? _eastBucketName : null,
                 });
             }
             catch (ArgumentException ex)
             {
                 missingParameter = ex.ParamName;
             }
-            Assert.AreEqual(missingParameter, expectedMissingParameter);
+            Assert.Equal(missingParameter, expectedMissingParameter);
         }
     }
 }

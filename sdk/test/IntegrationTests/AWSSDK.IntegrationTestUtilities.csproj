@@ -24,21 +24,11 @@
     <Compile Remove="**/**" />
     <Compile Include="Tests/General.CommonUtilities.cs" />
     <Compile Include="Utils/**" />
-    <Compile Include="Tests/TestBase.cs" />
     <None Remove="Config/**" />
-    <None Remove="Tests/CloudTrailBucketPolicy.json" />
-    <None Remove="Tests/ListObjectsResponse.xml" />
     <None Remove="obj/**" />
   </ItemGroup>
   
   <ItemGroup>
-    <EmbeddedResource Include="Tests/ListObjectsResponse.xml" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.97" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.97" />
     <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.97" />

@@ -1,20 +1,22 @@
 using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class ListObjectsTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class ListObjectsTests : IClassFixture<S3BucketFixture>, IAsyncLifetime
     {
         private const string content = "Test content";
-        private static string bucketName;
-        private static List<string> keys = new List<string>
+
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
+
+        private static readonly List<string> keys = new List<string>
         {
             //"a/",
             //"a/b/",
@@ -27,126 +29,123 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             "a/g&j",
         };
 
-        [ClassInitialize]
-        public static async Task Initialize(TestContext a)
+        public ListObjectsTests(S3BucketFixture bucket)
         {
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
+            _client = bucket.Client;
+            _bucketName = bucket.BucketName;
+        }
 
+        public async ValueTask InitializeAsync()
+        {
+            // Pre-populate the bucket with test objects (duplicate puts are idempotent).
             foreach (var key in keys)
             {
                 if (key.EndsWith("/"))
-                {
                     continue;
-                }
 
-                await Client.PutObjectAsync(new PutObjectRequest
+                await _client.PutObjectAsync(new PutObjectRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     Key = key,
                     ContentBody = content
                 });
             }
         }
 
-        [ClassCleanup]
-        public static async Task ClassCleanup()
-        {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
-            BaseClean();
-        }
+        public ValueTask DisposeAsync() => new ValueTask();
 
-        [TestMethod]
+        [Fact]
         public async Task TestS3ObjectsContainBucketName()
         {
-            var response = await Client.ListObjectsAsync(new ListObjectsRequest
+            var response = await _client.ListObjectsAsync(new ListObjectsRequest
             {
-                BucketName = bucketName
+                BucketName = _bucketName
             });
 
             foreach (var s3Object in response.S3Objects)
             {
-                Assert.AreEqual(s3Object.BucketName, bucketName);
+                Assert.Equal(s3Object.BucketName, _bucketName);
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestListV2()
         {
-            var response = await Client.ListObjectsV2Async(new ListObjectsV2Request
+            var response = await _client.ListObjectsV2Async(new ListObjectsV2Request
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 StartAfter = keys[0],
                 FetchOwner = true
             });
-            Assert.IsFalse(response.IsTruncated.Value);
-            Assert.AreEqual(keys.Count - 1, response.KeyCount);
-            Assert.AreEqual(keys.Count - 1, response.S3Objects.Count);
-            Assert.IsNull(response.ContinuationToken);
-            Assert.IsNotNull(response.S3Objects[0].Owner);
-            Assert.IsTrue(response.S3Objects.Any(o => o.Key.Contains("\r")));
-            Assert.IsTrue(response.S3Objects.Any(o => o.Key.Contains("\n")));
-            Assert.IsTrue(response.S3Objects.Any(o => o.Key.Contains("&")));
+            Assert.False(response.IsTruncated.Value);
+            Assert.Equal(keys.Count - 1, response.KeyCount);
+            Assert.Equal(keys.Count - 1, response.S3Objects.Count);
+            Assert.Null(response.ContinuationToken);
+            Assert.NotNull(response.S3Objects[0].Owner);
+            Assert.True(response.S3Objects.Any(o => o.Key.Contains("\r")));
+            Assert.True(response.S3Objects.Any(o => o.Key.Contains("\n")));
+            Assert.True(response.S3Objects.Any(o => o.Key.Contains("&")));
 
-            response = await Client.ListObjectsV2Async(new ListObjectsV2Request
+            response = await _client.ListObjectsV2Async(new ListObjectsV2Request
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 MaxKeys = 1,
                 StartAfter = keys[0],
                 FetchOwner = true
             });
-            Assert.IsTrue(response.IsTruncated.Value);
-            Assert.AreEqual(1, response.KeyCount);
-            Assert.AreEqual(1, response.MaxKeys);
-            Assert.AreEqual(1, response.S3Objects.Count);
-            Assert.IsNull(response.ContinuationToken);
-            Assert.IsNotNull(response.NextContinuationToken);
-            Assert.IsNotNull(response.S3Objects[0].Owner);
-            Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
+            Assert.True(response.IsTruncated.Value);
+            Assert.Equal(1, response.KeyCount);
+            Assert.Equal(1, response.MaxKeys);
+            Assert.Equal(1, response.S3Objects.Count);
+            Assert.Null(response.ContinuationToken);
+            Assert.NotNull(response.NextContinuationToken);
+            Assert.NotNull(response.S3Objects[0].Owner);
+            Assert.Equal(response.S3Objects[0].BucketName, _bucketName);
 
-            response = await Client.ListObjectsV2Async(new ListObjectsV2Request
+            response = await _client.ListObjectsV2Async(new ListObjectsV2Request
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 MaxKeys = 1,
                 FetchOwner = true,
                 ContinuationToken = response.NextContinuationToken
             });
-            Assert.IsTrue(response.IsTruncated.Value);
-            Assert.AreEqual(1, response.KeyCount);
-            Assert.AreEqual(1, response.MaxKeys);
-            Assert.IsNotNull(response.ContinuationToken);
-            Assert.IsNotNull(response.NextContinuationToken);
-            Assert.AreEqual(1, response.S3Objects.Count);
-            Assert.IsNotNull(response.S3Objects[0].Owner);
-            Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
+            Assert.True(response.IsTruncated.Value);
+            Assert.Equal(1, response.KeyCount);
+            Assert.Equal(1, response.MaxKeys);
+            Assert.NotNull(response.ContinuationToken);
+            Assert.NotNull(response.NextContinuationToken);
+            Assert.Equal(1, response.S3Objects.Count);
+            Assert.NotNull(response.S3Objects[0].Owner);
+            Assert.Equal(response.S3Objects[0].BucketName, _bucketName);
 
-            response = await Client.ListObjectsV2Async(new ListObjectsV2Request
+            response = await _client.ListObjectsV2Async(new ListObjectsV2Request
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 MaxKeys = 1,
             });
-            Assert.IsTrue(response.IsTruncated.Value);
-            Assert.AreEqual(1, response.KeyCount);
-            Assert.AreEqual(1, response.MaxKeys);
-            Assert.AreEqual(1, response.S3Objects.Count);
-            Assert.IsNull(response.ContinuationToken);
-            Assert.IsNotNull(response.NextContinuationToken);
-            Assert.IsNull(response.S3Objects[0].Owner);
-            Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
+            Assert.True(response.IsTruncated.Value);
+            Assert.Equal(1, response.KeyCount);
+            Assert.Equal(1, response.MaxKeys);
+            Assert.Equal(1, response.S3Objects.Count);
+            Assert.Null(response.ContinuationToken);
+            Assert.NotNull(response.NextContinuationToken);
+            Assert.Null(response.S3Objects[0].Owner);
+            Assert.Equal(response.S3Objects[0].BucketName, _bucketName);
 
-            response = await Client.ListObjectsV2Async(new ListObjectsV2Request
+            response = await _client.ListObjectsV2Async(new ListObjectsV2Request
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 MaxKeys = 1,
                 ContinuationToken = response.NextContinuationToken
             });
-            Assert.IsTrue(response.IsTruncated.Value);
-            Assert.AreEqual(1, response.KeyCount);
-            Assert.AreEqual(1, response.MaxKeys);
-            Assert.IsNotNull(response.ContinuationToken);
-            Assert.IsNotNull(response.NextContinuationToken);
-            Assert.AreEqual(1, response.S3Objects.Count);
-            Assert.IsNull(response.S3Objects[0].Owner);
-            Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
+            Assert.True(response.IsTruncated.Value);
+            Assert.Equal(1, response.KeyCount);
+            Assert.Equal(1, response.MaxKeys);
+            Assert.NotNull(response.ContinuationToken);
+            Assert.NotNull(response.NextContinuationToken);
+            Assert.Equal(1, response.S3Objects.Count);
+            Assert.Null(response.S3Objects[0].Owner);
+            Assert.Equal(response.S3Objects[0].BucketName, _bucketName);
         }
     }
 }

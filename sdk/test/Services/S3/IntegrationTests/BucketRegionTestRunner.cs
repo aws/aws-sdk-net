@@ -114,6 +114,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             else if (TestBucket.CreationDate.Value.AddHours(TemporaryRedirectMaxExpirationHours) < DateTime.UtcNow)
             {
+                // Clear the entire cache so each test starts from a clean state and can observe
+                // the SDK re-populating the cache from scratch.
+                // BucketRegionTestRunner is only used by BucketRegionTests, so this does not
+                // affect other test classes. The SDK handles cache misses gracefully via redirect,
+                // so any concurrently running tests are unaffected.
                 BucketRegionDetector.BucketRegionCache.Clear();
                 TestBucketIsReady = true;
             }

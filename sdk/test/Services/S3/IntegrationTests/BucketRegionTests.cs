@@ -2,82 +2,82 @@ using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
+    [Trait("Category", "S3")]
+    [Collection("Serial")]
     public class BucketRegionTests
     {
-        [TestMethod]
+        [Fact]
         public async Task HappyCaseSigV4()
         {
-            // make sure the cache works when it gets the region from the response body
             using (var runner = await BucketRegionTestRunner.CreateAsync())
             {
                 if (runner.TestBucketIsReady)
                 {
                     await runner.USEast1Client.PutObjectAsync(runner.PutObjectRequest);
-                    Assert.IsTrue(BucketRegionDetector.BucketRegionCache.TryGetValue(runner.BucketName, out RegionEndpoint cachedRegion));
-                    Assert.AreEqual(RegionEndpoint.USWest1, cachedRegion);
+                    Assert.True(BucketRegionDetector.BucketRegionCache.TryGetValue(runner.BucketName, out RegionEndpoint cachedRegion));
+                    Assert.Equal(RegionEndpoint.USWest1, cachedRegion);
                 }
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task HappyCaseGetObjectMetedata()
         {
-            // make sure the cache works when it gets the region from a HEAD bucket request
+            // Make sure the cache works when it gets the region from a HEAD bucket request
             using (var runner = await BucketRegionTestRunner.CreateAsync())
             {
                 if (runner.TestBucketIsReady)
                 {
-                    // ensure the object exists then clear the cache
+                    // Ensure the object exists then clear the cache
                     await runner.USEast1Client.PutObjectAsync(runner.PutObjectRequest);
                     BucketRegionDetector.BucketRegionCache.Clear();
 
                     await runner.USEast1Client.GetObjectMetadataAsync(runner.GetObjectMetadataRequest);
-                    Assert.IsTrue(BucketRegionDetector.BucketRegionCache.TryGetValue(runner.BucketName, out RegionEndpoint cachedRegion));
-                    Assert.AreEqual(RegionEndpoint.USWest1, cachedRegion);
+                    Assert.True(BucketRegionDetector.BucketRegionCache.TryGetValue(runner.BucketName, out RegionEndpoint cachedRegion));
+                    Assert.Equal(RegionEndpoint.USWest1, cachedRegion);
                 }
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task HappyCaseDoesS3BucketExist()
         {
-            // make sure the cache works when it gets the region from the x-amz-bucket-region header
+            // Make sure the cache works when it gets the region from the x-amz-bucket-region header
             using (var runner = await BucketRegionTestRunner.CreateAsync())
             {
                 if (runner.TestBucketIsReady)
                 {
-                    Assert.IsTrue(await AmazonS3Util.DoesS3BucketExistV2Async(runner.USEast1Client, runner.BucketName));
-                    Assert.IsTrue(BucketRegionDetector.BucketRegionCache.TryGetValue(runner.BucketName, out RegionEndpoint cachedRegion));
-                    Assert.AreEqual(RegionEndpoint.USWest1, cachedRegion);
+                    Assert.True(await AmazonS3Util.DoesS3BucketExistV2Async(runner.USEast1Client, runner.BucketName));
+                    Assert.True(BucketRegionDetector.BucketRegionCache.TryGetValue(runner.BucketName, out RegionEndpoint cachedRegion));
+                    Assert.Equal(RegionEndpoint.USWest1, cachedRegion);
                 }
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task BucketRecreatedInDifferentRegion()
         {
-            // make sure the cache gets refreshed when it should
+            // Make sure the cache gets refreshed when it should
             using (var runner = await BucketRegionTestRunner.CreateAsync())
             {
                 if (runner.TestBucketIsReady)
                 {
                     BucketRegionDetector.BucketRegionCache.AddOrUpdate(runner.BucketName, RegionEndpoint.APNortheast2);
                     await runner.USEast1Client.PutObjectAsync(runner.PutObjectRequest);
-                    Assert.IsTrue(BucketRegionDetector.BucketRegionCache.TryGetValue(runner.BucketName, out RegionEndpoint cachedRegion));
-                    Assert.AreEqual(RegionEndpoint.USWest1, cachedRegion);
+                    Assert.True(BucketRegionDetector.BucketRegionCache.TryGetValue(runner.BucketName, out RegionEndpoint cachedRegion));
+                    Assert.Equal(RegionEndpoint.USWest1, cachedRegion);
                 }
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task GetPreSignedUrlUSEast1SigV2()
         {
             using (var runner = await BucketRegionTestRunner.CreateAsync())
@@ -86,12 +86,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     var url = await runner.USEast1Client.GetPreSignedURLAsync(runner.PreSignedUrlRequestExtendedExpiration);
                     var statusCode = await GetHttpStatusCode(url);
-                    Assert.AreEqual(HttpStatusCode.OK, statusCode);
+                    Assert.Equal(HttpStatusCode.OK, statusCode);
                 }
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task GetPreSignedUrlUSWest1SigV2()
         {
             using (var runner = await BucketRegionTestRunner.CreateAsync())
@@ -100,12 +100,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     var url = await runner.USWest1Client.GetPreSignedURLAsync(runner.PreSignedUrlRequestExtendedExpiration);
                     var statusCode = await GetHttpStatusCode(url);
-                    Assert.AreEqual(HttpStatusCode.OK, statusCode);
+                    Assert.Equal(HttpStatusCode.OK, statusCode);
                 }
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task GetPreSignedUrlSigV4USWest1ClientUSWest2BucketOk()
         {
             using (var runner = await BucketRegionTestRunner.CreateAsync())
@@ -114,12 +114,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     var url = await runner.USWest1Client.GetPreSignedURLAsync(runner.PreSignedUrlRequest);
                     var statusCode = await GetHttpStatusCode(url);
-                    Assert.AreEqual(HttpStatusCode.OK, statusCode);
+                    Assert.Equal(HttpStatusCode.OK, statusCode);
                 }
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task GetPreSignedUrlSigV4USEast1ClientUSWest2BucketFail()
         {
             using (var runner = await BucketRegionTestRunner.CreateAsync())
@@ -128,12 +128,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     var url = await runner.USEast1Client.GetPreSignedURLAsync(runner.PreSignedUrlRequest);
                     var statusCode = await GetHttpStatusCode(url);
-                    Assert.AreEqual(HttpStatusCode.BadRequest, statusCode);
+                    Assert.Equal(HttpStatusCode.BadRequest, statusCode);
                 }
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task DeleteBucketUsingS3RegionUSEast1Enum()
         {
             using (var runner = await BucketRegionTestRunner.CreateAsync())
@@ -147,7 +147,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task GetBucketLocation()
         {
             using (var runner = await BucketRegionTestRunner.CreateAsync())
@@ -156,8 +156,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 try
                 {
                     var nonNullocationResponse = await runner.USWest1Client.GetBucketLocationAsync(nonUsEast1Bucket);
-                    Assert.IsNotNull(nonNullocationResponse.Location);
-                    Assert.AreEqual(RegionEndpoint.USWest1.SystemName, nonNullocationResponse.Location.ToString());
+                    Assert.NotNull(nonNullocationResponse.Location);
+                    Assert.Equal(RegionEndpoint.USWest1.SystemName, nonNullocationResponse.Location.ToString());
                 }
                 finally
                 {
@@ -172,7 +172,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 try
                 {
                     var nullLocationResponse = await runner.USEast1Client.GetBucketLocationAsync(usEast1Bucket);
-                    Assert.IsTrue(string.IsNullOrEmpty(nullLocationResponse.Location));
+                    Assert.True(string.IsNullOrEmpty(nullLocationResponse.Location));
                 }
                 finally
                 {
@@ -184,22 +184,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
+        private static readonly HttpClient _httpClient = new HttpClient(
+            new HttpClientHandler { AllowAutoRedirect = false });
+
         private async Task<HttpStatusCode> GetHttpStatusCode(string url)
         {
-            var httpRequest = WebRequest.Create(url) as HttpWebRequest;
-            try
+            using (var response = await _httpClient.GetAsync(url))
             {
-                using (var httpResponse = await httpRequest.GetResponseAsync() as HttpWebResponse)
-                {
-                    return httpResponse.StatusCode;
-                }
-            }
-            catch (WebException we)
-            {
-                using (var errorResponse = we.Response as HttpWebResponse)
-                {
-                    return errorResponse.StatusCode;
-                }
+                return response.StatusCode;
             }
         }
     }

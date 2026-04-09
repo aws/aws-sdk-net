@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+    <OutputType Condition="'$(TargetFramework)' == 'net8.0'">Exe</OutputType>
     <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
     <DebugType>portable</DebugType>
     <AssemblyName>UnitTests</AssemblyName>
@@ -17,7 +18,7 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
-    <NoWarn>CS1591,CS0612,CS0618,xUnit1013,NU1701</NoWarn>
+    <NoWarn>CS1591,CS0612,CS0618,xUnit1013,xUnit1051,NU1701</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
@@ -57,9 +58,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
-    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <!-- xunit.v3.extensibility.core for compile-only TFMs (netstandard2.0/netcoreapp3.1, no runner entry point) -->
+    <PackageReference Include="xunit.v3.extensibility.core" Version="3.2.2" Condition="'$(TargetFramework)' == 'netstandard2.0' Or '$(TargetFramework)' == 'netcoreapp3.1'" />
+  
+    <!-- Use xunit.v3.core directly to avoid the v2 compat shim from the xunit.v3 metapackage -->
+    <PackageReference Include="xunit.v3.core" Version="3.2.2" Condition="'$(TargetFramework)' != 'netstandard2.0' And '$(TargetFramework)' != 'netcoreapp3.1'" />
+
     <PackageReference Include="Moq" Version="4.8.3"/>
   </ItemGroup>
 
