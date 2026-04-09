@@ -4737,6 +4737,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ClusterInstanceType MlG6Xlarge = new ClusterInstanceType("ml.g6.xlarge");
         /// <summary>
+        /// Constant MlG7e12xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG7e12xlarge = new ClusterInstanceType("ml.g7e.12xlarge");
+        /// <summary>
+        /// Constant MlG7e24xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG7e24xlarge = new ClusterInstanceType("ml.g7e.24xlarge");
+        /// <summary>
+        /// Constant MlG7e2xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG7e2xlarge = new ClusterInstanceType("ml.g7e.2xlarge");
+        /// <summary>
+        /// Constant MlG7e48xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG7e48xlarge = new ClusterInstanceType("ml.g7e.48xlarge");
+        /// <summary>
+        /// Constant MlG7e4xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG7e4xlarge = new ClusterInstanceType("ml.g7e.4xlarge");
+        /// <summary>
+        /// Constant MlG7e8xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG7e8xlarge = new ClusterInstanceType("ml.g7e.8xlarge");
+        /// <summary>
         /// Constant MlGr64xlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlGr64xlarge = new ClusterInstanceType("ml.gr6.4xlarge");

@@ -216,7 +216,6 @@ namespace Amazon.SageMaker.Model
         /// Specifies the instance type of the instance group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ClusterInstanceType InstanceType
         {
             get { return this._instanceType; }
