@@ -54,6 +54,7 @@ namespace Amazon.Imagebuilder.Model
         private string _imagePipelineArn;
         private string _imageRecipeArn;
         private ImageScanningConfiguration _imageScanningConfiguration;
+        private Dictionary<string, string> _imageTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ImageTestsConfiguration _imageTestsConfiguration;
         private string _infrastructureConfigurationArn;
         private PipelineLoggingConfiguration _loggingConfiguration;
@@ -232,6 +233,30 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetImageScanningConfiguration()
         {
             return this._imageScanningConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageTags. 
+        /// <para>
+        /// The tags to be applied to the images produced by this pipeline.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> ImageTags
+        {
+            get { return this._imageTags; }
+            set { this._imageTags = value; }
+        }
+
+        // Check to see if ImageTags property is set
+        internal bool IsSetImageTags()
+        {
+            return this._imageTags != null && (this._imageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
