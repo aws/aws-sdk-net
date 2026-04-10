@@ -1,3 +1,24 @@
+### 4.0.230.0 (2026-04-10 18:22 UTC)
+* Connect (4.0.40.0)
+	* Conversational Analytics for Email
+* DevOpsAgent (4.0.2.0)
+	* Devops Agent now supports associate Splunk, Datadog and custom MCP server to an Agent Space.
+* ECS (4.0.19.0)
+	* Minor updates to exceptions for completeness
+* Imagebuilder (4.0.9.0)
+	* Image pipelines can now automatically apply tags to images they create. Set the imageTags property when creating or updating your pipelines to get started.
+* MediaConvert (4.0.16.0)
+	* Adds support for MV-HEVC video output and clear lead for AV1 DRM output.
+* ObservabilityAdmin (4.0.9.0)
+	* CloudWatch Observability Admin adds support for multi-region telemetry evaluation and telemetry enablement rules.
+* RTBFabric (4.0.4.0)
+	* Adds optional health check configuration for Responder Gateways with ASG Managed Endpoints. When provided, RTB Fabric continuously probes customers' instance IPs and routes traffic only to healthy ones, reducing errors during deployments, scaling events, and instance failures.
+* SageMaker (4.0.50.0)
+	* Support new SageMaker StartClusterHealthCheck API for on-demand DHC on Hyperpod EKS cluster. Support updated CreateCluster, UpdateCluster, DescribeCluster, BatchAddClusterNodes APIs for flexible instance group on HyperPod cluster
+* Core 4.0.3.29
+	* Fixed adaptive retry mode to adjust client send rate when retries are disabled.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.229.0 (2026-04-09 18:27 UTC)
 * BCMDashboards (4.0.3.0)
 	* Scheduled email reports of Billing and Cost Management Dashboards

@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Fixed adaptive retry mode to adjust client send rate when retries are disabled."
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}
