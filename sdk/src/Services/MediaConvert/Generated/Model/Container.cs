@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
     {
         private double? _duration;
         private Format _format;
+        private string _startTimecode;
         private List<Track> _tracks = AWSConfigs.InitializeCollections ? new List<Track>() : null;
 
         /// <summary>
@@ -70,6 +71,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFormat()
         {
             return this._format != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTimecode. The start timecode of the media file, in
+        /// HH:MM:SS:FF format (or HH:MM:SS;FF for drop frame timecode). Note that this field
+        /// is null when the container does not include an embedded start timecode.
+        /// </summary>
+        public string StartTimecode
+        {
+            get { return this._startTimecode; }
+            set { this._startTimecode = value; }
+        }
+
+        // Check to see if StartTimecode property is set
+        internal bool IsSetStartTimecode()
+        {
+            return this._startTimecode != null;
         }
 
         /// <summary>

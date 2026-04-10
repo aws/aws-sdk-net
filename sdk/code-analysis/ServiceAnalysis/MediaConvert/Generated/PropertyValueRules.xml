@@ -1755,6 +1755,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MultiViewInput.FileInput</property>
+    <pattern>^s3://([^\/]+\/+)+((([^\/]*)))|^https?://[^\/].*[^&amp;]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.MxfXavcProfileSettings.MaxAncDataSize</property>
     <min>0</min>
     <max>2147483647</max>

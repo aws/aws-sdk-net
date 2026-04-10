@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Container Object
+    /// Response Unmarshaller for MultiViewInput Object
     /// </summary>  
-    public class ContainerUnmarshaller : IJsonUnmarshaller<Container, JsonUnmarshallerContext>
+    public class MultiViewInputUnmarshaller : IJsonUnmarshaller<MultiViewInput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Container Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MultiViewInput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Container unmarshalledObject = new Container();
+            MultiViewInput unmarshalledObject = new MultiViewInput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("duration", targetDepth))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("format", targetDepth))
+                if (context.TestExpression("fileInput", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("startTimecode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StartTimecode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tracks", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Track, TrackUnmarshaller>(TrackUnmarshaller.Instance);
-                    unmarshalledObject.Tracks = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.FileInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContainerUnmarshaller _instance = new ContainerUnmarshaller();        
+        private static MultiViewInputUnmarshaller _instance = new MultiViewInputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContainerUnmarshaller Instance
+        public static MultiViewInputUnmarshaller Instance
         {
             get
             {
