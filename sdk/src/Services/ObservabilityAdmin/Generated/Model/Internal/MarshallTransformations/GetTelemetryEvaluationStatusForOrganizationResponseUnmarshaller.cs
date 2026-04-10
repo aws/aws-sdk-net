@@ -58,6 +58,18 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("HomeRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.HomeRegion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RegionStatuses", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<RegionStatus, RegionStatusUnmarshaller>(RegionStatusUnmarshaller.Instance);
+                    response.RegionStatuses = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TelemetryRule Object
+    /// Response Unmarshaller for RegionStatus Object
     /// </summary>  
-    public class TelemetryRuleUnmarshaller : IJsonUnmarshaller<TelemetryRule, JsonUnmarshallerContext>
+    public class RegionStatusUnmarshaller : IJsonUnmarshaller<RegionStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TelemetryRule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RegionStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            TelemetryRule unmarshalledObject = new TelemetryRule();
+            RegionStatus unmarshalledObject = new RegionStatus();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,52 +56,28 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllRegions", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AllRegions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DestinationConfiguration", targetDepth))
-                {
-                    var unmarshaller = TelemetryDestinationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DestinationConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Regions", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Regions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ResourceType", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Scope", targetDepth))
+                if (context.TestExpression("Region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectionCriteria", targetDepth))
+                if (context.TestExpression("RuleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelectionCriteria = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.RuleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TelemetrySourceTypes", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.TelemetrySourceTypes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TelemetryType", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TelemetryType = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -109,12 +85,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         }
 
 
-        private static TelemetryRuleUnmarshaller _instance = new TelemetryRuleUnmarshaller();        
+        private static RegionStatusUnmarshaller _instance = new RegionStatusUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TelemetryRuleUnmarshaller Instance
+        public static RegionStatusUnmarshaller Instance
         {
             get
             {

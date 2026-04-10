@@ -138,6 +138,14 @@
     <pattern>arn:aws([a-z0-9\-]+)?:resource-explorer-2:([a-z0-9\-]+)?:([0-9]{12})?:managed-view/(.+)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetTelemetryEvaluationStatusResponse.HomeRegion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetTelemetryEvaluationStatusForOrganizationResponse.HomeRegion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.GetTelemetryPipelineRequest.PipelineIdentifier</property>
     <min>1</min>
     <max>512</max>
@@ -146,6 +154,10 @@
     <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleRequest.RuleIdentifier</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleResponse.HomeRegion</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleResponse.RuleArn</property>
@@ -163,6 +175,10 @@
     <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleForOrganizationRequest.RuleIdentifier</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleForOrganizationResponse.HomeRegion</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.GetTelemetryRuleForOrganizationResponse.RuleArn</property>
@@ -359,6 +375,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.LogsEncryptionConfiguration.KmsKeyArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws([a-z0-9\-]+)?:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.RegionStatus.Region</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.RegionStatus.RuleArn</property>
     <min>1</min>
     <max>1011</max>
     <pattern>arn:aws([a-z0-9\-]+)?:([a-zA-Z0-9\-]+):([a-z0-9\-]+)?:([0-9]{12})?:(.+)</pattern>
