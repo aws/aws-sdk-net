@@ -613,6 +613,42 @@
     <pattern>arn:aws:iam::[0-9]{12}:role/.{1,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RTBFabric.Model.HealthCheckConfig.HealthyThresholdCount</property>
+    <min>2</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.HealthCheckConfig.IntervalSeconds</property>
+    <min>5</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.HealthCheckConfig.Path</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.HealthCheckConfig.Port</property>
+    <min>80</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.HealthCheckConfig.StatusCodeMatcher</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.HealthCheckConfig.TimeoutMs</property>
+    <min>100</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RTBFabric.Model.HealthCheckConfig.UnhealthyThresholdCount</property>
+    <min>2</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RTBFabric.Model.LinkApplicationLogSampling.ErrorLog</property>
     <min>0</min>
     <max>100</max>
