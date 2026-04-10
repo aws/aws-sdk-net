@@ -95,7 +95,7 @@
     <property>Amazon.DevOpsAgent.Model.CreatePrivateConnectionResponse.ResourceConfigurationId</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
+    <pattern>(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}|rcfg-[0-9a-z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.CreatePrivateConnectionResponse.ResourceGatewayId</property>
@@ -153,7 +153,7 @@
     <property>Amazon.DevOpsAgent.Model.DescribePrivateConnectionResponse.ResourceConfigurationId</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
+    <pattern>(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}|rcfg-[0-9a-z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DescribePrivateConnectionResponse.ResourceGatewayId</property>
@@ -577,7 +577,7 @@
     <property>Amazon.DevOpsAgent.Model.UpdatePrivateConnectionCertificateResponse.ResourceConfigurationId</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
+    <pattern>(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}|rcfg-[0-9a-z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.UpdatePrivateConnectionCertificateResponse.ResourceGatewayId</property>
@@ -739,7 +739,7 @@
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerAPIKeyConfig.ApiKeyValue</property>
     <min>1</min>
-    <pattern>[a-zA-Z0-9+/=._-]+(\s[a-zA-Z0-9+/=._-]+)?</pattern>
+    <pattern>[!-~]([ \t]*[!-~])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerAuthorizationDiscoveryConfig.ReturnToEndpoint</property>
@@ -887,7 +887,7 @@
     <property>Amazon.DevOpsAgent.Model.PrivateConnectionSummary.ResourceConfigurationId</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
+    <pattern>(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}|rcfg-[0-9a-z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.PrivateConnectionSummary.ResourceGatewayId</property>
@@ -1005,7 +1005,7 @@
     <property>Amazon.DevOpsAgent.Model.SelfManagedInput.ResourceConfigurationId</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
+    <pattern>(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}|rcfg-[0-9a-z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.ServiceManagedInput.Certificate</property>

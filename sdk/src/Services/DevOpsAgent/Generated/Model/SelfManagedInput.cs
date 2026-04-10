@@ -59,7 +59,7 @@ namespace Amazon.DevOpsAgent.Model
         /// <summary>
         /// Gets and sets the property ResourceConfigurationId. 
         /// <para>
-        /// The ARN of the Resource Configuration.
+        /// The ID or ARN of the resource configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
