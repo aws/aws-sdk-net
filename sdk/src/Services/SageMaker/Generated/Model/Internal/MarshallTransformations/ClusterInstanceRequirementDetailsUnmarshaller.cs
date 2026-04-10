@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BatchAddClusterNodesError Object
+    /// Response Unmarshaller for ClusterInstanceRequirementDetails Object
     /// </summary>  
-    public class BatchAddClusterNodesErrorUnmarshaller : IJsonUnmarshaller<BatchAddClusterNodesError, JsonUnmarshallerContext>
+    public class ClusterInstanceRequirementDetailsUnmarshaller : IJsonUnmarshaller<ClusterInstanceRequirementDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchAddClusterNodesError Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ClusterInstanceRequirementDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            BatchAddClusterNodesError unmarshalledObject = new BatchAddClusterNodesError();
+            ClusterInstanceRequirementDetails unmarshalledObject = new ClusterInstanceRequirementDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AvailabilityZones", targetDepth))
+                if (context.TestExpression("CurrentInstanceTypes", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AvailabilityZones = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CurrentInstanceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorCode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FailedCount", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FailedCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InstanceGroupName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceGroupName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InstanceTypes", targetDepth))
+                if (context.TestExpression("DesiredInstanceTypes", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.InstanceTypes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Message", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DesiredInstanceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static BatchAddClusterNodesErrorUnmarshaller _instance = new BatchAddClusterNodesErrorUnmarshaller();        
+        private static ClusterInstanceRequirementDetailsUnmarshaller _instance = new ClusterInstanceRequirementDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchAddClusterNodesErrorUnmarshaller Instance
+        public static ClusterInstanceRequirementDetailsUnmarshaller Instance
         {
             get
             {

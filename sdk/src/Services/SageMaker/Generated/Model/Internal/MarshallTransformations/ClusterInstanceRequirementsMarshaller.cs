@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AddClusterNodeSpecification Marshaller
+    /// ClusterInstanceRequirements Marshaller
     /// </summary>
-    public class AddClusterNodeSpecificationMarshaller : IRequestMarshaller<AddClusterNodeSpecification, JsonMarshallerContext> 
+    public class ClusterInstanceRequirementsMarshaller : IRequestMarshaller<ClusterInstanceRequirements, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,33 +42,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AddClusterNodeSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(ClusterInstanceRequirements requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAvailabilityZones())
-            {
-                context.Writer.WritePropertyName("AvailabilityZones");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectAvailabilityZonesListValue in requestObject.AvailabilityZones)
-                {
-                        context.Writer.WriteStringValue(requestObjectAvailabilityZonesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetIncrementTargetCountBy())
-            {
-                context.Writer.WritePropertyName("IncrementTargetCountBy");
-                context.Writer.WriteNumberValue(requestObject.IncrementTargetCountBy.Value);
-            }
-
-            if(requestObject.IsSetInstanceGroupName())
-            {
-                context.Writer.WritePropertyName("InstanceGroupName");
-                context.Writer.WriteStringValue(requestObject.InstanceGroupName);
-            }
-
             if(requestObject.IsSetInstanceTypes())
             {
                 context.Writer.WritePropertyName("InstanceTypes");
@@ -85,7 +62,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AddClusterNodeSpecificationMarshaller Instance = new AddClusterNodeSpecificationMarshaller();
+        public readonly static ClusterInstanceRequirementsMarshaller Instance = new ClusterInstanceRequirementsMarshaller();
 
     }
 }

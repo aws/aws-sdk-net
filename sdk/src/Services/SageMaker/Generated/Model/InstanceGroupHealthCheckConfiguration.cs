@@ -30,20 +30,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies an instance group and the number of nodes to add to it.
+    /// The configuration of deep health checks for an instance group.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Overlapping deep health check configurations will be merged into a single operation.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class AddClusterNodeSpecification
+    public partial class InstanceGroupHealthCheckConfiguration
     {
-        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private int? _incrementTargetCountBy;
+        private List<string> _deepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _instanceGroupName;
-        private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZones. 
+        /// Gets and sets the property DeepHealthChecks. 
         /// <para>
-        /// The availability zones in which to add nodes. Use this to target node placement in
-        /// specific availability zones within a flexible instance group.
+        /// A list of deep health checks to be performed.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -51,43 +55,23 @@ namespace Amazon.SageMaker.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
-        public List<string> AvailabilityZones
+        [AWSProperty(Required=true, Min=1, Max=2)]
+        public List<string> DeepHealthChecks
         {
-            get { return this._availabilityZones; }
-            set { this._availabilityZones = value; }
+            get { return this._deepHealthChecks; }
+            set { this._deepHealthChecks = value; }
         }
 
-        // Check to see if AvailabilityZones property is set
-        internal bool IsSetAvailabilityZones()
+        // Check to see if DeepHealthChecks property is set
+        internal bool IsSetDeepHealthChecks()
         {
-            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property IncrementTargetCountBy. 
-        /// <para>
-        /// The number of nodes to add to the specified instance group. The total number of nodes
-        /// across all instance groups in a single request cannot exceed 50.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
-        public int? IncrementTargetCountBy
-        {
-            get { return this._incrementTargetCountBy; }
-            set { this._incrementTargetCountBy = value; }
-        }
-
-        // Check to see if IncrementTargetCountBy property is set
-        internal bool IsSetIncrementTargetCountBy()
-        {
-            return this._incrementTargetCountBy.HasValue; 
+            return this._deepHealthChecks != null && (this._deepHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property InstanceGroupName. 
         /// <para>
-        /// The name of the instance group to which you want to add nodes.
+        /// The name of the instance group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -104,28 +88,33 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceTypes. 
+        /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// The instance types to use when adding nodes. Use this to target specific instance
-        /// types within a flexible instance group.
+        /// A list of Amazon Elastic Compute Cloud (EC2) instance IDs on which to perform deep
+        /// health checks.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Leave this field blank to perform deep health checks on the entire instance group.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
-        public List<string> InstanceTypes
+        [AWSProperty(Min=1, Max=500)]
+        public List<string> InstanceIds
         {
-            get { return this._instanceTypes; }
-            set { this._instanceTypes = value; }
+            get { return this._instanceIds; }
+            set { this._instanceIds = value; }
         }
 
-        // Check to see if InstanceTypes property is set
-        internal bool IsSetInstanceTypes()
+        // Check to see if InstanceIds property is set
+        internal bool IsSetInstanceIds()
         {
-            return this._instanceTypes != null && (this._instanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

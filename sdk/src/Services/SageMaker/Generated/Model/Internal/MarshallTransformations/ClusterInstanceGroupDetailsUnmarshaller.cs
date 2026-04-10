@@ -104,6 +104,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("InstanceRequirements", targetDepth))
+                {
+                    var unmarshaller = ClusterInstanceRequirementDetailsUnmarshaller.Instance;
+                    unmarshalledObject.InstanceRequirements = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("InstanceStorageConfigs", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClusterInstanceStorageConfig, ClusterInstanceStorageConfigUnmarshaller>(ClusterInstanceStorageConfigUnmarshaller.Instance);
@@ -114,6 +120,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("InstanceTypeDetails", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ClusterInstanceTypeDetail, ClusterInstanceTypeDetailUnmarshaller>(ClusterInstanceTypeDetailUnmarshaller.Instance);
+                    unmarshalledObject.InstanceTypeDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KubernetesConfig", targetDepth))

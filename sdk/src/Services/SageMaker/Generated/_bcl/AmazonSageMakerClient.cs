@@ -18218,6 +18218,59 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StartClusterHealthCheck
+
+
+        /// <summary>
+        /// Start deep health checks for a SageMaker HyperPod cluster. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeClusterNode.html">DescribeClusterNode</a>
+        /// API to track progress of the deep health checks. The unhealthy nodes will be automatically
+        /// rebooted or replaced. Please see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-resiliency-node-labels.html">
+        /// Resilience-related Kubernetes labels by SageMaker HyperPod</a> for details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartClusterHealthCheck service method.</param>
+        /// 
+        /// <returns>The response from the StartClusterHealthCheck service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartClusterHealthCheck">REST API Reference for StartClusterHealthCheck Operation</seealso>
+        public virtual StartClusterHealthCheckResponse StartClusterHealthCheck(StartClusterHealthCheckRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartClusterHealthCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartClusterHealthCheckResponseUnmarshaller.Instance;
+
+            return Invoke<StartClusterHealthCheckResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Start deep health checks for a SageMaker HyperPod cluster. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeClusterNode.html">DescribeClusterNode</a>
+        /// API to track progress of the deep health checks. The unhealthy nodes will be automatically
+        /// rebooted or replaced. Please see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-resiliency-node-labels.html">
+        /// Resilience-related Kubernetes labels by SageMaker HyperPod</a> for details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartClusterHealthCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartClusterHealthCheck service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartClusterHealthCheck">REST API Reference for StartClusterHealthCheck Operation</seealso>
+        public virtual Task<StartClusterHealthCheckResponse> StartClusterHealthCheckAsync(StartClusterHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartClusterHealthCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartClusterHealthCheckResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartClusterHealthCheckResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartEdgeDeploymentStage
 
 

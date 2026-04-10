@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AddClusterNodeSpecification Marshaller
+    /// InstanceGroupHealthCheckConfiguration Marshaller
     /// </summary>
-    public class AddClusterNodeSpecificationMarshaller : IRequestMarshaller<AddClusterNodeSpecification, JsonMarshallerContext> 
+    public class InstanceGroupHealthCheckConfigurationMarshaller : IRequestMarshaller<InstanceGroupHealthCheckConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AddClusterNodeSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(InstanceGroupHealthCheckConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAvailabilityZones())
+            if(requestObject.IsSetDeepHealthChecks())
             {
-                context.Writer.WritePropertyName("AvailabilityZones");
+                context.Writer.WritePropertyName("DeepHealthChecks");
                 context.Writer.WriteStartArray();
-                foreach(var requestObjectAvailabilityZonesListValue in requestObject.AvailabilityZones)
+                foreach(var requestObjectDeepHealthChecksListValue in requestObject.DeepHealthChecks)
                 {
-                        context.Writer.WriteStringValue(requestObjectAvailabilityZonesListValue);
+                        context.Writer.WriteStringValue(requestObjectDeepHealthChecksListValue);
                 }
                 context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetIncrementTargetCountBy())
-            {
-                context.Writer.WritePropertyName("IncrementTargetCountBy");
-                context.Writer.WriteNumberValue(requestObject.IncrementTargetCountBy.Value);
             }
 
             if(requestObject.IsSetInstanceGroupName())
@@ -69,13 +63,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.InstanceGroupName);
             }
 
-            if(requestObject.IsSetInstanceTypes())
+            if(requestObject.IsSetInstanceIds())
             {
-                context.Writer.WritePropertyName("InstanceTypes");
+                context.Writer.WritePropertyName("InstanceIds");
                 context.Writer.WriteStartArray();
-                foreach(var requestObjectInstanceTypesListValue in requestObject.InstanceTypes)
+                foreach(var requestObjectInstanceIdsListValue in requestObject.InstanceIds)
                 {
-                        context.Writer.WriteStringValue(requestObjectInstanceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectInstanceIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
@@ -85,7 +79,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AddClusterNodeSpecificationMarshaller Instance = new AddClusterNodeSpecificationMarshaller();
+        public readonly static InstanceGroupHealthCheckConfigurationMarshaller Instance = new InstanceGroupHealthCheckConfigurationMarshaller();
 
     }
 }

@@ -3045,6 +3045,14 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant IncompatibleAvailabilityZones for BatchAddClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchAddClusterNodesErrorCode IncompatibleAvailabilityZones = new BatchAddClusterNodesErrorCode("IncompatibleAvailabilityZones");
+        /// <summary>
+        /// Constant IncompatibleInstanceTypes for BatchAddClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchAddClusterNodesErrorCode IncompatibleInstanceTypes = new BatchAddClusterNodesErrorCode("IncompatibleInstanceTypes");
+        /// <summary>
         /// Constant InstanceGroupNotFound for BatchAddClusterNodesErrorCode
         /// </summary>
         public static readonly BatchAddClusterNodesErrorCode InstanceGroupNotFound = new BatchAddClusterNodesErrorCode("InstanceGroupNotFound");
