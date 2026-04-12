@@ -36,6 +36,7 @@ namespace Amazon.BedrockDataAutomation.Model
     {
         private DateTime? _creationTime;
         private CustomOutputConfiguration _customOutputConfiguration;
+        private DataAutomationLibraryConfiguration _dataAutomationLibraryConfiguration;
         private Dictionary<string, string> _kmsEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _kmsKeyId;
         private DateTime? _lastModifiedTime;
@@ -77,6 +78,21 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetCustomOutputConfiguration()
         {
             return this._customOutputConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataAutomationLibraryConfiguration.
+        /// </summary>
+        public DataAutomationLibraryConfiguration DataAutomationLibraryConfiguration
+        {
+            get { return this._dataAutomationLibraryConfiguration; }
+            set { this._dataAutomationLibraryConfiguration = value; }
+        }
+
+        // Check to see if DataAutomationLibraryConfiguration property is set
+        internal bool IsSetDataAutomationLibraryConfiguration()
+        {
+            return this._dataAutomationLibraryConfiguration != null;
         }
 
         /// <summary>

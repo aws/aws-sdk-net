@@ -35,7 +35,27 @@ namespace Amazon.MailManager.Model
     /// </summary>
     public partial class GetIngressPointRequest : AmazonMailManagerRequest
     {
+        private TrustStoreResponseOption _includeTrustStoreContents;
         private string _ingressPointId;
+
+        /// <summary>
+        /// Gets and sets the property IncludeTrustStoreContents. 
+        /// <para>
+        /// Whether to include the trust store contents in the response. Use INCLUDE to retrieve
+        /// trust store certificate and CRL contents.
+        /// </para>
+        /// </summary>
+        public TrustStoreResponseOption IncludeTrustStoreContents
+        {
+            get { return this._includeTrustStoreContents; }
+            set { this._includeTrustStoreContents = value; }
+        }
+
+        // Check to see if IncludeTrustStoreContents property is set
+        internal bool IsSetIncludeTrustStoreContents()
+        {
+            return this._includeTrustStoreContents != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IngressPointId. 

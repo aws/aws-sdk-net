@@ -200,6 +200,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("warmPoolConfig", targetDepth))
+                {
+                    var unmarshaller = WarmPoolConfigUnmarshaller.Instance;
+                    unmarshalledObject.WarmPoolConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

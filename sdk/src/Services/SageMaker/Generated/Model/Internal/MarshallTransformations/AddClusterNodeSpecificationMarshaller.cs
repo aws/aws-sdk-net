@@ -46,6 +46,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAvailabilityZones())
+            {
+                context.Writer.WritePropertyName("AvailabilityZones");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAvailabilityZonesListValue in requestObject.AvailabilityZones)
+                {
+                        context.Writer.WriteStringValue(requestObjectAvailabilityZonesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetIncrementTargetCountBy())
             {
                 context.Writer.WritePropertyName("IncrementTargetCountBy");
@@ -56,6 +67,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("InstanceGroupName");
                 context.Writer.WriteStringValue(requestObject.InstanceGroupName);
+            }
+
+            if(requestObject.IsSetInstanceTypes())
+            {
+                context.Writer.WritePropertyName("InstanceTypes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectInstanceTypesListValue in requestObject.InstanceTypes)
+                {
+                        context.Writer.WriteStringValue(requestObjectInstanceTypesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }

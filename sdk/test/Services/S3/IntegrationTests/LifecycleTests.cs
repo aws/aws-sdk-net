@@ -1,35 +1,25 @@
-/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
-
-using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class LifecycleTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class LifecycleTests : IClassFixture<S3PublicAclBucketFixture>
     {
-        private static string bucketName;
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
+
+        public LifecycleTests(S3PublicAclBucketFixture fixture)
+        {
+            _client = fixture.Client;
+            _bucketName = fixture.BucketName;
+        }
 
         private readonly LifecyclePrefixPredicate BasicPrefixPredicate1 = new LifecyclePrefixPredicate()
         {
@@ -59,22 +49,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         };
 
-        [TestInitialize]
-        public async Task Init()
-        {
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, true);
-        }
-
-        [TestCleanup]
-        public async Task Cleanup()
-        {
-            if (!string.IsNullOrEmpty(bucketName))
-            {
-                await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
-            }
-        }
-
-        [TestMethod]
+        [Fact]
         public async Task LifecycleEmptyFilterTest()
         {
             var s3Configuration = new LifecycleConfiguration
@@ -93,25 +68,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            await Client.PutLifecycleConfigurationAsync(new PutLifecycleConfigurationRequest
+            await _client.PutLifecycleConfigurationAsync(new PutLifecycleConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Configuration = s3Configuration
             });
 
             var configuration = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetLifecycleConfigurationAsync(bucketName);
-                return res.Configuration?.Rules?.Count == s3Configuration.Rules.Count ? res.Configuration : null;
+                var res = await _client.GetLifecycleConfigurationAsync(_bucketName);
+                return res.Configuration?.Rules?.Any(r => r.Id == "Empty-filter-test") == true ? res.Configuration : null;
             });
 
-            Assert.AreEqual(configuration.Rules.First().Id, "Empty-filter-test");
-            Assert.AreEqual(configuration.Rules.First().Expiration.Days, 30);
+            Assert.Equal(configuration.Rules.First().Id, "Empty-filter-test");
+            Assert.Equal(configuration.Rules.First().Expiration.Days, 30);
         }
 
         // even if a user explicitly sets status to null we should set it to disabled so the 
         // request succeeds
-        [TestMethod]
+        [Fact]
         public async Task LifecycleNullStatusTest()
         {
             var s3Configuration = new LifecycleConfiguration
@@ -131,36 +106,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            await Client.PutLifecycleConfigurationAsync(new PutLifecycleConfigurationRequest
+            await _client.PutLifecycleConfigurationAsync(new PutLifecycleConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Configuration = s3Configuration
             });
 
             var configuration = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetLifecycleConfigurationAsync(bucketName);
-                return res.Configuration?.Rules?.Count == s3Configuration.Rules.Count ? res.Configuration : null;
+                var res = await _client.GetLifecycleConfigurationAsync(_bucketName);
+                return res.Configuration?.Rules?.Any(r => r.Id == "null-status-test") == true ? res.Configuration : null;
             });
 
-            Assert.AreEqual(configuration.Rules.First().Id, "null-status-test");
-            Assert.AreEqual(configuration.Rules.First().Expiration.Days, 30);
+            Assert.Equal(configuration.Rules.First().Id, "null-status-test");
+            Assert.Equal(configuration.Rules.First().Expiration.Days, 30);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task LifecycleTest()
         {
-            var s3Configuration = (await Client.GetLifecycleConfigurationAsync(bucketName)).Configuration;
-            Assert.IsNotNull(s3Configuration);
+            // Delete any lifecycle config left by a previous test and wait for deletion to propagate.
+            await _client.DeleteLifecycleConfigurationAsync(_bucketName);
 
-            if (AWSConfigs.InitializeCollections)
+            var s3Configuration = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                Assert.AreEqual(0, s3Configuration.Rules.Count);
-            }
-            else
-            {
-                Assert.IsNull(s3Configuration.Rules);
-            }
+                var res = await _client.GetLifecycleConfigurationAsync(_bucketName);
+                var rules = res.Configuration?.Rules;
+                return (rules == null || rules.Count == 0) ? res.Configuration : null;
+            });
+            Assert.NotNull(s3Configuration);
 
             var configuration = new LifecycleConfiguration
             {
@@ -304,28 +278,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            await Client.PutLifecycleConfigurationAsync(new PutLifecycleConfigurationRequest
+            await _client.PutLifecycleConfigurationAsync(new PutLifecycleConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Configuration = configuration
             });
 
             s3Configuration = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetLifecycleConfigurationAsync(bucketName);
+                var res = await _client.GetLifecycleConfigurationAsync(_bucketName);
                 return res.Configuration?.Rules?.Count == configuration.Rules.Count ? res.Configuration : null;
             });
 
             string abortRuleId = null;
-            Assert.IsNotNull(s3Configuration);
-            Assert.IsNotNull(s3Configuration.Rules);
-            Assert.AreEqual(configuration.Rules.Count, s3Configuration.Rules.Count);
+            Assert.NotNull(s3Configuration);
+            Assert.NotNull(s3Configuration.Rules);
+            Assert.Equal(configuration.Rules.Count, s3Configuration.Rules.Count);
             for (int i = 0; i < configuration.Rules.Count; i++)
             {
                 var s3Rule = s3Configuration.Rules[i];
                 var rule = configuration.Rules[i];
-                Assert.IsNotNull(rule);
-                Assert.IsNotNull(s3Rule);
+                Assert.NotNull(rule);
+                Assert.NotNull(s3Rule);
                 if (rule.AbortIncompleteMultipartUpload != null)
                 {
                     abortRuleId = s3Rule.Id;
@@ -334,48 +308,43 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 AssertRulesAreEqual(rule, s3Rule);
             }
 
-            await Task.Delay(10000);
-
             var expectedMinAbortDate = DateTime.UtcNow.Date.AddDays(7);
-            var initResponse = await Client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
+            var initResponse = await _client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Key = "rule1-123",
                 CannedACL = S3CannedACL.PublicRead
             });
 
-            var listResponse = await Client.ListPartsAsync(bucketName, initResponse.Key, initResponse.UploadId);
-            Assert.AreEqual(abortRuleId, initResponse.AbortRuleId);
-            Assert.AreEqual(abortRuleId, listResponse.AbortRuleId);
-            Assert.AreEqual(initResponse.AbortDate, listResponse.AbortDate);
-            Assert.IsTrue(expectedMinAbortDate < initResponse.AbortDate);
+            var listResponse = await _client.ListPartsAsync(_bucketName, initResponse.Key, initResponse.UploadId);
+            Assert.Equal(abortRuleId, initResponse.AbortRuleId);
+            Assert.Equal(abortRuleId, listResponse.AbortRuleId);
+            Assert.Equal(initResponse.AbortDate, listResponse.AbortDate);
+            Assert.True(expectedMinAbortDate < initResponse.AbortDate);
         }
 
-        /// <summary>
-        /// Tests V2 rules that can not be combined with the request made in
-        /// <see cref="LifecycleTest"/>
-        /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task LifecycleV2Test()
         {
-            var s3Configuration = (await Client.GetLifecycleConfigurationAsync(bucketName)).Configuration;
-            Assert.IsNotNull(s3Configuration);
+            // Delete any lifecycle config left by a previous test and wait for deletion to propagate.
+            await _client.DeleteLifecycleConfigurationAsync(_bucketName);
 
-            if (AWSConfigs.InitializeCollections)
+            var s3Configuration = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                Assert.AreEqual(0, s3Configuration.Rules.Count);
-            }
-            else
-            {
-                Assert.IsNull(s3Configuration.Rules);
-            }
+                var res = await _client.GetLifecycleConfigurationAsync(_bucketName);
+                var rules = res.Configuration?.Rules;
+                return (rules == null || rules.Count == 0) ? res.Configuration : null;
+            });
+            Assert.NotNull(s3Configuration);
 
+            var ruleId = Guid.NewGuid().ToString("N");
             var configuration = new LifecycleConfiguration
             {
                 Rules = new List<LifecycleRule>
                 {
                     new LifecycleRule
                     {
+                        Id = ruleId,
                         Filter = new LifecycleFilter
                         {
                             LifecycleFilterPredicate = new LifecycleAndOperator
@@ -410,62 +379,49 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            await Client.PutLifecycleConfigurationAsync(new PutLifecycleConfigurationRequest
+            await _client.PutLifecycleConfigurationAsync(new PutLifecycleConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Configuration = configuration
             });
 
             s3Configuration = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetLifecycleConfigurationAsync(bucketName);
-                return res.Configuration?.Rules?.Count == configuration.Rules.Count ? res.Configuration : null;
+                var res = await _client.GetLifecycleConfigurationAsync(_bucketName);
+                return res.Configuration?.Rules?.Any(r => r.Id == ruleId) == true ? res.Configuration : null;
             });
 
-            string abortRuleId = null;
-            Assert.IsNotNull(s3Configuration);
-            Assert.IsNotNull(s3Configuration.Rules);
-            Assert.AreEqual(configuration.Rules.Count, s3Configuration.Rules.Count);
-            for (int i = 0; i < configuration.Rules.Count; i++)
-            {
-                var s3Rule = s3Configuration.Rules[i];
-                var rule = configuration.Rules[i];
-                Assert.IsNotNull(rule);
-                Assert.IsNotNull(s3Rule);
-                if (rule.AbortIncompleteMultipartUpload != null)
-                {
-                    abortRuleId = s3Rule.Id;
-                }
-
-                AssertRulesAreEqual(rule, s3Rule);
-            }
+            Assert.NotNull(s3Configuration);
+            Assert.NotNull(s3Configuration.Rules);
+            var s3Rule = s3Configuration.Rules.Single(r => r.Id == ruleId);
+            AssertRulesAreEqual(configuration.Rules[0], s3Rule);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestLifecycleFilterPrefix()
         {
             await TestLifecycleFilterPredicate(BasicPrefixPredicate1);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestLifecycleFilterTag()
         {
             await TestLifecycleFilterPredicate(BasicTagPredicate1);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestLifecycleFilterAndPrefixTag()
         {
             await TestLifecycleFilterPredicate(BuildAndOperator(BasicPrefixPredicate1, BasicTagPredicate1));
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestLifecycleFilterAndTwoTags()
         {
             await TestLifecycleFilterPredicate(BuildAndOperator(BasicTagPredicate1, BasicTagPredicate2));
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestLifecycleFilterAndTwoPrefixes()
         {
             // make a client that fails faster since that's what we're expecting
@@ -474,10 +430,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 MaxErrorRetry = 1
             });
 
-            var actualException = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() =>
+            var actualException = await Assert.ThrowsAsync<AmazonS3Exception>(() =>
                 TestLifecycleFilterPredicate(BuildAndOperator(BasicPrefixPredicate1, BasicPrefixPredicate2), oneRetryClient)
             );
-            Assert.AreEqual("An And operator may only contain one 'Prefix'.", actualException.Message);
+            Assert.Equal("An And operator may only contain one 'Prefix'.", actualException.Message);
         }
 
         private static LifecycleAndOperator BuildAndOperator(params LifecycleFilterPredicate[] operands)
@@ -488,15 +444,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
         }
 
-        private static async Task TestLifecycleFilterPredicate(LifecycleFilterPredicate predicate, AmazonS3Client client = null)
+        private async Task TestLifecycleFilterPredicate(LifecycleFilterPredicate predicate, AmazonS3Client client = null)
         {
             var filter = new LifecycleFilter
             {
                 LifecycleFilterPredicate = predicate
             };
 
+            var ruleId = Guid.NewGuid().ToString("N");
             var rule = new LifecycleRule
             {
+                Id = ruleId,
                 Filter = filter,
                 Status = LifecycleRuleStatus.Enabled,
                 Transitions = new List<LifecycleTransition>
@@ -511,12 +469,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             if (client == null)
             {
-                client = Client;
+                client = _client;
             }
 
             await client.PutLifecycleConfigurationAsync(new PutLifecycleConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Configuration = new LifecycleConfiguration
                 {
                     Rules = new List<LifecycleRule>
@@ -528,74 +486,74 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             var actualConfig = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await client.GetLifecycleConfigurationAsync(bucketName);
-                return res.Configuration?.Rules?.Count == 1 ? res.Configuration : null;
+                var res = await client.GetLifecycleConfigurationAsync(_bucketName);
+                return res.Configuration?.Rules?.Any(r => r.Id == ruleId) == true ? res.Configuration : null;
             });
 
-            Assert.IsNotNull(actualConfig);
-            Assert.IsNotNull(actualConfig.Rules);
-            Assert.AreEqual(1, actualConfig.Rules.Count);
+            Assert.NotNull(actualConfig);
+            Assert.NotNull(actualConfig.Rules);
+            Assert.Equal(1, actualConfig.Rules.Count);
             AssertRulesAreEqual(rule, actualConfig.Rules[0]);
         }
 
         private static void AssertRulesAreEqual(LifecycleRule expected, LifecycleRule actual)
         {
-            Assert.IsFalse(string.IsNullOrEmpty(actual.Id));
+            Assert.False(string.IsNullOrEmpty(actual.Id));
             AssertFiltersAreEqual(expected.Filter, actual.Filter);
-            Assert.AreEqual(expected.Transitions.Count, actual.Transitions.Count);
+            Assert.Equal(expected.Transitions.Count, actual.Transitions.Count);
 
             if (expected.NoncurrentVersionTransitions == null)
             {
-                Assert.IsNull(actual.NoncurrentVersionTransitions);
+                Assert.Null(actual.NoncurrentVersionTransitions);
             }
             else
             {
-                Assert.AreEqual(expected.NoncurrentVersionTransitions.Count, actual.NoncurrentVersionTransitions.Count);
+                Assert.Equal(expected.NoncurrentVersionTransitions.Count, actual.NoncurrentVersionTransitions.Count);
             }
 
             if (expected.AbortIncompleteMultipartUpload == null)
             {
-                Assert.IsNull(actual.AbortIncompleteMultipartUpload);
+                Assert.Null(actual.AbortIncompleteMultipartUpload);
             }
             else
             {
-                Assert.AreEqual(expected.AbortIncompleteMultipartUpload.DaysAfterInitiation, actual.AbortIncompleteMultipartUpload.DaysAfterInitiation);
+                Assert.Equal(expected.AbortIncompleteMultipartUpload.DaysAfterInitiation, actual.AbortIncompleteMultipartUpload.DaysAfterInitiation);
             }
-            Assert.AreEqual(expected.Status, actual.Status);
+            Assert.Equal(expected.Status, actual.Status);
             if (expected.Expiration == null)
             {
-                Assert.IsNull(actual.Expiration);
+                Assert.Null(actual.Expiration);
             }
             else
             {
-                Assert.AreEqual(expected.Expiration.Days, actual.Expiration.Days);
-                Assert.AreEqual(expected.Expiration.ExpiredObjectDeleteMarker, actual.Expiration.ExpiredObjectDeleteMarker);
+                Assert.Equal(expected.Expiration.Days, actual.Expiration.Days);
+                Assert.Equal(expected.Expiration.ExpiredObjectDeleteMarker, actual.Expiration.ExpiredObjectDeleteMarker);
             }
 
             if (expected.NoncurrentVersionExpiration == null)
             {
-                Assert.IsNull(actual.NoncurrentVersionExpiration);
+                Assert.Null(actual.NoncurrentVersionExpiration);
             }
             else
             {
-                Assert.AreEqual(expected.NoncurrentVersionExpiration.NoncurrentDays,
+                Assert.Equal(expected.NoncurrentVersionExpiration.NoncurrentDays,
                     actual.NoncurrentVersionExpiration.NoncurrentDays);
 
-                Assert.AreEqual(expected.NoncurrentVersionExpiration.NewerNoncurrentVersions,
+                Assert.Equal(expected.NoncurrentVersionExpiration.NewerNoncurrentVersions,
                     actual.NoncurrentVersionExpiration.NewerNoncurrentVersions);
             }
 
-            Assert.AreEqual(expected.Transitions[0].Days, actual.Transitions[0].Days);
+            Assert.Equal(expected.Transitions[0].Days, actual.Transitions[0].Days);
             if (expected.NoncurrentVersionTransitions == null)
             {
-                Assert.IsNull(actual.NoncurrentVersionTransitions);
+                Assert.Null(actual.NoncurrentVersionTransitions);
             }
             else
             {
-                Assert.AreEqual(expected.NoncurrentVersionTransitions[0].NoncurrentDays,
+                Assert.Equal(expected.NoncurrentVersionTransitions[0].NoncurrentDays,
                     actual.NoncurrentVersionTransitions[0].NoncurrentDays);
 
-                Assert.AreEqual(expected.NoncurrentVersionTransitions[0].NewerNoncurrentVersions,
+                Assert.Equal(expected.NoncurrentVersionTransitions[0].NewerNoncurrentVersions,
                     actual.NoncurrentVersionTransitions[0].NewerNoncurrentVersions);
             }
         }
@@ -604,7 +562,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             if (expected == null)
             {
-                Assert.IsNull(actual);
+                Assert.Null(actual);
             }
             else
             {
@@ -614,38 +572,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private static void AssertPredicatesAreEqual(LifecycleFilterPredicate expected, LifecycleFilterPredicate actual)
         {
-            Assert.IsNotNull(expected);
-            Assert.IsNotNull(actual);
-            Assert.AreEqual(expected.GetType(), actual.GetType());
+            Assert.NotNull(expected);
+            Assert.NotNull(actual);
+            Assert.Equal(expected.GetType(), actual.GetType());
 
             if (expected is LifecyclePrefixPredicate)
             {
                 var expectedPrefixPredicate = expected as LifecyclePrefixPredicate;
                 var actualPrefixPredicate = actual as LifecyclePrefixPredicate;
 
-                Assert.AreEqual(expectedPrefixPredicate.Prefix, actualPrefixPredicate.Prefix);
+                Assert.Equal(expectedPrefixPredicate.Prefix, actualPrefixPredicate.Prefix);
             }
             else if (expected is LifecycleTagPredicate)
             {
                 var expectedTagPredicate = expected as LifecycleTagPredicate;
                 var actualTagPredicate = actual as LifecycleTagPredicate;
 
-                Assert.AreEqual(expectedTagPredicate.Tag.Key, actualTagPredicate.Tag.Key);
-                Assert.AreEqual(expectedTagPredicate.Tag.Value, actualTagPredicate.Tag.Value);
+                Assert.Equal(expectedTagPredicate.Tag.Key, actualTagPredicate.Tag.Key);
+                Assert.Equal(expectedTagPredicate.Tag.Value, actualTagPredicate.Tag.Value);
             }
             else if (expected is LifecycleObjectSizeLessThanPredicate)
             {
                 var expectedTagPredicate = expected as LifecycleObjectSizeLessThanPredicate;
                 var actualTagPredicate = actual as LifecycleObjectSizeLessThanPredicate;
 
-                Assert.AreEqual(expectedTagPredicate.ObjectSizeLessThan, actualTagPredicate.ObjectSizeLessThan);
+                Assert.Equal(expectedTagPredicate.ObjectSizeLessThan, actualTagPredicate.ObjectSizeLessThan);
             }
             else if (expected is LifecycleObjectSizeGreaterThanPredicate)
             {
                 var expectedTagPredicate = expected as LifecycleObjectSizeGreaterThanPredicate;
                 var actualTagPredicate = actual as LifecycleObjectSizeGreaterThanPredicate;
 
-                Assert.AreEqual(expectedTagPredicate.ObjectSizeGreaterThan, actualTagPredicate.ObjectSizeGreaterThan);
+                Assert.Equal(expectedTagPredicate.ObjectSizeGreaterThan, actualTagPredicate.ObjectSizeGreaterThan);
             }
             else if (expected is LifecycleAndOperator)
             {
@@ -655,7 +613,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var expectedOperands = expectedAndOperator.Operands.ToArray();
                 var actualOperands = actualAndOperator.Operands.ToArray();
 
-                Assert.AreEqual(expectedOperands.Length, actualOperands.Length);
+                Assert.Equal(expectedOperands.Length, actualOperands.Length);
 
                 for (int i = 0; i < expectedOperands.Length; i++)
                 {

@@ -36,5 +36,15 @@ namespace Amazon.BCMDashboards.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListDashboardsPaginator ListDashboards(ListDashboardsRequest request);
+
+        /// <summary>
+        /// Paginator for ListScheduledReports operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListScheduledReportsPaginator ListScheduledReports(ListScheduledReportsRequest request);
     }
 }

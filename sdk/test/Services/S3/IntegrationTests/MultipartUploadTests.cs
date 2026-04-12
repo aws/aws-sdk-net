@@ -1,53 +1,48 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Amazon.S3;
+﻿using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
 using System.Net;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class MultipartUploadTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class MultipartUploadTests
     {
-        private static string bucketName;
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
+        private readonly string _testId;
 
-        [ClassInitialize]
-        public static async Task Initialize(TestContext a)
+        public MultipartUploadTests(SharedS3ObjectBucketFixture sharedBucket)
         {
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, true);
-        }
-
-        [ClassCleanup]
-        public static async Task ClassCleanup()
-        {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
-            BaseClean();
+            _client = sharedBucket.Client;
+            _bucketName = sharedBucket.BucketName;
+            _testId = System.Guid.NewGuid().ToString("N");
         }
 
         /// <summary>
         /// Test so that no regression happens like the one reported below.
         /// https://github.com/aws/aws-sdk-net/issues/3971 
         /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task TestInitiateMultipartUploadWithNoACL()
         {
-            var initMpuResponse = await Client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
+            var initMpuResponse = await _client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
             {
-                BucketName = bucketName,
-                Key = "test-mpu",
+                BucketName = _bucketName,
+                Key = _testId + "-test-mpu",
                 StorageClass = S3StorageClass.Standard,
                 CannedACL = S3CannedACL.NoACL
             });
-            Assert.AreEqual(initMpuResponse.HttpStatusCode, HttpStatusCode.OK);
+            Assert.Equal(initMpuResponse.HttpStatusCode, HttpStatusCode.OK);
             
             if (initMpuResponse.UploadId != null)
             {
-                await Client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest
+                await _client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest
                 {
-                    BucketName = bucketName,
-                    Key = "test-mpu",
+                    BucketName = _bucketName,
+                    Key = _testId + "-test-mpu",
                     UploadId = initMpuResponse.UploadId
                 });
             }

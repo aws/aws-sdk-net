@@ -34,8 +34,27 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class S3PropertiesInput
     {
+        private bool? _registers3AccessGrantLocation;
         private string _s3AccessGrantLocationId;
         private string _s3Uri;
+
+        /// <summary>
+        /// Gets and sets the property RegisterS3AccessGrantLocation. 
+        /// <para>
+        /// Specifies whether to register the Amazon S3 Access Grant location.
+        /// </para>
+        /// </summary>
+        public bool? RegisterS3AccessGrantLocation
+        {
+            get { return this._registers3AccessGrantLocation; }
+            set { this._registers3AccessGrantLocation = value; }
+        }
+
+        // Check to see if RegisterS3AccessGrantLocation property is set
+        internal bool IsSetRegisterS3AccessGrantLocation()
+        {
+            return this._registers3AccessGrantLocation.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property S3AccessGrantLocationId. 

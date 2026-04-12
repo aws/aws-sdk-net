@@ -36,6 +36,7 @@ namespace Amazon.BedrockDataAutomation.Model
     public partial class ListDataAutomationProjectsRequest : AmazonBedrockDataAutomationRequest
     {
         private BlueprintFilter _blueprintFilter;
+        private DataAutomationLibraryFilter _libraryFilter;
         private int? _maxResults;
         private string _nextToken;
         private DataAutomationProjectStageFilter _projectStageFilter;
@@ -54,6 +55,21 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetBlueprintFilter()
         {
             return this._blueprintFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LibraryFilter.
+        /// </summary>
+        public DataAutomationLibraryFilter LibraryFilter
+        {
+            get { return this._libraryFilter; }
+            set { this._libraryFilter = value; }
+        }
+
+        // Check to see if LibraryFilter property is set
+        internal bool IsSetLibraryFilter()
+        {
+            return this._libraryFilter != null;
         }
 
         /// <summary>

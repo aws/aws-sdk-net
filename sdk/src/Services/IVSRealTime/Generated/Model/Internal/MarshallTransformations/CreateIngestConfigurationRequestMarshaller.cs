@@ -105,6 +105,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetRedundantIngest())
+            {
+                context.Writer.WritePropertyName("redundantIngest");
+                context.Writer.WriteBooleanValue(publicRequest.RedundantIngest.Value);
+            }
+
             if(publicRequest.IsSetStageArn())
             {
                 context.Writer.WritePropertyName("stageArn");

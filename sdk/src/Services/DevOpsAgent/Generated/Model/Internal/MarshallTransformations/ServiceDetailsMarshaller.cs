@@ -134,17 +134,6 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetMcpserversigv4())
-            {
-                context.Writer.WritePropertyName("mcpserversigv4");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MCPServerSigV4ServiceDetailsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Mcpserversigv4, context);
-
-                context.Writer.WriteEndObject();
-            }
-
             if(requestObject.IsSetMcpserversplunk())
             {
                 context.Writer.WritePropertyName("mcpserversplunk");

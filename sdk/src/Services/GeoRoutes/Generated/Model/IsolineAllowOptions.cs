@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Features that are allowed while calculating an isoline.
+    /// Special road types or features that should be considered available for routing. For
+    /// example, this attribute can be used to allow the use of HOV (high-occupancy vehicle)
+    /// or HOT (high-occupancy toll) lanes, even if they would otherwise not be.
     /// </summary>
     public partial class IsolineAllowOptions
     {
@@ -40,7 +42,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Hot. 
         /// <para>
-        /// Allow Hot (High Occupancy Toll) lanes while calculating an isoline.
+        /// When true, allows the use of HOT (high-occupancy toll) lanes, which may affect travel
+        /// times and reachable areas.
         /// </para>
         ///  
         /// <para>
@@ -63,7 +66,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Hov. 
         /// <para>
-        /// Allow Hov (High Occupancy vehicle) lanes while calculating an isoline.
+        /// When true, allows the use of HOV (high-occupancy vehicle) lanes, which may affect
+        /// travel times and reachable areas.
         /// </para>
         ///  
         /// <para>

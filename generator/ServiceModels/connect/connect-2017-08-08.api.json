@@ -6313,7 +6313,8 @@
         "AfterContactWorkStartTimestamp":{"shape":"timestamp"},
         "AfterContactWorkEndTimestamp":{"shape":"timestamp"},
         "AgentInitiatedHoldDuration":{"shape":"Duration"},
-        "StateTransitions":{"shape":"StateTransitions"}
+        "StateTransitions":{"shape":"StateTransitions"},
+        "VoiceEnhancementMode":{"shape":"VoiceEnhancementMode"}
       }
     },
     "AgentLastName":{
@@ -8578,7 +8579,8 @@
       "type":"string",
       "enum":[
         "AGENT",
-        "AUTOMATED"
+        "AUTOMATED",
+        "CUSTOMER"
       ]
     },
     "ContactMediaProcessingFailureMode":{
@@ -8642,7 +8644,8 @@
       "enum":[
         "AGENT",
         "SYSTEM",
-        "CUSTOM_BOT"
+        "CUSTOM_BOT",
+        "CUSTOMER"
       ]
     },
     "ContactRecordingType":{
@@ -13421,7 +13424,10 @@
         "es-ES",
         "fr-FR",
         "it-IT",
-        "pt-BR"
+        "pt-BR",
+        "ja-JP",
+        "ko-KR",
+        "zh-CN"
       ]
     },
     "EvaluationFormLanguageConfiguration":{
@@ -14372,7 +14378,11 @@
     "FileUseCaseType":{
       "type":"string",
       "enum":[
+        "CONTACT_ANALYSIS",
         "EMAIL_MESSAGE",
+        "EMAIL_MESSAGE_PLAIN_TEXT",
+        "EMAIL_MESSAGE_REDACTED",
+        "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED",
         "ATTACHMENT"
       ]
     },
@@ -20711,7 +20721,9 @@
         "Url":{"shape":"UrlReference"},
         "Attachment":{"shape":"AttachmentReference"},
         "EmailMessage":{"shape":"EmailMessageReference"},
+        "EmailMessageRedacted":{"shape":"EmailMessageReference"},
         "EmailMessagePlainText":{"shape":"EmailMessageReference"},
+        "EmailMessagePlainTextRedacted":{"shape":"EmailMessageReference"},
         "String":{"shape":"StringReference"},
         "Number":{"shape":"NumberReference"},
         "Date":{"shape":"DateReference"},
@@ -20734,7 +20746,9 @@
         "DATE",
         "EMAIL",
         "EMAIL_MESSAGE",
-        "EMAIL_MESSAGE_PLAIN_TEXT"
+        "EMAIL_MESSAGE_PLAIN_TEXT",
+        "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED",
+        "EMAIL_MESSAGE_REDACTED"
       ]
     },
     "ReferenceTypes":{

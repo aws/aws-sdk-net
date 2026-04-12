@@ -44,6 +44,8 @@ namespace Amazon.CloudWatch.Model
         private int? _datapointsToAlarm;
         private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private string _evaluateLowSampleCountPercentile;
+        private EvaluationCriteria _evaluationCriteria;
+        private int? _evaluationInterval;
         private int? _evaluationPeriods;
         private EvaluationState _evaluationState;
         private string _extendedStatistic;
@@ -264,6 +266,43 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetEvaluateLowSampleCountPercentile()
         {
             return this._evaluateLowSampleCountPercentile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationCriteria. 
+        /// <para>
+        /// The evaluation criteria for the alarm.
+        /// </para>
+        /// </summary>
+        public EvaluationCriteria EvaluationCriteria
+        {
+            get { return this._evaluationCriteria; }
+            set { this._evaluationCriteria = value; }
+        }
+
+        // Check to see if EvaluationCriteria property is set
+        internal bool IsSetEvaluationCriteria()
+        {
+            return this._evaluationCriteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationInterval. 
+        /// <para>
+        /// The frequency, in seconds, at which the alarm is evaluated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=3600)]
+        public int? EvaluationInterval
+        {
+            get { return this._evaluationInterval; }
+            set { this._evaluationInterval = value; }
+        }
+
+        // Check to see if EvaluationInterval property is set
+        internal bool IsSetEvaluationInterval()
+        {
+            return this._evaluationInterval.HasValue; 
         }
 
         /// <summary>
@@ -632,6 +671,11 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// If this parameter is omitted, the default behavior of <c>missing</c> is used.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not applicable to PromQL alarms.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string TreatMissingData

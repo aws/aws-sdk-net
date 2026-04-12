@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class TableInlineVisualization
     {
         private DataBarsOptions _dataBars;
+        private SparklinesOptions _sparklines;
 
         /// <summary>
         /// Gets and sets the property DataBars. 
@@ -52,6 +53,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataBars()
         {
             return this._dataBars != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sparklines. 
+        /// <para>
+        /// The configuration of the inline visualization of the sparklines within a chart.
+        /// </para>
+        /// </summary>
+        public SparklinesOptions Sparklines
+        {
+            get { return this._sparklines; }
+            set { this._sparklines = value; }
+        }
+
+        // Check to see if Sparklines property is set
+        internal bool IsSetSparklines()
+        {
+            return this._sparklines != null;
         }
 
     }

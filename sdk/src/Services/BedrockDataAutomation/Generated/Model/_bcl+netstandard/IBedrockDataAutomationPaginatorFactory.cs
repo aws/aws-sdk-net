@@ -38,6 +38,36 @@ namespace Amazon.BedrockDataAutomation.Model
         IListBlueprintsPaginator ListBlueprints(ListBlueprintsRequest request);
 
         /// <summary>
+        /// Paginator for ListDataAutomationLibraries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataAutomationLibrariesPaginator ListDataAutomationLibraries(ListDataAutomationLibrariesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataAutomationLibraryEntities operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataAutomationLibraryEntitiesPaginator ListDataAutomationLibraryEntities(ListDataAutomationLibraryEntitiesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataAutomationLibraryIngestionJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataAutomationLibraryIngestionJobsPaginator ListDataAutomationLibraryIngestionJobs(ListDataAutomationLibraryIngestionJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListDataAutomationProjects operation
         ///</summary>
         [AWSPaginator(

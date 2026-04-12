@@ -68,7 +68,7 @@ namespace Amazon.Pricing.Model
         /// The maximum number of results to return in response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=10000)]
         public int? MaxResults
         {
             get { return this._maxResults; }

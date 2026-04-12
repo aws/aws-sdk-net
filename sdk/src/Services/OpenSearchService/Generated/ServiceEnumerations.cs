@@ -531,6 +531,122 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type CapabilityFailureReason.
+    /// </summary>
+    public class CapabilityFailureReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS_KEY_INSUFFICIENT_PERMISSION for CapabilityFailureReason
+        /// </summary>
+        public static readonly CapabilityFailureReason KMS_KEY_INSUFFICIENT_PERMISSION = new CapabilityFailureReason("KMS_KEY_INSUFFICIENT_PERMISSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityFailureReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityFailureReason FindValue(string value)
+        {
+            return FindValue<CapabilityFailureReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityFailureReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapabilityStatus.
+    /// </summary>
+    public class CapabilityStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus Active = new CapabilityStatus("active");
+        /// <summary>
+        /// Constant Create_failed for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus Create_failed = new CapabilityStatus("create_failed");
+        /// <summary>
+        /// Constant Creating for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus Creating = new CapabilityStatus("creating");
+        /// <summary>
+        /// Constant Delete_failed for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus Delete_failed = new CapabilityStatus("delete_failed");
+        /// <summary>
+        /// Constant Deleting for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus Deleting = new CapabilityStatus("deleting");
+        /// <summary>
+        /// Constant Update_failed for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus Update_failed = new CapabilityStatus("update_failed");
+        /// <summary>
+        /// Constant Updating for CapabilityStatus
+        /// </summary>
+        public static readonly CapabilityStatus Updating = new CapabilityStatus("updating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityStatus FindValue(string value)
+        {
+            return FindValue<CapabilityStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConfigChangeStatus.
     /// </summary>
     public class ConfigChangeStatus : ConstantClass
@@ -3840,6 +3956,10 @@ namespace Amazon.OpenSearchService
         /// Constant PolicyMinTLS12PFS202310 for TLSSecurityPolicy
         /// </summary>
         public static readonly TLSSecurityPolicy PolicyMinTLS12PFS202310 = new TLSSecurityPolicy("Policy-Min-TLS-1-2-PFS-2023-10");
+        /// <summary>
+        /// Constant PolicyMinTLS12RFC9151FIPS202408 for TLSSecurityPolicy
+        /// </summary>
+        public static readonly TLSSecurityPolicy PolicyMinTLS12RFC9151FIPS202408 = new TLSSecurityPolicy("Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

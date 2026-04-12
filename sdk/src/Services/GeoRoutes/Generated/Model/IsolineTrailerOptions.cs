@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Trailer options corresponding to the vehicle.
+    /// Additional specifications when the vehicle includes one or more trailers.
     /// </summary>
     public partial class IsolineTrailerOptions
     {
@@ -40,7 +40,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property AxleCount. 
         /// <para>
-        /// Total number of axles of the vehicle.
+        /// The total number of axles across all trailers. Used for weight distribution calculations
+        /// and road restrictions.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1)]
@@ -59,11 +60,12 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TrailerCount. 
         /// <para>
-        /// Number of trailers attached to the vehicle.
+        /// The number of trailers being pulled. Affects which roads can be used based on local
+        /// regulations.
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>0</c> 
+        /// Default value: <c>0</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=255)]

@@ -63,6 +63,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Delimiter);
             }
 
+            if(requestObject.IsSetDestination())
+            {
+                context.Writer.WritePropertyName("destination");
+                context.Writer.WriteStringValue(requestObject.Destination);
+            }
+
             if(requestObject.IsSetQuoteCharacter())
             {
                 context.Writer.WritePropertyName("quoteCharacter");

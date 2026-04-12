@@ -69,7 +69,7 @@ namespace Amazon.GuardDuty.Model
         /// Version of the EC2 launch template.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Version
         {
             get { return this._version; }

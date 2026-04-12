@@ -45,12 +45,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property ArrivalTime. 
         /// <para>
-        /// Time of arrival at the destination. This parameter is returned only if the Destination
-        /// parameters was provided in the request. 
+        /// Time of arrival at the destination, used for traffic calculations. This attribute
+        /// is returned only if the <c>Destination</c> and <c>ArrivalTime</c> attributes were
+        /// provided in the request.
         /// </para>
         ///  
         /// <para>
-        /// Time format:<c>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</c> 
+        /// Time format: <c>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</c> 
         /// </para>
         ///  
         /// <para>
@@ -81,11 +82,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property DepartureTime. 
         /// <para>
-        /// Time of departure from thr origin.
+        /// Time of departure from the origin, used for traffic calculations. This attribute is
+        /// returned when <c>Origin</c> was provided in the request and either a specific departure
+        /// time was requested (<c>DepartureTime</c>) or <c>DepartNow</c> was set to true.
         /// </para>
         ///  
         /// <para>
-        /// Time format:<c>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</c> 
+        /// Time format: <c>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</c> 
         /// </para>
         ///  
         /// <para>
@@ -116,11 +119,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property IsolineGeometryFormat. 
         /// <para>
-        /// The format of the returned IsolineGeometry. 
+        /// The format of the returned geometries, matching the format specified in the request.
+        /// Either <c> FlexiblePolyline</c> for compact encoding or <c>Simple</c> for GeoJSON-compatible
+        /// coordinates.
         /// </para>
         ///  
         /// <para>
-        /// Default Value:<c>FlexiblePolyline</c> 
+        /// Default value:<c>FlexiblePolyline</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -139,7 +144,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Isolines. 
         /// <para>
-        /// Calculated isolines and associated properties.
+        /// Reachable areas, or isolines, for each threshold specified in the request.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -163,7 +168,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property PricingBucket. 
         /// <para>
-        /// The pricing bucket for which the query is charged at.
+        /// The pricing bucket applied to this calculation. Different buckets apply based on the
+        /// travel mode and thresholds used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -182,7 +188,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property SnappedDestination. 
         /// <para>
-        /// Snapped destination that was used for the Isoline calculation.
+        /// The actual point on the road network used for calculations, which may differ from
+        /// the requested destination if <c>Destination</c> was not directly on a road.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -206,7 +213,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property SnappedOrigin. 
         /// <para>
-        /// Snapped origin that was used for the Isoline calculation.
+        /// The actual point on the road network used for calculations, which may differ from
+        /// the requested origin if <c>Origin</c> was not directly on a road.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

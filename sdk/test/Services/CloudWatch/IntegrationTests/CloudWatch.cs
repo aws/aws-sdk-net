@@ -1,18 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Amazon.CloudWatch;
+﻿using Amazon.CloudWatch;
 using Amazon.CloudWatch.Model;
 using Amazon.Runtime;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
-    [TestClass]
-    public class CloudWatch : TestBase<AmazonCloudWatchClient>
+    /// <summary>
+    /// xUnit fixture that owns a single <see cref="AmazonCloudWatchClient"/> for the lifetime
+    /// of the <see cref="CloudWatchTests"/> class.
+    /// </summary>
+    public class CloudWatchClientFixture : IAsyncLifetime
     {
-        [TestMethod]
+        public AmazonCloudWatchClient Client { get; private set; }
+
+        public ValueTask InitializeAsync()
+        {
+            Client = new AmazonCloudWatchClient();
+            RetryUtilities.ConfigureClient(Client);
+            return default;
+        }
+
+        public ValueTask DisposeAsync()
+        {
+            Client?.Dispose();
+            return default;
+        }
+    }
+
+    [Trait("Category", "CloudWatch")]
+    public class CloudWatchTests : IClassFixture<CloudWatchClientFixture>
+    {
+        private readonly AmazonCloudWatchClient _client;
+
+        public CloudWatchTests(CloudWatchClientFixture fixture)
+        {
+            _client = fixture.Client;
+        }
+
+        [Fact]
         public async Task PutMetricDataWithNonStreamingPayload()
         {
             var random = new Random();
@@ -30,12 +60,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
             };
 
-            var config = Client.Config as ClientConfig;
+            var config = _client.Config as ClientConfig;
             config.RequestMinCompressionSizeBytes = 0;
 
-            var response = await Client.PutMetricDataAsync(request);
-            Assert.IsFalse(Client.Config.DisableRequestCompression);
-            Assert.AreEqual(response.HttpStatusCode, HttpStatusCode.OK);
+            var response = await _client.PutMetricDataAsync(request);
+            Assert.False(_client.Config.DisableRequestCompression);
+            Assert.Equal(HttpStatusCode.OK, response.HttpStatusCode);
         }
     }
 }

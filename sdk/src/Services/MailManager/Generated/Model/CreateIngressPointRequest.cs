@@ -41,6 +41,7 @@ namespace Amazon.MailManager.Model
         private NetworkConfiguration _networkConfiguration;
         private string _ruleSetId;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private TlsPolicy _tlsPolicy;
         private string _trafficPolicyId;
         private IngressPointType _type;
 
@@ -163,6 +164,25 @@ namespace Amazon.MailManager.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsPolicy. 
+        /// <para>
+        /// The Transport Layer Security (TLS) policy for the ingress point. The FIPS value is
+        /// only valid in US and Canada regions.
+        /// </para>
+        /// </summary>
+        public TlsPolicy TlsPolicy
+        {
+            get { return this._tlsPolicy; }
+            set { this._tlsPolicy = value; }
+        }
+
+        // Check to see if TlsPolicy property is set
+        internal bool IsSetTlsPolicy()
+        {
+            return this._tlsPolicy != null;
         }
 
         /// <summary>

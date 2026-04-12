@@ -104,12 +104,6 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Mcpservernewrelic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mcpserversigv4", targetDepth))
-                {
-                    var unmarshaller = RegisteredMCPServerSigV4DetailsUnmarshaller.Instance;
-                    unmarshalledObject.Mcpserversigv4 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("mcpserversplunk", targetDepth))
                 {
                     var unmarshaller = RegisteredMCPServerDetailsUnmarshaller.Instance;

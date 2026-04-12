@@ -1891,17 +1891,9 @@ namespace Amazon.GeoRoutes
         /// </summary>
         public static readonly RoutePedestrianTravelStepType Depart = new RoutePedestrianTravelStepType("Depart");
         /// <summary>
-        /// Constant Exit for RoutePedestrianTravelStepType
-        /// </summary>
-        public static readonly RoutePedestrianTravelStepType Exit = new RoutePedestrianTravelStepType("Exit");
-        /// <summary>
         /// Constant Keep for RoutePedestrianTravelStepType
         /// </summary>
         public static readonly RoutePedestrianTravelStepType Keep = new RoutePedestrianTravelStepType("Keep");
-        /// <summary>
-        /// Constant Ramp for RoutePedestrianTravelStepType
-        /// </summary>
-        public static readonly RoutePedestrianTravelStepType Ramp = new RoutePedestrianTravelStepType("Ramp");
         /// <summary>
         /// Constant RoundaboutEnter for RoutePedestrianTravelStepType
         /// </summary>
@@ -1918,10 +1910,6 @@ namespace Amazon.GeoRoutes
         /// Constant Turn for RoutePedestrianTravelStepType
         /// </summary>
         public static readonly RoutePedestrianTravelStepType Turn = new RoutePedestrianTravelStepType("Turn");
-        /// <summary>
-        /// Constant UTurn for RoutePedestrianTravelStepType
-        /// </summary>
-        public static readonly RoutePedestrianTravelStepType UTurn = new RoutePedestrianTravelStepType("UTurn");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

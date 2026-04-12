@@ -1,0 +1,166 @@
+using Amazon.DynamoDBv2.DataModel;
+using System;
+using System.Collections.Generic;
+
+namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
+{
+    /// <summary>
+    /// Class representing items in the table [TableNamePrefix]HashRangeTable
+    ///
+    /// No DynamoDB attributes are defined on the type:
+    /// - Some attributes are inferred from the table
+    /// - Some attributes are defined in app.config (programatically)
+    /// </summary>
+    public class Employee
+    {
+        // Hash key
+        public virtual string Name { get; set; }
+
+        public string MiddleName { get; set; }
+
+        // Range key
+        internal virtual int Age { get; set; }
+
+        public virtual string CompanyName { get; set; }
+
+        public virtual int Score { get; set; }
+
+        public virtual string ManagerName { get; set; }
+
+        public byte[] Data { get; set; }
+        
+        public Status CurrentStatus { get; set; }
+
+        public List<string> Aliases { get; set; }
+
+        public string InternalId { get; set; }
+    }
+
+    /// <summary>
+    /// Same structure as <see cref="Employee"/>, but the indices are fully annotated
+    /// </summary>
+    [DynamoDBTable("HashRangeTable")]
+    public class AnnotatedEmployee : Employee
+    {
+        // Hash key
+        [DynamoDBHashKey] public override string Name { get; set; }
+
+        // Range key
+        [DynamoDBRangeKey] internal override int Age { get; set; }
+
+        [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex", AttributeName = "Company")]
+        public override string CompanyName { get; set; }
+
+        [DynamoDBGlobalSecondaryIndexRangeKey("GlobalIndex")]
+        public override int Score { get; set; }
+
+        [DynamoDBLocalSecondaryIndexRangeKey("LocalIndex", AttributeName = "Manager")]
+        public override string ManagerName { get; set; }
+    }
+
+    /// <summary>
+    /// Same structure as <see cref="AnnotatedEmployee"/>, but it does not have the <see cref="DynamoDBTableAttribute"/> and attribute names overrides.
+    /// </summary>
+    public class PartiallyAnnotatedEmployee : Employee
+    {
+        // Hash key
+        [DynamoDBHashKey] public override string Name { get; set; }
+
+        // Range key
+        [DynamoDBRangeKey] internal override int Age { get; set; }
+
+        [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex")]
+        public override string CompanyName { get; set; }
+
+        [DynamoDBGlobalSecondaryIndexRangeKey("GlobalIndex")]
+        public override int Score { get; set; }
+
+        [DynamoDBLocalSecondaryIndexRangeKey("LocalIndex")]
+        public override string ManagerName { get; set; }
+    }
+
+    /// <summary>
+    /// Child class of <see cref="AnnotatedEmployee"/> without any attributes.
+    /// </summary>
+    public class EmployeeChild : AnnotatedEmployee
+    {
+    }
+
+    /// <summary>
+    /// Class with a property of a type that has no valid constructor
+    /// </summary>
+    public class Employee2 : Employee
+    {
+        public TimeSpan TimeWithCompany { get; set; }
+    }
+
+    /// <summary>
+    /// Class with a property of an empty type
+    /// </summary>
+    public class Employee3 : Employee
+    {
+        public EmptyType EmptyProperty { get; set; }
+    }
+
+    /// <summary>
+    /// Annotated class with a property of a type that has no valid constructor
+    /// </summary>
+    public class Employee4 : AnnotatedEmployee
+    {
+        public TimeSpan TimeWithCompany { get; set; }
+    }
+
+    /// <summary>
+    /// Annotated class with a property of an empty type
+    /// </summary>
+    public class Employee5 : AnnotatedEmployee
+    {
+        public EmptyType EmptyProperty { get; set; }
+    }
+
+    /// <summary>
+    /// Empty type
+    /// </summary>
+    public class EmptyType
+    {
+    }
+
+    public interface IVersioned
+    {
+        int? Version { get; set; }
+    }
+
+    /// <summary>
+    /// Class representing items in the table [TableNamePrefix]HashTable
+    /// This class uses optimistic locking via the Version field
+    /// </summary>
+    public class VersionedEmployee : Employee, IVersioned
+    {
+        public int? Version { get; set; }
+    }
+
+    public class CounterAnnotatedEmployee : AnnotatedEmployee
+    {
+        [DynamoDBAtomicCounter]
+        public int? CountDefault { get; set; }
+
+        [DynamoDBAtomicCounter(delta: 2, startValue: 10)]
+        public int? CountAtomic { get; set; }
+    }
+
+    /// <summary>
+    /// Class representing items in the table [TableNamePrefix]HashTable
+    /// This class uses optimistic locking via the Version field
+    /// </summary>
+    public class VersionedAnnotatedEmployee : CounterAnnotatedEmployee, IVersioned
+    {
+        [DynamoDBVersion] public int? Version { get; set; }
+    }
+
+    [DynamoDBTable("HashRangeTable")]
+    public class EmployeeWithTimestampAndCounter : AnnotatedEmployee
+    {
+        [DynamoDBAutoGeneratedTimestamp] public DateTime? LastUpdated { get; set; }
+        [DynamoDBAtomicCounter] public int? CountDefault { get; set; }
+    }
+}

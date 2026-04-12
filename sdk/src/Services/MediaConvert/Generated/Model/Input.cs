@@ -54,6 +54,7 @@ namespace Amazon.MediaConvert.Model
         private ImageInserter _imageInserter;
         private List<InputClipping> _inputClippings = AWSConfigs.InitializeCollections ? new List<InputClipping>() : null;
         private InputScanType _inputScanType;
+        private List<MultiViewSettings> _multiViewSettings = AWSConfigs.InitializeCollections ? new List<MultiViewSettings>() : null;
         private Rectangle _position;
         private int? _programNumber;
         private InputPsiControl _psiControl;
@@ -419,6 +420,31 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetInputScanType()
         {
             return this._inputScanType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiViewSettings. Specify the enhancement layer input
+        /// video file path for Multi View outputs. The base layer input is treated as the left
+        /// eye and this Multi View input is treated as the right eye. Only one Multi View input
+        /// is currently supported. MediaConvert encodes both views into a single MV-HEVC output
+        /// codec. When you add MultiViewSettings to your job, you can only produce Multi View
+        /// outputs. Adding any other codec output to the same job is not supported.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<MultiViewSettings> MultiViewSettings
+        {
+            get { return this._multiViewSettings; }
+            set { this._multiViewSettings = value; }
+        }
+
+        // Check to see if MultiViewSettings property is set
+        internal bool IsSetMultiViewSettings()
+        {
+            return this._multiViewSettings != null && (this._multiViewSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

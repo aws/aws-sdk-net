@@ -1456,6 +1456,10 @@ namespace Amazon.Connect
         /// Constant AUTOMATED for ContactInteractionType
         /// </summary>
         public static readonly ContactInteractionType AUTOMATED = new ContactInteractionType("AUTOMATED");
+        /// <summary>
+        /// Constant CUSTOMER for ContactInteractionType
+        /// </summary>
+        public static readonly ContactInteractionType CUSTOMER = new ContactInteractionType("CUSTOMER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1606,6 +1610,10 @@ namespace Amazon.Connect
         /// Constant CUSTOM_BOT for ContactParticipantRole
         /// </summary>
         public static readonly ContactParticipantRole CUSTOM_BOT = new ContactParticipantRole("CUSTOM_BOT");
+        /// <summary>
+        /// Constant CUSTOMER for ContactParticipantRole
+        /// </summary>
+        public static readonly ContactParticipantRole CUSTOMER = new ContactParticipantRole("CUSTOMER");
         /// <summary>
         /// Constant SYSTEM for ContactParticipantRole
         /// </summary>
@@ -2895,9 +2903,21 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly EvaluationFormLanguageCode ItIT = new EvaluationFormLanguageCode("it-IT");
         /// <summary>
+        /// Constant JaJP for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode JaJP = new EvaluationFormLanguageCode("ja-JP");
+        /// <summary>
+        /// Constant KoKR for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode KoKR = new EvaluationFormLanguageCode("ko-KR");
+        /// <summary>
         /// Constant PtBR for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode PtBR = new EvaluationFormLanguageCode("pt-BR");
+        /// <summary>
+        /// Constant ZhCN for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode ZhCN = new EvaluationFormLanguageCode("zh-CN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3907,9 +3927,25 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly FileUseCaseType ATTACHMENT = new FileUseCaseType("ATTACHMENT");
         /// <summary>
+        /// Constant CONTACT_ANALYSIS for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType CONTACT_ANALYSIS = new FileUseCaseType("CONTACT_ANALYSIS");
+        /// <summary>
         /// Constant EMAIL_MESSAGE for FileUseCaseType
         /// </summary>
         public static readonly FileUseCaseType EMAIL_MESSAGE = new FileUseCaseType("EMAIL_MESSAGE");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE_PLAIN_TEXT = new FileUseCaseType("EMAIL_MESSAGE_PLAIN_TEXT");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT_REDACTED for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE_PLAIN_TEXT_REDACTED = new FileUseCaseType("EMAIL_MESSAGE_PLAIN_TEXT_REDACTED");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_REDACTED for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE_REDACTED = new FileUseCaseType("EMAIL_MESSAGE_REDACTED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -8542,6 +8578,14 @@ namespace Amazon.Connect
         /// Constant EMAIL_MESSAGE_PLAIN_TEXT for ReferenceType
         /// </summary>
         public static readonly ReferenceType EMAIL_MESSAGE_PLAIN_TEXT = new ReferenceType("EMAIL_MESSAGE_PLAIN_TEXT");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT_REDACTED for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL_MESSAGE_PLAIN_TEXT_REDACTED = new ReferenceType("EMAIL_MESSAGE_PLAIN_TEXT_REDACTED");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_REDACTED for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL_MESSAGE_REDACTED = new ReferenceType("EMAIL_MESSAGE_REDACTED");
         /// <summary>
         /// Constant NUMBER for ReferenceType
         /// </summary>

@@ -508,6 +508,7 @@ namespace Amazon.S3.Internal
                 return result;
             }
             if (requestContext.RequestName == "ListBucketMetricsConfigurationsRequest") {
+                result.UseS3ExpressControlEndpoint = true;
                 var request = (ListBucketMetricsConfigurationsRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 return result;

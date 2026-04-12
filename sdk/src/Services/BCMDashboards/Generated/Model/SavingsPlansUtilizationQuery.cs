@@ -57,7 +57,7 @@ namespace Amazon.BCMDashboards.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        /// The time granularity of the retrieved data: HOURLY, DAILY, or MONTHLY.
+        /// The time granularity of the retrieved data: <c>HOURLY</c>, <c>DAILY</c>, or <c>MONTHLY</c>.
         /// </para>
         /// </summary>
         public Granularity Granularity

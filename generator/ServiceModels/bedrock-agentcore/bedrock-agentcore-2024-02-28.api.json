@@ -391,6 +391,24 @@
         {"shape":"InternalServerException"}
       ]
     },
+    "InvokeBrowser":{
+      "name":"InvokeBrowser",
+      "http":{
+        "method":"POST",
+        "requestUri":"/browsers/{browserIdentifier}/sessions/invoke",
+        "responseCode":200
+      },
+      "input":{"shape":"InvokeBrowserRequest"},
+      "output":{"shape":"InvokeBrowserResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "InvokeCodeInterpreter":{
       "name":"InvokeCodeInterpreter",
       "http":{
@@ -582,6 +600,24 @@
       ],
       "idempotent":true
     },
+    "SearchRegistryRecords":{
+      "name":"SearchRegistryRecords",
+      "http":{
+        "method":"POST",
+        "requestUri":"/registry-records/search",
+        "responseCode":200
+      },
+      "input":{"shape":"SearchRegistryRecordsRequest"},
+      "output":{"shape":"SearchRegistryRecordsResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "StartBrowserSession":{
       "name":"StartBrowserSession",
       "http":{
@@ -725,6 +761,13 @@
     }
   },
   "shapes":{
+    "A2aDescriptor":{
+      "type":"structure",
+      "required":["agentCard"],
+      "members":{
+        "agentCard":{"shape":"AgentCardDefinition"}
+      }
+    },
     "AccessDeniedException":{
       "type":"structure",
       "members":{
@@ -763,6 +806,21 @@
       "type":"structure",
       "members":{},
       "document":true
+    },
+    "AgentCardDefinition":{
+      "type":"structure",
+      "members":{
+        "schemaVersion":{"shape":"SchemaVersion"},
+        "inlineContent":{"shape":"InlineContent"}
+      }
+    },
+    "AgentSkillsDescriptor":{
+      "type":"structure",
+      "required":["skillMd"],
+      "members":{
+        "skillMd":{"shape":"SkillMdDefinition"},
+        "skillDefinition":{"shape":"SkillDefinition"}
+      }
     },
     "ApiKeyType":{
       "type":"string",
@@ -920,6 +978,41 @@
       "max":100,
       "min":1,
       "pattern":"[a-zA-Z0-9][a-zA-Z0-9-_]*"
+    },
+    "BrowserAction":{
+      "type":"structure",
+      "members":{
+        "mouseClick":{"shape":"MouseClickArguments"},
+        "mouseMove":{"shape":"MouseMoveArguments"},
+        "mouseDrag":{"shape":"MouseDragArguments"},
+        "mouseScroll":{"shape":"MouseScrollArguments"},
+        "keyType":{"shape":"KeyTypeArguments"},
+        "keyPress":{"shape":"KeyPressArguments"},
+        "keyShortcut":{"shape":"KeyShortcutArguments"},
+        "screenshot":{"shape":"ScreenshotArguments"}
+      },
+      "union":true
+    },
+    "BrowserActionResult":{
+      "type":"structure",
+      "members":{
+        "mouseClick":{"shape":"MouseClickResult"},
+        "mouseMove":{"shape":"MouseMoveResult"},
+        "mouseDrag":{"shape":"MouseDragResult"},
+        "mouseScroll":{"shape":"MouseScrollResult"},
+        "keyType":{"shape":"KeyTypeResult"},
+        "keyPress":{"shape":"KeyPressResult"},
+        "keyShortcut":{"shape":"KeyShortcutResult"},
+        "screenshot":{"shape":"ScreenshotResult"}
+      },
+      "union":true
+    },
+    "BrowserActionStatus":{
+      "type":"string",
+      "enum":[
+        "SUCCESS",
+        "FAILED"
+      ]
     },
     "BrowserEnterprisePolicies":{
       "type":"list",
@@ -1258,6 +1351,12 @@
       "min":1,
       "pattern":"[a-zA-Z0-9\\-_]+"
     },
+    "CustomDescriptor":{
+      "type":"structure",
+      "members":{
+        "inlineContent":{"shape":"InlineContent"}
+      }
+    },
     "CustomRequestKeyType":{
       "type":"string",
       "max":256,
@@ -1341,6 +1440,30 @@
       "required":["memoryRecordId"],
       "members":{
         "memoryRecordId":{"shape":"MemoryRecordId"}
+      }
+    },
+    "Description":{
+      "type":"string",
+      "max":4096,
+      "min":1,
+      "sensitive":true
+    },
+    "DescriptorType":{
+      "type":"string",
+      "enum":[
+        "MCP",
+        "A2A",
+        "CUSTOM",
+        "AGENT_SKILLS"
+      ]
+    },
+    "Descriptors":{
+      "type":"structure",
+      "members":{
+        "mcp":{"shape":"McpDescriptor"},
+        "a2a":{"shape":"A2aDescriptor"},
+        "custom":{"shape":"CustomDescriptor"},
+        "agentSkills":{"shape":"AgentSkillsDescriptor"}
       }
     },
     "Document":{
@@ -1541,6 +1664,10 @@
         "branch":{"shape":"Branch"},
         "metadata":{"shape":"MetadataMap"}
       }
+    },
+    "EventFilterCondition":{
+      "type":"string",
+      "enum":["HAS_EVENTS"]
     },
     "EventId":{
       "type":"string",
@@ -1942,6 +2069,11 @@
       "max":100,
       "min":0
     },
+    "InlineContent":{
+      "type":"string",
+      "max":409600,
+      "min":1
+    },
     "InputContentBlock":{
       "type":"structure",
       "required":["path"],
@@ -2291,6 +2423,42 @@
       },
       "payload":"response"
     },
+    "InvokeBrowserRequest":{
+      "type":"structure",
+      "required":[
+        "browserIdentifier",
+        "sessionId",
+        "action"
+      ],
+      "members":{
+        "browserIdentifier":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"browserIdentifier"
+        },
+        "sessionId":{
+          "shape":"BrowserSessionId",
+          "location":"header",
+          "locationName":"x-amzn-browser-session-id"
+        },
+        "action":{"shape":"BrowserAction"}
+      }
+    },
+    "InvokeBrowserResponse":{
+      "type":"structure",
+      "required":[
+        "result",
+        "sessionId"
+      ],
+      "members":{
+        "result":{"shape":"BrowserActionResult"},
+        "sessionId":{
+          "shape":"BrowserSessionId",
+          "location":"header",
+          "locationName":"x-amzn-browser-session-id"
+        }
+      }
+    },
     "InvokeCodeInterpreterRequest":{
       "type":"structure",
       "required":[
@@ -2344,6 +2512,69 @@
         "stream":{"shape":"CodeInterpreterStreamOutput"}
       },
       "payload":"stream"
+    },
+    "KeyList":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "max":5,
+      "min":1
+    },
+    "KeyPressArguments":{
+      "type":"structure",
+      "required":["key"],
+      "members":{
+        "key":{"shape":"String"},
+        "presses":{"shape":"KeyPressArgumentsPressesInteger"}
+      }
+    },
+    "KeyPressArgumentsPressesInteger":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "KeyPressResult":{
+      "type":"structure",
+      "required":["status"],
+      "members":{
+        "status":{"shape":"BrowserActionStatus"},
+        "error":{"shape":"String"}
+      }
+    },
+    "KeyShortcutArguments":{
+      "type":"structure",
+      "required":["keys"],
+      "members":{
+        "keys":{"shape":"KeyList"}
+      }
+    },
+    "KeyShortcutResult":{
+      "type":"structure",
+      "required":["status"],
+      "members":{
+        "status":{"shape":"BrowserActionStatus"},
+        "error":{"shape":"String"}
+      }
+    },
+    "KeyTypeArguments":{
+      "type":"structure",
+      "required":["text"],
+      "members":{
+        "text":{"shape":"KeyTypeArgumentsTextString"}
+      }
+    },
+    "KeyTypeArgumentsTextString":{
+      "type":"string",
+      "max":10000,
+      "min":0
+    },
+    "KeyTypeResult":{
+      "type":"structure",
+      "required":["status"],
+      "members":{
+        "status":{"shape":"BrowserActionStatus"},
+        "error":{"shape":"String"}
+      }
     },
     "LanguageRuntime":{
       "type":"string",
@@ -2534,7 +2765,8 @@
           "locationName":"actorId"
         },
         "maxResults":{"shape":"MaxResults"},
-        "nextToken":{"shape":"PaginationToken"}
+        "nextToken":{"shape":"PaginationToken"},
+        "filter":{"shape":"SessionFilter"}
       }
     },
     "ListSessionsOutput":{
@@ -2565,6 +2797,17 @@
       "box":true,
       "max":100,
       "min":1
+    },
+    "McpDescriptor":{
+      "type":"structure",
+      "required":[
+        "server",
+        "tools"
+      ],
+      "members":{
+        "server":{"shape":"ServerDefinition"},
+        "tools":{"shape":"ToolsDefinition"}
+      }
     },
     "MemoryContent":{
       "type":"structure",
@@ -2750,6 +2993,11 @@
       "type":"list",
       "member":{"shape":"MessageMetadata"}
     },
+    "MetadataFilterExpression":{
+      "type":"structure",
+      "members":{},
+      "document":true
+    },
     "MetadataKey":{
       "type":"string",
       "max":128,
@@ -2780,6 +3028,117 @@
       "type":"string",
       "max":256,
       "min":1
+    },
+    "MouseButton":{
+      "type":"string",
+      "enum":[
+        "LEFT",
+        "RIGHT",
+        "MIDDLE"
+      ]
+    },
+    "MouseClickArguments":{
+      "type":"structure",
+      "required":[
+        "x",
+        "y"
+      ],
+      "members":{
+        "x":{"shape":"Integer"},
+        "y":{"shape":"Integer"},
+        "button":{"shape":"MouseButton"},
+        "clickCount":{"shape":"MouseClickArgumentsClickCountInteger"}
+      }
+    },
+    "MouseClickArgumentsClickCountInteger":{
+      "type":"integer",
+      "box":true,
+      "max":10,
+      "min":1
+    },
+    "MouseClickResult":{
+      "type":"structure",
+      "required":["status"],
+      "members":{
+        "status":{"shape":"BrowserActionStatus"},
+        "error":{"shape":"String"}
+      }
+    },
+    "MouseDragArguments":{
+      "type":"structure",
+      "required":[
+        "endX",
+        "endY",
+        "startX",
+        "startY"
+      ],
+      "members":{
+        "endX":{"shape":"Integer"},
+        "endY":{"shape":"Integer"},
+        "startX":{"shape":"Integer"},
+        "startY":{"shape":"Integer"},
+        "button":{"shape":"MouseButton"}
+      }
+    },
+    "MouseDragResult":{
+      "type":"structure",
+      "required":["status"],
+      "members":{
+        "status":{"shape":"BrowserActionStatus"},
+        "error":{"shape":"String"}
+      }
+    },
+    "MouseMoveArguments":{
+      "type":"structure",
+      "required":[
+        "x",
+        "y"
+      ],
+      "members":{
+        "x":{"shape":"Integer"},
+        "y":{"shape":"Integer"}
+      }
+    },
+    "MouseMoveResult":{
+      "type":"structure",
+      "required":["status"],
+      "members":{
+        "status":{"shape":"BrowserActionStatus"},
+        "error":{"shape":"String"}
+      }
+    },
+    "MouseScrollArguments":{
+      "type":"structure",
+      "required":[
+        "x",
+        "y"
+      ],
+      "members":{
+        "x":{"shape":"Integer"},
+        "y":{"shape":"Integer"},
+        "deltaX":{"shape":"MouseScrollArgumentsDeltaXInteger"},
+        "deltaY":{"shape":"MouseScrollArgumentsDeltaYInteger"}
+      }
+    },
+    "MouseScrollArgumentsDeltaXInteger":{
+      "type":"integer",
+      "box":true,
+      "max":1000,
+      "min":-1000
+    },
+    "MouseScrollArgumentsDeltaYInteger":{
+      "type":"integer",
+      "box":true,
+      "max":1000,
+      "min":-1000
+    },
+    "MouseScrollResult":{
+      "type":"structure",
+      "required":["status"],
+      "members":{
+        "status":{"shape":"BrowserActionStatus"},
+        "error":{"shape":"String"}
+      }
     },
     "Name":{
       "type":"string",
@@ -2879,6 +3238,84 @@
         "basicAuth":{"shape":"BasicAuth"}
       },
       "union":true
+    },
+    "RegistryArn":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}"
+    },
+    "RegistryIdentifier":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"(arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}"
+    },
+    "RegistryRecordArn":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}"
+    },
+    "RegistryRecordId":{
+      "type":"string",
+      "max":12,
+      "min":12,
+      "pattern":"[a-zA-Z0-9]{12}"
+    },
+    "RegistryRecordName":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"[a-zA-Z0-9][a-zA-Z0-9_\\-\\.\\/]*"
+    },
+    "RegistryRecordStatus":{
+      "type":"string",
+      "enum":[
+        "DRAFT",
+        "PENDING_APPROVAL",
+        "APPROVED",
+        "REJECTED",
+        "DEPRECATED"
+      ]
+    },
+    "RegistryRecordSummary":{
+      "type":"structure",
+      "required":[
+        "registryArn",
+        "recordArn",
+        "recordId",
+        "name",
+        "descriptorType",
+        "descriptors",
+        "version",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "registryArn":{"shape":"RegistryArn"},
+        "recordArn":{"shape":"RegistryRecordArn"},
+        "recordId":{"shape":"RegistryRecordId"},
+        "name":{"shape":"RegistryRecordName"},
+        "description":{"shape":"Description"},
+        "descriptorType":{"shape":"DescriptorType"},
+        "descriptors":{"shape":"Descriptors"},
+        "version":{"shape":"RegistryRecordVersion"},
+        "status":{"shape":"RegistryRecordStatus"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"}
+      }
+    },
+    "RegistryRecordSummaryList":{
+      "type":"list",
+      "member":{"shape":"RegistryRecordSummary"}
+    },
+    "RegistryRecordVersion":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"[a-zA-Z0-9.-]+"
     },
     "RequestIdentifier":{
       "type":"string",
@@ -3099,6 +3536,11 @@
         "lastUpdatedAt":{"shape":"DateTimestamp"}
       }
     },
+    "SchemaVersion":{
+      "type":"string",
+      "max":255,
+      "min":1
+    },
     "ScopeType":{
       "type":"string",
       "max":128,
@@ -3107,6 +3549,25 @@
     "ScopesListType":{
       "type":"list",
       "member":{"shape":"ScopeType"}
+    },
+    "ScreenshotArguments":{
+      "type":"structure",
+      "members":{
+        "format":{"shape":"ScreenshotFormat"}
+      }
+    },
+    "ScreenshotFormat":{
+      "type":"string",
+      "enum":["PNG"]
+    },
+    "ScreenshotResult":{
+      "type":"structure",
+      "required":["status"],
+      "members":{
+        "status":{"shape":"BrowserActionStatus"},
+        "error":{"shape":"String"},
+        "data":{"shape":"Blob"}
+      }
     },
     "SearchCriteria":{
       "type":"structure",
@@ -3130,6 +3591,43 @@
       "max":100,
       "min":1
     },
+    "SearchRegistryRecordsRequest":{
+      "type":"structure",
+      "required":[
+        "searchQuery",
+        "registryIds"
+      ],
+      "members":{
+        "searchQuery":{"shape":"SearchRegistryRecordsRequestSearchQueryString"},
+        "registryIds":{"shape":"SearchRegistryRecordsRequestRegistryIdsList"},
+        "maxResults":{"shape":"SearchRegistryRecordsRequestMaxResultsInteger"},
+        "filters":{"shape":"MetadataFilterExpression"}
+      }
+    },
+    "SearchRegistryRecordsRequestMaxResultsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":20,
+      "min":1
+    },
+    "SearchRegistryRecordsRequestRegistryIdsList":{
+      "type":"list",
+      "member":{"shape":"RegistryIdentifier"},
+      "max":1,
+      "min":1
+    },
+    "SearchRegistryRecordsRequestSearchQueryString":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
+    "SearchRegistryRecordsResponse":{
+      "type":"structure",
+      "required":["registryRecords"],
+      "members":{
+        "registryRecords":{"shape":"RegistryRecordSummaryList"}
+      }
+    },
     "SecretArn":{
       "type":"string",
       "pattern":"arn:aws(-[a-z-]+)?:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+"
@@ -3139,6 +3637,13 @@
       "required":["secretArn"],
       "members":{
         "secretArn":{"shape":"SecretArn"}
+      }
+    },
+    "ServerDefinition":{
+      "type":"structure",
+      "members":{
+        "schemaVersion":{"shape":"SchemaVersion"},
+        "inlineContent":{"shape":"InlineContent"}
       }
     },
     "ServiceException":{
@@ -3161,6 +3666,12 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "SessionFilter":{
+      "type":"structure",
+      "members":{
+        "eventFilter":{"shape":"EventFilterCondition"}
+      }
     },
     "SessionId":{
       "type":"string",
@@ -3196,6 +3707,19 @@
       "type":"string",
       "max":256,
       "min":33
+    },
+    "SkillDefinition":{
+      "type":"structure",
+      "members":{
+        "schemaVersion":{"shape":"SchemaVersion"},
+        "inlineContent":{"shape":"InlineContent"}
+      }
+    },
+    "SkillMdDefinition":{
+      "type":"structure",
+      "members":{
+        "inlineContent":{"shape":"InlineContent"}
+      }
     },
     "Span":{
       "type":"structure",
@@ -3620,6 +4144,13 @@
         "stderr":{"shape":"String"},
         "exitCode":{"shape":"Integer"},
         "executionTime":{"shape":"Double"}
+      }
+    },
+    "ToolsDefinition":{
+      "type":"structure",
+      "members":{
+        "protocolVersion":{"shape":"SchemaVersion"},
+        "inlineContent":{"shape":"InlineContent"}
       }
     },
     "TraceId":{

@@ -65,7 +65,7 @@ namespace Amazon.MediaConnect.Model
         /// The destination port number for the RTP protocol in the router output configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=65531)]
+        [AWSProperty(Required=true, Min=1024, Max=65531)]
         public int? DestinationPort
         {
             get { return this._destinationPort; }

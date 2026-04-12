@@ -98,6 +98,18 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Gitlab = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("mcpserver", targetDepth))
+                {
+                    var unmarshaller = MCPServerConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Mcpserver = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("mcpserverdatadog", targetDepth))
+                {
+                    var unmarshaller = MCPServerDatadogConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Mcpserverdatadog = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("mcpservergrafana", targetDepth))
                 {
                     var unmarshaller = MCPServerGrafanaConfigurationUnmarshaller.Instance;
@@ -110,10 +122,10 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Mcpservernewrelic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("msteams", targetDepth))
+                if (context.TestExpression("mcpserversplunk", targetDepth))
                 {
-                    var unmarshaller = MSTeamsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Msteams = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = MCPServerSplunkConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Mcpserversplunk = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pagerduty", targetDepth))

@@ -43,5 +43,13 @@ namespace Amazon.CertificateManager.Model
         {
             return new ListCertificatesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for SearchCertificates operation
+        ///</summary>
+        public ISearchCertificatesPaginator SearchCertificates(SearchCertificatesRequest request) 
+        {
+            return new SearchCertificatesPaginator(this.client, request);
+        }
     }
 }

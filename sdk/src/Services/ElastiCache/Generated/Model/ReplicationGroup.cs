@@ -323,7 +323,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The engine used in a replication group. The options are redis, memcached or valkey.
+        /// The engine used in a replication group. The options are valkey, memcached or redis.
         /// </para>
         /// </summary>
         public string Engine

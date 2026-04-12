@@ -316,7 +316,7 @@ namespace Amazon.GuardDuty.Model
         /// The type of finding.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Type
         {
             get { return this._type; }

@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Travel mode options when the provided travel mode is <c>Car</c>.
+    /// Travel mode options when the provided travel mode is <c>Car</c>. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+    /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only <c>LicensePlate</c>
+    /// options.
     /// </summary>
     public partial class RouteCarOptions
     {
@@ -42,7 +44,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property EngineType. 
         /// <para>
-        /// Engine type of the vehicle.
+        ///  Engine type of the vehicle. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -79,11 +83,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property MaxSpeed. 
         /// <para>
-        /// Maximum speed specified.
+        ///  Maximum speed specified. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>KilometersPerHour</c> 
+        ///  <b>Unit</b>: <c>kilometers per hour</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=252)]
@@ -102,11 +108,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Occupancy. 
         /// <para>
-        /// The number of occupants in the vehicle.
+        ///  The number of occupants in the vehicle. Not supported in <c>ap-southeast-1</c> and
+        /// <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>1</c> 
+        /// Default value: <c>1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1)]

@@ -46,6 +46,17 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAvailabilityZoneIds())
+            {
+                context.Writer.WritePropertyName("AvailabilityZoneIds");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAvailabilityZoneIdsListValue in requestObject.AvailabilityZoneIds)
+                {
+                        context.Writer.WriteStringValue(requestObjectAvailabilityZoneIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetAvailabilityZones())
             {
                 context.Writer.WritePropertyName("AvailabilityZones");

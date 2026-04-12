@@ -67,7 +67,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>UseTrafficData</c> 
+        /// Default value: <c>UseTrafficData</c> 
         /// </para>
         /// </summary>
         public TrafficUsage Usage

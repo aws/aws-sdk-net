@@ -198,6 +198,10 @@ namespace Amazon.MedicalImaging
         /// Constant UPDATING for ImageSetWorkflowStatus
         /// </summary>
         public static readonly ImageSetWorkflowStatus UPDATING = new ImageSetWorkflowStatus("UPDATING");
+        /// <summary>
+        /// Constant UPDATING_FOR_STUDY_CONSISTENCY for ImageSetWorkflowStatus
+        /// </summary>
+        public static readonly ImageSetWorkflowStatus UPDATING_FOR_STUDY_CONSISTENCY = new ImageSetWorkflowStatus("UPDATING_FOR_STUDY_CONSISTENCY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

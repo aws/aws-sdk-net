@@ -2986,6 +2986,11 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <exception cref="Amazon.ECR.Model.UnableToListUpstreamImageReferrersException">
+        /// The referrer or referrers were unable to be listed using the pull through cache rule.
+        /// This is usually caused because of an issue with the Secrets Manager secret containing
+        /// the credentials for the upstream registry.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.ValidationException">
         /// There was an exception validating this request.
         /// </exception>
@@ -3024,6 +3029,11 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.UnableToListUpstreamImageReferrersException">
+        /// The referrer or referrers were unable to be listed using the pull through cache rule.
+        /// This is usually caused because of an issue with the Secrets Manager secret containing
+        /// the credentials for the upstream registry.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.ValidationException">
         /// There was an exception validating this request.

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Zone category to be avoided.
+    /// Types of regulated zones that may affect routing.
     /// </summary>
     public partial class IsolineAvoidanceZoneCategory
     {
@@ -39,7 +39,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// Zone category to be avoided.
+        /// The type of regulated zone: <c>CongestionPricing</c> for toll zones based on traffic
+        /// levels, <c>Environmental</c> for low-emission zones, or <c>Vignette</c> for areas
+        /// requiring special permits or stickers.
         /// </para>
         /// </summary>
         public IsolineZoneCategory Category

@@ -1373,6 +1373,56 @@ namespace Amazon.MediaConnect
 
 
     /// <summary>
+    /// Constants used for properties of type MediaLiveChannelPipelineId.
+    /// </summary>
+    public class MediaLiveChannelPipelineId : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PIPELINE_0 for MediaLiveChannelPipelineId
+        /// </summary>
+        public static readonly MediaLiveChannelPipelineId PIPELINE_0 = new MediaLiveChannelPipelineId("PIPELINE_0");
+        /// <summary>
+        /// Constant PIPELINE_1 for MediaLiveChannelPipelineId
+        /// </summary>
+        public static readonly MediaLiveChannelPipelineId PIPELINE_1 = new MediaLiveChannelPipelineId("PIPELINE_1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaLiveChannelPipelineId(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaLiveChannelPipelineId FindValue(string value)
+        {
+            return FindValue<MediaLiveChannelPipelineId>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaLiveChannelPipelineId(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MediaLiveInputPipelineId.
     /// </summary>
     public class MediaLiveInputPipelineId : ConstantClass
@@ -2228,6 +2278,10 @@ namespace Amazon.MediaConnect
         /// Constant MEDIACONNECT_FLOW for RouterInputType
         /// </summary>
         public static readonly RouterInputType MEDIACONNECT_FLOW = new RouterInputType("MEDIACONNECT_FLOW");
+        /// <summary>
+        /// Constant MEDIALIVE_CHANNEL for RouterInputType
+        /// </summary>
+        public static readonly RouterInputType MEDIALIVE_CHANNEL = new RouterInputType("MEDIALIVE_CHANNEL");
         /// <summary>
         /// Constant MERGE for RouterInputType
         /// </summary>

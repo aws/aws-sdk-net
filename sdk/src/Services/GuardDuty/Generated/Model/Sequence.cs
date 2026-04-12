@@ -54,7 +54,7 @@ namespace Amazon.GuardDuty.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=400)]
+        [AWSProperty(Min=0, Max=400)]
         public List<Actor> Actors
         {
             get { return this._actors; }
@@ -97,7 +97,7 @@ namespace Amazon.GuardDuty.Model
         /// Description of the attack sequence.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=4096)]
+        [AWSProperty(Required=true, Min=0, Max=4096)]
         public string Description
         {
             get { return this._description; }
@@ -121,7 +121,7 @@ namespace Amazon.GuardDuty.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=400)]
+        [AWSProperty(Min=0, Max=400)]
         public List<NetworkEndpoint> Endpoints
         {
             get { return this._endpoints; }
@@ -145,7 +145,7 @@ namespace Amazon.GuardDuty.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=400)]
+        [AWSProperty(Min=0, Max=400)]
         public List<ResourceV2> Resources
         {
             get { return this._resources; }
@@ -169,7 +169,7 @@ namespace Amazon.GuardDuty.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=400)]
+        [AWSProperty(Min=0, Max=400)]
         public List<Indicator> SequenceIndicators
         {
             get { return this._sequenceIndicators; }

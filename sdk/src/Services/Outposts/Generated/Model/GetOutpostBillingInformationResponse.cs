@@ -36,6 +36,8 @@ namespace Amazon.Outposts.Model
     {
         private string _contractEndDate;
         private string _nextToken;
+        private PaymentOption _paymentOption;
+        private PaymentTerm _paymentTerm;
         private List<Subscription> _subscriptions = AWSConfigs.InitializeCollections ? new List<Subscription>() : null;
 
         /// <summary>
@@ -74,6 +76,42 @@ namespace Amazon.Outposts.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PaymentOption. 
+        /// <para>
+        /// The payment option.
+        /// </para>
+        /// </summary>
+        public PaymentOption PaymentOption
+        {
+            get { return this._paymentOption; }
+            set { this._paymentOption = value; }
+        }
+
+        // Check to see if PaymentOption property is set
+        internal bool IsSetPaymentOption()
+        {
+            return this._paymentOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PaymentTerm. 
+        /// <para>
+        /// The payment term.
+        /// </para>
+        /// </summary>
+        public PaymentTerm PaymentTerm
+        {
+            get { return this._paymentTerm; }
+            set { this._paymentTerm = value; }
+        }
+
+        // Check to see if PaymentTerm property is set
+        internal bool IsSetPaymentTerm()
+        {
+            return this._paymentTerm != null;
         }
 
         /// <summary>

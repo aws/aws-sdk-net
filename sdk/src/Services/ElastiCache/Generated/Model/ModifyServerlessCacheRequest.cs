@@ -106,8 +106,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Modifies the engine listed in a serverless cache request. The options are redis, memcached
-        /// or valkey.
+        /// Modifies the engine listed in a serverless cache request. The options are valkey,
+        /// memcached or redis.
         /// </para>
         /// </summary>
         public string Engine

@@ -25,6 +25,64 @@ namespace Amazon.RTBFabric
 {
 
     /// <summary>
+    /// Constants used for properties of type ConnectivityType.
+    /// </summary>
+    public class ConnectivityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for ConnectivityType
+        /// </summary>
+        public static readonly ConnectivityType DEFAULT = new ConnectivityType("DEFAULT");
+        /// <summary>
+        /// Constant EXTERNAL_INBOUND for ConnectivityType
+        /// </summary>
+        public static readonly ConnectivityType EXTERNAL_INBOUND = new ConnectivityType("EXTERNAL_INBOUND");
+        /// <summary>
+        /// Constant PUBLIC_EGRESS for ConnectivityType
+        /// </summary>
+        public static readonly ConnectivityType PUBLIC_EGRESS = new ConnectivityType("PUBLIC_EGRESS");
+        /// <summary>
+        /// Constant PUBLIC_INGRESS for ConnectivityType
+        /// </summary>
+        public static readonly ConnectivityType PUBLIC_INGRESS = new ConnectivityType("PUBLIC_INGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectivityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectivityType FindValue(string value)
+        {
+            return FindValue<ConnectivityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectivityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterType.
     /// </summary>
     public class FilterType : ConstantClass
@@ -68,6 +126,56 @@ namespace Amazon.RTBFabric
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GatewayType.
+    /// </summary>
+    public class GatewayType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTERNAL for GatewayType
+        /// </summary>
+        public static readonly GatewayType EXTERNAL = new GatewayType("EXTERNAL");
+        /// <summary>
+        /// Constant INTERNAL for GatewayType
+        /// </summary>
+        public static readonly GatewayType INTERNAL = new GatewayType("INTERNAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GatewayType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayType FindValue(string value)
+        {
+            return FindValue<GatewayType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayType(string value)
         {
             return FindValue(value);
         }

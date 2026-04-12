@@ -368,9 +368,10 @@ namespace Amazon.Runtime.EventStreams
                     newOffset += valueLength;
                     break;
                 case EventStreamHeaderType.Timestamp:
-                    var tempValue = (Int64)((DateTime)HeaderValue).Subtract(_unixEpoch).TotalMilliseconds;
-                    serializedBytes = BitConverter.GetBytes(IPAddress.HostToNetworkOrder(tempValue));
-                    Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, 8);
+                    var millis = (((DateTime)HeaderValue).Ticks - _unixEpoch.Ticks) / TimeSpan.TicksPerMillisecond;
+                    var networkOrder = IPAddress.HostToNetworkOrder(millis);
+                    serializedBytes = BitConverter.GetBytes(networkOrder);
+                    Buffer.BlockCopy(serializedBytes, 0, buffer, newOffset, _sizeOfInt64);
                     newOffset += _sizeOfInt64;
                     break;
                 case EventStreamHeaderType.UUID:

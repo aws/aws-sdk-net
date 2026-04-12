@@ -34,8 +34,35 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class AddClusterNodeSpecification
     {
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _incrementTargetCountBy;
         private string _instanceGroupName;
+        private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZones. 
+        /// <para>
+        /// The availability zones in which to add nodes. Use this to target node placement in
+        /// specific availability zones within a flexible instance group.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> AvailabilityZones
+        {
+            get { return this._availabilityZones; }
+            set { this._availabilityZones = value; }
+        }
+
+        // Check to see if AvailabilityZones property is set
+        internal bool IsSetAvailabilityZones()
+        {
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property IncrementTargetCountBy. 
@@ -74,6 +101,31 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroupName()
         {
             return this._instanceGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceTypes. 
+        /// <para>
+        /// The instance types to use when adding nodes. Use this to target specific instance
+        /// types within a flexible instance group.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<string> InstanceTypes
+        {
+            get { return this._instanceTypes; }
+            set { this._instanceTypes = value; }
+        }
+
+        // Check to see if InstanceTypes property is set
+        internal bool IsSetInstanceTypes()
+        {
+            return this._instanceTypes != null && (this._instanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

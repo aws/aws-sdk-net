@@ -43,5 +43,13 @@ namespace Amazon.BCMDashboards.Model
         {
             return new ListDashboardsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListScheduledReports operation
+        ///</summary>
+        public IListScheduledReportsPaginator ListScheduledReports(ListScheduledReportsRequest request) 
+        {
+            return new ListScheduledReportsPaginator(this.client, request);
+        }
     }
 }

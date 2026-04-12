@@ -479,11 +479,17 @@ namespace Amazon.MedicalImaging
         /// <exception cref="Amazon.MedicalImaging.Model.AccessDeniedException">
         /// The user does not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.MedicalImaging.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
         /// <exception cref="Amazon.MedicalImaging.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.MedicalImaging.Model.InternalServerException">
         /// An unexpected error occurred during processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.MedicalImaging.Model.NotAcceptableException">
+        /// The request content type or accept header is not supported.
         /// </exception>
         /// <exception cref="Amazon.MedicalImaging.Model.ResourceNotFoundException">
         /// The request references a resource which does not exist.
@@ -511,11 +517,17 @@ namespace Amazon.MedicalImaging
         /// <exception cref="Amazon.MedicalImaging.Model.AccessDeniedException">
         /// The user does not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.MedicalImaging.Model.BadRequestException">
+        /// The request is invalid or malformed.
+        /// </exception>
         /// <exception cref="Amazon.MedicalImaging.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.MedicalImaging.Model.InternalServerException">
         /// An unexpected error occurred during processing of the request.
+        /// </exception>
+        /// <exception cref="Amazon.MedicalImaging.Model.NotAcceptableException">
+        /// The request content type or accept header is not supported.
         /// </exception>
         /// <exception cref="Amazon.MedicalImaging.Model.ResourceNotFoundException">
         /// The request references a resource which does not exist.

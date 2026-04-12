@@ -110,6 +110,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.Owner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("selectiveContentGuarding", targetDepth))
+                {
+                    var unmarshaller = SelectiveContentGuardingUnmarshaller.Instance;
+                    unmarshalledObject.SelectiveContentGuarding = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

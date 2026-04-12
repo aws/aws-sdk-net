@@ -675,6 +675,10 @@
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.DrainSessionInstanceRequest.SessionId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.EnableUserRequest.UserName</property>
     <min>1</min>
     <max>128</max>

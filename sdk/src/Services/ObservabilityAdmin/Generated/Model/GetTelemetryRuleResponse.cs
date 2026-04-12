@@ -35,7 +35,10 @@ namespace Amazon.ObservabilityAdmin.Model
     public partial class GetTelemetryRuleResponse : AmazonWebServiceResponse
     {
         private long? _createdTimeStamp;
+        private string _homeRegion;
+        private bool? _isReplicated;
         private long? _lastUpdateTimeStamp;
+        private List<RegionStatus> _regionStatuses = AWSConfigs.InitializeCollections ? new List<RegionStatus>() : null;
         private string _ruleArn;
         private string _ruleName;
         private TelemetryRule _telemetryRule;
@@ -59,6 +62,48 @@ namespace Amazon.ObservabilityAdmin.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HomeRegion. 
+        /// <para>
+        ///  The Amazon Web Services Region where the telemetry rule was originally created. For
+        /// replicated rules in spoke regions, this indicates the region that manages the rule.
+        /// For rules created without multi-region scope, this field is not present. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string HomeRegion
+        {
+            get { return this._homeRegion; }
+            set { this._homeRegion = value; }
+        }
+
+        // Check to see if HomeRegion property is set
+        internal bool IsSetHomeRegion()
+        {
+            return this._homeRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsReplicated. 
+        /// <para>
+        ///  Indicates whether this telemetry rule is a replica that was created in this region
+        /// through multi-region fan-out from the home region. Replicated rules cannot be directly
+        /// updated or deleted in the spoke region. To modify a replicated rule, make changes
+        /// in the home region. 
+        /// </para>
+        /// </summary>
+        public bool? IsReplicated
+        {
+            get { return this._isReplicated; }
+            set { this._isReplicated = value; }
+        }
+
+        // Check to see if IsReplicated property is set
+        internal bool IsSetIsReplicated()
+        {
+            return this._isReplicated.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdateTimeStamp. 
         /// <para>
         ///  The timestamp when the telemetry rule was last updated. 
@@ -74,6 +119,31 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetLastUpdateTimeStamp()
         {
             return this._lastUpdateTimeStamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegionStatuses. 
+        /// <para>
+        ///  A list of per-region replication statuses for the telemetry rule. Each entry indicates
+        /// the replication status of the rule in a specific spoke region. This field is only
+        /// present for rules created with multi-region scope. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<RegionStatus> RegionStatuses
+        {
+            get { return this._regionStatuses; }
+            set { this._regionStatuses = value; }
+        }
+
+        // Check to see if RegionStatuses property is set
+        internal bool IsSetRegionStatuses()
+        {
+            return this._regionStatuses != null && (this._regionStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

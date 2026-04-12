@@ -52,6 +52,12 @@ namespace Amazon.Lightsail.Model
     /// overwrites the previous configuration of the alarm. The alarm is then evaluated with
     /// the updated configuration.
     /// </para>
+    ///  
+    /// <para>
+    /// The <c>put alarm</c> operation supports tag-based access control via request tags.
+    /// For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Developer Guide</a>.
+    /// </para>
     /// </summary>
     public partial class PutAlarmRequest : AmazonLightsailRequest
     {
@@ -64,6 +70,7 @@ namespace Amazon.Lightsail.Model
         private string _monitoredResourceName;
         private bool? _notificationEnabled;
         private List<string> _notificationTriggers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private double? _threshold;
         private TreatMissingData _treatMissingData;
 
@@ -361,6 +368,33 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetNotificationTriggers()
         {
             return this._notificationTriggers != null && (this._notificationTriggers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag keys and optional values to add to the alarm during create.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>TagResource</c> action to tag a resource after it's created.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

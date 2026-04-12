@@ -38,6 +38,7 @@ namespace Amazon.IVSRealTime.Model
         private string _browserName;
         private string _browserVersion;
         private DateTime? _firstJoinTime;
+        private string _ingestConfigurationArn;
         private string _ispName;
         private string _osName;
         private string _osVersion;
@@ -47,6 +48,7 @@ namespace Amazon.IVSRealTime.Model
         private string _recordings3BucketName;
         private string _recordings3Prefix;
         private ParticipantRecordingState _recordingState;
+        private bool? _redundantIngest;
         private ReplicationState _replicationState;
         private ReplicationType _replicationType;
         private string _sdkVersion;
@@ -136,6 +138,25 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetFirstJoinTime()
         {
             return this._firstJoinTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngestConfigurationArn. 
+        /// <para>
+        /// The participant’s ingest configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string IngestConfigurationArn
+        {
+            get { return this._ingestConfigurationArn; }
+            set { this._ingestConfigurationArn = value; }
+        }
+
+        // Check to see if IngestConfigurationArn property is set
+        internal bool IsSetIngestConfigurationArn()
+        {
+            return this._ingestConfigurationArn != null;
         }
 
         /// <summary>
@@ -310,6 +331,24 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetRecordingState()
         {
             return this._recordingState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedundantIngest. 
+        /// <para>
+        /// Indicates whether redundant ingest is enabled for the participant.
+        /// </para>
+        /// </summary>
+        public bool? RedundantIngest
+        {
+            get { return this._redundantIngest; }
+            set { this._redundantIngest = value; }
+        }
+
+        // Check to see if RedundantIngest property is set
+        internal bool IsSetRedundantIngest()
+        {
+            return this._redundantIngest.HasValue; 
         }
 
         /// <summary>

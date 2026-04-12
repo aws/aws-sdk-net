@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Travel mode options when the provided travel mode is "Truck"
+    /// Vehicle characteristics and restrictions that affect which roads can be used when
+    /// calculating reachable areas for trucks. These details ensure that routes respect physical
+    /// limitations and legal requirements.
+    /// 
+    ///  
+    /// <para>
+    /// These apply when the provided travel mode is <c>Truck</c> 
+    /// </para>
     /// </summary>
     public partial class IsolineTruckOptions
     {
@@ -57,7 +64,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property AxleCount. 
         /// <para>
-        /// Total number of axles of the vehicle.
+        /// The total number of axles on the vehicle. Required for certain road restrictions and
+        /// weight limit calculations.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=2, Max=255)]
@@ -76,8 +84,23 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property EngineType. 
         /// <para>
-        /// Engine type of the vehicle.
+        /// The type of engine powering the vehicle, which may affect route calculation due to
+        /// road restrictions or vehicle characteristics.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>INTERNAL_COMBUSTION</c>—Standard gasoline or diesel engine.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ELECTRIC</c>—Battery electric vehicle.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PLUGIN_HYBRID</c>—Combination of electric and internal combustion engines with
+        /// plug-in charging capability.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public IsolineEngineType EngineType
@@ -95,11 +118,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property GrossWeight. 
         /// <para>
-        /// Gross weight of the vehicle including trailers, and goods at capacity.
+        /// The gross vehicle weight (the maximum weight a vehicle can safely operate at, as specified
+        /// by the manufacturer) in kilograms. Used to avoid roads with weight restrictions and
+        /// ensure compliance with maximum allowed vehicle weight regulations.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -118,8 +143,54 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property HazardousCargos. 
         /// <para>
-        /// List of Hazardous cargo contained in the vehicle.
+        /// Types of hazardous materials being transported. This affects which roads and tunnels
+        /// can be used based on local regulations.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Combustible</c>—Materials that can burn readily
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Corrosive</c>—Materials that can destroy or irreversibly damage other substances
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Explosive</c>—Materials that can produce an explosion by chemical reaction
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Flammable</c>—Materials that can easily ignite
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Gas</c>—Hazardous materials in gaseous form
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HarmfulToWater</c>—Materials that pose a risk to water sources if released
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Organic</c>—Hazardous organic compounds
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Other</c>—Hazardous materials not covered by other categories
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Poison</c>—Toxic materials
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PoisonousInhalation</c>—Materials that are toxic when inhaled
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Radioactive</c>—Materials that emit ionizing radiation
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -142,7 +213,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Height. 
         /// <para>
-        /// Height of the vehicle.
+        /// The vehicle height in centimeters. Used to avoid routes with low bridges or other
+        /// height restrictions.
         /// </para>
         ///  
         /// <para>
@@ -165,7 +237,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property HeightAboveFirstAxle. 
         /// <para>
-        /// Height of the vehicle above its first axle.
+        /// The height in centimeters measured from the ground to the highest point above the
+        /// first axle. Used for specific bridge and tunnel clearance restrictions.
         /// </para>
         ///  
         /// <para>
@@ -188,7 +261,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property KpraLength. 
         /// <para>
-        /// Kingpin to rear axle length of the vehicle.
+        /// The kingpin to rear axle (KPRA) length in centimeters. Used to determine if the vehicle
+        /// can safely navigate turns and intersections.
         /// </para>
         ///  
         /// <para>
@@ -211,7 +285,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Length. 
         /// <para>
-        /// Length of the vehicle.
+        /// The total vehicle length in centimeters. Used to avoid roads with length restrictions
+        /// and determine if the vehicle can safely navigate turns.
         /// </para>
         ///  
         /// <para>
@@ -234,7 +309,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property LicensePlate. 
         /// <para>
-        /// The vehicle License Plate.
+        /// License plate information used in regions where road access or routing restrictions
+        /// are based on license plate numbers.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -253,11 +329,14 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property MaxSpeed. 
         /// <para>
-        /// Maximum speed specified.
+        /// The maximum speed in kilometers per hour at which the vehicle can or is permitted
+        /// to travel. This affects travel time calculations and may result in different reachable
+        /// areas compared to using default speed limits. Value must be between 3.6 and 252 kilometers
+        /// per hour.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>KilometersPerHour</c> 
+        ///  <b>Unit</b>: <c>kilometers per hour</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=252)]
@@ -276,11 +355,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Occupancy. 
         /// <para>
-        /// The number of occupants in the vehicle.
+        /// The number of occupants in the vehicle. This can affect route calculations by enabling
+        /// the use of high-occupancy vehicle (HOV) lanes where minimum occupancy requirements
+        /// are met.
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>1</c> 
+        /// Default value: <c>1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1)]
@@ -299,7 +380,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property PayloadCapacity. 
         /// <para>
-        /// Payload capacity of the vehicle and trailers attached.
+        /// The maximum cargo weight in kilograms that the vehicle (including attached trailers)
+        /// is rated to carry.
         /// </para>
         ///  
         /// <para>
@@ -322,7 +404,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TireCount. 
         /// <para>
-        /// Number of tires on the vehicle.
+        /// The total number of tires on the vehicle.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=255)]
@@ -341,7 +423,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Trailer. 
         /// <para>
-        /// Trailer options corresponding to the vehicle.
+        /// Optional specifications for attached trailers. When provided, trailer characteristics
+        /// affect route calculations to ensure compliance with trailer-specific restrictions
+        /// such as length limits, weight distribution requirements, and access restrictions for
+        /// multi-trailer configurations.
         /// </para>
         /// </summary>
         public IsolineTrailerOptions Trailer
@@ -359,7 +444,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TruckType. 
         /// <para>
-        /// Type of the truck.
+        /// The type of truck: <c>LightTruck</c> for smaller delivery vehicles, <c> StraightTruck
+        /// </c> for rigid body trucks, or <c>Tractor</c> for tractor-trailer combinations.
         /// </para>
         /// </summary>
         public IsolineTruckType TruckType
@@ -451,12 +537,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property WeightPerAxle. 
         /// <para>
-        /// Heaviest weight per axle irrespective of the axle type or the axle group. Meant for
-        /// usage in countries where the differences in axle types or axle groups are not distinguished.
+        /// The heaviest weight per axle in kilograms, regardless of axle type or grouping. Used
+        /// for roads with axle-weight restrictions in regions where regulations don't distinguish
+        /// between different axle configurations.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -475,12 +562,12 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property WeightPerAxleGroup. 
         /// <para>
-        /// Specifies the total weight for the specified axle group. Meant for usage in countries
-        /// that have different regulations based on the axle group type.
+        /// Specifies the total weight for different axle group configurations. Used in regions
+        /// where regulations set different weight limits based on axle group types.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         public WeightPerAxleGroup WeightPerAxleGroup
@@ -498,7 +585,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Width. 
         /// <para>
-        /// Width of the vehicle.
+        /// The vehicle width in centimeters. Used to avoid routes with width restrictions.
         /// </para>
         ///  
         /// <para>

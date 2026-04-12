@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Options to configure matching the provided position to a side of the street.
+    /// Controls how points are matched to specific sides of streets. This is important when
+    /// the side of the street matters for accessibility - for example, when building entrances
+    /// or parking lot access points can only be reached from one side of a divided road.
     /// </summary>
     public partial class IsolineSideOfStreetOptions
     {
@@ -40,7 +42,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// Position defined as <c>[longitude, latitude]</c>.
+        /// The <c>[longitude, latitude]</c> coordinates of the point that should be matched to
+        /// a specific side of the street.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -64,12 +67,16 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property UseWith. 
         /// <para>
-        /// Strategy that defines when the side of street position should be used. AnyStreet will
-        /// always use the provided position.
+        /// Controls whether side-of-street matching is applied to any street (<c>AnyStreet</c>)
+        /// or only to divided roads (<c>DividedStreetOnly</c>). This is important when the exact
+        /// side of the street matters - for example, if a building entrance is only accessible
+        /// from one side of a divided highway, or if a parking lot can only be entered from northbound
+        /// lanes. Without correct side-of-street matching, travel time estimates may be inaccurate
+        /// because they don't account for necessary U-turns or detours to reach the correct side.
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>DividedStreetOnly</c> 
+        /// Default value: <c>DividedStreetOnly</c> 
         /// </para>
         /// </summary>
         public SideOfStreetMatchingStrategy UseWith

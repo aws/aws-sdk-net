@@ -64,6 +64,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
             }
             
+            if (publicRequest.IsSetAuditContext())
+                request.Parameters.Add("auditContext", StringUtils.FromString(publicRequest.AuditContext));
+            
             if (publicRequest.IsSetDurationSeconds())
                 request.Parameters.Add("durationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
             if (string.IsNullOrEmpty(publicRequest.Permission))

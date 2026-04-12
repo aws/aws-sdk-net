@@ -51,6 +51,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class GameSession
     {
+        private string _computeName;
         private DateTime? _creationTime;
         private string _creatorId;
         private int? _currentPlayerSessionCount;
@@ -71,6 +72,28 @@ namespace Amazon.GameLift.Model
         private GameSessionStatus _status;
         private GameSessionStatusReason _statusReason;
         private DateTime? _terminationTime;
+
+        /// <summary>
+        /// Gets and sets the property ComputeName. 
+        /// <para>
+        /// A descriptive label for the compute resource. The compute resource that is hosting
+        /// the game session. For EC2 fleets, this is the EC2 instance ID. For Container fleets,
+        /// each game server container group on a fleet instance is assigned a compute name. For
+        /// Anywhere fleets, this is the custom compute name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ComputeName
+        {
+            get { return this._computeName; }
+            set { this._computeName = value; }
+        }
+
+        // Check to see if ComputeName property is set
+        internal bool IsSetComputeName()
+        {
+            return this._computeName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 

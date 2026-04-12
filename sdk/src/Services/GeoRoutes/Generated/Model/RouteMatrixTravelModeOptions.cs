@@ -41,7 +41,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Car. 
         /// <para>
-        /// Travel mode options when the provided travel mode is "Car"
+        /// Travel mode options when the provided travel mode is <c>Car</c>.
         /// </para>
         /// </summary>
         public RouteMatrixCarOptions Car
@@ -59,7 +59,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Scooter. 
         /// <para>
-        /// Travel mode options when the provided travel mode is <c>Scooter</c> 
+        /// Travel mode options when the provided travel mode is <c>Scooter</c>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Truck. 
         /// <para>
-        /// Travel mode options when the provided travel mode is "Truck"
+        /// Travel mode options when the provided travel mode is <c>Truck</c>.
         /// </para>
         /// </summary>
         public RouteMatrixTruckOptions Truck

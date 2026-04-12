@@ -1,31 +1,25 @@
 ﻿using Amazon.S3;
-using Amazon.S3.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    public class S3ExtensionsTests : TestBase<AmazonS3Client>
+    public class S3ExtensionsTests : IClassFixture<S3BucketFixture>
     {
-        private static string _bucketName;
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
 
-        [ClassInitialize]
-        public static async Task Setup(TestContext context)
+        public S3ExtensionsTests(S3BucketFixture bucket)
         {
-            _bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
+            _client = bucket.Client;
+            _bucketName = bucket.BucketName;
         }
 
-        [ClassCleanup]
-        public static async Task ClassCleanup()
-        {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, _bucketName);
-        }
-
-        [TestMethod]
+        [Fact]
         public async Task EnsureBucketExists()
         {
-            IAmazonS3 s3Client = Client;
+            IAmazonS3 s3Client = _client;
             await s3Client.EnsureBucketExistsAsync(_bucketName);
         }
     }

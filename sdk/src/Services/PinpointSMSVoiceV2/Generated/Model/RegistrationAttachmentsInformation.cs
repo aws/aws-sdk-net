@@ -36,6 +36,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     {
         private AttachmentStatus _attachmentStatus;
         private AttachmentUploadErrorReason _attachmentUploadErrorReason;
+        private string _attachmentUrl;
         private DateTime? _createdTimestamp;
         private string _registrationAttachmentArn;
         private string _registrationAttachmentId;
@@ -92,6 +93,24 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetAttachmentUploadErrorReason()
         {
             return this._attachmentUploadErrorReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachmentUrl. 
+        /// <para>
+        /// The URL to the document that's associated with the registration attachment.
+        /// </para>
+        /// </summary>
+        public string AttachmentUrl
+        {
+            get { return this._attachmentUrl; }
+            set { this._attachmentUrl = value; }
+        }
+
+        // Check to see if AttachmentUrl property is set
+        internal bool IsSetAttachmentUrl()
+        {
+            return this._attachmentUrl != null;
         }
 
         /// <summary>

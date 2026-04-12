@@ -40,6 +40,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.CreateDaemon(Amazon.ECS.Model.CreateDaemonRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.CreateDaemon(Amazon.ECS.Model.CreateDaemonRequest)" />
+            <member name="T:Amazon.ECS.Model.CreateDaemonRequest" />
+            <member name="T:Amazon.ECS.Model.CreateDaemonResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a daemon named my-monitoring-daemon in the specified cluster that uses the monitoring-agent daemon task definition and deploys to the specified capacity provider.
+                </para>
+                <code
+                    title="To create a daemon"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.CreateService(Amazon.ECS.Model.CreateServiceRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.CreateService(Amazon.ECS.Model.CreateServiceRequest)" />
             <member name="T:Amazon.ECS.Model.CreateServiceRequest" />
@@ -185,6 +204,44 @@
                 </para>
                 <code
                     title="To delete an empty cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DeleteDaemon(Amazon.ECS.Model.DeleteDaemonRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DeleteDaemon(Amazon.ECS.Model.DeleteDaemonRequest)" />
+            <member name="T:Amazon.ECS.Model.DeleteDaemonRequest" />
+            <member name="T:Amazon.ECS.Model.DeleteDaemonResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the my-monitoring-daemon daemon.
+                </para>
+                <code
+                    title="To delete a daemon"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DeleteDaemonTaskDefinition(Amazon.ECS.Model.DeleteDaemonTaskDefinitionRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DeleteDaemonTaskDefinition(Amazon.ECS.Model.DeleteDaemonTaskDefinitionRequest)" />
+            <member name="T:Amazon.ECS.Model.DeleteDaemonTaskDefinitionRequest" />
+            <member name="T:Amazon.ECS.Model.DeleteDaemonTaskDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the first revision of the monitoring-agent daemon task definition.
+                </para>
+                <code
+                    title="To delete a daemon task definition"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -356,6 +413,82 @@
                 </para>
                 <code
                     title="To describe container instance"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeDaemon(Amazon.ECS.Model.DescribeDaemonRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeDaemon(Amazon.ECS.Model.DescribeDaemonRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeDaemonRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeDaemonResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the my-monitoring-daemon daemon.
+                </para>
+                <code
+                    title="To describe a daemon"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeDaemonDeployments(Amazon.ECS.Model.DescribeDaemonDeploymentsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeDaemonDeployments(Amazon.ECS.Model.DescribeDaemonDeploymentsRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeDaemonDeploymentsRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeDaemonDeploymentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes a daemon deployment for the my-monitoring-daemon daemon.
+                </para>
+                <code
+                    title="To describe daemon deployments"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeDaemonRevisions(Amazon.ECS.Model.DescribeDaemonRevisionsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeDaemonRevisions(Amazon.ECS.Model.DescribeDaemonRevisionsRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeDaemonRevisionsRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeDaemonRevisionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes a daemon revision for the my-monitoring-daemon daemon.
+                </para>
+                <code
+                    title="To describe daemon revisions"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeDaemonTaskDefinition(Amazon.ECS.Model.DescribeDaemonTaskDefinitionRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeDaemonTaskDefinition(Amazon.ECS.Model.DescribeDaemonTaskDefinitionRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeDaemonTaskDefinitionRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeDaemonTaskDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the first revision of the monitoring-agent daemon task definition.
+                </para>
+                <code
+                    title="To describe a daemon task definition"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -603,6 +736,63 @@
                 </para>
                 <code
                     title="To list your available container instances in a cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListDaemonDeployments(Amazon.ECS.Model.ListDaemonDeploymentsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListDaemonDeployments(Amazon.ECS.Model.ListDaemonDeploymentsRequest)" />
+            <member name="T:Amazon.ECS.Model.ListDaemonDeploymentsRequest" />
+            <member name="T:Amazon.ECS.Model.ListDaemonDeploymentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all successful daemon deployments for the my-monitoring-daemon daemon.
+                </para>
+                <code
+                    title="To list daemon deployments"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListDaemons(Amazon.ECS.Model.ListDaemonsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListDaemons(Amazon.ECS.Model.ListDaemonsRequest)" />
+            <member name="T:Amazon.ECS.Model.ListDaemonsRequest" />
+            <member name="T:Amazon.ECS.Model.ListDaemonsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all daemons in the specified cluster.
+                </para>
+                <code
+                    title="To list daemons in a cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListDaemonTaskDefinitions(Amazon.ECS.Model.ListDaemonTaskDefinitionsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListDaemonTaskDefinitions(Amazon.ECS.Model.ListDaemonTaskDefinitionsRequest)" />
+            <member name="T:Amazon.ECS.Model.ListDaemonTaskDefinitionsRequest" />
+            <member name="T:Amazon.ECS.Model.ListDaemonTaskDefinitionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all daemon task definitions in your account that start with the monitoring prefix.
+                </para>
+                <code
+                    title="To list daemon task definitions"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -914,6 +1104,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.RegisterDaemonTaskDefinition(Amazon.ECS.Model.RegisterDaemonTaskDefinitionRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.RegisterDaemonTaskDefinition(Amazon.ECS.Model.RegisterDaemonTaskDefinitionRequest)" />
+            <member name="T:Amazon.ECS.Model.RegisterDaemonTaskDefinitionRequest" />
+            <member name="T:Amazon.ECS.Model.RegisterDaemonTaskDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example registers a daemon task definition in the monitoring-agent family with a single container that runs a CloudWatch agent.
+                </para>
+                <code
+                    title="To register a daemon task definition"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.RegisterTaskDefinition(Amazon.ECS.Model.RegisterTaskDefinitionRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.RegisterTaskDefinition(Amazon.ECS.Model.RegisterTaskDefinitionRequest)" />
             <member name="T:Amazon.ECS.Model.RegisterTaskDefinitionRequest" />
@@ -1154,6 +1363,25 @@
                 </para>
                 <code
                     title="To update the state of a container instance"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateDaemon(Amazon.ECS.Model.UpdateDaemonRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateDaemon(Amazon.ECS.Model.UpdateDaemonRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateDaemonRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateDaemonResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the my-monitoring-daemon daemon to use a new daemon task definition revision.
+                </para>
+                <code
+                    title="To update a daemon"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="example-1" />
             </example>

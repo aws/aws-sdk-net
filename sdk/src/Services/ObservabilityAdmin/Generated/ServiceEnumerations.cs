@@ -497,9 +497,21 @@ namespace Amazon.ObservabilityAdmin
     {
 
         /// <summary>
+        /// Constant ACCESS_LOGS for LogType
+        /// </summary>
+        public static readonly LogType ACCESS_LOGS = new LogType("ACCESS_LOGS");
+        /// <summary>
         /// Constant APPLICATION_LOGS for LogType
         /// </summary>
         public static readonly LogType APPLICATION_LOGS = new LogType("APPLICATION_LOGS");
+        /// <summary>
+        /// Constant CONNECTION_LOGS for LogType
+        /// </summary>
+        public static readonly LogType CONNECTION_LOGS = new LogType("CONNECTION_LOGS");
+        /// <summary>
+        /// Constant SECURITY_FINDING_LOGS for LogType
+        /// </summary>
+        public static readonly LogType SECURITY_FINDING_LOGS = new LogType("SECURITY_FINDING_LOGS");
         /// <summary>
         /// Constant USAGE_LOGS for LogType
         /// </summary>
@@ -655,9 +667,21 @@ namespace Amazon.ObservabilityAdmin
         /// </summary>
         public static readonly ResourceType AWSBedrockAgentCoreCodeInterpreter = new ResourceType("AWS::BedrockAgentCore::CodeInterpreter");
         /// <summary>
+        /// Constant AWSBedrockAgentCoreGateway for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSBedrockAgentCoreGateway = new ResourceType("AWS::BedrockAgentCore::Gateway");
+        /// <summary>
+        /// Constant AWSBedrockAgentCoreMemory for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSBedrockAgentCoreMemory = new ResourceType("AWS::BedrockAgentCore::Memory");
+        /// <summary>
         /// Constant AWSBedrockAgentCoreRuntime for ResourceType
         /// </summary>
         public static readonly ResourceType AWSBedrockAgentCoreRuntime = new ResourceType("AWS::BedrockAgentCore::Runtime");
+        /// <summary>
+        /// Constant AWSCloudFrontDistribution for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCloudFrontDistribution = new ResourceType("AWS::CloudFront::Distribution");
         /// <summary>
         /// Constant AWSCloudTrail for ResourceType
         /// </summary>
@@ -686,6 +710,10 @@ namespace Amazon.ObservabilityAdmin
         /// Constant AWSRoute53ResolverResolverEndpoint for ResourceType
         /// </summary>
         public static readonly ResourceType AWSRoute53ResolverResolverEndpoint = new ResourceType("AWS::Route53Resolver::ResolverEndpoint");
+        /// <summary>
+        /// Constant AWSSecurityHubHub for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSecurityHubHub = new ResourceType("AWS::SecurityHub::Hub");
         /// <summary>
         /// Constant AWSWAFv2WebACL for ResourceType
         /// </summary>

@@ -317,6 +317,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.EvaluationInterval</property>
+    <min>10</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.EvaluationPeriods</property>
     <min>1</min>
   </property-value-rule>
@@ -435,6 +440,21 @@
     <property>Amazon.CloudWatch.Model.AlarmMuteRuleSummary.AlarmMuteRuleArn</property>
     <min>1</min>
     <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.AlarmPromQLCriteria.PendingPeriod</property>
+    <min>0</min>
+    <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.AlarmPromQLCriteria.Query</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.AlarmPromQLCriteria.RecoveryPeriod</property>
+    <min>0</min>
+    <max>86400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.AnomalyDetector.MetricName</property>
@@ -601,6 +621,11 @@
     <property>Amazon.CloudWatch.Model.MetricAlarm.EvaluateLowSampleCountPercentile</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.MetricAlarm.EvaluationInterval</property>
+    <min>10</min>
+    <max>3600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricAlarm.EvaluationPeriods</property>

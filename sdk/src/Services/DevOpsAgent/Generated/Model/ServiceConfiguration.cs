@@ -42,9 +42,11 @@ namespace Amazon.DevOpsAgent.Model
         private EventChannelConfiguration _eventChannel;
         private GitHubConfiguration _github;
         private GitLabConfiguration _gitlab;
+        private MCPServerConfiguration _mcpserver;
+        private MCPServerDatadogConfiguration _mcpserverdatadog;
         private MCPServerGrafanaConfiguration _mcpservergrafana;
         private MCPServerNewRelicConfiguration _mcpservernewrelic;
-        private MSTeamsConfiguration _msteams;
+        private MCPServerSplunkConfiguration _mcpserversplunk;
         private PagerDutyConfiguration _pagerduty;
         private ServiceNowConfiguration _servicenow;
         private SlackConfiguration _slack;
@@ -177,6 +179,42 @@ namespace Amazon.DevOpsAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Mcpserver. 
+        /// <para>
+        /// MCP (Model Context Protocol) server integration configuration.
+        /// </para>
+        /// </summary>
+        public MCPServerConfiguration Mcpserver
+        {
+            get { return this._mcpserver; }
+            set { this._mcpserver = value; }
+        }
+
+        // Check to see if Mcpserver property is set
+        internal bool IsSetMcpserver()
+        {
+            return this._mcpserver != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mcpserverdatadog. 
+        /// <para>
+        /// Datadog MCP server integration configuration.
+        /// </para>
+        /// </summary>
+        public MCPServerDatadogConfiguration Mcpserverdatadog
+        {
+            get { return this._mcpserverdatadog; }
+            set { this._mcpserverdatadog = value; }
+        }
+
+        // Check to see if Mcpserverdatadog property is set
+        internal bool IsSetMcpserverdatadog()
+        {
+            return this._mcpserverdatadog != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Mcpservergrafana. 
         /// <para>
         /// Grafana MCP server integration configuration.
@@ -213,21 +251,21 @@ namespace Amazon.DevOpsAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Msteams. 
+        /// Gets and sets the property Mcpserversplunk. 
         /// <para>
-        /// MS Teams integration configuration
+        /// Splunk MCP server integration configuration.
         /// </para>
         /// </summary>
-        public MSTeamsConfiguration Msteams
+        public MCPServerSplunkConfiguration Mcpserversplunk
         {
-            get { return this._msteams; }
-            set { this._msteams = value; }
+            get { return this._mcpserversplunk; }
+            set { this._mcpserversplunk = value; }
         }
 
-        // Check to see if Msteams property is set
-        internal bool IsSetMsteams()
+        // Check to see if Mcpserversplunk property is set
+        internal bool IsSetMcpserversplunk()
         {
-            return this._msteams != null;
+            return this._mcpserversplunk != null;
         }
 
         /// <summary>

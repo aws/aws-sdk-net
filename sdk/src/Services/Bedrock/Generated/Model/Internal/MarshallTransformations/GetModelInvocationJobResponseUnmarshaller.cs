@@ -64,6 +64,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     response.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("errorRecordCount", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.ErrorRecordCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("inputDataConfig", targetDepth))
                 {
                     var unmarshaller = ModelInvocationJobInputDataConfigUnmarshaller.Instance;
@@ -118,6 +124,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     response.OutputDataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("processedRecordCount", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.ProcessedRecordCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -136,10 +148,22 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     response.SubmitTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("successRecordCount", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.SuccessRecordCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("timeoutDurationInHours", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TimeoutDurationInHours = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("totalRecordCount", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.TotalRecordCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vpcConfig", targetDepth))

@@ -57,6 +57,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSparklines())
+            {
+                context.Writer.WritePropertyName("Sparklines");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SparklinesOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Sparklines, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

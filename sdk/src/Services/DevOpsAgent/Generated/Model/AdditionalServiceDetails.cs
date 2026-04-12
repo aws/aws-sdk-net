@@ -42,7 +42,6 @@ namespace Amazon.DevOpsAgent.Model
         private RegisteredMCPServerDetails _mcpserverdatadog;
         private RegisteredGrafanaServerDetails _mcpservergrafana;
         private RegisteredNewRelicDetails _mcpservernewrelic;
-        private RegisteredMCPServerSigV4Details _mcpserversigv4;
         private RegisteredMCPServerDetails _mcpserversplunk;
         private RegisteredPagerDutyDetails _pagerduty;
         private RegisteredServiceNowDetails _servicenow;
@@ -190,24 +189,6 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetMcpservernewrelic()
         {
             return this._mcpservernewrelic != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Mcpserversigv4. 
-        /// <para>
-        /// SigV4-authenticated MCP server-specific service details.
-        /// </para>
-        /// </summary>
-        public RegisteredMCPServerSigV4Details Mcpserversigv4
-        {
-            get { return this._mcpserversigv4; }
-            set { this._mcpserversigv4 = value; }
-        }
-
-        // Check to see if Mcpserversigv4 property is set
-        internal bool IsSetMcpserversigv4()
-        {
-            return this._mcpserversigv4 != null;
         }
 
         /// <summary>

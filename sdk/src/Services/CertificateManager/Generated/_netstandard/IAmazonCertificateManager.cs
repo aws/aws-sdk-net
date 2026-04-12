@@ -118,18 +118,33 @@ namespace Amazon.CertificateManager
 
         /// <summary>
         /// Deletes a certificate and its associated private key. If this action succeeds, the
-        /// certificate no longer appears in the list that can be displayed by calling the <a>ListCertificates</a>
-        /// action or be retrieved by calling the <a>GetCertificate</a> action. The certificate
-        /// will not be available for use by Amazon Web Services services integrated with ACM.
-        /// 
+        /// certificate is not available for use by Amazon Web Services services integrated with
+        /// ACM. Deleting a certificate is eventually consistent. The may be a short delay before
+        /// the certificate no longer appears in the list that can be displayed by calling the
+        /// <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a>
+        /// action.
         /// 
         ///  <note> 
         /// <para>
         /// You cannot delete an ACM certificate that is being used by another Amazon Web Services
-        /// service. To delete a certificate that is in use, the certificate association must
-        /// first be removed.
+        /// service. To delete a certificate that is in use, you must first remove the certificate
+        /// association using the console or the CLI for the associated service.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        /// Deleting a certificate issued by a private certificate authority (CA) has no effect
+        /// on the CA. You will continue to be charged for the CA until it is deleted. For more
+        /// information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">
+        /// Deleting Your Private CA</a> in the <i>Private Certificate Authority User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Deleting a certificate issued by a private certificate authority (CA) has no effect
+        /// on the CA. You will continue to be charged for the CA until it is deleted. For more
+        /// information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">Deleting
+        /// your private CA</a> in the <i>Amazon Web Services Private Certificate Authority User
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="certificateArn">String that contains the ARN of the ACM certificate to be deleted. This must be of the form:  <c>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</c>  For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</param>
         /// <param name="cancellationToken">
@@ -164,18 +179,33 @@ namespace Amazon.CertificateManager
 
         /// <summary>
         /// Deletes a certificate and its associated private key. If this action succeeds, the
-        /// certificate no longer appears in the list that can be displayed by calling the <a>ListCertificates</a>
-        /// action or be retrieved by calling the <a>GetCertificate</a> action. The certificate
-        /// will not be available for use by Amazon Web Services services integrated with ACM.
-        /// 
+        /// certificate is not available for use by Amazon Web Services services integrated with
+        /// ACM. Deleting a certificate is eventually consistent. The may be a short delay before
+        /// the certificate no longer appears in the list that can be displayed by calling the
+        /// <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a>
+        /// action.
         /// 
         ///  <note> 
         /// <para>
         /// You cannot delete an ACM certificate that is being used by another Amazon Web Services
-        /// service. To delete a certificate that is in use, the certificate association must
-        /// first be removed.
+        /// service. To delete a certificate that is in use, you must first remove the certificate
+        /// association using the console or the CLI for the associated service.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        /// Deleting a certificate issued by a private certificate authority (CA) has no effect
+        /// on the CA. You will continue to be charged for the CA until it is deleted. For more
+        /// information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">
+        /// Deleting Your Private CA</a> in the <i>Private Certificate Authority User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Deleting a certificate issued by a private certificate authority (CA) has no effect
+        /// on the CA. You will continue to be charged for the CA until it is deleted. For more
+        /// information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">Deleting
+        /// your private CA</a> in the <i>Amazon Web Services Private Certificate Authority User
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -270,11 +300,11 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Exports a private certificate issued by a private certificate authority (CA) or public
-        /// certificate for use anywhere. The exported file contains the certificate, the certificate
-        /// chain, and the encrypted private key associated with the public key that is embedded
-        /// in the certificate. For security, you must assign a passphrase for the private key
-        /// when exporting it. 
+        /// Exports a private certificate issued by a private certificate authority (CA) or a
+        /// public certificate for use anywhere. The exported file contains the certificate, the
+        /// certificate chain, and the encrypted private key associated with the public key that
+        /// is embedded in the certificate. For security, you must assign a passphrase for the
+        /// private key when exporting it. 
         /// 
         ///  
         /// <para>
@@ -283,6 +313,11 @@ namespace Amazon.CertificateManager
         /// a private certificate</a> and <a href="https://docs.aws.amazon.com/acm/latest/userguide/export-public-certificate">Export
         /// a public certificate</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// ACM public certificates created prior to June 17, 2025 cannot be exported.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -300,6 +335,9 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
         /// The specified certificate cannot be found in the caller's account or the caller's
         /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ExportCertificate">REST API Reference for ExportCertificate Operation</seealso>
         Task<ExportCertificateResponse> ExportCertificateAsync(ExportCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -483,6 +521,10 @@ namespace Amazon.CertificateManager
         /// </param>
         /// 
         /// <returns>The response from the ImportCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
@@ -681,8 +723,8 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Renews an <a href="https://docs.aws.amazon.com/acm/latest/userguide/managed-renewal.html">eligible
         /// ACM certificate</a>. In order to renew your Amazon Web Services Private CA certificates
-        /// with ACM, you must first <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant
-        /// the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing
+        /// with ACM, you must first <a href="https://docs.aws.amazon.com/privateca/latest/userguide/assign-permissions.html#PcaPermissions">grant
+        /// the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/managed-renewal.html">Testing
         /// Managed Renewal</a> in the ACM User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RenewCertificate service method.</param>
@@ -874,6 +916,13 @@ namespace Amazon.CertificateManager
         /// <summary>
         /// Revokes a public ACM certificate. You can only revoke certificates that have been
         /// previously exported.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Once a certificate is revoked, you cannot reuse the certificate. Revoking a certificate
+        /// is permanent.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RevokeCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -904,6 +953,36 @@ namespace Amazon.CertificateManager
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RevokeCertificate">REST API Reference for RevokeCertificate Operation</seealso>
         Task<RevokeCertificateResponse> RevokeCertificateAsync(RevokeCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SearchCertificates
+
+
+
+        /// <summary>
+        /// Retrieves a list of certificates matching search criteria. You can filter certificates
+        /// by X.509 attributes and ACM specific properties like certificate status, type and
+        /// renewal eligibility. This operation provides more flexible filtering than <a>ListCertificates</a>
+        /// by supporting complex filter statements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchCertificates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchCertificates service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ValidationException">
+        /// The supplied input failed to satisfy constraints of an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/SearchCertificates">REST API Reference for SearchCertificates Operation</seealso>
+        Task<SearchCertificatesResponse> SearchCertificatesAsync(SearchCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

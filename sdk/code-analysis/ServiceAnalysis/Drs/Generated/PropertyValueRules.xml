@@ -4,25 +4,25 @@
     <property>Amazon.Drs.Model.AssociateSourceNetworkStackRequest.CfnStackName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[a-zA-Z][-a-zA-Z0-9]*$</pattern>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.AssociateSourceNetworkStackRequest.SourceNetworkID</property>
     <min>20</min>
     <max>20</max>
-    <pattern>^sn-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateExtendedSourceServerRequest.SourceServerArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})$</pattern>
+    <pattern>arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateLaunchConfigurationTemplateRequest.ExportBucketArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateReplicationConfigurationTemplateRequest.BandwidthThrottling</property>
@@ -32,7 +32,7 @@
     <property>Amazon.Drs.Model.CreateReplicationConfigurationTemplateRequest.EbsEncryptionKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateReplicationConfigurationTemplateRequest.ReplicationServerInstanceType</property>
@@ -43,13 +43,13 @@
     <property>Amazon.Drs.Model.CreateReplicationConfigurationTemplateRequest.StagingAreaSubnetId</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^subnet-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>subnet-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateReplicationConfigurationTemplateResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateReplicationConfigurationTemplateResponse.BandwidthThrottling</property>
@@ -59,13 +59,13 @@
     <property>Amazon.Drs.Model.CreateReplicationConfigurationTemplateResponse.EbsEncryptionKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateReplicationConfigurationTemplateResponse.ReplicationConfigurationTemplateID</property>
     <min>21</min>
     <max>21</max>
-    <pattern>^rct-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>rct-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateReplicationConfigurationTemplateResponse.ReplicationServerInstanceType</property>
@@ -76,83 +76,83 @@
     <property>Amazon.Drs.Model.CreateReplicationConfigurationTemplateResponse.StagingAreaSubnetId</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^subnet-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>subnet-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateSourceNetworkRequest.OriginAccountID</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12,}</pattern>
+    <pattern>.*[0-9]{12,}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateSourceNetworkRequest.OriginRegion</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateSourceNetworkRequest.VpcID</property>
     <min>12</min>
     <max>21</max>
-    <pattern>^vpc-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>vpc-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateSourceNetworkResponse.SourceNetworkID</property>
     <min>20</min>
     <max>20</max>
-    <pattern>^sn-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DeleteJobRequest.JobID</property>
     <min>24</min>
     <max>24</max>
-    <pattern>^drsjob-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>drsjob-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DeleteLaunchActionRequest.ActionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DeleteLaunchActionRequest.ResourceId</property>
-    <pattern>^(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})$</pattern>
+    <pattern>(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DeleteLaunchConfigurationTemplateRequest.LaunchConfigurationTemplateID</property>
     <min>21</min>
     <max>21</max>
-    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>lct-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DeleteRecoveryInstanceRequest.RecoveryInstanceID</property>
     <min>10</min>
     <max>19</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DeleteReplicationConfigurationTemplateRequest.ReplicationConfigurationTemplateID</property>
     <min>21</min>
     <max>21</max>
-    <pattern>^rct-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>rct-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DeleteSourceNetworkRequest.SourceNetworkID</property>
     <min>20</min>
     <max>20</max>
-    <pattern>^sn-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DeleteSourceServerRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeJobLogItemsRequest.JobID</property>
     <min>24</min>
     <max>24</max>
-    <pattern>^drsjob-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>drsjob-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeJobLogItemsRequest.MaxResults</property>
@@ -224,7 +224,7 @@
     <property>Amazon.Drs.Model.DescribeRecoverySnapshotsRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeRecoverySnapshotsResponse.NextToken</property>
@@ -277,53 +277,53 @@
     <property>Amazon.Drs.Model.DisconnectRecoveryInstanceRequest.RecoveryInstanceID</property>
     <min>10</min>
     <max>19</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DisconnectSourceServerRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DisconnectSourceServerResponse.AgentVersion</property>
-    <pattern>^[0-9]{1,5}.[0-9]{1,5}.[0-9]{1,5}(.[0-9]{4}.[0-9]{3}.[0-9]{4})?$</pattern>
+    <pattern>[0-9]{1,5}.[0-9]{1,5}.[0-9]{1,5}(.[0-9]{4}.[0-9]{3}.[0-9]{4})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DisconnectSourceServerResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DisconnectSourceServerResponse.RecoveryInstanceId</property>
     <min>10</min>
     <max>19</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DisconnectSourceServerResponse.ReversedDirectionSourceServerArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})$</pattern>
+    <pattern>arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DisconnectSourceServerResponse.SourceNetworkID</property>
     <min>20</min>
     <max>20</max>
-    <pattern>^sn-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DisconnectSourceServerResponse.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ExportSourceNetworkCfnTemplateRequest.SourceNetworkID</property>
     <min>20</min>
     <max>20</max>
-    <pattern>^sn-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ExportSourceNetworkCfnTemplateResponse.S3DestinationUrl</property>
@@ -334,7 +334,7 @@
     <property>Amazon.Drs.Model.GetFailbackReplicationConfigurationRequest.RecoveryInstanceID</property>
     <min>10</min>
     <max>19</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.GetFailbackReplicationConfigurationResponse.BandwidthThrottling</property>
@@ -349,13 +349,13 @@
     <property>Amazon.Drs.Model.GetFailbackReplicationConfigurationResponse.RecoveryInstanceID</property>
     <min>10</min>
     <max>19</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.GetLaunchConfigurationRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.GetLaunchConfigurationResponse.Ec2LaunchTemplateID</property>
@@ -371,13 +371,13 @@
     <property>Amazon.Drs.Model.GetLaunchConfigurationResponse.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.GetReplicationConfigurationRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.GetReplicationConfigurationResponse.BandwidthThrottling</property>
@@ -387,7 +387,7 @@
     <property>Amazon.Drs.Model.GetReplicationConfigurationResponse.EbsEncryptionKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.GetReplicationConfigurationResponse.Name</property>
@@ -403,13 +403,13 @@
     <property>Amazon.Drs.Model.GetReplicationConfigurationResponse.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.GetReplicationConfigurationResponse.StagingAreaSubnetId</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^subnet-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>subnet-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ListExtensibleSourceServersRequest.MaxResults</property>
@@ -425,7 +425,7 @@
     <property>Amazon.Drs.Model.ListExtensibleSourceServersRequest.StagingAccountID</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12,}</pattern>
+    <pattern>.*[0-9]{12,}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ListExtensibleSourceServersResponse.NextToken</property>
@@ -444,7 +444,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ListLaunchActionsRequest.ResourceId</property>
-    <pattern>^(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})$</pattern>
+    <pattern>(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ListLaunchActionsResponse.NextToken</property>
@@ -470,37 +470,37 @@
     <property>Amazon.Drs.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionRequest.ActionCode</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^([A-Za-z0-9-/:])+$</pattern>
+    <pattern>([A-Za-z0-9-/:])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionRequest.ActionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionRequest.ActionVersion</property>
     <min>1</min>
     <max>10</max>
-    <pattern>^(\$DEFAULT|\$LATEST|[0-9]+)$</pattern>
+    <pattern>(\$DEFAULT|\$LATEST|[0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionRequest.Description</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[0-9a-zA-Z ():/.,'-_#*; ]*$</pattern>
+    <pattern>[0-9a-zA-Z ():/.,'-_#*; ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[A-Za-z0-9][A-Za-z0-9 /_-]*$</pattern>
+    <pattern>[A-Za-z0-9][A-Za-z0-9 /_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionRequest.Order</property>
@@ -509,37 +509,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionRequest.ResourceId</property>
-    <pattern>^(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})$</pattern>
+    <pattern>(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionResponse.ActionCode</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^([A-Za-z0-9-/:])+$</pattern>
+    <pattern>([A-Za-z0-9-/:])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionResponse.ActionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionResponse.ActionVersion</property>
     <min>1</min>
     <max>10</max>
-    <pattern>^(\$DEFAULT|\$LATEST|[0-9]+)$</pattern>
+    <pattern>(\$DEFAULT|\$LATEST|[0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionResponse.Description</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[0-9a-zA-Z ():/.,'-_#*; ]*$</pattern>
+    <pattern>[0-9a-zA-Z ():/.,'-_#*; ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionResponse.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[A-Za-z0-9][A-Za-z0-9 /_-]*$</pattern>
+    <pattern>[A-Za-z0-9][A-Za-z0-9 /_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionResponse.Order</property>
@@ -548,101 +548,101 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PutLaunchActionResponse.ResourceId</property>
-    <pattern>^(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})$</pattern>
+    <pattern>(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RetryDataReplicationRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RetryDataReplicationResponse.AgentVersion</property>
-    <pattern>^[0-9]{1,5}.[0-9]{1,5}.[0-9]{1,5}(.[0-9]{4}.[0-9]{3}.[0-9]{4})?$</pattern>
+    <pattern>[0-9]{1,5}.[0-9]{1,5}.[0-9]{1,5}(.[0-9]{4}.[0-9]{3}.[0-9]{4})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RetryDataReplicationResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RetryDataReplicationResponse.RecoveryInstanceId</property>
     <min>10</min>
     <max>19</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RetryDataReplicationResponse.ReversedDirectionSourceServerArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})$</pattern>
+    <pattern>arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RetryDataReplicationResponse.SourceNetworkID</property>
     <min>20</min>
     <max>20</max>
-    <pattern>^sn-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RetryDataReplicationResponse.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ReverseReplicationRequest.RecoveryInstanceID</property>
     <min>10</min>
     <max>19</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ReverseReplicationResponse.ReversedDirectionSourceServerArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})$</pattern>
+    <pattern>arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.StartReplicationRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.StartSourceNetworkReplicationRequest.SourceNetworkID</property>
     <min>20</min>
     <max>20</max>
-    <pattern>^sn-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.StopFailbackRequest.RecoveryInstanceID</property>
     <min>10</min>
     <max>19</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.StopReplicationRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.StopSourceNetworkReplicationRequest.SourceNetworkID</property>
     <min>20</min>
     <max>20</max>
-    <pattern>^sn-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateFailbackReplicationConfigurationRequest.BandwidthThrottling</property>
@@ -657,7 +657,7 @@
     <property>Amazon.Drs.Model.UpdateFailbackReplicationConfigurationRequest.RecoveryInstanceID</property>
     <min>10</min>
     <max>19</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateLaunchConfigurationRequest.Name</property>
@@ -668,7 +668,7 @@
     <property>Amazon.Drs.Model.UpdateLaunchConfigurationRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateLaunchConfigurationResponse.Ec2LaunchTemplateID</property>
@@ -684,19 +684,19 @@
     <property>Amazon.Drs.Model.UpdateLaunchConfigurationResponse.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateLaunchConfigurationTemplateRequest.ExportBucketArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateLaunchConfigurationTemplateRequest.LaunchConfigurationTemplateID</property>
     <min>21</min>
     <max>21</max>
-    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>lct-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationRequest.BandwidthThrottling</property>
@@ -706,7 +706,7 @@
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationRequest.EbsEncryptionKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationRequest.Name</property>
@@ -722,13 +722,13 @@
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationRequest.StagingAreaSubnetId</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^subnet-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>subnet-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationResponse.BandwidthThrottling</property>
@@ -738,7 +738,7 @@
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationResponse.EbsEncryptionKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationResponse.Name</property>
@@ -754,19 +754,19 @@
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationResponse.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationResponse.StagingAreaSubnetId</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^subnet-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>subnet-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationTemplateRequest.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationTemplateRequest.BandwidthThrottling</property>
@@ -776,13 +776,13 @@
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationTemplateRequest.EbsEncryptionKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationTemplateRequest.ReplicationConfigurationTemplateID</property>
     <min>21</min>
     <max>21</max>
-    <pattern>^rct-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>rct-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationTemplateRequest.ReplicationServerInstanceType</property>
@@ -793,13 +793,13 @@
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationTemplateRequest.StagingAreaSubnetId</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^subnet-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>subnet-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationTemplateResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationTemplateResponse.BandwidthThrottling</property>
@@ -809,13 +809,13 @@
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationTemplateResponse.EbsEncryptionKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationTemplateResponse.ReplicationConfigurationTemplateID</property>
     <min>21</min>
     <max>21</max>
-    <pattern>^rct-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>rct-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationTemplateResponse.ReplicationServerInstanceType</property>
@@ -826,7 +826,7 @@
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationTemplateResponse.StagingAreaSubnetId</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^subnet-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>subnet-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.AccessDeniedException.Code</property>
@@ -837,7 +837,7 @@
     <property>Amazon.Drs.Model.Account.AccountID</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12,}</pattern>
+    <pattern>.*[0-9]{12,}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ConflictException.Code</property>
@@ -882,7 +882,7 @@
     <property>Amazon.Drs.Model.DataReplicationInfo.EtaDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DataReplicationInfo.LagDuration</property>
@@ -893,13 +893,13 @@
     <property>Amazon.Drs.Model.DataReplicationInfo.StagingAvailabilityZone</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DataReplicationInfo.StagingOutpostArn</property>
     <min>20</min>
     <max>255</max>
-    <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
+    <pattern>arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DataReplicationInfoReplicatedDisk.BackloggedStorageBytes</property>
@@ -926,49 +926,49 @@
     <property>Amazon.Drs.Model.DataReplicationInitiation.NextAttemptDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DataReplicationInitiation.StartDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeJobsRequestFilters.FromDate</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeJobsRequestFilters.ToDate</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeRecoverySnapshotsRequestFilters.FromDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeRecoverySnapshotsRequestFilters.ToDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeSourceNetworksRequestFilters.OriginAccountID</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12,}</pattern>
+    <pattern>.*[0-9]{12,}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeSourceNetworksRequestFilters.OriginRegion</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeSourceServersRequestFilters.HardwareId</property>
@@ -988,7 +988,7 @@
     <property>Amazon.Drs.Model.IdentificationHints.AwsInstanceID</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.IdentificationHints.Fqdn</property>
@@ -1013,37 +1013,47 @@
     <property>Amazon.Drs.Model.Job.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.Job.CreationDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.Job.EndDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.Job.JobID</property>
     <min>24</min>
     <max>24</max>
-    <pattern>^drsjob-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>drsjob-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.JobLog.LogDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.JobLogEventData.AttemptCount</property>
+    <min>0</min>
+    <max>9</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.JobLogEventData.ConversionServerID</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.JobLogEventData.MaxAttemptsCount</property>
+    <min>0</min>
+    <max>9</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.JobLogEventData.RawError</property>
@@ -1054,43 +1064,43 @@
     <property>Amazon.Drs.Model.JobLogEventData.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.JobLogEventData.TargetInstanceID</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchAction.ActionCode</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^([A-Za-z0-9-/:])+$</pattern>
+    <pattern>([A-Za-z0-9-/:])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchAction.ActionId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchAction.ActionVersion</property>
     <min>1</min>
     <max>10</max>
-    <pattern>^(\$DEFAULT|\$LATEST|[0-9]+)$</pattern>
+    <pattern>(\$DEFAULT|\$LATEST|[0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchAction.Description</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^[0-9a-zA-Z ():/.,'-_#*; ]*$</pattern>
+    <pattern>[0-9a-zA-Z ():/.,'-_#*; ]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchAction.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[A-Za-z0-9][A-Za-z0-9 /_-]*$</pattern>
+    <pattern>[A-Za-z0-9][A-Za-z0-9 /_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchAction.Order</property>
@@ -1101,55 +1111,55 @@
     <property>Amazon.Drs.Model.LaunchActionParameter.Value</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>^[A-Za-z0-9.-]+$</pattern>
+    <pattern>[A-Za-z0-9.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchActionRun.FailureReason</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^[0-9a-zA-Z ():/.,'-_#*;]*$</pattern>
+    <pattern>[0-9a-zA-Z ():/.,'-_#*;]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchActionRun.RunId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchActionsStatus.SsmAgentDiscoveryDatetime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchConfigurationTemplate.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchConfigurationTemplate.ExportBucketArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchConfigurationTemplate.LaunchConfigurationTemplateID</property>
     <min>21</min>
     <max>21</max>
-    <pattern>^lct-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>lct-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LaunchIntoInstanceProperties.LaunchIntoEC2InstanceID</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LifeCycle.AddedToServiceDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LifeCycle.ElapsedReplicationDuration</property>
@@ -1160,25 +1170,25 @@
     <property>Amazon.Drs.Model.LifeCycle.FirstByteDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LifeCycle.LastSeenByServiceDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LifeCycleLastLaunchInitiated.ApiCallDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.LifeCycleLastLaunchInitiated.JobID</property>
     <min>24</min>
     <max>24</max>
-    <pattern>^drsjob-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>drsjob-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.NetworkInterface.MacAddress</property>
@@ -1194,19 +1204,19 @@
     <property>Amazon.Drs.Model.ParticipatingResourceID.SourceNetworkID</property>
     <min>20</min>
     <max>20</max>
-    <pattern>^sn-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ParticipatingServer.RecoveryInstanceID</property>
     <min>10</min>
     <max>19</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ParticipatingServer.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.PITPolicyRule.Interval</property>
@@ -1224,59 +1234,59 @@
     <property>Amazon.Drs.Model.ProductCode.ProductCodeId</property>
     <min>25</min>
     <max>25</max>
-    <pattern>^([A-Za-z0-9])+$</pattern>
+    <pattern>([A-Za-z0-9])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.AgentVersion</property>
-    <pattern>^[0-9]{1,5}.[0-9]{1,5}.[0-9]{1,5}(.[0-9]{4}.[0-9]{3}.[0-9]{4})?$</pattern>
+    <pattern>[0-9]{1,5}.[0-9]{1,5}.[0-9]{1,5}(.[0-9]{4}.[0-9]{3}.[0-9]{4})?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.Ec2InstanceID</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.JobID</property>
     <min>24</min>
     <max>24</max>
-    <pattern>^drsjob-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>drsjob-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.OriginAvailabilityZone</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.PointInTimeSnapshotDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.RecoveryInstanceID</property>
     <min>10</min>
     <max>19</max>
-    <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>i-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.SourceOutpostArn</property>
     <min>20</min>
     <max>255</max>
-    <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
+    <pattern>arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationError.RawError</property>
@@ -1287,25 +1297,25 @@
     <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationInfo.EtaDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationInfo.LagDuration</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationInfo.StagingAvailabilityZone</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationInfo.StagingOutpostArn</property>
     <min>20</min>
     <max>255</max>
-    <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
+    <pattern>arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationInfoReplicatedDisk.BackloggedStorageBytes</property>
@@ -1332,7 +1342,7 @@
     <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationInitiation.StartDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceDisk.Bytes</property>
@@ -1342,7 +1352,7 @@
     <property>Amazon.Drs.Model.RecoveryInstanceDisk.EbsVolumeID</property>
     <min>10</min>
     <max>19</max>
-    <pattern>^vol-([0-9a-fA-F]{8}|[0-9a-fA-F]{17})$</pattern>
+    <pattern>vol-([0-9a-fA-F]{8}|[0-9a-fA-F]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceDisk.InternalDeviceName</property>
@@ -1353,13 +1363,13 @@
     <property>Amazon.Drs.Model.RecoveryInstanceFailback.AgentLastSeenByServiceDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceFailback.ElapsedReplicationDuration</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceFailback.FailbackClientID</property>
@@ -1370,31 +1380,31 @@
     <property>Amazon.Drs.Model.RecoveryInstanceFailback.FailbackClientLastSeenByServiceDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceFailback.FailbackInitiationTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceFailback.FailbackJobID</property>
     <min>24</min>
     <max>24</max>
-    <pattern>^drsjob-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>drsjob-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceFailback.FirstByteDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceProperties.LastUpdatedDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceProperties.RamBytes</property>
@@ -1404,31 +1414,31 @@
     <property>Amazon.Drs.Model.RecoveryLifeCycle.JobID</property>
     <min>24</min>
     <max>24</max>
-    <pattern>^drsjob-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>drsjob-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoverySnapshot.ExpectedTimestamp</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoverySnapshot.SnapshotID</property>
     <min>21</min>
     <max>21</max>
-    <pattern>^pit-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>pit-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoverySnapshot.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoverySnapshot.Timestamp</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ReplicationConfigurationReplicatedDisk.DeviceName</property>
@@ -1487,43 +1497,43 @@
     <property>Amazon.Drs.Model.SourceCloudProperties.OriginAccountID</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12,}</pattern>
+    <pattern>.*[0-9]{12,}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceCloudProperties.OriginAvailabilityZone</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceCloudProperties.OriginRegion</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceCloudProperties.SourceOutpostArn</property>
     <min>20</min>
     <max>255</max>
-    <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
+    <pattern>arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetwork.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetwork.CfnStackName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[a-zA-Z][-a-zA-Z0-9]*$</pattern>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetwork.LaunchedVpcID</property>
     <min>12</min>
     <max>21</max>
-    <pattern>^vpc-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>vpc-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetwork.ReplicationStatusDetails</property>
@@ -1534,37 +1544,37 @@
     <property>Amazon.Drs.Model.SourceNetwork.SourceAccountID</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12,}</pattern>
+    <pattern>.*[0-9]{12,}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetwork.SourceNetworkID</property>
     <min>20</min>
     <max>20</max>
-    <pattern>^sn-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetwork.SourceRegion</property>
     <min>0</min>
     <max>255</max>
-    <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetwork.SourceVpcID</property>
     <min>12</min>
     <max>21</max>
-    <pattern>^vpc-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>vpc-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetworkData.SourceNetworkID</property>
     <min>20</min>
     <max>20</max>
-    <pattern>^sn-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetworkData.SourceVpc</property>
     <min>12</min>
     <max>21</max>
-    <pattern>^vpc-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>vpc-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetworkData.StackName</property>
@@ -1575,13 +1585,13 @@
     <property>Amazon.Drs.Model.SourceNetworkData.TargetVpc</property>
     <min>12</min>
     <max>21</max>
-    <pattern>^vpc-[0-9a-fA-F]{8,}$</pattern>
+    <pattern>vpc-[0-9a-fA-F]{8,}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceProperties.LastUpdatedDateTime</property>
     <min>19</min>
     <max>32</max>
-    <pattern>^[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z$</pattern>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceProperties.RamBytes</property>
@@ -1601,19 +1611,19 @@
     <property>Amazon.Drs.Model.StagingArea.StagingAccountID</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12,}</pattern>
+    <pattern>.*[0-9]{12,}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.StagingArea.StagingSourceServerArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.{16,2044}$</pattern>
+    <pattern>arn:.{16,2044}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.StagingSourceServer.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})$</pattern>
+    <pattern>arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.StagingSourceServer.Hostname</property>
@@ -1624,25 +1634,25 @@
     <property>Amazon.Drs.Model.StartRecoveryRequestSourceServer.RecoverySnapshotID</property>
     <min>21</min>
     <max>21</max>
-    <pattern>^pit-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>pit-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.StartRecoveryRequestSourceServer.SourceServerID</property>
     <min>19</min>
     <max>19</max>
-    <pattern>^s-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.StartSourceNetworkRecoveryRequestNetworkEntry.CfnStackName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[a-zA-Z][-a-zA-Z0-9]*$</pattern>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.StartSourceNetworkRecoveryRequestNetworkEntry.SourceNetworkID</property>
     <min>20</min>
     <max>20</max>
-    <pattern>^sn-[0-9a-zA-Z]{17}$</pattern>
+    <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ThrottlingException.QuotaCode</property>

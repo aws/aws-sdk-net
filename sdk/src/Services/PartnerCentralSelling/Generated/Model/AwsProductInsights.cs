@@ -37,7 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class AwsProductInsights
     {
         private List<AwsProductDetails> _awsProducts = AWSConfigs.InitializeCollections ? new List<AwsProductDetails>() : null;
-        private AwsProductInsightsCurrencyCodeEnum _currencyCode;
+        private CurrencyCode _currencyCode;
         private PaymentFrequency _frequency;
         private string _totalAmount;
         private Dictionary<string, string> _totalAmountByCategory = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -71,11 +71,12 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// ISO 4217 currency code.
+        /// ISO 4217 currency code. Supported values are <c>USD</c> and <c>EUR</c>. Returns <c>EUR</c>
+        /// when the opportunity is in the <c>aws-eusc</c> (AWS European Sovereign Cloud) partition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
-        public AwsProductInsightsCurrencyCodeEnum CurrencyCode
+        public CurrencyCode CurrencyCode
         {
             get { return this._currencyCode; }
             set { this._currencyCode = value; }

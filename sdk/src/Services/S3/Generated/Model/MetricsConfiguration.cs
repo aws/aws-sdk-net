@@ -48,6 +48,11 @@ namespace Amazon.S3.Model
         /// objects that meet the filter's criteria. A filter must be a prefix, an object tag,
         /// an access point ARN, or a conjunction (MetricsAndOperator).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Metrics configurations for directory buckets do not support tag filters.
+        /// </para>
+        ///  </note>
         /// </summary>
         public MetricsFilter MetricsFilter
         {

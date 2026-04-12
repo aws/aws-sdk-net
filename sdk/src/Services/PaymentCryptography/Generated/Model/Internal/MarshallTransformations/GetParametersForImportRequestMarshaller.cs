@@ -81,6 +81,12 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.KeyMaterialType);
             }
 
+            if(publicRequest.IsSetReuseLastGeneratedToken())
+            {
+                context.Writer.WritePropertyName("ReuseLastGeneratedToken");
+                context.Writer.WriteBooleanValue(publicRequest.ReuseLastGeneratedToken.Value);
+            }
+
             if(publicRequest.IsSetWrappingKeyAlgorithm())
             {
                 context.Writer.WritePropertyName("WrappingKeyAlgorithm");

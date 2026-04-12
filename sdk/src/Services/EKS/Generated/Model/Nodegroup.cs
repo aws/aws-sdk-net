@@ -58,6 +58,7 @@ namespace Amazon.EKS.Model
         private List<Taint> _taints = AWSConfigs.InitializeCollections ? new List<Taint>() : null;
         private NodegroupUpdateConfig _updateConfig;
         private string _version;
+        private WarmPoolConfig _warmPoolConfig;
 
         /// <summary>
         /// Gets and sets the property AmiType. 
@@ -545,6 +546,26 @@ namespace Amazon.EKS.Model
         internal bool IsSetVersion()
         {
             return this._version != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmPoolConfig. 
+        /// <para>
+        /// The warm pool configuration attached to the node group. Amazon EKS manages warm pools
+        /// throughout the node group lifecycle using the <c>AWSServiceRoleForAmazonEKSNodegroup</c>
+        /// service-linked role to create, update, and delete warm pool resources.
+        /// </para>
+        /// </summary>
+        public WarmPoolConfig WarmPoolConfig
+        {
+            get { return this._warmPoolConfig; }
+            set { this._warmPoolConfig = value; }
+        }
+
+        // Check to see if WarmPoolConfig property is set
+        internal bool IsSetWarmPoolConfig()
+        {
+            return this._warmPoolConfig != null;
         }
 
     }

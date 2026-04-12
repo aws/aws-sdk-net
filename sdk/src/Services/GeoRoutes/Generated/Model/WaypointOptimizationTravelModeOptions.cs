@@ -40,7 +40,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Pedestrian. 
         /// <para>
-        /// Travel mode options when the provided travel mode is "Pedestrian"
+        /// Travel mode options when the provided travel mode is <c>Pedestrian</c>.
         /// </para>
         /// </summary>
         public WaypointOptimizationPedestrianOptions Pedestrian
@@ -58,7 +58,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Truck. 
         /// <para>
-        /// Travel mode options when the provided travel mode is "Truck"
+        /// Travel mode options when the provided travel mode is <c>Truck</c>.
         /// </para>
         /// </summary>
         public WaypointOptimizationTruckOptions Truck

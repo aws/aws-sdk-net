@@ -83,7 +83,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=8, Max=32)]
         public string GatewayId
         {
             get { return this._gatewayId; }
@@ -97,7 +97,10 @@ namespace Amazon.RTBFabric.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogSettings.
+        /// Gets and sets the property LogSettings. 
+        /// <para>
+        /// Settings for the application logs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public LinkLogSettings LogSettings

@@ -85,8 +85,7 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property ColorScheme. 
         /// <para>
-        /// Sets color tone for map such as dark and light for specific map styles. It applies
-        /// to only vector map styles such as Standard and Monochrome.
+        /// Sets the color tone for the map, such as dark and light.
         /// </para>
         ///  
         /// <para>
@@ -119,12 +118,13 @@ namespace Amazon.GeoMaps.Model
         /// <para>
         /// Displays the shape and steepness of terrain features using elevation lines. The density
         /// value controls how densely the available contour line information is rendered on the
-        /// map.
+        /// map. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for
+        /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is valid only for the <c>Standard</c>, <c>Monochrome</c>, and <c>Hybrid</c>
-        /// map styles.
+        /// This parameter is valid for all map styles except <c>Satellite</c>.
         /// </para>
         /// </summary>
         public ContourDensity ContourDensity
@@ -162,7 +162,9 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property PoliticalView. 
         /// <para>
-        /// Specifies the political view using ISO 3166-2 or ISO 3166-3 country code format.
+        /// Specifies the political view using ISO 3166-2 or ISO 3166-3 country code format. Not
+        /// supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
         /// </para>
         ///  
         /// <para>
@@ -243,7 +245,9 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property Style. 
         /// <para>
-        /// Style specifies the desired map style.
+        /// Style specifies the desired map style. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only the
+        /// <c>Standard</c> and <c>Monochrome</c> values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -262,7 +266,9 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property Terrain. 
         /// <para>
-        /// Adjusts how physical terrain details are rendered on the map.
+        /// Adjusts how physical terrain details are rendered on the map. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
         /// </para>
         ///  
         /// <para>
@@ -300,11 +306,13 @@ namespace Amazon.GeoMaps.Model
         /// Gets and sets the property Traffic. 
         /// <para>
         /// Displays real-time traffic information overlay on map, such as incident events and
-        /// flow events.
+        /// flow events. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions
+        /// for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is valid only for the <c>Standard</c> map style.
+        /// This parameter is valid for all map styles except <c>Satellite</c>.
         /// </para>
         /// </summary>
         public Traffic Traffic
@@ -324,11 +332,13 @@ namespace Amazon.GeoMaps.Model
         /// <para>
         /// Renders additional map information relevant to selected travel modes. Information
         /// for multiple travel modes can be displayed simultaneously, although this increases
-        /// the overall information density rendered on the map.
+        /// the overall information density rendered on the map. Not supported in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is valid only for the <c>Standard</c> map style.
+        /// This parameter is valid for all map styles except <c>Satellite</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

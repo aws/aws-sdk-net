@@ -64,6 +64,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     response.MonthlyAccountInvestigationHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("monthlyAccountOnDemandHours", targetDepth))
+                {
+                    var unmarshaller = UsageMetricUnmarshaller.Instance;
+                    response.MonthlyAccountOnDemandHours = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("monthlyAccountSystemLearningHours", targetDepth))
                 {
                     var unmarshaller = UsageMetricUnmarshaller.Instance;

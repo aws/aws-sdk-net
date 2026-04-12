@@ -72,5 +72,45 @@ namespace SDKDocGenerator.UnitTests
                 "<p><div class=\"noteblock\" type=\"caution\"><p>Be careful.</p></div></p>",
                 result);
         }
+
+        [Fact]
+        public void BulletList_RendersAsUnorderedList()
+        {
+            var result = TransformSummary("<list type=\"bullet\"><item><description>text</description></item></list>");
+
+            Assert.Equal(
+                "<p><ul><li><span>text</span></li></ul></p>",
+                result);
+        }
+
+        [Fact]
+        public void NumberedList_RendersAsOrderedList()
+        {
+            var result = TransformSummary("<list type=\"number\"><item><description>first</description></item></list>");
+
+            Assert.Equal(
+                "<p><ol><li><span>first</span></li></ol></p>",
+                result);
+        }
+
+        [Fact]
+        public void ListWithTermAndDescription_RendersBoth()
+        {
+            var result = TransformSummary("<list type=\"bullet\"><item><term>T</term><description>D</description></item></list>");
+
+            Assert.Equal(
+                "<p><ul><li><span>T</span><span>D</span></li></ul></p>",
+                result);
+        }
+
+        [Fact]
+        public void ListDefaultsToUnorderedList()
+        {
+            var result = TransformSummary("<list><item><description>text</description></item></list>");
+
+            Assert.Equal(
+                "<p><ul><li><span>text</span></li></ul></p>",
+                result);
+        }
     }
 }

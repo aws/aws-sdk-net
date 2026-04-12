@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Origin related options.
+    /// Options that control how the origin point is interpreted when calculating reachable
+    /// areas. These options affect which roads are considered accessible from the starting
+    /// point and how initial routing decisions are made.
     /// </summary>
     public partial class IsolineOriginOptions
     {
@@ -42,9 +44,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property AvoidActionsForDistance. 
         /// <para>
-        /// Avoids actions for the provided distance. This is typically to consider for users
-        /// in moving vehicles who may not have sufficient time to make an action at an origin
-        /// or a destination.
+        /// The distance in meters from the origin point within which certain routing actions
+        /// (such as U-turns or left turns across traffic) are restricted. This helps generate
+        /// more practical routes by avoiding potentially dangerous maneuvers near the starting
+        /// point.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -63,7 +66,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Heading. 
         /// <para>
-        /// GPS Heading at the position.
+        /// Initial direction of travel in degrees (0-360, where 0 is north). This affects which
+        /// road segments are considered accessible from the starting point and is particularly
+        /// useful when the origin is on a divided road or at a complex intersection.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=360)]
@@ -82,7 +87,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Matching. 
         /// <para>
-        /// Options to configure matching the provided position to the road network.
+        /// Controls how the origin point is matched to the road network, including search radius
+        /// and matching strategy.
         /// </para>
         /// </summary>
         public IsolineMatchingOptions Matching
@@ -100,7 +106,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property SideOfStreet. 
         /// <para>
-        /// Options to configure matching the provided position to a side of the street.
+        /// Controls which side of the street is considered accessible from the origin point,
+        /// particularly important for divided roads where building entrances or parking access
+        /// may only be available from one direction.
         /// </para>
         /// </summary>
         public IsolineSideOfStreetOptions SideOfStreet

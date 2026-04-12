@@ -47,6 +47,7 @@ namespace Amazon.Connect.Model
         private string _id;
         private DateTime? _previewEndTimestamp;
         private List<StateTransition> _stateTransitions = AWSConfigs.InitializeCollections ? new List<StateTransition>() : null;
+        private VoiceEnhancementMode _voiceEnhancementMode;
 
         /// <summary>
         /// Gets and sets the property AcceptedByAgentTimestamp. 
@@ -291,6 +292,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetStateTransitions()
         {
             return this._stateTransitions != null && (this._stateTransitions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VoiceEnhancementMode. 
+        /// <para>
+        /// The voice enhancement mode used by the agent as the call is ending. Valid values:
+        /// VOICE_ISOLATION | NOISE_SUPPRESSION | NONE. A value of null indicates this mode has
+        /// not yet been set for this user.
+        /// </para>
+        /// </summary>
+        public VoiceEnhancementMode VoiceEnhancementMode
+        {
+            get { return this._voiceEnhancementMode; }
+            set { this._voiceEnhancementMode = value; }
+        }
+
+        // Check to see if VoiceEnhancementMode property is set
+        internal bool IsSetVoiceEnhancementMode()
+        {
+            return this._voiceEnhancementMode != null;
         }
 
     }

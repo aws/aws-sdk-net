@@ -42,6 +42,12 @@ namespace Amazon.Lightsail.Model
     /// For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications
     /// in Amazon Lightsail</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// The <c>create contact method</c> operation supports tag-based access control via request
+    /// tags. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Developer Guide</a>.
+    /// </para>
     /// </summary>
     public partial class CreateContactMethodRequest : AmazonLightsailRequest
     {

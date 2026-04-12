@@ -123,6 +123,28 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMcpserver())
+            {
+                context.Writer.WritePropertyName("mcpserver");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MCPServerConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Mcpserver, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetMcpserverdatadog())
+            {
+                context.Writer.WritePropertyName("mcpserverdatadog");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MCPServerDatadogConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Mcpserverdatadog, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMcpservergrafana())
             {
                 context.Writer.WritePropertyName("mcpservergrafana");
@@ -145,13 +167,13 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetMsteams())
+            if(requestObject.IsSetMcpserversplunk())
             {
-                context.Writer.WritePropertyName("msteams");
+                context.Writer.WritePropertyName("mcpserversplunk");
                 context.Writer.WriteStartObject();
 
-                var marshaller = MSTeamsConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Msteams, context);
+                var marshaller = MCPServerSplunkConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Mcpserversplunk, context);
 
                 context.Writer.WriteEndObject();
             }

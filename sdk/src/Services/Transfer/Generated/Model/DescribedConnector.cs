@@ -41,6 +41,7 @@ namespace Amazon.Transfer.Model
         private DescribedConnectorEgressConfig _egressConfig;
         private ConnectorEgressType _egressType;
         private string _errorMessage;
+        private ConnectorsIpAddressType _ipAddressType;
         private string _loggingRole;
         private string _securityPolicyName;
         private List<string> _serviceManagedEgressIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -223,6 +224,26 @@ namespace Amazon.Transfer.Model
         internal bool IsSetErrorMessage()
         {
             return this._errorMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// IP address type for the connector's network connections. When set to <c>IPV4</c>,
+        /// the connector uses IPv4 addresses only. When set to <c>DUALSTACK</c>, the connector
+        /// supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.
+        /// </para>
+        /// </summary>
+        public ConnectorsIpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace Amazon.ECS.Model
         private List<string> _compatibilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<ContainerDefinition> _containerDefinitions = AWSConfigs.InitializeCollections ? new List<ContainerDefinition>() : null;
         private string _cpu;
+        private DateTime? _deleteRequestedAt;
         private DateTime? _deregisteredAt;
         private bool? _enableFaultInjection;
         private EphemeralStorage _ephemeralStorage;
@@ -145,6 +146,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetCpu()
         {
             return this._cpu != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteRequestedAt. 
+        /// <para>
+        /// The Unix timestamp for the time when the task definition delete was requested.
+        /// </para>
+        /// </summary>
+        public DateTime? DeleteRequestedAt
+        {
+            get { return this._deleteRequestedAt; }
+            set { this._deleteRequestedAt = value; }
+        }
+
+        // Check to see if DeleteRequestedAt property is set
+        internal bool IsSetDeleteRequestedAt()
+        {
+            return this._deleteRequestedAt.HasValue; 
         }
 
         /// <summary>

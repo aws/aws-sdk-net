@@ -68,6 +68,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Format = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("startTimecode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartTimecode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("tracks", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Track, TrackUnmarshaller>(TrackUnmarshaller.Instance);

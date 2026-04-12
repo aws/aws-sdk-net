@@ -133,6 +133,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For DevOps Agent, the valid value is <c>APPLICATION_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Amazon CodeWhisperer, the valid value is <c>EVENT_LOGS</c>.
         /// </para>
         ///  </li> <li> 
@@ -181,6 +185,10 @@ namespace Amazon.CloudWatchLogs.Model
         ///  </li> <li> 
         /// <para>
         /// For Amazon Q, the valid values are <c>EVENT_LOGS</c> and <c>SYNC_JOB_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Web Services Security Hub CSPM, the valid value is <c>SECURITY_FINDING_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -237,6 +245,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// The ARN of the Amazon Web Services resource that is generating and sending logs. For
         /// example, <c>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</c>
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For the <c>SECURITY_FINDING_LOGS</c> logType, use a wildcard ARN for the hub resource.
+        /// For example, <c>arn:aws:securityhub:us-east-1:111122223333:hub/*</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

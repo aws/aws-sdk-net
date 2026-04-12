@@ -68,6 +68,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TlsAuthConfiguration", targetDepth))
+                {
+                    var unmarshaller = TlsAuthConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TlsAuthConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

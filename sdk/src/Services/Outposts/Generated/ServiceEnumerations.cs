@@ -85,6 +85,10 @@ namespace Amazon.Outposts
         /// </summary>
         public static readonly AssetState ACTIVE = new AssetState("ACTIVE");
         /// <summary>
+        /// Constant INSTALLING for AssetState
+        /// </summary>
+        public static readonly AssetState INSTALLING = new AssetState("INSTALLING");
+        /// <summary>
         /// Constant ISOLATED for AssetState
         /// </summary>
         public static readonly AssetState ISOLATED = new AssetState("ISOLATED");
@@ -138,6 +142,22 @@ namespace Amazon.Outposts
         /// Constant COMPUTE for AssetType
         /// </summary>
         public static readonly AssetType COMPUTE = new AssetType("COMPUTE");
+        /// <summary>
+        /// Constant NETWORKING for AssetType
+        /// </summary>
+        public static readonly AssetType NETWORKING = new AssetType("NETWORKING");
+        /// <summary>
+        /// Constant POWERSHELF for AssetType
+        /// </summary>
+        public static readonly AssetType POWERSHELF = new AssetType("POWERSHELF");
+        /// <summary>
+        /// Constant STORAGE for AssetType
+        /// </summary>
+        public static readonly AssetType STORAGE = new AssetType("STORAGE");
+        /// <summary>
+        /// Constant SWITCH for AssetType
+        /// </summary>
+        public static readonly AssetType SWITCH = new AssetType("SWITCH");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -552,6 +572,10 @@ namespace Amazon.Outposts
         /// Constant ACTIVE for ComputeAssetState
         /// </summary>
         public static readonly ComputeAssetState ACTIVE = new ComputeAssetState("ACTIVE");
+        /// <summary>
+        /// Constant INSTALLING for ComputeAssetState
+        /// </summary>
+        public static readonly ComputeAssetState INSTALLING = new ComputeAssetState("INSTALLING");
         /// <summary>
         /// Constant ISOLATED for ComputeAssetState
         /// </summary>
@@ -1399,6 +1423,102 @@ namespace Amazon.Outposts
 
 
     /// <summary>
+    /// Constants used for properties of type PricingResult.
+    /// </summary>
+    public class PricingResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRICED for PricingResult
+        /// </summary>
+        public static readonly PricingResult PRICED = new PricingResult("PRICED");
+        /// <summary>
+        /// Constant UNABLE_TO_PRICE for PricingResult
+        /// </summary>
+        public static readonly PricingResult UNABLE_TO_PRICE = new PricingResult("UNABLE_TO_PRICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PricingResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PricingResult FindValue(string value)
+        {
+            return FindValue<PricingResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PricingResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuotePricingType.
+    /// </summary>
+    public class QuotePricingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SUBSCRIPTION for QuotePricingType
+        /// </summary>
+        public static readonly QuotePricingType SUBSCRIPTION = new QuotePricingType("SUBSCRIPTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuotePricingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuotePricingType FindValue(string value)
+        {
+            return FindValue<QuotePricingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuotePricingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -1528,6 +1648,10 @@ namespace Amazon.Outposts
         /// Constant INACTIVE for SubscriptionStatus
         /// </summary>
         public static readonly SubscriptionStatus INACTIVE = new SubscriptionStatus("INACTIVE");
+        /// <summary>
+        /// Constant PENDING for SubscriptionStatus
+        /// </summary>
+        public static readonly SubscriptionStatus PENDING = new SubscriptionStatus("PENDING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

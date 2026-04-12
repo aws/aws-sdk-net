@@ -275,8 +275,7 @@ namespace Amazon.DevOpsAgent
 
 
         /// <summary>
-        /// Authorize Ingestion Hub subscription operation. Looks to see if the derived accountId
-        /// from FAS has an AgentSpace.
+        /// Authorize Ingestion Hub subscription operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllowVendedLogDeliveryForResource service method.</param>
         /// 
@@ -317,8 +316,7 @@ namespace Amazon.DevOpsAgent
 
 
         /// <summary>
-        /// Authorize Ingestion Hub subscription operation. Looks to see if the derived accountId
-        /// from FAS has an AgentSpace.
+        /// Authorize Ingestion Hub subscription operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllowVendedLogDeliveryForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1243,103 +1241,6 @@ namespace Amazon.DevOpsAgent
 
         #endregion
         
-        #region  DescribeSupportLevel
-
-
-        /// <summary>
-        /// Describe the support level of a CloudSmith customer account.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeSupportLevel service method.</param>
-        /// 
-        /// <returns>The response from the DescribeSupportLevel service method, as returned by DevOpsAgent.</returns>
-        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
-        /// Access to the requested resource is denied due to insufficient permissions.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
-        /// The request conflicts with the current state of the resource.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
-        /// This exception is thrown when the content size exceeds the allowed limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
-        /// This exception is thrown when an unexpected error occurs in the processing of a request.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
-        /// One or more parameters provided in the request are invalid.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
-        /// The requested resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
-        /// The request would exceed the service quota limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
-        /// The request was throttled due to too many requests. Please slow down and try again.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DescribeSupportLevel">REST API Reference for DescribeSupportLevel Operation</seealso>
-        public virtual DescribeSupportLevelResponse DescribeSupportLevel(DescribeSupportLevelRequest request)
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = DescribeSupportLevelRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeSupportLevelResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeSupportLevelResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Describe the support level of a CloudSmith customer account.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeSupportLevel service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DescribeSupportLevel service method, as returned by DevOpsAgent.</returns>
-        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
-        /// Access to the requested resource is denied due to insufficient permissions.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
-        /// The request conflicts with the current state of the resource.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
-        /// This exception is thrown when the content size exceeds the allowed limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
-        /// This exception is thrown when an unexpected error occurs in the processing of a request.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
-        /// One or more parameters provided in the request are invalid.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
-        /// The requested resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
-        /// The request would exceed the service quota limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
-        /// The request was throttled due to too many requests. Please slow down and try again.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DescribeSupportLevel">REST API Reference for DescribeSupportLevel Operation</seealso>
-        public virtual Task<DescribeSupportLevelResponse> DescribeSupportLevelAsync(DescribeSupportLevelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = DescribeSupportLevelRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DescribeSupportLevelResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<DescribeSupportLevelResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
         #region  DisableOperatorApp
 
 
@@ -1641,103 +1542,6 @@ namespace Amazon.DevOpsAgent
             options.ResponseUnmarshaller = EnableOperatorAppResponseUnmarshaller.Instance;
             
             return InvokeAsync<EnableOperatorAppResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  EndChatForCase
-
-
-        /// <summary>
-        /// End a chat session for a support case in the specified agent space
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the EndChatForCase service method.</param>
-        /// 
-        /// <returns>The response from the EndChatForCase service method, as returned by DevOpsAgent.</returns>
-        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
-        /// Access to the requested resource is denied due to insufficient permissions.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
-        /// The request conflicts with the current state of the resource.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
-        /// This exception is thrown when the content size exceeds the allowed limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
-        /// This exception is thrown when an unexpected error occurs in the processing of a request.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
-        /// One or more parameters provided in the request are invalid.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
-        /// The requested resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
-        /// The request would exceed the service quota limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
-        /// The request was throttled due to too many requests. Please slow down and try again.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/EndChatForCase">REST API Reference for EndChatForCase Operation</seealso>
-        public virtual EndChatForCaseResponse EndChatForCase(EndChatForCaseRequest request)
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = EndChatForCaseRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = EndChatForCaseResponseUnmarshaller.Instance;
-
-            return Invoke<EndChatForCaseResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// End a chat session for a support case in the specified agent space
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the EndChatForCase service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the EndChatForCase service method, as returned by DevOpsAgent.</returns>
-        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
-        /// Access to the requested resource is denied due to insufficient permissions.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
-        /// The request conflicts with the current state of the resource.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
-        /// This exception is thrown when the content size exceeds the allowed limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
-        /// This exception is thrown when an unexpected error occurs in the processing of a request.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
-        /// One or more parameters provided in the request are invalid.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
-        /// The requested resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
-        /// The request would exceed the service quota limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
-        /// The request was throttled due to too many requests. Please slow down and try again.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/EndChatForCase">REST API Reference for EndChatForCase Operation</seealso>
-        public virtual Task<EndChatForCaseResponse> EndChatForCaseAsync(EndChatForCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = EndChatForCaseRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = EndChatForCaseResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<EndChatForCaseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2417,103 +2221,6 @@ namespace Amazon.DevOpsAgent
             options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetServiceResponse>(request, options, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  InitiateChatForCase
-
-
-        /// <summary>
-        /// Initiate a chat for support case in the specified agent space
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the InitiateChatForCase service method.</param>
-        /// 
-        /// <returns>The response from the InitiateChatForCase service method, as returned by DevOpsAgent.</returns>
-        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
-        /// Access to the requested resource is denied due to insufficient permissions.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
-        /// The request conflicts with the current state of the resource.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
-        /// This exception is thrown when the content size exceeds the allowed limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
-        /// This exception is thrown when an unexpected error occurs in the processing of a request.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
-        /// One or more parameters provided in the request are invalid.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
-        /// The requested resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
-        /// The request would exceed the service quota limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
-        /// The request was throttled due to too many requests. Please slow down and try again.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/InitiateChatForCase">REST API Reference for InitiateChatForCase Operation</seealso>
-        public virtual InitiateChatForCaseResponse InitiateChatForCase(InitiateChatForCaseRequest request)
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = InitiateChatForCaseRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = InitiateChatForCaseResponseUnmarshaller.Instance;
-
-            return Invoke<InitiateChatForCaseResponse>(request, options);
-        }
-
-
-        /// <summary>
-        /// Initiate a chat for support case in the specified agent space
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the InitiateChatForCase service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the InitiateChatForCase service method, as returned by DevOpsAgent.</returns>
-        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
-        /// Access to the requested resource is denied due to insufficient permissions.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
-        /// The request conflicts with the current state of the resource.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
-        /// This exception is thrown when the content size exceeds the allowed limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
-        /// This exception is thrown when an unexpected error occurs in the processing of a request.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
-        /// One or more parameters provided in the request are invalid.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
-        /// The requested resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
-        /// The request would exceed the service quota limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
-        /// The request was throttled due to too many requests. Please slow down and try again.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/InitiateChatForCase">REST API Reference for InitiateChatForCase Operation</seealso>
-        public virtual Task<InitiateChatForCaseResponse> InitiateChatForCaseAsync(InitiateChatForCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = InitiateChatForCaseRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = InitiateChatForCaseResponseUnmarshaller.Instance;
-            
-            return InvokeAsync<InitiateChatForCaseResponse>(request, options, cancellationToken);
         }
 
         #endregion

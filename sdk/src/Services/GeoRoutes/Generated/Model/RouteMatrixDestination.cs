@@ -40,7 +40,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// Destination related options.
+        ///  Destination related options. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RouteMatrixDestinationOptions Options
@@ -58,7 +60,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// Position defined as <c>[longitude, latitude]</c>.
+        /// Position in World Geodetic System (WGS 84) format: [longitude, latitude].
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

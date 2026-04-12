@@ -43,7 +43,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property AutoScalingConfiguration. 
         /// <para>
-        /// The auto scaling configuration options for the customer managed fleet.
+        /// The auto scaling configuration settings for the customer managed fleet.
         /// </para>
         /// </summary>
         public CustomerManagedAutoScalingConfiguration AutoScalingConfiguration

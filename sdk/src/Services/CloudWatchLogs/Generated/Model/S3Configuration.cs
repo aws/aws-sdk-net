@@ -62,7 +62,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same
-        /// AWS Region as the destination Amazon S3 bucket.
+        /// Amazon Web Services Region as the destination Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -81,7 +81,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
-        /// The AWS accountId for the bucket owning account.
+        /// The Amazon Web Services accountId for the bucket owning account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

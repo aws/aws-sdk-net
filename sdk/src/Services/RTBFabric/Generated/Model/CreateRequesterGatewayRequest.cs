@@ -66,6 +66,7 @@ namespace Amazon.RTBFabric.Model
         /// An optional description for the requester gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string Description
         {
             get { return this._description; }
@@ -155,7 +156,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the Virtual Private Cloud (VPC).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=12, Max=21)]
         public string VpcId
         {
             get { return this._vpcId; }

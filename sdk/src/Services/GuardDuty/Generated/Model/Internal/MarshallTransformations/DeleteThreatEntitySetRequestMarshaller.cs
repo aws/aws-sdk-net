@@ -64,11 +64,11 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 
             if (!publicRequest.IsSetDetectorId())
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
-            request.AddPathResource("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
+            request.AddPathResource("{DetectorId}", StringUtils.FromString(publicRequest.DetectorId));
             if (!publicRequest.IsSetThreatEntitySetId())
                 throw new AmazonGuardDutyException("Request object does not have required field ThreatEntitySetId set");
-            request.AddPathResource("{threatEntitySetId}", StringUtils.FromString(publicRequest.ThreatEntitySetId));
-            request.ResourcePath = "/detector/{detectorId}/threatentityset/{threatEntitySetId}";
+            request.AddPathResource("{ThreatEntitySetId}", StringUtils.FromString(publicRequest.ThreatEntitySetId));
+            request.ResourcePath = "/detector/{DetectorId}/threatentityset/{ThreatEntitySetId}";
 
             return request;
         }

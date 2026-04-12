@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         ///  The name of the dimension to filter by. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=300)]
         public FilterByDimension Dimension
         {
             get { return this._dimension; }

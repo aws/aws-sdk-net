@@ -33,6 +33,13 @@ namespace Amazon.CertificateManager.Model
     /// Container for the parameters to the RevokeCertificate operation.
     /// Revokes a public ACM certificate. You can only revoke certificates that have been
     /// previously exported.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Once a certificate is revoked, you cannot reuse the certificate. Revoking a certificate
+    /// is permanent.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class RevokeCertificateRequest : AmazonCertificateManagerRequest
     {

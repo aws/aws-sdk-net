@@ -1659,6 +1659,10 @@ namespace Amazon.QuickSight
     {
 
         /// <summary>
+        /// Constant KEYPAIR for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType KEYPAIR = new AuthenticationType("KEYPAIR");
+        /// <summary>
         /// Constant PASSWORD for AuthenticationType
         /// </summary>
         public static readonly AuthenticationType PASSWORD = new AuthenticationType("PASSWORD");
@@ -1836,6 +1840,68 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AuthorSpecifiedAggregation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomationJobStatus.
+    /// </summary>
+    public class AutomationJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AutomationJobStatus
+        /// </summary>
+        public static readonly AutomationJobStatus FAILED = new AutomationJobStatus("FAILED");
+        /// <summary>
+        /// Constant QUEUED for AutomationJobStatus
+        /// </summary>
+        public static readonly AutomationJobStatus QUEUED = new AutomationJobStatus("QUEUED");
+        /// <summary>
+        /// Constant RUNNING for AutomationJobStatus
+        /// </summary>
+        public static readonly AutomationJobStatus RUNNING = new AutomationJobStatus("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for AutomationJobStatus
+        /// </summary>
+        public static readonly AutomationJobStatus STOPPED = new AutomationJobStatus("STOPPED");
+        /// <summary>
+        /// Constant SUCCEEDED for AutomationJobStatus
+        /// </summary>
+        public static readonly AutomationJobStatus SUCCEEDED = new AutomationJobStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomationJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomationJobStatus FindValue(string value)
+        {
+            return FindValue<AutomationJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomationJobStatus(string value)
         {
             return FindValue(value);
         }
@@ -12134,6 +12200,10 @@ namespace Amazon.QuickSight
         /// Constant DETAILED for SelectedTooltipType
         /// </summary>
         public static readonly SelectedTooltipType DETAILED = new SelectedTooltipType("DETAILED");
+        /// <summary>
+        /// Constant SHEET for SelectedTooltipType
+        /// </summary>
+        public static readonly SelectedTooltipType SHEET = new SelectedTooltipType("SHEET");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -13298,6 +13368,106 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SparklineAxisBehavior.
+    /// </summary>
+    public class SparklineAxisBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INDEPENDENT for SparklineAxisBehavior
+        /// </summary>
+        public static readonly SparklineAxisBehavior INDEPENDENT = new SparklineAxisBehavior("INDEPENDENT");
+        /// <summary>
+        /// Constant SHARED for SparklineAxisBehavior
+        /// </summary>
+        public static readonly SparklineAxisBehavior SHARED = new SparklineAxisBehavior("SHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SparklineAxisBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SparklineAxisBehavior FindValue(string value)
+        {
+            return FindValue<SparklineAxisBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SparklineAxisBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SparklineVisualType.
+    /// </summary>
+    public class SparklineVisualType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AREA_LINE for SparklineVisualType
+        /// </summary>
+        public static readonly SparklineVisualType AREA_LINE = new SparklineVisualType("AREA_LINE");
+        /// <summary>
+        /// Constant LINE for SparklineVisualType
+        /// </summary>
+        public static readonly SparklineVisualType LINE = new SparklineVisualType("LINE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SparklineVisualType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SparklineVisualType FindValue(string value)
+        {
+            return FindValue<SparklineVisualType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SparklineVisualType(string value)
         {
             return FindValue(value);
         }

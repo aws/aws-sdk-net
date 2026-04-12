@@ -394,7 +394,8 @@ namespace ServiceClientGenerator
                     foreach (var projectFile in Directory.GetFiles(testProjectsRoot, projectFilePattern, SearchOption.AllDirectories)                        
                         .Where(projectFile => (Path.GetFileNameWithoutExtension(projectFile).Contains("UnitTestUtilities") || !Path.GetFileNameWithoutExtension(projectFile).Contains("Utilities")) &&
                         !Path.GetFullPath(projectFile).Contains("Services") &&
-                        !Path.GetFullPath(projectFile).Contains("CSM"))
+                        !Path.GetFullPath(projectFile).Contains("CSM") &&
+                        !Path.GetFullPath(projectFile).Contains(Path.Combine("NetStandard", "IntegrationTests")))
                         .OrderBy(f => f))
                     {
                         var profileFileAlt = Utils.ConvertPathAlt(projectFile);

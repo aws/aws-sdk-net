@@ -2,35 +2,30 @@
 using Amazon.S3;
 using Amazon.S3.Model;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    /// <summary>
-    /// Integration tests for S3Express Buckets and normal bucket creation
-    /// using S3Express specifications
-    /// </summary>
-    [TestClass]
-    [TestCategory("S3")]
-    public class PutBucketS3ExpressTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class PutBucketS3ExpressTests : IAsyncLifetime
     {
-        private static readonly List<string> bucketNames = new List<string>();
+        private readonly List<string> _bucketNames = new List<string>();
         private static readonly AmazonS3Client _usEast1Client = new AmazonS3Client(RegionEndpoint.USEast1);
 
-        [ClassCleanup]
-        public static async Task ClassCleanup()
+        public ValueTask InitializeAsync() => default;
+
+        public async ValueTask DisposeAsync()
         {
-            foreach (var bucketName in bucketNames)
+            foreach (var bucketName in _bucketNames)
             {
                 await _usEast1Client.DeleteBucketAsync(bucketName);
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task PutS3ExpressBucketUsingS3ExpressConfiguration()
         {
             string bucketName = UtilityMethods.GenerateName(UtilityMethods.SDK_TEST_PREFIX) + "--use1-az5--x-s3";
@@ -43,12 +38,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Location = new LocationInfo { Name = "use1-az5", Type = LocationType.AvailabilityZone }
                 }
             });
-            Assert.IsNotNull(response);
-            Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
-            bucketNames.Add(bucketName);
+            Assert.NotNull(response);
+            Assert.Equal(HttpStatusCode.OK, response.HttpStatusCode);
+            _bucketNames.Add(bucketName);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task PutRegularBucketUsingNoConfiguration()
         {
             string bucketName = UtilityMethods.GenerateName(UtilityMethods.SDK_TEST_PREFIX);
@@ -56,9 +51,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
             });
-            Assert.IsNotNull(response);
-            Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
-            bucketNames.Add(bucketName);
+            Assert.NotNull(response);
+            Assert.Equal(HttpStatusCode.OK, response.HttpStatusCode);
+            _bucketNames.Add(bucketName);
         }
     }
 }

@@ -43,6 +43,7 @@ namespace Amazon.Drs.Model
         private ReplicationConfigurationDefaultLargeStagingDiskType _defaultLargeStagingDiskType;
         private ReplicationConfigurationEbsEncryption _ebsEncryption;
         private string _ebsEncryptionKeyArn;
+        private InternetProtocol _internetProtocol;
         private string _name;
         private List<PITPolicyRule> _pitPolicy = AWSConfigs.InitializeCollections ? new List<PITPolicyRule>() : null;
         private List<ReplicationConfigurationReplicatedDisk> _replicatedDisks = AWSConfigs.InitializeCollections ? new List<ReplicationConfigurationReplicatedDisk>() : null;
@@ -200,6 +201,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetEbsEncryptionKeyArn()
         {
             return this._ebsEncryptionKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InternetProtocol. 
+        /// <para>
+        /// Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)
+        /// </para>
+        /// </summary>
+        public InternetProtocol InternetProtocol
+        {
+            get { return this._internetProtocol; }
+            set { this._internetProtocol = value; }
+        }
+
+        // Check to see if InternetProtocol property is set
+        internal bool IsSetInternetProtocol()
+        {
+            return this._internetProtocol != null;
         }
 
         /// <summary>

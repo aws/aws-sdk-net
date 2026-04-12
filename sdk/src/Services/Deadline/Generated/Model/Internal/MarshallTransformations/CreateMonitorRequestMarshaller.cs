@@ -85,6 +85,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.IdentityCenterInstanceArn);
             }
 
+            if(publicRequest.IsSetIdentityCenterRegion())
+            {
+                context.Writer.WritePropertyName("identityCenterRegion");
+                context.Writer.WriteStringValue(publicRequest.IdentityCenterRegion);
+            }
+
             if(publicRequest.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");

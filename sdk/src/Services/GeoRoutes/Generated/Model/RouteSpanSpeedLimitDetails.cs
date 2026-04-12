@@ -34,7 +34,7 @@ namespace Amazon.GeoRoutes.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Unit</b>: <c>KilometersPerHour</c> 
+    ///  <b>Unit</b>: <c>kilometers per hour</c> 
     /// </para>
     /// </summary>
     public partial class RouteSpanSpeedLimitDetails
@@ -49,7 +49,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>KilometersPerHour</c> 
+        ///  <b>Unit</b>: <c>kilometers per hour</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0)]

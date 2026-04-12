@@ -56,6 +56,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("attemptCount", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.AttemptCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("conversionProperties", targetDepth))
                 {
                     var unmarshaller = ConversionPropertiesUnmarshaller.Instance;
@@ -72,6 +78,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = EventResourceDataUnmarshaller.Instance;
                     unmarshalledObject.EventResourceData = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("maxAttemptsCount", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.MaxAttemptsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rawError", targetDepth))

@@ -1,96 +1,73 @@
-﻿/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
-using Amazon.S3;
+﻿using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class BucketOwnershipControlsTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class BucketOwnershipControlsTests : IClassFixture<S3BucketFixture>
     {
-        private static string bucketName;
-        private IAmazonS3 s3Client;
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
 
-        [TestInitialize]
-        public async Task Init()
+        public BucketOwnershipControlsTests(S3BucketFixture fixture)
         {
-            s3Client = new AmazonS3Client();
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(s3Client);
+            _client = fixture.Client;
+            _bucketName = fixture.BucketName;
         }
 
-        [TestCleanup]
-        public async Task Cleanup()
-        {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(s3Client, bucketName);
-            s3Client.Dispose();
-        }
-
-        [TestMethod]
+        [Fact]
         public async Task TestGetBucketOwnershipControls_ObjectWriter()
         {
             await PutAndGetBucketOwnershipControls(ObjectOwnership.ObjectWriter);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestGetBucketOwnershipControls_BucketOwnerPreferred()
         {
             await PutAndGetBucketOwnershipControls(ObjectOwnership.BucketOwnerPreferred);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestDeleteBucketOwnershipControls()
         {
             await PutAndGetBucketOwnershipControls(ObjectOwnership.BucketOwnerPreferred);
 
-            await s3Client.DeleteBucketOwnershipControlsAsync(new DeleteBucketOwnershipControlsRequest
+            await _client.DeleteBucketOwnershipControlsAsync(new DeleteBucketOwnershipControlsRequest
             {
-                BucketName = bucketName
+                BucketName = _bucketName
             });
 
-            await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() =>
-                s3Client.GetBucketOwnershipControlsAsync(new GetBucketOwnershipControlsRequest
+            await Assert.ThrowsAsync<AmazonS3Exception>(() =>
+                _client.GetBucketOwnershipControlsAsync(new GetBucketOwnershipControlsRequest
                 {
-                    BucketName = bucketName
+                    BucketName = _bucketName
                 })
             );
         }
 
         private async Task PutAndGetBucketOwnershipControls(ObjectOwnership objectOwnership)
         {
-            await s3Client.PutBucketOwnershipControlsAsync(new PutBucketOwnershipControlsRequest
+            await _client.PutBucketOwnershipControlsAsync(new PutBucketOwnershipControlsRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 OwnershipControls = new OwnershipControls
                 {
                     Rules = new List<OwnershipControlsRule> { new OwnershipControlsRule { ObjectOwnership = objectOwnership } }
                 }
             });
 
-            var getResponse = await s3Client.GetBucketOwnershipControlsAsync(new GetBucketOwnershipControlsRequest
+            var getResponse = await _client.GetBucketOwnershipControlsAsync(new GetBucketOwnershipControlsRequest
             {
-                BucketName = bucketName
+                BucketName = _bucketName
             });
-            Assert.IsNotNull(getResponse.OwnershipControls);
-            Assert.AreEqual(1, getResponse.OwnershipControls.Rules.Count());
-            Assert.AreEqual(objectOwnership, getResponse.OwnershipControls.Rules[0].ObjectOwnership);
+            Assert.NotNull(getResponse.OwnershipControls);
+            Assert.Equal(1, getResponse.OwnershipControls.Rules.Count());
+            Assert.Equal(objectOwnership, getResponse.OwnershipControls.Rules[0].ObjectOwnership);
         }
     }
 }

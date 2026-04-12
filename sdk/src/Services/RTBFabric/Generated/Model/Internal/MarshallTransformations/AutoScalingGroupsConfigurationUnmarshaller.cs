@@ -62,6 +62,12 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoScalingGroupNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("healthCheckConfig", targetDepth))
+                {
+                    var unmarshaller = HealthCheckConfigUnmarshaller.Instance;
+                    unmarshalledObject.HealthCheckConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
     public partial class CapacityManagerDimension
     {
         private string _accountId;
+        private string _accountName;
         private string _availabilityZoneId;
         private string _instanceFamily;
         private string _instancePlatform;
@@ -52,6 +53,7 @@ namespace Amazon.EC2.Model
         private ReservationType _reservationType;
         private string _reservationUnusedFinancialOwner;
         private string _resourceRegion;
+        private List<CapacityManagerTagDimension> _tags = AWSConfigs.InitializeCollections ? new List<CapacityManagerTagDimension>() : null;
         private CapacityTenancy _tenancy;
 
         /// <summary>
@@ -70,6 +72,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccountName. 
+        /// <para>
+        ///  The name of the Amazon Web Services account that owns the capacity resource. This
+        /// dimension is only available when Organizations access is enabled for Capacity Manager.
+        /// 
+        /// </para>
+        /// </summary>
+        public string AccountName
+        {
+            get { return this._accountName; }
+            set { this._accountName = value; }
+        }
+
+        // Check to see if AccountName property is set
+        internal bool IsSetAccountName()
+        {
+            return this._accountName != null;
         }
 
         /// <summary>
@@ -352,6 +374,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetResourceRegion()
         {
             return this._resourceRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  The tags associated with the capacity resource, represented as key-value pairs. Only
+        /// tags that have been activated for monitoring via <c>UpdateCapacityManagerMonitoredTagKeys</c>
+        /// are included. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<CapacityManagerTagDimension> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

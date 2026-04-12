@@ -75,6 +75,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIncludeTrustStoreContents())
+            {
+                context.Writer.WritePropertyName("IncludeTrustStoreContents");
+                context.Writer.WriteStringValue(publicRequest.IncludeTrustStoreContents);
+            }
+
             if(publicRequest.IsSetIngressPointId())
             {
                 context.Writer.WritePropertyName("IngressPointId");
