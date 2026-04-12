@@ -311,362 +311,362 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
 
         try
         {
-        string? currentCompletionId = null;
-        string? currentContentId = null;
-        string? currentContentType = null;
-        string? currentRole = null;
-        var emittedAssistantTranscripts = new HashSet<string>(StringComparer.Ordinal);
-        int outputIndex = 0;
-        bool inResponse = false;
-        UsageDetails? latestUsage = null;
-        List<AIContent>? pendingToolCallContents = null;
+            string? currentCompletionId = null;
+            string? currentContentId = null;
+            string? currentContentType = null;
+            string? currentRole = null;
+            var emittedAssistantTranscripts = new HashSet<string>(StringComparer.Ordinal);
+            int outputIndex = 0;
+            bool inResponse = false;
+            UsageDetails? latestUsage = null;
+            List<AIContent>? pendingToolCallContents = null;
 
-        IAsyncEnumerator<IEventStreamEvent> enumerator;
-        try
-        {
-            enumerator = _streamResponse.Body.GetAsyncEnumerator(cancellationToken);
-        }
-        catch (Exception ex) when (ex is OperationCanceledException or ObjectDisposedException)
-        {
-            yield break;
-        }
-
-        while (true)
-        {
-            bool moved;
+            IAsyncEnumerator<IEventStreamEvent> enumerator;
             try
             {
-                moved = await enumerator.MoveNextAsync().ConfigureAwait(false);
+                enumerator = _streamResponse.Body.GetAsyncEnumerator(cancellationToken);
             }
-            catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+            catch (Exception ex) when (ex is OperationCanceledException or ObjectDisposedException)
             {
-                // The caller explicitly cancelled via their token — propagate.
-                // Dispose the enumerator before rethrowing.
-                await enumerator.DisposeAsync().ConfigureAwait(false);
-                throw;
-            }
-            catch (Exception ex) when (ex is OperationCanceledException or ObjectDisposedException or InvalidOperationException)
-            {
-                // These exceptions are expected during session teardown:
-                //   - OperationCanceledException: internal cancellation from disposal.
-                //   - ObjectDisposedException: stream was disposed.
-                //   - InvalidOperationException: stream in invalid state during shutdown.
-                await enumerator.DisposeAsync().ConfigureAwait(false);
                 yield break;
             }
 
-            if (!moved)
+            while (true)
             {
-                await enumerator.DisposeAsync().ConfigureAwait(false);
-                yield break;
-            }
+                bool moved;
+                try
+                {
+                    moved = await enumerator.MoveNextAsync().ConfigureAwait(false);
+                }
+                catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+                {
+                    // The caller explicitly cancelled via their token — propagate.
+                    // Dispose the enumerator before rethrowing.
+                    await enumerator.DisposeAsync().ConfigureAwait(false);
+                    throw;
+                }
+                catch (Exception ex) when (ex is OperationCanceledException or ObjectDisposedException or InvalidOperationException)
+                {
+                    // These exceptions are expected during session teardown:
+                    //   - OperationCanceledException: internal cancellation from disposal.
+                    //   - ObjectDisposedException: stream was disposed.
+                    //   - InvalidOperationException: stream in invalid state during shutdown.
+                    await enumerator.DisposeAsync().ConfigureAwait(false);
+                    yield break;
+                }
 
-            var ev = enumerator.Current;
+                if (!moved)
+                {
+                    await enumerator.DisposeAsync().ConfigureAwait(false);
+                    yield break;
+                }
 
-            {
-            if (ev is not BidirectionalOutputPayloadPart chunk || chunk.Bytes is null)
-            {
-                continue;
-            }
+                var ev = enumerator.Current;
 
-            JsonDocument doc;
-            try
-            {
-                doc = JsonDocument.Parse(chunk.Bytes);
-            }
-            catch (JsonException)
-            {
-                continue;
-            }
-
-            using (doc)
-            {
-                if (!doc.RootElement.TryGetProperty("event", out var eventElement))
+                {
+                if (ev is not BidirectionalOutputPayloadPart chunk || chunk.Bytes is null)
                 {
                     continue;
                 }
 
-                // Trace all incoming events for debugging
-
-                if (eventElement.TryGetProperty("completionStart", out var completionStart))
+                JsonDocument doc;
+                try
                 {
-                    currentCompletionId = completionStart.TryGetProperty("completionId", out var cid) ? cid.GetString() : null;
-                    outputIndex = 0;
-                    inResponse = true;
-
-                    yield return new ResponseCreatedRealtimeServerMessage(RealtimeServerMessageType.ResponseCreated)
-                    {
-                        ResponseId = currentCompletionId,
-                        RawRepresentation = doc.RootElement.GetRawText()
-                    };
+                    doc = JsonDocument.Parse(chunk.Bytes);
                 }
-                else if (eventElement.TryGetProperty("completionEnd", out var completionEnd))
+                catch (JsonException)
                 {
-                    string? stopReason = completionEnd.TryGetProperty("stopReason", out var sr) ? sr.GetString() : null;
-                    string status = MapStopReason(stopReason);
-
-                    yield return new ResponseCreatedRealtimeServerMessage(RealtimeServerMessageType.ResponseDone)
-                    {
-                        ResponseId = currentCompletionId,
-                        Status = status,
-                        Usage = latestUsage,
-                        RawRepresentation = doc.RootElement.GetRawText()
-                    };
-
-                    inResponse = false;
-                    latestUsage = null;
-                    currentCompletionId = null;
+                    continue;
                 }
-                else if (eventElement.TryGetProperty("contentStart", out var contentStart))
+
+                using (doc)
                 {
-                    currentContentId = contentStart.TryGetProperty("contentId", out var cntId) ? cntId.GetString() : null;
-                    currentContentType = contentStart.TryGetProperty("type", out var ct) ? ct.GetString() : null;
-                    currentRole = contentStart.TryGetProperty("role", out var r) ? r.GetString() : null;
-
-                    // For TOOL content, the toolUse event carries the actual FunctionCallContent,
-                    // so we skip emitting an empty ResponseOutputItemAdded here to avoid duplicates.
-                    if (inResponse && !string.Equals(currentContentType, "TOOL", StringComparison.OrdinalIgnoreCase))
+                    if (!doc.RootElement.TryGetProperty("event", out var eventElement))
                     {
-                        var item = new RealtimeConversationItem(
-                            new List<AIContent>(),
-                            id: currentContentId,
-                            role: MapRole(currentRole));
+                        continue;
+                    }
 
-                        yield return new ResponseOutputItemRealtimeServerMessage(RealtimeServerMessageType.ResponseOutputItemAdded)
+                    // Trace all incoming events for debugging
+
+                    if (eventElement.TryGetProperty("completionStart", out var completionStart))
+                    {
+                        currentCompletionId = completionStart.TryGetProperty("completionId", out var cid) ? cid.GetString() : null;
+                        outputIndex = 0;
+                        inResponse = true;
+
+                        yield return new ResponseCreatedRealtimeServerMessage(RealtimeServerMessageType.ResponseCreated)
                         {
                             ResponseId = currentCompletionId,
-                            OutputIndex = outputIndex,
-                            Item = item,
                             RawRepresentation = doc.RootElement.GetRawText()
                         };
                     }
-                }
-                else if (eventElement.TryGetProperty("contentEnd", out var contentEnd))
-                {
-                    string? contentStopReason = contentEnd.TryGetProperty("stopReason", out var csr) ? csr.GetString() : null;
-                    string? endContentType = contentEnd.TryGetProperty("type", out var ect) ? ect.GetString() : null;
-
-                    if (inResponse)
+                    else if (eventElement.TryGetProperty("completionEnd", out var completionEnd))
                     {
-                        bool isToolContent = string.Equals(endContentType, "TOOL", StringComparison.OrdinalIgnoreCase)
-                                          || string.Equals(currentContentType, "TOOL", StringComparison.OrdinalIgnoreCase);
+                        string? stopReason = completionEnd.TryGetProperty("stopReason", out var sr) ? sr.GetString() : null;
+                        string status = MapStopReason(stopReason);
 
-                        var itemContents = new List<AIContent>();
-
-                        if (isToolContent && pendingToolCallContents is { Count: > 0 })
+                        yield return new ResponseCreatedRealtimeServerMessage(RealtimeServerMessageType.ResponseDone)
                         {
-                            // Nova Sonic requires tool results immediately — invoke tools directly
-                            // and send results before yielding to the consumer, to avoid latency
-                            // from the middleware chain that would cause the model to time out.
-                            foreach (var pending in pendingToolCallContents)
+                            ResponseId = currentCompletionId,
+                            Status = status,
+                            Usage = latestUsage,
+                            RawRepresentation = doc.RootElement.GetRawText()
+                        };
+
+                        inResponse = false;
+                        latestUsage = null;
+                        currentCompletionId = null;
+                    }
+                    else if (eventElement.TryGetProperty("contentStart", out var contentStart))
+                    {
+                        currentContentId = contentStart.TryGetProperty("contentId", out var cntId) ? cntId.GetString() : null;
+                        currentContentType = contentStart.TryGetProperty("type", out var ct) ? ct.GetString() : null;
+                        currentRole = contentStart.TryGetProperty("role", out var r) ? r.GetString() : null;
+
+                        // For TOOL content, the toolUse event carries the actual FunctionCallContent,
+                        // so we skip emitting an empty ResponseOutputItemAdded here to avoid duplicates.
+                        if (inResponse && !string.Equals(currentContentType, "TOOL", StringComparison.OrdinalIgnoreCase))
+                        {
+                            var item = new RealtimeConversationItem(
+                                new List<AIContent>(),
+                                id: currentContentId,
+                                role: MapRole(currentRole));
+
+                            yield return new ResponseOutputItemRealtimeServerMessage(RealtimeServerMessageType.ResponseOutputItemAdded)
                             {
-                                if (pending is FunctionCallContent fcc)
+                                ResponseId = currentCompletionId,
+                                OutputIndex = outputIndex,
+                                Item = item,
+                                RawRepresentation = doc.RootElement.GetRawText()
+                            };
+                        }
+                    }
+                    else if (eventElement.TryGetProperty("contentEnd", out var contentEnd))
+                    {
+                        string? contentStopReason = contentEnd.TryGetProperty("stopReason", out var csr) ? csr.GetString() : null;
+                        string? endContentType = contentEnd.TryGetProperty("type", out var ect) ? ect.GetString() : null;
+
+                        if (inResponse)
+                        {
+                            bool isToolContent = string.Equals(endContentType, "TOOL", StringComparison.OrdinalIgnoreCase)
+                                              || string.Equals(currentContentType, "TOOL", StringComparison.OrdinalIgnoreCase);
+
+                            var itemContents = new List<AIContent>();
+
+                            if (isToolContent && pendingToolCallContents is { Count: > 0 })
+                            {
+                                // Nova Sonic requires tool results immediately — invoke tools directly
+                                // and send results before yielding to the consumer, to avoid latency
+                                // from the middleware chain that would cause the model to time out.
+                                foreach (var pending in pendingToolCallContents)
                                 {
-                                    var tool = Options?.Tools?.OfType<AIFunction>()
-                                        .FirstOrDefault(t => string.Equals(t.Name, fcc.Name, StringComparison.Ordinal));
-
-                                    if (tool is not null)
+                                    if (pending is FunctionCallContent fcc)
                                     {
-                                        object? result = null;
-                                        try
-                                        {
-                                            result = await tool.InvokeAsync(
-                                                fcc.Arguments is not null ? new AIFunctionArguments(fcc.Arguments) : new AIFunctionArguments(),
-                                                cancellationToken).ConfigureAwait(false);
-                                        }
-                                        catch (Exception ex)
-                                        {
-                                            result = $"Error: {ex.Message}";
-                                        }
+                                        var tool = Options?.Tools?.OfType<AIFunction>()
+                                            .FirstOrDefault(t => string.Equals(t.Name, fcc.Name, StringComparison.Ordinal));
 
-                                        // Send tool result to Nova Sonic immediately via priority queue
-                                        string toolContentName = Guid.NewGuid().ToString();
-                                        SendToolResultInline(fcc.CallId, result, toolContentName);
+                                        if (tool is not null)
+                                        {
+                                            object? result = null;
+                                            try
+                                            {
+                                                result = await tool.InvokeAsync(
+                                                    fcc.Arguments is not null ? new AIFunctionArguments(fcc.Arguments) : new AIFunctionArguments(),
+                                                    cancellationToken).ConfigureAwait(false);
+                                            }
+                                            catch (Exception ex)
+                                            {
+                                                result = $"Error: {ex.Message}";
+                                            }
 
-                                        // Only emit FunctionResultContent — omit FunctionCallContent so the
-                                        // middleware does NOT re-invoke and send a duplicate tool result.
-                                        itemContents.Add(new FunctionResultContent(fcc.CallId, result));
+                                            // Send tool result to Nova Sonic immediately via priority queue
+                                            string toolContentName = Guid.NewGuid().ToString();
+                                            SendToolResultInline(fcc.CallId, result, toolContentName);
+
+                                            // Only emit FunctionResultContent — omit FunctionCallContent so the
+                                            // middleware does NOT re-invoke and send a duplicate tool result.
+                                            itemContents.Add(new FunctionResultContent(fcc.CallId, result));
+                                        }
+                                        else
+                                        {
+                                            // Tool not found locally — include FunctionCallContent
+                                            // so the middleware can handle it
+                                            itemContents.Add(fcc);
+                                        }
                                     }
                                     else
                                     {
-                                        // Tool not found locally — include FunctionCallContent
-                                        // so the middleware can handle it
-                                        itemContents.Add(fcc);
+                                        itemContents.Add(pending);
                                     }
                                 }
-                                else
-                                {
-                                    itemContents.Add(pending);
-                                }
+
+                                pendingToolCallContents = null;
                             }
 
-                            pendingToolCallContents = null;
-                        }
+                            var item = new RealtimeConversationItem(
+                                itemContents,
+                                id: currentContentId,
+                                role: MapRole(currentRole));
 
-                        var item = new RealtimeConversationItem(
-                            itemContents,
-                            id: currentContentId,
-                            role: MapRole(currentRole));
-
-                        yield return new ResponseOutputItemRealtimeServerMessage(RealtimeServerMessageType.ResponseOutputItemDone)
-                        {
-                            ResponseId = currentCompletionId,
-                            OutputIndex = outputIndex,
-                            Item = item,
-                            RawRepresentation = doc.RootElement.GetRawText()
-                        };
-
-                        outputIndex++;
-                    }
-
-                    currentContentId = null;
-                    currentContentType = null;
-                    currentRole = null;
-                }
-                else if (eventElement.TryGetProperty("textOutput", out var textOutput))
-                {
-                    string? text = textOutput.TryGetProperty("content", out var tc) ? tc.GetString() : null;
-                    string? itemId = textOutput.TryGetProperty("contentId", out var tid) ? tid.GetString() : null;
-
-                    bool isUserTranscript = string.Equals(currentRole, "USER", StringComparison.OrdinalIgnoreCase);
-
-                    if (isUserTranscript)
-                    {
-                        yield return new InputAudioTranscriptionRealtimeServerMessage(
-                            RealtimeServerMessageType.InputAudioTranscriptionCompleted)
-                        {
-                            ItemId = itemId,
-                            Transcription = text,
-                            RawRepresentation = doc.RootElement.GetRawText()
-                        };
-                    }
-                    else if (text is not null
-                             && !text.TrimStart().StartsWith("{", StringComparison.Ordinal)
-                             && emittedAssistantTranscripts.Add(text))
-                    {
-                        // Emit ASSISTANT transcript immediately. Skip:
-                        // - JSON control messages (e.g. { "interrupted" : true })
-                        // - Text already emitted (replayed at start of new completions)
-
-                        yield return new OutputTextAudioRealtimeServerMessage(RealtimeServerMessageType.OutputAudioTranscriptionDelta)
-                        {
-                            Text = text,
-                            ItemId = itemId,
-                            ResponseId = currentCompletionId,
-                            OutputIndex = outputIndex,
-                            RawRepresentation = doc.RootElement.GetRawText()
-                        };
-                    }
-                }
-                else if (eventElement.TryGetProperty("audioOutput", out var audioOutput))
-                {
-                    string? audioData = audioOutput.TryGetProperty("content", out var ac) ? ac.GetString() : null;
-                    string? itemId = audioOutput.TryGetProperty("contentId", out var aid) ? aid.GetString() : null;
-
-                    yield return new OutputTextAudioRealtimeServerMessage(RealtimeServerMessageType.OutputAudioDelta)
-                    {
-                        Audio = audioData,
-                        ItemId = itemId,
-                        ResponseId = currentCompletionId,
-                        OutputIndex = outputIndex,
-                        RawRepresentation = doc.RootElement.GetRawText()
-                    };
-                }
-                else if (eventElement.TryGetProperty("toolUse", out var toolUse))
-                {
-                    string? toolName = toolUse.TryGetProperty("toolName", out var tn) ? tn.GetString() : null;
-                    string? toolUseId = toolUse.TryGetProperty("toolUseId", out var tuid) ? tuid.GetString() : null;
-                    string? itemId = toolUse.TryGetProperty("contentId", out var tcid) ? tcid.GetString() : null;
-
-                    string? argsJson = null;
-                    if (toolUse.TryGetProperty("content", out var tcc))
-                    {
-                        if (tcc.ValueKind == JsonValueKind.Object)
-                        {
-                            argsJson = tcc.GetRawText();
-                        }
-                        else if (tcc.ValueKind == JsonValueKind.String)
-                        {
-                            // The content may be a JSON-encoded string; try to parse it as an object
-                            string? innerJson = tcc.GetString();
-                            if (innerJson is not null)
+                            yield return new ResponseOutputItemRealtimeServerMessage(RealtimeServerMessageType.ResponseOutputItemDone)
                             {
-                                try
-                                {
-                                    using var innerDoc = JsonDocument.Parse(innerJson);
-                                    if (innerDoc.RootElement.ValueKind == JsonValueKind.Object)
-                                    {
-                                        argsJson = innerJson;
-                                    }
-                                }
-                                catch (JsonException)
-                                {
-                                    // Not a JSON object string; leave argsJson as null
-                                }
-                            }
+                                ResponseId = currentCompletionId,
+                                OutputIndex = outputIndex,
+                                Item = item,
+                                RawRepresentation = doc.RootElement.GetRawText()
+                            };
+
+                            outputIndex++;
+                        }
+
+                        currentContentId = null;
+                        currentContentType = null;
+                        currentRole = null;
+                    }
+                    else if (eventElement.TryGetProperty("textOutput", out var textOutput))
+                    {
+                        string? text = textOutput.TryGetProperty("content", out var tc) ? tc.GetString() : null;
+                        string? itemId = textOutput.TryGetProperty("contentId", out var tid) ? tid.GetString() : null;
+
+                        bool isUserTranscript = string.Equals(currentRole, "USER", StringComparison.OrdinalIgnoreCase);
+
+                        if (isUserTranscript)
+                        {
+                            yield return new InputAudioTranscriptionRealtimeServerMessage(
+                                RealtimeServerMessageType.InputAudioTranscriptionCompleted)
+                            {
+                                ItemId = itemId,
+                                Transcription = text,
+                                RawRepresentation = doc.RootElement.GetRawText()
+                            };
+                        }
+                        else if (text is not null
+                                 && !text.TrimStart().StartsWith("{", StringComparison.Ordinal)
+                                 && emittedAssistantTranscripts.Add(text))
+                        {
+                            // Emit ASSISTANT transcript immediately. Skip:
+                            // - JSON control messages (e.g. { "interrupted" : true })
+                            // - Text already emitted (replayed at start of new completions)
+
+                            yield return new OutputTextAudioRealtimeServerMessage(RealtimeServerMessageType.OutputAudioTranscriptionDelta)
+                            {
+                                Text = text,
+                                ItemId = itemId,
+                                ResponseId = currentCompletionId,
+                                OutputIndex = outputIndex,
+                                RawRepresentation = doc.RootElement.GetRawText()
+                            };
                         }
                     }
-
-                    FunctionCallContent functionCall;
-                    if (argsJson is not null)
+                    else if (eventElement.TryGetProperty("audioOutput", out var audioOutput))
                     {
-                        try
+                        string? audioData = audioOutput.TryGetProperty("content", out var ac) ? ac.GetString() : null;
+                        string? itemId = audioOutput.TryGetProperty("contentId", out var aid) ? aid.GetString() : null;
+
+                        yield return new OutputTextAudioRealtimeServerMessage(RealtimeServerMessageType.OutputAudioDelta)
                         {
-                            functionCall = FunctionCallContent.CreateFromParsedArguments(
-                                argsJson, toolUseId ?? string.Empty, toolName ?? string.Empty,
-                                static json =>
+                            Audio = audioData,
+                            ItemId = itemId,
+                            ResponseId = currentCompletionId,
+                            OutputIndex = outputIndex,
+                            RawRepresentation = doc.RootElement.GetRawText()
+                        };
+                    }
+                    else if (eventElement.TryGetProperty("toolUse", out var toolUse))
+                    {
+                        string? toolName = toolUse.TryGetProperty("toolName", out var tn) ? tn.GetString() : null;
+                        string? toolUseId = toolUse.TryGetProperty("toolUseId", out var tuid) ? tuid.GetString() : null;
+                        string? itemId = toolUse.TryGetProperty("contentId", out var tcid) ? tcid.GetString() : null;
+
+                        string? argsJson = null;
+                        if (toolUse.TryGetProperty("content", out var tcc))
+                        {
+                            if (tcc.ValueKind == JsonValueKind.Object)
+                            {
+                                argsJson = tcc.GetRawText();
+                            }
+                            else if (tcc.ValueKind == JsonValueKind.String)
+                            {
+                                // The content may be a JSON-encoded string; try to parse it as an object
+                                string? innerJson = tcc.GetString();
+                                if (innerJson is not null)
                                 {
                                     try
                                     {
-                                        using var argDoc = JsonDocument.Parse(json);
-                                        if (argDoc.RootElement.ValueKind == JsonValueKind.Object)
+                                        using var innerDoc = JsonDocument.Parse(innerJson);
+                                        if (innerDoc.RootElement.ValueKind == JsonValueKind.Object)
                                         {
-                                            return ConvertJsonElementToToolPayload(argDoc.RootElement, 0)
-                                                as Dictionary<string, object?>;
+                                            argsJson = innerJson;
                                         }
                                     }
-                                    catch (JsonException) { }
-                                    return null;
-                                });
+                                    catch (JsonException)
+                                    {
+                                        // Not a JSON object string; leave argsJson as null
+                                    }
+                                }
+                            }
                         }
-                        catch (JsonException)
+
+                        FunctionCallContent functionCall;
+                        if (argsJson is not null)
+                        {
+                            try
+                            {
+                                functionCall = FunctionCallContent.CreateFromParsedArguments(
+                                    argsJson, toolUseId ?? string.Empty, toolName ?? string.Empty,
+                                    static json =>
+                                    {
+                                        try
+                                        {
+                                            using var argDoc = JsonDocument.Parse(json);
+                                            if (argDoc.RootElement.ValueKind == JsonValueKind.Object)
+                                            {
+                                                return ConvertJsonElementToToolPayload(argDoc.RootElement, 0)
+                                                    as Dictionary<string, object?>;
+                                            }
+                                        }
+                                        catch (JsonException) { }
+                                        return null;
+                                    });
+                            }
+                            catch (JsonException)
+                            {
+                                functionCall = new FunctionCallContent(toolUseId ?? string.Empty, toolName ?? string.Empty);
+                            }
+                        }
+                        else
                         {
                             functionCall = new FunctionCallContent(toolUseId ?? string.Empty, toolName ?? string.Empty);
                         }
+
+                        // Store for inline invocation at contentEnd(TOOL).
+                        // Do NOT yield here — yielding would cause a round-trip through the consumer
+                        // chain, adding latency that causes Nova Sonic to commit to speculative responses.
+                        pendingToolCallContents ??= new List<AIContent>();
+                        pendingToolCallContents.Add(functionCall);
+                    }
+                    else if (eventElement.TryGetProperty("usageEvent", out var usageEvent))
+                    {
+                        latestUsage = ParseUsage(usageEvent);
+
+                        yield return new RealtimeServerMessage
+                        {
+                            Type = RealtimeServerMessageType.RawContentOnly,
+                            RawRepresentation = doc.RootElement.GetRawText()
+                        };
                     }
                     else
                     {
-                        functionCall = new FunctionCallContent(toolUseId ?? string.Empty, toolName ?? string.Empty);
+                        // Unknown event type - pass through as raw
+                        yield return new RealtimeServerMessage
+                        {
+                            Type = RealtimeServerMessageType.RawContentOnly,
+                            RawRepresentation = doc.RootElement.GetRawText()
+                        };
                     }
-
-                    // Store for inline invocation at contentEnd(TOOL).
-                    // Do NOT yield here — yielding would cause a round-trip through the consumer
-                    // chain, adding latency that causes Nova Sonic to commit to speculative responses.
-                    pendingToolCallContents ??= new List<AIContent>();
-                    pendingToolCallContents.Add(functionCall);
                 }
-                else if (eventElement.TryGetProperty("usageEvent", out var usageEvent))
-                {
-                    latestUsage = ParseUsage(usageEvent);
-
-                    yield return new RealtimeServerMessage
-                    {
-                        Type = RealtimeServerMessageType.RawContentOnly,
-                        RawRepresentation = doc.RootElement.GetRawText()
-                    };
-                }
-                else
-                {
-                    // Unknown event type - pass through as raw
-                    yield return new RealtimeServerMessage
-                    {
-                        Type = RealtimeServerMessageType.RawContentOnly,
-                        RawRepresentation = doc.RootElement.GetRawText()
-                    };
                 }
             }
-            }
-        }
         }
         finally
         {
@@ -1342,29 +1342,6 @@ public sealed class BedrockNovaRealtimeSession : IRealtimeClientSession
         var promptStartWrapper = BuildPromptStartEvent(voiceId, outputSampleRate, Options.Tools);
         await WriteEventAsync(JsonSerializer.Serialize(promptStartWrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper), cancellationToken).ConfigureAwait(false);
         _promptStarted = true;
-    }
-
-    private async Task SendPromptEndAsync(CancellationToken cancellationToken)
-    {
-        if (!_promptStarted)
-        {
-            return;
-        }
-
-        var wrapper = new NovaSonicEventWrapper
-        {
-            Event = new NovaSonicEvent
-            {
-                PromptEnd = new NovaSonicPromptEnd
-                {
-                    PromptName = _promptName
-                }
-            }
-        };
-        var json = JsonSerializer.Serialize(wrapper, NovaSonicJsonOptions.Context.NovaSonicEventWrapper);
-
-        await WriteEventAsync(json, cancellationToken).ConfigureAwait(false);
-        _promptStarted = false;
     }
 
     private async Task WriteEventAsync(string json, CancellationToken cancellationToken)

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.34909.67
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11620.152 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}"
 EndProject
@@ -75,6 +75,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CborProtocol.Tests.NetFramework", "test\CborProtocol.Tests\CborProtocol.Tests.NetFramework.csproj", "{9FFDECAB-94D6-7EB1-1A5B-487492600755}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.UnitTestUtilities", "..\sdk\test\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj", "{0A0B216F-6C3F-5B5A-DFF6-3A7F7D4C6B30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedrockMEAIRealtimeTests", "test\BedrockMEAIRealtimeTests\BedrockMEAIRealtimeTests.csproj", "{A3584BAE-ABAE-5757-6C5A-26423809CA50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -210,6 +212,10 @@ Global
 		{0A0B216F-6C3F-5B5A-DFF6-3A7F7D4C6B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A0B216F-6C3F-5B5A-DFF6-3A7F7D4C6B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A0B216F-6C3F-5B5A-DFF6-3A7F7D4C6B30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3584BAE-ABAE-5757-6C5A-26423809CA50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3584BAE-ABAE-5757-6C5A-26423809CA50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3584BAE-ABAE-5757-6C5A-26423809CA50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3584BAE-ABAE-5757-6C5A-26423809CA50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -247,6 +253,7 @@ Global
 		{24CBBC97-409E-BAC8-0553-D260AB0B8C6A} = {3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}
 		{9FFDECAB-94D6-7EB1-1A5B-487492600755} = {A960D001-40B3-4B1A-A890-D1049FB7586E}
 		{0A0B216F-6C3F-5B5A-DFF6-3A7F7D4C6B30} = {A960D001-40B3-4B1A-A890-D1049FB7586E}
+		{A3584BAE-ABAE-5757-6C5A-26423809CA50} = {A960D001-40B3-4B1A-A890-D1049FB7586E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {949367A4-5683-4FD3-93F4-A2CEA6EECB21}
