@@ -4756,6 +4756,79 @@ namespace Amazon.Deadline
 
         #endregion
         
+        #region  GetMonitorSettings
+
+
+        /// <summary>
+        /// Gets the settings for a Deadline Cloud monitor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitorSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetMonitorSettings service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetMonitorSettings">REST API Reference for GetMonitorSettings Operation</seealso>
+        public virtual GetMonitorSettingsResponse GetMonitorSettings(GetMonitorSettingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetMonitorSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMonitorSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetMonitorSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the settings for a Deadline Cloud monitor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMonitorSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMonitorSettings service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetMonitorSettings">REST API Reference for GetMonitorSettings Operation</seealso>
+        public virtual Task<GetMonitorSettingsResponse> GetMonitorSettingsAsync(GetMonitorSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetMonitorSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMonitorSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMonitorSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetQueue
 
 
@@ -8793,6 +8866,81 @@ namespace Amazon.Deadline
             options.ResponseUnmarshaller = UpdateMonitorResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateMonitorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMonitorSettings
+
+
+        /// <summary>
+        /// Updates the settings for a Deadline Cloud monitor. Keys present in the request are
+        /// upserted; keys absent are left unchanged. Send an empty string value to delete a key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMonitorSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMonitorSettings service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateMonitorSettings">REST API Reference for UpdateMonitorSettings Operation</seealso>
+        public virtual UpdateMonitorSettingsResponse UpdateMonitorSettings(UpdateMonitorSettingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMonitorSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMonitorSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMonitorSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the settings for a Deadline Cloud monitor. Keys present in the request are
+        /// upserted; keys absent are left unchanged. Send an empty string value to delete a key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMonitorSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMonitorSettings service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/UpdateMonitorSettings">REST API Reference for UpdateMonitorSettings Operation</seealso>
+        public virtual Task<UpdateMonitorSettingsResponse> UpdateMonitorSettingsAsync(UpdateMonitorSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMonitorSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMonitorSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateMonitorSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion

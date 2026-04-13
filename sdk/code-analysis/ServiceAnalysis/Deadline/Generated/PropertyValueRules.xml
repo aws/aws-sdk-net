@@ -916,6 +916,10 @@
     <pattern>[a-z0-9-]{1,100}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.GetMonitorSettingsRequest.MonitorId</property>
+    <pattern>monitor-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.GetQueueRequest.FarmId</property>
     <pattern>farm-[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -2199,6 +2203,10 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateMonitorRequest.Subdomain</property>
     <pattern>[a-z0-9-]{1,100}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.UpdateMonitorSettingsRequest.MonitorId</property>
+    <pattern>monitor-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateQueueRequest.ClientToken</property>
