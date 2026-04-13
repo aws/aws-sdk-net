@@ -1,3 +1,17 @@
+### 4.0.231.0 (2026-04-13 18:21 UTC)
+* CustomerProfiles (4.0.10.0)
+	* This release introduces changes to SegmentDefinition APIs to support sorting by attributes.
+* Deadline (4.0.18.0)
+	* Adds GetMonitorSettings and UpdateMonitorSettings APIs to Deadline Cloud. Enables reading and writing monitor settings as key-value pairs (up to 64 keys per monitor). UpdateMonitorSettings supports upsert and delete (via empty value) semantics and is idempotent.
+* Glue (4.0.27.9)
+	* AWS Glue now defaults to Glue version 5.1 for newly created jobs if the Glue version is not specified in the request, and UpdateJob now preserves the existing Glue version of a job when the Glue version is not specified in the update request.
+* Interconnect (4.0.0.0)
+	* Initial release of AWS Interconnect -- a managed private connectivity service that enables you to create high-speed network connections between your AWS Virtual Private Clouds (VPCs) and your VPCs on other public clouds or your on-premise networks.
+* Macie2 (4.0.3.0)
+	* This release adds an optional expectedBucketOwner field to the Macie S3 export configuration, allowing customers to verify bucket ownership before Macie writes results to the destination bucket.
+* SecurityHub (4.0.9.0)
+	* Provide organizational unit scoping capability for GetFindingsV2, GetFindingStatisticsV2, GetResourcesV2, GetResourcesStatisticsV2 APIs.
+
 ### 4.0.230.0 (2026-04-10 18:22 UTC)
 * Connect (4.0.40.0)
 	* Conversational Analytics for Email
