@@ -229,6 +229,37 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
             #endregion
         }
 
+        public void DeadlineGetMonitorSettings()
+        {
+            #region example-1
+
+            var client = new AmazonDeadlineClient();
+            var response = client.GetMonitorSettings(new GetMonitorSettingsRequest 
+            {
+                MonitorId = "monitor-1234567890abcdef1234567890abcdef"
+            });
+
+
+            #endregion
+        }
+
+        public void DeadlineUpdateMonitorSettings()
+        {
+            #region example-1
+
+            var client = new AmazonDeadlineClient();
+            var response = client.UpdateMonitorSettings(new UpdateMonitorSettingsRequest 
+            {
+                MonitorId = "monitor-1234567890abcdef1234567890abcdef",
+                Settings = new Dictionary<string, string> {
+                    { "idcApplicationArn", "arn:aws:sso::123456789012:application/ins-1234567890abcdef/apl-1234567890abcdef" }
+                }
+            });
+
+
+            #endregion
+        }
+
         
         # region ISample Members
         public virtual void Run()

@@ -152,4 +152,42 @@
             </example>
         </value>
     </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.GetMonitorSettings(Amazon.Deadline.Model.GetMonitorSettingsRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.GetMonitorSettings(Amazon.Deadline.Model.GetMonitorSettingsRequest)" />
+            <member name="T:Amazon.Deadline.Model.GetMonitorSettingsRequest" />
+            <member name="T:Amazon.Deadline.Model.GetMonitorSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get monitor settings"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.UpdateMonitorSettings(Amazon.Deadline.Model.UpdateMonitorSettingsRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.UpdateMonitorSettings(Amazon.Deadline.Model.UpdateMonitorSettingsRequest)" />
+            <member name="T:Amazon.Deadline.Model.UpdateMonitorSettingsRequest" />
+            <member name="T:Amazon.Deadline.Model.UpdateMonitorSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update monitor settings"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
 </docs>
