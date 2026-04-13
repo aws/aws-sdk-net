@@ -147,7 +147,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MarketplaceProductId. 
         /// <para>
-        /// The identifier for the AWS Marketplace product associated with this integration.
+        /// The identifier for the Amazon Web Services Marketplace product associated with this
+        /// integration.
         /// </para>
         /// </summary>
         public string MarketplaceProductId

@@ -32,12 +32,28 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the GetResourcesV2 operation.
     /// Returns a list of resources.
+    /// 
+    ///  
+    /// <para>
+    /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+    /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you retrieve
+    /// resources from your entire organization or from specific organizational units. Only
+    /// the delegated administrator account can use <c>Scopes</c>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use the <c>Filters</c> parameter to refine results based on resource attributes.
+    /// You can use <c>Scopes</c> and <c>Filters</c> independently or together. When both
+    /// are provided, <c>Scopes</c> narrows the data set first, and then <c>Filters</c> refines
+    /// results within that scoped data set.
+    /// </para>
     /// </summary>
     public partial class GetResourcesV2Request : AmazonSecurityHubRequest
     {
         private ResourcesFilters _filters;
         private int? _maxResults;
         private string _nextToken;
+        private ResourceScopes _scopes;
         private List<SortCriterion> _sortCriteria = AWSConfigs.InitializeCollections ? new List<SortCriterion>() : null;
 
         /// <summary>
@@ -98,9 +114,40 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Scopes. 
+        /// <para>
+        /// Limits the results to resources from specific organizational units or from the delegated
+        /// administrator's organization. Only the delegated administrator account can use this
+        /// parameter. Other accounts receive an <c>AccessDeniedException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. If you omit it, the delegated administrator sees resources
+        /// from all accounts across the entire organization. Other accounts see only their own
+        /// resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify up to 10 entries in <c>Scopes.AwsOrganizations</c>. If multiple entries
+        /// are specified, the entries are combined using OR logic.
+        /// </para>
+        /// </summary>
+        public ResourceScopes Scopes
+        {
+            get { return this._scopes; }
+            set { this._scopes = value; }
+        }
+
+        // Check to see if Scopes property is set
+        internal bool IsSetScopes()
+        {
+            return this._scopes != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SortCriteria. 
         /// <para>
-        /// The finding attributes used to sort the list of returned findings.
+        /// The resource attributes used to sort the list of returned resources.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -30,36 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// This is the response object from the GetResourcesV2 operation.
+    /// Defines the data boundary for a resources query. Scopes determine which organizational
+    /// units or organizations to retrieve data from.
     /// </summary>
-    public partial class GetResourcesV2Response : AmazonWebServiceResponse
+    public partial class ResourceScopes
     {
-        private string _nextToken;
-        private List<ResourceResult> _resources = AWSConfigs.InitializeCollections ? new List<ResourceResult>() : null;
+        private List<AwsOrganizationScope> _awsOrganizations = AWSConfigs.InitializeCollections ? new List<AwsOrganizationScope>() : null;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property AwsOrganizations. 
         /// <para>
-        /// The pagination token to use to request the next page of results. Otherwise, this parameter
-        /// is null.
-        /// </para>
-        /// </summary>
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Resources. 
-        /// <para>
-        /// An array of resources returned by the operation.
+        /// A list of Organizations scopes to include in the query results. Each entry in the
+        /// list specifies an organization or organizational unit to include for the delegated
+        /// administrator's account. If the list specifies multiple entries, the entries are combined
+        /// using OR logic.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -67,17 +51,16 @@ namespace Amazon.SecurityHub.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<ResourceResult> Resources
+        public List<AwsOrganizationScope> AwsOrganizations
         {
-            get { return this._resources; }
-            set { this._resources = value; }
+            get { return this._awsOrganizations; }
+            set { this._awsOrganizations = value; }
         }
 
-        // Check to see if Resources property is set
-        internal bool IsSetResources()
+        // Check to see if AwsOrganizations property is set
+        internal bool IsSetAwsOrganizations()
         {
-            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._awsOrganizations != null && (this._awsOrganizations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
