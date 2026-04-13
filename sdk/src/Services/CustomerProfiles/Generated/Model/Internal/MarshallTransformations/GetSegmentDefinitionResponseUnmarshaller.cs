@@ -88,6 +88,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.SegmentGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SegmentSort", targetDepth))
+                {
+                    var unmarshaller = SegmentSortUnmarshaller.Instance;
+                    response.SegmentSort = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SegmentSqlQuery", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

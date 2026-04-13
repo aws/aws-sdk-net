@@ -3647,6 +3647,12 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.SortAttribute.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.SourceFlowConfig.ConnectorProfileName</property>
     <max>256</max>
     <pattern>[\w/!@#+=.-]+</pattern>
