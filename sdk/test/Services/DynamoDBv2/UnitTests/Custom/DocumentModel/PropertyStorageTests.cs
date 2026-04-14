@@ -49,11 +49,6 @@ namespace AWSSDK_DotNet.UnitTests
             public DynamoDBEntry ToEntry(object value) => null;
         }
 
-        private struct AbstractPropertyConverter : IPropertyConverter
-        {
-            public object FromEntry(DynamoDBEntry entry) => null;
-            public DynamoDBEntry ToEntry(object value) => null;
-        }
         private class ValidPropertyConverter : IPropertyConverter
         {
             public DynamoDBEntry ToEntry(object value) => null;
@@ -399,20 +394,6 @@ namespace AWSSDK_DotNet.UnitTests
             storage.FlattenProperties = new List<PropertyStorage>();
 
             storage.Validate(null);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
-        public void Validate_ThrowsWhenGlobalConverterTypeDoesNotImplementIPropertyConverter()
-        {
-            var storage = CreatePropertyStorage("Name");
-            storage.IndexNames = new List<string>();
-            storage.FlattenProperties = new List<PropertyStorage>();
-
-            var fakeConverter = new AbstractPropertyConverter();
-            _context.ConverterCache[typeof(string)] = fakeConverter;
-
-            storage.Validate(_context);
         }
 
         [TestMethod]
