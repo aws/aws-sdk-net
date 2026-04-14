@@ -15,7 +15,7 @@
     <dependencies>
       <group targetFramework="netstandard2.0">
         <dependency id="AWSSDK.Core" version="4.0.3.29" />
-        <dependency id="log4net" version="3.0.1" />
+        <dependency id="log4net" version="3.3.0" />
       </group>
     </dependencies>
   </metadata>

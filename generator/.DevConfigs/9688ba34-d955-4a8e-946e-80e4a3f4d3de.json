@@ -1,0 +1,11 @@
+{
+  "extensions": [
+    {
+      "extensionName": "Extensions.Logging.Log4NetAdaptor",
+      "type": "minor",
+      "changeLogMessages": [
+        "Updated log4net dependency from 3.0.1 to 3.3.0 to resolve known moderate severity vulnerability (GHSA-4f7c-pmjv-c25w)"
+      ]
+    }
+  ]
+}
