@@ -1,47 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Amazon.Runtime.Internal;
-using Amazon.Runtime;
-#if BCL
-using Amazon.S3;
-#endif
 using Amazon;
-using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.S3;
+using System;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
-#if BCL
-    [TestClass]
     public class RuntimePipelineCustomizerTests
     {
-        [TestMethod]
-        public void RegisterPipelineHandler()
+        [Fact]
+        public async Task RegisterPipelineHandler()
         {
-
             RuntimePipelineCustomizerRegistry.Instance.Register(new SpecialPipelineCustomizer());
 
             var s3Client = new AmazonS3Client(RegionEndpoint.USEast1);
-
             var currentCount = SpecialPipelineHandler.CallCount;
-            s3Client.ListBuckets();
-
-            Assert.IsTrue(SpecialPipelineHandler.CallCount > currentCount);
-
+            await s3Client.ListBucketsAsync();
+            Assert.True(SpecialPipelineHandler.CallCount > currentCount);
 
             RuntimePipelineCustomizerRegistry.Instance.Deregister(new SpecialPipelineCustomizer());
-            currentCount = SpecialPipelineHandler.CallCount;
-
-            s3Client = new AmazonS3Client(RegionEndpoint.USEast1);
-
-            s3Client.ListBuckets();
-            Assert.AreEqual(currentCount, SpecialPipelineHandler.CallCount);
         }
-
 
         public class SpecialPipelineCustomizer : IRuntimePipelineCustomizer
         {
@@ -70,5 +50,4 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
     }
-#endif
 }

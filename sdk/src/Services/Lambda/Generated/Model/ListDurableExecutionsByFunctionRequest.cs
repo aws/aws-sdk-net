@@ -51,7 +51,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DurableExecutionName. 
         /// <para>
-        /// Filter executions by name. Only executions with names that contain this string are
+        /// Filter executions by name. Only executions with names that matches this string are
         /// returned.
         /// </para>
         /// </summary>

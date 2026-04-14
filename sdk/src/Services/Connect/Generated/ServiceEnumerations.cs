@@ -3927,9 +3927,25 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly FileUseCaseType ATTACHMENT = new FileUseCaseType("ATTACHMENT");
         /// <summary>
+        /// Constant CONTACT_ANALYSIS for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType CONTACT_ANALYSIS = new FileUseCaseType("CONTACT_ANALYSIS");
+        /// <summary>
         /// Constant EMAIL_MESSAGE for FileUseCaseType
         /// </summary>
         public static readonly FileUseCaseType EMAIL_MESSAGE = new FileUseCaseType("EMAIL_MESSAGE");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE_PLAIN_TEXT = new FileUseCaseType("EMAIL_MESSAGE_PLAIN_TEXT");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT_REDACTED for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE_PLAIN_TEXT_REDACTED = new FileUseCaseType("EMAIL_MESSAGE_PLAIN_TEXT_REDACTED");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_REDACTED for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType EMAIL_MESSAGE_REDACTED = new FileUseCaseType("EMAIL_MESSAGE_REDACTED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -8562,6 +8578,14 @@ namespace Amazon.Connect
         /// Constant EMAIL_MESSAGE_PLAIN_TEXT for ReferenceType
         /// </summary>
         public static readonly ReferenceType EMAIL_MESSAGE_PLAIN_TEXT = new ReferenceType("EMAIL_MESSAGE_PLAIN_TEXT");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_PLAIN_TEXT_REDACTED for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL_MESSAGE_PLAIN_TEXT_REDACTED = new ReferenceType("EMAIL_MESSAGE_PLAIN_TEXT_REDACTED");
+        /// <summary>
+        /// Constant EMAIL_MESSAGE_REDACTED for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType EMAIL_MESSAGE_REDACTED = new ReferenceType("EMAIL_MESSAGE_REDACTED");
         /// <summary>
         /// Constant NUMBER for ReferenceType
         /// </summary>

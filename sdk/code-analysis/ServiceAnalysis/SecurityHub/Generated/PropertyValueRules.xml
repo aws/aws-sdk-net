@@ -4568,6 +4568,14 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsOrganizationScope.OrganizationalUnitId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AwsOrganizationScope.OrganizationId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.AwsRdsDbClusterAssociatedRole.RoleArn</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -6710,7 +6718,15 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException.Code</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.OrganizationConfiguration.StatusMessage</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.OrganizationNotFoundException.Code</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

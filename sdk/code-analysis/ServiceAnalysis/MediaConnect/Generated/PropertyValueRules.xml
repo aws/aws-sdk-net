@@ -442,6 +442,10 @@
     <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:source:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.MediaLiveChannelRouterInputConfiguration.MediaLiveChannelArn</property>
+    <pattern>arn:(aws[a-zA-Z-]*):medialive:[a-z0-9-]+:[0-9]{12}:channel:[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.MediaLiveInputRouterOutputConfiguration.MediaLiveInputArn</property>
     <pattern>arn:(aws[a-zA-Z-]*):medialive:[a-z0-9-]+:[0-9]{12}:input:[a-zA-Z0-9]+</pattern>
   </property-value-rule>
@@ -461,7 +465,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RistRouterOutputConfiguration.DestinationPort</property>
-    <min>0</min>
+    <min>1024</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
@@ -487,7 +491,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RtpRouterOutputConfiguration.DestinationPort</property>
-    <min>0</min>
+    <min>1024</min>
     <max>65531</max>
   </property-value-rule>
   <property-value-rule>
@@ -513,12 +517,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.SrtCallerRouterInputConfiguration.SourcePort</property>
-    <min>0</min>
+    <min>1024</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.SrtCallerRouterOutputConfiguration.DestinationPort</property>
-    <min>0</min>
+    <min>1024</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>

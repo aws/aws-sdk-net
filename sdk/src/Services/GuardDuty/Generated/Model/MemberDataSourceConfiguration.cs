@@ -64,6 +64,7 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         /// </summary>
         [Obsolete("This parameter is deprecated, use Features instead")]
+        [AWSProperty(Required=true)]
         public DataSourceConfigurationsResult DataSources
         {
             get { return this._dataSources; }

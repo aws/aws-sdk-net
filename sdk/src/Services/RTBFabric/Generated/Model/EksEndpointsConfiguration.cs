@@ -85,7 +85,7 @@ namespace Amazon.RTBFabric.Model
         /// The name of the cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=2, Max=63)]
         public string ClusterName
         {
             get { return this._clusterName; }
@@ -104,7 +104,7 @@ namespace Amazon.RTBFabric.Model
         /// The name of the endpoint resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=2, Max=63)]
         public string EndpointsResourceName
         {
             get { return this._endpointsResourceName; }
@@ -123,7 +123,7 @@ namespace Amazon.RTBFabric.Model
         /// The namespace of the endpoint resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=2, Max=63)]
         public string EndpointsResourceNamespace
         {
             get { return this._endpointsResourceNamespace; }

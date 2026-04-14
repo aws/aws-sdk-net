@@ -231,6 +231,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.RoleArn);
             }
 
+            if(publicRequest.IsSetSpecialRouterSettings())
+            {
+                context.Writer.WritePropertyName("specialRouterSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SpecialRouterSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SpecialRouterSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

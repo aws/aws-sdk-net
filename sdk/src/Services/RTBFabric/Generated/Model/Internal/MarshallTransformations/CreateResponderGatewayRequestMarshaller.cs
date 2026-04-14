@@ -96,6 +96,23 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DomainName);
             }
 
+            if(publicRequest.IsSetGatewayType())
+            {
+                context.Writer.WritePropertyName("gatewayType");
+                context.Writer.WriteStringValue(publicRequest.GatewayType);
+            }
+
+            if(publicRequest.IsSetListenerConfig())
+            {
+                context.Writer.WritePropertyName("listenerConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ListenerConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ListenerConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetManagedEndpointConfiguration())
             {
                 context.Writer.WritePropertyName("managedEndpointConfiguration");

@@ -37,6 +37,7 @@ namespace Amazon.IVSRealTime.Model
     public partial class UpdateIngestConfigurationRequest : AmazonIVSRealTimeRequest
     {
         private string _arn;
+        private bool? _redundantIngest;
         private string _stageArn;
 
         /// <summary>
@@ -56,6 +57,25 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedundantIngest. 
+        /// <para>
+        /// Indicates whether redundant ingest is enabled for the ingest configuration. Default:
+        /// <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? RedundantIngest
+        {
+            get { return this._redundantIngest; }
+            set { this._redundantIngest = value; }
+        }
+
+        // Check to see if RedundantIngest property is set
+        internal bool IsSetRedundantIngest()
+        {
+            return this._redundantIngest.HasValue; 
         }
 
         /// <summary>

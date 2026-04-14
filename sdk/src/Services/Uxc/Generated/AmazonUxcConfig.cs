@@ -33,7 +33,7 @@ namespace Amazon.Uxc
     public partial class AmazonUxcConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("uxc", "4.0.0.5");
+            InternalSDKUtils.BuildUserAgentString("uxc", "4.0.0.7");
 
         private static readonly AmazonUxcEndpointResolver EndpointResolver =
             new AmazonUxcEndpointResolver();

@@ -1013,6 +1013,64 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type DescriptorType.
+    /// </summary>
+    public class DescriptorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant A2A for DescriptorType
+        /// </summary>
+        public static readonly DescriptorType A2A = new DescriptorType("A2A");
+        /// <summary>
+        /// Constant AGENT_SKILLS for DescriptorType
+        /// </summary>
+        public static readonly DescriptorType AGENT_SKILLS = new DescriptorType("AGENT_SKILLS");
+        /// <summary>
+        /// Constant CUSTOM for DescriptorType
+        /// </summary>
+        public static readonly DescriptorType CUSTOM = new DescriptorType("CUSTOM");
+        /// <summary>
+        /// Constant MCP for DescriptorType
+        /// </summary>
+        public static readonly DescriptorType MCP = new DescriptorType("MCP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DescriptorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DescriptorType FindValue(string value)
+        {
+            return FindValue<DescriptorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DescriptorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EndpointIpAddressType.
     /// </summary>
     public class EndpointIpAddressType : ConstantClass
@@ -2493,6 +2551,300 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type RegistryAuthorizerType.
+    /// </summary>
+    public class RegistryAuthorizerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_IAM for RegistryAuthorizerType
+        /// </summary>
+        public static readonly RegistryAuthorizerType AWS_IAM = new RegistryAuthorizerType("AWS_IAM");
+        /// <summary>
+        /// Constant CUSTOM_JWT for RegistryAuthorizerType
+        /// </summary>
+        public static readonly RegistryAuthorizerType CUSTOM_JWT = new RegistryAuthorizerType("CUSTOM_JWT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistryAuthorizerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistryAuthorizerType FindValue(string value)
+        {
+            return FindValue<RegistryAuthorizerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistryAuthorizerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegistryRecordCredentialProviderType.
+    /// </summary>
+    public class RegistryRecordCredentialProviderType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IAM for RegistryRecordCredentialProviderType
+        /// </summary>
+        public static readonly RegistryRecordCredentialProviderType IAM = new RegistryRecordCredentialProviderType("IAM");
+        /// <summary>
+        /// Constant OAUTH for RegistryRecordCredentialProviderType
+        /// </summary>
+        public static readonly RegistryRecordCredentialProviderType OAUTH = new RegistryRecordCredentialProviderType("OAUTH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistryRecordCredentialProviderType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistryRecordCredentialProviderType FindValue(string value)
+        {
+            return FindValue<RegistryRecordCredentialProviderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistryRecordCredentialProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegistryRecordOAuthGrantType.
+    /// </summary>
+    public class RegistryRecordOAuthGrantType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLIENT_CREDENTIALS for RegistryRecordOAuthGrantType
+        /// </summary>
+        public static readonly RegistryRecordOAuthGrantType CLIENT_CREDENTIALS = new RegistryRecordOAuthGrantType("CLIENT_CREDENTIALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistryRecordOAuthGrantType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistryRecordOAuthGrantType FindValue(string value)
+        {
+            return FindValue<RegistryRecordOAuthGrantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistryRecordOAuthGrantType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegistryRecordStatus.
+    /// </summary>
+    public class RegistryRecordStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus APPROVED = new RegistryRecordStatus("APPROVED");
+        /// <summary>
+        /// Constant CREATE_FAILED for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus CREATE_FAILED = new RegistryRecordStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus CREATING = new RegistryRecordStatus("CREATING");
+        /// <summary>
+        /// Constant DEPRECATED for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus DEPRECATED = new RegistryRecordStatus("DEPRECATED");
+        /// <summary>
+        /// Constant DRAFT for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus DRAFT = new RegistryRecordStatus("DRAFT");
+        /// <summary>
+        /// Constant PENDING_APPROVAL for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus PENDING_APPROVAL = new RegistryRecordStatus("PENDING_APPROVAL");
+        /// <summary>
+        /// Constant REJECTED for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus REJECTED = new RegistryRecordStatus("REJECTED");
+        /// <summary>
+        /// Constant UPDATE_FAILED for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus UPDATE_FAILED = new RegistryRecordStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for RegistryRecordStatus
+        /// </summary>
+        public static readonly RegistryRecordStatus UPDATING = new RegistryRecordStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistryRecordStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistryRecordStatus FindValue(string value)
+        {
+            return FindValue<RegistryRecordStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistryRecordStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegistryStatus.
+    /// </summary>
+    public class RegistryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for RegistryStatus
+        /// </summary>
+        public static readonly RegistryStatus CREATE_FAILED = new RegistryStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for RegistryStatus
+        /// </summary>
+        public static readonly RegistryStatus CREATING = new RegistryStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for RegistryStatus
+        /// </summary>
+        public static readonly RegistryStatus DELETE_FAILED = new RegistryStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for RegistryStatus
+        /// </summary>
+        public static readonly RegistryStatus DELETING = new RegistryStatus("DELETING");
+        /// <summary>
+        /// Constant READY for RegistryStatus
+        /// </summary>
+        public static readonly RegistryStatus READY = new RegistryStatus("READY");
+        /// <summary>
+        /// Constant UPDATE_FAILED for RegistryStatus
+        /// </summary>
+        public static readonly RegistryStatus UPDATE_FAILED = new RegistryStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for RegistryStatus
+        /// </summary>
+        public static readonly RegistryStatus UPDATING = new RegistryStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegistryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegistryStatus FindValue(string value)
+        {
+            return FindValue<RegistryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegistryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -2776,6 +3128,52 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServerProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SynchronizationType.
+    /// </summary>
+    public class SynchronizationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant URL for SynchronizationType
+        /// </summary>
+        public static readonly SynchronizationType URL = new SynchronizationType("URL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SynchronizationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SynchronizationType FindValue(string value)
+        {
+            return FindValue<SynchronizationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SynchronizationType(string value)
         {
             return FindValue(value);
         }

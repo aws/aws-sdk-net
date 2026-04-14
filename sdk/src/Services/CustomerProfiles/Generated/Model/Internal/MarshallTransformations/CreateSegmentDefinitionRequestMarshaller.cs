@@ -102,6 +102,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetSegmentSort())
+            {
+                context.Writer.WritePropertyName("SegmentSort");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SegmentSortMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SegmentSort, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSegmentSqlQuery())
             {
                 context.Writer.WritePropertyName("SegmentSqlQuery");

@@ -293,6 +293,18 @@ namespace Amazon.Backup
         /// </summary>
         public static readonly BackupVaultEvent COPY_JOB_SUCCESSFUL = new BackupVaultEvent("COPY_JOB_SUCCESSFUL");
         /// <summary>
+        /// Constant EKS_BACKUP_OBJECT_FAILED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent EKS_BACKUP_OBJECT_FAILED = new BackupVaultEvent("EKS_BACKUP_OBJECT_FAILED");
+        /// <summary>
+        /// Constant EKS_RESTORE_OBJECT_FAILED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent EKS_RESTORE_OBJECT_FAILED = new BackupVaultEvent("EKS_RESTORE_OBJECT_FAILED");
+        /// <summary>
+        /// Constant EKS_RESTORE_OBJECT_SKIPPED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent EKS_RESTORE_OBJECT_SKIPPED = new BackupVaultEvent("EKS_RESTORE_OBJECT_SKIPPED");
+        /// <summary>
         /// Constant RECOVERY_POINT_INDEX_COMPLETED for BackupVaultEvent
         /// </summary>
         public static readonly BackupVaultEvent RECOVERY_POINT_INDEX_COMPLETED = new BackupVaultEvent("RECOVERY_POINT_INDEX_COMPLETED");

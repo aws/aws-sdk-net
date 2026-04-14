@@ -1,5 +1,4 @@
 ﻿using Amazon.Runtime;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -101,15 +100,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             return SHA256.Create().ComputeHash(data);
         }
 
-        public static void  CompareFiles(string file1, string file2)
+        public static void CompareFiles(string file1, string file2)
         {
             byte[] file1MD5 = ComputeHash(file1);
             byte[] file2MD5 = ComputeHash(file2);
 
-            Assert.AreEqual(file1MD5.Length, file2MD5.Length);
+            if (file1MD5.Length != file2MD5.Length)
+                throw new InvalidOperationException($"File MD5 length mismatch: {file1} vs {file2}");
+
             for (int i = 0; i < file1MD5.Length; i++)
             {
-                Assert.AreEqual(file1MD5[i], file2MD5[i], "MD5 of files do not match");
+                if (file1MD5[i] != file2MD5[i])
+                    throw new InvalidOperationException($"MD5 of files do not match: {file1} vs {file2}");
             }
         }
 

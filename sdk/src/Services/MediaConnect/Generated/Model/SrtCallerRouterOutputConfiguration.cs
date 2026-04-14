@@ -67,7 +67,7 @@ namespace Amazon.MediaConnect.Model
         /// The destination port number for the SRT protocol in caller mode.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=65535)]
+        [AWSProperty(Required=true, Min=1024, Max=65535)]
         public int? DestinationPort
         {
             get { return this._destinationPort; }

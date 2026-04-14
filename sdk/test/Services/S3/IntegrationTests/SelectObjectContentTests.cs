@@ -1,8 +1,7 @@
 ﻿using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,13 +10,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    [TestCategory("S3SelectObjectContent")]
-    public class SelectObjectContentTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    [Trait("Category", "S3SelectObjectContent")]
+    public class SelectObjectContentTests : IClassFixture<S3BucketFixture>, IAsyncLifetime
     {
         private static readonly string TestFileKey = "selectobjectcontent_content.txt";
         private static readonly string VerificationFilePath = "selectobjectcontent_verify.txt";
@@ -32,25 +31,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private const string SelectQuery = "select * from S3Object s where s.LOCATIONID = 'VALE'";
 
-        private static string _bucketName;
-        private static string _keyName;
-        private static string _csvKeyName;
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
+        private readonly string _keyName;
+        private readonly string _csvKeyName;
 
-        [ClassInitialize]
-        public static async Task Initialize(TestContext testContext)
+        public SelectObjectContentTests(S3BucketFixture bucket)
         {
-            _bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
+            _client = bucket.Client;
+            _bucketName = bucket.BucketName;
             _keyName = UtilityMethods.GenerateName(nameof(SelectObjectContentTests) + "_json");
             _csvKeyName = UtilityMethods.GenerateName(nameof(SelectObjectContentTests) + "_csv");
+        }
 
-            await Client.PutObjectAsync(new PutObjectRequest
+        public async ValueTask InitializeAsync()
+        {
+            await _client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = _bucketName,
                 Key = _keyName,
                 ContentBody = TestContent
             });
 
-            await Client.PutObjectAsync(new PutObjectRequest
+            await _client.PutObjectAsync(new PutObjectRequest
             {
                 BucketName = _bucketName,
                 Key = _csvKeyName,
@@ -58,17 +61,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
         }
 
-        [ClassCleanup]
-        public static async Task ClassCleanup()
-        {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, _bucketName);
-            BaseClean();
-        }
+        public ValueTask DisposeAsync() => new ValueTask();
 
         /// <summary>
         /// Tests the Enumerable method for iterating through an EventStream returned from SelectObjectContent.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task TestCallEnumerable()
         {
             var eventStream = await GetSelectObjectContentEventStream();
@@ -88,7 +86,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
 
             AssertRecordsEqualsExpected(testContent);
-            Assert.IsTrue(new List<Type>()
+            Assert.True(new List<Type>()
             {
                 typeof(RecordsEvent),
                 typeof(StatsEvent),
@@ -97,10 +95,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         /// <summary>
-        /// Tests the Event-Driven method for iterating through an EventStream returned from SelectObjectContent. Technically, the enumerable test should suffice,
-        /// but it may be useful to have a itegration test for each interaction pattern.
+        /// Tests the Event-Driven method for iterating through an EventStream returned from SelectObjectContent.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task TestCallEventsAsync()
         {
             var eventStream = await GetSelectObjectContentEventStream();
@@ -120,9 +117,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         /// <summary>
-        /// Tests the Event-Driven method for checking an EventStream returned from SelectObjectContent based on RecordDelimiter settings for CSV InputSerialization and OutputSerialization.
+        /// Tests the Event-Driven method for checking an EventStream returned from SelectObjectContent based on RecordDelimiter settings.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task TestCallCSVInputOutputDelimiterEvents()
         {
             string selectQuery = "select * from s3object";
@@ -156,13 +153,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             eventStream.Dispose();
 
-            Assert.IsTrue(string.Equals(CSVVerificationContent, testContent));
+            Assert.True(string.Equals(CSVVerificationContent, testContent));
         }
 
         /// <summary>
-        /// Tests the Event-Driven method for checking an EventStream returned from SelectObjectContent based on ScanRange setting for CSV InputSerialization and OutputSerialization.
+        /// Tests the Event-Driven method for checking an EventStream returned from SelectObjectContent based on ScanRange setting.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task TestCallScanRangeEvents()
         {
             string selectQuery = "select * from s3object";
@@ -196,7 +193,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             eventStream.Dispose();
 
-            Assert.IsTrue(string.Equals(CSVScanRangeVerificationContent, testContent));
+            Assert.True(string.Equals(CSVScanRangeVerificationContent, testContent));
         }
 
         private async Task<ISelectObjectContentEventStream> GetSelectObjectContentEventStream(
@@ -228,12 +225,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 selectObjectContentRequest.ScanRange = scanRange;
             }
 
-            return (await Client.SelectObjectContentAsync(selectObjectContentRequest)).Payload;
+            return (await _client.SelectObjectContentAsync(selectObjectContentRequest)).Payload;
         }
 
         private async Task<ISelectObjectContentEventStream> GetSelectObjectContentEventStream()
         {
-            return (await Client.SelectObjectContentAsync(new SelectObjectContentRequest
+            return (await _client.SelectObjectContentAsync(new SelectObjectContentRequest
             {
                 BucketName = _bucketName,
                 Key = _keyName,
@@ -255,7 +252,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private void AssertRecordsEqualsExpected(string records)
         {
-            Assert.IsTrue(string.Compare(VerificationContent, records, CultureInfo.CurrentCulture,
+            Assert.True(string.Compare(VerificationContent, records, CultureInfo.CurrentCulture,
                               CompareOptions.IgnoreSymbols) == 0);
         }
 

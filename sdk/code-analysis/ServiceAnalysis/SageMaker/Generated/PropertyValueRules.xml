@@ -1384,7 +1384,7 @@
     <property>Amazon.SageMaker.Model.CreatePipelineResponse.PipelineArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreatePresignedDomainUrlRequest.DomainId</property>
@@ -2140,7 +2140,7 @@
     <property>Amazon.SageMaker.Model.DeletePipelineResponse.PipelineArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteProcessingJobRequest.ProcessingJobName</property>
@@ -4160,7 +4160,7 @@
     <property>Amazon.SageMaker.Model.DescribePipelineRequest.PipelineName</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})</pattern>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribePipelineRequest.PipelineVersionId</property>
@@ -4170,7 +4170,7 @@
     <property>Amazon.SageMaker.Model.DescribePipelineResponse.PipelineArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribePipelineResponse.PipelineDefinition</property>
@@ -4242,7 +4242,7 @@
     <property>Amazon.SageMaker.Model.DescribePipelineExecutionResponse.PipelineArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribePipelineExecutionResponse.PipelineExecutionArn</property>
@@ -6653,7 +6653,7 @@
     <property>Amazon.SageMaker.Model.ListPipelineExecutionsRequest.PipelineName</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})</pattern>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListPipelineExecutionsResponse.NextToken</property>
@@ -6745,7 +6745,7 @@
     <property>Amazon.SageMaker.Model.ListPipelineVersionsRequest.PipelineName</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})</pattern>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ListPipelineVersionsResponse.NextToken</property>
@@ -7347,6 +7347,18 @@
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline\/.*\/execution\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.StartClusterHealthCheckRequest.ClusterName</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.StartClusterHealthCheckResponse.ClusterArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.StartEdgeDeploymentStageRequest.EdgeDeploymentPlanName</property>
     <min>1</min>
     <max>63</max>
@@ -7421,7 +7433,7 @@
     <property>Amazon.SageMaker.Model.StartPipelineExecutionRequest.PipelineName</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})</pattern>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.StartPipelineExecutionRequest.PipelineVersionId</property>
@@ -8318,7 +8330,7 @@
     <property>Amazon.SageMaker.Model.UpdatePipelineResponse.PipelineArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdatePipelineResponse.PipelineVersionId</property>
@@ -8352,7 +8364,7 @@
     <property>Amazon.SageMaker.Model.UpdatePipelineVersionRequest.PipelineArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdatePipelineVersionRequest.PipelineVersionDescription</property>
@@ -8374,7 +8386,7 @@
     <property>Amazon.SageMaker.Model.UpdatePipelineVersionResponse.PipelineArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdatePipelineVersionResponse.PipelineVersionId</property>
@@ -9642,6 +9654,15 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstancePlacement.AvailabilityZoneId</property>
     <pattern>[a-z]{3}\d-az\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterInstanceTypeDetail.CurrentCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterInstanceTypeDetail.ThreadsPerCore</property>
+    <min>1</min>
+    <max>2</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterKubernetesTaint.Key</property>
@@ -11739,6 +11760,12 @@
     <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.InstanceGroupHealthCheckConfiguration.InstanceGroupName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.InstanceGroupScalingMetadata.InstanceCount</property>
     <min>0</min>
     <max>10000000</max>
@@ -13245,7 +13272,7 @@
     <property>Amazon.SageMaker.Model.Pipeline.PipelineArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Pipeline.PipelineDescription</property>
@@ -13299,7 +13326,7 @@
     <property>Amazon.SageMaker.Model.PipelineExecution.PipelineArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.PipelineExecution.PipelineExecutionArn</property>
@@ -13391,7 +13418,7 @@
     <property>Amazon.SageMaker.Model.PipelineSummary.PipelineArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.PipelineSummary.PipelineDescription</property>
@@ -13433,7 +13460,7 @@
     <property>Amazon.SageMaker.Model.PipelineVersion.PipelineArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.PipelineVersion.PipelineVersionDescription</property>
@@ -13461,7 +13488,7 @@
     <property>Amazon.SageMaker.Model.PipelineVersionSummary.PipelineArn</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:pipeline/.*</pattern>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:([0-9]{12}|aws):pipeline/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.PipelineVersionSummary.PipelineVersionDescription</property>

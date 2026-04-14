@@ -1,47 +1,67 @@
 ﻿using Amazon;
 using Amazon.Route53;
 using Amazon.Route53.Model;
+using Amazon.Runtime;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
-    [TestClass]
-    [TestCategory("Route53")]
-    public class Route53 : TestBase<AmazonRoute53Client>
+    /// <summary>
+    /// xUnit fixture that owns a single <see cref="AmazonRoute53Client"/> for the lifetime
+    /// of the <see cref="Route53Tests"/> class.
+    /// </summary>
+    public class Route53ClientFixture : IAsyncLifetime
+    {
+        public AmazonRoute53Client Client { get; private set; }
+
+        public ValueTask InitializeAsync()
+        {
+            Client = new AmazonRoute53Client();
+            RetryUtilities.ConfigureClient(Client);
+            return default;
+        }
+
+        public ValueTask DisposeAsync()
+        {
+            Client?.Dispose();
+            return default;
+        }
+    }
+
+    [Trait("Category", "Route53")]
+    public class Route53Tests : IClassFixture<Route53ClientFixture>, IAsyncLifetime
     {
         private const string COMMENT = "comment";
         private const string ZONE_NAME = "aws.sdk.com.";
 
-        private static string CALLER_REFERENCE { get { return Guid.NewGuid().ToString(); } }
+        private static string CALLER_REFERENCE => Guid.NewGuid().ToString();
         private static readonly TimeSpan maxWaitTime = TimeSpan.FromMinutes(5);
 
-        // The ID of the zone we created in this test
-        private string createdZoneId;
+        private readonly AmazonRoute53Client _client;
 
-        // The ID of the change that created our test zone
-        private string createdZoneChangeId;
+        // The ID of the zone we created in this test — instance field, isolated per test.
+        private string _createdZoneId;
 
-        [ClassCleanup]
-        public static void Cleanup()
+        public Route53Tests(Route53ClientFixture fixture)
         {
-            BaseClean();
+            _client = fixture.Client;
         }
 
+        public ValueTask InitializeAsync() => default;
+
         // Ensures the HostedZone we create during this test is correctly released.
-        [TestCleanup]
-        public async Task TearDown()
+        public async ValueTask DisposeAsync()
         {
-            if (!string.IsNullOrEmpty(createdZoneId))
+            if (!string.IsNullOrEmpty(_createdZoneId))
             {
                 try
                 {
-                    await Client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest { Id = createdZoneId });
+                    await _client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest { Id = _createdZoneId });
                 }
                 catch { }
             }
@@ -49,13 +69,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         // Runs through a number of the APIs in the Route 53 client to make sure we can
         // correct send requests and unmarshall responses.
-        [TestMethod]
+        [Fact]
         public async Task TestRoute53()
         {
-            var listGeoLocationsResponse = await Client.ListGeoLocationsAsync();
+            var listGeoLocationsResponse = await _client.ListGeoLocationsAsync();
             var geoLocations = listGeoLocationsResponse.GeoLocationDetailsList;
-            Assert.IsNotNull(geoLocations);
-            Assert.AreNotEqual(0, geoLocations.Count);
+            Assert.NotNull(geoLocations);
+            Assert.NotEqual(0, geoLocations.Count);
 
             CreateHostedZoneRequest createRequest = new CreateHostedZoneRequest
             {
@@ -66,56 +86,56 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             // Create Hosted Zone
             var createResponse = await UtilityMethods.WaitUntilSuccessAsync(
-                () => Client.CreateHostedZoneAsync(createRequest)
+                () => _client.CreateHostedZoneAsync(createRequest)
             );
-            createdZoneId = createResponse.HostedZone.Id;
-            createdZoneChangeId = createResponse.ChangeInfo.Id;
+            _createdZoneId = createResponse.HostedZone.Id;
+            var createdZoneChangeId = createResponse.ChangeInfo.Id;
 
             AssertValidCreatedHostedZone(createResponse.HostedZone);
             AssertValidDelegationSet(createResponse.DelegationSet);
-            AssertValidChangeInfo(createResponse.ChangeInfo);
-            Assert.IsNotNull(createResponse.Location);
+            await AssertValidChangeInfo(createResponse.ChangeInfo);
+            Assert.NotNull(createResponse.Location);
 
             // Get Hosted Zone
-            GetHostedZoneRequest getRequest = new GetHostedZoneRequest { Id = createdZoneId };
-            var getHostedZoneResponse = await Client.GetHostedZoneAsync(getRequest);
+            GetHostedZoneRequest getRequest = new GetHostedZoneRequest { Id = _createdZoneId };
+            var getHostedZoneResponse = await _client.GetHostedZoneAsync(getRequest);
             AssertValidDelegationSet(getHostedZoneResponse.DelegationSet);
             AssertValidCreatedHostedZone(getHostedZoneResponse.HostedZone);
 
             // List Hosted Zones
-            var listZonesResponse = await Client.ListHostedZonesAsync();
+            var listZonesResponse = await _client.ListHostedZonesAsync();
             var hostedZones = listZonesResponse.HostedZones;
-            Assert.IsTrue(hostedZones.Count > 0);
+            Assert.True(hostedZones.Count > 0);
             foreach (HostedZone hostedZone in hostedZones)
             {
-                Assert.IsNotNull(hostedZone.CallerReference);
-                Assert.IsNotNull(hostedZone.Id);
-                Assert.IsNotNull(hostedZone.Name);
+                Assert.NotNull(hostedZone.CallerReference);
+                Assert.NotNull(hostedZone.Id);
+                Assert.NotNull(hostedZone.Name);
             }
 
             // List Resource Record Sets
-            var listRecordSetsResponse = await Client.ListResourceRecordSetsAsync(new ListResourceRecordSetsRequest 
-            { 
-                HostedZoneId = createdZoneId,
-                MaxItems = "10" 
+            var listRecordSetsResponse = await _client.ListResourceRecordSetsAsync(new ListResourceRecordSetsRequest
+            {
+                HostedZoneId = _createdZoneId,
+                MaxItems = "10"
             });
 
             var resourceRecordSets = listRecordSetsResponse.ResourceRecordSets;
-            Assert.IsTrue(resourceRecordSets.Count > 0);
+            Assert.True(resourceRecordSets.Count > 0);
             ResourceRecordSet existingResourceRecordSet = resourceRecordSets[0];
             foreach (ResourceRecordSet rrset in resourceRecordSets)
             {
-                Assert.IsNotNull(rrset.Name);
-                Assert.IsNotNull(rrset.Type);
-                Assert.IsNotNull(rrset.TTL);
-                Assert.IsTrue(rrset.ResourceRecords.Count > 0);
+                Assert.NotNull(rrset.Name);
+                Assert.NotNull(rrset.Type);
+                Assert.NotNull(rrset.TTL);
+                Assert.True(rrset.ResourceRecords.Count > 0);
             }
 
             // Get Change
-            var getChangeResponse = await Client.GetChangeAsync(new GetChangeRequest { Id = createdZoneChangeId });
+            var getChangeResponse = await _client.GetChangeAsync(new GetChangeRequest { Id = createdZoneChangeId });
             ChangeInfo changeInfo = getChangeResponse.ChangeInfo;
-            Assert.IsTrue(changeInfo.Id.EndsWith(createdZoneChangeId));
-            AssertValidChangeInfo(changeInfo);
+            Assert.True(changeInfo.Id.EndsWith(createdZoneChangeId));
+            await AssertValidChangeInfo(changeInfo);
 
             // Change Resource Record Sets
             ResourceRecordSet newResourceRecordSet = new ResourceRecordSet
@@ -127,9 +147,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 HealthCheckId = null
             };
 
-            var changeResponse = await Client.ChangeResourceRecordSetsAsync(new ChangeResourceRecordSetsRequest
+            var changeResponse = await _client.ChangeResourceRecordSetsAsync(new ChangeResourceRecordSetsRequest
             {
-                HostedZoneId = createdZoneId,
+                HostedZoneId = _createdZoneId,
                 ChangeBatch = new ChangeBatch
                 {
                     Comment = COMMENT,
@@ -142,14 +162,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
 
             changeInfo = changeResponse.ChangeInfo;
-            AssertValidChangeInfo(changeInfo);
+            await AssertValidChangeInfo(changeInfo);
 
             // Delete Hosted Zone
-            var deleteHostedZoneResult = await Client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest { Id = createdZoneId });
-            AssertValidChangeInfo(deleteHostedZoneResult.ChangeInfo);
+            var deleteHostedZoneResult = await _client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest { Id = _createdZoneId });
+            await AssertValidChangeInfo(deleteHostedZoneResult.ChangeInfo);
+            _createdZoneId = null; // already deleted, no need for DisposeAsync to retry
         }
 
-        [TestMethod]
+        [Fact]
         public async Task HealthCheckTests()
         {
             var createRequest = new CreateHealthCheckRequest
@@ -164,14 +185,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     FailureThreshold = 5
                 }
             };
-            var createResponse = await Client.CreateHealthCheckAsync(createRequest);
-            Assert.IsNotNull(createResponse.HealthCheck.Id);
-            Assert.AreEqual(10, createResponse.HealthCheck.HealthCheckConfig.RequestInterval);
-            Assert.AreEqual(5, createResponse.HealthCheck.HealthCheckConfig.FailureThreshold);
+            var createResponse = await _client.CreateHealthCheckAsync(createRequest);
+            Assert.NotNull(createResponse.HealthCheck.Id);
+            Assert.Equal(10, createResponse.HealthCheck.HealthCheckConfig.RequestInterval);
+            Assert.Equal(5, createResponse.HealthCheck.HealthCheckConfig.FailureThreshold);
             string healthCheckId = createResponse.HealthCheck.Id;
 
-            var listResponse = await Client.ListHealthChecksAsync();
-            Assert.IsNotNull(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
+            var listResponse = await _client.ListHealthChecksAsync();
+            Assert.NotNull(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
 
             GetHealthCheckStatusResponse status = null;
             var stopTime = DateTime.UtcNow + maxWaitTime;
@@ -180,7 +201,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 try
                 {
-                    status = await Client.GetHealthCheckStatusAsync(new GetHealthCheckStatusRequest
+                    status = await _client.GetHealthCheckStatusAsync(new GetHealthCheckStatusRequest
                     {
                         HealthCheckId = healthCheckId
                     });
@@ -191,46 +212,46 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     await Task.Delay(TimeSpan.FromSeconds(10));
                 }
             }
-            Assert.IsNotNull(status);
+            Assert.NotNull(status);
 
             if (status.HealthCheckObservations == null)
             {
-                Assert.IsFalse(AWSConfigs.InitializeCollections);
+                Assert.False(AWSConfigs.InitializeCollections);
             }
             else
             {
-                Assert.IsNotNull(status.HealthCheckObservations);
+                Assert.NotNull(status.HealthCheckObservations);
             }
 
-            var getResponse = await Client.GetHealthCheckAsync(new GetHealthCheckRequest
+            var getResponse = await _client.GetHealthCheckAsync(new GetHealthCheckRequest
             {
                 HealthCheckId = healthCheckId
             });
             var healthCheck = getResponse.HealthCheck;
-            Assert.IsNotNull(healthCheck);
-            Assert.IsNotNull(healthCheck.Id);
-            Assert.IsNotNull(healthCheck.HealthCheckConfig);
+            Assert.NotNull(healthCheck);
+            Assert.NotNull(healthCheck.Id);
+            Assert.NotNull(healthCheck.HealthCheckConfig);
 
-            var listTagsBeforeResponse = await Client.ListTagsForResourceAsync(new ListTagsForResourceRequest
+            var listTagsBeforeResponse = await _client.ListTagsForResourceAsync(new ListTagsForResourceRequest
             {
                 ResourceType = TagResourceType.Healthcheck,
                 ResourceId = healthCheckId
             });
             var tagSet = listTagsBeforeResponse.ResourceTagSet;
-            Assert.IsNotNull(tagSet);
-            Assert.IsNotNull(tagSet.ResourceId);
+            Assert.NotNull(tagSet);
+            Assert.NotNull(tagSet.ResourceId);
 
             if (AWSConfigs.InitializeCollections)
             {
-                Assert.IsNotNull(tagSet.Tags);
-                Assert.AreEqual(0, tagSet.Tags.Count);
+                Assert.NotNull(tagSet.Tags);
+                Assert.Equal(0, tagSet.Tags.Count);
             }
             else
             {
-                Assert.IsNull(tagSet.Tags);
+                Assert.Null(tagSet.Tags);
             }
 
-            await Client.ChangeTagsForResourceAsync(new ChangeTagsForResourceRequest
+            await _client.ChangeTagsForResourceAsync(new ChangeTagsForResourceRequest
             {
                 ResourceType = TagResourceType.Healthcheck,
                 ResourceId = healthCheckId,
@@ -240,30 +261,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
             });
 
-            var listTagsAfterResponse = await Client.ListTagsForResourceAsync(new ListTagsForResourceRequest
+            var listTagsAfterResponse = await _client.ListTagsForResourceAsync(new ListTagsForResourceRequest
             {
                 ResourceType = TagResourceType.Healthcheck,
                 ResourceId = healthCheckId
             });
             tagSet = listTagsAfterResponse.ResourceTagSet;
-            Assert.IsNotNull(tagSet);
-            Assert.IsNotNull(tagSet.ResourceId);
-            Assert.IsNotNull(tagSet.ResourceType);
-            Assert.IsNotNull(tagSet.Tags);
-            Assert.AreEqual(1, tagSet.Tags.Count);
-            Assert.AreEqual("Test", tagSet.Tags[0].Key);
-            Assert.AreEqual("true", tagSet.Tags[0].Value);
+            Assert.NotNull(tagSet);
+            Assert.NotNull(tagSet.ResourceId);
+            Assert.NotNull(tagSet.ResourceType);
+            Assert.NotNull(tagSet.Tags);
+            Assert.Single(tagSet.Tags);
+            Assert.Equal("Test", tagSet.Tags[0].Key);
+            Assert.Equal("true", tagSet.Tags[0].Value);
 
-            await Client.DeleteHealthCheckAsync(new DeleteHealthCheckRequest { HealthCheckId = healthCheckId });
+            await _client.DeleteHealthCheckAsync(new DeleteHealthCheckRequest { HealthCheckId = healthCheckId });
 
-            listResponse = await Client.ListHealthChecksAsync();
+            listResponse = await _client.ListHealthChecksAsync();
             if (listResponse.HealthChecks != null)
             {
-                Assert.IsNull(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
+                Assert.Null(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task VPCTests()
         {
             var vpc1 = await CreateVPC();
@@ -280,57 +301,58 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 };
 
                 var createResponse = await UtilityMethods.WaitUntilSuccessAsync(
-                    () => Client.CreateHostedZoneAsync(createRequest)
+                    () => _client.CreateHostedZoneAsync(createRequest)
                 );
-                createdZoneId = createResponse.HostedZone.Id;
+                _createdZoneId = createResponse.HostedZone.Id;
 
-                var hostedZoneInfo = await Client.GetHostedZoneAsync(new GetHostedZoneRequest
+                var hostedZoneInfo = await _client.GetHostedZoneAsync(new GetHostedZoneRequest
                 {
-                    Id = createdZoneId
+                    Id = _createdZoneId
                 });
-                Assert.IsNotNull(hostedZoneInfo.VPCs);
-                Assert.AreEqual(1, hostedZoneInfo.VPCs.Count);
-                Assert.IsTrue(hostedZoneInfo.HostedZone.Config.PrivateZone.Value);
+                Assert.NotNull(hostedZoneInfo.VPCs);
+                Assert.Single(hostedZoneInfo.VPCs);
+                Assert.True(hostedZoneInfo.HostedZone.Config.PrivateZone.Value);
 
-                var associateResponse = await Client.AssociateVPCWithHostedZoneAsync(new AssociateVPCWithHostedZoneRequest
+                var associateResponse = await _client.AssociateVPCWithHostedZoneAsync(new AssociateVPCWithHostedZoneRequest
                 {
                     VPC = vpc2,
                     Comment = COMMENT,
-                    HostedZoneId = createdZoneId
+                    HostedZoneId = _createdZoneId
                 });
                 var changeInfo = associateResponse.ChangeInfo;
-                Assert.IsNotNull(changeInfo);
-                Assert.IsNotNull(changeInfo.Comment);
-                AssertValidChangeInfo(changeInfo);
+                Assert.NotNull(changeInfo);
+                Assert.NotNull(changeInfo.Comment);
+                await AssertValidChangeInfo(changeInfo);
 
-                hostedZoneInfo = await Client.GetHostedZoneAsync(new GetHostedZoneRequest
+                hostedZoneInfo = await _client.GetHostedZoneAsync(new GetHostedZoneRequest
                 {
-                    Id = createdZoneId
+                    Id = _createdZoneId
                 });
-                Assert.IsNotNull(hostedZoneInfo.VPCs);
-                Assert.AreEqual(2, hostedZoneInfo.VPCs.Count);
+                Assert.NotNull(hostedZoneInfo.VPCs);
+                Assert.Equal(2, hostedZoneInfo.VPCs.Count);
 
-                var disassociateResponse = await Client.DisassociateVPCFromHostedZoneAsync(new DisassociateVPCFromHostedZoneRequest
+                var disassociateResponse = await _client.DisassociateVPCFromHostedZoneAsync(new DisassociateVPCFromHostedZoneRequest
                 {
-                    HostedZoneId = createdZoneId,
+                    HostedZoneId = _createdZoneId,
                     VPC = vpc2
                 });
                 changeInfo = disassociateResponse.ChangeInfo;
-                AssertValidChangeInfo(changeInfo);
+                await AssertValidChangeInfo(changeInfo);
 
-                hostedZoneInfo = await Client.GetHostedZoneAsync(new GetHostedZoneRequest
+                hostedZoneInfo = await _client.GetHostedZoneAsync(new GetHostedZoneRequest
                 {
-                    Id = createdZoneId
+                    Id = _createdZoneId
                 });
-                Assert.IsNotNull(hostedZoneInfo.VPCs);
-                Assert.AreEqual(1, hostedZoneInfo.VPCs.Count);
+                Assert.NotNull(hostedZoneInfo.VPCs);
+                Assert.Single(hostedZoneInfo.VPCs);
 
-                var deleteResponse = await Client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest
+                var deleteResponse = await _client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest
                 {
-                    Id = createdZoneId
+                    Id = _createdZoneId
                 });
                 changeInfo = deleteResponse.ChangeInfo;
-                AssertValidChangeInfo(changeInfo);
+                await AssertValidChangeInfo(changeInfo);
+                _createdZoneId = null; // already deleted
             }
             finally
             {
@@ -352,7 +374,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         private async Task<VPC> CreateVPC()
         {
-            var region = VPCRegion.FindValue(AWSConfigs.RegionEndpoint.SystemName);
+            var region = AWSConfigs.RegionEndpoint ?? FallbackRegionFactory.GetRegionEndpoint();
             using (var ec2 = new Amazon.EC2.AmazonEC2Client())
             {
                 var createResponse = await ec2.CreateVpcAsync(new Amazon.EC2.Model.CreateVpcRequest
@@ -363,43 +385,43 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                 return new VPC
                 {
-                    VPCRegion = region,
+                    VPCRegion = VPCRegion.FindValue(region.SystemName),
                     VPCId = createResponse.Vpc.VpcId
                 };
             }
         }
 
         // Asserts that the specified HostedZone is valid and represents the same
-        // HostedZone that we initially created at the very start of this test.        
+        // HostedZone that we initially created at the very start of this test.
         private void AssertValidCreatedHostedZone(HostedZone hostedZone)
         {
-            Assert.AreEqual(ZONE_NAME, hostedZone.Name);
-            Assert.IsNotNull(hostedZone.Id);
-            Assert.AreEqual(COMMENT, hostedZone.Config.Comment);
+            Assert.Equal(ZONE_NAME, hostedZone.Name);
+            Assert.NotNull(hostedZone.Id);
+            Assert.Equal(COMMENT, hostedZone.Config.Comment);
         }
 
-        // Asserts that the specified DelegationSet is valid.                 
+        // Asserts that the specified DelegationSet is valid.
         private void AssertValidDelegationSet(DelegationSet delegationSet)
         {
-            Assert.IsTrue(delegationSet.NameServers.Count > 0);
+            Assert.True(delegationSet.NameServers.Count > 0);
             foreach (string server in delegationSet.NameServers)
             {
-                Assert.IsNotNull(server);
+                Assert.NotNull(server);
             }
         }
-        
-        // Asserts that the specified ChangeInfo is valid.         
-        private void AssertValidChangeInfo(ChangeInfo change)
-        {
-            Assert.IsNotNull(change.Id);
-            Assert.IsNotNull(change.Status);
-            Assert.IsNotNull(change.SubmittedAt);
 
-            ChangeInfo retrievedChange = Client.GetChange(new GetChangeRequest { Id = change.Id }).ChangeInfo;
-            Assert.IsNotNull(retrievedChange);
-            Assert.IsNotNull(retrievedChange.Id);
-            Assert.IsNotNull(retrievedChange.Status);
-            Assert.IsNotNull(retrievedChange.SubmittedAt);
+        // Asserts that the specified ChangeInfo is valid.
+        private async Task AssertValidChangeInfo(ChangeInfo change)
+        {
+            Assert.NotNull(change.Id);
+            Assert.NotNull(change.Status);
+            Assert.NotNull(change.SubmittedAt);
+
+            ChangeInfo retrievedChange = (await _client.GetChangeAsync(new GetChangeRequest { Id = change.Id })).ChangeInfo;
+            Assert.NotNull(retrievedChange);
+            Assert.NotNull(retrievedChange.Id);
+            Assert.NotNull(retrievedChange.Status);
+            Assert.NotNull(retrievedChange.SubmittedAt);
         }
     }
 }

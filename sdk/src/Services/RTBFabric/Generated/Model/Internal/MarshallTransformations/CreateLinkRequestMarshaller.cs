@@ -124,6 +124,12 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetTimeoutInMillis())
+            {
+                context.Writer.WritePropertyName("timeoutInMillis");
+                context.Writer.WriteNumberValue(publicRequest.TimeoutInMillis.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

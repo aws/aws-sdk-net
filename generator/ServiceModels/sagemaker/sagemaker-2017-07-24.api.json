@@ -3505,6 +3505,18 @@
         {"shape":"ResourceLimitExceeded"}
       ]
     },
+    "StartClusterHealthCheck":{
+      "name":"StartClusterHealthCheck",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartClusterHealthCheckRequest"},
+      "output":{"shape":"StartClusterHealthCheckResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ]
+    },
     "StartEdgeDeploymentStage":{
       "name":"StartEdgeDeploymentStage",
       "http":{
@@ -4475,7 +4487,9 @@
       ],
       "members":{
         "InstanceGroupName":{"shape":"ClusterInstanceGroupName"},
-        "IncrementTargetCountBy":{"shape":"AddClusterNodeSpecificationIncrementTargetCountByInteger"}
+        "IncrementTargetCountBy":{"shape":"AddClusterNodeSpecificationIncrementTargetCountByInteger"},
+        "AvailabilityZones":{"shape":"ClusterAvailabilityZones"},
+        "InstanceTypes":{"shape":"ClusterInstanceTypes"}
       }
     },
     "AddClusterNodeSpecificationIncrementTargetCountByInteger":{
@@ -6026,6 +6040,8 @@
         "InstanceGroupName":{"shape":"InstanceGroupName"},
         "ErrorCode":{"shape":"BatchAddClusterNodesErrorCode"},
         "FailedCount":{"shape":"BatchAddFailureCount"},
+        "AvailabilityZones":{"shape":"ClusterAvailabilityZones"},
+        "InstanceTypes":{"shape":"ClusterInstanceTypes"},
         "Message":{"shape":"String"}
       }
     },
@@ -6033,7 +6049,9 @@
       "type":"string",
       "enum":[
         "InstanceGroupNotFound",
-        "InvalidInstanceGroupStatus"
+        "InvalidInstanceGroupStatus",
+        "IncompatibleAvailabilityZones",
+        "IncompatibleInstanceTypes"
       ]
     },
     "BatchAddClusterNodesErrorList":{
@@ -7258,6 +7276,12 @@
       "type":"string",
       "pattern":"[a-z]{3}\\d-az\\d"
     },
+    "ClusterAvailabilityZones":{
+      "type":"list",
+      "member":{"shape":"ClusterAvailabilityZone"},
+      "max":10,
+      "min":1
+    },
     "ClusterCapacityRequirements":{
       "type":"structure",
       "members":{
@@ -7403,6 +7427,8 @@
         "MinCount":{"shape":"ClusterInstanceCount"},
         "InstanceGroupName":{"shape":"ClusterInstanceGroupName"},
         "InstanceType":{"shape":"ClusterInstanceType"},
+        "InstanceRequirements":{"shape":"ClusterInstanceRequirementDetails"},
+        "InstanceTypeDetails":{"shape":"ClusterInstanceTypeDetails"},
         "LifeCycleConfig":{"shape":"ClusterLifeCycleConfig"},
         "ExecutionRole":{"shape":"RoleArn"},
         "ThreadsPerCore":{"shape":"ClusterThreadsPerCore"},
@@ -7439,8 +7465,6 @@
       "required":[
         "InstanceCount",
         "InstanceGroupName",
-        "InstanceType",
-        "LifeCycleConfig",
         "ExecutionRole"
       ],
       "members":{
@@ -7448,6 +7472,7 @@
         "MinInstanceCount":{"shape":"ClusterInstanceCount"},
         "InstanceGroupName":{"shape":"ClusterInstanceGroupName"},
         "InstanceType":{"shape":"ClusterInstanceType"},
+        "InstanceRequirements":{"shape":"ClusterInstanceRequirements"},
         "LifeCycleConfig":{"shape":"ClusterLifeCycleConfig"},
         "ExecutionRole":{"shape":"RoleArn"},
         "ThreadsPerCore":{"shape":"ClusterThreadsPerCore"},
@@ -7485,6 +7510,20 @@
       "members":{
         "AvailabilityZone":{"shape":"ClusterAvailabilityZone"},
         "AvailabilityZoneId":{"shape":"ClusterAvailabilityZoneId"}
+      }
+    },
+    "ClusterInstanceRequirementDetails":{
+      "type":"structure",
+      "members":{
+        "CurrentInstanceTypes":{"shape":"ClusterInstanceTypes"},
+        "DesiredInstanceTypes":{"shape":"ClusterInstanceTypes"}
+      }
+    },
+    "ClusterInstanceRequirements":{
+      "type":"structure",
+      "required":["InstanceTypes"],
+      "members":{
+        "InstanceTypes":{"shape":"ClusterInstanceTypes"}
       }
     },
     "ClusterInstanceStatus":{
@@ -7641,8 +7680,34 @@
         "ml.r7i.24xlarge",
         "ml.r7i.48xlarge",
         "ml.r5d.16xlarge",
+        "ml.g7e.2xlarge",
+        "ml.g7e.4xlarge",
+        "ml.g7e.8xlarge",
+        "ml.g7e.12xlarge",
+        "ml.g7e.24xlarge",
+        "ml.g7e.48xlarge",
         "ml.p6-b300.48xlarge"
       ]
+    },
+    "ClusterInstanceTypeDetail":{
+      "type":"structure",
+      "members":{
+        "InstanceType":{"shape":"ClusterInstanceType"},
+        "CurrentCount":{"shape":"ClusterNonNegativeInstanceCount"},
+        "ThreadsPerCore":{"shape":"ClusterThreadsPerCore"}
+      }
+    },
+    "ClusterInstanceTypeDetails":{
+      "type":"list",
+      "member":{"shape":"ClusterInstanceTypeDetail"},
+      "max":20,
+      "min":0
+    },
+    "ClusterInstanceTypes":{
+      "type":"list",
+      "member":{"shape":"ClusterInstanceType"},
+      "max":20,
+      "min":1
     },
     "ClusterKubernetesConfig":{
       "type":"structure",
@@ -7728,10 +7793,6 @@
     },
     "ClusterLifeCycleConfig":{
       "type":"structure",
-      "required":[
-        "SourceS3Uri",
-        "OnCreate"
-      ],
       "members":{
         "SourceS3Uri":{"shape":"S3Uri"},
         "OnCreate":{"shape":"ClusterLifeCycleConfigFileName"}
@@ -10660,12 +10721,24 @@
       "max":20,
       "min":0
     },
+    "DeepHealthCheckConfigurations":{
+      "type":"list",
+      "member":{"shape":"InstanceGroupHealthCheckConfiguration"},
+      "max":99,
+      "min":1
+    },
     "DeepHealthCheckType":{
       "type":"string",
       "enum":[
         "InstanceStress",
         "InstanceConnectivity"
       ]
+    },
+    "DeepHealthChecks":{
+      "type":"list",
+      "member":{"shape":"DeepHealthCheckType"},
+      "max":2,
+      "min":1
     },
     "DefaultDomainIdList":{
       "type":"list",
@@ -17337,6 +17410,18 @@
         "InstanceGroupName":{"shape":"InstanceGroupName"}
       }
     },
+    "InstanceGroupHealthCheckConfiguration":{
+      "type":"structure",
+      "required":[
+        "InstanceGroupName",
+        "DeepHealthChecks"
+      ],
+      "members":{
+        "InstanceGroupName":{"shape":"ClusterInstanceGroupName"},
+        "InstanceIds":{"shape":"InstanceIds"},
+        "DeepHealthChecks":{"shape":"DeepHealthChecks"}
+      }
+    },
     "InstanceGroupMetadata":{
       "type":"structure",
       "members":{
@@ -17391,6 +17476,12 @@
       "member":{"shape":"InstanceGroup"},
       "max":5,
       "min":0
+    },
+    "InstanceIds":{
+      "type":"list",
+      "member":{"shape":"ClusterNodeId"},
+      "max":500,
+      "min":1
     },
     "InstanceMetadata":{
       "type":"structure",
@@ -22133,7 +22224,9 @@
       "members":{
         "NodeLogicalId":{"shape":"ClusterNodeLogicalId"},
         "InstanceGroupName":{"shape":"ClusterInstanceGroupName"},
-        "Status":{"shape":"ClusterInstanceStatus"}
+        "Status":{"shape":"ClusterInstanceStatus"},
+        "AvailabilityZones":{"shape":"ClusterAvailabilityZones"},
+        "InstanceTypes":{"shape":"ClusterInstanceTypes"}
       }
     },
     "NodeAdditionResultList":{
@@ -23059,7 +23152,7 @@
       "type":"string",
       "max":2048,
       "min":0,
-      "pattern":"arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:pipeline/.*"
+      "pattern":"arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:([0-9]{12}|aws):pipeline/.*"
     },
     "PipelineDefinition":{
       "type":"string",
@@ -23226,7 +23319,7 @@
       "type":"string",
       "max":2048,
       "min":1,
-      "pattern":"(arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})"
+      "pattern":"(arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:([0-9]{12}|aws):pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})"
     },
     "PipelineParameterName":{
       "type":"string",
@@ -26599,6 +26692,24 @@
         "DurationInSeconds":{"shape":"TrafficDurationInSeconds"},
         "NumberOfSteps":{"shape":"NumberOfSteps"},
         "UsersPerStep":{"shape":"UsersPerStep"}
+      }
+    },
+    "StartClusterHealthCheckRequest":{
+      "type":"structure",
+      "required":[
+        "ClusterName",
+        "DeepHealthCheckConfigurations"
+      ],
+      "members":{
+        "ClusterName":{"shape":"ClusterNameOrArn"},
+        "DeepHealthCheckConfigurations":{"shape":"DeepHealthCheckConfigurations"}
+      }
+    },
+    "StartClusterHealthCheckResponse":{
+      "type":"structure",
+      "required":["ClusterArn"],
+      "members":{
+        "ClusterArn":{"shape":"ClusterArn"}
       }
     },
     "StartEdgeDeploymentStageRequest":{

@@ -51,6 +51,7 @@ namespace Amazon.MediaLive.Model
         private MaintenanceUpdateSettings _maintenance;
         private string _name;
         private string _roleArn;
+        private SpecialRouterSettings _specialRouterSettings;
 
         /// <summary>
         /// Gets and sets the property AnywhereSettings. The Elemental Anywhere settings for this
@@ -314,6 +315,25 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpecialRouterSettings. When using MediaConnect Router as
+        /// the source of a MediaLive input there's a special handoff that occurs when a router
+        /// outputis created. This group of settings is set on your behalf by the MediaConnect
+        /// Router service using this set of settings. Thissetting object can only by used by
+        /// that service.
+        /// </summary>
+        public SpecialRouterSettings SpecialRouterSettings
+        {
+            get { return this._specialRouterSettings; }
+            set { this._specialRouterSettings = value; }
+        }
+
+        // Check to see if SpecialRouterSettings property is set
+        internal bool IsSetSpecialRouterSettings()
+        {
+            return this._specialRouterSettings != null;
         }
 
     }

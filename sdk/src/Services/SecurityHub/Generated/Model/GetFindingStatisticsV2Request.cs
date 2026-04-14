@@ -31,14 +31,27 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFindingStatisticsV2 operation.
-    /// Returns aggregated statistical data about findings. <c>GetFindingStatisticsV2</c>
-    /// use <c>securityhub:GetAdhocInsightResults</c> in the <c>Action</c> element of an IAM
-    /// policy statement. You must have permission to perform the <c>s</c> action.
+    /// Returns aggregated statistical data about findings.
+    /// 
+    ///  
+    /// <para>
+    /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+    /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you aggregate
+    /// findings from your entire organization or from specific organizational units. Only
+    /// the delegated administrator account can use <c>Scopes</c>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>GetFindingStatisticsV2</c> uses <c>securityhub:GetAdhocInsightResults</c> in the
+    /// <c>Action</c> element of an IAM policy statement. You must have permission to perform
+    /// the <c>securityhub:GetAdhocInsightResults</c> action.
+    /// </para>
     /// </summary>
     public partial class GetFindingStatisticsV2Request : AmazonSecurityHubRequest
     {
         private List<GroupByRule> _groupByRules = AWSConfigs.InitializeCollections ? new List<GroupByRule>() : null;
         private int? _maxStatisticResults;
+        private FindingScopes _scopes;
         private SortOrder _sortOrder;
 
         /// <summary>
@@ -83,6 +96,37 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetMaxStatisticResults()
         {
             return this._maxStatisticResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scopes. 
+        /// <para>
+        /// Limits the results to findings from specific organizational units or from the delegated
+        /// administrator's organization. Only the delegated administrator account can use this
+        /// parameter. Other accounts receive an <c>AccessDeniedException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. If you omit it, the delegated administrator sees statistics
+        /// from all accounts across the entire organization. Other accounts see only statistics
+        /// for their own findings.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify up to 10 entries in <c>Scopes.AwsOrganizations</c>. If multiple entries
+        /// are specified, the entries are combined using OR logic.
+        /// </para>
+        /// </summary>
+        public FindingScopes Scopes
+        {
+            get { return this._scopes; }
+            set { this._scopes = value; }
+        }
+
+        // Check to see if Scopes property is set
+        internal bool IsSetScopes()
+        {
+            return this._scopes != null;
         }
 
         /// <summary>

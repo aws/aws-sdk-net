@@ -1,3 +1,121 @@
+### 4.0.231.0 (2026-04-13 18:21 UTC)
+* CustomerProfiles (4.0.10.0)
+	* This release introduces changes to SegmentDefinition APIs to support sorting by attributes.
+* Deadline (4.0.18.0)
+	* Adds GetMonitorSettings and UpdateMonitorSettings APIs to Deadline Cloud. Enables reading and writing monitor settings as key-value pairs (up to 64 keys per monitor). UpdateMonitorSettings supports upsert and delete (via empty value) semantics and is idempotent.
+* Glue (4.0.27.9)
+	* AWS Glue now defaults to Glue version 5.1 for newly created jobs if the Glue version is not specified in the request, and UpdateJob now preserves the existing Glue version of a job when the Glue version is not specified in the update request.
+* Interconnect (4.0.0.0)
+	* Initial release of AWS Interconnect -- a managed private connectivity service that enables you to create high-speed network connections between your AWS Virtual Private Clouds (VPCs) and your VPCs on other public clouds or your on-premise networks.
+* Macie2 (4.0.3.0)
+	* This release adds an optional expectedBucketOwner field to the Macie S3 export configuration, allowing customers to verify bucket ownership before Macie writes results to the destination bucket.
+* SecurityHub (4.0.9.0)
+	* Provide organizational unit scoping capability for GetFindingsV2, GetFindingStatisticsV2, GetResourcesV2, GetResourcesStatisticsV2 APIs.
+
+### 4.0.230.0 (2026-04-10 18:22 UTC)
+* Connect (4.0.40.0)
+	* Conversational Analytics for Email
+* DevOpsAgent (4.0.2.0)
+	* Devops Agent now supports associate Splunk, Datadog and custom MCP server to an Agent Space.
+* ECS (4.0.19.0)
+	* Minor updates to exceptions for completeness
+* Imagebuilder (4.0.9.0)
+	* Image pipelines can now automatically apply tags to images they create. Set the imageTags property when creating or updating your pipelines to get started.
+* MediaConvert (4.0.16.0)
+	* Adds support for MV-HEVC video output and clear lead for AV1 DRM output.
+* ObservabilityAdmin (4.0.9.0)
+	* CloudWatch Observability Admin adds support for multi-region telemetry evaluation and telemetry enablement rules.
+* RTBFabric (4.0.4.0)
+	* Adds optional health check configuration for Responder Gateways with ASG Managed Endpoints. When provided, RTB Fabric continuously probes customers' instance IPs and routes traffic only to healthy ones, reducing errors during deployments, scaling events, and instance failures.
+* SageMaker (4.0.50.0)
+	* Support new SageMaker StartClusterHealthCheck API for on-demand DHC on Hyperpod EKS cluster. Support updated CreateCluster, UpdateCluster, DescribeCluster, BatchAddClusterNodes APIs for flexible instance group on HyperPod cluster
+* Core 4.0.3.29
+	* Fixed adaptive retry mode to adjust client send rate when retries are disabled.
+	* All service and extension packages updated to require new Core
+
+### 4.0.229.0 (2026-04-09 18:27 UTC)
+* BCMDashboards (4.0.3.0)
+	* Scheduled email reports of Billing and Cost Management Dashboards
+* BedrockAgentCore (4.0.18.0)
+	* Introducing support for SearchRegistryRecords API on AgentCoreRegistry
+* BedrockAgentCoreControl (4.0.27.0)
+	* Initial release for CRUDL in AgentCore Registry Service
+* MediaConnect (4.0.7.0)
+	* Adds support for MediaLive Channel-type Router Inputs.
+* RedshiftDataAPIService (4.0.4.0)
+	* The BatchExecuteStatement API now supports named SQL parameters, enabling secure batch queries with parameterized values. This enhancement helps prevent SQL injection vulnerabilities and improves query reusability.
+* SageMaker (4.0.49.0)
+	* Release support for g7e instance types for SageMaker HyperPod
+
+### 4.0.228.0 (2026-04-08 20:03 UTC)
+* Backup (4.0.11.0)
+	* Adding EKS specific backup vault notification types for AWS Backup.
+* Drs (4.0.3.0)
+	* This changes adds support for modifying the replication configuration to support data replication using IPv6.
+* ECR (4.0.13.0)
+	* Add UnableToListUpstreamImageReferrersException in ListImageReferrers
+* IVSRealTime (4.0.7.0)
+	* Adds support for Amazon IVS real-time streaming redundant ingest.
+* MarketplaceDiscovery (4.0.0.0)
+	* AWS Marketplace Discovery API provides an interface that enables programmatic access to the AWS Marketplace catalog, including searching and browsing listings, retrieving product details and fulfillment options, and accessing public and private offer pricing and terms.
+* MediaLive (4.0.19.0)
+	* MediaLive is adding support for MediaConnect Router by supporting a new output type called MEDIACONNECT ROUTER. This new output type will provide seamless encrypted transport between your MediaLive channel and MediaConnect Router.
+* Outposts (4.0.6.0)
+	* Add AWS Outposts APIs to view renewal pricing options and submit renewal requests for Outpost contracts
+
+### 4.0.227.0 (2026-04-07 18:24 UTC)
+* AccessAnalyzer (4.0.6.0)
+	* Revert previous additions of API changes.
+* BedrockAgentCore (4.0.17.0)
+	* This release includes support for 1) InvokeBrowser API, enabling OS-level control of AgentCore Browser Tool sessions through mouse actions, keyboard input, and screenshots. 2) Added documentation noting that empty sessions are automatically deleted after one day in the ListSessions API.
+* Braket (4.0.5.0)
+	* Added support for t3, g6, and g6e instance types for Hybrid Jobs.
+* Connect (4.0.39.0)
+	* The voice enhancement mode used by the agent can now be viewed on the contact record via the DescribeContact api.
+* DataSync (4.0.10.0)
+	* Allow IAM role ARNs with IAM Paths for "SecretAccessRoleArn" field in "CustomSecretConfig"
+* DataZone (4.0.24.0)
+	* Update Configurations and registerS3AccessGrantLocation as public attributes for cfn
+* EC2 (4.0.83.0)
+	* EC2 Capacity Manager adds new dimensions for grouping and filtering capacity metrics, including tag-based dimensions and Account Name.
+* ECS (4.0.18.0)
+	* This release provides the functionality of mounting Amazon S3 Files to Amazon ECS tasks by adding support for the new S3FilesVolumeConfiguration parameter in ECS RegisterTaskDefinition API.
+* EKS (4.0.15.0)
+	* EKS MNG WarmPool feature to support ASG WarmPool feature.
+* Lambda (4.0.14.0)
+	* Launching Lambda integration with S3 Files as a new file system configuration.
+* Outposts (4.0.5.0)
+	* This change allows listAssets to surface pending and non-compute asset information. Adds the INSTALLING asset state enum and the STORAGE, POWERSHELF, SWITCH, and NETWORKING AssetTypes.
+* RTBFabric (4.0.3.0)
+	* AWS RTB Fabric External Responder gateways now support HTTP in addition to HTTPS for inbound external links. Gateways can accept bid requests on port 80 or serve both protocols simultaneously via listener configuration, giving customers flexible transport options for their bidding infrastructure
+* S3 (4.0.21.0)
+	* Updated list of the valid AWS Region values for the LocationConstraint parameter for general purpose buckets.
+* S3Files (4.0.0.0)
+	* Support for S3 Files, a new shared file system that connects any AWS compute directly with your data in Amazon S3. It provides fast, direct access to all of your S3 data as files with full file system semantics and low-latency performance, without your data ever leaving S3.
+
+### 4.0.226.0 (2026-04-06 18:29 UTC)
+* AccessAnalyzer (4.0.5.0)
+	* Brookie helps customers preview the impact of SCPs before deployment using historical access activity. It evaluates attached policies and proposed policy updates using collected access activity through CloudTrail authorization events and reports where currently allowed access will be denied.
+* Deadline (4.0.17.0)
+	* Added 8 batch APIs (BatchGetJob, BatchGetStep, BatchGetTask, BatchGetSession, BatchGetSessionAction, BatchGetWorker, BatchUpdateJob, BatchUpdateTask) for bulk operations. Monitors can now use an Identity Center instance in a different region via the identityCenterRegion parameter.
+* DLM (4.0.3.0)
+	* This release adds support for Fast Snapshot Restore AvailabilityZone Ids in Amazon Data Lifecycle Manager EBS snapshot lifecycle policies.
+* GeoMaps (4.0.5.4)
+	* This release updates API reference documentation for Amazon Location Service Maps APIs to reflect regional restrictions for Grab Maps users
+* GuardDuty (4.0.18.0)
+	* Migrated to Smithy. No functional changes
+* Lightsail (4.0.7.0)
+	* This release adds support for the Asia Pacific (Malaysia) (ap-southeast-5) Region.
+* MediaTailor (4.0.7.0)
+	* This change adds support for Tagging the resource types Programs and Prefetch Schedules
+* QConnect (4.0.9.0)
+	* Added optional originRequestId parameter to SendMessageRequest and ListSpans response in Amazon Q in Connect to support request tracing across service boundaries.
+* Transfer (4.0.7.0)
+	* AWS Transfer Family Connectors now support IPv6 connectivity, enabling outbound connections to remote SFTP or AS2 servers using IPv4-only or dual-stack (IPv4 and IPv6) configurations based on network requirements.
+* Core 4.0.3.28
+	* Added unified platform map for cross-platform API documentation generation
+	* All service and extension packages updated to require new Core
+
 ### 4.0.225.0 (2026-04-03 18:16 UTC)
 * Bedrock (4.0.25.0)
 	* Amazon Bedrock Guardrails enforcement configuration APIs now support selective guarding controls for system prompts as well as user and assistant messages, along with SDK support for Amazon Bedrock resource policy APIs.

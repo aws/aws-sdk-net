@@ -52,10 +52,28 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("attributes", targetDepth))
+                {
+                    var unmarshaller = LinkAttributesUnmarshaller.Instance;
+                    response.Attributes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("connectivityType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ConnectivityType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("flowModules", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ModuleConfiguration, ModuleConfigurationUnmarshaller>(ModuleConfigurationUnmarshaller.Instance);
+                    response.FlowModules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("gatewayId", targetDepth))
@@ -74,6 +92,12 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LinkLogSettingsUnmarshaller.Instance;
                     response.LogSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("pendingFlowModules", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ModuleConfiguration, ModuleConfigurationUnmarshaller>(ModuleConfigurationUnmarshaller.Instance);
+                    response.PendingFlowModules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("publicEndpoint", targetDepth))

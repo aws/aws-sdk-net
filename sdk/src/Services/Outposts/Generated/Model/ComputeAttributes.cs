@@ -145,6 +145,11 @@ namespace Amazon.Outposts.Model
         /// resources is reduced. Amazon Web Services sends notifications for resources that must
         /// be stopped before the asset can be replaced.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INSTALLING - The asset is being installed and can't yet provide capacity for new compute
+        /// resources.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ComputeAssetState State

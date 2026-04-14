@@ -1,98 +1,97 @@
-﻿using Amazon;
+using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
-    [TestClass]
-    public class CacheTests
+#if NETFRAMEWORK
+    [Collection("Serial")]
+    [Trait("Category", "DynamoDBv2")]
+    public class CacheTests : IAsyncLifetime
     {
+        private static readonly string TableCacheIdentifier = typeof(Table).FullName;
         private const string TABLENAME = "cache-test-table";
-        private string testTableName = null;
-        private static AmazonDynamoDBClient client = DynamoDBTests.Client;
-        private static bool lastUseSdkCacheValue;
 
-        [TestInitialize]
-        public async Task Init()
+        private string _testTableName;
+        private AmazonDynamoDBClient _client;
+        private bool _lastUseSdkCacheValue;
+
+        public async ValueTask InitializeAsync()
         {
-            lastUseSdkCacheValue = AWSConfigs.UseSdkCache;
+            _client = new AmazonDynamoDBClient();
+            _lastUseSdkCacheValue = AWSConfigs.UseSdkCache;
             AWSConfigs.UseSdkCache = true;
             SdkCache.Clear();
 
-            testTableName = UtilityMethods.GenerateName("CacheTest");
-            await CreateTable(testTableName, true);
+            _testTableName = UtilityMethods.GenerateName("CacheTest");
+            await CreateTable(_testTableName, defaultKeys: true);
         }
 
-        [TestCleanup]
-        public async Task Cleanup()
+        public async ValueTask DisposeAsync()
         {
-            var allTables = (await DynamoDBTests.Client.ListTablesAsync()).TableNames;
-            
+            var allTables = (await _client.ListTablesAsync()).TableNames;
             if (allTables.Contains(TABLENAME))
             {
                 await DeleteTable(TABLENAME);
             }
 
-            if (allTables.Contains(testTableName))
+            if (allTables.Contains(_testTableName))
             {
-                await DeleteTable(testTableName);
+                await DeleteTable(_testTableName);
             }
 
-            AWSConfigs.UseSdkCache = lastUseSdkCacheValue;
+            AWSConfigs.UseSdkCache = _lastUseSdkCacheValue;
             SdkCache.Clear();
+            _client?.Dispose();
         }
 
-#if NETFRAMEWORK
-        [TestMethod]
-        [TestCategory("DynamoDBv2")]
+        [Fact]
         public void TestCache()
         {
-            TableDescription creator(string tn) => client.DescribeTable(tn).Table;
+            TableDescription creator(string tn) => _client.DescribeTable(tn).Table;
 
-            var tableName = testTableName;
-            var tableCache = SdkCache.GetCache<string, TableDescription>(client, DynamoDBTests.TableCacheIdentifier, StringComparer.Ordinal);
-            Assert.AreEqual(0, tableCache.ItemCount);
+            var tableName = _testTableName;
+            var tableCache = SdkCache.GetCache<string, TableDescription>(_client, TableCacheIdentifier, StringComparer.Ordinal);
+            Assert.Equal(0, tableCache.ItemCount);
 
-            using (var counter = new ServiceResponseCounter(client))
+            using (var counter = new ServiceResponseCounter(_client))
             {
                 var table = tableCache.GetValue(tableName, creator);
-                Assert.AreEqual(1, counter.ResponseCount);
-                Assert.AreEqual(1, tableCache.ItemCount);
+                Assert.Equal(1, counter.ResponseCount);
+                Assert.Equal(1, tableCache.ItemCount);
 
                 // verify the item is still there
                 table = tableCache.GetValue(tableName, creator);
-                Assert.AreEqual(1, counter.ResponseCount);
+                Assert.Equal(1, counter.ResponseCount);
 
                 // verify item was reloaded
                 tableCache.Clear(tableName);
                 table = tableCache.GetValue(tableName, creator);
-                Assert.AreEqual(2, counter.ResponseCount);
-                Assert.AreEqual(1, tableCache.ItemCount);
+                Assert.Equal(2, counter.ResponseCount);
+                Assert.Equal(1, tableCache.ItemCount);
 
                 // test item expiration
                 tableCache.MaximumItemLifespan = TimeSpan.FromSeconds(1);
                 Thread.Sleep(tableCache.MaximumItemLifespan);
                 table = tableCache.GetValue(tableName, creator);
-                Assert.AreEqual(3, counter.ResponseCount);
-                Assert.AreEqual(1, tableCache.ItemCount);
+                Assert.Equal(3, counter.ResponseCount);
+                Assert.Equal(1, tableCache.ItemCount);
             }
         }
-#endif
 
-        [TestMethod]
-        [TestCategory("DynamoDBv2")]
+        [Fact]
         public void MultipleClientsTest()
         {
             Table.ClearTableCache();
-            var tableName = testTableName;
+            var tableName = _testTableName;
 
             ITable table;
             using (var nc = new AmazonDynamoDBClient())
@@ -101,11 +100,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
 
             Table.ClearTableCache();
-            table = Table.LoadTable(client, tableName);
+            table = Table.LoadTable(_client, tableName);
         }
 
-        [TestMethod]
-        [TestCategory("DynamoDBv2")]
+        [Fact]
         public async Task ChangingTableTest()
         {
             var item = new Document(new Dictionary<string, DynamoDBEntry>
@@ -114,18 +112,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 { "Name", "Floyd" },
                 { "Coffee", "Yes" }
             });
-            var tableCache = SdkCache.GetCache<string, TableDescription>(client, DynamoDBTests.TableCacheIdentifier, StringComparer.Ordinal);
+            var tableCache = SdkCache.GetCache<string, TableDescription>(_client, TableCacheIdentifier, StringComparer.Ordinal);
 
             await CreateTable(TABLENAME, defaultKeys: true);
-            var table = Table.LoadTable(client, TABLENAME);
+            var table = Table.LoadTable(_client, TABLENAME);
             await table.PutItemAsync(item);
 
-            using (var counter = new ServiceResponseCounter(client))
+            using (var counter = new ServiceResponseCounter(_client))
             {
-                var doc = await table.GetItemAsync(42, "Floyd");
-                Assert.IsNotNull(doc);
-                Assert.AreNotEqual(0, doc.Count);
-                Assert.AreEqual(1, counter.ResponseCount);
+                var consistentRead = new GetItemOperationConfig { ConsistentRead = true };
+                var doc = await table.GetItemAsync(42, "Floyd", consistentRead);
+                Assert.NotNull(doc);
+                Assert.NotEqual(0, doc.Count);
+                Assert.Equal(1, counter.ResponseCount);
                 AssertExtensions.ExpectException(() => table.GetItem("Floyd", 42));
 
                 var oldTableDescription = tableCache.GetValue(TABLENAME, null);
@@ -138,78 +137,77 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 counter.Reset();
                 Table.ClearTableCache();
-                table = Table.LoadTable(client, TABLENAME);
-                doc = await table.GetItemAsync(42, "Yes");
-                Assert.IsNotNull(doc);
-                Assert.AreNotEqual(0, doc.Count);
-                Assert.AreEqual(2, counter.ResponseCount);
+                table = Table.LoadTable(_client, TABLENAME);
+                doc = await table.GetItemAsync(42, "Yes", consistentRead);
+                Assert.NotNull(doc);
+                Assert.NotEqual(0, doc.Count);
+                Assert.Equal(2, counter.ResponseCount);
 
                 counter.Reset();
                 Table.ClearTableCache();
                 PutItem(tableCache, TABLENAME, oldTableDescription);
-                table = Table.LoadTable(client, TABLENAME);
+                table = Table.LoadTable(_client, TABLENAME);
                 doc = tableCache.UseCache(TABLENAME,
                     () => table.GetItem(42, "Yes"),
-                    () => table = Table.LoadTable(client, TABLENAME),
+                    () => table = Table.LoadTable(_client, TABLENAME),
                     shouldRetryForException: null);
 
-                Assert.IsNotNull(doc);
-                Assert.AreNotEqual(0, doc.Count);
-                Assert.AreEqual(2, counter.ResponseCount);
+                Assert.NotNull(doc);
+                Assert.NotEqual(0, doc.Count);
+                Assert.Equal(2, counter.ResponseCount);
             }
         }
 
         private async Task CreateTable(string name, bool defaultKeys)
         {
-            var keySchema = new List<KeySchemaElement>
-            {
-                new KeySchemaElement
-                {
-                    AttributeName = "Id",
-                    KeyType = KeyType.HASH
-                },
-                new KeySchemaElement
-                {
-                    AttributeName = defaultKeys ? "Name" : "Coffee",
-                    KeyType = KeyType.RANGE
-                }
-            };
-
-            var attributes = new List<AttributeDefinition>
-            {
-                new AttributeDefinition
-                {
-                    AttributeName = "Id",
-                    AttributeType = ScalarAttributeType.N
-                },
-                new AttributeDefinition
-                {
-                    AttributeName = defaultKeys ? "Name" : "Coffee",
-                    AttributeType = ScalarAttributeType.S
-                }
-            };
-
-            await client.CreateTableAsync(new CreateTableRequest
+            await _client.CreateTableAsync(new CreateTableRequest
             {
                 TableName = name,
-                KeySchema = keySchema,
-                AttributeDefinitions = attributes,
+                KeySchema = new List<KeySchemaElement>
+                {
+                    new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH },
+                    new KeySchemaElement { AttributeName = defaultKeys ? "Name" : "Coffee", KeyType = KeyType.RANGE }
+                },
+                AttributeDefinitions = new List<AttributeDefinition>
+                {
+                    new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N },
+                    new AttributeDefinition { AttributeName = defaultKeys ? "Name" : "Coffee", AttributeType = ScalarAttributeType.S }
+                },
                 BillingMode = BillingMode.PAY_PER_REQUEST
             });
 
-            await DynamoDBTests.WaitForTableStatus(name, TableStatus.ACTIVE);
+            await WaitForTableStatus(name, TableStatus.ACTIVE);
         }
 
         private async Task DeleteTable(string name)
         {
-            await client.DeleteTableAsync(name);
-            await DynamoDBTests.WaitForTableStatus(name, null);
+            await _client.DeleteTableAsync(name);
+            await WaitForTableStatus(name, null);
         }
-       
-        private void PutItem<TKey,TValue>(ICache<TKey,TValue> cache, TKey key, TValue value)
+
+        private void PutItem<TKey, TValue>(ICache<TKey, TValue> cache, TKey key, TValue value)
         {
             cache.Clear(key);
             cache.GetValue(key, k => value);
         }
+
+        private async Task WaitForTableStatus(string tableName, TableStatus status)
+        {
+            async Task<bool> testFunction()
+            {
+                try
+                {
+                    var tableStatus = (await _client.DescribeTableAsync(tableName)).Table.TableStatus;
+                    return tableStatus == status;
+                }
+                catch (ResourceNotFoundException)
+                {
+                    return status == null;
+                }
+            }
+
+            await UtilityMethods.WaitUntilAsync(testFunction);
+        }
     }
+#endif
 }

@@ -23565,6 +23565,41 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  GetCapacityManagerMonitoredTagKeys
+
+        internal virtual GetCapacityManagerMonitoredTagKeysResponse GetCapacityManagerMonitoredTagKeys(GetCapacityManagerMonitoredTagKeysRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerMonitoredTagKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerMonitoredTagKeysResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapacityManagerMonitoredTagKeysResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the tag keys that are currently being monitored by EC2 Capacity Manager.
+        /// Monitored tag keys are included as dimensions in capacity metric data, enabling you
+        /// to group and filter metrics by tag values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerMonitoredTagKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerMonitoredTagKeys service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMonitoredTagKeys">REST API Reference for GetCapacityManagerMonitoredTagKeys Operation</seealso>
+        public virtual Task<GetCapacityManagerMonitoredTagKeysResponse> GetCapacityManagerMonitoredTagKeysAsync(GetCapacityManagerMonitoredTagKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerMonitoredTagKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerMonitoredTagKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCapacityManagerMonitoredTagKeysResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetCapacityReservationUsage
 
         internal virtual GetCapacityReservationUsageResponse GetCapacityReservationUsage(GetCapacityReservationUsageRequest request)
@@ -33032,6 +33067,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = UnmonitorInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<UnmonitorInstancesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateCapacityManagerMonitoredTagKeys
+
+        internal virtual UpdateCapacityManagerMonitoredTagKeysResponse UpdateCapacityManagerMonitoredTagKeys(UpdateCapacityManagerMonitoredTagKeysRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCapacityManagerMonitoredTagKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCapacityManagerMonitoredTagKeysResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCapacityManagerMonitoredTagKeysResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Activates or deactivates tag keys for monitoring by EC2 Capacity Manager. Activated
+        /// tag keys are included as dimensions in capacity metric data, enabling you to group
+        /// and filter metrics by tag values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityManagerMonitoredTagKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCapacityManagerMonitoredTagKeys service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerMonitoredTagKeys">REST API Reference for UpdateCapacityManagerMonitoredTagKeys Operation</seealso>
+        public virtual Task<UpdateCapacityManagerMonitoredTagKeysResponse> UpdateCapacityManagerMonitoredTagKeysAsync(UpdateCapacityManagerMonitoredTagKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCapacityManagerMonitoredTagKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCapacityManagerMonitoredTagKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCapacityManagerMonitoredTagKeysResponse>(request, options, cancellationToken);
         }
         #endregion
         

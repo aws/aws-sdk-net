@@ -35,13 +35,16 @@ namespace Amazon.RTBFabric.Model
     public partial class ListLinksResponseStructure
     {
         private LinkAttributes _attributes;
+        private ConnectivityType _connectivityType;
         private DateTime? _createdAt;
         private LinkDirection _direction;
         private List<ModuleConfiguration> _flowModules = AWSConfigs.InitializeCollections ? new List<ModuleConfiguration>() : null;
         private string _gatewayId;
         private string _linkId;
+        private LinkLogSettings _logSettings;
         private string _peerGatewayId;
         private List<ModuleConfiguration> _pendingFlowModules = AWSConfigs.InitializeCollections ? new List<ModuleConfiguration>() : null;
+        private string _publicEndpoint;
         private LinkStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updatedAt;
@@ -62,6 +65,24 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectivityType. 
+        /// <para>
+        /// The connectivity type of the link.
+        /// </para>
+        /// </summary>
+        public ConnectivityType ConnectivityType
+        {
+            get { return this._connectivityType; }
+            set { this._connectivityType = value; }
+        }
+
+        // Check to see if ConnectivityType property is set
+        internal bool IsSetConnectivityType()
+        {
+            return this._connectivityType != null;
         }
 
         /// <summary>
@@ -130,7 +151,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=8, Max=32)]
         public string GatewayId
         {
             get { return this._gatewayId; }
@@ -149,7 +170,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the link.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=6, Max=30)]
         public string LinkId
         {
             get { return this._linkId; }
@@ -163,12 +184,27 @@ namespace Amazon.RTBFabric.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogSettings.
+        /// </summary>
+        public LinkLogSettings LogSettings
+        {
+            get { return this._logSettings; }
+            set { this._logSettings = value; }
+        }
+
+        // Check to see if LogSettings property is set
+        internal bool IsSetLogSettings()
+        {
+            return this._logSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PeerGatewayId. 
         /// <para>
         /// The unique identifier of the peer gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=8, Max=32)]
         public string PeerGatewayId
         {
             get { return this._peerGatewayId; }
@@ -202,6 +238,25 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetPendingFlowModules()
         {
             return this._pendingFlowModules != null && (this._pendingFlowModules.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicEndpoint. 
+        /// <para>
+        /// The public endpoint of the outbound link.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=255)]
+        public string PublicEndpoint
+        {
+            get { return this._publicEndpoint; }
+            set { this._publicEndpoint = value; }
+        }
+
+        // Check to see if PublicEndpoint property is set
+        internal bool IsSetPublicEndpoint()
+        {
+            return this._publicEndpoint != null;
         }
 
         /// <summary>

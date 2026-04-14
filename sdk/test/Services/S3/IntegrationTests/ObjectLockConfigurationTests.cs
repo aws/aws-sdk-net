@@ -1,63 +1,33 @@
-/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
-
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
-using Amazon.S3.Util;
 using Amazon.Util;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class ObjectLockConfigurationTests : TestBase<AmazonS3Client>
+    public class ObjectLockConfigurationTestsFixture : S3ClientFixture
     {
-        private static string bucketName;        
+        public string BucketName { get; private set; }
 
-        private string _testId;
-
-        [TestInitialize]
-        public void SetTestId()
+        public override async ValueTask InitializeAsync()
         {
-            _testId = Guid.NewGuid().ToString("N");
-        }
-        private static readonly Dictionary<string, string> headers = new Dictionary<string, string>(StringComparer.Ordinal)
-        {
-            { "Content-Type", "text/html" },
-            { "Content-Disposition", "attachment; filename=\"fname.ext\"" }
-        };
-
-        [ClassInitialize]
-        public static async Task Initialize(TestContext a)
-        {
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, new PutBucketRequest
+            await base.InitializeAsync();
+            BucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client, new PutBucketRequest
             {
                 ObjectLockEnabledForBucket = true,
             });
 
             await Client.PutObjectLockConfigurationAsync(new PutObjectLockConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = BucketName,
                 RequestPayer = RequestPayer.Requester,
                 ObjectLockConfiguration = new ObjectLockConfiguration
                 {
@@ -74,12 +44,37 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
         }
 
-        [ClassCleanup]
-        public static async Task ClassCleanup()
+        public override async ValueTask DisposeAsync()
         {
-            await DeleteBucketObjectsIncludingLocked(Client, bucketName);
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
-            BaseClean();
+            if (BucketName != null)
+            {
+                // AmazonS3Util.DeleteS3BucketWithObjectsAsync does not bypass governance retention,
+                // so we must delete all object versions with BypassGovernanceRetention=true first.
+                await S3TestUtils.DeleteObjects(Client, BucketName, bypassGovernanceRetention: true);
+                await Client.DeleteBucketAsync(BucketName);
+            }
+            await base.DisposeAsync();
+        }
+    }
+
+    [Trait("Category", "S3")]
+    public class ObjectLockConfigurationTests : IClassFixture<ObjectLockConfigurationTestsFixture>
+    {
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
+        private readonly string _testId;
+
+        private static readonly Dictionary<string, string> headers = new Dictionary<string, string>(StringComparer.Ordinal)
+        {
+            { "Content-Type", "text/html" },
+            { "Content-Disposition", "attachment; filename=\"fname.ext\"" }
+        };
+
+        public ObjectLockConfigurationTests(ObjectLockConfigurationTestsFixture fixture)
+        {
+            _client = fixture.Client;
+            _bucketName = fixture.BucketName;
+            _testId = Guid.NewGuid().ToString("N");
         }
 
         public async Task<string> PutObject(DateTime? retainUntilDate = null)
@@ -88,7 +83,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var content = "This is the content body!";
             var putObjectRequest = new PutObjectRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Key = key,
                 ContentBody = content,
                 MD5Digest = AWSSDKUtils.GenerateChecksumForContent(content, true),
@@ -105,39 +100,39 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 putObjectRequest.Headers[kvp.Key] = kvp.Value;
             }                
 
-            await Client.PutObjectAsync(putObjectRequest);
+            await _client.PutObjectAsync(putObjectRequest);
             return key;
         }
 
         public async Task DeleteObject(string key)
         {
-            var deleteResponse = await Client.DeleteObjectAsync(new DeleteObjectRequest
+            var deleteResponse = await _client.DeleteObjectAsync(new DeleteObjectRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Key = key,
                 RequestPayer = RequestPayer.Requester,
                 BypassGovernanceRetention = true
             });
-            Assert.AreEqual(HttpStatusCode.NoContent, deleteResponse.HttpStatusCode);
+            Assert.Equal(HttpStatusCode.NoContent, deleteResponse.HttpStatusCode);
         }
 
         public async Task DeleteObjects(List<KeyVersion> objects)
         {
-            var deleteResponse = await Client.DeleteObjectsAsync(new DeleteObjectsRequest
+            var deleteResponse = await _client.DeleteObjectsAsync(new DeleteObjectsRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Objects = objects,
                 RequestPayer = RequestPayer.Requester,
                 BypassGovernanceRetention = true
             });
-            Assert.AreEqual(HttpStatusCode.OK, deleteResponse.HttpStatusCode);
+            Assert.Equal(HttpStatusCode.OK, deleteResponse.HttpStatusCode);
         }
 
         public async Task PutObjectLegalHold(string key, ObjectLockLegalHoldStatus status)
         {
-            var putResponse = await Client.PutObjectLegalHoldAsync(new PutObjectLegalHoldRequest
+            var putResponse = await _client.PutObjectLegalHoldAsync(new PutObjectLegalHoldRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 LegalHold = new ObjectLockLegalHold
                 {
                     Status = status
@@ -145,23 +140,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 RequestPayer = RequestPayer.Requester,
                 Key = key
             });
-            Assert.AreEqual(HttpStatusCode.OK, putResponse.HttpStatusCode);
+            Assert.Equal(HttpStatusCode.OK, putResponse.HttpStatusCode);
 
             var getResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetObjectLegalHoldAsync(new GetObjectLegalHoldRequest
+                var res = await _client.GetObjectLegalHoldAsync(new GetObjectLegalHoldRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     Key = key,
                     RequestPayer = RequestPayer.Requester
                 });
                 return res.LegalHold?.Status == status ? res : null;
             });
-            Assert.AreEqual(HttpStatusCode.OK, getResponse.HttpStatusCode);
-            Assert.AreEqual(status, getResponse.LegalHold.Status);
+            Assert.Equal(HttpStatusCode.OK, getResponse.HttpStatusCode);
+            Assert.Equal(status, getResponse.LegalHold.Status);
         }
         
-        [TestMethod]
+        [Fact]
         public async Task TestObjectRetention_SetCompliance()
         {
             var date = DateTime.UtcNow.AddMinutes(15);
@@ -169,9 +164,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             try
             {
-                var putResponse = await Client.PutObjectRetentionAsync(new PutObjectRetentionRequest
+                var putResponse = await _client.PutObjectRetentionAsync(new PutObjectRetentionRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     BypassGovernanceRetention = true,
                     Retention = new ObjectLockRetention
                     {
@@ -181,17 +176,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     RequestPayer = RequestPayer.Requester,
                     Key = key
                 });
-                Assert.AreEqual(HttpStatusCode.OK, putResponse.HttpStatusCode);
+                Assert.Equal(HttpStatusCode.OK, putResponse.HttpStatusCode);
 
-                var getResponse = await Client.GetObjectRetentionAsync(new GetObjectRetentionRequest
+                var getResponse = await _client.GetObjectRetentionAsync(new GetObjectRetentionRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     Key = key,
                     RequestPayer = RequestPayer.Requester
                 });
-                Assert.AreEqual(HttpStatusCode.OK, getResponse.HttpStatusCode);
-                Assert.AreEqual(ObjectLockRetentionMode.Governance, getResponse.Retention.Mode);
-                Assert.AreEqual(date.ToString(), getResponse.Retention.RetainUntilDate.ToString());
+                Assert.Equal(HttpStatusCode.OK, getResponse.HttpStatusCode);
+                Assert.Equal(ObjectLockRetentionMode.Governance, getResponse.Retention.Mode);
+                Assert.Equal(date.ToString(), getResponse.Retention.RetainUntilDate.ToString());
             }
             finally
             {
@@ -199,7 +194,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestObjectLockRetainUntilDate()
         {
             var date = DateTime.UtcNow.AddMinutes(15);
@@ -207,14 +202,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             try
             {                
-                var getResponse = await Client.GetObjectAsync(new GetObjectRequest
+                var getResponse = await _client.GetObjectAsync(new GetObjectRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     Key = key,
                     RequestPayer = RequestPayer.Requester
                 });
-                Assert.AreEqual(HttpStatusCode.OK, getResponse.HttpStatusCode);
-                Assert.AreEqual(date.ToUniversalTime().ToString(), getResponse.ObjectLockRetainUntilDate.ToString());                
+                Assert.Equal(HttpStatusCode.OK, getResponse.HttpStatusCode);
+                Assert.Equal(date.ToUniversalTime().ToString(), getResponse.ObjectLockRetainUntilDate.ToString());                
             }
             finally
             {
@@ -222,7 +217,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestObjectLegalHold_SetUnset()
         {
             var key = await PutObject();
@@ -238,7 +233,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestMultipleObjectDeleteWithBypass()
         {
             var objects = new List<KeyVersion>();
@@ -259,16 +254,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestUploadFileWithTransferUtility()
         {
             var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
-            var transfer = new TransferUtility(Client, transferConfig);
+            var transfer = new TransferUtility(_client, transferConfig);
             var content = new string('a', 7000000);
             var key = UtilityMethods.GenerateName(nameof(ObjectLockConfigurationTests));
             var filePath = Path.Combine(Path.GetTempPath(), key + ".txt");
 
-            // NOTE: In ObjectLockMode.Compliance mode, a protected object version can't be deleted by any user, including the root user (refer https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html#object-lock-retention-modes).
+            // NOTE: In ObjectLockMode.Compliance mode, a protected object version can't be deleted by any user, including the root user.
             var desiredObjectLockLegalHoldStatus = ObjectLockLegalHoldStatus.Off;
             var desiredObjectLockMode = ObjectLockMode.Governance;
             var desiredObjectLockRetainUntilDate = DateTime.UtcNow.Date.AddDays(5);
@@ -280,7 +275,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             await transfer.UploadAsync(new TransferUtilityUploadRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Key = key,
                 FilePath = filePath,
                 ObjectLockLegalHoldStatus = desiredObjectLockLegalHoldStatus,
@@ -288,68 +283,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 ObjectLockRetainUntilDate = desiredObjectLockRetainUntilDate
             });
 
-            using (var getResponse = await Client.GetObjectAsync(bucketName, key))
+            using (var getResponse = await _client.GetObjectAsync(_bucketName, key))
             {
                 var getBody = await new StreamReader(getResponse.ResponseStream).ReadToEndAsync();
-                Assert.AreEqual(content, getBody);
-                Assert.AreEqual(desiredObjectLockLegalHoldStatus, getResponse.ObjectLockLegalHoldStatus);
-                Assert.AreEqual(desiredObjectLockMode, getResponse.ObjectLockMode);
-                Assert.AreEqual(desiredObjectLockRetainUntilDate.Date, getResponse.ObjectLockRetainUntilDate.Value.ToUniversalTime().Date);
+                Assert.Equal(content, getBody);
+                Assert.Equal(desiredObjectLockLegalHoldStatus, getResponse.ObjectLockLegalHoldStatus);
+                Assert.Equal(desiredObjectLockMode, getResponse.ObjectLockMode);
+                Assert.Equal(desiredObjectLockRetainUntilDate.Date, getResponse.ObjectLockRetainUntilDate.Value.ToUniversalTime().Date);
             }
-        }
-
-        private static async Task DeleteBucketObjectsIncludingLocked(IAmazonS3 s3Client, string bucketName)
-        {            
-            var listVersionsRequest = new ListVersionsRequest
-            {
-                BucketName = bucketName
-            };
-
-            ListVersionsResponse listVersionsResponse;
-
-            // Iterate through the objects in the bucket and delete them.
-            do
-            {
-                // List all the versions of all the objects in the bucket.
-                listVersionsResponse = await s3Client.ListVersionsAsync(listVersionsRequest);
-
-                if (listVersionsResponse.Versions.Count == 0)
-                {
-                    // If the bucket has no objects break the loop.
-                    break;
-                }
-
-                var keyVersionList = new List<KeyVersion>(listVersionsResponse.Versions.Count);
-                for (int index = 0; index < listVersionsResponse.Versions.Count; index++)
-                {
-                    keyVersionList.Add(new KeyVersion
-                    {
-                        Key = listVersionsResponse.Versions[index].Key,
-                        VersionId = listVersionsResponse.Versions[index].VersionId
-                    });
-                }
-
-                try
-                {
-                    // Delete the current set of objects.
-                    await s3Client.DeleteObjectsAsync(new DeleteObjectsRequest
-                    {
-                        BucketName = bucketName,
-                        Objects = keyVersionList,                        
-                        BypassGovernanceRetention = true
-                    });
-                }
-                catch
-                {
-                    // Ignore exceptions and continue deleting remaining objects.
-                }
-
-                // Set the markers to get next set of objects from the bucket.
-                listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
-                listVersionsRequest.VersionIdMarker = listVersionsResponse.NextVersionIdMarker;
-            }
-            // Continue listing objects and deleting them until the bucket is empty.
-            while (listVersionsResponse.IsTruncated.Value);
         }
     }
 }

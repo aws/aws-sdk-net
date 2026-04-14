@@ -246,6 +246,7 @@ namespace Amazon.ECS.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [Obsolete("This feature is no longer available.")]
         public List<InferenceAccelerator> InferenceAccelerators
         {
             get { return this._inferenceAccelerators; }

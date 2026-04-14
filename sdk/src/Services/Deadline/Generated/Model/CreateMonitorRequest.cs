@@ -40,6 +40,7 @@ namespace Amazon.Deadline.Model
         private string _clientToken;
         private string _displayName;
         private string _identityCenterInstanceArn;
+        private string _identityCenterRegion;
         private string _roleArn;
         private string _subdomain;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -106,6 +107,26 @@ namespace Amazon.Deadline.Model
         internal bool IsSetIdentityCenterInstanceArn()
         {
             return this._identityCenterInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterRegion. 
+        /// <para>
+        /// The AWS region where IAM Identity Center is enabled. Required when Identity Center
+        /// is in a different region than the monitor.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public string IdentityCenterRegion
+        {
+            get { return this._identityCenterRegion; }
+            set { this._identityCenterRegion = value; }
+        }
+
+        // Check to see if IdentityCenterRegion property is set
+        internal bool IsSetIdentityCenterRegion()
+        {
+            return this._identityCenterRegion != null;
         }
 
         /// <summary>

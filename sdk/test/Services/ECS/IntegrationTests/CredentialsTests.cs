@@ -1,15 +1,14 @@
 ﻿using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
-    [TestClass]
+    [Trait("Category", "General")]
     public class CredentialsTests
     {
-        [TestMethod]
-        [TestCategory("General")]
+        [Fact]
         public void TestCredentialsFile()
         {
             var ic = new ImmutableCredentials("access-key", "secret-key", null);
@@ -28,40 +27,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             sharedCredentialsFile.TryGetProfile(profileName, out credentialProfile);
             var awsCredentials = credentialProfile.GetAWSCredentials(sharedCredentialsFile);
             var rc = awsCredentials.GetCredentials();
-            
-            Assert.AreEqual(ic.SecretKey, rc.SecretKey);
-            Assert.AreEqual(ic.AccessKey, rc.AccessKey);
-            Assert.AreEqual(ic.UseToken, rc.UseToken);
-            Assert.AreEqual(ic.Token, rc.Token);
+
+            Assert.Equal(ic.SecretKey, rc.SecretKey);
+            Assert.Equal(ic.AccessKey, rc.AccessKey);
+            Assert.Equal(ic.UseToken, rc.UseToken);
+            Assert.Equal(ic.Token, rc.Token);
 
             for (int i = 0; i < 4; i++)
             {
                 var shouldHaveToken = (i % 2 == 1);
                 sharedCredentialsFile.TryGetProfile(profileName + i, out credentialProfile);
-                Assert.IsNotNull(credentialProfile);
-
+                Assert.NotNull(credentialProfile);
 
                 rc = credentialProfile.GetAWSCredentials(sharedCredentialsFile).GetCredentials();
-                Assert.IsNotNull(rc.AccessKey);
-                Assert.IsNotNull(rc.SecretKey);
-                Assert.AreEqual(shouldHaveToken, rc.UseToken);
+                Assert.NotNull(rc.AccessKey);
+                Assert.NotNull(rc.SecretKey);
+                Assert.Equal(shouldHaveToken, rc.UseToken);
 
                 if (rc.UseToken)
                 {
-                    Assert.AreEqual(sessionCreds.AccessKey, rc.AccessKey);
-                    Assert.AreEqual(sessionCreds.SecretKey, rc.SecretKey);
-                    Assert.AreEqual(sessionCreds.Token, rc.Token);
+                    Assert.Equal(sessionCreds.AccessKey, rc.AccessKey);
+                    Assert.Equal(sessionCreds.SecretKey, rc.SecretKey);
+                    Assert.Equal(sessionCreds.Token, rc.Token);
                 }
                 else
                 {
-                    Assert.AreEqual(basicCreds.AccessKey, rc.AccessKey);
-                    Assert.AreEqual(basicCreds.SecretKey, rc.SecretKey);
+                    Assert.Equal(basicCreds.AccessKey, rc.AccessKey);
+                    Assert.Equal(basicCreds.SecretKey, rc.SecretKey);
                 }
             }
         }
 
         private static ImmutableCredentials basicCreds = new ImmutableCredentials("=ac0", "sc=1", null);
         private static ImmutableCredentials sessionCreds = new ImmutableCredentials("ac2", "sc3=", "token==");
+
         private static string WriteCreds(string profileName, ImmutableCredentials ic)
         {
             string configPath = Path.GetFullPath("credentials");

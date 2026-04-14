@@ -1,25 +1,30 @@
 ﻿using Amazon.EC2;
 using Amazon.EC2.Model;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 {
-    [TestClass]
-    [TestCategory("EC2")]
-    public class SecurityGroupTests : TestBase<AmazonEC2Client>
+    /// <summary>
+    /// xUnit fixture that creates a VPC and security group once for the lifetime of the
+    /// <see cref="SecurityGroupTests"/> class and tears them down afterwards.
+    /// </summary>
+    public class SecurityGroupFixture : IAsyncLifetime
     {
-        private static readonly string SECURITY_GROUP_NAME = "test-sg";
-        private static string SECURITY_GROUP_ID;
         private static readonly Tag DotNetTag = new Tag("purpose", ".NET SDK integ test");
 
-        [ClassInitialize]
-        public static async Task ClassInitialize(TestContext testContext)
+        public AmazonEC2Client Client { get; private set; }
+        public string SecurityGroupId { get; private set; }
+
+        public async ValueTask InitializeAsync()
         {
+            Client = new AmazonEC2Client();
+            RetryUtilities.ConfigureClient(Client);
+
             var createVpcResponse = await Client.CreateVpcAsync(new CreateVpcRequest
             {
                 CidrBlock = "10.0.0.0/16",
@@ -35,8 +40,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             await UtilityMethods.WaitUntilSuccessAsync(async () =>
             {
-                var describVpcsResponse = await DescribeVpcsByTag();
-                if (describVpcsResponse.Vpcs.Count > 0)
+                var describeVpcsResponse = await DescribeVpcsByTag(Client);
+                if (describeVpcsResponse.Vpcs.Count > 0)
                 {
                     return;
                 }
@@ -46,7 +51,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             var createSecurityGroup = await Client.CreateSecurityGroupAsync(new CreateSecurityGroupRequest
             {
-                GroupName = SECURITY_GROUP_NAME,
+                GroupName = "test-sg",
                 Description = "Test security Group",
                 VpcId = createVpcResponse.Vpc.VpcId,
                 TagSpecifications = new List<TagSpecification>
@@ -61,7 +66,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             await UtilityMethods.WaitUntilSuccessAsync(async () =>
             {
-                var describeSecurityGroupsResponse = await DescribeSecurityGroupsByTag();
+                var describeSecurityGroupsResponse = await DescribeSecurityGroupsByTag(Client);
                 if (describeSecurityGroupsResponse.SecurityGroups.Count > 0)
                 {
                     return;
@@ -70,36 +75,74 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
                 throw new Exception("Security Group not ready yet, will continue waiting.");
             });
 
-            SECURITY_GROUP_ID = createSecurityGroup.GroupId;
+            SecurityGroupId = createSecurityGroup.GroupId;
         }
 
-        [ClassCleanup]
-        public static async Task ClassCleanup()
+        public async ValueTask DisposeAsync()
         {
             await UtilityMethods.WaitUntilSuccessAsync(async () =>
             {
                 // clean up all .net tagged security groups
-                var describeSecurityGroupsResponse = await DescribeSecurityGroupsByTag();
+                var describeSecurityGroupsResponse = await DescribeSecurityGroupsByTag(Client);
                 foreach (var group in describeSecurityGroupsResponse.SecurityGroups)
                 {
-                    Client.DeleteSecurityGroup(new DeleteSecurityGroupRequest
+                    await Client.DeleteSecurityGroupAsync(new DeleteSecurityGroupRequest
                     {
                         GroupId = group.GroupId
                     });
                 }
 
                 // clean up all .net tagged vpcs
-                var describVpcsResponse = await DescribeVpcsByTag();
-                foreach (var vpc in describVpcsResponse.Vpcs)
+                var describeVpcsResponse = await DescribeVpcsByTag(Client);
+                foreach (var vpc in describeVpcsResponse.Vpcs)
                 {
-                    Client.DeleteVpc(new DeleteVpcRequest
+                    await Client.DeleteVpcAsync(new DeleteVpcRequest
                     {
                         VpcId = vpc.VpcId
                     });
                 }
             });
 
-            BaseClean();
+            Client?.Dispose();
+        }
+
+        internal static async Task<DescribeSecurityGroupsResponse> DescribeSecurityGroupsByTag(AmazonEC2Client client)
+        {
+            var describeSecurityGroupRequest = new DescribeSecurityGroupsRequest
+            {
+                Filters = new List<Filter>
+                {
+                    new Filter("tag-value", new List<string> { DotNetTag.Value }),
+                }
+            };
+
+            return await client.DescribeSecurityGroupsAsync(describeSecurityGroupRequest);
+        }
+
+        internal static async Task<DescribeVpcsResponse> DescribeVpcsByTag(AmazonEC2Client client)
+        {
+            var describeVpcsRequest = new DescribeVpcsRequest
+            {
+                Filters = new List<Filter>
+                {
+                    new Filter("tag:" + DotNetTag.Key, new List<string> { DotNetTag.Value })
+                }
+            };
+
+            return await client.DescribeVpcsAsync(describeVpcsRequest);
+        }
+    }
+
+    [Trait("Category", "EC2")]
+    public class SecurityGroupTests : IClassFixture<SecurityGroupFixture>
+    {
+        private readonly AmazonEC2Client _client;
+        private readonly string _securityGroupId;
+
+        public SecurityGroupTests(SecurityGroupFixture fixture)
+        {
+            _client = fixture.Client;
+            _securityGroupId = fixture.SecurityGroupId;
         }
 
         /// <summary>
@@ -109,11 +152,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
         /// Validation is performed to check the updated values appears on Ipv4Ranges property.
         /// 2. A RevokeSecurityGroupEgressRequest operation is perfomed to remove all the IpPermissions added to the security group.
         /// </summary>
-        [TestMethod]
+        [Fact]
         public async Task IpRangeRoundTripTest()
         {
             var describeSecurityGroupsResponse = await DescribeSecurityGroupById();
-            
+
             var testCollection = new List<string>
             {
                 "0.0.0.0/7"
@@ -121,7 +164,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             var authorizeSecurityGroupEgressRequest = new AuthorizeSecurityGroupEgressRequest
             {
-                GroupId = SECURITY_GROUP_ID
+                GroupId = _securityGroupId
             };
 
             var authorizeSecurityGroupEgressPermission = new IpPermission
@@ -136,8 +179,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             };
 
             authorizeSecurityGroupEgressRequest.IpPermissions = new List<IpPermission> { authorizeSecurityGroupEgressPermission };
-            var authorizeSecurityGroupEgressResponse = await Client.AuthorizeSecurityGroupEgressAsync(authorizeSecurityGroupEgressRequest);
-            Assert.IsNotNull(authorizeSecurityGroupEgressResponse);
+            var authorizeSecurityGroupEgressResponse = await _client.AuthorizeSecurityGroupEgressAsync(authorizeSecurityGroupEgressRequest);
+            Assert.NotNull(authorizeSecurityGroupEgressResponse);
 
             await UtilityMethods.WaitUntilSuccessAsync(async () =>
                 describeSecurityGroupsResponse = await DescribeSecurityGroupById()
@@ -145,18 +188,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             var revokeSecurityGroupEgressRequest = new RevokeSecurityGroupEgressRequest
             {
-                GroupId = SECURITY_GROUP_ID,
+                GroupId = _securityGroupId,
                 IpPermissions = new List<IpPermission> { describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress[1] }
             };
 
-            var revokeSecurityGroupIngressResponse = await Client.RevokeSecurityGroupEgressAsync(revokeSecurityGroupEgressRequest);
-            Assert.IsNotNull(revokeSecurityGroupIngressResponse);
+            var revokeSecurityGroupIngressResponse = await _client.RevokeSecurityGroupEgressAsync(revokeSecurityGroupEgressRequest);
+            Assert.NotNull(revokeSecurityGroupIngressResponse);
 
             await UtilityMethods.WaitUntilSuccessAsync(async () =>
             {
                 describeSecurityGroupsResponse = await DescribeSecurityGroupById();
                 var ipEgress = describeSecurityGroupsResponse.SecurityGroups[0].IpPermissionsEgress ?? new List<IpPermission>();
-                Assert.IsFalse(ipEgress
+                Assert.False(ipEgress
                     .Where(p => p.Ipv4Ranges != null && p.Ipv4Ranges.Contains(new IpRange { CidrIp = "0.0.0.0/7", Description = "test" }))
                     .ToList()
                     .Any()
@@ -164,40 +207,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             });
         }
 
-        private static async Task<DescribeSecurityGroupsResponse> DescribeSecurityGroupById()
+        private async Task<DescribeSecurityGroupsResponse> DescribeSecurityGroupById()
         {
             var describeSecurityGroupRequest = new DescribeSecurityGroupsRequest
             {
-                GroupIds = new List<string> { SECURITY_GROUP_ID }
+                GroupIds = new List<string> { _securityGroupId }
             };
 
-            return await Client.DescribeSecurityGroupsAsync(describeSecurityGroupRequest);
-        }
-
-        private static async Task<DescribeSecurityGroupsResponse> DescribeSecurityGroupsByTag()
-        {
-            var describeSecurityGroupRequest = new DescribeSecurityGroupsRequest
-            {
-                Filters = new List<Filter>
-                {
-                    new Filter("tag-value", new List<string> { DotNetTag.Value }),
-                }
-            };
-            
-            return await Client.DescribeSecurityGroupsAsync(describeSecurityGroupRequest);
-        }
-
-        private static async Task<DescribeVpcsResponse> DescribeVpcsByTag()
-        {
-            var describeVpcsRequest = new DescribeVpcsRequest
-            {
-                Filters = new List<Filter>
-                {
-                    new Filter("tag:" +  DotNetTag.Key, new List<string> { DotNetTag.Value })
-                }
-            };
-
-            return await Client.DescribeVpcsAsync(describeVpcsRequest);
+            return await _client.DescribeSecurityGroupsAsync(describeSecurityGroupRequest);
         }
     }
 }

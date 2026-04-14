@@ -79,6 +79,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
         /// 
         /// <returns>The response from the CreateCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -130,6 +133,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the CreateCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -193,6 +199,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -242,6 +251,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1198,6 +1210,9 @@ namespace Amazon.ECS
         /// ECS service event messages</a>. 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
         /// The specified namespace wasn't found.
         /// </exception>
@@ -1272,6 +1287,9 @@ namespace Amazon.ECS
         /// ECS service event messages</a>. 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
         /// The specified namespace wasn't found.
         /// </exception>
@@ -1310,6 +1328,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountSetting service method.</param>
         /// 
         /// <returns>The response from the DeleteAccountSetting service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1341,6 +1362,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeleteAccountSetting service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1372,6 +1396,14 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes service method.</param>
         /// 
         /// <returns>The response from the DeleteAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
@@ -1384,6 +1416,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TargetNotFoundException">
         /// The specified target wasn't found. You can view your available container instances
@@ -1404,6 +1439,14 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeleteAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
@@ -1416,6 +1459,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TargetNotFoundException">
         /// The specified target wasn't found. You can view your available container instances
@@ -1455,6 +1501,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityProvider service method.</param>
         /// 
         /// <returns>The response from the DeleteCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1478,6 +1527,13 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
         /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
+        /// There's already a current Amazon ECS container agent update in progress on the container
+        /// instance that's specified. If the container agent becomes disconnected while it's
+        /// in a transitional stage, such as <c>PENDING</c> or <c>STAGING</c>, the update process
+        /// can get stuck in that state. However, when the agent reconnects, it resumes where
+        /// it stopped previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
         DeleteCapacityProviderResponse DeleteCapacityProvider(DeleteCapacityProviderRequest request);
@@ -1512,6 +1568,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeleteCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1535,6 +1594,13 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
         /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
+        /// There's already a current Amazon ECS container agent update in progress on the container
+        /// instance that's specified. If the container agent becomes disconnected while it's
+        /// in a transitional stage, such as <c>PENDING</c> or <c>STAGING</c>, the update process
+        /// can get stuck in that state. However, when the agent reconnects, it resumes where
+        /// it stopped previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
         Task<DeleteCapacityProviderResponse> DeleteCapacityProviderAsync(DeleteCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1560,6 +1626,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
         /// 
         /// <returns>The response from the DeleteCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1632,6 +1701,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeleteCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2042,6 +2114,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DeleteService service method.</param>
         /// 
         /// <returns>The response from the DeleteService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2103,6 +2178,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeleteService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2301,6 +2379,9 @@ namespace Amazon.ECS
         /// ECS service event messages</a>. 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
@@ -2357,6 +2438,9 @@ namespace Amazon.ECS
         /// ECS service event messages</a>. 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
@@ -2411,6 +2495,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DeregisterContainerInstance service method.</param>
         /// 
         /// <returns>The response from the DeregisterContainerInstance service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2467,6 +2554,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeregisterContainerInstance service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2527,6 +2617,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DeregisterTaskDefinition service method.</param>
         /// 
         /// <returns>The response from the DeregisterTaskDefinition service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2583,6 +2676,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeregisterTaskDefinition service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2614,6 +2710,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityProviders service method.</param>
         /// 
         /// <returns>The response from the DescribeCapacityProviders service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2652,6 +2751,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DescribeCapacityProviders service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2696,6 +2798,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusters service method.</param>
         /// 
         /// <returns>The response from the DescribeClusters service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2733,6 +2838,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DescribeClusters service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2765,6 +2873,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DescribeContainerInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeContainerInstances service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2801,6 +2912,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DescribeContainerInstances service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3522,6 +3636,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DescribeServices service method.</param>
         /// 
         /// <returns>The response from the DescribeServices service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3557,6 +3674,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DescribeServices service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3601,6 +3721,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DescribeTaskDefinition service method.</param>
         /// 
         /// <returns>The response from the DescribeTaskDefinition service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3641,6 +3764,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DescribeTaskDefinition service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3683,6 +3809,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the DescribeTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeTasks service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3729,6 +3858,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DescribeTasks service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4104,6 +4236,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the ListAccountSettings service method.</param>
         /// 
         /// <returns>The response from the ListAccountSettings service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4135,6 +4270,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListAccountSettings service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4171,6 +4309,14 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the ListAttributes service method.</param>
         /// 
         /// <returns>The response from the ListAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
@@ -4183,6 +4329,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
         ListAttributesResponse ListAttributes(ListAttributesRequest request);
@@ -4203,6 +4352,14 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
@@ -4215,6 +4372,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
         Task<ListAttributesResponse> ListAttributesAsync(ListAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4230,6 +4390,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
         /// <returns>The response from the ListClusters service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4261,6 +4424,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListClusters service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4295,6 +4461,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the ListContainerInstances service method.</param>
         /// 
         /// <returns>The response from the ListContainerInstances service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4333,6 +4502,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListContainerInstances service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4625,6 +4797,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -4677,6 +4853,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -4711,6 +4891,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
         /// 
         /// <returns>The response from the ListServices service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4747,6 +4930,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListServices service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4787,6 +4973,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the ListServicesByNamespace service method.</param>
         /// 
         /// <returns>The response from the ListServicesByNamespace service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4826,6 +5015,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListServicesByNamespace service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4860,6 +5052,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4895,6 +5090,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4939,6 +5137,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the ListTaskDefinitionFamilies service method.</param>
         /// 
         /// <returns>The response from the ListTaskDefinitionFamilies service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4979,6 +5180,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListTaskDefinitionFamilies service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5012,6 +5216,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the ListTaskDefinitions service method.</param>
         /// 
         /// <returns>The response from the ListTaskDefinitions service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5045,6 +5252,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListTaskDefinitions service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5083,6 +5293,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the ListTasks service method.</param>
         /// 
         /// <returns>The response from the ListTasks service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5129,6 +5342,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListTasks service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5176,6 +5392,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting service method.</param>
         /// 
         /// <returns>The response from the PutAccountSetting service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5215,6 +5434,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the PutAccountSetting service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5247,6 +5469,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSettingDefault service method.</param>
         /// 
         /// <returns>The response from the PutAccountSettingDefault service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5279,6 +5504,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the PutAccountSettingDefault service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5314,10 +5542,18 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the PutAttributes service method.</param>
         /// 
         /// <returns>The response from the PutAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.AttributeLimitExceededException">
         /// You can apply up to 10 custom attributes for each resource. You can view the attributes
         /// of a resource with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAttributes.html">ListAttributes</a>.
         /// You can remove existing attributes on a resource with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAttributes.html">DeleteAttributes</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -5331,6 +5567,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TargetNotFoundException">
         /// The specified target wasn't found. You can view your available container instances
@@ -5355,10 +5594,18 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the PutAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.AttributeLimitExceededException">
         /// You can apply up to 10 custom attributes for each resource. You can view the attributes
         /// of a resource with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAttributes.html">ListAttributes</a>.
         /// You can remove existing attributes on a resource with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAttributes.html">DeleteAttributes</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -5372,6 +5619,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TargetNotFoundException">
         /// The specified target wasn't found. You can view your available container instances
@@ -5418,6 +5668,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the PutClusterCapacityProviders service method.</param>
         /// 
         /// <returns>The response from the PutClusterCapacityProviders service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5489,6 +5742,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the PutClusterCapacityProviders service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5659,6 +5915,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the RegisterTaskDefinition service method.</param>
         /// 
         /// <returns>The response from the RegisterTaskDefinition service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5672,6 +5931,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -5711,6 +5973,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the RegisterTaskDefinition service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -5724,6 +5989,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -6042,6 +6310,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the StartTask service method.</param>
         /// 
         /// <returns>The response from the StartTask service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6059,6 +6330,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -6104,6 +6378,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the StartTask service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6121,6 +6398,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -6302,6 +6582,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the StopTask service method.</param>
         /// 
         /// <returns>The response from the StopTask service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6363,6 +6646,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the StopTask service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6416,6 +6702,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -6460,6 +6750,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -6489,6 +6783,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6506,6 +6803,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
         /// The specified resource wasn't found.
@@ -6530,6 +6830,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6547,6 +6850,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
         /// The specified resource wasn't found.
@@ -6568,6 +6874,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6606,6 +6915,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6650,6 +6962,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityProvider service method.</param>
         /// 
         /// <returns>The response from the UpdateCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6694,6 +7009,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the UpdateCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6732,6 +7050,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
         /// 
         /// <returns>The response from the UpdateCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6770,6 +7091,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the UpdateCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6808,6 +7132,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSettings service method.</param>
         /// 
         /// <returns>The response from the UpdateClusterSettings service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6828,6 +7155,13 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
+        /// There's already a current Amazon ECS container agent update in progress on the container
+        /// instance that's specified. If the container agent becomes disconnected while it's
+        /// in a transitional stage, such as <c>PENDING</c> or <c>STAGING</c>, the update process
+        /// can get stuck in that state. However, when the agent reconnects, it resumes where
+        /// it stopped previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">REST API Reference for UpdateClusterSettings Operation</seealso>
         UpdateClusterSettingsResponse UpdateClusterSettings(UpdateClusterSettingsRequest request);
@@ -6843,6 +7177,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the UpdateClusterSettings service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6863,6 +7200,13 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
+        /// There's already a current Amazon ECS container agent update in progress on the container
+        /// instance that's specified. If the container agent becomes disconnected while it's
+        /// in a transitional stage, such as <c>PENDING</c> or <c>STAGING</c>, the update process
+        /// can get stuck in that state. However, when the agent reconnects, it resumes where
+        /// it stopped previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">REST API Reference for UpdateClusterSettings Operation</seealso>
         Task<UpdateClusterSettingsResponse> UpdateClusterSettingsAsync(UpdateClusterSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6906,6 +7250,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the UpdateContainerAgent service method.</param>
         /// 
         /// <returns>The response from the UpdateContainerAgent service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -6987,6 +7334,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the UpdateContainerAgent service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -7104,6 +7454,9 @@ namespace Amazon.ECS
         /// <param name="request">Container for the necessary parameters to execute the UpdateContainerInstancesState service method.</param>
         /// 
         /// <returns>The response from the UpdateContainerInstancesState service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -7203,6 +7556,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the UpdateContainerInstancesState service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -8237,6 +8593,9 @@ namespace Amazon.ECS
         /// ECS service event messages</a>. 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
@@ -8292,6 +8651,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.

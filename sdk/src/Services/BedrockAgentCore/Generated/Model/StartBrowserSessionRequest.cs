@@ -66,6 +66,11 @@ namespace Amazon.BedrockAgentCore.Model
     ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_StopBrowserSession.html">StopBrowserSession</a>
     /// 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_InvokeBrowser.html">InvokeBrowser</a>
+    /// 
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class StartBrowserSessionRequest : AmazonBedrockAgentCoreRequest

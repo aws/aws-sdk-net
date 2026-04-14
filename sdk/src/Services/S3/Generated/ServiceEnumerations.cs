@@ -235,6 +235,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly BucketLocationConstraint ApEast1 = new BucketLocationConstraint("ap-east-1");
         /// <summary>
+        /// Constant ApEast2 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint ApEast2 = new BucketLocationConstraint("ap-east-2");
+        /// <summary>
         /// Constant ApNortheast1 for BucketLocationConstraint
         /// </summary>
         public static readonly BucketLocationConstraint ApNortheast1 = new BucketLocationConstraint("ap-northeast-1");
@@ -274,6 +278,14 @@ namespace Amazon.S3
         /// Constant ApSoutheast5 for BucketLocationConstraint
         /// </summary>
         public static readonly BucketLocationConstraint ApSoutheast5 = new BucketLocationConstraint("ap-southeast-5");
+        /// <summary>
+        /// Constant ApSoutheast6 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint ApSoutheast6 = new BucketLocationConstraint("ap-southeast-6");
+        /// <summary>
+        /// Constant ApSoutheast7 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint ApSoutheast7 = new BucketLocationConstraint("ap-southeast-7");
         /// <summary>
         /// Constant CaCentral1 for BucketLocationConstraint
         /// </summary>
@@ -338,6 +350,10 @@ namespace Amazon.S3
         /// Constant MeSouth1 for BucketLocationConstraint
         /// </summary>
         public static readonly BucketLocationConstraint MeSouth1 = new BucketLocationConstraint("me-south-1");
+        /// <summary>
+        /// Constant MxCentral1 for BucketLocationConstraint
+        /// </summary>
+        public static readonly BucketLocationConstraint MxCentral1 = new BucketLocationConstraint("mx-central-1");
         /// <summary>
         /// Constant SaEast1 for BucketLocationConstraint
         /// </summary>

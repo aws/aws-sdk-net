@@ -522,6 +522,7 @@ namespace Amazon.ECS.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<KeyValuePair> Environment
         {
             get { return this._environment; }

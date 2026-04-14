@@ -16,7 +16,6 @@
 using Amazon;
 using Amazon.Polly;
 using Amazon.Polly.Model;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,58 +24,58 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
 {
-    [TestClass]
-    [TestCategory("Polly")]
+    [Trait("Category", "Polly")]
     public class PollyTests
     {
-        [TestMethod]
+        [Fact]
         public async Task HappyCaseAPI()
         {
             using (var client = new AmazonPollyClient(RegionEndpoint.USWest2))
             {
                 var response = await client.SynthesizeSpeechAsync(GetMp3Request());
-                Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
-                Assert.IsTrue(response.AudioStream.ReadByte() > -1);
+                Assert.Equal(HttpStatusCode.OK, response.HttpStatusCode);
+                Assert.True(response.AudioStream.ReadByte() > -1);
             }
         }
 
-        [TestMethod]
+        [Fact]
         public async Task APIWithSpeechMarks()
         {
             using (var client = new AmazonPollyClient(RegionEndpoint.USWest2))
             {
                 var response = await client.SynthesizeSpeechAsync(GetSpeechMarkRequest());
-                Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
+                Assert.Equal(HttpStatusCode.OK, response.HttpStatusCode);
                 using (var streamReader = new StreamReader(response.AudioStream))
                 {
-                    string text = streamReader.ReadToEnd(); // read the stream to the end to make sure it's valid JSON
+                    string text = await streamReader.ReadToEndAsync(); // read the stream to the end to make sure it's valid JSON
                     AssertSpeechMarks(text);
                 }
             }
         }
 
-        [TestMethod]
-        public void HappyCasePresignedUrl()
+        [Fact]
+        public async Task HappyCasePresignedUrl()
         {
-            AssertPreSignedUrl(SynthesizeSpeechUtil.GeneratePresignedUrl(RegionEndpoint.USWest2, GetMp3Request()));
+            await AssertPreSignedUrl(SynthesizeSpeechUtil.GeneratePresignedUrl(RegionEndpoint.USWest2, GetMp3Request()));
         }
 
-        [TestMethod]
-        public void PresignedUrlWithSpeechMarks()
+        [Fact]
+        public async Task PresignedUrlWithSpeechMarks()
         {
-            var data = AssertPreSignedUrl(SynthesizeSpeechUtil.GeneratePresignedUrl(RegionEndpoint.USWest2, GetSpeechMarkRequest()));
+            var data = await AssertPreSignedUrl(SynthesizeSpeechUtil.GeneratePresignedUrl(RegionEndpoint.USWest2, GetSpeechMarkRequest()));
             AssertSpeechMarks(Encoding.UTF8.GetString(data));
         }
 
-        [TestMethod]
-        public void EnsureIsUrlEncoded()
+        [Fact]
+        public async Task EnsureIsUrlEncoded()
         {
             var request = GetMp3Request();
             request.Text = "hello == hello"; // we will get an exception if the == isn't encoded
-            AssertPreSignedUrl(SynthesizeSpeechUtil.GeneratePresignedUrl(RegionEndpoint.USWest2, GetMp3Request()));
+            await AssertPreSignedUrl(SynthesizeSpeechUtil.GeneratePresignedUrl(RegionEndpoint.USWest2, GetMp3Request()));
         }
 
         private static void AssertSpeechMarks(string speechMarksString)
@@ -86,28 +85,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
             {
                 var jsonDoc = JsonDocument.Parse(speechMarksJsonObject);
                 IEnumerable<string> propertyNames = jsonDoc.RootElement.EnumerateObject().Select(x => x.Name);
-                Assert.IsTrue(propertyNames.Contains("time"));
-                Assert.IsTrue(propertyNames.Contains("type"));
-                Assert.IsTrue(propertyNames.Contains("start"));
-                Assert.IsTrue(propertyNames.Contains("end"));
-                Assert.IsTrue(propertyNames.Contains("value"));
+                Assert.Contains("time", propertyNames);
+                Assert.Contains("type", propertyNames);
+                Assert.Contains("start", propertyNames);
+                Assert.Contains("end", propertyNames);
+                Assert.Contains("value", propertyNames);
             }
         }
 
-        private static byte[] AssertPreSignedUrl(string url)
+        private static async Task<byte[]> AssertPreSignedUrl(string url)
         {
-            // download using the PreSigned URL in a totally independent WebClient
-            byte[] data;
-            using (var webClient = new WebClient())
+            // download using the PreSigned URL using HttpClient
+            using (var httpClient = new System.Net.Http.HttpClient())
             {
-                data = webClient.DownloadData(url);
+                var data = await httpClient.GetByteArrayAsync(url);
+
+                // make sure there are no exceptions, and that there's something there
+                Assert.NotNull(data);
+                Assert.True(data.Length > 0);
+
+                return data;
             }
-
-            // make sure there are no exceptions, and that there's something there
-            Assert.IsNotNull(data);
-            Assert.IsTrue(data.Length > 0);
-
-            return data;
         }
 
         private static SynthesizeSpeechRequest GetMp3Request()

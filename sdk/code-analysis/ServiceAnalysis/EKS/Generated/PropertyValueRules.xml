@@ -202,4 +202,8 @@
     <min>0</min>
     <max>63</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.WarmPoolConfig.MinSize</property>
+    <min>0</min>
+  </property-value-rule>
 </property-value-rules>

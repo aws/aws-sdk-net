@@ -80,6 +80,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.HlsOutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("mediaConnectRouterOutputSettings", targetDepth))
+                {
+                    var unmarshaller = MediaConnectRouterOutputSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MediaConnectRouterOutputSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("mediaPackageOutputSettings", targetDepth))
                 {
                     var unmarshaller = MediaPackageOutputSettingsUnmarshaller.Instance;

@@ -34,14 +34,51 @@ namespace Amazon.RTBFabric.Model
     /// </summary>
     public partial class GetOutboundExternalLinkResponse : AmazonWebServiceResponse
     {
+        private LinkAttributes _attributes;
+        private ConnectivityType _connectivityType;
         private DateTime? _createdAt;
+        private List<ModuleConfiguration> _flowModules = AWSConfigs.InitializeCollections ? new List<ModuleConfiguration>() : null;
         private string _gatewayId;
         private string _linkId;
         private LinkLogSettings _logSettings;
+        private List<ModuleConfiguration> _pendingFlowModules = AWSConfigs.InitializeCollections ? new List<ModuleConfiguration>() : null;
         private string _publicEndpoint;
         private LinkStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property Attributes.
+        /// </summary>
+        public LinkAttributes Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectivityType. 
+        /// <para>
+        /// The connectivity type of the link.
+        /// </para>
+        /// </summary>
+        public ConnectivityType ConnectivityType
+        {
+            get { return this._connectivityType; }
+            set { this._connectivityType = value; }
+        }
+
+        // Check to see if ConnectivityType property is set
+        internal bool IsSetConnectivityType()
+        {
+            return this._connectivityType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -62,12 +99,35 @@ namespace Amazon.RTBFabric.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FlowModules. 
+        /// <para>
+        /// The configuration of flow modules.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ModuleConfiguration> FlowModules
+        {
+            get { return this._flowModules; }
+            set { this._flowModules = value; }
+        }
+
+        // Check to see if FlowModules property is set
+        internal bool IsSetFlowModules()
+        {
+            return this._flowModules != null && (this._flowModules.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property GatewayId. 
         /// <para>
         /// The unique identifier of the gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=8, Max=32)]
         public string GatewayId
         {
             get { return this._gatewayId; }
@@ -86,7 +146,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the link.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=6, Max=30)]
         public string LinkId
         {
             get { return this._linkId; }
@@ -100,7 +160,10 @@ namespace Amazon.RTBFabric.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogSettings.
+        /// Gets and sets the property LogSettings. 
+        /// <para>
+        /// Settings for the application logs.
+        /// </para>
         /// </summary>
         public LinkLogSettings LogSettings
         {
@@ -112,6 +175,29 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetLogSettings()
         {
             return this._logSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingFlowModules. 
+        /// <para>
+        /// The configuration of pending flow modules.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ModuleConfiguration> PendingFlowModules
+        {
+            get { return this._pendingFlowModules; }
+            set { this._pendingFlowModules = value; }
+        }
+
+        // Check to see if PendingFlowModules property is set
+        internal bool IsSetPendingFlowModules()
+        {
+            return this._pendingFlowModules != null && (this._pendingFlowModules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -6,11 +6,10 @@ using Amazon.S3Control.Model;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
 using AWSSDK_DotNet.IntegrationTests.Utils;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
@@ -19,6 +18,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     {
         private const int MAX_SPIN_LOOPS = 100;
         private const string TEST_MRAP_NAME = UtilityMethods.SDK_TEST_PREFIX + "-for-mrap-tests";
+
+        private static readonly HttpClient _httpClient = new HttpClient();
 
         public static async Task<string> CreateBucketAsync(IAmazonS3 s3Client, PutBucketRequest bucketRequest)
         {
@@ -171,7 +172,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var asyncRequestArn = (await s3ControlClient.CreateMultiRegionAccessPointAsync(createMrapRequest)).RequestTokenARN;
 
             // Wait until its status is READY
-            await UtilityMethods.WaitUntilSuccessAsync(async () =>
+            return await UtilityMethods.WaitUntilSuccessAsync(async () =>
             {
                 var request = new GetMultiRegionAccessPointRequest
                 {
@@ -191,8 +192,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     throw new Exception("S3 Multi-Region Access Point not ready yet, will continue waiting.");
                 }
             });
-
-            throw new Exception($"{nameof(GetOrCreateTestMRAP)} timed out while creating a new Multi-Region Access Point");
         }
 
         /// <summary>
@@ -232,7 +231,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// </summary>
         /// <param name="client">S3 Client</param>
         /// <param name="bucketName">Bucket whose objects to delete</param>
-        public static async Task DeleteObjects(IAmazonS3 client, string bucketName)
+        /// <param name="bypassGovernanceRetention">
+        /// When true, passes BypassGovernanceRetention=true to DeleteObjects, allowing deletion
+        /// of objects protected by Object Lock governance-mode retention.
+        /// </param>
+        public static async Task DeleteObjects(IAmazonS3 client, string bucketName, bool bypassGovernanceRetention = false)
         {
             var listVersionsRequest = new ListVersionsRequest
             {
@@ -262,11 +265,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
 
                 // Delete the current set of objects.
-                await client.DeleteObjectsAsync(new DeleteObjectsRequest
+                var deleteRequest = new DeleteObjectsRequest
                 {
                     BucketName = bucketName,
                     Objects = keyVersionList
-                });
+                };
+
+                if (bypassGovernanceRetention)
+                {
+                    deleteRequest.BypassGovernanceRetention = true;
+                }
+                await client.DeleteObjectsAsync(deleteRequest);
 
                 // Set the markers to get next set of objects from the bucket.
                 listVersionsRequest.KeyMarker = listVersionsResponse.NextKeyMarker;
@@ -315,7 +324,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             // If we don't have an ok result then spend the normal wait period to wait for eventual consistency.
             Console.WriteLine($"Eventual consistency wait: could not resolve eventual consistency after {MAX_SPIN_LOOPS}. Waiting normally...");
-            var lastWaitSeconds = 240; //4 minute wait.
+            var lastWaitSeconds = 60; //1 minute wait.
             return await UtilityMethods.WaitUntilSuccessAsync(loadFunction, 5, lastWaitSeconds);
         }
 
@@ -349,7 +358,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var s = new StreamReader(response.ResponseStream))
             {
                 var responseContent = await s.ReadToEndAsync();
-                Assert.AreEqual(testContent, responseContent);
+                if (responseContent != testContent)
+                    throw new Exception($"Content mismatch: expected '{testContent}', got '{responseContent}'");
             }
 
             var presignedUrl = await s3Client.GetPreSignedURLAsync(new GetPreSignedUrlRequest
@@ -360,13 +370,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Expires = DateTime.UtcNow + TimeSpan.FromDays(5)
             });
 
-            var httpRequest = WebRequest.Create(presignedUrl);
-            using (var httpResponse = await httpRequest.GetResponseAsync())
-            using (var reader = new StreamReader(httpResponse.GetResponseStream()))
-            {
-                var content = await reader.ReadToEndAsync();
-                Assert.AreEqual(testContent, content);
-            }
+            var content = await _httpClient.GetStringAsync(presignedUrl);
+            if (content != testContent)
+                throw new Exception($"Presigned URL content mismatch: expected '{testContent}', got '{content}'");
         }
     }
 }

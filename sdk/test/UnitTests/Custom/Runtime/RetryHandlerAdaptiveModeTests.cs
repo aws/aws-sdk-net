@@ -351,6 +351,45 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
+        public void VerifyClientSendRateAdjustedWhenRetriesDisabled()
+        {
+            var config = CreateConfig();
+            config.MaxErrorRetry = 0;
+            RunRetryTest((executionContext, retryPolicy) =>
+            {
+                Tester.Reset();
+                Tester.Action = (int callCount) =>
+                {
+                    switch (callCount)
+                    {
+                        case 1:
+                            // Throw a throttling error - even with no retries, the token bucket 
+                            // should still have its rate updated.
+                            throw new AmazonServiceException("Mocked throttling exception", new WebException(), ErrorType.Receiver, "TooManyRequestsException", "TestRequestId", (HttpStatusCode)429);
+                        default:
+                            throw new Exception($"Invalid number of calls ({callCount})");
+                    }
+                };
+
+                var exception = Utils.AssertExceptionExpected<AmazonServiceException>(() =>
+                {
+                    RuntimePipeline.InvokeSync(executionContext);
+                });
+
+                Assert.AreEqual("Mocked throttling exception", exception.Message);
+
+                // Verify no retries were made
+                Assert.AreEqual(0, executionContext.RequestContext.Retries);
+                Assert.AreEqual(1, Tester.CallCount);
+
+                // Even though retries are disabled, the token bucket should have been enabled by the throttling error.
+                Assert.IsTrue(retryPolicy.TokenBucketInstance.IsTokenBucketEnabled);
+            }, config);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
         public void VerifyCUBICCalculations()
         {
             var expectedRates = new double[] { 7.0, 9.64893600966, 10.000030849917364, 
@@ -431,6 +470,7 @@ namespace AWSSDK.UnitTests
         {
             _exponentialBase = 1;
             _exponentialPower = 2;
+            TokenBucket = new MockedTokenBucket();
         }
 
         public static void SetCapacityManagerInstance(CapacityManager capacityManager)
@@ -551,5 +591,11 @@ namespace AWSSDK.UnitTests
         {
             CurrentCapacity = 0;
         }
+
+        /// <summary>
+        /// Exposes the protected Enabled property so tests can verify 
+        /// token bucket state after throttling errors.
+        /// </summary>
+        public bool IsTokenBucketEnabled => Enabled;
     }
 }

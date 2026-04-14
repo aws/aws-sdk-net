@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.AcceptConnectionProposal(Amazon.Interconnect.Model.AcceptConnectionProposalRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.AcceptConnectionProposal(Amazon.Interconnect.Model.AcceptConnectionProposalRequest)" />
+            <member name="T:Amazon.Interconnect.Model.AcceptConnectionProposalRequest" />
+            <member name="T:Amazon.Interconnect.Model.AcceptConnectionProposalResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Accept Connection Proposal"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.CreateConnection(Amazon.Interconnect.Model.CreateConnectionRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.CreateConnection(Amazon.Interconnect.Model.CreateConnectionRequest)" />
+            <member name="T:Amazon.Interconnect.Model.CreateConnectionRequest" />
+            <member name="T:Amazon.Interconnect.Model.CreateConnectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create Connection on specific environment"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.DeleteConnection(Amazon.Interconnect.Model.DeleteConnectionRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.DeleteConnection(Amazon.Interconnect.Model.DeleteConnectionRequest)" />
+            <member name="T:Amazon.Interconnect.Model.DeleteConnectionRequest" />
+            <member name="T:Amazon.Interconnect.Model.DeleteConnectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete Connection"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.DescribeConnectionProposal(Amazon.Interconnect.Model.DescribeConnectionProposalRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.DescribeConnectionProposal(Amazon.Interconnect.Model.DescribeConnectionProposalRequest)" />
+            <member name="T:Amazon.Interconnect.Model.DescribeConnectionProposalRequest" />
+            <member name="T:Amazon.Interconnect.Model.DescribeConnectionProposalResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Describe Connection Proposal"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.GetConnection(Amazon.Interconnect.Model.GetConnectionRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.GetConnection(Amazon.Interconnect.Model.GetConnectionRequest)" />
+            <member name="T:Amazon.Interconnect.Model.GetConnectionRequest" />
+            <member name="T:Amazon.Interconnect.Model.GetConnectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get connection"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.GetEnvironment(Amazon.Interconnect.Model.GetEnvironmentRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.GetEnvironment(Amazon.Interconnect.Model.GetEnvironmentRequest)" />
+            <member name="T:Amazon.Interconnect.Model.GetEnvironmentRequest" />
+            <member name="T:Amazon.Interconnect.Model.GetEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get a specific environment"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.ListAttachPoints(Amazon.Interconnect.Model.ListAttachPointsRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.ListAttachPoints(Amazon.Interconnect.Model.ListAttachPointsRequest)" />
+            <member name="T:Amazon.Interconnect.Model.ListAttachPointsRequest" />
+            <member name="T:Amazon.Interconnect.Model.ListAttachPointsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List Attach Points"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.ListConnections(Amazon.Interconnect.Model.ListConnectionsRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.ListConnections(Amazon.Interconnect.Model.ListConnectionsRequest)" />
+            <member name="T:Amazon.Interconnect.Model.ListConnectionsRequest" />
+            <member name="T:Amazon.Interconnect.Model.ListConnectionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List All Connections"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.ListConnections(Amazon.Interconnect.Model.ListConnectionsRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.ListConnections(Amazon.Interconnect.Model.ListConnectionsRequest)" />
+            <member name="T:Amazon.Interconnect.Model.ListConnectionsRequest" />
+            <member name="T:Amazon.Interconnect.Model.ListConnectionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List Connections in available state"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.ListConnections(Amazon.Interconnect.Model.ListConnectionsRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.ListConnections(Amazon.Interconnect.Model.ListConnectionsRequest)" />
+            <member name="T:Amazon.Interconnect.Model.ListConnectionsRequest" />
+            <member name="T:Amazon.Interconnect.Model.ListConnectionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List Connections on specific Environment"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.ListEnvironments(Amazon.Interconnect.Model.ListEnvironmentsRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.ListEnvironments(Amazon.Interconnect.Model.ListEnvironmentsRequest)" />
+            <member name="T:Amazon.Interconnect.Model.ListEnvironmentsRequest" />
+            <member name="T:Amazon.Interconnect.Model.ListEnvironmentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List All Environments"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.ListTagsForResource(Amazon.Interconnect.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.ListTagsForResource(Amazon.Interconnect.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.Interconnect.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.Interconnect.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List Tags"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.TagResource(Amazon.Interconnect.Model.TagResourceRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.TagResource(Amazon.Interconnect.Model.TagResourceRequest)" />
+            <member name="T:Amazon.Interconnect.Model.TagResourceRequest" />
+            <member name="T:Amazon.Interconnect.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Apply Tags"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.UntagResource(Amazon.Interconnect.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.UntagResource(Amazon.Interconnect.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.Interconnect.Model.UntagResourceRequest" />
+            <member name="T:Amazon.Interconnect.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Remove Tags"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.UpdateConnection(Amazon.Interconnect.Model.UpdateConnectionRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.UpdateConnection(Amazon.Interconnect.Model.UpdateConnectionRequest)" />
+            <member name="T:Amazon.Interconnect.Model.UpdateConnectionRequest" />
+            <member name="T:Amazon.Interconnect.Model.UpdateConnectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update Connection Description"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Interconnect.IAmazonInterconnect.UpdateConnection(Amazon.Interconnect.Model.UpdateConnectionRequest)" />
+            <member name="M:Amazon.Interconnect.AmazonInterconnectClient.UpdateConnection(Amazon.Interconnect.Model.UpdateConnectionRequest)" />
+            <member name="T:Amazon.Interconnect.Model.UpdateConnectionRequest" />
+            <member name="T:Amazon.Interconnect.Model.UpdateConnectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update Connection Bandwidth"
+                    source=".\AWSSDKDocSamples\Interconnect\Interconnect.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+</docs>

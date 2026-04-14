@@ -59,10 +59,47 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartTelemetryEvaluationForOrganizationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ObservabilityAdmin");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/StartTelemetryEvaluationForOrganization";
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllRegions())
+            {
+                context.Writer.WritePropertyName("AllRegions");
+                context.Writer.WriteBooleanValue(publicRequest.AllRegions.Value);
+            }
+
+            if(publicRequest.IsSetRegions())
+            {
+                context.Writer.WritePropertyName("Regions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRegionsListValue in publicRequest.Regions)
+                {
+                        context.Writer.WriteStringValue(publicRequestRegionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
+
 
             return request;
         }

@@ -2571,6 +2571,26 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType Version = new UpdateParamType("Version");
         /// <summary>
+        /// Constant WarmPoolEnabled for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType WarmPoolEnabled = new UpdateParamType("WarmPoolEnabled");
+        /// <summary>
+        /// Constant WarmPoolMaxGroupPreparedCapacity for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType WarmPoolMaxGroupPreparedCapacity = new UpdateParamType("WarmPoolMaxGroupPreparedCapacity");
+        /// <summary>
+        /// Constant WarmPoolMinSize for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType WarmPoolMinSize = new UpdateParamType("WarmPoolMinSize");
+        /// <summary>
+        /// Constant WarmPoolReuseOnScaleIn for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType WarmPoolReuseOnScaleIn = new UpdateParamType("WarmPoolReuseOnScaleIn");
+        /// <summary>
+        /// Constant WarmPoolState for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType WarmPoolState = new UpdateParamType("WarmPoolState");
+        /// <summary>
         /// Constant ZonalShiftConfig for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ZonalShiftConfig = new UpdateParamType("ZonalShiftConfig");
@@ -2826,6 +2846,60 @@ namespace Amazon.EKS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WarmPoolState.
+    /// </summary>
+    public class WarmPoolState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIBERNATED for WarmPoolState
+        /// </summary>
+        public static readonly WarmPoolState HIBERNATED = new WarmPoolState("HIBERNATED");
+        /// <summary>
+        /// Constant RUNNING for WarmPoolState
+        /// </summary>
+        public static readonly WarmPoolState RUNNING = new WarmPoolState("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for WarmPoolState
+        /// </summary>
+        public static readonly WarmPoolState STOPPED = new WarmPoolState("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WarmPoolState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WarmPoolState FindValue(string value)
+        {
+            return FindValue<WarmPoolState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WarmPoolState(string value)
         {
             return FindValue(value);
         }
