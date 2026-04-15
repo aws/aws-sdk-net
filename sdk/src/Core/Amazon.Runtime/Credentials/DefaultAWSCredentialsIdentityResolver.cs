@@ -218,11 +218,11 @@ namespace Amazon.Runtime.Credentials
 
             if (resolvedCredentials != null)
             {
-                // Update the environment snapshot before publishing the credentials via the
-                // volatile write. This avoids a race where a concurrent reader in
-                // TryGetCachedCredentials sees non-null _cachedCredentials but stale
-                // environment state, causing a false "environment changed" detection and
-                // an unnecessary re-resolution attempt.
+                // Clear the cache first so that any concurrent lock-free reader in
+                // TryGetCachedCredentials sees a cache miss and waits for the lock
+                // rather than returning stale credentials while the environment
+                // snapshot is being updated.
+                _cachedCredentials = null;
                 _lastKnownEnvironmentState.UpdateEnvironment();
                 _cachedCredentials = resolvedCredentials;
                 return resolvedCredentials;
