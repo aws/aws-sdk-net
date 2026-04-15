@@ -12,8 +12,6 @@
 
         <VSToolsPath Condition="'$(VSToolsPath)' == ''">C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0</VSToolsPath>
 
-        <SmokeBuild></SmokeBuild>
-
         <!-- perform a release build by default -->
         <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
 
@@ -198,9 +196,9 @@
         <Exec Command="dotnet build -c $(Configuration) --no-incremental $(NetStandardSolutionFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk"/>
     </Target>
 
-    <Target Name="test-sdk" DependsOnTargets="init;build-sdk;build-roslyn-anlyzer-test-and-run;run-smoke-tests;run-unit-tests;run-integ-tests;run-CSM-tests;test-backward-compatibility" />
+    <Target Name="test-sdk" DependsOnTargets="init;build-sdk;build-roslyn-anlyzer-test-and-run;run-unit-tests;run-CSM-tests;test-backward-compatibility" />
 
-    <Target Name="test-sdk-service" DependsOnTargets="init;build-sdk-service;build-roslyn-anlyzer-test-and-run;run-unit-tests-service;run-integ-tests-service;test-backward-compatibility" />
+    <Target Name="test-sdk-service" DependsOnTargets="init;build-sdk-service;build-roslyn-anlyzer-test-and-run;run-unit-tests-service;test-backward-compatibility" />
 
     <Target Name="verify-signed-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="$(VerifySignedSdkArtifacts-DependsOnTargets)">
         <Exec LogStandardErrorAsError="true"
@@ -323,50 +321,12 @@
         <Exec Command="dotnet build -c $(Configuration) AWSSDK.IntegrationTests.%(ServiceName.FileName).NetFramework.csproj /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests" Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests')"/>
     </Target>
 
-    <Target Name="run-integ-tests-service" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'" DependsOnTargets="build-test-wrapper">
-        <MsTestWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\Services\%(ServiceName.FileName)\IntegrationTests\AWSSDK.IntegrationTests.%(ServiceName.FileName).NetFramework.csproj"
-            Configuration="$(Configuration)"
-            Categories="$(IntegCategoriesToTest)"
-            Condition="Exists('..\sdk\test\Services\%(ServiceName.FileName)\IntegrationTests')"
-            TestExecutionProfile="test-runner"/>
-    </Target>
-
-    <Target Name="run-integ-tests" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'" DependsOnTargets="init;build-sdk;">
-        <MsTestWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\IntegrationTests\AWSSDK.IntegrationTests.csproj"
-            Configuration="$(Configuration)"
-            Categories="$(IntegCategoriesToTest)"
-            TestExecutionProfile="test-runner"/>
-
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\NetStandard\IntegrationTests\IntegrationTests.NetStandard.csproj"
-            Configuration="$(Configuration)"
-            Categories="$(IntegCategoriesToTest)"
-            TestExecutionProfile="test-runner"/>
-    </Target>
-
     <Target Name="build-CSM">
         <Exec Command="dotnet restore -f  CSMTest.sln" WorkingDirectory="..\sdk\test\CSMTest"/>
         <Exec Command="dotnet clean -c $(Configuration) CSMTest.sln" WorkingDirectory="..\sdk\test\CSMTest"/>
         <Exec Command="dotnet build -c $(Configuration) --no-incremental CSMTest.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\test\CSMTest"/>
     </Target>
 
-    <Target Name="run-smoke-tests" DependsOnTargets="build-test-wrapper" Condition="'$(ServiceList)'==''">
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\SmokeTests\AWSSDK.SmokeTests.NetFramework.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/>
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\SmokeTests\AWSSDK.SmokeTests.NetStandard.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/>
-    </Target>
     <Target Name="run-CSM-tests" DependsOnTargets="build-CSM;build-test-wrapper;run-CSM-integration-tests;run-CSM-unit-tests"/>
     <Target Name="run-CSM-integration-tests" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
         <Message Text="CSM Corelr"/>
