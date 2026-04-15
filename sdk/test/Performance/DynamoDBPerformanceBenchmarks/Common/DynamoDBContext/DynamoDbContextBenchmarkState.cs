@@ -1,5 +1,7 @@
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Linq.Expressions;
 
 namespace AWSSDK.Benchmarks.MockedDynamoDB;
 
@@ -33,12 +35,21 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
     private Func<Task>? _contextDelete;
     private Func<Task>? _contextDeleteWithOperationConfig;
     private Func<Task>? _contextDeleteWithDeleteConfig;
-    private Func<Task>? _contextDeleteHashKey;
-    private Func<Task>? _contextDeleteHashKeyWithOperationConfig;
-    private Func<Task>? _contextDeleteHashKeyWithDeleteConfig;
     private Func<Task>? _contextDeleteHashKeyRangeKey;
     private Func<Task>? _contextDeleteHashKeyRangeKeyWithOperationConfig;
     private Func<Task>? _contextDeleteHashKeyRangeKeyWithDeleteConfig;
+    private Func<Task>? _contextQuery;
+    private Func<Task>? _contextQueryWithQueryConfig;
+    private Func<Task>? _contextQueryWithOperationConfig;
+    private Func<Task>? _contextQueryWithQueryConditionalQueryConfig;
+    private Func<Task>? _contextQueryWithQueryOperator;
+    private Func<Task>? _contextQueryWithQueryOperatorQueryConfig;
+    private Func<Task>? _contextQueryWithQueryOperatorOperationConfig;
+    private Func<Task>? _contextScan;
+    private Func<Task>? _contextScanWithScanConditionOperationConfig;
+    private Func<Task>? _contextScanWithScanConditionScanConfig;
+    private Func<Task>? _contextScanWithContextExpression;
+    private Func<Task>? _contextScanWithContextExpressionScanConfig;
 
     public DynamoDbContextBenchmarkState(
         BenchmarkItemSize itemSize,
@@ -98,17 +109,35 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
 
     public Task ContextDeleteWithDeleteConfigAsync() => _contextDeleteWithDeleteConfig!();
 
-    public Task ContextDeleteHashKeyAsync() => _contextDeleteHashKey!();
-
-    public Task ContextDeleteHashKeyWithOperationConfigAsync() => _contextDeleteHashKeyWithOperationConfig!();
-
-    public Task ContextDeleteHashKeyWithDeleteConfigAsync() => _contextDeleteHashKeyWithDeleteConfig!();
-
     public Task ContextDeleteHashKeyRangeKeyAsync() => _contextDeleteHashKeyRangeKey!();
 
     public Task ContextDeleteHashKeyRangeKeyWithOperationConfigAsync() => _contextDeleteHashKeyRangeKeyWithOperationConfig!();
 
     public Task ContextDeleteHashKeyRangeKeyWithDeleteConfigAsync() => _contextDeleteHashKeyRangeKeyWithDeleteConfig!();
+
+    public Task ContextQueryAsync() => _contextQuery!();
+
+    public Task ContextQueryWithQueryConfigAsync() => _contextQueryWithQueryConfig!();
+
+    public Task ContextQueryWithOperationConfigAsync() => _contextQueryWithOperationConfig!();
+
+    public Task ContextQueryWithQueryConditionalQueryConfigAsync() => _contextQueryWithQueryConditionalQueryConfig!();
+
+    public Task ContextQueryWithQueryOperatorAsync() => _contextQueryWithQueryOperator!();
+
+    public Task ContextQueryWithQueryOperatorQueryConfigAsync() => _contextQueryWithQueryOperatorQueryConfig!();
+
+    public Task ContextQueryWithQueryOperatorOperationConfigAsync() => _contextQueryWithQueryOperatorOperationConfig!();
+
+    public Task ContextScanAsync() => _contextScan!();
+
+    public Task ContextScanWithScanConditionOperationConfigAsync() => _contextScanWithScanConditionOperationConfig!();
+
+    public Task ContextScanWithScanConditionScanConfigAsync() => _contextScanWithScanConditionScanConfig!();
+
+    public Task ContextScanWithContextExpression() => _contextScanWithContextExpression!();
+
+    public Task ContextScanWithContextExpressionScanCondition() => _contextScanWithContextExpressionScanConfig!();
 
     public Task SeedAsync()
     {
@@ -121,23 +150,42 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
         return _context.SaveAsync(_item.GetType(), _item, saveConfig);
     }
 
-    public Task ContextQueryAsync()
+    private void ConfigureContextDelegates()
     {
-        throw new NotImplementedException();
+        var itemType = GetItemType();
+        var configureMap = new Dictionary<Type, Action>
+        {
+            [typeof(BenchmarkItemMinimal)] = ConfigureContextDelegates<BenchmarkItemMinimal>,
+            [typeof(BenchmarkItemMinimalWithConverter)] = ConfigureContextDelegates<BenchmarkItemMinimalWithConverter>,
+            [typeof(BenchmarkItemStandard)] = ConfigureContextDelegates<BenchmarkItemStandard>,
+            [typeof(BenchmarkItemStandardWithConverter)] = ConfigureContextDelegates<BenchmarkItemStandardWithConverter>,
+            [typeof(BenchmarkItemAdvanced)] = ConfigureContextDelegates<BenchmarkItemAdvanced>,
+            [typeof(BenchmarkItemAdvancedWithConverter)] = ConfigureContextDelegates<BenchmarkItemAdvancedWithConverter>,
+            [typeof(BenchmarkItemPolymorphicFlatten)] = ConfigureContextDelegates<BenchmarkItemPolymorphicFlatten>,
+            [typeof(BenchmarkItemPolymorphicFlattenWithConverter)] = ConfigureContextDelegates<BenchmarkItemPolymorphicFlattenWithConverter>
+        };
+
+        if (!configureMap.TryGetValue(itemType, out var configure))
+        {
+            throw new InvalidOperationException($"Unsupported benchmark item type: {itemType}.");
+        }
+
+        configure();
     }
 
-    public Task ContextScanAsync()
-    {
-        throw new NotImplementedException();
-    }
-
-    protected override void ConfigureContextDelegates<T>()
+    private void ConfigureContextDelegates<T>()
     {
         var typedItem = (T)_item!;
         var operationConfig = new DynamoDBOperationConfig { OverrideTableName = TableName };
         var loadConfig = new LoadConfig { OverrideTableName = TableName };
         var saveConfig = new SaveConfig { OverrideTableName = TableName };
         var deleteConfig = new DeleteConfig { OverrideTableName = TableName };
+        var queryConfig = new QueryConfig { OverrideTableName = TableName };
+        var queryConditional = QueryConditional.HashKeyEqualTo("PartitionKey", PartitionKeyValue);
+        var scanConfig = new ScanConfig { OverrideTableName = TableName };
+        var scanConditions = new List<ScanCondition>()
+        {  new("PartitionKey", ScanOperator.Equal, ["pk"]) };
+        var contextExpression  = CreateContextExpression<T>(typedItem);
 
         //LoadAsync
         _contextLoad = () => _context!.LoadAsync<T>(PartitionKeyValue, SortKeyValue);
@@ -159,12 +207,128 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
         _contextDelete = () => _context!.DeleteAsync(typedItem);
         _contextDeleteWithOperationConfig = () => _context!.DeleteAsync(typedItem, operationConfig);
         _contextDeleteWithDeleteConfig = () => _context!.DeleteAsync(typedItem, deleteConfig);
-        _contextDeleteHashKey = () => _context!.DeleteAsync<T>(PartitionKeyValue);
-        _contextDeleteHashKeyWithOperationConfig = () => _context!.DeleteAsync<T>(PartitionKeyValue, operationConfig);
-        _contextDeleteHashKeyWithDeleteConfig = () => _context!.DeleteAsync<T>(PartitionKeyValue, deleteConfig);
         _contextDeleteHashKeyRangeKey = () => _context!.DeleteAsync<T>(PartitionKeyValue, SortKeyValue);
         _contextDeleteHashKeyRangeKeyWithOperationConfig = () => _context!.DeleteAsync<T>(PartitionKeyValue, SortKeyValue, operationConfig);
         _contextDeleteHashKeyRangeKeyWithDeleteConfig = () => _context!.DeleteAsync<T>(PartitionKeyValue, SortKeyValue, deleteConfig);
+
+        //QueryAsync
+        _contextQuery = () =>
+        {
+            var search = _context!.QueryAsync<T>(PartitionKeyValue);
+            return search.GetNextSetAsync();
+        };
+
+        _contextQueryWithQueryConfig = () =>
+        {
+            var search = _context!.QueryAsync<T>(PartitionKeyValue, queryConfig);
+            return search.GetNextSetAsync();
+        };
+
+        _contextQueryWithOperationConfig = () =>
+        {
+            var search = _context!.QueryAsync<T>(PartitionKeyValue, operationConfig);
+            return search.GetNextSetAsync();
+        };
+        _contextQueryWithQueryConditionalQueryConfig = () =>
+        {
+            var search = _context!.QueryAsync<T>(queryConditional, queryConfig);
+            return search.GetNextSetAsync();
+        };
+        _contextQueryWithQueryOperator = () =>
+        {
+            var search = _context!.QueryAsync<T>("PartitionKey", QueryOperator.Equal, new[] { "pk" });
+            return search.GetNextSetAsync();
+        };
+        _contextQueryWithQueryOperatorQueryConfig = () =>
+        {
+            var search = _context!.QueryAsync<T>("PartitionKey", QueryOperator.Equal, new[] { "pk" }, queryConfig);
+            return search.GetNextSetAsync();
+        };
+        _contextQueryWithQueryOperatorOperationConfig = () =>
+        {
+            var search = _context!.QueryAsync<T>("PartitionKey", QueryOperator.Equal, new[] { "pk" }, operationConfig);
+            return search.GetNextSetAsync();
+        };
+
+        //ScanAsync
+        _contextScan = () =>
+        {
+            var search = _context!.ScanAsync<T>(scanConditions);
+            return search.GetNextSetAsync();
+        };
+
+        _contextScanWithScanConditionOperationConfig = () =>
+        {
+            var search = _context!.ScanAsync<T>(scanConditions, operationConfig);
+            return search.GetNextSetAsync();
+        };
+
+        _contextScanWithScanConditionScanConfig = () =>
+        {
+            var search = _context!.ScanAsync<T>(scanConditions, scanConfig);
+            return search.GetNextSetAsync();
+        };
+
+        _contextScanWithContextExpression= () =>
+        {
+            var search = _context!.ScanAsync<T>(contextExpression);
+            return search.GetNextSetAsync();
+        };
+
+        _contextScanWithContextExpressionScanConfig = () =>
+        {
+            var search = _context!.ScanAsync<T>(contextExpression, scanConfig);
+            return search.GetNextSetAsync();
+        };
+    }
+
+    private ContextExpression CreateContextExpression<T>(T typedItem)
+    {
+        var contextExpression = new ContextExpression();
+        switch (typeof(T))
+        {
+            case Type t when t == typeof(BenchmarkItemMinimalWithConverter):
+                {
+                    contextExpression.SetFilter <BenchmarkItemMinimalWithConverter> (x => x.PartitionKey == "42");
+                    return contextExpression;
+                }
+            case Type t when t == typeof(BenchmarkItemStandardWithConverter):
+                {
+                    contextExpression.SetFilter<BenchmarkItemStandardWithConverter>(x => x.PartitionKey == "42");
+                    return contextExpression;
+                }
+            case Type t when t == typeof(BenchmarkItemAdvancedWithConverter):
+                {
+                    contextExpression.SetFilter<BenchmarkItemAdvancedWithConverter>(x => x.PartitionKey == "42");
+                    return contextExpression;
+                }
+            case Type t when t == typeof(BenchmarkItemPolymorphicFlattenWithConverter):
+                {
+                    contextExpression.SetFilter<BenchmarkItemPolymorphicFlattenWithConverter>(x => x.PartitionKey == "42");
+                    return contextExpression;
+                }
+            case Type t when t == typeof(BenchmarkItemMinimal):
+                {
+                    contextExpression.SetFilter<BenchmarkItemMinimal>(x => x.PartitionKey == "42");
+                    return contextExpression;
+                }
+            case Type t when t == typeof(BenchmarkItemStandard):
+                {
+                    contextExpression.SetFilter<BenchmarkItemStandard>(x => x.PartitionKey == "42");
+                    return contextExpression;
+                }
+            case Type t when t == typeof(BenchmarkItemAdvanced):
+                {
+                    contextExpression.SetFilter<BenchmarkItemAdvanced>(x => x.PartitionKey == "42");
+                    return contextExpression;
+                }
+            case Type t when t == typeof(BenchmarkItemPolymorphicFlatten):
+                {
+                    contextExpression.SetFilter<BenchmarkItemPolymorphicFlatten>(x => x.PartitionKey == "42");
+                    return contextExpression;
+                }
+            default: throw new InvalidOperationException($"Unsupported benchmark item type: {typeof(T)}."); ;
+        }
     }
 
     private object CreateItem()
