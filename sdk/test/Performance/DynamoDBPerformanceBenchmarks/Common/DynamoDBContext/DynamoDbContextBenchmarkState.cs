@@ -76,7 +76,7 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
 
         _item = CreateItem();
 
-        ConfigureContextDelegates();
+        ConfigureContextDelegates(_converterUsage, _annotationStyle);
     }
 
     public Task ContextLoadAsync() => _contextLoad!();
@@ -333,7 +333,7 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
 
     private object CreateItem()
     {
-        var itemType = GetItemType();
+        var itemType = GetItemType(_converterUsage, _annotationStyle);
         var item = Activator.CreateInstance(itemType) ?? throw new InvalidOperationException("Failed to create benchmark item.");
         var payload = CreatePayload();
         var nested = _objectComplexity == BenchmarkObjectComplexity.Nested
@@ -389,18 +389,6 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
     {
         var property = item.GetType().GetProperty(name, System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
         property?.SetValue(item, value);
-    }
-
-    private Type GetItemType()
-    {
-        var usesConverter = _converterUsage != BenchmarkConverterUsage.Default;
-        return _annotationStyle switch
-        {
-            BenchmarkAnnotationStyle.Minimal => usesConverter ? typeof(BenchmarkItemMinimalWithConverter) : typeof(BenchmarkItemMinimal),
-            BenchmarkAnnotationStyle.Standard => usesConverter ? typeof(BenchmarkItemStandardWithConverter) : typeof(BenchmarkItemStandard),
-            BenchmarkAnnotationStyle.Advanced => usesConverter ? typeof(BenchmarkItemAdvancedWithConverter) : typeof(BenchmarkItemAdvanced),
-            _ => usesConverter ? typeof(BenchmarkItemPolymorphicFlattenWithConverter) : typeof(BenchmarkItemPolymorphicFlatten)
-        };
     }
 
 }
