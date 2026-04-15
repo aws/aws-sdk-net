@@ -358,7 +358,7 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
 
     private string CreatePayload()
     {
-        var size = _itemSize == BenchmarkItemSize.Small ? 32 : 2048;
+        var size = _itemSize == BenchmarkItemSize.Small ? 32 : 1024;
         return new string('a', size);
     }
 

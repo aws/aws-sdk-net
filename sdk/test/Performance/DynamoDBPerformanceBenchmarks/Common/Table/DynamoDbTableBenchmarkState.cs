@@ -17,6 +17,7 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
     private readonly BenchmarkAnnotationStyle _annotationStyle = BenchmarkAnnotationStyle.Standard;
 
     private Amazon.DynamoDBv2.DocumentModel.Table? _table;
+    private Document _document;
 
     private Func<Task>? _tableDeleteItemAsync;
     private Func<Task>? _tableDeleteDocumentAsync;
@@ -65,6 +66,7 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
         var client = SetupClient(_itemSize, _attributeCount, _annotationStyle, _objectComplexity, runtimeOptions.ClientFactory);
 
         _table = runtimeOptions.TableFactory(client, TableName);
+        _document = CreateDocument();
 
         ConfigureContextDelegates(_converterUsage, _annotationStyle);
     }
@@ -73,29 +75,42 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
     {
         var _dictionaryKey = new Dictionary<string, DynamoDBEntry>()
         {
-            ["pk"] = PartitionKeyValue,
-            ["sk"] = SortKeyValue
+            ["PartitionKey"] = PartitionKeyValue,
+            ["SortKey"] = SortKeyValue
         };
-        var document = CreateDocument();
-        var tableQueryFilter = CreateTableQueryFilter();
+        
         var tableScanFilter = CreateTableScanFilter();
-        var tableExpression = CreateExpression();
+        var scanFilterExpression = CreateScanFilterExpression();
+        var tableQueryFilter = CreateTableQueryFilter();
+        var queryKeyExpression = CreateQueryKeyExpression();
+        var queryFilterExpression = CreateQueryFilterExpression();
 
         var deleteConfig = new DeleteItemOperationConfig() { ReturnValues = ReturnValues.AllOldAttributes};
         var deleteRequest = new DeleteItemDocumentOperationRequest() { Key = _dictionaryKey, ReturnValues = ReturnValues.AllOldAttributes };
         var getItemConfig = new GetItemOperationConfig() { ConsistentRead = true };
         var getItemRequest = new GetItemDocumentOperationRequest() { Key = _dictionaryKey };
         var putItemConfig = new PutItemOperationConfig() { ReturnValues = ReturnValues.AllNewAttributes };
-        var putItemRequest = new PutItemDocumentOperationRequest() { Document = document };
-        var queryConfig = new QueryOperationConfig() { Filter = tableQueryFilter };
-        var queryRequest = new QueryDocumentOperationRequest() { ProjectionExpression = tableExpression };
-        var scanConfig = new ScanOperationConfig() { Filter = tableScanFilter };
-        var scanRequest = new ScanDocumentOperationRequest() { ProjectionExpression = tableExpression };
+        var putItemRequest = new PutItemDocumentOperationRequest() { Document = _document };
+        var queryConfig = new QueryOperationConfig
+        {
+            KeyExpression = queryKeyExpression,
+            FilterExpression = queryFilterExpression
+        };
+        var queryRequest = new QueryDocumentOperationRequest() 
+        { 
+            KeyConditionExpression = queryKeyExpression,
+            FilterExpression = queryFilterExpression
+        };
+        var scanConfig = new ScanOperationConfig
+        {
+            FilterExpression = scanFilterExpression
+        };
+        var scanRequest = new ScanDocumentOperationRequest() { ProjectionExpression = scanFilterExpression };
 
         //delete
         _tableDeleteItemAsync = () => _table!.DeleteItemAsync(PartitionKeyValue, SortKeyValue);
-        _tableDeleteDocumentAsync = () => _table!.DeleteItemAsync(document);
-        _tableDeleteDocumentWithOperationConfigAsync = () => _table!.DeleteItemAsync(document, deleteConfig);
+        _tableDeleteDocumentAsync = () => _table!.DeleteItemAsync(_document);
+        _tableDeleteDocumentWithOperationConfigAsync = () => _table!.DeleteItemAsync(_document, deleteConfig);
         _tableDeleteHashKeyRangeKeyWithOperationConfigAsync = () => _table!.DeleteItemAsync(PartitionKeyValue, SortKeyValue, deleteConfig);
         _tableDeleteWithOperationRequest = () => _table!.DeleteItemAsync(deleteRequest);
         _tableDeteleDynamoDbEntry = () => _table!.DeleteItemAsync(_dictionaryKey);
@@ -109,8 +124,8 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
         _tableGetDynamoDbEntryWithOperationConfigAsync = () => _table!.GetItemAsync(_dictionaryKey, getItemConfig);
 
         //put item
-        _tablePutItemAsync = () => _table!.PutItemAsync(document!);
-        _tablePutItemWithOperationConfigAsync = () => _table!.PutItemAsync(document!, putItemConfig);
+        _tablePutItemAsync = () => _table!.PutItemAsync(_document!);
+        _tablePutItemWithOperationConfigAsync = () => _table!.PutItemAsync(_document!, putItemConfig);
         _tablePutItemWithOperationRequestAsync = () => _table!.PutItemAsync(putItemRequest);
 
         //query
@@ -121,7 +136,14 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
         };
         _tableQueryWithExpressionAsync = () =>
         {
-            var search = _table!.Query(PartitionKeyValue, tableExpression);
+            var search = _table!.Query(PartitionKeyValue, new Expression
+            {
+                ExpressionStatement = "NumericValue = :P0",
+                ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>
+                {
+                    [":P0"] = 42
+                }
+            });
             return search.GetNextSetAsync();
         };
         _tableQueryWithFilterAsync = () =>
@@ -148,7 +170,7 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
         };
         _tableScanWithExpressionAsync = () =>
         {
-            var search = _table!.Scan(tableExpression);
+            var search = _table!.Scan(scanFilterExpression);
             return search.GetNextSetAsync();
         };
         _tableScanWithOperationConfigAsync = () =>
@@ -163,7 +185,7 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
         };
     }
 
-    // Delete _tableDeleteItemAsync!();
+    // Delete item;
     public Task TableDeleteItemAsync() => _tableDeleteItemAsync!();
 
     public Task TableDeleteDocumentAsync() => _tableDeleteDocumentAsync!();
@@ -214,54 +236,117 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
     public Task TableScanWithOperationConfigAsync() => _tableScanWithOperationConfigAsync!();
     public Task TableScanWithOperationRequestAsync() => _tableScanWithOperationRequestAsync!();
 
-    private Expression CreateExpression()
+    public Task SeedAsync()
     {
-        var expression = new Expression();
-        if (_expressionStyle == BenchmarkExpressionStyle.None)
+        if (_table == null || _table == null)
         {
-            return expression;
+            throw new InvalidOperationException("State is not initialized.");
         }
 
-        expression.ExpressionStatement = "#P0";
-        expression.ExpressionAttributeNames = new Dictionary<string, string>()
+        return _table.PutItemAsync(_document);
+    }
+
+    private Expression CreateScanFilterExpression()
+    {
+        var parts = new List<string>();
+        var values = new Dictionary<string, DynamoDBEntry>();
+
+        parts.Add("PartitionKey = :pk");
+        values[":pk"] = PartitionKeyValue;
+
+        if (_expressionStyle != BenchmarkExpressionStyle.None)
         {
-            {"#P0", "Payload" }
-        };
+            parts.Add("Renamed = :P0");
+            values[":P0"] = "renamed";
+        }
+
         if (_expressionStyle == BenchmarkExpressionStyle.Compound)
         {
-            expression.ExpressionStatement += ", #P1";
-            expression.ExpressionAttributeNames.Add("#P1", "NumericValue");
+            parts.Add("NumericValue > :P1");
+            values[":P1"] = 1;
         }
 
-        return expression;
+        return new Expression
+        {
+            ExpressionStatement = string.Join(" AND ", parts),
+            ExpressionAttributeValues = values
+        };
+    }
+
+    private Expression CreateQueryKeyExpression()
+    {
+        var keyExpression = new Expression
+        {
+            ExpressionStatement = "PartitionKey = :pk",
+            ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>
+            {
+                [":pk"] = PartitionKeyValue
+            }
+        };
+        return keyExpression;
+    }
+
+    private Expression CreateQueryFilterExpression()
+    {
+        var parts = new List<string>();
+        var values = new Dictionary<string, DynamoDBEntry>();
+
+        parts.Add("Flag = :P0");
+        values[":P0"] = true;
+
+        if (_expressionStyle != BenchmarkExpressionStyle.None)
+        {
+            parts.Add("Renamed = :P1");
+            values[":P1"] = "renamed";
+        }
+
+        if (_expressionStyle == BenchmarkExpressionStyle.Compound)
+        {
+            parts.Add("NumericValue > :P2");
+            values[":P2"] = 1;
+        }
+
+        return new Expression
+        {
+            ExpressionStatement = string.Join(" AND ", parts),
+            ExpressionAttributeValues = values
+        };
     }
 
     private QueryFilter CreateTableQueryFilter()
     {
-        var filter = new QueryFilter();
+        var filter = new QueryFilter("PartitionKey", QueryOperator.Equal, PartitionKeyValue);
         if (_expressionStyle == BenchmarkExpressionStyle.None)
         {
             return filter;
         }
 
-        filter.AddCondition("Payload", QueryOperator.Equal, "payload");
+        if (_expressionStyle != BenchmarkExpressionStyle.None)
+        {
+            filter.AddCondition("Renamed", QueryOperator.Equal, "renamed");
+        }
+
         if (_expressionStyle == BenchmarkExpressionStyle.Compound)
         {
             filter.AddCondition("NumericValue", QueryOperator.GreaterThan, 1);
         }
-
-        return filter;
+            return filter;
     }
 
     private ScanFilter CreateTableScanFilter()
     {
         var filter = new ScanFilter();
+        filter.AddCondition("PartitionKey", ScanOperator.Equal, PartitionKeyValue);
         if (_expressionStyle == BenchmarkExpressionStyle.None)
         {
             return filter;
         }
 
-        filter.AddCondition("Payload", ScanOperator.Equal, "payload");
+        if (_expressionStyle != BenchmarkExpressionStyle.None)
+        {
+            filter.AddCondition("Renamed", ScanOperator.Equal, "renamed");
+        }
+
         if (_expressionStyle == BenchmarkExpressionStyle.Compound)
         {
             filter.AddCondition("NumericValue", ScanOperator.GreaterThan, 1);
@@ -274,21 +359,21 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
     {
         var attributes = CreateAttributes();
         var payload = CreatePayload();
+
         var document = new Document
         {
-            ["pk"] = PartitionKeyValue,
-            ["sk"] = SortKeyValue,
+            ["PartitionKey"] = PartitionKeyValue,
+            ["SortKey"] = SortKeyValue,
             ["Payload"] = payload,
             ["NumericValue"] = 42,
             ["Flag"] = true,
             ["Timestamp"] = DateTime.UnixEpoch,
             ["Renamed"] = "renamed",
+            ["Optional"] = _annotationStyle == BenchmarkAnnotationStyle.Advanced ? null : "optional",
             ["Status"] = BenchmarkStatus.Active.ToString(),
             ["Version"] = 1,
-            ["Attributes"] = CreateAttributeDocument(attributes)
+            ["Attributes"] = CreateAttributeDocument(attributes),
         };
-
-        document["Optional"] = "optional";
 
         if (_objectComplexity == BenchmarkObjectComplexity.Nested)
         {
@@ -297,6 +382,20 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
                 ["DetailOne"] = payload,
                 ["DetailTwo"] = payload,
                 ["DetailThree"] = payload
+            };
+        }
+
+        if (_annotationStyle == BenchmarkAnnotationStyle.PolymorphicFlatten)
+        {
+            document["Flattened"] = new Document
+            {
+                ["FlatOne"] = payload,
+                ["FlatTwo"] = payload,
+            };
+            document["Polymorphic"] = new Document
+            {
+                ["BaseDetail"] = payload,
+                ["AlphaDetail"] = payload,
             };
         }
 
@@ -329,7 +428,7 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
 
     private string CreatePayload()
     {
-        var size = _itemSize == BenchmarkItemSize.Small ? 32 : 2048;
+        var size = _itemSize == BenchmarkItemSize.Small ? 32 : 1024;
         return new string('a', size);
     }
 }
