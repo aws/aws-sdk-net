@@ -111,7 +111,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' != 'net472' And '$(TargetFramework)' != 'netstandard2.0' And '$(TargetFramework)' != 'netcoreapp3.1' And '$(TargetFramework)' != 'net8.0'">
     <Features>$(Features);runtime-async=on</Features>
-	<EnablePreviewFeatures>true</EnablePreviewFeatures>
   </PropertyGroup>
 <#
 
