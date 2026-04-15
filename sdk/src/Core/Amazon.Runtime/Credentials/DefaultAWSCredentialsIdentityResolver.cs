@@ -108,44 +108,39 @@ namespace Amazon.Runtime.Credentials
 
         public AWSCredentials ResolveIdentity(IClientConfig clientConfig)
         {
-            var profile = clientConfig?.Profile;
-            if (!string.IsNullOrEmpty(profile?.Name))
-            {
-                var source = new CredentialProfileStoreChain(profile.Location);
-                if (source.TryGetProfile(profile.Name, out CredentialProfile storedProfile))
-                {
-                    return storedProfile.GetAWSCredentials(source, true);
-                }
-
-                throw new AmazonClientException($"Unable to find the \"{profile.Name}\" profile specified in the client configuration.");
-            }
+            var profileCredentials = TryGetProfileCredentials(clientConfig);
+            if (profileCredentials != null) return profileCredentials;
 
             return InternalGetCredentials();
         }
 
-        Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken) =>
-            InternalResolveIdentityAsync(clientConfig, cancellationToken);
+        async Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken) =>
+            await ResolveIdentityAsync(clientConfig, cancellationToken).ConfigureAwait(false);
 
         public async Task<AWSCredentials> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default)
         {
-            var profile = clientConfig?.Profile;
-            if (!string.IsNullOrEmpty(profile?.Name))
-            {
-                var source = new CredentialProfileStoreChain(profile.Location);
-                if (source.TryGetProfile(profile.Name, out CredentialProfile storedProfile))
-                {
-                    return storedProfile.GetAWSCredentials(source, true);
-                }
-
-                throw new AmazonClientException($"Unable to find the \"{profile.Name}\" profile specified in the client configuration.");
-            }
+            var profileCredentials = TryGetProfileCredentials(clientConfig);
+            if (profileCredentials != null) return profileCredentials;
 
             return await InternalGetCredentialsAsync(cancellationToken).ConfigureAwait(false);
         }
 
-        private async Task<BaseIdentity> InternalResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken)
+        /// <summary>
+        /// Resolves credentials from the profile specified in <paramref name="clientConfig"/>, if any.
+        /// Returns null if no profile name is configured, allowing the caller to fall back to the credential chain.
+        /// </summary>
+        private static AWSCredentials TryGetProfileCredentials(IClientConfig clientConfig)
         {
-            return await ResolveIdentityAsync(clientConfig, cancellationToken).ConfigureAwait(false);
+            var profile = clientConfig?.Profile;
+            if (string.IsNullOrEmpty(profile?.Name)) return null;
+
+            var source = new CredentialProfileStoreChain(profile.Location);
+            if (source.TryGetProfile(profile.Name, out CredentialProfile storedProfile))
+            {
+                return storedProfile.GetAWSCredentials(source, true);
+            }
+
+            throw new AmazonClientException($"Unable to find the \"{profile.Name}\" profile specified in the client configuration.");
         }
 
         /// <summary>
@@ -153,14 +148,12 @@ namespace Amazon.Runtime.Credentials
         /// Returns the cached credentials if they exist and the environment hasn't changed,
         /// otherwise returns null to indicate that credentials need to be resolved.
         /// </summary>
-        private AWSCredentials TryGetCachedCredentials(out bool hasEnvironmentChanged)
+        private AWSCredentials TryGetCachedCredentials()
         {
-            hasEnvironmentChanged = false;
             var cached = _cachedCredentials;
             if (cached != null)
             {
-                hasEnvironmentChanged = _lastKnownEnvironmentState.HasEnvironmentChanged();
-                if (!hasEnvironmentChanged)
+                if (!_lastKnownEnvironmentState.HasEnvironmentChanged())
                 {
                     return cached;
                 }
@@ -251,7 +244,7 @@ namespace Amazon.Runtime.Credentials
         private AWSCredentials InternalGetCredentials()
         {
             // Fast path: return cached credentials without acquiring the lock.
-            var cached = TryGetCachedCredentials(out _);
+            var cached = TryGetCachedCredentials();
             if (cached != null)
             {
                 return cached;
@@ -262,9 +255,7 @@ namespace Amazon.Runtime.Credentials
             try
             {
                 // Re-check with fresh environment state after acquiring the lock.
-                // We discard the pre-lock hasEnvironmentChanged because the environment
-                // may have changed while we were waiting on the semaphore.
-                cached = TryGetCachedCredentials(out _);
+                cached = TryGetCachedCredentials();
                 if (cached != null)
                 {
                     return cached;
@@ -288,7 +279,7 @@ namespace Amazon.Runtime.Credentials
         private async Task<AWSCredentials> InternalGetCredentialsAsync(CancellationToken cancellationToken)
         {
             // Fast path: return cached credentials without acquiring the lock.
-            var cached = TryGetCachedCredentials(out _);
+            var cached = TryGetCachedCredentials();
             if (cached != null)
             {
                 return cached;
@@ -299,9 +290,7 @@ namespace Amazon.Runtime.Credentials
             try
             {
                 // Re-check with fresh environment state after acquiring the lock.
-                // We discard the pre-lock hasEnvironmentChanged because the environment
-                // may have changed while we were waiting on the semaphore.
-                cached = TryGetCachedCredentials(out _);
+                cached = TryGetCachedCredentials();
                 if (cached != null)
                 {
                     return cached;
