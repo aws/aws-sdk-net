@@ -106,12 +106,25 @@ namespace Amazon.Runtime.Credentials
         BaseIdentity IIdentityResolver.ResolveIdentity(IClientConfig clientConfig) 
             => ResolveIdentity(clientConfig);
 
+        /// <summary>
+        /// Resolves the identity using no cancellation token. If a network call is made during credential
+        /// resolution (e.g. EC2 instance metadata) and hangs, this overload will block indefinitely.
+        /// Use <see cref="ResolveIdentity(IClientConfig, CancellationToken)"/> with a timeout-bound
+        /// cancellation token to avoid this.
+        /// </summary>
         public AWSCredentials ResolveIdentity(IClientConfig clientConfig)
+            => ResolveIdentity(clientConfig, CancellationToken.None);
+
+        /// <summary>
+        /// Resolves the identity using the provided <paramref name="cancellationToken"/>. Pass a token
+        /// with a timeout to avoid blocking indefinitely if a network call during credential resolution hangs.
+        /// </summary>
+        public AWSCredentials ResolveIdentity(IClientConfig clientConfig, CancellationToken cancellationToken)
         {
             var profileCredentials = TryGetProfileCredentials(clientConfig);
             if (profileCredentials != null) return profileCredentials;
 
-            return InternalGetCredentials();
+            return InternalGetCredentials(cancellationToken);
         }
 
         async Task<BaseIdentity> IIdentityResolver.ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken) =>
@@ -241,7 +254,7 @@ namespace Amazon.Runtime.Credentials
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "We need to catch all exceptions to be able to move to the next generator.")]
-        private AWSCredentials InternalGetCredentials()
+        private AWSCredentials InternalGetCredentials(CancellationToken cancellationToken)
         {
             // Fast path: return cached credentials without acquiring the lock.
             var cached = TryGetCachedCredentials();
@@ -251,10 +264,9 @@ namespace Amazon.Runtime.Credentials
             }
 
             // Slow path: acquire the lock synchronously so only one thread walks the credential chain.
-            _credentialResolutionLock.Wait();
+            _credentialResolutionLock.Wait(cancellationToken);
             try
             {
-                // Re-check with fresh environment state after acquiring the lock.
                 cached = TryGetCachedCredentials();
                 if (cached != null)
                 {
@@ -289,7 +301,6 @@ namespace Amazon.Runtime.Credentials
             await _credentialResolutionLock.WaitAsync(cancellationToken).ConfigureAwait(false);
             try
             {
-                // Re-check with fresh environment state after acquiring the lock.
                 cached = TryGetCachedCredentials();
                 if (cached != null)
                 {
