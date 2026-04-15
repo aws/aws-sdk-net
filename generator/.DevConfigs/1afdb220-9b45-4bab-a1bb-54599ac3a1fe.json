@@ -1,6 +1,6 @@
 {
   "core": {
-    "updateMinimum": true,
+    "updateMinimum": false,
     "type": "patch",
     "changeLogMessages": [
       "Update docs on GetCredentials and GetCredentialsAsync to clarify background refresh behavior"
