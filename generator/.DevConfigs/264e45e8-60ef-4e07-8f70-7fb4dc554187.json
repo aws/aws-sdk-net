@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Replace legacy parameter Expected with ConditionExpression in DeleteItem and DeleteItemAsync flow"
+      ]
+    }
+  ]
+}

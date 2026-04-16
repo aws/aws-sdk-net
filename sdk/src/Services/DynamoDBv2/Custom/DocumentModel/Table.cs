@@ -1755,13 +1755,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 
-        internal Document DeleteHelper(DeleteItemDocumentOperationRequest request)
+        internal Document DeleteHelper(BaseDeleteItemDocumentOperationRequest request)
         {
             var pipeline = new DeleteItemPipeline(this);
             return pipeline.ExecuteSync(request);
         }
 
-        internal async Task<Document> DeleteHelperAsync(DeleteItemDocumentOperationRequest request, CancellationToken cancellationToken)
+        internal async Task<Document> DeleteHelperAsync(BaseDeleteItemDocumentOperationRequest request, CancellationToken cancellationToken)
         {
             var pipeline = new DeleteItemPipeline(this);
             return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);

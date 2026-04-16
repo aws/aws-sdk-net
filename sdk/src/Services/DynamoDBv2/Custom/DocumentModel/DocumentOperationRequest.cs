@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Amazon.DynamoDBv2.Model;
+using System;
 using System.Collections.Generic;
 
 namespace Amazon.DynamoDBv2.DocumentModel
@@ -269,13 +270,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// Legacy parameters such as Expected are not supported.
     /// Use ConditionalExpression instead.
     /// </summary>
-    public class DeleteItemDocumentOperationRequest : DocumentOperationRequest
+    public class DeleteItemDocumentOperationRequest : BaseDeleteItemDocumentOperationRequest
     {
         /// <summary>
         /// Gets or sets the key identifying the item in the table.
         /// </summary>
         public IDictionary<string, DynamoDBEntry> Key { get; set; }
+    }
 
+    /// <summary>
+    /// Represents a request to delete an item from a DynamoDB table using the Document Model.
+    /// This class introduces a modern expression-based API that replaces legacy parameter-based approaches.
+    /// Legacy parameters such as Expected are not supported.
+    /// Use ConditionalExpression instead.
+    /// </summary>
+    public class BaseDeleteItemDocumentOperationRequest : DocumentOperationRequest
+    {
         /// <summary>
         /// Gets or sets the conditional expression specifying when the item should be deleted.
         /// </summary>
