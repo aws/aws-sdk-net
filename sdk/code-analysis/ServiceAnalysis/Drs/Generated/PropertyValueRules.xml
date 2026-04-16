@@ -88,7 +88,7 @@
     <property>Amazon.Drs.Model.CreateSourceNetworkRequest.OriginRegion</property>
     <min>0</min>
     <max>255</max>
-    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|eusc|sa|af|me|il)-([a-z]{2}-)?(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateSourceNetworkRequest.VpcID</property>
@@ -893,7 +893,7 @@
     <property>Amazon.Drs.Model.DataReplicationInfo.StagingAvailabilityZone</property>
     <min>0</min>
     <max>255</max>
-    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|eusc|sa|af|me|il)-([a-z]{2}-)?(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DataReplicationInfo.StagingOutpostArn</property>
@@ -968,7 +968,7 @@
     <property>Amazon.Drs.Model.DescribeSourceNetworksRequestFilters.OriginRegion</property>
     <min>0</min>
     <max>255</max>
-    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|eusc|sa|af|me|il)-([a-z]{2}-)?(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DescribeSourceServersRequestFilters.HardwareId</property>
@@ -1262,7 +1262,7 @@
     <property>Amazon.Drs.Model.RecoveryInstance.OriginAvailabilityZone</property>
     <min>0</min>
     <max>255</max>
-    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|eusc|sa|af|me|il)-([a-z]{2}-)?(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.PointInTimeSnapshotDateTime</property>
@@ -1309,7 +1309,7 @@
     <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationInfo.StagingAvailabilityZone</property>
     <min>0</min>
     <max>255</max>
-    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|eusc|sa|af|me|il)-([a-z]{2}-)?(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationInfo.StagingOutpostArn</property>
@@ -1503,13 +1503,13 @@
     <property>Amazon.Drs.Model.SourceCloudProperties.OriginAvailabilityZone</property>
     <min>0</min>
     <max>255</max>
-    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|eusc|sa|af|me|il)-([a-z]{2}-)?(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceCloudProperties.OriginRegion</property>
     <min>0</min>
     <max>255</max>
-    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|eusc|sa|af|me|il)-([a-z]{2}-)?(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceCloudProperties.SourceOutpostArn</property>
@@ -1556,7 +1556,7 @@
     <property>Amazon.Drs.Model.SourceNetwork.SourceRegion</property>
     <min>0</min>
     <max>255</max>
-    <pattern>(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]</pattern>
+    <pattern>(us(-gov)?|ap|ca|cn|eu|eusc|sa|af|me|il)-([a-z]{2}-)?(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetwork.SourceVpcID</property>
