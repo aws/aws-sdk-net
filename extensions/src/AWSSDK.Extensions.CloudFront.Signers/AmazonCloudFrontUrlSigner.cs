@@ -19,6 +19,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Amazon.Runtime;
 using Amazon.Util;
+
 #if !NET
 using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Crypto;
@@ -41,14 +42,13 @@ namespace Amazon.CloudFront
             http, https, rtmp
         }
 
-
         /// <summary>
         /// Returns a signed URL that grants universal access to private content until a given date.
         /// </summary>
         /// <param name="protocol">The protocol of the URL</param>
         /// <param name="distributionDomain">The domain name of the distribution</param>
         /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
-        /// <param name="privateKey">The private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">The private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>
         /// <returns>The signed URL.</returns>
@@ -71,7 +71,32 @@ namespace Amazon.CloudFront
         /// <param name="protocol">The protocol of the URL</param>
         /// <param name="distributionDomain">The domain name of the distribution</param>
         /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
-        /// <param name="privateKey">The private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">The private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
+        /// <param name="expiresOn">The expiration date of the signed URL</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed URL.</returns>
+        public static string GetCannedSignedURL(Protocol protocol,
+                                                string distributionDomain,
+                                                FileSystemInfo privateKey,
+                                                string resourcePath,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                HashAlgorithmName algorithm)
+        {
+            using (StreamReader reader = new StreamReader(File.OpenRead(privateKey.FullName)))
+            {
+                return GetCannedSignedURL(protocol, distributionDomain, reader, resourcePath, keyPairId, expiresOn, algorithm);
+            }
+        }
+
+        /// <summary>
+        /// Returns a signed URL that grants universal access to private content until a given date.
+        /// </summary>
+        /// <param name="protocol">The protocol of the URL</param>
+        /// <param name="distributionDomain">The domain name of the distribution</param>
+        /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
+        /// <param name="privateKey">The private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>
         /// <returns>The signed URL.</returns>
@@ -89,17 +114,55 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Returns a signed URL that grants universal access to private content until a given date.
         /// </summary>
+        /// <param name="protocol">The protocol of the URL</param>
+        /// <param name="distributionDomain">The domain name of the distribution</param>
+        /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
+        /// <param name="privateKey">The private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
+        /// <param name="expiresOn">The expiration date of the signed URL</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed URL.</returns>
+        public static string GetCannedSignedURL(Protocol protocol,
+                                                string distributionDomain,
+                                                TextReader privateKey,
+                                                string resourcePath,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                HashAlgorithmName algorithm)
+        {
+            string url = GenerateResourcePath(protocol, distributionDomain, resourcePath);
+            return GetCannedSignedURL(url, privateKey, keyPairId, expiresOn, algorithm);
+        }
+
+        /// <summary>
+        /// Returns a signed URL that grants universal access to private content until a given date.
+        /// </summary>
         /// <param name="url">The full url (protocol + domain + resource path) to the resource, or the name of the stream for rtmp</param>
-        /// <param name="privateKey">The private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">The private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>
         /// <returns>The signed URL.</returns>
-        public static string GetCannedSignedURL(string url, 
+        public static string GetCannedSignedURL(string url, TextReader privateKey, string keyPairId, DateTime expiresOn)
+        {
+            return SignUrlCanned(url, keyPairId, privateKey, expiresOn);
+        }
+
+        /// <summary>
+        /// Returns a signed URL that grants universal access to private content until a given date.
+        /// </summary>
+        /// <param name="url">The full url (protocol + domain + resource path) to the resource, or the name of the stream for rtmp</param>
+        /// <param name="privateKey">The private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
+        /// <param name="expiresOn">The expiration date of the signed URL</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed URL.</returns>
+        public static string GetCannedSignedURL(string url,
                                                 TextReader privateKey,
                                                 string keyPairId,
-                                                DateTime expiresOn)
+                                                DateTime expiresOn,
+                                                HashAlgorithmName algorithm)
         {
-            string signedUrlCanned = SignUrlCanned(url, keyPairId, privateKey, expiresOn);
+            string signedUrlCanned = SignUrlCanned(url, keyPairId, privateKey, expiresOn, algorithm);
             return signedUrlCanned;
         }
 
@@ -108,7 +171,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="protocol">The protocol of the URL</param>
         /// <param name="distributionDomain">The domain name of the distribution</param>
-        /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>
@@ -135,7 +198,36 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="protocol">The protocol of the URL</param>
         /// <param name="distributionDomain">The domain name of the distribution</param>
-        /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
+        /// <param name="expiresOn">The expiration date of the signed URL</param>
+        /// <param name="activeFrom">The beginning valid date of the signed URL</param>
+        /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed URL.</returns>
+        public static string GetCustomSignedURL(Protocol protocol,
+                                                string distributionDomain,
+                                                FileSystemInfo privateKey,
+                                                string resourcePath,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                DateTime activeFrom,
+                                                string ipRange,
+                                                HashAlgorithmName algorithm)
+        {
+            using (StreamReader reader = new StreamReader(File.OpenRead(privateKey.FullName)))
+            {
+                return GetCustomSignedURL(protocol, distributionDomain, reader, resourcePath, keyPairId, expiresOn, activeFrom, ipRange, algorithm);
+            }
+        }
+
+        /// <summary>
+        /// Returns a signed URL that provides tailored access to private content based on an access time window and an ip range.
+        /// </summary>
+        /// <param name="protocol">The protocol of the URL</param>
+        /// <param name="distributionDomain">The domain name of the distribution</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>
@@ -160,7 +252,34 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="protocol">The protocol of the URL</param>
         /// <param name="distributionDomain">The domain name of the distribution</param>
-        /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
+        /// <param name="expiresOn">The expiration date of the signed URL</param>
+        /// <param name="activeFrom">The beginning valid date of the signed URL</param>
+        /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed URL.</returns>
+        public static string GetCustomSignedURL(Protocol protocol,
+                                                string distributionDomain,
+                                                TextReader privateKey,
+                                                string resourcePath,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                DateTime activeFrom,
+                                                string ipRange,
+                                                HashAlgorithmName algorithm)
+        {
+            string path = GenerateResourcePath(protocol, distributionDomain, resourcePath);
+            return GetCustomSignedURL(path, privateKey, keyPairId, expiresOn, activeFrom, ipRange, algorithm);
+        }
+
+        /// <summary>
+        /// Returns a signed URL that provides tailored access to private content based on an access time window and an ip range.
+        /// </summary>
+        /// <param name="protocol">The protocol of the URL</param>
+        /// <param name="distributionDomain">The domain name of the distribution</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>        
@@ -181,8 +300,33 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Returns a signed URL that provides tailored access to private content based on an access time window and an ip range.
         /// </summary>
+        /// <param name="protocol">The protocol of the URL</param>
+        /// <param name="distributionDomain">The domain name of the distribution</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="resourcePath">The path for the resource, or the name of the stream for rtmp</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
+        /// <param name="expiresOn">The expiration date of the signed URL</param>
+        /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed URL.</returns>
+        public static string GetCustomSignedURL(Protocol protocol,
+                                                string distributionDomain,
+                                                TextReader privateKey,
+                                                string resourcePath,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                string ipRange,
+                                                HashAlgorithmName algorithm)
+        {
+            string path = GenerateResourcePath(protocol, distributionDomain, resourcePath);
+            return GetCustomSignedURL(path, privateKey, keyPairId, expiresOn, ipRange, algorithm);
+        }
+
+        /// <summary>
+        /// Returns a signed URL that provides tailored access to private content based on an access time window and an ip range.
+        /// </summary>
         /// <param name="url">The protocol of the URL</param>
-        /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>
         /// <param name="activeFrom">The beginning valid date of the signed URL</param>
@@ -203,7 +347,30 @@ namespace Amazon.CloudFront
         /// Returns a signed URL that provides tailored access to private content based on an access time window and an ip range.
         /// </summary>
         /// <param name="url">The protocol of the URL</param>
-        /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
+        /// <param name="expiresOn">The expiration date of the signed URL</param>
+        /// <param name="activeFrom">The beginning valid date of the signed URL</param>
+        /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed URL.</returns>
+        public static string GetCustomSignedURL(string url,
+                                                TextReader privateKey,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                DateTime activeFrom,
+                                                string ipRange,
+                                                HashAlgorithmName algorithm)
+        {
+            string policy = BuildPolicyForSignedUrl(url, expiresOn, ipRange, activeFrom);
+            return SignUrl(url, keyPairId, privateKey, policy, algorithm);
+        }
+
+        /// <summary>
+        /// Returns a signed URL that provides tailored access to private content based on an access time window and an ip range.
+        /// </summary>
+        /// <param name="url">The protocol of the URL</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
         /// <param name="expiresOn">The expiration date of the signed URL</param>
         /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
@@ -216,6 +383,27 @@ namespace Amazon.CloudFront
         {
             string policy = BuildPolicyForSignedUrl(url, expiresOn, ipRange);
             return SignUrl(url, keyPairId, privateKey, policy);
+        }
+
+        /// <summary>
+        /// Returns a signed URL that provides tailored access to private content based on an access time window and an ip range.
+        /// </summary>
+        /// <param name="url">The protocol of the URL</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given</param>
+        /// <param name="expiresOn">The expiration date of the signed URL</param>
+        /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed URL.</returns>
+        public static string GetCustomSignedURL(string url,
+                                                TextReader privateKey,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                string ipRange,
+                                                HashAlgorithmName algorithm)
+        {
+            string policy = BuildPolicyForSignedUrl(url, expiresOn, ipRange);
+            return SignUrl(url, keyPairId, privateKey, policy, algorithm);
         }
 
         /// <summary>
@@ -233,7 +421,7 @@ namespace Amazon.CloudFront
         /// name.
         /// </param>
         /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
-        /// <param name="privateKey">The RSA private key data that corresponding to the certificate keypair identified by keyPairId.</param>
+        /// <param name="privateKey">The private key (RSA or ECDSA) corresponding to the certificate keypair identified by keyPairId.</param>
         /// <param name="policy">A policy document that describes the access permissions that will be applied by 
         /// the signed URL.</param>
         /// <returns>A signed URL that will permit access to distribution and resource path as specified in the policy document.</returns>
@@ -260,22 +448,70 @@ namespace Amazon.CloudFront
         /// name.
         /// </param>
         /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
-        /// <param name="privateKey">The RSA private key data that corresponding to the certificate keypair identified by keyPairId.</param>
+        /// <param name="privateKey">The private key (RSA or ECDSA) corresponding to the certificate keypair identified by keyPairId.</param>
+        /// <param name="policy">A policy document that describes the access permissions that will be applied by
+        /// the signed URL.</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>A signed URL that will permit access to distribution and resource path as specified in the policy document.</returns>
+        public static string SignUrl(string resourceUrlOrPath, string keyPairId, FileInfo privateKey, string policy, HashAlgorithmName algorithm)
+        {
+            using (StreamReader reader = new StreamReader(File.OpenRead(privateKey.FullName)))
+            {
+                return SignUrl(resourceUrlOrPath, keyPairId, reader, policy, algorithm);
+            }
+        }
+
+        /// <summary>
+        /// Generate a signed URL that allows access to distribution and resource path
+        /// by applying access restrictions specified in a custom policy document.
+        /// </summary>
+        /// <param name="resourceUrlOrPath">
+        /// The URL or path that uniquely identifies a resource within a
+        /// distribution. For standard distributions the resource URL will
+        /// be <tt>"http://" + distributionName + "/" + path</tt>
+        /// (may also include URL parameters. For distributions with the
+        /// HTTPS required protocol, the resource URL must start with
+        /// <tt>"https://"</tt>. RTMP resources do not take the form of a
+        /// URL, and instead the resource path is nothing but the stream's
+        /// name.
+        /// </param>
+        /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
+        /// <param name="privateKey">The private key (RSA or ECDSA) corresponding to the certificate keypair identified by keyPairId.</param>
         /// <param name="policy">A policy document that describes the access permissions that will be applied by 
         /// the signed URL.</param>
         /// <returns>A signed URL that will permit access to distribution and S3 objects as specified in the policy document.</returns>
         public static string SignUrl(string resourceUrlOrPath, string keyPairId, TextReader privateKey, string policy)
         {
             ValidatePolicyInput(resourceUrlOrPath, "resourceUrlOrPath");
+            var (signatureBytes, usedAlgorithm) = SignData(Encoding.UTF8.GetBytes(policy), privateKey);
+            return BuildSignedUrl(resourceUrlOrPath, keyPairId, MakeStringUrlSafe(policy), signatureBytes, usedAlgorithm);
+        }
 
-            byte[] signatureBytes = SignWithSha1RSA(Encoding.UTF8.GetBytes(policy), privateKey);
-
-            string urlSafePolicy = MakeStringUrlSafe(policy);
-            string urlSafeSignature = MakeBytesUrlSafe(signatureBytes);
-
-            string signedUrl = resourceUrlOrPath + (resourceUrlOrPath.IndexOf('?') >= 0 ? "&" : "?") + "Policy="
-                    + urlSafePolicy + "&Signature=" + urlSafeSignature + "&Key-Pair-Id=" + keyPairId;
-            return signedUrl;
+        /// <summary>
+        /// Generate a signed URL that allows access to distribution and resource path
+        /// by applying access restrictions specified in a custom policy document.
+        /// </summary>
+        /// <param name="resourceUrlOrPath">
+        /// The URL or path that uniquely identifies a resource within a
+        /// distribution. For standard distributions the resource URL will
+        /// be <tt>"http://" + distributionName + "/" + path</tt>
+        /// (may also include URL parameters. For distributions with the
+        /// HTTPS required protocol, the resource URL must start with
+        /// <tt>"https://"</tt>. RTMP resources do not take the form of a
+        /// URL, and instead the resource path is nothing but the stream's
+        /// name.
+        /// </param>
+        /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
+        /// <param name="privateKey">The private key (RSA or ECDSA) corresponding to the certificate keypair identified by keyPairId.</param>
+        /// <param name="policy">A policy document that describes the access permissions that will be applied by
+        /// the signed URL.</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>A signed URL that will permit access to distribution and S3 objects as specified in the policy document.</returns>
+        public static string SignUrl(string resourceUrlOrPath, string keyPairId, TextReader privateKey, string policy, HashAlgorithmName algorithm)
+        {
+            ValidatePolicyInput(resourceUrlOrPath, "resourceUrlOrPath");
+            var (signatureBytes, usedAlgorithm) = SignData(Encoding.UTF8.GetBytes(policy), privateKey, algorithm);
+            return BuildSignedUrl(resourceUrlOrPath, keyPairId, MakeStringUrlSafe(policy), signatureBytes, usedAlgorithm);
         }
 
         /// <summary>
@@ -294,7 +530,7 @@ namespace Amazon.CloudFront
         /// name.
         /// </param>
         /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
-        /// <param name="privateKey">The RSA private key data that corresponding to the certificate keypair identified by keyPairId.</param>
+        /// <param name="privateKey">The private key (RSA or ECDSA) corresponding to the certificate keypair identified by keyPairId.</param>
         /// <param name="expiresOn">The time and date when the signed URL will expire.</param>
         public static String SignUrlCanned(string resourceUrlOrPath,
                                            string keyPairId,
@@ -323,27 +559,77 @@ namespace Amazon.CloudFront
         /// name.
         /// </param>
         /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
-        /// <param name="privateKey">The RSA private key data that corresponding to the certificate keypair identified by keyPairId.</param>
+        /// <param name="privateKey">The private key (RSA or ECDSA) corresponding to the certificate keypair identified by keyPairId.</param>
+        /// <param name="expiresOn">The time and date when the signed URL will expire.</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        public static String SignUrlCanned(string resourceUrlOrPath,
+                                           string keyPairId,
+                                           FileInfo privateKey,
+                                           DateTime expiresOn,
+                                           HashAlgorithmName algorithm)
+        {
+            using (StreamReader reader = new StreamReader(File.OpenRead(privateKey.FullName)))
+            {
+                return SignUrlCanned(resourceUrlOrPath, keyPairId, reader, expiresOn, algorithm);
+            }
+        }
+
+        /// <summary>
+        /// Generate a signed URL that allows access to a specific distribution and
+        /// resource path by applying a access restrictions from a "canned" (simplified)
+        /// policy document.
+        /// </summary>
+        /// <param name="resourceUrlOrPath">
+        /// The URL or path that uniquely identifies a resource within a
+        /// distribution. For standard distributions the resource URL will
+        /// be <tt>"http://" + distributionName + "/" + path</tt>
+        /// (may also include URL parameters. For distributions with the
+        /// HTTPS required protocol, the resource URL must start with
+        /// <tt>"https://"</tt>. RTMP resources do not take the form of a
+        /// URL, and instead the resource path is nothing but the stream's
+        /// name.
+        /// </param>
+        /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
+        /// <param name="privateKey">The private key (RSA or ECDSA) corresponding to the certificate keypair identified by keyPairId.</param>
         /// <param name="expiresOn">The time and date when the signed URL will expire.</param>
         public static String SignUrlCanned(string resourceUrlOrPath,
                                            string keyPairId,
                                            TextReader privateKey,
                                            DateTime expiresOn)
         {
-            ValidatePolicyInput(resourceUrlOrPath, "resourceUrlOrPath");
+            PrepareCannedPolicy(resourceUrlOrPath, expiresOn, out string epochSeconds, out byte[] policyBytes);
+            var (signatureBytes, usedAlgorithm) = SignData(policyBytes, privateKey);
+            return BuildCannedSignedUrl(resourceUrlOrPath, keyPairId, epochSeconds, signatureBytes, usedAlgorithm);
+        }
 
-            string epochSeconds = AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn);
-            string cannedPolicy = "{\"Statement\":[{\"Resource\":\"" + resourceUrlOrPath
-                    + "\",\"Condition\":{\"DateLessThan\":{\"AWS:EpochTime\":" + epochSeconds
-                    + "}}}]}";
-            byte[] signatureBytes = SignWithSha1RSA(Encoding.UTF8.GetBytes(cannedPolicy), privateKey);
-
-            string urlSafeSignature = MakeBytesUrlSafe(signatureBytes);
-
-            string signedUrl = resourceUrlOrPath + (resourceUrlOrPath.IndexOf('?') >= 0 ? "&" : "?") + "Expires="
-                    + epochSeconds +
-                    "&Signature=" + urlSafeSignature + "&Key-Pair-Id=" + keyPairId;
-            return signedUrl;
+        /// <summary>
+        /// Generate a signed URL that allows access to a specific distribution and
+        /// resource path by applying a access restrictions from a "canned" (simplified)
+        /// policy document.
+        /// </summary>
+        /// <param name="resourceUrlOrPath">
+        /// The URL or path that uniquely identifies a resource within a
+        /// distribution. For standard distributions the resource URL will
+        /// be <tt>"http://" + distributionName + "/" + path</tt>
+        /// (may also include URL parameters. For distributions with the
+        /// HTTPS required protocol, the resource URL must start with
+        /// <tt>"https://"</tt>. RTMP resources do not take the form of a
+        /// URL, and instead the resource path is nothing but the stream's
+        /// name.
+        /// </param>
+        /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
+        /// <param name="privateKey">The private key (RSA or ECDSA) corresponding to the certificate keypair identified by keyPairId.</param>
+        /// <param name="expiresOn">The time and date when the signed URL will expire.</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        public static String SignUrlCanned(string resourceUrlOrPath,
+                                           string keyPairId,
+                                           TextReader privateKey,
+                                           DateTime expiresOn,
+                                           HashAlgorithmName algorithm)
+        {
+            PrepareCannedPolicy(resourceUrlOrPath, expiresOn, out string epochSeconds, out byte[] policyBytes);
+            var (signatureBytes, usedAlgorithm) = SignData(policyBytes, privateKey, algorithm);
+            return BuildCannedSignedUrl(resourceUrlOrPath, keyPairId, epochSeconds, signatureBytes, usedAlgorithm);
         }
 
         /// <summary>
@@ -390,13 +676,11 @@ namespace Amazon.CloudFront
         {
             // Reference: 
             // http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html#private-content-custom-policy-statement
-
-            // Validate if activeFrom (time at which the URL will be active)
-            // is less than expiresOn (time at which the URL will expire)
-            if (activeFrom > expiresOn)
+            
+            // Validate if activeFrom (time at which the URL will be active) is less than expiresOn (time at which the URL will expire).
+            if (activeFrom >= expiresOn)
             {
-                throw new AmazonClientException("The parameter activeFrom (time at which the URL will be active)" +
-                    "must be less than expiresOn (time at which the URL will expire).");
+                throw new AmazonClientException("The parameter activeFrom (time at which the URL will be active) must be less than expiresOn (time at which the URL will expire).");
             }
 
             if (resourcePath == null)
@@ -407,7 +691,7 @@ namespace Amazon.CloudFront
             ValidatePolicyInput(resourcePath, "resourcePath");
             ValidatePolicyInput(limitToIpAddressCIDR, "limitToIpAddressCIDR");
 
-            string policy = "{\"Statement\": [{"
+            string policy = "{\"Statement\":[{"
                     + "\"Resource\":\""
                     + resourcePath
                     + "\""
@@ -415,14 +699,14 @@ namespace Amazon.CloudFront
                     + "\"DateLessThan\":{\"AWS:EpochTime\":"
                     + AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn)
                     + "}"
-                // omitting IpAddress parameter indicates any ip address access
-                    + (string.IsNullOrEmpty(limitToIpAddressCIDR)
-                        ? ""
-                        : ",\"IpAddress\":{\"AWS:SourceIp\":\"" + limitToIpAddressCIDR + "\"}")
                 // Ignore epochDateGreaterThan if its value is DateTime.MinValue, the default value of DateTime.
                     + (activeFrom > DateTime.MinValue ? ",\"DateGreaterThan\":{\"AWS:EpochTime\":"
                     + AWSSDKUtils.ConvertToUnixEpochSecondsString(activeFrom) + "}"
                             : string.Empty)
+                // omitting IpAddress parameter indicates any ip address access
+                    + (string.IsNullOrEmpty(limitToIpAddressCIDR)
+                        ? ""
+                        : ",\"IpAddress\":{\"AWS:SourceIp\":\"" + limitToIpAddressCIDR + "\"}")
                     + "}}]}";
             return policy;
         }
@@ -465,8 +749,7 @@ namespace Amazon.CloudFront
                                                      DateTime expiresOn,
                                                      string limitToIpAddressCIDR)
         {
-            return BuildPolicyForSignedUrl(resourcePath, expiresOn,
-                limitToIpAddressCIDR, DateTime.MinValue);
+            return BuildPolicyForSignedUrl(resourcePath, expiresOn, limitToIpAddressCIDR, DateTime.MinValue);
         }
 
         /// <summary>
@@ -512,19 +795,45 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Converts the given string to be safe for use in signed URLs for a private distribution.
         /// </summary>
-        internal static String MakeStringUrlSafe(string str)
+        internal static string MakeStringUrlSafe(string str)
         {
-            return MakeBytesUrlSafe(UTF8Encoding.UTF8.GetBytes(str));
+            return MakeBytesUrlSafe(Encoding.UTF8.GetBytes(str));
+        }
+
+        private static string BuildSignedUrl(string resourceUrlOrPath, string keyPairId, string urlSafePolicy, byte[] signatureBytes, HashAlgorithmName algorithm)
+        {
+            return resourceUrlOrPath +
+                (resourceUrlOrPath.Contains("?") ? "&" : "?") +
+                "Policy=" + urlSafePolicy +
+                "&Signature=" + MakeBytesUrlSafe(signatureBytes) +
+                "&Key-Pair-Id=" + keyPairId +
+                "&Hash-Algorithm=" + algorithm.Name;
+        }
+
+        private static void PrepareCannedPolicy(string resourceUrlOrPath, DateTime expiresOn, out string epochSeconds, out byte[] policyBytes)
+        {
+            ValidatePolicyInput(resourceUrlOrPath, "resourceUrlOrPath");
+            
+            epochSeconds = AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn);
+            var cannedPolicy = "{\"Statement\":[{\"Resource\":\"" + resourceUrlOrPath + "\",\"Condition\":{\"DateLessThan\":{\"AWS:EpochTime\":" + epochSeconds + "}}}]}";
+            policyBytes = Encoding.UTF8.GetBytes(cannedPolicy);
+        }
+
+        private static string BuildCannedSignedUrl(string resourceUrlOrPath, string keyPairId, string epochSeconds, byte[] signatureBytes, HashAlgorithmName algorithm)
+        {
+            return resourceUrlOrPath +
+                (resourceUrlOrPath.Contains("?") ? "&" : "?") +
+                "Expires=" + epochSeconds +
+                "&Signature=" + MakeBytesUrlSafe(signatureBytes) +
+                "&Key-Pair-Id=" + keyPairId +
+                "&Hash-Algorithm=" + algorithm.Name;
         }
 
         /// <summary>
         /// Returns the resource path for the given distribution, object, and protocol.
         /// </summary>
-        private static string GenerateResourcePath(Protocol protocol,
-                                                   string distributionDomain,
-                                                   string path)
+        private static string GenerateResourcePath(Protocol protocol, string distributionDomain, string path)
         {
-
             if (protocol == Protocol.http || protocol == Protocol.https)
             {
                 return protocol.ToString() + "://" + distributionDomain + "/" + path;
@@ -536,65 +845,142 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
-        /// Signs the data given with the private key given, using the SHA1withRSA
-        /// algorithm provided by bouncy castle.
+        /// Signs the given data using the specified hash algorithm and private key.
+        /// The key type (RSA or ECDSA) is detected automatically from the PEM.
+        /// When <paramref name="algorithm"/> is null, uses the default for the key type:
+        /// SHA-1 for RSA (for backwards compatibility) and SHA-256 for ECDSA.
         /// </summary>
-        internal static byte[] SignWithSha1RSA(byte[] dataToSign, TextReader privateKey)
+        /// <param name="dataToSign">The raw bytes to sign.</param>
+        /// <param name="privateKey">A <see cref="TextReader"/> over a PEM-encoded private key.</param>
+        /// <param name="algorithm">
+        /// The hash algorithm to use, or null to use the default for the key type.
+        /// Supported values are <see cref="HashAlgorithmName.SHA1"/> (RSA only)
+        /// and <see cref="HashAlgorithmName.SHA256"/> (RSA or ECDSA).
+        /// </param>
+        /// <returns>The signature bytes.</returns>
+        internal static (byte[] Signature, HashAlgorithmName UsedAlgorithm) SignData(byte[] dataToSign, TextReader privateKey, HashAlgorithmName? algorithm = null)
         {
-            using (SHA1 cryptoSHA1 = SHA1.Create())
-            using (RSA rsa = RSA.Create())
-            {
-                ImportRSAFromPem(rsa, privateKey);
+            const string InvalidKeyMessage = "The private key could not be loaded. Supported key types are RSA and ECDSA (P-256) in PEM format.";
 
-                byte[] hashedData = cryptoSHA1.ComputeHash(dataToSign);
-                return GetRSAPKCS1SignatureFromSHA1(hashedData, rsa);
-            }
-        }
-
-        private static void ImportRSAFromPem(RSA rsa, TextReader privateKeyReader)
-        {
 #if NET
-            rsa.ImportFromPem(privateKeyReader.ReadToEnd());
+            var pem = privateKey.ReadToEnd();
+            bool isEcdsa = pem.Contains("BEGIN EC PRIVATE KEY", StringComparison.Ordinal);
+            if (!isEcdsa)
+            {
+                // Try RSA. Handles both PKCS#1 ("BEGIN RSA PRIVATE KEY") and PKCS#8 RSA ("BEGIN PRIVATE KEY") in a single import.
+                try
+                {
+                    using (var rsa = RSA.Create())
+                    {
+                        rsa.ImportFromPem(pem);
+                        var algo = algorithm ?? HashAlgorithmName.SHA1;
+                        if (algorithm.HasValue && algo != HashAlgorithmName.SHA1 && algo != HashAlgorithmName.SHA256)
+                        {
+                            throw new ArgumentException(
+                                $"Unsupported hash algorithm for RSA: {algo}. Use HashAlgorithmName.SHA1 or HashAlgorithmName.SHA256.",
+                                nameof(algorithm)
+                            );
+                        }
+                        return (rsa.SignData(dataToSign, algo, RSASignaturePadding.Pkcs1), algo);
+                    }
+                }
+                catch (ArgumentException e) when (algorithm.HasValue && e.ParamName == nameof(algorithm)) { throw; }
+                catch (Exception e) when (e is ArgumentException or CryptographicException)
+                {
+                    // RSA import failed; fall through to try ECDSA.
+                }
+            }
+
+            if (algorithm.HasValue && algorithm.Value != HashAlgorithmName.SHA256)
+            {
+                throw new ArgumentException("ECDSA keys only support SHA-256 with CloudFront.", nameof(algorithm));
+            }
+
+            using (var ecdsa = ECDsa.Create())
+            {
+                try 
+                { 
+                    ecdsa.ImportFromPem(pem);
+                }
+                catch (CryptographicException e) 
+                { 
+                    throw new AmazonClientException(InvalidKeyMessage, e);
+                }
+
+                // CloudFront expects DER-encoded (RFC 3279) ECDSA signatures.
+                return (ecdsa.SignData(dataToSign, HashAlgorithmName.SHA256, DSASignatureFormat.Rfc3279DerSequence), HashAlgorithmName.SHA256);
+            }
 #else
-            RSAParameters rsaParams;
+            AsymmetricKeyParameter privateKeyParams;
+            bool isEcdsa;
             try
             {
-                using (var pemReader = new PemReader(privateKeyReader))
+                using (var pemReader = new PemReader(privateKey))
                 {
-                    var keyPair = pemReader.ReadObject();
-                    if (keyPair is RsaPrivateCrtKeyParameters)
+                    var keyObject = pemReader.ReadObject();
+                    AsymmetricKeyParameter keyParam;
+                    if (keyObject is AsymmetricCipherKeyPair keyPair)
                     {
-                        rsaParams = DotNetUtilities.ToRSAParameters((RsaPrivateCrtKeyParameters)keyPair);
+                        keyParam = keyPair.Private;
                     }
-                    else if (keyPair is AsymmetricCipherKeyPair)
+                    else if (keyObject is AsymmetricKeyParameter param)
                     {
-                        var asymmetricKeyPair = keyPair as AsymmetricCipherKeyPair;
-                        var privateKey = asymmetricKeyPair.Private as RsaPrivateCrtKeyParameters;
-                        rsaParams = DotNetUtilities.ToRSAParameters(privateKey);
+                        keyParam = param;
                     }
                     else
                     {
-                        throw new AmazonClientException("Unknown key type");
+                        throw new AmazonClientException(InvalidKeyMessage);
                     }
+
+                    privateKeyParams = keyParam;
+                    isEcdsa = keyParam is ECPrivateKeyParameters;
                 }
+            }
+            catch (AmazonClientException) { throw; }
+            catch (Exception e) { throw new AmazonClientException(InvalidKeyMessage, e); }
+
+            string signerAlgorithm;
+            HashAlgorithmName usedAlgorithm;
+            if (isEcdsa)
+            {
+                if (algorithm.HasValue && algorithm.Value != HashAlgorithmName.SHA256)
+                {
+                    throw new ArgumentException("ECDSA keys only support SHA-256 with CloudFront.", nameof(algorithm));
+                }
+
+                // BouncyCastle ECDSA signers produce DER-encoded (RFC 3279) signatures by default,
+                // which is what CloudFront expects.
+                signerAlgorithm = "SHA256withECDSA";
+                usedAlgorithm = HashAlgorithmName.SHA256;
+            }
+            else if (!algorithm.HasValue || algorithm.Value == HashAlgorithmName.SHA1)
+            {
+                signerAlgorithm = "SHA1withRSA";
+                usedAlgorithm = HashAlgorithmName.SHA1;
+            }
+            else if (algorithm.Value == HashAlgorithmName.SHA256)
+            {
+                signerAlgorithm = "SHA256withRSA";
+                usedAlgorithm = HashAlgorithmName.SHA256;
+            }
+            else
+            {
+                throw new ArgumentException(
+                    $"Unsupported hash algorithm for RSA: {algorithm.Value}. Use HashAlgorithmName.SHA1 or HashAlgorithmName.SHA256.",
+                    nameof(algorithm)
+                );
+            }
+            try
+            {
+                var signer = SignerUtilities.GetSigner(signerAlgorithm);
+                signer.Init(true, privateKeyParams);
+                signer.BlockUpdate(dataToSign, 0, dataToSign.Length);
+                return (signer.GenerateSignature(), usedAlgorithm);
             }
             catch (Exception e)
             {
-                throw new AmazonClientException("Invalid RSA Private Key", e);
+                throw new AmazonClientException($"Failed to sign data using {signerAlgorithm}", e);
             }
-            rsa.ImportParameters(rsaParams);
-#endif
-        }
-
-        private static byte[] GetRSAPKCS1SignatureFromSHA1(byte[] hashedData, RSA providerRSA)
-        {
-            // Format the RSACryptoServiceProvider and create the signature.
-#if NETSTANDARD
-            return providerRSA.SignHash(hashedData, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
-#else
-            RSAPKCS1SignatureFormatter rsaFormatter = new RSAPKCS1SignatureFormatter(providerRSA);
-            rsaFormatter.SetHashAlgorithm("SHA1");
-            return rsaFormatter.CreateSignature(hashedData);
 #endif
         }
     }
