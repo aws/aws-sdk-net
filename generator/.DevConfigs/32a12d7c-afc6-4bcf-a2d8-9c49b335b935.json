@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fixed issue calling UploadPart with an unseekable stream and disabling checksum failing."
+      ]
+    }
+  ]
+}

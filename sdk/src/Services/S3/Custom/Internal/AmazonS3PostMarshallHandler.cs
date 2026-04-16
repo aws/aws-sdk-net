@@ -125,11 +125,11 @@ namespace Amazon.S3.Internal
             if (uploadPartRequest.InputStream != null)
             {
                 // Wrap input stream in partial wrapper (to upload only part of the stream)
-                var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize.GetValueOrDefault());
+                var partialStream = GetStreamWithLength(uploadPartRequest.InputStream, uploadPartRequest.PartSize.GetValueOrDefault(), chooseMin: true);
                 if (partialStream.Length > 0 && !(uploadPartRequest.DisablePayloadSigning ?? false))
                     request.UseChunkEncoding = uploadPartRequest.UseChunkEncoding;
                 if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
-                    request.Headers.Add(HeaderKeys.ContentLengthHeader, partialStream.Length.ToString(CultureInfo.InvariantCulture));
+                    request.Headers.Add(HeaderKeys.ContentLengthHeader, (partialStream.Length - partialStream.Position).ToString(CultureInfo.InvariantCulture));
 
                 request.DisablePayloadSigning = uploadPartRequest.DisablePayloadSigning;
                 uploadPartRequest.InputStream = partialStream;
@@ -159,7 +159,7 @@ namespace Amazon.S3.Internal
             if (putObjectRequest.InputStream != null)
             {
                 // Wrap the stream in a stream that has a length
-                var streamWithLength = GetStreamWithLength(putObjectRequest.InputStream, putObjectRequest.Headers.ContentLength);
+                var streamWithLength = GetStreamWithLength(putObjectRequest.InputStream, putObjectRequest.Headers.ContentLength, chooseMin: false);
                 if (streamWithLength.Length > 0 && !(putObjectRequest.DisablePayloadSigning ?? false))
                     request.UseChunkEncoding = putObjectRequest.UseChunkEncoding;
                 var length = streamWithLength.Length - streamWithLength.Position;
@@ -190,7 +190,7 @@ namespace Amazon.S3.Internal
         /// If the stream supports seeking, returns stream.
         /// Otherwise, uses hintLength to create a read-only, non-seekable stream of given length
         /// </summary>
-        private static Stream GetStreamWithLength(Stream baseStream, long hintLength)
+        private static Stream GetStreamWithLength(Stream baseStream, long hintLength, bool chooseMin)
         {
             Stream result = baseStream;
             bool shouldWrapStream = false;
@@ -198,6 +198,14 @@ namespace Amazon.S3.Internal
             try
             {
                 length = baseStream.Length - baseStream.Position;
+
+                // If chooseMin is true that means we are uploading a part of a stream and the hintLength
+                // must be treated as the maximum length to read from the baseStream.
+                if (chooseMin && length > hintLength)
+                {
+                    shouldWrapStream = true;
+                    length = hintLength;
+                }
             }
             catch (NotSupportedException)
             {
