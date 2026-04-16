@@ -3643,6 +3643,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly EventSourceName OnContactEvaluationSubmit = new EventSourceName("OnContactEvaluationSubmit");
         /// <summary>
+        /// Constant OnEmailAnalysisAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnEmailAnalysisAvailable = new EventSourceName("OnEmailAnalysisAvailable");
+        /// <summary>
         /// Constant OnMetricDataUpdate for EventSourceName
         /// </summary>
         public static readonly EventSourceName OnMetricDataUpdate = new EventSourceName("OnMetricDataUpdate");
