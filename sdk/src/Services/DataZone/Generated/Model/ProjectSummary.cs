@@ -42,6 +42,7 @@ namespace Amazon.DataZone.Model
         private List<ProjectDeletionError> _failureReasons = AWSConfigs.InitializeCollections ? new List<ProjectDeletionError>() : null;
         private string _id;
         private string _name;
+        private string _projectCategory;
         private ProjectStatus _projectStatus;
         private DateTime? _updatedAt;
 
@@ -199,6 +200,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectCategory. 
+        /// <para>
+        /// The category of the project.
+        /// </para>
+        /// </summary>
+        public string ProjectCategory
+        {
+            get { return this._projectCategory; }
+            set { this._projectCategory = value; }
+        }
+
+        // Check to see if ProjectCategory property is set
+        internal bool IsSetProjectCategory()
+        {
+            return this._projectCategory != null;
         }
 
         /// <summary>

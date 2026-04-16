@@ -667,7 +667,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainRequest.DomainExecutionRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainRequest.KmsKeyIdentifier</property>
@@ -677,11 +677,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainRequest.ServiceRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainResponse.DomainExecutionRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainResponse.Id</property>
@@ -701,7 +701,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainResponse.ServiceRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainUnitRequest.ClientToken</property>
@@ -1165,6 +1165,10 @@
     <pattern>[\w -]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateProjectRequest.ProjectExecutionRole</property>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.CreateProjectRequest.ProjectProfileId</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
@@ -1405,6 +1409,11 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateUserProfileRequest.DomainIdentifier</property>
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateUserProfileRequest.SessionName</property>
+    <min>2</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateUserProfileRequest.UserIdentifier</property>
@@ -2045,7 +2054,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetDomainResponse.DomainExecutionRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetDomainResponse.Id</property>
@@ -2065,7 +2074,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetDomainResponse.ServiceRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetDomainUnitRequest.DomainIdentifier</property>
@@ -2226,11 +2235,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetEnvironmentBlueprintConfigurationResponse.ManageAccessRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetEnvironmentBlueprintConfigurationResponse.ProvisioningRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetEnvironmentCredentialsRequest.DomainIdentifier</property>
@@ -2788,6 +2797,11 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetUserProfileRequest.DomainIdentifier</property>
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetUserProfileRequest.SessionName</property>
+    <min>2</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetUserProfileRequest.UserIdentifier</property>
@@ -3717,11 +3731,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.PutEnvironmentBlueprintConfigurationRequest.ManageAccessRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.PutEnvironmentBlueprintConfigurationRequest.ProvisioningRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.PutEnvironmentBlueprintConfigurationResponse.DomainId</property>
@@ -3737,11 +3751,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.PutEnvironmentBlueprintConfigurationResponse.ManageAccessRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.PutEnvironmentBlueprintConfigurationResponse.ProvisioningRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.QueryGraphRequest.DomainIdentifier</property>
@@ -4229,7 +4243,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainRequest.DomainExecutionRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainRequest.Identifier</property>
@@ -4237,11 +4251,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainRequest.ServiceRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainResponse.DomainExecutionRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainResponse.Id</property>
@@ -4255,7 +4269,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainResponse.ServiceRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainUnitRequest.Description</property>
@@ -4873,6 +4887,11 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateUserProfileRequest.DomainIdentifier</property>
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateUserProfileRequest.SessionName</property>
+    <min>2</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateUserProfileRequest.UserIdentifier</property>
@@ -5532,11 +5551,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentBlueprintConfigurationItem.ManageAccessRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentBlueprintConfigurationItem.ProvisioningRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentBlueprintSummary.Description</property>
@@ -5965,7 +5984,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.LakeFormationConfiguration.LocationRegistrationRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.LineageEventSummary.DomainId</property>

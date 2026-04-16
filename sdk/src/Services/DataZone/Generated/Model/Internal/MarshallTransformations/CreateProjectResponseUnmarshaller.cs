@@ -118,6 +118,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("projectCategory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProjectCategory = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("projectProfileId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

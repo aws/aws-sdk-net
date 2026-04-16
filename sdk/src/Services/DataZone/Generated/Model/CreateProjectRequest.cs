@@ -39,7 +39,10 @@ namespace Amazon.DataZone.Model
         private string _domainIdentifier;
         private string _domainUnitId;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ProjectMembershipAssignment> _membershipAssignments = AWSConfigs.InitializeCollections ? new List<ProjectMembershipAssignment>() : null;
         private string _name;
+        private string _projectCategory;
+        private string _projectExecutionRole;
         private string _projectProfileId;
         private Dictionary<string, string> _resourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<EnvironmentConfigurationUserParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<EnvironmentConfigurationUserParameter>() : null;
@@ -127,6 +130,29 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MembershipAssignments. 
+        /// <para>
+        /// The members to be assigned to the project.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ProjectMembershipAssignment> MembershipAssignments
+        {
+            get { return this._membershipAssignments; }
+            set { this._membershipAssignments = value; }
+        }
+
+        // Check to see if MembershipAssignments property is set
+        internal bool IsSetMembershipAssignments()
+        {
+            return this._membershipAssignments != null && (this._membershipAssignments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the Amazon DataZone project.
@@ -143,6 +169,44 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectCategory. 
+        /// <para>
+        /// The category of the project. Set to 'ADMIN' designates this as an administrative project
+        /// for the Amazon DataZone domain.
+        /// </para>
+        /// </summary>
+        public string ProjectCategory
+        {
+            get { return this._projectCategory; }
+            set { this._projectCategory = value; }
+        }
+
+        // Check to see if ProjectCategory property is set
+        internal bool IsSetProjectCategory()
+        {
+            return this._projectCategory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectExecutionRole. 
+        /// <para>
+        /// The default project IAM role that is used to access project resources and run computes
+        /// such as Glue and Sagemaker.
+        /// </para>
+        /// </summary>
+        public string ProjectExecutionRole
+        {
+            get { return this._projectExecutionRole; }
+            set { this._projectExecutionRole = value; }
+        }
+
+        // Check to see if ProjectExecutionRole property is set
+        internal bool IsSetProjectExecutionRole()
+        {
+            return this._projectExecutionRole != null;
         }
 
         /// <summary>

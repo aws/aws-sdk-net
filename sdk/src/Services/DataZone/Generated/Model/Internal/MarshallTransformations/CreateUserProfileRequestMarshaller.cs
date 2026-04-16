@@ -87,6 +87,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetSessionName())
+            {
+                context.Writer.WritePropertyName("sessionName");
+                context.Writer.WriteStringValue(publicRequest.SessionName);
+            }
+
             if(publicRequest.IsSetUserIdentifier())
             {
                 context.Writer.WritePropertyName("userIdentifier");

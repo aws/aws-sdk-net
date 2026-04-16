@@ -38,6 +38,7 @@ namespace Amazon.DataZone.Model
         private string _clientToken;
         private string _domainIdentifier;
         private string _groupIdentifier;
+        private string _rolePrincipalArn;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -83,7 +84,6 @@ namespace Amazon.DataZone.Model
         /// The identifier of the group for which the group profile is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string GroupIdentifier
         {
             get { return this._groupIdentifier; }
@@ -94,6 +94,26 @@ namespace Amazon.DataZone.Model
         internal bool IsSetGroupIdentifier()
         {
             return this._groupIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RolePrincipalArn. 
+        /// <para>
+        /// The ARN of the IAM role that will be associated with the group profile. This role
+        /// defines the permissions that group members will assume when accessing Amazon DataZone
+        /// resources.
+        /// </para>
+        /// </summary>
+        public string RolePrincipalArn
+        {
+            get { return this._rolePrincipalArn; }
+            set { this._rolePrincipalArn = value; }
+        }
+
+        // Check to see if RolePrincipalArn property is set
+        internal bool IsSetRolePrincipalArn()
+        {
+            return this._rolePrincipalArn != null;
         }
 
     }

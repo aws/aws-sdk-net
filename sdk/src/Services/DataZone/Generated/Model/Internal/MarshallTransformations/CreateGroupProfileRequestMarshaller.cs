@@ -93,6 +93,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.GroupIdentifier);
             }
 
+            if(publicRequest.IsSetRolePrincipalArn())
+            {
+                context.Writer.WritePropertyName("rolePrincipalArn");
+                context.Writer.WriteStringValue(publicRequest.RolePrincipalArn);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

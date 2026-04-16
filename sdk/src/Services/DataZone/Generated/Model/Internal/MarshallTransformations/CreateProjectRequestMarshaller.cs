@@ -99,10 +99,38 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetMembershipAssignments())
+            {
+                context.Writer.WritePropertyName("membershipAssignments");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMembershipAssignmentsListValue in publicRequest.MembershipAssignments)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProjectMembershipAssignmentMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMembershipAssignmentsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetProjectCategory())
+            {
+                context.Writer.WritePropertyName("projectCategory");
+                context.Writer.WriteStringValue(publicRequest.ProjectCategory);
+            }
+
+            if(publicRequest.IsSetProjectExecutionRole())
+            {
+                context.Writer.WritePropertyName("projectExecutionRole");
+                context.Writer.WriteStringValue(publicRequest.ProjectExecutionRole);
             }
 
             if(publicRequest.IsSetProjectProfileId())

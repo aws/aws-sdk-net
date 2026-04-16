@@ -45,6 +45,7 @@ namespace Amazon.DataZone.Model
         private string _id;
         private DateTime? _lastUpdatedAt;
         private string _name;
+        private string _projectCategory;
         private string _projectProfileId;
         private ProjectStatus _projectStatus;
         private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
@@ -264,6 +265,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectCategory. 
+        /// <para>
+        /// The category of the project.
+        /// </para>
+        /// </summary>
+        public string ProjectCategory
+        {
+            get { return this._projectCategory; }
+            set { this._projectCategory = value; }
+        }
+
+        // Check to see if ProjectCategory property is set
+        internal bool IsSetProjectCategory()
+        {
+            return this._projectCategory != null;
         }
 
         /// <summary>
