@@ -275,63 +275,6 @@ namespace Amazon.DevOpsAgent
         #endregion
 
 
-        #region  AllowVendedLogDeliveryForResource
-
-        internal virtual AllowVendedLogDeliveryForResourceResponse AllowVendedLogDeliveryForResource(AllowVendedLogDeliveryForResourceRequest request)
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = AllowVendedLogDeliveryForResourceRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = AllowVendedLogDeliveryForResourceResponseUnmarshaller.Instance;
-
-            return Invoke<AllowVendedLogDeliveryForResourceResponse>(request, options);
-        }
-
-
-
-        /// <summary>
-        /// Authorize Ingestion Hub subscription operation.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the AllowVendedLogDeliveryForResource service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the AllowVendedLogDeliveryForResource service method, as returned by DevOpsAgent.</returns>
-        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
-        /// Access to the requested resource is denied due to insufficient permissions.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
-        /// The request conflicts with the current state of the resource.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
-        /// This exception is thrown when the content size exceeds the allowed limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
-        /// This exception is thrown when an unexpected error occurs in the processing of a request.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
-        /// One or more parameters provided in the request are invalid.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
-        /// The requested resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
-        /// The request would exceed the service quota limit.
-        /// </exception>
-        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
-        /// The request was throttled due to too many requests. Please slow down and try again.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/AllowVendedLogDeliveryForResource">REST API Reference for AllowVendedLogDeliveryForResource Operation</seealso>
-        public virtual Task<AllowVendedLogDeliveryForResourceResponse> AllowVendedLogDeliveryForResourceAsync(AllowVendedLogDeliveryForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var options = new Amazon.Runtime.Internal.InvokeOptions();
-            options.RequestMarshaller = AllowVendedLogDeliveryForResourceRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = AllowVendedLogDeliveryForResourceResponseUnmarshaller.Instance;
-
-            return InvokeAsync<AllowVendedLogDeliveryForResourceResponse>(request, options, cancellationToken);
-        }
-        #endregion
-        
         #region  AssociateService
 
         internal virtual AssociateServiceResponse AssociateService(AssociateServiceRequest request)

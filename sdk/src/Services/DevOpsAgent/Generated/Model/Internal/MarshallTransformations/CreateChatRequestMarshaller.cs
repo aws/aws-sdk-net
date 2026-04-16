@@ -65,8 +65,6 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetAgentSpaceId())
                 throw new AmazonDevOpsAgentException("Request object does not have required field AgentSpaceId set");
             request.AddPathResource("{agentSpaceId}", StringUtils.FromString(publicRequest.AgentSpaceId));
-            if (string.IsNullOrEmpty(publicRequest.UserId))
-                throw new AmazonDevOpsAgentException("Request object does not have required field UserId set");
             
             if (publicRequest.IsSetUserId())
                 request.Parameters.Add("userId", StringUtils.FromString(publicRequest.UserId));
