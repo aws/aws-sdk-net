@@ -32,31 +32,20 @@ namespace Amazon.Runtime.Credentials
     /// The default search order used is described in the <a href="https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/creds-assign.html">
     /// developer guide</a>, but it can be overwritten by setting the <see cref="AWSConfigs.AWSCredentialsGenerators"/> property.
     /// </summary>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA1001:Types that own disposable fields should be disposable",
-        Justification = "This resolver is designed to be long-lived (singleton via DefaultIdentityResolverConfiguration). Disposing the semaphore would break concurrent callers.")]
-    public class DefaultAWSCredentialsIdentityResolver : IIdentityResolver<AWSCredentials>
+    public class DefaultAWSCredentialsIdentityResolver : IIdentityResolver<AWSCredentials>, IDisposable
     {
         private const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
         private const string DEFAULT_PROFILE_NAME = "default";
 
-        /// <summary>
-        /// A method that should either return valid <see cref="AWSCredentials"/> or throw an exception (so
-        /// that the SDK can move on and attempt the next generator in the credential chain).
-        /// </summary>
         public delegate AWSCredentials CredentialsGenerator();
 
-        /// <summary>
-        /// SemaphoreSlim supports both synchronous Wait() and asynchronous WaitAsync(), preventing
-        /// thread pool starvation when many concurrent async requests need to resolve credentials
-        /// simultaneously. Only one caller walks the credential chain; all others wait and reuse
-        /// the cached result.
-        /// </summary>
         private readonly SemaphoreSlim _credentialResolutionLock = new SemaphoreSlim(1, 1);
         private volatile AWSCredentials _cachedCredentials;
         private readonly List<CredentialsGenerator> _credentialsGenerators;
         private readonly CredentialProfileStoreChain _credentialProfileChain = new();
         private readonly EnvironmentState _lastKnownEnvironmentState = new();
         private static readonly Lazy<DefaultAWSCredentialsIdentityResolver> _defaultInstance = new();
+        private bool _disposed;
 
         public DefaultAWSCredentialsIdentityResolver()
         {
@@ -387,6 +376,22 @@ namespace Amazon.Runtime.Credentials
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Failed to connect to EC2 instance metadata to retrieve credentials: {0}.",
                     e.Message), e);
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed) return;
+            if (disposing)
+            {
+                _disposed = true;
+                _credentialResolutionLock.Dispose();
             }
         }
 

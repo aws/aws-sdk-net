@@ -3,7 +3,8 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "Fix credential resolution issue under high concurrency where multiple threads simultaneously walked the credential chain causing initial service calls to fail."
+      "Fix credential resolution issue under high concurrency where multiple threads simultaneously walked the credential chain causing initial service calls to fail.",
+      "[Breaking Change] DefaultAWSCredentialsIdentityResolver implements IDisposable now. Most users will be unaffected since the static GetCredentials() or GetCredentialsAsync() methods are being called."
     ]
   }
 }
