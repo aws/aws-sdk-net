@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
     {
         private int? _concurrentJobs;
         private string _description;
+        private int? _maximumConcurrentFeeds;
         private string _name;
         private ReservationPlanSettings _reservationPlanSettings;
         private QueueStatus _status;
@@ -74,6 +75,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaximumConcurrentFeeds. Specify the maximum number of Elemental
+        /// Inference feeds MediaConvert can process concurrently.
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? MaximumConcurrentFeeds
+        {
+            get { return this._maximumConcurrentFeeds; }
+            set { this._maximumConcurrentFeeds = value; }
+        }
+
+        // Check to see if MaximumConcurrentFeeds property is set
+        internal bool IsSetMaximumConcurrentFeeds()
+        {
+            return this._maximumConcurrentFeeds.HasValue; 
         }
 
         /// <summary>

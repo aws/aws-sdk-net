@@ -98,6 +98,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentPhase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("elementalInferenceConfiguration", targetDepth))
+                {
+                    var unmarshaller = ElementalInferenceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ElementalInferenceConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("errorCode", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

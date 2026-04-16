@@ -11,6 +11,10 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CreateQueueRequest.MaximumConcurrentFeeds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.ListJobsRequest.MaxResults</property>
     <min>1</min>
     <max>20</max>
@@ -49,6 +53,10 @@
     <property>Amazon.MediaConvert.Model.UpdateJobTemplateRequest.Priority</property>
     <min>-50</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.UpdateQueueRequest.MaximumConcurrentFeeds</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.AacSettings.Bitrate</property>
@@ -1905,6 +1913,10 @@
     <property>Amazon.MediaConvert.Model.ProresSettings.ParNumerator</property>
     <min>1</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Queue.MaximumConcurrentFeeds</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Rectangle.Height</property>
