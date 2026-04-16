@@ -110,10 +110,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ExpireDate. 
         /// <para>
-        /// The date and time when the mute rule expires and is no longer evaluated. After this
-        /// time, the rule status becomes EXPIRED and will no longer mute the targeted alarms.
-        /// This date and time is interpreted according to the schedule timezone, or UTC if no
-        /// timezone is specified.
+        /// The date and time when the mute rule expires and is no longer evaluated, specified
+        /// as a timestamp in ISO 8601 format (for example, <c>2026-12-31T23:59:59Z</c>). After
+        /// this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms.
         /// </para>
         /// </summary>
         public DateTime? ExpireDate
@@ -188,10 +187,10 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The date and time after which the mute rule takes effect. If not specified, the mute
-        /// rule takes effect immediately upon creation and the mutes are applied as per the schedule
-        /// expression. This date and time is interpreted according to the schedule timezone,
-        /// or UTC if no timezone is specified.
+        /// The date and time after which the mute rule takes effect, specified as a timestamp
+        /// in ISO 8601 format (for example, <c>2026-04-15T08:00:00Z</c>). If not specified, the
+        /// mute rule takes effect immediately upon creation and the mutes are applied as per
+        /// the schedule expression.
         /// </para>
         /// </summary>
         public DateTime? StartDate
