@@ -525,7 +525,11 @@ namespace Amazon.SimpleNotificationService.Util
 
                                 var content = reader.ReadToEnd().Trim();
 
+#if NET11_0_OR_GREATER
+                                X509Certificate2 certificate = X509CertificateLoader.LoadCertificate(ParsePemContent(content));
+#else
                                 X509Certificate2 certificate = new X509Certificate2(ParsePemContent(content));
+#endif
                                 certificateCache[this.SigningCertURL] = certificate;
                                 return certificate;
                             }
@@ -545,7 +549,7 @@ namespace Amazon.SimpleNotificationService.Util
                     "Unable to download signing cert after {0} retries", MAX_RETRIES));
             }
         }
-        #endregion
+#endregion
 
 #if BCL
         #region Subscribe/Unsubscribe Actions
