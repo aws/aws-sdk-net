@@ -219,4 +219,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBProperty(StoreAsEpochLong = true)]
         public DateTime? UpdatedAt { get; set; }
     }
+
+    [DynamoDBTable("HashTable")]
+    public class ProductReviews
+    {
+        [DynamoDBHashKey]
+        public int Id { get; set; }
+
+        // reserved word
+        [DynamoDBProperty(StoreAsEpoch = true)]
+        public DateTime Date { get; set; }
+
+        // reserved word
+        public string Comment { get; set; }
+    }
 }
