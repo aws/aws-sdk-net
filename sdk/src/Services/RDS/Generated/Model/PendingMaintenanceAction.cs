@@ -73,6 +73,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>serverless-platform-version-update</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>system-update</c> 
         /// </para>
         ///  </li> </ul> 
