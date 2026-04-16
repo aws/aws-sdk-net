@@ -103,5 +103,75 @@ namespace ServiceClientGeneratorTests
             var printedText = sb.ToString();
             Assert.Equal(expectedText, printedText);
         }
+
+        #region Deprecation Message Sanitization Tests
+
+        private const string _deprecatedModelsPath = "../../Content/TestModelDeprecated.json";
+
+        // The expected sanitized message after removing \r, \n, replacing " with ',
+        // removing <p></p>, and replacing <code></code> with <c></c>.
+        private const string _expectedSanitizedMessage = "This operation is deprecated.Use <c>NewOperation</c> instead.See 'docs' for details.";
+        private const string _expectedSanitizedMemberMessage = "This field is deprecated.Use <c>NewField</c> instead.See 'docs' for details.";
+        private const string _expectedSanitizedShapeMessage = "This shape is deprecated.Use <c>NewShape</c> instead.See 'docs' for details.";
+
+        [Fact]
+        public void OperationDeprecationMessageIsSanitized()
+        {
+            var model = new ServiceModel(_deprecatedModelsPath, null);
+            var operation = model.Operations.Single(x => x.Name.Equals("DeprecatedOperation"));
+
+            Assert.True(operation.IsDeprecated);
+            var message = operation.DeprecationMessage;
+
+            Assert.DoesNotContain("\n", message);
+            Assert.DoesNotContain("\r", message);
+            Assert.DoesNotContain("\"", message);
+            Assert.DoesNotContain("<p>", message);
+            Assert.DoesNotContain("</p>", message);
+            Assert.DoesNotContain("<code>", message);
+            Assert.DoesNotContain("</code>", message);
+            Assert.Equal(_expectedSanitizedMessage, message);
+        }
+
+        [Fact]
+        public void ShapeDeprecationMessageIsSanitized()
+        {
+            var model = new ServiceModel(_deprecatedModelsPath, null);
+            var shape = model.Shapes.Single(x => x.Name.Equals("DeprecatedShape"));
+
+            Assert.True(shape.IsDeprecated);
+            var message = shape.DeprecationMessage;
+
+            Assert.DoesNotContain("\n", message);
+            Assert.DoesNotContain("\r", message);
+            Assert.DoesNotContain("\"", message);
+            Assert.DoesNotContain("<p>", message);
+            Assert.DoesNotContain("</p>", message);
+            Assert.DoesNotContain("<code>", message);
+            Assert.DoesNotContain("</code>", message);
+            Assert.Equal(_expectedSanitizedShapeMessage, message);
+        }
+
+        [Fact]
+        public void MemberDeprecationMessageIsSanitized()
+        {
+            var model = new ServiceModel(_deprecatedModelsPath, null);
+            var shape = model.Shapes.Single(x => x.Name.Equals("DeprecatedOperationInput"));
+            var member = shape.Members.Single(x => x.ModeledName.Equals("OldField"));
+
+            Assert.True(member.IsDeprecated);
+            var message = member.DeprecationMessage;
+
+            Assert.DoesNotContain("\n", message);
+            Assert.DoesNotContain("\r", message);
+            Assert.DoesNotContain("\"", message);
+            Assert.DoesNotContain("<p>", message);
+            Assert.DoesNotContain("</p>", message);
+            Assert.DoesNotContain("<code>", message);
+            Assert.DoesNotContain("</code>", message);
+            Assert.Equal(_expectedSanitizedMemberMessage, message);
+        }
+
+        #endregion
     }
 }

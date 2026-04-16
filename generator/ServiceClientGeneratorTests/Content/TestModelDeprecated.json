@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "metadata": {
+    "apiVersion": "2020-6-25",
+    "serviceAbbreviation": "TestService",
+    "serviceFullName": "TestService",
+    "signatureVersion": "v4",
+    "serviceId": "TestService"
+  },
+  "operations": {
+    "DeprecatedOperation": {
+      "name": "DeprecatedOperation",
+      "input": { "shape": "DeprecatedOperationInput" },
+      "output": { "shape": "DeprecatedOperationOutput" },
+      "documentation": "a deprecated operation",
+      "deprecated": true,
+      "deprecatedMessage": "This operation is deprecated.\nUse <code>NewOperation</code> instead.\r\nSee \"docs\" for <p>details</p>."
+    }
+  },
+  "shapes": {
+    "DeprecatedOperationInput": {
+      "type": "structure",
+      "members": {
+        "OldField": {
+          "shape": "OldFieldShape",
+          "deprecated": true,
+          "deprecatedMessage": "This field is deprecated.\nUse <code>NewField</code> instead.\r\nSee \"docs\" for <p>details</p>."
+        }
+      }
+    },
+    "DeprecatedOperationOutput": {
+      "type": "structure",
+      "members": {}
+    },
+    "OldFieldShape": { "type": "string" },
+    "DeprecatedShape": {
+      "type": "structure",
+      "members": {},
+      "deprecated": true,
+      "deprecatedMessage": "This shape is deprecated.\nUse <code>NewShape</code> instead.\r\nSee \"docs\" for <p>details</p>."
+    }
+  }
+}

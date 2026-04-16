@@ -1039,7 +1039,7 @@ namespace ServiceClientGenerator
                 if (message == null)
                     throw new Exception(string.Format("The 'message' property of the 'deprecated' trait is missing for member {0}.{1}.\nFor example: \"MemberName\":{{ ... \"deprecated\":true, \"deprecatedMessage\":\"This property is deprecated, use XXX instead.\"}}", this.OwningShape.Name, this._name));
 
-                return message ?? "";
+                return (message ?? "").SanitizeDeprecationMessage();
             }
         }
 
