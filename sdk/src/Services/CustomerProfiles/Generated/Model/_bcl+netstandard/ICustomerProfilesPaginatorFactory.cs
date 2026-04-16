@@ -118,6 +118,16 @@ namespace Amazon.CustomerProfiles.Model
         IListRecommendersPaginator ListRecommenders(ListRecommendersRequest request);
 
         /// <summary>
+        /// Paginator for ListRecommenderSchemas operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRecommenderSchemasPaginator ListRecommenderSchemas(ListRecommenderSchemasRequest request);
+
+        /// <summary>
         /// Paginator for ListRuleBasedMatches operation
         ///</summary>
         [AWSPaginator(

@@ -30,25 +30,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Provides a summary of a recommender filter's configuration and current state.
+    /// This is the response object from the CreateRecommenderSchema operation.
     /// </summary>
-    public partial class RecommenderFilterSummary
+    public partial class CreateRecommenderSchemaResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdAt;
-        private string _description;
-        private string _failureReason;
-        private string _recommenderFilterExpression;
-        private string _recommenderFilterName;
+        private Dictionary<string, List<RecommenderSchemaField>> _fields = AWSConfigs.InitializeCollections ? new Dictionary<string, List<RecommenderSchemaField>>() : null;
+        private string _recommenderSchemaArn;
         private string _recommenderSchemaName;
-        private RecommenderFilterStatus _status;
+        private RecommenderSchemaStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the recommender filter was created.
+        /// The timestamp of when the recommender schema was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime? CreatedAt
         {
             get { return this._createdAt; }
@@ -62,87 +61,55 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property Fields. 
         /// <para>
-        /// A description of the recommender filter's purpose and characteristics.
+        /// A map of dataset type to column definitions included in the schema.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
-        public string Description
+        [AWSProperty(Required=true, Min=1, Max=1)]
+        public Dictionary<string, List<RecommenderSchemaField>> Fields
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._fields; }
+            set { this._fields = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if Fields property is set
+        internal bool IsSetFields()
         {
-            return this._description != null;
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property FailureReason. 
+        /// Gets and sets the property RecommenderSchemaArn. 
         /// <para>
-        /// If the recommender filter is in a failed state, provides the reason for the failure.
+        /// The Amazon Resource Name (ARN) of the recommender schema.
         /// </para>
         /// </summary>
-        public string FailureReason
+        [AWSProperty(Required=true)]
+        public string RecommenderSchemaArn
         {
-            get { return this._failureReason; }
-            set { this._failureReason = value; }
+            get { return this._recommenderSchemaArn; }
+            set { this._recommenderSchemaArn = value; }
         }
 
-        // Check to see if FailureReason property is set
-        internal bool IsSetFailureReason()
+        // Check to see if RecommenderSchemaArn property is set
+        internal bool IsSetRecommenderSchemaArn()
         {
-            return this._failureReason != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RecommenderFilterExpression. 
-        /// <para>
-        /// The filter expression that defines which items to include or exclude from recommendations.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=2500)]
-        public string RecommenderFilterExpression
-        {
-            get { return this._recommenderFilterExpression; }
-            set { this._recommenderFilterExpression = value; }
-        }
-
-        // Check to see if RecommenderFilterExpression property is set
-        internal bool IsSetRecommenderFilterExpression()
-        {
-            return this._recommenderFilterExpression != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RecommenderFilterName. 
-        /// <para>
-        /// The name of the recommender filter.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=63)]
-        public string RecommenderFilterName
-        {
-            get { return this._recommenderFilterName; }
-            set { this._recommenderFilterName = value; }
-        }
-
-        // Check to see if RecommenderFilterName property is set
-        internal bool IsSetRecommenderFilterName()
-        {
-            return this._recommenderFilterName != null;
+            return this._recommenderSchemaArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property RecommenderSchemaName. 
         /// <para>
-        /// The name of the recommender schema associated with this recommender filter.
+        /// The name of the recommender schema.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RecommenderSchemaName
         {
             get { return this._recommenderSchemaName; }
@@ -158,10 +125,11 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current operational status of the recommender filter.
+        /// The status of the recommender schema.
         /// </para>
         /// </summary>
-        public RecommenderFilterStatus Status
+        [AWSProperty(Required=true)]
+        public RecommenderSchemaStatus Status
         {
             get { return this._status; }
             set { this._status = value; }

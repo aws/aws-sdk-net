@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetRecommenderFilter operation
+    /// Response Unmarshaller for DeleteRecommenderSchema operation
     /// </summary>  
-    public class GetRecommenderFilterResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteRecommenderSchemaResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,61 +46,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetRecommenderFilterResponse response = new GetRecommenderFilterResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
-            {
-                if (context.TestExpression("CreatedAt", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FailureReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RecommenderFilterExpression", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RecommenderFilterExpression = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RecommenderFilterName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RecommenderFilterName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RecommenderSchemaName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RecommenderSchemaName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-            }
+            DeleteRecommenderSchemaResponse response = new DeleteRecommenderSchemaResponse();
 
             return response;
         }
@@ -149,9 +95,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             return new AmazonCustomerProfilesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetRecommenderFilterResponseUnmarshaller _instance = new GetRecommenderFilterResponseUnmarshaller();        
+        private static DeleteRecommenderSchemaResponseUnmarshaller _instance = new DeleteRecommenderSchemaResponseUnmarshaller();        
 
-        internal static GetRecommenderFilterResponseUnmarshaller GetInstance()
+        internal static DeleteRecommenderSchemaResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -159,7 +105,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetRecommenderFilterResponseUnmarshaller Instance
+        public static DeleteRecommenderSchemaResponseUnmarshaller Instance
         {
             get
             {

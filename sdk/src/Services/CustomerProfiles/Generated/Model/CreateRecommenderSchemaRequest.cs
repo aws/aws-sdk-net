@@ -30,37 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateRecommenderFilter operation.
-    /// Creates a recommender filter. A recommender filter specifies which items to include
-    /// or exclude from recommendations.
+    /// Container for the parameters to the CreateRecommenderSchema operation.
+    /// Creates a recommender schema. A recommender schema defines the set of data columns
+    /// available for training recommenders and filters under a domain.
     /// </summary>
-    public partial class CreateRecommenderFilterRequest : AmazonCustomerProfilesRequest
+    public partial class CreateRecommenderSchemaRequest : AmazonCustomerProfilesRequest
     {
-        private string _description;
         private string _domainName;
-        private string _recommenderFilterExpression;
-        private string _recommenderFilterName;
+        private Dictionary<string, List<RecommenderSchemaField>> _fields = AWSConfigs.InitializeCollections ? new Dictionary<string, List<RecommenderSchemaField>>() : null;
         private string _recommenderSchemaName;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-
-        /// <summary>
-        /// Gets and sets the property Description. 
-        /// <para>
-        /// A description of the recommender filter.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
-        public string Description
-        {
-            get { return this._description; }
-            set { this._description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this._description != null;
-        }
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -82,51 +61,37 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecommenderFilterExpression. 
+        /// Gets and sets the property Fields. 
         /// <para>
-        /// The filter expression that defines which items to include or exclude from recommendations.
+        /// A map of dataset type to column definitions that specifies which data columns to include
+        /// in the schema. Currently only the <c>_webAnalytics</c> key is supported.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=2500)]
-        public string RecommenderFilterExpression
+        [AWSProperty(Required=true, Min=1, Max=1)]
+        public Dictionary<string, List<RecommenderSchemaField>> Fields
         {
-            get { return this._recommenderFilterExpression; }
-            set { this._recommenderFilterExpression = value; }
+            get { return this._fields; }
+            set { this._fields = value; }
         }
 
-        // Check to see if RecommenderFilterExpression property is set
-        internal bool IsSetRecommenderFilterExpression()
+        // Check to see if Fields property is set
+        internal bool IsSetFields()
         {
-            return this._recommenderFilterExpression != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RecommenderFilterName. 
-        /// <para>
-        /// The name of the recommender filter. The name must be unique within the domain.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=63)]
-        public string RecommenderFilterName
-        {
-            get { return this._recommenderFilterName; }
-            set { this._recommenderFilterName = value; }
-        }
-
-        // Check to see if RecommenderFilterName property is set
-        internal bool IsSetRecommenderFilterName()
-        {
-            return this._recommenderFilterName != null;
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property RecommenderSchemaName. 
         /// <para>
-        /// The name of the recommender schema to use for this recommender filter. If not specified,
-        /// the default schema is used.
+        /// The name of the recommender schema. The name must be unique within the domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string RecommenderSchemaName
         {
             get { return this._recommenderSchemaName; }

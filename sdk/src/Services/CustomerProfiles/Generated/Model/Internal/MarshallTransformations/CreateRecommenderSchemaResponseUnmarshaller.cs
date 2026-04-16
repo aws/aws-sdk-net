@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetRecommender operation
+    /// Response Unmarshaller for CreateRecommenderSchema operation
     /// </summary>  
-    public class GetRecommenderResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateRecommenderSchemaResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetRecommenderResponse response = new GetRecommenderResponse();
+            CreateRecommenderSchemaResponse response = new CreateRecommenderSchemaResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
@@ -58,46 +58,16 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Fields", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<RecommenderSchemaField>, StringUnmarshaller, JsonListUnmarshaller<RecommenderSchemaField,RecommenderSchemaFieldUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<RecommenderSchemaField, RecommenderSchemaFieldUnmarshaller>(RecommenderSchemaFieldUnmarshaller.Instance));
+                    response.Fields = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RecommenderSchemaArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FailureReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdatedAt", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LatestRecommenderUpdate", targetDepth))
-                {
-                    var unmarshaller = RecommenderUpdateUnmarshaller.Instance;
-                    response.LatestRecommenderUpdate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RecommenderConfig", targetDepth))
-                {
-                    var unmarshaller = RecommenderConfigUnmarshaller.Instance;
-                    response.RecommenderConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RecommenderName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RecommenderName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RecommenderRecipeName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RecommenderRecipeName = unmarshaller.Unmarshall(context, ref reader);
+                    response.RecommenderSchemaArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecommenderSchemaName", targetDepth))
@@ -116,12 +86,6 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TrainingMetrics", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<TrainingMetrics, TrainingMetricsUnmarshaller>(TrainingMetricsUnmarshaller.Instance);
-                    response.TrainingMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -173,9 +137,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             return new AmazonCustomerProfilesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetRecommenderResponseUnmarshaller _instance = new GetRecommenderResponseUnmarshaller();        
+        private static CreateRecommenderSchemaResponseUnmarshaller _instance = new CreateRecommenderSchemaResponseUnmarshaller();        
 
-        internal static GetRecommenderResponseUnmarshaller GetInstance()
+        internal static CreateRecommenderSchemaResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -183,7 +147,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetRecommenderResponseUnmarshaller Instance
+        public static CreateRecommenderSchemaResponseUnmarshaller Instance
         {
             get
             {

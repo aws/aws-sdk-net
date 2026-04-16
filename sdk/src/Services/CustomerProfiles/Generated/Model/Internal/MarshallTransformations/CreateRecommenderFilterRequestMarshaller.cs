@@ -91,6 +91,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.RecommenderFilterExpression);
             }
 
+            if(publicRequest.IsSetRecommenderSchemaName())
+            {
+                context.Writer.WritePropertyName("RecommenderSchemaName");
+                context.Writer.WriteStringValue(publicRequest.RecommenderSchemaName);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

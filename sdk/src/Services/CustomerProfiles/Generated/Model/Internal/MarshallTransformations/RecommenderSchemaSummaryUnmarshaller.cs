@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecommenderFilterSummary Object
+    /// Response Unmarshaller for RecommenderSchemaSummary Object
     /// </summary>  
-    public class RecommenderFilterSummaryUnmarshaller : IJsonUnmarshaller<RecommenderFilterSummary, JsonUnmarshallerContext>
+    public class RecommenderSchemaSummaryUnmarshaller : IJsonUnmarshaller<RecommenderSchemaSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecommenderFilterSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RecommenderSchemaSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            RecommenderFilterSummary unmarshalledObject = new RecommenderFilterSummary();
+            RecommenderSchemaSummary unmarshalledObject = new RecommenderSchemaSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -62,28 +62,10 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Fields", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FailureReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RecommenderFilterExpression", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommenderFilterExpression = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RecommenderFilterName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommenderFilterName = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<RecommenderSchemaField>, StringUnmarshaller, JsonListUnmarshaller<RecommenderSchemaField,RecommenderSchemaFieldUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<RecommenderSchemaField, RecommenderSchemaFieldUnmarshaller>(RecommenderSchemaFieldUnmarshaller.Instance));
+                    unmarshalledObject.Fields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecommenderSchemaName", targetDepth))
@@ -98,23 +80,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static RecommenderFilterSummaryUnmarshaller _instance = new RecommenderFilterSummaryUnmarshaller();        
+        private static RecommenderSchemaSummaryUnmarshaller _instance = new RecommenderSchemaSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommenderFilterSummaryUnmarshaller Instance
+        public static RecommenderSchemaSummaryUnmarshaller Instance
         {
             get
             {

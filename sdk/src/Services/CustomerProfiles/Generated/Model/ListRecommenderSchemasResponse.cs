@@ -30,17 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Configuration settings that define how events are processed and tracked.
+    /// This is the response object from the ListRecommenderSchemas operation.
     /// </summary>
-    public partial class EventsConfig
+    public partial class ListRecommenderSchemasResponse : AmazonWebServiceResponse
     {
-        private List<EventParameters> _eventParametersList = AWSConfigs.InitializeCollections ? new List<EventParameters>() : null;
+        private string _nextToken;
+        private List<RecommenderSchemaSummary> _recommenderSchemas = AWSConfigs.InitializeCollections ? new List<RecommenderSchemaSummary>() : null;
 
         /// <summary>
-        /// Gets and sets the property EventParametersList. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// A list of event parameters configurations that specify how different event types should
-        /// be handled.
+        /// A token to retrieve the next page of results. Null if there are no more results to
+        /// retrieve.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommenderSchemas. 
+        /// <para>
+        /// A list of recommender schemas and their properties in the specified domain.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -48,17 +68,16 @@ namespace Amazon.CustomerProfiles.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public List<EventParameters> EventParametersList
+        public List<RecommenderSchemaSummary> RecommenderSchemas
         {
-            get { return this._eventParametersList; }
-            set { this._eventParametersList = value; }
+            get { return this._recommenderSchemas; }
+            set { this._recommenderSchemas = value; }
         }
 
-        // Check to see if EventParametersList property is set
-        internal bool IsSetEventParametersList()
+        // Check to see if RecommenderSchemas property is set
+        internal bool IsSetRecommenderSchemas()
         {
-            return this._eventParametersList != null && (this._eventParametersList.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._recommenderSchemas != null && (this._recommenderSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRecommender Request Marshaller
+    /// CreateRecommenderSchema Request Marshaller
     /// </summary>       
-    public class CreateRecommenderRequestMarshaller : IMarshaller<IRequest, CreateRecommenderRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateRecommenderSchemaRequestMarshaller : IMarshaller<IRequest, CreateRecommenderSchemaRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRecommenderRequest)input);
+            return this.Marshall((CreateRecommenderSchemaRequest)input);
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRecommenderRequest publicRequest)
+        public IRequest Marshall(CreateRecommenderSchemaRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
             request.Headers["Content-Type"] = "application/json";
@@ -66,10 +66,10 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
-            if (!publicRequest.IsSetRecommenderName())
-                throw new AmazonCustomerProfilesException("Request object does not have required field RecommenderName set");
-            request.AddPathResource("{RecommenderName}", StringUtils.FromString(publicRequest.RecommenderName));
-            request.ResourcePath = "/domains/{DomainName}/recommenders/{RecommenderName}";
+            if (!publicRequest.IsSetRecommenderSchemaName())
+                throw new AmazonCustomerProfilesException("Request object does not have required field RecommenderSchemaName set");
+            request.AddPathResource("{RecommenderSchemaName}", StringUtils.FromString(publicRequest.RecommenderSchemaName));
+            request.ResourcePath = "/domains/{DomainName}/recommender-schemas/{RecommenderSchemaName}";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -79,33 +79,28 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDescription())
+            if(publicRequest.IsSetFields())
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-
-            if(publicRequest.IsSetRecommenderConfig())
-            {
-                context.Writer.WritePropertyName("RecommenderConfig");
+                context.Writer.WritePropertyName("Fields");
                 context.Writer.WriteStartObject();
+                foreach (var publicRequestFieldsKvp in publicRequest.Fields)
+                {
+                    context.Writer.WritePropertyName(publicRequestFieldsKvp.Key);
+                    var publicRequestFieldsValue = publicRequestFieldsKvp.Value;
 
-                var marshaller = RecommenderConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.RecommenderConfig, context);
+                    context.Writer.WriteStartArray();
+                    foreach(var publicRequestFieldsValueListValue in publicRequestFieldsValue)
+                    {
+                        context.Writer.WriteStartObject();
 
+                        var marshaller = RecommenderSchemaFieldMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFieldsValueListValue, context);
+
+                        context.Writer.WriteEndObject();
+                    }
+                    context.Writer.WriteEndArray();
+                }
                 context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetRecommenderRecipeName())
-            {
-                context.Writer.WritePropertyName("RecommenderRecipeName");
-                context.Writer.WriteStringValue(publicRequest.RecommenderRecipeName);
-            }
-
-            if(publicRequest.IsSetRecommenderSchemaName())
-            {
-                context.Writer.WritePropertyName("RecommenderSchemaName");
-                context.Writer.WriteStringValue(publicRequest.RecommenderSchemaName);
             }
 
             if(publicRequest.IsSetTags())
@@ -135,9 +130,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateRecommenderRequestMarshaller _instance = new CreateRecommenderRequestMarshaller();        
+        private static CreateRecommenderSchemaRequestMarshaller _instance = new CreateRecommenderSchemaRequestMarshaller();        
 
-        internal static CreateRecommenderRequestMarshaller GetInstance()
+        internal static CreateRecommenderSchemaRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -145,7 +140,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRecommenderRequestMarshaller Instance
+        public static CreateRecommenderSchemaRequestMarshaller Instance
         {
             get
             {

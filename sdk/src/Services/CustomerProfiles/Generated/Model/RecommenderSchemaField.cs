@@ -30,21 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Represents a field in a ProfileObjectType.
+    /// Defines a column in a recommender schema, including the target field name and optional
+    /// feature and content type settings for training.
     /// </summary>
-    public partial class ObjectTypeField
+    public partial class RecommenderSchemaField
     {
-        private FieldContentType _contentType;
-        private string _source;
-        private string _target;
+        private ContentType _contentType;
+        private FeatureType _featureType;
+        private string _targetFieldName;
 
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The content type of the field. Used for determining equality when searching.
+        /// The data type of the column value. Valid values are <c>String</c> and <c>Number</c>.
+        /// The default value is <c>String</c>.
         /// </para>
         /// </summary>
-        public FieldContentType ContentType
+        public ContentType ContentType
         {
             get { return this._contentType; }
             set { this._contentType = value; }
@@ -57,44 +59,41 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Source. 
+        /// Gets and sets the property FeatureType. 
         /// <para>
-        /// A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType
-        /// of a Zendesk user and “FirstName” is a field in that ObjectType.
+        /// How the column is treated for model training. Valid values are <c>CATEGORICAL</c>
+        /// and <c>TEXTUAL</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public string Source
+        public FeatureType FeatureType
         {
-            get { return this._source; }
-            set { this._source = value; }
+            get { return this._featureType; }
+            set { this._featureType = value; }
         }
 
-        // Check to see if Source property is set
-        internal bool IsSetSource()
+        // Check to see if FeatureType property is set
+        internal bool IsSetFeatureType()
         {
-            return this._source != null;
+            return this._featureType != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Target. 
+        /// Gets and sets the property TargetFieldName. 
         /// <para>
-        /// The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.
-        /// Do not include sensitive or personally identifiable information (PII) in the target
-        /// field name.
+        /// The name of the target field in the dataset, such as <c>Location.City</c> or <c>Attributes.MealTime</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public string Target
+        [AWSProperty(Required=true, Min=1, Max=1000)]
+        public string TargetFieldName
         {
-            get { return this._target; }
-            set { this._target = value; }
+            get { return this._targetFieldName; }
+            set { this._targetFieldName = value; }
         }
 
-        // Check to see if Target property is set
-        internal bool IsSetTarget()
+        // Check to see if TargetFieldName property is set
+        internal bool IsSetTargetFieldName()
         {
-            return this._target != null;
+            return this._targetFieldName != null;
         }
 
     }
