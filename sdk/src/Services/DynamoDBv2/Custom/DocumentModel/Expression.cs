@@ -32,8 +32,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal bool IsSet
         {
-            get { return this.ExpressionStatement != null; }
+            get { return HasStatement(); }
         }
+
+        internal virtual bool HasStatement() { return this.ExpressionStatement != null; }
 
         /// <summary>
         /// Gets and sets the property ExpressionStatement. "Price > :price" is an example expression statement. 
@@ -172,11 +174,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             var convertToAttributeValues  = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
             request.ExpressionAttributeValues ??= new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
-            foreach (var kvp in convertToAttributeValues)
+            if (convertToAttributeValues != null)
             {
-                request.ExpressionAttributeValues[kvp.Key] = kvp.Value;
+                foreach (var kvp in convertToAttributeValues)
+                {
+                    request.ExpressionAttributeValues[kvp.Key] = kvp.Value;
+                }
             }
-
 
             if (this.ExpressionAttributeNames?.Count > 0)
             {
@@ -314,6 +318,104 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
 
             return convertedValues;
+        }
+    }
+
+    internal sealed class UpdateExpression : Expression
+    {
+        internal const string OperationSet = "SET";
+        internal const string OperationRemove = "REMOVE";
+        internal const string OperationAdd = "ADD";
+        internal const string OperationDelete = "DELETE";
+
+        private List<string> SetParts { get; } = new List<string>();
+        private List<string> RemoveParts { get; } = new List<string>();
+        private List<string> AddParts { get; } = new List<string>();
+        private List<string> DeleteParts { get; } = new List<string>();
+
+        private Dictionary<string, AttributeValue> _attributeValues = new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
+
+        internal Dictionary<string, AttributeValue> AttributeValues
+        {
+            get => this._attributeValues;
+            set => this._attributeValues = value;
+        }
+        internal override bool HasStatement()
+        {
+            return SetParts.Count != 0 ||
+                    RemoveParts.Count != 0 ||
+                    AddParts.Count != 0 ||
+                    DeleteParts.Count != 0;
+        }
+
+        internal void AddStatement(string operation, string statement)
+        {
+            if (string.IsNullOrWhiteSpace(operation))
+                throw new ArgumentException("Operation must be non-null and non-empty.", nameof(operation));
+            if (string.IsNullOrWhiteSpace(statement))
+                throw new ArgumentException("Statement must be non-null and non-empty.", nameof(statement));
+
+            switch (operation)
+            {
+                case OperationSet:
+                    SetParts.Add(statement);
+                    break;
+                case OperationRemove:
+                    RemoveParts.Add(statement);
+                    break;
+                case OperationAdd:
+                    AddParts.Add(statement);
+                    break;
+                case OperationDelete:
+                    DeleteParts.Add(statement);
+                    break;
+                default:
+                    throw new ArgumentException($"Unsupported update operation: {operation}", nameof(operation));
+            }
+        }
+
+        internal void ClearStatements()
+        {
+            SetParts.Clear();
+            RemoveParts.Clear();
+            AddParts.Clear();
+            DeleteParts.Clear();
+            ExpressionStatement = null;
+        }
+
+        internal string BuildExpressionStatement()
+        {
+            var parts = new List<string>(4);
+
+            AppendOperation(parts, OperationSet, SetParts);
+            AppendOperation(parts, OperationRemove, RemoveParts);
+            AppendOperation(parts, OperationAdd, AddParts);
+            AppendOperation(parts, OperationDelete, DeleteParts);
+
+            return parts.Count == 0 ? null : string.Join(" ", parts);
+        }
+
+        internal new void ApplyUpdateExpression(UpdateItemRequest request, Table table)
+        {
+            base.ExpressionStatement = BuildExpressionStatement();
+            if (AttributeValues != null && AttributeValues.Count > 0)
+            {
+                request.ExpressionAttributeValues ??= new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
+                foreach (var kvp in AttributeValues)
+                {
+                    request.ExpressionAttributeValues[kvp.Key] = kvp.Value;
+                }
+            }
+            base.ApplyUpdateExpression(request, table);
+        }
+        private static void AppendOperation(List<string> parts, string operation, List<string> operationParts)
+        {
+            if (operationParts == null || operationParts.Count == 0)
+            {
+                return;
+            }
+
+            parts.Add($"{operation} {string.Join(", ", operationParts)}");
         }
     }
 }

@@ -1391,6 +1391,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsTrue(result.Contains("PropX"));
             Assert.IsTrue(result.Contains("PropY"));
         }
+
         [TestMethod]
         public void BuildCounterConditionExpression_NoCounters_ReturnsNull()
         {
@@ -1399,7 +1400,7 @@ namespace AWSSDK_DotNet.UnitTests
             foreach (var p in itemStorage.Config.BaseTypeStorageConfig.Properties)
                 p.IsCounter = false;
 
-            var result = DynamoDBContext.BuildCounterConditionExpression(itemStorage);
+            var result = DynamoDBContext.BuildCounterUpdateExpression(itemStorage);
 
             Assert.IsNull(result);
         }
@@ -1441,13 +1442,13 @@ namespace AWSSDK_DotNet.UnitTests
             second.CounterStartValue = 100;
             second.CounterDelta = 10;
 
-            var result = DynamoDBContext.BuildCounterConditionExpression(itemStorage);
+            var result = DynamoDBContext.BuildCounterUpdateExpression(itemStorage);
 
             Assert.IsNotNull(result);
-            Assert.IsFalse(string.IsNullOrEmpty(result.ExpressionStatement));
+            Assert.IsTrue(result.IsSet);
             // Expression should contain both attribute names
-            Assert.IsTrue(result.ExpressionStatement.Contains(first.AttributeName));
-            Assert.IsTrue(result.ExpressionStatement.Contains(second.AttributeName));
+            Assert.IsTrue(result.BuildExpressionStatement().Contains(first.AttributeName));
+            Assert.IsTrue(result.BuildExpressionStatement().Contains(second.AttributeName));
             // Delta keys
             var firstDeltaKey = ":" + first.AttributeName + "Delta";
             var firstStartKey = ":" + first.AttributeName + "Start";
@@ -1496,10 +1497,10 @@ namespace AWSSDK_DotNet.UnitTests
             child.CounterStartValue = 10;
             child.CounterDelta = 3;
 
-            var result = DynamoDBContext.BuildCounterConditionExpression(itemStorage);
+            var result = DynamoDBContext.BuildCounterUpdateExpression(itemStorage);
 
             Assert.IsNotNull(result);
-            Assert.IsTrue(result.ExpressionStatement.Contains("Prop1"));
+            Assert.IsTrue(result.BuildExpressionStatement().Contains("Prop1"));
             var deltaKey = ":Prop1Delta";
             var startKey = ":Prop1Start";
             Assert.AreEqual(child.CounterDelta, result.ExpressionAttributeValues[deltaKey].AsInt());
@@ -1544,11 +1545,11 @@ namespace AWSSDK_DotNet.UnitTests
             propY.CounterStartValue = 200;
             propY.CounterDelta = 20;
 
-            var result = DynamoDBContext.BuildCounterConditionExpression(itemStorage);
+            var result = DynamoDBContext.BuildCounterUpdateExpression(itemStorage);
 
             Assert.IsNotNull(result);
-            Assert.IsTrue(result.ExpressionStatement.Contains("PropX"));
-            Assert.IsTrue(result.ExpressionStatement.Contains("PropY"));
+            Assert.IsTrue(result.BuildExpressionStatement().Contains("PropX"));
+            Assert.IsTrue(result.BuildExpressionStatement().Contains("PropY"));
 
             Assert.AreEqual(propX.CounterDelta, result.ExpressionAttributeValues[":PropXDelta"].AsInt());
             Assert.AreEqual(propX.CounterStartValue - propX.CounterDelta, result.ExpressionAttributeValues[":PropXStart"].AsInt());

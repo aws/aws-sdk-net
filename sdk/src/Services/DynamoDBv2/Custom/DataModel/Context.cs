@@ -375,9 +375,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var updateDocument = table.UpdateHelper(
                 storage.Document,
-                table.MakeKey(storage.Document),
-                updateConfig.opConfig,
-                updateConfig.counterConditionExpression,
+                updateConfig.opConfig.ReturnValues,
+                updateConfig.opConfig.ConditionalExpression,
+                updateConfig.counterUpdateExpression,
                 updateConfig.updateIfNotExistsAttributeNames
             );
 
@@ -402,9 +402,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var updateDocument = await table.UpdateHelperAsync(
                 storage.Document,
-                table.MakeKey(storage.Document),
-                updateConfig.opConfig,
-                updateConfig.counterConditionExpression,
+                updateConfig.opConfig.ReturnValues,
+                updateConfig.opConfig.ConditionalExpression,
+                updateConfig.counterUpdateExpression,
                 cancellationToken,
                 updateConfig.updateIfNotExistsAttributeNames
             ).ConfigureAwait(false);
@@ -412,10 +412,10 @@ namespace Amazon.DynamoDBv2.DataModel
             ApplyPostUpdate(storage, value, flatConfig, updateDocument, updateConfig);
         }
 
-        private (UpdateItemOperationConfig opConfig, Expression versionExpression, Expression counterConditionExpression, 
+        private (UpdateItemOperationConfig opConfig, Expression versionExpression, UpdateExpression counterUpdateExpression, 
             HashSet<string> updateIfNotExistsAttributeNames, bool updateIfNotExists) PrepareUpdateOperation(ItemStorage storage, DynamoDBFlatConfig flatConfig, Table table)
         {
-            var counterConditionExpression = BuildCounterConditionExpression(storage);
+            var counterUpdateExpression = BuildCounterUpdateExpression(storage);
 
             Expression versionExpression = null;
 
@@ -426,7 +426,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             // set return values to AllNewAttributes if there is a condition expression or updateIfNotExists is true
             // to get the updated document back and reflect changes to the object
-            var returnValues = counterConditionExpression == null && !updateIfNotExists
+            var returnValues = counterUpdateExpression == null && !updateIfNotExists
                 ? ReturnValues.None
                 : ReturnValues.AllNewAttributes;
 
@@ -445,7 +445,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return (updateItemOperationConfig,
                 versionExpression,
-                counterConditionExpression,
+                counterUpdateExpression,
                 updateIfNotExistsAttributeNames,
                 updateIfNotExists);
         }
