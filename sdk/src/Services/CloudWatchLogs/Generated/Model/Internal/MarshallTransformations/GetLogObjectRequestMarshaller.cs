@@ -98,7 +98,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             
 
             
-            request.HostPrefix = $"streaming-";
+            request.HostPrefix = $"stream-";
 
             return request;
         }
