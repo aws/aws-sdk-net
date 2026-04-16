@@ -57,7 +57,6 @@ namespace Amazon.DynamoDBv2
         {
             base.ServiceId = "DynamoDB";
             this.AuthenticationServiceName = "dynamodb";
-            this.MaxErrorRetry = 10;
             this.EndpointProvider = new AmazonDynamoDBEndpointProvider();
         }
 
