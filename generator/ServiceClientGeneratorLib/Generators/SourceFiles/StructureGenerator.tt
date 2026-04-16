@@ -340,19 +340,7 @@ namespace <#=this.Config.Namespace#>.Model
         <#=member.AccessModifier#> <#=memberModifier#><#=member.DetermineType()#> <#=member.PropertyName#>
         {
 <#
-                    if (this.Structure != null && this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(this.Structure.Name, out var modifier) && modifier.NewObjectIfNullProperties.Contains(member.ModeledName))
-                    {
-#>
-            get 
-            {
-                if (this.<#=member.VariableName#> == null)
-                    this.<#=member.VariableName#> = new <#=member.DetermineType()#>();
-
-                return this.<#=member.VariableName#>; 
-            }
-<#
-                    }
-                    else if (this.Structure != null && this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectXmlPropertyGetterModifier) && injectXmlPropertyGetterModifier.InjectXmlPropertyGetter.Count > 0)
+                    if (this.Structure != null && this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectXmlPropertyGetterModifier) && injectXmlPropertyGetterModifier.InjectXmlPropertyGetter.Count > 0)
                     {
 #>
 <#WriteInjectXmlCode(injectXmlPropertyGetterModifier.InjectXmlPropertyGetter, 3);#>
