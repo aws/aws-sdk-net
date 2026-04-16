@@ -93,6 +93,7 @@ namespace Amazon.AutoScaling.Model
     {
         private string _autoScalingGroupName;
         private AvailabilityZoneDistribution _availabilityZoneDistribution;
+        private List<string> _availabilityZoneIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AvailabilityZoneImpairmentPolicy _availabilityZoneImpairmentPolicy;
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _capacityRebalance;
@@ -155,6 +156,30 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAvailabilityZoneDistribution()
         {
             return this._availabilityZoneDistribution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneIds. 
+        /// <para>
+        ///  A list of Availability Zone IDs for the Auto Scaling group. You cannot specify both
+        /// AvailabilityZones and AvailabilityZoneIds in the same request. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AvailabilityZoneIds
+        {
+            get { return this._availabilityZoneIds; }
+            set { this._availabilityZoneIds = value; }
+        }
+
+        // Check to see if AvailabilityZoneIds property is set
+        internal bool IsSetAvailabilityZoneIds()
+        {
+            return this._availabilityZoneIds != null && (this._availabilityZoneIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
