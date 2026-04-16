@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// WebAuthnConfigurationType Marshaller
+    /// WebAuthnMfaSettingsType Marshaller
     /// </summary>
-    public class WebAuthnConfigurationTypeMarshaller : IRequestMarshaller<WebAuthnConfigurationType, JsonMarshallerContext> 
+    public class WebAuthnMfaSettingsTypeMarshaller : IRequestMarshaller<WebAuthnMfaSettingsType, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,14 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(WebAuthnConfigurationType requestObject, JsonMarshallerContext context)
+        public void Marshall(WebAuthnMfaSettingsType requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetFactorConfiguration())
+            if(requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("FactorConfiguration");
-                context.Writer.WriteStringValue(requestObject.FactorConfiguration);
-            }
-
-            if(requestObject.IsSetRelyingPartyId())
-            {
-                context.Writer.WritePropertyName("RelyingPartyId");
-                context.Writer.WriteStringValue(requestObject.RelyingPartyId);
-            }
-
-            if(requestObject.IsSetUserVerification())
-            {
-                context.Writer.WritePropertyName("UserVerification");
-                context.Writer.WriteStringValue(requestObject.UserVerification);
+                context.Writer.WritePropertyName("Enabled");
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
         }
@@ -69,7 +57,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static WebAuthnConfigurationTypeMarshaller Instance = new WebAuthnConfigurationTypeMarshaller();
+        public readonly static WebAuthnMfaSettingsTypeMarshaller Instance = new WebAuthnMfaSettingsTypeMarshaller();
 
     }
 }

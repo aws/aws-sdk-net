@@ -50,8 +50,32 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class WebAuthnConfigurationType
     {
+        private WebAuthnFactorConfigurationType _factorConfiguration;
         private string _relyingPartyId;
         private UserVerificationType _userVerification;
+
+        /// <summary>
+        /// Gets and sets the property FactorConfiguration. 
+        /// <para>
+        /// Sets whether passkeys can be used as multi-factor authentication (MFA). When set to
+        /// <c>MULTI_FACTOR_WITH_USER_VERIFICATION</c>, passkey authentication with user verification
+        /// satisfies MFA requirements. When set to <c>SINGLE_FACTOR</c> or not set, passkeys
+        /// are a single authentication factor. To activate this setting, your user pool must
+        /// be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+        /// Essentials tier</a> or higher.
+        /// </para>
+        /// </summary>
+        public WebAuthnFactorConfigurationType FactorConfiguration
+        {
+            get { return this._factorConfiguration; }
+            set { this._factorConfiguration = value; }
+        }
+
+        // Check to see if FactorConfiguration property is set
+        internal bool IsSetFactorConfiguration()
+        {
+            return this._factorConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RelyingPartyId. 
