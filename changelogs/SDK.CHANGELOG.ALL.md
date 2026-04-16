@@ -1,3 +1,41 @@
+### 4.0.232.0 (2026-04-16 18:15 UTC)
+* AppStream (4.0.9.0)
+	* Add content redirection to Update Stack
+* AutoScaling (4.0.10.0)
+	* This release adds support for specifying Availability Zone IDs as an alternative to Availability Zone names when creating or updating Auto Scaling groups.
+* BedrockAgentCore (4.0.19.0)
+	* Introducing NamespacePath in AgentCore Memory to support hierarchical prefix based memory record retrieval.
+* CloudWatch (4.0.9.4)
+	* Update documentation of alarm mute rules start and end date fields
+* CloudWatchLogs (4.0.20.0)
+	* Endpoint update for CloudWatch Logs Streaming APIs.
+* CognitoIdentityProvider (4.0.7.0)
+	* Adds support for passkey-based multi-factor authentication in Cognito User Pools. Users can authenticate securely using FIDO2-compliant passkeys with user verification, enabling passwordless MFA flows while maintaining backward compatibility with password-based authentication
+* Connect (4.0.41.0)
+	* This release updates the Amazon Connect Rules CRUD APIs to support a new EventSourceName - OnEmailAnalysisAvailable. Use this event source to trigger rules when conversational analytics results are available for email contacts.
+* ConnectCases (4.0.13.0)
+	* Added error handling for service quota limits
+* CustomerProfiles (4.0.11.0)
+	* Amazon Connect Customer Profiles adds RecommenderSchema CRUD APIs for custom ML training columns. CreateRecommender and CreateRecommenderFilter now accept optional RecommenderSchemaName.
+* DataZone (4.0.25.0)
+	* Launching SMUS IAM domain SDK support
+* DevOpsAgent (4.0.3.0)
+	* Deprecate the userId from the Chat operations. This update also removes  support of AllowVendedLogDeliveryForResource API from AWS SDKs.
+* Drs (4.0.4.0)
+	* Updating regex for identification of AWS Regions.
+* DynamoDBv2 (4.0.17.9)
+	* [BugFix] Fix DynamoDB AOT/trim issue on PropertyStorage Validate.
+* MediaConvert (4.0.17.0)
+	* Adds support for Elemental Inference powered smart crop feature, enabling video verticalization
+* RDS (4.0.20.0)
+	* Adds a new DescribeServerlessV2PlatformVersions API to describe platform version properties for Aurora Serverless v2. Also introduces a new valid maintenance action value for serverless platform version updates.
+* S3 (4.0.21.2)
+	* Update customization hook used in GetLifecycleConfigurationOutput.
+* Extensions.Logging.Log4NetAdaptor (4.0.1.0)
+	* Updated log4net dependency from 3.0.1 to 3.3.0 to resolve known moderate severity vulnerability (GHSA-4f7c-pmjv-c25w)
+* Core 4.0.3.30
+	* Update docs on GetCredentials and GetCredentialsAsync to clarify background refresh behavior
+
 ### 4.0.231.0 (2026-04-13 18:21 UTC)
 * CustomerProfiles (4.0.10.0)
 	* This release introduces changes to SegmentDefinition APIs to support sorting by attributes.
