@@ -41,7 +41,12 @@ namespace Amazon.Runtime.Internal
             /// <summary>
             /// The timeout capacity type uses the timeout capacity amount.
             /// </summary>
-            Timeout
+            Timeout,
+            /// <summary>
+            /// The throttling capacity type uses the throttling retry cost amount.
+            /// Used when the new retry behavior (SEP 2.1) is enabled.
+            /// </summary>
+            Throttling
         }
 
 
@@ -63,17 +68,21 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        public CapacityManager(int throttleRetryCount, int throttleRetryCost, int throttleCost) 
-            : this(throttleRetryCount, throttleRetryCost, throttleCost, throttleRetryCost)
-        {    
-        }
-
-        public CapacityManager(int throttleRetryCount, int throttleRetryCost, int throttleCost, int timeoutRetryCost)
+        /// <summary>
+        /// Constructor for CapacityManager.
+        /// </summary>
+        /// <param name="initialRetryTokens">The initial and maximum number of retry tokens.</param>
+        /// <param name="retryCost">The cost of a non-throttling retry.</param>
+        /// <param name="noRetryIncrement">The capacity to add on a successful non-retry request.</param>
+        /// <param name="timeoutRetryCost">The cost of a timeout retry.</param>
+        /// <param name="throttlingRetryCost">The cost of a throttling retry (0 if not applicable).</param>
+        public CapacityManager(int initialRetryTokens, int retryCost, int noRetryIncrement, int timeoutRetryCost, int throttlingRetryCost)
         {
-            retryCost = throttleRetryCost;
-            initialRetryTokens = throttleRetryCount;
-            noRetryIncrement = throttleCost;
+            this.retryCost = retryCost;
+            this.initialRetryTokens = initialRetryTokens;
+            this.noRetryIncrement = noRetryIncrement;
             this.timeoutRetryCost = timeoutRetryCost;
+            this.throttlingRetryCost = throttlingRetryCost;
         }
 
         /// <summary>
@@ -92,7 +101,19 @@ namespace Amazon.Runtime.Internal
         /// <param name="capacityType">Specifies what capacity type cost to use for obtaining capacity</param>
         public bool TryAcquireCapacity(RetryCapacity retryCapacity, CapacityType capacityType)
         {
-            var capacityCost = capacityType == CapacityType.Timeout ? timeoutRetryCost : retryCost;
+            int capacityCost;
+            switch (capacityType)
+            {
+                case CapacityType.Timeout:
+                    capacityCost = timeoutRetryCost;
+                    break;
+                case CapacityType.Throttling:
+                    capacityCost = throttlingRetryCost;
+                    break;
+                default:
+                    capacityCost = retryCost;
+                    break;
+            }
             if (capacityCost < 0)
             {
                 return false;
@@ -126,6 +147,9 @@ namespace Amazon.Runtime.Internal
                     break;
                 case CapacityType.Timeout:
                     ReleaseCapacity(timeoutRetryCost, retryCapacity);
+                    break;
+                case CapacityType.Throttling:
+                    ReleaseCapacity(throttlingRetryCost, retryCapacity);
                     break;
                 case CapacityType.Increment:
                     ReleaseCapacity(noRetryIncrement, retryCapacity);
@@ -163,6 +187,10 @@ namespace Amazon.Runtime.Internal
         // legacy retry modes and 10 for all other retry modes.
         private readonly int timeoutRetryCost;
 
+        // This parameter sets the cost of making a retry call when the error is a throttling error.
+        // Used when the new retry behavior (SEP 2.1) is enabled. The default value is 5.
+        private readonly int throttlingRetryCost;
+
         // Maximum capacity in a bucket set to 100 for legacy retry mode and 500 for all other retry modes.
         private readonly int initialRetryTokens;
 
@@ -199,7 +227,7 @@ namespace Amazon.Runtime.Internal
                     _rwlock.EnterWriteLock();
                     try
                     {
-                        retryCapacity = new RetryCapacity(retryCost * initialRetryTokens);
+                        retryCapacity = new RetryCapacity(initialRetryTokens);
                         _serviceUrlToCapacityMap.Add(serviceURL, retryCapacity);
                         return retryCapacity;
                     }
