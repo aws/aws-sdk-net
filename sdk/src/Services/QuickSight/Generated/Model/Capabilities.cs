@@ -116,6 +116,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _extension;
         private CapabilityState _factSetAction;
         private CapabilityState _flow;
+        private CapabilityState _generateAnalyses;
         private CapabilityState _genericHTTPAction;
         private CapabilityState _githubAction;
         private CapabilityState _googleCalendarAction;
@@ -1730,6 +1731,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFlow()
         {
             return this._flow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenerateAnalyses. 
+        /// <para>
+        /// The ability to generate analysis using AI
+        /// </para>
+        /// </summary>
+        public CapabilityState GenerateAnalyses
+        {
+            get { return this._generateAnalyses; }
+            set { this._generateAnalyses = value; }
+        }
+
+        // Check to see if GenerateAnalyses property is set
+        internal bool IsSetGenerateAnalyses()
+        {
+            return this._generateAnalyses != null;
         }
 
         /// <summary>

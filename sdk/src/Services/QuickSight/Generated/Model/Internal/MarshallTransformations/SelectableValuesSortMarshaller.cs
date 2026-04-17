@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AthenaParameters Marshaller
+    /// SelectableValuesSort Marshaller
     /// </summary>
-    public class AthenaParametersMarshaller : IRequestMarshaller<AthenaParameters, JsonMarshallerContext> 
+    public class SelectableValuesSortMarshaller : IRequestMarshaller<SelectableValuesSort, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AthenaParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(SelectableValuesSort requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConsumerAccountRoleArn())
+            if(requestObject.IsSetDirection())
             {
-                context.Writer.WritePropertyName("ConsumerAccountRoleArn");
-                context.Writer.WriteStringValue(requestObject.ConsumerAccountRoleArn);
-            }
-
-            if(requestObject.IsSetIdentityCenterConfiguration())
-            {
-                context.Writer.WritePropertyName("IdentityCenterConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = IdentityCenterConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.IdentityCenterConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetRoleArn())
-            {
-                context.Writer.WritePropertyName("RoleArn");
-                context.Writer.WriteStringValue(requestObject.RoleArn);
-            }
-
-            if(requestObject.IsSetWorkGroup())
-            {
-                context.Writer.WritePropertyName("WorkGroup");
-                context.Writer.WriteStringValue(requestObject.WorkGroup);
+                context.Writer.WritePropertyName("Direction");
+                context.Writer.WriteStringValue(requestObject.Direction);
             }
 
         }
@@ -80,7 +57,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AthenaParametersMarshaller Instance = new AthenaParametersMarshaller();
+        public readonly static SelectableValuesSortMarshaller Instance = new SelectableValuesSortMarshaller();
 
     }
 }

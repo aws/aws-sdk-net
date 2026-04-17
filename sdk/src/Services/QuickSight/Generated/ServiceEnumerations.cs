@@ -3557,6 +3557,60 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type ControlSortDirection.
+    /// </summary>
+    public class ControlSortDirection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for ControlSortDirection
+        /// </summary>
+        public static readonly ControlSortDirection ASC = new ControlSortDirection("ASC");
+        /// <summary>
+        /// Constant DESC for ControlSortDirection
+        /// </summary>
+        public static readonly ControlSortDirection DESC = new ControlSortDirection("DESC");
+        /// <summary>
+        /// Constant USER_DEFINED_ORDER for ControlSortDirection
+        /// </summary>
+        public static readonly ControlSortDirection USER_DEFINED_ORDER = new ControlSortDirection("USER_DEFINED_ORDER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ControlSortDirection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ControlSortDirection FindValue(string value)
+        {
+            return FindValue<ControlSortDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ControlSortDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CrossDatasetTypes.
     /// </summary>
     public class CrossDatasetTypes : ConstantClass
@@ -4992,6 +5046,10 @@ namespace Amazon.QuickSight
         /// Constant S3_KNOWLEDGE_BASE for DataSourceType
         /// </summary>
         public static readonly DataSourceType S3_KNOWLEDGE_BASE = new DataSourceType("S3_KNOWLEDGE_BASE");
+        /// <summary>
+        /// Constant S3_TABLES for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType S3_TABLES = new DataSourceType("S3_TABLES");
         /// <summary>
         /// Constant SALESFORCE for DataSourceType
         /// </summary>

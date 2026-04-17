@@ -538,6 +538,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Flow);
             }
 
+            if(requestObject.IsSetGenerateAnalyses())
+            {
+                context.Writer.WritePropertyName("GenerateAnalyses");
+                context.Writer.WriteStringValue(requestObject.GenerateAnalyses);
+            }
+
             if(requestObject.IsSetGenericHTTPAction())
             {
                 context.Writer.WritePropertyName("GenericHTTPAction");

@@ -62,6 +62,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.CascadingControlConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ControlSortConfigurations", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ControlSortConfiguration, ControlSortConfigurationUnmarshaller>(ControlSortConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ControlSortConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DisplayOptions", targetDepth))
                 {
                     var unmarshaller = ListControlDisplayOptionsUnmarshaller.Instance;

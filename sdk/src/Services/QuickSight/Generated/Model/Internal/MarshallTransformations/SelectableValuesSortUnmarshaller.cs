@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AthenaParameters Object
+    /// Response Unmarshaller for SelectableValuesSort Object
     /// </summary>  
-    public class AthenaParametersUnmarshaller : IJsonUnmarshaller<AthenaParameters, JsonUnmarshallerContext>
+    public class SelectableValuesSortUnmarshaller : IJsonUnmarshaller<SelectableValuesSort, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AthenaParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SelectableValuesSort Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AthenaParameters unmarshalledObject = new AthenaParameters();
+            SelectableValuesSort unmarshalledObject = new SelectableValuesSort();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConsumerAccountRoleArn", targetDepth))
+                if (context.TestExpression("Direction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConsumerAccountRoleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IdentityCenterConfiguration", targetDepth))
-                {
-                    var unmarshaller = IdentityCenterConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.IdentityCenterConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RoleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("WorkGroup", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkGroup = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Direction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static AthenaParametersUnmarshaller _instance = new AthenaParametersUnmarshaller();        
+        private static SelectableValuesSortUnmarshaller _instance = new SelectableValuesSortUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AthenaParametersUnmarshaller Instance
+        public static SelectableValuesSortUnmarshaller Instance
         {
             get
             {

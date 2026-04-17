@@ -34,9 +34,33 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AthenaParameters
     {
+        private string _consumerAccountRoleArn;
         private IdentityCenterConfiguration _identityCenterConfiguration;
         private string _roleArn;
         private string _workGroup;
+
+        /// <summary>
+        /// Gets and sets the property ConsumerAccountRoleArn. 
+        /// <para>
+        /// Use <c>ConsumerAccountRoleArn</c> to perform cross-account Athena access. This is
+        /// an IAM role ARN in the same AWS account as the Athena resources you want to access.
+        /// Provide this along with <c>RoleArn</c> to enable role-chaining, where Amazon Quick
+        /// Sight first assumes the <c>RoleArn</c> and then assumes the <c>ConsumerAccountRoleArn</c>
+        /// to access Athena resources.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ConsumerAccountRoleArn
+        {
+            get { return this._consumerAccountRoleArn; }
+            set { this._consumerAccountRoleArn = value; }
+        }
+
+        // Check to see if ConsumerAccountRoleArn property is set
+        internal bool IsSetConsumerAccountRoleArn()
+        {
+            return this._consumerAccountRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IdentityCenterConfiguration. 
