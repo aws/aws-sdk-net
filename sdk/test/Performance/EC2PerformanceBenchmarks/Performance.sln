@@ -25,6 +25,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceClientGenerator", ".
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.UnitTestUtilities", "..\..\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj", "{16EABAA8-9625-D75F-C03D-CCD90882E010}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoDBBenchmarks", "..\DynamoDBPerformanceBenchmarks\DynamoDBBenchmarks.csproj", "{FFD64C51-5C33-9057-A599-5EFC2A7DE91F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Extensions.CborProtocol.NetStandard", "..\..\..\..\extensions\src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetStandard.csproj", "{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,14 @@ Global
 		{16EABAA8-9625-D75F-C03D-CCD90882E010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16EABAA8-9625-D75F-C03D-CCD90882E010}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16EABAA8-9625-D75F-C03D-CCD90882E010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFD64C51-5C33-9057-A599-5EFC2A7DE91F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD64C51-5C33-9057-A599-5EFC2A7DE91F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD64C51-5C33-9057-A599-5EFC2A7DE91F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD64C51-5C33-9057-A599-5EFC2A7DE91F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
