@@ -2895,6 +2895,10 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ListTestCaseExecutionsRequest.EndTime</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ListTestCaseExecutionsRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -2903,6 +2907,10 @@
     <property>Amazon.Connect.Model.ListTestCaseExecutionsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListTestCaseExecutionsRequest.StartTime</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListTestCaseExecutionsRequest.TestCaseId</property>

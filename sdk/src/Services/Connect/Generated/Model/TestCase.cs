@@ -141,7 +141,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InitializationData. 
         /// <para>
-        /// Defines the test attributes for precise data representation.
+        /// Defines the test attributes for precise data representation. The value must be a valid
+        /// JSON string.
         /// </para>
         /// </summary>
         public string InitializationData
