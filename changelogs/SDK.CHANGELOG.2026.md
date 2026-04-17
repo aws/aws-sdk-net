@@ -1,3 +1,28 @@
+### 4.0.233.0 (2026-04-17 18:15 UTC)
+* CleanRooms (4.0.16.0)
+	* This release adds support for configurable spark properties for Cleanrooms PySpark workloads.
+* Connect (4.0.42.0)
+	* Fixes in SDK for customers using TestCase APIs
+* ConnectCampaignsV2 (4.0.7.0)
+	* This release adds support for campaign entry limits configuration and hourly refresh frequency in Amazon Connect Outbound Campaigns.
+* GroundStation (4.0.4.0)
+	* Adds support for updating contacts, listing antennas, and listing ground station reservations. New API operations - UpdateContact, ListContactVersions, DescribeContactVersion, ListAntennas, and ListGroundStationReservations.
+* Imagebuilder (4.0.10.0)
+	* ImportDiskImage API adds registerImageOptions for Secure Boot control and custom UEFI data. It adds windowsConfiguration for selecting a specific edition from multi-image .wim files during ISO import.
+* Neptune (4.0.5.11)
+	* Improving Documentation for Neptune
+* QuickSight (4.0.19.0)
+	* Public release of dashboard customization summary, S3 Tables data source type, Athena cross-account connector, custom sorting for controls, and AI-powered analysis generation.
+* SageMaker (4.0.51.0)
+	* Adds support for providing NetworkInterface for efa enabled instances and Simplified cluster creation for Slurm-orchestrated clusters with optional Lifecycle Script (LCS) configuration.
+* SecurityToken (4.0.6.0)
+	* The STS client now supports configuring SigV4a through the auth scheme preference setting. SigV4a uses asymmetric cryptography, enabling customers using long-term IAM credentials to continue making STS API calls even when a region is isolated from the partition leader.
+* Extensions.CloudFront.Signers (4.0.1.0)
+	* `AmazonCloudFrontUrlSigner` and `AmazonCloudFrontCookieSigner` now support ECDSA private keys in addition to RSA. The key type is detected automatically, so no API changes are required (https://github.com/aws/aws-sdk-net/issues/4304)
+	* A `Hash-Algorithm` query parameter (for URLs) or `CloudFront-Hash-Algorithm` attribute (for cookies) is included in the output with the algorithm used to create the signature.
+	* Signing methods now accept an optional `HashAlgorithmName` parameter, enabling `SHA-256` signatures for RSA keys. Existing callers that omit the parameter continue to use `SHA-1` for backwards compatibility (https://github.com/aws/aws-sdk-net/issues/4345)
+	* Updated `BouncyCastle.Cryptography` dependency from version `2.4.0` to `2.6.2`
+
 ### 4.0.232.0 (2026-04-16 18:15 UTC)
 * AppStream (4.0.9.0)
 	* Add content redirection to Update Stack
