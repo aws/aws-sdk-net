@@ -38,6 +38,7 @@ namespace Amazon.ConnectCampaignsV2.Model
         private List<string> _channelSubtypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _connectCampaignFlowArn;
         private string _connectInstanceId;
+        private EntryLimitsConfig _entryLimitsConfig;
         private string _id;
         private string _name;
         private Schedule _schedule;
@@ -110,6 +111,21 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetConnectInstanceId()
         {
             return this._connectInstanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntryLimitsConfig.
+        /// </summary>
+        public EntryLimitsConfig EntryLimitsConfig
+        {
+            get { return this._entryLimitsConfig; }
+            set { this._entryLimitsConfig = value; }
+        }
+
+        // Check to see if EntryLimitsConfig property is set
+        internal bool IsSetEntryLimitsConfig()
+        {
+            return this._entryLimitsConfig != null;
         }
 
         /// <summary>

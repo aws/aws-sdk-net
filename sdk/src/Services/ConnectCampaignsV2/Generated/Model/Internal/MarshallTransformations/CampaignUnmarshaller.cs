@@ -92,6 +92,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectInstanceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("entryLimitsConfig", targetDepth))
+                {
+                    var unmarshaller = EntryLimitsConfigUnmarshaller.Instance;
+                    unmarshalledObject.EntryLimitsConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

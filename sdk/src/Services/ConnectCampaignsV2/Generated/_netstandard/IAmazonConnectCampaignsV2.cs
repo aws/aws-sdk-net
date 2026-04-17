@@ -223,6 +223,44 @@ namespace Amazon.ConnectCampaignsV2
 
         #endregion
                 
+        #region  DeleteCampaignEntryLimits
+
+
+
+        /// <summary>
+        /// Deletes the entry limits config for a campaign. This API is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCampaignEntryLimits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCampaignEntryLimits service method, as returned by ConnectCampaignsV2.</returns>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.InternalServerException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.InvalidCampaignStateException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// campaign.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/DeleteCampaignEntryLimits">REST API Reference for DeleteCampaignEntryLimits Operation</seealso>
+        Task<DeleteCampaignEntryLimitsResponse> DeleteCampaignEntryLimitsAsync(DeleteCampaignEntryLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteConnectInstanceConfig
 
 
@@ -1131,6 +1169,44 @@ namespace Amazon.ConnectCampaignsV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UpdateCampaignCommunicationTime">REST API Reference for UpdateCampaignCommunicationTime Operation</seealso>
         Task<UpdateCampaignCommunicationTimeResponse> UpdateCampaignCommunicationTimeAsync(UpdateCampaignCommunicationTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCampaignEntryLimits
+
+
+
+        /// <summary>
+        /// Updates the entry limits config for a campaign. This API is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCampaignEntryLimits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCampaignEntryLimits service method, as returned by ConnectCampaignsV2.</returns>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.InternalServerException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.InvalidCampaignStateException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// campaign.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/UpdateCampaignEntryLimits">REST API Reference for UpdateCampaignEntryLimits Operation</seealso>
+        Task<UpdateCampaignEntryLimitsResponse> UpdateCampaignEntryLimitsAsync(UpdateCampaignEntryLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
