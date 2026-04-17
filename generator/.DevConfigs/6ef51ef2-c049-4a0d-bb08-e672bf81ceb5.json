@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Replace legacy parameter AttributesToGet with ProjectionExpression and ExpressionAttributeNames in LoadAsync flow"
+      ]
+    }
+  ]
+}

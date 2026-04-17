@@ -17,7 +17,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// This class introduces a modern expression-based API that replaces legacy parameter-based approaches.
     /// Legacy parameters such as AttributesToGet are not supported. Use ProjectionExpression instead.
     /// </summary>
-    public class GetItemDocumentOperationRequest : DocumentOperationRequest
+    public class GetItemDocumentOperationRequest : BaseGetItemDocumentOperationRequest
     {
         /// <summary>
         /// Gets or sets the key identifying the item in the table.
@@ -25,6 +25,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public IDictionary<string, DynamoDBEntry> Key { get; set; }
 
+    }
+
+    /// <summary>
+    /// Abstract base class for DynamoDB GetItem document operation requests.
+    /// Provides shared configuration for retrieving a single item using the expression-based API. 
+    /// Legacy parameters (e.g., <c>AttributesToGet</c>) are not supported; use <c>ProjectionExpression</c> instead.
+    /// Extended by <see cref="GetItemDocumentOperationRequest"/> 
+    /// </summary>
+    public abstract class BaseGetItemDocumentOperationRequest : DocumentOperationRequest
+    {
         /// <summary>
         /// Gets or sets the projection expression specifying which attributes should be retrieved.
         /// If null, all attributes are returned.
