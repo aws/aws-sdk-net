@@ -159,7 +159,7 @@ namespace SDKDocGenerator
                         ServiceName,
                         Options.Platform,
                         AssemblyPath,
-                        useIsolatedContext: false);
+                        useIsolatedContext: true);
                 }
 
                 return _manifestAssemblyWrapper;

@@ -1,0 +1,209 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <!--
+        This project is a helper to generate the ZIP files described in https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-obtain-assemblies.html
+        It references the projects that include external dependencies so that they're also included in the final artifact.
+    -->
+    <PropertyGroup>
+        <TargetFrameworks>net472;netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+        <OutputType>Library</OutputType>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+        <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+        <BuildType Condition="'$(BuildType)' == ''">RELEASE</BuildType>
+    </PropertyGroup>
+
+    <Target Name="VerifyKnownExtensions" BeforeTargets="Build" Condition="'$(BuildType)' == 'RELEASE' and '$(TargetFramework)' == 'net8.0'">
+        <!--
+            Ensures every extension folder that contains a .nuspec file is referenced somewhere in this project.
+            XmlPeek reads all ExtensionProjectReference attributes directly from the XML, bypassing condition evaluation and ignoring XML comments.
+
+            Note: Checking for TargetFramework is arbitrary here so that the target only runs once.
+        -->
+        <XmlPeek XmlInputPath="$(MSBuildProjectFullPath)" Query="//ExtensionProjectReference/@Include">
+            <Output TaskParameter="Result" ItemName="_ExtRefInclude" />
+        </XmlPeek>
+        <PropertyGroup>
+            <_AllExtRefs>@(_ExtRefInclude)</_AllExtRefs>
+        </PropertyGroup>
+        <ItemGroup>
+            <_FoundNuspec Include="..\..\extensions\src\**\*.nuspec" />
+        </ItemGroup>
+        <Error Condition="!$(_AllExtRefs.Contains('%(_FoundNuspec.Filename)'))"
+               Text="Extension '%(_FoundNuspec.Filename)' has a .nuspec in extensions but is not referenced in this project. Add an ExtensionProjectReference for it." />
+    </Target>
+
+    <Target Name="FilterPublishOutput" AfterTargets="ComputeFilesToPublish">
+        <!--
+            This step filters out:
+            - The actual output of this project (since it's not meant to be used elsewhere)
+            - Runtime specific assets (since those would contain the value from the build system)
+        -->
+        <ItemGroup>
+            <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)"
+                Condition="$([MSBuild]::ValueOrDefault('%(Filename)', '').StartsWith('aws-sdk-zip-artifact'))
+                        or $([MSBuild]::ValueOrDefault('%(RelativePath)', '').StartsWith('runtimes'))" />
+        </ItemGroup>
+    </Target>
+
+    <Target Name="PublishExtensionSubfolders" AfterTargets="Publish">
+        <PropertyGroup>
+            <_ExtTempRoot>$(MSBuildProjectDirectory)\tmp-ext-publish</_ExtTempRoot>
+        </PropertyGroup>
+
+        <!-- Restore extension projects first so their package props are available in the subsequent publish evaluation -->
+        <MSBuild
+            Projects="%(ExtensionProjectReference.Identity)"
+            Properties="TargetFramework=$(TargetFramework)"
+            Targets="Restore"
+            Condition="'@(ExtensionProjectReference)' != ''" />
+
+        <!-- Publish each extension to its own temp directory -->
+        <MSBuild
+            Projects="%(ExtensionProjectReference.Identity)"
+            Properties="CopyLocalLockFileAssemblies=true;TargetFramework=$(TargetFramework);PublishDir=$(_ExtTempRoot)\%(ExtensionProjectReference.SubFolder)\;NoBuild=$(NoBuild);IntermediateOutputPath=bin\$(Configuration)\$(TargetFramework)\"
+            Targets="Publish"
+            Condition="'@(ExtensionProjectReference)' != ''" />
+
+        <!--
+            AWSSDK service files (e.g. AWSSDK.EC2) are excluded — they are transitive dependencies of
+            extensions but belong to the SDK root folder, not to the extension subfolder. 
+        -->
+        <ItemGroup>
+            <_ExtOnlyFile Include="$(_ExtTempRoot)\%(ExtensionProjectReference.SubFolder)\AWSSDK.Extensions.*">
+                <SubFolder>%(ExtensionProjectReference.SubFolder)</SubFolder>
+            </_ExtOnlyFile>
+        </ItemGroup>
+        <ItemGroup>
+            <_ExtOnlyFile Include="$(_ExtTempRoot)\%(ExtensionProjectReference.SubFolder)\*" Exclude="$(_ExtTempRoot)\%(ExtensionProjectReference.SubFolder)\AWSSDK.*">
+                <SubFolder>%(ExtensionProjectReference.SubFolder)</SubFolder>
+            </_ExtOnlyFile>
+        </ItemGroup>
+
+        <!-- Copy extension-only files to their respective subfolder -->
+        <MakeDir Directories="$(PublishDir)extensions\%(_ExtOnlyFile.SubFolder)" />
+        <Copy SourceFiles="@(_ExtOnlyFile)" DestinationFolder="$(PublishDir)extensions\%(_ExtOnlyFile.SubFolder)\" />
+
+        <!-- Remove extension files from the publish root (they were placed there in the build system but now go in subfolders) -->
+        <ItemGroup>
+            <_RootExtFile Include="$(PublishDir)AWSSDK.Extensions.*" />
+        </ItemGroup>
+        <Delete Files="@(_RootExtFile)" />
+
+        <!-- Clean up temp publish directories -->
+        <RemoveDir Directories="$(_ExtTempRoot)" />
+    </Target>
+
+    <Target Name="VerifyZipArtifactManifest" AfterTargets="PublishExtensionSubfolders" Condition="'$(BuildType)' != 'PREVIEW'">
+        <!--
+            Verifies the full publish output (root + all extension subfolders) against a single manifest per TFM.
+            Root DLLs are listed as their filenames; extension DLLs as extensions\<SubFolder>\<filename>.
+            This step runs for all non-PREVIEW builds as those only include a subset of the dependencies.
+
+            To update a manifest after an intentional dependency change:
+            1. Publish to a clean directory: dotnet publish -f <tfm> -o ./tmp-publish
+            2. Run in PowerShell from ./tmp-publish:
+                $root = @(Get-ChildItem *.dll | ForEach-Object { $_.Name })
+                $ext = Get-ChildItem extensions\**\*.dll | ForEach-Object { "extensions\$($_.Directory.Name)\$($_.Name)" }
+                ($root + $ext) | Sort-Object
+            3. Replace the contents of manifests/<tfm>.txt with that output
+            4. Delete ./tmp-publish
+        -->
+
+        <!-- Root DLLs: use ResolvedFileToPublish to avoid picking up pre-existing files in PublishDir -->
+        <ItemGroup>
+            <_ActualRelPath Include="@(ResolvedFileToPublish->'%(Filename)%(Extension)')" Condition="'%(Extension)' == '.dll'" />
+        </ItemGroup>
+
+        <!-- Extension DLLs: relative path is extensions\<SubFolder>\<filename> -->
+        <ItemGroup>
+            <_ExtDll Include="$(PublishDir)extensions\**\*.dll" />
+            <_ActualRelPath Include="@(_ExtDll->'extensions\%(RecursiveDir)%(Filename)%(Extension)')" />
+        </ItemGroup>
+
+        <ReadLinesFromFile File="$(MSBuildThisFileDirectory)manifests\$(TargetFramework).txt">
+            <Output TaskParameter="Lines" ItemName="_ExpectedRelPath" />
+        </ReadLinesFromFile>
+        <ItemGroup>
+            <_MissingFile Include="@(_ExpectedRelPath)" Exclude="@(_ActualRelPath)" />
+            <_UnexpectedFile Include="@(_ActualRelPath)" Exclude="@(_ExpectedRelPath)" />
+        </ItemGroup>
+        <Error
+            Condition="'@(_MissingFile)' != '' or '@(_UnexpectedFile)' != ''"
+            Text="[$(TargetFramework)] Manifest mismatch — Missing: @(_MissingFile, ', ') | Unexpected: @(_UnexpectedFile, ', ')" />
+    </Target>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+        <ProjectReference Include="..\..\sdk\src\Core\AWSSDK.Core.NetFramework.csproj" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+        <ProjectReference Include="..\..\sdk\src\Core\AWSSDK.Core.NetStandard.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <!--
+            The SDK compiles with an older version of System.Text.Json for compatibility with PowerShell, but the
+            ZIP artifact must contain the newer version (that's used in the Nuspec files).
+        -->
+        <PackageReference Update="System.Text.Json" Version="8.0.5" />
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' and '$(BuildType)' == 'PREVIEW'">
+        <!--
+            BouncyCastle is normally pulled in transitively via CloudFront.Signers and EC2.DecryptPassword,
+            but those are excluded in PREVIEW builds, so we reference it directly here instead.
+        -->
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.2" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetFramework.csproj">
+            <SubFolder>CborProtocol</SubFolder>
+        </ExtensionProjectReference>
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.NetFramework.csproj">
+            <SubFolder>CrtIntegration</SubFolder>
+        </ExtensionProjectReference>
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetStandard.csproj">
+            <SubFolder>CborProtocol</SubFolder>
+        </ExtensionProjectReference>
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.NetStandard.csproj">
+            <SubFolder>CrtIntegration</SubFolder>
+        </ExtensionProjectReference>
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'net472' and '$(BuildType)' != 'PREVIEW'">
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.CloudFront.Signers\AWSSDK.Extensions.CloudFront.Signers.NetFramework.csproj">
+            <SubFolder>CloudFrontSigners</SubFolder>
+        </ExtensionProjectReference>
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.EC2.DecryptPassword\AWSSDK.Extensions.EC2.DecryptPassword.NetFramework.csproj">
+            <SubFolder>EC2DecryptPassword</SubFolder>
+        </ExtensionProjectReference>
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.Bedrock.MEAI\AWSSDK.Extensions.Bedrock.MEAI.NetFramework.csproj">
+            <SubFolder>BedrockMEAI</SubFolder>
+        </ExtensionProjectReference>
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' != 'net472' and '$(BuildType)' != 'PREVIEW'">
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.CloudFront.Signers\AWSSDK.Extensions.CloudFront.Signers.NetStandard.csproj">
+            <SubFolder>CloudFrontSigners</SubFolder>
+        </ExtensionProjectReference>
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.EC2.DecryptPassword\AWSSDK.Extensions.EC2.DecryptPassword.NetStandard.csproj">
+            <SubFolder>EC2DecryptPassword</SubFolder>
+        </ExtensionProjectReference>
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.NETCore.Setup\AWSSDK.Extensions.NETCore.Setup.csproj">
+            <SubFolder>NETCoreSetup</SubFolder>
+        </ExtensionProjectReference>
+    </ItemGroup>
+
+    <!-- Extensions projects which don't target all TFMs listed in this project. -->
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' and '$(BuildType)' != 'PREVIEW'">
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.Logging.ILoggerAdaptor\AWSSDK.Extensions.Logging.ILoggerAdaptor.csproj">
+            <SubFolder>LoggingILoggerAdaptor</SubFolder>
+        </ExtensionProjectReference>
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.Logging.Log4NetAdaptor\AWSSDK.Extensions.Logging.Log4NetAdaptor.csproj">
+            <SubFolder>LoggingLog4NetAdaptor</SubFolder>
+        </ExtensionProjectReference>
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' != 'netcoreapp3.1' and '$(BuildType)' != 'PREVIEW'">
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.Bedrock.MEAI\AWSSDK.Extensions.Bedrock.MEAI.NetStandard.csproj">
+            <SubFolder>BedrockMEAI</SubFolder>
+        </ExtensionProjectReference>
+    </ItemGroup>
+</Project>
