@@ -37,6 +37,14 @@ namespace Amazon.GroundStation.Model
         }
 
         /// <summary>
+        /// Paginator for ListAntennas operation
+        ///</summary>
+        public IListAntennasPaginator ListAntennas(ListAntennasRequest request) 
+        {
+            return new ListAntennasPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListConfigs operation
         ///</summary>
         public IListConfigsPaginator ListConfigs(ListConfigsRequest request) 
@@ -53,6 +61,14 @@ namespace Amazon.GroundStation.Model
         }
 
         /// <summary>
+        /// Paginator for ListContactVersions operation
+        ///</summary>
+        public IListContactVersionsPaginator ListContactVersions(ListContactVersionsRequest request) 
+        {
+            return new ListContactVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDataflowEndpointGroups operation
         ///</summary>
         public IListDataflowEndpointGroupsPaginator ListDataflowEndpointGroups(ListDataflowEndpointGroupsRequest request) 
@@ -66,6 +82,14 @@ namespace Amazon.GroundStation.Model
         public IListEphemeridesPaginator ListEphemerides(ListEphemeridesRequest request) 
         {
             return new ListEphemeridesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGroundStationReservations operation
+        ///</summary>
+        public IListGroundStationReservationsPaginator ListGroundStationReservations(ListGroundStationReservationsRequest request) 
+        {
+            return new ListGroundStationReservationsPaginator(this.client, request);
         }
 
         /// <summary>

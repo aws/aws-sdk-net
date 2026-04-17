@@ -148,6 +148,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     response.TrackingOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("version", targetDepth))
+                {
+                    var unmarshaller = ContactVersionUnmarshaller.Instance;
+                    response.Version = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("visibilityEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

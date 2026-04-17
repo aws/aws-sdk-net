@@ -30,11 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// 
+    /// Response containing the ID of a contact.
     /// </summary>
     public partial class CancelContactResponse : AmazonWebServiceResponse
     {
         private string _contactId;
+        private int? _versionId;
 
         /// <summary>
         /// Gets and sets the property ContactId. 
@@ -53,6 +54,25 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetContactId()
         {
             return this._contactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// Version ID of a contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public int? VersionId
+        {
+            get { return this._versionId; }
+            set { this._versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this._versionId.HasValue; 
         }
 
     }

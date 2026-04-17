@@ -95,7 +95,7 @@ namespace Amazon.GroundStation.Model
         /// This ephemeris is specific to this ground station and can't be used at other locations.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=500)]
+        [AWSProperty(Required=true, Min=4, Max=97)]
         public string GroundStation
         {
             get { return this._groundStation; }

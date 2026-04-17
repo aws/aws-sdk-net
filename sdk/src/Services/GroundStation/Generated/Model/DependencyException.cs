@@ -127,7 +127,10 @@ namespace Amazon.GroundStation.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property ParameterName.
+        /// Gets and sets the property ParameterName. 
+        /// <para>
+        /// Name of the parameter that caused the exception.
+        /// </para>
         /// </summary>
         public string ParameterName
         {

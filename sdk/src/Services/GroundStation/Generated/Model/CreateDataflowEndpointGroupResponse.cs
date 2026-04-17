@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// 
+    /// Response containing the ID of a dataflow endpoint group.
     /// </summary>
     public partial class CreateDataflowEndpointGroupResponse : AmazonWebServiceResponse
     {

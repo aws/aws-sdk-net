@@ -140,6 +140,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("version", targetDepth))
+                {
+                    var unmarshaller = ContactVersionUnmarshaller.Instance;
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("visibilityEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

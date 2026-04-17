@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// 
+    /// Output for the <c>GetMissionProfile</c> operation.
     /// </summary>
     public partial class GetMissionProfileResponse : AmazonWebServiceResponse
     {
@@ -51,7 +51,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ContactPostPassDurationSeconds. 
         /// <para>
-        /// Amount of time after a contact ends that you’d like to receive a CloudWatch event
+        /// Amount of time after a contact ends that you'd like to receive a CloudWatch event
         /// indicating the pass has finished.
         /// </para>
         /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ContactPrePassDurationSeconds. 
         /// <para>
-        /// Amount of time prior to contact start you’d like to receive a CloudWatch event indicating
+        /// Amount of time prior to contact start you'd like to receive a CloudWatch event indicating
         /// an upcoming pass.
         /// </para>
         /// </summary>
@@ -116,7 +116,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property MinimumViableContactDurationSeconds. 
         /// <para>
-        /// Smallest amount of time in seconds that you’d like to see for an available contact.
+        /// Smallest amount of time in seconds that you'd like to see for an available contact.
         /// AWS Ground Station will not present you with contacts shorter than this duration.
         /// </para>
         /// </summary>
