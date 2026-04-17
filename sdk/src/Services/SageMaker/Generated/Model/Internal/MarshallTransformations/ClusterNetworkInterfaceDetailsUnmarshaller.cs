@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterLifeCycleConfig Object
+    /// Response Unmarshaller for ClusterNetworkInterfaceDetails Object
     /// </summary>  
-    public class ClusterLifeCycleConfigUnmarshaller : IJsonUnmarshaller<ClusterLifeCycleConfig, JsonUnmarshallerContext>
+    public class ClusterNetworkInterfaceDetailsUnmarshaller : IJsonUnmarshaller<ClusterNetworkInterfaceDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterLifeCycleConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ClusterNetworkInterfaceDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ClusterLifeCycleConfig unmarshalledObject = new ClusterLifeCycleConfig();
+            ClusterNetworkInterfaceDetails unmarshalledObject = new ClusterNetworkInterfaceDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OnCreate", targetDepth))
+                if (context.TestExpression("InterfaceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OnCreate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("OnInitComplete", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OnInitComplete = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SourceS3Uri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceS3Uri = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.InterfaceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterLifeCycleConfigUnmarshaller _instance = new ClusterLifeCycleConfigUnmarshaller();        
+        private static ClusterNetworkInterfaceDetailsUnmarshaller _instance = new ClusterNetworkInterfaceDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterLifeCycleConfigUnmarshaller Instance
+        public static ClusterNetworkInterfaceDetailsUnmarshaller Instance
         {
             get
             {

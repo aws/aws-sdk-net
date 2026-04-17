@@ -146,6 +146,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("NetworkInterface", targetDepth))
+                {
+                    var unmarshaller = ClusterNetworkInterfaceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.NetworkInterface = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("OnStartDeepHealthChecks", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

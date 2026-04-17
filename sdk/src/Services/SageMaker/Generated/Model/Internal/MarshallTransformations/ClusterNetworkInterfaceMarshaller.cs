@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ClusterLifeCycleConfig Marshaller
+    /// ClusterNetworkInterface Marshaller
     /// </summary>
-    public class ClusterLifeCycleConfigMarshaller : IRequestMarshaller<ClusterLifeCycleConfig, JsonMarshallerContext> 
+    public class ClusterNetworkInterfaceMarshaller : IRequestMarshaller<ClusterNetworkInterface, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ClusterLifeCycleConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ClusterNetworkInterface requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetOnCreate())
+            if(requestObject.IsSetInterfaceType())
             {
-                context.Writer.WritePropertyName("OnCreate");
-                context.Writer.WriteStringValue(requestObject.OnCreate);
-            }
-
-            if(requestObject.IsSetOnInitComplete())
-            {
-                context.Writer.WritePropertyName("OnInitComplete");
-                context.Writer.WriteStringValue(requestObject.OnInitComplete);
-            }
-
-            if(requestObject.IsSetSourceS3Uri())
-            {
-                context.Writer.WritePropertyName("SourceS3Uri");
-                context.Writer.WriteStringValue(requestObject.SourceS3Uri);
+                context.Writer.WritePropertyName("InterfaceType");
+                context.Writer.WriteStringValue(requestObject.InterfaceType);
             }
 
         }
@@ -69,7 +57,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ClusterLifeCycleConfigMarshaller Instance = new ClusterLifeCycleConfigMarshaller();
+        public readonly static ClusterNetworkInterfaceMarshaller Instance = new ClusterNetworkInterfaceMarshaller();
 
     }
 }
