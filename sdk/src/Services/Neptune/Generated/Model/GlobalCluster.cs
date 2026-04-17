@@ -212,7 +212,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterResourceId. 
         /// <para>
-        /// An immutable identifier for the global database that is unique within in all regions.
+        /// An immutable identifier for the global database that is unique within all regions.
         /// This identifier is found in CloudTrail log entries whenever the KMS key for the DB
         /// cluster is accessed.
         /// </para>

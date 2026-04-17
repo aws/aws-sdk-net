@@ -98,7 +98,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Specifying this parameter and also setting the SkipFinalShapshot parameter to true
+        /// Specifying this parameter and also setting the SkipFinalSnapshot parameter to true
         /// results in an error.
         /// </para>
         ///  </note> 
