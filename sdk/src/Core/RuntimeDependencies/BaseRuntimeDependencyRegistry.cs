@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading;
 
 namespace Amazon.RuntimeDependencies
@@ -24,11 +25,13 @@ namespace Amazon.RuntimeDependencies
     /// </summary>
     /// <param name="context">Context information the SDK user registering the callback can use to construct the object.</param>
     /// <returns>An instance for the registered type in the registry.</returns>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public delegate object RuntimeDependencyFactory(CreateInstanceContext context);
 
     /// <summary>
     /// Base runtime dependency registry managing the state of the registry and invoking any registered RuntimeDependencyFactory callbacks.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public abstract class BaseRuntimeDependencyRegistry : IDisposable
     {
         private ReaderWriterLockSlim _rwlock = new ReaderWriterLockSlim();

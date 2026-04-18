@@ -14,8 +14,6 @@ namespace Amazon.Runtime.Internal
     /// Collection of helper methods for constructing the necessary Service client to
     /// interrogate AWS SSO Services.
     /// </summary>
-    [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
-        Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
     public static class SSOServiceClientHelpers
     {
         public static ICoreAmazonSSOOIDC BuildSSOIDCClient(
@@ -27,23 +25,14 @@ namespace Amazon.Runtime.Internal
 #endif
         )
         {
-            ICoreAmazonSSOOIDC coreSSO = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSSOOIDC>(ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME, new CreateInstanceContext(new SSOOIDCClientContext { Region = region, ProxySettings = proxySettings }));
-            if (coreSSO == null)
-            {
-                coreSSO = CreateClient<ICoreAmazonSSOOIDC>(
-                    region,
-                    ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME,
-                    ServiceClientHelpers.SSO_OIDC_SERVICE_CONFIG_NAME,
-                    ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME,
-                    nameof(GlobalRuntimeDependencyRegistry.RegisterSSOOIDCClient),
-                    proxySettings);
-            }
-
-            return coreSSO;
+            return CreateClient<ICoreAmazonSSOOIDC>(
+                region,
+                ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_FULL_NAME,
+                ServiceClientHelpers.SSO_OIDC_SERVICE_CONFIG_FULL_NAME,
+                ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME,
+                proxySettings);
         }
 
-        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
-            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
         public static ICoreAmazonSSO BuildSSOClient(
             RegionEndpoint region,
 #if BCL
@@ -53,22 +42,14 @@ namespace Amazon.Runtime.Internal
 #endif
         )
         {
-            ICoreAmazonSSO coreSSO = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSSO>(ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME, new CreateInstanceContext(new SSOClientContext { Region = region, ProxySettings = proxySettings }));
-            if(coreSSO == null)
-            {
-                coreSSO = CreateClient<ICoreAmazonSSO>(
-                    region,
-                    ServiceClientHelpers.SSO_SERVICE_CLASS_NAME,
-                    ServiceClientHelpers.SSO_SERVICE_CONFIG_NAME,
-                    ServiceClientHelpers.SSO_ASSEMBLY_NAME,
-                    nameof(GlobalRuntimeDependencyRegistry.RegisterSSOClient),
-                    proxySettings);
-            }
-            return coreSSO;
+            return CreateClient<ICoreAmazonSSO>(
+                region,
+                ServiceClientHelpers.SSO_SERVICE_CLASS_FULL_NAME,
+                ServiceClientHelpers.SSO_SERVICE_CONFIG_FULL_NAME,
+                ServiceClientHelpers.SSO_ASSEMBLY_NAME,
+                proxySettings);
         }
 
-        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
-            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
         public static ICoreAmazonSSO_Logout BuildSSOLogoutClient(
             RegionEndpoint region,
 #if BCL
@@ -78,22 +59,14 @@ namespace Amazon.Runtime.Internal
 #endif
         )
         {
-            ICoreAmazonSSO_Logout coreSSOLogout = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSSO_Logout>(ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME, new CreateInstanceContext(new SSOClientContext { Region = region, ProxySettings = proxySettings }));
-            if(coreSSOLogout == null)
-            {
-                coreSSOLogout = CreateClient<ICoreAmazonSSO_Logout>(
-                    region,
-                    ServiceClientHelpers.SSO_SERVICE_CLASS_NAME,
-                    ServiceClientHelpers.SSO_SERVICE_CONFIG_NAME,
-                    ServiceClientHelpers.SSO_ASSEMBLY_NAME,
-                    nameof(GlobalRuntimeDependencyRegistry.RegisterSSOClient),
-                    proxySettings);
-            }
-            return coreSSOLogout;
+            return CreateClient<ICoreAmazonSSO_Logout>(
+                region,
+                ServiceClientHelpers.SSO_SERVICE_CLASS_FULL_NAME,
+                ServiceClientHelpers.SSO_SERVICE_CONFIG_FULL_NAME,
+                ServiceClientHelpers.SSO_ASSEMBLY_NAME,
+                proxySettings);
         }
 
-        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
-            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
         public static ICoreAmazonSSOOIDC_V2 BuildSSOIDC_V2Client(
             RegionEndpoint region,
 #if BCL
@@ -103,44 +76,39 @@ namespace Amazon.Runtime.Internal
 #endif
         )
         {
-            ICoreAmazonSSOOIDC_V2 coreSSO = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSSOOIDC_V2>(ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME, new CreateInstanceContext(new SSOOIDCClientContext { Region = region, ProxySettings = proxySettings }));
-            if (coreSSO == null)
-            {
-                coreSSO = CreateClient<ICoreAmazonSSOOIDC_V2>(
-                    region,
-                    ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME,
-                    ServiceClientHelpers.SSO_OIDC_SERVICE_CONFIG_NAME,
-                    ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME,
-                    nameof(GlobalRuntimeDependencyRegistry.RegisterSSOOIDCClient),
-                    proxySettings);
-            }
-
-            return coreSSO;
+            return CreateClient<ICoreAmazonSSOOIDC_V2>(
+                region,
+                ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_FULL_NAME,
+                ServiceClientHelpers.SSO_OIDC_SERVICE_CONFIG_FULL_NAME,
+                ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME,
+                proxySettings);
         }
 
         /// <summary>
         /// Attempts to get a service client at runtime which cannot be made a project reference.
         /// </summary>
-    [RequiresUnreferencedCode("Using CreateClient to dynamically load dependency is not supported for Native AOT. SDK calling code must use Amazon.RuntimeDependencyRegistry to explicitly provide runtime dependencies.")]
         private static T CreateClient<T>(
         RegionEndpoint region,
-            string serviceClassName, 
-            string serviceConfigName, 
+#if NET
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+#endif
+            string serviceClassName,
+#if NET
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+#endif
+            string serviceConfigName,
             string parentAssemblyName,
-            string runtimeDependencyRegistryMethod,
 #if BCL
             WebProxy proxySettings = null
 #elif NETSTANDARD
             IWebProxy proxySettings = null
 #endif
-        ) 
+        )
             where T : class
         {
             try
             {
-                var serviceConfig = ServiceClientHelpers.CreateServiceConfig(
-                    parentAssemblyName,
-                    serviceConfigName);
+                var serviceConfig = ServiceClientHelpers.CreateServiceConfig(serviceConfigName);
 
                 serviceConfig.RegionEndpoint = region;
 
@@ -149,20 +117,14 @@ namespace Amazon.Runtime.Internal
                     serviceConfig.SetWebProxy(proxySettings);
                 }
 
-                var serviceClient = ServiceClientHelpers.CreateServiceFromAssembly<T>(
-                    parentAssemblyName,
+                var serviceClient = ServiceClientHelpers.CreateServiceFromTypeName<T>(
                     serviceClassName,
-                    new AnonymousAWSCredentials(), serviceConfig) as T;
+                    new AnonymousAWSCredentials(), serviceConfig);
 
                 return serviceClient;
             }
             catch (Exception e)
             {
-                if (InternalSDKUtils.IsRunningNativeAot())
-                {
-                    throw new MissingRuntimeDependencyException(parentAssemblyName, serviceClassName, runtimeDependencyRegistryMethod);
-                }
-
                 var msg = string.Format(CultureInfo.CurrentCulture,
                     "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use {1}.",
                     parentAssemblyName,

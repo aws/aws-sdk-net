@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime;
+using System.ComponentModel;
 using System.Net;
 
 namespace Amazon.RuntimeDependencies
@@ -21,6 +22,7 @@ namespace Amazon.RuntimeDependencies
     /// Context object passed into the RuntimeDependencyFactory delegate used by the runtime dependency registry to give the SDK user
     /// context for constructed the runtime dependency.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public class CreateInstanceContext
     {
         /// <summary>
@@ -200,6 +202,7 @@ namespace Amazon.RuntimeDependencies
     /// <summary>
     /// Context for the factory method to create the SecurityTokenServiceClient runtime dependency.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public class SecurityTokenServiceClientContext
     {
         /// <summary>
@@ -230,6 +233,7 @@ namespace Amazon.RuntimeDependencies
     /// <summary>
     /// Context for the factory method to create the KeyManagementServiceClient runtime dependency.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public class KeyManagementServiceClientContext
     {
 
@@ -243,6 +247,7 @@ namespace Amazon.RuntimeDependencies
     /// <summary>
     /// Context for the factory method to create the SigV4aCrtSigner runtime dependency.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public class SigV4aCrtSignerContext
     {
         /// <summary>
@@ -263,6 +268,7 @@ namespace Amazon.RuntimeDependencies
     /// <summary>
     /// Context for the factory method to create the CheckSumProvider runtime dependency.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public class CheckSumProviderContext
     {
 
@@ -271,6 +277,7 @@ namespace Amazon.RuntimeDependencies
     /// <summary>
     /// Context for the factory method to create the SSOClient runtime dependency.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public class SSOClientContext
     {
 
@@ -288,6 +295,7 @@ namespace Amazon.RuntimeDependencies
     /// <summary>
     /// Context for the factory method to create the SSOOIDCClient runtime dependency.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public class SSOOIDCClientContext
     {
 
@@ -305,6 +313,7 @@ namespace Amazon.RuntimeDependencies
     /// <summary>
     /// Context for the factory method to create the AmazonS3Client runtime dependency.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public class S3ClientContext
     {
         /// <summary>
@@ -327,6 +336,7 @@ namespace Amazon.RuntimeDependencies
     /// <summary>
     /// Context for the factory method to create the SigninClient runtime dependency.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
     public class SigninClientContext
     {
 

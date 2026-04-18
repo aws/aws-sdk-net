@@ -66,7 +66,7 @@ namespace Amazon.Runtime
         private AssumeRoleWithWebIdentityCredentialsOptions _options;
 
         #region Properties
-        
+
         /// <summary>
         /// The absolute path to the file on disk containing an OIDC token
         /// </summary>
@@ -158,7 +158,7 @@ namespace Amazon.Runtime
 
             var credentials = new AssumeRoleWithWebIdentityCredentials(webIdentityTokenFile, roleArn, roleSessionName);
             credentials.FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_ENV_VARS_STS_WEB_ID_TOKEN);
-            
+
             return credentials;
         }
 
@@ -234,44 +234,28 @@ namespace Amazon.Runtime
         /// Gets a client to be used for AssumeRoleWithWebIdentity requests.
         /// </summary>
         /// <returns>The STS client.</returns>
-        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
-            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
         protected virtual ICoreAmazonSTS CreateClient()
         {
             var region = FallbackRegionFactory.GetRegionEndpoint() ?? _defaultSTSClientRegion;
 
-            ICoreAmazonSTS coreSTSClient = GlobalRuntimeDependencyRegistry.Instance.GetInstance<ICoreAmazonSTS>(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SecurityTokenServiceClientContext { Action = SecurityTokenServiceClientContext.ActionContext.AssumeRoleAWSCredentials, Region = region, ProxySettings = _options?.ProxySettings }));
-            if(coreSTSClient == null)
+            try
             {
-                try
+                var stsConfig = ServiceClientHelpers.CreateServiceConfig(ServiceClientHelpers.STS_SERVICE_CONFIG_FULL_NAME);
+                stsConfig.RegionEndpoint = region;
+
+                if (_options?.ProxySettings != null)
                 {
-                    var stsConfig = ServiceClientHelpers.CreateServiceConfig(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CONFIG_NAME);
-                    stsConfig.RegionEndpoint = region;
-
-                    if (_options?.ProxySettings != null)
-                    {
-                        stsConfig.SetWebProxy(_options.ProxySettings);
-                    }
-
-                    coreSTSClient = ServiceClientHelpers.CreateServiceFromAssembly<ICoreAmazonSTS>(
-                                ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, new AnonymousAWSCredentials(), stsConfig);
+                    stsConfig.SetWebProxy(_options.ProxySettings);
                 }
-                catch (Exception e)
-                {
-                    if (InternalSDKUtils.IsRunningNativeAot())
-                    {
-                        throw new MissingRuntimeDependencyException(ServiceClientHelpers.STS_ASSEMBLY_NAME, ServiceClientHelpers.STS_SERVICE_CLASS_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterSecurityTokenServiceClient));
-                    }
 
-                    var msg = string.Format(CultureInfo.CurrentCulture,
-                        "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use Amazon.Runtime.AssumeRoleAWSCredentials.",
-                        ServiceClientHelpers.STS_ASSEMBLY_NAME);
-                    throw new InvalidOperationException(msg, e);
-                }
+                return ServiceClientHelpers.CreateServiceFromTypeName<ICoreAmazonSTS>(
+                            ServiceClientHelpers.STS_SERVICE_CLASS_FULL_NAME, new AnonymousAWSCredentials(), stsConfig);
             }
-
-            return coreSTSClient;
+            catch (Exception e)
+            {
+                var msg = $"Assembly {ServiceClientHelpers.STS_ASSEMBLY_NAME} could not be found or loaded. This assembly must be available at runtime to use Amazon.Runtime.AssumeRoleWithWebIdentityCredentials.";
+                throw new InvalidOperationException(msg, e);
+            }
         }
     }
 }

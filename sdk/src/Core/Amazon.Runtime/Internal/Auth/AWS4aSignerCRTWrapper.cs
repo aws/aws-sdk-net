@@ -34,6 +34,7 @@ namespace Amazon.Runtime.Internal.Auth
         internal const string CRT_WRAPPER_ASSEMBLY_NAME = "AWSSDK.Extensions.CrtIntegration";
         internal const string CRT_WRAPPER_NUGET_PACKGE_NAME = "AWSSDK.Extensions.CrtIntegration";
         internal const string CRT_WRAPPER_CLASS_NAME = "Amazon.Extensions.CrtIntegration.CrtAWS4aSigner";
+        private const string CRT_WRAPPER_FULL_NAME = "Amazon.Extensions.CrtIntegration.CrtAWS4aSigner, AWSSDK.Extensions.CrtIntegration";
 
         private static IAWSSigV4aProvider _awsSigV4AProvider;
         private static object _lock = new object();
@@ -49,47 +50,25 @@ namespace Amazon.Runtime.Internal.Auth
         /// Instantiates an SigV4a signer using CRT's SigV4a implementation
         /// </summary>
         /// <param name="signPayload">Whether to sign the request's payload</param>
-        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026", 
-            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2075",
-            Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
         public AWS4aSignerCRTWrapper(bool signPayload)
         {
             if (_awsSigV4AProvider == null)
             {
-                lock(_lock)
+                lock (_lock)
                 {
                     if (_awsSigV4AProvider == null)
                     {
-                        _awsSigV4AProvider = GlobalRuntimeDependencyRegistry.Instance.GetInstance<IAWSSigV4aProvider>(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME,
-                                new CreateInstanceContext(new SigV4aCrtSignerContext(signPayload)));
-
-                        if (_awsSigV4AProvider == null)
+                        var crtWrapperType = Type.GetType(CRT_WRAPPER_FULL_NAME);
+                        if (crtWrapperType is null)
                         {
-                            try
-                            {
-                                var crtWrapperType = ServiceClientHelpers.LoadTypeFromAssembly(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
-                                var constructor = crtWrapperType.GetConstructor(new Type[]
-                                {
-                                    typeof(bool)
-                                });
-                                _awsSigV4AProvider = constructor.Invoke(new object[] { signPayload }) as IAWSSigV4aProvider;
-
-                            }
-                            catch (Exception)
-                            {
-                                if (InternalSDKUtils.IsRunningNativeAot())
-                                {
-                                    throw new MissingRuntimeDependencyException(CRT_WRAPPER_NUGET_PACKGE_NAME, CRT_WRAPPER_CLASS_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterSigV4aProvider));
-                                }
-
-                                throw new AWSCommonRuntimeException
-                                (
-                                    string.Format(CultureInfo.InvariantCulture, "Attempting to make a request that requires an implementation of AWS Signature V4a. " +
-                                    $"Add a reference to the {CRT_WRAPPER_NUGET_PACKGE_NAME} NuGet package to your project to include the AWS Signature V4a signer.")
-                                );
-                            }
+                            throw new AWSCommonRuntimeException("Attempting to make a request that requires an implementation of AWS Signature V4a. " +
+                                $"Add a reference to the {CRT_WRAPPER_NUGET_PACKGE_NAME} NuGet package to your project to include the AWS Signature V4a signer.");
                         }
+                        var constructor = crtWrapperType.GetConstructor(new Type[]
+                        {
+                            typeof(bool)
+                        });
+                        _awsSigV4AProvider = constructor.Invoke(new object[] { signPayload }) as IAWSSigV4aProvider;
                     }
                 }
             }
