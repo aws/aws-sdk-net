@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Revert internal CI change for generating SDK ZIP artifacts"
+    ]
+  }
+}

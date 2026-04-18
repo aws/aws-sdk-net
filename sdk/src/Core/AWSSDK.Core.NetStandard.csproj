@@ -88,4 +88,6 @@
       an older version of System.Text.Json.  -->
     <PackageReference Include="System.Text.Json" Version="6.0.11" />
   </ItemGroup>
+    <Import Project="overrides.targets"/>
+
 </Project>

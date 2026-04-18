@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": false,
-    "type": "minor",
-    "changeLogMessages": [
-      "[Breaking Change] The AWSSDK ZIP artifact now organizes extension assemblies into dedicated subfolders under `extensions/` (for example, `extensions\\CrtIntegration\\AWSSDK.Extensions.CrtIntegration.dll`). Each subfolder contains only the extension DLL and its third-party dependencies - transitive `AWSSDK` service DLLs remain in the root directory and are not duplicated. There is no impact for customers installing the SDK via NuGet, which is the recommended installation method as described in our [developer guide](https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-install-assemblies.html)."
-    ]
-  }
-}

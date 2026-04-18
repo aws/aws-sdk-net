@@ -31,17 +31,6 @@ namespace SDKDocGenerator
                 return LoadFromAssemblyPath(assemblyPath);
             }
 
-            // Fall back to searching extension subfolders (e.g. extensions\CborProtocol\)
-            var extensionsPath = Path.Combine(_basePath, "extensions");
-            if (Directory.Exists(extensionsPath))
-            {
-                var nested = Directory.GetFiles(extensionsPath, $"{assemblyName.Name}.dll", SearchOption.AllDirectories);
-                if (nested.Length > 0)
-                {
-                    return LoadFromAssemblyPath(nested[0]);
-                }
-            }
-
             // Fall back to default context for system assemblies
             return null;
         }
