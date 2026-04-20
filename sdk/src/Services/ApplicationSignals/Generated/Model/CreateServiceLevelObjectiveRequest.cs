@@ -153,6 +153,7 @@ namespace Amazon.ApplicationSignals.Model
     public partial class CreateServiceLevelObjectiveRequest : AmazonApplicationSignalsRequest
     {
         private List<BurnRateConfiguration> _burnRateConfigurations = AWSConfigs.InitializeCollections ? new List<BurnRateConfiguration>() : null;
+        private bool? _createRecommendedSlo;
         private string _description;
         private Goal _goal;
         private string _name;
@@ -184,6 +185,30 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetBurnRateConfigurations()
         {
             return this._burnRateConfigurations != null && (this._burnRateConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateRecommendedSlo. 
+        /// <para>
+        /// Set this to <c>true</c> to create a recommended SLO out of the box. When set to <c>true</c>,
+        /// you don't need to specify the <c>MetricThreshold</c> or <c>ComparisonOperator</c>
+        /// in the <c>SliConfig</c> or <c>RequestBasedSliConfig</c>. The default value is <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is supported for SLOs on a service, service operation, or a dependency.
+        /// </para>
+        /// </summary>
+        public bool? CreateRecommendedSlo
+        {
+            get { return this._createRecommendedSlo; }
+            set { this._createRecommendedSlo = value; }
+        }
+
+        // Check to see if CreateRecommendedSlo property is set
+        internal bool IsSetCreateRecommendedSlo()
+        {
+            return this._createRecommendedSlo.HasValue; 
         }
 
         /// <summary>

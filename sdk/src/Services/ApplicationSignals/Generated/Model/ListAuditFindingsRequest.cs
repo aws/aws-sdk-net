@@ -99,6 +99,14 @@ namespace Amazon.ApplicationSignals.Model
         ///  <c>log</c> - LogAuditor: Extracts insights from application logs, categorizing error
         /// types and ranking severity by frequency during the Analysis phase
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>change_indicator</c> - ChangeIndicatorAuditor: Detects change events (deployments,
+        /// configuration changes) that occurred within 10 minutes before and during a detected
+        /// anomaly, and surfaces them as findings with deployment timestamps in the Analysis
+        /// phase. When changes are detected, the <c>top_contributor</c> auditor skips its analysis
+        /// to avoid redundancy.
+        /// </para>
         ///  </li> </ul> <note> 
         /// <para>
         ///  <c>InitAuditor</c> and <c>Summarizer</c> auditors are not configurable as they are

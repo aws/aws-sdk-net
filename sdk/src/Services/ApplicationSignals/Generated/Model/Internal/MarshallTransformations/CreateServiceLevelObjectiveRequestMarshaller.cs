@@ -89,6 +89,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetCreateRecommendedSlo())
+            {
+                context.Writer.WritePropertyName("CreateRecommendedSlo");
+                context.Writer.WriteBooleanValue(publicRequest.CreateRecommendedSlo.Value);
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
