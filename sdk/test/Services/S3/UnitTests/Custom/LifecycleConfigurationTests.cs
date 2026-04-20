@@ -32,6 +32,8 @@ using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 using AWSSDK.UnitTests.TestTools;
+using System.Net;
+
 namespace AWSSDK.UnitTests
 {
     /// <summary>
@@ -126,6 +128,76 @@ namespace AWSSDK.UnitTests
                 return context;
             }
         }
+        /// <summary>
+        /// When S3 returns an HTTP 200 with an empty body  (no lifecycle configuration exists), the 
+        // SDK should throw an AmazonS3Exception with NoSuchLifecycleConfiguration error code, matching 
+        // V3 behavior.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3")]
+        public void GetLifecycleConfiguration_EmptyResponse_ThrowsNoSuchLifecycleConfiguration()
+        {
+            // Simulate an HTTP 200 response with empty body (Content-Length: 0)
+            // This is what S3 returns in V4 when no lifecycle configuration exists
+            var responseData = new WebResponseData
+            {
+                StatusCode = HttpStatusCode.OK,
+                IsSuccessStatusCode = true,
+                Headers = new Dictionary<string, string>
+                {
+                    { "x-amzn-RequestId", "test-request-id" },
+                    { "Content-Length", "0" }
+                },
+                ContentLength = 0
+            };
+
+            var context = new S3UnmarshallerContext(new MemoryStream(), false, responseData, false);
+            var exception = Assert.ThrowsException<AmazonS3Exception>(() =>
+            {
+                GetLifecycleConfigurationResponseUnmarshaller.Instance.Unmarshall(context);
+            });
+
+            Assert.AreEqual("NoSuchLifecycleConfiguration", exception.ErrorCode);
+            Assert.AreEqual(HttpStatusCode.NotFound, exception.StatusCode);
+        }
+
+        /// <summary>
+        /// Verifies that a valid lifecycle configuration response is still unmarshalled correctly.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3")]
+        public void GetLifecycleConfiguration_ValidResponse_ReturnsConfiguration()
+        {
+            var xmlContent = @"<LifecycleConfiguration>
+                <Rule>
+                    <ID>test-rule</ID>
+                    <Filter><Prefix>logs/</Prefix></Filter>
+                    <Expiration><Days>30</Days></Expiration>
+                </Rule>
+            </LifecycleConfiguration>";
+
+            var buffer = Encoding.UTF8.GetBytes(xmlContent);
+            var responseData = new WebResponseData
+            {
+                StatusCode = HttpStatusCode.OK,
+                IsSuccessStatusCode = true,
+                Headers = new Dictionary<string, string>
+                {
+                    { "x-amzn-RequestId", "test-request-id" },
+                    { "Content-Length", buffer.Length.ToString() }
+                },
+                ContentLength = buffer.Length
+            };
+
+            var context = new S3UnmarshallerContext(new MemoryStream(buffer), false, responseData, false);
+            var response = (GetLifecycleConfigurationResponse)GetLifecycleConfigurationResponseUnmarshaller.Instance.Unmarshall(context);
+
+            Assert.IsNotNull(response.Configuration);
+            Assert.IsNotNull(response.Configuration.Rules);
+            Assert.AreEqual(1, response.Configuration.Rules.Count);
+            Assert.AreEqual("test-rule", response.Configuration.Rules[0].Id);
+        }
+
         [TestMethod]
         public void TestPutLifecycleConfiguration()
         {
