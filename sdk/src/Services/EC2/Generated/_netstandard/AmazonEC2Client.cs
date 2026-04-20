@@ -382,6 +382,41 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  AcceptTransitGatewayClientVpnAttachment
+
+        internal virtual AcceptTransitGatewayClientVpnAttachmentResponse AcceptTransitGatewayClientVpnAttachment(AcceptTransitGatewayClientVpnAttachmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AcceptTransitGatewayClientVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptTransitGatewayClientVpnAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptTransitGatewayClientVpnAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Accepts a Transit Gateway attachment request for a Client VPN endpoint. The Transit
+        /// Gateway owner must accept the attachment request before the Client VPN endpoint can
+        /// route traffic through the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayClientVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayClientVpnAttachment">REST API Reference for AcceptTransitGatewayClientVpnAttachment Operation</seealso>
+        public virtual Task<AcceptTransitGatewayClientVpnAttachmentResponse> AcceptTransitGatewayClientVpnAttachmentAsync(AcceptTransitGatewayClientVpnAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AcceptTransitGatewayClientVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptTransitGatewayClientVpnAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcceptTransitGatewayClientVpnAttachmentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  AcceptTransitGatewayMulticastDomainAssociations
 
         internal virtual AcceptTransitGatewayMulticastDomainAssociationsResponse AcceptTransitGatewayMulticastDomainAssociations(AcceptTransitGatewayMulticastDomainAssociationsRequest request)
@@ -10297,6 +10332,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DeleteTransitGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTransitGatewayResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteTransitGatewayClientVpnAttachment
+
+        internal virtual DeleteTransitGatewayClientVpnAttachmentResponse DeleteTransitGatewayClientVpnAttachment(DeleteTransitGatewayClientVpnAttachmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayClientVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayClientVpnAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayClientVpnAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a Transit Gateway attachment for a Client VPN endpoint. The Transit Gateway
+        /// owner can delete the attachment to remove the association between the Client VPN endpoint
+        /// and the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayClientVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayClientVpnAttachment">REST API Reference for DeleteTransitGatewayClientVpnAttachment Operation</seealso>
+        public virtual Task<DeleteTransitGatewayClientVpnAttachmentResponse> DeleteTransitGatewayClientVpnAttachmentAsync(DeleteTransitGatewayClientVpnAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayClientVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayClientVpnAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTransitGatewayClientVpnAttachmentResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -30594,6 +30664,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = RejectCapacityReservationBillingOwnershipResponseUnmarshaller.Instance;
 
             return InvokeAsync<RejectCapacityReservationBillingOwnershipResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  RejectTransitGatewayClientVpnAttachment
+
+        internal virtual RejectTransitGatewayClientVpnAttachmentResponse RejectTransitGatewayClientVpnAttachment(RejectTransitGatewayClientVpnAttachmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RejectTransitGatewayClientVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectTransitGatewayClientVpnAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<RejectTransitGatewayClientVpnAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Rejects a Transit Gateway attachment request for a Client VPN endpoint. The Transit
+        /// Gateway owner can reject the attachment request to prevent the Client VPN endpoint
+        /// from routing traffic through the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayClientVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayClientVpnAttachment">REST API Reference for RejectTransitGatewayClientVpnAttachment Operation</seealso>
+        public virtual Task<RejectTransitGatewayClientVpnAttachmentResponse> RejectTransitGatewayClientVpnAttachmentAsync(RejectTransitGatewayClientVpnAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RejectTransitGatewayClientVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectTransitGatewayClientVpnAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RejectTransitGatewayClientVpnAttachmentResponse>(request, options, cancellationToken);
         }
         #endregion
         

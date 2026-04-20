@@ -46,10 +46,52 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AssociateClientVpnTargetNetworkRequest : AmazonEC2Request
     {
+        private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _clientToken;
         private string _clientVpnEndpointId;
         private bool? _dryRun;
         private string _subnetId;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The Availability Zone name for the Transit Gateway association. Required if when associating
+        /// an Availability Zone with a Client VPN endpoint that uses a Transit Gateway. You cannot
+        /// specify both <c>SubnetId</c> and <c>AvailabilityZone</c>.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The Availability Zone ID for the Transit Gateway association. Required if when associating
+        /// an Availability Zone with a Client VPN endpoint that uses a Transit Gateway. You cannot
+        /// specify both <c>AvailabilityZone</c> and <c>AvailabilityZoneId</c>.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -113,10 +155,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet to associate with the Client VPN endpoint.
+        /// The ID of the subnet to associate with the Client VPN endpoint. Required for VPC-based
+        /// endpoints. For Transit Gateway-based endpoints, use <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c>
+        /// instead.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SubnetId
         {
             get { return this._subnetId; }

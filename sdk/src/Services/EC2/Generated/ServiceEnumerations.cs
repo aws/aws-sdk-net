@@ -3995,6 +3995,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ClientVpnEndpointStatusCode Deleting = new ClientVpnEndpointStatusCode("deleting");
         /// <summary>
+        /// Constant Pending for ClientVpnEndpointStatusCode
+        /// </summary>
+        public static readonly ClientVpnEndpointStatusCode Pending = new ClientVpnEndpointStatusCode("pending");
+        /// <summary>
         /// Constant PendingAssociate for ClientVpnEndpointStatusCode
         /// </summary>
         public static readonly ClientVpnEndpointStatusCode PendingAssociate = new ClientVpnEndpointStatusCode("pending-associate");
@@ -27271,6 +27275,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant ClientVpn for TransitGatewayAttachmentResourceType
+        /// </summary>
+        public static readonly TransitGatewayAttachmentResourceType ClientVpn = new TransitGatewayAttachmentResourceType("client-vpn");
+        /// <summary>
         /// Constant Connect for TransitGatewayAttachmentResourceType
         /// </summary>
         public static readonly TransitGatewayAttachmentResourceType Connect = new TransitGatewayAttachmentResourceType("connect");
@@ -27426,6 +27434,72 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TransitGatewayAttachmentState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransitGatewayAttachmentStatusType.
+    /// </summary>
+    public class TransitGatewayAttachmentStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for TransitGatewayAttachmentStatusType
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatusType Available = new TransitGatewayAttachmentStatusType("available");
+        /// <summary>
+        /// Constant Deleted for TransitGatewayAttachmentStatusType
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatusType Deleted = new TransitGatewayAttachmentStatusType("deleted");
+        /// <summary>
+        /// Constant Deleting for TransitGatewayAttachmentStatusType
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatusType Deleting = new TransitGatewayAttachmentStatusType("deleting");
+        /// <summary>
+        /// Constant Pending for TransitGatewayAttachmentStatusType
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatusType Pending = new TransitGatewayAttachmentStatusType("pending");
+        /// <summary>
+        /// Constant PendingAcceptance for TransitGatewayAttachmentStatusType
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatusType PendingAcceptance = new TransitGatewayAttachmentStatusType("pending-acceptance");
+        /// <summary>
+        /// Constant Rejected for TransitGatewayAttachmentStatusType
+        /// </summary>
+        public static readonly TransitGatewayAttachmentStatusType Rejected = new TransitGatewayAttachmentStatusType("rejected");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayAttachmentStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayAttachmentStatusType FindValue(string value)
+        {
+            return FindValue<TransitGatewayAttachmentStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayAttachmentStatusType(string value)
         {
             return FindValue(value);
         }

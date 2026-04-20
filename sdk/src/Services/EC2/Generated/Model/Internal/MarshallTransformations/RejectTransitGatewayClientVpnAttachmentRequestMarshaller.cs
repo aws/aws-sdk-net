@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AssociateClientVpnTargetNetwork Request Marshaller
+    /// RejectTransitGatewayClientVpnAttachment Request Marshaller
     /// </summary>       
-    public class AssociateClientVpnTargetNetworkRequestMarshaller : IMarshaller<IRequest, AssociateClientVpnTargetNetworkRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RejectTransitGatewayClientVpnAttachmentRequestMarshaller : IMarshaller<IRequest, RejectTransitGatewayClientVpnAttachmentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AssociateClientVpnTargetNetworkRequest)input);
+            return this.Marshall((RejectTransitGatewayClientVpnAttachmentRequest)input);
         }
     
         /// <summary>
@@ -51,50 +51,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AssociateClientVpnTargetNetworkRequest publicRequest)
+        public IRequest Marshall(RejectTransitGatewayClientVpnAttachmentRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
-            request.Parameters.Add("Action", "AssociateClientVpnTargetNetwork");
+            request.Parameters.Add("Action", "RejectTransitGatewayClientVpnAttachment");
             request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetAvailabilityZone())
-                {
-                    request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
-                }
-                if(publicRequest.IsSetAvailabilityZoneId())
-                {
-                    request.Parameters.Add("AvailabilityZoneId", StringUtils.FromString(publicRequest.AvailabilityZoneId));
-                }
-                if(publicRequest.IsSetClientToken())
-                {
-                    request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
-                }
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
-                }
-                if(publicRequest.IsSetClientVpnEndpointId())
-                {
-                    request.Parameters.Add("ClientVpnEndpointId", StringUtils.FromString(publicRequest.ClientVpnEndpointId));
-                }
                 if(publicRequest.IsSetDryRun())
                 {
                     request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
                 }
-                if(publicRequest.IsSetSubnetId())
+                if(publicRequest.IsSetTransitGatewayAttachmentId())
                 {
-                    request.Parameters.Add("SubnetId", StringUtils.FromString(publicRequest.SubnetId));
+                    request.Parameters.Add("TransitGatewayAttachmentId", StringUtils.FromString(publicRequest.TransitGatewayAttachmentId));
                 }
             }
 
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
-                    private static AssociateClientVpnTargetNetworkRequestMarshaller _instance = new AssociateClientVpnTargetNetworkRequestMarshaller();        
+                    private static RejectTransitGatewayClientVpnAttachmentRequestMarshaller _instance = new RejectTransitGatewayClientVpnAttachmentRequestMarshaller();        
 
-        internal static AssociateClientVpnTargetNetworkRequestMarshaller GetInstance()
+        internal static RejectTransitGatewayClientVpnAttachmentRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +82,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociateClientVpnTargetNetworkRequestMarshaller Instance
+        public static RejectTransitGatewayClientVpnAttachmentRequestMarshaller Instance
         {
             get
             {

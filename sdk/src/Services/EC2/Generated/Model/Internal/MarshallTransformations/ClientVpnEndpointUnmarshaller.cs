@@ -218,6 +218,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TrafficIpAddressType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("transitGatewayConfiguration", targetDepth))
+                    {
+                        var unmarshaller = TransitGatewayConfigurationDescribeEndpointStructureUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("transportProtocol", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

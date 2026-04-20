@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClientVpnRoute Object
+    /// Response Unmarshaller for TransitGatewayConfigurationDescribeEndpointStructure Object
     /// </summary>  
-    public class ClientVpnRouteUnmarshaller : IXmlUnmarshaller<ClientVpnRoute, XmlUnmarshallerContext>
+    public class TransitGatewayConfigurationDescribeEndpointStructureUnmarshaller : IXmlUnmarshaller<TransitGatewayConfigurationDescribeEndpointStructure, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ClientVpnRoute Unmarshall(XmlUnmarshallerContext context)
+        public TransitGatewayConfigurationDescribeEndpointStructure Unmarshall(XmlUnmarshallerContext context)
         {
-            ClientVpnRoute unmarshalledObject = new ClientVpnRoute();
+            TransitGatewayConfigurationDescribeEndpointStructure unmarshalledObject = new TransitGatewayConfigurationDescribeEndpointStructure();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,40 +55,26 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("clientVpnEndpointId", targetDepth))
+                    if (context.TestExpression("availabilityZoneIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ClientVpnEndpointId = unmarshaller.Unmarshall(context);
+                        if (unmarshalledObject.AvailabilityZoneIds == null)
+                        {
+                            unmarshalledObject.AvailabilityZoneIds = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailabilityZoneIds.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("description", targetDepth))
+                    if (context.TestExpression("availabilityZoneSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("destinationCidr", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DestinationCidr = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("origin", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Origin = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("status", targetDepth))
-                    {
-                        var unmarshaller = ClientVpnRouteStatusUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("targetSubnet", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TargetSubnet = unmarshaller.Unmarshall(context);
+                        if (unmarshalledObject.AvailabilityZones == null)
+                        {
+                            unmarshalledObject.AvailabilityZones = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
                     }
                     if (context.TestExpression("transitGatewayAttachmentId", targetDepth))
@@ -97,10 +83,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TransitGatewayAttachmentId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("type", targetDepth))
+                    if (context.TestExpression("transitGatewayId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TransitGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -113,12 +99,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ClientVpnRouteUnmarshaller _instance = new ClientVpnRouteUnmarshaller();        
+        private static TransitGatewayConfigurationDescribeEndpointStructureUnmarshaller _instance = new TransitGatewayConfigurationDescribeEndpointStructureUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClientVpnRouteUnmarshaller Instance
+        public static TransitGatewayConfigurationDescribeEndpointStructureUnmarshaller Instance
         {
             get
             {

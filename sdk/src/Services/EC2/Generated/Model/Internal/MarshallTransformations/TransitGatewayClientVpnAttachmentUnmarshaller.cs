@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClientVpnRoute Object
+    /// Response Unmarshaller for TransitGatewayClientVpnAttachment Object
     /// </summary>  
-    public class ClientVpnRouteUnmarshaller : IXmlUnmarshaller<ClientVpnRoute, XmlUnmarshallerContext>
+    public class TransitGatewayClientVpnAttachmentUnmarshaller : IXmlUnmarshaller<TransitGatewayClientVpnAttachment, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ClientVpnRoute Unmarshall(XmlUnmarshallerContext context)
+        public TransitGatewayClientVpnAttachment Unmarshall(XmlUnmarshallerContext context)
         {
-            ClientVpnRoute unmarshalledObject = new ClientVpnRoute();
+            TransitGatewayClientVpnAttachment unmarshalledObject = new TransitGatewayClientVpnAttachment();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -61,34 +61,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClientVpnEndpointId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("description", targetDepth))
+                    if (context.TestExpression("clientVpnOwnerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ClientVpnOwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("destinationCidr", targetDepth))
+                    if (context.TestExpression("creationTime", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DestinationCidr = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("origin", targetDepth))
+                    if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Origin = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("status", targetDepth))
-                    {
-                        var unmarshaller = ClientVpnRouteStatusUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("targetSubnet", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TargetSubnet = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("transitGatewayAttachmentId", targetDepth))
@@ -97,10 +85,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TransitGatewayAttachmentId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("type", targetDepth))
+                    if (context.TestExpression("transitGatewayId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TransitGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -113,12 +101,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ClientVpnRouteUnmarshaller _instance = new ClientVpnRouteUnmarshaller();        
+        private static TransitGatewayClientVpnAttachmentUnmarshaller _instance = new TransitGatewayClientVpnAttachmentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClientVpnRouteUnmarshaller Instance
+        public static TransitGatewayClientVpnAttachmentUnmarshaller Instance
         {
             get
             {

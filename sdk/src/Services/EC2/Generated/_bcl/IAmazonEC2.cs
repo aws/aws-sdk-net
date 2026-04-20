@@ -140,6 +140,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AcceptTransitGatewayClientVpnAttachment
+
+
+        /// <summary>
+        /// Accepts a Transit Gateway attachment request for a Client VPN endpoint. The Transit
+        /// Gateway owner must accept the attachment request before the Client VPN endpoint can
+        /// route traffic through the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayClientVpnAttachment service method.</param>
+        /// 
+        /// <returns>The response from the AcceptTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayClientVpnAttachment">REST API Reference for AcceptTransitGatewayClientVpnAttachment Operation</seealso>
+        AcceptTransitGatewayClientVpnAttachmentResponse AcceptTransitGatewayClientVpnAttachment(AcceptTransitGatewayClientVpnAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Accepts a Transit Gateway attachment request for a Client VPN endpoint. The Transit
+        /// Gateway owner must accept the attachment request before the Client VPN endpoint can
+        /// route traffic through the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayClientVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayClientVpnAttachment">REST API Reference for AcceptTransitGatewayClientVpnAttachment Operation</seealso>
+        Task<AcceptTransitGatewayClientVpnAttachmentResponse> AcceptTransitGatewayClientVpnAttachmentAsync(AcceptTransitGatewayClientVpnAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AcceptTransitGatewayMulticastDomainAssociations
 
 
@@ -11334,6 +11366,38 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteTransitGateway service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway">REST API Reference for DeleteTransitGateway Operation</seealso>
         Task<DeleteTransitGatewayResponse> DeleteTransitGatewayAsync(DeleteTransitGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTransitGatewayClientVpnAttachment
+
+
+        /// <summary>
+        /// Deletes a Transit Gateway attachment for a Client VPN endpoint. The Transit Gateway
+        /// owner can delete the attachment to remove the association between the Client VPN endpoint
+        /// and the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayClientVpnAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayClientVpnAttachment">REST API Reference for DeleteTransitGatewayClientVpnAttachment Operation</seealso>
+        DeleteTransitGatewayClientVpnAttachmentResponse DeleteTransitGatewayClientVpnAttachment(DeleteTransitGatewayClientVpnAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a Transit Gateway attachment for a Client VPN endpoint. The Transit Gateway
+        /// owner can delete the attachment to remove the association between the Client VPN endpoint
+        /// and the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayClientVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayClientVpnAttachment">REST API Reference for DeleteTransitGatewayClientVpnAttachment Operation</seealso>
+        Task<DeleteTransitGatewayClientVpnAttachmentResponse> DeleteTransitGatewayClientVpnAttachmentAsync(DeleteTransitGatewayClientVpnAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -33511,6 +33575,38 @@ namespace Amazon.EC2
         /// <returns>The response from the RejectCapacityReservationBillingOwnership service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectCapacityReservationBillingOwnership">REST API Reference for RejectCapacityReservationBillingOwnership Operation</seealso>
         Task<RejectCapacityReservationBillingOwnershipResponse> RejectCapacityReservationBillingOwnershipAsync(RejectCapacityReservationBillingOwnershipRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RejectTransitGatewayClientVpnAttachment
+
+
+        /// <summary>
+        /// Rejects a Transit Gateway attachment request for a Client VPN endpoint. The Transit
+        /// Gateway owner can reject the attachment request to prevent the Client VPN endpoint
+        /// from routing traffic through the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayClientVpnAttachment service method.</param>
+        /// 
+        /// <returns>The response from the RejectTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayClientVpnAttachment">REST API Reference for RejectTransitGatewayClientVpnAttachment Operation</seealso>
+        RejectTransitGatewayClientVpnAttachmentResponse RejectTransitGatewayClientVpnAttachment(RejectTransitGatewayClientVpnAttachmentRequest request);
+
+
+
+        /// <summary>
+        /// Rejects a Transit Gateway attachment request for a Client VPN endpoint. The Transit
+        /// Gateway owner can reject the attachment request to prevent the Client VPN endpoint
+        /// from routing traffic through the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayClientVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayClientVpnAttachment">REST API Reference for RejectTransitGatewayClientVpnAttachment Operation</seealso>
+        Task<RejectTransitGatewayClientVpnAttachmentResponse> RejectTransitGatewayClientVpnAttachmentAsync(RejectTransitGatewayClientVpnAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
