@@ -1,3 +1,23 @@
+### 4.0.234.0 (2026-04-20 18:24 UTC)
+* ApplicationSignals (4.0.7.0)
+	* Releasing Second phase of SLO Recommendations where you can create recommended SLOs out-of-the box using CreateSLO API
+* BedrockAgentCoreControl (4.0.28.0)
+	* Supporting listingMode for AgentCore Gateway MCP server targets
+* EC2 (4.0.84.0)
+	* Added Transit Gateway Integration into AWS Client VPN.
+* Evs (4.0.6.0)
+	* Amazon EVS now allows you to create connectors to your vCenter appliances and create Windows Server entitlements for virtual machines running in your EVS environments
+* GuardDuty (4.0.18.2)
+	* Expanded support for new suppression rule fields.
+* Kafka (4.0.8.0)
+	* Amazon MSK Replicator now supports data migration from external Apache Kafka clusters to Amazon MSK Express brokers. This release adds SaslScram authentication with TLS encryption, enhanced consumer offset synchronization, and customer log forwarding for troubleshooting.
+* LocationService (4.0.4.0)
+	* This release adds support for new Job APIs for bulk workloads. The initial job type supported is Address Validation. The new APIs added are StartJob, CancelJob, ListJobs, and GetJob.
+* ObservabilityAdmin (4.0.10.0)
+	* Enablement for Security Hub v2 via Observability Admin Telemetry Rule for account and organization level.
+* Core 4.0.3.31
+	* Revert internal CI change for generating SDK ZIP artifacts
+
 ### 4.0.233.0 (2026-04-17 18:15 UTC)
 * CleanRooms (4.0.16.0)
 	* This release adds support for configurable spark properties for Cleanrooms PySpark workloads.
