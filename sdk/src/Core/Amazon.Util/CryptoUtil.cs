@@ -169,8 +169,12 @@ namespace Amazon.Util
             /// <returns>Computed hash code</returns>
             public byte[] ComputeMD5Hash(byte[] data)
             {
+#if NET8_0_OR_GREATER
+                return MD5.HashData(data);
+#else
                 var hashed = new MD5Managed().ComputeHash(data);
                 return hashed;
+#endif
             }
 
             /// <summary>
@@ -180,8 +184,12 @@ namespace Amazon.Util
             /// <returns>Computed hash code</returns>
             public byte[] ComputeMD5Hash(Stream steam)
             {
+#if NET8_0_OR_GREATER
+                return MD5.HashData(steam);
+#else
                 var hashed = new MD5Managed().ComputeHash(steam);
                 return hashed;
+#endif
             }
 
             /// <summary>
