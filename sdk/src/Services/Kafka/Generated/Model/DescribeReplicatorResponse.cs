@@ -38,6 +38,7 @@ namespace Amazon.Kafka.Model
         private string _currentVersion;
         private bool? _isReplicatorReference;
         private List<KafkaClusterDescription> _kafkaClusters = AWSConfigs.InitializeCollections ? new List<KafkaClusterDescription>() : null;
+        private LogDelivery _logDelivery;
         private List<ReplicationInfoDescription> _replicationInfoList = AWSConfigs.InitializeCollections ? new List<ReplicationInfoDescription>() : null;
         private string _replicatorArn;
         private string _replicatorDescription;
@@ -123,6 +124,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetKafkaClusters()
         {
             return this._kafkaClusters != null && (this._kafkaClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogDelivery. 
+        /// <para>
+        /// Configuration for log delivery.
+        /// </para>
+        /// </summary>
+        public LogDelivery LogDelivery
+        {
+            get { return this._logDelivery; }
+            set { this._logDelivery = value; }
+        }
+
+        // Check to see if LogDelivery property is set
+        internal bool IsSetLogDelivery()
+        {
+            return this._logDelivery != null;
         }
 
         /// <summary>

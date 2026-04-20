@@ -303,6 +303,56 @@ namespace Amazon.Kafka
 
 
     /// <summary>
+    /// Constants used for properties of type ConsumerGroupOffsetSyncMode.
+    /// </summary>
+    public class ConsumerGroupOffsetSyncMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENHANCED for ConsumerGroupOffsetSyncMode
+        /// </summary>
+        public static readonly ConsumerGroupOffsetSyncMode ENHANCED = new ConsumerGroupOffsetSyncMode("ENHANCED");
+        /// <summary>
+        /// Constant LEGACY for ConsumerGroupOffsetSyncMode
+        /// </summary>
+        public static readonly ConsumerGroupOffsetSyncMode LEGACY = new ConsumerGroupOffsetSyncMode("LEGACY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConsumerGroupOffsetSyncMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConsumerGroupOffsetSyncMode FindValue(string value)
+        {
+            return FindValue<ConsumerGroupOffsetSyncMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConsumerGroupOffsetSyncMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CustomerActionStatus.
     /// </summary>
     public class CustomerActionStatus : ConstantClass
@@ -408,6 +458,102 @@ namespace Amazon.Kafka
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EnhancedMonitoring(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KafkaClusterEncryptionInTransitType.
+    /// </summary>
+    public class KafkaClusterEncryptionInTransitType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TLS for KafkaClusterEncryptionInTransitType
+        /// </summary>
+        public static readonly KafkaClusterEncryptionInTransitType TLS = new KafkaClusterEncryptionInTransitType("TLS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KafkaClusterEncryptionInTransitType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KafkaClusterEncryptionInTransitType FindValue(string value)
+        {
+            return FindValue<KafkaClusterEncryptionInTransitType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KafkaClusterEncryptionInTransitType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KafkaClusterSaslScramMechanism.
+    /// </summary>
+    public class KafkaClusterSaslScramMechanism : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHA256 for KafkaClusterSaslScramMechanism
+        /// </summary>
+        public static readonly KafkaClusterSaslScramMechanism SHA256 = new KafkaClusterSaslScramMechanism("SHA256");
+        /// <summary>
+        /// Constant SHA512 for KafkaClusterSaslScramMechanism
+        /// </summary>
+        public static readonly KafkaClusterSaslScramMechanism SHA512 = new KafkaClusterSaslScramMechanism("SHA512");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KafkaClusterSaslScramMechanism(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KafkaClusterSaslScramMechanism FindValue(string value)
+        {
+            return FindValue<KafkaClusterSaslScramMechanism>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KafkaClusterSaslScramMechanism(string value)
         {
             return FindValue(value);
         }

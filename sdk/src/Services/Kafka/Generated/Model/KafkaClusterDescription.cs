@@ -35,6 +35,9 @@ namespace Amazon.Kafka.Model
     public partial class KafkaClusterDescription
     {
         private AmazonMskCluster _amazonMskCluster;
+        private ApacheKafkaCluster _apacheKafkaCluster;
+        private KafkaClusterClientAuthentication _clientAuthentication;
+        private KafkaClusterEncryptionInTransit _encryptionInTransit;
         private string _kafkaClusterAlias;
         private KafkaClusterClientVpcConfig _vpcConfig;
 
@@ -54,6 +57,60 @@ namespace Amazon.Kafka.Model
         internal bool IsSetAmazonMskCluster()
         {
             return this._amazonMskCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApacheKafkaCluster. 
+        /// <para>
+        /// Details of an Apache Kafka Cluster.
+        /// </para>
+        /// </summary>
+        public ApacheKafkaCluster ApacheKafkaCluster
+        {
+            get { return this._apacheKafkaCluster; }
+            set { this._apacheKafkaCluster = value; }
+        }
+
+        // Check to see if ApacheKafkaCluster property is set
+        internal bool IsSetApacheKafkaCluster()
+        {
+            return this._apacheKafkaCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientAuthentication. 
+        /// <para>
+        /// Details of the client authentication used by the Apache Kafka cluster.
+        /// </para>
+        /// </summary>
+        public KafkaClusterClientAuthentication ClientAuthentication
+        {
+            get { return this._clientAuthentication; }
+            set { this._clientAuthentication = value; }
+        }
+
+        // Check to see if ClientAuthentication property is set
+        internal bool IsSetClientAuthentication()
+        {
+            return this._clientAuthentication != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionInTransit. 
+        /// <para>
+        /// Details of encryption in transit to the Apache Kafka cluster.
+        /// </para>
+        /// </summary>
+        public KafkaClusterEncryptionInTransit EncryptionInTransit
+        {
+            get { return this._encryptionInTransit; }
+            set { this._encryptionInTransit = value; }
+        }
+
+        // Check to see if EncryptionInTransit property is set
+        internal bool IsSetEncryptionInTransit()
+        {
+            return this._encryptionInTransit != null;
         }
 
         /// <summary>

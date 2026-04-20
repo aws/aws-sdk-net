@@ -46,6 +46,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetConsumerGroupOffsetSyncMode())
+            {
+                context.Writer.WritePropertyName("consumerGroupOffsetSyncMode");
+                context.Writer.WriteStringValue(requestObject.ConsumerGroupOffsetSyncMode);
+            }
+
             if(requestObject.IsSetConsumerGroupsToExclude())
             {
                 context.Writer.WritePropertyName("consumerGroupsToExclude");

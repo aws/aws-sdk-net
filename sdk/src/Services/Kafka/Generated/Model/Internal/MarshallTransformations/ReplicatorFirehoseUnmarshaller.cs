@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KafkaClusterSummary Object
+    /// Response Unmarshaller for ReplicatorFirehose Object
     /// </summary>  
-    public class KafkaClusterSummaryUnmarshaller : IJsonUnmarshaller<KafkaClusterSummary, JsonUnmarshallerContext>
+    public class ReplicatorFirehoseUnmarshaller : IJsonUnmarshaller<ReplicatorFirehose, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KafkaClusterSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ReplicatorFirehose Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            KafkaClusterSummary unmarshalledObject = new KafkaClusterSummary();
+            ReplicatorFirehose unmarshalledObject = new ReplicatorFirehose();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("amazonMskCluster", targetDepth))
-                {
-                    var unmarshaller = AmazonMskClusterUnmarshaller.Instance;
-                    unmarshalledObject.AmazonMskCluster = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("apacheKafkaCluster", targetDepth))
-                {
-                    var unmarshaller = ApacheKafkaClusterUnmarshaller.Instance;
-                    unmarshalledObject.ApacheKafkaCluster = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("kafkaClusterAlias", targetDepth))
+                if (context.TestExpression("deliveryStream", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KafkaClusterAlias = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DeliveryStream = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("enabled", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         }
 
 
-        private static KafkaClusterSummaryUnmarshaller _instance = new KafkaClusterSummaryUnmarshaller();        
+        private static ReplicatorFirehoseUnmarshaller _instance = new ReplicatorFirehoseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KafkaClusterSummaryUnmarshaller Instance
+        public static ReplicatorFirehoseUnmarshaller Instance
         {
             get
             {

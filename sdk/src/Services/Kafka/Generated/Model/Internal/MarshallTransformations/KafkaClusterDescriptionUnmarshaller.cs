@@ -62,6 +62,24 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.AmazonMskCluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("apacheKafkaCluster", targetDepth))
+                {
+                    var unmarshaller = ApacheKafkaClusterUnmarshaller.Instance;
+                    unmarshalledObject.ApacheKafkaCluster = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("clientAuthentication", targetDepth))
+                {
+                    var unmarshaller = KafkaClusterClientAuthenticationUnmarshaller.Instance;
+                    unmarshalledObject.ClientAuthentication = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("encryptionInTransit", targetDepth))
+                {
+                    var unmarshaller = KafkaClusterEncryptionInTransitUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionInTransit = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("kafkaClusterAlias", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

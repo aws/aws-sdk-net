@@ -93,16 +93,39 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CurrentVersion);
             }
 
+            if(publicRequest.IsSetLogDelivery())
+            {
+                context.Writer.WritePropertyName("logDelivery");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogDeliveryMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LogDelivery, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSourceKafkaClusterArn())
             {
                 context.Writer.WritePropertyName("sourceKafkaClusterArn");
                 context.Writer.WriteStringValue(publicRequest.SourceKafkaClusterArn);
             }
 
+            if(publicRequest.IsSetSourceKafkaClusterId())
+            {
+                context.Writer.WritePropertyName("sourceKafkaClusterId");
+                context.Writer.WriteStringValue(publicRequest.SourceKafkaClusterId);
+            }
+
             if(publicRequest.IsSetTargetKafkaClusterArn())
             {
                 context.Writer.WritePropertyName("targetKafkaClusterArn");
                 context.Writer.WriteStringValue(publicRequest.TargetKafkaClusterArn);
+            }
+
+            if(publicRequest.IsSetTargetKafkaClusterId())
+            {
+                context.Writer.WritePropertyName("targetKafkaClusterId");
+                context.Writer.WriteStringValue(publicRequest.TargetKafkaClusterId);
             }
 
             if(publicRequest.IsSetTopicReplication())

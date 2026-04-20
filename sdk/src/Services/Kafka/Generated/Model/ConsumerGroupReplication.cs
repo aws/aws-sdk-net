@@ -34,10 +34,32 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class ConsumerGroupReplication
     {
+        private ConsumerGroupOffsetSyncMode _consumerGroupOffsetSyncMode;
         private List<string> _consumerGroupsToExclude = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _consumerGroupsToReplicate = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _detectAndCopyNewConsumerGroups;
         private bool? _synchroniseConsumerGroupOffsets;
+
+        /// <summary>
+        /// Gets and sets the property ConsumerGroupOffsetSyncMode. 
+        /// <para>
+        /// The consumer group offset synchronization mode. With LEGACY, offsets are synchronized
+        /// when producers write to the source cluster. With ENHANCED, consumer offsets are synchronized
+        /// regardless of producer location. ENHANCED requires a corresponding replicator that
+        /// replicates data from the target cluster to the source cluster.
+        /// </para>
+        /// </summary>
+        public ConsumerGroupOffsetSyncMode ConsumerGroupOffsetSyncMode
+        {
+            get { return this._consumerGroupOffsetSyncMode; }
+            set { this._consumerGroupOffsetSyncMode = value; }
+        }
+
+        // Check to see if ConsumerGroupOffsetSyncMode property is set
+        internal bool IsSetConsumerGroupOffsetSyncMode()
+        {
+            return this._consumerGroupOffsetSyncMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConsumerGroupsToExclude. 
