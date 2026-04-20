@@ -43,6 +43,10 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// 20 byte SHA-1 certificate fingerprint associated with the Android app signing certificate.
         /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>BB:0D:AC:74:D3:21:E1:43:67:71:9B:62:91:AF:A1:66:6E:44:5D:75</c> 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=59, Max=59)]
         public string CertificateFingerprint
@@ -60,7 +64,11 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Package. 
         /// <para>
-        /// Unique package name for an Android app.
+        /// Unique package name identifier for an Android app.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>com.mydomain.appname</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

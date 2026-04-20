@@ -601,6 +601,46 @@ namespace Amazon.LocationService
 
         #endregion
                 
+        #region  CancelJob
+
+
+
+        /// <summary>
+        /// <c>CancelJob</c> cancels a job that is currently running or pending. If the job is
+        /// already in a terminal state (<c>Completed</c>, <c>Failed</c>, or <c>Cancelled</c>),
+        /// the operation returns successfully with the current status.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/jobs-concepts.html">Job
+        /// concepts</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelJob service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CancelJob">REST API Reference for CancelJob Operation</seealso>
+        Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateGeofenceCollection
 
 
@@ -1904,6 +1944,48 @@ namespace Amazon.LocationService
 
         #endregion
                 
+        #region  GetJob
+
+
+
+        /// <summary>
+        /// <c>GetJob</c> retrieves detailed information about a specific job, including its
+        /// current status, configuration, and error information if the job failed.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/jobs-concepts.html">Job
+        /// concepts</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJob service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetJob">REST API Reference for GetJob Operation</seealso>
+        Task<GetJobResponse> GetJobAsync(GetJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetMapGlyphs
 
 
@@ -2405,6 +2487,44 @@ namespace Amazon.LocationService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListGeofences">REST API Reference for ListGeofences Operation</seealso>
         Task<ListGeofencesResponse> ListGeofencesAsync(ListGeofencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListJobs
+
+
+
+        /// <summary>
+        /// <c>ListJobs</c> retrieves a list of jobs with optional filtering and pagination support.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/jobs-concepts.html">Job
+        /// concepts</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListJobs">REST API Reference for ListJobs Operation</seealso>
+        Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3035,6 +3155,46 @@ namespace Amazon.LocationService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForText">REST API Reference for SearchPlaceIndexForText Operation</seealso>
         Task<SearchPlaceIndexForTextResponse> SearchPlaceIndexForTextAsync(SearchPlaceIndexForTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartJob
+
+
+
+        /// <summary>
+        /// <c>StartJob</c> starts a new asynchronous bulk processing job. You specify the input
+        /// data location in Amazon S3, the action to perform, and the output location where results
+        /// are written.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/jobs-concepts.html">Job
+        /// concepts</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartJob service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/StartJob">REST API Reference for StartJob Operation</seealso>
+        Task<StartJobResponse> StartJobAsync(StartJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

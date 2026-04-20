@@ -30,35 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Unique identifying information for an Apple app (iOS, macOS, tvOS and watchOS). Consists
-    /// of an Apple Bundle ID.
+    /// Container for the parameters to the GetJob operation.
+    /// <c>GetJob</c> retrieves detailed information about a specific job, including its
+    /// current status, configuration, and error information if the job failed.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/jobs-concepts.html">Job
+    /// concepts</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
-    public partial class AppleApp
+    public partial class GetJobRequest : AmazonLocationServiceRequest
     {
-        private string _bundleId;
+        private string _jobId;
 
         /// <summary>
-        /// Gets and sets the property BundleId. 
+        /// Gets and sets the property JobId. 
         /// <para>
-        /// The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS and
-        /// watchOS).
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <c>com.mydomain.appname</c> 
+        /// The unique identifier of the job to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=155)]
-        public string BundleId
+        [AWSProperty(Required=true, Min=1, Max=200)]
+        public string JobId
         {
-            get { return this._bundleId; }
-            set { this._bundleId = value; }
+            get { return this._jobId; }
+            set { this._jobId = value; }
         }
 
-        // Check to see if BundleId property is set
-        internal bool IsSetBundleId()
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
         {
-            return this._bundleId != null;
+            return this._jobId != null;
         }
 
     }

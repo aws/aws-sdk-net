@@ -30,35 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Unique identifying information for an Apple app (iOS, macOS, tvOS and watchOS). Consists
-    /// of an Apple Bundle ID.
+    /// Criteria for filtering jobs.
     /// </summary>
-    public partial class AppleApp
+    public partial class JobsFilter
     {
-        private string _bundleId;
+        private JobStatus _jobStatus;
 
         /// <summary>
-        /// Gets and sets the property BundleId. 
+        /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS and
-        /// watchOS).
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <c>com.mydomain.appname</c> 
+        /// Filter by job status.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=155)]
-        public string BundleId
+        public JobStatus JobStatus
         {
-            get { return this._bundleId; }
-            set { this._bundleId = value; }
+            get { return this._jobStatus; }
+            set { this._jobStatus = value; }
         }
 
-        // Check to see if BundleId property is set
-        internal bool IsSetBundleId()
+        // Check to see if JobStatus property is set
+        internal bool IsSetJobStatus()
         {
-            return this._bundleId != null;
+            return this._jobStatus != null;
         }
 
     }

@@ -70,6 +70,24 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LocationService.Model.CancelJobRequest.JobId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[-._\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.CancelJobResponse.JobArn</property>
+    <min>0</min>
+    <max>1600</max>
+    <pattern>arn(:[a-z0-9]+([.-][a-z0-9]+)*):geo(:([a-z0-9]+([.-][a-z0-9]+)*))(:[0-9]+):((\*)|([-a-z]+[/][*-._\w]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.CancelJobResponse.JobId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[-._\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LocationService.Model.CreateGeofenceCollectionRequest.CollectionName</property>
     <min>1</min>
     <max>100</max>
@@ -516,6 +534,30 @@
     <pattern>[-._\p{L}\p{N}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LocationService.Model.GetJobRequest.JobId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[-._\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.GetJobResponse.JobArn</property>
+    <min>0</min>
+    <max>1600</max>
+    <pattern>arn(:[a-z0-9]+([.-][a-z0-9]+)*):geo(:([a-z0-9]+([.-][a-z0-9]+)*))(:[0-9]+):((\*)|([-a-z]+[/][*-._\w]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.GetJobResponse.JobId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[-._\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.GetJobResponse.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[-._\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LocationService.Model.GetMapGlyphsRequest.FontUnicodeRange</property>
     <pattern>[0-9]+-[0-9]+\.pbf</pattern>
   </property-value-rule>
@@ -649,6 +691,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LocationService.Model.ListGeofencesResponse.NextToken</property>
+    <min>1</min>
+    <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.ListJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.ListJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.ListJobsResponse.NextToken</property>
     <min>1</min>
     <max>60000</max>
   </property-value-rule>
@@ -844,6 +901,30 @@
     <property>Amazon.LocationService.Model.SearchPlaceIndexForTextRequest.Text</property>
     <min>1</min>
     <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.StartJobRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.StartJobRequest.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[-._\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.StartJobResponse.JobArn</property>
+    <min>0</min>
+    <max>1600</max>
+    <pattern>arn(:[a-z0-9]+([.-][a-z0-9]+)*):geo(:([a-z0-9]+([.-][a-z0-9]+)*))(:[0-9]+):((\*)|([-a-z]+[/][*-._\w]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.StartJobResponse.JobId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[-._\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LocationService.Model.TagResourceRequest.ResourceArn</property>
@@ -1137,6 +1218,18 @@
     <max>700000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LocationService.Model.JobInputOptions.Location</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>(arn:aws(-[a-z]+)*:[a-z0-9-]+:[a-z0-9-]*:(\d{12})?:[\w/+=,.-]+|s3://[a-z0-9][a-z0-9._-]{2,254}(/[^/]+)*/?)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.JobOutputOptions.Location</property>
+    <min>0</min>
+    <max>300</max>
+    <pattern>(arn:aws(-[a-z]+)*:[a-z0-9-]+:[a-z0-9-]*:(\d{12})?:[\w/+=,.-]+|s3://[a-z0-9][a-z0-9._-]{2,254}(/[^/]+)*/)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LocationService.Model.Leg.Distance</property>
     <min>0</min>
   </property-value-rule>
@@ -1166,6 +1259,24 @@
     <min>1</min>
     <max>100</max>
     <pattern>[-._\p{L}\p{N}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.ListJobsResponseEntry.JobArn</property>
+    <min>0</min>
+    <max>1600</max>
+    <pattern>arn(:[a-z0-9]+([.-][a-z0-9]+)*):geo(:([a-z0-9]+([.-][a-z0-9]+)*))(:[0-9]+):((\*)|([-a-z]+[/][*-._\w]+))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.ListJobsResponseEntry.JobId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[-._\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LocationService.Model.ListJobsResponseEntry.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[-._\w]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LocationService.Model.ListKeysResponseEntry.Description</property>

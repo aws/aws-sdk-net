@@ -30,35 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Unique identifying information for an Apple app (iOS, macOS, tvOS and watchOS). Consists
-    /// of an Apple Bundle ID.
+    /// Additional options for configuring job action parameters.
     /// </summary>
-    public partial class AppleApp
+    public partial class JobActionOptions
     {
-        private string _bundleId;
+        private ValidateAddressActionOptions _validateAddress;
 
         /// <summary>
-        /// Gets and sets the property BundleId. 
+        /// Gets and sets the property ValidateAddress. 
         /// <para>
-        /// The unique identifier of the app across all Apple platforms (iOS, macOS, tvOS and
-        /// watchOS).
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <c>com.mydomain.appname</c> 
+        /// Options specific to address validation jobs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=155)]
-        public string BundleId
+        public ValidateAddressActionOptions ValidateAddress
         {
-            get { return this._bundleId; }
-            set { this._bundleId = value; }
+            get { return this._validateAddress; }
+            set { this._validateAddress = value; }
         }
 
-        // Check to see if BundleId property is set
-        internal bool IsSetBundleId()
+        // Check to see if ValidateAddress property is set
+        internal bool IsSetValidateAddress()
         {
-            return this._bundleId != null;
+            return this._validateAddress != null;
         }
 
     }

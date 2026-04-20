@@ -77,6 +77,14 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Paginator for ListJobs operation
+        ///</summary>
+        public IListJobsPaginator ListJobs(ListJobsRequest request) 
+        {
+            return new ListJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListKeys operation
         ///</summary>
         public IListKeysPaginator ListKeys(ListKeysRequest request) 

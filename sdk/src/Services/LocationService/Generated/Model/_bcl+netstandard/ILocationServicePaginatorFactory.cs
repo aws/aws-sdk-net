@@ -78,6 +78,16 @@ namespace Amazon.LocationService.Model
         IListGeofencesPaginator ListGeofences(ListGeofencesRequest request);
 
         /// <summary>
+        /// Paginator for ListJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListJobsPaginator ListJobs(ListJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListKeys operation
         ///</summary>
         [AWSPaginator(
