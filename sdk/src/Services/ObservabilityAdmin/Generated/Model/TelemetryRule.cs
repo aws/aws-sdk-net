@@ -34,6 +34,7 @@ namespace Amazon.ObservabilityAdmin.Model
     /// </summary>
     public partial class TelemetryRule
     {
+        private bool? _allowFieldUpdates;
         private bool? _allRegions;
         private TelemetryDestinationConfiguration _destinationConfiguration;
         private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -42,6 +43,29 @@ namespace Amazon.ObservabilityAdmin.Model
         private string _selectionCriteria;
         private List<string> _telemetrySourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TelemetryType _telemetryType;
+
+        /// <summary>
+        /// Gets and sets the property AllowFieldUpdates. 
+        /// <para>
+        ///  If set to <c>true</c>, Amazon CloudWatch Observability Admin detects and remediates
+        /// configuration drift in telemetry resources that it manages. For example, if a VPC
+        /// flow log's format, traffic type, or aggregation interval no longer matches the rule's
+        /// destination configuration, the flow log is replaced with one that matches. Only Observability
+        /// Admin-managed resources are updated; customer-created resources are never modified.
+        /// Currently supported for <c>AWS::EC2::VPC</c> resources (VPC flow logs). 
+        /// </para>
+        /// </summary>
+        public bool? AllowFieldUpdates
+        {
+            get { return this._allowFieldUpdates; }
+            set { this._allowFieldUpdates = value; }
+        }
+
+        // Check to see if AllowFieldUpdates property is set
+        internal bool IsSetAllowFieldUpdates()
+        {
+            return this._allowFieldUpdates.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AllRegions. 

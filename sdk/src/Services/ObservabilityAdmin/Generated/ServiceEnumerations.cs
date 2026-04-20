@@ -715,6 +715,10 @@ namespace Amazon.ObservabilityAdmin
         /// </summary>
         public static readonly ResourceType AWSSecurityHubHub = new ResourceType("AWS::SecurityHub::Hub");
         /// <summary>
+        /// Constant AWSSecurityHubHubV2 for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSecurityHubHubV2 = new ResourceType("AWS::SecurityHub::HubV2");
+        /// <summary>
         /// Constant AWSWAFv2WebACL for ResourceType
         /// </summary>
         public static readonly ResourceType AWSWAFv2WebACL = new ResourceType("AWS::WAFv2::WebACL");
