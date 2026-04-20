@@ -108,6 +108,64 @@ namespace Amazon.Evs
 
         #endregion
         
+        #region  CreateEntitlement
+
+
+        /// <summary>
+        /// Creates a Windows Server License entitlement for virtual machines in an Amazon EVS
+        /// environment using the provided vCenter Server connector. This is an asynchronous operation.
+        /// Amazon EVS validates the specified virtual machines before starting usage tracking.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEntitlement service method.</param>
+        /// 
+        /// <returns>The response from the CreateEntitlement service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/CreateEntitlement">REST API Reference for CreateEntitlement Operation</seealso>
+        CreateEntitlementResponse CreateEntitlement(CreateEntitlementRequest request);
+
+
+
+        /// <summary>
+        /// Creates a Windows Server License entitlement for virtual machines in an Amazon EVS
+        /// environment using the provided vCenter Server connector. This is an asynchronous operation.
+        /// Amazon EVS validates the specified virtual machines before starting usage tracking.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEntitlement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEntitlement service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/CreateEntitlement">REST API Reference for CreateEntitlement Operation</seealso>
+        Task<CreateEntitlementResponse> CreateEntitlementAsync(CreateEntitlementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateEnvironment
 
 
@@ -195,6 +253,64 @@ namespace Amazon.Evs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateEnvironmentConnector
+
+
+        /// <summary>
+        /// Creates a connector for an Amazon EVS environment. A connector establishes a connection
+        /// to a VCF appliance, such as vCenter, using a fully qualified domain name and an Amazon
+        /// Web Services Secrets Manager secret that stores the appliance credentials.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentConnector service method.</param>
+        /// 
+        /// <returns>The response from the CreateEnvironmentConnector service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/CreateEnvironmentConnector">REST API Reference for CreateEnvironmentConnector Operation</seealso>
+        CreateEnvironmentConnectorResponse CreateEnvironmentConnector(CreateEnvironmentConnectorRequest request);
+
+
+
+        /// <summary>
+        /// Creates a connector for an Amazon EVS environment. A connector establishes a connection
+        /// to a VCF appliance, such as vCenter, using a fully qualified domain name and an Amazon
+        /// Web Services Secrets Manager secret that stores the appliance credentials.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEnvironmentConnector service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/CreateEnvironmentConnector">REST API Reference for CreateEnvironmentConnector Operation</seealso>
+        Task<CreateEnvironmentConnectorResponse> CreateEnvironmentConnectorAsync(CreateEnvironmentConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -304,6 +420,64 @@ namespace Amazon.Evs
 
         #endregion
         
+        #region  DeleteEntitlement
+
+
+        /// <summary>
+        /// Deletes a Windows Server License entitlement for virtual machines in an Amazon EVS
+        /// environment. Deleting an entitlement stops usage tracking for the specified virtual
+        /// machines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEntitlement service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEntitlement service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DeleteEntitlement">REST API Reference for DeleteEntitlement Operation</seealso>
+        DeleteEntitlementResponse DeleteEntitlement(DeleteEntitlementRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a Windows Server License entitlement for virtual machines in an Amazon EVS
+        /// environment. Deleting an entitlement stops usage tracking for the specified virtual
+        /// machines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEntitlement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEntitlement service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DeleteEntitlement">REST API Reference for DeleteEntitlement Operation</seealso>
+        Task<DeleteEntitlementResponse> DeleteEntitlementAsync(DeleteEntitlementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteEnvironment
 
 
@@ -371,6 +545,74 @@ namespace Amazon.Evs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteEnvironmentConnector
+
+
+        /// <summary>
+        /// Deletes a connector from an Amazon EVS environment.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before deleting a connector, you must remove all entitlements that are associated
+        /// with the same vCenter.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentConnector service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEnvironmentConnector service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DeleteEnvironmentConnector">REST API Reference for DeleteEnvironmentConnector Operation</seealso>
+        DeleteEnvironmentConnectorResponse DeleteEnvironmentConnector(DeleteEnvironmentConnectorRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a connector from an Amazon EVS environment.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before deleting a connector, you must remove all entitlements that are associated
+        /// with the same vCenter.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEnvironmentConnector service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/DeleteEnvironmentConnector">REST API Reference for DeleteEnvironmentConnector Operation</seealso>
+        Task<DeleteEnvironmentConnectorResponse> DeleteEnvironmentConnectorAsync(DeleteEnvironmentConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -584,6 +826,54 @@ namespace Amazon.Evs
 
         #endregion
         
+        #region  ListEnvironmentConnectors
+
+
+        /// <summary>
+        /// Lists the connectors within an environment. Returns the status of each connector and
+        /// its applicable checks, among other connector details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentConnectors service method.</param>
+        /// 
+        /// <returns>The response from the ListEnvironmentConnectors service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListEnvironmentConnectors">REST API Reference for ListEnvironmentConnectors Operation</seealso>
+        ListEnvironmentConnectorsResponse ListEnvironmentConnectors(ListEnvironmentConnectorsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the connectors within an environment. Returns the status of each connector and
+        /// its applicable checks, among other connector details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnvironmentConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEnvironmentConnectors service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListEnvironmentConnectors">REST API Reference for ListEnvironmentConnectors Operation</seealso>
+        Task<ListEnvironmentConnectorsResponse> ListEnvironmentConnectorsAsync(ListEnvironmentConnectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListEnvironmentHosts
 
 
@@ -749,6 +1039,56 @@ namespace Amazon.Evs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListVmEntitlements
+
+
+        /// <summary>
+        /// Lists the Windows Server License entitlements for virtual machines in an Amazon EVS
+        /// environment. Returns existing entitlements for virtual machines associated with the
+        /// specified environment and connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVmEntitlements service method.</param>
+        /// 
+        /// <returns>The response from the ListVmEntitlements service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListVmEntitlements">REST API Reference for ListVmEntitlements Operation</seealso>
+        ListVmEntitlementsResponse ListVmEntitlements(ListVmEntitlementsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the Windows Server License entitlements for virtual machines in an Amazon EVS
+        /// environment. Returns existing entitlements for virtual machines associated with the
+        /// specified environment and connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVmEntitlements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVmEntitlements service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListVmEntitlements">REST API Reference for ListVmEntitlements Operation</seealso>
+        Task<ListVmEntitlementsResponse> ListVmEntitlementsAsync(ListVmEntitlementsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -929,6 +1269,74 @@ namespace Amazon.Evs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateEnvironmentConnector
+
+
+        /// <summary>
+        /// Updates a connector for an Amazon EVS environment. You can update the Amazon Web Services
+        /// Secrets Manager secret ARN or the appliance FQDN to reconfigure the connector metadata.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot update both the secret and the FQDN in the same request.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentConnector service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEnvironmentConnector service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/UpdateEnvironmentConnector">REST API Reference for UpdateEnvironmentConnector Operation</seealso>
+        UpdateEnvironmentConnectorResponse UpdateEnvironmentConnector(UpdateEnvironmentConnectorRequest request);
+
+
+
+        /// <summary>
+        /// Updates a connector for an Amazon EVS environment. You can update the Amazon Web Services
+        /// Secrets Manager secret ARN or the appliance FQDN to reconfigure the connector metadata.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot update both the secret and the FQDN in the same request.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironmentConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEnvironmentConnector service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/UpdateEnvironmentConnector">REST API Reference for UpdateEnvironmentConnector Operation</seealso>
+        Task<UpdateEnvironmentConnectorResponse> UpdateEnvironmentConnectorAsync(UpdateEnvironmentConnectorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

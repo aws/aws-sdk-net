@@ -37,6 +37,14 @@ namespace Amazon.Evs.Model
         }
 
         /// <summary>
+        /// Paginator for ListEnvironmentConnectors operation
+        ///</summary>
+        public IListEnvironmentConnectorsPaginator ListEnvironmentConnectors(ListEnvironmentConnectorsRequest request) 
+        {
+            return new ListEnvironmentConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnvironmentHosts operation
         ///</summary>
         public IListEnvironmentHostsPaginator ListEnvironmentHosts(ListEnvironmentHostsRequest request) 
@@ -58,6 +66,14 @@ namespace Amazon.Evs.Model
         public IListEnvironmentVlansPaginator ListEnvironmentVlans(ListEnvironmentVlansRequest request) 
         {
             return new ListEnvironmentVlansPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListVmEntitlements operation
+        ///</summary>
+        public IListVmEntitlementsPaginator ListVmEntitlements(ListVmEntitlementsRequest request) 
+        {
+            return new ListVmEntitlementsPaginator(this.client, request);
         }
     }
 }

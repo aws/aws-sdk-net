@@ -28,6 +28,16 @@ namespace Amazon.Evs.Model
     {
 
         /// <summary>
+        /// Paginator for ListEnvironmentConnectors operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListEnvironmentConnectorsPaginator ListEnvironmentConnectors(ListEnvironmentConnectorsRequest request);
+
+        /// <summary>
         /// Paginator for ListEnvironmentHosts operation
         ///</summary>
         [AWSPaginator(
@@ -56,5 +66,15 @@ namespace Amazon.Evs.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListEnvironmentVlansPaginator ListEnvironmentVlans(ListEnvironmentVlansRequest request);
+
+        /// <summary>
+        /// Paginator for ListVmEntitlements operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListVmEntitlementsPaginator ListVmEntitlements(ListVmEntitlementsRequest request);
     }
 }

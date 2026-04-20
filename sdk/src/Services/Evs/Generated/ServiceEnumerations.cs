@@ -100,6 +100,18 @@ namespace Amazon.Evs
         /// Constant REACHABILITY for CheckType
         /// </summary>
         public static readonly CheckType REACHABILITY = new CheckType("REACHABILITY");
+        /// <summary>
+        /// Constant VCENTER_REACHABILITY for CheckType
+        /// </summary>
+        public static readonly CheckType VCENTER_REACHABILITY = new CheckType("VCENTER_REACHABILITY");
+        /// <summary>
+        /// Constant VCENTER_VM_EVENT for CheckType
+        /// </summary>
+        public static readonly CheckType VCENTER_VM_EVENT = new CheckType("VCENTER_VM_EVENT");
+        /// <summary>
+        /// Constant VCENTER_VM_SYNC for CheckType
+        /// </summary>
+        public static readonly CheckType VCENTER_VM_SYNC = new CheckType("VCENTER_VM_SYNC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -130,6 +142,234 @@ namespace Amazon.Evs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CheckType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorState.
+    /// </summary>
+    public class ConnectorState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState ACTIVE = new ConnectorState("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState CREATE_FAILED = new ConnectorState("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState CREATING = new ConnectorState("CREATING");
+        /// <summary>
+        /// Constant DELETED for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState DELETED = new ConnectorState("DELETED");
+        /// <summary>
+        /// Constant DELETING for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState DELETING = new ConnectorState("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState UPDATE_FAILED = new ConnectorState("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState UPDATING = new ConnectorState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorState FindValue(string value)
+        {
+            return FindValue<ConnectorState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorType.
+    /// </summary>
+    public class ConnectorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VCENTER for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType VCENTER = new ConnectorType("VCENTER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorType FindValue(string value)
+        {
+            return FindValue<ConnectorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EntitlementStatus.
+    /// </summary>
+    public class EntitlementStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AT_RISK for EntitlementStatus
+        /// </summary>
+        public static readonly EntitlementStatus AT_RISK = new EntitlementStatus("AT_RISK");
+        /// <summary>
+        /// Constant CREATE_FAILED for EntitlementStatus
+        /// </summary>
+        public static readonly EntitlementStatus CREATE_FAILED = new EntitlementStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATED for EntitlementStatus
+        /// </summary>
+        public static readonly EntitlementStatus CREATED = new EntitlementStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for EntitlementStatus
+        /// </summary>
+        public static readonly EntitlementStatus CREATING = new EntitlementStatus("CREATING");
+        /// <summary>
+        /// Constant DELETED for EntitlementStatus
+        /// </summary>
+        public static readonly EntitlementStatus DELETED = new EntitlementStatus("DELETED");
+        /// <summary>
+        /// Constant ENTITLEMENT_REMOVED for EntitlementStatus
+        /// </summary>
+        public static readonly EntitlementStatus ENTITLEMENT_REMOVED = new EntitlementStatus("ENTITLEMENT_REMOVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EntitlementStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntitlementStatus FindValue(string value)
+        {
+            return FindValue<EntitlementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntitlementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EntitlementType.
+    /// </summary>
+    public class EntitlementType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WINDOWS_SERVER for EntitlementType
+        /// </summary>
+        public static readonly EntitlementType WINDOWS_SERVER = new EntitlementType("WINDOWS_SERVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EntitlementType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntitlementType FindValue(string value)
+        {
+            return FindValue<EntitlementType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntitlementType(string value)
         {
             return FindValue(value);
         }
