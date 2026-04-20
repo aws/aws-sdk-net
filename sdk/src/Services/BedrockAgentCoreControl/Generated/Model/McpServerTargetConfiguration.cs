@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class McpServerTargetConfiguration
     {
         private string _endpoint;
+        private ListingMode _listingMode;
         private McpToolSchemaConfiguration _mcpToolSchema;
 
         /// <summary>
@@ -54,6 +55,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetEndpoint()
         {
             return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListingMode. 
+        /// <para>
+        /// The listing mode for the MCP server target configuration. MCP resources for default
+        /// targets are cached at the control plane for faster access. MCP resources for dynamic
+        /// targets will be dynamically retrieved when listing tools.
+        /// </para>
+        /// </summary>
+        public ListingMode ListingMode
+        {
+            get { return this._listingMode; }
+            set { this._listingMode = value; }
+        }
+
+        // Check to see if ListingMode property is set
+        internal bool IsSetListingMode()
+        {
+            return this._listingMode != null;
         }
 
         /// <summary>
