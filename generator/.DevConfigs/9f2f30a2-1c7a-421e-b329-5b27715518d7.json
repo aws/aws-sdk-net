@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "minor",
+      "changeLogMessages": [
+        "Replace AttributesToGet usage with ProjectionExpression for batch get requests"
+      ]
+    }
+  ]
+}
