@@ -1,3 +1,23 @@
+### 4.0.235.0 (2026-04-21 20:12 UTC)
+* CognitoIdentityProvider (4.0.8.0)
+	* Adding dutch language support for Cognito Managed Login and Terms on Console
+* ComprehendMedical (4.0.3.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.1. The SDK will prioritize its most performant protocol.
+* ComputeOptimizer (4.0.5.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.0. The SDK will prioritize its most performant protocol.
+* ComputeOptimizerAutomation (4.0.1.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.0. The SDK will prioritize its most performant protocol.
+* GameLift (4.0.9.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.1. The SDK will prioritize its most performant protocol.
+* MarketplaceEntitlementService (4.0.5.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.1. The SDK will prioritize its most performant protocol.
+* NetworkFirewall (4.0.11.0)
+	* Support for new types of partner managed rulegroups for Network Firewall Service
+* SageMaker (4.0.52.0)
+	* SageMaker AI now supports generative AI inference recommendations. Provide your model and workload, and SageMaker AI optimizes configurations, benchmarks them on real GPUs, and returns deployment-ready recommendations with validated metrics, accelerating the path to production from weeks to hours.
+* Snowball (4.0.2.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.1. The SDK will prioritize its most performant protocol.
+
 ### 4.0.234.0 (2026-04-20 18:24 UTC)
 * ApplicationSignals (4.0.7.0)
 	* Releasing Second phase of SLO Recommendations where you can create recommended SLOs out-of-the box using CreateSLO API
