@@ -390,9 +390,9 @@ namespace Amazon.Runtime.Credentials
             if (_disposed) return;
             if (disposing)
             {
-                _disposed = true;
                 _credentialResolutionLock.Dispose();
             }
+            _disposed = true;
         }
 
         /// <summary>

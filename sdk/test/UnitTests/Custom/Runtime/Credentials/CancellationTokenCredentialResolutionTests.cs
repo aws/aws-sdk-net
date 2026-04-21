@@ -84,11 +84,13 @@ namespace AWSSDK.UnitTests
             {
                 cts.Cancel();
 
-                var resolver = new DefaultAWSCredentialsIdentityResolver();
-                Assert.ThrowsException<OperationCanceledException>(
-                    () => resolver.ResolveIdentity(clientConfig: null, cts.Token));
+                using (var resolver = new DefaultAWSCredentialsIdentityResolver())
+                {
+                    Assert.ThrowsException<OperationCanceledException>(
+                        () => resolver.ResolveIdentity(clientConfig: null, cts.Token));
 
-                Assert.AreEqual(0, generatorCallCount, "Generator should not be called when token is already cancelled.");
+                    Assert.AreEqual(0, generatorCallCount, "Generator should not be called when token is already cancelled.");
+                }
             }
         }
 
@@ -113,12 +115,14 @@ namespace AWSSDK.UnitTests
             {
                 cts.Cancel();
 
-                var resolver = new DefaultAWSCredentialsIdentityResolver();
-                var ex = await Assert.ThrowsExceptionAsync<TaskCanceledException>(
-                    () => resolver.ResolveIdentityAsync(clientConfig: null, cts.Token));
-                Assert.IsInstanceOfType(ex, typeof(OperationCanceledException));
+                using (var resolver = new DefaultAWSCredentialsIdentityResolver())
+                {
+                    var ex = await Assert.ThrowsExceptionAsync<TaskCanceledException>(
+                        () => resolver.ResolveIdentityAsync(clientConfig: null, cts.Token));
+                    Assert.IsInstanceOfType(ex, typeof(OperationCanceledException));
 
-                Assert.AreEqual(0, generatorCallCount, "Generator should not be called when token is already cancelled.");
+                    Assert.AreEqual(0, generatorCallCount, "Generator should not be called when token is already cancelled."); 
+                }
             }
         }
 
@@ -144,22 +148,23 @@ namespace AWSSDK.UnitTests
                 }
             };
 
-            var resolver = new DefaultAWSCredentialsIdentityResolver();
-
-            // First thread acquires the lock and hangs inside the generator.
-            var firstThread = Task.Run(() => resolver.ResolveIdentity(clientConfig: null));
-            generatorStarted.Wait(); // Ensure the first thread holds the lock.
-
-            // Second thread tries to resolve with a short timeout — should be cancelled.
-            using (var cts = new CancellationTokenSource(TimeSpan.FromMilliseconds(200)))
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
             {
-                Assert.ThrowsException<OperationCanceledException>(
-                    () => resolver.ResolveIdentity(clientConfig: null, cts.Token));
-            }
+                // First thread acquires the lock and hangs inside the generator.
+                var firstThread = Task.Run(() => resolver.ResolveIdentity(clientConfig: null));
+                generatorStarted.Wait(); // Ensure the first thread holds the lock.
 
-            // Unblock the first thread so the test can clean up.
-            generatorCanProceed.Set();
-            firstThread.Wait();
+                // Second thread tries to resolve with a short timeout — should be cancelled.
+                using (var cts = new CancellationTokenSource(TimeSpan.FromMilliseconds(200)))
+                {
+                    Assert.ThrowsException<OperationCanceledException>(
+                        () => resolver.ResolveIdentity(clientConfig: null, cts.Token));
+                }
+
+                // Unblock the first thread so the test can clean up.
+                generatorCanProceed.Set();
+                firstThread.Wait();
+            }
         }
 
         /// <summary>
@@ -181,27 +186,28 @@ namespace AWSSDK.UnitTests
                 }
             };
 
-            var resolver = new DefaultAWSCredentialsIdentityResolver();
-
-            var firstTask = Task.Run(() => resolver.ResolveIdentityAsync(clientConfig: null));
-            generatorStarted.Wait();
-
-            using (var cts = new CancellationTokenSource(TimeSpan.FromMilliseconds(200)))
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
             {
-                Exception caughtEx = null;
-                try
-                {
-                    await resolver.ResolveIdentityAsync(clientConfig: null, cts.Token);
-                }
-                catch (OperationCanceledException ex)
-                {
-                    caughtEx = ex;
-                }
-                Assert.IsNotNull(caughtEx, "Expected OperationCanceledException or TaskCanceledException to be thrown.");
-            }
+                var firstTask = Task.Run(() => resolver.ResolveIdentityAsync(clientConfig: null));
+                generatorStarted.Wait();
 
-            generatorCanProceed.Set();
-            await firstTask;
+                using (var cts = new CancellationTokenSource(TimeSpan.FromMilliseconds(200)))
+                {
+                    Exception caughtEx = null;
+                    try
+                    {
+                        await resolver.ResolveIdentityAsync(clientConfig: null, cts.Token);
+                    }
+                    catch (OperationCanceledException ex)
+                    {
+                        caughtEx = ex;
+                    }
+                    Assert.IsNotNull(caughtEx, "Expected OperationCanceledException or TaskCanceledException to be thrown.");
+                }
+
+                generatorCanProceed.Set();
+                await firstTask;
+            }
         }
 
         /// <summary>
@@ -217,9 +223,8 @@ namespace AWSSDK.UnitTests
             };
 
             using (var cts = new CancellationTokenSource(TimeSpan.FromSeconds(5)))
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
             {
-                var resolver = new DefaultAWSCredentialsIdentityResolver();
-
                 var credentials = resolver.ResolveIdentity(clientConfig: null, cts.Token);
 
                 Assert.IsNotNull(credentials);
@@ -240,9 +245,8 @@ namespace AWSSDK.UnitTests
             };
 
             using (var cts = new CancellationTokenSource(TimeSpan.FromSeconds(5)))
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
             {
-                var resolver = new DefaultAWSCredentialsIdentityResolver();
-
                 var credentials = await resolver.ResolveIdentityAsync(clientConfig: null, cts.Token);
 
                 Assert.IsNotNull(credentials);
@@ -261,21 +265,21 @@ namespace AWSSDK.UnitTests
             {
                 () => new BasicAWSCredentials("key", "secret")
             };
-
-            var resolver = new DefaultAWSCredentialsIdentityResolver();
-
-            // Warm the cache.
-            resolver.ResolveIdentity(clientConfig: null);
-
-            // A pre-cancelled token should still return cached credentials since the fast
-            // path returns before ever touching the semaphore.
-            using (var cts = new CancellationTokenSource())
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
             {
-                cts.Cancel();
+                // Warm the cache.
+                resolver.ResolveIdentity(clientConfig: null);
 
-                var credentials = resolver.ResolveIdentity(clientConfig: null, cts.Token);
-                Assert.IsNotNull(credentials);
-                Assert.IsInstanceOfType(credentials, typeof(BasicAWSCredentials));
+                // A pre-cancelled token should still return cached credentials since the fast
+                // path returns before ever touching the semaphore.
+                using (var cts = new CancellationTokenSource())
+                {
+                    cts.Cancel();
+
+                    var credentials = resolver.ResolveIdentity(clientConfig: null, cts.Token);
+                    Assert.IsNotNull(credentials);
+                    Assert.IsInstanceOfType(credentials, typeof(BasicAWSCredentials));
+                }
             }
         }
     }

@@ -101,37 +101,38 @@ namespace AWSSDK.UnitTests
                     return new BasicAWSCredentials("test-access-key", "test-secret-key");
                 }
             };
-
-            var resolver = new DefaultAWSCredentialsIdentityResolver();
-            var tasks = new Task<AWSCredentials>[concurrency];
-            var barrier = new ManualResetEventSlim(false);
-
-            // Launch all tasks, have them wait at a barrier, then release simultaneously
-            for (int i = 0; i < concurrency; i++)
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
             {
-                tasks[i] = Task.Run(() =>
+                var tasks = new Task<AWSCredentials>[concurrency];
+                var barrier = new ManualResetEventSlim(false);
+
+                // Launch all tasks, have them wait at a barrier, then release simultaneously
+                for (int i = 0; i < concurrency; i++)
                 {
-                    barrier.Wait();
-                    return resolver.ResolveIdentity(clientConfig: null);
-                });
+                    tasks[i] = Task.Run(() =>
+                    {
+                        barrier.Wait();
+                        return resolver.ResolveIdentity(clientConfig: null);
+                    });
+                }
+
+                // Release all threads simultaneously to maximize contention
+                barrier.Set();
+
+                Task.WaitAll(tasks);
+
+                // All tasks should have succeeded
+                for (int i = 0; i < concurrency; i++)
+                {
+                    Assert.IsNotNull(tasks[i].Result, $"Task {i} returned null credentials");
+                    Assert.IsInstanceOfType(tasks[i].Result, typeof(BasicAWSCredentials));
+                }
+
+                // The generator should have been called exactly once due to single-flight pattern
+                Assert.AreEqual(1, generatorCallCount,
+                    $"Expected generator to be called exactly once, but it was called {generatorCallCount} times. " +
+                    "This indicates the single-flight pattern is not working correctly.");
             }
-
-            // Release all threads simultaneously to maximize contention
-            barrier.Set();
-
-            Task.WaitAll(tasks);
-
-            // All tasks should have succeeded
-            for (int i = 0; i < concurrency; i++)
-            {
-                Assert.IsNotNull(tasks[i].Result, $"Task {i} returned null credentials");
-                Assert.IsInstanceOfType(tasks[i].Result, typeof(BasicAWSCredentials));
-            }
-
-            // The generator should have been called exactly once due to single-flight pattern
-            Assert.AreEqual(1, generatorCallCount,
-                $"Expected generator to be called exactly once, but it was called {generatorCallCount} times. " +
-                "This indicates the single-flight pattern is not working correctly.");
         }
 
         /// <summary>
@@ -154,32 +155,34 @@ namespace AWSSDK.UnitTests
                 }
             };
 
-            var resolver = new DefaultAWSCredentialsIdentityResolver();
-            var tasks = new Task<AWSCredentials>[concurrency];
-            var barrier = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
-
-            for (int i = 0; i < concurrency; i++)
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
             {
-                tasks[i] = Task.Run(async () =>
+                var tasks = new Task<AWSCredentials>[concurrency];
+                var barrier = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+
+                for (int i = 0; i < concurrency; i++)
                 {
-                    await barrier.Task.ConfigureAwait(false);
-                    return await resolver.ResolveIdentityAsync(clientConfig: null).ConfigureAwait(false);
-                });
+                    tasks[i] = Task.Run(async () =>
+                    {
+                        await barrier.Task.ConfigureAwait(false);
+                        return await resolver.ResolveIdentityAsync(clientConfig: null).ConfigureAwait(false);
+                    });
+                }
+
+                // Release all tasks simultaneously
+                barrier.SetResult(true);
+
+                await Task.WhenAll(tasks).ConfigureAwait(false);
+
+                for (int i = 0; i < concurrency; i++)
+                {
+                    Assert.IsNotNull(tasks[i].Result, $"Task {i} returned null credentials");
+                    Assert.IsInstanceOfType(tasks[i].Result, typeof(BasicAWSCredentials));
+                }
+
+                Assert.AreEqual(1, generatorCallCount,
+                    $"Expected generator to be called exactly once, but it was called {generatorCallCount} times."); 
             }
-
-            // Release all tasks simultaneously
-            barrier.SetResult(true);
-
-            await Task.WhenAll(tasks).ConfigureAwait(false);
-
-            for (int i = 0; i < concurrency; i++)
-            {
-                Assert.IsNotNull(tasks[i].Result, $"Task {i} returned null credentials");
-                Assert.IsInstanceOfType(tasks[i].Result, typeof(BasicAWSCredentials));
-            }
-
-            Assert.AreEqual(1, generatorCallCount,
-                $"Expected generator to be called exactly once, but it was called {generatorCallCount} times.");
         }
 
         /// <summary>
@@ -207,23 +210,24 @@ namespace AWSSDK.UnitTests
                 }
             };
 
-            var resolver = new DefaultAWSCredentialsIdentityResolver();
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
+            {
+                // First resolution attempt should fail
+                Assert.ThrowsException<AmazonClientException>(() => resolver.ResolveIdentity(clientConfig: null));
 
-            // First resolution attempt should fail
-            Assert.ThrowsException<AmazonClientException>(() => resolver.ResolveIdentity(clientConfig: null));
+                // Fix the provider and try again - should succeed
+                shouldFail = false;
+                var credentials = resolver.ResolveIdentity(clientConfig: null);
+                Assert.IsNotNull(credentials);
+                Assert.IsInstanceOfType(credentials, typeof(BasicAWSCredentials));
 
-            // Fix the provider and try again - should succeed
-            shouldFail = false;
-            var credentials = resolver.ResolveIdentity(clientConfig: null);
-            Assert.IsNotNull(credentials);
-            Assert.IsInstanceOfType(credentials, typeof(BasicAWSCredentials));
-
-            // Third call should use cached credentials without calling the generator again
-            int callsBeforeThirdAttempt = generatorCallCount;
-            var cachedCredentials = resolver.ResolveIdentity(clientConfig: null);
-            Assert.IsNotNull(cachedCredentials);
-            Assert.AreEqual(callsBeforeThirdAttempt, generatorCallCount,
-                "Generator should not be called again when credentials are cached");
+                // Third call should use cached credentials without calling the generator again
+                int callsBeforeThirdAttempt = generatorCallCount;
+                var cachedCredentials = resolver.ResolveIdentity(clientConfig: null);
+                Assert.IsNotNull(cachedCredentials);
+                Assert.AreEqual(callsBeforeThirdAttempt, generatorCallCount,
+                    "Generator should not be called again when credentials are cached"); 
+            }
         }
     }
 }
