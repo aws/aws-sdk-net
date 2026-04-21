@@ -1289,6 +1289,10 @@ namespace Amazon.NetworkFirewall
         /// </summary>
         public static readonly RuleGroupType STATEFUL = new RuleGroupType("STATEFUL");
         /// <summary>
+        /// Constant STATEFUL_DOMAIN for RuleGroupType
+        /// </summary>
+        public static readonly RuleGroupType STATEFUL_DOMAIN = new RuleGroupType("STATEFUL_DOMAIN");
+        /// <summary>
         /// Constant STATELESS for RuleGroupType
         /// </summary>
         public static readonly RuleGroupType STATELESS = new RuleGroupType("STATELESS");

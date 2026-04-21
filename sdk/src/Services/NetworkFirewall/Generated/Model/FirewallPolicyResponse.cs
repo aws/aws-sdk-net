@@ -35,6 +35,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class FirewallPolicyResponse
     {
+        private int? _consumedStatefulDomainCapacity;
         private int? _consumedStatefulRuleCapacity;
         private int? _consumedStatelessRuleCapacity;
         private string _description;
@@ -46,6 +47,25 @@ namespace Amazon.NetworkFirewall.Model
         private DateTime? _lastModifiedTime;
         private int? _numberOfAssociations;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ConsumedStatefulDomainCapacity. 
+        /// <para>
+        /// The total number of domain name specifications across all domain list rule groups
+        /// in the firewall policy that use the <c>stateful-domain-rulegroup</c> resource type.
+        /// </para>
+        /// </summary>
+        public int? ConsumedStatefulDomainCapacity
+        {
+            get { return this._consumedStatefulDomainCapacity; }
+            set { this._consumedStatefulDomainCapacity = value; }
+        }
+
+        // Check to see if ConsumedStatefulDomainCapacity property is set
+        internal bool IsSetConsumedStatefulDomainCapacity()
+        {
+            return this._consumedStatefulDomainCapacity.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConsumedStatefulRuleCapacity. 

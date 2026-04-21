@@ -56,6 +56,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("ConsumedStatefulDomainCapacity", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.ConsumedStatefulDomainCapacity = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ConsumedStatefulRuleCapacity", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
