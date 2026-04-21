@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
@@ -59,130 +58,111 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
         public IRequest Marshall(UpdateAutomationRuleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ComputeOptimizerAutomation");
-            string target = "ComputeOptimizerAutomationService.UpdateAutomationRule";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/ComputeOptimizerAutomationService/operation/UpdateAutomationRule";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2025-09-22";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetClientToken())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(publicRequest.ClientToken);
-            }
-
-            else if(!(publicRequest.IsSetClientToken()))
-            {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if(publicRequest.IsSetCriteria())
-            {
-                context.Writer.WritePropertyName("criteria");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CriteriaMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Criteria, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetOrganizationConfiguration())
-            {
-                context.Writer.WritePropertyName("organizationConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OrganizationConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.OrganizationConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetPriority())
-            {
-                context.Writer.WritePropertyName("priority");
-                context.Writer.WriteStringValue(publicRequest.Priority);
-            }
-
-            if(publicRequest.IsSetRecommendedActionTypes())
-            {
-                context.Writer.WritePropertyName("recommendedActionTypes");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestRecommendedActionTypesListValue in publicRequest.RecommendedActionTypes)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetClientToken())
                 {
-                        context.Writer.WriteStringValue(publicRequestRecommendedActionTypesListValue);
+                    context.Writer.WriteTextString("clientToken");
+                    context.Writer.WriteTextString(publicRequest.ClientToken);
                 }
-                context.Writer.WriteEndArray();
-            }
+                else if (!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WriteTextString("clientToken");
+                    context.Writer.WriteTextString(Guid.NewGuid().ToString());
+                }
+                if (publicRequest.IsSetCriteria())
+                {
+                    context.Writer.WriteTextString("criteria");
+                    context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetRuleArn())
+                    var marshaller = CriteriaMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Criteria, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                if (publicRequest.IsSetOrganizationConfiguration())
+                {
+                    context.Writer.WriteTextString("organizationConfiguration");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = OrganizationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OrganizationConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetPriority())
+                {
+                    context.Writer.WriteTextString("priority");
+                    context.Writer.WriteTextString(publicRequest.Priority);
+                }
+                if (publicRequest.IsSetRecommendedActionTypes())
+                {
+                    context.Writer.WriteTextString("recommendedActionTypes");
+                    context.Writer.WriteStartArray(publicRequest.RecommendedActionTypes.Count);
+                    foreach(var publicRequestRecommendedActionTypesListValue in publicRequest.RecommendedActionTypes)
+                    {
+                            context.Writer.WriteTextString(publicRequestRecommendedActionTypesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetRuleArn())
+                {
+                    context.Writer.WriteTextString("ruleArn");
+                    context.Writer.WriteTextString(publicRequest.RuleArn);
+                }
+                if (publicRequest.IsSetRuleRevision())
+                {
+                    context.Writer.WriteTextString("ruleRevision");
+                    context.Writer.WriteInt64(publicRequest.RuleRevision.Value);
+                }
+                if (publicRequest.IsSetRuleType())
+                {
+                    context.Writer.WriteTextString("ruleType");
+                    context.Writer.WriteTextString(publicRequest.RuleType);
+                }
+                if (publicRequest.IsSetSchedule())
+                {
+                    context.Writer.WriteTextString("schedule");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ScheduleMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Schedule, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetStatus())
+                {
+                    context.Writer.WriteTextString("status");
+                    context.Writer.WriteTextString(publicRequest.Status);
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
             {
-                context.Writer.WritePropertyName("ruleArn");
-                context.Writer.WriteStringValue(publicRequest.RuleArn);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetRuleRevision())
-            {
-                context.Writer.WritePropertyName("ruleRevision");
-                context.Writer.WriteNumberValue(publicRequest.RuleRevision.Value);
-            }
-
-            if(publicRequest.IsSetRuleType())
-            {
-                context.Writer.WritePropertyName("ruleType");
-                context.Writer.WriteStringValue(publicRequest.RuleType);
-            }
-
-            if(publicRequest.IsSetSchedule())
-            {
-                context.Writer.WritePropertyName("schedule");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ScheduleMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Schedule, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetStatus())
-            {
-                context.Writer.WritePropertyName("status");
-                context.Writer.WriteStringValue(publicRequest.Status);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static UpdateAutomationRuleRequestMarshaller _instance = new UpdateAutomationRuleRequestMarshaller();        

@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
@@ -59,84 +58,71 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
         public IRequest Marshall(ListAutomationRulePreviewRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ComputeOptimizerAutomation");
-            string target = "ComputeOptimizerAutomationService.ListAutomationRulePreview";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/ComputeOptimizerAutomationService/operation/ListAutomationRulePreview";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2025-09-22";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetCriteria())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("criteria");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CriteriaMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Criteria, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetMaxResults())
-            {
-                context.Writer.WritePropertyName("maxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
-            }
-
-            if(publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("nextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-
-            if(publicRequest.IsSetOrganizationScope())
-            {
-                context.Writer.WritePropertyName("organizationScope");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OrganizationScopeMarshaller.Instance;
-                marshaller.Marshall(publicRequest.OrganizationScope, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetRecommendedActionTypes())
-            {
-                context.Writer.WritePropertyName("recommendedActionTypes");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestRecommendedActionTypesListValue in publicRequest.RecommendedActionTypes)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetCriteria())
                 {
-                        context.Writer.WriteStringValue(publicRequestRecommendedActionTypesListValue);
+                    context.Writer.WriteTextString("criteria");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = CriteriaMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Criteria, context);
+
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("maxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("nextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                if (publicRequest.IsSetOrganizationScope())
+                {
+                    context.Writer.WriteTextString("organizationScope");
+                    context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetRuleType())
+                    var marshaller = OrganizationScopeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OrganizationScope, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetRecommendedActionTypes())
+                {
+                    context.Writer.WriteTextString("recommendedActionTypes");
+                    context.Writer.WriteStartArray(publicRequest.RecommendedActionTypes.Count);
+                    foreach(var publicRequestRecommendedActionTypesListValue in publicRequest.RecommendedActionTypes)
+                    {
+                            context.Writer.WriteTextString(publicRequestRecommendedActionTypesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetRuleType())
+                {
+                    context.Writer.WriteTextString("ruleType");
+                    context.Writer.WriteTextString(publicRequest.RuleType);
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
             {
-                context.Writer.WritePropertyName("ruleType");
-                context.Writer.WriteStringValue(publicRequest.RuleType);
+                CborWriterPool.Return(writer);
             }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static ListAutomationRulePreviewRequestMarshaller _instance = new ListAutomationRulePreviewRequestMarshaller();        

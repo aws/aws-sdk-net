@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
@@ -59,61 +58,51 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public IRequest Marshall(DeleteRecommendationPreferencesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ComputeOptimizer");
-            string target = "ComputeOptimizerService.DeleteRecommendationPreferences";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/ComputeOptimizerService/operation/DeleteRecommendationPreferences";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetRecommendationPreferenceNames())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("recommendationPreferenceNames");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestRecommendationPreferenceNamesListValue in publicRequest.RecommendationPreferenceNames)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetRecommendationPreferenceNames())
                 {
-                        context.Writer.WriteStringValue(publicRequestRecommendationPreferenceNamesListValue);
+                    context.Writer.WriteTextString("recommendationPreferenceNames");
+                    context.Writer.WriteStartArray(publicRequest.RecommendationPreferenceNames.Count);
+                    foreach(var publicRequestRecommendationPreferenceNamesListValue in publicRequest.RecommendationPreferenceNames)
+                    {
+                            context.Writer.WriteTextString(publicRequestRecommendationPreferenceNamesListValue);
+                    }
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetResourceType())
+                {
+                    context.Writer.WriteTextString("resourceType");
+                    context.Writer.WriteTextString(publicRequest.ResourceType);
+                }
+                if (publicRequest.IsSetScope())
+                {
+                    context.Writer.WriteTextString("scope");
+                    context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetResourceType())
+                    var marshaller = ScopeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Scope, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
             {
-                context.Writer.WritePropertyName("resourceType");
-                context.Writer.WriteStringValue(publicRequest.ResourceType);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetScope())
-            {
-                context.Writer.WritePropertyName("scope");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ScopeMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Scope, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static DeleteRecommendationPreferencesRequestMarshaller _instance = new DeleteRecommendationPreferencesRequestMarshaller();        

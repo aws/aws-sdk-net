@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RecommendationPreferences Marshaller
     /// </summary>
-    public class RecommendationPreferencesMarshaller : IRequestMarshaller<RecommendationPreferences, JsonMarshallerContext> 
+    public class RecommendationPreferencesMarshaller : IRequestMarshaller<RecommendationPreferences, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,21 +45,21 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RecommendationPreferences requestObject, JsonMarshallerContext context)
+        public void Marshall(RecommendationPreferences requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCpuVendorArchitectures())
+
+            if (requestObject.IsSetCpuVendorArchitectures())
             {
-                context.Writer.WritePropertyName("cpuVendorArchitectures");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("cpuVendorArchitectures");
+                context.Writer.WriteStartArray(requestObject.CpuVendorArchitectures.Count);
                 foreach(var requestObjectCpuVendorArchitecturesListValue in requestObject.CpuVendorArchitectures)
                 {
-                        context.Writer.WriteStringValue(requestObjectCpuVendorArchitecturesListValue);
+                        context.Writer.WriteTextString(requestObjectCpuVendorArchitecturesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

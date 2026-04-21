@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IntegerCriteriaCondition Marshaller
     /// </summary>
-    public class IntegerCriteriaConditionMarshaller : IRequestMarshaller<IntegerCriteriaCondition, JsonMarshallerContext> 
+    public class IntegerCriteriaConditionMarshaller : IRequestMarshaller<IntegerCriteriaCondition, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IntegerCriteriaCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(IntegerCriteriaCondition requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetComparison())
-            {
-                context.Writer.WritePropertyName("comparison");
-                context.Writer.WriteStringValue(requestObject.Comparison);
-            }
 
-            if(requestObject.IsSetValues())
+            if (requestObject.IsSetComparison())
             {
-                context.Writer.WritePropertyName("values");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("comparison");
+                context.Writer.WriteTextString(requestObject.Comparison);
+            }
+            if (requestObject.IsSetValues())
+            {
+                context.Writer.WriteTextString("values");
+                context.Writer.WriteStartArray(requestObject.Values.Count);
                 foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                        context.Writer.WriteNumberValue(requestObjectValuesListValue);
+                        context.Writer.WriteInt32(requestObjectValuesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

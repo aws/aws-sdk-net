@@ -29,64 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LicenseRecommendationOption Object
     /// </summary>  
-    public class LicenseRecommendationOptionUnmarshaller : IJsonUnmarshaller<LicenseRecommendationOption, JsonUnmarshallerContext>
+    public class LicenseRecommendationOptionUnmarshaller : ICborUnmarshaller<LicenseRecommendationOption, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LicenseRecommendationOption Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LicenseRecommendationOption Unmarshall(CborUnmarshallerContext context)
         {
             LicenseRecommendationOption unmarshalledObject = new LicenseRecommendationOption();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("licenseEdition", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseEdition = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("licenseModel", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseModel = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("operatingSystem", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("rank", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Rank = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("savingsOpportunity", targetDepth))
-                {
-                    var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
-                    unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "licenseEdition":
+                        {
+                            context.AddPathSegment("LicenseEdition");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LicenseEdition = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "licenseModel":
+                        {
+                            context.AddPathSegment("LicenseModel");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LicenseModel = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "operatingSystem":
+                        {
+                            context.AddPathSegment("OperatingSystem");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "rank":
+                        {
+                            context.AddPathSegment("Rank");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.Rank = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "savingsOpportunity":
+                        {
+                            context.AddPathSegment("SavingsOpportunity");
+                            var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
+                            unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -29,112 +29,149 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutoScalingGroupRecommendation Object
     /// </summary>  
-    public class AutoScalingGroupRecommendationUnmarshaller : IJsonUnmarshaller<AutoScalingGroupRecommendation, JsonUnmarshallerContext>
+    public class AutoScalingGroupRecommendationUnmarshaller : ICborUnmarshaller<AutoScalingGroupRecommendation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoScalingGroupRecommendation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AutoScalingGroupRecommendation Unmarshall(CborUnmarshallerContext context)
         {
             AutoScalingGroupRecommendation unmarshalledObject = new AutoScalingGroupRecommendation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("accountId", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("autoScalingGroupArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoScalingGroupArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("autoScalingGroupName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currentConfiguration", targetDepth))
-                {
-                    var unmarshaller = AutoScalingGroupConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CurrentConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currentInstanceGpuInfo", targetDepth))
-                {
-                    var unmarshaller = GpuInfoUnmarshaller.Instance;
-                    unmarshalledObject.CurrentInstanceGpuInfo = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currentPerformanceRisk", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentPerformanceRisk = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("effectiveRecommendationPreferences", targetDepth))
-                {
-                    var unmarshaller = EffectiveRecommendationPreferencesUnmarshaller.Instance;
-                    unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("finding", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Finding = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("inferredWorkloadTypes", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.InferredWorkloadTypes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lastRefreshTimestamp", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lookBackPeriodInDays", targetDepth))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LookBackPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("recommendationOptions", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<AutoScalingGroupRecommendationOption, AutoScalingGroupRecommendationOptionUnmarshaller>(AutoScalingGroupRecommendationOptionUnmarshaller.Instance);
-                    unmarshalledObject.RecommendationOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("utilizationMetrics", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<UtilizationMetric, UtilizationMetricUnmarshaller>(UtilizationMetricUnmarshaller.Instance);
-                    unmarshalledObject.UtilizationMetrics = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "accountId":
+                        {
+                            context.AddPathSegment("AccountId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "autoScalingGroupArn":
+                        {
+                            context.AddPathSegment("AutoScalingGroupArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AutoScalingGroupArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "autoScalingGroupName":
+                        {
+                            context.AddPathSegment("AutoScalingGroupName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currentConfiguration":
+                        {
+                            context.AddPathSegment("CurrentConfiguration");
+                            var unmarshaller = AutoScalingGroupConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.CurrentConfiguration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currentInstanceGpuInfo":
+                        {
+                            context.AddPathSegment("CurrentInstanceGpuInfo");
+                            var unmarshaller = GpuInfoUnmarshaller.Instance;
+                            unmarshalledObject.CurrentInstanceGpuInfo = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currentPerformanceRisk":
+                        {
+                            context.AddPathSegment("CurrentPerformanceRisk");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CurrentPerformanceRisk = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "effectiveRecommendationPreferences":
+                        {
+                            context.AddPathSegment("EffectiveRecommendationPreferences");
+                            var unmarshaller = EffectiveRecommendationPreferencesUnmarshaller.Instance;
+                            unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "finding":
+                        {
+                            context.AddPathSegment("Finding");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Finding = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "inferredWorkloadTypes":
+                        {
+                            context.AddPathSegment("InferredWorkloadTypes");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.InferredWorkloadTypes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lastRefreshTimestamp":
+                        {
+                            context.AddPathSegment("LastRefreshTimestamp");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lookBackPeriodInDays":
+                        {
+                            context.AddPathSegment("LookBackPeriodInDays");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.LookBackPeriodInDays = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "recommendationOptions":
+                        {
+                            context.AddPathSegment("RecommendationOptions");
+                            var unmarshaller = new CborListUnmarshaller<AutoScalingGroupRecommendationOption, AutoScalingGroupRecommendationOptionUnmarshaller>(AutoScalingGroupRecommendationOptionUnmarshaller.Instance);
+                            unmarshalledObject.RecommendationOptions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "utilizationMetrics":
+                        {
+                            context.AddPathSegment("UtilizationMetrics");
+                            var unmarshaller = new CborListUnmarshaller<UtilizationMetric, UtilizationMetricUnmarshaller>(UtilizationMetricUnmarshaller.Instance);
+                            unmarshalledObject.UtilizationMetrics = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

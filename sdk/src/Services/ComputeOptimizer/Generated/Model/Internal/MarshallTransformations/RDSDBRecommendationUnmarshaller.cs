@@ -29,166 +29,221 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RDSDBRecommendation Object
     /// </summary>  
-    public class RDSDBRecommendationUnmarshaller : IJsonUnmarshaller<RDSDBRecommendation, JsonUnmarshallerContext>
+    public class RDSDBRecommendationUnmarshaller : ICborUnmarshaller<RDSDBRecommendation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RDSDBRecommendation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RDSDBRecommendation Unmarshall(CborUnmarshallerContext context)
         {
             RDSDBRecommendation unmarshalledObject = new RDSDBRecommendation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("accountId", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currentDBInstanceClass", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentDBInstanceClass = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currentInstancePerformanceRisk", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentInstancePerformanceRisk = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currentStorageConfiguration", targetDepth))
-                {
-                    var unmarshaller = DBStorageConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CurrentStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currentStorageEstimatedMonthlyVolumeIOPsCostVariation", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("dbClusterIdentifier", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DbClusterIdentifier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("effectiveRecommendationPreferences", targetDepth))
-                {
-                    var unmarshaller = RDSEffectiveRecommendationPreferencesUnmarshaller.Instance;
-                    unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("engine", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Engine = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("engineVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("idle", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Idle = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("instanceFinding", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceFinding = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("instanceFindingReasonCodes", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.InstanceFindingReasonCodes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("instanceRecommendationOptions", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RDSDBInstanceRecommendationOption, RDSDBInstanceRecommendationOptionUnmarshaller>(RDSDBInstanceRecommendationOptionUnmarshaller.Instance);
-                    unmarshalledObject.InstanceRecommendationOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lastRefreshTimestamp", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lookbackPeriodInDays", targetDepth))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LookbackPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("promotionTier", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PromotionTier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("resourceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("storageFinding", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageFinding = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("storageFindingReasonCodes", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.StorageFindingReasonCodes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("storageRecommendationOptions", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RDSDBStorageRecommendationOption, RDSDBStorageRecommendationOptionUnmarshaller>(RDSDBStorageRecommendationOptionUnmarshaller.Instance);
-                    unmarshalledObject.StorageRecommendationOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("utilizationMetrics", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RDSDBUtilizationMetric, RDSDBUtilizationMetricUnmarshaller>(RDSDBUtilizationMetricUnmarshaller.Instance);
-                    unmarshalledObject.UtilizationMetrics = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "accountId":
+                        {
+                            context.AddPathSegment("AccountId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currentDBInstanceClass":
+                        {
+                            context.AddPathSegment("CurrentDBInstanceClass");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CurrentDBInstanceClass = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currentInstancePerformanceRisk":
+                        {
+                            context.AddPathSegment("CurrentInstancePerformanceRisk");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CurrentInstancePerformanceRisk = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currentStorageConfiguration":
+                        {
+                            context.AddPathSegment("CurrentStorageConfiguration");
+                            var unmarshaller = DBStorageConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.CurrentStorageConfiguration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currentStorageEstimatedMonthlyVolumeIOPsCostVariation":
+                        {
+                            context.AddPathSegment("CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CurrentStorageEstimatedMonthlyVolumeIOPsCostVariation = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "dbClusterIdentifier":
+                        {
+                            context.AddPathSegment("DbClusterIdentifier");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DbClusterIdentifier = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "effectiveRecommendationPreferences":
+                        {
+                            context.AddPathSegment("EffectiveRecommendationPreferences");
+                            var unmarshaller = RDSEffectiveRecommendationPreferencesUnmarshaller.Instance;
+                            unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "engine":
+                        {
+                            context.AddPathSegment("Engine");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "engineVersion":
+                        {
+                            context.AddPathSegment("EngineVersion");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "idle":
+                        {
+                            context.AddPathSegment("Idle");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Idle = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "instanceFinding":
+                        {
+                            context.AddPathSegment("InstanceFinding");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.InstanceFinding = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "instanceFindingReasonCodes":
+                        {
+                            context.AddPathSegment("InstanceFindingReasonCodes");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.InstanceFindingReasonCodes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "instanceRecommendationOptions":
+                        {
+                            context.AddPathSegment("InstanceRecommendationOptions");
+                            var unmarshaller = new CborListUnmarshaller<RDSDBInstanceRecommendationOption, RDSDBInstanceRecommendationOptionUnmarshaller>(RDSDBInstanceRecommendationOptionUnmarshaller.Instance);
+                            unmarshalledObject.InstanceRecommendationOptions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lastRefreshTimestamp":
+                        {
+                            context.AddPathSegment("LastRefreshTimestamp");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lookbackPeriodInDays":
+                        {
+                            context.AddPathSegment("LookbackPeriodInDays");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.LookbackPeriodInDays = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "promotionTier":
+                        {
+                            context.AddPathSegment("PromotionTier");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.PromotionTier = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "resourceArn":
+                        {
+                            context.AddPathSegment("ResourceArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "storageFinding":
+                        {
+                            context.AddPathSegment("StorageFinding");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.StorageFinding = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "storageFindingReasonCodes":
+                        {
+                            context.AddPathSegment("StorageFindingReasonCodes");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.StorageFindingReasonCodes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "storageRecommendationOptions":
+                        {
+                            context.AddPathSegment("StorageRecommendationOptions");
+                            var unmarshaller = new CborListUnmarshaller<RDSDBStorageRecommendationOption, RDSDBStorageRecommendationOptionUnmarshaller>(RDSDBStorageRecommendationOptionUnmarshaller.Instance);
+                            unmarshalledObject.StorageRecommendationOptions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "tags":
+                        {
+                            context.AddPathSegment("Tags");
+                            var unmarshaller = new CborListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                            unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "utilizationMetrics":
+                        {
+                            context.AddPathSegment("UtilizationMetrics");
+                            var unmarshaller = new CborListUnmarshaller<RDSDBUtilizationMetric, RDSDBUtilizationMetricUnmarshaller>(RDSDBUtilizationMetricUnmarshaller.Instance);
+                            unmarshalledObject.UtilizationMetrics = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

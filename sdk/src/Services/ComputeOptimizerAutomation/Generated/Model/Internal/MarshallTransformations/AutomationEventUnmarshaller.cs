@@ -29,124 +29,165 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutomationEvent Object
     /// </summary>  
-    public class AutomationEventUnmarshaller : IJsonUnmarshaller<AutomationEvent, JsonUnmarshallerContext>
+    public class AutomationEventUnmarshaller : ICborUnmarshaller<AutomationEvent, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutomationEvent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AutomationEvent Unmarshall(CborUnmarshallerContext context)
         {
             AutomationEvent unmarshalledObject = new AutomationEvent();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("accountId", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("completedTimestamp", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CompletedTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("createdTimestamp", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("estimatedMonthlySavings", targetDepth))
-                {
-                    var unmarshaller = EstimatedMonthlySavingsUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("eventDescription", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventDescription = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("eventId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("eventStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("eventStatusReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventStatusReason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("eventType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("recommendedActionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendedActionId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("region", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("resourceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("resourceId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ruleId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "accountId":
+                        {
+                            context.AddPathSegment("AccountId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "completedTimestamp":
+                        {
+                            context.AddPathSegment("CompletedTimestamp");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.CompletedTimestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "createdTimestamp":
+                        {
+                            context.AddPathSegment("CreatedTimestamp");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "estimatedMonthlySavings":
+                        {
+                            context.AddPathSegment("EstimatedMonthlySavings");
+                            var unmarshaller = EstimatedMonthlySavingsUnmarshaller.Instance;
+                            unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "eventDescription":
+                        {
+                            context.AddPathSegment("EventDescription");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.EventDescription = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "eventId":
+                        {
+                            context.AddPathSegment("EventId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "eventStatus":
+                        {
+                            context.AddPathSegment("EventStatus");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.EventStatus = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "eventStatusReason":
+                        {
+                            context.AddPathSegment("EventStatusReason");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.EventStatusReason = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "eventType":
+                        {
+                            context.AddPathSegment("EventType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.EventType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "recommendedActionId":
+                        {
+                            context.AddPathSegment("RecommendedActionId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RecommendedActionId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "region":
+                        {
+                            context.AddPathSegment("Region");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "resourceArn":
+                        {
+                            context.AddPathSegment("ResourceArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "resourceId":
+                        {
+                            context.AddPathSegment("ResourceId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "resourceType":
+                        {
+                            context.AddPathSegment("ResourceType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ruleId":
+                        {
+                            context.AddPathSegment("RuleId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RuleId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

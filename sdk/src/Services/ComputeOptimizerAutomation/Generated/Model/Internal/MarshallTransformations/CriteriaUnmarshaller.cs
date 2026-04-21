@@ -29,82 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Criteria Object
     /// </summary>  
-    public class CriteriaUnmarshaller : IJsonUnmarshaller<Criteria, JsonUnmarshallerContext>
+    public class CriteriaUnmarshaller : ICborUnmarshaller<Criteria, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Criteria Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Criteria Unmarshall(CborUnmarshallerContext context)
         {
             Criteria unmarshalledObject = new Criteria();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ebsVolumeSizeInGib", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<IntegerCriteriaCondition, IntegerCriteriaConditionUnmarshaller>(IntegerCriteriaConditionUnmarshaller.Instance);
-                    unmarshalledObject.EbsVolumeSizeInGib = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ebsVolumeType", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<StringCriteriaCondition, StringCriteriaConditionUnmarshaller>(StringCriteriaConditionUnmarshaller.Instance);
-                    unmarshalledObject.EbsVolumeType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("estimatedMonthlySavings", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<DoubleCriteriaCondition, DoubleCriteriaConditionUnmarshaller>(DoubleCriteriaConditionUnmarshaller.Instance);
-                    unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lookBackPeriodInDays", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<IntegerCriteriaCondition, IntegerCriteriaConditionUnmarshaller>(IntegerCriteriaConditionUnmarshaller.Instance);
-                    unmarshalledObject.LookBackPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("region", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<StringCriteriaCondition, StringCriteriaConditionUnmarshaller>(StringCriteriaConditionUnmarshaller.Instance);
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("resourceArn", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<StringCriteriaCondition, StringCriteriaConditionUnmarshaller>(StringCriteriaConditionUnmarshaller.Instance);
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("resourceTag", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ResourceTagsCriteriaCondition, ResourceTagsCriteriaConditionUnmarshaller>(ResourceTagsCriteriaConditionUnmarshaller.Instance);
-                    unmarshalledObject.ResourceTag = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("restartNeeded", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<StringCriteriaCondition, StringCriteriaConditionUnmarshaller>(StringCriteriaConditionUnmarshaller.Instance);
-                    unmarshalledObject.RestartNeeded = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ebsVolumeSizeInGib":
+                        {
+                            context.AddPathSegment("EbsVolumeSizeInGib");
+                            var unmarshaller = new CborListUnmarshaller<IntegerCriteriaCondition, IntegerCriteriaConditionUnmarshaller>(IntegerCriteriaConditionUnmarshaller.Instance);
+                            unmarshalledObject.EbsVolumeSizeInGib = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ebsVolumeType":
+                        {
+                            context.AddPathSegment("EbsVolumeType");
+                            var unmarshaller = new CborListUnmarshaller<StringCriteriaCondition, StringCriteriaConditionUnmarshaller>(StringCriteriaConditionUnmarshaller.Instance);
+                            unmarshalledObject.EbsVolumeType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "estimatedMonthlySavings":
+                        {
+                            context.AddPathSegment("EstimatedMonthlySavings");
+                            var unmarshaller = new CborListUnmarshaller<DoubleCriteriaCondition, DoubleCriteriaConditionUnmarshaller>(DoubleCriteriaConditionUnmarshaller.Instance);
+                            unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lookBackPeriodInDays":
+                        {
+                            context.AddPathSegment("LookBackPeriodInDays");
+                            var unmarshaller = new CborListUnmarshaller<IntegerCriteriaCondition, IntegerCriteriaConditionUnmarshaller>(IntegerCriteriaConditionUnmarshaller.Instance);
+                            unmarshalledObject.LookBackPeriodInDays = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "region":
+                        {
+                            context.AddPathSegment("Region");
+                            var unmarshaller = new CborListUnmarshaller<StringCriteriaCondition, StringCriteriaConditionUnmarshaller>(StringCriteriaConditionUnmarshaller.Instance);
+                            unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "resourceArn":
+                        {
+                            context.AddPathSegment("ResourceArn");
+                            var unmarshaller = new CborListUnmarshaller<StringCriteriaCondition, StringCriteriaConditionUnmarshaller>(StringCriteriaConditionUnmarshaller.Instance);
+                            unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "resourceTag":
+                        {
+                            context.AddPathSegment("ResourceTag");
+                            var unmarshaller = new CborListUnmarshaller<ResourceTagsCriteriaCondition, ResourceTagsCriteriaConditionUnmarshaller>(ResourceTagsCriteriaConditionUnmarshaller.Instance);
+                            unmarshalledObject.ResourceTag = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "restartNeeded":
+                        {
+                            context.AddPathSegment("RestartNeeded");
+                            var unmarshaller = new CborListUnmarshaller<StringCriteriaCondition, StringCriteriaConditionUnmarshaller>(StringCriteriaConditionUnmarshaller.Instance);
+                            unmarshalledObject.RestartNeeded = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

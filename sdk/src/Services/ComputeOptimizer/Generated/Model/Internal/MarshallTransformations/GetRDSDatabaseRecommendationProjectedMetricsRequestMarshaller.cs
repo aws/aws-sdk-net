@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
@@ -59,74 +58,61 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetRDSDatabaseRecommendationProjectedMetricsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ComputeOptimizer");
-            string target = "ComputeOptimizerService.GetRDSDatabaseRecommendationProjectedMetrics";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/ComputeOptimizerService/operation/GetRDSDatabaseRecommendationProjectedMetrics";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetEndTime())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("endTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTime.Value)));
-            }
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetEndTime())
+                {
+                    context.Writer.WriteTextString("endTime");
+                    context.Writer.WriteDateTime(publicRequest.EndTime.Value);
+                }
+                if (publicRequest.IsSetPeriod())
+                {
+                    context.Writer.WriteTextString("period");
+                    context.Writer.WriteInt32(publicRequest.Period.Value);
+                }
+                if (publicRequest.IsSetRecommendationPreferences())
+                {
+                    context.Writer.WriteTextString("recommendationPreferences");
+                    context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetPeriod())
+                    var marshaller = RecommendationPreferencesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RecommendationPreferences, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetResourceArn())
+                {
+                    context.Writer.WriteTextString("resourceArn");
+                    context.Writer.WriteTextString(publicRequest.ResourceArn);
+                }
+                if (publicRequest.IsSetStartTime())
+                {
+                    context.Writer.WriteTextString("startTime");
+                    context.Writer.WriteDateTime(publicRequest.StartTime.Value);
+                }
+                if (publicRequest.IsSetStat())
+                {
+                    context.Writer.WriteTextString("stat");
+                    context.Writer.WriteTextString(publicRequest.Stat);
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
             {
-                context.Writer.WritePropertyName("period");
-                context.Writer.WriteNumberValue(publicRequest.Period.Value);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetRecommendationPreferences())
-            {
-                context.Writer.WritePropertyName("recommendationPreferences");
-                context.Writer.WriteStartObject();
-
-                var marshaller = RecommendationPreferencesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.RecommendationPreferences, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetResourceArn())
-            {
-                context.Writer.WritePropertyName("resourceArn");
-                context.Writer.WriteStringValue(publicRequest.ResourceArn);
-            }
-
-            if(publicRequest.IsSetStartTime())
-            {
-                context.Writer.WritePropertyName("startTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTime.Value)));
-            }
-
-            if(publicRequest.IsSetStat())
-            {
-                context.Writer.WritePropertyName("stat");
-                context.Writer.WriteStringValue(publicRequest.Stat);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static GetRDSDatabaseRecommendationProjectedMetricsRequestMarshaller _instance = new GetRDSDatabaseRecommendationProjectedMetricsRequestMarshaller();        

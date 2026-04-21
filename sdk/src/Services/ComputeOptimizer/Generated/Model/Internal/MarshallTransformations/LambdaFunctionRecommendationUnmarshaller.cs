@@ -29,118 +29,157 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LambdaFunctionRecommendation Object
     /// </summary>  
-    public class LambdaFunctionRecommendationUnmarshaller : IJsonUnmarshaller<LambdaFunctionRecommendation, JsonUnmarshallerContext>
+    public class LambdaFunctionRecommendationUnmarshaller : ICborUnmarshaller<LambdaFunctionRecommendation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LambdaFunctionRecommendation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LambdaFunctionRecommendation Unmarshall(CborUnmarshallerContext context)
         {
             LambdaFunctionRecommendation unmarshalledObject = new LambdaFunctionRecommendation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("accountId", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currentMemorySize", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CurrentMemorySize = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currentPerformanceRisk", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentPerformanceRisk = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("effectiveRecommendationPreferences", targetDepth))
-                {
-                    var unmarshaller = LambdaEffectiveRecommendationPreferencesUnmarshaller.Instance;
-                    unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("finding", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Finding = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("findingReasonCodes", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.FindingReasonCodes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("functionArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("functionVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lastRefreshTimestamp", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lookbackPeriodInDays", targetDepth))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LookbackPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("memorySizeRecommendationOptions", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<LambdaFunctionMemoryRecommendationOption, LambdaFunctionMemoryRecommendationOptionUnmarshaller>(LambdaFunctionMemoryRecommendationOptionUnmarshaller.Instance);
-                    unmarshalledObject.MemorySizeRecommendationOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("numberOfInvocations", targetDepth))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfInvocations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("utilizationMetrics", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<LambdaFunctionUtilizationMetric, LambdaFunctionUtilizationMetricUnmarshaller>(LambdaFunctionUtilizationMetricUnmarshaller.Instance);
-                    unmarshalledObject.UtilizationMetrics = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "accountId":
+                        {
+                            context.AddPathSegment("AccountId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currentMemorySize":
+                        {
+                            context.AddPathSegment("CurrentMemorySize");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.CurrentMemorySize = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currentPerformanceRisk":
+                        {
+                            context.AddPathSegment("CurrentPerformanceRisk");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CurrentPerformanceRisk = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "effectiveRecommendationPreferences":
+                        {
+                            context.AddPathSegment("EffectiveRecommendationPreferences");
+                            var unmarshaller = LambdaEffectiveRecommendationPreferencesUnmarshaller.Instance;
+                            unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "finding":
+                        {
+                            context.AddPathSegment("Finding");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Finding = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "findingReasonCodes":
+                        {
+                            context.AddPathSegment("FindingReasonCodes");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.FindingReasonCodes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "functionArn":
+                        {
+                            context.AddPathSegment("FunctionArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.FunctionArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "functionVersion":
+                        {
+                            context.AddPathSegment("FunctionVersion");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.FunctionVersion = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lastRefreshTimestamp":
+                        {
+                            context.AddPathSegment("LastRefreshTimestamp");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lookbackPeriodInDays":
+                        {
+                            context.AddPathSegment("LookbackPeriodInDays");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.LookbackPeriodInDays = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "memorySizeRecommendationOptions":
+                        {
+                            context.AddPathSegment("MemorySizeRecommendationOptions");
+                            var unmarshaller = new CborListUnmarshaller<LambdaFunctionMemoryRecommendationOption, LambdaFunctionMemoryRecommendationOptionUnmarshaller>(LambdaFunctionMemoryRecommendationOptionUnmarshaller.Instance);
+                            unmarshalledObject.MemorySizeRecommendationOptions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "numberOfInvocations":
+                        {
+                            context.AddPathSegment("NumberOfInvocations");
+                            var unmarshaller = CborNullableLongUnmarshaller.Instance;
+                            unmarshalledObject.NumberOfInvocations = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "tags":
+                        {
+                            context.AddPathSegment("Tags");
+                            var unmarshaller = new CborListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                            unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "utilizationMetrics":
+                        {
+                            context.AddPathSegment("UtilizationMetrics");
+                            var unmarshaller = new CborListUnmarshaller<LambdaFunctionUtilizationMetric, LambdaFunctionUtilizationMetricUnmarshaller>(LambdaFunctionUtilizationMetricUnmarshaller.Instance);
+                            unmarshalledObject.UtilizationMetrics = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

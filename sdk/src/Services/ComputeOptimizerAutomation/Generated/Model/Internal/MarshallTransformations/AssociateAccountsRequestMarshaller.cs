@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
@@ -59,55 +58,46 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
         public IRequest Marshall(AssociateAccountsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ComputeOptimizerAutomation");
-            string target = "ComputeOptimizerAutomationService.AssociateAccounts";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/ComputeOptimizerAutomationService/operation/AssociateAccounts";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2025-09-22";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAccountIds())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("accountIds");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAccountIds())
                 {
-                        context.Writer.WriteStringValue(publicRequestAccountIdsListValue);
+                    context.Writer.WriteTextString("accountIds");
+                    context.Writer.WriteStartArray(publicRequest.AccountIds.Count);
+                    foreach(var publicRequestAccountIdsListValue in publicRequest.AccountIds)
+                    {
+                            context.Writer.WriteTextString(publicRequestAccountIdsListValue);
+                    }
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteEndArray();
+                if (publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WriteTextString("clientToken");
+                    context.Writer.WriteTextString(publicRequest.ClientToken);
+                }
+                else if (!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WriteTextString("clientToken");
+                    context.Writer.WriteTextString(Guid.NewGuid().ToString());
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-
-            if(publicRequest.IsSetClientToken())
+            finally
             {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(publicRequest.ClientToken);
+                CborWriterPool.Return(writer);
             }
-
-            else if(!(publicRequest.IsSetClientToken()))
-            {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static AssociateAccountsRequestMarshaller _instance = new AssociateAccountsRequestMarshaller();        

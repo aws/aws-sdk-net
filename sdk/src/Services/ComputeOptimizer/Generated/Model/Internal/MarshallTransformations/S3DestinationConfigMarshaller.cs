@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3DestinationConfig Marshaller
     /// </summary>
-    public class S3DestinationConfigMarshaller : IRequestMarshaller<S3DestinationConfig, JsonMarshallerContext> 
+    public class S3DestinationConfigMarshaller : IRequestMarshaller<S3DestinationConfig, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3DestinationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(S3DestinationConfig requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetBucket())
-            {
-                context.Writer.WritePropertyName("bucket");
-                context.Writer.WriteStringValue(requestObject.Bucket);
-            }
 
-            if(requestObject.IsSetKeyPrefix())
+            if (requestObject.IsSetBucket())
             {
-                context.Writer.WritePropertyName("keyPrefix");
-                context.Writer.WriteStringValue(requestObject.KeyPrefix);
+                context.Writer.WriteTextString("bucket");
+                context.Writer.WriteTextString(requestObject.Bucket);
             }
-
+            if (requestObject.IsSetKeyPrefix())
+            {
+                context.Writer.WriteTextString("keyPrefix");
+                context.Writer.WriteTextString(requestObject.KeyPrefix);
+            }
         }
 
         /// <summary>

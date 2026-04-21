@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OrderBy Marshaller
     /// </summary>
-    public class OrderByMarshaller : IRequestMarshaller<OrderBy, JsonMarshallerContext> 
+    public class OrderByMarshaller : IRequestMarshaller<OrderBy, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OrderBy requestObject, JsonMarshallerContext context)
+        public void Marshall(OrderBy requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDimension())
-            {
-                context.Writer.WritePropertyName("dimension");
-                context.Writer.WriteStringValue(requestObject.Dimension);
-            }
 
-            if(requestObject.IsSetOrder())
+            if (requestObject.IsSetDimension())
             {
-                context.Writer.WritePropertyName("order");
-                context.Writer.WriteStringValue(requestObject.Order);
+                context.Writer.WriteTextString("dimension");
+                context.Writer.WriteTextString(requestObject.Dimension);
             }
-
+            if (requestObject.IsSetOrder())
+            {
+                context.Writer.WriteTextString("order");
+                context.Writer.WriteTextString(requestObject.Order);
+            }
         }
 
         /// <summary>

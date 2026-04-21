@@ -29,46 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RecommendedActionTotal Object
     /// </summary>  
-    public class RecommendedActionTotalUnmarshaller : IJsonUnmarshaller<RecommendedActionTotal, JsonUnmarshallerContext>
+    public class RecommendedActionTotalUnmarshaller : ICborUnmarshaller<RecommendedActionTotal, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecommendedActionTotal Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RecommendedActionTotal Unmarshall(CborUnmarshallerContext context)
         {
             RecommendedActionTotal unmarshalledObject = new RecommendedActionTotal();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("estimatedMonthlySavings", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = EstimatedMonthlySavingsUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("recommendedActionCount", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RecommendedActionCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "estimatedMonthlySavings":
+                        {
+                            context.AddPathSegment("EstimatedMonthlySavings");
+                            var unmarshaller = EstimatedMonthlySavingsUnmarshaller.Instance;
+                            unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "recommendedActionCount":
+                        {
+                            context.AddPathSegment("RecommendedActionCount");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.RecommendedActionCount = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

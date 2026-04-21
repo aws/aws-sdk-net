@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Schedule Marshaller
     /// </summary>
-    public class ScheduleMarshaller : IRequestMarshaller<Schedule, JsonMarshallerContext> 
+    public class ScheduleMarshaller : IRequestMarshaller<Schedule, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Schedule requestObject, JsonMarshallerContext context)
+        public void Marshall(Schedule requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetExecutionWindowInMinutes())
-            {
-                context.Writer.WritePropertyName("executionWindowInMinutes");
-                context.Writer.WriteNumberValue(requestObject.ExecutionWindowInMinutes.Value);
-            }
 
-            if(requestObject.IsSetScheduleExpression())
+            if (requestObject.IsSetExecutionWindowInMinutes())
             {
-                context.Writer.WritePropertyName("scheduleExpression");
-                context.Writer.WriteStringValue(requestObject.ScheduleExpression);
+                context.Writer.WriteTextString("executionWindowInMinutes");
+                context.Writer.WriteInt32(requestObject.ExecutionWindowInMinutes.Value);
             }
-
-            if(requestObject.IsSetScheduleExpressionTimezone())
+            if (requestObject.IsSetScheduleExpression())
             {
-                context.Writer.WritePropertyName("scheduleExpressionTimezone");
-                context.Writer.WriteStringValue(requestObject.ScheduleExpressionTimezone);
+                context.Writer.WriteTextString("scheduleExpression");
+                context.Writer.WriteTextString(requestObject.ScheduleExpression);
             }
-
+            if (requestObject.IsSetScheduleExpressionTimezone())
+            {
+                context.Writer.WriteTextString("scheduleExpressionTimezone");
+                context.Writer.WriteTextString(requestObject.ScheduleExpressionTimezone);
+            }
         }
 
         /// <summary>
