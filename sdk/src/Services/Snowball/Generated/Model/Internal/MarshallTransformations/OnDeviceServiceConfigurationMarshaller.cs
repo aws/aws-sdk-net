@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OnDeviceServiceConfiguration Marshaller
     /// </summary>
-    public class OnDeviceServiceConfigurationMarshaller : IRequestMarshaller<OnDeviceServiceConfiguration, JsonMarshallerContext> 
+    public class OnDeviceServiceConfigurationMarshaller : IRequestMarshaller<OnDeviceServiceConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,54 +45,51 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OnDeviceServiceConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(OnDeviceServiceConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEKSOnDeviceService())
+
+            if (requestObject.IsSetEKSOnDeviceService())
             {
-                context.Writer.WritePropertyName("EKSOnDeviceService");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("EKSOnDeviceService");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = EKSOnDeviceServiceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EKSOnDeviceService, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetNFSOnDeviceService())
+            if (requestObject.IsSetNFSOnDeviceService())
             {
-                context.Writer.WritePropertyName("NFSOnDeviceService");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("NFSOnDeviceService");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = NFSOnDeviceServiceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NFSOnDeviceService, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetS3OnDeviceService())
+            if (requestObject.IsSetS3OnDeviceService())
             {
-                context.Writer.WritePropertyName("S3OnDeviceService");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("S3OnDeviceService");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = S3OnDeviceServiceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3OnDeviceService, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetTGWOnDeviceService())
+            if (requestObject.IsSetTGWOnDeviceService())
             {
-                context.Writer.WritePropertyName("TGWOnDeviceService");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("TGWOnDeviceService");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = TGWOnDeviceServiceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TGWOnDeviceService, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

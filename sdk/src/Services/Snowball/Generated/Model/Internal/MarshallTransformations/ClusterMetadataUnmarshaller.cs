@@ -29,124 +29,165 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ClusterMetadata Object
     /// </summary>  
-    public class ClusterMetadataUnmarshaller : IJsonUnmarshaller<ClusterMetadata, JsonUnmarshallerContext>
+    public class ClusterMetadataUnmarshaller : ICborUnmarshaller<ClusterMetadata, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ClusterMetadata Unmarshall(CborUnmarshallerContext context)
         {
             ClusterMetadata unmarshalledObject = new ClusterMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AddressId", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddressId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ClusterId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ClusterState", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterState = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CreationDate", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ForwardingAddressId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ForwardingAddressId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("JobType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("KmsKeyARN", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyARN = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Notification", targetDepth))
-                {
-                    var unmarshaller = NotificationUnmarshaller.Instance;
-                    unmarshalledObject.Notification = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("OnDeviceServiceConfiguration", targetDepth))
-                {
-                    var unmarshaller = OnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OnDeviceServiceConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Resources", targetDepth))
-                {
-                    var unmarshaller = JobResourceUnmarshaller.Instance;
-                    unmarshalledObject.Resources = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RoleARN", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ShippingOption", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ShippingOption = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SnowballType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnowballType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TaxDocuments", targetDepth))
-                {
-                    var unmarshaller = TaxDocumentsUnmarshaller.Instance;
-                    unmarshalledObject.TaxDocuments = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "AddressId":
+                        {
+                            context.AddPathSegment("AddressId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AddressId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ClusterId":
+                        {
+                            context.AddPathSegment("ClusterId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ClusterId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ClusterState":
+                        {
+                            context.AddPathSegment("ClusterState");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ClusterState = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "CreationDate":
+                        {
+                            context.AddPathSegment("CreationDate");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Description":
+                        {
+                            context.AddPathSegment("Description");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ForwardingAddressId":
+                        {
+                            context.AddPathSegment("ForwardingAddressId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ForwardingAddressId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "JobType":
+                        {
+                            context.AddPathSegment("JobType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.JobType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "KmsKeyARN":
+                        {
+                            context.AddPathSegment("KmsKeyARN");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.KmsKeyARN = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Notification":
+                        {
+                            context.AddPathSegment("Notification");
+                            var unmarshaller = NotificationUnmarshaller.Instance;
+                            unmarshalledObject.Notification = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "OnDeviceServiceConfiguration":
+                        {
+                            context.AddPathSegment("OnDeviceServiceConfiguration");
+                            var unmarshaller = OnDeviceServiceConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.OnDeviceServiceConfiguration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Resources":
+                        {
+                            context.AddPathSegment("Resources");
+                            var unmarshaller = JobResourceUnmarshaller.Instance;
+                            unmarshalledObject.Resources = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RoleARN":
+                        {
+                            context.AddPathSegment("RoleARN");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ShippingOption":
+                        {
+                            context.AddPathSegment("ShippingOption");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ShippingOption = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SnowballType":
+                        {
+                            context.AddPathSegment("SnowballType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SnowballType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "TaxDocuments":
+                        {
+                            context.AddPathSegment("TaxDocuments");
+                            var unmarshaller = TaxDocumentsUnmarshaller.Instance;
+                            unmarshalledObject.TaxDocuments = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

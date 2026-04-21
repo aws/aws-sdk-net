@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContainerPortConfiguration Marshaller
     /// </summary>
-    public class ContainerPortConfigurationMarshaller : IRequestMarshaller<ContainerPortConfiguration, JsonMarshallerContext> 
+    public class ContainerPortConfigurationMarshaller : IRequestMarshaller<ContainerPortConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +45,26 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ContainerPortConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ContainerPortConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetContainerPortRanges())
+
+            if (requestObject.IsSetContainerPortRanges())
             {
-                context.Writer.WritePropertyName("ContainerPortRanges");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ContainerPortRanges");
+                context.Writer.WriteStartArray(requestObject.ContainerPortRanges.Count);
                 foreach(var requestObjectContainerPortRangesListValue in requestObject.ContainerPortRanges)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ContainerPortRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectContainerPortRangesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

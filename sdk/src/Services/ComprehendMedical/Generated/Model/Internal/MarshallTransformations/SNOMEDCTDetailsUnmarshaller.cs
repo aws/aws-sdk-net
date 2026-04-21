@@ -29,52 +29,69 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SNOMEDCTDetails Object
     /// </summary>  
-    public class SNOMEDCTDetailsUnmarshaller : IJsonUnmarshaller<SNOMEDCTDetails, JsonUnmarshallerContext>
+    public class SNOMEDCTDetailsUnmarshaller : ICborUnmarshaller<SNOMEDCTDetails, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SNOMEDCTDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SNOMEDCTDetails Unmarshall(CborUnmarshallerContext context)
         {
             SNOMEDCTDetails unmarshalledObject = new SNOMEDCTDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Edition", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Edition = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Language", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Language = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VersionDate", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VersionDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Edition":
+                        {
+                            context.AddPathSegment("Edition");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Edition = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Language":
+                        {
+                            context.AddPathSegment("Language");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Language = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "VersionDate":
+                        {
+                            context.AddPathSegment("VersionDate");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.VersionDate = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

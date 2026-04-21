@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AttributeValue Marshaller
     /// </summary>
-    public class AttributeValueMarshaller : IRequestMarshaller<AttributeValue, JsonMarshallerContext> 
+    public class AttributeValueMarshaller : IRequestMarshaller<AttributeValue, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,54 +45,44 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AttributeValue requestObject, JsonMarshallerContext context)
+        public void Marshall(AttributeValue requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetN())
-            {
-                context.Writer.WritePropertyName("N");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.N.Value))
-                {
-                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.N.Value));
-                }
-                else
-                {
-                    context.Writer.WriteNumberValue(requestObject.N.Value);
-                }
-            }
 
-            if(requestObject.IsSetS())
+            if (requestObject.IsSetN())
             {
-                context.Writer.WritePropertyName("S");
-                context.Writer.WriteStringValue(requestObject.S);
+                context.Writer.WriteTextString("N");
+                context.Writer.WriteOptimizedNumber(requestObject.N.Value);
             }
-
-            if(requestObject.IsSetSDM())
+            if (requestObject.IsSetS())
             {
-                context.Writer.WritePropertyName("SDM");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("S");
+                context.Writer.WriteTextString(requestObject.S);
+            }
+            if (requestObject.IsSetSDM())
+            {
+                context.Writer.WriteTextString("SDM");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectSDMKvp in requestObject.SDM)
                 {
-                    context.Writer.WritePropertyName(requestObjectSDMKvp.Key);
+                    context.Writer.WriteTextString(requestObjectSDMKvp.Key);
                     var requestObjectSDMValue = requestObjectSDMKvp.Value;
 
-                        context.Writer.WriteNumberValue(requestObjectSDMValue);
+                        context.Writer.WriteOptimizedNumber(requestObjectSDMValue);
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetSL())
+            if (requestObject.IsSetSL())
             {
-                context.Writer.WritePropertyName("SL");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("SL");
+                context.Writer.WriteStartArray(requestObject.SL.Count);
                 foreach(var requestObjectSLListValue in requestObject.SL)
                 {
-                        context.Writer.WriteStringValue(requestObjectSLListValue);
+                        context.Writer.WriteTextString(requestObjectSLListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

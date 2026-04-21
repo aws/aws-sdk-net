@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PlayerConnectionDetail Object
     /// </summary>  
-    public class PlayerConnectionDetailUnmarshaller : IJsonUnmarshaller<PlayerConnectionDetail, JsonUnmarshallerContext>
+    public class PlayerConnectionDetailUnmarshaller : ICborUnmarshaller<PlayerConnectionDetail, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PlayerConnectionDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PlayerConnectionDetail Unmarshall(CborUnmarshallerContext context)
         {
             PlayerConnectionDetail unmarshalledObject = new PlayerConnectionDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Endpoints", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<PlayerConnectionEndpoint, PlayerConnectionEndpointUnmarshaller>(PlayerConnectionEndpointUnmarshaller.Instance);
-                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Expiration", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Expiration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PlayerGatewayToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlayerGatewayToken = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PlayerId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlayerId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Endpoints":
+                        {
+                            context.AddPathSegment("Endpoints");
+                            var unmarshaller = new CborListUnmarshaller<PlayerConnectionEndpoint, PlayerConnectionEndpointUnmarshaller>(PlayerConnectionEndpointUnmarshaller.Instance);
+                            unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Expiration":
+                        {
+                            context.AddPathSegment("Expiration");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.Expiration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PlayerGatewayToken":
+                        {
+                            context.AddPathSegment("PlayerGatewayToken");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.PlayerGatewayToken = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PlayerId":
+                        {
+                            context.AddPathSegment("PlayerId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.PlayerId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

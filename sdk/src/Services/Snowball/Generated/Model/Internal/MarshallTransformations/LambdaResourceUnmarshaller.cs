@@ -29,46 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LambdaResource Object
     /// </summary>  
-    public class LambdaResourceUnmarshaller : IJsonUnmarshaller<LambdaResource, JsonUnmarshallerContext>
+    public class LambdaResourceUnmarshaller : ICborUnmarshaller<LambdaResource, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LambdaResource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LambdaResource Unmarshall(CborUnmarshallerContext context)
         {
             LambdaResource unmarshalledObject = new LambdaResource();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("EventTriggers", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<EventTriggerDefinition, EventTriggerDefinitionUnmarshaller>(EventTriggerDefinitionUnmarshaller.Instance);
-                    unmarshalledObject.EventTriggers = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LambdaArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LambdaArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "EventTriggers":
+                        {
+                            context.AddPathSegment("EventTriggers");
+                            var unmarshaller = new CborListUnmarshaller<EventTriggerDefinition, EventTriggerDefinitionUnmarshaller>(EventTriggerDefinitionUnmarshaller.Instance);
+                            unmarshalledObject.EventTriggers = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "LambdaArn":
+                        {
+                            context.AddPathSegment("LambdaArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LambdaArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

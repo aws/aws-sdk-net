@@ -29,70 +29,93 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GameSessionConnectionInfo Object
     /// </summary>  
-    public class GameSessionConnectionInfoUnmarshaller : IJsonUnmarshaller<GameSessionConnectionInfo, JsonUnmarshallerContext>
+    public class GameSessionConnectionInfoUnmarshaller : ICborUnmarshaller<GameSessionConnectionInfo, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GameSessionConnectionInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public GameSessionConnectionInfo Unmarshall(CborUnmarshallerContext context)
         {
             GameSessionConnectionInfo unmarshalledObject = new GameSessionConnectionInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DnsName", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameSessionArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameSessionArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IpAddress", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MatchedPlayerSessions", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<MatchedPlayerSession, MatchedPlayerSessionUnmarshaller>(MatchedPlayerSessionUnmarshaller.Instance);
-                    unmarshalledObject.MatchedPlayerSessions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PlayerGatewayStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlayerGatewayStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Port", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "DnsName":
+                        {
+                            context.AddPathSegment("DnsName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DnsName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameSessionArn":
+                        {
+                            context.AddPathSegment("GameSessionArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameSessionArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IpAddress":
+                        {
+                            context.AddPathSegment("IpAddress");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MatchedPlayerSessions":
+                        {
+                            context.AddPathSegment("MatchedPlayerSessions");
+                            var unmarshaller = new CborListUnmarshaller<MatchedPlayerSession, MatchedPlayerSessionUnmarshaller>(MatchedPlayerSessionUnmarshaller.Instance);
+                            unmarshalledObject.MatchedPlayerSessions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PlayerGatewayStatus":
+                        {
+                            context.AddPathSegment("PlayerGatewayStatus");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.PlayerGatewayStatus = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Port":
+                        {
+                            context.AddPathSegment("Port");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

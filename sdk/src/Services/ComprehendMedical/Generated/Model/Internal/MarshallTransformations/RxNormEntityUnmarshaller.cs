@@ -29,94 +29,125 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RxNormEntity Object
     /// </summary>  
-    public class RxNormEntityUnmarshaller : IJsonUnmarshaller<RxNormEntity, JsonUnmarshallerContext>
+    public class RxNormEntityUnmarshaller : ICborUnmarshaller<RxNormEntity, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RxNormEntity Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RxNormEntity Unmarshall(CborUnmarshallerContext context)
         {
             RxNormEntity unmarshalledObject = new RxNormEntity();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Attributes", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<RxNormAttribute, RxNormAttributeUnmarshaller>(RxNormAttributeUnmarshaller.Instance);
-                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("BeginOffset", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Category", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Category = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EndOffset", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RxNormConcepts", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RxNormConcept, RxNormConceptUnmarshaller>(RxNormConceptUnmarshaller.Instance);
-                    unmarshalledObject.RxNormConcepts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Score", targetDepth))
-                {
-                    var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.Score = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Text", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Traits", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RxNormTrait, RxNormTraitUnmarshaller>(RxNormTraitUnmarshaller.Instance);
-                    unmarshalledObject.Traits = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Attributes":
+                        {
+                            context.AddPathSegment("Attributes");
+                            var unmarshaller = new CborListUnmarshaller<RxNormAttribute, RxNormAttributeUnmarshaller>(RxNormAttributeUnmarshaller.Instance);
+                            unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "BeginOffset":
+                        {
+                            context.AddPathSegment("BeginOffset");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Category":
+                        {
+                            context.AddPathSegment("Category");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Category = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EndOffset":
+                        {
+                            context.AddPathSegment("EndOffset");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Id":
+                        {
+                            context.AddPathSegment("Id");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RxNormConcepts":
+                        {
+                            context.AddPathSegment("RxNormConcepts");
+                            var unmarshaller = new CborListUnmarshaller<RxNormConcept, RxNormConceptUnmarshaller>(RxNormConceptUnmarshaller.Instance);
+                            unmarshalledObject.RxNormConcepts = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Score":
+                        {
+                            context.AddPathSegment("Score");
+                            var unmarshaller = CborNullableFloatUnmarshaller.Instance;
+                            unmarshalledObject.Score = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Text":
+                        {
+                            context.AddPathSegment("Text");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Traits":
+                        {
+                            context.AddPathSegment("Traits");
+                            var unmarshaller = new CborListUnmarshaller<RxNormTrait, RxNormTraitUnmarshaller>(RxNormTraitUnmarshaller.Instance);
+                            unmarshalledObject.Traits = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Type":
+                        {
+                            context.AddPathSegment("Type");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

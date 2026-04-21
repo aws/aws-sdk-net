@@ -29,46 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ContainerAttribute Object
     /// </summary>  
-    public class ContainerAttributeUnmarshaller : IJsonUnmarshaller<ContainerAttribute, JsonUnmarshallerContext>
+    public class ContainerAttributeUnmarshaller : ICborUnmarshaller<ContainerAttribute, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContainerAttribute Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ContainerAttribute Unmarshall(CborUnmarshallerContext context)
         {
             ContainerAttribute unmarshalledObject = new ContainerAttribute();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ContainerName", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ContainerRuntimeId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerRuntimeId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ContainerName":
+                        {
+                            context.AddPathSegment("ContainerName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ContainerName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ContainerRuntimeId":
+                        {
+                            context.AddPathSegment("ContainerRuntimeId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ContainerRuntimeId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -59,103 +58,86 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateGameSessionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.CreateGameSession";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GameLift/operation/CreateGameSession";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAliasId())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("AliasId");
-                context.Writer.WriteStringValue(publicRequest.AliasId);
-            }
-
-            if(publicRequest.IsSetCreatorId())
-            {
-                context.Writer.WritePropertyName("CreatorId");
-                context.Writer.WriteStringValue(publicRequest.CreatorId);
-            }
-
-            if(publicRequest.IsSetFleetId())
-            {
-                context.Writer.WritePropertyName("FleetId");
-                context.Writer.WriteStringValue(publicRequest.FleetId);
-            }
-
-            if(publicRequest.IsSetGameProperties())
-            {
-                context.Writer.WritePropertyName("GameProperties");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestGamePropertiesListValue in publicRequest.GameProperties)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAliasId())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = GamePropertyMarshaller.Instance;
-                    marshaller.Marshall(publicRequestGamePropertiesListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("AliasId");
+                    context.Writer.WriteTextString(publicRequest.AliasId);
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetCreatorId())
+                {
+                    context.Writer.WriteTextString("CreatorId");
+                    context.Writer.WriteTextString(publicRequest.CreatorId);
+                }
+                if (publicRequest.IsSetFleetId())
+                {
+                    context.Writer.WriteTextString("FleetId");
+                    context.Writer.WriteTextString(publicRequest.FleetId);
+                }
+                if (publicRequest.IsSetGameProperties())
+                {
+                    context.Writer.WriteTextString("GameProperties");
+                    context.Writer.WriteStartArray(publicRequest.GameProperties.Count);
+                    foreach(var publicRequestGamePropertiesListValue in publicRequest.GameProperties)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetGameSessionData())
+                        var marshaller = GamePropertyMarshaller.Instance;
+                        marshaller.Marshall(publicRequestGamePropertiesListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetGameSessionData())
+                {
+                    context.Writer.WriteTextString("GameSessionData");
+                    context.Writer.WriteTextString(publicRequest.GameSessionData);
+                }
+                if (publicRequest.IsSetGameSessionId())
+                {
+                    context.Writer.WriteTextString("GameSessionId");
+                    context.Writer.WriteTextString(publicRequest.GameSessionId);
+                }
+                if (publicRequest.IsSetIdempotencyToken())
+                {
+                    context.Writer.WriteTextString("IdempotencyToken");
+                    context.Writer.WriteTextString(publicRequest.IdempotencyToken);
+                }
+                if (publicRequest.IsSetLocation())
+                {
+                    context.Writer.WriteTextString("Location");
+                    context.Writer.WriteTextString(publicRequest.Location);
+                }
+                if (publicRequest.IsSetMaximumPlayerSessionCount())
+                {
+                    context.Writer.WriteTextString("MaximumPlayerSessionCount");
+                    context.Writer.WriteInt32(publicRequest.MaximumPlayerSessionCount.Value);
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("Name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
             {
-                context.Writer.WritePropertyName("GameSessionData");
-                context.Writer.WriteStringValue(publicRequest.GameSessionData);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetGameSessionId())
-            {
-                context.Writer.WritePropertyName("GameSessionId");
-                context.Writer.WriteStringValue(publicRequest.GameSessionId);
-            }
-
-            if(publicRequest.IsSetIdempotencyToken())
-            {
-                context.Writer.WritePropertyName("IdempotencyToken");
-                context.Writer.WriteStringValue(publicRequest.IdempotencyToken);
-            }
-
-            if(publicRequest.IsSetLocation())
-            {
-                context.Writer.WritePropertyName("Location");
-                context.Writer.WriteStringValue(publicRequest.Location);
-            }
-
-            if(publicRequest.IsSetMaximumPlayerSessionCount())
-            {
-                context.Writer.WritePropertyName("MaximumPlayerSessionCount");
-                context.Writer.WriteNumberValue(publicRequest.MaximumPlayerSessionCount.Value);
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static CreateGameSessionRequestMarshaller _instance = new CreateGameSessionRequestMarshaller();        

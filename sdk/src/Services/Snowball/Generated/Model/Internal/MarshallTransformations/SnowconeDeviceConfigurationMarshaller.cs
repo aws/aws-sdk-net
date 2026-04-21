@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SnowconeDeviceConfiguration Marshaller
     /// </summary>
-    public class SnowconeDeviceConfigurationMarshaller : IRequestMarshaller<SnowconeDeviceConfiguration, JsonMarshallerContext> 
+    public class SnowconeDeviceConfigurationMarshaller : IRequestMarshaller<SnowconeDeviceConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,21 +45,21 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SnowconeDeviceConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SnowconeDeviceConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetWirelessConnection())
+
+            if (requestObject.IsSetWirelessConnection())
             {
-                context.Writer.WritePropertyName("WirelessConnection");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("WirelessConnection");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = WirelessConnectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.WirelessConnection, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

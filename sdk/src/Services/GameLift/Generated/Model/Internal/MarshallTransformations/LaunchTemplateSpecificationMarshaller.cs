@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LaunchTemplateSpecification Marshaller
     /// </summary>
-    public class LaunchTemplateSpecificationMarshaller : IRequestMarshaller<LaunchTemplateSpecification, JsonMarshallerContext> 
+    public class LaunchTemplateSpecificationMarshaller : IRequestMarshaller<LaunchTemplateSpecification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LaunchTemplateSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(LaunchTemplateSpecification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetLaunchTemplateId())
-            {
-                context.Writer.WritePropertyName("LaunchTemplateId");
-                context.Writer.WriteStringValue(requestObject.LaunchTemplateId);
-            }
 
-            if(requestObject.IsSetLaunchTemplateName())
+            if (requestObject.IsSetLaunchTemplateId())
             {
-                context.Writer.WritePropertyName("LaunchTemplateName");
-                context.Writer.WriteStringValue(requestObject.LaunchTemplateName);
+                context.Writer.WriteTextString("LaunchTemplateId");
+                context.Writer.WriteTextString(requestObject.LaunchTemplateId);
             }
-
-            if(requestObject.IsSetVersion())
+            if (requestObject.IsSetLaunchTemplateName())
             {
-                context.Writer.WritePropertyName("Version");
-                context.Writer.WriteStringValue(requestObject.Version);
+                context.Writer.WriteTextString("LaunchTemplateName");
+                context.Writer.WriteTextString(requestObject.LaunchTemplateName);
             }
-
+            if (requestObject.IsSetVersion())
+            {
+                context.Writer.WriteTextString("Version");
+                context.Writer.WriteTextString(requestObject.Version);
+            }
         }
 
         /// <summary>

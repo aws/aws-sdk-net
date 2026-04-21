@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Notification Marshaller
     /// </summary>
-    public class NotificationMarshaller : IRequestMarshaller<Notification, JsonMarshallerContext> 
+    public class NotificationMarshaller : IRequestMarshaller<Notification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,39 +45,36 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Notification requestObject, JsonMarshallerContext context)
+        public void Marshall(Notification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDevicePickupSnsTopicARN())
-            {
-                context.Writer.WritePropertyName("DevicePickupSnsTopicARN");
-                context.Writer.WriteStringValue(requestObject.DevicePickupSnsTopicARN);
-            }
 
-            if(requestObject.IsSetJobStatesToNotify())
+            if (requestObject.IsSetDevicePickupSnsTopicARN())
             {
-                context.Writer.WritePropertyName("JobStatesToNotify");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("DevicePickupSnsTopicARN");
+                context.Writer.WriteTextString(requestObject.DevicePickupSnsTopicARN);
+            }
+            if (requestObject.IsSetJobStatesToNotify())
+            {
+                context.Writer.WriteTextString("JobStatesToNotify");
+                context.Writer.WriteStartArray(requestObject.JobStatesToNotify.Count);
                 foreach(var requestObjectJobStatesToNotifyListValue in requestObject.JobStatesToNotify)
                 {
-                        context.Writer.WriteStringValue(requestObjectJobStatesToNotifyListValue);
+                        context.Writer.WriteTextString(requestObjectJobStatesToNotifyListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetNotifyAll())
+            if (requestObject.IsSetNotifyAll())
             {
-                context.Writer.WritePropertyName("NotifyAll");
-                context.Writer.WriteBooleanValue(requestObject.NotifyAll.Value);
+                context.Writer.WriteTextString("NotifyAll");
+                context.Writer.WriteBoolean(requestObject.NotifyAll.Value);
             }
-
-            if(requestObject.IsSetSnsTopicARN())
+            if (requestObject.IsSetSnsTopicARN())
             {
-                context.Writer.WritePropertyName("SnsTopicARN");
-                context.Writer.WriteStringValue(requestObject.SnsTopicARN);
+                context.Writer.WriteTextString("SnsTopicARN");
+                context.Writer.WriteTextString(requestObject.SnsTopicARN);
             }
-
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ClaimFilterOption Marshaller
     /// </summary>
-    public class ClaimFilterOptionMarshaller : IRequestMarshaller<ClaimFilterOption, JsonMarshallerContext> 
+    public class ClaimFilterOptionMarshaller : IRequestMarshaller<ClaimFilterOption, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,21 +45,21 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ClaimFilterOption requestObject, JsonMarshallerContext context)
+        public void Marshall(ClaimFilterOption requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetInstanceStatuses())
+
+            if (requestObject.IsSetInstanceStatuses())
             {
-                context.Writer.WritePropertyName("InstanceStatuses");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("InstanceStatuses");
+                context.Writer.WriteStartArray(requestObject.InstanceStatuses.Count);
                 foreach(var requestObjectInstanceStatusesListValue in requestObject.InstanceStatuses)
                 {
-                        context.Writer.WriteStringValue(requestObjectInstanceStatusesListValue);
+                        context.Writer.WriteTextString(requestObjectInstanceStatusesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

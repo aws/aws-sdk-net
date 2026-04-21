@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CertificateConfiguration Marshaller
     /// </summary>
-    public class CertificateConfigurationMarshaller : IRequestMarshaller<CertificateConfiguration, JsonMarshallerContext> 
+    public class CertificateConfigurationMarshaller : IRequestMarshaller<CertificateConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CertificateConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(CertificateConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCertificateType())
-            {
-                context.Writer.WritePropertyName("CertificateType");
-                context.Writer.WriteStringValue(requestObject.CertificateType);
-            }
 
+            if (requestObject.IsSetCertificateType())
+            {
+                context.Writer.WriteTextString("CertificateType");
+                context.Writer.WriteTextString(requestObject.CertificateType);
+            }
         }
 
         /// <summary>

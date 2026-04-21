@@ -29,46 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VpcPeeringConnectionStatus Object
     /// </summary>  
-    public class VpcPeeringConnectionStatusUnmarshaller : IJsonUnmarshaller<VpcPeeringConnectionStatus, JsonUnmarshallerContext>
+    public class VpcPeeringConnectionStatusUnmarshaller : ICborUnmarshaller<VpcPeeringConnectionStatus, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VpcPeeringConnectionStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VpcPeeringConnectionStatus Unmarshall(CborUnmarshallerContext context)
         {
             VpcPeeringConnectionStatus unmarshalledObject = new VpcPeeringConnectionStatus();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Code", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Message", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Code":
+                        {
+                            context.AddPathSegment("Code");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Message":
+                        {
+                            context.AddPathSegment("Message");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

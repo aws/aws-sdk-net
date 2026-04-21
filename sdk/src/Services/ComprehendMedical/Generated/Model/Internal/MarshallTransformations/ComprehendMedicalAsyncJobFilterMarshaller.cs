@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComprehendMedicalAsyncJobFilter Marshaller
     /// </summary>
-    public class ComprehendMedicalAsyncJobFilterMarshaller : IRequestMarshaller<ComprehendMedicalAsyncJobFilter, JsonMarshallerContext> 
+    public class ComprehendMedicalAsyncJobFilterMarshaller : IRequestMarshaller<ComprehendMedicalAsyncJobFilter, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,34 +45,31 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ComprehendMedicalAsyncJobFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(ComprehendMedicalAsyncJobFilter requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetJobName())
-            {
-                context.Writer.WritePropertyName("JobName");
-                context.Writer.WriteStringValue(requestObject.JobName);
-            }
 
-            if(requestObject.IsSetJobStatus())
+            if (requestObject.IsSetJobName())
             {
-                context.Writer.WritePropertyName("JobStatus");
-                context.Writer.WriteStringValue(requestObject.JobStatus);
+                context.Writer.WriteTextString("JobName");
+                context.Writer.WriteTextString(requestObject.JobName);
             }
-
-            if(requestObject.IsSetSubmitTimeAfter())
+            if (requestObject.IsSetJobStatus())
             {
-                context.Writer.WritePropertyName("SubmitTimeAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.SubmitTimeAfter.Value)));
+                context.Writer.WriteTextString("JobStatus");
+                context.Writer.WriteTextString(requestObject.JobStatus);
             }
-
-            if(requestObject.IsSetSubmitTimeBefore())
+            if (requestObject.IsSetSubmitTimeAfter())
             {
-                context.Writer.WritePropertyName("SubmitTimeBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.SubmitTimeBefore.Value)));
+                context.Writer.WriteTextString("SubmitTimeAfter");
+                context.Writer.WriteDateTime(requestObject.SubmitTimeAfter.Value);
             }
-
+            if (requestObject.IsSetSubmitTimeBefore())
+            {
+                context.Writer.WriteTextString("SubmitTimeBefore");
+                context.Writer.WriteDateTime(requestObject.SubmitTimeBefore.Value);
+            }
         }
 
         /// <summary>

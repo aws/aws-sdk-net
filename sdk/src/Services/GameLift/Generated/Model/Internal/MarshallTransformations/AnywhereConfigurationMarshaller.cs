@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AnywhereConfiguration Marshaller
     /// </summary>
-    public class AnywhereConfigurationMarshaller : IRequestMarshaller<AnywhereConfiguration, JsonMarshallerContext> 
+    public class AnywhereConfigurationMarshaller : IRequestMarshaller<AnywhereConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AnywhereConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(AnywhereConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCost())
-            {
-                context.Writer.WritePropertyName("Cost");
-                context.Writer.WriteStringValue(requestObject.Cost);
-            }
 
+            if (requestObject.IsSetCost())
+            {
+                context.Writer.WriteTextString("Cost");
+                context.Writer.WriteTextString(requestObject.Cost);
+            }
         }
 
         /// <summary>

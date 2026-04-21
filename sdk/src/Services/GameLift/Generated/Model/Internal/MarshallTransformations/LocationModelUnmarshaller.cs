@@ -29,52 +29,69 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LocationModel Object
     /// </summary>  
-    public class LocationModelUnmarshaller : IJsonUnmarshaller<LocationModel, JsonUnmarshallerContext>
+    public class LocationModelUnmarshaller : ICborUnmarshaller<LocationModel, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LocationModel Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LocationModel Unmarshall(CborUnmarshallerContext context)
         {
             LocationModel unmarshalledObject = new LocationModel();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("LocationArn", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LocationName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocationName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PingBeacon", targetDepth))
-                {
-                    var unmarshaller = PingBeaconUnmarshaller.Instance;
-                    unmarshalledObject.PingBeacon = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "LocationArn":
+                        {
+                            context.AddPathSegment("LocationArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LocationArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "LocationName":
+                        {
+                            context.AddPathSegment("LocationName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LocationName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PingBeacon":
+                        {
+                            context.AddPathSegment("PingBeacon");
+                            var unmarshaller = PingBeaconUnmarshaller.Instance;
+                            unmarshalledObject.PingBeacon = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

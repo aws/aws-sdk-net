@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ManagedCapacityConfiguration Marshaller
     /// </summary>
-    public class ManagedCapacityConfigurationMarshaller : IRequestMarshaller<ManagedCapacityConfiguration, JsonMarshallerContext> 
+    public class ManagedCapacityConfigurationMarshaller : IRequestMarshaller<ManagedCapacityConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ManagedCapacityConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ManagedCapacityConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetScaleInAfterInactivityMinutes())
-            {
-                context.Writer.WritePropertyName("ScaleInAfterInactivityMinutes");
-                context.Writer.WriteNumberValue(requestObject.ScaleInAfterInactivityMinutes.Value);
-            }
 
-            if(requestObject.IsSetZeroCapacityStrategy())
+            if (requestObject.IsSetScaleInAfterInactivityMinutes())
             {
-                context.Writer.WritePropertyName("ZeroCapacityStrategy");
-                context.Writer.WriteStringValue(requestObject.ZeroCapacityStrategy);
+                context.Writer.WriteTextString("ScaleInAfterInactivityMinutes");
+                context.Writer.WriteInt32(requestObject.ScaleInAfterInactivityMinutes.Value);
             }
-
+            if (requestObject.IsSetZeroCapacityStrategy())
+            {
+                context.Writer.WriteTextString("ZeroCapacityStrategy");
+                context.Writer.WriteTextString(requestObject.ZeroCapacityStrategy);
+            }
         }
 
         /// <summary>

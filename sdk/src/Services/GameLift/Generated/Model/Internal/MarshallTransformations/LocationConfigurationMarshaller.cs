@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LocationConfiguration Marshaller
     /// </summary>
-    public class LocationConfigurationMarshaller : IRequestMarshaller<LocationConfiguration, JsonMarshallerContext> 
+    public class LocationConfigurationMarshaller : IRequestMarshaller<LocationConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LocationConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(LocationConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetLocation())
-            {
-                context.Writer.WritePropertyName("Location");
-                context.Writer.WriteStringValue(requestObject.Location);
-            }
 
+            if (requestObject.IsSetLocation())
+            {
+                context.Writer.WriteTextString("Location");
+                context.Writer.WriteTextString(requestObject.Location);
+            }
         }
 
         /// <summary>

@@ -29,100 +29,133 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SupportContainerDefinition Object
     /// </summary>  
-    public class SupportContainerDefinitionUnmarshaller : IJsonUnmarshaller<SupportContainerDefinition, JsonUnmarshallerContext>
+    public class SupportContainerDefinitionUnmarshaller : ICborUnmarshaller<SupportContainerDefinition, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SupportContainerDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SupportContainerDefinition Unmarshall(CborUnmarshallerContext context)
         {
             SupportContainerDefinition unmarshalledObject = new SupportContainerDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ContainerName", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DependsOn", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ContainerDependency, ContainerDependencyUnmarshaller>(ContainerDependencyUnmarshaller.Instance);
-                    unmarshalledObject.DependsOn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EnvironmentOverride", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ContainerEnvironment, ContainerEnvironmentUnmarshaller>(ContainerEnvironmentUnmarshaller.Instance);
-                    unmarshalledObject.EnvironmentOverride = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Essential", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Essential = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("HealthCheck", targetDepth))
-                {
-                    var unmarshaller = ContainerHealthCheckUnmarshaller.Instance;
-                    unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ImageUri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageUri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MemoryHardLimitMebibytes", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MemoryHardLimitMebibytes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MountPoints", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ContainerMountPoint, ContainerMountPointUnmarshaller>(ContainerMountPointUnmarshaller.Instance);
-                    unmarshalledObject.MountPoints = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PortConfiguration", targetDepth))
-                {
-                    var unmarshaller = ContainerPortConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PortConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ResolvedImageDigest", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResolvedImageDigest = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Vcpu", targetDepth))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Vcpu = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ContainerName":
+                        {
+                            context.AddPathSegment("ContainerName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ContainerName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DependsOn":
+                        {
+                            context.AddPathSegment("DependsOn");
+                            var unmarshaller = new CborListUnmarshaller<ContainerDependency, ContainerDependencyUnmarshaller>(ContainerDependencyUnmarshaller.Instance);
+                            unmarshalledObject.DependsOn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EnvironmentOverride":
+                        {
+                            context.AddPathSegment("EnvironmentOverride");
+                            var unmarshaller = new CborListUnmarshaller<ContainerEnvironment, ContainerEnvironmentUnmarshaller>(ContainerEnvironmentUnmarshaller.Instance);
+                            unmarshalledObject.EnvironmentOverride = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Essential":
+                        {
+                            context.AddPathSegment("Essential");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.Essential = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "HealthCheck":
+                        {
+                            context.AddPathSegment("HealthCheck");
+                            var unmarshaller = ContainerHealthCheckUnmarshaller.Instance;
+                            unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ImageUri":
+                        {
+                            context.AddPathSegment("ImageUri");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ImageUri = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MemoryHardLimitMebibytes":
+                        {
+                            context.AddPathSegment("MemoryHardLimitMebibytes");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.MemoryHardLimitMebibytes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MountPoints":
+                        {
+                            context.AddPathSegment("MountPoints");
+                            var unmarshaller = new CborListUnmarshaller<ContainerMountPoint, ContainerMountPointUnmarshaller>(ContainerMountPointUnmarshaller.Instance);
+                            unmarshalledObject.MountPoints = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PortConfiguration":
+                        {
+                            context.AddPathSegment("PortConfiguration");
+                            var unmarshaller = ContainerPortConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.PortConfiguration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ResolvedImageDigest":
+                        {
+                            context.AddPathSegment("ResolvedImageDigest");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ResolvedImageDigest = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Vcpu":
+                        {
+                            context.AddPathSegment("Vcpu");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.Vcpu = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

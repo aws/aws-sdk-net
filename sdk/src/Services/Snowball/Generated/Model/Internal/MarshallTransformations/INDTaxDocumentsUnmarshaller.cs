@@ -29,40 +29,53 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for INDTaxDocuments Object
     /// </summary>  
-    public class INDTaxDocumentsUnmarshaller : IJsonUnmarshaller<INDTaxDocuments, JsonUnmarshallerContext>
+    public class INDTaxDocumentsUnmarshaller : ICborUnmarshaller<INDTaxDocuments, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public INDTaxDocuments Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public INDTaxDocuments Unmarshall(CborUnmarshallerContext context)
         {
             INDTaxDocuments unmarshalledObject = new INDTaxDocuments();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("GSTIN", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GSTIN = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "GSTIN":
+                        {
+                            context.AddPathSegment("GSTIN");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GSTIN = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

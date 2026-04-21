@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TargetOnDeviceService Marshaller
     /// </summary>
-    public class TargetOnDeviceServiceMarshaller : IRequestMarshaller<TargetOnDeviceService, JsonMarshallerContext> 
+    public class TargetOnDeviceServiceMarshaller : IRequestMarshaller<TargetOnDeviceService, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TargetOnDeviceService requestObject, JsonMarshallerContext context)
+        public void Marshall(TargetOnDeviceService requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetServiceName())
-            {
-                context.Writer.WritePropertyName("ServiceName");
-                context.Writer.WriteStringValue(requestObject.ServiceName);
-            }
 
-            if(requestObject.IsSetTransferOption())
+            if (requestObject.IsSetServiceName())
             {
-                context.Writer.WritePropertyName("TransferOption");
-                context.Writer.WriteStringValue(requestObject.TransferOption);
+                context.Writer.WriteTextString("ServiceName");
+                context.Writer.WriteTextString(requestObject.ServiceName);
             }
-
+            if (requestObject.IsSetTransferOption())
+            {
+                context.Writer.WriteTextString("TransferOption");
+                context.Writer.WriteTextString(requestObject.TransferOption);
+            }
         }
 
         /// <summary>

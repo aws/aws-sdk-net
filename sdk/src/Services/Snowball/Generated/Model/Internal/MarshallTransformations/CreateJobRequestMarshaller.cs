@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
@@ -59,177 +58,151 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Snowball");
-            string target = "AWSIESnowballJobManagementService.CreateJob";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/AWSIESnowballJobManagementService/operation/CreateJob";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-06-30";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAddressId())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("AddressId");
-                context.Writer.WriteStringValue(publicRequest.AddressId);
-            }
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAddressId())
+                {
+                    context.Writer.WriteTextString("AddressId");
+                    context.Writer.WriteTextString(publicRequest.AddressId);
+                }
+                if (publicRequest.IsSetClusterId())
+                {
+                    context.Writer.WriteTextString("ClusterId");
+                    context.Writer.WriteTextString(publicRequest.ClusterId);
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetDeviceConfiguration())
+                {
+                    context.Writer.WriteTextString("DeviceConfiguration");
+                    context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetClusterId())
+                    var marshaller = DeviceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeviceConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetForwardingAddressId())
+                {
+                    context.Writer.WriteTextString("ForwardingAddressId");
+                    context.Writer.WriteTextString(publicRequest.ForwardingAddressId);
+                }
+                if (publicRequest.IsSetImpactLevel())
+                {
+                    context.Writer.WriteTextString("ImpactLevel");
+                    context.Writer.WriteTextString(publicRequest.ImpactLevel);
+                }
+                if (publicRequest.IsSetJobType())
+                {
+                    context.Writer.WriteTextString("JobType");
+                    context.Writer.WriteTextString(publicRequest.JobType);
+                }
+                if (publicRequest.IsSetKmsKeyARN())
+                {
+                    context.Writer.WriteTextString("KmsKeyARN");
+                    context.Writer.WriteTextString(publicRequest.KmsKeyARN);
+                }
+                if (publicRequest.IsSetLongTermPricingId())
+                {
+                    context.Writer.WriteTextString("LongTermPricingId");
+                    context.Writer.WriteTextString(publicRequest.LongTermPricingId);
+                }
+                if (publicRequest.IsSetNotification())
+                {
+                    context.Writer.WriteTextString("Notification");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = NotificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Notification, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetOnDeviceServiceConfiguration())
+                {
+                    context.Writer.WriteTextString("OnDeviceServiceConfiguration");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = OnDeviceServiceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OnDeviceServiceConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetPickupDetails())
+                {
+                    context.Writer.WriteTextString("PickupDetails");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = PickupDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PickupDetails, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetRemoteManagement())
+                {
+                    context.Writer.WriteTextString("RemoteManagement");
+                    context.Writer.WriteTextString(publicRequest.RemoteManagement);
+                }
+                if (publicRequest.IsSetResources())
+                {
+                    context.Writer.WriteTextString("Resources");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = JobResourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Resources, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetRoleARN())
+                {
+                    context.Writer.WriteTextString("RoleARN");
+                    context.Writer.WriteTextString(publicRequest.RoleARN);
+                }
+                if (publicRequest.IsSetShippingOption())
+                {
+                    context.Writer.WriteTextString("ShippingOption");
+                    context.Writer.WriteTextString(publicRequest.ShippingOption);
+                }
+                if (publicRequest.IsSetSnowballCapacityPreference())
+                {
+                    context.Writer.WriteTextString("SnowballCapacityPreference");
+                    context.Writer.WriteTextString(publicRequest.SnowballCapacityPreference);
+                }
+                if (publicRequest.IsSetSnowballType())
+                {
+                    context.Writer.WriteTextString("SnowballType");
+                    context.Writer.WriteTextString(publicRequest.SnowballType);
+                }
+                if (publicRequest.IsSetTaxDocuments())
+                {
+                    context.Writer.WriteTextString("TaxDocuments");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = TaxDocumentsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TaxDocuments, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
             {
-                context.Writer.WritePropertyName("ClusterId");
-                context.Writer.WriteStringValue(publicRequest.ClusterId);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-
-            if(publicRequest.IsSetDeviceConfiguration())
-            {
-                context.Writer.WritePropertyName("DeviceConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DeviceConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.DeviceConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetForwardingAddressId())
-            {
-                context.Writer.WritePropertyName("ForwardingAddressId");
-                context.Writer.WriteStringValue(publicRequest.ForwardingAddressId);
-            }
-
-            if(publicRequest.IsSetImpactLevel())
-            {
-                context.Writer.WritePropertyName("ImpactLevel");
-                context.Writer.WriteStringValue(publicRequest.ImpactLevel);
-            }
-
-            if(publicRequest.IsSetJobType())
-            {
-                context.Writer.WritePropertyName("JobType");
-                context.Writer.WriteStringValue(publicRequest.JobType);
-            }
-
-            if(publicRequest.IsSetKmsKeyARN())
-            {
-                context.Writer.WritePropertyName("KmsKeyARN");
-                context.Writer.WriteStringValue(publicRequest.KmsKeyARN);
-            }
-
-            if(publicRequest.IsSetLongTermPricingId())
-            {
-                context.Writer.WritePropertyName("LongTermPricingId");
-                context.Writer.WriteStringValue(publicRequest.LongTermPricingId);
-            }
-
-            if(publicRequest.IsSetNotification())
-            {
-                context.Writer.WritePropertyName("Notification");
-                context.Writer.WriteStartObject();
-
-                var marshaller = NotificationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Notification, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetOnDeviceServiceConfiguration())
-            {
-                context.Writer.WritePropertyName("OnDeviceServiceConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OnDeviceServiceConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.OnDeviceServiceConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetPickupDetails())
-            {
-                context.Writer.WritePropertyName("PickupDetails");
-                context.Writer.WriteStartObject();
-
-                var marshaller = PickupDetailsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.PickupDetails, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetRemoteManagement())
-            {
-                context.Writer.WritePropertyName("RemoteManagement");
-                context.Writer.WriteStringValue(publicRequest.RemoteManagement);
-            }
-
-            if(publicRequest.IsSetResources())
-            {
-                context.Writer.WritePropertyName("Resources");
-                context.Writer.WriteStartObject();
-
-                var marshaller = JobResourceMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Resources, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetRoleARN())
-            {
-                context.Writer.WritePropertyName("RoleARN");
-                context.Writer.WriteStringValue(publicRequest.RoleARN);
-            }
-
-            if(publicRequest.IsSetShippingOption())
-            {
-                context.Writer.WritePropertyName("ShippingOption");
-                context.Writer.WriteStringValue(publicRequest.ShippingOption);
-            }
-
-            if(publicRequest.IsSetSnowballCapacityPreference())
-            {
-                context.Writer.WritePropertyName("SnowballCapacityPreference");
-                context.Writer.WriteStringValue(publicRequest.SnowballCapacityPreference);
-            }
-
-            if(publicRequest.IsSetSnowballType())
-            {
-                context.Writer.WritePropertyName("SnowballType");
-                context.Writer.WriteStringValue(publicRequest.SnowballType);
-            }
-
-            if(publicRequest.IsSetTaxDocuments())
-            {
-                context.Writer.WritePropertyName("TaxDocuments");
-                context.Writer.WriteStartObject();
-
-                var marshaller = TaxDocumentsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.TaxDocuments, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static CreateJobRequestMarshaller _instance = new CreateJobRequestMarshaller();        

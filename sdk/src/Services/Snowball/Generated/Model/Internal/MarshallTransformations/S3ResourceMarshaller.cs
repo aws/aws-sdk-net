@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Resource Marshaller
     /// </summary>
-    public class S3ResourceMarshaller : IRequestMarshaller<S3Resource, JsonMarshallerContext> 
+    public class S3ResourceMarshaller : IRequestMarshaller<S3Resource, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,43 +45,41 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3Resource requestObject, JsonMarshallerContext context)
+        public void Marshall(S3Resource requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetBucketArn())
-            {
-                context.Writer.WritePropertyName("BucketArn");
-                context.Writer.WriteStringValue(requestObject.BucketArn);
-            }
 
-            if(requestObject.IsSetKeyRange())
+            if (requestObject.IsSetBucketArn())
             {
-                context.Writer.WritePropertyName("KeyRange");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("BucketArn");
+                context.Writer.WriteTextString(requestObject.BucketArn);
+            }
+            if (requestObject.IsSetKeyRange())
+            {
+                context.Writer.WriteTextString("KeyRange");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = KeyRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyRange, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetTargetOnDeviceServices())
+            if (requestObject.IsSetTargetOnDeviceServices())
             {
-                context.Writer.WritePropertyName("TargetOnDeviceServices");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("TargetOnDeviceServices");
+                context.Writer.WriteStartArray(requestObject.TargetOnDeviceServices.Count);
                 foreach(var requestObjectTargetOnDeviceServicesListValue in requestObject.TargetOnDeviceServices)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = TargetOnDeviceServiceMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetOnDeviceServicesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

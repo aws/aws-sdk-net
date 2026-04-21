@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3Location Marshaller
     /// </summary>
-    public class S3LocationMarshaller : IRequestMarshaller<S3Location, JsonMarshallerContext> 
+    public class S3LocationMarshaller : IRequestMarshaller<S3Location, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,34 +45,31 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3Location requestObject, JsonMarshallerContext context)
+        public void Marshall(S3Location requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetBucket())
-            {
-                context.Writer.WritePropertyName("Bucket");
-                context.Writer.WriteStringValue(requestObject.Bucket);
-            }
 
-            if(requestObject.IsSetKey())
+            if (requestObject.IsSetBucket())
             {
-                context.Writer.WritePropertyName("Key");
-                context.Writer.WriteStringValue(requestObject.Key);
+                context.Writer.WriteTextString("Bucket");
+                context.Writer.WriteTextString(requestObject.Bucket);
             }
-
-            if(requestObject.IsSetObjectVersion())
+            if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("ObjectVersion");
-                context.Writer.WriteStringValue(requestObject.ObjectVersion);
+                context.Writer.WriteTextString("Key");
+                context.Writer.WriteTextString(requestObject.Key);
             }
-
-            if(requestObject.IsSetRoleArn())
+            if (requestObject.IsSetObjectVersion())
             {
-                context.Writer.WritePropertyName("RoleArn");
-                context.Writer.WriteStringValue(requestObject.RoleArn);
+                context.Writer.WriteTextString("ObjectVersion");
+                context.Writer.WriteTextString(requestObject.ObjectVersion);
             }
-
+            if (requestObject.IsSetRoleArn())
+            {
+                context.Writer.WriteTextString("RoleArn");
+                context.Writer.WriteTextString(requestObject.RoleArn);
+            }
         }
 
         /// <summary>

@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -59,73 +58,61 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateGameServerGroupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.UpdateGameServerGroup";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GameLift/operation/UpdateGameServerGroup";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetBalancingStrategy())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("BalancingStrategy");
-                context.Writer.WriteStringValue(publicRequest.BalancingStrategy);
-            }
-
-            if(publicRequest.IsSetGameServerGroupName())
-            {
-                context.Writer.WritePropertyName("GameServerGroupName");
-                context.Writer.WriteStringValue(publicRequest.GameServerGroupName);
-            }
-
-            if(publicRequest.IsSetGameServerProtectionPolicy())
-            {
-                context.Writer.WritePropertyName("GameServerProtectionPolicy");
-                context.Writer.WriteStringValue(publicRequest.GameServerProtectionPolicy);
-            }
-
-            if(publicRequest.IsSetInstanceDefinitions())
-            {
-                context.Writer.WritePropertyName("InstanceDefinitions");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestInstanceDefinitionsListValue in publicRequest.InstanceDefinitions)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetBalancingStrategy())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = InstanceDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequestInstanceDefinitionsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("BalancingStrategy");
+                    context.Writer.WriteTextString(publicRequest.BalancingStrategy);
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetGameServerGroupName())
+                {
+                    context.Writer.WriteTextString("GameServerGroupName");
+                    context.Writer.WriteTextString(publicRequest.GameServerGroupName);
+                }
+                if (publicRequest.IsSetGameServerProtectionPolicy())
+                {
+                    context.Writer.WriteTextString("GameServerProtectionPolicy");
+                    context.Writer.WriteTextString(publicRequest.GameServerProtectionPolicy);
+                }
+                if (publicRequest.IsSetInstanceDefinitions())
+                {
+                    context.Writer.WriteTextString("InstanceDefinitions");
+                    context.Writer.WriteStartArray(publicRequest.InstanceDefinitions.Count);
+                    foreach(var publicRequestInstanceDefinitionsListValue in publicRequest.InstanceDefinitions)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetRoleArn())
+                        var marshaller = InstanceDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestInstanceDefinitionsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WriteTextString("RoleArn");
+                    context.Writer.WriteTextString(publicRequest.RoleArn);
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
             {
-                context.Writer.WritePropertyName("RoleArn");
-                context.Writer.WriteStringValue(publicRequest.RoleArn);
+                CborWriterPool.Return(writer);
             }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static UpdateGameServerGroupRequestMarshaller _instance = new UpdateGameServerGroupRequestMarshaller();        

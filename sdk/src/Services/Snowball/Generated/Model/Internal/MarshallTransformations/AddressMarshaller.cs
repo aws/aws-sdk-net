@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Address Marshaller
     /// </summary>
-    public class AddressMarshaller : IRequestMarshaller<Address, JsonMarshallerContext> 
+    public class AddressMarshaller : IRequestMarshaller<Address, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,100 +45,86 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Address requestObject, JsonMarshallerContext context)
+        public void Marshall(Address requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAddressId())
-            {
-                context.Writer.WritePropertyName("AddressId");
-                context.Writer.WriteStringValue(requestObject.AddressId);
-            }
 
-            if(requestObject.IsSetCity())
+            if (requestObject.IsSetAddressId())
             {
-                context.Writer.WritePropertyName("City");
-                context.Writer.WriteStringValue(requestObject.City);
+                context.Writer.WriteTextString("AddressId");
+                context.Writer.WriteTextString(requestObject.AddressId);
             }
-
-            if(requestObject.IsSetCompany())
+            if (requestObject.IsSetCity())
             {
-                context.Writer.WritePropertyName("Company");
-                context.Writer.WriteStringValue(requestObject.Company);
+                context.Writer.WriteTextString("City");
+                context.Writer.WriteTextString(requestObject.City);
             }
-
-            if(requestObject.IsSetCountry())
+            if (requestObject.IsSetCompany())
             {
-                context.Writer.WritePropertyName("Country");
-                context.Writer.WriteStringValue(requestObject.Country);
+                context.Writer.WriteTextString("Company");
+                context.Writer.WriteTextString(requestObject.Company);
             }
-
-            if(requestObject.IsSetIsRestricted())
+            if (requestObject.IsSetCountry())
             {
-                context.Writer.WritePropertyName("IsRestricted");
-                context.Writer.WriteBooleanValue(requestObject.IsRestricted.Value);
+                context.Writer.WriteTextString("Country");
+                context.Writer.WriteTextString(requestObject.Country);
             }
-
-            if(requestObject.IsSetLandmark())
+            if (requestObject.IsSetIsRestricted())
             {
-                context.Writer.WritePropertyName("Landmark");
-                context.Writer.WriteStringValue(requestObject.Landmark);
+                context.Writer.WriteTextString("IsRestricted");
+                context.Writer.WriteBoolean(requestObject.IsRestricted.Value);
             }
-
-            if(requestObject.IsSetName())
+            if (requestObject.IsSetLandmark())
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("Landmark");
+                context.Writer.WriteTextString(requestObject.Landmark);
             }
-
-            if(requestObject.IsSetPhoneNumber())
+            if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("PhoneNumber");
-                context.Writer.WriteStringValue(requestObject.PhoneNumber);
+                context.Writer.WriteTextString("Name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
-
-            if(requestObject.IsSetPostalCode())
+            if (requestObject.IsSetPhoneNumber())
             {
-                context.Writer.WritePropertyName("PostalCode");
-                context.Writer.WriteStringValue(requestObject.PostalCode);
+                context.Writer.WriteTextString("PhoneNumber");
+                context.Writer.WriteTextString(requestObject.PhoneNumber);
             }
-
-            if(requestObject.IsSetPrefectureOrDistrict())
+            if (requestObject.IsSetPostalCode())
             {
-                context.Writer.WritePropertyName("PrefectureOrDistrict");
-                context.Writer.WriteStringValue(requestObject.PrefectureOrDistrict);
+                context.Writer.WriteTextString("PostalCode");
+                context.Writer.WriteTextString(requestObject.PostalCode);
             }
-
-            if(requestObject.IsSetStateOrProvince())
+            if (requestObject.IsSetPrefectureOrDistrict())
             {
-                context.Writer.WritePropertyName("StateOrProvince");
-                context.Writer.WriteStringValue(requestObject.StateOrProvince);
+                context.Writer.WriteTextString("PrefectureOrDistrict");
+                context.Writer.WriteTextString(requestObject.PrefectureOrDistrict);
             }
-
-            if(requestObject.IsSetStreet1())
+            if (requestObject.IsSetStateOrProvince())
             {
-                context.Writer.WritePropertyName("Street1");
-                context.Writer.WriteStringValue(requestObject.Street1);
+                context.Writer.WriteTextString("StateOrProvince");
+                context.Writer.WriteTextString(requestObject.StateOrProvince);
             }
-
-            if(requestObject.IsSetStreet2())
+            if (requestObject.IsSetStreet1())
             {
-                context.Writer.WritePropertyName("Street2");
-                context.Writer.WriteStringValue(requestObject.Street2);
+                context.Writer.WriteTextString("Street1");
+                context.Writer.WriteTextString(requestObject.Street1);
             }
-
-            if(requestObject.IsSetStreet3())
+            if (requestObject.IsSetStreet2())
             {
-                context.Writer.WritePropertyName("Street3");
-                context.Writer.WriteStringValue(requestObject.Street3);
+                context.Writer.WriteTextString("Street2");
+                context.Writer.WriteTextString(requestObject.Street2);
             }
-
-            if(requestObject.IsSetType())
+            if (requestObject.IsSetStreet3())
             {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("Street3");
+                context.Writer.WriteTextString(requestObject.Street3);
             }
-
+            if (requestObject.IsSetType())
+            {
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteTextString(requestObject.Type);
+            }
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServerProcess Marshaller
     /// </summary>
-    public class ServerProcessMarshaller : IRequestMarshaller<ServerProcess, JsonMarshallerContext> 
+    public class ServerProcessMarshaller : IRequestMarshaller<ServerProcess, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ServerProcess requestObject, JsonMarshallerContext context)
+        public void Marshall(ServerProcess requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetConcurrentExecutions())
-            {
-                context.Writer.WritePropertyName("ConcurrentExecutions");
-                context.Writer.WriteNumberValue(requestObject.ConcurrentExecutions.Value);
-            }
 
-            if(requestObject.IsSetLaunchPath())
+            if (requestObject.IsSetConcurrentExecutions())
             {
-                context.Writer.WritePropertyName("LaunchPath");
-                context.Writer.WriteStringValue(requestObject.LaunchPath);
+                context.Writer.WriteTextString("ConcurrentExecutions");
+                context.Writer.WriteInt32(requestObject.ConcurrentExecutions.Value);
             }
-
-            if(requestObject.IsSetParameters())
+            if (requestObject.IsSetLaunchPath())
             {
-                context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteStringValue(requestObject.Parameters);
+                context.Writer.WriteTextString("LaunchPath");
+                context.Writer.WriteTextString(requestObject.LaunchPath);
             }
-
+            if (requestObject.IsSetParameters())
+            {
+                context.Writer.WriteTextString("Parameters");
+                context.Writer.WriteTextString(requestObject.Parameters);
+            }
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventTriggerDefinition Marshaller
     /// </summary>
-    public class EventTriggerDefinitionMarshaller : IRequestMarshaller<EventTriggerDefinition, JsonMarshallerContext> 
+    public class EventTriggerDefinitionMarshaller : IRequestMarshaller<EventTriggerDefinition, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EventTriggerDefinition requestObject, JsonMarshallerContext context)
+        public void Marshall(EventTriggerDefinition requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEventResourceARN())
-            {
-                context.Writer.WritePropertyName("EventResourceARN");
-                context.Writer.WriteStringValue(requestObject.EventResourceARN);
-            }
 
+            if (requestObject.IsSetEventResourceARN())
+            {
+                context.Writer.WriteTextString("EventResourceARN");
+                context.Writer.WriteTextString(requestObject.EventResourceARN);
+            }
         }
 
         /// <summary>

@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -59,56 +58,46 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartFleetActionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.StartFleetActions";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GameLift/operation/StartFleetActions";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetActions())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("Actions");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetActions())
                 {
-                        context.Writer.WriteStringValue(publicRequestActionsListValue);
+                    context.Writer.WriteTextString("Actions");
+                    context.Writer.WriteStartArray(publicRequest.Actions.Count);
+                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    {
+                            context.Writer.WriteTextString(publicRequestActionsListValue);
+                    }
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteEndArray();
+                if (publicRequest.IsSetFleetId())
+                {
+                    context.Writer.WriteTextString("FleetId");
+                    context.Writer.WriteTextString(publicRequest.FleetId);
+                }
+                if (publicRequest.IsSetLocation())
+                {
+                    context.Writer.WriteTextString("Location");
+                    context.Writer.WriteTextString(publicRequest.Location);
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-
-            if(publicRequest.IsSetFleetId())
+            finally
             {
-                context.Writer.WritePropertyName("FleetId");
-                context.Writer.WriteStringValue(publicRequest.FleetId);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetLocation())
-            {
-                context.Writer.WritePropertyName("Location");
-                context.Writer.WriteStringValue(publicRequest.Location);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static StartFleetActionsRequestMarshaller _instance = new StartFleetActionsRequestMarshaller();        

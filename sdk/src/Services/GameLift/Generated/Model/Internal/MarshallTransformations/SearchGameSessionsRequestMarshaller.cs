@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -59,75 +58,61 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public IRequest Marshall(SearchGameSessionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.SearchGameSessions";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GameLift/operation/SearchGameSessions";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAliasId())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("AliasId");
-                context.Writer.WriteStringValue(publicRequest.AliasId);
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAliasId())
+                {
+                    context.Writer.WriteTextString("AliasId");
+                    context.Writer.WriteTextString(publicRequest.AliasId);
+                }
+                if (publicRequest.IsSetFilterExpression())
+                {
+                    context.Writer.WriteTextString("FilterExpression");
+                    context.Writer.WriteTextString(publicRequest.FilterExpression);
+                }
+                if (publicRequest.IsSetFleetId())
+                {
+                    context.Writer.WriteTextString("FleetId");
+                    context.Writer.WriteTextString(publicRequest.FleetId);
+                }
+                if (publicRequest.IsSetLimit())
+                {
+                    context.Writer.WriteTextString("Limit");
+                    context.Writer.WriteInt32(publicRequest.Limit.Value);
+                }
+                if (publicRequest.IsSetLocation())
+                {
+                    context.Writer.WriteTextString("Location");
+                    context.Writer.WriteTextString(publicRequest.Location);
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                if (publicRequest.IsSetSortExpression())
+                {
+                    context.Writer.WriteTextString("SortExpression");
+                    context.Writer.WriteTextString(publicRequest.SortExpression);
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-
-            if(publicRequest.IsSetFilterExpression())
+            finally
             {
-                context.Writer.WritePropertyName("FilterExpression");
-                context.Writer.WriteStringValue(publicRequest.FilterExpression);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetFleetId())
-            {
-                context.Writer.WritePropertyName("FleetId");
-                context.Writer.WriteStringValue(publicRequest.FleetId);
-            }
-
-            if(publicRequest.IsSetLimit())
-            {
-                context.Writer.WritePropertyName("Limit");
-                context.Writer.WriteNumberValue(publicRequest.Limit.Value);
-            }
-
-            if(publicRequest.IsSetLocation())
-            {
-                context.Writer.WritePropertyName("Location");
-                context.Writer.WriteStringValue(publicRequest.Location);
-            }
-
-            if(publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("NextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-
-            if(publicRequest.IsSetSortExpression())
-            {
-                context.Writer.WritePropertyName("SortExpression");
-                context.Writer.WriteStringValue(publicRequest.SortExpression);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static SearchGameSessionsRequestMarshaller _instance = new SearchGameSessionsRequestMarshaller();        

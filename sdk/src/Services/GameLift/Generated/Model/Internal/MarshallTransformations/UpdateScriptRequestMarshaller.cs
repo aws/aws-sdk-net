@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -59,68 +58,56 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateScriptRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.UpdateScript";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GameLift/operation/UpdateScript";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetName())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("Name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                if (publicRequest.IsSetScriptId())
+                {
+                    context.Writer.WriteTextString("ScriptId");
+                    context.Writer.WriteTextString(publicRequest.ScriptId);
+                }
+                if (publicRequest.IsSetStorageLocation())
+                {
+                    context.Writer.WriteTextString("StorageLocation");
+                    context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetScriptId())
+                    var marshaller = S3LocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StorageLocation, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetVersion())
+                {
+                    context.Writer.WriteTextString("Version");
+                    context.Writer.WriteTextString(publicRequest.Version);
+                }
+                if (publicRequest.IsSetZipFile())
+                {
+                    context.Writer.WriteTextString("ZipFile");
+                    context.Writer.WriteByteString(publicRequest.ZipFile.ToArray());
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
             {
-                context.Writer.WritePropertyName("ScriptId");
-                context.Writer.WriteStringValue(publicRequest.ScriptId);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetStorageLocation())
-            {
-                context.Writer.WritePropertyName("StorageLocation");
-                context.Writer.WriteStartObject();
-
-                var marshaller = S3LocationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.StorageLocation, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetVersion())
-            {
-                context.Writer.WritePropertyName("Version");
-                context.Writer.WriteStringValue(publicRequest.Version);
-            }
-
-            if(publicRequest.IsSetZipFile())
-            {
-                context.Writer.WritePropertyName("ZipFile");
-                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.ZipFile);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static UpdateScriptRequestMarshaller _instance = new UpdateScriptRequestMarshaller();        

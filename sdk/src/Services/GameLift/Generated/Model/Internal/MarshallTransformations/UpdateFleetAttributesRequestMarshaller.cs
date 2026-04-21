@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -59,90 +58,76 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateFleetAttributesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.UpdateFleetAttributes";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GameLift/operation/UpdateFleetAttributes";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAnywhereConfiguration())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("AnywhereConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AnywhereConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.AnywhereConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-
-            if(publicRequest.IsSetFleetId())
-            {
-                context.Writer.WritePropertyName("FleetId");
-                context.Writer.WriteStringValue(publicRequest.FleetId);
-            }
-
-            if(publicRequest.IsSetMetricGroups())
-            {
-                context.Writer.WritePropertyName("MetricGroups");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestMetricGroupsListValue in publicRequest.MetricGroups)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAnywhereConfiguration())
                 {
-                        context.Writer.WriteStringValue(publicRequestMetricGroupsListValue);
+                    context.Writer.WriteTextString("AnywhereConfiguration");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = AnywhereConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AnywhereConfiguration, context);
+
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetFleetId())
+                {
+                    context.Writer.WriteTextString("FleetId");
+                    context.Writer.WriteTextString(publicRequest.FleetId);
+                }
+                if (publicRequest.IsSetMetricGroups())
+                {
+                    context.Writer.WriteTextString("MetricGroups");
+                    context.Writer.WriteStartArray(publicRequest.MetricGroups.Count);
+                    foreach(var publicRequestMetricGroupsListValue in publicRequest.MetricGroups)
+                    {
+                            context.Writer.WriteTextString(publicRequestMetricGroupsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("Name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                if (publicRequest.IsSetNewGameSessionProtectionPolicy())
+                {
+                    context.Writer.WriteTextString("NewGameSessionProtectionPolicy");
+                    context.Writer.WriteTextString(publicRequest.NewGameSessionProtectionPolicy);
+                }
+                if (publicRequest.IsSetResourceCreationLimitPolicy())
+                {
+                    context.Writer.WriteTextString("ResourceCreationLimitPolicy");
+                    context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetName())
+                    var marshaller = ResourceCreationLimitPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ResourceCreationLimitPolicy, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetNewGameSessionProtectionPolicy())
-            {
-                context.Writer.WritePropertyName("NewGameSessionProtectionPolicy");
-                context.Writer.WriteStringValue(publicRequest.NewGameSessionProtectionPolicy);
-            }
-
-            if(publicRequest.IsSetResourceCreationLimitPolicy())
-            {
-                context.Writer.WritePropertyName("ResourceCreationLimitPolicy");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ResourceCreationLimitPolicyMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ResourceCreationLimitPolicy, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static UpdateFleetAttributesRequestMarshaller _instance = new UpdateFleetAttributesRequestMarshaller();        
