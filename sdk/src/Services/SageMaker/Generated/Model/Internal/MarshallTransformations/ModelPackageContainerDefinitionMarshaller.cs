@@ -46,6 +46,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalModelDataSources())
+            {
+                context.Writer.WritePropertyName("AdditionalModelDataSources");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAdditionalModelDataSourcesListValue in requestObject.AdditionalModelDataSources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AdditionalModelDataSourceMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAdditionalModelDataSourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetAdditionalS3DataSource())
             {
                 context.Writer.WritePropertyName("AdditionalS3DataSource");

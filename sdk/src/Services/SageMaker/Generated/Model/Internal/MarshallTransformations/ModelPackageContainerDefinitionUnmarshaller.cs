@@ -56,6 +56,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AdditionalModelDataSources", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AdditionalModelDataSource, AdditionalModelDataSourceUnmarshaller>(AdditionalModelDataSourceUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalModelDataSources = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AdditionalS3DataSource", targetDepth))
                 {
                     var unmarshaller = AdditionalS3DataSourceUnmarshaller.Instance;

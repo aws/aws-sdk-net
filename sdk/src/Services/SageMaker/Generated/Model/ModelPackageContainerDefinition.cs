@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ModelPackageContainerDefinition
     {
+        private List<AdditionalModelDataSource> _additionalModelDataSources = AWSConfigs.InitializeCollections ? new List<AdditionalModelDataSource>() : null;
         private AdditionalS3DataSource _additionalS3DataSource;
         private BaseModel _baseModel;
         private string _containerHostname;
@@ -49,6 +50,31 @@ namespace Amazon.SageMaker.Model
         private ModelInput _modelInput;
         private string _nearestModelName;
         private string _productId;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalModelDataSources. 
+        /// <para>
+        /// Data sources that are available to your model in addition to the one that you specify
+        /// for <c>ModelDataSource</c> when you use the <c>CreateModelPackage</c> action.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<AdditionalModelDataSource> AdditionalModelDataSources
+        {
+            get { return this._additionalModelDataSources; }
+            set { this._additionalModelDataSources = value; }
+        }
+
+        // Check to see if AdditionalModelDataSources property is set
+        internal bool IsSetAdditionalModelDataSources()
+        {
+            return this._additionalModelDataSources != null && (this._additionalModelDataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AdditionalS3DataSource. 
