@@ -222,6 +222,15 @@ namespace Amazon.IVS
         /// <param name="request">Container for the necessary parameters to execute the BatchGetChannel service method.</param>
         /// 
         /// <returns>The response from the BatchGetChannel service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchGetChannel">REST API Reference for BatchGetChannel Operation</seealso>
         BatchGetChannelResponse BatchGetChannel(BatchGetChannelRequest request);
 
@@ -236,6 +245,15 @@ namespace Amazon.IVS
         /// </param>
         /// 
         /// <returns>The response from the BatchGetChannel service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchGetChannel">REST API Reference for BatchGetChannel Operation</seealso>
         Task<BatchGetChannelResponse> BatchGetChannelAsync(BatchGetChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -250,6 +268,15 @@ namespace Amazon.IVS
         /// <param name="request">Container for the necessary parameters to execute the BatchGetStreamKey service method.</param>
         /// 
         /// <returns>The response from the BatchGetStreamKey service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchGetStreamKey">REST API Reference for BatchGetStreamKey Operation</seealso>
         BatchGetStreamKeyResponse BatchGetStreamKey(BatchGetStreamKeyRequest request);
 
@@ -264,6 +291,15 @@ namespace Amazon.IVS
         /// </param>
         /// 
         /// <returns>The response from the BatchGetStreamKey service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchGetStreamKey">REST API Reference for BatchGetStreamKey Operation</seealso>
         Task<BatchGetStreamKeyResponse> BatchGetStreamKeyAsync(BatchGetStreamKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -320,6 +356,82 @@ namespace Amazon.IVS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchStartViewerSessionRevocation">REST API Reference for BatchStartViewerSessionRevocation Operation</seealso>
         Task<BatchStartViewerSessionRevocationResponse> BatchStartViewerSessionRevocationAsync(BatchStartViewerSessionRevocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAdConfiguration
+
+
+        /// <summary>
+        /// Creates a new ad configuration to be used for server-side ad insertion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAdConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateAdConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateAdConfiguration">REST API Reference for CreateAdConfiguration Operation</seealso>
+        CreateAdConfigurationResponse CreateAdConfiguration(CreateAdConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new ad configuration to be used for server-side ad insertion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAdConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAdConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateAdConfiguration">REST API Reference for CreateAdConfiguration Operation</seealso>
+        Task<CreateAdConfigurationResponse> CreateAdConfigurationAsync(CreateAdConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -608,6 +720,64 @@ namespace Amazon.IVS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateStreamKey">REST API Reference for CreateStreamKey Operation</seealso>
         Task<CreateStreamKeyResponse> CreateStreamKeyAsync(CreateStreamKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAdConfiguration
+
+
+        /// <summary>
+        /// Deletes the specified ad configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAdConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAdConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteAdConfiguration">REST API Reference for DeleteAdConfiguration Operation</seealso>
+        DeleteAdConfigurationResponse DeleteAdConfiguration(DeleteAdConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified ad configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAdConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAdConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteAdConfiguration">REST API Reference for DeleteAdConfiguration Operation</seealso>
+        Task<DeleteAdConfigurationResponse> DeleteAdConfigurationAsync(DeleteAdConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -924,6 +1094,58 @@ namespace Amazon.IVS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteStreamKey">REST API Reference for DeleteStreamKey Operation</seealso>
         Task<DeleteStreamKeyResponse> DeleteStreamKeyAsync(DeleteStreamKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAdConfiguration
+
+
+        /// <summary>
+        /// Gets the ad configuration represented by the specified ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetAdConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetAdConfiguration">REST API Reference for GetAdConfiguration Operation</seealso>
+        GetAdConfigurationResponse GetAdConfiguration(GetAdConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Gets the ad configuration represented by the specified ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAdConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetAdConfiguration">REST API Reference for GetAdConfiguration Operation</seealso>
+        Task<GetAdConfigurationResponse> GetAdConfigurationAsync(GetAdConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1336,6 +1558,144 @@ namespace Amazon.IVS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ImportPlaybackKeyPair">REST API Reference for ImportPlaybackKeyPair Operation</seealso>
         Task<ImportPlaybackKeyPairResponse> ImportPlaybackKeyPairAsync(ImportPlaybackKeyPairRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  InsertAdBreak
+
+
+        /// <summary>
+        /// Inserts an ad marker in the playlist for the specified channel and duration using
+        /// the ad configuration associated with the channel.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> AWS Elemental MediaTailor (EMT), the service that handles ad requests,
+        /// provides CloudWatch metrics to help you monitor the success or failure of each InsertAdBreak
+        /// operation. See <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monitoring-cloudwatch-metrics.html">Monitoring
+        /// AWS Elemental MediaTailor with Amazon CloudWatch</a> metrics in the <i>AWS Elemental
+        /// MediaTailor User Guide</i> for details on available metrics.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InsertAdBreak service method.</param>
+        /// 
+        /// <returns>The response from the InsertAdBreak service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ChannelNotBroadcastingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/InsertAdBreak">REST API Reference for InsertAdBreak Operation</seealso>
+        InsertAdBreakResponse InsertAdBreak(InsertAdBreakRequest request);
+
+
+
+        /// <summary>
+        /// Inserts an ad marker in the playlist for the specified channel and duration using
+        /// the ad configuration associated with the channel.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> AWS Elemental MediaTailor (EMT), the service that handles ad requests,
+        /// provides CloudWatch metrics to help you monitor the success or failure of each InsertAdBreak
+        /// operation. See <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monitoring-cloudwatch-metrics.html">Monitoring
+        /// AWS Elemental MediaTailor with Amazon CloudWatch</a> metrics in the <i>AWS Elemental
+        /// MediaTailor User Guide</i> for details on available metrics.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InsertAdBreak service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InsertAdBreak service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ChannelNotBroadcastingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/InsertAdBreak">REST API Reference for InsertAdBreak Operation</seealso>
+        Task<InsertAdBreakResponse> InsertAdBreakAsync(InsertAdBreakRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAdConfigurations
+
+
+        /// <summary>
+        /// Gets summary information about all ad configurations in your account, in the AWS region
+        /// where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAdConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListAdConfigurations service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListAdConfigurations">REST API Reference for ListAdConfigurations Operation</seealso>
+        ListAdConfigurationsResponse ListAdConfigurations(ListAdConfigurationsRequest request);
+
+
+
+        /// <summary>
+        /// Gets summary information about all ad configurations in your account, in the AWS region
+        /// where the API request is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAdConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAdConfigurations service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListAdConfigurations">REST API Reference for ListAdConfigurations Operation</seealso>
+        Task<ListAdConfigurationsResponse> ListAdConfigurationsAsync(ListAdConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

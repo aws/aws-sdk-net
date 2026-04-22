@@ -38,11 +38,31 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class ListChannelsRequest : AmazonIVSRequest
     {
+        private string _filterByAdConfigurationArn;
         private string _filterByName;
         private string _filterByPlaybackRestrictionPolicyArn;
         private string _filterByRecordingConfigurationArn;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property FilterByAdConfigurationArn. 
+        /// <para>
+        /// Filters the channel list to match the specified ad configuration ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string FilterByAdConfigurationArn
+        {
+            get { return this._filterByAdConfigurationArn; }
+            set { this._filterByAdConfigurationArn = value; }
+        }
+
+        // Check to see if FilterByAdConfigurationArn property is set
+        internal bool IsSetFilterByAdConfigurationArn()
+        {
+            return this._filterByAdConfigurationArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FilterByName. 

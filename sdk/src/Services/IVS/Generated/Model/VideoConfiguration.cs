@@ -51,8 +51,10 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property AvcLevel. 
         /// <para>
-        /// Indicates the degree of required decoder performance for a profile. Normally this
-        /// is set automatically by the encoder. For details, see the H.264 specification.
+        /// (Deprecated) Indicates the degree of required decoder performance for a profile. Normally
+        /// this is set automatically by the encoder. For details, see the H.264 specification.
+        /// This is populated only when VideoConfiguration is part of the deprecated IngestConfiguration;
+        /// otherwise, this is an empty string.
         /// </para>
         /// </summary>
         public string AvcLevel
@@ -70,8 +72,10 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property AvcProfile. 
         /// <para>
-        /// Indicates to the decoder the requirements for decoding the stream. For definitions
-        /// of the valid values, see the H.264 specification.
+        /// (Deprecated) Indicates to the decoder the requirements for decoding the stream. For
+        /// definitions of the valid values, see the H.264 specification. This is populated only
+        /// when VideoConfiguration is part of the deprecated IngestConfiguration; otherwise,
+        /// this is an empty string.
         /// </para>
         /// </summary>
         public string AvcProfile
@@ -200,7 +204,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Track. 
         /// <para>
-        /// Name of the video track. If multitrack is not enabled, this is track0 (the sole track).
+        /// Name of the video track. If multitrack is not enabled, this is Track0 (the sole track).
         /// </para>
         /// </summary>
         public string Track

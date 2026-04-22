@@ -37,6 +37,14 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Paginator for ListAdConfigurations operation
+        ///</summary>
+        public IListAdConfigurationsPaginator ListAdConfigurations(ListAdConfigurationsRequest request) 
+        {
+            return new ListAdConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListChannels operation
         ///</summary>
         public IListChannelsPaginator ListChannels(ListChannelsRequest request) 

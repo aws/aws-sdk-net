@@ -28,6 +28,16 @@ namespace Amazon.IVS.Model
     {
 
         /// <summary>
+        /// Paginator for ListAdConfigurations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAdConfigurationsPaginator ListAdConfigurations(ListAdConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListChannels operation
         ///</summary>
         [AWSPaginator(

@@ -118,7 +118,7 @@ namespace Amazon.IVS.Model
         /// Gets and sets the property Track. 
         /// <para>
         /// Name of the audio track (if the stream has an audio track). If multitrack is not enabled,
-        /// this is track0 (the sole track).
+        /// this is Track0 (the sole track).
         /// </para>
         /// </summary>
         public string Track
