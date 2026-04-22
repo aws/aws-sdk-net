@@ -150,30 +150,7 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
         return _context.SaveAsync(_item.GetType(), _item, saveConfig);
     }
 
-    private void ConfigureContextDelegates()
-    {
-        var itemType = GetItemType();
-        var configureMap = new Dictionary<Type, Action>
-        {
-            [typeof(BenchmarkItemMinimal)] = ConfigureContextDelegates<BenchmarkItemMinimal>,
-            [typeof(BenchmarkItemMinimalWithConverter)] = ConfigureContextDelegates<BenchmarkItemMinimalWithConverter>,
-            [typeof(BenchmarkItemStandard)] = ConfigureContextDelegates<BenchmarkItemStandard>,
-            [typeof(BenchmarkItemStandardWithConverter)] = ConfigureContextDelegates<BenchmarkItemStandardWithConverter>,
-            [typeof(BenchmarkItemAdvanced)] = ConfigureContextDelegates<BenchmarkItemAdvanced>,
-            [typeof(BenchmarkItemAdvancedWithConverter)] = ConfigureContextDelegates<BenchmarkItemAdvancedWithConverter>,
-            [typeof(BenchmarkItemPolymorphicFlatten)] = ConfigureContextDelegates<BenchmarkItemPolymorphicFlatten>,
-            [typeof(BenchmarkItemPolymorphicFlattenWithConverter)] = ConfigureContextDelegates<BenchmarkItemPolymorphicFlattenWithConverter>
-        };
-
-        if (!configureMap.TryGetValue(itemType, out var configure))
-        {
-            throw new InvalidOperationException($"Unsupported benchmark item type: {itemType}.");
-        }
-
-        configure();
-    }
-
-    private void ConfigureContextDelegates<T>()
+    protected override void ConfigureContextDelegates<T>()
     {
         var typedItem = (T)_item!;
         var operationConfig = new DynamoDBOperationConfig { OverrideTableName = TableName };
@@ -381,7 +358,7 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
 
     private string CreatePayload()
     {
-        var size = _itemSize == BenchmarkItemSize.Small ? 32 : 2048;
+        var size = _itemSize == BenchmarkItemSize.Small ? 32 : 1024;
         return new string('a', size);
     }
 

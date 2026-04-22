@@ -24,8 +24,8 @@ public sealed class BenchmarkTableRuntimeOptions
         {
             ClientFactory = MockDynamoDbClientFactory.Create,
             TableFactory = (client, tableName) => new TableBuilder(client, tableName)
-                .AddHashKey("pk", DynamoDBEntryType.String)
-                .AddRangeKey("sk", DynamoDBEntryType.String)
+                .AddHashKey("PartitionKey", DynamoDBEntryType.String)
+                .AddRangeKey("SortKey", DynamoDBEntryType.String)
                 .Build()
         };
     }
