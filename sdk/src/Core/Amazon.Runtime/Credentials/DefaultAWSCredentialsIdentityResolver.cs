@@ -96,13 +96,17 @@ namespace Amazon.Runtime.Credentials
             => ResolveIdentity(clientConfig);
 
         /// <summary>
-        /// Resolves the identity using no cancellation token. If a network call is made during credential
-        /// resolution (e.g. EC2 instance metadata) and hangs, this overload will block indefinitely.
-        /// Use <see cref="ResolveIdentity(IClientConfig, CancellationToken)"/> with a timeout-bound
-        /// cancellation token to avoid this.
+        /// Resolves the identity using a cancellation token with a default of 35 seconds. 
+        /// 35 seconds is calculated as the worst case scenario for DefaultInstanceProfileAWSCredentials and its
+        /// retry mechanism during resolution.
+        /// To pass in your own cancellation token call <see cref="ResolveIdentity(IClientConfig, CancellationToken)"/>.
         /// </summary>
         public AWSCredentials ResolveIdentity(IClientConfig clientConfig)
-            => ResolveIdentity(clientConfig, CancellationToken.None);
+        {
+            using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(35));
+            return ResolveIdentity(clientConfig, cts.Token);
+        }
+            
 
         /// <summary>
         /// Resolves the identity using the provided <paramref name="cancellationToken"/>. Pass a token
