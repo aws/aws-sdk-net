@@ -271,4 +271,124 @@ namespace Amazon.EMRServerless
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SESSION for ResourceType
+        /// </summary>
+        public static readonly ResourceType SESSION = new ResourceType("SESSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SessionState.
+    /// </summary>
+    public class SessionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUSY for SessionState
+        /// </summary>
+        public static readonly SessionState BUSY = new SessionState("BUSY");
+        /// <summary>
+        /// Constant FAILED for SessionState
+        /// </summary>
+        public static readonly SessionState FAILED = new SessionState("FAILED");
+        /// <summary>
+        /// Constant IDLE for SessionState
+        /// </summary>
+        public static readonly SessionState IDLE = new SessionState("IDLE");
+        /// <summary>
+        /// Constant STARTED for SessionState
+        /// </summary>
+        public static readonly SessionState STARTED = new SessionState("STARTED");
+        /// <summary>
+        /// Constant STARTING for SessionState
+        /// </summary>
+        public static readonly SessionState STARTING = new SessionState("STARTING");
+        /// <summary>
+        /// Constant SUBMITTED for SessionState
+        /// </summary>
+        public static readonly SessionState SUBMITTED = new SessionState("SUBMITTED");
+        /// <summary>
+        /// Constant TERMINATED for SessionState
+        /// </summary>
+        public static readonly SessionState TERMINATED = new SessionState("TERMINATED");
+        /// <summary>
+        /// Constant TERMINATING for SessionState
+        /// </summary>
+        public static readonly SessionState TERMINATING = new SessionState("TERMINATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionState FindValue(string value)
+        {
+            return FindValue<SessionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

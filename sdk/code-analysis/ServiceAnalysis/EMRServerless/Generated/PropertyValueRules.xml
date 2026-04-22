@@ -115,6 +115,69 @@
     <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetResourceDashboardRequest.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetResourceDashboardRequest.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetResourceDashboardResponse.Url</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetSessionRequest.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetSessionRequest.SessionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetSessionEndpointRequest.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetSessionEndpointRequest.SessionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetSessionEndpointResponse.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetSessionEndpointResponse.AuthToken</property>
+    <min>1</min>
+    <max>8000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetSessionEndpointResponse.Endpoint</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.GetSessionEndpointResponse.SessionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRServerless.Model.ListApplicationsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -184,6 +247,29 @@
     <pattern>[A-Za-z0-9_=-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRServerless.Model.ListSessionsRequest.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.ListSessionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.ListSessionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[A-Za-z0-9_=-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.ListSessionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[A-Za-z0-9_=-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRServerless.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>60</min>
     <max>1024</max>
@@ -243,6 +329,53 @@
     <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRServerless.Model.StartSessionRequest.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.StartSessionRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.StartSessionRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):iam::([0-9]{12}):(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.StartSessionRequest.IdleTimeoutMinutes</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.StartSessionRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.StartSessionResponse.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.StartSessionResponse.Arn</property>
+    <min>60</min>
+    <max>1024</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+\/sessions\/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.StartSessionResponse.SessionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRServerless.Model.StopApplicationRequest.ApplicationId</property>
     <min>1</min>
     <max>64</max>
@@ -253,6 +386,30 @@
     <min>60</min>
     <max>1024</max>
     <pattern>arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+(\/jobruns\/[0-9a-zA-Z]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.TerminateSessionRequest.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.TerminateSessionRequest.SessionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.TerminateSessionResponse.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.TerminateSessionResponse.SessionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.UntagResourceRequest.ResourceArn</property>
@@ -654,6 +811,107 @@
     <min>1</min>
     <max>10280</max>
     <pattern>.*[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.Session.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.Session.Arn</property>
+    <min>60</min>
+    <max>1024</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+\/sessions\/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.Session.CreatedBy</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):(iam|sts)::(\d{12})?:[\w/+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.Session.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):iam::([0-9]{12}):(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.Session.IdleTimeoutMinutes</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.Session.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.Session.ReleaseLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9._/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.Session.SessionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.Session.StateDetails</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.SessionSummary.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.SessionSummary.Arn</property>
+    <min>60</min>
+    <max>1024</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+\/sessions\/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.SessionSummary.CreatedBy</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):(iam|sts)::(\d{12})?:[\w/+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.SessionSummary.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):iam::([0-9]{12}):(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.SessionSummary.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.SessionSummary.ReleaseLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9._/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.SessionSummary.SessionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRServerless.Model.SessionSummary.StateDetails</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.SparkSubmit.EntryPoint</property>

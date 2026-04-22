@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InteractiveConfiguration Marshaller
+    /// SessionConfigurationOverrides Marshaller
     /// </summary>
-    public class InteractiveConfigurationMarshaller : IRequestMarshaller<InteractiveConfiguration, JsonMarshallerContext> 
+    public class SessionConfigurationOverridesMarshaller : IRequestMarshaller<SessionConfigurationOverrides, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,26 +42,24 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InteractiveConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SessionConfigurationOverrides requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetLivyEndpointEnabled())
+            if(requestObject.IsSetRuntimeConfiguration())
             {
-                context.Writer.WritePropertyName("livyEndpointEnabled");
-                context.Writer.WriteBooleanValue(requestObject.LivyEndpointEnabled.Value);
-            }
+                context.Writer.WritePropertyName("runtimeConfiguration");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectRuntimeConfigurationListValue in requestObject.RuntimeConfiguration)
+                {
+                    context.Writer.WriteStartObject();
 
-            if(requestObject.IsSetSessionEnabled())
-            {
-                context.Writer.WritePropertyName("sessionEnabled");
-                context.Writer.WriteBooleanValue(requestObject.SessionEnabled.Value);
-            }
+                    var marshaller = ConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRuntimeConfigurationListValue, context);
 
-            if(requestObject.IsSetStudioEnabled())
-            {
-                context.Writer.WritePropertyName("studioEnabled");
-                context.Writer.WriteBooleanValue(requestObject.StudioEnabled.Value);
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -69,7 +67,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static InteractiveConfigurationMarshaller Instance = new InteractiveConfigurationMarshaller();
+        public readonly static SessionConfigurationOverridesMarshaller Instance = new SessionConfigurationOverridesMarshaller();
 
     }
 }
