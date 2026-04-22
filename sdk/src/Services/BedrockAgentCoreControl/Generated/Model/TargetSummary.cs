@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private DateTime? _createdAt;
         private string _description;
         private string _name;
+        private int? _resourcePriority;
         private TargetStatus _status;
         private string _targetId;
         private DateTime? _updatedAt;
@@ -97,6 +98,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourcePriority. 
+        /// <para>
+        /// Priority for resolving resource URI conflicts across targets. Lower values take precedence.
+        /// Defaults to 1000 when not set.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public int? ResourcePriority
+        {
+            get { return this._resourcePriority; }
+            set { this._resourcePriority = value; }
+        }
+
+        // Check to see if ResourcePriority property is set
+        internal bool IsSetResourcePriority()
+        {
+            return this._resourcePriority.HasValue; 
         }
 
         /// <summary>

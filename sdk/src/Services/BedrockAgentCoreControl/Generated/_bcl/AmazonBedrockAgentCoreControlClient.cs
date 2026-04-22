@@ -1023,6 +1023,83 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  CreateHarness
+
+
+        /// <summary>
+        /// Operation to create a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHarness service method.</param>
+        /// 
+        /// <returns>The response from the CreateHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateHarness">REST API Reference for CreateHarness Operation</seealso>
+        public virtual CreateHarnessResponse CreateHarness(CreateHarnessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHarnessResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHarnessResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Operation to create a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHarness service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateHarness">REST API Reference for CreateHarness Operation</seealso>
+        public virtual Task<CreateHarnessResponse> CreateHarnessAsync(CreateHarnessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHarnessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateHarnessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateMemory
 
 
@@ -2466,6 +2543,83 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  DeleteHarness
+
+
+        /// <summary>
+        /// Operation to delete a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHarness service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteHarness">REST API Reference for DeleteHarness Operation</seealso>
+        public virtual DeleteHarnessResponse DeleteHarness(DeleteHarnessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHarnessResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHarnessResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Operation to delete a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHarness service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteHarness">REST API Reference for DeleteHarness Operation</seealso>
+        public virtual Task<DeleteHarnessResponse> DeleteHarnessAsync(DeleteHarnessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHarnessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteHarnessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteMemory
 
 
@@ -3840,6 +3994,77 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = GetGatewayTargetResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetGatewayTargetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetHarness
+
+
+        /// <summary>
+        /// Operation to get a single Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHarness service method.</param>
+        /// 
+        /// <returns>The response from the GetHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetHarness">REST API Reference for GetHarness Operation</seealso>
+        public virtual GetHarnessResponse GetHarness(GetHarnessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHarnessResponseUnmarshaller.Instance;
+
+            return Invoke<GetHarnessResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Operation to get a single Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHarness service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetHarness">REST API Reference for GetHarness Operation</seealso>
+        public virtual Task<GetHarnessResponse> GetHarnessAsync(GetHarnessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHarnessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetHarnessResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5355,6 +5580,71 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = ListGatewayTargetsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListGatewayTargetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListHarnesses
+
+
+        /// <summary>
+        /// Operation to list Harnesses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHarnesses service method.</param>
+        /// 
+        /// <returns>The response from the ListHarnesses service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnesses">REST API Reference for ListHarnesses Operation</seealso>
+        public virtual ListHarnessesResponse ListHarnesses(ListHarnessesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHarnessesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHarnessesResponseUnmarshaller.Instance;
+
+            return Invoke<ListHarnessesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Operation to list Harnesses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHarnesses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHarnesses service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnesses">REST API Reference for ListHarnesses Operation</seealso>
+        public virtual Task<ListHarnessesResponse> ListHarnessesAsync(ListHarnessesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHarnessesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHarnessesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListHarnessesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7361,6 +7651,83 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = UpdateGatewayTargetResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateGatewayTargetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateHarness
+
+
+        /// <summary>
+        /// Operation to update a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHarness service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateHarness">REST API Reference for UpdateHarness Operation</seealso>
+        public virtual UpdateHarnessResponse UpdateHarness(UpdateHarnessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHarnessResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHarnessResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Operation to update a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHarness service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateHarness">REST API Reference for UpdateHarness Operation</seealso>
+        public virtual Task<UpdateHarnessResponse> UpdateHarnessAsync(UpdateHarnessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHarnessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateHarnessResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -128,6 +128,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
         IListGatewayTargetsPaginator ListGatewayTargets(ListGatewayTargetsRequest request);
 
         /// <summary>
+        /// Paginator for ListHarnesses operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListHarnessesPaginator ListHarnesses(ListHarnessesRequest request);
+
+        /// <summary>
         /// Paginator for ListMemories operation
         ///</summary>
         [AWSPaginator(

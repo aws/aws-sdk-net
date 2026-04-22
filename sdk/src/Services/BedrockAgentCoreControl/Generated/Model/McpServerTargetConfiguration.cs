@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _endpoint;
         private ListingMode _listingMode;
         private McpToolSchemaConfiguration _mcpToolSchema;
+        private int? _resourcePriority;
 
         /// <summary>
         /// Gets and sets the property Endpoint. 
@@ -95,6 +96,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetMcpToolSchema()
         {
             return this._mcpToolSchema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourcePriority. 
+        /// <para>
+        /// Priority for resolving MCP server targets with shared resource URIs. Lower values
+        /// take precedence. Defaults to 1000 when not set.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public int? ResourcePriority
+        {
+            get { return this._resourcePriority; }
+            set { this._resourcePriority = value; }
+        }
+
+        // Check to see if ResourcePriority property is set
+        internal bool IsSetResourcePriority()
+        {
+            return this._resourcePriority.HasValue; 
         }
 
     }

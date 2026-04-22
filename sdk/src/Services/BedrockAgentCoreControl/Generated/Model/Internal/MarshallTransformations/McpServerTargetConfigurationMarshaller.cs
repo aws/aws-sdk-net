@@ -69,6 +69,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetResourcePriority())
+            {
+                context.Writer.WritePropertyName("resourcePriority");
+                context.Writer.WriteNumberValue(requestObject.ResourcePriority.Value);
+            }
+
         }
 
         /// <summary>
