@@ -100,4 +100,11 @@ namespace Amazon.Runtime.Internal.Util
             : base(CryptoUtilFactory.GetChecksumInstance(CoreChecksumAlgorithm.SHA1))
         { }
     }
+
+    public class HashingWrapperSHA512 : HashingWrapper
+    {
+        public HashingWrapperSHA512()
+            : base(CryptoUtilFactory.GetChecksumInstance(CoreChecksumAlgorithm.SHA512))
+        { }
+    }
 }

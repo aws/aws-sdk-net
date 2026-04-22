@@ -112,6 +112,31 @@ namespace Amazon.Runtime.Internal.UserAgent
         public static readonly UserAgentFeatureId FLEXIBLE_CHECKSUMS_REQ_SHA256 = new UserAgentFeatureId("Y");
 
         /// <summary>
+        /// Operation included a XXHash128 checksum for request payload.
+        /// </summary>
+        public static readonly UserAgentFeatureId FLEXIBLE_CHECKSUMS_REQ_XXHASH128 = new UserAgentFeatureId("AI");
+
+        /// <summary>
+        /// Operation included a XXHASH3 checksum for request payload.
+        /// </summary>
+        public static readonly UserAgentFeatureId FLEXIBLE_CHECKSUMS_REQ_XXHASH3 = new UserAgentFeatureId("AG");
+
+        /// <summary>
+        /// Operation included a XXHASH64 checksum for request payload
+        /// </summary>
+        public static readonly UserAgentFeatureId FLEXIBLE_CHECKSUMS_REQ_XXHASH64 = new UserAgentFeatureId("AH");
+
+        /// <summary>
+        /// Operation included a  SHA-512 checksum for request payload.
+        /// </summary>
+        public static readonly UserAgentFeatureId FLEXIBLE_CHECKSUMS_REQ_SHA512 = new UserAgentFeatureId("AF");
+
+        /// <summary>
+        /// Operation included a MD5 checksum for request payload.
+        /// </summary>
+        public static readonly UserAgentFeatureId FLEXIBLE_CHECKSUMS_REQ_MD5 = new UserAgentFeatureId("AE");
+
+        /// <summary>
         /// SDK resolved configuration <see cref="RequestChecksumCalculation.WHEN_SUPPORTED"/>.
         /// </summary>
         public static readonly UserAgentFeatureId FLEXIBLE_CHECKSUMS_REQ_WHEN_SUPPORTED = new UserAgentFeatureId("Z");

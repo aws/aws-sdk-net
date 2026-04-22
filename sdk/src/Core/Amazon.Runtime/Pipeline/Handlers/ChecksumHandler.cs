@@ -98,6 +98,21 @@ namespace Amazon.Runtime.Internal
                 case CoreChecksumAlgorithm.CRC64NVME:
                     requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_CRC64);
                     break;
+                case CoreChecksumAlgorithm.XXHASH128:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_XXHASH128);
+                    break;
+                case CoreChecksumAlgorithm.XXHASH3:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_XXHASH3);
+                    break;
+                case CoreChecksumAlgorithm.XXHASH64:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_XXHASH64);
+                    break;
+                case CoreChecksumAlgorithm.SHA512:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_SHA512);
+                    break;
+                case CoreChecksumAlgorithm.MD5:
+                    requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.FLEXIBLE_CHECKSUMS_REQ_MD5);
+                    break;
             }
 
             switch (clientConfig.RequestChecksumCalculation)
