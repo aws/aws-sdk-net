@@ -302,6 +302,22 @@ namespace Amazon.S3Control
         /// Constant SHA256 for ComputeObjectChecksumAlgorithm
         /// </summary>
         public static readonly ComputeObjectChecksumAlgorithm SHA256 = new ComputeObjectChecksumAlgorithm("SHA256");
+        /// <summary>
+        /// Constant SHA512 for ComputeObjectChecksumAlgorithm
+        /// </summary>
+        public static readonly ComputeObjectChecksumAlgorithm SHA512 = new ComputeObjectChecksumAlgorithm("SHA512");
+        /// <summary>
+        /// Constant XXHASH128 for ComputeObjectChecksumAlgorithm
+        /// </summary>
+        public static readonly ComputeObjectChecksumAlgorithm XXHASH128 = new ComputeObjectChecksumAlgorithm("XXHASH128");
+        /// <summary>
+        /// Constant XXHASH3 for ComputeObjectChecksumAlgorithm
+        /// </summary>
+        public static readonly ComputeObjectChecksumAlgorithm XXHASH3 = new ComputeObjectChecksumAlgorithm("XXHASH3");
+        /// <summary>
+        /// Constant XXHASH64 for ComputeObjectChecksumAlgorithm
+        /// </summary>
+        public static readonly ComputeObjectChecksumAlgorithm XXHASH64 = new ComputeObjectChecksumAlgorithm("XXHASH64");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2125,6 +2141,10 @@ namespace Amazon.S3Control
         /// </summary>
         public static readonly S3ChecksumAlgorithm CRC64NVME = new S3ChecksumAlgorithm("CRC64NVME");
         /// <summary>
+        /// Constant MD5 for S3ChecksumAlgorithm
+        /// </summary>
+        public static readonly S3ChecksumAlgorithm MD5 = new S3ChecksumAlgorithm("MD5");
+        /// <summary>
         /// Constant SHA1 for S3ChecksumAlgorithm
         /// </summary>
         public static readonly S3ChecksumAlgorithm SHA1 = new S3ChecksumAlgorithm("SHA1");
@@ -2132,6 +2152,22 @@ namespace Amazon.S3Control
         /// Constant SHA256 for S3ChecksumAlgorithm
         /// </summary>
         public static readonly S3ChecksumAlgorithm SHA256 = new S3ChecksumAlgorithm("SHA256");
+        /// <summary>
+        /// Constant SHA512 for S3ChecksumAlgorithm
+        /// </summary>
+        public static readonly S3ChecksumAlgorithm SHA512 = new S3ChecksumAlgorithm("SHA512");
+        /// <summary>
+        /// Constant XXHASH128 for S3ChecksumAlgorithm
+        /// </summary>
+        public static readonly S3ChecksumAlgorithm XXHASH128 = new S3ChecksumAlgorithm("XXHASH128");
+        /// <summary>
+        /// Constant XXHASH3 for S3ChecksumAlgorithm
+        /// </summary>
+        public static readonly S3ChecksumAlgorithm XXHASH3 = new S3ChecksumAlgorithm("XXHASH3");
+        /// <summary>
+        /// Constant XXHASH64 for S3ChecksumAlgorithm
+        /// </summary>
+        public static readonly S3ChecksumAlgorithm XXHASH64 = new S3ChecksumAlgorithm("XXHASH64");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
