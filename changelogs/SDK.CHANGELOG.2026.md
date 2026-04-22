@@ -1,3 +1,36 @@
+### 4.0.236.0 (2026-04-22 18:23 UTC)
+* Batch (4.0.9.0)
+	* Support of S3Files volume type, container start and stop timeouts.
+* BedrockAgentCore (4.0.20.0)
+	* Adds support for Amazon Bedrock AgentCore Harness data plane APIs, enabling customers to invoke managed agent loops and execute commands on live agent sessions with streaming responses.
+* BedrockAgentCoreControl (4.0.29.0)
+	* Adds support for Amazon Bedrock AgentCore Harness control plane APIs, enabling customers to create, manage, and configure managed agent loops with customizable models, tools, memory, and isolated execution environments.
+* EC2 (4.0.85.0)
+	* Managed resource visibility settings control whether resources that AWS services provision on your behalf within your AWS account appear in your Amazon console views and API list operations.
+* ECS (4.0.20.0)
+	* GPU health monitoring and auto-repair for ECS Managed Instances
+* EMRServerless (4.0.9.0)
+	* This release adds support for Spark connect sessions starting with release label emr-7.13.0.
+* IoTWireless (4.0.6.0)
+	* Enable customers to optionally specify a desired confidence level for Cellular and WiFi position estimates. Customers can use this to trade off confidence level and radius of uncertainty based on their needs.
+* IVS (4.0.3.0)
+	* Adds support for Amazon IVS server-side ad insertion
+* Lambda (4.0.15.0)
+	* Add Ruby 4.0 (ruby4.0) support to AWS Lambda.
+* OpenSearchService (4.0.17.0)
+	* Adds support for RollbackServiceSoftwareUpdate API
+* OSIS (4.0.5.0)
+	* Update the pipeline configuration body character limit for the CreatePipeline API call.
+* S3 (4.0.22.0)
+	* This release adds five additional checksum algorithms for S3 data integrity (MD5, SHA-512, XXHash3, XXHash64, XXHash128) and support for S3 Inventory on directory buckets (S3 Express One Zone).
+* S3Control (4.0.11.0)
+	* This release adds support for five additional checksum algorithms for data integrity checking in Amazon S3 - MD5, SHA-512, XXHash3, XXHash64, and XXHash128.
+* Core 4.0.3.32
+	* [Breaking Change] DefaultAWSCredentialsIdentityResolver implements IDisposable now. Most users will be unaffected since the static GetCredentials() or GetCredentialsAsync() methods are being called.
+	* Fix credential resolution issue under high concurrency where multiple threads simultaneously walked the credential chain causing initial service calls to fail.
+	* Use MD5.HashData() on .NET 8+ to reduce allocations in CryptoUtil.ComputeMD5Hash.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.235.0 (2026-04-21 20:12 UTC)
 * CognitoIdentityProvider (4.0.8.0)
 	* Adding dutch language support for Cognito Managed Login and Terms on Console

@@ -33,7 +33,7 @@ namespace Amazon.PartnerCentralAccount
     public partial class AmazonPartnerCentralAccountConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PartnerCentral Account", "4.0.2.5");
+            InternalSDKUtils.BuildUserAgentString("PartnerCentral Account", "4.0.2.6");
 
         private static readonly AmazonPartnerCentralAccountEndpointResolver EndpointResolver =
             new AmazonPartnerCentralAccountEndpointResolver();
