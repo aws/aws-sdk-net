@@ -35,8 +35,28 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class OperatorResponse
     {
+        private bool? _hiddenByDefault;
         private bool? _managed;
         private string _principal;
+
+        /// <summary>
+        /// Gets and sets the property HiddenByDefault. 
+        /// <para>
+        /// If <c>true</c>, the resource is hidden by default based on the managed resource visibility
+        /// settings for the account.
+        /// </para>
+        /// </summary>
+        public bool? HiddenByDefault
+        {
+            get { return this._hiddenByDefault; }
+            set { this._hiddenByDefault = value; }
+        }
+
+        // Check to see if HiddenByDefault property is set
+        internal bool IsSetHiddenByDefault()
+        {
+            return this._hiddenByDefault.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Managed. 

@@ -25040,6 +25040,40 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  GetManagedResourceVisibility
+
+        internal virtual GetManagedResourceVisibilityResponse GetManagedResourceVisibility(GetManagedResourceVisibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetManagedResourceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedResourceVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedResourceVisibilityResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the managed resource visibility configuration for the account. The response
+        /// indicates whether managed resources are hidden or visible by default.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedResourceVisibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedResourceVisibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedResourceVisibility">REST API Reference for GetManagedResourceVisibility Operation</seealso>
+        public virtual Task<GetManagedResourceVisibilityResponse> GetManagedResourceVisibilityAsync(GetManagedResourceVisibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetManagedResourceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedResourceVisibilityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetManagedResourceVisibilityResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetNetworkInsightsAccessScopeAnalysisFindings
 
         internal virtual GetNetworkInsightsAccessScopeAnalysisFindingsResponse GetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request)
@@ -28100,6 +28134,42 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyManagedPrefixListResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyManagedPrefixListResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ModifyManagedResourceVisibility
+
+        internal virtual ModifyManagedResourceVisibilityResponse ModifyManagedResourceVisibility(ModifyManagedResourceVisibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyManagedResourceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyManagedResourceVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyManagedResourceVisibilityResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the managed resource visibility configuration for the account. Use this operation
+        /// to control whether managed resources are hidden or visible by default. Visibility
+        /// settings are account-wide and affect all IAM principals uniformly. Hidden resources
+        /// remain fully operational and billable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyManagedResourceVisibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyManagedResourceVisibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedResourceVisibility">REST API Reference for ModifyManagedResourceVisibility Operation</seealso>
+        public virtual Task<ModifyManagedResourceVisibilityResponse> ModifyManagedResourceVisibilityAsync(ModifyManagedResourceVisibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyManagedResourceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyManagedResourceVisibilityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyManagedResourceVisibilityResponse>(request, options, cancellationToken);
         }
         #endregion
         

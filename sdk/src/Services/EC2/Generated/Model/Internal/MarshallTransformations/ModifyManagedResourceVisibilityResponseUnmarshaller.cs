@@ -33,67 +33,70 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OperatorResponse Object
+    /// Response Unmarshaller for ModifyManagedResourceVisibility operation
     /// </summary>  
-    public class OperatorResponseUnmarshaller : IXmlUnmarshaller<OperatorResponse, XmlUnmarshallerContext>
+    public class ModifyManagedResourceVisibilityResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
+        /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
-        public OperatorResponse Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            OperatorResponse unmarshalledObject = new OperatorResponse();
+            ModifyManagedResourceVisibilityResponse response = new ModifyManagedResourceVisibilityResponse();
+
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
             if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
+               targetDepth = 2;
+
             while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("hiddenByDefault", targetDepth))
+
+                    if (context.TestExpression("visibility", targetDepth))
                     {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        unmarshalledObject.HiddenByDefault = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ManagedResourceVisibilitySettingsUnmarshaller.Instance;
+                        response.Visibility = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("managed", targetDepth))
-                    {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        unmarshalledObject.Managed = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("principal", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Principal = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
+                } 
             }
 
-            return unmarshalledObject;
+            return response;
         }
 
-        private static OperatorResponseUnmarshaller _instance = new OperatorResponseUnmarshaller();        
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+        }
+        private static ModifyManagedResourceVisibilityResponseUnmarshaller _instance = new ModifyManagedResourceVisibilityResponseUnmarshaller();        
+
+        internal static ModifyManagedResourceVisibilityResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OperatorResponseUnmarshaller Instance
+        public static ModifyManagedResourceVisibilityResponseUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }

@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private DateTime? _endTime;
         private VolumeModificationState _modificationState;
+        private OperatorResponse _operator;
         private int? _originalIops;
         private bool? _originalMultiAttachEnabled;
         private int? _originalSize;
@@ -85,6 +86,21 @@ namespace Amazon.EC2.Model
         internal bool IsSetModificationState()
         {
             return this._modificationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator.
+        /// </summary>
+        public OperatorResponse Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

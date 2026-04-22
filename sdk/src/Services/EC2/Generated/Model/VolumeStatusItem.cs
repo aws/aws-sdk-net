@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZoneId;
         private List<VolumeStatusEvent> _events = AWSConfigs.InitializeCollections ? new List<VolumeStatusEvent>() : null;
         private InitializationStatusDetails _initializationStatusDetails;
+        private OperatorResponse _operator;
         private string _outpostArn;
         private string _volumeId;
         private VolumeStatusInfo _volumeStatus;
@@ -176,6 +177,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInitializationStatusDetails()
         {
             return this._initializationStatusDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The service provider that manages the resource.
+        /// </para>
+        /// </summary>
+        public OperatorResponse Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

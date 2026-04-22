@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OperatorResponse Object
+    /// Response Unmarshaller for ManagedResourceVisibilitySettings Object
     /// </summary>  
-    public class OperatorResponseUnmarshaller : IXmlUnmarshaller<OperatorResponse, XmlUnmarshallerContext>
+    public class ManagedResourceVisibilitySettingsUnmarshaller : IXmlUnmarshaller<ManagedResourceVisibilitySettings, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OperatorResponse Unmarshall(XmlUnmarshallerContext context)
+        public ManagedResourceVisibilitySettings Unmarshall(XmlUnmarshallerContext context)
         {
-            OperatorResponse unmarshalledObject = new OperatorResponse();
+            ManagedResourceVisibilitySettings unmarshalledObject = new ManagedResourceVisibilitySettings();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,22 +55,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("hiddenByDefault", targetDepth))
-                    {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        unmarshalledObject.HiddenByDefault = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("managed", targetDepth))
-                    {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        unmarshalledObject.Managed = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("principal", targetDepth))
+                    if (context.TestExpression("defaultVisibility", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Principal = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DefaultVisibility = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -83,12 +71,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static OperatorResponseUnmarshaller _instance = new OperatorResponseUnmarshaller();        
+        private static ManagedResourceVisibilitySettingsUnmarshaller _instance = new ManagedResourceVisibilitySettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OperatorResponseUnmarshaller Instance
+        public static ManagedResourceVisibilitySettingsUnmarshaller Instance
         {
             get
             {
