@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Use MD5.HashData() on .NET 8+ to reduce allocations in CryptoUtil.ComputeMD5Hash."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
