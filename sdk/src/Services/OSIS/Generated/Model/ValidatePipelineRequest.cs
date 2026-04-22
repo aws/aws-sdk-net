@@ -47,7 +47,7 @@ namespace Amazon.OSIS.Model
         /// each new line must be escaped with <c>\n</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=24000)]
+        [AWSProperty(Required=true, Min=1, Max=100000)]
         public string PipelineConfigurationBody
         {
             get { return this._pipelineConfigurationBody; }
