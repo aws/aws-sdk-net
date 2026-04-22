@@ -173,13 +173,13 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private void ExecuteHelper()
         {
-            DocumentTransaction.ExecuteHelper();
+            DocumentTransaction.ExecuteHelper(_storageConfig);
             PopulateResults();
         }
 
         private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
-            await DocumentTransaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            await DocumentTransaction.ExecuteHelperAsync(cancellationToken, _storageConfig).ConfigureAwait(false);
             PopulateResults();
         }
 

@@ -153,6 +153,171 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         [Fact]
+        public async Task TestContext_TransactGet_WithDerivedTypeItems()
+        {
+            var model1 = CreateNestedTypeItem(out var id);
+            var model2 = new ModelA2
+            {
+                Id = Guid.NewGuid(),
+                MyType = new A { Name = "A1", MyPropA = 1 },
+                MyInterface = new InterfaceB()
+                {
+                    S2 = 2,
+                    S1 = "s1",
+                    S4 = "s4"
+                },
+                DictionaryClasses = new Dictionary<string, A>()
+                {
+                    { "A", new A { Name = "A1", MyPropA = 1 } },
+                    { "B", new B { Name = "A1", MyPropA = 1, MyPropB = 2 } }
+                }
+            };
+
+            var transactWrite = _context.CreateTransactWrite<ModelA>();
+            transactWrite.AddSaveItems(new[] { model1, model2 });
+            await transactWrite.ExecuteAsync();
+
+            var transactGetModel1 = _context.CreateTransactGet<ModelA>();
+            transactGetModel1.AddKey(id);
+            await transactGetModel1.ExecuteAsync();
+
+            Assert.Equal(1, transactGetModel1.Results.Count);
+            var storedModel1 = transactGetModel1.Results[0];
+
+            var transactGetModel2 = _context.CreateTransactGet<ModelA>();
+            transactGetModel2.AddKey(model2.Id);
+            await transactGetModel2.ExecuteAsync();
+
+            Assert.Equal(1, transactGetModel2.Results.Count);
+            var storedModel2 = transactGetModel2.Results[0];
+
+            Assert.Equal(model1.Id, storedModel1.Id);
+            Assert.Equal(model1.GetType(), storedModel1.GetType());
+            Assert.Equal(model2.Id, storedModel2.Id);
+            Assert.Equal(model2.GetType(), storedModel2.GetType());
+
+            var myInterface = model2.MyInterface as InterfaceB;
+            var storedInterface = model2.MyInterface as InterfaceB;
+
+            Assert.Equal(myInterface.S4, storedInterface.S4);
+        }
+
+        [Fact]
+        public async Task TestContext_TransactGet_WithGlobalSecondaryIndexRangeKey()
+        {
+            var model1 = new ModelA1
+            {
+                Id = Guid.NewGuid(),
+                MyType = new B { Name = "BType1", MyPropA = 5, MyPropB = 10 },
+                MyClasses = new List<A>
+                {
+                    new A { Name = "A1", MyPropA = 1 },
+                    new B { Name = "B1", MyPropA = 2, MyPropB = 3 }
+                },
+                CompanyName = "TestCompany",
+                Price = 100
+            };
+
+            var model2 = new ModelA1
+            {
+                Id = Guid.NewGuid(),
+                MyType = new B { Name = "BType2", MyPropA = 6, MyPropB = 12 },
+                MyClasses = new List<A>
+                {
+                    new A { Name = "A2", MyPropA = 2 },
+                    new B { Name = "B2", MyPropA = 3, MyPropB = 4 }
+                },
+                CompanyName = "TestCompany",
+                Price = 200
+            };
+
+            var transactWrite = _context.CreateTransactWrite<ModelA>();
+            transactWrite.AddSaveItems(new[] { model1, model2 });
+            await transactWrite.ExecuteAsync();
+
+            var transactGetModel1 = _context.CreateTransactGet<ModelA>();
+            transactGetModel1.AddKey(model1.Id);
+            await transactGetModel1.ExecuteAsync();
+
+            Assert.Equal(1, transactGetModel1.Results.Count);
+            var storedModel1 = transactGetModel1.Results[0] as ModelA1;
+
+            var transactGetModel2 = _context.CreateTransactGet<ModelA>();
+            transactGetModel2.AddKey(model2.Id);
+            await transactGetModel2.ExecuteAsync();
+
+            Assert.Equal(1, transactGetModel2.Results.Count);
+            var storedModel2 = transactGetModel2.Results[0] as ModelA1;
+
+            Assert.NotNull(storedModel1);
+            Assert.NotNull(storedModel2);
+
+            Assert.Equal(model1.Id, storedModel1.Id);
+            Assert.Equal(model1.MyType.GetType(), storedModel1.MyType.GetType());
+            Assert.Equal(((B)model1.MyType).MyPropB, ((B)storedModel1.MyType).MyPropB);
+            Assert.Equal(model1.MyClasses.Count, storedModel1.MyClasses.Count);
+            Assert.Equal(model1.CompanyName, storedModel1.CompanyName);
+            Assert.Equal(model1.Price, storedModel1.Price);
+
+            Assert.Equal(model2.Id, storedModel2.Id);
+            Assert.Equal(model2.MyType.GetType(), storedModel2.MyType.GetType());
+            Assert.Equal(((B)model2.MyType).MyPropB, ((B)storedModel2.MyType).MyPropB);
+            Assert.Equal(model2.MyClasses.Count, storedModel2.MyClasses.Count);
+            Assert.Equal(model2.CompanyName, storedModel2.CompanyName);
+            Assert.Equal(model2.Price, storedModel2.Price);
+        }
+
+        [Fact]
+        public async Task TestContext_TransactGet_WithLocalSecondaryIndexRangeKey()
+        {
+            var model1 = new ModelA2
+            {
+                Id = Guid.NewGuid(),
+                MyType = new C { Name = "AType1", MyPropA = 5, MyPropC = "test" },
+                DictionaryClasses = new Dictionary<string, A>
+                {
+                    { "A", new A { Name = "A1", MyPropA = 1 } },
+                    { "B", new B { Name = "B1", MyPropA = 2, MyPropB = 3 } }
+                },
+                ManagerName = "Manager1"
+            };
+
+            var model2 = new ModelA2
+            {
+                Id = Guid.NewGuid(),
+                MyType = new A { Name = "AType2", MyPropA = 6 },
+                DictionaryClasses = new Dictionary<string, A>
+                {
+                    { "A", new A { Name = "A2", MyPropA = 2 } },
+                    { "B", new B { Name = "B2", MyPropA = 3, MyPropB = 4 } }
+                },
+                ManagerName = "Manager2"
+            };
+
+            var transactWrite = _context.CreateTransactWrite<ModelA2>();
+            transactWrite.AddSaveItems(new[] { model1, model2 });
+            await transactWrite.ExecuteAsync();
+
+            var transactGetModel = _context.CreateTransactGet<ModelA2>();
+            transactGetModel.AddKey(model1.Id);
+            await transactGetModel.ExecuteAsync();
+
+            Assert.Equal(1, transactGetModel.Results.Count);
+            var storedModel = transactGetModel.Results[0];
+
+            Assert.NotNull(storedModel);
+            Assert.NotNull(storedModel);
+            Assert.Equal(model1.Id, storedModel.Id);
+            Assert.Equal(model1.MyType.GetType(), storedModel.MyType.GetType());
+            Assert.Equal(model1.DictionaryClasses.Count, storedModel.DictionaryClasses.Count);
+            Assert.Equal(model1.DictionaryClasses["A"].GetType(), storedModel.DictionaryClasses["A"].GetType());
+            Assert.Equal(model1.DictionaryClasses["B"].GetType(), storedModel.DictionaryClasses["B"].GetType());
+            Assert.Equal(((B)model1.DictionaryClasses["B"]).MyPropB,
+                ((B)storedModel.DictionaryClasses["B"]).MyPropB);
+            Assert.Equal(model1.ManagerName, storedModel.ManagerName);
+        }
+
+        [Fact]
         public async Task TestContext_SaveAndScan_WithGlobalSecondaryIndexRangeKey()
         {
             var model1 = new ModelA1

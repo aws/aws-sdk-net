@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Telemetry.Tracing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -186,15 +187,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Internal/private methods
 
-        internal void ExecuteHelper()
+        internal void ExecuteHelper(ItemStorageConfig storageConfig = default)
         {
-            var items = GetMultiTransactGet().GetItems();
+            var items = GetMultiTransactGet().GetItems(storageConfig);
             Results = items.Values.SingleOrDefault() ?? new List<Document>();
         }
 
-        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken, ItemStorageConfig storageConfig = default)
         {
-            var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken).ConfigureAwait(false);
+            var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken, storageConfig).ConfigureAwait(false);
             Results = items.Values.SingleOrDefault() ?? new List<Document>();
         }
 
@@ -284,9 +285,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Internal/private methods
 
-        internal void ExecuteHelper()
+        internal void ExecuteHelper(ItemStorageConfig storageConfig = default)
         {
-            var items = GetMultiTransactGet().GetItems();
+            var items = GetMultiTransactGet().GetItems(storageConfig);
             var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactGet)}";
 
             foreach (var transactionPart in TransactionParts)
@@ -297,9 +298,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
+        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken, ItemStorageConfig storageConfig = default)
         {
-            var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken).ConfigureAwait(false);
+            var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken, storageConfig).ConfigureAwait(false);
             var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactGet)}";
 
             foreach (var transactionPart in TransactionParts)
@@ -350,14 +351,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public methods
 
-        public Dictionary<DocumentTransactGet, List<Document>> GetItems()
+        public Dictionary<DocumentTransactGet, List<Document>> GetItems(ItemStorageConfig storageConfig = default)
         {
-            return GetItemsHelper();
+            return GetItemsHelper(storageConfig);
         }
 
-        public Task<Dictionary<DocumentTransactGet, List<Document>>> GetItemsAsync(CancellationToken cancellationToken)
+        public Task<Dictionary<DocumentTransactGet, List<Document>>> GetItemsAsync(CancellationToken cancellationToken, ItemStorageConfig storageConfig = default)
         {
-            return GetItemsHelperAsync(cancellationToken);
+            return GetItemsHelperAsync(cancellationToken, storageConfig);
         }
 
         #endregion
@@ -365,11 +366,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Private helper methods
 
-        private Dictionary<DocumentTransactGet, List<Document>> GetItemsHelper()
+        private Dictionary<DocumentTransactGet, List<Document>> GetItemsHelper(ItemStorageConfig storageConfig = default)
         {
             if (Items == null || !Items.Any()) return new Dictionary<DocumentTransactGet, List<Document>>();
 
-            var request = ConstructRequest(isAsync: false);
+            var request = ConstructRequest(isAsync: false, storageConfig);
 #if NETSTANDARD
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var internalClient = Items[0].TransactionPart.TargetTable.DDBClient as AmazonDynamoDBClient;
@@ -385,19 +386,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return GetDocuments(response.Responses);
         }
 
-        private async Task<Dictionary<DocumentTransactGet, List<Document>>> GetItemsHelperAsync(CancellationToken cancellationToken)
+        private async Task<Dictionary<DocumentTransactGet, List<Document>>> GetItemsHelperAsync(CancellationToken cancellationToken, ItemStorageConfig storageConfig = default)
         {
             if (Items == null || !Items.Any()) return new Dictionary<DocumentTransactGet, List<Document>>();
 
-            var request = ConstructRequest(isAsync: true);
+            var request = ConstructRequest(isAsync: true, storageConfig);
             var dynamoDbClient = Items[0].TransactionPart.TargetTable.DDBClient;
             var response = await dynamoDbClient.TransactGetItemsAsync(request, cancellationToken).ConfigureAwait(false);
             return GetDocuments(response.Responses);
         }
 
-        private TransactGetItemsRequest ConstructRequest(bool isAsync)
+        private TransactGetItemsRequest ConstructRequest(bool isAsync, ItemStorageConfig storageConfig = default)
         {
-            var transactItems = Items.Select(item => item.GetRequest()).ToList();
+            var transactItems = Items.Select(item => item.GetRequest(storageConfig)).ToList();
             var request = new TransactGetItemsRequest { TransactItems = transactItems };
             Items[0].TransactionPart.TargetTable.UpdateRequestUserAgentDetails(request, isAsync);
             return request;
@@ -453,7 +454,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Methods
 
-        public TransactGetItem GetRequest()
+        public TransactGetItem GetRequest(ItemStorageConfig storageConfig = default)
         {
             var currentConfig = OperationConfig ?? new TransactGetItemOperationConfig();
 
@@ -462,8 +463,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Key = Key,
                 TableName = TransactionPart.TargetTable.TableName
             };
+            if(currentConfig.ProjectionExpression != null && currentConfig.ProjectionExpression.IsSet)
+            {
+                currentConfig.ProjectionExpression.ApplyExpression(get, TransactionPart.TargetTable);
+                return new TransactGetItem { Get = get };
+            }
 
-            currentConfig.ProjectionExpression?.ApplyExpression(get, TransactionPart.TargetTable);
+            if(storageConfig != default && storageConfig.ProjectionExpression.IsSet)
+            {
+                get.ProjectionExpression = storageConfig.ProjectionExpression.ExpressionStatement;
+                get.ExpressionAttributeNames = storageConfig.ProjectionExpression.ExpressionAttributeNames;
+            }
 
             return new TransactGetItem { Get = get };
         }
