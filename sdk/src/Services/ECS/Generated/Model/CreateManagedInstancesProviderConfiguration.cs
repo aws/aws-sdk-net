@@ -37,10 +37,31 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class CreateManagedInstancesProviderConfiguration
     {
+        private AutoRepairConfiguration _autoRepairConfiguration;
         private InfrastructureOptimization _infrastructureOptimization;
         private string _infrastructureRoleArn;
         private InstanceLaunchTemplate _instanceLaunchTemplate;
         private PropagateMITags _propagateTags;
+
+        /// <summary>
+        /// Gets and sets the property AutoRepairConfiguration. 
+        /// <para>
+        /// The auto repair configuration for the Amazon ECS Managed Instances capacity provider.
+        /// Use this to enable or disable automatic replacement of container instances that are
+        /// detected as unhealthy.
+        /// </para>
+        /// </summary>
+        public AutoRepairConfiguration AutoRepairConfiguration
+        {
+            get { return this._autoRepairConfiguration; }
+            set { this._autoRepairConfiguration = value; }
+        }
+
+        // Check to see if AutoRepairConfiguration property is set
+        internal bool IsSetAutoRepairConfiguration()
+        {
+            return this._autoRepairConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InfrastructureOptimization. 
