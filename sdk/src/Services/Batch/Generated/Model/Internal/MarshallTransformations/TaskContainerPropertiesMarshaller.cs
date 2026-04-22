@@ -211,6 +211,18 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetStartTimeout())
+            {
+                context.Writer.WritePropertyName("startTimeout");
+                context.Writer.WriteNumberValue(requestObject.StartTimeout.Value);
+            }
+
+            if(requestObject.IsSetStopTimeout())
+            {
+                context.Writer.WritePropertyName("stopTimeout");
+                context.Writer.WriteNumberValue(requestObject.StopTimeout.Value);
+            }
+
             if(requestObject.IsSetUlimits())
             {
                 context.Writer.WritePropertyName("ulimits");

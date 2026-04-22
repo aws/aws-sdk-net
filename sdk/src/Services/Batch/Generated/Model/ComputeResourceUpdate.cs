@@ -200,8 +200,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances
         /// in the compute environment. If <c>Ec2Configuration</c> isn't specified, the default
-        /// is <c>ECS_AL2</c> for EC2 (ECS) compute environments and <c>EKS_AL2023</c> for EKS
-        /// compute environments.
+        /// is <c>ECS_AL2023</c> for EC2 (ECS) compute environments and <c>EKS_AL2023</c> for
+        /// EKS compute environments.
         /// </para>
         ///  
         /// <para>
@@ -296,9 +296,9 @@ namespace Amazon.Batch.Model
         /// instance types that you intend to use for that compute environment. For example, if
         /// your compute environment uses A1 instance types, the compute resource AMI that you
         /// choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the
-        /// Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon
-        /// ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
+        /// Amazon ECS-optimized Amazon Linux 2023 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon
+        /// ECS-optimized Amazon Linux 2023 AMI</a> in the <i>Amazon Elastic Container Service
+        /// Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Volume Object
+    /// Response Unmarshaller for S3FilesVolumeConfiguration Object
     /// </summary>  
-    public class VolumeUnmarshaller : IJsonUnmarshaller<Volume, JsonUnmarshallerContext>
+    public class S3FilesVolumeConfigurationUnmarshaller : IJsonUnmarshaller<S3FilesVolumeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Volume Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public S3FilesVolumeConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Volume unmarshalledObject = new Volume();
+            S3FilesVolumeConfiguration unmarshalledObject = new S3FilesVolumeConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,28 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("efsVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = EFSVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EfsVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("host", targetDepth))
-                {
-                    var unmarshaller = HostUnmarshaller.Instance;
-                    unmarshalledObject.Host = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("accessPointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AccessPointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3filesVolumeConfiguration", targetDepth))
+                if (context.TestExpression("fileSystemArn", targetDepth))
                 {
-                    var unmarshaller = S3FilesVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.S3filesVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FileSystemArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("rootDirectory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RootDirectory = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("transitEncryptionPort", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TransitEncryptionPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +85,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
 
 
-        private static VolumeUnmarshaller _instance = new VolumeUnmarshaller();        
+        private static S3FilesVolumeConfigurationUnmarshaller _instance = new S3FilesVolumeConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VolumeUnmarshaller Instance
+        public static S3FilesVolumeConfigurationUnmarshaller Instance
         {
             get
             {
