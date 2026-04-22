@@ -188,6 +188,11 @@ namespace Amazon.S3.Transfer.Internal
                 ChecksumSHA1 = this._fileTransporterRequest.ChecksumSHA1,
                 ChecksumSHA256 = this._fileTransporterRequest.ChecksumSHA256,
                 ExpectedBucketOwner = this._fileTransporterRequest.ExpectedBucketOwner,
+                ChecksumSHA512 = this._fileTransporterRequest.ChecksumSHA512,
+                ChecksumXXHASH128 = this._fileTransporterRequest.ChecksumXXHASH128,
+                ChecksumXXHASH64 = this._fileTransporterRequest.ChecksumXXHASH64,
+                ChecksumXXHASH3 = this._fileTransporterRequest.ChecksumXXHASH3,
+                ChecksumMD5 = this._fileTransporterRequest.ChecksumMD5
             };
 
             if(this._fileTransporterRequest.ServerSideEncryptionCustomerMethod != null 
@@ -497,6 +502,36 @@ namespace Amazon.S3.Transfer.Internal
             if (this._fileTransporterRequest.IsSetChecksumSHA256())
             {
                 chosenAlgorithm = ChecksumAlgorithm.SHA256;
+                return true;
+            }
+
+            if (this._fileTransporterRequest.IsSetChecksumSHA512())
+            {
+                chosenAlgorithm = ChecksumAlgorithm.SHA512;
+                return true;
+            }
+            
+            if (this._fileTransporterRequest.IsSetChecksumXXHASH128())
+            {
+                chosenAlgorithm = ChecksumAlgorithm.XXHASH128;
+                return true;
+            }
+
+            if (this._fileTransporterRequest.IsSetChecksumXXHASH3())
+            {
+                chosenAlgorithm = ChecksumAlgorithm.XXHASH3;
+                return true;
+            }
+
+            if (this._fileTransporterRequest.IsSetChecksumXXHASH64())
+            {
+                chosenAlgorithm = ChecksumAlgorithm.XXHASH64;
+                return true;
+            }
+
+            if (this._fileTransporterRequest.IsSetChecksumMD5())
+            {
+                chosenAlgorithm = ChecksumAlgorithm.MD5;
                 return true;
             }
 

@@ -130,7 +130,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
             if (publicRequest.IsSetExpires()) 
             {
-                request.Headers["Expires"] = publicRequest.Expires;
+                request.Headers["Expires"] = StringUtils.FromString(publicRequest.Expires);
             }
         
             if (publicRequest.IsSetGrantFullControl()) 

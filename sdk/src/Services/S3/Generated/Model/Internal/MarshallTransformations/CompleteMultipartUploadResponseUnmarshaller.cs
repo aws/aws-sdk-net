@@ -101,6 +101,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         response.ChecksumCRC64NVME = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ChecksumMD5", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ChecksumMD5 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ChecksumSHA1", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -113,10 +119,34 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         response.ChecksumSHA256 = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ChecksumSHA512", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ChecksumSHA512 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ChecksumType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.ChecksumType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumXXHASH128", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ChecksumXXHASH128 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumXXHASH3", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ChecksumXXHASH3 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumXXHASH64", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.ChecksumXXHASH64 = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ETag", targetDepth))

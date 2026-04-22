@@ -529,6 +529,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly ChecksumAlgorithm CRC64NVME = new ChecksumAlgorithm("CRC64NVME");
         /// <summary>
+        /// Constant MD5 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm MD5 = new ChecksumAlgorithm("MD5");
+        /// <summary>
         /// Constant SHA1 for ChecksumAlgorithm
         /// </summary>
         public static readonly ChecksumAlgorithm SHA1 = new ChecksumAlgorithm("SHA1");
@@ -536,6 +540,22 @@ namespace Amazon.S3
         /// Constant SHA256 for ChecksumAlgorithm
         /// </summary>
         public static readonly ChecksumAlgorithm SHA256 = new ChecksumAlgorithm("SHA256");
+        /// <summary>
+        /// Constant SHA512 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm SHA512 = new ChecksumAlgorithm("SHA512");
+        /// <summary>
+        /// Constant XXHASH128 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm XXHASH128 = new ChecksumAlgorithm("XXHASH128");
+        /// <summary>
+        /// Constant XXHASH3 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm XXHASH3 = new ChecksumAlgorithm("XXHASH3");
+        /// <summary>
+        /// Constant XXHASH64 for ChecksumAlgorithm
+        /// </summary>
+        public static readonly ChecksumAlgorithm XXHASH64 = new ChecksumAlgorithm("XXHASH64");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

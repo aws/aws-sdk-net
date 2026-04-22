@@ -60,12 +60,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.ChecksumCRC32C = context.ResponseData.GetHeaderValue("x-amz-checksum-crc32c");
             if (context.ResponseData.IsHeaderPresent("x-amz-checksum-crc64nvme"))
                 response.ChecksumCRC64NVME = context.ResponseData.GetHeaderValue("x-amz-checksum-crc64nvme");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-md5"))
+                response.ChecksumMD5 = context.ResponseData.GetHeaderValue("x-amz-checksum-md5");
             if (context.ResponseData.IsHeaderPresent("x-amz-checksum-sha1"))
                 response.ChecksumSHA1 = context.ResponseData.GetHeaderValue("x-amz-checksum-sha1");
             if (context.ResponseData.IsHeaderPresent("x-amz-checksum-sha256"))
                 response.ChecksumSHA256 = context.ResponseData.GetHeaderValue("x-amz-checksum-sha256");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-sha512"))
+                response.ChecksumSHA512 = context.ResponseData.GetHeaderValue("x-amz-checksum-sha512");
             if (context.ResponseData.IsHeaderPresent("x-amz-checksum-type"))
                 response.ChecksumType = context.ResponseData.GetHeaderValue("x-amz-checksum-type");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-xxhash128"))
+                response.ChecksumXXHASH128 = context.ResponseData.GetHeaderValue("x-amz-checksum-xxhash128");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-xxhash3"))
+                response.ChecksumXXHASH3 = context.ResponseData.GetHeaderValue("x-amz-checksum-xxhash3");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-xxhash64"))
+                response.ChecksumXXHASH64 = context.ResponseData.GetHeaderValue("x-amz-checksum-xxhash64");
             if (context.ResponseData.IsHeaderPresent("Content-Disposition"))
                 response.ContentDisposition = context.ResponseData.GetHeaderValue("Content-Disposition");
             if (context.ResponseData.IsHeaderPresent("Content-Encoding"))

@@ -188,11 +188,31 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>MD5</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>SHA1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>SHA256</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SHA512</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>XXHASH3</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>XXHASH64</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>XXHASH128</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

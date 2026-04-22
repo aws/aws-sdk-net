@@ -6159,6 +6159,43 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
+        [Description("Data Plane with bucket containing delimiters")]
+        public void Data_Plane_with_bucket_containing_delimiters_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "my--s3--bucket--abcd-ab1--x-s3";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Accelerate"] = false;
+            parameters["UseS3ExpressControlEndpoint"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://my--s3--bucket--abcd-ab1--x-s3.s3express-abcd-ab1.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("Control plane with with bucket containing delimiters")]
+        public void Control_plane_with_with_bucket_containing_delimiters_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "my--s3--bucket--abcd-ab1--x-s3";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Accelerate"] = false;
+            parameters["UseS3ExpressControlEndpoint"] = true;
+            parameters["DisableS3ExpressSessionAuth"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3express-control.us-east-1.amazonaws.com/my--s3--bucket--abcd-ab1--x-s3", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
         [Description("Data Plane with short AZ and dualstack")]
         public void Data_Plane_with_short_AZ_and_dualstack_Test()
         {

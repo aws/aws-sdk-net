@@ -802,7 +802,7 @@ namespace Amazon.S3.Model
 
         private static readonly List<CoreChecksumAlgorithm> _supportedChecksumAlgorithms = new List<CoreChecksumAlgorithm>
         {
-            CoreChecksumAlgorithm.CRC64NVME, CoreChecksumAlgorithm.CRC32, CoreChecksumAlgorithm.CRC32C, CoreChecksumAlgorithm.SHA256, CoreChecksumAlgorithm.SHA1
+            CoreChecksumAlgorithm.CRC64NVME, CoreChecksumAlgorithm.CRC32, CoreChecksumAlgorithm.CRC32C, CoreChecksumAlgorithm.SHA256, CoreChecksumAlgorithm.SHA1, CoreChecksumAlgorithm.SHA512
         };
 
         /// <inheritdoc/>

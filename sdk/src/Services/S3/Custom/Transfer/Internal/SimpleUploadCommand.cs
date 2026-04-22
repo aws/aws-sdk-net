@@ -90,7 +90,12 @@ namespace Amazon.S3.Transfer.Internal
                 Grants = this._fileTransporterRequest.Grants,
                 ServerSideEncryptionKeyManagementServiceEncryptionContext = this._fileTransporterRequest.SSEKMSEncryptionContext,
                 WebsiteRedirectLocation = this._fileTransporterRequest.WebsiteRedirectLocation,
-                Expires = this._fileTransporterRequest.Expires
+                Expires = this._fileTransporterRequest.Expires,
+                ChecksumSHA512 = this._fileTransporterRequest.ChecksumSHA512,
+                ChecksumXXHASH3 = this._fileTransporterRequest.ChecksumXXHASH3,
+                ChecksumXXHASH64 = this._fileTransporterRequest.ChecksumXXHASH64,
+                ChecksumXXHASH128 = this._fileTransporterRequest.ChecksumXXHASH128,
+                ChecksumMD5 = this._fileTransporterRequest.ChecksumMD5
             };
             
             // We are iterating over the Headers to avoid setting the Header from the Transfer utility upload request 

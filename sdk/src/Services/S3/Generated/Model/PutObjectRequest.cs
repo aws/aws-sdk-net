@@ -234,8 +234,13 @@ namespace Amazon.S3.Model
         private string _checksumCRC32;
         private string _checksumCRC32C;
         private string _checksumCRC64NVME;
+        private string _checksumMD5;
         private string _checksumSHA1;
         private string _checksumSHA256;
+        private string _checksumSHA512;
+        private string _checksumXXHASH128;
+        private string _checksumXXHASH3;
+        private string _checksumXXHASH64;
         private string _expectedBucketOwner;
         private string _expires;
         private string _ifMatch;
@@ -429,11 +434,31 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>MD5</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>SHA1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>SHA256</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SHA512</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>XXHASH3</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>XXHASH64</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>XXHASH128</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -536,6 +561,27 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChecksumMD5. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This header specifies the Base64 encoded,
+        /// 128-bit <c>MD5</c> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public string ChecksumMD5
+        {
+            get { return this._checksumMD5; }
+            set { this._checksumMD5 = value; }
+        }
+
+        // Check to see if ChecksumMD5 property is set
+        internal bool IsSetChecksumMD5()
+        {
+            return this._checksumMD5 != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ChecksumSHA1. 
         /// <para>
         /// This header can be used as a data integrity check to verify that the data received
@@ -575,6 +621,90 @@ namespace Amazon.S3.Model
         internal bool IsSetChecksumSHA256()
         {
             return this._checksumSHA256 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA512. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This header specifies the Base64 encoded,
+        /// 512-bit <c>SHA512</c> digest of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA512
+        {
+            get { return this._checksumSHA512; }
+            set { this._checksumSHA512 = value; }
+        }
+
+        // Check to see if ChecksumSHA512 property is set
+        internal bool IsSetChecksumSHA512()
+        {
+            return this._checksumSHA512 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumXXHASH128. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This header specifies the Base64 encoded,
+        /// 128-bit <c>XXHASH128</c> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public string ChecksumXXHASH128
+        {
+            get { return this._checksumXXHASH128; }
+            set { this._checksumXXHASH128 = value; }
+        }
+
+        // Check to see if ChecksumXXHASH128 property is set
+        internal bool IsSetChecksumXXHASH128()
+        {
+            return this._checksumXXHASH128 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumXXHASH3. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This header specifies the Base64 encoded,
+        /// 64-bit <c>XXHASH3</c> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public string ChecksumXXHASH3
+        {
+            get { return this._checksumXXHASH3; }
+            set { this._checksumXXHASH3 = value; }
+        }
+
+        // Check to see if ChecksumXXHASH3 property is set
+        internal bool IsSetChecksumXXHASH3()
+        {
+            return this._checksumXXHASH3 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumXXHASH64. 
+        /// <para>
+        /// This header can be used as a data integrity check to verify that the data received
+        /// is the same data that was originally sent. This header specifies the Base64 encoded,
+        /// 64-bit <c>XXHASH64</c> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public string ChecksumXXHASH64
+        {
+            get { return this._checksumXXHASH64; }
+            set { this._checksumXXHASH64 = value; }
+        }
+
+        // Check to see if ChecksumXXHASH64 property is set
+        internal bool IsSetChecksumXXHASH64()
+        {
+            return this._checksumXXHASH64 != null;
         }
 
         /// <summary>

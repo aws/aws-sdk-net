@@ -64,6 +64,11 @@ namespace Amazon.S3.Transfer.Internal
             response.ServerSideEncryptionMethod = source.ServerSideEncryptionMethod;
             response.VersionId = source.VersionId;
             response.Size = source.Size;
+            response.ChecksumXXHASH128 = source.ChecksumXXHASH128;
+            response.ChecksumMD5 = source.ChecksumMD5;
+            response.ChecksumXXHASH64 = source.ChecksumXXHASH64;
+            response.ChecksumXXHASH3 = source.ChecksumXXHASH3;
+            response.ChecksumSHA512 = source.ChecksumSHA512;
 
             return response;
         }
@@ -99,6 +104,11 @@ namespace Amazon.S3.Transfer.Internal
             response.BucketName = source.BucketName;
             response.Key = source.Key;
             response.Location = source.Location;
+            response.ChecksumXXHASH128 = source.ChecksumXXHASH128;
+            response.ChecksumMD5 = source.ChecksumMD5;
+            response.ChecksumXXHASH64 = source.ChecksumXXHASH64;
+            response.ChecksumXXHASH3 = source.ChecksumXXHASH3;
+            response.ChecksumSHA512 = source.ChecksumSHA512;
 
             return response;
         }
@@ -151,6 +161,11 @@ namespace Amazon.S3.Transfer.Internal
             target.TagCount = source.TagCount;
             target.VersionId = source.VersionId;
             target.WebsiteRedirectLocation = source.WebsiteRedirectLocation;
+            target.ChecksumMD5 = source.ChecksumMD5;
+            target.ChecksumXXHASH128 = source.ChecksumXXHASH128;
+            target.ChecksumXXHASH64 = source.ChecksumXXHASH64;
+            target.ChecksumXXHASH3 = source.ChecksumXXHASH3;
+            target.ChecksumSHA512 = source.ChecksumSHA512;
         }
 
         /// <summary>
