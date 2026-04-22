@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SoftwareUpdateOptions Object
+    /// Response Unmarshaller for RollbackServiceSoftwareOptions Object
     /// </summary>  
-    public class SoftwareUpdateOptionsUnmarshaller : IJsonUnmarshaller<SoftwareUpdateOptions, JsonUnmarshallerContext>
+    public class RollbackServiceSoftwareOptionsUnmarshaller : IJsonUnmarshaller<RollbackServiceSoftwareOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SoftwareUpdateOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RollbackServiceSoftwareOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SoftwareUpdateOptions unmarshalledObject = new SoftwareUpdateOptions();
+            RollbackServiceSoftwareOptions unmarshalledObject = new RollbackServiceSoftwareOptions();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,28 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoSoftwareUpdateEnabled", targetDepth))
+                if (context.TestExpression("CurrentVersion", targetDepth))
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AutoSoftwareUpdateEnabled = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrentVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseLatestServiceSoftwareForBlueGreen", targetDepth))
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("NewVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NewVersion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RollbackAvailable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UseLatestServiceSoftwareForBlueGreen = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.RollbackAvailable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +85,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
 
 
-        private static SoftwareUpdateOptionsUnmarshaller _instance = new SoftwareUpdateOptionsUnmarshaller();        
+        private static RollbackServiceSoftwareOptionsUnmarshaller _instance = new RollbackServiceSoftwareOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SoftwareUpdateOptionsUnmarshaller Instance
+        public static RollbackServiceSoftwareOptionsUnmarshaller Instance
         {
             get
             {
