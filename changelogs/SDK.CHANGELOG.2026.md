@@ -1,3 +1,13 @@
+### 4.0.237.0 (2026-04-23 18:19 UTC)
+* DataZone (4.0.26.0)
+	* Releasing For LakehouseProperties attributes in the Connections API's
+* IoTManagedIntegrations (4.0.7.0)
+	* Adds "Status" field to provisioning profile operation response types, giving users visibility into the readiness of a provisioning profile to be used for device provisioning.
+* OpenSearchService (4.0.18.0)
+	* Amazon OpenSearch UI applications now support cross-Region domain association, enabling you to connect OpenSearch Dashboards in one AWS Region to OpenSearch domains in other Regions within the same partition for centralized data visualization.
+* PCS (4.0.13.9)
+	* This release adds support for Slurm 25.11 with expedited requeue enabled by default for jobs failing due to node issues, configurable requeue delay, health checks at node startup only, and unauthenticated HTTP endpoints disabled by default for improved security.
+
 ### 4.0.236.0 (2026-04-22 18:23 UTC)
 * Batch (4.0.9.0)
 	* Support of S3Files volume type, container start and stop timeouts.
