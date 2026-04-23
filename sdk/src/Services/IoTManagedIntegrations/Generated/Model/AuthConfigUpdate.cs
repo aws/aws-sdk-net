@@ -41,7 +41,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// Gets and sets the property GeneralAuthorizationUpdate. 
         /// <para>
         /// The General Authorization update information containing authorization materials to
-        /// add or update in Kinesis Data Streams.
+        /// add or update.
         /// </para>
         /// </summary>
         public GeneralAuthorizationUpdate GeneralAuthorizationUpdate

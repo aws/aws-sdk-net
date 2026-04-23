@@ -40,12 +40,12 @@ namespace Amazon.IoTManagedIntegrations.Model
         private string _id;
         private string _name;
         private ProvisioningType _provisioningType;
+        private ProvisioningProfileStatus _status;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the provisioning template used in the provisioning
-        /// profile.
+        /// The Amazon Resource Name (ARN) of the provisioning profile.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=64)]
@@ -64,7 +64,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property ClaimCertificate. 
         /// <para>
-        /// The id of the claim certificate.
+        /// The body of the PEM-encoded claim certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -83,8 +83,8 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property ClaimCertificatePrivateKey. 
         /// <para>
-        /// The private key of the claim certificate. This is stored securely on the device for
-        /// validating the connection endpoint with IoT managed integrations using the public
+        /// The private key of the claim certificate. This may be stored securely on the device
+        /// for validating the connection endpoint with IoT managed integrations using the public
         /// key.
         /// </para>
         /// </summary>
@@ -123,7 +123,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the provisioning template.
+        /// The name of the provisioning profile.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -155,6 +155,24 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetProvisioningType()
         {
             return this._provisioningType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of a provisioning profile.
+        /// </para>
+        /// </summary>
+        public ProvisioningProfileStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

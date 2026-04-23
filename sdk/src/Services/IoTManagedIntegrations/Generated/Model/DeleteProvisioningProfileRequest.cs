@@ -40,7 +40,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The name of the provisioning template.
+        /// The id of the provisioning profile.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

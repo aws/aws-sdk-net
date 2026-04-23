@@ -1099,9 +1099,9 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Create a provisioning profile for a device to execute the provisioning flows using
-        /// a provisioning template. The provisioning template is a document that defines the
-        /// set of resources and policies applied to a device during the provisioning process.
+        /// Create a provisioning profile for executing device provisioning flows. The provisioning
+        /// profile is a document that defines the set of resources and policies applied to a
+        /// device during the provisioning process.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningProfile service method.</param>
         /// 
@@ -1143,9 +1143,9 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Create a provisioning profile for a device to execute the provisioning flows using
-        /// a provisioning template. The provisioning template is a document that defines the
-        /// set of resources and policies applied to a device during the provisioning process.
+        /// Create a provisioning profile for executing device provisioning flows. The provisioning
+        /// profile is a document that defines the set of resources and policies applied to a
+        /// device during the provisioning process.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningProfile service method.</param>
         /// <param name="cancellationToken">
@@ -2024,6 +2024,9 @@ namespace Amazon.IoTManagedIntegrations
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
         /// User is not authorized.
         /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
+        /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
         /// is unavailable.
@@ -2065,6 +2068,9 @@ namespace Amazon.IoTManagedIntegrations
         /// <returns>The response from the DeleteProvisioningProfile service method, as returned by IoTManagedIntegrations.</returns>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.AccessDeniedException">
         /// User is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.IoTManagedIntegrations.Model.ConflictException">
+        /// There is a conflict with the request.
         /// </exception>
         /// <exception cref="Amazon.IoTManagedIntegrations.Model.InternalServerException">
         /// Internal error from the service that indicates an unexpected error or that the service
@@ -3715,7 +3721,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Get a provisioning profile by template name.
+        /// Get details of a provisioning profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProvisioningProfile service method.</param>
         /// 
@@ -3754,7 +3760,7 @@ namespace Amazon.IoTManagedIntegrations
 
 
         /// <summary>
-        /// Get a provisioning profile by template name.
+        /// Get details of a provisioning profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProvisioningProfile service method.</param>
         /// <param name="cancellationToken">
