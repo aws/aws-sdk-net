@@ -1,7 +1,6 @@
 using Amazon.DynamoDBv2;
 using BenchmarkDotNet.Columns;
 using BenchmarkDotNet.Configs;
-using BenchmarkDotNet.Exporters.Csv;
 using BenchmarkDotNet.Reports;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Attributes;
@@ -10,37 +9,53 @@ namespace AWSSDK.Benchmarks.MockedDynamoDB
 {
     internal class Program
     {
+        private const string ClientArgName = "--client";
+        private const string BenchmarksArgName = "--benchmarks";
+        private const string ItemSizeArgName = "--itemSize";
+        private const string AttributeCountArgName = "--attributeCount";
+        private const string ExpressionStyleArgName = "--expressionStyle";
+        private const string ObjectComplexityArgName = "--objectComplexity";
+        private const string ConverterUsageArgName = "--converterUsage";
+        private const string AnnotationStyleArgName = "--annotationStyle";
+
+        private const string MockedClientMode = "mocked";
+        private static readonly string[] RealClientModes = ["aws", "real", "live"];
+        private const string RealBenchmarkPrefix = "Real";
+
         static void Main(string[] args)
         {
             var (clientMode, overrides, benchmarkNames, remainingArgs) = ParseArguments(args);
             var effectiveOverrides = overrides ?? CreateDefaultOverrides();
             ConfigureRuntime(clientMode, effectiveOverrides);
 
+            var config = CreateBenchmarkConfig();
+            var selectedBenchmarks = benchmarkNames?.Length > 0
+                ? ResolveBenchmarkTypes(benchmarkNames)
+                : ResolveBenchmarkTypesForClient(clientMode);
+
+            if (selectedBenchmarks.Length == 1)
+            {
+                BenchmarkRunner.Run(selectedBenchmarks[0], config, remainingArgs);
+                return;
+            }
+
+            BenchmarkSwitcher.FromTypes(selectedBenchmarks).Run(remainingArgs, config);
+        }
+
+        private static IConfig CreateBenchmarkConfig()
+        {
             var config = ManualConfig.Create(DefaultConfig.Instance);
             var summaryStyle = new SummaryStyle(
                 cultureInfo: System.Globalization.CultureInfo.InvariantCulture,
                 printUnitsInHeader: false,
-                timeUnit: Perfolizer.Horology.TimeUnit.Millisecond, sizeUnit: SizeUnit.B);
-            config.WithSummaryStyle(summaryStyle);
+                timeUnit: Perfolizer.Horology.TimeUnit.Millisecond,
+                sizeUnit: SizeUnit.B);
 
+            config.WithSummaryStyle(summaryStyle);
             config.AddColumn(StatisticColumn.P50);
             config.AddColumn(StatisticColumn.P90);
             config.AddColumn(StatisticColumn.P95);
-
-            if (benchmarkNames?.Length > 0)
-            {
-                var selectedBenchmarks = ResolveBenchmarkTypes(benchmarkNames);
-                if (selectedBenchmarks.Length == 1)
-                {
-                    BenchmarkRunner.Run(selectedBenchmarks[0], config, remainingArgs);
-                    return;
-                }
-
-                BenchmarkSwitcher.FromTypes(selectedBenchmarks).Run(remainingArgs, config);
-                return;
-            }
-
-            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(remainingArgs, config);
+            return config;
         }
 
         private static (string? clientMode, BenchmarkParameterOverrides? overrides, string[]? benchmarkNames, string[] remainingArgs) ParseArguments(string[] args)
@@ -52,19 +67,19 @@ namespace AWSSDK.Benchmarks.MockedDynamoDB
             for (var i = 0; i < args.Length; i++)
             {
                 var arg = args[i];
-                if (arg.StartsWith("--client=", StringComparison.OrdinalIgnoreCase))
+                if (arg.StartsWith(ClientArgName + "=", StringComparison.OrdinalIgnoreCase))
                 {
-                    clientMode = arg["--client=".Length..];
+                    clientMode = arg[(ClientArgName.Length + 1)..];
                     continue;
                 }
 
-                if (string.Equals(arg, "--client", StringComparison.OrdinalIgnoreCase) && i + 1 < args.Length)
+                if (string.Equals(arg, ClientArgName, StringComparison.OrdinalIgnoreCase) && i + 1 < args.Length)
                 {
                     clientMode = args[++i];
                     continue;
                 }
 
-                if (TryParseValue(arg, i + 1 < args.Length ? args[i + 1] : null, "--benchmarks", out var benchmarksValue, out var consumedNext))
+                if (TryParseValue(arg, i + 1 < args.Length ? args[i + 1] : null, BenchmarksArgName, out var benchmarksValue, out var consumedNext))
                 {
                     benchmarkNames = benchmarksValue.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
                     if (consumedNext)
@@ -93,11 +108,7 @@ namespace AWSSDK.Benchmarks.MockedDynamoDB
 
         private static Type[] ResolveBenchmarkTypes(string[] benchmarkNames)
         {
-            var benchmarks = typeof(Program).Assembly
-                .GetTypes()
-                .Where(type => type.IsClass
-                    && type.GetMethods().Any(method => method.GetCustomAttributes(typeof(BenchmarkAttribute), inherit: true).Any()))
-                .ToArray();
+            var benchmarks = GetAllBenchmarkTypes();
 
             var selected = benchmarks
                 .Where(type => benchmarkNames.Any(name => string.Equals(type.Name, name, StringComparison.OrdinalIgnoreCase)
@@ -112,50 +123,97 @@ namespace AWSSDK.Benchmarks.MockedDynamoDB
             return selected;
         }
 
+        private static Type[] ResolveBenchmarkTypesForClient(string? clientMode)
+        {
+            var benchmarks = GetAllBenchmarkTypes();
+
+            if (IsMockedMode(clientMode))
+            {
+                return benchmarks.Where(type => !IsRealBenchmark(type)).ToArray();
+            }
+
+            if (IsRealMode(clientMode))
+            {
+                return benchmarks.Where(IsRealBenchmark).ToArray();
+            }
+
+            return benchmarks;
+        }
+
+        private static Type[] GetAllBenchmarkTypes()
+        {
+            return typeof(Program).Assembly
+                .GetTypes()
+                .Where(type => type.IsClass
+                    && type.GetMethods().Any(method => method.GetCustomAttributes(typeof(BenchmarkAttribute), inherit: true).Any()))
+                .ToArray();
+        }
+
+        private static bool IsRealBenchmark(Type type) => type.Name.StartsWith(RealBenchmarkPrefix, StringComparison.OrdinalIgnoreCase);
+
+        private static bool IsMockedMode(string? clientMode) => string.Equals(clientMode, MockedClientMode, StringComparison.OrdinalIgnoreCase);
+
+        private static bool IsRealMode(string? clientMode) =>
+            RealClientModes.Any(mode => string.Equals(clientMode, mode, StringComparison.OrdinalIgnoreCase));
+
         private static bool TryParseOverride(string arg, string? nextArg, out Action<BenchmarkParameterOverrides> applyOverride, out bool consumedNext)
         {
             applyOverride = _ => { };
             consumedNext = false;
 
-            if (TryParseValue(arg, nextArg, "--itemSize", out var value, out consumedNext)
-                && Enum.TryParse<BenchmarkItemSize>(value, ignoreCase: true, out var itemSize))
+            if (TryParseEnumValue<BenchmarkItemSize>(arg, nextArg, ItemSizeArgName, out var itemSize, out consumedNext))
             {
                 applyOverride = overrides => overrides.ItemSize = itemSize;
                 return true;
             }
 
-            if (TryParseValue(arg, nextArg, "--attributeCount", out value, out consumedNext)
-                && Enum.TryParse<BenchmarkAttributeCount>(value, ignoreCase: true, out var attributeCount))
+            if (TryParseEnumValue<BenchmarkAttributeCount>(arg, nextArg, AttributeCountArgName, out var attributeCount, out consumedNext))
             {
                 applyOverride = overrides => overrides.AttributeCount = attributeCount;
                 return true;
             }
 
-            if (TryParseValue(arg, nextArg, "--expressionStyle", out value, out consumedNext)
-                && Enum.TryParse<BenchmarkExpressionStyle>(value, ignoreCase: true, out var expressionStyle))
+            if (TryParseEnumValue<BenchmarkExpressionStyle>(arg, nextArg, ExpressionStyleArgName, out var expressionStyle, out consumedNext))
             {
                 applyOverride = overrides => overrides.ExpressionStyle = expressionStyle;
                 return true;
             }
 
-            if (TryParseValue(arg, nextArg, "--objectComplexity", out value, out consumedNext)
-                && Enum.TryParse<BenchmarkObjectComplexity>(value, ignoreCase: true, out var objectComplexity))
+            if (TryParseEnumValue<BenchmarkObjectComplexity>(arg, nextArg, ObjectComplexityArgName, out var objectComplexity, out consumedNext))
             {
                 applyOverride = overrides => overrides.ObjectComplexity = objectComplexity;
                 return true;
             }
 
-            if (TryParseValue(arg, nextArg, "--converterUsage", out value, out consumedNext)
-                && Enum.TryParse<BenchmarkConverterUsage>(value, ignoreCase: true, out var converterUsage))
+            if (TryParseEnumValue<BenchmarkConverterUsage>(arg, nextArg, ConverterUsageArgName, out var converterUsage, out consumedNext))
             {
                 applyOverride = overrides => overrides.ConverterUsage = converterUsage;
                 return true;
             }
 
-            if (TryParseValue(arg, nextArg, "--annotationStyle", out value, out consumedNext)
-                && Enum.TryParse<BenchmarkAnnotationStyle>(value, ignoreCase: true, out var annotationStyle))
+            if (TryParseEnumValue<BenchmarkAnnotationStyle>(arg, nextArg, AnnotationStyleArgName, out var annotationStyle, out consumedNext))
             {
                 applyOverride = overrides => overrides.AnnotationStyle = annotationStyle;
+                return true;
+            }
+
+            return false;
+        }
+
+        private static bool TryParseEnumValue<TEnum>(
+            string arg,
+            string? nextArg,
+            string key,
+            out TEnum parsedValue,
+            out bool consumedNext)
+            where TEnum : struct, Enum
+        {
+            parsedValue = default;
+            consumedNext = false;
+
+            if (TryParseValue(arg, nextArg, key, out var value, out consumedNext)
+                && Enum.TryParse<TEnum>(value, ignoreCase: true, out parsedValue))
+            {
                 return true;
             }
 
@@ -198,15 +256,16 @@ namespace AWSSDK.Benchmarks.MockedDynamoDB
 
         private static void ConfigureRuntime(string? clientMode, BenchmarkParameterOverrides overrides)
         {
+            var useMockedClient = IsMockedMode(clientMode);
+            var useRealClient = IsRealMode(clientMode);
+
             BenchmarkContextRuntimeOptions.Configure(options =>
             {
-                if (string.Equals(clientMode, "mocked", StringComparison.OrdinalIgnoreCase))
+                if (useMockedClient)
                 {
                     options.ClientFactory = MockDynamoDbClientFactory.Create;
                 }
-                else if (string.Equals(clientMode, "aws", StringComparison.OrdinalIgnoreCase)
-                    || string.Equals(clientMode, "real", StringComparison.OrdinalIgnoreCase)
-                    || string.Equals(clientMode, "live", StringComparison.OrdinalIgnoreCase))
+                else if (useRealClient)
                 {
                     options.ClientFactory = _ => new AmazonDynamoDBClient();
                 }
@@ -216,13 +275,11 @@ namespace AWSSDK.Benchmarks.MockedDynamoDB
 
             BenchmarkTableRuntimeOptions.Configure(options =>
             {
-                if (string.Equals(clientMode, "mocked", StringComparison.OrdinalIgnoreCase))
+                if (useMockedClient)
                 {
                     options.ClientFactory = MockDynamoDbClientFactory.Create;
                 }
-                else if (string.Equals(clientMode, "aws", StringComparison.OrdinalIgnoreCase)
-                    || string.Equals(clientMode, "real", StringComparison.OrdinalIgnoreCase)
-                    || string.Equals(clientMode, "live", StringComparison.OrdinalIgnoreCase))
+                else if (useRealClient)
                 {
                     options.ClientFactory = _ => new AmazonDynamoDBClient();
                 }

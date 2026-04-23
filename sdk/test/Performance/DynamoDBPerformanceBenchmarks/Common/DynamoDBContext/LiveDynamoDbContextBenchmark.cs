@@ -29,4 +29,11 @@ public abstract class LiveDynamoDbContextBenchmark : DynamoDbContextBenchmark
         State.Setup();
         await State.SeedAsync().ConfigureAwait(false);
     }
+
+    [GlobalCleanup]
+    public async Task Cleanup()
+    {
+        using var client = new AmazonDynamoDBClient();
+        await DynamoDbBenchmarkTableManager.DeleteTableAsync(client).ConfigureAwait(false);
+    }
 }
