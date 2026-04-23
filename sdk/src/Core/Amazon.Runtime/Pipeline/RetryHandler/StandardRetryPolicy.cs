@@ -33,7 +33,9 @@ namespace Amazon.Runtime.Internal
         //The status code returned from a service request when an invalid endpoint is used.
         private const int INVALID_ENDPOINT_EXCEPTION_STATUSCODE = 421;        
         
-        protected static CapacityManager CapacityManagerInstance { get; set; } = new CapacityManager(throttleRetryCount: 100, throttleRetryCost: 5, throttleCost: 1, timeoutRetryCost: 10);
+        protected static CapacityManager CapacityManagerInstance { get; set; } = UseNewRetries2026
+            ? new CapacityManager(initialRetryTokens: 500, retryCost: 14, noRetryIncrement: 1, timeoutRetryCost: 10, throttlingRetryCost: 5)
+            : new CapacityManager(initialRetryTokens: 500, retryCost: 5, noRetryIncrement: 1, timeoutRetryCost: 10, throttlingRetryCost: 0);
 
         /// <summary>
         /// The maximum value of exponential backoff in milliseconds, which will be used to wait
@@ -62,6 +64,19 @@ namespace Amazon.Runtime.Internal
         public StandardRetryPolicy(IClientConfig config)
         {
             this.MaxRetries = config.MaxErrorRetry;
+
+            // DynamoDB and DynamoDB Streams retry count handling:
+            // Previously, MaxErrorRetry was set to 10 in the generated AmazonDynamoDBConfig/AmazonDynamoDBStreamsConfig.
+            // This was moved here to the retry policy so we can apply the correct default based on the
+            // UseNewRetries2026 flag. When UseNewRetries2026 is enabled, DynamoDB uses 3 retries (4 attempts)
+            // per SEP 2.1. When disabled, it preserves the legacy default of 10 retries.
+            // TODO: After the UseNewRetries2026 flag is removed (end of 2026), update the generated
+            // DynamoDB/DynamoDB Streams configs to set MaxErrorRetry to 3 directly and remove this block.
+            if (!config.IsMaxErrorRetrySet && IsDynamoDBService(config))
+            {
+                this.MaxRetries = UseNewRetries2026 ? 3 : 10;
+            }
+
             if (config.ThrottleRetries)
             {
                 RetryCapacity = CapacityManagerInstance.GetRetryCapacity(GetRetryCapacityKey(config));
@@ -91,7 +106,7 @@ namespace Amazon.Runtime.Internal
 
         /// <summary>
         /// Virtual method that gets called when a retry request is initiated. If retry throttling is
-        /// enabled, the value returned is true if the required capacity is retured, false otherwise. 
+        /// enabled, the value returned is true if the required capacity is returned, false otherwise. 
         /// If retry throttling is disabled, true is returned.
         /// </summary>
         /// <param name="executionContext">The execution context which contains both the
@@ -103,7 +118,7 @@ namespace Amazon.Runtime.Internal
 
         /// <summary>
         /// Virtual method that gets called when a retry request is initiated. If retry throttling is
-        /// enabled, the value returned is true if the required capacity is retured, false otherwise. 
+        /// enabled, the value returned is true if the required capacity is returned, false otherwise. 
         /// If retry throttling is disabled, true is returned.
         /// </summary>
         /// <param name="executionContext">The execution context which contains both the
@@ -116,13 +131,13 @@ namespace Amazon.Runtime.Internal
 
         /// <summary>
         /// Virtual method that gets called when a retry request is initiated. If retry throttling is
-        /// enabled, the value returned is true if the required capacity is retured, false otherwise. 
+        /// enabled, the value returned is true if the required capacity is returned, false otherwise. 
         /// If retry throttling is disabled, true is returned.
         /// </summary>
         /// <param name="executionContext">The execution context which contains both the
         /// requests and response context.</param>
         /// <param name="bypassAcquireCapacity">true to bypass any attempt to acquire capacity on a retry</param>
-        /// <param name="isThrottlingError">true if the error that will be retried is a throtting error</param>        
+        /// <param name="isThrottlingError">true if the error that will be retried is a throttling error</param>        
         public override bool OnRetry(IExecutionContext executionContext, bool bypassAcquireCapacity, bool isThrottlingError)
         {
             if (!bypassAcquireCapacity && executionContext.RequestContext.ClientConfig.ThrottleRetries && RetryCapacity != null)
@@ -218,33 +233,115 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
-        /// Waits before retrying a request. The default policy implements a exponential backoff with 
-        /// jitter algorithm.
+        /// Determines if the service associated with the given client config is DynamoDB or DynamoDB Streams.
+        /// Used for service-specific retry behavior such as adjusted backoff timing and increased retry counts.
         /// </summary>
-        /// <param name="executionContext">Request context containing the state of the request.</param>
-        public override void WaitBeforeRetry(IExecutionContext executionContext)
+        internal static bool IsDynamoDBService(IClientConfig config)
         {
-            StandardRetryPolicy.WaitBeforeRetry(executionContext.RequestContext.Retries, this.MaxBackoffInMilliseconds);
+            var serviceId = config?.ServiceId;
+            return string.Equals(serviceId, "DynamoDB", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(serviceId, "DynamoDB Streams", StringComparison.OrdinalIgnoreCase);
         }
-        
+
         /// <summary>
         /// Waits for an amount of time using an exponential backoff with jitter algorithm.
         /// </summary>
         /// <param name="retries">The request retry index. The first request is expected to be 0 while 
         /// the first retry will be 1.</param>
         /// <param name="maxBackoffInMilliseconds">The max number of milliseconds to wait</param>
+        [Obsolete("Use WaitBeforeRetry(IExecutionContext) instead.")]
         public static void WaitBeforeRetry(int retries, int maxBackoffInMilliseconds)
         {
             AWSSDKUtils.Sleep(CalculateRetryDelay(retries, maxBackoffInMilliseconds));
-        }        
+        }
 
+        /// <summary>
+        /// Calculates the retry delay using exponential backoff with jitter.
+        /// </summary>
+        /// <param name="retries">The retry index (0-based).</param>
+        /// <param name="maxBackoffInMilliseconds">The maximum backoff in milliseconds.</param>
+        /// <returns>The delay in milliseconds.</returns>
+        [Obsolete("Use CalculateRetryDelay(IExecutionContext, int) instead.")]
         protected static int CalculateRetryDelay(int retries, int maxBackoffInMilliseconds)
         {
             double jitter;
-            lock (_randomJitter) {        
+            lock (_randomJitter)
+            {
                 jitter = _randomJitter.NextDouble();
             }
             return Convert.ToInt32(Math.Min(jitter * Math.Pow(2, retries - 1) * 1000.0, maxBackoffInMilliseconds));
         }
+
+        /// <summary>
+        /// Waits before retrying a request. The default policy implements a exponential backoff with 
+        /// jitter algorithm.
+        /// </summary>
+        /// <param name="executionContext">Request context containing the state of the request.</param>
+        public override void WaitBeforeRetry(IExecutionContext executionContext)
+        {
+            AWSSDKUtils.Sleep(CalculateRetryDelay(executionContext, this.MaxBackoffInMilliseconds));
+        }
+
+        /// <summary>
+        /// Calculates the retry delay in milliseconds. When UseNewRetries2026 is enabled, uses the
+        /// SEP 2.1 formula with service-aware base delay, MAX_BACKOFF applied before jitter, and
+        /// x-amz-retry-after header clamping. Otherwise uses the legacy 2.0 formula.
+        /// </summary>
+        /// <param name="executionContext">The execution context for the current request.</param>
+        /// <param name="maxBackoffInMilliseconds">The maximum backoff in milliseconds.</param>
+        /// <returns>The delay in milliseconds before the next retry.</returns>
+        internal static int CalculateRetryDelay(IExecutionContext executionContext, int maxBackoffInMilliseconds)
+        {
+            var retries = executionContext.RequestContext.Retries;
+            double jitter;
+            lock (_randomJitter) {        
+                jitter = _randomJitter.NextDouble();
+            }
+
+            if (!UseNewRetries2026)
+            {
+                return Convert.ToInt32(Math.Min(jitter * Math.Pow(2, retries - 1) * 1000.0, maxBackoffInMilliseconds));
+            }
+
+            // SEP 2.1: Determine the base delay multiplier (x) based on error type and service.
+            //   - 1.0 (1000ms) for throttling errors
+            //   - 0.05 (50ms) for non-throttling errors on most services
+            //   - 0.025 (25ms) for non-throttling errors on DynamoDB/DynamoDB Streams
+            var isThrottlingError = executionContext.RequestContext.LastCapacityType == CapacityManager.CapacityType.Throttling;
+            double baseDelayMs;
+            if (isThrottlingError)
+            {
+                baseDelayMs = 1000.0;
+            }
+            else if (IsDynamoDBService(executionContext.RequestContext.ClientConfig))
+            {
+                baseDelayMs = 25.0;
+            }
+            else
+            {
+                baseDelayMs = 50.0;
+            }
+
+            // SEP 2.1: MAX_BACKOFF is applied before jitter.
+            // Formula: jitter * Min(baseDelayMs * 2^(retries-1), MAX_BACKOFF)
+            // where baseDelayMs is 1000, 50, or 25 depending on the service.
+            double rawDelay = baseDelayMs * Math.Pow(2, retries - 1);
+            double cappedDelay = Math.Min(rawDelay, maxBackoffInMilliseconds);
+            var backoffDelayMs = Convert.ToInt32(jitter * cappedDelay);
+
+            // SEP 2.1: x-amz-retry-after header clamping.
+            // The header value (ms) is clamped to [backoffDelay, 5000 + backoffDelay]. MAX_BACKOFF is NOT applied.
+            if (executionContext.RequestContext.ContextAttributes.TryGetValue(RetryAfterContextKey, out var retryAfterObj)
+                && retryAfterObj is int retryAfterMs)
+            {
+                var clampedMs = retryAfterMs;
+                if (clampedMs < backoffDelayMs) clampedMs = backoffDelayMs;
+                if (clampedMs > 5000 + backoffDelayMs) clampedMs = 5000 + backoffDelayMs;
+                return clampedMs;
+            }
+
+            return backoffDelayMs;
+        }
+
     }
 }
