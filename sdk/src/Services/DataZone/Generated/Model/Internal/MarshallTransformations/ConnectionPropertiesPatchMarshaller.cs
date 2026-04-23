@@ -90,6 +90,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetLakehouseProperties())
+            {
+                context.Writer.WritePropertyName("lakehouseProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LakehousePropertiesPatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.LakehouseProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMlflowProperties())
             {
                 context.Writer.WritePropertyName("mlflowProperties");

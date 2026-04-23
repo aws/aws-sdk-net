@@ -86,6 +86,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.IamProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("lakehouseProperties", targetDepth))
+                {
+                    var unmarshaller = LakehousePropertiesOutputUnmarshaller.Instance;
+                    unmarshalledObject.LakehouseProperties = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("mlflowProperties", targetDepth))
                 {
                     var unmarshaller = MlflowPropertiesOutputUnmarshaller.Instance;
