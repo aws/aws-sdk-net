@@ -235,7 +235,7 @@ namespace AWSSDK.Benchmarks
             }
             else if ((member.IsList || member.IsMap) && shape.IsTimeStamp)
             {
-                // Member is of type list or map, and the shape is a date time
+                // Member is of type list or map, and the shape is a timestamp
                 return GetTestDate(shape.GetTimestampFormat(member.MarshallLocation));
             }
             else

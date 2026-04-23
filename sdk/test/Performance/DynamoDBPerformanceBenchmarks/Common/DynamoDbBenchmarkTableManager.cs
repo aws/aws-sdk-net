@@ -36,16 +36,20 @@ internal static class DynamoDbBenchmarkTableManager
 
         await client.CreateTableAsync(request, cancellationToken).ConfigureAwait(false);
 
+        string? lastObservedStatus = null;
         for (var i = 0; i < 10; i++)
         {
             var table = await client.DescribeTableAsync(TableName, cancellationToken).ConfigureAwait(false);
-            if (string.Equals(table.Table.TableStatus, TableStatus.ACTIVE, StringComparison.Ordinal))
+            lastObservedStatus = table.Table.TableStatus;
+            if (string.Equals(lastObservedStatus, TableStatus.ACTIVE, StringComparison.Ordinal))
             {
                 return;
             }
-
             await Task.Delay(500, cancellationToken).ConfigureAwait(false);
         }
+
+        throw new global::System.TimeoutException(
+            $"Timed out waiting for DynamoDB table '{TableName}' to become ACTIVE. Last observed status: '{lastObservedStatus ?? "unknown"}'.");
     }
 
     public static async Task DeleteTableAsync(AmazonDynamoDBClient client, CancellationToken cancellationToken = default)

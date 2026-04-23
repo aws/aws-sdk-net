@@ -19,7 +19,7 @@ public sealed class DynamoDBResponseProvider
 
     public DynamoDBResponseProvider(BenchmarkItemSize itemSize, BenchmarkAttributeCount attributeCount, BenchmarkAnnotationStyle annotationStyle, BenchmarkObjectComplexity complexity)
     {
-        var payload = new string('a', itemSize == BenchmarkItemSize.Small ? 32 : 2048);
+        var payload = new string('a', itemSize == BenchmarkItemSize.Small ? 32 : 1024);
         var attributes = CreateAttributeMap(payload, (int)attributeCount);
         var item = CreateItemMap(payload, attributes, annotationStyle, complexity);
 

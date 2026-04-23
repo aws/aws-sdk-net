@@ -266,42 +266,42 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
         {
             case Type t when t == typeof(BenchmarkItemMinimalWithConverter):
                 {
-                    contextExpression.SetFilter <BenchmarkItemMinimalWithConverter> (x => x.PartitionKey == "42");
+                    contextExpression.SetFilter <BenchmarkItemMinimalWithConverter> (x => x.PartitionKey == PartitionKeyValue);
                     return contextExpression;
                 }
             case Type t when t == typeof(BenchmarkItemStandardWithConverter):
                 {
-                    contextExpression.SetFilter<BenchmarkItemStandardWithConverter>(x => x.PartitionKey == "42");
+                    contextExpression.SetFilter<BenchmarkItemStandardWithConverter>(x => x.PartitionKey == PartitionKeyValue);
                     return contextExpression;
                 }
             case Type t when t == typeof(BenchmarkItemAdvancedWithConverter):
                 {
-                    contextExpression.SetFilter<BenchmarkItemAdvancedWithConverter>(x => x.PartitionKey == "42");
+                    contextExpression.SetFilter<BenchmarkItemAdvancedWithConverter>(x => x.PartitionKey == PartitionKeyValue);
                     return contextExpression;
                 }
             case Type t when t == typeof(BenchmarkItemPolymorphicFlattenWithConverter):
                 {
-                    contextExpression.SetFilter<BenchmarkItemPolymorphicFlattenWithConverter>(x => x.PartitionKey == "42");
+                    contextExpression.SetFilter<BenchmarkItemPolymorphicFlattenWithConverter>(x => x.PartitionKey == PartitionKeyValue);
                     return contextExpression;
                 }
             case Type t when t == typeof(BenchmarkItemMinimal):
                 {
-                    contextExpression.SetFilter<BenchmarkItemMinimal>(x => x.PartitionKey == "42");
+                    contextExpression.SetFilter<BenchmarkItemMinimal>(x => x.PartitionKey == PartitionKeyValue);
                     return contextExpression;
                 }
             case Type t when t == typeof(BenchmarkItemStandard):
                 {
-                    contextExpression.SetFilter<BenchmarkItemStandard>(x => x.PartitionKey == "42");
+                    contextExpression.SetFilter<BenchmarkItemStandard>(x => x.PartitionKey == PartitionKeyValue);
                     return contextExpression;
                 }
             case Type t when t == typeof(BenchmarkItemAdvanced):
                 {
-                    contextExpression.SetFilter<BenchmarkItemAdvanced>(x => x.PartitionKey == "42");
+                    contextExpression.SetFilter<BenchmarkItemAdvanced>(x => x.PartitionKey == PartitionKeyValue);
                     return contextExpression;
                 }
             case Type t when t == typeof(BenchmarkItemPolymorphicFlatten):
                 {
-                    contextExpression.SetFilter<BenchmarkItemPolymorphicFlatten>(x => x.PartitionKey == "42");
+                    contextExpression.SetFilter<BenchmarkItemPolymorphicFlatten>(x => x.PartitionKey == PartitionKeyValue);
                     return contextExpression;
                 }
             default: throw new InvalidOperationException($"Unsupported benchmark item type: {typeof(T)}."); ;
