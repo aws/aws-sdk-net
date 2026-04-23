@@ -38,7 +38,11 @@ namespace Amazon
         private static Dictionary<string, RegionEndpoint> _hashBySystemName = new Dictionary<string, RegionEndpoint>(StringComparer.OrdinalIgnoreCase);
         private static ReaderWriterLockSlim _readerWriterLock = new ReaderWriterLockSlim();
 
-        private static HashSet<string> _allPartitionRegionRegex = new HashSet<string>();
+        /// <summary>
+        /// Maps partition region regex patterns to their compiled Regex instances.
+        /// Serves as both the set of known patterns and the compiled regex cache.
+        /// </summary>
+        private static Dictionary<string, Regex> _partitionRegionRegexMap = new Dictionary<string, Regex>();
 
         public static IEnumerable<RegionEndpoint> EnumerableAllRegions
         {
@@ -63,7 +67,7 @@ namespace Amazon
                 try
                 {
                     _readerWriterLock.EnterReadLock();
-                    return _allPartitionRegionRegex.ToList();
+                    return _partitionRegionRegexMap.Keys.ToList();
                 }
                 finally
                 {
@@ -93,7 +97,10 @@ namespace Amazon
 
                 regionEndpoint = new RegionEndpoint(systemName, displayName, partitionName, partitionDnsSuffix, partitionRegionRegex, hostnameTemplate);
                 _hashBySystemName.Add(systemName, regionEndpoint);
-                _allPartitionRegionRegex.Add(partitionRegionRegex);
+                if (!_partitionRegionRegexMap.ContainsKey(partitionRegionRegex))
+                {
+                    _partitionRegionRegexMap[partitionRegionRegex] = new Regex(partitionRegionRegex, RegexOptions.Compiled);
+                }
 
                 return regionEndpoint;
             }
@@ -158,7 +165,10 @@ namespace Amazon
 
             // no region key in the entry, but it matches the pattern in this partition.
             // we can try to construct an endpoint based on the heuristics.
-            else if (new Regex(partitionRegionPattern).Match(regionName).Success)
+            // Use cached compiled Regex to avoid per-call Regex instantiation.
+            else if (_partitionRegionRegexMap.TryGetValue(partitionRegionPattern, out var cachedRegex)
+                ? cachedRegex.IsMatch(regionName)
+                : new Regex(partitionRegionPattern).IsMatch(regionName))
             {
                 description = GetUnknownRegionDescription(regionName);
                 return true;
