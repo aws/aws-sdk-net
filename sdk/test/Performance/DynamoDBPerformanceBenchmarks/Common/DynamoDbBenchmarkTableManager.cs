@@ -6,19 +6,47 @@ namespace AWSSDK.Benchmarks.MockedDynamoDB;
 internal static class DynamoDbBenchmarkTableManager
 {
     private const string TableName = "BenchmarkTable";
+    private const int MaxDescribeAttempts = 60;
+    private const int TableStatePollDelayMilliseconds = 500;
 
     public static async Task EnsureTableExistsAsync(AmazonDynamoDBClient client, CancellationToken cancellationToken = default)
     {
         string? lastObservedStatus = null;
-        try
-        {
-            await client.DescribeTableAsync(TableName, cancellationToken).ConfigureAwait(false);
-            return;
-        }
-        catch (ResourceNotFoundException)
-        {
 
-        var request = new CreateTableRequest
+        for (var i = 0; i < MaxDescribeAttempts; i++)
+        {
+            try
+            {
+                var response = await client.DescribeTableAsync(TableName, cancellationToken).ConfigureAwait(false);
+                lastObservedStatus = response.Table.TableStatus;
+
+                if (string.Equals(lastObservedStatus, TableStatus.ACTIVE, StringComparison.Ordinal))
+                {
+                    return;
+                }
+            }
+            catch (ResourceNotFoundException)
+            {
+                lastObservedStatus = null;
+                try
+                {
+                    await client.CreateTableAsync(CreateTableRequest(), cancellationToken).ConfigureAwait(false);
+                }
+                catch (ResourceInUseException)
+                {
+                }
+            }
+
+            await Task.Delay(TableStatePollDelayMilliseconds, cancellationToken).ConfigureAwait(false);
+        }
+
+        throw new TimeoutException(
+            $"Timed out waiting for DynamoDB table '{TableName}' to become ACTIVE. Last observed status: '{lastObservedStatus ?? "unknown"}'.");
+    }
+
+    private static CreateTableRequest CreateTableRequest()
+    {
+        return new CreateTableRequest
         {
             TableName = TableName,
             KeySchema = new List<KeySchemaElement>
@@ -33,24 +61,6 @@ internal static class DynamoDbBenchmarkTableManager
             },
             BillingMode = BillingMode.PAY_PER_REQUEST
         };
-
-        await client.CreateTableAsync(request, cancellationToken).ConfigureAwait(false);
-
-        
-        for (var i = 0; i < 20; i++)
-        {
-            var table = await client.DescribeTableAsync(TableName, cancellationToken).ConfigureAwait(false);
-            lastObservedStatus = table.Table.TableStatus;
-            if (string.Equals(lastObservedStatus, TableStatus.ACTIVE, StringComparison.Ordinal))
-            {
-                return;
-            }
-            await Task.Delay(500, cancellationToken).ConfigureAwait(false);
-        }
-
-        }
-        throw new global::System.TimeoutException(
-            $"Timed out waiting for DynamoDB table '{TableName}' to become ACTIVE. Last observed status: '{lastObservedStatus ?? "unknown"}'.");
     }
 
     public static async Task DeleteTableAsync(AmazonDynamoDBClient client, CancellationToken cancellationToken = default)
