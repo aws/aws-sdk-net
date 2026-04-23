@@ -32,7 +32,7 @@ namespace Amazon.PartnerCentralBenefits
     public partial class AmazonPartnerCentralBenefitsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PartnerCentral Benefits", "3.7.500.44");
+            InternalSDKUtils.BuildUserAgentString("PartnerCentral Benefits", "3.7.500.45");
 
         private string _userAgent = UserAgentString;
         ///<summary>

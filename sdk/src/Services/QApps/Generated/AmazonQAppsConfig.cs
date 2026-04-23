@@ -32,7 +32,7 @@ namespace Amazon.QApps
     public partial class AmazonQAppsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("QApps", "3.7.502.59");
+            InternalSDKUtils.BuildUserAgentString("QApps", "3.7.502.60");
 
         private string _userAgent = UserAgentString;
         ///<summary>

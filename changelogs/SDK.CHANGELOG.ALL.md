@@ -1,3 +1,11 @@
+### 3.7.1251.1 (2026-04-23 17:01 UTC)
+* S3 (3.7.511.6)
+	* This release adds support for five additional checksum algorithms for data integrity checking in Amazon S3 - MD5, SHA-512, XXHash3, XXHash64, and XXHash128.
+	* Only SHA512 will be calculated by default if SHA512 is selected. For the XXHash algorithms, you must supply your own checksum
+* Core 3.7.500.96
+	* Add support for new Checksum Algorithms: SHA512, XXHASH3, XXHASH64, XXHASH128
+	* All services packages updated to require new Core
+
 ### 3.7.1251.0 (2026-03-26 18:16 UTC)
 * BCMDataExports (3.7.503.0)
 	* With this release we are providing an option to accounts to have their export delivered to an S3 bucket that is not owned by the account.
