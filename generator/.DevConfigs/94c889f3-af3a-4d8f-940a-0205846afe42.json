@@ -1,0 +1,26 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Implements the updated Retry Behavior behind a feature flag (AWS_NEW_RETRIES_2026)."
+    ],
+    "type": "minor",
+    "updateMinimum": true,
+    "backwardIncompatibilitiesToIgnore": []
+  },
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Remove max-retries from DynamoDB service and depend on values applied in the `AWSSDK.Core` package."
+      ]
+    },
+    {
+      "serviceName": "DynamoDBStreams",
+      "type": "patch",
+      "changeLogMessages": [
+        "Remove max-retries from DynamoDB Streams service and depend on values applied in the `AWSSDK.Core` package."
+      ]
+    }
+  ]
+}

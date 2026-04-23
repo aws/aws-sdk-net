@@ -35,6 +35,16 @@ namespace Amazon.Runtime
     public abstract partial class RetryPolicy
     {
         /// <summary>
+        /// Temporary feature flag for updated retry behavior improvements including
+        /// revised backoff timing, updated retry quota costs, and other enhancements.
+        /// Enabled by setting the AWS_NEW_RETRIES_2026 environment variable to "true".
+        /// Defaults to false. This flag will be removed at end of 2026 when the new
+        /// behavior becomes the default.
+        /// </summary>
+        internal static bool UseNewRetries2026 { get; set; } =
+            string.Equals(Environment.GetEnvironmentVariable("AWS_NEW_RETRIES_2026"), "true", StringComparison.OrdinalIgnoreCase);
+
+        /// <summary>
         /// Maximum number of retries to be performed.
         /// This does not count the initial request.
         /// </summary>
@@ -146,8 +156,17 @@ namespace Amazon.Runtime
                         return false;
                     }
 
-                    executionContext.RequestContext.LastCapacityType = IsServiceTimeoutError(exception) ? 
-                        CapacityManager.CapacityType.Timeout : CapacityManager.CapacityType.Retry;
+                    if (UseNewRetries2026)
+                    {
+                        executionContext.RequestContext.LastCapacityType = IsThrottlingError(exception) ?
+                            CapacityManager.CapacityType.Throttling : CapacityManager.CapacityType.Retry;
+                        StoreRetryAfterHeader(executionContext, exception);
+                    }
+                    else
+                    {
+                        executionContext.RequestContext.LastCapacityType = IsServiceTimeoutError(exception) ?
+                            CapacityManager.CapacityType.Timeout : CapacityManager.CapacityType.Retry;
+                    }
                     return OnRetry(executionContext, isClockSkewError,  IsThrottlingError(exception));
                 }
             }
@@ -622,6 +641,39 @@ namespace Amazon.Runtime
         }
 
         #endregion
+
+        /// <summary>
+        /// Context attribute key for storing the x-amz-retry-after header value (in milliseconds).
+        /// </summary>
+        protected const string RetryAfterContextKey = "RetryAfterMs";
+
+        /// <summary>
+        /// Extracts the x-amz-retry-after header from the error response and stores it in ContextAttributes.
+        /// The header value is an integer representing milliseconds.
+        /// </summary>
+        private void StoreRetryAfterHeader(IExecutionContext executionContext, Exception exception)
+        {
+            // Remove any previously stored value
+            executionContext.RequestContext.ContextAttributes.Remove(RetryAfterContextKey);
+
+            var serviceException = exception as AmazonServiceException;
+            var webData = GetWebData(serviceException);
+            if (webData == null)
+                return;
+
+            var retryAfterValue = webData.GetHeaderValue("x-amz-retry-after");
+            if (string.IsNullOrEmpty(retryAfterValue))
+                return;
+
+            if (int.TryParse(retryAfterValue, out var retryAfterMs) && retryAfterMs >= 0)
+            {
+                executionContext.RequestContext.ContextAttributes[RetryAfterContextKey] = retryAfterMs;
+            }
+            else
+            {
+                Logger?.DebugFormat("Invalid x-amz-retry-after header value '{0}', falling back to exponential backoff.", retryAfterValue);
+            }
+        }
 
         private static IWebResponseData GetWebData(AmazonServiceException ase)
         {
