@@ -1,0 +1,9 @@
+{
+    "core": {
+        "changeLogMessages": [
+            "Cache compiled Regex instances in Partition and RegionEndpoint for endpoint resolution performance"
+        ],
+        "type": "patch",
+        "updateMinimum": true
+    }
+}
