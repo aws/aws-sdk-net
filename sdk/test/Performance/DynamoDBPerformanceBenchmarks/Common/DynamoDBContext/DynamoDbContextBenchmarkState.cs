@@ -1,7 +1,7 @@
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Linq.Expressions;
+
+#pragma warning disable CS0618
 
 namespace AWSSDK.Benchmarks.MockedDynamoDB;
 

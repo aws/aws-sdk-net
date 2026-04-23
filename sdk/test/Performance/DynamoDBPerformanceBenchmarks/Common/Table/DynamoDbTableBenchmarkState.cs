@@ -1,5 +1,5 @@
-using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
+#pragma warning disable CS0618
 
 namespace AWSSDK.Benchmarks.MockedDynamoDB;
 
@@ -17,15 +17,15 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
     private readonly BenchmarkAnnotationStyle _annotationStyle = BenchmarkAnnotationStyle.Standard;
 
     private Amazon.DynamoDBv2.DocumentModel.Table? _table;
-    private Document _document;
+    private Document? _document;
 
     private Func<Task>? _tableDeleteItemAsync;
     private Func<Task>? _tableDeleteDocumentAsync;
     private Func<Task>? _tableDeleteDocumentWithOperationConfigAsync;
     private Func<Task>? _tableDeleteHashKeyRangeKeyWithOperationConfigAsync;
     private Func<Task>? _tableDeleteWithOperationRequest;
-    private Func<Task>? _tableDeteleDynamoDbEntry;
-    private Func<Task>? _tableDeteleDynamoDbEntryWithOperationConfigAsync;
+    private Func<Task>? _tableDeleteDynamoDbEntry;
+    private Func<Task>? _tableDeleteDynamoDbEntryWithOperationConfigAsync;
 
     private Func<Task>? _tableGetItemAsync;
     private Func<Task>? _tableGetHashKeyRangeKeyWithOperationConfigAsync;
@@ -105,7 +105,7 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
         {
             FilterExpression = scanFilterExpression
         };
-        var scanRequest = new ScanDocumentOperationRequest() { ProjectionExpression = scanFilterExpression };
+        var scanRequest = new ScanDocumentOperationRequest() { FilterExpression = scanFilterExpression };
 
         //delete
         _tableDeleteItemAsync = () => _table!.DeleteItemAsync(PartitionKeyValue, SortKeyValue);
@@ -113,8 +113,8 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
         _tableDeleteDocumentWithOperationConfigAsync = () => _table!.DeleteItemAsync(_document, deleteConfig);
         _tableDeleteHashKeyRangeKeyWithOperationConfigAsync = () => _table!.DeleteItemAsync(PartitionKeyValue, SortKeyValue, deleteConfig);
         _tableDeleteWithOperationRequest = () => _table!.DeleteItemAsync(deleteRequest);
-        _tableDeteleDynamoDbEntry = () => _table!.DeleteItemAsync(_dictionaryKey);
-        _tableDeteleDynamoDbEntryWithOperationConfigAsync = () => _table!.DeleteItemAsync(_dictionaryKey, deleteConfig);
+        _tableDeleteDynamoDbEntry = () => _table!.DeleteItemAsync(_dictionaryKey);
+        _tableDeleteDynamoDbEntryWithOperationConfigAsync = () => _table!.DeleteItemAsync(_dictionaryKey, deleteConfig);
 
         //get item
         _tableGetItemAsync = () => _table!.GetItemAsync(PartitionKeyValue, SortKeyValue);
@@ -196,9 +196,9 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
 
     public Task TableDeleteWithOperationRequest() => _tableDeleteWithOperationRequest!();
 
-    public Task TableDeteleDynamoDbEntry() => _tableDeteleDynamoDbEntry!();
+    public Task TableDeleteDynamoDbEntry() => _tableDeleteDynamoDbEntry!();
 
-    public Task TableDeteleDynamoDbEntryWithOperationConfigAsync() => _tableDeteleDynamoDbEntryWithOperationConfigAsync!();
+    public Task TableDeleteDynamoDbEntryWithOperationConfigAsync() => _tableDeleteDynamoDbEntryWithOperationConfigAsync!();
 
     // Get item
     public Task TableGetItemAsync() => _tableGetItemAsync!();
@@ -238,7 +238,7 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
 
     public Task SeedAsync()
     {
-        if (_table == null || _table == null)
+        if (_table == null || _document == null)
         {
             throw new InvalidOperationException("State is not initialized.");
         }

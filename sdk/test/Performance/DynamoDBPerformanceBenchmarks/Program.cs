@@ -22,22 +22,25 @@ namespace AWSSDK.Benchmarks.MockedDynamoDB
                 printUnitsInHeader: false,
                 timeUnit: Perfolizer.Horology.TimeUnit.Millisecond, sizeUnit: SizeUnit.B);
             config.WithSummaryStyle(summaryStyle);
-            var csvConfig = new SummaryStyle(
-                cultureInfo: System.Globalization.CultureInfo.InvariantCulture,
-                printUnitsInHeader: false,
-                timeUnit: Perfolizer.Horology.TimeUnit.Millisecond, sizeUnit: SizeUnit.B);
-            var csvExporter = new CsvExporter(CsvSeparator.CurrentCulture, csvConfig);
-            config.AddExporter(csvExporter);
 
             config.AddColumn(StatisticColumn.P50);
             config.AddColumn(StatisticColumn.P90);
             config.AddColumn(StatisticColumn.P95);
 
-            var switcher = benchmarkNames?.Length > 0
-                ? BenchmarkSwitcher.FromTypes(ResolveBenchmarkTypes(benchmarkNames))
-                : BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly);
+            if (benchmarkNames?.Length > 0)
+            {
+                var selectedBenchmarks = ResolveBenchmarkTypes(benchmarkNames);
+                if (selectedBenchmarks.Length == 1)
+                {
+                    BenchmarkRunner.Run(selectedBenchmarks[0], config, remainingArgs);
+                    return;
+                }
 
-            switcher.Run(remainingArgs, config);
+                BenchmarkSwitcher.FromTypes(selectedBenchmarks).Run(remainingArgs, config);
+                return;
+            }
+
+            BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(remainingArgs, config);
         }
 
         private static (string? clientMode, BenchmarkParameterOverrides? overrides, string[]? benchmarkNames, string[] remainingArgs) ParseArguments(string[] args)
