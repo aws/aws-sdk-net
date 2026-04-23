@@ -295,13 +295,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 exprSet = request.UpdateExpression is { IsSet: true };
             }
 
-            if(!docSet)
+            if (!docSet) { 
                 switch (request)
                 {
                     case UpdateItemDocumentOperationRequest r when r.Key == null || r.Key.Count == 0:
                         throw new InvalidOperationException("A key must be provided when Document is not set.");
+                    case UpdateItemDocumentOperationRequest r:
+                        if (!exprSet)
+                            throw new InvalidOperationException("Either Document or UpdateExpression must be set (exclusively).");
+                        break;
+                    default:
+                        break;
                 }
-               
+            }
+
             if (docSet && exprSet)
                 throw new InvalidOperationException("Either Document or UpdateExpression must be set (exclusively).");
         }

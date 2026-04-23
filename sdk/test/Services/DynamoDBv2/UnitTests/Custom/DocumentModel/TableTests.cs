@@ -123,6 +123,25 @@ namespace AWSSDK_DotNet.UnitTests
                 AssertThrowsSync<InvalidOperationException>(() => InvokeUpdateSync(request), expectedMessage);
         }
 
+
+        [DataTestMethod]
+        [DataRow("Either Document or UpdateExpression must be set (exclusively).", true)]
+        [DataRow("Either Document or UpdateExpression must be set (exclusively).", false)]
+        public async Task UpdateHelper_RequestInvalidDocExprCombinationWithKey_ThrowsInvalidOperationException(string expectedMessage, bool isAsync)
+        {
+            var request = new UpdateItemDocumentOperationRequest
+            {
+                Key = new Document { ["Id"] = "1", ["Count"] = 5 },
+                Document = null,
+                UpdateExpression = null
+            };
+
+            if (isAsync)
+                await AssertThrowsAsync<InvalidOperationException>(() => InvokeUpdateAsync(request), expectedMessage);
+            else
+                AssertThrowsSync<InvalidOperationException>(() => InvokeUpdateSync(request), expectedMessage);
+        }
+
         [DataTestMethod]
         [DataRow(true)]
         [DataRow(false)]
