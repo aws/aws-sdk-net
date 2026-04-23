@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.UnitTestUtilities", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoDBBenchmarks", "..\DynamoDBPerformanceBenchmarks\DynamoDBBenchmarks.csproj", "{FFD64C51-5C33-9057-A599-5EFC2A7DE91F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Extensions.CborProtocol.NetStandard", "..\..\..\..\extensions\src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetStandard.csproj", "{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.CborProtocol.NetStandard", "..\..\..\..\extensions\src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetStandard.csproj", "{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
