@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -44,6 +45,7 @@ namespace Amazon.Runtime.Credentials
         private readonly List<CredentialsGenerator> _credentialsGenerators;
         private readonly CredentialProfileStoreChain _credentialProfileChain = new();
         private readonly EnvironmentState _lastKnownEnvironmentState = new();
+        private readonly ConcurrentDictionary<(string ProfileName, string Location), ProfileCredentialEntry> _profileCredentialCache = new();
         private static readonly Lazy<DefaultAWSCredentialsIdentityResolver> _defaultInstance = new();
         private bool _disposed;
 
@@ -114,7 +116,7 @@ namespace Amazon.Runtime.Credentials
         /// </summary>
         public AWSCredentials ResolveIdentity(IClientConfig clientConfig, CancellationToken cancellationToken)
         {
-            var profileCredentials = TryGetProfileCredentials(clientConfig);
+            var profileCredentials = TryGetProfileCredentials(clientConfig, cancellationToken);
             if (profileCredentials != null) return profileCredentials;
 
             return InternalGetCredentials(cancellationToken);
@@ -125,28 +127,124 @@ namespace Amazon.Runtime.Credentials
 
         public async Task<AWSCredentials> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default)
         {
-            var profileCredentials = TryGetProfileCredentials(clientConfig);
+            var profileCredentials = await TryGetProfileCredentialsAsync(clientConfig, cancellationToken).ConfigureAwait(false);
             if (profileCredentials != null) return profileCredentials;
 
             return await InternalGetCredentialsAsync(cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Resolves credentials from the profile specified in <paramref name="clientConfig"/>, if any.
-        /// Returns null if no profile name is configured, allowing the caller to fall back to the credential chain.
+        /// Returns the <see cref="ProfileCredentialEntry"/> for the given key, creating it if absent.
+        /// The entry owns the per-key <see cref="SemaphoreSlim"/> and the volatile cached snapshot.
         /// </summary>
-        private static AWSCredentials TryGetProfileCredentials(IClientConfig clientConfig)
+        private ProfileCredentialEntry GetOrCreateEntry((string ProfileName, string Location) key) 
+        => _profileCredentialCache.GetOrAdd(key, _ => new ProfileCredentialEntry());
+
+        /// <summary>
+        /// Resolves credentials from the profile specified in <paramref name="clientConfig"/> synchronously,
+        /// using a per-key double-checked lock pattern to avoid redundant disk reads under concurrency.
+        /// Returns null if no profile is configured.
+        /// </summary>
+        private AWSCredentials TryGetProfileCredentials(IClientConfig clientConfig, CancellationToken cancellationToken)
         {
             var profile = clientConfig?.Profile;
             if (string.IsNullOrEmpty(profile?.Name)) return null;
 
-            var source = new CredentialProfileStoreChain(profile.Location);
-            if (source.TryGetProfile(profile.Name, out CredentialProfile storedProfile))
-            {
-                return storedProfile.GetAWSCredentials(source, true);
-            }
+            var key = (profile.Name, profile.Location ?? string.Empty);
+            var entry = GetOrCreateEntry(key);
 
-            throw new AmazonClientException($"Unable to find the \"{profile.Name}\" profile specified in the client configuration.");
+            // Fast path: valid cached credentials, no lock needed.
+            var cached = entry.GetIfValid();
+            if (cached != null) return cached;
+
+            entry.ResolutionLock.Wait(cancellationToken);
+            try
+            {
+                cached = entry.GetIfValid();
+                if (cached != null) return cached;
+
+                return ResolveAndCacheProfileCredentials(profile, entry);
+            }
+            // if we go here that means we were unable to find a profile with that name
+            // we must clean up the zombie entry that was added in GetOrCreateEntry above
+            // so that we don't add semaphore overhead to every future call
+            catch (AmazonClientException)
+            {
+                _profileCredentialCache.TryRemove(key, out _);
+                entry.Dispose();
+                throw;
+            }
+            finally
+            {
+                try
+                {
+                    entry.ResolutionLock.Release();
+                }
+                // in multithreaded scenarios where a zombie entry was removed, releasing the lock
+                // will throw an object disposed exception since the entry has been disposed.
+                catch (ObjectDisposedException) { }
+            }
+        }
+
+        /// <summary>
+        /// Resolves credentials from the profile specified in <paramref name="clientConfig"/> asynchronously,
+        /// using a per-key double-checked lock pattern to avoid redundant disk reads under concurrency.
+        /// Returns null if no profile is configured.
+        /// </summary>
+        private async Task<AWSCredentials> TryGetProfileCredentialsAsync(IClientConfig clientConfig, CancellationToken cancellationToken)
+        {
+            var profile = clientConfig?.Profile;
+            if (string.IsNullOrEmpty(profile?.Name)) return null;
+
+            var key = (profile.Name, profile.Location ?? string.Empty);
+            var entry = GetOrCreateEntry(key);
+
+            // Fast path: valid cached credentials, no lock needed.
+            var cached = entry.GetIfValid();
+            if (cached != null) return cached;
+
+            await entry.ResolutionLock.WaitAsync(cancellationToken).ConfigureAwait(false);
+            try
+            {
+                cached = entry.GetIfValid();
+                if (cached != null) return cached;
+
+                return ResolveAndCacheProfileCredentials(profile, entry);
+            }
+            // if we go here that means we were unable to find a profile with that name
+            // we must clean up the zombie entry that was added in GetOrCreateEntry above
+            // so that we don't add semaphore overhead to every future call
+            catch (AmazonClientException)
+            {
+                _profileCredentialCache.TryRemove(key, out _);
+                entry.Dispose();
+                throw;
+            }
+            finally
+            {
+                try
+                {
+                    entry.ResolutionLock.Release();
+                }
+                // in multithreaded scenarios where a zombie entry was removed, releasing the lock
+                // will throw an object disposed exception since the entry has been disposed.
+                catch (ObjectDisposedException) { }
+            }
+        }
+
+        /// <summary>
+        /// Performs the actual disk read and updates the entry's cached snapshot.
+        /// Must only be called while holding <paramref name="entry"/>.ResolutionLock.
+        /// </summary>
+        private static AWSCredentials ResolveAndCacheProfileCredentials(Profile profile, ProfileCredentialEntry entry)
+        {
+            var source = new CredentialProfileStoreChain(profile.Location);
+            if (!source.TryGetProfile(profile.Name, out CredentialProfile storedProfile))
+                throw new AmazonClientException($"Unable to find the \"{profile.Name}\" profile specified in the client configuration.");
+
+            var credentials = storedProfile.GetAWSCredentials(source, true);
+            entry.Update(credentials, source.ProfilesLocation);
+            return credentials;
         }
 
         /// <summary>
@@ -395,6 +493,8 @@ namespace Amazon.Runtime.Credentials
             if (disposing)
             {
                 _credentialResolutionLock.Dispose();
+                foreach (var entry in _profileCredentialCache.Values)
+                    entry.Dispose();
             }
             _disposed = true;
         }
@@ -440,6 +540,64 @@ namespace Amazon.Runtime.Credentials
                 SessionToken = Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SESSION_TOKEN);
                 ProfileName = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
             }
+        }
+
+        /// <summary>
+        /// Holds the per-profile resolution lock and the volatile cached credential snapshot.
+        /// The lock serialises re-resolution; the volatile field allows a lock-free fast path read.
+        /// </summary>
+        private sealed class ProfileCredentialEntry : IDisposable
+        {
+            public readonly SemaphoreSlim ResolutionLock = new SemaphoreSlim(1, 1);
+
+            // Written only while holding ResolutionLock; read lock-free on the fast path.
+            private volatile ProfileCredentialSnapshot _snapshot;
+
+            /// <summary>Returns cached credentials if the backing files have not changed, otherwise null.</summary>
+            public AWSCredentials GetIfValid()
+            {
+                var s = _snapshot;
+                return s != null && !s.HasFileChanged() ? s.Credentials : null;
+            }
+
+            /// <summary>Replaces the cached snapshot. Must be called while holding <see cref="ResolutionLock"/>.</summary>
+            public void Update(AWSCredentials credentials, string profilesLocation)
+            {
+                _snapshot = new ProfileCredentialSnapshot(credentials, profilesLocation);
+            }
+
+            public void Dispose() => ResolutionLock.Dispose();
+        }
+
+        /// <summary>
+        /// Immutable snapshot of resolved credentials and the file timestamps captured at resolution time.
+        /// </summary>
+        private sealed class ProfileCredentialSnapshot
+        {
+            private readonly string _credentialsFilePath;
+            private readonly string _configFilePath;
+            private readonly DateTime _credentialsFileWriteTime;
+            private readonly DateTime _configFileWriteTime;
+
+            public AWSCredentials Credentials { get; }
+
+            public ProfileCredentialSnapshot(AWSCredentials credentials, string profilesLocation)
+            {
+                Credentials = credentials;
+                _credentialsFilePath = string.IsNullOrEmpty(profilesLocation)
+                    ? SharedCredentialsFile.DefaultFilePath
+                    : profilesLocation;
+                _configFilePath = SharedCredentialsFile.DefaultConfigFilePath;
+                _credentialsFileWriteTime = GetLastWriteTime(_credentialsFilePath);
+                _configFileWriteTime = GetLastWriteTime(_configFilePath);
+            }
+
+            public bool HasFileChanged() =>
+                GetLastWriteTime(_credentialsFilePath) != _credentialsFileWriteTime ||
+                GetLastWriteTime(_configFilePath) != _configFileWriteTime;
+
+            private static DateTime GetLastWriteTime(string path) =>
+                string.IsNullOrEmpty(path) ? default : File.GetLastWriteTimeUtc(path);
         }
     }
 }
