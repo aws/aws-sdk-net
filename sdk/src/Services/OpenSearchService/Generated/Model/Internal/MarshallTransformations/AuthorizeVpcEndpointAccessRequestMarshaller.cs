@@ -88,6 +88,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Service);
             }
 
+            if(publicRequest.IsSetServiceOptions())
+            {
+                context.Writer.WritePropertyName("ServiceOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ServiceOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ServiceOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

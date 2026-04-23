@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchService.Model
     {
         private string _principal;
         private PrincipalType _principalType;
+        private ServiceOptions _serviceOptions;
 
         /// <summary>
         /// Gets and sets the property Principal. 
@@ -73,6 +74,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetPrincipalType()
         {
             return this._principalType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceOptions. 
+        /// <para>
+        /// The options for the service, including the supported Regions for the endpoint access.
+        /// </para>
+        /// </summary>
+        public ServiceOptions ServiceOptions
+        {
+            get { return this._serviceOptions; }
+            set { this._serviceOptions = value; }
+        }
+
+        // Check to see if ServiceOptions property is set
+        internal bool IsSetServiceOptions()
+        {
+            return this._serviceOptions != null;
         }
 
     }

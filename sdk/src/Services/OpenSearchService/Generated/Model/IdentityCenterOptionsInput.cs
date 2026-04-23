@@ -36,6 +36,7 @@ namespace Amazon.OpenSearchService.Model
     {
         private bool? _enabledAPIAccess;
         private string _identityCenterInstanceARN;
+        private string _identityCenterInstanceRegion;
         private RolesKeyIdCOption _rolesKey;
         private SubjectKeyIdCOption _subjectKey;
 
@@ -76,6 +77,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetIdentityCenterInstanceARN()
         {
             return this._identityCenterInstanceARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterInstanceRegion. 
+        /// <para>
+        /// The Region of the IAM Identity Center instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=30)]
+        public string IdentityCenterInstanceRegion
+        {
+            get { return this._identityCenterInstanceRegion; }
+            set { this._identityCenterInstanceRegion = value; }
+        }
+
+        // Check to see if IdentityCenterInstanceRegion property is set
+        internal bool IsSetIdentityCenterInstanceRegion()
+        {
+            return this._identityCenterInstanceRegion != null;
         }
 
         /// <summary>

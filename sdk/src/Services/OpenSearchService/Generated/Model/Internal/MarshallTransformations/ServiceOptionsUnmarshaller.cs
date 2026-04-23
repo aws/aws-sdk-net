@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AuthorizedPrincipal Object
+    /// Response Unmarshaller for ServiceOptions Object
     /// </summary>  
-    public class AuthorizedPrincipalUnmarshaller : IJsonUnmarshaller<AuthorizedPrincipal, JsonUnmarshallerContext>
+    public class ServiceOptionsUnmarshaller : IJsonUnmarshaller<ServiceOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AuthorizedPrincipal Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ServiceOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AuthorizedPrincipal unmarshalledObject = new AuthorizedPrincipal();
+            ServiceOptions unmarshalledObject = new ServiceOptions();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Principal", targetDepth))
+                if (context.TestExpression("SupportedRegions", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Principal = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PrincipalType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrincipalType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ServiceOptions", targetDepth))
-                {
-                    var unmarshaller = ServiceOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ServiceOptions = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedRegions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
 
 
-        private static AuthorizedPrincipalUnmarshaller _instance = new AuthorizedPrincipalUnmarshaller();        
+        private static ServiceOptionsUnmarshaller _instance = new ServiceOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AuthorizedPrincipalUnmarshaller Instance
+        public static ServiceOptionsUnmarshaller Instance
         {
             get
             {

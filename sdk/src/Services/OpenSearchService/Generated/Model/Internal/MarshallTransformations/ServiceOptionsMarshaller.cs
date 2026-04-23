@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IdentityCenterOptionsInput Marshaller
+    /// ServiceOptions Marshaller
     /// </summary>
-    public class IdentityCenterOptionsInputMarshaller : IRequestMarshaller<IdentityCenterOptionsInput, JsonMarshallerContext> 
+    public class ServiceOptionsMarshaller : IRequestMarshaller<ServiceOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,38 +42,19 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IdentityCenterOptionsInput requestObject, JsonMarshallerContext context)
+        public void Marshall(ServiceOptions requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnabledAPIAccess())
+            if(requestObject.IsSetSupportedRegions())
             {
-                context.Writer.WritePropertyName("EnabledAPIAccess");
-                context.Writer.WriteBooleanValue(requestObject.EnabledAPIAccess.Value);
-            }
-
-            if(requestObject.IsSetIdentityCenterInstanceARN())
-            {
-                context.Writer.WritePropertyName("IdentityCenterInstanceARN");
-                context.Writer.WriteStringValue(requestObject.IdentityCenterInstanceARN);
-            }
-
-            if(requestObject.IsSetIdentityCenterInstanceRegion())
-            {
-                context.Writer.WritePropertyName("IdentityCenterInstanceRegion");
-                context.Writer.WriteStringValue(requestObject.IdentityCenterInstanceRegion);
-            }
-
-            if(requestObject.IsSetRolesKey())
-            {
-                context.Writer.WritePropertyName("RolesKey");
-                context.Writer.WriteStringValue(requestObject.RolesKey);
-            }
-
-            if(requestObject.IsSetSubjectKey())
-            {
-                context.Writer.WritePropertyName("SubjectKey");
-                context.Writer.WriteStringValue(requestObject.SubjectKey);
+                context.Writer.WritePropertyName("SupportedRegions");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSupportedRegionsListValue in requestObject.SupportedRegions)
+                {
+                        context.Writer.WriteStringValue(requestObjectSupportedRegionsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -81,7 +62,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static IdentityCenterOptionsInputMarshaller Instance = new IdentityCenterOptionsInputMarshaller();
+        public readonly static ServiceOptionsMarshaller Instance = new ServiceOptionsMarshaller();
 
     }
 }

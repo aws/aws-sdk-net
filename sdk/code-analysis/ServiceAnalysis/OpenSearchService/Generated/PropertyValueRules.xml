@@ -1286,6 +1286,12 @@
     <pattern>^arn:aws[a-z\\-]*:[a-z]+:[a-z0-9\\-]*:[0-9]*:[a-z0-9\\-]+\/[a-z0-9\\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IdentityCenterOptions.IdentityCenterInstanceRegion</property>
+    <min>5</min>
+    <max>30</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.IdentityCenterOptions.IdentityStoreId</property>
     <min>1</min>
     <max>64</max>
@@ -1296,6 +1302,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:aws[a-z\\-]*:[a-z]+:[a-z0-9\\-]*:[0-9]*:[a-z0-9\\-]+\/[a-z0-9\\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IdentityCenterOptionsInput.IdentityCenterInstanceRegion</property>
+    <min>5</min>
+    <max>30</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.InboundConnection.ConnectionId</property>
