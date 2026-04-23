@@ -91,6 +91,36 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("ChecksumMD5", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        partsItem.ChecksumMD5 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumSHA512", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        partsItem.ChecksumSHA512 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumXXHASH128", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        partsItem.ChecksumXXHASH128 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumXXHASH3", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        partsItem.ChecksumXXHASH3 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumXXHASH64", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        partsItem.ChecksumXXHASH64 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -213,6 +213,11 @@ namespace Amazon.S3.Model
         private string _ifNoneMatch;
 
         private string _ifMatch;
+        private string _checksumMD5;
+        private string _checksumSHA512;
+        private string _checksumXXHASH128;
+        private string _checksumXXHASH3;
+        private string _checksumXXHASH64;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -521,6 +526,81 @@ namespace Amazon.S3.Model
         {
             get { return this.partETags; }
             set { this.partETags = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumMD5.
+        /// </summary>
+        public string ChecksumMD5
+        {
+            get { return this._checksumMD5; }
+            set { this._checksumMD5 = value; }
+        }
+
+        // Check to see if ChecksumMD5 property is set
+        internal bool IsSetChecksumMD5()
+        {
+            return this._checksumMD5 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA512.
+        /// </summary>
+        public string ChecksumSHA512
+        {
+            get { return this._checksumSHA512; }
+            set { this._checksumSHA512 = value; }
+        }
+
+        // Check to see if ChecksumSHA512 property is set
+        internal bool IsSetChecksumSHA512()
+        {
+            return this._checksumSHA512 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumXXHASH128.
+        /// </summary>
+        public string ChecksumXXHASH128
+        {
+            get { return this._checksumXXHASH128; }
+            set { this._checksumXXHASH128 = value; }
+        }
+
+        // Check to see if ChecksumXXHASH128 property is set
+        internal bool IsSetChecksumXXHASH128()
+        {
+            return this._checksumXXHASH128 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumXXHASH3.
+        /// </summary>
+        public string ChecksumXXHASH3
+        {
+            get { return this._checksumXXHASH3; }
+            set { this._checksumXXHASH3 = value; }
+        }
+
+        // Check to see if ChecksumXXHASH3 property is set
+        internal bool IsSetChecksumXXHASH3()
+        {
+            return this._checksumXXHASH3 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumXXHASH64.
+        /// </summary>
+        public string ChecksumXXHASH64
+        {
+            get { return this._checksumXXHASH64; }
+            set { this._checksumXXHASH64 = value; }
+        }
+
+        // Check to see if ChecksumXXHASH64 property is set
+        internal bool IsSetChecksumXXHASH64()
+        {
+            return this._checksumXXHASH64 != null;
         }
 
         /// <summary>

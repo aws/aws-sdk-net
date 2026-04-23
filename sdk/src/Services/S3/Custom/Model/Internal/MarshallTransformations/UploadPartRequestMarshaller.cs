@@ -78,6 +78,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (uploadPartRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(uploadPartRequest.ExpectedBucketOwner));
+            
+            if (uploadPartRequest.IsSetChecksumMD5())
+                request.Headers["x-amz-checksum-md5"] = uploadPartRequest.ChecksumMD5;
+            
+            if (uploadPartRequest.IsSetChecksumSHA512())
+                request.Headers["x-amz-checksum-sha512"] = uploadPartRequest.ChecksumSHA512;
+
+            if (uploadPartRequest.IsSetChecksumXXHASH128())
+                request.Headers["x-amz-checksum-xxhash128"] = uploadPartRequest.ChecksumXXHASH128;
+            
+            if (uploadPartRequest.IsSetChecksumXXHASH3())
+                request.Headers["x-amz-checksum-xxhash3"] = uploadPartRequest.ChecksumXXHASH3;
+            
+            if (uploadPartRequest.IsSetChecksumXXHASH64())
+                request.Headers["x-amz-checksum-xxhash64"] = uploadPartRequest.ChecksumXXHASH64;
 
             if (string.IsNullOrEmpty(uploadPartRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "UploadPartRequest.BucketName");

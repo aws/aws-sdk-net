@@ -81,7 +81,12 @@ namespace Amazon.S3.Transfer.Internal
                 ChecksumCRC64NVME = this._fileTransporterRequest.ChecksumCRC64NVME,
                 ChecksumSHA1 = this._fileTransporterRequest.ChecksumSHA1,
                 ChecksumSHA256 = this._fileTransporterRequest.ChecksumSHA256,
-                RequestPayer = this._fileTransporterRequest.RequestPayer
+                RequestPayer = this._fileTransporterRequest.RequestPayer,
+                ChecksumSHA512 = this._fileTransporterRequest.ChecksumSHA512,
+                ChecksumXXHASH3 = this._fileTransporterRequest.ChecksumXXHASH3,
+                ChecksumXXHASH64 = this._fileTransporterRequest.ChecksumXXHASH64,
+                ChecksumXXHASH128 = this._fileTransporterRequest.ChecksumXXHASH128,
+                ChecksumMD5 = this._fileTransporterRequest.ChecksumMD5
             };
 
             // Avoid setting ContentType to null, as that may clear

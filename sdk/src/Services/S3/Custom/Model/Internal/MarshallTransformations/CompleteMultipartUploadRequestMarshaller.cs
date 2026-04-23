@@ -86,6 +86,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (completeMultipartUploadRequest.IsSetIfMatch())
                 request.Headers[HeaderKeys.IfMatchHeader] = completeMultipartUploadRequest.IfMatch;
 
+            if (completeMultipartUploadRequest.IsSetChecksumSHA512())
+                request.Headers["x-amz-checksum-sha512"] = completeMultipartUploadRequest.ChecksumSHA512;
+
+            if (completeMultipartUploadRequest.IsSetChecksumXXHASH128())
+                request.Headers["x-amz-checksum-xxhash128"] = completeMultipartUploadRequest.ChecksumXXHASH128;
+            
+            if (completeMultipartUploadRequest.IsSetChecksumXXHASH3())
+                request.Headers["x-amz-checksum-xxhash3"] = completeMultipartUploadRequest.ChecksumXXHASH3;
+
+            if (completeMultipartUploadRequest.IsSetChecksumXXHASH64())
+                request.Headers["x-amz-checksum-xxhash64"] = completeMultipartUploadRequest.ChecksumXXHASH64;
+
             if (string.IsNullOrEmpty(completeMultipartUploadRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "CompleteMultipartUploadRequest.BucketName");
             if (string.IsNullOrEmpty(completeMultipartUploadRequest.Key))
@@ -135,6 +147,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("ChecksumCRC64NVME",
                                     S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumCRC64NVME));
                             }
+                            if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumMD5())
+                                xmlWriter.WriteElementString("ChecksumMD5", StringUtils.FromString(multipartUploadMultipartUploadpartsListValue.ChecksumMD5));
 
                             if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumSHA1())
                             {
@@ -147,6 +161,27 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteElementString("ChecksumSHA256",
                                     S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumSHA256));
                             }
+                            if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumSHA512())
+                            {
+                                xmlWriter.WriteElementString("ChecksumSHA512",
+                                    StringUtils.FromString(multipartUploadMultipartUploadpartsListValue.ChecksumSHA512));
+                            }
+                            if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumXXHASH128())
+                            {
+                                xmlWriter.WriteElementString("ChecksumXXHASH128",
+                                    StringUtils.FromString(multipartUploadMultipartUploadpartsListValue.ChecksumXXHASH128));
+                            }
+                            if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumXXHASH3())
+                            {
+                                xmlWriter.WriteElementString("ChecksumXXHASH3",
+                                    StringUtils.FromString(multipartUploadMultipartUploadpartsListValue.ChecksumXXHASH3));
+                            }
+                            if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumXXHASH64())
+                            {
+                                xmlWriter.WriteElementString("ChecksumXXHASH64",
+                                    StringUtils.FromString(multipartUploadMultipartUploadpartsListValue.ChecksumXXHASH64));
+                            }
+
                             xmlWriter.WriteEndElement();
                         }
                     }

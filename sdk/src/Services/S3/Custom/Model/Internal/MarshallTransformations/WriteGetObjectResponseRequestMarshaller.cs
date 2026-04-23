@@ -160,6 +160,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (writeGetObjectResponseRequest.IsSetBucketKeyEnabled())
                 request.Headers["x-amz-fwd-header-x-amz-server-side-encryption-bucket-key-enabled"] = S3Transforms.ToStringValue(writeGetObjectResponseRequest.BucketKeyEnabled);
+            if (writeGetObjectResponseRequest.IsSetChecksumMD5())
+                request.Headers["x-amz-fwd-header-x-amz-checksum-md5"] = writeGetObjectResponseRequest.ChecksumMD5;
+
+            if (writeGetObjectResponseRequest.IsSetChecksumSHA512())
+                request.Headers["x-amz-fwd-header-x-amz-checksum-sha512"] = writeGetObjectResponseRequest.ChecksumSHA512;
+
+            if (writeGetObjectResponseRequest.IsSetChecksumXXHASH128())
+                request.Headers["x-amz-fwd-header-x-amz-checksum-xxhash128"] = writeGetObjectResponseRequest.ChecksumXXHASH128;
+
+            if (writeGetObjectResponseRequest.IsSetChecksumXXHASH3())
+                request.Headers["x-amz-fwd-header-x-amz-checksum-xxhash3"] = writeGetObjectResponseRequest.ChecksumXXHASH3;
+
+            if (writeGetObjectResponseRequest.IsSetChecksumXXHASH64())
+                request.Headers["x-amz-fwd-header-x-amz-checksum-xxhash64"] = writeGetObjectResponseRequest.ChecksumXXHASH64;
 
             var stream = writeGetObjectResponseRequest.Body ?? new MemoryStream();
             request.ContentStream = stream;

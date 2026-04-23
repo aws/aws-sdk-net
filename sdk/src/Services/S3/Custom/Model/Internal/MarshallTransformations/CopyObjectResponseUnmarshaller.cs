@@ -89,6 +89,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         response.ChecksumCRC64NVME = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ChecksumMD5", targetDepth))
+                    {
+                        response.ChecksumMD5 = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ChecksumSHA1", targetDepth))
                     {
                         response.ChecksumSHA1 = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -99,9 +104,29 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         response.ChecksumSHA256 = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ChecksumSHA512", targetDepth))
+                    {
+                        response.ChecksumSHA512 = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ChecksumType", targetDepth))
                     {
                         response.ChecksumType = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumXXHASH128", targetDepth))
+                    {
+                        response.ChecksumXXHASH128 = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumXXHASH3", targetDepth))
+                    {
+                        response.ChecksumXXHASH3 = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumXXHASH64", targetDepth))
+                    {
+                        response.ChecksumXXHASH64 = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
                 }

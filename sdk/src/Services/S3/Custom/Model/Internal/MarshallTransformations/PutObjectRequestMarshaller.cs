@@ -129,7 +129,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 
             if (putObjectRequest.IsSetWriteOffsetBytes())
                 request.Headers.Add("x-amz-write-offset-bytes", S3Transforms.ToStringValue(putObjectRequest.WriteOffsetBytes));
+            
+            if (putObjectRequest.IsSetChecksumMD5())
+                request.Headers["x-amz-checksum-md5"] = putObjectRequest.ChecksumMD5;
 
+            if (putObjectRequest.IsSetChecksumSHA512())
+                request.Headers["x-amz-checksum-sha512"] = putObjectRequest.ChecksumSHA512;
+
+            if (putObjectRequest.IsSetChecksumXXHASH128())
+                request.Headers["x-amz-checksum-xxhash128"] = putObjectRequest.ChecksumXXHASH128;
+
+            if (putObjectRequest.IsSetChecksumXXHASH3())
+                request.Headers["x-amz-checksum-xxhash3"] = putObjectRequest.ChecksumXXHASH3;
+
+            if (putObjectRequest.IsSetChecksumXXHASH64())
+                request.Headers["x-amz-checksum-xxhash64"] = putObjectRequest.ChecksumXXHASH64;
+            
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
 
             if (string.IsNullOrEmpty(putObjectRequest.BucketName))

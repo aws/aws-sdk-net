@@ -33,6 +33,7 @@ namespace Amazon.Util
         private const int SHA56_BASE64_LENGTH = 44;
         private const int CRC32_BASE64_LENGTH = 8;
         private const int CRC64NVME_BASE64_LENGTH = 12;
+        private const int SHA512_BASE64_LENGTH = 88;
 
         static CryptoUtil util = new CryptoUtil();
 
@@ -68,6 +69,14 @@ namespace Amazon.Util
                 case CoreChecksumAlgorithm.CRC64NVME:
                     return new CrtCrc64NVME();
 
+                case CoreChecksumAlgorithm.SHA512:
+                    return CryptoUtil.CreateSHA512Instance();
+
+                case CoreChecksumAlgorithm.XXHASH128:
+                case CoreChecksumAlgorithm.XXHASH3:
+                case CoreChecksumAlgorithm.XXHASH64:
+                    throw new AmazonClientException($"The {algorithm} checksum algorithm is not supported by the SDK. You may provide a pre-calculated {algorithm} checksum value, but the SDK cannot calculate it automatically.");
+
                 default:
                     throw new AmazonClientException($"Unable to instantiate checksum algorithm {algorithm}");
             }
@@ -91,6 +100,13 @@ namespace Amazon.Util
                     return CRC32_BASE64_LENGTH;
                 case CoreChecksumAlgorithm.CRC64NVME:
                     return CRC64NVME_BASE64_LENGTH;
+                case CoreChecksumAlgorithm.SHA512:
+                    return SHA512_BASE64_LENGTH;
+
+                case CoreChecksumAlgorithm.XXHASH128:
+                case CoreChecksumAlgorithm.XXHASH3:
+                case CoreChecksumAlgorithm.XXHASH64:
+                    throw new AmazonClientException($"The {algorithm} checksum algorithm is not supported by the SDK. You may provide a pre-calculated {algorithm} checksum value, but the SDK cannot calculate it automatically.");
                 default:
                     throw new AmazonClientException($"Unable to determine the base64-encoded length of {algorithm}");
             }
@@ -170,6 +186,25 @@ namespace Amazon.Util
             }
 
             /// <summary>
+            /// Computes a SHA512 hash
+            /// </summary>
+            /// <param name="data">Input to compute the hash code for</param>
+            /// <returns>Computed has code</returns>
+            public byte[] ComputeSHA512Hash(byte[] data)
+            {
+                return SHA512AlgorithmInstance.ComputeHash(data);
+            }
+
+            /// <summary>
+            /// Compute a SHA512 hash
+            /// </summary>
+            /// <param name="stream">Input to compute the hash code for</param>
+            /// <returns>The computed hash code</returns>
+            public byte[] ComputeSHA512Hash(Stream stream)
+            {
+                return SHA512AlgorithmInstance.ComputeHash(stream);
+            }
+            /// <summary>
             /// Computes an MD5 hash
             /// </summary>
             /// <param name="data">Input to compute the hash code for</param>
@@ -220,6 +255,23 @@ namespace Amazon.Util
             public string ComputeCRC64NVMEHash(byte[] data)
             {
                 return ChecksumCRTWrapper.Crc64NVME(data);
+            }
+
+            [ThreadStatic]
+            private static HashAlgorithm _sha512HashAlgorithm = null;
+            private static HashAlgorithm SHA512AlgorithmInstance
+            {
+                get
+                {
+                    if (_sha512HashAlgorithm == null)
+                        _sha512HashAlgorithm = CreateSHA512Instance();
+                    return _sha512HashAlgorithm;
+                }
+            }
+
+            internal static HashAlgorithm CreateSHA512Instance()
+            {
+                return SHA512.Create();
             }
         }
     }

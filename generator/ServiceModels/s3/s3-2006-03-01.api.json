@@ -665,8 +665,13 @@
           "CRC64NVME",
           "CRC32",
           "CRC32C",
+          "SHA1",
           "SHA256",
-          "SHA1"
+          "SHA512",
+          "MD5",
+          "XXHASH64",
+          "XXHASH3",
+          "XXHASH128"
         ]
       }
     },
@@ -1856,6 +1861,11 @@
         "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
         "ChecksumSHA256":{"shape":"ChecksumSHA256"},
+        "ChecksumSHA512":{"shape":"ChecksumSHA512"},
+        "ChecksumMD5":{"shape":"ChecksumMD5"},
+        "ChecksumXXHASH64":{"shape":"ChecksumXXHASH64"},
+        "ChecksumXXHASH3":{"shape":"ChecksumXXHASH3"},
+        "ChecksumXXHASH128":{"shape":"ChecksumXXHASH128"},
         "ChecksumType":{"shape":"ChecksumType"}
       }
     },
@@ -1866,7 +1876,12 @@
         "CRC32C",
         "SHA1",
         "SHA256",
-        "CRC64NVME"
+        "CRC64NVME",
+        "SHA512",
+        "MD5",
+        "XXHASH64",
+        "XXHASH3",
+        "XXHASH128"
       ]
     },
     "ChecksumAlgorithmList":{
@@ -1877,12 +1892,14 @@
     "ChecksumCRC32":{"type":"string"},
     "ChecksumCRC32C":{"type":"string"},
     "ChecksumCRC64NVME":{"type":"string"},
+    "ChecksumMD5":{"type":"string"},
     "ChecksumMode":{
       "type":"string",
       "enum":["ENABLED"]
     },
     "ChecksumSHA1":{"type":"string"},
     "ChecksumSHA256":{"type":"string"},
+    "ChecksumSHA512":{"type":"string"},
     "ChecksumType":{
       "type":"string",
       "enum":[
@@ -1890,6 +1907,9 @@
         "FULL_OBJECT"
       ]
     },
+    "ChecksumXXHASH128":{"type":"string"},
+    "ChecksumXXHASH3":{"type":"string"},
+    "ChecksumXXHASH64":{"type":"string"},
     "ClientToken":{"type":"string"},
     "CloudFunction":{"type":"string"},
     "CloudFunctionConfiguration":{
@@ -1939,6 +1959,11 @@
         "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
         "ChecksumSHA256":{"shape":"ChecksumSHA256"},
+        "ChecksumSHA512":{"shape":"ChecksumSHA512"},
+        "ChecksumMD5":{"shape":"ChecksumMD5"},
+        "ChecksumXXHASH64":{"shape":"ChecksumXXHASH64"},
+        "ChecksumXXHASH3":{"shape":"ChecksumXXHASH3"},
+        "ChecksumXXHASH128":{"shape":"ChecksumXXHASH128"},
         "ChecksumType":{"shape":"ChecksumType"},
         "ServerSideEncryption":{
           "shape":"ServerSideEncryption",
@@ -2022,6 +2047,31 @@
           "location":"header",
           "locationName":"x-amz-checksum-sha256"
         },
+        "ChecksumSHA512":{
+          "shape":"ChecksumSHA512",
+          "location":"header",
+          "locationName":"x-amz-checksum-sha512"
+        },
+        "ChecksumMD5":{
+          "shape":"ChecksumMD5",
+          "location":"header",
+          "locationName":"x-amz-checksum-md5"
+        },
+        "ChecksumXXHASH64":{
+          "shape":"ChecksumXXHASH64",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash64"
+        },
+        "ChecksumXXHASH3":{
+          "shape":"ChecksumXXHASH3",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash3"
+        },
+        "ChecksumXXHASH128":{
+          "shape":"ChecksumXXHASH128",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash128"
+        },
         "ChecksumType":{
           "shape":"ChecksumType",
           "location":"header",
@@ -2088,6 +2138,11 @@
         "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
         "ChecksumSHA256":{"shape":"ChecksumSHA256"},
+        "ChecksumSHA512":{"shape":"ChecksumSHA512"},
+        "ChecksumMD5":{"shape":"ChecksumMD5"},
+        "ChecksumXXHASH64":{"shape":"ChecksumXXHASH64"},
+        "ChecksumXXHASH3":{"shape":"ChecksumXXHASH3"},
+        "ChecksumXXHASH128":{"shape":"ChecksumXXHASH128"},
         "PartNumber":{"shape":"PartNumber"}
       }
     },
@@ -2422,7 +2477,12 @@
         "ChecksumCRC32C":{"shape":"ChecksumCRC32C"},
         "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
-        "ChecksumSHA256":{"shape":"ChecksumSHA256"}
+        "ChecksumSHA256":{"shape":"ChecksumSHA256"},
+        "ChecksumSHA512":{"shape":"ChecksumSHA512"},
+        "ChecksumMD5":{"shape":"ChecksumMD5"},
+        "ChecksumXXHASH64":{"shape":"ChecksumXXHASH64"},
+        "ChecksumXXHASH3":{"shape":"ChecksumXXHASH3"},
+        "ChecksumXXHASH128":{"shape":"ChecksumXXHASH128"}
       }
     },
     "CopyPartResult":{
@@ -2434,7 +2494,12 @@
         "ChecksumCRC32C":{"shape":"ChecksumCRC32C"},
         "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
-        "ChecksumSHA256":{"shape":"ChecksumSHA256"}
+        "ChecksumSHA256":{"shape":"ChecksumSHA256"},
+        "ChecksumSHA512":{"shape":"ChecksumSHA512"},
+        "ChecksumMD5":{"shape":"ChecksumMD5"},
+        "ChecksumXXHASH64":{"shape":"ChecksumXXHASH64"},
+        "ChecksumXXHASH3":{"shape":"ChecksumXXHASH3"},
+        "ChecksumXXHASH128":{"shape":"ChecksumXXHASH128"}
       }
     },
     "CopySource":{
@@ -3668,7 +3733,7 @@
       "type":"boolean",
       "box":true
     },
-    "Expires":{"type":"string"},
+    "Expires":{"type":"timestamp"},
     "ExposeHeader":{"type":"string"},
     "ExposeHeaders":{
       "type":"list",
@@ -4658,6 +4723,31 @@
           "location":"header",
           "locationName":"x-amz-checksum-sha256"
         },
+        "ChecksumSHA512":{
+          "shape":"ChecksumSHA512",
+          "location":"header",
+          "locationName":"x-amz-checksum-sha512"
+        },
+        "ChecksumMD5":{
+          "shape":"ChecksumMD5",
+          "location":"header",
+          "locationName":"x-amz-checksum-md5"
+        },
+        "ChecksumXXHASH64":{
+          "shape":"ChecksumXXHASH64",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash64"
+        },
+        "ChecksumXXHASH3":{
+          "shape":"ChecksumXXHASH3",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash3"
+        },
+        "ChecksumXXHASH128":{
+          "shape":"ChecksumXXHASH128",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash128"
+        },
         "ChecksumType":{
           "shape":"ChecksumType",
           "location":"header",
@@ -5221,6 +5311,31 @@
           "shape":"ChecksumSHA256",
           "location":"header",
           "locationName":"x-amz-checksum-sha256"
+        },
+        "ChecksumSHA512":{
+          "shape":"ChecksumSHA512",
+          "location":"header",
+          "locationName":"x-amz-checksum-sha512"
+        },
+        "ChecksumMD5":{
+          "shape":"ChecksumMD5",
+          "location":"header",
+          "locationName":"x-amz-checksum-md5"
+        },
+        "ChecksumXXHASH64":{
+          "shape":"ChecksumXXHASH64",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash64"
+        },
+        "ChecksumXXHASH3":{
+          "shape":"ChecksumXXHASH3",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash3"
+        },
+        "ChecksumXXHASH128":{
+          "shape":"ChecksumXXHASH128",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash128"
         },
         "ChecksumType":{
           "shape":"ChecksumType",
@@ -7001,7 +7116,12 @@
         "ChecksumCRC32C":{"shape":"ChecksumCRC32C"},
         "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
-        "ChecksumSHA256":{"shape":"ChecksumSHA256"}
+        "ChecksumSHA256":{"shape":"ChecksumSHA256"},
+        "ChecksumSHA512":{"shape":"ChecksumSHA512"},
+        "ChecksumMD5":{"shape":"ChecksumMD5"},
+        "ChecksumXXHASH64":{"shape":"ChecksumXXHASH64"},
+        "ChecksumXXHASH3":{"shape":"ChecksumXXHASH3"},
+        "ChecksumXXHASH128":{"shape":"ChecksumXXHASH128"}
       }
     },
     "ObjectSize":{
@@ -7129,7 +7249,12 @@
         "ChecksumCRC32C":{"shape":"ChecksumCRC32C"},
         "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
-        "ChecksumSHA256":{"shape":"ChecksumSHA256"}
+        "ChecksumSHA256":{"shape":"ChecksumSHA256"},
+        "ChecksumSHA512":{"shape":"ChecksumSHA512"},
+        "ChecksumMD5":{"shape":"ChecksumMD5"},
+        "ChecksumXXHASH64":{"shape":"ChecksumXXHASH64"},
+        "ChecksumXXHASH3":{"shape":"ChecksumXXHASH3"},
+        "ChecksumXXHASH128":{"shape":"ChecksumXXHASH128"}
       }
     },
     "PartNumber":{"type":"integer"},
@@ -8256,6 +8381,31 @@
           "location":"header",
           "locationName":"x-amz-checksum-sha256"
         },
+        "ChecksumSHA512":{
+          "shape":"ChecksumSHA512",
+          "location":"header",
+          "locationName":"x-amz-checksum-sha512"
+        },
+        "ChecksumMD5":{
+          "shape":"ChecksumMD5",
+          "location":"header",
+          "locationName":"x-amz-checksum-md5"
+        },
+        "ChecksumXXHASH64":{
+          "shape":"ChecksumXXHASH64",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash64"
+        },
+        "ChecksumXXHASH3":{
+          "shape":"ChecksumXXHASH3",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash3"
+        },
+        "ChecksumXXHASH128":{
+          "shape":"ChecksumXXHASH128",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash128"
+        },
         "ChecksumType":{
           "shape":"ChecksumType",
           "location":"header",
@@ -8394,6 +8544,31 @@
           "shape":"ChecksumSHA256",
           "location":"header",
           "locationName":"x-amz-checksum-sha256"
+        },
+        "ChecksumSHA512":{
+          "shape":"ChecksumSHA512",
+          "location":"header",
+          "locationName":"x-amz-checksum-sha512"
+        },
+        "ChecksumMD5":{
+          "shape":"ChecksumMD5",
+          "location":"header",
+          "locationName":"x-amz-checksum-md5"
+        },
+        "ChecksumXXHASH64":{
+          "shape":"ChecksumXXHASH64",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash64"
+        },
+        "ChecksumXXHASH3":{
+          "shape":"ChecksumXXHASH3",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash3"
+        },
+        "ChecksumXXHASH128":{
+          "shape":"ChecksumXXHASH128",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash128"
         },
         "Expires":{
           "shape":"Expires",
@@ -10035,6 +10210,31 @@
           "location":"header",
           "locationName":"x-amz-checksum-sha256"
         },
+        "ChecksumSHA512":{
+          "shape":"ChecksumSHA512",
+          "location":"header",
+          "locationName":"x-amz-checksum-sha512"
+        },
+        "ChecksumMD5":{
+          "shape":"ChecksumMD5",
+          "location":"header",
+          "locationName":"x-amz-checksum-md5"
+        },
+        "ChecksumXXHASH64":{
+          "shape":"ChecksumXXHASH64",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash64"
+        },
+        "ChecksumXXHASH3":{
+          "shape":"ChecksumXXHASH3",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash3"
+        },
+        "ChecksumXXHASH128":{
+          "shape":"ChecksumXXHASH128",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash128"
+        },
         "SSECustomerAlgorithm":{
           "shape":"SSECustomerAlgorithm",
           "location":"header",
@@ -10120,6 +10320,31 @@
           "shape":"ChecksumSHA256",
           "location":"header",
           "locationName":"x-amz-checksum-sha256"
+        },
+        "ChecksumSHA512":{
+          "shape":"ChecksumSHA512",
+          "location":"header",
+          "locationName":"x-amz-checksum-sha512"
+        },
+        "ChecksumMD5":{
+          "shape":"ChecksumMD5",
+          "location":"header",
+          "locationName":"x-amz-checksum-md5"
+        },
+        "ChecksumXXHASH64":{
+          "shape":"ChecksumXXHASH64",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash64"
+        },
+        "ChecksumXXHASH3":{
+          "shape":"ChecksumXXHASH3",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash3"
+        },
+        "ChecksumXXHASH128":{
+          "shape":"ChecksumXXHASH128",
+          "location":"header",
+          "locationName":"x-amz-checksum-xxhash128"
         },
         "Key":{
           "shape":"ObjectKey",
@@ -10299,6 +10524,31 @@
           "shape":"ChecksumSHA256",
           "location":"header",
           "locationName":"x-amz-fwd-header-x-amz-checksum-sha256"
+        },
+        "ChecksumSHA512":{
+          "shape":"ChecksumSHA512",
+          "location":"header",
+          "locationName":"x-amz-fwd-header-x-amz-checksum-sha512"
+        },
+        "ChecksumMD5":{
+          "shape":"ChecksumMD5",
+          "location":"header",
+          "locationName":"x-amz-fwd-header-x-amz-checksum-md5"
+        },
+        "ChecksumXXHASH64":{
+          "shape":"ChecksumXXHASH64",
+          "location":"header",
+          "locationName":"x-amz-fwd-header-x-amz-checksum-xxhash64"
+        },
+        "ChecksumXXHASH3":{
+          "shape":"ChecksumXXHASH3",
+          "location":"header",
+          "locationName":"x-amz-fwd-header-x-amz-checksum-xxhash3"
+        },
+        "ChecksumXXHASH128":{
+          "shape":"ChecksumXXHASH128",
+          "location":"header",
+          "locationName":"x-amz-fwd-header-x-amz-checksum-xxhash128"
         },
         "DeleteMarker":{
           "shape":"DeleteMarker",

@@ -79,6 +79,30 @@ namespace Amazon.S3.Internal
         /// </summary>
         private const string FLEXIBLE_CHECKSUMS_RES_WHEN_REQUIRED = "c";
 
+        /// <summary>
+        /// Operation included a XXHash128 checksum for request payload.
+        /// </summary>
+        private const string FLEXIBLE_CHECKSUMS_REQ_XXHASH128 = "AI";
+
+        /// <summary>
+        /// Operation included a XXHASH3 checksum for request payload.
+        /// </summary>
+        private const string FLEXIBLE_CHECKSUMS_REQ_XXHASH3 = "AG";
+
+        /// <summary>
+        /// Operation included a XXHASH64 checksum for request payload
+        /// </summary>
+        private const string FLEXIBLE_CHECKSUMS_REQ_XXHASH64 = "AH";
+
+        /// <summary>
+        /// Operation included a  SHA-512 checksum for request payload.
+        /// </summary>
+        private const string FLEXIBLE_CHECKSUMS_REQ_SHA512 = "AF";
+
+        /// <summary>
+        /// Operation included a MD5 checksum for request payload.
+        /// </summary>
+        private const string FLEXIBLE_CHECKSUMS_REQ_MD5 = "AE";
         #endregion
 
         public override void InvokeSync(IExecutionContext executionContext)
@@ -127,6 +151,21 @@ namespace Amazon.S3.Internal
                     break;
                 case CoreChecksumAlgorithm.SHA1:
                     features.Add(FLEXIBLE_CHECKSUMS_REQ_SHA1);
+                    break;
+                case CoreChecksumAlgorithm.SHA512:
+                    features.Add(FLEXIBLE_CHECKSUMS_REQ_SHA512);
+                    break;
+                case CoreChecksumAlgorithm.XXHASH128:
+                    features.Add(FLEXIBLE_CHECKSUMS_REQ_XXHASH128);
+                    break;
+                case CoreChecksumAlgorithm.XXHASH3:
+                    features.Add(FLEXIBLE_CHECKSUMS_REQ_XXHASH3);
+                    break;
+                case CoreChecksumAlgorithm.XXHASH64:
+                    features.Add(FLEXIBLE_CHECKSUMS_REQ_XXHASH64);
+                    break;
+                case CoreChecksumAlgorithm.MD5:
+                    features.Add(FLEXIBLE_CHECKSUMS_REQ_MD5);
                     break;
                 case CoreChecksumAlgorithm.NONE:
                 default:

@@ -1,0 +1,19 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "This release adds support for five additional checksum algorithms for data integrity checking in Amazon S3 - MD5, SHA-512, XXHash3, XXHash64, and XXHash128.",
+                "Only SHA512 will be calculated by default if SHA512 is selected. For the XXHash algorithms, you must supply your own checksum"
+            ]
+        }
+    ],
+  "core": {
+    "changeLogMessages": [
+      "Add support for new Checksum Algorithms: SHA512, XXHASH3, XXHASH64, XXHASH128"
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}

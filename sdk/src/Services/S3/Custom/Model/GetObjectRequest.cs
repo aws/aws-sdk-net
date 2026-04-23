@@ -754,7 +754,8 @@ namespace Amazon.S3.Model
             CoreChecksumAlgorithm.CRC32C,
             CoreChecksumAlgorithm.CRC32,
             CoreChecksumAlgorithm.SHA256,
-            CoreChecksumAlgorithm.SHA1
+            CoreChecksumAlgorithm.SHA1,
+            CoreChecksumAlgorithm.SHA512
         };
 
         /// <summary>

@@ -129,7 +129,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.ChecksumSHA256 = S3Transforms.ToString(context.ResponseData.GetHeaderValue("x-amz-checksum-sha256"));
             if (responseData.IsHeaderPresent(S3Constants.AmzHeaderChecksumType))
                 response.ChecksumType = S3Transforms.ToString(responseData.GetHeaderValue(S3Constants.AmzHeaderChecksumType));
-
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-md5"))
+                response.ChecksumMD5 = context.ResponseData.GetHeaderValue("x-amz-checksum-md5");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-sha512"))
+                response.ChecksumSHA512 = context.ResponseData.GetHeaderValue("x-amz-checksum-sha512");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-xxhash128"))
+                response.ChecksumXXHASH128 = context.ResponseData.GetHeaderValue("x-amz-checksum-xxhash128");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-xxhash3"))
+                response.ChecksumXXHASH3 = context.ResponseData.GetHeaderValue("x-amz-checksum-xxhash3");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-xxhash64"))
+                response.ChecksumXXHASH64 = context.ResponseData.GetHeaderValue("x-amz-checksum-xxhash64");
             foreach (var name in responseData.GetHeaderNames())
             {
                 if (name.StartsWith("x-amz-meta-", StringComparison.OrdinalIgnoreCase))

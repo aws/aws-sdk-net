@@ -86,7 +86,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.Size = S3Transforms.ToLong(responseData.GetHeaderValue("x-amz-object-size"));
             if (responseData.IsHeaderPresent(S3Constants.AmzHeaderChecksumType))
                 response.ChecksumType = context.ResponseData.GetHeaderValue(S3Constants.AmzHeaderChecksumType);
-
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-md5"))
+                response.ChecksumMD5 = context.ResponseData.GetHeaderValue("x-amz-checksum-md5");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-sha512"))
+                response.ChecksumSHA512 = context.ResponseData.GetHeaderValue("x-amz-checksum-sha512");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-xxhash128"))
+                response.ChecksumXXHASH128 = context.ResponseData.GetHeaderValue("x-amz-checksum-xxhash128");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-xxhash3"))
+                response.ChecksumXXHASH3 = context.ResponseData.GetHeaderValue("x-amz-checksum-xxhash3");
+            if (context.ResponseData.IsHeaderPresent("x-amz-checksum-xxhash64"))
+                response.ChecksumXXHASH64 = context.ResponseData.GetHeaderValue("x-amz-checksum-xxhash64");
             return;
         }
 
