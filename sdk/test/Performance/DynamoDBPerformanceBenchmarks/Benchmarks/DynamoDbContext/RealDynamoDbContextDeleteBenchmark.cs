@@ -6,6 +6,9 @@ namespace AWSSDK.Benchmarks.MockedDynamoDB.DynamoDbContext;
 [Orderer(SummaryOrderPolicy.FastestToSlowest)]
 public class RealDynamoDbContextDeleteBenchmark : LiveDynamoDbContextBenchmark
 {
+    [IterationSetup]
+    public void IterationSetup() => State.SeedAsync().GetAwaiter().GetResult();
+
     [Benchmark]
     public Task DeleteAsync() => State.ContextDeleteAsync();
 

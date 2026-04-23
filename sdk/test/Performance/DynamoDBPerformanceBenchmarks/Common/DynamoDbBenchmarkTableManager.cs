@@ -9,6 +9,7 @@ internal static class DynamoDbBenchmarkTableManager
 
     public static async Task EnsureTableExistsAsync(AmazonDynamoDBClient client, CancellationToken cancellationToken = default)
     {
+        string? lastObservedStatus = null;
         try
         {
             await client.DescribeTableAsync(TableName, cancellationToken).ConfigureAwait(false);
@@ -16,7 +17,6 @@ internal static class DynamoDbBenchmarkTableManager
         }
         catch (ResourceNotFoundException)
         {
-        }
 
         var request = new CreateTableRequest
         {
@@ -36,8 +36,8 @@ internal static class DynamoDbBenchmarkTableManager
 
         await client.CreateTableAsync(request, cancellationToken).ConfigureAwait(false);
 
-        string? lastObservedStatus = null;
-        for (var i = 0; i < 10; i++)
+        
+        for (var i = 0; i < 20; i++)
         {
             var table = await client.DescribeTableAsync(TableName, cancellationToken).ConfigureAwait(false);
             lastObservedStatus = table.Table.TableStatus;
@@ -48,6 +48,7 @@ internal static class DynamoDbBenchmarkTableManager
             await Task.Delay(500, cancellationToken).ConfigureAwait(false);
         }
 
+        }
         throw new global::System.TimeoutException(
             $"Timed out waiting for DynamoDB table '{TableName}' to become ACTIVE. Last observed status: '{lastObservedStatus ?? "unknown"}'.");
     }

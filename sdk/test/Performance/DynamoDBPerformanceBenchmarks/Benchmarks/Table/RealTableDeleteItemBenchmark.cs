@@ -4,6 +4,9 @@ namespace AWSSDK.Benchmarks.MockedDynamoDB.Table;
 
 public class RealTableDeleteItemBenchmark : LiveDynamoDbTableBenchmark
 {
+    [IterationSetup]
+    public void IterationSetup() => State.SeedAsync().GetAwaiter().GetResult();
+
     [Benchmark]
     public Task DeleteItemAsync() => State.TableDeleteItemAsync();
 
