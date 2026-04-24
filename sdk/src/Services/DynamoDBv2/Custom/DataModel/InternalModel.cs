@@ -683,18 +683,21 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private void AddAttributeNameToProjectionExpression(string derivedTypeAttributeName)
         {
-            var projectionExpressionBuilder = new StringBuilder();
-            var expressionAttributeName = "#P" + ProjectionExpression.ExpressionAttributeNames.Count.ToString(CultureInfo.InvariantCulture);
-            if (projectionExpressionBuilder.Length == 0 && !string.IsNullOrEmpty(ProjectionExpression.ExpressionStatement))
+            var expressionAttributeCount = ProjectionExpression.ExpressionAttributeNames.Count;
+            var expressionAttributeName = "#P" + expressionAttributeCount.ToString(CultureInfo.InvariantCulture);
+
+            var currentExpressionStatement = ProjectionExpression.ExpressionStatement;
+            if (string.IsNullOrEmpty(currentExpressionStatement))
             {
-                projectionExpressionBuilder.Append(ProjectionExpression.ExpressionStatement);
+                ProjectionExpression.ExpressionStatement = expressionAttributeName;
             }
-            if (ProjectionExpression.ExpressionAttributeNames.Count > 0)
+            else
             {
-                projectionExpressionBuilder.Append(", ");
+                ProjectionExpression.ExpressionStatement = expressionAttributeCount > 0
+                    ? string.Concat(currentExpressionStatement, ", ", expressionAttributeName)
+                    : string.Concat(currentExpressionStatement, expressionAttributeName);
             }
-            projectionExpressionBuilder.Append(expressionAttributeName);
-            ProjectionExpression.ExpressionStatement = projectionExpressionBuilder.ToString();
+
             ProjectionExpression.ExpressionAttributeNames.Add(expressionAttributeName, derivedTypeAttributeName);
         }
 
