@@ -3,7 +3,8 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "Cache credentials sourced from profiles when calling ResodentityAsync rather than doing a full file read every time a profile is specified on the config."
+      "Cache credentials sourced from profiles when calling ResolveIdentity rather than doing a full file read every time a profile is specified on the config.",
+      "Introduce a new CredentialsGenerator CachedProfileCredentialResolver which handles caching of profiles and resolving of credentials via profile."
     ]
   }
 }
