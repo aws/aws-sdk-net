@@ -34,7 +34,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// the VPC Lattice resource gateway and resource configuration on your behalf using a
     /// service-linked role.
     /// </summary>
-    public partial class ManagedLatticeResource
+    public partial class ManagedVpcResource
     {
         private EndpointIpAddressType _endpointIpAddressType;
         private string _routingDomain;

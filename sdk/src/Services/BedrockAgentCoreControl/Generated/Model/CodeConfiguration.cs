@@ -86,8 +86,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// The runtime environment for executing the code (for example, Python 3.9 or Node.js
-        /// 18).
+        /// The runtime environment for executing the agent code. Specify the programming language
+        /// and version to use for the agent runtime. For valid values, see the list of supported
+        /// runtimes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

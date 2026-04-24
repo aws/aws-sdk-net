@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ManagedLatticeResource Marshaller
+    /// ManagedVpcResource Marshaller
     /// </summary>
-    public class ManagedLatticeResourceMarshaller : IRequestMarshaller<ManagedLatticeResource, JsonMarshallerContext> 
+    public class ManagedVpcResourceMarshaller : IRequestMarshaller<ManagedVpcResource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ManagedLatticeResource requestObject, JsonMarshallerContext context)
+        public void Marshall(ManagedVpcResource requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -105,7 +105,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ManagedLatticeResourceMarshaller Instance = new ManagedLatticeResourceMarshaller();
+        public readonly static ManagedVpcResourceMarshaller Instance = new ManagedVpcResourceMarshaller();
 
     }
 }

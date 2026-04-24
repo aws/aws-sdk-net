@@ -46,13 +46,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetManagedLatticeResource())
+            if(requestObject.IsSetManagedVpcResource())
             {
-                context.Writer.WritePropertyName("managedLatticeResource");
+                context.Writer.WritePropertyName("managedVpcResource");
                 context.Writer.WriteStartObject();
 
-                var marshaller = ManagedLatticeResourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.ManagedLatticeResource, context);
+                var marshaller = ManagedVpcResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManagedVpcResource, context);
 
                 context.Writer.WriteEndObject();
             }

@@ -31,6 +31,10 @@ namespace Amazon.BedrockAgentCoreControl
     {
 
         /// <summary>
+        /// Constant NODE_22 for AgentManagedRuntimeType
+        /// </summary>
+        public static readonly AgentManagedRuntimeType NODE_22 = new AgentManagedRuntimeType("NODE_22");
+        /// <summary>
         /// Constant PYTHON_3_10 for AgentManagedRuntimeType
         /// </summary>
         public static readonly AgentManagedRuntimeType PYTHON_3_10 = new AgentManagedRuntimeType("PYTHON_3_10");
@@ -3368,6 +3372,76 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServerProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for Status
+        /// </summary>
+        public static readonly Status CREATE_FAILED = new Status("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for Status
+        /// </summary>
+        public static readonly Status CREATING = new Status("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for Status
+        /// </summary>
+        public static readonly Status DELETE_FAILED = new Status("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for Status
+        /// </summary>
+        public static readonly Status DELETING = new Status("DELETING");
+        /// <summary>
+        /// Constant READY for Status
+        /// </summary>
+        public static readonly Status READY = new Status("READY");
+        /// <summary>
+        /// Constant UPDATE_FAILED for Status
+        /// </summary>
+        public static readonly Status UPDATE_FAILED = new Status("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for Status
+        /// </summary>
+        public static readonly Status UPDATING = new Status("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
         {
             return FindValue(value);
         }

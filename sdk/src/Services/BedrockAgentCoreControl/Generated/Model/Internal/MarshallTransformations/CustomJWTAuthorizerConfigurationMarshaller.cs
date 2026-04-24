@@ -101,6 +101,33 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DiscoveryUrl);
             }
 
+            if(requestObject.IsSetPrivateEndpoint())
+            {
+                context.Writer.WritePropertyName("privateEndpoint");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PrivateEndpointMarshaller.Instance;
+                marshaller.Marshall(requestObject.PrivateEndpoint, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPrivateEndpointOverrides())
+            {
+                context.Writer.WritePropertyName("privateEndpointOverrides");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPrivateEndpointOverridesListValue in requestObject.PrivateEndpointOverrides)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PrivateEndpointOverrideMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPrivateEndpointOverridesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

@@ -39,9 +39,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private DateTime? _createdTime;
         private string _credentialProviderArn;
         private CredentialProviderVendorType _credentialProviderVendor;
+        private string _failureReason;
         private DateTime? _lastUpdatedTime;
         private string _name;
         private Oauth2ProviderConfigOutput _oauth2ProviderConfigOutput;
+        private Status _status;
 
         /// <summary>
         /// Gets and sets the property CallbackUrl. 
@@ -140,6 +142,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason for the failure if the OAuth2 credential provider is in a failed state.
+        /// </para>
+        /// </summary>
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
         /// The timestamp when the OAuth2 credential provider was last updated.
@@ -194,6 +214,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetOauth2ProviderConfigOutput()
         {
             return this._oauth2ProviderConfigOutput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the OAuth2 credential provider.
+        /// </para>
+        /// </summary>
+        public Status Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManagedLatticeResource Object
+    /// Response Unmarshaller for ManagedVpcResource Object
     /// </summary>  
-    public class ManagedLatticeResourceUnmarshaller : IJsonUnmarshaller<ManagedLatticeResource, JsonUnmarshallerContext>
+    public class ManagedVpcResourceUnmarshaller : IJsonUnmarshaller<ManagedVpcResource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ManagedLatticeResource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ManagedVpcResource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ManagedLatticeResource unmarshalledObject = new ManagedLatticeResource();
+            ManagedVpcResource unmarshalledObject = new ManagedVpcResource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -97,12 +97,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManagedLatticeResourceUnmarshaller _instance = new ManagedLatticeResourceUnmarshaller();        
+        private static ManagedVpcResourceUnmarshaller _instance = new ManagedVpcResourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManagedLatticeResourceUnmarshaller Instance
+        public static ManagedVpcResourceUnmarshaller Instance
         {
             get
             {

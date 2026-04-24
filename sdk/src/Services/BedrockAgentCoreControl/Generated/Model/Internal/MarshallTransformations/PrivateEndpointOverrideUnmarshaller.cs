@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PrivateEndpoint Object
+    /// Response Unmarshaller for PrivateEndpointOverride Object
     /// </summary>  
-    public class PrivateEndpointUnmarshaller : IJsonUnmarshaller<PrivateEndpoint, JsonUnmarshallerContext>
+    public class PrivateEndpointOverrideUnmarshaller : IJsonUnmarshaller<PrivateEndpointOverride, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PrivateEndpoint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PrivateEndpointOverride Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            PrivateEndpoint unmarshalledObject = new PrivateEndpoint();
+            PrivateEndpointOverride unmarshalledObject = new PrivateEndpointOverride();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("managedVpcResource", targetDepth))
+                if (context.TestExpression("domain", targetDepth))
                 {
-                    var unmarshaller = ManagedVpcResourceUnmarshaller.Instance;
-                    unmarshalledObject.ManagedVpcResource = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Domain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("selfManagedLatticeResource", targetDepth))
+                if (context.TestExpression("privateEndpoint", targetDepth))
                 {
-                    var unmarshaller = SelfManagedLatticeResourceUnmarshaller.Instance;
-                    unmarshalledObject.SelfManagedLatticeResource = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = PrivateEndpointUnmarshaller.Instance;
+                    unmarshalledObject.PrivateEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static PrivateEndpointUnmarshaller _instance = new PrivateEndpointUnmarshaller();        
+        private static PrivateEndpointOverrideUnmarshaller _instance = new PrivateEndpointOverrideUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PrivateEndpointUnmarshaller Instance
+        public static PrivateEndpointOverrideUnmarshaller Instance
         {
             get
             {

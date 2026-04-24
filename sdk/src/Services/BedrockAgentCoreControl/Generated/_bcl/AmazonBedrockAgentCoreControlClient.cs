@@ -2709,6 +2709,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
         /// This exception is thrown when a request is denied per access permissions
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
         /// This exception is thrown if there was an unexpected error during processing of request
         /// </exception>
@@ -2747,6 +2750,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <returns>The response from the DeleteOauth2CredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
         /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
         /// This exception is thrown if there was an unexpected error during processing of request

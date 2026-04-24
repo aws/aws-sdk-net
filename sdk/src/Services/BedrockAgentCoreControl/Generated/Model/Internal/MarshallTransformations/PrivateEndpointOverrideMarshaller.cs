@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CustomOauth2ProviderConfigInput Marshaller
+    /// PrivateEndpointOverride Marshaller
     /// </summary>
-    public class CustomOauth2ProviderConfigInputMarshaller : IRequestMarshaller<CustomOauth2ProviderConfigInput, JsonMarshallerContext> 
+    public class PrivateEndpointOverrideMarshaller : IRequestMarshaller<PrivateEndpointOverride, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,31 +42,14 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CustomOauth2ProviderConfigInput requestObject, JsonMarshallerContext context)
+        public void Marshall(PrivateEndpointOverride requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetClientId())
+            if(requestObject.IsSetDomain())
             {
-                context.Writer.WritePropertyName("clientId");
-                context.Writer.WriteStringValue(requestObject.ClientId);
-            }
-
-            if(requestObject.IsSetClientSecret())
-            {
-                context.Writer.WritePropertyName("clientSecret");
-                context.Writer.WriteStringValue(requestObject.ClientSecret);
-            }
-
-            if(requestObject.IsSetOauthDiscovery())
-            {
-                context.Writer.WritePropertyName("oauthDiscovery");
-                context.Writer.WriteStartObject();
-
-                var marshaller = Oauth2DiscoveryMarshaller.Instance;
-                marshaller.Marshall(requestObject.OauthDiscovery, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("domain");
+                context.Writer.WriteStringValue(requestObject.Domain);
             }
 
             if(requestObject.IsSetPrivateEndpoint())
@@ -80,28 +63,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetPrivateEndpointOverrides())
-            {
-                context.Writer.WritePropertyName("privateEndpointOverrides");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectPrivateEndpointOverridesListValue in requestObject.PrivateEndpointOverrides)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = PrivateEndpointOverrideMarshaller.Instance;
-                    marshaller.Marshall(requestObjectPrivateEndpointOverridesListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CustomOauth2ProviderConfigInputMarshaller Instance = new CustomOauth2ProviderConfigInputMarshaller();
+        public readonly static PrivateEndpointOverrideMarshaller Instance = new PrivateEndpointOverrideMarshaller();
 
     }
 }
