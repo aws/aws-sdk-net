@@ -33,7 +33,7 @@ namespace Amazon.Interconnect
     public partial class AmazonInterconnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Interconnect", "4.0.0.1");
+            InternalSDKUtils.BuildUserAgentString("Interconnect", "4.0.0.2");
 
         private static readonly AmazonInterconnectEndpointResolver EndpointResolver =
             new AmazonInterconnectEndpointResolver();

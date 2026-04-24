@@ -1,3 +1,25 @@
+### 4.0.238.0 (2026-04-24 18:27 UTC)
+* BedrockAgentCoreControl (4.0.30.0)
+	* Added support for configuring identity providers and inbound authorizers within a private VPC for AWS Bedrock AgentCore, enabling secure network connection without public internet access
+* CloudWatchLogs (4.0.21.0)
+	* Adding nextToken and maxItems to the GetQueryResults API.
+* Connect (4.0.43.0)
+	* Amazon Connect is expanding attachment capabilities to give customers greater flexibility and control. Currently limited to predefined file types, the new feature will allow contact center administrators to customize which file extensions and sizes are supported across chat, email, tasks, and cases.
+* ConnectHealth (4.0.1.0)
+	* Corrected CreateWebAppConfiguration documentation. Adding slash as an allowed character for the Ambient documentation agent to allow pronoun specifications.
+* DynamoDBStreams (4.0.4.27)
+	* Remove max-retries from DynamoDB Streams service and depend on values applied in the `AWSSDK.Core` package.
+* DynamoDBv2 (4.0.17.11)
+	* Remove max-retries from DynamoDB service and depend on values applied in the `AWSSDK.Core` package.
+* Evs (4.0.7.0)
+	* EVS now supports i7i.metal-24xl EC2 bare metal instance type, delivering high random IOPS performance with real-time latency, ideal for IO intensive and latency-sensitive workloads such as transactional databases, real-time analytics, and AI ML pre-processing.
+* Transfer (4.0.8.0)
+	* AWS Transfer Family now support configurable IP address types for Web Apps of type VPC, enabling customers to select IPv4-only or dual-stack (IPv4 and IPv6) configurations based on their network requirements.
+* Core 4.0.4.0
+	* Cache compiled Regex instances in Partition and RegionEndpoint for endpoint resolution performance
+	* Implements the updated Retry Behavior behind a feature flag (AWS_NEW_RETRIES_2026).
+	* All service and extension packages updated to require new Core
+
 ### 4.0.237.0 (2026-04-23 18:19 UTC)
 * DataZone (4.0.26.0)
 	* Releasing For LakehouseProperties attributes in the Connections API's

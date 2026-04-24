@@ -33,7 +33,7 @@ namespace Amazon.BCMRecommendedActions
     public partial class AmazonBCMRecommendedActionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("BCM Recommended Actions", "4.0.2.17");
+            InternalSDKUtils.BuildUserAgentString("BCM Recommended Actions", "4.0.2.18");
 
         private static readonly AmazonBCMRecommendedActionsEndpointResolver EndpointResolver =
             new AmazonBCMRecommendedActionsEndpointResolver();
