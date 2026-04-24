@@ -40,6 +40,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public List<string> AttributesToGet { get; set; }
 
         /// <summary>
+        /// Expression to specify the attributes to retrieve.
+        /// </summary>
+        public Expression ProjectionExpression { get; set; }
+
+        /// <summary>
         /// Returns the total number of keys associated with this Batch request.
         /// </summary>
         public int TotalKeys { get; }
@@ -103,6 +108,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public List<string> AttributesToGet { get; set; }
 
         /// <inheritdoc/>
+        public Expression ProjectionExpression { get; set; }
+
+        /// <inheritdoc/>
         public int TotalKeys => Keys.Count;
 
         /// <inheritdoc/>
@@ -163,40 +171,26 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             MultiBatchGet resultsObject = new MultiBatchGet
             {
-                Batches = new List<DocumentBatchGet> { this }
+                Batches = new List<DocumentBatchGet>(1) { this }
             };
 
             var results = resultsObject.GetItemsHelper();
 
             List<Document> batchResults;
-            if (results.TryGetValue(TargetTable.TableName, out batchResults))
-            {
-                Results = batchResults;
-            }
-            else
-            {
-                Results = new List<Document>();
-            }
+            Results = results.TryGetValue(TargetTable.TableName, out batchResults) ? batchResults : new List<Document>();
         }
 
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
             MultiBatchGet resultsObject = new MultiBatchGet
             {
-                Batches = new List<DocumentBatchGet> { this }
+                Batches = new List<DocumentBatchGet>(1) { this }
             };
 
             var results = await resultsObject.GetItemsHelperAsync(cancellationToken).ConfigureAwait(false);
 
             List<Document> batchResults;
-            if (results.TryGetValue(TargetTable.TableName, out batchResults))
-            {
-                Results = batchResults;
-            }
-            else
-            {
-                Results = new List<Document>();
-            }
+            Results = results.TryGetValue(TargetTable.TableName, out batchResults) ? batchResults : new List<Document>();
         }
 
         internal void AddKey(Document document)
@@ -398,13 +392,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             var results = await GetAttributeItemsAsync(cancellationToken).ConfigureAwait(false);
 
-            var itemsAsDocuments = new Dictionary<string, List<Document>>(StringComparer.Ordinal);
+            var itemsAsDocuments = new Dictionary<string, List<Document>>(results.RetrievedItems.Count, StringComparer.Ordinal);
             foreach (var kvp in results.RetrievedItems)
             {
                 var tableName = kvp.Key;
                 var table = results.TargetTables[tableName];
 
-                List<Document> documents = new List<Document>();
+                List<Document> documents = new List<Document>(kvp.Value.Count);
                 foreach (var dictionary in kvp.Value)
                 {
                     documents.Add(table.FromAttributeMap(dictionary));
@@ -419,13 +413,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             var results = GetAttributeItems();
 
-            var itemsAsDocuments = new Dictionary<string, List<Document>>(StringComparer.Ordinal);
+            var itemsAsDocuments = new Dictionary<string, List<Document>>(results.RetrievedItems.Count, StringComparer.Ordinal);
             foreach (var kvp in results.RetrievedItems)
             {
                 var tableName = kvp.Key;
                 var table = results.TargetTables[tableName];
 
-                List<Document> documents = new List<Document>();
+                List<Document> documents = new List<Document>(kvp.Value.Count);
                 foreach (var dictionary in kvp.Value)
                 {
                     documents.Add(table.FromAttributeMap(dictionary));
@@ -450,7 +444,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var convertedBatches = ConvertBatches();
             while (true)
             {
-                var nextSet = GetNextRequestItems(ref convertedBatches, MaxItemsPerCall);
+                var nextSet = GetNextRequestItems(convertedBatches, MaxItemsPerCall);
                 if (nextSet.Count == 0)
                     break;
 
@@ -477,7 +471,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var convertedBatches = ConvertBatches();
             while (true)
             {
-                var nextSet = GetNextRequestItems(ref convertedBatches, MaxItemsPerCall);
+                var nextSet = GetNextRequestItems(convertedBatches, MaxItemsPerCall);
                 if (nextSet.Count == 0)
                     break;
 
@@ -539,18 +533,33 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             BatchGetItemRequest request = new BatchGetItemRequest();
 
-            var requestItems = new Dictionary<string, KeysAndAttributes>();
+            var requestItems = new Dictionary<string, KeysAndAttributes>(set.Count);
             foreach (var kvp in set)
             {
                 var tableName = kvp.Key;
                 var requestSet = kvp.Value;
 
+                if (requestSet.Batch.ProjectionExpression is { IsSet: true } &&
+                    requestSet.Batch.AttributesToGet is { Count: > 0 }) 
+                {
+                    throw new  InvalidOperationException($"BatchGetItem request for table {tableName} contains both ProjectionExpression and AttributesToGet, which is not allowed. Please specify only one of these properties.");
+                }
+
                 var keys = new KeysAndAttributes
                 {
                     Keys = requestSet.GetItems(),
-                    ConsistentRead = requestSet.Batch.ConsistentRead,
-                    AttributesToGet = requestSet.Batch.AttributesToGet
+                    ConsistentRead = requestSet.Batch.ConsistentRead
                 };
+
+                if (requestSet.Batch.ProjectionExpression is { IsSet: true })
+                {
+                    keys.ProjectionExpression = requestSet.Batch.ProjectionExpression.ExpressionStatement;
+                    keys.ExpressionAttributeNames = requestSet.Batch.ProjectionExpression.ExpressionAttributeNames;
+                }
+                else
+                {
+                    keys.AttributesToGet = requestSet.Batch.AttributesToGet;
+                }
 
                 requestItems.Add(tableName, keys);
             }
@@ -561,7 +570,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private Dictionary<string, RequestSet> ConvertBatches()
         {
-            var allItems = new Dictionary<string, RequestSet>();
+            var allItems = new Dictionary<string, RequestSet>(Batches?.Count ?? 0);
             if (Batches == null || Batches.Count == 0)
                 return allItems;
 
@@ -584,17 +593,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return allItems;
         }
 
-        private static Dictionary<string, RequestSet> GetNextRequestItems(ref Dictionary<string, RequestSet> getRequestsMap, int maxNumberOfItems)
+        private static Dictionary<string, RequestSet> GetNextRequestItems(Dictionary<string, RequestSet> getRequestsMap, int maxNumberOfItems)
         {
             int numberOfItems = 0;
-            var nextItems = new Dictionary<string, RequestSet>();
-            List<string> keys = new List<string>(getRequestsMap.Keys);
-            foreach (string tableName in keys)
+            var nextItems = new Dictionary<string, RequestSet>(getRequestsMap.Count);
+            foreach (var kvp in getRequestsMap)
             {
                 if (numberOfItems >= maxNumberOfItems)
                     break;
 
-                var getRequests = getRequestsMap[tableName];
+                var tableName = kvp.Key;
+                var getRequests = kvp.Value;
                 if (getRequests.Count == 0)
                     continue;
 

@@ -112,6 +112,36 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
+        public void Denormalize_DerivedTypeAttribute_MustBeInProjectionExpression()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var context = new DummyContext(mockClient.Object);
+            var config = CreatePopulatedConfig(mockClient);
+
+            var polyStorage = new StorageConfig(typeof(DerivedType));
+            var extraProp = new PropertyStorage(typeof(DerivedType).GetProperty(nameof(DerivedType.Extra)))
+            { AttributeName = "Extra" };
+            extraProp.IndexNames ??= new List<string>();
+            extraProp.FlattenProperties ??= new List<PropertyStorage>();
+            polyStorage.Properties.Add(extraProp);
+
+            config.AddPolymorphicPropertyStorageConfiguration("DT1", typeof(DerivedType), polyStorage);
+
+            var polyPropOnBase = new PropertyStorage(typeof(TestClass).GetProperty(nameof(TestClass.Poly)))
+            { AttributeName = "Poly", PolymorphicProperty = true };
+            polyPropOnBase.IndexNames ??= new List<string>();
+            polyPropOnBase.FlattenProperties ??= new List<PropertyStorage>();
+            config.BaseTypeStorageConfig.Properties.Add(polyPropOnBase);
+
+            config.Denormalize(context, derivedTypeAttributeName: "dtype");
+
+            Assert.IsTrue(config.AttributesToGet.Contains("dtype"));
+            Assert.IsTrue(
+                config.ProjectionExpression.ExpressionAttributeNames.ContainsValue("dtype"),
+                "ProjectionExpression must include the derived type attribute so polymorphic batch gets return the $type column");
+        }
+
+        [TestMethod]
         public void Denormalize_PopulatesKeys_AttributesAndIndexMappings()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -144,6 +174,8 @@ namespace AWSSDK_DotNet.UnitTests
             CollectionAssert.Contains(config.IndexNameToLSIRangePropertiesMapping["LSI_A"], nameof(TestClass.LsiRange));
 
             Assert.IsFalse(config.AttributesToGet.Contains("dtype"));
+            Assert.IsFalse(config.ProjectionExpression.ExpressionAttributeNames.ContainsValue("dtype"));
+
         }
 
         [TestMethod]
