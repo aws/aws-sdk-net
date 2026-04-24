@@ -28,5 +28,15 @@ namespace Amazon.Runtime.Telemetry.Tracing
         /// <param name="scope">The name of the instrumentation scope that uniquely identifies the tracer.</param>
         /// <returns>A <see cref="Tracer"/> instance for the specified scope.</returns>
         public abstract Tracer GetTracer(string scope);
+
+        /// <summary>
+        /// Creates a new <see cref="Tracer"/> instance for a given scope.
+        /// Tracers are used as an entry point for creating spans.
+        /// </summary>
+        /// <param name="scope">The name of the instrumentation scope that uniquely identifies the tracer.</param>
+        /// <param name="attributes">Optional attributes associated with the tracer.</param> 
+        /// <returns>A <see cref="Tracer"/> instance for the specified scope.</returns>
+        /// <remarks>The implementation of this method ignores the attributes and simply calls the <see cref="GetTracer(string)"/> method. Derived classes can override this method to provide custom behavior based on the attributes.</remarks
+        public virtual Tracer GetTracer(string scope, Attributes attributes) => GetTracer(scope);
     }
 }
