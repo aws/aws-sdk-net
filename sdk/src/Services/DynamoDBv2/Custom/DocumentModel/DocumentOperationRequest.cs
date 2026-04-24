@@ -234,13 +234,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// Legacy parameters such as AttributeUpdates, Expected are not supported.
     /// Use UpdateExpression and ConditionalExpression instead.
     /// </summary>
-    public class UpdateItemDocumentOperationRequest : DocumentOperationRequest
+    public class UpdateItemDocumentOperationRequest : BaseUpdateItemDocumentOperationRequest
     {
         /// <summary>
         /// Gets or sets the key identifying the item in the table.
         /// </summary>
         public IDictionary<string, DynamoDBEntry> Key { get; set; }
+    }
 
+    /// <summary>
+    /// Internal version of UpdateItemDocumentOperationRequest that includes a strongly-typed Key property.
+    /// </summary>
+    public abstract class BaseUpdateItemDocumentOperationRequest : DocumentOperationRequest
+    {
         /// <summary>
         /// Gets or sets the attributes to be updated in the item.
         /// </summary>
