@@ -624,6 +624,7 @@ namespace Amazon.DynamoDBv2.DataModel
             if (StorePolymorphicTypes)
             {
                 AttributesToGet.Add(derivedTypeAttributeName);
+                AddAttributeNameToProjectionExpression(derivedTypeAttributeName);
             }
 
             if (this.BaseTypeStorageConfig.Properties.Count == 0)
