@@ -1406,7 +1406,8 @@ namespace AWSSDK_DotNet.UnitTests
                     r.ExpressionAttributeNames.Count == 2 &&
                     r.ExpressionAttributeNames["#P0"] == "Id" &&
                     r.ExpressionAttributeNames["#P1"] == "Name" &&
-                    r.ProjectionExpression == "#P0, #P1"
+                    r.ProjectionExpression == "#P0, #P1" &&
+                    r.AttributesToGet == null
                     ),
                 It.IsAny<CancellationToken>()))
                .ReturnsAsync(new GetItemResponse() 
@@ -1446,7 +1447,8 @@ namespace AWSSDK_DotNet.UnitTests
                     r.ExpressionAttributeNames.Count == 2 &&
                     r.ExpressionAttributeNames["#P0"] == "Id" &&
                     r.ExpressionAttributeNames["#P1"] == "Name" &&
-                    r.ProjectionExpression == "#P0, #P1"
+                    r.ProjectionExpression == "#P0, #P1" && 
+                    r.AttributesToGet == null
                     )))
                .Returns(new GetItemResponse()
                {
