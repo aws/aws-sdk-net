@@ -452,6 +452,22 @@ namespace ServiceClientGenerator
             return s.Replace("\"", "\"\"");
         }
 
+        /// <summary>
+        /// Sanitizes a deprecation message by removing or replacing characters that could
+        /// break generated code (e.g. newlines, HTML tags, quotes in [Obsolete("...")] attributes).
+        /// </summary>
+        public static string SanitizeDeprecationMessage(this string s)
+        {
+            return s
+                .Replace("\r", string.Empty)
+                .Replace("\n", string.Empty)
+                .Replace("\"", "'")
+                .Replace("<p>", string.Empty)
+                .Replace("</p>", string.Empty)
+                .Replace("<code>", "<c>")
+                .Replace("</code>", "</c>");
+        }
+
         public static string ToVariableName(this string s)
         {
             return s.Replace("-", "_");
