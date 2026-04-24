@@ -518,6 +518,10 @@ namespace Amazon.Evs
         /// Constant I4iMetal for InstanceType
         /// </summary>
         public static readonly InstanceType I4iMetal = new InstanceType("i4i.metal");
+        /// <summary>
+        /// Constant I7iMetal24xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType I7iMetal24xl = new InstanceType("i7i.metal-24xl");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
