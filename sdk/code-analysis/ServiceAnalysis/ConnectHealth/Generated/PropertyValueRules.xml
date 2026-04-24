@@ -303,7 +303,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectHealth.Model.EncounterContext.UnstructuredContext</property>
-    <pattern>[a-zA-Z0-9\s\*_\-#\[\]\(\)\.,:;!?'"`&lt;&gt;~]+</pattern>
+    <pattern>[a-zA-Z0-9\s\*_\-#\[\]\(\)\.,:;!?'"`&lt;&gt;~/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectHealth.Model.EncryptionContext.KmsKeyArn</property>
@@ -411,7 +411,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectHealth.Model.TemplateSectionInstruction.SectionInstruction</property>
-    <pattern>[a-zA-Z0-9\s\*_\-#\[\]\(\)\.,:;!?'"`&lt;&gt;~]+</pattern>
+    <pattern>[a-zA-Z0-9\s\*_\-#\[\]\(\)\.,:;!?'"`&lt;&gt;~/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectHealth.Model.UserContext.UserId</property>
