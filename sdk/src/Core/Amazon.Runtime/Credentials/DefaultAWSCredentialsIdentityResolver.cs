@@ -158,9 +158,6 @@ namespace Amazon.Runtime.Credentials
             if (cached != null) return cached;
 
             entry.ResolutionLock.Wait(cancellationToken);
-            // this flag is to track whether or not the entry will be removed later if the given profile
-            // hasn't been found. This is to prevent disposing a lock of an already disposed object.
-            bool entryRemoved = false;
             try
             {
                 cached = entry.GetIfValid();
@@ -173,14 +170,19 @@ namespace Amazon.Runtime.Credentials
             // so that we don't add semaphore overhead to every future call
             catch (AmazonClientException)
             {
-                entryRemoved = _profileCredentialCache.TryRemove(key, out _);
+                _profileCredentialCache.TryRemove(key, out _);
                 entry.Dispose();
                 throw;
             }
             finally
             {
-                if (entryRemoved)
+                try
+                {
                     entry.ResolutionLock.Release();
+                }
+                // in multithreaded scenarios where a zombie entry was removed, releasing the lock
+                // will throw an object disposed exception since the entry has been disposed.
+                catch (ObjectDisposedException) { }
             }
         }
 
@@ -202,9 +204,6 @@ namespace Amazon.Runtime.Credentials
             if (cached != null) return cached;
 
             await entry.ResolutionLock.WaitAsync(cancellationToken).ConfigureAwait(false);
-            // this flag is to track whether or not the entry will be removed later if the given profile
-            // hasn't been found. This is to prevent disposing a lock of an already disposed object.
-            bool entryRemoved = false;
             try
             {
                 cached = entry.GetIfValid();
@@ -217,14 +216,19 @@ namespace Amazon.Runtime.Credentials
             // so that we don't add semaphore overhead to every future call
             catch (AmazonClientException)
             {
-                entryRemoved = _profileCredentialCache.TryRemove(key, out _);
+                _profileCredentialCache.TryRemove(key, out _);
                 entry.Dispose();
                 throw;
             }
             finally
             {
-                if (entryRemoved)
+                try
+                {
                     entry.ResolutionLock.Release();
+                }
+                // in multithreaded scenarios where a zombie entry was removed, releasing the lock
+                // will throw an object disposed exception since the entry has been disposed.
+                catch (ObjectDisposedException) { }
             }
         }
 
