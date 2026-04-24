@@ -920,6 +920,15 @@
     <max>10485760</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetQueryResultsRequest.MaxItems</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetQueryResultsRequest.NextToken</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetQueryResultsRequest.QueryId</property>
     <min>1</min>
     <max>256</max>
@@ -927,6 +936,10 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetQueryResultsResponse.EncryptionKey</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetQueryResultsResponse.NextToken</property>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetScheduledQueryRequest.Identifier</property>

@@ -58,6 +58,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     response.EncryptionKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("queryLanguage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
