@@ -10225,6 +10225,93 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribeAttachedFilesConfiguration
+
+
+        /// <summary>
+        /// Describes the attached files configuration for the specified Amazon Connect instance
+        /// and attachment scope.
+        /// 
+        ///  
+        /// <para>
+        /// If a custom configuration exists for the specified attachment scope, the custom configuration
+        /// is returned. If no custom configuration exists, the default configuration values for
+        /// that attachment scope are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAttachedFilesConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAttachedFilesConfiguration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAttachedFilesConfiguration">REST API Reference for DescribeAttachedFilesConfiguration Operation</seealso>
+        public virtual DescribeAttachedFilesConfigurationResponse DescribeAttachedFilesConfiguration(DescribeAttachedFilesConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAttachedFilesConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAttachedFilesConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAttachedFilesConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the attached files configuration for the specified Amazon Connect instance
+        /// and attachment scope.
+        /// 
+        ///  
+        /// <para>
+        /// If a custom configuration exists for the specified attachment scope, the custom configuration
+        /// is returned. If no custom configuration exists, the default configuration values for
+        /// that attachment scope are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAttachedFilesConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAttachedFilesConfiguration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAttachedFilesConfiguration">REST API Reference for DescribeAttachedFilesConfiguration Operation</seealso>
+        public virtual Task<DescribeAttachedFilesConfigurationResponse> DescribeAttachedFilesConfigurationAsync(DescribeAttachedFilesConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAttachedFilesConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAttachedFilesConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAttachedFilesConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAuthenticationProfile
 
 
@@ -16768,6 +16855,93 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListAssociatedContactsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListAssociatedContactsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAttachedFilesConfigurations
+
+
+        /// <summary>
+        /// Provides summary information about the attached files configurations for the specified
+        /// Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// This API returns effective configurations (custom overrides or defaults) for each
+        /// attachment scope. If no custom configuration exists for a scope, the default configuration
+        /// values are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedFilesConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachedFilesConfigurations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAttachedFilesConfigurations">REST API Reference for ListAttachedFilesConfigurations Operation</seealso>
+        public virtual ListAttachedFilesConfigurationsResponse ListAttachedFilesConfigurations(ListAttachedFilesConfigurationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAttachedFilesConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttachedFilesConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttachedFilesConfigurationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides summary information about the attached files configurations for the specified
+        /// Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// This API returns effective configurations (custom overrides or defaults) for each
+        /// attachment scope. If no custom configuration exists for a scope, the default configuration
+        /// values are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedFilesConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAttachedFilesConfigurations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAttachedFilesConfigurations">REST API Reference for ListAttachedFilesConfigurations Operation</seealso>
+        public virtual Task<ListAttachedFilesConfigurationsResponse> ListAttachedFilesConfigurationsAsync(ListAttachedFilesConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAttachedFilesConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttachedFilesConfigurationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAttachedFilesConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -27795,6 +27969,93 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateAgentStatusResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateAgentStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAttachedFilesConfiguration
+
+
+        /// <summary>
+        /// Updates the attached files configuration for the specified Amazon Connect instance
+        /// and attachment scope.
+        /// 
+        ///  
+        /// <para>
+        /// If no instance-specific configuration exists, this operation creates one. Partial
+        /// updates are supported—only specified fields are updated, while unspecified fields
+        /// retain their current values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAttachedFilesConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAttachedFilesConfiguration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAttachedFilesConfiguration">REST API Reference for UpdateAttachedFilesConfiguration Operation</seealso>
+        public virtual UpdateAttachedFilesConfigurationResponse UpdateAttachedFilesConfiguration(UpdateAttachedFilesConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAttachedFilesConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAttachedFilesConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAttachedFilesConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the attached files configuration for the specified Amazon Connect instance
+        /// and attachment scope.
+        /// 
+        ///  
+        /// <para>
+        /// If no instance-specific configuration exists, this operation creates one. Partial
+        /// updates are supported—only specified fields are updated, while unspecified fields
+        /// retain their current values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAttachedFilesConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAttachedFilesConfiguration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAttachedFilesConfiguration">REST API Reference for UpdateAttachedFilesConfiguration Operation</seealso>
+        public virtual Task<UpdateAttachedFilesConfigurationResponse> UpdateAttachedFilesConfigurationAsync(UpdateAttachedFilesConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAttachedFilesConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAttachedFilesConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAttachedFilesConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

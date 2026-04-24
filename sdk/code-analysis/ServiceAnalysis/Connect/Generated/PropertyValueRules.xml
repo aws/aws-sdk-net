@@ -1494,6 +1494,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeAttachedFilesConfigurationRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DescribeAuthenticationProfileRequest.AuthenticationProfileId</property>
     <min>1</min>
     <max>100</max>
@@ -2286,6 +2291,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListAssociatedContactsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListAttachedFilesConfigurationsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListAttachedFilesConfigurationsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -4269,6 +4284,26 @@
     <max>127</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAttachedFilesConfigurationRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAttachedFilesConfigurationRequest.MaximumSizeLimitInBytes</property>
+    <min>1</min>
+    <max>104857600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAttachedFilesConfigurationResponse.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAttachedFilesConfigurationResponse.MaximumSizeLimitInBytes</property>
+    <min>1</min>
+    <max>104857600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateAuthenticationProfileRequest.AuthenticationProfileId</property>
     <min>1</min>
     <max>100</max>
@@ -5216,6 +5251,12 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AllowedExtension.Extension</property>
+    <min>1</min>
+    <max>10</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AnalyticsDataAssociationResult.DataSetId</property>
     <min>1</min>
     <max>255</max>
@@ -5269,6 +5310,26 @@
     <property>Amazon.Connect.Model.AttachedFileError.FileId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttachedFilesConfiguration.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttachedFilesConfiguration.MaximumSizeLimitInBytes</property>
+    <min>1</min>
+    <max>104857600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttachedFilesConfigurationSummary.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttachedFilesConfigurationSummary.MaximumSizeLimitInBytes</property>
+    <min>1</min>
+    <max>104857600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AttachmentReference.Arn</property>
