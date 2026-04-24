@@ -1385,7 +1385,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return this.FromAttributeMap(attributeMap);
         }
 
-        internal Document GetItemHelper(GetItemDocumentOperationRequest request)
+        internal Document GetItemHelper(BaseGetItemDocumentOperationRequest request)
         {
             var pipeline = new GetItemPipeline(this);
             return pipeline.ExecuteSync(request);

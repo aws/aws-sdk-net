@@ -530,21 +530,29 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private T LoadHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig)
         {
-            GetItemOperationConfig getConfig = new GetItemOperationConfig
-            {
-                ConsistentRead = flatConfig.ConsistentRead.Value,
-                AttributesToGet = storageConfig.AttributesToGet
-            };
+            var operationRequest = CreateInternalGetItemDocumentOperationRequest(key, flatConfig, storageConfig);
 
             Table table = GetTargetTable(storageConfig, flatConfig);
             ItemStorage storage = new ItemStorage(storageConfig);
-            storage.Document = table.GetItemHelper(key, getConfig);
+            storage.Document = table.GetItemHelper(operationRequest);
 
             T instance = DocumentToObject<T>(storage, flatConfig);
             return instance;
         }
 
         private async Task<T> LoadHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig, CancellationToken cancellationToken)
+        {
+            var operationRequest = CreateInternalGetItemDocumentOperationRequest(key, flatConfig, storageConfig);
+
+            Table table = GetTargetTable(storageConfig, flatConfig);
+            ItemStorage storage = new ItemStorage(storageConfig);
+            storage.Document = await table.GetItemHelperAsync(operationRequest, cancellationToken).ConfigureAwait(false);
+
+            T instance = DocumentToObject<T>(storage, flatConfig);
+            return instance;
+        }
+
+        private InternalGetItemDocumentOperationRequest CreateInternalGetItemDocumentOperationRequest(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig)
         {
             var operationRequest = new InternalGetItemDocumentOperationRequest()
             {
@@ -558,12 +566,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 operationRequest.ProjectionExpression = storageConfig.ProjectionExpression;
             }
 
-            Table table = GetTargetTable(storageConfig, flatConfig);
-            ItemStorage storage = new ItemStorage(storageConfig);
-            storage.Document = await table.GetItemHelperAsync(operationRequest, cancellationToken).ConfigureAwait(false);
-
-            T instance = DocumentToObject<T>(storage, flatConfig);
-            return instance;
+            return operationRequest;
         }
 
         /// <inheritdoc/>
