@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Cache credentials sourced from profiles when calling ResodentityAsync rather than doing a full file read every time a profile is specified on the config."
+    ]
+  }
+}
