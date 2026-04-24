@@ -2,12 +2,12 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
-using static AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DataModelContextTestHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
+using static AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DataModelContextTestHelpers;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
@@ -731,6 +731,91 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             await Assert.ThrowsAsync<InvalidOperationException>(() => _context.ScanAsync<TimeSpan>(new List<ScanCondition>()).GetNextSetAsync());
             await Assert.ThrowsAsync<InvalidOperationException>(() => _context.ScanAsync<EmptyType>(new List<ScanCondition>()).GetNextSetAsync());
         }
+
+        [Fact]
+        public async Task Test_LoadAsync_WithProjectionExpression_AndReservedWords()
+        {
+            var productReview1 = new ProductReviews()
+            {
+                Id = 1,
+                Comment = "Comment",
+                Date = DateTime.Now,
+            };
+            var productReview2 = new ProductReviews()
+            {
+                Id = 2,
+                Comment = "Review",
+                Date = DateTime.Now,
+            };
+            var productReview3 = new ProductReviews()
+            {
+                Id = 3,
+                Comment = "Date",
+                Date = DateTime.Now,
+            };
+
+            await _context.SaveAsync(productReview1);
+            await _context.SaveAsync(productReview2);
+            await _context.SaveAsync(productReview3);
+
+            var savedProduct1 = await _context.LoadAsync<ProductReviews>(1);
+            var savedProduct2 = await _context.LoadAsync<ProductReviews>(2);
+            var savedProduct3 = await _context.LoadAsync<ProductReviews>(3);
+
+            Assert.Equal(productReview1.Comment, savedProduct1.Comment);
+            Assert.Equal(productReview2.Comment, savedProduct2.Comment);
+            Assert.Equal(productReview3.Comment, savedProduct3.Comment);
+            ApproximatelyEqual(productReview1.Date.ToUniversalTime(), savedProduct1.Date);
+            ApproximatelyEqual(productReview2.Date.ToUniversalTime(), savedProduct2.Date);
+            ApproximatelyEqual(productReview3.Date.ToUniversalTime(), savedProduct3.Date);
+        }
+
+        [Fact]
+        public async Task Test_LoadAsync_WithProjectionExpression()
+        {
+            var product = new Product
+            {
+                Id = 1,
+                Name = "Product name",
+                CompanyName = "Company name",
+                Price = 123,
+                Map = new Dictionary<string, string> // M
+                {
+                    {
+                        "Position", "Position map"
+                    }
+                },
+                CompanyInfo = new CompanyInfo // L
+                {
+                    Name = "Company info name",
+                    AllProducts = new List<Product>
+                    {
+                        new Product { Id = 12, Name = "product name 2", IsPublic = true }
+                    },
+                },
+                Components = new List<string> // SS
+                {
+                    string.Empty
+                }
+            };
+
+            await _context.SaveAsync(product);
+
+            var savedProduct = await _context.LoadAsync<Product>(1);
+            Assert.Equal(product.CompanyName, savedProduct.CompanyName);
+            Assert.Equal(product.Name, savedProduct.Name);
+            Assert.Equal(product.Price, savedProduct.Price);
+            Assert.Equal(product.Map.Count, savedProduct.Map.Count);
+            Assert.Equal(product.Map["Position"], savedProduct.Map["Position"]);
+            Assert.Equal(product.CompanyInfo.Name, savedProduct.CompanyInfo.Name);
+            Assert.Equal(product.CompanyInfo.AllProducts.Count, savedProduct.CompanyInfo.AllProducts.Count);
+            Assert.Equal(product.CompanyInfo.AllProducts[0].Name, savedProduct.CompanyInfo.AllProducts[0].Name);
+            Assert.Equal(product.CompanyInfo.AllProducts[0].IsPublic, savedProduct.CompanyInfo.AllProducts[0].IsPublic);
+            Assert.Equal(product.CompanyInfo.AllProducts[0].Id, savedProduct.CompanyInfo.AllProducts[0].Id);
+            Assert.Equal(product.Components.Count, savedProduct.Components.Count);
+            Assert.Equal(product.Components[0], savedProduct.Components[0]);
+        }
+
 
         [Theory]
         [MemberData(nameof(DynamoDBFixture.Conversions), MemberType = typeof(DynamoDBFixture))]
