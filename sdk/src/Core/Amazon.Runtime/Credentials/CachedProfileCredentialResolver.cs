@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Credentials
     /// to avoid redundant disk reads under concurrency. The cache is automatically invalidated when
     /// the backing credentials or config file is modified on disk.
     /// </summary>
-    public sealed class CachedProfileCredentialResolver : IDisposable
+    public class CachedProfileCredentialResolver : IDisposable
     {
         private readonly ConcurrentDictionary<(string ProfileName, string Location), ProfileCredentialEntry> _profileCredentialCache = new();
         private bool _disposed;
@@ -137,9 +137,18 @@ namespace Amazon.Runtime.Credentials
 
         public void Dispose()
         {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
             if (_disposed) return;
-            foreach (var entry in _profileCredentialCache.Values)
-                entry.Dispose();
+            if (disposing)
+            {
+                foreach (var entry in _profileCredentialCache.Values)
+                    entry.Dispose();
+            }
             _disposed = true;
         }
 
@@ -180,9 +189,6 @@ namespace Amazon.Runtime.Credentials
             private readonly string _configFilePath;
             private readonly DateTime _credentialsFileWriteTime;
             private readonly DateTime _configFileWriteTime;
-            private readonly long _credentialsFileLength;
-            private readonly long _configFileLength;
-
             public AWSCredentials Credentials { get; }
 
             public ProfileCredentialSnapshot(AWSCredentials credentials, string profilesLocation)
