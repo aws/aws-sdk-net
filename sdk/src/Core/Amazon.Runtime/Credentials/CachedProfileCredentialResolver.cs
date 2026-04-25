@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Credentials
     /// to avoid redundant disk reads under concurrency. The cache is automatically invalidated when
     /// the backing credentials or config file is modified on disk.
     /// </summary>
-    internal sealed class CachedProfileCredentialResolver : IDisposable
+    public sealed class CachedProfileCredentialResolver : IDisposable
     {
         private readonly ConcurrentDictionary<(string ProfileName, string Location), ProfileCredentialEntry> _profileCredentialCache = new();
         private bool _disposed;
@@ -58,24 +58,21 @@ namespace Amazon.Runtime.Credentials
 
                 return ResolveAndCacheProfileCredentials(profile, entry);
             }
-            // if we got here that means we were unable to find a profile with that name.
-            // we must clean up the zombie entry that was added in GetOrCreateEntry above
-            // so that we don't add semaphore overhead to every future call.
+            // If we got here that means we were unable to find a profile with that name.
+            // Remove the zombie entry from the dictionary so future callers don't pay
+            // semaphore overhead, but do NOT dispose the entry: other threads may still
+            // be blocked on entry.ResolutionLock.Wait/WaitAsync. They will wake up,
+            // acquire the lock, fail to resolve, and re-throw. The orphaned entry
+            // (and its SemaphoreSlim) will be garbage-collected once all references
+            // are released — SemaphoreSlim has no unmanaged resources.
             catch (AmazonClientException)
             {
                 _profileCredentialCache.TryRemove(key, out _);
-                entry.Dispose();
                 throw;
             }
             finally
             {
-                try
-                {
-                    entry.ResolutionLock.Release();
-                }
-                // in multithreaded scenarios where a zombie entry was removed, releasing the lock
-                // will throw an object disposed exception since the entry has been disposed.
-                catch (ObjectDisposedException) { }
+                entry.ResolutionLock.Release();
             }
         }
 
@@ -103,24 +100,16 @@ namespace Amazon.Runtime.Credentials
 
                 return ResolveAndCacheProfileCredentials(profile, entry);
             }
-            // if we got here that means we were unable to find a profile with that name.
-            // we must clean up the zombie entry that was added in GetOrCreateEntry above
-            // so that we don't add semaphore overhead to every future call.
+            // Same as the sync path: remove from dictionary but do NOT dispose.
+            // See comment in TryResolveCredentials for rationale.
             catch (AmazonClientException)
             {
                 _profileCredentialCache.TryRemove(key, out _);
-                entry.Dispose();
                 throw;
             }
             finally
             {
-                try
-                {
-                    entry.ResolutionLock.Release();
-                }
-                // in multithreaded scenarios where a zombie entry was removed, releasing the lock
-                // will throw an object disposed exception since the entry has been disposed.
-                catch (ObjectDisposedException) { }
+                entry.ResolutionLock.Release();
             }
         }
 
@@ -182,7 +171,8 @@ namespace Amazon.Runtime.Credentials
         }
 
         /// <summary>
-        /// Immutable snapshot of resolved credentials and the file timestamps captured at resolution time.
+        /// Immutable snapshot of resolved credentials and the file metadata captured at resolution time.
+        /// Invalidation checks last-write timestamp.
         /// </summary>
         private sealed class ProfileCredentialSnapshot
         {
@@ -190,15 +180,15 @@ namespace Amazon.Runtime.Credentials
             private readonly string _configFilePath;
             private readonly DateTime _credentialsFileWriteTime;
             private readonly DateTime _configFileWriteTime;
+            private readonly long _credentialsFileLength;
+            private readonly long _configFileLength;
 
             public AWSCredentials Credentials { get; }
 
             public ProfileCredentialSnapshot(AWSCredentials credentials, string profilesLocation)
             {
                 Credentials = credentials;
-                _credentialsFilePath = string.IsNullOrEmpty(profilesLocation)
-                    ? SharedCredentialsFile.DefaultFilePath
-                    : profilesLocation;
+                _credentialsFilePath = GetEffectiveCredentialsFilePath(profilesLocation);
                 _configFilePath = SharedCredentialsFile.DefaultConfigFilePath;
                 _credentialsFileWriteTime = GetLastWriteTime(_credentialsFilePath);
                 _configFileWriteTime = GetLastWriteTime(_configFilePath);
@@ -207,6 +197,24 @@ namespace Amazon.Runtime.Credentials
             public bool HasFileChanged() =>
                 GetLastWriteTime(_credentialsFilePath) != _credentialsFileWriteTime ||
                 GetLastWriteTime(_configFilePath) != _configFileWriteTime;
+
+            /// <summary>
+            /// Resolves the effective credentials file path using the same logic as
+            /// <see cref="SharedCredentialsFile.SetUpFilePath"/>:
+            /// 1. If <paramref name="profilesLocation"/> is provided, use it directly.
+            /// 2. Else if <see cref="AWSConfigs.AWSProfilesLocation"/> is set, use that.
+            /// 3. Else fall back to <see cref="SharedCredentialsFile.DefaultFilePath"/>.
+            /// </summary>
+            private static string GetEffectiveCredentialsFilePath(string profilesLocation)
+            {
+                if (!string.IsNullOrEmpty(profilesLocation))
+                    return profilesLocation;
+
+                if (!string.IsNullOrEmpty(AWSConfigs.AWSProfilesLocation))
+                    return AWSConfigs.AWSProfilesLocation;
+
+                return SharedCredentialsFile.DefaultFilePath;
+            }
 
             private static DateTime GetLastWriteTime(string path) =>
                 string.IsNullOrEmpty(path) ? default : File.GetLastWriteTimeUtc(path);
