@@ -830,8 +830,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1990,8 +1991,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2169,9 +2171,12 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: Yes. If you use the <c>KeyId</c> parameter to identify
-        /// a KMS key in a different Amazon Web Services account, specify the key ARN or the alias
-        /// ARN of the KMS key.
+        ///  <b>Cross-account use</b>: Yes. To specify a KMS key in a different Amazon Web Services
+        /// account, use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-alias-ARN">alias
+        /// ARN</a>. A short <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
+        /// ID</a> is also acceptable when decrypting symmetric ciphertexts, though using a full
+        /// key ARN is recommended to be more explicit about the intended KMS key.
         /// </para>
         ///  
         /// <para>
@@ -2711,8 +2716,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4119,8 +4125,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6100,8 +6107,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6224,8 +6232,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6258,6 +6267,133 @@ namespace Amazon.KeyManagementService
             options.ResponseUnmarshaller = GenerateRandomResponseUnmarshaller.Instance;
 
             return InvokeAsync<GenerateRandomResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetKeyLastUsage
+
+        internal virtual GetKeyLastUsageResponse GetKeyLastUsage(GetKeyLastUsageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetKeyLastUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKeyLastUsageResponseUnmarshaller.Instance;
+
+            return Invoke<GetKeyLastUsageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns usage information about the last successful cryptographic operation performed
+        /// with a specified KMS key, including the operation type, timestamp, and associated
+        /// CloudTrail event ID.
+        /// 
+        ///  
+        /// <para>
+        /// The <c>TrackingStartDate</c> in the <c>GetKeyLastUsage</c> response indicates the
+        /// date from which KMS began recording cryptographic activity for a given key. Use this
+        /// value together with <c>KeyCreationDate</c> to understand the key's usage history:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the <c>KeyLastUsage</c> response element is <i>present</i>, the key has been used
+        /// for a successful cryptographic operation since the <c>TrackingStartDate</c>. The response
+        /// includes the operation type, timestamp, and associated CloudTrail event ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the <c>KeyLastUsage</c> response element is <i>empty</i> and <c>KeyCreationDate</c>
+        /// is on or after <c>TrackingStartDate</c>, the key has not been used for a successful
+        /// cryptographic operation since it was created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the <c>KeyLastUsage</c> response element is <i>empty</i> and <c>KeyCreationDate</c>
+        /// is before <c>TrackingStartDate</c>, there is no record of the key being used for a
+        /// successful cryptographic operation since the <c>TrackingStartDate</c>. However, the
+        /// key may have been used before tracking began. To determine whether the key was used
+        /// before the <c>TrackingStartDate</c>, examine your past CloudTrail logs.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For multi-Region KMS keys, primary and replica keys track last usage independently.
+        /// Each key in a multi-Region key set maintains its own usage information.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>ReEncrypt</c> operation uses two keys: a source key for decryption and a destination
+        /// key for encryption. Usage information is recorded for both keys independently, each
+        /// with the CloudTrail event ID from the respective key owner's account.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Do not use <c>GetKeyLastUsage</c> as the sole indicator when scheduling a key for
+        /// deletion. Instead, first <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">disable
+        /// the key</a> and monitor CloudTrail for <c>DisabledException</c> entries, as there
+        /// could be infrequent workflows that are dependent on the key. By looking for this exception,
+        /// you can identify potential dependencies and workload failures before they occur.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a
+        /// different Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyLastUsage</a>
+        /// (key policy)
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>DescribeKey</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DisableKey</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>ScheduleKeyDeletion</a> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
+        /// eventual consistency</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKeyLastUsage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetKeyLastUsage service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
+        /// The system timed out while trying to fulfill the request. You can retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
+        /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
+        /// valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
+        /// The request was rejected because an internal exception occurred. The request can be
+        /// retried.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
+        /// The request was rejected because the specified entity or resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyLastUsage">REST API Reference for GetKeyLastUsage Operation</seealso>
+        public virtual Task<GetKeyLastUsageResponse> GetKeyLastUsageAsync(GetKeyLastUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetKeyLastUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKeyLastUsageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetKeyLastUsageResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -8714,8 +8850,12 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  <b>Cross-account use</b>: Yes. The source KMS key and destination KMS key can be
         /// in different Amazon Web Services accounts. Either or both KMS keys can be in a different
-        /// account than the caller. To specify a KMS key in a different account, you must use
-        /// its key ARN or alias ARN.
+        /// account than the caller. To specify a KMS key in a different account, use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+        /// ARN</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-alias-ARN">alias
+        /// ARN</a>. A short <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
+        /// ID</a> is also acceptable for the source key when decrypting symmetric ciphertexts,
+        /// though using a full key ARN is recommended to be more explicit about the intended
+        /// KMS key.
         /// </para>
         ///  
         /// <para>
@@ -11060,8 +11200,10 @@ namespace Amazon.KeyManagementService
         /// friendly name (<c>NewCustomKeyStoreName</c>), to tell KMS about a change to the <c>kmsuser</c>
         /// crypto user password (<c>KeyStorePassword</c>), or to associate the custom key store
         /// with a different, but related, CloudHSM cluster (<c>CloudHsmClusterId</c>). To update
-        /// any property of an CloudHSM key store, the <c>ConnectionState</c> of the CloudHSM
-        /// key store must be <c>DISCONNECTED</c>. 
+        /// most properties of an CloudHSM key store, the <c>ConnectionState</c> of the CloudHSM
+        /// key store must be <c>DISCONNECTED</c>. However, you can update the <c>CustomKeyStoreName</c>
+        /// of an AWS CloudHSM key store when it is in the <c>CONNECTED</c> or <c>DISCONNECTED</c>
+        /// state.
         /// </para>
         ///  
         /// <para>
@@ -11251,8 +11393,9 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-        /// on a custom key store that is not disconnected. This operation is valid only when
-        /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+        /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+        /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+        /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
