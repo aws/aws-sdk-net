@@ -152,6 +152,7 @@ namespace Amazon.ApplicationSignals.Model
     /// </summary>
     public partial class CreateServiceLevelObjectiveRequest : AmazonApplicationSignalsRequest
     {
+        private bool? _autoInvestigationEnabled;
         private List<BurnRateConfiguration> _burnRateConfigurations = AWSConfigs.InitializeCollections ? new List<BurnRateConfiguration>() : null;
         private bool? _createRecommendedSlo;
         private string _description;
@@ -160,6 +161,25 @@ namespace Amazon.ApplicationSignals.Model
         private RequestBasedServiceLevelIndicatorConfig _requestBasedSliConfig;
         private ServiceLevelIndicatorConfig _sliConfig;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AutoInvestigationEnabled. 
+        /// <para>
+        /// Indicates whether DevOps Agent will automatically investigate this SLO when it is
+        /// breached
+        /// </para>
+        /// </summary>
+        public bool? AutoInvestigationEnabled
+        {
+            get { return this._autoInvestigationEnabled; }
+            set { this._autoInvestigationEnabled = value; }
+        }
+
+        // Check to see if AutoInvestigationEnabled property is set
+        internal bool IsSetAutoInvestigationEnabled()
+        {
+            return this._autoInvestigationEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property BurnRateConfigurations. 

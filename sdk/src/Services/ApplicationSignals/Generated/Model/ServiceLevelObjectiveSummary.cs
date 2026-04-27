@@ -36,6 +36,7 @@ namespace Amazon.ApplicationSignals.Model
     public partial class ServiceLevelObjectiveSummary
     {
         private string _arn;
+        private CompositeSliConfig _compositeSliConfig;
         private DateTime? _createdTime;
         private DependencyConfig _dependencyConfig;
         private EvaluationType _evaluationType;
@@ -62,6 +63,25 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompositeSliConfig. 
+        /// <para>
+        /// The composite SLI configuration for service-level SLOs that monitor multiple operations
+        /// of a service.
+        /// </para>
+        /// </summary>
+        public CompositeSliConfig CompositeSliConfig
+        {
+            get { return this._compositeSliConfig; }
+            set { this._compositeSliConfig = value; }
+        }
+
+        // Check to see if CompositeSliConfig property is set
+        internal bool IsSetCompositeSliConfig()
+        {
+            return this._compositeSliConfig != null;
         }
 
         /// <summary>

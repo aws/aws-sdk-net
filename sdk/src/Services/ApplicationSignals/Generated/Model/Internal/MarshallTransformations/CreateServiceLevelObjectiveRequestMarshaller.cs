@@ -73,6 +73,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAutoInvestigationEnabled())
+            {
+                context.Writer.WritePropertyName("AutoInvestigationEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.AutoInvestigationEnabled.Value);
+            }
+
             if(publicRequest.IsSetBurnRateConfigurations())
             {
                 context.Writer.WritePropertyName("BurnRateConfigurations");
