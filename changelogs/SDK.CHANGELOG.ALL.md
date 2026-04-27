@@ -1,3 +1,31 @@
+### 4.0.239.0 (2026-04-27 19:22 UTC)
+* ApplicationSignals (4.0.8.0)
+	* Application Signals now supports creating composite Service Level Objectives on Service Operations. Users can now create service SLO on multiple operations.
+* BillingConductor (4.0.5.0)
+	* Add support for Passthrough pricing plan
+* CloudWatchLogs (4.0.22.0)
+	* Adds support for selecting all logs sources and types in a single association.
+* GameLiftStreams (4.0.7.11)
+	* Adds Proton 10.0-4 to the list of runtime environment options available when creating an Amazon GameLift Streams application
+* Glue (4.0.28.0)
+	* Addition of AdditionalAuditContext to GetPartition, GetPartitions, GetTableVersion, and GetTableVersions
+* IVS (4.0.4.0)
+	* Adds tags parameter to the CreateAdConfiguration operation
+* KeyManagementService (4.0.10.0)
+	* KMS GetKeyLastUsage API provides information on the last successful cryptographic operation performed on KMS keys. This new API provides KMS customers with the last timestamp, CloudTrail eventId, and the cryptographic operation that was performed on the key.
+* Mgn (4.0.6.0)
+	* Added network modernization support, enabling customers to edit, resize, merge, and split VPCs and subnets during migration while retaining functional, non-conflicting IP addresses.
+* Omics (4.0.8.0)
+	* Enable Public Internet or VPC configuration to BatchRun
+* OpenSearchService (4.0.19.0)
+	* Amazon OpenSearch Service now supports JWKS URL configuration for JWT authentication
+* SageMaker (4.0.53.0)
+	* Updated API documentation for endpoint MetricsConfig. Added details on supported metric publish frequencies and clarified how EnableEnhancedMetrics controls utilization and invocation metric behavior.
+* WorkSpaces (4.0.11.0)
+	* Added support for Protocol as modified resource and added update failure as modification state
+* Core 4.0.5.0
+	* Add TracerProvider.GetTracer() method overload that accepts Attributes to use to create the Tracer.
+
 ### 4.0.238.0 (2026-04-24 18:27 UTC)
 * BedrockAgentCoreControl (4.0.30.0)
 	* Added support for configuring identity providers and inbound authorizers within a private VPC for AWS Bedrock AgentCore, enabling secure network connection without public internet access
