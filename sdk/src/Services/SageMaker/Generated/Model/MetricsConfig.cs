@@ -41,8 +41,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property EnableEnhancedMetrics. 
         /// <para>
         /// Specifies whether to enable enhanced metrics for the endpoint. Enhanced metrics provide
-        /// utilization data at instance and container granularity. Container granularity is supported
-        /// for Inference Components. The default is <c>False</c>.
+        /// utilization and invocation data at instance and container granularity. Container granularity
+        /// is supported for Inference Components. The default is <c>False</c>.
         /// </para>
         /// </summary>
         public bool? EnableEnhancedMetrics
@@ -60,8 +60,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MetricPublishFrequencyInSeconds. 
         /// <para>
-        /// The frequency, in seconds, at which utilization metrics are published to Amazon CloudWatch.
-        /// The default is <c>60</c> seconds.
+        /// The interval, in seconds, at which metrics are published to Amazon CloudWatch. Defaults
+        /// to <c>60</c>. Valid values: <c>10</c>, <c>30</c>, <c>60</c>, <c>120</c>, <c>180</c>,
+        /// <c>240</c>, <c>300</c>. When <c>EnableEnhancedMetrics</c> is set to <c>False</c>,
+        /// this interval applies to utilization metrics only; invocation metrics continue to
+        /// be published at the default 60-second interval. When <c>EnableEnhancedMetrics</c>
+        /// is set to <c>True</c>, this interval applies to both utilization and invocation metrics.
         /// </para>
         /// </summary>
         public int? MetricPublishFrequencyInSeconds
