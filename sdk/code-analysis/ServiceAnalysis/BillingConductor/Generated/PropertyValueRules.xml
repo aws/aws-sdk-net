@@ -10,11 +10,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.AssociatePricingRulesRequest.Arn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.AssociatePricingRulesResponse.Arn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.BatchAssociateResourcesToCustomLineItemRequest.TargetArn</property>
@@ -97,7 +97,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.CreatePricingPlanResponse.Arn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.CreatePricingRuleRequest.BillingEntity</property>
@@ -164,11 +164,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.DeletePricingPlanRequest.Arn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.DeletePricingPlanResponse.Arn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.DeletePricingRuleRequest.Arn</property>
@@ -188,11 +188,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.DisassociatePricingRulesRequest.Arn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.DisassociatePricingRulesResponse.Arn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.GetBillingGroupCostReportRequest.Arn</property>
@@ -301,7 +301,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.ListPricingRulesAssociatedToPricingPlanRequest.PricingPlanArn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.ListPricingRulesAssociatedToPricingPlanResponse.BillingPeriod</property>
@@ -309,7 +309,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.ListPricingRulesAssociatedToPricingPlanResponse.PricingPlanArn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.ListResourcesAssociatedToCustomLineItemRequest.Arn</property>
@@ -378,7 +378,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.UpdateBillingGroupResponse.PricingPlanArn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.UpdateBillingGroupResponse.PrimaryAccountId</property>
@@ -428,7 +428,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.UpdatePricingPlanRequest.Arn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.UpdatePricingPlanRequest.Description</property>
@@ -443,7 +443,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.UpdatePricingPlanResponse.Arn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.UpdatePricingPlanResponse.Description</property>
@@ -581,7 +581,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.ComputationPreference.PricingPlanArn</property>
-    <pattern>arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.CustomLineItemBillingPeriodRange.ExclusiveEndBillingPeriod</property>
@@ -691,7 +691,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.ListBillingGroupsFilter.PricingPlan</property>
-    <pattern>arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.ListCustomLineItemFlatChargeDetails.ChargeValue</property>
@@ -727,7 +727,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.PricingPlanListElement.Arn</property>
-    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|[a-zA-Z0-9]{10})</pattern>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.PricingPlanListElement.Description</property>
