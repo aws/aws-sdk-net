@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateOperation Marshaller
+    /// DeleteOperation Marshaller
     /// </summary>
-    public class UpdateOperationMarshaller : IRequestMarshaller<UpdateOperation, JsonMarshallerContext> 
+    public class DeleteOperationMarshaller : IRequestMarshaller<DeleteOperation, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,42 +42,16 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateOperation requestObject, JsonMarshallerContext context)
+        public void Marshall(DeleteOperation requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetExcluded())
-            {
-                context.Writer.WritePropertyName("excluded");
-                context.Writer.WriteBooleanValue(requestObject.Excluded.Value);
-            }
-
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
-            }
-
-            if(requestObject.IsSetProperties())
-            {
-                context.Writer.WritePropertyName("properties");
-                context.Writer.WriteStartObject();
-                foreach (var requestObjectPropertiesKvp in requestObject.Properties)
-                {
-                    context.Writer.WritePropertyName(requestObjectPropertiesKvp.Key);
-                    var requestObjectPropertiesValue = requestObjectPropertiesKvp.Value;
-
-                        context.Writer.WriteStringValue(requestObjectPropertiesValue);
-                }
-                context.Writer.WriteEndObject();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UpdateOperationMarshaller Instance = new UpdateOperationMarshaller();
+        public readonly static DeleteOperationMarshaller Instance = new DeleteOperationMarshaller();
 
     }
 }

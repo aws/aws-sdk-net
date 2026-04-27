@@ -80,6 +80,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("excluded", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.Excluded = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("logicalID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateOperation Marshaller
+    /// MergeConstruct Marshaller
     /// </summary>
-    public class UpdateOperationMarshaller : IRequestMarshaller<UpdateOperation, JsonMarshallerContext> 
+    public class MergeConstructMarshaller : IRequestMarshaller<MergeConstruct, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,34 +42,20 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UpdateOperation requestObject, JsonMarshallerContext context)
+        public void Marshall(MergeConstruct requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetExcluded())
+            if(requestObject.IsSetConstructID())
             {
-                context.Writer.WritePropertyName("excluded");
-                context.Writer.WriteBooleanValue(requestObject.Excluded.Value);
+                context.Writer.WritePropertyName("constructID");
+                context.Writer.WriteStringValue(requestObject.ConstructID);
             }
 
-            if(requestObject.IsSetName())
+            if(requestObject.IsSetSegmentID())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
-            }
-
-            if(requestObject.IsSetProperties())
-            {
-                context.Writer.WritePropertyName("properties");
-                context.Writer.WriteStartObject();
-                foreach (var requestObjectPropertiesKvp in requestObject.Properties)
-                {
-                    context.Writer.WritePropertyName(requestObjectPropertiesKvp.Key);
-                    var requestObjectPropertiesValue = requestObjectPropertiesKvp.Value;
-
-                        context.Writer.WriteStringValue(requestObjectPropertiesValue);
-                }
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("segmentID");
+                context.Writer.WriteStringValue(requestObject.SegmentID);
             }
 
         }
@@ -77,7 +63,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UpdateOperationMarshaller Instance = new UpdateOperationMarshaller();
+        public readonly static MergeConstructMarshaller Instance = new MergeConstructMarshaller();
 
     }
 }

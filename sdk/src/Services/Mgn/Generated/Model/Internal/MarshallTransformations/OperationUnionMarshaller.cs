@@ -46,6 +46,39 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDelete())
+            {
+                context.Writer.WritePropertyName("delete");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeleteOperationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Delete, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetMerge())
+            {
+                context.Writer.WritePropertyName("merge");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MergeOperationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Merge, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSplit())
+            {
+                context.Writer.WritePropertyName("split");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SplitOperationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Split, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetUpdate())
             {
                 context.Writer.WritePropertyName("update");
