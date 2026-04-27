@@ -1327,6 +1327,12 @@
     <pattern>([a-z][a-z0-9\-]+|\d{12})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.JWTOptionsInput.JwksUrl</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^$|^https://(?!(?:10|127|169\.254|192\.168|172\.(?:1[6-9]|2[0-9]|3[01]))\.)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}(?::[0-9]{1,5})?(?:/[a-zA-Z0-9\-._~%!$&amp;'()*+,;=:']*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.JWTOptionsInput.RolesKey</property>
     <min>1</min>
     <max>64</max>
@@ -1335,6 +1341,12 @@
     <property>Amazon.OpenSearchService.Model.JWTOptionsInput.SubjectKey</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.JWTOptionsOutput.JwksUrl</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^$|^https://(?!(?:10|127|169\.254|192\.168|172\.(?:1[6-9]|2[0-9]|3[01]))\.)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}(?::[0-9]{1,5})?(?:/[a-zA-Z0-9\-._~%!$&amp;'()*+,;=:']*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.KeyStoreAccessOption.KeyAccessRoleArn</property>
