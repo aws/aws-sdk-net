@@ -40,7 +40,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
             string versionAttributeName = storage.Config.VersionPropertyStorage.AttributeName;
 
-            //Primitive version;
             if (storage.Document.TryGetValue(versionAttributeName, out DynamoDBEntry versionEntry) && versionEntry is Primitive version && version.Value != null)
             {
                 if (version.Type != DynamoDBEntryType.Numeric) throw new InvalidOperationException("Version property must be numeric");
