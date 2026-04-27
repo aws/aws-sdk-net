@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "minor",
+    "changeLogMessages": [
+      "Add TracerProvider.GetTracer() method overload that accepts Attributes to use to create the Tracer."
+    ]
+  }
+}
