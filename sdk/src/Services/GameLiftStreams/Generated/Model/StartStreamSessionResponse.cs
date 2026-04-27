@@ -532,11 +532,6 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>idleTimeout</c>: The stream session was terminated because it exceeded the idle
-        /// timeout period of 60 minutes with no user input activity.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>maxSessionLengthTimeout</c>: The stream session was terminated because it exceeded
         /// the maximum session length timeout period specified by <c>SessionLengthSeconds</c>.
         /// </para>
