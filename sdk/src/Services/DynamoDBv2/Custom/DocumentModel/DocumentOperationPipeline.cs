@@ -386,8 +386,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             switch (request)
             {
-                case DeleteItemDocumentOperationRequest getItemRequest:
-                    if (getItemRequest.Key == null || getItemRequest.Key.Count == 0)
+                case DeleteItemDocumentOperationRequest deleteItemRequest:
+                    if (deleteItemRequest.Key == null || deleteItemRequest.Key.Count == 0)
                         throw new InvalidOperationException("DeleteItemDocumentOperationRequest.Key cannot be null or empty.");
                     break;
                 case InternalDeleteItemDocumentOperationRequest internalDeleteItemRequest:
@@ -415,7 +415,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     req.Key = new Dictionary<string, AttributeValue>(internalDeleteItemRequest.Key);
                     break;
                 default:
-                    throw new InvalidOperationException("Unsupported type for BaseGetItemDocumentOperationRequest");
+                    throw new InvalidOperationException("Unsupported type for BaseDeleteItemDocumentOperationRequest");
             }
 
             if (request.ReturnValues == ReturnValues.AllOldAttributes)

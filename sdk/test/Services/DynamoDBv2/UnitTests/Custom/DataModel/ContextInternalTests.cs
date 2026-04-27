@@ -1560,7 +1560,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void DeteleItem_With_ConditionalExpression()
+        public void DeleteItem_WithConditionalExpression()
         {
             mockClient
             .Setup(m => m.DeleteItem(
@@ -1593,7 +1593,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void DeteleItem_With_SkipVersion()
+        public void DeleteItem_WithSkipVersion()
         {
             mockClient
             .Setup(m => m.DeleteItem(
@@ -1626,7 +1626,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public async Task DeteleItemAsync_With_ConditionalExpression()
+        public async Task DeleteItemAsync_WithConditionalExpression()
         {
             mockClient
             .Setup(m => m.DeleteItemAsync(
@@ -1661,7 +1661,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public async Task DeteleItemAsync_With_SkipVersion()
+        public async Task DeleteItemAsync_WithSkipVersion()
         {
             mockClient
             .Setup(m => m.DeleteItemAsync(

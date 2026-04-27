@@ -262,22 +262,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             await _context.SaveAsync(employee1);
-            var loadeItem = await _context.LoadAsync<VersionedAnnotatedEmployee>(employee1.Name, employee1.Age);
-            Assert.NotNull(loadeItem);
+            var loadedItem = await _context.LoadAsync<VersionedAnnotatedEmployee>(employee1.Name, employee1.Age);
+            Assert.NotNull(loadedItem);
 
             await _context.DeleteAsync(employee1, new DeleteConfig() { SkipVersionCheck = true });
 
-            var loadeItemAfterDelete = await _context.LoadAsync<VersionedAnnotatedEmployee>(employee1.Name, employee1.Age);
-            Assert.Null(loadeItemAfterDelete);
+            var loadedItemAfterDelete = await _context.LoadAsync<VersionedAnnotatedEmployee>(employee1.Name, employee1.Age);
+            Assert.Null(loadedItemAfterDelete);
 
             await _context.SaveAsync(employee2);
-            var loadeItem2 = await _context.LoadAsync<VersionedAnnotatedEmployee>(employee2.Name, employee2.Age);
-            Assert.NotNull(loadeItem2);
+            var loadedItem2 = await _context.LoadAsync<VersionedAnnotatedEmployee>(employee2.Name, employee2.Age);
+            Assert.NotNull(loadedItem2);
 
             await _context.DeleteAsync(employee2);
 
-            var loadeItemAfterDelete2 = await _context.LoadAsync<VersionedAnnotatedEmployee>(employee2.Name, employee2.Age);
-            Assert.Null(loadeItemAfterDelete2);
+            var loadedItemAfterDelete2 = await _context.LoadAsync<VersionedAnnotatedEmployee>(employee2.Name, employee2.Age);
+            Assert.Null(loadedItemAfterDelete2);
         }
 
         private DynamoDBContext CreateBuilderTablesContext(DynamoDBEntryConversion conversion)

@@ -1,5 +1,4 @@
 ﻿using Amazon.DynamoDBv2.Model;
-using System;
 using System.Collections.Generic;
 
 namespace Amazon.DynamoDBv2.DocumentModel
