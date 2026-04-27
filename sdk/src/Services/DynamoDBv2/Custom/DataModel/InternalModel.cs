@@ -506,6 +506,8 @@ namespace Amazon.DynamoDBv2.DataModel
         // properties to get
         public List<string> AttributesToGet { get; private set; }
 
+        public Expression ProjectionExpression { get; private set; }
+
         // version
         public string VersionPropertyName { get; private set; }
         public bool HasVersion { get { return !string.IsNullOrEmpty(VersionPropertyName); } }
@@ -622,6 +624,7 @@ namespace Amazon.DynamoDBv2.DataModel
             if (StorePolymorphicTypes)
             {
                 AttributesToGet.Add(derivedTypeAttributeName);
+                AddAttributeNameToProjectionExpression(derivedTypeAttributeName);
             }
 
             if (this.BaseTypeStorageConfig.Properties.Count == 0)
@@ -678,6 +681,23 @@ namespace Amazon.DynamoDBv2.DataModel
             this.PolymorphicConfig.Add(derivedType, typeDiscriminator);
         }
 
+        private void AddAttributeNameToProjectionExpression(string derivedTypeAttributeName)
+        {
+            StringBuilder _projectionExpressionBuilder = new StringBuilder();
+            var expressionAttributeName = "#P" + ProjectionExpression.ExpressionAttributeNames.Count.ToString(CultureInfo.InvariantCulture);
+            if (_projectionExpressionBuilder.Length == 0 && !string.IsNullOrEmpty(ProjectionExpression.ExpressionStatement))
+            {
+                _projectionExpressionBuilder.Append(ProjectionExpression.ExpressionStatement);
+            }
+            if (ProjectionExpression.ExpressionAttributeNames.Count > 0)
+            {
+                _projectionExpressionBuilder.Append(", ");
+            }
+            _projectionExpressionBuilder.Append(expressionAttributeName);
+            ProjectionExpression.ExpressionStatement = _projectionExpressionBuilder.ToString();
+            ProjectionExpression.ExpressionAttributeNames.Add(expressionAttributeName, derivedTypeAttributeName);
+        }
+
         private void AddPropertyStorage(PropertyStorage value, StorageConfig config)
         {
             string propertyName = value.PropertyName;
@@ -685,8 +705,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
             config.AddPropertyStorage(propertyName, value);
 
+            // keep the AttributesToGet setting for flows that are not yet migrated to use ProjectionExpression
             if (!AttributesToGet.Contains(attributeName))
                 AttributesToGet.Add(attributeName);
+            if (!ProjectionExpression.ExpressionAttributeNames.ContainsValue(attributeName))
+                AddAttributeNameToProjectionExpression(attributeName);
             if (value.StoreAsEpoch)
                 AttributesToStoreAsEpoch.Add(attributeName);
             if (value.StoreAsEpochLong)
@@ -776,6 +799,7 @@ namespace Amazon.DynamoDBv2.DataModel
             IndexNameToLSIRangePropertiesMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
             IndexNameToGSIMapping = new Dictionary<string, GSIConfig>(StringComparer.Ordinal);
             AttributesToGet = new List<string>();
+            ProjectionExpression = new Expression();
             HashKeyPropertyNames = new List<string>();
             RangeKeyPropertyNames = new List<string>();
             AttributesToStoreAsEpoch = new HashSet<string>();
