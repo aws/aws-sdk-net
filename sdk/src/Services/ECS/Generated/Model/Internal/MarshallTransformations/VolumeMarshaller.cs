@@ -102,6 +102,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Name);
             }
 
+            if(requestObject.IsSetS3filesVolumeConfiguration())
+            {
+                context.Writer.WritePropertyName("s3filesVolumeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3FilesVolumeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3filesVolumeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

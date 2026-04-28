@@ -108,6 +108,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MajorEngineVersion", StringUtils.FromString(publicRequest.MajorEngineVersion));
                 }
+                if(publicRequest.IsSetNetworkType())
+                {
+                    request.Parameters.Add("NetworkType", StringUtils.FromString(publicRequest.NetworkType));
+                }
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     if (publicRequest.SecurityGroupIds.Count == 0)
@@ -184,6 +188,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UserGroupId", StringUtils.FromString(publicRequest.UserGroupId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateServerlessCacheRequestMarshaller _instance = new CreateServerlessCacheRequestMarshaller();        

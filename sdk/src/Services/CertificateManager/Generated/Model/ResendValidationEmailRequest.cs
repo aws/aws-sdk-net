@@ -101,8 +101,7 @@ namespace Amazon.CertificateManager.Model
         /// are used to send the emails. This must be the same as the <c>Domain</c> value or a
         /// superdomain of the <c>Domain</c> value. For example, if you requested a certificate
         /// for <c>site.subdomain.example.com</c> and specify a <b>ValidationDomain</b> of <c>subdomain.example.com</c>,
-        /// ACM sends email to the domain registrant, technical contact, and administrative contact
-        /// in WHOIS and the following five addresses:
+        /// ACM sends email to the the following five addresses:
         /// </para>
         ///  <ul> <li> 
         /// <para>

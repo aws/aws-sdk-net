@@ -139,6 +139,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetTooltip())
+            {
+                context.Writer.WritePropertyName("Tooltip");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TooltipOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Tooltip, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTotalOptions())
             {
                 context.Writer.WritePropertyName("TotalOptions");

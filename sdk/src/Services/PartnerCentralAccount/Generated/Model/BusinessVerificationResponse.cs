@@ -36,6 +36,8 @@ namespace Amazon.PartnerCentralAccount.Model
     public partial class BusinessVerificationResponse
     {
         private BusinessVerificationDetails _businessVerificationDetails;
+        private string _completionUrl;
+        private DateTime? _completionUrlExpiresAt;
 
         /// <summary>
         /// Gets and sets the property BusinessVerificationDetails. 
@@ -55,6 +57,44 @@ namespace Amazon.PartnerCentralAccount.Model
         internal bool IsSetBusinessVerificationDetails()
         {
             return this._businessVerificationDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompletionUrl. 
+        /// <para>
+        /// A secure URL where the registrant can complete additional verification steps, such
+        /// as document upload or identity confirmation through a third-party verification service.
+        /// </para>
+        /// </summary>
+        public string CompletionUrl
+        {
+            get { return this._completionUrl; }
+            set { this._completionUrl = value; }
+        }
+
+        // Check to see if CompletionUrl property is set
+        internal bool IsSetCompletionUrl()
+        {
+            return this._completionUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompletionUrlExpiresAt. 
+        /// <para>
+        /// The timestamp when the completion URL expires and is no longer valid for accessing
+        /// the verification workflow.
+        /// </para>
+        /// </summary>
+        public DateTime? CompletionUrlExpiresAt
+        {
+            get { return this._completionUrlExpiresAt; }
+            set { this._completionUrlExpiresAt = value; }
+        }
+
+        // Check to see if CompletionUrlExpiresAt property is set
+        internal bool IsSetCompletionUrlExpiresAt()
+        {
+            return this._completionUrlExpiresAt.HasValue; 
         }
 
     }

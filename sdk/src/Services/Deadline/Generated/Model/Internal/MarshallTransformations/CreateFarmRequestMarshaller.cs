@@ -73,6 +73,19 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCostScaleFactor())
+            {
+                context.Writer.WritePropertyName("costScaleFactor");
+                if(StringUtils.IsSpecialFloatValue(publicRequest.CostScaleFactor.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(publicRequest.CostScaleFactor.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.CostScaleFactor.Value);
+                }
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

@@ -64,6 +64,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SourceDBInstanceArn", StringUtils.FromString(publicRequest.SourceDBInstanceArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static StopDBInstanceAutomatedBackupsReplicationRequestMarshaller _instance = new StopDBInstanceAutomatedBackupsReplicationRequestMarshaller();        

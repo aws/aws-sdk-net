@@ -59,6 +59,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SimpleEmailV2.IAmazonSimpleEmailServiceV2.GetEmailAddressInsights(Amazon.SimpleEmailV2.Model.GetEmailAddressInsightsRequest)" />
+            <member name="M:Amazon.SimpleEmailV2.AmazonSimpleEmailServiceV2Client.GetEmailAddressInsights(Amazon.SimpleEmailV2.Model.GetEmailAddressInsightsRequest)" />
+            <member name="T:Amazon.SimpleEmailV2.Model.GetEmailAddressInsightsRequest" />
+            <member name="T:Amazon.SimpleEmailV2.Model.GetEmailAddressInsightsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Performs email validation against an email address.
+                </para>
+                <code
+                    title="Get Email Address Insights"
+                    source=".\AWSSDKDocSamples\SimpleEmailV2\SimpleEmailV2.GeneratedSamples.cs"
+                    region="get-email-address-insights-1766162111000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SimpleEmailV2.IAmazonSimpleEmailServiceV2.GetExportJob(Amazon.SimpleEmailV2.Model.GetExportJobRequest)" />
             <member name="M:Amazon.SimpleEmailV2.AmazonSimpleEmailServiceV2Client.GetExportJob(Amazon.SimpleEmailV2.Model.GetExportJobRequest)" />
             <member name="T:Amazon.SimpleEmailV2.Model.GetExportJobRequest" />

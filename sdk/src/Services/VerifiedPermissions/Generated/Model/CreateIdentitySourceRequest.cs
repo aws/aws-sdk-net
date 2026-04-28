@@ -148,6 +148,23 @@ namespace Amazon.VerifiedPermissions.Model
         /// Only policies and requests made using this policy store can reference identities from
         /// the identity provider configured in the new identity source.
         /// </para>
+        ///  
+        /// <para>
+        /// To specify a policy store, use its ID or alias name. When using an alias name, prefix
+        /// it with <c>policy-store-alias/</c>. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ID: <c>PSEXAMPLEabcdefg111111</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name: <c>policy-store-alias/example-policy-store</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
         public string PolicyStoreId

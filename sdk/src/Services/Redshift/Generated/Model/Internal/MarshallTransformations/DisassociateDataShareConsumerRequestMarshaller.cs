@@ -76,6 +76,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DisassociateEntireAccount", StringUtils.FromBool(publicRequest.DisassociateEntireAccount));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DisassociateDataShareConsumerRequestMarshaller _instance = new DisassociateDataShareConsumerRequestMarshaller();        

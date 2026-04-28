@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
-    /// The request failed because another request to modify a resource occurred at the same.
+    /// The request failed because another request to modify a resource occurred at the same
+    /// time.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -228,6 +228,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TimeoutInMinutes", StringUtils.FromInt(publicRequest.TimeoutInMinutes));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateStackRequestMarshaller _instance = new CreateStackRequestMarshaller();        

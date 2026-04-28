@@ -121,6 +121,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetDBSnapshotIdentifier", StringUtils.FromString(publicRequest.TargetDBSnapshotIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CopyDBSnapshotRequestMarshaller _instance = new CopyDBSnapshotRequestMarshaller();        

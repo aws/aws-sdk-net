@@ -1,43 +1,44 @@
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class CopyPartTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class CopyPartTests : IAsyncLifetime
     {
         private const string testContent = "This is the content body!";
         private const string testKeyWithSlash = "/sourceTestKey.txt";
 
-        private string bucketName;
+        private AmazonS3Client _client;
+        private string _bucketName;
 
-        [TestInitialize]
-        public async Task Initialize()
+        public async ValueTask InitializeAsync()
         {
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
+            _client = new AmazonS3Client();
+            AWSSDK_DotNet.IntegrationTests.Utils.RetryUtilities.ConfigureClient(_client);
+            _bucketName = await S3TestUtils.CreateBucketWithWaitAsync(_client);
 
-            await Client.PutObjectAsync(new PutObjectRequest
+            await _client.PutObjectAsync(new PutObjectRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 Key = testKeyWithSlash,
                 ContentBody = testContent
             });
         }
 
-        [TestCleanup]
-        public async Task TestCleanup()
+        public async ValueTask DisposeAsync()
         {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
-            BaseClean();
+            if (_bucketName != null && _client != null)
+                await AmazonS3Util.DeleteS3BucketWithObjectsAsync(_client, _bucketName);
+            _client?.Dispose();
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestCopyPartWithLeadingSlash()
         {
             var destinationKeyWithSlash = "/destinationTestKey.txt";
@@ -45,43 +46,42 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             try
             {
-                var multiPartUploadResponse = await Client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
+                var multiPartUploadResponse = await _client.InitiateMultipartUploadAsync(new InitiateMultipartUploadRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     Key = destinationKeyWithSlash,
                 });
 
                 uploadId = multiPartUploadResponse.UploadId;
-                var copyPartResponse = await Client.CopyPartAsync(new CopyPartRequest
+                var copyPartResponse = await _client.CopyPartAsync(new CopyPartRequest
                 {
-                    DestinationBucket = bucketName,
+                    DestinationBucket = _bucketName,
                     DestinationKey = destinationKeyWithSlash,
                     
-                    SourceBucket = bucketName,
+                    SourceBucket = _bucketName,
                     SourceKey = testKeyWithSlash,
 
                     UploadId = uploadId,
                     PartNumber = 1,
-
                 });
-                Assert.IsNotNull(copyPartResponse.ETag);
-                Assert.IsTrue(copyPartResponse.ETag != null && copyPartResponse.ETag.Length > 0);
-                Assert.IsTrue(copyPartResponse.PartNumber == 1);
+                Assert.NotNull(copyPartResponse.ETag);
+                Assert.True(copyPartResponse.ETag != null && copyPartResponse.ETag.Length > 0);
+                Assert.True(copyPartResponse.PartNumber == 1);
 
                 var completeUploadRequest = new CompleteMultipartUploadRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     Key = destinationKeyWithSlash,
                     UploadId = uploadId,
                 };
                 completeUploadRequest.AddPartETags(copyPartResponse);
 
-                var completeUploadResponse = await Client.CompleteMultipartUploadAsync(completeUploadRequest);
-                Assert.AreEqual(HttpStatusCode.OK, completeUploadResponse.HttpStatusCode);
+                var completeUploadResponse = await _client.CompleteMultipartUploadAsync(completeUploadRequest);
+                Assert.Equal(HttpStatusCode.OK, completeUploadResponse.HttpStatusCode);
 
-                var getObjectResponse = await Client.GetObjectAsync(new GetObjectRequest
+                var getObjectResponse = await _client.GetObjectAsync(new GetObjectRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     Key = destinationKeyWithSlash
                 });
 
@@ -89,16 +89,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 using (var reader = new StreamReader(getObjectResponse.ResponseStream))
                 {
                     var actualText = await reader.ReadToEndAsync();
-                    Assert.AreEqual(testContent, actualText);
+                    Assert.Equal(testContent, actualText);
                 }
             }
             finally
             {
                 if (uploadId != null)
                 {
-                    await Client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest
+                    await _client.AbortMultipartUploadAsync(new AbortMultipartUploadRequest
                     {
-                        BucketName = bucketName,
+                        BucketName = _bucketName,
                         Key = destinationKeyWithSlash,
                         UploadId = uploadId
                     });

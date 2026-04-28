@@ -55,6 +55,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("allocationMetadataList/item", targetDepth))
+                    {
+                        var unmarshaller = CapacityAllocationMetadataEntryUnmarshaller.Instance;
+                        if (unmarshalledObject.AllocationMetadata == null)
+                        {
+                            unmarshalledObject.AllocationMetadata = new List<CapacityAllocationMetadataEntry>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AllocationMetadata.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("allocationType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

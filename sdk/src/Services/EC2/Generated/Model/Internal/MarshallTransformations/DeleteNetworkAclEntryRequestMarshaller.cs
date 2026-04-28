@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RuleNumber", StringUtils.FromInt(publicRequest.RuleNumber));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteNetworkAclEntryRequestMarshaller _instance = new DeleteNetworkAclEntryRequestMarshaller();        

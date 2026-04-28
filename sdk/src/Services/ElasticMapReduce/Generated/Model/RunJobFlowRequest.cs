@@ -98,6 +98,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _securityConfiguration;
         private string _serviceRole;
         private int? _stepConcurrencyLevel;
+        private string _stepExecutionRoleArn;
         private List<StepConfig> _steps = AWSConfigs.InitializeCollections ? new List<StepConfig>() : null;
         private List<string> _supportedProducts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -772,6 +773,38 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetStepConcurrencyLevel()
         {
             return this._stepConcurrencyLevel.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StepExecutionRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the runtime role for steps specified in the RunJobFlow
+        /// request. The runtime role can be a cross-account IAM role. The runtime role ARN is
+        /// a combination of account ID, role name, and role type using the following format:
+        /// <c>arn:partition:iam::account-id:role/role-name</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, <c>arn:aws:iam::1234567890:role/ReadOnly</c> is a correctly formatted
+        /// runtime role ARN.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter applies only to steps included in the <c>Steps</c> parameter of this
+        /// RunJobFlow request. It does not apply to steps added later to the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string StepExecutionRoleArn
+        {
+            get { return this._stepExecutionRoleArn; }
+            set { this._stepExecutionRoleArn = value; }
+        }
+
+        // Check to see if StepExecutionRoleArn property is set
+        internal bool IsSetStepExecutionRoleArn()
+        {
+            return this._stepExecutionRoleArn != null;
         }
 
         /// <summary>

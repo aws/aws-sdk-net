@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Sustainability.IAmazonSustainability.GetEstimatedCarbonEmissions(Amazon.Sustainability.Model.GetEstimatedCarbonEmissionsRequest)" />
+            <member name="M:Amazon.Sustainability.AmazonSustainabilityClient.GetEstimatedCarbonEmissions(Amazon.Sustainability.Model.GetEstimatedCarbonEmissionsRequest)" />
+            <member name="T:Amazon.Sustainability.Model.GetEstimatedCarbonEmissionsRequest" />
+            <member name="T:Amazon.Sustainability.Model.GetEstimatedCarbonEmissionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetEstimatedCarbonEmissionsSuccess"
+                    source=".\AWSSDKDocSamples\Sustainability\Sustainability.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Sustainability.IAmazonSustainability.GetEstimatedCarbonEmissionsDimensionValues(Amazon.Sustainability.Model.GetEstimatedCarbonEmissionsDimensionValuesRequest)" />
+            <member name="M:Amazon.Sustainability.AmazonSustainabilityClient.GetEstimatedCarbonEmissionsDimensionValues(Amazon.Sustainability.Model.GetEstimatedCarbonEmissionsDimensionValuesRequest)" />
+            <member name="T:Amazon.Sustainability.Model.GetEstimatedCarbonEmissionsDimensionValuesRequest" />
+            <member name="T:Amazon.Sustainability.Model.GetEstimatedCarbonEmissionsDimensionValuesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetEstimatedCarbonEmissionsDimensionValuesSuccess"
+                    source=".\AWSSDKDocSamples\Sustainability\Sustainability.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

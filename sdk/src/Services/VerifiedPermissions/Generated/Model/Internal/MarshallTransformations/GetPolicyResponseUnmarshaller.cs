@@ -82,6 +82,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     response.LastUpdatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("policyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

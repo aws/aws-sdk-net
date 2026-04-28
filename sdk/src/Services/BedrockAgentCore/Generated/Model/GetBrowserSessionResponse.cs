@@ -35,7 +35,9 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class GetBrowserSessionResponse : AmazonWebServiceResponse
     {
         private string _browserIdentifier;
+        private List<Certificate> _certificates = AWSConfigs.InitializeCollections ? new List<Certificate>() : null;
         private DateTime? _createdAt;
+        private List<BrowserEnterprisePolicy> _enterprisePolicies = AWSConfigs.InitializeCollections ? new List<BrowserEnterprisePolicy>() : null;
         private List<BrowserExtension> _extensions = AWSConfigs.InitializeCollections ? new List<BrowserExtension>() : null;
         private DateTime? _lastUpdatedAt;
         private string _name;
@@ -68,6 +70,30 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Certificates. 
+        /// <para>
+        /// The list of certificates installed in the browser session.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Certificate> Certificates
+        {
+            get { return this._certificates; }
+            set { this._certificates = value; }
+        }
+
+        // Check to see if Certificates property is set
+        internal bool IsSetCertificates()
+        {
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The time at which the browser session was created.
@@ -84,6 +110,30 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnterprisePolicies. 
+        /// <para>
+        /// A list of files containing enterprise policies for the browser session.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<BrowserEnterprisePolicy> EnterprisePolicies
+        {
+            get { return this._enterprisePolicies; }
+            set { this._enterprisePolicies = value; }
+        }
+
+        // Check to see if EnterprisePolicies property is set
+        internal bool IsSetEnterprisePolicies()
+        {
+            return this._enterprisePolicies != null && (this._enterprisePolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

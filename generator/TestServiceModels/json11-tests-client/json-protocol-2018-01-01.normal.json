@@ -180,6 +180,15 @@
       },
       "input":{"shape":"SimpleScalarPropertiesInputOutput"},
       "output":{"shape":"SimpleScalarPropertiesInputOutput"}
+    },
+    "SparseNullsOperation":{
+      "name":"SparseNullsOperation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"SparseNullsOperationInputOutput"},
+      "output":{"shape":"SparseNullsOperationInputOutput"}
     }
   },
   "shapes":{
@@ -514,6 +523,24 @@
       "members":{
         "Value":{"shape":"String"}
       }
+    },
+    "SparseNullsOperationInputOutput":{
+      "type":"structure",
+      "members":{
+        "sparseStringList":{"shape":"SparseStringList"},
+        "sparseStringMap":{"shape":"SparseStringMap"}
+      }
+    },
+    "SparseStringList":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "sparse":true
+    },
+    "SparseStringMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"String"},
+      "sparse":true
     },
     "String":{"type":"string"},
     "StringList":{

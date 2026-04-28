@@ -174,7 +174,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
 	}
 
 	var payload = this.Operation.RequestPayloadMember;
-	if (this.Operation.HttpMethod != "GET" && this.Operation.HttpMethod != "DELETE")
+	if (this.Operation.HttpMethod != "GET" && this.Operation.HttpMethod != "DELETE" && !this.Operation.IsEventStreamInput)
 	{
 
 		if (this.Config.ServiceModel.Customizations.OverrideContentType != null)
@@ -324,7 +324,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line 142 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 		
-			ProcessStructure(0, "publicRequest." + payload.PropertyName, payload.Shape);
+			ProcessStructure(0, "publicRequest." + payload.PropertyName, payload.Shape, isSparse: requestStructure.IsSparse);
 
             
             #line default

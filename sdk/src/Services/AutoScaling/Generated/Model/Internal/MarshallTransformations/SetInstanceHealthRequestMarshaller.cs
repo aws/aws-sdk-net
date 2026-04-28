@@ -72,6 +72,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ShouldRespectGracePeriod", StringUtils.FromBool(publicRequest.ShouldRespectGracePeriod));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SetInstanceHealthRequestMarshaller _instance = new SetInstanceHealthRequestMarshaller();        

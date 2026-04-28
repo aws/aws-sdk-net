@@ -98,6 +98,16 @@ namespace Amazon.Batch.Model
         IListJobsByConsumableResourcePaginator ListJobsByConsumableResource(ListJobsByConsumableResourceRequest request);
 
         /// <summary>
+        /// Paginator for ListQuotaShares operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListQuotaSharesPaginator ListQuotaShares(ListQuotaSharesRequest request);
+
+        /// <summary>
         /// Paginator for ListSchedulingPolicies operation
         ///</summary>
         [AWSPaginator(

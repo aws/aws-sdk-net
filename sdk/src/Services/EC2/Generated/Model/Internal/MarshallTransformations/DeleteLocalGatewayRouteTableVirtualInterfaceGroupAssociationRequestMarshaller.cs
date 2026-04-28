@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("LocalGatewayRouteTableVirtualInterfaceGroupAssociationId", StringUtils.FromString(publicRequest.LocalGatewayRouteTableVirtualInterfaceGroupAssociationId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller _instance = new DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequestMarshaller();        

@@ -68,6 +68,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RemoveCustomerOverride", StringUtils.FromBool(publicRequest.RemoveCustomerOverride));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyCertificatesRequestMarshaller _instance = new ModifyCertificatesRequestMarshaller();        

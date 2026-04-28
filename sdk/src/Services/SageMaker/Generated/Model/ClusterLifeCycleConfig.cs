@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// This entrypoint script runs during cluster creation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string OnCreate
         {
             get { return this._onCreate; }
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string SourceS3Uri
         {
             get { return this._sourceS3Uri; }

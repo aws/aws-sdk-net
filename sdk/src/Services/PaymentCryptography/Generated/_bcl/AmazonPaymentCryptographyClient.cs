@@ -3746,6 +3746,11 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
+        /// To return a previously generated export token and signing key certificate instead
+        /// of generating new ones, set <c>ReuseLastGeneratedToken</c> to <c>true</c>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
         /// Services accounts.
         /// </para>
@@ -3867,6 +3872,11 @@ namespace Amazon.PaymentCryptography
         /// before calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>.
         /// The export token expires in 30 days. You can use the same export token to export multiple
         /// keys from your service account.
+        /// </para>
+        ///  
+        /// <para>
+        /// To return a previously generated export token and signing key certificate instead
+        /// of generating new ones, set <c>ReuseLastGeneratedToken</c> to <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -4001,6 +4011,11 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
+        /// To return a previously generated import token and wrapping key certificate instead
+        /// of generating new ones, set <c>ReuseLastGeneratedToken</c> to <c>true</c>.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
         /// Services accounts.
         /// </para>
@@ -4122,6 +4137,11 @@ namespace Amazon.PaymentCryptography
         /// key certificate must be in place and operational before calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
         /// The import token expires in 30 days. You can use the same import token to import multiple
         /// keys into your service account.
+        /// </para>
+        ///  
+        /// <para>
+        /// To return a previously generated import token and wrapping key certificate instead
+        /// of generating new ones, set <c>ReuseLastGeneratedToken</c> to <c>true</c>.
         /// </para>
         ///  
         /// <para>

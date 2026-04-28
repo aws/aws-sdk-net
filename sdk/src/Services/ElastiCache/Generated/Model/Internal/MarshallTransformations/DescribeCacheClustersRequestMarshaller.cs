@@ -80,6 +80,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ShowCacheNodeInfo", StringUtils.FromBool(publicRequest.ShowCacheNodeInfo));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeCacheClustersRequestMarshaller _instance = new DescribeCacheClustersRequestMarshaller();        

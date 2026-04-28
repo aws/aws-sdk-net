@@ -11,12 +11,24 @@ namespace SDKDocGenerator.Writers
     public class ClassWriter : BaseWriter
     {
         readonly TypeWrapper _versionType;
+        readonly IReadOnlyList<MethodInfoWrapper> _allMethods;
 
-        public ClassWriter(GenerationManifest artifacts, FrameworkVersion version, TypeWrapper versionType)
+        /// <summary>
+        /// Creates a ClassWriter with the complete list of methods to document.
+        /// The caller is responsible for assembling the full method list
+        /// (including any platform-exclusive methods).
+        /// </summary>
+        /// <param name="artifacts">The generation manifest</param>
+        /// <param name="version">The framework version for documentation</param>
+        /// <param name="versionType">The type to document</param>
+        /// <param name="methods">The complete list of methods to render on the class page</param>
+        public ClassWriter(GenerationManifest artifacts, FrameworkVersion version, TypeWrapper versionType,
+                          IEnumerable<MethodInfoWrapper> methods)
             : base(artifacts, version)
         {
             _versionType = versionType;
             _version = version;
+            _allMethods = (methods ?? Enumerable.Empty<MethodInfoWrapper>()).ToList();
         }
 
         protected override string GenerateFilename()
@@ -105,8 +117,7 @@ namespace SDKDocGenerator.Writers
                 if (properties.Any())
                     writer.WriteLine("<li><a href=\"#properties\">Properties</a></li>");
                 
-                var methods = this._versionType.GetMethodsToDocument();
-                if (methods.Any())
+                if (_allMethods.Any())
                     writer.WriteLine("<li><a href=\"#methods\">Methods</a></li>");
                 
                 var events = this._versionType.GetEvents();
@@ -286,7 +297,7 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             string html = string.Empty;
-            var isInherited = !propertyInfo.DeclaringType.Equals(_versionType);
+            var isInherited = !string.Equals(propertyInfo.DeclaringType.FullName, _versionType.FullName);
             if (isInherited)
             {
                 html = string.Format("Inherited from {0}.{1}.", propertyInfo.DeclaringType.Namespace, propertyInfo.DeclaringType.Name);
@@ -304,16 +315,16 @@ namespace SDKDocGenerator.Writers
 
         void AddMethods(TextWriter writer)
         {
-            var methods = this._versionType.GetMethodsToDocument();
-            if (!methods.Any())
+            if (!_allMethods.Any())
                 return;
+
             AddMemberTableSectionHeader(writer, "Methods");
 
             const string netFrameworkPatternNote = "<div class=\"noteblock\"><div class=\"noteheader\">Note:</div>" +
                                             "<p>Asynchronous operations (methods ending with <i>Async</i>) in the table below are for .NET 4.7.2 or higher.</p></div>";
 
             writer.WriteLine(netFrameworkPatternNote);
-            foreach (var info in methods.OrderBy(x => x.Name))
+            foreach (var info in _allMethods.OrderBy(x => x.Name))
             {
                 AddMethod(writer, info);
             }
@@ -342,7 +353,11 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             string html = string.Empty;
-            var isInherited = !info.DeclaringType.Equals(_versionType);
+            // Use FullName comparison for the inheritance check. The standard Equals()
+            // compares underlying System.Type references, which fails for supplemental
+            // methods from other assembly contexts (e.g., net8.0 methods on a net472 class page)
+            // even though they represent the same logical type.
+            var isInherited = !string.Equals(info.DeclaringType.FullName, _versionType.FullName);
             if (isInherited)
             {
                 html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
@@ -390,7 +405,7 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             string html = string.Empty;
-            var isInherited = !info.DeclaringType.Equals(_versionType);
+            var isInherited = !string.Equals(info.DeclaringType.FullName, _versionType.FullName);
             if (isInherited)
             {
                 html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
@@ -440,7 +455,7 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
 
             string html = string.Empty;
-            var isInherited = !info.DeclaringType.Equals(_versionType);
+            var isInherited = !string.Equals(info.DeclaringType.FullName, _versionType.FullName);
             if (isInherited)
             {
                 html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);

@@ -91,6 +91,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TypeName", StringUtils.FromString(publicRequest.TypeName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RegisterTypeRequestMarshaller _instance = new RegisterTypeRequestMarshaller();        

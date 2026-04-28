@@ -65,6 +65,19 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 }
             }
 
+            if(requestObject.IsSetEventWeight())
+            {
+                context.Writer.WritePropertyName("EventWeight");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.EventWeight.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.EventWeight.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.EventWeight.Value);
+                }
+            }
+
         }
 
         /// <summary>

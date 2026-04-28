@@ -40,7 +40,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property UDPEndpoint. 
         /// <para>
-        /// The domain name and port of the UDP ping beacon. 
+        /// The domain name and port of the UDP ping beacon. Your game client can send UDP messages
+        /// to this endpoint and receive responses to measure network latency.
         /// </para>
         /// </summary>
         public UDPEndpoint UDPEndpoint

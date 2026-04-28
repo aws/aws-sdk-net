@@ -86,6 +86,16 @@
     <max>48000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Ac4Settings.Bitrate</property>
+    <min>48000</min>
+    <max>768000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Ac4Settings.SampleRate</property>
+    <min>48000</min>
+    <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.AiffSettings.BitDepth</property>
     <min>16</min>
     <max>24</max>
@@ -1743,6 +1753,10 @@
     <property>Amazon.MediaConvert.Model.MsSmoothGroupSettings.FragmentLength</property>
     <min>1</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MultiViewInput.FileInput</property>
+    <pattern>^s3://([^\/]+\/+)+((([^\/]*)))|^https?://[^\/].*[^&amp;]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.MxfXavcProfileSettings.MaxAncDataSize</property>

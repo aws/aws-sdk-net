@@ -72,6 +72,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateServiceLinkedRoleRequestMarshaller _instance = new CreateServiceLinkedRoleRequestMarshaller();        

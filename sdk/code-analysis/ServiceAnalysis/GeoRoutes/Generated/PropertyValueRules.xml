@@ -274,7 +274,7 @@
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RoadSnapTrailerOptions.TrailerCount</property>
     <min>0</min>
-    <max>255</max>
+    <max>4</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RoadSnapTruckOptions.GrossWeight</property>
@@ -1064,8 +1064,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RouteWaypoint.StopDuration</property>
-    <min>0</min>
-    <max>4294967295</max>
+    <max>49999</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.RouteWeightConstraint.Value</property>
@@ -1085,6 +1084,7 @@
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationConnection.From</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationConnection.RestDuration</property>
@@ -1095,6 +1095,7 @@
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationConnection.To</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationConnection.TravelDuration</property>
@@ -1119,6 +1120,7 @@
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationDestinationOptions.Id</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationDestinationOptions.ServiceDuration</property>
@@ -1134,6 +1136,7 @@
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationImpedingWaypoint.Id</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationOptimizedWaypoint.ArrivalTime</property>
@@ -1151,11 +1154,13 @@
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationOptimizedWaypoint.Id</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationOriginOptions.Id</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationRestCycleDurations.RestDuration</property>
@@ -1240,6 +1245,7 @@
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationWaypoint.Id</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[^,;!]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GeoRoutes.Model.WaypointOptimizationWaypoint.ServiceDuration</property>

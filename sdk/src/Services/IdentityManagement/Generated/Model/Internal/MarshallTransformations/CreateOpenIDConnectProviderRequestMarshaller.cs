@@ -113,6 +113,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Url", StringUtils.FromString(publicRequest.Url));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateOpenIDConnectProviderRequestMarshaller _instance = new CreateOpenIDConnectProviderRequestMarshaller();        

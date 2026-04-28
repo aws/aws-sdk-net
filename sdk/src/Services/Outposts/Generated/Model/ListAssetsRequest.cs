@@ -43,11 +43,57 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class ListAssetsRequest : AmazonOutpostsRequest
     {
+        private List<string> _assetTypeFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _hostIdFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _outpostIdentifier;
         private List<string> _statusFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AssetTypeFilter. 
+        /// <para>
+        /// Filters the results by asset type.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// COMPUTE - Server asset used for customer compute 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// STORAGE - Server asset used by storage services 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POWERSHELF - Powershelf assets 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SWITCH - Switch assets 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NETWORKING - Asset managed by Amazon Web Services for networking purposes 
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> AssetTypeFilter
+        {
+            get { return this._assetTypeFilter; }
+            set { this._assetTypeFilter = value; }
+        }
+
+        // Check to see if AssetTypeFilter property is set
+        internal bool IsSetAssetTypeFilter()
+        {
+            return this._assetTypeFilter != null && (this._assetTypeFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property HostIdFilter. 
@@ -134,7 +180,7 @@ namespace Amazon.Outposts.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=3)]
+        [AWSProperty(Min=1, Max=5)]
         public List<string> StatusFilter
         {
             get { return this._statusFilter; }

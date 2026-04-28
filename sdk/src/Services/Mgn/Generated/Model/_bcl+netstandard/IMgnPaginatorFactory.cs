@@ -138,6 +138,16 @@ namespace Amazon.Mgn.Model
         IListImportErrorsPaginator ListImportErrors(ListImportErrorsRequest request);
 
         /// <summary>
+        /// Paginator for ListImportFileEnrichments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListImportFileEnrichmentsPaginator ListImportFileEnrichments(ListImportFileEnrichmentsRequest request);
+
+        /// <summary>
         /// Paginator for ListImports operation
         ///</summary>
         [AWSPaginator(
@@ -156,6 +166,126 @@ namespace Amazon.Mgn.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListManagedAccountsPaginator ListManagedAccounts(ListManagedAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationAnalyses operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNetworkMigrationAnalysesPaginator ListNetworkMigrationAnalyses(ListNetworkMigrationAnalysesRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationAnalysisResults operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNetworkMigrationAnalysisResultsPaginator ListNetworkMigrationAnalysisResults(ListNetworkMigrationAnalysisResultsRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationCodeGenerations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNetworkMigrationCodeGenerationsPaginator ListNetworkMigrationCodeGenerations(ListNetworkMigrationCodeGenerationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationCodeGenerationSegments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNetworkMigrationCodeGenerationSegmentsPaginator ListNetworkMigrationCodeGenerationSegments(ListNetworkMigrationCodeGenerationSegmentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationDefinitions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNetworkMigrationDefinitionsPaginator ListNetworkMigrationDefinitions(ListNetworkMigrationDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationDeployedStacks operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNetworkMigrationDeployedStacksPaginator ListNetworkMigrationDeployedStacks(ListNetworkMigrationDeployedStacksRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationDeployments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNetworkMigrationDeploymentsPaginator ListNetworkMigrationDeployments(ListNetworkMigrationDeploymentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationExecutions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNetworkMigrationExecutionsPaginator ListNetworkMigrationExecutions(ListNetworkMigrationExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationMapperSegmentConstructs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNetworkMigrationMapperSegmentConstructsPaginator ListNetworkMigrationMapperSegmentConstructs(ListNetworkMigrationMapperSegmentConstructsRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationMapperSegments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNetworkMigrationMapperSegmentsPaginator ListNetworkMigrationMapperSegments(ListNetworkMigrationMapperSegmentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationMappings operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNetworkMigrationMappingsPaginator ListNetworkMigrationMappings(ListNetworkMigrationMappingsRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworkMigrationMappingUpdates operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNetworkMigrationMappingUpdatesPaginator ListNetworkMigrationMappingUpdates(ListNetworkMigrationMappingUpdatesRequest request);
 
         /// <summary>
         /// Paginator for ListSourceServerActions operation

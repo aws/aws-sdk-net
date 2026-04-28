@@ -773,6 +773,61 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  CreateNetworkMigrationDefinition
+
+
+        /// <summary>
+        /// Creates a new network migration definition that specifies the source and target network
+        /// configuration for a migration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkMigrationDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateNetworkMigrationDefinition service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateNetworkMigrationDefinition">REST API Reference for CreateNetworkMigrationDefinition Operation</seealso>
+        public virtual CreateNetworkMigrationDefinitionResponse CreateNetworkMigrationDefinition(CreateNetworkMigrationDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNetworkMigrationDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new network migration definition that specifies the source and target network
+        /// configuration for a migration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkMigrationDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateNetworkMigrationDefinition service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateNetworkMigrationDefinition">REST API Reference for CreateNetworkMigrationDefinition Operation</seealso>
+        public virtual Task<CreateNetworkMigrationDefinitionResponse> CreateNetworkMigrationDefinitionAsync(CreateNetworkMigrationDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateNetworkMigrationDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateReplicationConfigurationTemplate
 
 
@@ -1131,6 +1186,69 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = DeleteLaunchConfigurationTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteLaunchConfigurationTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteNetworkMigrationDefinition
+
+
+        /// <summary>
+        /// Deletes a network migration definition. This operation removes the migration definition
+        /// and all associated metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkMigrationDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNetworkMigrationDefinition service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteNetworkMigrationDefinition">REST API Reference for DeleteNetworkMigrationDefinition Operation</seealso>
+        public virtual DeleteNetworkMigrationDefinitionResponse DeleteNetworkMigrationDefinition(DeleteNetworkMigrationDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkMigrationDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a network migration definition. This operation removes the migration definition
+        /// and all associated metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkMigrationDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteNetworkMigrationDefinition service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteNetworkMigrationDefinition">REST API Reference for DeleteNetworkMigrationDefinition Operation</seealso>
+        public virtual Task<DeleteNetworkMigrationDefinitionResponse> DeleteNetworkMigrationDefinitionAsync(DeleteNetworkMigrationDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteNetworkMigrationDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2064,6 +2182,122 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  GetNetworkMigrationDefinition
+
+
+        /// <summary>
+        /// Retrieves the details of a network migration definition including source and target
+        /// configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkMigrationDefinition service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkMigrationDefinition service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetNetworkMigrationDefinition">REST API Reference for GetNetworkMigrationDefinition Operation</seealso>
+        public virtual GetNetworkMigrationDefinitionResponse GetNetworkMigrationDefinition(GetNetworkMigrationDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkMigrationDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the details of a network migration definition including source and target
+        /// configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkMigrationDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNetworkMigrationDefinition service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetNetworkMigrationDefinition">REST API Reference for GetNetworkMigrationDefinition Operation</seealso>
+        public virtual Task<GetNetworkMigrationDefinitionResponse> GetNetworkMigrationDefinitionAsync(GetNetworkMigrationDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetNetworkMigrationDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetNetworkMigrationMapperSegmentConstruct
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific construct within a mapper segment,
+        /// including its properties and configuration data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkMigrationMapperSegmentConstruct service method.</param>
+        /// 
+        /// <returns>The response from the GetNetworkMigrationMapperSegmentConstruct service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetNetworkMigrationMapperSegmentConstruct">REST API Reference for GetNetworkMigrationMapperSegmentConstruct Operation</seealso>
+        public virtual GetNetworkMigrationMapperSegmentConstructResponse GetNetworkMigrationMapperSegmentConstruct(GetNetworkMigrationMapperSegmentConstructRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNetworkMigrationMapperSegmentConstructRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkMigrationMapperSegmentConstructResponseUnmarshaller.Instance;
+
+            return Invoke<GetNetworkMigrationMapperSegmentConstructResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific construct within a mapper segment,
+        /// including its properties and configuration data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNetworkMigrationMapperSegmentConstruct service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNetworkMigrationMapperSegmentConstruct service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/GetNetworkMigrationMapperSegmentConstruct">REST API Reference for GetNetworkMigrationMapperSegmentConstruct Operation</seealso>
+        public virtual Task<GetNetworkMigrationMapperSegmentConstructResponse> GetNetworkMigrationMapperSegmentConstructAsync(GetNetworkMigrationMapperSegmentConstructRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNetworkMigrationMapperSegmentConstructRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNetworkMigrationMapperSegmentConstructResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetNetworkMigrationMapperSegmentConstructResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetReplicationConfiguration
 
 
@@ -2423,6 +2657,53 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  ListImportFileEnrichments
+
+
+        /// <summary>
+        /// Lists import file enrichment jobs with optional filtering by job IDs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportFileEnrichments service method.</param>
+        /// 
+        /// <returns>The response from the ListImportFileEnrichments service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportFileEnrichments">REST API Reference for ListImportFileEnrichments Operation</seealso>
+        public virtual ListImportFileEnrichmentsResponse ListImportFileEnrichments(ListImportFileEnrichmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListImportFileEnrichmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportFileEnrichmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportFileEnrichmentsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists import file enrichment jobs with optional filtering by job IDs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportFileEnrichments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImportFileEnrichments service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportFileEnrichments">REST API Reference for ListImportFileEnrichments Operation</seealso>
+        public virtual Task<ListImportFileEnrichmentsResponse> ListImportFileEnrichmentsAsync(ListImportFileEnrichmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListImportFileEnrichmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportFileEnrichmentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListImportFileEnrichmentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListImports
 
 
@@ -2525,6 +2806,774 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = ListManagedAccountsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListManagedAccountsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationAnalyses
+
+
+        /// <summary>
+        /// Lists network migration analysis jobs for a specified execution. Returns information
+        /// about analysis job status and results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationAnalyses service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationAnalyses service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationAnalyses">REST API Reference for ListNetworkMigrationAnalyses Operation</seealso>
+        public virtual ListNetworkMigrationAnalysesResponse ListNetworkMigrationAnalyses(ListNetworkMigrationAnalysesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationAnalysesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationAnalysesResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationAnalysesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists network migration analysis jobs for a specified execution. Returns information
+        /// about analysis job status and results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationAnalyses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationAnalyses service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationAnalyses">REST API Reference for ListNetworkMigrationAnalyses Operation</seealso>
+        public virtual Task<ListNetworkMigrationAnalysesResponse> ListNetworkMigrationAnalysesAsync(ListNetworkMigrationAnalysesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationAnalysesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationAnalysesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNetworkMigrationAnalysesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationAnalysisResults
+
+
+        /// <summary>
+        /// Lists the results of network migration analyses, showing connectivity and compatibility
+        /// findings for migrated resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationAnalysisResults service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationAnalysisResults service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationAnalysisResults">REST API Reference for ListNetworkMigrationAnalysisResults Operation</seealso>
+        public virtual ListNetworkMigrationAnalysisResultsResponse ListNetworkMigrationAnalysisResults(ListNetworkMigrationAnalysisResultsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationAnalysisResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationAnalysisResultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationAnalysisResultsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the results of network migration analyses, showing connectivity and compatibility
+        /// findings for migrated resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationAnalysisResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationAnalysisResults service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationAnalysisResults">REST API Reference for ListNetworkMigrationAnalysisResults Operation</seealso>
+        public virtual Task<ListNetworkMigrationAnalysisResultsResponse> ListNetworkMigrationAnalysisResultsAsync(ListNetworkMigrationAnalysisResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationAnalysisResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationAnalysisResultsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNetworkMigrationAnalysisResultsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationCodeGenerations
+
+
+        /// <summary>
+        /// Lists network migration code generation jobs, which convert network mappings into
+        /// infrastructure-as-code templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationCodeGenerations service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationCodeGenerations service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationCodeGenerations">REST API Reference for ListNetworkMigrationCodeGenerations Operation</seealso>
+        public virtual ListNetworkMigrationCodeGenerationsResponse ListNetworkMigrationCodeGenerations(ListNetworkMigrationCodeGenerationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationCodeGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationCodeGenerationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationCodeGenerationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists network migration code generation jobs, which convert network mappings into
+        /// infrastructure-as-code templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationCodeGenerations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationCodeGenerations service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationCodeGenerations">REST API Reference for ListNetworkMigrationCodeGenerations Operation</seealso>
+        public virtual Task<ListNetworkMigrationCodeGenerationsResponse> ListNetworkMigrationCodeGenerationsAsync(ListNetworkMigrationCodeGenerationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationCodeGenerationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationCodeGenerationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNetworkMigrationCodeGenerationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationCodeGenerationSegments
+
+
+        /// <summary>
+        /// Lists code generation segments, which represent individual infrastructure components
+        /// generated as code templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationCodeGenerationSegments service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationCodeGenerationSegments service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationCodeGenerationSegments">REST API Reference for ListNetworkMigrationCodeGenerationSegments Operation</seealso>
+        public virtual ListNetworkMigrationCodeGenerationSegmentsResponse ListNetworkMigrationCodeGenerationSegments(ListNetworkMigrationCodeGenerationSegmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationCodeGenerationSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationCodeGenerationSegmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationCodeGenerationSegmentsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists code generation segments, which represent individual infrastructure components
+        /// generated as code templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationCodeGenerationSegments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationCodeGenerationSegments service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationCodeGenerationSegments">REST API Reference for ListNetworkMigrationCodeGenerationSegments Operation</seealso>
+        public virtual Task<ListNetworkMigrationCodeGenerationSegmentsResponse> ListNetworkMigrationCodeGenerationSegmentsAsync(ListNetworkMigrationCodeGenerationSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationCodeGenerationSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationCodeGenerationSegmentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNetworkMigrationCodeGenerationSegmentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationDefinitions
+
+
+        /// <summary>
+        /// Lists all network migration definitions in the account, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationDefinitions service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDefinitions">REST API Reference for ListNetworkMigrationDefinitions Operation</seealso>
+        public virtual ListNetworkMigrationDefinitionsResponse ListNetworkMigrationDefinitions(ListNetworkMigrationDefinitionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationDefinitionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all network migration definitions in the account, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationDefinitions service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDefinitions">REST API Reference for ListNetworkMigrationDefinitions Operation</seealso>
+        public virtual Task<ListNetworkMigrationDefinitionsResponse> ListNetworkMigrationDefinitionsAsync(ListNetworkMigrationDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationDefinitionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNetworkMigrationDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationDeployedStacks
+
+
+        /// <summary>
+        /// Lists CloudFormation stacks that have been deployed as part of the network migration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationDeployedStacks service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationDeployedStacks service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDeployedStacks">REST API Reference for ListNetworkMigrationDeployedStacks Operation</seealso>
+        public virtual ListNetworkMigrationDeployedStacksResponse ListNetworkMigrationDeployedStacks(ListNetworkMigrationDeployedStacksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationDeployedStacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationDeployedStacksResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationDeployedStacksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists CloudFormation stacks that have been deployed as part of the network migration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationDeployedStacks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationDeployedStacks service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDeployedStacks">REST API Reference for ListNetworkMigrationDeployedStacks Operation</seealso>
+        public virtual Task<ListNetworkMigrationDeployedStacksResponse> ListNetworkMigrationDeployedStacksAsync(ListNetworkMigrationDeployedStacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationDeployedStacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationDeployedStacksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNetworkMigrationDeployedStacksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationDeployments
+
+
+        /// <summary>
+        /// Lists network migration deployment jobs and their current status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationDeployments service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationDeployments service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDeployments">REST API Reference for ListNetworkMigrationDeployments Operation</seealso>
+        public virtual ListNetworkMigrationDeploymentsResponse ListNetworkMigrationDeployments(ListNetworkMigrationDeploymentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationDeploymentsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists network migration deployment jobs and their current status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationDeployments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationDeployments service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDeployments">REST API Reference for ListNetworkMigrationDeployments Operation</seealso>
+        public virtual Task<ListNetworkMigrationDeploymentsResponse> ListNetworkMigrationDeploymentsAsync(ListNetworkMigrationDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationDeploymentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNetworkMigrationDeploymentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationExecutions
+
+
+        /// <summary>
+        /// Lists network migration execution instances for a given definition, showing the status
+        /// and progress of each execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationExecutions service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationExecutions">REST API Reference for ListNetworkMigrationExecutions Operation</seealso>
+        public virtual ListNetworkMigrationExecutionsResponse ListNetworkMigrationExecutions(ListNetworkMigrationExecutionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationExecutionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists network migration execution instances for a given definition, showing the status
+        /// and progress of each execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationExecutions service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationExecutions">REST API Reference for ListNetworkMigrationExecutions Operation</seealso>
+        public virtual Task<ListNetworkMigrationExecutionsResponse> ListNetworkMigrationExecutionsAsync(ListNetworkMigrationExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationExecutionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNetworkMigrationExecutionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationMapperSegmentConstructs
+
+
+        /// <summary>
+        /// Lists constructs within a mapper segment, representing individual infrastructure components
+        /// like VPCs, subnets, or security groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMapperSegmentConstructs service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationMapperSegmentConstructs service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMapperSegmentConstructs">REST API Reference for ListNetworkMigrationMapperSegmentConstructs Operation</seealso>
+        public virtual ListNetworkMigrationMapperSegmentConstructsResponse ListNetworkMigrationMapperSegmentConstructs(ListNetworkMigrationMapperSegmentConstructsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMapperSegmentConstructsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMapperSegmentConstructsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationMapperSegmentConstructsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists constructs within a mapper segment, representing individual infrastructure components
+        /// like VPCs, subnets, or security groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMapperSegmentConstructs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationMapperSegmentConstructs service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMapperSegmentConstructs">REST API Reference for ListNetworkMigrationMapperSegmentConstructs Operation</seealso>
+        public virtual Task<ListNetworkMigrationMapperSegmentConstructsResponse> ListNetworkMigrationMapperSegmentConstructsAsync(ListNetworkMigrationMapperSegmentConstructsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMapperSegmentConstructsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMapperSegmentConstructsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNetworkMigrationMapperSegmentConstructsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationMapperSegments
+
+
+        /// <summary>
+        /// Lists mapper segments, which represent logical groupings of network resources to be
+        /// migrated together.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMapperSegments service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationMapperSegments service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMapperSegments">REST API Reference for ListNetworkMigrationMapperSegments Operation</seealso>
+        public virtual ListNetworkMigrationMapperSegmentsResponse ListNetworkMigrationMapperSegments(ListNetworkMigrationMapperSegmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMapperSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMapperSegmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationMapperSegmentsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists mapper segments, which represent logical groupings of network resources to be
+        /// migrated together.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMapperSegments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationMapperSegments service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMapperSegments">REST API Reference for ListNetworkMigrationMapperSegments Operation</seealso>
+        public virtual Task<ListNetworkMigrationMapperSegmentsResponse> ListNetworkMigrationMapperSegmentsAsync(ListNetworkMigrationMapperSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMapperSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMapperSegmentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNetworkMigrationMapperSegmentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationMappings
+
+
+        /// <summary>
+        /// Lists network migration mapping jobs, which analyze and create relationships between
+        /// source and target network resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMappings service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationMappings service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappings">REST API Reference for ListNetworkMigrationMappings Operation</seealso>
+        public virtual ListNetworkMigrationMappingsResponse ListNetworkMigrationMappings(ListNetworkMigrationMappingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMappingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationMappingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists network migration mapping jobs, which analyze and create relationships between
+        /// source and target network resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMappings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationMappings service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappings">REST API Reference for ListNetworkMigrationMappings Operation</seealso>
+        public virtual Task<ListNetworkMigrationMappingsResponse> ListNetworkMigrationMappingsAsync(ListNetworkMigrationMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMappingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNetworkMigrationMappingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNetworkMigrationMappingUpdates
+
+
+        /// <summary>
+        /// Lists mapping update jobs, which apply customer modifications to the generated network
+        /// mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMappingUpdates service method.</param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationMappingUpdates service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappingUpdates">REST API Reference for ListNetworkMigrationMappingUpdates Operation</seealso>
+        public virtual ListNetworkMigrationMappingUpdatesResponse ListNetworkMigrationMappingUpdates(ListNetworkMigrationMappingUpdatesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMappingUpdatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMappingUpdatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListNetworkMigrationMappingUpdatesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists mapping update jobs, which apply customer modifications to the generated network
+        /// mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNetworkMigrationMappingUpdates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNetworkMigrationMappingUpdates service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationMappingUpdates">REST API Reference for ListNetworkMigrationMappingUpdates Operation</seealso>
+        public virtual Task<ListNetworkMigrationMappingUpdatesResponse> ListNetworkMigrationMappingUpdatesAsync(ListNetworkMigrationMappingUpdatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNetworkMigrationMappingUpdatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNetworkMigrationMappingUpdatesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNetworkMigrationMappingUpdatesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3480,6 +4529,484 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  StartImportFileEnrichment
+
+
+        /// <summary>
+        /// Starts an import file enrichment job to process and enrich network migration import
+        /// files with additional metadata and IP assignment strategies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImportFileEnrichment service method.</param>
+        /// 
+        /// <returns>The response from the StartImportFileEnrichment service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImportFileEnrichment">REST API Reference for StartImportFileEnrichment Operation</seealso>
+        public virtual StartImportFileEnrichmentResponse StartImportFileEnrichment(StartImportFileEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartImportFileEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportFileEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportFileEnrichmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts an import file enrichment job to process and enrich network migration import
+        /// files with additional metadata and IP assignment strategies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImportFileEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartImportFileEnrichment service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImportFileEnrichment">REST API Reference for StartImportFileEnrichment Operation</seealso>
+        public virtual Task<StartImportFileEnrichmentResponse> StartImportFileEnrichmentAsync(StartImportFileEnrichmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartImportFileEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportFileEnrichmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartImportFileEnrichmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartNetworkMigrationAnalysis
+
+
+        /// <summary>
+        /// Starts a network migration analysis job to evaluate connectivity and compatibility
+        /// of the migration mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationAnalysis service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationAnalysis">REST API Reference for StartNetworkMigrationAnalysis Operation</seealso>
+        public virtual StartNetworkMigrationAnalysisResponse StartNetworkMigrationAnalysis(StartNetworkMigrationAnalysisRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<StartNetworkMigrationAnalysisResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a network migration analysis job to evaluate connectivity and compatibility
+        /// of the migration mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationAnalysis service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationAnalysis">REST API Reference for StartNetworkMigrationAnalysis Operation</seealso>
+        public virtual Task<StartNetworkMigrationAnalysisResponse> StartNetworkMigrationAnalysisAsync(StartNetworkMigrationAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationAnalysisResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartNetworkMigrationAnalysisResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartNetworkMigrationCodeGeneration
+
+
+        /// <summary>
+        /// Starts a code generation job to convert network migration mappings into infrastructure-as-code
+        /// templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationCodeGeneration service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationCodeGeneration service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationCodeGeneration">REST API Reference for StartNetworkMigrationCodeGeneration Operation</seealso>
+        public virtual StartNetworkMigrationCodeGenerationResponse StartNetworkMigrationCodeGeneration(StartNetworkMigrationCodeGenerationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationCodeGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationCodeGenerationResponseUnmarshaller.Instance;
+
+            return Invoke<StartNetworkMigrationCodeGenerationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a code generation job to convert network migration mappings into infrastructure-as-code
+        /// templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationCodeGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationCodeGeneration service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationCodeGeneration">REST API Reference for StartNetworkMigrationCodeGeneration Operation</seealso>
+        public virtual Task<StartNetworkMigrationCodeGenerationResponse> StartNetworkMigrationCodeGenerationAsync(StartNetworkMigrationCodeGenerationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationCodeGenerationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationCodeGenerationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartNetworkMigrationCodeGenerationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartNetworkMigrationDeployment
+
+
+        /// <summary>
+        /// Starts a deployment job to create the target network infrastructure based on the generated
+        /// code templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationDeployment service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationDeployment service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationDeployment">REST API Reference for StartNetworkMigrationDeployment Operation</seealso>
+        public virtual StartNetworkMigrationDeploymentResponse StartNetworkMigrationDeployment(StartNetworkMigrationDeploymentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<StartNetworkMigrationDeploymentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a deployment job to create the target network infrastructure based on the generated
+        /// code templates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationDeployment service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationDeployment">REST API Reference for StartNetworkMigrationDeployment Operation</seealso>
+        public virtual Task<StartNetworkMigrationDeploymentResponse> StartNetworkMigrationDeploymentAsync(StartNetworkMigrationDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationDeploymentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartNetworkMigrationDeploymentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartNetworkMigrationMapping
+
+
+        /// <summary>
+        /// Starts the network migration mapping process for a given network migration execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationMapping service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationMapping service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationMapping">REST API Reference for StartNetworkMigrationMapping Operation</seealso>
+        public virtual StartNetworkMigrationMappingResponse StartNetworkMigrationMapping(StartNetworkMigrationMappingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationMappingResponseUnmarshaller.Instance;
+
+            return Invoke<StartNetworkMigrationMappingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts the network migration mapping process for a given network migration execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationMapping service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationMapping">REST API Reference for StartNetworkMigrationMapping Operation</seealso>
+        public virtual Task<StartNetworkMigrationMappingResponse> StartNetworkMigrationMappingAsync(StartNetworkMigrationMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationMappingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationMappingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartNetworkMigrationMappingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartNetworkMigrationMappingUpdate
+
+
+        /// <summary>
+        /// Starts a job to apply customer modifications to network migration mappings, such as
+        /// changing properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationMappingUpdate service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationMappingUpdate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationMappingUpdate">REST API Reference for StartNetworkMigrationMappingUpdate Operation</seealso>
+        public virtual StartNetworkMigrationMappingUpdateResponse StartNetworkMigrationMappingUpdate(StartNetworkMigrationMappingUpdateRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationMappingUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationMappingUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<StartNetworkMigrationMappingUpdateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a job to apply customer modifications to network migration mappings, such as
+        /// changing properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkMigrationMappingUpdate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartNetworkMigrationMappingUpdate service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
+        /// Reached throttling quota exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartNetworkMigrationMappingUpdate">REST API Reference for StartNetworkMigrationMappingUpdate Operation</seealso>
+        public virtual Task<StartNetworkMigrationMappingUpdateResponse> StartNetworkMigrationMappingUpdateAsync(StartNetworkMigrationMappingUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNetworkMigrationMappingUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkMigrationMappingUpdateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartNetworkMigrationMappingUpdateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartReplication
 
 
@@ -4288,6 +5815,124 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = UpdateLaunchConfigurationTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateLaunchConfigurationTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateNetworkMigrationDefinition
+
+
+        /// <summary>
+        /// Updates an existing network migration definition with new source or target configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkMigrationDefinition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNetworkMigrationDefinition service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationDefinition">REST API Reference for UpdateNetworkMigrationDefinition Operation</seealso>
+        public virtual UpdateNetworkMigrationDefinitionResponse UpdateNetworkMigrationDefinition(UpdateNetworkMigrationDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNetworkMigrationDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing network migration definition with new source or target configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkMigrationDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNetworkMigrationDefinition service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationDefinition">REST API Reference for UpdateNetworkMigrationDefinition Operation</seealso>
+        public virtual Task<UpdateNetworkMigrationDefinitionResponse> UpdateNetworkMigrationDefinitionAsync(UpdateNetworkMigrationDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkMigrationDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkMigrationDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateNetworkMigrationDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateNetworkMigrationMapperSegment
+
+
+        /// <summary>
+        /// Updates a mapper segment's configuration, such as changing its scope tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkMigrationMapperSegment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNetworkMigrationMapperSegment service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationMapperSegment">REST API Reference for UpdateNetworkMigrationMapperSegment Operation</seealso>
+        public virtual UpdateNetworkMigrationMapperSegmentResponse UpdateNetworkMigrationMapperSegment(UpdateNetworkMigrationMapperSegmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkMigrationMapperSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkMigrationMapperSegmentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNetworkMigrationMapperSegmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a mapper segment's configuration, such as changing its scope tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNetworkMigrationMapperSegment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNetworkMigrationMapperSegment service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
+        /// Operating denied due to a file permission or access check error.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateNetworkMigrationMapperSegment">REST API Reference for UpdateNetworkMigrationMapperSegment Operation</seealso>
+        public virtual Task<UpdateNetworkMigrationMapperSegmentResponse> UpdateNetworkMigrationMapperSegmentAsync(UpdateNetworkMigrationMapperSegmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNetworkMigrationMapperSegmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNetworkMigrationMapperSegmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateNetworkMigrationMapperSegmentResponse>(request, options, cancellationToken);
         }
 
         #endregion

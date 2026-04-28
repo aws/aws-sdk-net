@@ -101,6 +101,8 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                     request.Parameters.Add("WebIdentityToken", StringUtils.FromString(publicRequest.WebIdentityToken));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static AssumeRoleWithWebIdentityRequestMarshaller _instance = new AssumeRoleWithWebIdentityRequestMarshaller();        

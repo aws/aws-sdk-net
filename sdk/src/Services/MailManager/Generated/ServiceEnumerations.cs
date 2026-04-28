@@ -809,6 +809,10 @@ namespace Amazon.MailManager
         /// </summary>
         public static readonly IngressPointStatus ACTIVE = new IngressPointStatus("ACTIVE");
         /// <summary>
+        /// Constant ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST for IngressPointStatus
+        /// </summary>
+        public static readonly IngressPointStatus ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST = new IngressPointStatus("ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST");
+        /// <summary>
         /// Constant CLOSED for IngressPointStatus
         /// </summary>
         public static readonly IngressPointStatus CLOSED = new IngressPointStatus("CLOSED");
@@ -924,6 +928,10 @@ namespace Amazon.MailManager
         /// Constant AUTH for IngressPointType
         /// </summary>
         public static readonly IngressPointType AUTH = new IngressPointType("AUTH");
+        /// <summary>
+        /// Constant MTLS for IngressPointType
+        /// </summary>
+        public static readonly IngressPointType MTLS = new IngressPointType("MTLS");
         /// <summary>
         /// Constant OPEN for IngressPointType
         /// </summary>
@@ -1269,6 +1277,56 @@ namespace Amazon.MailManager
 
 
     /// <summary>
+    /// Constants used for properties of type LambdaInvocationType.
+    /// </summary>
+    public class LambdaInvocationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EVENT for LambdaInvocationType
+        /// </summary>
+        public static readonly LambdaInvocationType EVENT = new LambdaInvocationType("EVENT");
+        /// <summary>
+        /// Constant REQUEST_RESPONSE for LambdaInvocationType
+        /// </summary>
+        public static readonly LambdaInvocationType REQUEST_RESPONSE = new LambdaInvocationType("REQUEST_RESPONSE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaInvocationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaInvocationType FindValue(string value)
+        {
+            return FindValue<LambdaInvocationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaInvocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MailFrom.
     /// </summary>
     public class MailFrom : ConstantClass
@@ -1588,6 +1646,80 @@ namespace Amazon.MailManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RuleBooleanOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleClientCertificateAttribute.
+    /// </summary>
+    public class RuleClientCertificateAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CN for RuleClientCertificateAttribute
+        /// </summary>
+        public static readonly RuleClientCertificateAttribute CN = new RuleClientCertificateAttribute("CN");
+        /// <summary>
+        /// Constant SAN_DIRECTORY_NAME for RuleClientCertificateAttribute
+        /// </summary>
+        public static readonly RuleClientCertificateAttribute SAN_DIRECTORY_NAME = new RuleClientCertificateAttribute("SAN_DIRECTORY_NAME");
+        /// <summary>
+        /// Constant SAN_DNS_NAME for RuleClientCertificateAttribute
+        /// </summary>
+        public static readonly RuleClientCertificateAttribute SAN_DNS_NAME = new RuleClientCertificateAttribute("SAN_DNS_NAME");
+        /// <summary>
+        /// Constant SAN_IP_ADDRESS for RuleClientCertificateAttribute
+        /// </summary>
+        public static readonly RuleClientCertificateAttribute SAN_IP_ADDRESS = new RuleClientCertificateAttribute("SAN_IP_ADDRESS");
+        /// <summary>
+        /// Constant SAN_REGISTERED_ID for RuleClientCertificateAttribute
+        /// </summary>
+        public static readonly RuleClientCertificateAttribute SAN_REGISTERED_ID = new RuleClientCertificateAttribute("SAN_REGISTERED_ID");
+        /// <summary>
+        /// Constant SAN_RFC822_NAME for RuleClientCertificateAttribute
+        /// </summary>
+        public static readonly RuleClientCertificateAttribute SAN_RFC822_NAME = new RuleClientCertificateAttribute("SAN_RFC822_NAME");
+        /// <summary>
+        /// Constant SAN_UNIFORM_RESOURCE_IDENTIFIER for RuleClientCertificateAttribute
+        /// </summary>
+        public static readonly RuleClientCertificateAttribute SAN_UNIFORM_RESOURCE_IDENTIFIER = new RuleClientCertificateAttribute("SAN_UNIFORM_RESOURCE_IDENTIFIER");
+        /// <summary>
+        /// Constant SERIAL_NUMBER for RuleClientCertificateAttribute
+        /// </summary>
+        public static readonly RuleClientCertificateAttribute SERIAL_NUMBER = new RuleClientCertificateAttribute("SERIAL_NUMBER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleClientCertificateAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleClientCertificateAttribute FindValue(string value)
+        {
+            return FindValue<RuleClientCertificateAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleClientCertificateAttribute(string value)
         {
             return FindValue(value);
         }
@@ -2356,6 +2488,110 @@ namespace Amazon.MailManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SnsNotificationPayloadType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TlsPolicy.
+    /// </summary>
+    public class TlsPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIPS for TlsPolicy
+        /// </summary>
+        public static readonly TlsPolicy FIPS = new TlsPolicy("FIPS");
+        /// <summary>
+        /// Constant OPTIONAL for TlsPolicy
+        /// </summary>
+        public static readonly TlsPolicy OPTIONAL = new TlsPolicy("OPTIONAL");
+        /// <summary>
+        /// Constant REQUIRED for TlsPolicy
+        /// </summary>
+        public static readonly TlsPolicy REQUIRED = new TlsPolicy("REQUIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TlsPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TlsPolicy FindValue(string value)
+        {
+            return FindValue<TlsPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TlsPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrustStoreResponseOption.
+    /// </summary>
+    public class TrustStoreResponseOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for TrustStoreResponseOption
+        /// </summary>
+        public static readonly TrustStoreResponseOption EXCLUDE = new TrustStoreResponseOption("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for TrustStoreResponseOption
+        /// </summary>
+        public static readonly TrustStoreResponseOption INCLUDE = new TrustStoreResponseOption("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrustStoreResponseOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustStoreResponseOption FindValue(string value)
+        {
+            return FindValue<TrustStoreResponseOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustStoreResponseOption(string value)
         {
             return FindValue(value);
         }

@@ -102,6 +102,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetContentRedirection())
+            {
+                context.Writer.WritePropertyName("ContentRedirection");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ContentRedirectionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ContentRedirection, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");

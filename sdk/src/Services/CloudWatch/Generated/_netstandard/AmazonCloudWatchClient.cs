@@ -1626,6 +1626,42 @@ namespace Amazon.CloudWatch
         }
         #endregion
         
+        #region  GetOTelEnrichment
+
+        internal virtual GetOTelEnrichmentResponse GetOTelEnrichment(GetOTelEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<GetOTelEnrichmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the current status of vended metric enrichment for the account, including
+        /// whether CloudWatch vended metrics are enriched with resource ARN and resource tag
+        /// labels and queryable using PromQL. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">Supported
+        /// AWS infrastructure metrics</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOTelEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetOTelEnrichment">REST API Reference for GetOTelEnrichment Operation</seealso>
+        public virtual Task<GetOTelEnrichmentResponse> GetOTelEnrichmentAsync(GetOTelEnrichmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetOTelEnrichmentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListAlarmMuteRules
 
         internal virtual ListAlarmMuteRulesResponse ListAlarmMuteRules(ListAlarmMuteRulesRequest request)
@@ -2030,7 +2066,7 @@ namespace Amazon.CloudWatch
         /// For example, If you want to allow a user to create mute rules that target only specific
         /// alarms named "WebServerCPUAlarm" and "DatabaseConnectionAlarm", you would create an
         /// IAM policy with one statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the alarm
-        /// mute rule resource (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute:*</c>),
+        /// mute rule resource (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute-rule:*</c>),
         /// and another statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the targeted
         /// alarm resources (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:WebServerCPUAlarm</c>
         /// and <c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:DatabaseConnectionAlarm</c>).
@@ -2418,8 +2454,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Creates or updates an alarm and associates it with the specified metric, metric math
-        /// expression, anomaly detection model, or Metrics Insights query. For more information
-        /// about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+        /// expression, anomaly detection model, Metrics Insights query, or PromQL query. For
+        /// more information about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
         /// alarms on Metrics Insights queries</a>.
         /// 
         ///  
@@ -2429,8 +2465,9 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// When this operation creates an alarm, the alarm state is immediately set to <c>INSUFFICIENT_DATA</c>.
-        /// The alarm is then evaluated and its state is set appropriately. Any actions associated
-        /// with the new state are then executed.
+        /// For PromQL alarms, the alarm state is instead immediately set to <c>OK</c>. The alarm
+        /// is then evaluated and its state is set appropriately. Any actions associated with
+        /// the new state are then executed.
         /// </para>
         ///  
         /// <para>
@@ -2836,6 +2873,50 @@ namespace Amazon.CloudWatch
         }
         #endregion
         
+        #region  StartOTelEnrichment
+
+        internal virtual StartOTelEnrichmentResponse StartOTelEnrichment(StartOTelEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<StartOTelEnrichmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
+        /// AWS resources</a> in the account. Once enabled, metrics that contain a resource identifier
+        /// dimension (for example, EC2 <c>CPUUtilization</c> with an <c>InstanceId</c> dimension)
+        /// are enriched with resource ARN and resource tag labels and become queryable using
+        /// PromQL.
+        /// 
+        ///  
+        /// <para>
+        /// Before calling this operation, you must enable resource tags on telemetry for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
+        /// resource tags on telemetry</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOTelEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartOTelEnrichment">REST API Reference for StartOTelEnrichment Operation</seealso>
+        public virtual Task<StartOTelEnrichmentResponse> StartOTelEnrichmentAsync(StartOTelEnrichmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartOTelEnrichmentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StopMetricStreams
 
         internal virtual StopMetricStreamsResponse StopMetricStreams(StopMetricStreamsRequest request)
@@ -2875,6 +2956,41 @@ namespace Amazon.CloudWatch
             options.ResponseUnmarshaller = StopMetricStreamsResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopMetricStreamsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  StopOTelEnrichment
+
+        internal virtual StopOTelEnrichmentResponse StopOTelEnrichment(StopOTelEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<StopOTelEnrichmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
+        /// AWS resources</a> in the account. After disabling, these metrics are no longer enriched
+        /// with resource ARN and resource tag labels, and cannot be queried using PromQL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopOTelEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopOTelEnrichment">REST API Reference for StopOTelEnrichment Operation</seealso>
+        public virtual Task<StopOTelEnrichmentResponse> StopOTelEnrichmentAsync(StopOTelEnrichmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopOTelEnrichmentResponse>(request, options, cancellationToken);
         }
         #endregion
         

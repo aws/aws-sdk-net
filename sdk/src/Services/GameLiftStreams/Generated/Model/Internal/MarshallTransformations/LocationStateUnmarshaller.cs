@@ -74,6 +74,12 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdleCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("InternalVpcIpv4CidrBlock", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InternalVpcIpv4CidrBlock = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("LocationName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -108,6 +114,12 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetIdleCapacity = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("VpcTransitConfiguration", targetDepth))
+                {
+                    var unmarshaller = VpcTransitConfigurationResponseUnmarshaller.Instance;
+                    unmarshalledObject.VpcTransitConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

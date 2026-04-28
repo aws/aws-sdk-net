@@ -2889,6 +2889,94 @@ namespace Amazon.ConnectCases
         }
         #endregion
         
+        #region  UpdateRelatedItem
+
+        internal virtual UpdateRelatedItemResponse UpdateRelatedItem(UpdateRelatedItemRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRelatedItemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRelatedItemResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRelatedItemResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the content of a related item associated with a case. The following related
+        /// item types are supported:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Comment</b> - Update the text content of an existing comment
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Custom</b> - Update the fields of a custom related item. You can add, modify,
+        /// and remove fields from a custom related item. There's a quota for the number of fields
+        /// allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
+        /// Connect Cases quotas</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When updating a Custom related item, all existing and new fields, and their associated
+        /// values should be included in the request. Fields not included as part of this request
+        /// will be removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you provide a value for <c>performedBy.userArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// permission on the ARN of the user that you provide.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html#system-case-fields">System
+        /// case fields</a> cannot be used in a custom related item.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRelatedItem service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRelatedItem service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateRelatedItem">REST API Reference for UpdateRelatedItem Operation</seealso>
+        public virtual Task<UpdateRelatedItemResponse> UpdateRelatedItemAsync(UpdateRelatedItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRelatedItemRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRelatedItemResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRelatedItemResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateTemplate
 
         internal virtual UpdateTemplateResponse UpdateTemplate(UpdateTemplateRequest request)

@@ -135,6 +135,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UseAwsProvidedLatestImage", StringUtils.FromBool(publicRequest.UseAwsProvidedLatestImage));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateCustomDBEngineVersionRequestMarshaller _instance = new CreateCustomDBEngineVersionRequestMarshaller();        

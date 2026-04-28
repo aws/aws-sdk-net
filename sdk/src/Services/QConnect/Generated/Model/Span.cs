@@ -38,6 +38,7 @@ namespace Amazon.QConnect.Model
         private string _assistantId;
         private SpanAttributes _attributes;
         private DateTime? _endTimestamp;
+        private string _originRequestId;
         private string _parentSpanId;
         private string _requestId;
         private string _sessionId;
@@ -102,6 +103,25 @@ namespace Amazon.QConnect.Model
         internal bool IsSetEndTimestamp()
         {
             return this._endTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginRequestId. 
+        /// <para>
+        /// The origin request identifier for end-to-end tracing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string OriginRequestId
+        {
+            get { return this._originRequestId; }
+            set { this._originRequestId = value; }
+        }
+
+        // Check to see if OriginRequestId property is set
+        internal bool IsSetOriginRequestId()
+        {
+            return this._originRequestId != null;
         }
 
         /// <summary>

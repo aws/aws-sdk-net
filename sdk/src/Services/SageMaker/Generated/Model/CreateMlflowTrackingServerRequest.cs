@@ -41,6 +41,8 @@ namespace Amazon.SageMaker.Model
         private bool? _automaticModelRegistration;
         private string _mlflowVersion;
         private string _roleArn;
+        private string _s3BucketOwnerAccountId;
+        private bool? _s3BucketOwnerVerification;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _trackingServerName;
         private TrackingServerSize _trackingServerSize;
@@ -129,6 +131,45 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BucketOwnerAccountId. 
+        /// <para>
+        /// Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact
+        /// storage. Defaults to caller's account ID if not provided.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string S3BucketOwnerAccountId
+        {
+            get { return this._s3BucketOwnerAccountId; }
+            set { this._s3BucketOwnerAccountId = value; }
+        }
+
+        // Check to see if S3BucketOwnerAccountId property is set
+        internal bool IsSetS3BucketOwnerAccountId()
+        {
+            return this._s3BucketOwnerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BucketOwnerVerification. 
+        /// <para>
+        /// Enable Amazon S3 Ownership checks when interacting with Amazon S3 buckets from a SageMaker
+        /// Managed MLflow Tracking Server. Defaults to <c>True</c> if not provided. 
+        /// </para>
+        /// </summary>
+        public bool? S3BucketOwnerVerification
+        {
+            get { return this._s3BucketOwnerVerification; }
+            set { this._s3BucketOwnerVerification = value; }
+        }
+
+        // Check to see if S3BucketOwnerVerification property is set
+        internal bool IsSetS3BucketOwnerVerification()
+        {
+            return this._s3BucketOwnerVerification.HasValue; 
         }
 
         /// <summary>

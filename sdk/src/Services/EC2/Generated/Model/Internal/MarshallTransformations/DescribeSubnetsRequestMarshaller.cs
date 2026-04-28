@@ -117,6 +117,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeSubnetsRequestMarshaller _instance = new DescribeSubnetsRequestMarshaller();        

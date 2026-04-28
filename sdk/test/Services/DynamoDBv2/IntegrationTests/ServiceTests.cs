@@ -1,30 +1,42 @@
-﻿using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
-    public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
+    [Trait("Category", "DynamoDBv2")]
+    public class ServiceTests : IClassFixture<HashTablesFixture>, IAsyncLifetime
     {
-        [TestMethod]
-        [TestCategory("DynamoDBv2")]
+        private readonly HashTablesFixture _fixture;
+
+        public ServiceTests(HashTablesFixture fixture)
+        {
+            _fixture = fixture;
+        }
+
+        public async ValueTask InitializeAsync() => await _fixture.CleanupTables();
+
+        public ValueTask DisposeAsync() => default;
+
+        [Fact]
         public async Task TestDataCalls()
         {
             // Test hash-key table
-            await TestHashTable(hashTableName);
+            await TestHashTable(_fixture.HashTableName);
 
             // Test hash-and-range-key table
-            await TestHashRangeTable(hashRangeTableName);
+            await TestHashRangeTable(_fixture.HashRangeTableName);
 
             // Test batch gets and writes
-            await TestBatchWriteGet(hashTableName, hashRangeTableName);
+            await TestBatchWriteGet(_fixture.HashTableName, _fixture.HashRangeTableName);
 
             // Test large batch gets and writes
-            await TestLargeBatches(hashTableName);
+            await TestLargeBatches(_fixture.HashTableName);
         }
 
         private async Task TestHashTable(string hashTableName)
@@ -40,7 +52,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // optional call to IsLSet = true, no-op
                 IsLSet = true
             };
-            Assert.AreEqual(2, nonEmptyListAV.L.Count);
+            Assert.Equal(2, nonEmptyListAV.L.Count);
 
             var emptyListAV = new AttributeValue
             {
@@ -49,7 +61,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Users would explicit set IsLSet to confirm an empty array is sent to the request.
                 IsLSet = true
             };
-            Assert.AreEqual(0, emptyListAV.L.Count);
+            Assert.Equal(0, emptyListAV.L.Count);
 
             // Create a new AttributeValue to confirm that the empty collection will be sent even
             // if IsLSet is not set.
@@ -57,14 +69,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 L = new List<AttributeValue>()
             };
-            Assert.AreEqual(0, emptyListAV.L.Count);
+            Assert.Equal(0, emptyListAV.L.Count);
 
             var boolAV = new AttributeValue();
-            Assert.IsFalse(boolAV.IsBOOLSet);
+            Assert.False(boolAV.IsBOOLSet);
             boolAV.BOOL = false;
-            Assert.IsTrue(boolAV.IsBOOLSet);
+            Assert.True(boolAV.IsBOOLSet);
 
-            await Client.PutItemAsync(hashTableName, new Dictionary<string, AttributeValue>
+            await _fixture.Client.PutItemAsync(hashTableName, new Dictionary<string, AttributeValue>
             {
                 { "Id", new AttributeValue { N = "1" } },
                 { "Product", new AttributeValue { S = "CloudSpotter" } },
@@ -84,38 +96,39 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 { "Id", new AttributeValue { N = "1" } }
             };
-            var item = (await Client.GetItemAsync(hashTableName, key1)).Item;
+            var item = (await _fixture.Client.GetItemAsync(new GetItemRequest { TableName = hashTableName, Key = key1, ConsistentRead = true })).Item;
 
             // Verify empty collections and value type
-            Assert.IsTrue(item["EmptyList"].IsLSet);
-            Assert.IsFalse(item["EmptyList"].IsMSet);
-            Assert.IsTrue(item["EmptyMap"].IsMSet);
-            Assert.IsFalse(item["EmptyMap"].IsLSet);
-            Assert.IsTrue(item["BoolFalse"].IsBOOLSet);
-            Assert.IsFalse(item["BoolFalse"].BOOL.Value);
-            Assert.IsTrue(item["NonEmptyList"].IsLSet);
-            Assert.AreEqual(nonEmptyListAV.L.Count, item["NonEmptyList"].L.Count);
+            Assert.True(item["EmptyList"].IsLSet);
+            Assert.False(item["EmptyList"].IsMSet);
+            Assert.True(item["EmptyMap"].IsMSet);
+            Assert.False(item["EmptyMap"].IsLSet);
+            Assert.True(item["BoolFalse"].IsBOOLSet);
+            Assert.False(item["BoolFalse"].BOOL.Value);
+            Assert.True(item["NonEmptyList"].IsLSet);
+            Assert.Equal(nonEmptyListAV.L.Count, item["NonEmptyList"].L.Count);
 
             // Get nonexistent item
             var key2 = new Dictionary<string, AttributeValue>
             {
                 { "Id", new AttributeValue { N = "999" } }
             };
-            var getItemResult = await Client.GetItemAsync(hashTableName, key2);
-            Assert.IsFalse(getItemResult.IsItemSet);
+            var getItemResult = await _fixture.Client.GetItemAsync(new GetItemRequest { TableName = hashTableName, Key = key2, ConsistentRead = true });
+            Assert.False(getItemResult.IsItemSet);
 
             // Get empty item
-            getItemResult = await Client.GetItemAsync(new GetItemRequest
+            getItemResult = await _fixture.Client.GetItemAsync(new GetItemRequest
             {
                 TableName = hashTableName,
                 Key = key1,
+                ConsistentRead = true,
                 ProjectionExpression = "Coffee"
             });
-            Assert.IsTrue(getItemResult.IsItemSet);
-            Assert.AreEqual(0, getItemResult.Item.Count);
+            Assert.True(getItemResult.IsItemSet);
+            Assert.Equal(0, getItemResult.Item.Count);
 
             // Update item
-            await Client.UpdateItemAsync(hashTableName, key1, new Dictionary<string, AttributeValueUpdate>
+            await _fixture.Client.UpdateItemAsync(hashTableName, key1, new Dictionary<string, AttributeValueUpdate>
             {
                 { "Product", new AttributeValueUpdate { Action = AttributeAction.PUT, Value = new AttributeValue { S = "CloudSpotter 2.0" } } },
                 { "Seller", new AttributeValueUpdate { Action = AttributeAction.DELETE } },
@@ -123,10 +136,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             });
 
             // Get updated item
-            item = (await Client.GetItemAsync(hashTableName, key1)).Item;
-            Assert.IsTrue(item["Product"].S.IndexOf("2.0") >= 0);
-            Assert.AreEqual(3, item["Tags"].SS.Count);
-            Assert.IsFalse(item.ContainsKey("Seller"));
+            item = (await _fixture.Client.GetItemAsync(new GetItemRequest { TableName = hashTableName, Key = key1, ConsistentRead = true })).Item;
+            Assert.True(item["Product"].S.IndexOf("2.0") >= 0);
+            Assert.Equal(3, item["Tags"].SS.Count);
+            Assert.False(item.ContainsKey("Seller"));
 
             // Scan all items
             var scanConditions = new Dictionary<string, Condition>
@@ -144,14 +157,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             };
             var items = await Scan(hashTableName, scanConditions);
-            Assert.AreEqual(1, items.Count);
+            Assert.Equal(1, items.Count);
 
             // Update non-existent item
             key2 = new Dictionary<string, AttributeValue>
             {
                 { "Id", new AttributeValue { N = "2" } }
             };
-            await Client.UpdateItemAsync(hashTableName, key2,
+            await _fixture.Client.UpdateItemAsync(hashTableName, key2,
                 new Dictionary<string, AttributeValueUpdate>
                 {
                     { "Product", new AttributeValueUpdate { Action = AttributeAction.PUT, Value = new AttributeValue { S = "CloudDebugger" } } },
@@ -161,17 +174,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 });
 
             // Get updated item
-            item = (await Client.GetItemAsync(hashTableName, key2)).Item;
-            Assert.IsTrue(item["Product"].S.IndexOf("Debugger") >= 0);
-            Assert.AreEqual(1, item["Tags"].SS.Count);
-            Assert.IsFalse(item.ContainsKey("Seller"));
+            item = (await _fixture.Client.GetItemAsync(new GetItemRequest { TableName = hashTableName, Key = key2, ConsistentRead = true })).Item;
+            Assert.True(item["Product"].S.IndexOf("Debugger") >= 0);
+            Assert.Equal(1, item["Tags"].SS.Count);
+            Assert.False(item.ContainsKey("Seller"));
 
             // Scan all items
             items = await Scan(hashTableName, scanConditions);
-            Assert.AreEqual(2, items.Count);
+            Assert.Equal(2, items.Count);
 
             // Query global index
-            items = (await Client.QueryAsync(new QueryRequest
+            items = (await _fixture.Client.QueryAsync(new QueryRequest
             {
                 TableName = hashTableName,
                 IndexName = "GlobalIndex",
@@ -197,10 +210,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.AreEqual(1, items.Count);
+            Assert.Equal(1, items.Count);
 
             // Scan global index
-            items = (await Client.ScanAsync(new ScanRequest
+            items = (await _fixture.Client.ScanAsync(new ScanRequest
             {
                 TableName = hashTableName,
                 IndexName = "GlobalIndex",
@@ -226,13 +239,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.AreEqual(1, items.Count);
+            Assert.Equal(1, items.Count);
         }
-        
+
         private async Task TestHashRangeTable(string hashRangeTableName)
         {
             // Put items
-            await Client.PutItemAsync(hashRangeTableName, new Dictionary<string, AttributeValue>
+            await _fixture.Client.PutItemAsync(hashRangeTableName, new Dictionary<string, AttributeValue>
             {
                 { "Name", new AttributeValue { S = "Alan" } },
                 { "Age", new AttributeValue { N = "31" } },
@@ -240,7 +253,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 { "Score", new AttributeValue { N = "120" } },
                 { "Manager", new AttributeValue { S = "Barbara"} }
             });
-            await Client.PutItemAsync(hashRangeTableName, new Dictionary<string, AttributeValue>
+            await _fixture.Client.PutItemAsync(hashRangeTableName, new Dictionary<string, AttributeValue>
             {
                 { "Name", new AttributeValue { S = "Chuck" } },
                 { "Age", new AttributeValue { N = "30" } },
@@ -248,7 +261,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 { "Score", new AttributeValue { N = "94" } },
                 { "Manager", new AttributeValue { S = "Barbara"} }
             });
-            await Client.PutItemAsync(hashRangeTableName, new Dictionary<string, AttributeValue>
+            await _fixture.Client.PutItemAsync(hashRangeTableName, new Dictionary<string, AttributeValue>
             {
                 { "Name", new AttributeValue { S = "Diane" } },
                 { "Age", new AttributeValue { N = "40" } },
@@ -256,7 +269,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 { "Score", new AttributeValue { N = "140" } },
                 { "Manager", new AttributeValue { S = "Eva"} }
             });
-            await Client.PutItemAsync(hashRangeTableName, new Dictionary<string, AttributeValue>
+            await _fixture.Client.PutItemAsync(hashRangeTableName, new Dictionary<string, AttributeValue>
             {
                 { "Name", new AttributeValue { S = "Diane" } },
                 { "Age", new AttributeValue { N = "24" } },
@@ -281,14 +294,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             };
             var items = await Scan(hashRangeTableName, scanConditions);
-            Assert.AreEqual(4, items.Count);
+            Assert.Equal(4, items.Count);
 
             // Scan in parallel
             items = await ParallelScan(hashRangeTableName, segments: 2, conditions: scanConditions);
-            Assert.AreEqual(4, items.Count);
+            Assert.Equal(4, items.Count);
 
             // Query table with no range-key condition
-            items = (await Client.QueryAsync(new QueryRequest
+            items = (await _fixture.Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 KeyConditions = new Dictionary<string, Condition>
@@ -304,10 +317,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     },
                 }
             })).Items;
-            Assert.AreEqual(2, items.Count);
+            Assert.Equal(2, items.Count);
 
             // Query table with no range-key condition and no returned attributes
-            items = (await Client.QueryAsync(new QueryRequest
+            items = (await _fixture.Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 KeyConditions = new Dictionary<string, Condition>
@@ -324,12 +337,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 },
                 ProjectionExpression = "Coffee"
             })).Items;
-            Assert.AreEqual(2, items.Count);
-            Assert.AreEqual(0, items[0].Count);
-            Assert.AreEqual(0, items[1].Count);
+            Assert.Equal(2, items.Count);
+            Assert.Equal(0, items[0].Count);
+            Assert.Equal(0, items[1].Count);
 
             // Query table with hash-key condition expression
-            items = (await Client.QueryAsync(new QueryRequest
+            items = (await _fixture.Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 KeyConditionExpression = "#H = :val",
@@ -342,10 +355,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     { ":val", new AttributeValue { S = "Diane" } }
                 }
             })).Items;
-            Assert.AreEqual(2, items.Count);
+            Assert.Equal(2, items.Count);
 
             // Query table with key condition expression
-            items = (await Client.QueryAsync(new QueryRequest
+            items = (await _fixture.Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 KeyConditionExpression = "#H = :name and #R > :age",
@@ -360,10 +373,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     { ":age", new AttributeValue { N = "30" } }
                 }
             })).Items;
-            Assert.AreEqual(1, items.Count);
+            Assert.Equal(1, items.Count);
 
             // Query global index
-            items = (await Client.QueryAsync(new QueryRequest
+            items = (await _fixture.Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "GlobalIndex",
@@ -389,10 +402,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.AreEqual(1, items.Count);
+            Assert.Equal(1, items.Count);
 
             // Query local index with no range-key condition
-            items = (await Client.QueryAsync(new QueryRequest
+            items = (await _fixture.Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
@@ -409,10 +422,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     },
                 }
             })).Items;
-            Assert.AreEqual(2, items.Count);
+            Assert.Equal(2, items.Count);
 
             // Query local index with range-key condition
-            items = (await Client.QueryAsync(new QueryRequest
+            items = (await _fixture.Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
@@ -438,10 +451,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.AreEqual(1, items.Count);
+            Assert.Equal(1, items.Count);
 
             // Query local index with a query filter
-            items = (await Client.QueryAsync(new QueryRequest
+            items = (await _fixture.Client.QueryAsync(new QueryRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
@@ -470,10 +483,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.AreEqual(1, items.Count);
+            Assert.Equal(1, items.Count);
 
             // Scan global index
-            items = (await Client.ScanAsync(new ScanRequest
+            items = (await _fixture.Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "GlobalIndex",
@@ -499,10 +512,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.AreEqual(1, items.Count);
+            Assert.Equal(1, items.Count);
 
             // Scan local index with no range-key condition
-            items = (await Client.ScanAsync(new ScanRequest
+            items = (await _fixture.Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
@@ -519,10 +532,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     },
                 }
             })).Items;
-            Assert.AreEqual(2, items.Count);
+            Assert.Equal(2, items.Count);
 
             // Scan local index with range-key condition
-            items = (await Client.ScanAsync(new ScanRequest
+            items = (await _fixture.Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
@@ -548,10 +561,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.AreEqual(1, items.Count);
+            Assert.Equal(1, items.Count);
 
             // Scan local index with a non-key condition
-            items = (await Client.ScanAsync(new ScanRequest
+            items = (await _fixture.Client.ScanAsync(new ScanRequest
             {
                 TableName = hashRangeTableName,
                 IndexName = "LocalIndex",
@@ -577,13 +590,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     }
                 }
             })).Items;
-            Assert.AreEqual(1, items.Count);
+            Assert.Equal(1, items.Count);
         }
-        
+
         private async Task TestBatchWriteGet(string hashTableName, string hashRangeTableName)
         {
             // Put 1 item and delete 2 items across 2 tables
-            await Client.BatchWriteItemAsync(new Dictionary<string, List<WriteRequest>>
+            await _fixture.Client.BatchWriteItemAsync(new Dictionary<string, List<WriteRequest>>
             {
                 {
                     hashTableName,
@@ -633,7 +646,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             });
 
             // Get 5 items across 2 tables
-            var batchGetResult = await Client.BatchGetItemAsync(new Dictionary<string, KeysAndAttributes>
+            var batchGetResult = await _fixture.Client.BatchGetItemAsync(new Dictionary<string, KeysAndAttributes>
             {
                 {
                     hashTableName,
@@ -682,35 +695,39 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var hashItems = tableItems[hashTableName];
             var hashRangeItems = tableItems[hashRangeTableName];
 
-            Assert.AreEqual(2, hashItems.Count);
-            Assert.AreEqual(3, hashRangeItems.Count);
+            Assert.Equal(2, hashItems.Count);
+            Assert.Equal(3, hashRangeItems.Count);
         }
-        
+
         private async Task TestLargeBatches(string hashTableName)
         {
             int itemSize = 60 * 1024;
-            Assert.IsTrue(itemSize < MaxItemSize);
+            Assert.True(itemSize < DynamoDBFixture.MaxItemSize);
             int itemCount = 25;
 
             // DynamoDB allows 1MB of data per operation, so itemSize * writeBatchSize < 1MB
-            int writeBatchSize = (int)Math.Floor((decimal)OneMB / (decimal)itemSize);
+            int writeBatchSize = (int)Math.Floor((decimal)DynamoDBFixture.OneMB / (decimal)itemSize);
 
             // Write large items to table in small batches
             List<string> itemIds = new List<string>();
             for (int i = 0; i < itemCount; i += writeBatchSize)
             {
-                var writtenIds = await WriteBigBatch(hashTableName, writeBatchSize, i, itemSize);
+                // Use itemCount - i so the last batch only writes the remaining items,
+                // avoiding writing more items than itemCount total.
+                int batchCount = Math.Min(writeBatchSize, itemCount - i);
+                var writtenIds = await WriteBigBatch(hashTableName, batchCount, i, itemSize);
                 itemIds.AddRange(writtenIds);
             }
 
             // Get large items from table in 1MB batches
-            for (int i = 0; i < itemCount; i += MaxBatchSize)
+            for (int i = 0; i < itemCount; i += DynamoDBFixture.MaxBatchSize)
             {
-                List<string> itemsToGet = itemIds.GetRange(i, MaxBatchSize);
+                // Use itemCount - i so the last batch only reads the remaining items.
+                List<string> itemsToGet = itemIds.GetRange(i, Math.Min(DynamoDBFixture.MaxBatchSize, itemCount - i));
                 if (itemsToGet.Count > 0)
                 {
                     int itemsRetrieved = await GetBigBatch(hashTableName, itemsToGet);
-                    Assert.AreEqual(itemsRetrieved, itemsToGet.Count);
+                    Assert.Equal(itemsToGet.Count, itemsRetrieved);
                 }
             }
         }
@@ -720,7 +737,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var itemData = new string('@', itemSize);
             var itemIds = new List<string>();
             var writeRequests = new List<WriteRequest>();
-            
+
             for (int i = 0; i < items; i++)
             {
                 var itemId = (itemsStartingIndex + i).ToString();
@@ -751,13 +768,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             do
             {
-                result = await Client.BatchWriteItemAsync(request);
+                result = await _fixture.Client.BatchWriteItemAsync(request);
                 request.RequestItems = result.UnprocessedItems;
             } while (result.UnprocessedItems != null && result.UnprocessedItems.Count > 0);
 
             return itemIds;
         }
-        
+
         private async Task<int> GetBigBatch(string hashTableName, List<string> idsToGet)
         {
             var keys = new List<Dictionary<string, AttributeValue>>();
@@ -773,15 +790,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 RequestItems = new Dictionary<string, KeysAndAttributes>
                 {
-                    { hashTableName, new KeysAndAttributes { Keys = keys } }
+                    { hashTableName, new KeysAndAttributes { Keys = keys, ConsistentRead = true } }
                 }
             };
-            
+
             BatchGetItemResponse result;
             int itemsRetrieved = 0;
             do
             {
-                result = await Client.BatchGetItemAsync(request);
+                result = await _fixture.Client.BatchGetItemAsync(request);
                 itemsRetrieved += result.Responses[hashTableName].Count;
 
                 request.RequestItems = result.UnprocessedKeys;
@@ -794,7 +811,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             return (await ScanHelper(tableName, conditions)).ToList();
         }
-        
+
         private async Task<List<Dictionary<string, AttributeValue>>> ParallelScan(string tableName, int segments, Dictionary<string, Condition> conditions)
         {
             var allItems = new List<Dictionary<string, AttributeValue>>();
@@ -806,14 +823,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             return allItems;
         }
-        
+
         private async Task<IEnumerable<Dictionary<string, AttributeValue>>> ScanHelper(string tableName, Dictionary<string, Condition> conditions, int? segment = null, int? totalSegments = null)
         {
             var request = new ScanRequest
             {
                 TableName = tableName,
                 ScanFilter = conditions,
-                Limit = ScanLimit,
+                Limit = DynamoDBFixture.ScanLimit,
+                ConsistentRead = true,
             };
 
             if (segment.HasValue && totalSegments.HasValue)
@@ -827,14 +845,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ScanResponse result;
             do
             {
-                result = await Client.ScanAsync(request);
+                result = await _fixture.Client.ScanAsync(request);
                 if (result.Items != null)
                 {
                     items.AddRange(result.Items);
                 }
                 request.ExclusiveStartKey = result.LastEvaluatedKey;
             } while (result.LastEvaluatedKey != null && result.LastEvaluatedKey.Count > 0);
-            
+
             return items;
         }
     }

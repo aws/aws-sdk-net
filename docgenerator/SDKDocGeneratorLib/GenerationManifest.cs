@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using SDKDocGenerator.PlatformMap;
 using SDKDocGenerator.Writers;
 using System.Diagnostics;
 using System.Reflection;
@@ -95,6 +96,31 @@ namespace SDKDocGenerator
         public GeneratorOptions Options { get; }
 
         /// <summary>
+        /// Platform availability map for this service.
+        /// Built once during initialization, used for page generation decisions
+        /// throughout documentation generation.
+        /// </summary>
+        public PlatformMap.PlatformAvailabilityMap PlatformMap { get; private set; }
+
+        /// <summary>
+        /// Attaches a platform availability map to this manifest.
+        /// Should only be called once during initialization.
+        /// </summary>
+        public void AttachPlatformMap(PlatformMap.PlatformAvailabilityMap map)
+        {
+            if (map == null)
+                throw new ArgumentNullException(nameof(map));
+
+            if (PlatformMap != null)
+                throw new InvalidOperationException("PlatformMap has already been attached");
+
+            if (!map.ServiceName.Equals(ServiceName, StringComparison.OrdinalIgnoreCase))
+                throw new ArgumentException($"Map service name '{map.ServiceName}' doesn't match manifest service name '{ServiceName}'");
+
+            PlatformMap = map;
+        }
+
+        /// <summary>
         /// Returns the discovered NDoc table for a given platform, if it existed. If platform
         /// is not specified, we attempt to return the NDoc for the primary platform specified
         /// in the generator options.
@@ -129,7 +155,11 @@ namespace SDKDocGenerator
             {
                 if (_manifestAssemblyWrapper == null)
                 {
-                    _manifestAssemblyWrapper = new ManifestAssemblyWrapper(ServiceName, Options.Platform, AssemblyPath);
+                    _manifestAssemblyWrapper = new ManifestAssemblyWrapper(
+                        ServiceName,
+                        Options.Platform,
+                        AssemblyPath,
+                        useIsolatedContext: false);
                 }
 
                 return _manifestAssemblyWrapper;
@@ -179,6 +209,20 @@ namespace SDKDocGenerator
                 return FilenameGenerator.ServiceNamespaceContractions[nsPart];
 
             return nsPart;
+        }
+
+        /// <summary>
+        /// Pre-loads XML documentation for all platforms without generating pages.
+        /// This is used to ensure Core documentation is available when service types
+        /// inherit from Core types and need to look up inherited member documentation.
+        /// </summary>
+        public void PreloadDocumentation()
+        {
+            Trace.WriteLine($"\tpre-loading documentation for {ServiceName}");
+            foreach (var platform in AllPlatforms)
+            {
+                NDocUtilities.LoadDocumentation(AssemblyName, ServiceName, platform, Options);
+            }
         }
 
         /// <summary>
@@ -239,6 +283,10 @@ namespace SDKDocGenerator
                 Trace.WriteLine($"\t\t{namespaceName} processed ({++processed} of {namespaceNames.Count()})");
             }
 
+            // Don't discard if this manifest has exclusive members that need page generation
+            if (PlatformMap?.ExclusiveMemberCount > 0)
+                discardAssemblyOnExit = false;
+
             if (discardAssemblyOnExit)
             {
                 // release artifact roots for future GC collections to operate on
@@ -250,6 +298,99 @@ namespace SDKDocGenerator
                 ManifestAssemblyContext.Dispose();
                 ManifestAssemblyContext = null;
             }
+        }
+
+        /// <summary>
+        /// Generates individual method pages for platform-exclusive methods.
+        /// Class pages already include exclusive methods (assembled during WriteType()),
+        /// so this method only creates the per-method detail pages.
+        ///
+        /// Uses MethodInfoWrapper instances stored in the map during the initial scan,
+        /// so no assemblies need to be reloaded.
+        /// </summary>
+        /// <param name="tocWriter">TOC generation handler</param>
+        public void GenerateExclusivePagesFromMap(TOCWriter tocWriter)
+        {
+            if (PlatformMap == null)
+            {
+                if (Options.Verbose)
+                    Trace.WriteLine($"\tNo platform map available for {ServiceName}, skipping exclusive page generation");
+                return;
+            }
+
+            // Get types that have exclusive members
+            var typesWithExclusive = PlatformMap.GetTypesWithExclusiveMembers().ToList();
+            if (!typesWithExclusive.Any())
+            {
+                if (Options.Verbose)
+                    Trace.WriteLine($"\tNo exclusive members found for {ServiceName}");
+                return;
+            }
+
+            var exclusiveCount = PlatformMap.ExclusiveMemberCount;
+            Trace.WriteLine($"\tgenerating exclusive method pages from unified map for {ServiceName} ({exclusiveCount} methods across {typesWithExclusive.Count} types)");
+
+            // Load NDoc documentation for all platforms
+            foreach (var platform in AllPlatforms)
+            {
+                NDocUtilities.LoadDocumentation(AssemblyName, ServiceName, platform, Options);
+            }
+
+            var frameworkVersion = FrameworkVersion.FromPlatformFolder(Options.Platform);
+
+            try
+            {
+                foreach (var typeFullName in typesWithExclusive)
+                {
+                    // Get all exclusive methods for this type from the map
+                    var exclusiveMethods = PlatformMap.GetExclusiveMethodsForType(typeFullName).ToList();
+
+                    if (!exclusiveMethods.Any())
+                        continue;
+
+                    // Get the primary type for class page regeneration
+                    var primaryType = ManifestAssemblyContext.SdkAssembly.GetType(typeFullName);
+                    if (primaryType == null)
+                    {
+                        if (Options.Verbose)
+                            Trace.WriteLine($"\t\tWarning: Could not find primary type {typeFullName} for exclusive methods");
+                        continue;
+                    }
+
+                    // Generate individual method pages for each exclusive method
+                    // The wrappers are already valid because assemblies are kept loaded in the map
+                    // Class pages are already generated with exclusive methods included during WriteType()
+                    foreach (var method in exclusiveMethods)
+                    {
+                        // Only write if the method is declared in this type's namespace
+                        if (method.DeclaringType.Namespace == primaryType.Namespace)
+                        {
+                            var methodWriter = new MethodWriter(this, frameworkVersion, method);
+                            methodWriter.Write();
+                            if (Options.Verbose)
+                                Trace.WriteLine($"\t\t\tGenerated exclusive method page: {primaryType.Name}.{method.Name}");
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                // NDoc lifecycle: We intentionally do NOT unload NDoc documentation here.
+                // Unlike Generate() which owns its NDoc lifecycle per-manifest,
+                // GenerateExclusivePagesFromMap() runs after all manifests have generated.
+                // NDoc tables are shared across manifests and cleaned up globally by the
+                // caller (SdkDocGenerator.Execute) at the end of the generation pass.
+            }
+        }
+
+        /// <summary>
+        /// Disposes the platform map, releasing all loaded assembly contexts.
+        /// The reference is kept so that post-disposal calls receive
+        /// <see cref="ObjectDisposedException"/> rather than a null reference.
+        /// </summary>
+        public void DisposePlatformMap()
+        {
+            PlatformMap?.Dispose();
         }
 
         void WriteNamespace(FrameworkVersion version, string namespaceName)
@@ -265,7 +406,21 @@ namespace SDKDocGenerator
 
         void WriteType(FrameworkVersion version, TypeWrapper type)
         {
-            var writer = new ClassWriter(this, version, type);
+            // Assemble complete method list: primary platform + any platform-exclusive methods
+            var methods = type.GetMethodsToDocument().ToList();
+            var exclusive = PlatformMap?.GetExclusiveMethodsForType(type.FullName);
+            if (exclusive != null)
+            {
+                var existingSigs = new HashSet<string>(
+                    methods.Select(m => MemberSignature.ForMethod(m)));
+                foreach (var m in exclusive)
+                {
+                    if (!existingSigs.Contains(MemberSignature.ForMethod(m)))
+                        methods.Add(m);
+                }
+            }
+
+            var writer = new ClassWriter(this, version, type, methods);
             writer.Write();
 
             foreach (var item in type.GetConstructors().Where(x => x.IsPublic))
@@ -300,11 +455,22 @@ namespace SDKDocGenerator
             public AssemblyWrapper SdkAssembly { get; private set; }
             public AppDomain Domain { get; private set; }
 
-            public ManifestAssemblyWrapper(string serviceName, string platform, string assemblyPath)
+            /// <summary>
+            /// Creates a manifest assembly wrapper for loading an SDK assembly.
+            /// </summary>
+            /// <param name="serviceName">The service name for documentation ID generation.</param>
+            /// <param name="platform">The platform identifier (e.g., "net472", "net8.0").</param>
+            /// <param name="assemblyPath">The path to the assembly file.</param>
+            /// <param name="useIsolatedContext">
+            /// If true, loads the assembly in an isolated AssemblyLoadContext. This should be
+            /// used for supplemental platform assemblies to avoid conflicts when the primary
+            /// platform assembly with the same name is already loaded.
+            /// </param>
+            public ManifestAssemblyWrapper(string serviceName, string platform, string assemblyPath, bool useIsolatedContext = false)
             {
                 var docId = NDocUtilities.GenerateDocId(serviceName, platform);
                 SdkAssembly = new AssemblyWrapper(docId);
-                SdkAssembly.LoadAssembly(assemblyPath);
+                SdkAssembly.LoadAssembly(assemblyPath, useIsolatedContext);
             }
 
             #region IDisposable Support
@@ -316,7 +482,8 @@ namespace SDKDocGenerator
                 {
                     if (disposing)
                     {
-                        // unlink roots, then drop the domain if we used one
+                        // Unload the assembly (including isolated context if used)
+                        SdkAssembly?.Unload();
                         SdkAssembly = null;
                         if (Domain != null)
                         {

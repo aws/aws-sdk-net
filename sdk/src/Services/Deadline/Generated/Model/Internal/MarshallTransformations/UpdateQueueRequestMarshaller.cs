@@ -169,6 +169,17 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.RoleArn);
             }
 
+            if(publicRequest.IsSetSchedulingConfiguration())
+            {
+                context.Writer.WritePropertyName("schedulingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SchedulingConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SchedulingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

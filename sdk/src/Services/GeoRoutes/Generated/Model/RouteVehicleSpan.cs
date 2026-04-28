@@ -175,7 +175,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>KilometersPerHour</c> 
+        ///  <b>Unit</b>: <c>kilometers per hour</c> 
         /// </para>
         /// </summary>
         public RouteSpanDynamicSpeedDetails DynamicSpeed
@@ -193,8 +193,39 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property FunctionalClassification. 
         /// <para>
-        /// Functional classification of the road segment corresponding to the span.
+        /// A numerical value indicating the functional classification of the road segment corresponding
+        /// to the span.
         /// </para>
+        ///  
+        /// <para>
+        /// Classification values are part of the hierarchical network that helps determine a
+        /// logical and efficient route, and have the following definitions:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Roads that allow for high volume, maximum speed traffic movement between and through
+        /// major metropolitan areas.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Roads that are used to channel traffic to functional class 1 roads for travel between
+        /// and through cities in the shortest amount of time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Roads that intersect functional class 2 roads and provide a high volume of traffic
+        /// movement at a lower level of mobility than functional class 2 roads.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Roads that provide for a high volume of traffic movement at moderate speeds between
+        /// neighborhoods.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Roads with volume and traffic movement below the level of any other functional class.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=5)]
         public int? FunctionalClassification
@@ -436,7 +467,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>KilometersPerHour</c> 
+        ///  <b>Unit</b>: <c>kilometers per hour</c> 
         /// </para>
         /// </summary>
         public RouteSpanSpeedLimitDetails SpeedLimit

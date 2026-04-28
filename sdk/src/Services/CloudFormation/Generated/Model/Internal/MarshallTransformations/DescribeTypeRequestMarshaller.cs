@@ -84,6 +84,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VersionId", StringUtils.FromString(publicRequest.VersionId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeTypeRequestMarshaller _instance = new DescribeTypeRequestMarshaller();        

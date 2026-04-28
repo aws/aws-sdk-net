@@ -35,8 +35,28 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class CreateJobRequest : AmazonDataExchangeRequest
     {
+        private AssetConfiguration _assetConfiguration;
         private RequestDetails _details;
         private Type _type;
+
+        /// <summary>
+        /// Gets and sets the property AssetConfiguration. 
+        /// <para>
+        /// The configuration for the asset, including tags to be applied to assets created by
+        /// the job.
+        /// </para>
+        /// </summary>
+        public AssetConfiguration AssetConfiguration
+        {
+            get { return this._assetConfiguration; }
+            set { this._assetConfiguration = value; }
+        }
+
+        // Check to see if AssetConfiguration property is set
+        internal bool IsSetAssetConfiguration()
+        {
+            return this._assetConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Details. 

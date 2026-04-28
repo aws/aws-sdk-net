@@ -64,7 +64,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Radius. 
         /// <para>
-        /// The radius, in meters, of the <c>FilterCircle</c>.
+        ///  The radius, in meters, of the <c>FilterCircle</c>. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers,<c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions support only up
+        /// to a maximum value of 300,000. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=21000000)]

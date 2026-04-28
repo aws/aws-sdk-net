@@ -38,6 +38,7 @@ namespace Amazon.MedicalImaging.Model
         private string _datastoreId;
         private bool? _force;
         private string _imageSetId;
+        private bool? _includeStudyImageSets;
         private string _latestVersionId;
         private MetadataUpdates _updateImageSetMetadataUpdates;
 
@@ -106,6 +107,25 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetImageSetId()
         {
             return this._imageSetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeStudyImageSets. 
+        /// <para>
+        /// Flag to apply the metadata updates to all image sets in the same Study as the requested
+        /// image set ID.
+        /// </para>
+        /// </summary>
+        public bool? IncludeStudyImageSets
+        {
+            get { return this._includeStudyImageSets; }
+            set { this._includeStudyImageSets = value; }
+        }
+
+        // Check to see if IncludeStudyImageSets property is set
+        internal bool IsSetIncludeStudyImageSets()
+        {
+            return this._includeStudyImageSets.HasValue; 
         }
 
         /// <summary>

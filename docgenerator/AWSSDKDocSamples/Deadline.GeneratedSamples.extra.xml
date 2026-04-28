@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.BatchGetJob(Amazon.Deadline.Model.BatchGetJobRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.BatchGetJob(Amazon.Deadline.Model.BatchGetJobRequest)" />
+            <member name="T:Amazon.Deadline.Model.BatchGetJobRequest" />
+            <member name="T:Amazon.Deadline.Model.BatchGetJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get multiple jobs in a single request"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.BatchGetSession(Amazon.Deadline.Model.BatchGetSessionRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.BatchGetSession(Amazon.Deadline.Model.BatchGetSessionRequest)" />
+            <member name="T:Amazon.Deadline.Model.BatchGetSessionRequest" />
+            <member name="T:Amazon.Deadline.Model.BatchGetSessionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get multiple sessions in a single request"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.BatchGetSessionAction(Amazon.Deadline.Model.BatchGetSessionActionRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.BatchGetSessionAction(Amazon.Deadline.Model.BatchGetSessionActionRequest)" />
+            <member name="T:Amazon.Deadline.Model.BatchGetSessionActionRequest" />
+            <member name="T:Amazon.Deadline.Model.BatchGetSessionActionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get multiple session actions in a single request"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.BatchGetStep(Amazon.Deadline.Model.BatchGetStepRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.BatchGetStep(Amazon.Deadline.Model.BatchGetStepRequest)" />
+            <member name="T:Amazon.Deadline.Model.BatchGetStepRequest" />
+            <member name="T:Amazon.Deadline.Model.BatchGetStepResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get multiple steps in a single request"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.BatchGetTask(Amazon.Deadline.Model.BatchGetTaskRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.BatchGetTask(Amazon.Deadline.Model.BatchGetTaskRequest)" />
+            <member name="T:Amazon.Deadline.Model.BatchGetTaskRequest" />
+            <member name="T:Amazon.Deadline.Model.BatchGetTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get multiple tasks in a single request"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.BatchGetWorker(Amazon.Deadline.Model.BatchGetWorkerRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.BatchGetWorker(Amazon.Deadline.Model.BatchGetWorkerRequest)" />
+            <member name="T:Amazon.Deadline.Model.BatchGetWorkerRequest" />
+            <member name="T:Amazon.Deadline.Model.BatchGetWorkerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get multiple workers in a single request"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.BatchUpdateJob(Amazon.Deadline.Model.BatchUpdateJobRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.BatchUpdateJob(Amazon.Deadline.Model.BatchUpdateJobRequest)" />
+            <member name="T:Amazon.Deadline.Model.BatchUpdateJobRequest" />
+            <member name="T:Amazon.Deadline.Model.BatchUpdateJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update multiple jobs in a single request"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.BatchUpdateTask(Amazon.Deadline.Model.BatchUpdateTaskRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.BatchUpdateTask(Amazon.Deadline.Model.BatchUpdateTaskRequest)" />
+            <member name="T:Amazon.Deadline.Model.BatchUpdateTaskRequest" />
+            <member name="T:Amazon.Deadline.Model.BatchUpdateTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update multiple tasks in a single request"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.GetMonitorSettings(Amazon.Deadline.Model.GetMonitorSettingsRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.GetMonitorSettings(Amazon.Deadline.Model.GetMonitorSettingsRequest)" />
+            <member name="T:Amazon.Deadline.Model.GetMonitorSettingsRequest" />
+            <member name="T:Amazon.Deadline.Model.GetMonitorSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get monitor settings"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.UpdateMonitorSettings(Amazon.Deadline.Model.UpdateMonitorSettingsRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.UpdateMonitorSettings(Amazon.Deadline.Model.UpdateMonitorSettingsRequest)" />
+            <member name="T:Amazon.Deadline.Model.UpdateMonitorSettingsRequest" />
+            <member name="T:Amazon.Deadline.Model.UpdateMonitorSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update monitor settings"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -76,6 +76,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PathPrefix", StringUtils.FromString(publicRequest.PathPrefix));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListAttachedGroupPoliciesRequestMarshaller _instance = new ListAttachedGroupPoliciesRequestMarshaller();        

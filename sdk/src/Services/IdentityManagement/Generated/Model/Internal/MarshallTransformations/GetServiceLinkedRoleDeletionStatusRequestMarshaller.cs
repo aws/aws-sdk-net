@@ -64,6 +64,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DeletionTaskId", StringUtils.FromString(publicRequest.DeletionTaskId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetServiceLinkedRoleDeletionStatusRequestMarshaller _instance = new GetServiceLinkedRoleDeletionStatusRequestMarshaller();        

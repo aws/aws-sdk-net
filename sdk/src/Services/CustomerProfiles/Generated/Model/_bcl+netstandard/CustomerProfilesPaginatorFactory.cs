@@ -85,6 +85,14 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Paginator for ListRecommenderFilters operation
+        ///</summary>
+        public IListRecommenderFiltersPaginator ListRecommenderFilters(ListRecommenderFiltersRequest request) 
+        {
+            return new ListRecommenderFiltersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRecommenderRecipes operation
         ///</summary>
         public IListRecommenderRecipesPaginator ListRecommenderRecipes(ListRecommenderRecipesRequest request) 

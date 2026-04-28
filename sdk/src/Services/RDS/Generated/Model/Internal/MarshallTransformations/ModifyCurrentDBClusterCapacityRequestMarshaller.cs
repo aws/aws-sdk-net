@@ -76,6 +76,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TimeoutAction", StringUtils.FromString(publicRequest.TimeoutAction));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyCurrentDBClusterCapacityRequestMarshaller _instance = new ModifyCurrentDBClusterCapacityRequestMarshaller();        

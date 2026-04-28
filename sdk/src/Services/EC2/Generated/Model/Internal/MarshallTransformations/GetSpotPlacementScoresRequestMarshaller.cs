@@ -412,6 +412,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetCapacityUnitType", StringUtils.FromString(publicRequest.TargetCapacityUnitType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetSpotPlacementScoresRequestMarshaller _instance = new GetSpotPlacementScoresRequestMarshaller();        

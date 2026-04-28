@@ -39,6 +39,11 @@
     <None Remove="**/obj/**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="xunit" Version="2.3.1" />
+    <!--
+      xunit.v3.assert provides Xunit.Assert without the runner infrastructure or the v2
+      compatibility shim that the xunit metapackage includes. This avoids CS0433 type
+      ambiguity when test executables reference both this library and xunit.v3.core.
+    -->
+    <PackageReference Include="xunit.v3.assert" Version="3.2.2" />
   </ItemGroup>
 </Project>

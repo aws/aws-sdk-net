@@ -84,6 +84,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SourceCapacityReservationId", StringUtils.FromString(publicRequest.SourceCapacityReservationId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static MoveCapacityReservationInstancesRequestMarshaller _instance = new MoveCapacityReservationInstancesRequestMarshaller();        

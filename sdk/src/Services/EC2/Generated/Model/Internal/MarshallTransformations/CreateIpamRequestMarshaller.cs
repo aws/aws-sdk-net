@@ -143,6 +143,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Tier", StringUtils.FromString(publicRequest.Tier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateIpamRequestMarshaller _instance = new CreateIpamRequestMarshaller();        

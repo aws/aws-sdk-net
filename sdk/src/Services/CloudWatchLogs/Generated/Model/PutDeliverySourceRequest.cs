@@ -119,12 +119,21 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For Amazon Bedrock AgentCore Memory, the valid values are <c>APPLICATION_LOGS</c>
+        /// and <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Amazon Bedrock AgentCore Gateway, the valid values are <c>APPLICATION_LOGS</c>
         /// and <c>TRACES</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For CloudFront, the valid value is <c>ACCESS_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For DevOps Agent, the valid value is <c>APPLICATION_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -138,6 +147,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// For Elemental MediaTailor, the valid values are <c>AD_DECISION_SERVER_LOGS</c>, <c>MANIFEST_SERVICE_LOGS</c>,
         /// and <c>TRANSCODE_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon EKS Auto Mode, the valid values are <c>AUTO_MODE_BLOCK_STORAGE_LOGS</c>,
+        /// <c>AUTO_MODE_COMPUTE_LOGS</c>, <c>AUTO_MODE_IPAM_LOGS</c>, and <c>AUTO_MODE_LOAD_BALANCING_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -162,7 +176,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Quick Suite, the valid values are <c>CHAT_LOGS</c> and <c>FEEDBACK_LOGS</c>.
+        /// For Quick, the valid values are <c>CHAT_LOGS</c> and <c>FEEDBACK_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -171,6 +185,10 @@ namespace Amazon.CloudWatchLogs.Model
         ///  </li> <li> 
         /// <para>
         /// For Amazon Q, the valid values are <c>EVENT_LOGS</c> and <c>SYNC_JOB_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Web Services Security Hub CSPM, the valid value is <c>SECURITY_FINDING_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -227,6 +245,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// The ARN of the Amazon Web Services resource that is generating and sending logs. For
         /// example, <c>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</c>
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For the <c>SECURITY_FINDING_LOGS</c> logType, use a wildcard ARN for the hub resource.
+        /// For example, <c>arn:aws:securityhub:us-east-1:111122223333:hub/*</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

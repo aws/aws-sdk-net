@@ -375,6 +375,56 @@ namespace Amazon.BCMDashboards
 
 
     /// <summary>
+    /// Constants used for properties of type HealthStatusCode.
+    /// </summary>
+    public class HealthStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEALTHY for HealthStatusCode
+        /// </summary>
+        public static readonly HealthStatusCode HEALTHY = new HealthStatusCode("HEALTHY");
+        /// <summary>
+        /// Constant UNHEALTHY for HealthStatusCode
+        /// </summary>
+        public static readonly HealthStatusCode UNHEALTHY = new HealthStatusCode("UNHEALTHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HealthStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HealthStatusCode FindValue(string value)
+        {
+            return FindValue<HealthStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HealthStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MatchOption.
     /// </summary>
     public class MatchOption : ConstantClass
@@ -528,6 +578,126 @@ namespace Amazon.BCMDashboards
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScheduleState.
+    /// </summary>
+    public class ScheduleState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ScheduleState
+        /// </summary>
+        public static readonly ScheduleState DISABLED = new ScheduleState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ScheduleState
+        /// </summary>
+        public static readonly ScheduleState ENABLED = new ScheduleState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduleState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduleState FindValue(string value)
+        {
+            return FindValue<ScheduleState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduleState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StatusReason.
+    /// </summary>
+    public class StatusReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DASHBOARD_ACCESS_DENIED for StatusReason
+        /// </summary>
+        public static readonly StatusReason DASHBOARD_ACCESS_DENIED = new StatusReason("DASHBOARD_ACCESS_DENIED");
+        /// <summary>
+        /// Constant DASHBOARD_NOT_FOUND for StatusReason
+        /// </summary>
+        public static readonly StatusReason DASHBOARD_NOT_FOUND = new StatusReason("DASHBOARD_NOT_FOUND");
+        /// <summary>
+        /// Constant DATA_SOURCE_ACCESS_DENIED for StatusReason
+        /// </summary>
+        public static readonly StatusReason DATA_SOURCE_ACCESS_DENIED = new StatusReason("DATA_SOURCE_ACCESS_DENIED");
+        /// <summary>
+        /// Constant EXECUTION_ROLE_ASSUME_FAILED for StatusReason
+        /// </summary>
+        public static readonly StatusReason EXECUTION_ROLE_ASSUME_FAILED = new StatusReason("EXECUTION_ROLE_ASSUME_FAILED");
+        /// <summary>
+        /// Constant EXECUTION_ROLE_INSUFFICIENT_PERMISSIONS for StatusReason
+        /// </summary>
+        public static readonly StatusReason EXECUTION_ROLE_INSUFFICIENT_PERMISSIONS = new StatusReason("EXECUTION_ROLE_INSUFFICIENT_PERMISSIONS");
+        /// <summary>
+        /// Constant INTERNAL_FAILURE for StatusReason
+        /// </summary>
+        public static readonly StatusReason INTERNAL_FAILURE = new StatusReason("INTERNAL_FAILURE");
+        /// <summary>
+        /// Constant WIDGET_ID_NOT_FOUND for StatusReason
+        /// </summary>
+        public static readonly StatusReason WIDGET_ID_NOT_FOUND = new StatusReason("WIDGET_ID_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatusReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatusReason FindValue(string value)
+        {
+            return FindValue<StatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatusReason(string value)
         {
             return FindValue(value);
         }

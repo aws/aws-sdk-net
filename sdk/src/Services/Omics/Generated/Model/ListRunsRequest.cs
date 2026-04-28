@@ -44,11 +44,31 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class ListRunsRequest : AmazonOmicsRequest
     {
+        private string _batchId;
         private int? _maxResults;
         private string _name;
         private string _runGroupId;
         private string _startingToken;
         private RunStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property BatchId. 
+        /// <para>
+        /// Filter by batch ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=18)]
+        public string BatchId
+        {
+            get { return this._batchId; }
+            set { this._batchId = value; }
+        }
+
+        // Check to see if BatchId property is set
+        internal bool IsSetBatchId()
+        {
+            return this._batchId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

@@ -35,6 +35,8 @@ namespace Amazon.ObservabilityAdmin.Model
     public partial class GetTelemetryEvaluationStatusResponse : AmazonWebServiceResponse
     {
         private string _failureReason;
+        private string _homeRegion;
+        private List<RegionStatus> _regionStatuses = AWSConfigs.InitializeCollections ? new List<RegionStatus>() : null;
         private Status _status;
 
         /// <summary>
@@ -54,6 +56,53 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HomeRegion. 
+        /// <para>
+        ///  The Amazon Web Services Region that is designated as the home region for multi-region
+        /// telemetry evaluation. The home region is the single management point for all multi-region
+        /// operations on this account. This field is only present when multi-region telemetry
+        /// evaluation is active. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string HomeRegion
+        {
+            get { return this._homeRegion; }
+            set { this._homeRegion = value; }
+        }
+
+        // Check to see if HomeRegion property is set
+        internal bool IsSetHomeRegion()
+        {
+            return this._homeRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegionStatuses. 
+        /// <para>
+        ///  A list of per-region telemetry evaluation statuses. Each entry indicates the evaluation
+        /// status for a specific spoke region included in the multi-region configuration. This
+        /// field is only present when multi-region telemetry evaluation is active. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<RegionStatus> RegionStatuses
+        {
+            get { return this._regionStatuses; }
+            set { this._regionStatuses = value; }
+        }
+
+        // Check to see if RegionStatuses property is set
+        internal bool IsSetRegionStatuses()
+        {
+            return this._regionStatuses != null && (this._regionStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

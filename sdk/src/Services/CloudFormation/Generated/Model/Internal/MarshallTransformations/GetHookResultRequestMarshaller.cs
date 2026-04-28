@@ -64,6 +64,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("HookResultId", StringUtils.FromString(publicRequest.HookResultId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetHookResultRequestMarshaller _instance = new GetHookResultRequestMarshaller();        

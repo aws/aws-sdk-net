@@ -62,6 +62,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("registerS3AccessGrantLocation", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.RegisterS3AccessGrantLocation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("s3AccessGrantLocationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

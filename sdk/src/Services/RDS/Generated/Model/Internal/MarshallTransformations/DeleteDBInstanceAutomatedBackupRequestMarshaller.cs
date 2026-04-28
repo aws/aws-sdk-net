@@ -68,6 +68,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DbiResourceId", StringUtils.FromString(publicRequest.DbiResourceId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteDBInstanceAutomatedBackupRequestMarshaller _instance = new DeleteDBInstanceAutomatedBackupRequestMarshaller();        

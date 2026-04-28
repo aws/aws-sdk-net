@@ -2548,6 +2548,19 @@
       ],
       "documentation":"<p>Retrieves detailed information about a specific training plan.</p>"
     },
+    "DescribeTrainingPlanExtensionHistory":{
+      "name":"DescribeTrainingPlanExtensionHistory",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeTrainingPlanExtensionHistoryRequest"},
+      "output":{"shape":"DescribeTrainingPlanExtensionHistoryResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ],
+      "documentation":"<p>Retrieves the extension history for a specified training plan. The response includes details about each extension, such as the offering ID, start and end dates, status, payment status, and cost information.</p>"
+    },
     "DescribeTransformJob":{
       "name":"DescribeTransformJob",
       "http":{
@@ -2666,6 +2679,19 @@
       "input":{"shape":"EnableSagemakerServicecatalogPortfolioInput"},
       "output":{"shape":"EnableSagemakerServicecatalogPortfolioOutput"},
       "documentation":"<p>Enables using Service Catalog in SageMaker. Service Catalog is used to create SageMaker projects.</p>"
+    },
+    "ExtendTrainingPlan":{
+      "name":"ExtendTrainingPlan",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ExtendTrainingPlanRequest"},
+      "output":{"shape":"ExtendTrainingPlanResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ],
+      "documentation":"<p>Extends an existing training plan by purchasing an extension offering. This allows you to add additional compute capacity time to your training plan without creating a new plan or reconfiguring your workloads.</p> <p>To find available extension offerings, use the <code> <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchTrainingPlanOfferings.html\">SearchTrainingPlanOfferings</a> </code> API with the <code>TrainingPlanArn</code> parameter.</p> <p>To view the history of extensions for a training plan, use the <code> <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingPlanExtensionHistory.html\">DescribeTrainingPlanExtensionHistory</a> </code> API.</p>"
     },
     "GetDeviceFleetReport":{
       "name":"GetDeviceFleetReport",
@@ -3792,6 +3818,19 @@
       ],
       "documentation":"<p>Notifies the pipeline that the execution of a callback step succeeded and provides a list of the step's output parameters. When a callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).</p>"
     },
+    "StartClusterHealthCheck":{
+      "name":"StartClusterHealthCheck",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartClusterHealthCheckRequest"},
+      "output":{"shape":"StartClusterHealthCheckResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ],
+      "documentation":"<p>Start deep health checks for a SageMaker HyperPod cluster. You can use <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeClusterNode.html\">DescribeClusterNode</a> API to track progress of the deep health checks. The unhealthy nodes will be automatically rebooted or replaced. Please see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-resiliency-node-labels.html\"> Resilience-related Kubernetes labels by SageMaker HyperPod</a> for details.</p>"
+    },
     "StartEdgeDeploymentStage":{
       "name":"StartEdgeDeploymentStage",
       "http":{
@@ -4888,6 +4927,14 @@
         "IncrementTargetCountBy":{
           "shape":"AddClusterNodeSpecificationIncrementTargetCountByInteger",
           "documentation":"<p>The number of nodes to add to the specified instance group. The total number of nodes across all instance groups in a single request cannot exceed 50.</p>"
+        },
+        "AvailabilityZones":{
+          "shape":"ClusterAvailabilityZones",
+          "documentation":"<p>The availability zones in which to add nodes. Use this to target node placement in specific availability zones within a flexible instance group.</p>"
+        },
+        "InstanceTypes":{
+          "shape":"ClusterInstanceTypes",
+          "documentation":"<p>The instance types to use when adding nodes. Use this to target specific instance types within a flexible instance group.</p>"
         }
       },
       "documentation":"<p>Specifies an instance group and the number of nodes to add to it.</p>"
@@ -6988,6 +7035,20 @@
       "min":1,
       "pattern":"[a-z]+\\-[0-9a-z\\-]+"
     },
+    "AvailabilityZoneBalanceEnforcementMode":{
+      "type":"string",
+      "enum":["PERMISSIVE"]
+    },
+    "AvailabilityZoneBalanceMaxImbalance":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":0
+    },
+    "AvailabilityZoneId":{
+      "type":"string",
+      "pattern":"[a-z]{3}\\d-az\\d"
+    },
     "AvailableInstanceCount":{
       "type":"integer",
       "box":true,
@@ -7067,6 +7128,14 @@
           "shape":"BatchAddFailureCount",
           "documentation":"<p>The number of nodes that failed to be added to the specified instance group.</p>"
         },
+        "AvailabilityZones":{
+          "shape":"ClusterAvailabilityZones",
+          "documentation":"<p>The availability zones associated with the failed node addition request.</p>"
+        },
+        "InstanceTypes":{
+          "shape":"ClusterInstanceTypes",
+          "documentation":"<p>The instance types associated with the failed node addition request.</p>"
+        },
         "Message":{
           "shape":"String",
           "documentation":"<p>A descriptive message providing additional details about the error.</p>"
@@ -7078,7 +7147,9 @@
       "type":"string",
       "enum":[
         "InstanceGroupNotFound",
-        "InvalidInstanceGroupStatus"
+        "InvalidInstanceGroupStatus",
+        "IncompatibleAvailabilityZones",
+        "IncompatibleInstanceTypes"
       ]
     },
     "BatchAddClusterNodesErrorList":{
@@ -8909,6 +8980,12 @@
       "type":"string",
       "pattern":"[a-z]{3}\\d-az\\d"
     },
+    "ClusterAvailabilityZones":{
+      "type":"list",
+      "member":{"shape":"ClusterAvailabilityZone"},
+      "max":10,
+      "min":1
+    },
     "ClusterCapacityRequirements":{
       "type":"structure",
       "members":{
@@ -9154,6 +9231,14 @@
           "shape":"ClusterInstanceType",
           "documentation":"<p>The instance type of the instance group of a SageMaker HyperPod cluster.</p>"
         },
+        "InstanceRequirements":{
+          "shape":"ClusterInstanceRequirementDetails",
+          "documentation":"<p>The instance requirements for the instance group, including the current and desired instance types. This field is present for flexible instance groups that support multiple instance types.</p>"
+        },
+        "InstanceTypeDetails":{
+          "shape":"ClusterInstanceTypeDetails",
+          "documentation":"<p>Details about the instance types in the instance group, including the count and configuration of each instance type. This field is present for flexible instance groups that support multiple instance types.</p>"
+        },
         "LifeCycleConfig":{
           "shape":"ClusterLifeCycleConfig",
           "documentation":"<p>Details of LifeCycle configuration for the instance group.</p>"
@@ -9245,8 +9330,6 @@
       "required":[
         "InstanceCount",
         "InstanceGroupName",
-        "InstanceType",
-        "LifeCycleConfig",
         "ExecutionRole"
       ],
       "members":{
@@ -9265,6 +9348,10 @@
         "InstanceType":{
           "shape":"ClusterInstanceType",
           "documentation":"<p>Specifies the instance type of the instance group.</p>"
+        },
+        "InstanceRequirements":{
+          "shape":"ClusterInstanceRequirements",
+          "documentation":"<p>The instance requirements for the instance group, including the instance types to use. Use this to create a flexible instance group that supports multiple instance types. The <code>InstanceType</code> and <code>InstanceRequirements</code> properties are mutually exclusive.</p>"
         },
         "LifeCycleConfig":{
           "shape":"ClusterLifeCycleConfig",
@@ -9348,6 +9435,31 @@
         }
       },
       "documentation":"<p>Specifies the placement details for the node in the SageMaker HyperPod cluster, including the Availability Zone and the unique identifier (ID) of the Availability Zone.</p>"
+    },
+    "ClusterInstanceRequirementDetails":{
+      "type":"structure",
+      "members":{
+        "CurrentInstanceTypes":{
+          "shape":"ClusterInstanceTypes",
+          "documentation":"<p>The instance types currently in use by the instance group.</p>"
+        },
+        "DesiredInstanceTypes":{
+          "shape":"ClusterInstanceTypes",
+          "documentation":"<p>The desired instance types for the instance group, as specified in the most recent update request.</p>"
+        }
+      },
+      "documentation":"<p>The instance requirement details for a flexible instance group, including the current and desired instance types.</p>"
+    },
+    "ClusterInstanceRequirements":{
+      "type":"structure",
+      "required":["InstanceTypes"],
+      "members":{
+        "InstanceTypes":{
+          "shape":"ClusterInstanceTypes",
+          "documentation":"<p>The list of instance types that the instance group can use. The order of instance types determines the priority—HyperPod attempts to provision instances using the first instance type in the list and falls back to subsequent types if capacity is unavailable.</p>"
+        }
+      },
+      "documentation":"<p>The instance requirements for a flexible instance group. Use this to specify multiple instance types that the instance group can use. The order of instance types in the list determines the priority for instance provisioning.</p>"
     },
     "ClusterInstanceStatus":{
       "type":"string",
@@ -9519,8 +9631,45 @@
         "ml.r7i.16xlarge",
         "ml.r7i.24xlarge",
         "ml.r7i.48xlarge",
+        "ml.r5d.16xlarge",
+        "ml.g7e.2xlarge",
+        "ml.g7e.4xlarge",
+        "ml.g7e.8xlarge",
+        "ml.g7e.12xlarge",
+        "ml.g7e.24xlarge",
+        "ml.g7e.48xlarge",
         "ml.p6-b300.48xlarge"
       ]
+    },
+    "ClusterInstanceTypeDetail":{
+      "type":"structure",
+      "members":{
+        "InstanceType":{
+          "shape":"ClusterInstanceType",
+          "documentation":"<p>The instance type.</p>"
+        },
+        "CurrentCount":{
+          "shape":"ClusterNonNegativeInstanceCount",
+          "documentation":"<p>The number of instances of this type currently running in the instance group.</p>"
+        },
+        "ThreadsPerCore":{
+          "shape":"ClusterThreadsPerCore",
+          "documentation":"<p>The number of threads per CPU core for this instance type.</p>"
+        }
+      },
+      "documentation":"<p>Details about a specific instance type within a flexible instance group, including the count and configuration.</p>"
+    },
+    "ClusterInstanceTypeDetails":{
+      "type":"list",
+      "member":{"shape":"ClusterInstanceTypeDetail"},
+      "max":20,
+      "min":0
+    },
+    "ClusterInstanceTypes":{
+      "type":"list",
+      "member":{"shape":"ClusterInstanceType"},
+      "max":20,
+      "min":1
     },
     "ClusterKubernetesConfig":{
       "type":"structure",
@@ -9649,10 +9798,6 @@
     },
     "ClusterLifeCycleConfig":{
       "type":"structure",
-      "required":[
-        "SourceS3Uri",
-        "OnCreate"
-      ],
       "members":{
         "SourceS3Uri":{
           "shape":"S3Uri",
@@ -12532,8 +12677,7 @@
       "type":"structure",
       "required":[
         "InferenceComponentName",
-        "EndpointName",
-        "Specification"
+        "EndpointName"
       ],
       "members":{
         "InferenceComponentName":{
@@ -12846,6 +12990,15 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>Tags consisting of key-value pairs used to manage metadata for the tracking server.</p>"
+        },
+        "S3BucketOwnerAccountId":{
+          "shape":"AccountId",
+          "documentation":"<p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage. Defaults to caller's account ID if not provided.</p>"
+        },
+        "S3BucketOwnerVerification":{
+          "shape":"Boolean",
+          "documentation":"<p>Enable Amazon S3 Ownership checks when interacting with Amazon S3 buckets from a SageMaker Managed MLflow Tracking Server. Defaults to <code>True</code> if not provided. </p>",
+          "box":true
         }
       }
     },
@@ -14959,12 +15112,24 @@
       "max":20,
       "min":0
     },
+    "DeepHealthCheckConfigurations":{
+      "type":"list",
+      "member":{"shape":"InstanceGroupHealthCheckConfiguration"},
+      "max":99,
+      "min":1
+    },
     "DeepHealthCheckType":{
       "type":"string",
       "enum":[
         "InstanceStress",
         "InstanceConnectivity"
       ]
+    },
+    "DeepHealthChecks":{
+      "type":"list",
+      "member":{"shape":"DeepHealthCheckType"},
+      "max":2,
+      "min":1
     },
     "DefaultDomainIdList":{
       "type":"list",
@@ -18932,7 +19097,16 @@
           "shape":"Timestamp",
           "documentation":"<p>The timestamp of when the described MLflow Tracking Server was last modified.</p>"
         },
-        "LastModifiedBy":{"shape":"UserContext"}
+        "LastModifiedBy":{"shape":"UserContext"},
+        "S3BucketOwnerAccountId":{
+          "shape":"AccountId",
+          "documentation":"<p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>"
+        },
+        "S3BucketOwnerVerification":{
+          "shape":"Boolean",
+          "documentation":"<p>Whether Amazon S3 Bucket Ownership checks are enabled whenever the tracking server interacts with Amazon Amazon S3.</p>",
+          "box":true
+        }
       }
     },
     "DescribeModelBiasJobDefinitionRequest":{
@@ -20642,6 +20816,38 @@
         "OutputModelPackageArn":{
           "shape":"ModelPackageArn",
           "documentation":"<p> The Amazon Resource Name (ARN) of the output model package containing model weights or checkpoints. </p>"
+        }
+      }
+    },
+    "DescribeTrainingPlanExtensionHistoryRequest":{
+      "type":"structure",
+      "required":["TrainingPlanArn"],
+      "members":{
+        "TrainingPlanArn":{
+          "shape":"TrainingPlanArn",
+          "documentation":"<p>The Amazon Resource Name (ARN); of the training plan to retrieve extension history for.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>A token to continue pagination if more results are available.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of extensions to return in the response.</p>"
+        }
+      }
+    },
+    "DescribeTrainingPlanExtensionHistoryResponse":{
+      "type":"structure",
+      "required":["TrainingPlanExtensions"],
+      "members":{
+        "TrainingPlanExtensions":{
+          "shape":"TrainingPlanExtensions",
+          "documentation":"<p>A list of extensions for the specified training plan.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>A token to continue pagination if more results are available.</p>"
         }
       }
     },
@@ -23136,6 +23342,26 @@
       },
       "documentation":"<p>A parameter to activate explainers.</p>"
     },
+    "ExtendTrainingPlanRequest":{
+      "type":"structure",
+      "required":["TrainingPlanExtensionOfferingId"],
+      "members":{
+        "TrainingPlanExtensionOfferingId":{
+          "shape":"TrainingPlanExtensionOfferingId",
+          "documentation":"<p>The unique identifier of the extension offering to purchase. You can retrieve this ID from the <code>TrainingPlanExtensionOfferings</code> in the response of the <code>SearchTrainingPlanOfferings</code> API.</p>"
+        }
+      }
+    },
+    "ExtendTrainingPlanResponse":{
+      "type":"structure",
+      "required":["TrainingPlanExtensions"],
+      "members":{
+        "TrainingPlanExtensions":{
+          "shape":"TrainingPlanExtensions",
+          "documentation":"<p>The list of extensions for the training plan, including the newly created extension.</p>"
+        }
+      }
+    },
     "FSxLustreConfig":{
       "type":"structure",
       "required":[
@@ -24290,7 +24516,7 @@
     },
     "HubContentDocument":{
       "type":"string",
-      "max":170391,
+      "max":327680,
       "min":0,
       "pattern":".*"
     },
@@ -25860,6 +26086,21 @@
       "max":2048,
       "min":20
     },
+    "InferenceComponentAvailabilityZoneBalance":{
+      "type":"structure",
+      "required":["EnforcementMode"],
+      "members":{
+        "EnforcementMode":{
+          "shape":"AvailabilityZoneBalanceEnforcementMode",
+          "documentation":"<p>Determines how strictly the Availability Zone balance constraint is enforced.</p> <dl> <dt>PERMISSIVE</dt> <dd> <p>The endpoint attempts to balance copies across Availability Zones but proceeds with scheduling even if balance can't be achieved due to available capacity or instance distribution across Availability Zones.</p> </dd> </dl>"
+        },
+        "MaxImbalance":{
+          "shape":"AvailabilityZoneBalanceMaxImbalance",
+          "documentation":"<p>The maximum allowed difference in the number of inference component copies between any two Availability Zones. This parameter applies only when the endpoint has instances across two or more Availability Zones. A copy placement is allowed if it reduces imbalance or the resulting imbalance is within this value.</p> <p>Default value: <code>0</code>.</p>"
+        }
+      },
+      "documentation":"<p>Configuration for balancing inference component copies across Availability Zones.</p>"
+    },
     "InferenceComponentCapacitySize":{
       "type":"structure",
       "required":[
@@ -26004,6 +26245,13 @@
       "min":0,
       "pattern":"[a-zA-Z0-9-]+"
     },
+    "InferenceComponentPlacementStrategy":{
+      "type":"string",
+      "enum":[
+        "SPREAD",
+        "BINPACK"
+      ]
+    },
     "InferenceComponentRollingUpdatePolicy":{
       "type":"structure",
       "required":[
@@ -26055,6 +26303,21 @@
       },
       "documentation":"<p>Details about the runtime settings for the model that is deployed with the inference component.</p>"
     },
+    "InferenceComponentSchedulingConfig":{
+      "type":"structure",
+      "required":["PlacementStrategy"],
+      "members":{
+        "PlacementStrategy":{
+          "shape":"InferenceComponentPlacementStrategy",
+          "documentation":"<p>The strategy for placing inference component copies across available instances. If you also set <code>AvailabilityZoneBalance</code>, this strategy applies to placement within each Availability Zone.</p> <dl> <dt>SPREAD</dt> <dd> <p>Distributes copies evenly across available instances for better resilience.</p> </dd> <dt>BINPACK</dt> <dd> <p>Packs copies onto fewer instances to optimize resource utilization.</p> </dd> </dl>"
+        },
+        "AvailabilityZoneBalance":{
+          "shape":"InferenceComponentAvailabilityZoneBalance",
+          "documentation":"<p>Configuration for balancing inference component copies across Availability Zones.</p>"
+        }
+      },
+      "documentation":"<p>The scheduling configuration that determines how inference component copies are placed across available instances when copies are added or removed.</p>"
+    },
     "InferenceComponentSortKey":{
       "type":"string",
       "enum":[
@@ -26089,6 +26352,10 @@
         "DataCacheConfig":{
           "shape":"InferenceComponentDataCacheConfig",
           "documentation":"<p>Settings that affect how the inference component caches data.</p>"
+        },
+        "SchedulingConfig":{
+          "shape":"InferenceComponentSchedulingConfig",
+          "documentation":"<p>The scheduling configuration that determines how inference component copies are placed across available instances when copies are added or removed.</p>"
         }
       },
       "documentation":"<p>Details about the resources to deploy with this inference component, including the model, container, and compute resources.</p>"
@@ -26119,6 +26386,10 @@
         "DataCacheConfig":{
           "shape":"InferenceComponentDataCacheConfigSummary",
           "documentation":"<p>Settings that affect how the inference component caches data.</p>"
+        },
+        "SchedulingConfig":{
+          "shape":"InferenceComponentSchedulingConfig",
+          "documentation":"<p>The scheduling configuration that determines how inference component copies are placed across available instances when copies are added or removed.</p>"
         }
       },
       "documentation":"<p>Details about the resources that are deployed with this inference component.</p>"
@@ -26662,6 +26933,28 @@
       },
       "documentation":"<p>Defines an instance group for heterogeneous cluster training. When requesting a training job using the <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html\">CreateTrainingJob</a> API, you can configure multiple instance groups .</p>"
     },
+    "InstanceGroupHealthCheckConfiguration":{
+      "type":"structure",
+      "required":[
+        "InstanceGroupName",
+        "DeepHealthChecks"
+      ],
+      "members":{
+        "InstanceGroupName":{
+          "shape":"ClusterInstanceGroupName",
+          "documentation":"<p>The name of the instance group.</p>"
+        },
+        "InstanceIds":{
+          "shape":"InstanceIds",
+          "documentation":"<p>A list of Amazon Elastic Compute Cloud (EC2) instance IDs on which to perform deep health checks.</p> <note> <p>Leave this field blank to perform deep health checks on the entire instance group.</p> </note>"
+        },
+        "DeepHealthChecks":{
+          "shape":"DeepHealthChecks",
+          "documentation":"<p>A list of deep health checks to be performed.</p>"
+        }
+      },
+      "documentation":"<p>The configuration of deep health checks for an instance group.</p> <note> <p>Overlapping deep health check configurations will be merged into a single operation.</p> </note>"
+    },
     "InstanceGroupMetadata":{
       "type":"structure",
       "members":{
@@ -26748,6 +27041,12 @@
       "member":{"shape":"InstanceGroup"},
       "max":5,
       "min":0
+    },
+    "InstanceIds":{
+      "type":"list",
+      "member":{"shape":"ClusterNodeId"},
+      "max":500,
+      "min":1
     },
     "InstanceMetadata":{
       "type":"structure",
@@ -32219,15 +32518,34 @@
       "min":0,
       "pattern":"\\d+\\.\\d+"
     },
+    "ManagedInstanceScalingCooldownInMinutes":{
+      "type":"integer",
+      "box":true,
+      "max":1440,
+      "min":5
+    },
     "ManagedInstanceScalingMaxInstanceCount":{
       "type":"integer",
       "box":true,
+      "min":1
+    },
+    "ManagedInstanceScalingMaximumStepSize":{
+      "type":"integer",
+      "box":true,
+      "max":100,
       "min":1
     },
     "ManagedInstanceScalingMinInstanceCount":{
       "type":"integer",
       "box":true,
       "min":0
+    },
+    "ManagedInstanceScalingScaleInStrategy":{
+      "type":"string",
+      "enum":[
+        "IDLE_RELEASE",
+        "CONSOLIDATION"
+      ]
     },
     "ManagedInstanceScalingStatus":{
       "type":"string",
@@ -35416,6 +35734,14 @@
         "Status":{
           "shape":"ClusterInstanceStatus",
           "documentation":"<p>The current status of the node. Possible values include <code>Pending</code>, <code>Running</code>, <code>Failed</code>, <code>ShuttingDown</code>, <code>SystemUpdating</code>, <code>DeepHealthCheckInProgress</code>, and <code>NotFound</code>.</p>"
+        },
+        "AvailabilityZones":{
+          "shape":"ClusterAvailabilityZones",
+          "documentation":"<p>The availability zones associated with the successfully added node.</p>"
+        },
+        "InstanceTypes":{
+          "shape":"ClusterInstanceTypes",
+          "documentation":"<p>The instance types associated with the successfully added node.</p>"
         }
       },
       "documentation":"<p>Information about a node that was successfully added to the cluster.</p>"
@@ -36798,7 +37124,7 @@
       "type":"string",
       "max":2048,
       "min":0,
-      "pattern":"arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:pipeline/.*"
+      "pattern":"arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:([0-9]{12}|aws):pipeline/.*"
     },
     "PipelineDefinition":{
       "type":"string",
@@ -37140,7 +37466,7 @@
       "type":"string",
       "max":2048,
       "min":1,
-      "pattern":"(arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})"
+      "pattern":"(arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:([0-9]{12}|aws):pipeline/.*)?([a-zA-Z0-9](-*[a-zA-Z0-9]){0,255})"
     },
     "PipelineParameterName":{
       "type":"string",
@@ -38432,9 +38758,32 @@
         "MaxInstanceCount":{
           "shape":"ManagedInstanceScalingMaxInstanceCount",
           "documentation":"<p>The maximum number of instances that the endpoint can provision when it scales up to accommodate an increase in traffic.</p>"
+        },
+        "ScaleInPolicy":{
+          "shape":"ProductionVariantManagedInstanceScalingScaleInPolicy",
+          "documentation":"<p>Configures the scale-in behavior for managed instance scaling.</p>"
         }
       },
       "documentation":"<p>Settings that control the range in the number of instances that the endpoint provisions as it scales up or down to accommodate traffic. </p>"
+    },
+    "ProductionVariantManagedInstanceScalingScaleInPolicy":{
+      "type":"structure",
+      "required":["Strategy"],
+      "members":{
+        "Strategy":{
+          "shape":"ManagedInstanceScalingScaleInStrategy",
+          "documentation":"<p>The strategy for scaling in instances.</p> <dl> <dt>IDLE_RELEASE</dt> <dd> <p>Releases instances that have no hosted inference component copies.</p> </dd> <dt>CONSOLIDATION</dt> <dd> <p>Consolidates inference component copies onto fewer instances to release more instances. Consolidation honors the scheduling configuration of each inference component. For example, if an inference component specifies Availability Zone balance, consolidation only proceeds when the resulting distribution does not increase the imbalance.</p> </dd> </dl>"
+        },
+        "MaximumStepSize":{
+          "shape":"ManagedInstanceScalingMaximumStepSize",
+          "documentation":"<p>The maximum number of instances that the endpoint can terminate at a time during a consolidation scale-in operation.</p> <p>Default value: <code>1</code>.</p>"
+        },
+        "CooldownInMinutes":{
+          "shape":"ManagedInstanceScalingCooldownInMinutes",
+          "documentation":"<p>The cooldown period, in minutes, after the last endpoint operation before the endpoint evaluates consolidation scale-in opportunities.</p> <p>Default value: <code>20</code>.</p>"
+        }
+      },
+      "documentation":"<p>Configures the scale-in behavior for managed instance scaling.</p>"
     },
     "ProductionVariantModelDataDownloadTimeoutInSeconds":{
       "type":"integer",
@@ -40006,6 +40355,14 @@
         "EndTime":{
           "shape":"Timestamp",
           "documentation":"<p>The end time of the reserved capacity offering.</p>"
+        },
+        "ExtensionStartTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The start time of the extension for the reserved capacity offering.</p>"
+        },
+        "ExtensionEndTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The end time of the extension for the reserved capacity offering.</p>"
         }
       },
       "documentation":"<p>Details about a reserved capacity offering for a training plan offering.</p> <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html\">CreateTrainingPlan</a> </code>.</p>"
@@ -41109,6 +41466,10 @@
         "TargetResources":{
           "shape":"SageMakerResourceNames",
           "documentation":"<p>The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker Endpoints) to search for in the offerings.</p> <p>Training plans are specific to their target resource.</p> <ul> <li> <p>A training plan designed for SageMaker training jobs can only be used to schedule and run training jobs.</p> </li> <li> <p>A training plan for HyperPod clusters can be used exclusively to provide compute resources to a cluster's instance group.</p> </li> <li> <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p> </li> </ul>"
+        },
+        "TrainingPlanArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN); of an existing training plan to search for extension offerings. When specified, the API returns extension offerings that can be used to extend the specified training plan.</p>"
         }
       }
     },
@@ -41119,6 +41480,10 @@
         "TrainingPlanOfferings":{
           "shape":"TrainingPlanOfferings",
           "documentation":"<p>A list of training plan offerings that match the search criteria.</p>"
+        },
+        "TrainingPlanExtensionOfferings":{
+          "shape":"TrainingPlanExtensionOfferings",
+          "documentation":"<p>A list of extension offerings available for the specified training plan. These offerings can be used with the <code> <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExtendTrainingPlan.html\">ExtendTrainingPlan</a> </code> API to extend an existing training plan.</p>"
         }
       }
     },
@@ -42009,6 +42374,33 @@
         }
       },
       "documentation":"<p>Defines the stairs traffic pattern for an Inference Recommender load test. This pattern type consists of multiple steps where the number of users increases at each step.</p> <p>Specify either the stairs or phases traffic pattern.</p>"
+    },
+    "StartClusterHealthCheckRequest":{
+      "type":"structure",
+      "required":[
+        "ClusterName",
+        "DeepHealthCheckConfigurations"
+      ],
+      "members":{
+        "ClusterName":{
+          "shape":"ClusterNameOrArn",
+          "documentation":"<p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.</p>"
+        },
+        "DeepHealthCheckConfigurations":{
+          "shape":"DeepHealthCheckConfigurations",
+          "documentation":"<p>A list of configurations containing instance group names, EC2 instance IDs, and deep health checks to perform.</p>"
+        }
+      }
+    },
+    "StartClusterHealthCheckResponse":{
+      "type":"structure",
+      "required":["ClusterArn"],
+      "members":{
+        "ClusterArn":{
+          "shape":"ClusterArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster on which the deep health checks were initiated.</p>"
+        }
+      }
     },
     "StartEdgeDeploymentStageRequest":{
       "type":"structure",
@@ -44031,6 +44423,109 @@
       "type":"long",
       "box":true,
       "max":59,
+      "min":0
+    },
+    "TrainingPlanExtension":{
+      "type":"structure",
+      "required":["TrainingPlanExtensionOfferingId"],
+      "members":{
+        "TrainingPlanExtensionOfferingId":{
+          "shape":"TrainingPlanExtensionOfferingId",
+          "documentation":"<p>The unique identifier of the extension offering that was used to create this extension.</p>"
+        },
+        "ExtendedAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp when the extension was created.</p>"
+        },
+        "StartDate":{
+          "shape":"Timestamp",
+          "documentation":"<p>The start date of the extension period.</p>"
+        },
+        "EndDate":{
+          "shape":"Timestamp",
+          "documentation":"<p>The end date of the extension period.</p>"
+        },
+        "Status":{
+          "shape":"String256",
+          "documentation":"<p>The current status of the extension (e.g., Pending, Active, Scheduled, Failed, Expired).</p>"
+        },
+        "PaymentStatus":{
+          "shape":"String256",
+          "documentation":"<p>The payment processing status of the extension.</p>"
+        },
+        "AvailabilityZone":{
+          "shape":"String256",
+          "documentation":"<p>The Availability Zone of the extension.</p>"
+        },
+        "AvailabilityZoneId":{
+          "shape":"AvailabilityZoneId",
+          "documentation":"<p>The Availability Zone ID of the extension.</p>"
+        },
+        "DurationHours":{
+          "shape":"TrainingPlanExtensionDurationHours",
+          "documentation":"<p>The duration of the extension in hours.</p>"
+        },
+        "UpfrontFee":{
+          "shape":"String256",
+          "documentation":"<p>The upfront fee for the extension.</p>"
+        },
+        "CurrencyCode":{
+          "shape":"CurrencyCode",
+          "documentation":"<p>The currency code for the upfront fee (e.g., USD).</p>"
+        }
+      },
+      "documentation":"<p>Details about an extension to a training plan, including the offering ID, dates, status, and cost information.</p>"
+    },
+    "TrainingPlanExtensionDurationHours":{
+      "type":"integer",
+      "box":true,
+      "max":4368,
+      "min":0
+    },
+    "TrainingPlanExtensionOffering":{
+      "type":"structure",
+      "required":["TrainingPlanExtensionOfferingId"],
+      "members":{
+        "TrainingPlanExtensionOfferingId":{
+          "shape":"TrainingPlanExtensionOfferingId",
+          "documentation":"<p>The unique identifier for this extension offering.</p>"
+        },
+        "AvailabilityZone":{
+          "shape":"String256",
+          "documentation":"<p>The Availability Zone for this extension offering.</p>"
+        },
+        "StartDate":{
+          "shape":"Timestamp",
+          "documentation":"<p>The start date of this extension offering.</p>"
+        },
+        "EndDate":{
+          "shape":"Timestamp",
+          "documentation":"<p>The end date of this extension offering.</p>"
+        },
+        "DurationHours":{
+          "shape":"TrainingPlanExtensionDurationHours",
+          "documentation":"<p>The duration of this extension offering in hours.</p>"
+        },
+        "UpfrontFee":{
+          "shape":"String256",
+          "documentation":"<p>The upfront fee for this extension offering.</p>"
+        },
+        "CurrencyCode":{
+          "shape":"CurrencyCode",
+          "documentation":"<p>The currency code for the upfront fee (e.g., USD).</p>"
+        }
+      },
+      "documentation":"<p>Details about an available extension offering for a training plan. Use the offering ID with the <code> <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExtendTrainingPlan.html\">ExtendTrainingPlan</a> </code> API to extend a training plan.</p>"
+    },
+    "TrainingPlanExtensionOfferingId":{"type":"string"},
+    "TrainingPlanExtensionOfferings":{
+      "type":"list",
+      "member":{"shape":"TrainingPlanExtensionOffering"},
+      "min":0
+    },
+    "TrainingPlanExtensions":{
+      "type":"list",
+      "member":{"shape":"TrainingPlanExtension"},
       "min":0
     },
     "TrainingPlanFilter":{
@@ -46557,6 +47052,15 @@
         "WeeklyMaintenanceWindowStart":{
           "shape":"WeeklyMaintenanceWindowStart",
           "documentation":"<p>The new weekly maintenance window start day and time to update. The maintenance window day and time should be in Coordinated Universal Time (UTC) 24-hour standard time. For example: TUE:03:30.</p>"
+        },
+        "S3BucketOwnerAccountId":{
+          "shape":"AccountId",
+          "documentation":"<p>The new expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>"
+        },
+        "S3BucketOwnerVerification":{
+          "shape":"Boolean",
+          "documentation":"<p>Whether to enable or disable Amazon S3 Bucket Owenrship Verifaction whenever the MLflow Tracking Server interacts with Amazon Amazon S3.</p>",
+          "box":true
         }
       }
     },

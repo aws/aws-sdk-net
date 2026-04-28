@@ -63,12 +63,37 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Usage. 
         /// <para>
-        /// Determines if traffic should be used or ignored while calculating the route.
+        /// Specifies how traffic data should be used when calculating routes.
         /// </para>
         ///  
         /// <para>
         /// Default Value: <c>UseTrafficData</c> 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Traffic data usage depends on the time parameters in your route request:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When <c>Usage</c> is set to <c>UseTrafficData</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <c>DepartNow</c> is set to <c>true</c>, or if you specify <c>DepartureTime</c>
+        /// or <c>ArrivalTime</c>, then all traffic data is considered (including live traffic
+        /// and closures).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <c>DepartNow</c>, <c>DepartureTime</c>, and <c>ArrivalTime</c> are all unspecified,
+        /// then only long-term closures are considered, regardless of this setting.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// When <c>Usage</c> is set to <c>IgnoreTrafficData</c>, then all traffic data is ignored
+        /// regardless of the time parameters in your route request.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public TrafficUsage Usage
         {

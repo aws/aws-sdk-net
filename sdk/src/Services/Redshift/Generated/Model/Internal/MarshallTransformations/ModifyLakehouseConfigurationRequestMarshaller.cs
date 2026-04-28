@@ -84,6 +84,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("LakehouseRegistration", StringUtils.FromString(publicRequest.LakehouseRegistration));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyLakehouseConfigurationRequestMarshaller _instance = new ModifyLakehouseConfigurationRequestMarshaller();        

@@ -289,9 +289,21 @@ namespace Amazon.ApplicationSignals
     {
 
         /// <summary>
+        /// Constant AppMonitor for MetricSourceType
+        /// </summary>
+        public static readonly MetricSourceType AppMonitor = new MetricSourceType("AppMonitor");
+        /// <summary>
+        /// Constant Canary for MetricSourceType
+        /// </summary>
+        public static readonly MetricSourceType Canary = new MetricSourceType("Canary");
+        /// <summary>
         /// Constant CloudWatchMetric for MetricSourceType
         /// </summary>
         public static readonly MetricSourceType CloudWatchMetric = new MetricSourceType("CloudWatchMetric");
+        /// <summary>
+        /// Constant Service for MetricSourceType
+        /// </summary>
+        public static readonly MetricSourceType Service = new MetricSourceType("Service");
         /// <summary>
         /// Constant ServiceDependency for MetricSourceType
         /// </summary>

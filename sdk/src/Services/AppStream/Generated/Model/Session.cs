@@ -38,6 +38,7 @@ namespace Amazon.AppStream.Model
         private SessionConnectionState _connectionState;
         private string _fleetName;
         private string _id;
+        private InstanceDrainStatus _instanceDrainStatus;
         private string _instanceId;
         private DateTime? _maxExpirationTime;
         private NetworkAccessConfiguration _networkAccessConfiguration;
@@ -119,6 +120,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceDrainStatus. 
+        /// <para>
+        /// The drain status of the instance hosting the streaming session. This only applies
+        /// to multi-session fleets.
+        /// </para>
+        /// </summary>
+        public InstanceDrainStatus InstanceDrainStatus
+        {
+            get { return this._instanceDrainStatus; }
+            set { this._instanceDrainStatus = value; }
+        }
+
+        // Check to see if InstanceDrainStatus property is set
+        internal bool IsSetInstanceDrainStatus()
+        {
+            return this._instanceDrainStatus != null;
         }
 
         /// <summary>

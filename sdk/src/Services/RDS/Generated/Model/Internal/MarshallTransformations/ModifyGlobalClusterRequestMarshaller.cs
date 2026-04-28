@@ -80,6 +80,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NewGlobalClusterIdentifier", StringUtils.FromString(publicRequest.NewGlobalClusterIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyGlobalClusterRequestMarshaller _instance = new ModifyGlobalClusterRequestMarshaller();        

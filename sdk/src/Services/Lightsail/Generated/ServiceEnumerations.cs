@@ -4561,6 +4561,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly RegionName ApSoutheast3 = new RegionName("ap-southeast-3");
         /// <summary>
+        /// Constant ApSoutheast5 for RegionName
+        /// </summary>
+        public static readonly RegionName ApSoutheast5 = new RegionName("ap-southeast-5");
+        /// <summary>
         /// Constant CaCentral1 for RegionName
         /// </summary>
         public static readonly RegionName CaCentral1 = new RegionName("ca-central-1");

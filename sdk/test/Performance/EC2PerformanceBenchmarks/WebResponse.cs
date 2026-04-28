@@ -19,6 +19,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Amazon.Runtime.EventStreams;
 
 namespace AWSSDK.Benchmarks
 {
@@ -30,6 +31,7 @@ namespace AWSSDK.Benchmarks
             this.StatusCode = HttpStatusCode.OK;
             this.IsSuccessStatusCode = true;
             this.Headers = new Dictionary<string, string>();
+            this.EventHeaders = new Dictionary<string, IEventStreamHeader>();
         }
 
         public Dictionary<string, string> Headers { get; set; }
@@ -40,6 +42,7 @@ namespace AWSSDK.Benchmarks
 
         public bool IsSuccessStatusCode { get; set; }
 
+        public Dictionary<string, IEventStreamHeader> EventHeaders { get; set; }
         public string[] GetHeaderNames()
         {
             return Headers.Keys.ToArray();
@@ -56,6 +59,18 @@ namespace AWSSDK.Benchmarks
                 return this.Headers[headerName];
             else
                 return null;
+        }
+
+        public IEventStreamHeader GetEventStreamHeader(string headerName)
+        {
+            if (EventHeaders.ContainsKey(headerName))
+                return EventHeaders[headerName];
+            return null;
+        }
+
+        public bool IsEventHeaderPresent(string headerName)
+        {
+            return EventHeaders.ContainsKey(headerName);
         }
 
         public long ContentLength { get; set; }

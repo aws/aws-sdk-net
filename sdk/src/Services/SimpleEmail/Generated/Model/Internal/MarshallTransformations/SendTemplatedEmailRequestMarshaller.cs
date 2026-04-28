@@ -172,6 +172,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TemplateData", StringUtils.FromString(publicRequest.TemplateData));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SendTemplatedEmailRequestMarshaller _instance = new SendTemplatedEmailRequestMarshaller();        

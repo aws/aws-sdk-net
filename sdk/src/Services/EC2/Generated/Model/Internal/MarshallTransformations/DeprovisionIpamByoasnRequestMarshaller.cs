@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("IpamId", StringUtils.FromString(publicRequest.IpamId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeprovisionIpamByoasnRequestMarshaller _instance = new DeprovisionIpamByoasnRequestMarshaller();        

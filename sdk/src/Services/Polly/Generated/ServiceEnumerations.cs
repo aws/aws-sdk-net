@@ -349,6 +349,10 @@ namespace Amazon.Polly
     {
 
         /// <summary>
+        /// Constant Alaw for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Alaw = new OutputFormat("alaw");
+        /// <summary>
         /// Constant Json for OutputFormat
         /// </summary>
         public static readonly OutputFormat Json = new OutputFormat("json");
@@ -356,6 +360,10 @@ namespace Amazon.Polly
         /// Constant Mp3 for OutputFormat
         /// </summary>
         public static readonly OutputFormat Mp3 = new OutputFormat("mp3");
+        /// <summary>
+        /// Constant Mulaw for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Mulaw = new OutputFormat("mulaw");
         /// <summary>
         /// Constant Ogg_opus for OutputFormat
         /// </summary>
@@ -398,6 +406,102 @@ namespace Amazon.Polly
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OutputFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuotaCode.
+    /// </summary>
+    public class QuotaCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InputStreamInboundEventTimeout for QuotaCode
+        /// </summary>
+        public static readonly QuotaCode InputStreamInboundEventTimeout = new QuotaCode("input-stream-inbound-event-timeout");
+        /// <summary>
+        /// Constant InputStreamTimeout for QuotaCode
+        /// </summary>
+        public static readonly QuotaCode InputStreamTimeout = new QuotaCode("input-stream-timeout");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuotaCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuotaCode FindValue(string value)
+        {
+            return FindValue<QuotaCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuotaCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceCode.
+    /// </summary>
+    public class ServiceCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Polly for ServiceCode
+        /// </summary>
+        public static readonly ServiceCode Polly = new ServiceCode("polly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceCode FindValue(string value)
+        {
+            return FindValue<ServiceCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceCode(string value)
         {
             return FindValue(value);
         }
@@ -571,6 +675,64 @@ namespace Amazon.Polly
 
 
     /// <summary>
+    /// Constants used for properties of type ValidationExceptionReason.
+    /// </summary>
+    public class ValidationExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FieldValidationFailed for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason FieldValidationFailed = new ValidationExceptionReason("fieldValidationFailed");
+        /// <summary>
+        /// Constant InvalidInboundEvent for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason InvalidInboundEvent = new ValidationExceptionReason("invalidInboundEvent");
+        /// <summary>
+        /// Constant Other for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason Other = new ValidationExceptionReason("other");
+        /// <summary>
+        /// Constant UnsupportedOperation for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UnsupportedOperation = new ValidationExceptionReason("unsupportedOperation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationExceptionReason FindValue(string value)
+        {
+            return FindValue<ValidationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type VoiceId.
     /// </summary>
     public class VoiceId : ConstantClass
@@ -584,6 +746,10 @@ namespace Amazon.Polly
         /// Constant Adriano for VoiceId
         /// </summary>
         public static readonly VoiceId Adriano = new VoiceId("Adriano");
+        /// <summary>
+        /// Constant Ambre for VoiceId
+        /// </summary>
+        public static readonly VoiceId Ambre = new VoiceId("Ambre");
         /// <summary>
         /// Constant Amy for VoiceId
         /// </summary>
@@ -612,6 +778,10 @@ namespace Amazon.Polly
         /// Constant Ayanda for VoiceId
         /// </summary>
         public static readonly VoiceId Ayanda = new VoiceId("Ayanda");
+        /// <summary>
+        /// Constant Beatrice for VoiceId
+        /// </summary>
+        public static readonly VoiceId Beatrice = new VoiceId("Beatrice");
         /// <summary>
         /// Constant Bianca for VoiceId
         /// </summary>
@@ -684,6 +854,10 @@ namespace Amazon.Polly
         /// Constant Filiz for VoiceId
         /// </summary>
         public static readonly VoiceId Filiz = new VoiceId("Filiz");
+        /// <summary>
+        /// Constant Florian for VoiceId
+        /// </summary>
+        public static readonly VoiceId Florian = new VoiceId("Florian");
         /// <summary>
         /// Constant Gabrielle for VoiceId
         /// </summary>
@@ -801,6 +975,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly VoiceId Lea = new VoiceId("Lea");
         /// <summary>
+        /// Constant Lennart for VoiceId
+        /// </summary>
+        public static readonly VoiceId Lennart = new VoiceId("Lennart");
+        /// <summary>
         /// Constant Liam for VoiceId
         /// </summary>
         public static readonly VoiceId Liam = new VoiceId("Liam");
@@ -812,6 +990,10 @@ namespace Amazon.Polly
         /// Constant Liv for VoiceId
         /// </summary>
         public static readonly VoiceId Liv = new VoiceId("Liv");
+        /// <summary>
+        /// Constant Lorenzo for VoiceId
+        /// </summary>
+        public static readonly VoiceId Lorenzo = new VoiceId("Lorenzo");
         /// <summary>
         /// Constant Lotte for VoiceId
         /// </summary>
@@ -952,6 +1134,10 @@ namespace Amazon.Polly
         /// Constant Thiago for VoiceId
         /// </summary>
         public static readonly VoiceId Thiago = new VoiceId("Thiago");
+        /// <summary>
+        /// Constant Tiffany for VoiceId
+        /// </summary>
+        public static readonly VoiceId Tiffany = new VoiceId("Tiffany");
         /// <summary>
         /// Constant Tomoko for VoiceId
         /// </summary>

@@ -117,6 +117,32 @@ namespace Amazon.Runtime
         /// <returns>An HTTP request.</returns>
         public IHttpRequest<HttpContent> CreateHttpRequest(Uri requestUri)
         {
+            return CreateHttpRequest(requestUri, null);
+        }
+
+        /// <summary>
+        /// Creates an HTTP request for the given URI with access to the request context.
+        /// When the request uses bidirectional event streaming (has an EventStreamPublisher),
+        /// a dedicated HttpClient is created to avoid HTTP/2 multiplexing issues where
+        /// multiple streams share the same TCP connection. Some services like Amazon Transcribe
+        /// Streaming do not support HTTP/2 multiplexing and require one connection per stream.
+        /// </summary>
+        /// <param name="requestUri">The request URI.</param>
+        /// <param name="requestContext">The request context containing request details.</param>
+        /// <returns>An HTTP request.</returns>
+        public IHttpRequest<HttpContent> CreateHttpRequest(Uri requestUri, IRequestContext requestContext)
+        {
+            // For bidirectional event stream requests (e.g., Transcribe Streaming), always create
+            // a dedicated HttpClient to ensure each stream gets its own HTTP/2 connection.
+            // Services like Amazon Transcribe Streaming do not support HTTP/2 multiplexing
+            // (multiple streams on the same TCP connection), so sharing an HttpClient would cause
+            // SignatureDoesNotMatch errors and REFUSED_STREAM errors under concurrency.
+            if (requestContext?.Request?.EventStreamPublisher != null)
+            {
+                var dedicatedHttpClient = CreateHttpClient(_clientConfig);
+                return new HttpWebRequestMessage(dedicatedHttpClient, requestUri, _clientConfig, ownsDedicatedHttpClient: true);
+            }
+
             HttpClient httpClient = null;
             if(ClientConfig.CacheHttpClients(_clientConfig))
             {
@@ -410,6 +436,7 @@ namespace Amazon.Runtime
         private HttpRequestMessage _request;
         private HttpClient _httpClient;
         private IClientConfig _clientConfig;
+        private bool _ownsDedicatedHttpClient;
 
         /// <summary>
         /// The constructor for HttpWebRequestMessage.
@@ -418,9 +445,22 @@ namespace Amazon.Runtime
         /// <param name="requestUri">The request URI.</param>
         /// <param name="config">The service client config.</param>
         public HttpWebRequestMessage(HttpClient httpClient, Uri requestUri, IClientConfig config)
+            : this(httpClient, requestUri, config, false)
+        {
+        }
+
+        /// <summary>
+        /// The constructor for HttpWebRequestMessage.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient used to make the request.</param>
+        /// <param name="requestUri">The request URI.</param>
+        /// <param name="config">The service client config.</param>
+        /// <param name="ownsDedicatedHttpClient">If true, this request owns the HttpClient and is responsible for disposing it.</param>
+        internal HttpWebRequestMessage(HttpClient httpClient, Uri requestUri, IClientConfig config, bool ownsDedicatedHttpClient)
         {
             _clientConfig = config;
             _httpClient = httpClient;
+            _ownsDedicatedHttpClient = ownsDedicatedHttpClient;
 
             _request = new HttpRequestMessage();
             _request.RequestUri = requestUri;
@@ -624,7 +664,9 @@ namespace Amazon.Runtime
 
         private HttpClientResponseData ProcessHttpResponseMessage(HttpResponseMessage responseMessage)
         {
-            bool disposeClient = ClientConfig.DisposeHttpClients(_clientConfig);
+            // For dedicated HttpClients (created for event stream requests), always dispose
+            // the HttpClient when the response is disposed to prevent resource leaks.
+            bool disposeClient = _ownsDedicatedHttpClient || ClientConfig.DisposeHttpClients(_clientConfig);
             // If AllowAutoRedirect is set to false, HTTP 3xx responses are returned back as response.
             if (!_clientConfig.AllowAutoRedirect &&
                 responseMessage.StatusCode >= HttpStatusCode.Ambiguous &&

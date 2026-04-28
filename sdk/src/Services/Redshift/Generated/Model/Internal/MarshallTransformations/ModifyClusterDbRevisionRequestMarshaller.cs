@@ -68,6 +68,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RevisionTarget", StringUtils.FromString(publicRequest.RevisionTarget));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyClusterDbRevisionRequestMarshaller _instance = new ModifyClusterDbRevisionRequestMarshaller();        

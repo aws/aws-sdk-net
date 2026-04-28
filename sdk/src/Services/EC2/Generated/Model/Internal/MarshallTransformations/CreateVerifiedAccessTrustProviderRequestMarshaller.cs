@@ -218,6 +218,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UserTrustProviderType", StringUtils.FromString(publicRequest.UserTrustProviderType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateVerifiedAccessTrustProviderRequestMarshaller _instance = new CreateVerifiedAccessTrustProviderRequestMarshaller();        

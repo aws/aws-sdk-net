@@ -96,6 +96,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
+            if(publicRequest.IsSetScopes())
+            {
+                context.Writer.WritePropertyName("Scopes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourceScopesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Scopes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSortCriteria())
             {
                 context.Writer.WritePropertyName("SortCriteria");

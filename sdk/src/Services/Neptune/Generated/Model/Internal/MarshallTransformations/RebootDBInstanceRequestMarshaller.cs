@@ -68,6 +68,8 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ForceFailover", StringUtils.FromBool(publicRequest.ForceFailover));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RebootDBInstanceRequestMarshaller _instance = new RebootDBInstanceRequestMarshaller();        

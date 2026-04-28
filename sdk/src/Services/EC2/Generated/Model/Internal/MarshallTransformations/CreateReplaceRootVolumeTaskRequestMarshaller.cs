@@ -130,6 +130,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VolumeInitializationRate", StringUtils.FromLong(publicRequest.VolumeInitializationRate));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateReplaceRootVolumeTaskRequestMarshaller _instance = new CreateReplaceRootVolumeTaskRequestMarshaller();        

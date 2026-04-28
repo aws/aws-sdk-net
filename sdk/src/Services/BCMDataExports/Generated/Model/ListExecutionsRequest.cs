@@ -64,7 +64,7 @@ namespace Amazon.BCMDataExports.Model
         /// The maximum number of objects that are returned for the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=300)]
         public int? MaxResults
         {
             get { return this._maxResults; }

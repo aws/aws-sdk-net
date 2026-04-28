@@ -673,6 +673,10 @@ namespace Amazon.Bedrock
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildWorkflowType GENERATE_FIDELITY_REPORT = new AutomatedReasoningPolicyBuildWorkflowType("GENERATE_FIDELITY_REPORT");
         /// <summary>
+        /// Constant GENERATE_POLICY_SCENARIOS for AutomatedReasoningPolicyBuildWorkflowType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowType GENERATE_POLICY_SCENARIOS = new AutomatedReasoningPolicyBuildWorkflowType("GENERATE_POLICY_SCENARIOS");
+        /// <summary>
         /// Constant IMPORT_POLICY for AutomatedReasoningPolicyBuildWorkflowType
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildWorkflowType IMPORT_POLICY = new AutomatedReasoningPolicyBuildWorkflowType("IMPORT_POLICY");
@@ -3710,6 +3714,56 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SearchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SelectiveGuardingMode.
+    /// </summary>
+    public class SelectiveGuardingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPREHENSIVE for SelectiveGuardingMode
+        /// </summary>
+        public static readonly SelectiveGuardingMode COMPREHENSIVE = new SelectiveGuardingMode("COMPREHENSIVE");
+        /// <summary>
+        /// Constant SELECTIVE for SelectiveGuardingMode
+        /// </summary>
+        public static readonly SelectiveGuardingMode SELECTIVE = new SelectiveGuardingMode("SELECTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SelectiveGuardingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SelectiveGuardingMode FindValue(string value)
+        {
+            return FindValue<SelectiveGuardingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SelectiveGuardingMode(string value)
         {
             return FindValue(value);
         }

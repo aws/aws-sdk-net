@@ -34,12 +34,33 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class JobLogEventData
     {
+        private long? _attemptCount;
         private ConversionProperties _conversionProperties;
         private string _conversionServerID;
         private EventResourceData _eventResourceData;
+        private long? _maxAttemptsCount;
         private string _rawError;
         private string _sourceServerID;
         private string _targetInstanceID;
+
+        /// <summary>
+        /// Gets and sets the property AttemptCount. 
+        /// <para>
+        /// Retries for this operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=9)]
+        public long? AttemptCount
+        {
+            get { return this._attemptCount; }
+            set { this._attemptCount = value; }
+        }
+
+        // Check to see if AttemptCount property is set
+        internal bool IsSetAttemptCount()
+        {
+            return this._attemptCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConversionProperties. 
@@ -94,6 +115,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetEventResourceData()
         {
             return this._eventResourceData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxAttemptsCount. 
+        /// <para>
+        /// The maximum number of retries that will be attempted if this operation failed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=9)]
+        public long? MaxAttemptsCount
+        {
+            get { return this._maxAttemptsCount; }
+            set { this._maxAttemptsCount = value; }
+        }
+
+        // Check to see if MaxAttemptsCount property is set
+        internal bool IsSetMaxAttemptsCount()
+        {
+            return this._maxAttemptsCount.HasValue; 
         }
 
         /// <summary>

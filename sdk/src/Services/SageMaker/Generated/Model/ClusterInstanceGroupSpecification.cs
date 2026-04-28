@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _imageId;
         private int? _instanceCount;
         private string _instanceGroupName;
+        private ClusterInstanceRequirements _instanceRequirements;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
         private ClusterKubernetesConfig _kubernetesConfig;
@@ -186,6 +187,27 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceRequirements. 
+        /// <para>
+        /// The instance requirements for the instance group, including the instance types to
+        /// use. Use this to create a flexible instance group that supports multiple instance
+        /// types. The <c>InstanceType</c> and <c>InstanceRequirements</c> properties are mutually
+        /// exclusive.
+        /// </para>
+        /// </summary>
+        public ClusterInstanceRequirements InstanceRequirements
+        {
+            get { return this._instanceRequirements; }
+            set { this._instanceRequirements = value; }
+        }
+
+        // Check to see if InstanceRequirements property is set
+        internal bool IsSetInstanceRequirements()
+        {
+            return this._instanceRequirements != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceStorageConfigs. 
         /// <para>
         /// Specifies the additional storage configurations for the instances in the SageMaker
@@ -216,7 +238,6 @@ namespace Amazon.SageMaker.Model
         /// Specifies the instance type of the instance group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ClusterInstanceType InstanceType
         {
             get { return this._instanceType; }
@@ -255,7 +276,6 @@ namespace Amazon.SageMaker.Model
         /// Specifies the LifeCycle configuration for the instance group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ClusterLifeCycleConfig LifeCycleConfig
         {
             get { return this._lifeCycleConfig; }

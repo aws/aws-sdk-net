@@ -112,7 +112,7 @@ namespace Amazon.SageMaker.Model
         /// type, associated containers, scripts, and more.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=170391)]
+        [AWSProperty(Required=true, Min=0, Max=327680)]
         public string HubContentDocument
         {
             get { return this._hubContentDocument; }

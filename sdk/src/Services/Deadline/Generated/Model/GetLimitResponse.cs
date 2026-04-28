@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// This is the response object from the GetLimit operation.
+    /// Domain fields for Limit summary/response shapes, ordered before timestamps.
     /// </summary>
     public partial class GetLimitResponse : AmazonWebServiceResponse
     {

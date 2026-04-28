@@ -87,6 +87,11 @@ namespace Amazon.MedicalImaging.Model
         /// If the stored transfer syntax is <c>1.2.840.10008.1.2.4.203</c>, the returned contentType
         /// is <c>image/jphc</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the stored transfer syntax is <c>1.2.840.10008.1.2.4.112</c> the returned <c>contentType</c>
+        /// is <c>image/jxl</c>.
+        /// </para>
         ///  </li> </ul> </note>
         /// </summary>
         public string ContentType

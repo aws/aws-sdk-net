@@ -86,6 +86,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RevokeEndpointAccessRequestMarshaller _instance = new RevokeEndpointAccessRequestMarshaller();        

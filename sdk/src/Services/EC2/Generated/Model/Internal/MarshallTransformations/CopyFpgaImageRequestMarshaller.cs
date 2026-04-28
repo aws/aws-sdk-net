@@ -84,6 +84,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SourceRegion", StringUtils.FromString(publicRequest.SourceRegion));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CopyFpgaImageRequestMarshaller _instance = new CopyFpgaImageRequestMarshaller();        

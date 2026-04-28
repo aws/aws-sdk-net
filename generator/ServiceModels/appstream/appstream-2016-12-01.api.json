@@ -942,6 +942,20 @@
         {"shape":"ConcurrentModificationException"}
       ]
     },
+    "DrainSessionInstance":{
+      "name":"DrainSessionInstance",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DrainSessionInstanceRequest"},
+      "output":{"shape":"DrainSessionInstanceResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"OperationNotPermittedException"}
+      ]
+    },
     "EnableUser":{
       "name":"EnableUser",
       "http":{
@@ -1785,7 +1799,10 @@
         "DesiredUserSessions":{"shape":"Integer"},
         "AvailableUserSessions":{"shape":"Integer"},
         "ActiveUserSessions":{"shape":"Integer"},
-        "ActualUserSessions":{"shape":"Integer"}
+        "ActualUserSessions":{"shape":"Integer"},
+        "Draining":{"shape":"Integer"},
+        "DrainModeActiveUserSessions":{"shape":"Integer"},
+        "DrainModeUnusedUserSessions":{"shape":"Integer"}
       }
     },
     "ConcurrentModificationException":{
@@ -1794,6 +1811,12 @@
         "Message":{"shape":"ErrorMessage"}
       },
       "exception":true
+    },
+    "ContentRedirection":{
+      "type":"structure",
+      "members":{
+        "HostToClient":{"shape":"UrlRedirectionConfig"}
+      }
     },
     "CopyImageRequest":{
       "type":"structure",
@@ -2100,7 +2123,8 @@
         "Tags":{"shape":"Tags"},
         "AccessEndpoints":{"shape":"AccessEndpointList"},
         "EmbedHostDomains":{"shape":"EmbedHostDomains"},
-        "StreamingExperienceSettings":{"shape":"StreamingExperienceSettings"}
+        "StreamingExperienceSettings":{"shape":"StreamingExperienceSettings"},
+        "ContentRedirection":{"shape":"ContentRedirection"}
       }
     },
     "CreateStackResult":{
@@ -2809,6 +2833,17 @@
       "member":{"shape":"Domain"},
       "max":50
     },
+    "DrainSessionInstanceRequest":{
+      "type":"structure",
+      "required":["SessionId"],
+      "members":{
+        "SessionId":{"shape":"String"}
+      }
+    },
+    "DrainSessionInstanceResult":{
+      "type":"structure",
+      "members":{}
+    },
     "DryRunOperationException":{
       "type":"structure",
       "members":{
@@ -3304,6 +3339,14 @@
       },
       "exception":true
     },
+    "InstanceDrainStatus":{
+      "type":"string",
+      "enum":[
+        "ACTIVE",
+        "DRAINING",
+        "NOT_APPLICABLE"
+      ]
+    },
     "InstanceType":{
       "type":"string",
       "pattern":"^[a-zA-Z0-9-]+(\\.[a-z0-9-]+)+\\.(small|medium|large|xlarge|\\d+xlarge|metal)$"
@@ -3665,7 +3708,8 @@
         "MaxExpirationTime":{"shape":"Timestamp"},
         "AuthenticationType":{"shape":"AuthenticationType"},
         "NetworkAccessConfiguration":{"shape":"NetworkAccessConfiguration"},
-        "InstanceId":{"shape":"String"}
+        "InstanceId":{"shape":"String"},
+        "InstanceDrainStatus":{"shape":"InstanceDrainStatus"}
       }
     },
     "SessionConnectionState":{
@@ -3747,7 +3791,8 @@
         "ApplicationSettings":{"shape":"ApplicationSettingsResponse"},
         "AccessEndpoints":{"shape":"AccessEndpointList"},
         "EmbedHostDomains":{"shape":"EmbedHostDomains"},
-        "StreamingExperienceSettings":{"shape":"StreamingExperienceSettings"}
+        "StreamingExperienceSettings":{"shape":"StreamingExperienceSettings"},
+        "ContentRedirection":{"shape":"ContentRedirection"}
       }
     },
     "StackAttribute":{
@@ -3764,7 +3809,8 @@
         "EMBED_HOST_DOMAINS",
         "IAM_ROLE_ARN",
         "ACCESS_ENDPOINTS",
-        "STREAMING_EXPERIENCE_SETTINGS"
+        "STREAMING_EXPERIENCE_SETTINGS",
+        "CONTENT_REDIRECTION"
       ]
     },
     "StackAttributes":{
@@ -4239,6 +4285,27 @@
       "type":"structure",
       "members":{
         "Theme":{"shape":"Theme"}
+      }
+    },
+    "UrlPattern":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"^(\\*|https?://[^\\s,;]+)$"
+    },
+    "UrlPatternList":{
+      "type":"list",
+      "member":{"shape":"UrlPattern"},
+      "max":100,
+      "min":0
+    },
+    "UrlRedirectionConfig":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{"shape":"BooleanObject"},
+        "AllowedUrls":{"shape":"UrlPatternList"},
+        "DeniedUrls":{"shape":"UrlPatternList"}
       }
     },
     "UsageReportExecutionErrorCode":{

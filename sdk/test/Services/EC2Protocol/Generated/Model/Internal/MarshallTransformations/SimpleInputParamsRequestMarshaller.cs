@@ -104,6 +104,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UsesXmlName", StringUtils.FromString(publicRequest.UsesXmlName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SimpleInputParamsRequestMarshaller _instance = new SimpleInputParamsRequestMarshaller();        

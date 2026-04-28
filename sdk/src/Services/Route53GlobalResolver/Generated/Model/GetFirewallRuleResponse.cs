@@ -212,7 +212,8 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property DnsAdvancedProtection. 
         /// <para>
-        /// The type of the DNS Firewall Advanced rule. Valid values are DGA and DNS_TUNNELING.
+        /// The type of the DNS Firewall Advanced rule. Valid values are DGA, DNS_TUNNELING, and
+        /// DICTIONARY_DGA.
         /// </para>
         /// </summary>
         public DnsAdvancedProtection DnsAdvancedProtection

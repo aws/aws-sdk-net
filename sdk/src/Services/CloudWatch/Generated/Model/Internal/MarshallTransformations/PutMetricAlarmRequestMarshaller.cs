@@ -126,6 +126,21 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("EvaluateLowSampleCountPercentile");
                     context.Writer.WriteTextString(publicRequest.EvaluateLowSampleCountPercentile);
                 }
+                if (publicRequest.IsSetEvaluationCriteria())
+                {
+                    context.Writer.WriteTextString("EvaluationCriteria");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = EvaluationCriteriaMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EvaluationCriteria, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetEvaluationInterval())
+                {
+                    context.Writer.WriteTextString("EvaluationInterval");
+                    context.Writer.WriteInt32(publicRequest.EvaluationInterval.Value);
+                }
                 if (publicRequest.IsSetEvaluationPeriods())
                 {
                     context.Writer.WriteTextString("EvaluationPeriods");

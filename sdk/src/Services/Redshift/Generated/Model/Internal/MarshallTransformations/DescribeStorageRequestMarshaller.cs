@@ -60,6 +60,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             if(publicRequest != null)
             {
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeStorageRequestMarshaller _instance = new DescribeStorageRequestMarshaller();        

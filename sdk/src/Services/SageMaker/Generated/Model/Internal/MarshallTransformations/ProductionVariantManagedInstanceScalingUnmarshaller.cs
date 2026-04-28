@@ -68,6 +68,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ScaleInPolicy", targetDepth))
+                {
+                    var unmarshaller = ProductionVariantManagedInstanceScalingScaleInPolicyUnmarshaller.Instance;
+                    unmarshalledObject.ScaleInPolicy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

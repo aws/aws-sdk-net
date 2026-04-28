@@ -1408,8 +1408,9 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action is not applicable for Linux/Unix instances or Windows instances that are
-        /// backed by Amazon EBS.
+        /// This action is no longer supported. To create an AMI, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
+        /// Create an Amazon EBS-backed AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -15102,6 +15103,26 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  GetCapacityManagerMonitoredTagKeys
+
+
+
+        /// <summary>
+        /// Retrieves the tag keys that are currently being monitored by EC2 Capacity Manager.
+        /// Monitored tag keys are included as dimensions in capacity metric data, enabling you
+        /// to group and filter metrics by tag values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerMonitoredTagKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerMonitoredTagKeys service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMonitoredTagKeys">REST API Reference for GetCapacityManagerMonitoredTagKeys Operation</seealso>
+        Task<GetCapacityManagerMonitoredTagKeysResponse> GetCapacityManagerMonitoredTagKeysAsync(GetCapacityManagerMonitoredTagKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetCapacityReservationUsage
 
 
@@ -21269,6 +21290,26 @@ namespace Amazon.EC2
         /// <returns>The response from the UnmonitorInstances service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">REST API Reference for UnmonitorInstances Operation</seealso>
         Task<UnmonitorInstancesResponse> UnmonitorInstancesAsync(UnmonitorInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCapacityManagerMonitoredTagKeys
+
+
+
+        /// <summary>
+        /// Activates or deactivates tag keys for monitoring by EC2 Capacity Manager. Activated
+        /// tag keys are included as dimensions in capacity metric data, enabling you to group
+        /// and filter metrics by tag values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityManagerMonitoredTagKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCapacityManagerMonitoredTagKeys service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerMonitoredTagKeys">REST API Reference for UpdateCapacityManagerMonitoredTagKeys Operation</seealso>
+        Task<UpdateCapacityManagerMonitoredTagKeysResponse> UpdateCapacityManagerMonitoredTagKeysAsync(UpdateCapacityManagerMonitoredTagKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

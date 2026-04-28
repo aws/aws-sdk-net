@@ -32,7 +32,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.RestJson
@@ -40,67 +39,5 @@ namespace AWSSDK.ProtocolTests.RestJson
     [TestClass]
     public class IgnoreQueryParamsInResponse
     {
-        /// <summary>
-        /// Query parameters must be ignored when serializing the output of
-        /// an operation. As of January 2021, server implementations are
-        /// expected to respond with a JSON object regardless of if the
-        /// output parameters are empty.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("ResponseTest")]
-        [TestCategory("RestJson")]
-        public void RestJsonIgnoreQueryParamsInResponseResponse()
-        {
-            // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/json";
-            byte[] bytes = Encoding.ASCII.GetBytes("{}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
-
-            // Act
-            var unmarshalledResponse = new IgnoreQueryParamsInResponseResponseUnmarshaller().Unmarshall(context);
-            var expectedResponse = new IgnoreQueryParamsInResponseResponse
-            {
-            };
-
-            // Assert
-            var actualResponse = (IgnoreQueryParamsInResponseResponse)unmarshalledResponse;
-            Comparer.CompareObjects<IgnoreQueryParamsInResponseResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
-        }
-
-        /// <summary>
-        /// This test is similar to RestJsonIgnoreQueryParamsInResponse, but
-        /// it ensures that clients gracefully handle responses from the
-        /// server that do not serialize an empty JSON object.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("ResponseTest")]
-        [TestCategory("RestJson")]
-        public void RestJsonIgnoreQueryParamsInResponseNoPayloadResponse()
-        {
-            // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
-
-            // Act
-            var unmarshalledResponse = new IgnoreQueryParamsInResponseResponseUnmarshaller().Unmarshall(context);
-            var expectedResponse = new IgnoreQueryParamsInResponseResponse
-            {
-            };
-
-            // Assert
-            var actualResponse = (IgnoreQueryParamsInResponseResponse)unmarshalledResponse;
-            Comparer.CompareObjects<IgnoreQueryParamsInResponseResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
-        }
-
     }
 }

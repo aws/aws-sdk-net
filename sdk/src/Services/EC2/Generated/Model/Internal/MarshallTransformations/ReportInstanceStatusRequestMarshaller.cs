@@ -108,6 +108,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ReportInstanceStatusRequestMarshaller _instance = new ReportInstanceStatusRequestMarshaller();        

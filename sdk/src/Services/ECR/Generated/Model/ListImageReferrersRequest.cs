@@ -76,7 +76,7 @@ namespace Amazon.ECR.Model
         /// element. The remaining results of the initial request can be seen by sending another
         /// <c>ListImageReferrers</c> request with the returned <c>nextToken</c> value. This value
         /// can be between 1 and 50. If this parameter is not used, then <c>ListImageReferrers</c>
-        /// returns up to 50 results and a <c>nextToken</c> value, if applicable.
+        /// returns up to 20 results and a <c>nextToken</c> value, if applicable.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

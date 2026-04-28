@@ -37,6 +37,7 @@ namespace Amazon.AppStream.Model
         private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
         private ApplicationSettingsResponse _applicationSettings;
         private string _arn;
+        private ContentRedirection _contentRedirection;
         private DateTime? _createdTime;
         private string _description;
         private string _displayName;
@@ -108,6 +109,26 @@ namespace Amazon.AppStream.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentRedirection. 
+        /// <para>
+        /// Configuration for bidirectional URL redirection between the streaming session and
+        /// the local client. Use HostToClient to redirect URLs from the remote desktop to the
+        /// local browser.
+        /// </para>
+        /// </summary>
+        public ContentRedirection ContentRedirection
+        {
+            get { return this._contentRedirection; }
+            set { this._contentRedirection = value; }
+        }
+
+        // Check to see if ContentRedirection property is set
+        internal bool IsSetContentRedirection()
+        {
+            return this._contentRedirection != null;
         }
 
         /// <summary>

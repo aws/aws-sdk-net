@@ -45,6 +45,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeTrainingPlanExtensionHistory operation
+        ///</summary>
+        public IDescribeTrainingPlanExtensionHistoryPaginator DescribeTrainingPlanExtensionHistory(DescribeTrainingPlanExtensionHistoryRequest request) 
+        {
+            return new DescribeTrainingPlanExtensionHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListActions operation
         ///</summary>
         public IListActionsPaginator ListActions(ListActionsRequest request) 

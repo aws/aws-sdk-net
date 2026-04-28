@@ -65,7 +65,7 @@ namespace Amazon.PCS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>23.11 | 24.05 | 24.11</c> 
+        /// Valid Values: <c>23.11 | 24.05 | 24.11 | 25.05</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

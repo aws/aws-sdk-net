@@ -36,8 +36,10 @@ namespace Amazon.Omics.Model
     {
         private Accelerators _accelerators;
         private string _arn;
+        private string _batchId;
         private CacheBehavior _cacheBehavior;
         private string _cacheId;
+        private ConfigurationDetails _configuration;
         private DateTime? _creationTime;
         private string _definition;
         private string _digest;
@@ -47,6 +49,7 @@ namespace Amazon.Omics.Model
         private RunLogLevel _logLevel;
         private RunLogLocation _logLocation;
         private string _name;
+        private NetworkingMode _networkingMode;
         private string _outputUri;
         private Amazon.Runtime.Documents.Document _parameters;
         private int? _priority;
@@ -65,6 +68,7 @@ namespace Amazon.Omics.Model
         private StorageType _storageType;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uuid;
+        private VpcConfigResponse _vpcConfig;
         private string _workflowId;
         private string _workflowOwnerId;
         private WorkflowType _workflowType;
@@ -110,6 +114,25 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BatchId. 
+        /// <para>
+        /// The run's batch ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=18)]
+        public string BatchId
+        {
+            get { return this._batchId; }
+            set { this._batchId = value; }
+        }
+
+        // Check to see if BatchId property is set
+        internal bool IsSetBatchId()
+        {
+            return this._batchId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CacheBehavior. 
         /// <para>
         /// The run cache behavior for the run.
@@ -145,6 +168,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetCacheId()
         {
             return this._cacheId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// Configuration details for the workflow run.
+        /// </para>
+        /// </summary>
+        public ConfigurationDetails Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
         }
 
         /// <summary>
@@ -314,6 +355,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkingMode. 
+        /// <para>
+        /// Configuration for run networking behavior. If absent, this will default to RESTRICTED.
+        /// </para>
+        /// </summary>
+        public NetworkingMode NetworkingMode
+        {
+            get { return this._networkingMode; }
+            set { this._networkingMode = value; }
+        }
+
+        // Check to see if NetworkingMode property is set
+        internal bool IsSetNetworkingMode()
+        {
+            return this._networkingMode != null;
         }
 
         /// <summary>
@@ -661,6 +720,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetUuid()
         {
             return this._uuid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// VPC configuration for the workflow run.
+        /// </para>
+        /// </summary>
+        public VpcConfigResponse VpcConfig
+        {
+            get { return this._vpcConfig; }
+            set { this._vpcConfig = value; }
+        }
+
+        // Check to see if VpcConfig property is set
+        internal bool IsSetVpcConfig()
+        {
+            return this._vpcConfig != null;
         }
 
         /// <summary>

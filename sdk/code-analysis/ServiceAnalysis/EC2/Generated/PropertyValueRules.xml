@@ -768,6 +768,11 @@
     <min>3600</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetCapacityManagerMonitoredTagKeysRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetCapacityReservationUsageRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -1098,6 +1103,11 @@
     <property>Amazon.EC2.Model.DeprecationTimeConditionRequest.MaximumDaysSinceDeprecated</property>
     <min>0</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DimensionCondition.Dimension</property>
+    <min>0</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.Ec2InstanceConnectEndpoint.InstanceConnectEndpointArn</property>

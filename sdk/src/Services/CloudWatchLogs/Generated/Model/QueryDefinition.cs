@@ -37,6 +37,7 @@ namespace Amazon.CloudWatchLogs.Model
         private long? _lastModified;
         private List<string> _logGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
+        private List<QueryParameter> _parameters = AWSConfigs.InitializeCollections ? new List<QueryParameter>() : null;
         private string _queryDefinitionId;
         private QueryLanguage _queryLanguage;
         private string _queryString;
@@ -101,6 +102,31 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// If this query definition contains a list of query parameters that define placeholder
+        /// variables for the query string, that list appears here.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=20)]
+        public List<QueryParameter> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

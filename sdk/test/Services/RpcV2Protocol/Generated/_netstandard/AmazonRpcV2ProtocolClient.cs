@@ -564,6 +564,43 @@ namespace Amazon.RpcV2Protocol
         }
         #endregion
         
+        #region  RpcV2CborSparseMaps
+
+        internal virtual RpcV2CborSparseMapsResponse RpcV2CborSparseMaps(RpcV2CborSparseMapsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RpcV2CborSparseMapsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RpcV2CborSparseMapsResponseUnmarshaller.Instance;
+
+            return Invoke<RpcV2CborSparseMapsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RpcV2CborSparseMaps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RpcV2CborSparseMaps service method, as returned by RpcV2Protocol.</returns>
+        /// <exception cref="Amazon.RpcV2Protocol.Model.ValidationException">
+        /// A standard error for input validation failures. This should be thrown by services
+        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/RpcV2CborSparseMaps">REST API Reference for RpcV2CborSparseMaps Operation</seealso>
+        public virtual Task<RpcV2CborSparseMapsResponse> RpcV2CborSparseMapsAsync(RpcV2CborSparseMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RpcV2CborSparseMapsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RpcV2CborSparseMapsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RpcV2CborSparseMapsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SimpleScalarProperties
 
         internal virtual SimpleScalarPropertiesResponse SimpleScalarProperties(SimpleScalarPropertiesRequest request)
@@ -594,6 +631,39 @@ namespace Amazon.RpcV2Protocol
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<SimpleScalarPropertiesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  SparseNullsOperation
+
+        internal virtual SparseNullsOperationResponse SparseNullsOperation(SparseNullsOperationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SparseNullsOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SparseNullsOperationResponseUnmarshaller.Instance;
+
+            return Invoke<SparseNullsOperationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SparseNullsOperation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SparseNullsOperation service method, as returned by RpcV2Protocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/SparseNullsOperation">REST API Reference for SparseNullsOperation Operation</seealso>
+        public virtual Task<SparseNullsOperationResponse> SparseNullsOperationAsync(SparseNullsOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SparseNullsOperationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SparseNullsOperationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SparseNullsOperationResponse>(request, options, cancellationToken);
         }
         #endregion
         

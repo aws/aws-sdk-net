@@ -68,6 +68,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomOutputConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("dataAutomationLibraryConfiguration", targetDepth))
+                {
+                    var unmarshaller = DataAutomationLibraryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DataAutomationLibraryConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("kmsEncryptionContext", targetDepth))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

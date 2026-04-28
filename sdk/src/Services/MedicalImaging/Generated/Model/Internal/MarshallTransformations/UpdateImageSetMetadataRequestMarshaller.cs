@@ -72,6 +72,9 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetForce())
                 request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
+            
+            if (publicRequest.IsSetIncludeStudyImageSets())
+                request.Parameters.Add("includeStudyImageSets", StringUtils.FromBool(publicRequest.IncludeStudyImageSets));
             if (string.IsNullOrEmpty(publicRequest.LatestVersionId))
                 throw new AmazonMedicalImagingException("Request object does not have required field LatestVersionId set");
             

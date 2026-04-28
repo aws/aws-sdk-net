@@ -78,6 +78,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RuleSetName", StringUtils.FromString(publicRequest.RuleSetName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ReorderReceiptRuleSetRequestMarshaller _instance = new ReorderReceiptRuleSetRequestMarshaller();        

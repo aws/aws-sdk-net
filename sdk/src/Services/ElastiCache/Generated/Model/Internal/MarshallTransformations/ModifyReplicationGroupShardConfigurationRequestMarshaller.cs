@@ -131,6 +131,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyReplicationGroupShardConfigurationRequestMarshaller _instance = new ModifyReplicationGroupShardConfigurationRequestMarshaller();        

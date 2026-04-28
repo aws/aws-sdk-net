@@ -56,15 +56,15 @@ namespace Amazon.ObservabilityAdmin.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>${source.accountId}</b> — The AWS account ID where the log originated.
+        ///  <b>${source.accountId}</b> — The Amazon Web Services account ID where the log originated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>${source.region}</b> — The AWS Region where the log originated.
+        ///  <b>${source.region}</b> — The Amazon Web Services Region where the log originated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>${source.org.id}</b> — The AWS Organization ID of the source account.
+        ///  <b>${source.org.id}</b> — The Amazon Web Services Organization ID of the source account.
         /// </para>
         ///  </li> <li> 
         /// <para>

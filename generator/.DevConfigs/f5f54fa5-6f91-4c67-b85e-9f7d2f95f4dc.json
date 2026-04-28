@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "[BugFix] Fix DynamoDB AOT/trim issue on PropertyStorage Validate."
+      ]
+    }
+  ]
+}

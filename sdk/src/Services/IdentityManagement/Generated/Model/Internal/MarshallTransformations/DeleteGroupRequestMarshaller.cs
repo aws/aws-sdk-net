@@ -64,6 +64,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteGroupRequestMarshaller _instance = new DeleteGroupRequestMarshaller();        

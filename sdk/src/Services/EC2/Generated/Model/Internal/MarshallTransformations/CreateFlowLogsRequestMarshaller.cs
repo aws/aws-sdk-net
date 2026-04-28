@@ -171,6 +171,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TrafficType", StringUtils.FromString(publicRequest.TrafficType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateFlowLogsRequestMarshaller _instance = new CreateFlowLogsRequestMarshaller();        

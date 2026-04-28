@@ -2254,6 +2254,53 @@ namespace Amazon.RestXmlProtocol
 
         #endregion
         
+        #region  XmlAttributesInMiddle
+
+
+        /// <summary>
+        /// This example serializes an XML attribute on a payload when it's defined in the middle
+        /// of the member list. This tests that implementations correctly write attributes immediately
+        /// after the element start tag, which is critical for languages like C# where attribute
+        /// writing must happen before child elements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the XmlAttributesInMiddle service method.</param>
+        /// 
+        /// <returns>The response from the XmlAttributesInMiddle service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlAttributesInMiddle">REST API Reference for XmlAttributesInMiddle Operation</seealso>
+        public virtual XmlAttributesInMiddleResponse XmlAttributesInMiddle(XmlAttributesInMiddleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = XmlAttributesInMiddleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = XmlAttributesInMiddleResponseUnmarshaller.Instance;
+
+            return Invoke<XmlAttributesInMiddleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This example serializes an XML attribute on a payload when it's defined in the middle
+        /// of the member list. This tests that implementations correctly write attributes immediately
+        /// after the element start tag, which is critical for languages like C# where attribute
+        /// writing must happen before child elements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the XmlAttributesInMiddle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the XmlAttributesInMiddle service method, as returned by RestXmlProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlAttributesInMiddle">REST API Reference for XmlAttributesInMiddle Operation</seealso>
+        public virtual Task<XmlAttributesInMiddleResponse> XmlAttributesInMiddleAsync(XmlAttributesInMiddleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = XmlAttributesInMiddleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = XmlAttributesInMiddleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<XmlAttributesInMiddleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  XmlAttributesOnPayload
 
 

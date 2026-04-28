@@ -68,6 +68,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.SelectedTooltipType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SheetTooltip", targetDepth))
+                {
+                    var unmarshaller = SheetTooltipUnmarshaller.Instance;
+                    unmarshalledObject.SheetTooltip = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TooltipVisibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

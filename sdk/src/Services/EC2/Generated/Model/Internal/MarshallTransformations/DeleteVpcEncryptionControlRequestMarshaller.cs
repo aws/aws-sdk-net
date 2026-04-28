@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VpcEncryptionControlId", StringUtils.FromString(publicRequest.VpcEncryptionControlId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteVpcEncryptionControlRequestMarshaller _instance = new DeleteVpcEncryptionControlRequestMarshaller();        

@@ -164,6 +164,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VerifiedAccessTrustProviderId", StringUtils.FromString(publicRequest.VerifiedAccessTrustProviderId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyVerifiedAccessTrustProviderRequestMarshaller _instance = new ModifyVerifiedAccessTrustProviderRequestMarshaller();        

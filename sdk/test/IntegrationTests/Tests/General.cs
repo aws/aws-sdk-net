@@ -1,155 +1,70 @@
-﻿using System;
-using System.Linq;
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Amazon.S3;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using Amazon;
-using Amazon.Runtime;
-using System.Collections.Generic;
-using System.Reflection;
-using Amazon.Runtime.Internal.Auth;
-using System.Configuration;
-using System.Collections.Specialized;
-using System.Xml;
-using Amazon.Util;
-using Amazon.Runtime.Internal;
+﻿using Amazon;
+using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Internal;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
-using System.Xml.Serialization;
-using System.Text;
-using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Util;
 using Amazon.SecurityToken.SAML;
-using Amazon.DynamoDBv2;
-using System.Threading;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.Net;
+using System.Reflection;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.Json;
-using AWSSDK_DotNet.CommonTest.Utils;
+using System.Threading;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
-    [TestClass]
+    [Trait("Category", "General")]
+    [Collection("Serial")]
     public partial class General
     {
         private readonly string fakeData = "obviously-super-duper-fake-data";
 
-        [TestMethod]
-        [TestCategory("General")]
-        [Ignore]
+        [Fact]
         // Test exception parsing with selected services
-        public void TestDownloadStringContentWithTimeout()
-        {
-            var timeout = TimeSpan.FromSeconds(3);
-            var url = new Uri("https://httpbin.org/delay/10"); // server will delay for 10 seconds
-            string downloadedContent = null;
-            Exception caughtException = null;
-            var thread = new Thread(() =>
-            {
-                try
-                {
-                    downloadedContent = Amazon.Util.AWSSDKUtils.DownloadStringContent(url, timeout);
-                }
-                catch(Exception e)
-                {
-                    caughtException = e;
-                }
-            });
-
-            try
-            {
-                thread.IsBackground = true;
-                thread.Start();
-
-                Thread.Sleep(timeout + timeout);
-                Assert.IsNull(downloadedContent);
-                Assert.IsNotNull(caughtException);
-
-                var webException = caughtException as WebException;
-                Assert.IsNotNull(webException);
-                Console.WriteLine("Exception message = [{0}]", webException.Message);
-                Assert.AreEqual("The operation has timed out", webException.Message);
-            }
-            finally
-            {
-                thread.Abort();
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("General")]
-        // Test exception parsing with selected services
-        public void TestExceptions()
+        public async Task TestExceptions()
         {
             using (var client = new Amazon.Lightsail.AmazonLightsailClient())
             {
-                var ex = AssertExtensions.ExpectException<Amazon.Lightsail.Model.NotFoundException>(() =>
-                {
-                    client.GetInstance(new Amazon.Lightsail.Model.GetInstanceRequest
+                var ex = await Assert.ThrowsAsync<Amazon.Lightsail.Model.NotFoundException>(() =>
+                    client.GetInstanceAsync(new Amazon.Lightsail.Model.GetInstanceRequest
                     {
                         InstanceName = fakeData
-                    });
-                });
-                Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
+                    }));
+                Assert.Equal(ErrorType.Unknown, ex.ErrorType);
             }
 
             using (var ddb = new Amazon.DynamoDBv2.AmazonDynamoDBClient())
             {
-                var ex = AssertExtensions.ExpectException<Amazon.DynamoDBv2.Model.ResourceNotFoundException>(() => ddb.DescribeTable("fakey-mcfake-table"));
-                Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
+                var ex = await Assert.ThrowsAsync<Amazon.DynamoDBv2.Model.ResourceNotFoundException>(() =>
+                    ddb.DescribeTableAsync("fakey-mcfake-table"));
+                Assert.Equal(ErrorType.Unknown, ex.ErrorType);
             }
-
-            // Temperoary disable this test as it is currently failing
-            // using (var client = new Amazon.Pinpoint.AmazonPinpointClient())
-            // {
-            //     var ex = AssertExtensions.ExpectException<Amazon.Pinpoint.Model.NotFoundException>(() =>
-            //     {
-            //         client.DeleteCampaign(new Amazon.Pinpoint.Model.DeleteCampaignRequest
-            //         {
-            //             ApplicationId = fakeData,
-            //             CampaignId = fakeData
-            //         });
-            //     });
-            //     Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
-            // }
 
             using (var client = new Amazon.Batch.AmazonBatchClient())
             {
-                var ex = AssertExtensions.ExpectException<Amazon.Batch.Model.ClientException>(() =>
-                {
-                    client.UpdateComputeEnvironment(new Amazon.Batch.Model.UpdateComputeEnvironmentRequest
+                var ex = await Assert.ThrowsAsync<Amazon.Batch.Model.ClientException>(() =>
+                    client.UpdateComputeEnvironmentAsync(new Amazon.Batch.Model.UpdateComputeEnvironmentRequest
                     {
                         ComputeEnvironment = fakeData
-                    });
-                });
-                Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
+                    }));
+                Assert.Equal(ErrorType.Unknown, ex.ErrorType);
             }
         }
 
-        [TestMethod]
-        [TestCategory("General")]
-        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
-        public void IAMTestExceptions()
-        {
-            using (var client = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
-            {
-                var ex = AssertExtensions.ExpectException<Amazon.IdentityManagement.Model.NoSuchEntityException>(() =>
-                {
-                    client.AttachGroupPolicy(new Amazon.IdentityManagement.Model.AttachGroupPolicyRequest
-                    {
-                        PolicyArn = fakeData,
-                        GroupName = fakeData
-                    });
-                });
-                Assert.AreEqual(ErrorType.Sender, ex.ErrorType);
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("General")]
+        // BinaryFormatter, S3PostUploadException, and AdfsAuthenticationControllerException are only
+        // available on .NET Framework. BinaryFormatter was removed in .NET 8, and S3PostUploadException
+        // and AdfsAuthenticationControllerException are defined in BCL-only (_bcl/) source folders.
+#if NETFRAMEWORK
+        [Fact]
         public void TestSerializingExceptions()
         {
             using(var client = new Amazon.S3.AmazonS3Client())
@@ -172,13 +87,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                 var aace = new AdfsAuthenticationControllerException("Message");
                 TestException(aace);
-
             }
         }
 
-
-        [TestMethod]
-        [TestCategory("General")]
+        [Fact]
         public void TestSerializaingObjects()
         {
             DeleteObjectsResponse response = new DeleteObjectsResponse
@@ -204,23 +116,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 ms.Seek(0, SeekOrigin.Begin);
                 DeleteObjectsResponse deserialized = serializer.Deserialize(ms) as DeleteObjectsResponse;
 
-
                 List<string> deleteObjectKeys = new List<string>{ "hello", "world", "!!!"};
-                // Validate deserialized dataa
                 foreach (var obj in deserialized.DeletedObjects)
                 {
-                    Assert.AreEqual(obj.VersionId, "version");
-                    Assert.IsTrue(deleteObjectKeys.Contains(obj.Key));
+                    Assert.Equal("version", obj.VersionId);
+                    Assert.Contains(obj.Key, deleteObjectKeys);
                 }
 
                 List<string> errorCodes = new List<string>{ "200", "500" };
                 foreach (var error in deserialized.DeleteErrors)
                 {
-                    Assert.AreEqual(error.Key, "key");
-                    Assert.IsTrue(errorCodes.Contains(error.Code));
+                    Assert.Equal("key", error.Key);
+                    Assert.Contains(error.Code, errorCodes);
                 }
 
-                Assert.AreEqual(deserialized.RequestCharged, RequestCharged.Requester);
+                Assert.Equal(RequestCharged.Requester, deserialized.RequestCharged);
             }
         }
 
@@ -244,55 +154,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var dor = new Amazon.S3.Model.DeleteObjectsResponse
             {
                 DeletedObjects = new List<DeletedObject>
-                    {
-                        new DeletedObject
-                        {
-                            Key = "key1",
-                            VersionId = "v1",
-                            DeleteMarker = true,
-                            DeleteMarkerVersionId = "mv1"
-                        },
-                        new DeletedObject
-                        {
-                            Key = "key2",
-                            VersionId = "v2",
-                            DeleteMarker = false,
-                            DeleteMarkerVersionId = "mv2"
-                        }
-                    },
+                {
+                    new DeletedObject { Key = "key1", VersionId = "v1", DeleteMarker = true, DeleteMarkerVersionId = "mv1" },
+                    new DeletedObject { Key = "key2", VersionId = "v2", DeleteMarker = false, DeleteMarkerVersionId = "mv2" }
+                },
                 DeleteErrors = new List<DeleteError>
-                    {
-                        new DeleteError
-                        {
-                            Key = "key3",
-                            Code = "code3",
-                            Message = "message3",
-                            VersionId = "v3"
-                        },
-                        new DeleteError
-                        {
-                            Key = "key4",
-                            Code = "code4",
-                            Message = "message4",
-                            VersionId = "v4"
-                        },
-                        new DeleteError
-                        {
-                            Key = "key5",
-                            Code = "code5",
-                            Message = "message5",
-                            VersionId = "v5"
-                        }
-                    },
+                {
+                    new DeleteError { Key = "key3", Code = "code3", Message = "message3", VersionId = "v3" },
+                    new DeleteError { Key = "key4", Code = "code4", Message = "message4", VersionId = "v4" },
+                    new DeleteError { Key = "key5", Code = "code5", Message = "message5", VersionId = "v5" }
+                },
                 ContentLength = 10,
                 HttpStatusCode = HttpStatusCode.OK,
                 ResponseMetadata = new ResponseMetadata
                 {
-                    Metadata =
-                        {
-                            { "m1", "mv1" },
-                            { "m2", "mv2" }
-                        },
+                    Metadata = { { "m1", "mv1" }, { "m2", "mv2" } },
                     RequestId = "requestId"
                 }
             };
@@ -315,10 +191,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var hasHttpResponse = here != null;
             if (hasHttpResponse)
             {
-                Assert.IsNotNull(here.Response);
+                Assert.NotNull(here.Response);
                 headers = here.Response.GetHeaderNames();
-                Assert.IsNotNull(headers);
-                Assert.AreNotEqual(0, headers.Length);
+                Assert.NotNull(headers);
+                Assert.NotEqual(0, headers.Length);
             }
 
             var serializer = new BinaryFormatter();
@@ -328,42 +204,42 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 ms.Seek(0, SeekOrigin.Begin);
                 var deserialized = serializer.Deserialize(ms) as Exception;
 
-                Assert.IsNotNull(deserialized);
+                Assert.NotNull(deserialized);
+                Assert.Equal(e.Message, deserialized.Message);
 
-                Assert.AreEqual(e.Message, deserialized.Message);
                 if (e is AmazonS3Exception)
                 {
                     var as3e = e as AmazonS3Exception;
                     var dAs3e = deserialized as AmazonS3Exception;
-                    Assert.AreEqual(as3e.ErrorType, dAs3e.ErrorType);
-                    Assert.AreEqual(as3e.ErrorCode, dAs3e.ErrorCode);
-                    Assert.AreEqual(as3e.RequestId, dAs3e.RequestId);
-                    Assert.AreEqual(as3e.StatusCode, dAs3e.StatusCode);
-                    Assert.AreEqual(as3e.AmazonId2, dAs3e.AmazonId2);
-                    Assert.AreEqual(as3e.ResponseBody, dAs3e.ResponseBody);
+                    Assert.Equal(as3e.ErrorType, dAs3e.ErrorType);
+                    Assert.Equal(as3e.ErrorCode, dAs3e.ErrorCode);
+                    Assert.Equal(as3e.RequestId, dAs3e.RequestId);
+                    Assert.Equal(as3e.StatusCode, dAs3e.StatusCode);
+                    Assert.Equal(as3e.AmazonId2, dAs3e.AmazonId2);
+                    Assert.Equal(as3e.ResponseBody, dAs3e.ResponseBody);
                 }
 
                 if (hasHttpResponse)
                 {
                     var hereDeserialized = deserialized.InnerException as HttpErrorResponseException;
-                    Assert.IsNotNull(hereDeserialized);
-                    Assert.IsNotNull(hereDeserialized.Response);
+                    Assert.NotNull(hereDeserialized);
+                    Assert.NotNull(hereDeserialized.Response);
                     var headersDeserialized = hereDeserialized.Response.GetHeaderNames();
-                    Assert.IsNotNull(headersDeserialized);
-                    Assert.AreNotEqual(0, headersDeserialized.Length);
-                    Assert.AreEqual(headers.Length, headersDeserialized.Length);
+                    Assert.NotNull(headersDeserialized);
+                    Assert.NotEqual(0, headersDeserialized.Length);
+                    Assert.Equal(headers.Length, headersDeserialized.Length);
 
-                    Assert.AreEqual(here.Response.StatusCode, hereDeserialized.Response.StatusCode);
-                    Assert.AreEqual(here.Response.IsSuccessStatusCode, hereDeserialized.Response.IsSuccessStatusCode);
-                    Assert.AreEqual(here.Response.ContentLength, hereDeserialized.Response.ContentLength);
-                    Assert.AreEqual(here.Response.ContentType, hereDeserialized.Response.ContentType);
+                    Assert.Equal(here.Response.StatusCode, hereDeserialized.Response.StatusCode);
+                    Assert.Equal(here.Response.IsSuccessStatusCode, hereDeserialized.Response.IsSuccessStatusCode);
+                    Assert.Equal(here.Response.ContentLength, hereDeserialized.Response.ContentLength);
+                    Assert.Equal(here.Response.ContentType, hereDeserialized.Response.ContentType);
 
                     foreach (var header in headers)
                     {
-                        Assert.IsTrue(hereDeserialized.Response.IsHeaderPresent(header));
+                        Assert.True(hereDeserialized.Response.IsHeaderPresent(header));
                         var value = hereDeserialized.Response.GetHeaderValue(header);
-                        Assert.IsNotNull(value);
-                        Assert.AreEqual(here.Response.GetHeaderValue(header), value);
+                        Assert.NotNull(value);
+                        Assert.Equal(here.Response.GetHeaderValue(header), value);
                     }
                 }
 
@@ -372,22 +248,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     var doe = e as DeleteObjectsException;
                     var dDoe = deserialized as DeleteObjectsException;
 
-                    Assert.AreEqual(doe.Response.DeletedObjects.Count, dDoe.Response.DeletedObjects.Count);
+                    Assert.Equal(doe.Response.DeletedObjects.Count, dDoe.Response.DeletedObjects.Count);
                     foreach(var deleted in dDoe.Response.DeletedObjects)
                     {
-                        Assert.IsNotNull(deleted.DeleteMarkerVersionId);
-                        Assert.IsNotNull(deleted.Key);
-                        Assert.IsNotNull(deleted.VersionId);
-                        Assert.IsNotNull(deleted.DeleteMarker);
-                        Assert.AreEqual(deleted.Key.EndsWith("1"), deleted.DeleteMarker);
+                        Assert.NotNull(deleted.DeleteMarkerVersionId);
+                        Assert.NotNull(deleted.Key);
+                        Assert.NotNull(deleted.VersionId);
+                        Assert.NotNull(deleted.DeleteMarker);
+                        Assert.Equal(deleted.Key.EndsWith("1"), deleted.DeleteMarker);
                     }
-                    Assert.AreEqual(doe.Response.DeleteErrors.Count, dDoe.Response.DeleteErrors.Count);
+                    Assert.Equal(doe.Response.DeleteErrors.Count, dDoe.Response.DeleteErrors.Count);
                     foreach (var error in dDoe.Response.DeleteErrors)
                     {
-                        Assert.IsNotNull(error.Code);
-                        Assert.IsNotNull(error.Key);
-                        Assert.IsNotNull(error.Message);
-                        Assert.IsNotNull(error.VersionId);
+                        Assert.NotNull(error.Code);
+                        Assert.NotNull(error.Key);
+                        Assert.NotNull(error.Message);
+                        Assert.NotNull(error.VersionId);
                     }
                 }
 
@@ -396,96 +272,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     var pue = e as S3PostUploadException;
                     var dPue = deserialized as S3PostUploadException;
 
-                    Assert.AreEqual(pue.ErrorCode, dPue.ErrorCode);
-                    Assert.AreEqual(pue.RequestId, dPue.RequestId);
-                    Assert.AreEqual(pue.HostId, dPue.HostId);
-                    Assert.AreEqual(pue.StatusCode, dPue.StatusCode);
-                    Assert.AreEqual(pue.ExtraFields.Count, dPue.ExtraFields.Count);
+                    Assert.Equal(pue.ErrorCode, dPue.ErrorCode);
+                    Assert.Equal(pue.RequestId, dPue.RequestId);
+                    Assert.Equal(pue.HostId, dPue.HostId);
+                    Assert.Equal(pue.StatusCode, dPue.StatusCode);
+                    Assert.Equal(pue.ExtraFields.Count, dPue.ExtraFields.Count);
                     foreach(var kvp in dPue.ExtraFields)
                     {
-                        Assert.IsFalse(string.IsNullOrEmpty(kvp.Key));
-                        Assert.IsFalse(string.IsNullOrEmpty(kvp.Value));
+                        Assert.False(string.IsNullOrEmpty(kvp.Key));
+                        Assert.False(string.IsNullOrEmpty(kvp.Value));
                     }
                 }
             }
         }
+#endif
 
-        [TestMethod]
-        [TestCategory("General")]
+        [Fact]
         public void JsonCountSerializationBug()
         {
             var json = @"{""Data"":{""NotCount"":""42""}}";
             var poco = JsonSerializer.Deserialize<Poco>(json);
-            Assert.AreEqual(1, poco.Data.Count);
-            Assert.AreEqual("42", poco.Data["NotCount"]);
+            Assert.Equal(1, poco.Data.Count);
+            Assert.Equal("42", poco.Data["NotCount"]);
 
             json = @"{""Data"":{""Count"":""Dracula""}}";
             poco = JsonSerializer.Deserialize<Poco>(json);
-            Assert.AreEqual(1, poco.Data.Count);
-            Assert.AreEqual("Dracula", poco.Data["Count"]);
+            Assert.Equal(1, poco.Data.Count);
+            Assert.Equal("Dracula", poco.Data["Count"]);
         }
         private class Poco
         {
             public Dictionary<string, string> Data { get; set; }
         }
 
-        [TestMethod]
-        [TestCategory("General")]
-        public void TestSDKExceptions()
-        {
-            var allTypes = new List<Type>();
-            foreach (Assembly ass in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                allTypes.AddRange(ass.GetExportedTypes());
-            }
-            Assert.AreNotEqual(0, allTypes.Count);
-
-            var exceptionType = typeof(Exception);
-
-            var binding = BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
-            var inputTypes = new Type[] { typeof(SerializationInfo), typeof(StreamingContext) };
-
-            var errors = new List<string>();
-
-            foreach (var type in allTypes)
-            {
-                var typeName = type.FullName;
-
-                if (type.FullName.IndexOf("Amazon.", StringComparison.OrdinalIgnoreCase) >= 0 &&
-                    exceptionType.IsAssignableFrom(type))
-                {
-                    var serializableAttributes = type.GetCustomAttributes(typeof(SerializableAttribute), false).ToList();
-
-                    // exceptions must have [Serializable] attribute
-                    if (serializableAttributes.Count == 0)
-                    {
-                        //exceptionsWithoutSerializeable.Add(type);
-                        errors.Add("Exception " + type.FullName + " exception types are not serializeable");
-                    }
-
-                    // exceptions must have serialization constructor
-                    var serializationConstructor = type.GetConstructor(binding, null, inputTypes, null);
-                    if (serializationConstructor == null)
-                        errors.Add("Type " + type.FullName + " missing serialization constructor");
-
-                    // exceptions which have extra fields on them, must overload GetObjectData
-                    var declaredFields = type.GetFields(BindingFlags.DeclaredOnly | BindingFlags.Instance);
-                    if (declaredFields.Length > 0)
-                    {
-                        var getObjectDataMethod = type.GetMethod("GetObjectData", binding, null, inputTypes, null);
-                        if (getObjectDataMethod == null)
-                            errors.Add("Type " + type.FullName + " missing serialization GetObjectData method");
-                    }
-                }
-            }
-
-            // report all errors
-            if (errors.Count > 0)
-                Assert.Fail("Errors found:" + string.Join(Environment.NewLine, errors.ToArray()));
-        }
-
-        [TestMethod]
-        [TestCategory("General")]
+        [Fact]
         public void TestLargeRetryCount()
         {
             var maxRetries = 1000;
@@ -510,150 +330,50 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        [TestMethod]
-        [TestCategory("General")]
-        public void TestClientDispose()
+        [Fact]
+        public async Task TestClientDispose()
         {
             IAmazonS3 client;
             using(client = new AmazonS3Client())
             {
-                var response = client.ListBuckets();
-                Assert.IsNotNull(response);
-                Assert.IsNotNull(response.ResponseMetadata);
-                Assert.IsNotNull(response.ResponseMetadata.RequestId);
-                Assert.IsFalse(string.IsNullOrEmpty(response.ResponseMetadata.RequestId));
+                var response = await client.ListBucketsAsync();
+                Assert.NotNull(response);
+                Assert.NotNull(response.ResponseMetadata);
+                Assert.NotNull(response.ResponseMetadata.RequestId);
+                Assert.False(string.IsNullOrEmpty(response.ResponseMetadata.RequestId));
             }
 
-            AssertExtensions.ExpectException(() => client.ListBuckets(), typeof(ObjectDisposedException));
-        }
-        
-        [TestMethod]
-        [TestCategory("General")]
-        [TestCategory("RequiresIAMUser")]
-        public void TestExpiringCredentials()
-        {
-            // test that non-expired credentials work
-            TestExpireOffset(returnExpiredCredentials: false);
-
-            // test that expired credentials do not work
-            TestExpireOffset(returnExpiredCredentials: true);
-
-
-            // test that various dates work
-            TestExpire(DateTime.Now, expectFailure: true);
-            TestExpire(DateTime.UtcNow, expectFailure: true);
-
-            // 1 minute offset
-            var epsilon = TimeSpan.FromMinutes(1);
-            
-            TestExpire(DateTime.Now + epsilon, expectFailure: false);
-            TestExpire(DateTime.UtcNow + epsilon, expectFailure: false);
-            TestExpire(DateTime.Now - epsilon, expectFailure: true);
-            TestExpire(DateTime.UtcNow - epsilon, expectFailure: true);
+            await Assert.ThrowsAsync<ObjectDisposedException>(() => client.ListBucketsAsync());
         }
 
-        private static void TestExpireOffset(bool returnExpiredCredentials)
+        [Fact]
+        public async Task TestManualClockCorrection()
         {
-            TimeSpan expireOffset;
-            if (returnExpiredCredentials)
-                expireOffset = TimeSpan.FromHours(-1);
-            else
-                expireOffset = TimeSpan.FromHours(6);
-
-            var creds = new ProxyRefreshingAWSCredentials(expireOffset);
-            TestCredentials(creds, returnExpiredCredentials);
-        }
-        private static void TestExpire(DateTime expire, bool expectFailure)
-        {
-            var creds = new ProxyRefreshingAWSCredentials(expire);
-            TestCredentials(creds, expectFailure);
-        }
-
-
-        private static void TestCredentials(ProxyRefreshingAWSCredentials creds, bool expectFailure)
-        {
-            using (var client = new AmazonS3Client(creds))
-            {
-                try
-                {
-                    client.ListBuckets();
-                    Assert.IsFalse(expectFailure);
-                    Assert.IsNotNull(creds.Expiration);
-                }
-                catch (AmazonClientException ace)
-                {
-                    Assert.IsTrue(expectFailure);
-                    Assert.IsNotNull(ace);
-                    Assert.IsNotNull(ace.Message);
-                    Assert.IsTrue(ace.Message.IndexOf("already") >= 0);
-                }
-            }
-        }
-
-        private class ProxyRefreshingAWSCredentials : RefreshingAWSCredentials
-        {
-            private TimeSpan expireOffset;
-            private DateTime? expireValue = null;
-
-            public ProxyRefreshingAWSCredentials()
-                : this(TimeSpan.FromHours(6))
-            { }
-            public ProxyRefreshingAWSCredentials(TimeSpan expireOffset)
-            {
-                this.expireOffset = expireOffset;
-            }
-            public ProxyRefreshingAWSCredentials(DateTime expireValue)
-            {
-                this.expireValue = expireValue;
-            }
-
-            protected override CredentialsRefreshState GenerateNewCredentials()
-            {
-                var credentials = UtilityMethods.CreateTemporaryCredentials();
-                var ic = credentials.GetCredentials();
-
-                DateTime expiration;
-                if (expireValue.HasValue)
-                {
-                    expiration = expireValue.Value;
-                }
-                else
-                {
-                    var now = DateTime.UtcNow;
-                    expiration = now + expireOffset;
-                }
-
-                return new CredentialsRefreshState(ic, expiration);
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("General")]
-        public void TestManualClockCorrection()
-        {
-            TestClients(TestServiceCallForManualClockCorrection);
+            await TestClientsAsync(TestServiceCallForManualClockCorrectionAsync);
         }
 
         // This test verifies that all service clients are able to
         // correctly handle clock skew errors.
         // By default it only tests a small subset of services.
-        [TestMethod]
-        [TestCategory("General")]
-        [Ignore("Skipping flaky test while design for clock skew behavior is defined")]
-        public void TestClockSkewCorrection()
+        [Fact(Skip = "Skipping flaky test while design for clock skew behavior is defined")]
+        public async Task TestClockSkewCorrection()
         {
+            // VerifyClockSkewSetting reads from App.config via ConfigurationManager, which is
+            // only available on .NET Framework. .NET 8 does not support the aws config section.
+#if NETFRAMEWORK
             VerifyClockSkewSetting();
-            TestClients(TestServiceCallForClockSkew);
+#endif
+            await TestClientsAsync(TestServiceCallForClockSkewAsync);
         }
 
-        private void TestClients(Action<ClockSkewTestContext> serviceCall)
+        private async Task TestClientsAsync(Func<ClockSkewTestContext, Task> serviceCall)
         {
             bool allPassed = true;
             foreach (var clientTest in clientTests)
             {
                 try
                 {
-                    TestClient(clientTest.Client, clientTest.Method, clientTest.Request, serviceCall);
+                    await TestClientAsync(clientTest.Client, clientTest.Method, clientTest.Request, serviceCall);
                     Console.WriteLine("Client test succeeded");
                 }
                 catch (Exception e)
@@ -663,9 +383,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
             }
 
-            Assert.IsTrue(allPassed);
+            Assert.True(allPassed);
         }
 
+        // ConfigurationManager and App.config are only available on .NET Framework.
+        // .NET 8 does not support reading the aws config section from App.config.
+#if NETFRAMEWORK
         private static void VerifyClockSkewSetting()
         {
             var clockSkewSetting = AWSConfigs.CorrectForClockSkew;
@@ -677,17 +400,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var attribute = awsNode.Attributes["correctForClockSkew"];
             var attributeValueText = attribute.Value;
             bool configClockSkewSetting;
-            Assert.IsTrue(bool.TryParse(attributeValueText, out configClockSkewSetting));
-            Assert.AreEqual(clockSkewSetting, configClockSkewSetting);
+            Assert.True(bool.TryParse(attributeValueText, out configClockSkewSetting));
+            Assert.Equal(clockSkewSetting, configClockSkewSetting);
         }
+#endif
 
         private class ClockSkewTestContext
         {
             public IClientConfig Config;
-            public Action TestAction;
+            public Func<Task> TestAction;
         }
 
-        private static void TestServiceCallForManualClockCorrection(ClockSkewTestContext context)
+        private static async Task TestServiceCallForManualClockCorrectionAsync(ClockSkewTestContext context)
         {
             var oldManualClockCorrection = AWSConfigs.ManualClockCorrection;
             var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
@@ -699,20 +423,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
                 AWSConfigs.ManualClockCorrection = null;
-                AssertExtensions.ExpectException(context.TestAction);
+                await Assert.ThrowsAnyAsync<Exception>(context.TestAction);
 
                 AWSConfigs.ManualClockCorrection = IncorrectPositiveClockSkewOffset.Negate();
-                context.TestAction();
+                await context.TestAction();
 
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
                 AWSConfigs.ManualClockCorrection = IncorrectNegativeClockSkewOffset.Negate();
-                context.TestAction();
+                await context.TestAction();
 
                 AWSConfigs.ManualClockCorrection = TimeSpan.FromTicks(IncorrectNegativeClockSkewOffset.Negate().Ticks * 2);
-                AssertExtensions.ExpectException(context.TestAction);
+                await Assert.ThrowsAnyAsync<Exception>(context.TestAction);
 
                 AWSConfigs.ManualClockCorrection = TimeSpan.Zero;
-                AssertExtensions.ExpectException(context.TestAction);
+                await Assert.ThrowsAnyAsync<Exception>(context.TestAction);
             }
             finally
             {
@@ -722,7 +446,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        private static void TestServiceCallForClockSkew(ClockSkewTestContext context)
+        private static async Task TestServiceCallForClockSkewAsync(ClockSkewTestContext context)
         {
             var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
             var oldUtcNowSource = GetUtcNowSource();
@@ -731,31 +455,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 AWSConfigs.CorrectForClockSkew = true;
                 SetClockSkewCorrection(TimeSpan.Zero);
-                context.TestAction();
+                await context.TestAction();
 
                 SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
-                context.TestAction();
+                await context.TestAction();
 
                 SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
-                context.TestAction();
+                await context.TestAction();
 
                 Console.WriteLine("Simulating positive clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
                 AWSConfigs.CorrectForClockSkew = false;
-                AssertExtensions.ExpectException(context.TestAction);
-                    
+                await Assert.ThrowsAnyAsync<Exception>(context.TestAction);
+
                 AWSConfigs.CorrectForClockSkew = true;
                 SetClockSkewCorrection(TimeSpan.Zero);
-                context.TestAction();
+                await context.TestAction();
 
                 Console.WriteLine("Simulating negative clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
                 AWSConfigs.CorrectForClockSkew = true;
                 SetClockSkewCorrection(TimeSpan.Zero);
-                context.TestAction();
+                await context.TestAction();
 
                 AWSConfigs.CorrectForClockSkew = false;
-                AssertExtensions.ExpectException(context.TestAction);
+                await Assert.ThrowsAnyAsync<Exception>(context.TestAction);
             }
             finally
             {
@@ -764,30 +488,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-
         // ClientTest helpers
-        private void TestClient(Type clientType, string methodName, object request, Action<ClockSkewTestContext> serviceCall)
+        private async Task TestClientAsync(Type clientType, string methodName, object request, Func<ClockSkewTestContext, Task> serviceCall)
         {
             Console.WriteLine("Testing client: " + clientType.FullName);
             var client = Activator.CreateInstance(clientType, null) as IDisposable;
 
             // Optionally modify client config
             var config = GetConfig(client);
-            //config.UseHttp = true;
-
             using (client)
             {
-                Action action = GetClientAction(client, methodName, request);
-
-                // Optionally log the signer type
-                //var signer = GetSigner(client);
-                //Console.WriteLine("Signer: " + signer.GetType().FullName);
-
-                serviceCall(
-                    new ClockSkewTestContext {
-                        TestAction = action,
-                        Config = config
-                });
+                Func<Task> action = GetClientAsyncAction(client, methodName, request);
+                await serviceCall(new ClockSkewTestContext { TestAction = action, Config = config });
             }
         }
         private class ClientTest
@@ -799,29 +511,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private static List<ClientTest> clientTests = new List<ClientTest>
         {
             // Partial list of clients to test
-            new ClientTest { Client = typeof(Amazon.CognitoSync.AmazonCognitoSyncClient), Method = "ListIdentityPoolUsage", Request = new Amazon.CognitoSync.Model.ListIdentityPoolUsageRequest { MaxResults = 1 } },
-            new ClientTest { Client = typeof(Amazon.EC2.AmazonEC2Client), Method = "DescribeKeyPairs" },
-            new ClientTest { Client = typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), Method = "ListTables" },
-            new ClientTest { Client = typeof(AmazonS3Client), Method = "ListBuckets" },
-            new ClientTest { Client = typeof(Amazon.Glacier.AmazonGlacierClient), Method = "ListVaults" },
-            new ClientTest { Client = typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), Method = "ListGroups" },
+            new ClientTest { Client = typeof(Amazon.CognitoSync.AmazonCognitoSyncClient), Method = "ListIdentityPoolUsageAsync", Request = new Amazon.CognitoSync.Model.ListIdentityPoolUsageRequest { MaxResults = 1 } },
+            new ClientTest { Client = typeof(Amazon.EC2.AmazonEC2Client), Method = "DescribeKeyPairsAsync" },
+            new ClientTest { Client = typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), Method = "ListTablesAsync" },
+            new ClientTest { Client = typeof(AmazonS3Client), Method = "ListBucketsAsync" },
+            new ClientTest { Client = typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), Method = "ListGroupsAsync" },
         };
 
-        // Reflection helpers
-        private AbstractAWSSigner GetSigner(object client)
-        {
-            var signerProperty = typeof(AmazonServiceClient).GetProperty("Signer", BindingFlags.Instance | BindingFlags.NonPublic);
-            var signer = signerProperty.GetValue(client, null) as AbstractAWSSigner;
-            return signer;
-        }
         private ClientConfig GetConfig(object client)
         {
             var configProperty = typeof(AmazonServiceClient).GetProperty("Config", BindingFlags.Instance | BindingFlags.Public);
-            var config = configProperty.GetValue(client, null) as ClientConfig;
-            return config;
-
+            return configProperty.GetValue(client, null) as ClientConfig;
         }
-        private static Action GetClientAction(object client, string methodName, object request)
+
+        private static Func<Task> GetClientAsyncAction(object client, string methodName, object request)
         {
             Type requestType = typeof(AmazonWebServiceRequest);
             Type clientType = client.GetType();
@@ -832,7 +535,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 if (string.Equals(m.Name, methodName, StringComparison.OrdinalIgnoreCase))
                 {
                     parameters = m.GetParameters();
-                    if (parameters.Length == 1 && requestType.IsAssignableFrom(parameters[0].ParameterType))
+                    // Match async methods: single request param, or request + CancellationToken
+                    if (parameters.Length >= 1 && requestType.IsAssignableFrom(parameters[0].ParameterType))
                     {
                         method = m;
                         break;
@@ -843,25 +547,46 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 throw new InvalidOperationException("Cannot find method [" + methodName + "]");
 
             parameters = method.GetParameters();
-            object[] inputs = request == null ? null : new object[] { request };
-            if (inputs == null)
+            object[] inputs;
+            if (request != null)
+            {
+                if (parameters.Length == 2) // request + CancellationToken
+                    inputs = new object[] { request, CancellationToken.None };
+                else
+                    inputs = new object[] { request };
+            }
+            else
             {
                 if (parameters.Length == 0)
                 {
                     inputs = null;
+                }
+                else if (parameters.Length == 1 && parameters[0].ParameterType == typeof(CancellationToken))
+                {
+                    inputs = new object[] { CancellationToken.None };
                 }
                 else if (parameters.Length == 1)
                 {
                     var input = Activator.CreateInstance(parameters[0].ParameterType);
                     inputs = new object[] { input };
                 }
+                else if (parameters.Length == 2)
+                {
+                    var input = Activator.CreateInstance(parameters[0].ParameterType);
+                    inputs = new object[] { input, CancellationToken.None };
+                }
                 else
                 {
-                    throw new InvalidOperationException("Method requires more than 1 input");
+                    throw new InvalidOperationException("Method requires more than expected inputs");
                 }
             }
-            Action action = () => method.Invoke(client, inputs);
-            return action;
+
+            return async () =>
+            {
+                var result = method.Invoke(client, inputs);
+                if (result is Task task)
+                    await task;
+            };
         }
     }
 }

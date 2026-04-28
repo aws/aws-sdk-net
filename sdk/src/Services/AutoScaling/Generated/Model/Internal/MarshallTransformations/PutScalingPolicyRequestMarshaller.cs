@@ -569,6 +569,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static PutScalingPolicyRequestMarshaller _instance = new PutScalingPolicyRequestMarshaller();        

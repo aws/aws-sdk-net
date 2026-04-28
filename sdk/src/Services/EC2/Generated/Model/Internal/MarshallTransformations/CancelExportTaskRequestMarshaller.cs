@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ExportTaskId", StringUtils.FromString(publicRequest.ExportTaskId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CancelExportTaskRequestMarshaller _instance = new CancelExportTaskRequestMarshaller();        

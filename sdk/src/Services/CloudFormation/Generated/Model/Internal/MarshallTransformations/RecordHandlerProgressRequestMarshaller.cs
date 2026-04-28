@@ -88,6 +88,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("StatusMessage", StringUtils.FromString(publicRequest.StatusMessage));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RecordHandlerProgressRequestMarshaller _instance = new RecordHandlerProgressRequestMarshaller();        

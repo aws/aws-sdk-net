@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private FieldBasedTooltip _fieldBasedTooltip;
         private SelectedTooltipType _selectedTooltipType;
+        private SheetTooltip _sheetTooltip;
         private Visibility _tooltipVisibility;
 
         /// <summary>
@@ -82,6 +83,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSelectedTooltipType()
         {
             return this._selectedTooltipType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SheetTooltip.
+        /// </summary>
+        public SheetTooltip SheetTooltip
+        {
+            get { return this._sheetTooltip; }
+            set { this._sheetTooltip = value; }
+        }
+
+        // Check to see if SheetTooltip property is set
+        internal bool IsSetSheetTooltip()
+        {
+            return this._sheetTooltip != null;
         }
 
         /// <summary>

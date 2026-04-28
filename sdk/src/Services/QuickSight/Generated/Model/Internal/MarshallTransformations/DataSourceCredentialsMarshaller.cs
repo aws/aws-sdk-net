@@ -74,6 +74,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetOAuthClientCredentials())
+            {
+                context.Writer.WritePropertyName("OAuthClientCredentials");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OAuthClientCredentialsMarshaller.Instance;
+                marshaller.Marshall(requestObject.OAuthClientCredentials, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");

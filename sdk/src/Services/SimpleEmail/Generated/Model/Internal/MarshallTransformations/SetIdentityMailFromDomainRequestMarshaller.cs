@@ -72,6 +72,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("MailFromDomain", StringUtils.FromString(publicRequest.MailFromDomain));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SetIdentityMailFromDomainRequestMarshaller _instance = new SetIdentityMailFromDomainRequestMarshaller();        

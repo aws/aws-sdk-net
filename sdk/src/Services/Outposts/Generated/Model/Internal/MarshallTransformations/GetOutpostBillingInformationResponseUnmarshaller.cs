@@ -64,6 +64,18 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PaymentOption", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PaymentOption = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("PaymentTerm", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PaymentTerm = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Subscriptions", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Subscription, SubscriptionUnmarshaller>(SubscriptionUnmarshaller.Instance);

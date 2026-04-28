@@ -34,6 +34,11 @@
       "members":{
         "message":{"shape":"String"}
       },
+      "error":{
+        "code":"Customized",
+        "httpStatusCode":402,
+        "senderFault":true
+      },
       "exception":true
     },
     "NoCustomCodeError":{

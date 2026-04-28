@@ -110,6 +110,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TransitGatewayRouteTableId", StringUtils.FromString(publicRequest.TransitGatewayRouteTableId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateTransitGatewayRouteTableAnnouncementRequestMarshaller _instance = new CreateTransitGatewayRouteTableAnnouncementRequestMarshaller();        

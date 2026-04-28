@@ -78,6 +78,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetIdentityPoliciesRequestMarshaller _instance = new GetIdentityPoliciesRequestMarshaller();        

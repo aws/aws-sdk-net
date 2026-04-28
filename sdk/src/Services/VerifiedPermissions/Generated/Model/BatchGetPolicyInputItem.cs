@@ -42,6 +42,20 @@ namespace Amazon.VerifiedPermissions.Model
         /// <para>
         /// The identifier of the policy you want information about.
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the policy name in place of the policy ID. When using a name, prefix it
+        /// with <c>name/</c>. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ID: <c>SPEXAMPLEabcdefg111111</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Name: <c>name/example-policy</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
         public string PolicyId

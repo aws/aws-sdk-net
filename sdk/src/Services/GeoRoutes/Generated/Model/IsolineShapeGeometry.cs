@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Geometry of the connection between different Isoline components.
+    /// Represents the shape of a reachable area. The geometry can be provided either as coordinate
+    /// pairs (<c>Polygon</c>) or in encoded format (<c>PolylinePolygon</c>), matching the
+    /// format specified in the request.
     /// </summary>
     public partial class IsolineShapeGeometry
     {
@@ -40,9 +42,16 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Polygon. 
         /// <para>
-        /// A list of Isoline Polygons, for each isoline polygon, it contains polygons of the
-        /// first linear ring (the outer ring) and from 2nd item to the last item (the inner rings).
+        /// A series of coordinate rings defining the reachable area when Simple geometry format
+        /// is requested. Each ring is a list of <c>[longitude, latitude]</c> coordinate pairs.
+        /// The first ring defines the outer boundary; subsequent rings define holes representing
+        /// unreachable areas.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Polygon and PolylinePolygon are mutually exclusive properties.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -65,10 +74,16 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property PolylinePolygon. 
         /// <para>
-        /// A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it contains PolylinePolygon
-        /// of the first linear ring (the outer ring) and from 2nd item to the last item (the
-        /// inner rings). For more information on polyline encoding, see <a href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.
+        /// An encoded representation of the reachable area when FlexiblePolyline geometry format
+        /// is requested. Provides a compact representation suitable for transmission and storage.
+        /// The first string defines the outer boundary; subsequent strings define holes representing
+        /// unreachable areas. For more information on polyline encoding, see <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Polygon and PolylinePolygon are mutually exclusive properties.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

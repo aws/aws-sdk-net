@@ -64,6 +64,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListPhoneNumbersOptedOutRequestMarshaller _instance = new ListPhoneNumbersOptedOutRequestMarshaller();        

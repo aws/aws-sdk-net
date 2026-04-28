@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Resource", StringUtils.FromString(publicRequest.Resource));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeIdFormatRequestMarshaller _instance = new DescribeIdFormatRequestMarshaller();        

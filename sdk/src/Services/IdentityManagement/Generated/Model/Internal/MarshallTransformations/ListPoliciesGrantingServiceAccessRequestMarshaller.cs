@@ -82,6 +82,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListPoliciesGrantingServiceAccessRequestMarshaller _instance = new ListPoliciesGrantingServiceAccessRequestMarshaller();        

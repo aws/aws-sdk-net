@@ -68,6 +68,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RoleName", StringUtils.FromString(publicRequest.RoleName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetRolePolicyRequestMarshaller _instance = new GetRolePolicyRequestMarshaller();        

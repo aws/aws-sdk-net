@@ -133,6 +133,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ReplaceImageCriteriaInAllowedImagesSettingsRequestMarshaller _instance = new ReplaceImageCriteriaInAllowedImagesSettingsRequestMarshaller();        

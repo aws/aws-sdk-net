@@ -80,6 +80,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TypeArn", StringUtils.FromString(publicRequest.TypeArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListHookResultsRequestMarshaller _instance = new ListHookResultsRequestMarshaller();        

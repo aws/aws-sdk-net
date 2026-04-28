@@ -33,11 +33,20 @@ namespace Amazon.SecurityHub.Model
     /// Container for the parameters to the GetResourcesStatisticsV2 operation.
     /// Retrieves statistical information about Amazon Web Services resources and their associated
     /// security findings.
+    /// 
+    ///  
+    /// <para>
+    /// You can use the <c>Scopes</c> parameter to define the data boundary for the query.
+    /// Currently, <c>Scopes</c> supports <c>AwsOrganizations</c>, which lets you aggregate
+    /// resources from your entire organization or from specific organizational units. Only
+    /// the delegated administrator account can use <c>Scopes</c>.
+    /// </para>
     /// </summary>
     public partial class GetResourcesStatisticsV2Request : AmazonSecurityHubRequest
     {
         private List<ResourceGroupByRule> _groupByRules = AWSConfigs.InitializeCollections ? new List<ResourceGroupByRule>() : null;
         private int? _maxStatisticResults;
+        private ResourceScopes _scopes;
         private SortOrder _sortOrder;
 
         /// <summary>
@@ -81,6 +90,37 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetMaxStatisticResults()
         {
             return this._maxStatisticResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scopes. 
+        /// <para>
+        /// Limits the results to resources from specific organizational units or from the delegated
+        /// administrator's organization. Only the delegated administrator account can use this
+        /// parameter. Other accounts receive an <c>AccessDeniedException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is optional. If you omit it, the delegated administrator sees statistics
+        /// from all accounts across the entire organization. Other accounts see only statistics
+        /// for their own resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify up to 10 entries in <c>Scopes.AwsOrganizations</c>. If multiple entries
+        /// are specified, the entries are combined using OR logic.
+        /// </para>
+        /// </summary>
+        public ResourceScopes Scopes
+        {
+            get { return this._scopes; }
+            set { this._scopes = value; }
+        }
+
+        // Check to see if Scopes property is set
+        internal bool IsSetScopes()
+        {
+            return this._scopes != null;
         }
 
         /// <summary>

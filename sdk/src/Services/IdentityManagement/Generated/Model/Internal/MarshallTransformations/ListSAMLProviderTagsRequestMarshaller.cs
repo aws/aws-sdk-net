@@ -72,6 +72,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SAMLProviderArn", StringUtils.FromString(publicRequest.SAMLProviderArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListSAMLProviderTagsRequestMarshaller _instance = new ListSAMLProviderTagsRequestMarshaller();        

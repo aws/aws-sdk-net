@@ -2939,6 +2939,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityManagerMonitoredTagKeyStatus.
+    /// </summary>
+    public class CapacityManagerMonitoredTagKeyStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Activated for CapacityManagerMonitoredTagKeyStatus
+        /// </summary>
+        public static readonly CapacityManagerMonitoredTagKeyStatus Activated = new CapacityManagerMonitoredTagKeyStatus("activated");
+        /// <summary>
+        /// Constant Activating for CapacityManagerMonitoredTagKeyStatus
+        /// </summary>
+        public static readonly CapacityManagerMonitoredTagKeyStatus Activating = new CapacityManagerMonitoredTagKeyStatus("activating");
+        /// <summary>
+        /// Constant Deactivating for CapacityManagerMonitoredTagKeyStatus
+        /// </summary>
+        public static readonly CapacityManagerMonitoredTagKeyStatus Deactivating = new CapacityManagerMonitoredTagKeyStatus("deactivating");
+        /// <summary>
+        /// Constant Suspended for CapacityManagerMonitoredTagKeyStatus
+        /// </summary>
+        public static readonly CapacityManagerMonitoredTagKeyStatus Suspended = new CapacityManagerMonitoredTagKeyStatus("suspended");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityManagerMonitoredTagKeyStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityManagerMonitoredTagKeyStatus FindValue(string value)
+        {
+            return FindValue<CapacityManagerMonitoredTagKeyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityManagerMonitoredTagKeyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapacityManagerStatus.
     /// </summary>
     public class CapacityManagerStatus : ConstantClass
@@ -4810,6 +4868,10 @@ namespace Amazon.EC2
         /// Constant OnDemand for DefaultTargetCapacityType
         /// </summary>
         public static readonly DefaultTargetCapacityType OnDemand = new DefaultTargetCapacityType("on-demand");
+        /// <summary>
+        /// Constant ReservedCapacity for DefaultTargetCapacityType
+        /// </summary>
+        public static readonly DefaultTargetCapacityType ReservedCapacity = new DefaultTargetCapacityType("reserved-capacity");
         /// <summary>
         /// Constant Spot for DefaultTargetCapacityType
         /// </summary>
@@ -6701,6 +6763,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly FilterByDimension AccountId = new FilterByDimension("account-id");
         /// <summary>
+        /// Constant AccountName for FilterByDimension
+        /// </summary>
+        public static readonly FilterByDimension AccountName = new FilterByDimension("account-name");
+        /// <summary>
         /// Constant AvailabilityZoneId for FilterByDimension
         /// </summary>
         public static readonly FilterByDimension AvailabilityZoneId = new FilterByDimension("availability-zone-id");
@@ -7255,6 +7321,52 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type FleetReservationType.
+    /// </summary>
+    public class FleetReservationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InterruptibleCapacityReservation for FleetReservationType
+        /// </summary>
+        public static readonly FleetReservationType InterruptibleCapacityReservation = new FleetReservationType("interruptible-capacity-reservation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetReservationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetReservationType FindValue(string value)
+        {
+            return FindValue<FleetReservationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetReservationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetStateCode.
     /// </summary>
     public class FleetStateCode : ConstantClass
@@ -7724,6 +7836,10 @@ namespace Amazon.EC2
         /// Constant AccountId for GroupBy
         /// </summary>
         public static readonly GroupBy AccountId = new GroupBy("account-id");
+        /// <summary>
+        /// Constant AccountName for GroupBy
+        /// </summary>
+        public static readonly GroupBy AccountName = new GroupBy("account-name");
         /// <summary>
         /// Constant AvailabilityZoneId for GroupBy
         /// </summary>
@@ -9402,6 +9518,10 @@ namespace Amazon.EC2
     public class InstanceLifecycle : ConstantClass
     {
 
+        /// <summary>
+        /// Constant InterruptibleCapacityReservation for InstanceLifecycle
+        /// </summary>
+        public static readonly InstanceLifecycle InterruptibleCapacityReservation = new InstanceLifecycle("interruptible-capacity-reservation");
         /// <summary>
         /// Constant OnDemand for InstanceLifecycle
         /// </summary>

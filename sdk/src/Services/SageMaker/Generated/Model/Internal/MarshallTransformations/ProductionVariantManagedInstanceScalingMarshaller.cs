@@ -58,6 +58,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.MinInstanceCount.Value);
             }
 
+            if(requestObject.IsSetScaleInPolicy())
+            {
+                context.Writer.WritePropertyName("ScaleInPolicy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProductionVariantManagedInstanceScalingScaleInPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.ScaleInPolicy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");

@@ -136,7 +136,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
+        /// See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
         /// the Request Lifecycle</a> for details on the life time of a delegation request at
         /// each state.
         /// </para>
@@ -372,8 +372,9 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// If the <c>PermissionPolicy</c> includes role creation permissions, this element will
         /// include the list of permissions boundary policies associated with the role creation.
-        /// See <a href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
-        /// for IAM entities</a> for more details about IAM permission boundaries. 
+        /// See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+        /// boundaries for IAM entities</a> for more details about IAM permission boundaries.
+        /// 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -419,8 +420,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
+        /// See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
         /// the Request Lifecycle</a> for an explanation of how these states are transitioned.
+        /// 
         /// </para>
         /// </summary>
         public StateType State

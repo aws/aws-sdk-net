@@ -73,7 +73,7 @@ namespace Amazon.ConfigService.Model
         /// A string, in JSON format, that is passed to your organization Config rule Lambda function.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=1024)]
         public string InputParameters
         {
             get { return this._inputParameters; }

@@ -68,6 +68,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("FinalSnapshotIdentifier", StringUtils.FromString(publicRequest.FinalSnapshotIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteCacheClusterRequestMarshaller _instance = new DeleteCacheClusterRequestMarshaller();        

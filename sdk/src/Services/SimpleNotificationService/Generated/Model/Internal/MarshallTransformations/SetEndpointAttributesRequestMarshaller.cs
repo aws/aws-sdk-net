@@ -79,6 +79,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     request.Parameters.Add("EndpointArn", StringUtils.FromString(publicRequest.EndpointArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SetEndpointAttributesRequestMarshaller _instance = new SetEndpointAttributesRequestMarshaller();        

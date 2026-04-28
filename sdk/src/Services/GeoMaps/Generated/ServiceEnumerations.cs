@@ -127,6 +127,14 @@ namespace Amazon.GeoMaps
     {
 
         /// <summary>
+        /// Constant High for ContourDensity
+        /// </summary>
+        public static readonly ContourDensity High = new ContourDensity("High");
+        /// <summary>
+        /// Constant Low for ContourDensity
+        /// </summary>
+        public static readonly ContourDensity Low = new ContourDensity("Low");
+        /// <summary>
         /// Constant Medium for ContourDensity
         /// </summary>
         public static readonly ContourDensity Medium = new ContourDensity("Medium");
@@ -550,6 +558,10 @@ namespace Amazon.GeoMaps
         /// Constant All for Traffic
         /// </summary>
         public static readonly Traffic All = new Traffic("All");
+        /// <summary>
+        /// Constant Congestion for Traffic
+        /// </summary>
+        public static readonly Traffic Congestion = new Traffic("Congestion");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

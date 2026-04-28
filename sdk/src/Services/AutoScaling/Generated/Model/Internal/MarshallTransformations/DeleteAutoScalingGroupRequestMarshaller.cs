@@ -68,6 +68,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ForceDelete", StringUtils.FromBool(publicRequest.ForceDelete));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteAutoScalingGroupRequestMarshaller _instance = new DeleteAutoScalingGroupRequestMarshaller();        

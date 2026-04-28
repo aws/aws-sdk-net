@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TransitGatewayMeteringPolicyId", StringUtils.FromString(publicRequest.TransitGatewayMeteringPolicyId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteTransitGatewayMeteringPolicyEntryRequestMarshaller _instance = new DeleteTransitGatewayMeteringPolicyEntryRequestMarshaller();        

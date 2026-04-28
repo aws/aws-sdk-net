@@ -88,6 +88,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("InstanceMetadataTags", StringUtils.FromString(publicRequest.InstanceMetadataTags));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyInstanceMetadataOptionsRequestMarshaller _instance = new ModifyInstanceMetadataOptionsRequestMarshaller();        

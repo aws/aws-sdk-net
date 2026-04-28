@@ -43,7 +43,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property IsoCountryCode. 
         /// <para>
-        /// The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. 
+        /// The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. This
+        /// field is optional and may not be present for origination identity types that are not
+        /// country-specific, such as RCS agents.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=2)]
@@ -71,7 +73,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3)]
+        [AWSProperty(Required=true, Min=1, Max=4)]
         public List<string> NumberCapabilities
         {
             get { return this._numberCapabilities; }

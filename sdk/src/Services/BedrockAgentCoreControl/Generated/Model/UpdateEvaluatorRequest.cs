@@ -87,8 +87,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property EvaluatorConfig. 
         /// <para>
-        ///  The updated configuration for the evaluator, including LLM-as-a-Judge settings with
-        /// instructions, rating scale, and model configuration. 
+        ///  The updated configuration for the evaluator. Specify either LLM-as-a-Judge settings
+        /// with instructions, rating scale, and model configuration, or code-based settings with
+        /// a customer-managed Lambda function. 
         /// </para>
         /// </summary>
         public EvaluatorConfig EvaluatorConfig

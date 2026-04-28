@@ -44,6 +44,7 @@ namespace Amazon.ECS.Model
     {
         private string _cluster;
         private string _containerInstance;
+        private string _daemonName;
         private DesiredStatus _desiredStatus;
         private string _family;
         private LaunchType _launchType;
@@ -90,6 +91,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetContainerInstance()
         {
             return this._containerInstance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DaemonName. 
+        /// <para>
+        /// The name of the daemon to use when filtering the <c>ListTasks</c> results. Specifying
+        /// a <c>daemonName</c> limits the results to tasks that belong to that daemon.
+        /// </para>
+        /// </summary>
+        public string DaemonName
+        {
+            get { return this._daemonName; }
+            set { this._daemonName = value; }
+        }
+
+        // Check to see if DaemonName property is set
+        internal bool IsSetDaemonName()
+        {
+            return this._daemonName != null;
         }
 
         /// <summary>

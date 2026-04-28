@@ -910,7 +910,8 @@ namespace Amazon.VerifiedPermissions
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
-        /// The request failed because another request to modify a resource occurred at the same.
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
@@ -1089,7 +1090,8 @@ namespace Amazon.VerifiedPermissions
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
-        /// The request failed because another request to modify a resource occurred at the same.
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
@@ -1256,7 +1258,8 @@ namespace Amazon.VerifiedPermissions
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
-        /// The request failed because another request to modify a resource occurred at the same.
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
@@ -1380,6 +1383,177 @@ namespace Amazon.VerifiedPermissions
         }
         #endregion
         
+        #region  CreatePolicyStoreAlias
+
+        internal virtual CreatePolicyStoreAliasResponse CreatePolicyStoreAlias(CreatePolicyStoreAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePolicyStoreAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePolicyStoreAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePolicyStoreAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a policy store alias for the specified policy store. A policy store alias
+        /// is an alternative identifier that you can use to reference a policy store in API operations.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is idempotent. If multiple CreatePolicyStoreAlias requests are made
+        /// where the <c>aliasName</c> and <c>policyStoreId</c> fields are the same between the
+        /// requests, subsequent requests will be ignored. For each duplicate CreatePolicyStoreAlias
+        /// request, a Success response will be returned and a new policy store alias will not
+        /// be created.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Verified Permissions is <i> <a href="https://wikipedia.org/wiki/Eventual_consistency">eventually
+        /// consistent</a> </i>. It can take a few seconds for a new or changed element to propagate
+        /// through the service and be visible in the results of other Verified Permissions operations.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicyStoreAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePolicyStoreAlias service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ResourceNotFoundException">
+        /// The request failed because it references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ServiceQuotaExceededException">
+        /// The request failed because it would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicyStoreAlias">REST API Reference for CreatePolicyStoreAlias Operation</seealso>
+        public virtual Task<CreatePolicyStoreAliasResponse> CreatePolicyStoreAliasAsync(CreatePolicyStoreAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePolicyStoreAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePolicyStoreAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePolicyStoreAliasResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreatePolicyTemplate
 
         internal virtual CreatePolicyTemplateResponse CreatePolicyTemplate(CreatePolicyTemplateRequest request)
@@ -1419,7 +1593,8 @@ namespace Amazon.VerifiedPermissions
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
-        /// The request failed because another request to modify a resource occurred at the same.
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
@@ -1576,7 +1751,8 @@ namespace Amazon.VerifiedPermissions
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
-        /// The request failed because another request to modify a resource occurred at the same.
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
@@ -1732,7 +1908,8 @@ namespace Amazon.VerifiedPermissions
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
-        /// The request failed because another request to modify a resource occurred at the same.
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
@@ -2010,6 +2187,168 @@ namespace Amazon.VerifiedPermissions
         }
         #endregion
         
+        #region  DeletePolicyStoreAlias
+
+        internal virtual DeletePolicyStoreAliasResponse DeletePolicyStoreAlias(DeletePolicyStoreAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePolicyStoreAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyStoreAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePolicyStoreAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified policy store alias.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is idempotent. If you specify a policy store alias that does not exist,
+        /// the request response will still return a successful HTTP 200 status code.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a policy store alias is deleted, it enters the <c>PendingDeletion</c> state.
+        /// When a policy store alias is in the <c>PendingDeletion</c> state, new policy store
+        /// aliases cannot be created with the same name. If the policy store alias is used in
+        /// an API that has a <c>policyStoreId</c> field, the operation will fail with a <c>ResourceNotFound</c>
+        /// exception.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyStoreAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePolicyStoreAlias service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InvalidStateException">
+        /// The policy store can't be deleted because deletion protection is enabled. To delete
+        /// this policy store, disable deletion protection.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/DeletePolicyStoreAlias">REST API Reference for DeletePolicyStoreAlias Operation</seealso>
+        public virtual Task<DeletePolicyStoreAliasResponse> DeletePolicyStoreAliasAsync(DeletePolicyStoreAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePolicyStoreAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePolicyStoreAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePolicyStoreAliasResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeletePolicyTemplate
 
         internal virtual DeletePolicyTemplateResponse DeletePolicyTemplate(DeletePolicyTemplateRequest request)
@@ -2044,7 +2383,8 @@ namespace Amazon.VerifiedPermissions
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
-        /// The request failed because another request to modify a resource occurred at the same.
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
@@ -2606,6 +2946,153 @@ namespace Amazon.VerifiedPermissions
             options.ResponseUnmarshaller = GetPolicyStoreResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPolicyStoreResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetPolicyStoreAlias
+
+        internal virtual GetPolicyStoreAliasResponse GetPolicyStoreAlias(GetPolicyStoreAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicyStoreAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyStoreAliasResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyStoreAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves details about the specified policy store alias.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyStoreAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPolicyStoreAlias service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ResourceNotFoundException">
+        /// The request failed because it references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/GetPolicyStoreAlias">REST API Reference for GetPolicyStoreAlias Operation</seealso>
+        public virtual Task<GetPolicyStoreAliasResponse> GetPolicyStoreAliasAsync(GetPolicyStoreAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicyStoreAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyStoreAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPolicyStoreAliasResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -3516,6 +4003,151 @@ namespace Amazon.VerifiedPermissions
         }
         #endregion
         
+        #region  ListPolicyStoreAliases
+
+        internal virtual ListPolicyStoreAliasesResponse ListPolicyStoreAliases(ListPolicyStoreAliasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyStoreAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyStoreAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyStoreAliasesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a paginated list of all policy store aliases in the calling Amazon Web Services
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyStoreAliases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicyStoreAliases service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/ListPolicyStoreAliases">REST API Reference for ListPolicyStoreAliases Operation</seealso>
+        public virtual Task<ListPolicyStoreAliasesResponse> ListPolicyStoreAliasesAsync(ListPolicyStoreAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyStoreAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyStoreAliasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPolicyStoreAliasesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListPolicyStores
 
         internal virtual ListPolicyStoresResponse ListPolicyStores(ListPolicyStoresRequest request)
@@ -3994,7 +4626,8 @@ namespace Amazon.VerifiedPermissions
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
-        /// The request failed because another request to modify a resource occurred at the same.
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
@@ -4475,7 +5108,8 @@ namespace Amazon.VerifiedPermissions
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
-        /// The request failed because another request to modify a resource occurred at the same.
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
@@ -4679,7 +5313,8 @@ namespace Amazon.VerifiedPermissions
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
-        /// The request failed because another request to modify a resource occurred at the same.
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
@@ -4840,7 +5475,8 @@ namespace Amazon.VerifiedPermissions
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
-        /// The request failed because another request to modify a resource occurred at the same.
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later
@@ -5006,7 +5642,8 @@ namespace Amazon.VerifiedPermissions
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.ConflictException">
-        /// The request failed because another request to modify a resource occurred at the same.
+        /// The request failed because another request to modify a resource occurred at the same
+        /// time.
         /// </exception>
         /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
         /// The request failed because of an internal error. Try your request again later

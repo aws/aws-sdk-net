@@ -10,6 +10,7 @@ public class FakeWebResponseData : IWebResponseData
         this.StatusCode = HttpStatusCode.OK;
         this.IsSuccessStatusCode = true;
         this.Headers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        this.EventHeaders = new Dictionary<string, IEventStreamHeader>();
     }
 
     public Dictionary<string, string> Headers { get; set; }
@@ -19,6 +20,8 @@ public class FakeWebResponseData : IWebResponseData
     public HttpStatusCode StatusCode { get; set; }
 
     public bool IsSuccessStatusCode { get; set; }
+
+    public Dictionary<string, IEventStreamHeader> EventHeaders {get; set;}
 
     public string[] GetHeaderNames()
     {
@@ -36,6 +39,18 @@ public class FakeWebResponseData : IWebResponseData
             return this.Headers[headerName];
         else
             return null;
+    }
+
+    public IEventStreamHeader GetEventStreamHeader(string headerName)
+    {
+        if (EventHeaders.ContainsKey(headerName))
+            return EventHeaders[headerName];
+        return null;
+    }
+
+    public bool IsEventHeaderPresent(string headerName)
+    {
+        return EventHeaders.ContainsKey(headerName);
     }
 
     public long ContentLength { get; set; }

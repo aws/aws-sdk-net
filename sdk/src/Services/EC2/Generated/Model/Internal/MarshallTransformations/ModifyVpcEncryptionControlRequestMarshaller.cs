@@ -104,6 +104,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VpcPeeringExclusion", StringUtils.FromString(publicRequest.VpcPeeringExclusion));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyVpcEncryptionControlRequestMarshaller _instance = new ModifyVpcEncryptionControlRequestMarshaller();        

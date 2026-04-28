@@ -354,6 +354,10 @@ namespace Amazon.MailManager
         /// <exception cref="Amazon.MailManager.Model.ServiceQuotaExceededException">
         /// Occurs when an operation exceeds a predefined service quota or limit.
         /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ThrottlingException">
+        /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
+        /// further requests.
+        /// </exception>
         /// <exception cref="Amazon.MailManager.Model.ValidationException">
         /// The request validation has failed. For details, see the accompanying error message.
         /// </exception>
@@ -791,6 +795,9 @@ namespace Amazon.MailManager
         /// Occurs when a service's request rate limit is exceeded, resulting in throttling of
         /// further requests.
         /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ValidationException">
+        /// The request validation has failed. For details, see the accompanying error message.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mailmanager-2023-10-17/DeleteAddressList">REST API Reference for DeleteAddressList Operation</seealso>
         public virtual Task<DeleteAddressListResponse> DeleteAddressListAsync(DeleteAddressListRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1041,6 +1048,9 @@ namespace Amazon.MailManager
         /// <returns>The response from the DeregisterMemberFromAddressList service method, as returned by MailManager.</returns>
         /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
         /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
         /// Occurs when a requested resource is not found.
@@ -2250,6 +2260,9 @@ namespace Amazon.MailManager
         /// <returns>The response from the RegisterMemberToAddressList service method, as returned by MailManager.</returns>
         /// <exception cref="Amazon.MailManager.Model.AccessDeniedException">
         /// Occurs when a user is denied access to a specific resource or action.
+        /// </exception>
+        /// <exception cref="Amazon.MailManager.Model.ConflictException">
+        /// The request configuration has conflicts. For details, see the accompanying error message.
         /// </exception>
         /// <exception cref="Amazon.MailManager.Model.ResourceNotFoundException">
         /// Occurs when a requested resource is not found.

@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("OptInStatus", StringUtils.FromString(publicRequest.OptInStatus));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyAvailabilityZoneGroupRequestMarshaller _instance = new ModifyAvailabilityZoneGroupRequestMarshaller();        

@@ -85,6 +85,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CacheId);
             }
 
+            if(publicRequest.IsSetConfigurationName())
+            {
+                context.Writer.WritePropertyName("configurationName");
+                context.Writer.WriteStringValue(publicRequest.ConfigurationName);
+            }
+
             if(publicRequest.IsSetLogLevel())
             {
                 context.Writer.WritePropertyName("logLevel");
@@ -95,6 +101,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNetworkingMode())
+            {
+                context.Writer.WritePropertyName("networkingMode");
+                context.Writer.WriteStringValue(publicRequest.NetworkingMode);
             }
 
             if(publicRequest.IsSetOutputUri())

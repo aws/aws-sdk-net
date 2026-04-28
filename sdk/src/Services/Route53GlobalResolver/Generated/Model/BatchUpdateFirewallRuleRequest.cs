@@ -33,6 +33,15 @@ namespace Amazon.Route53GlobalResolver.Model
     /// Container for the parameters to the BatchUpdateFirewallRule operation.
     /// Updates multiple DNS firewall rules in a single operation. This is more efficient
     /// than updating rules individually.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+    /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+    /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+    /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class BatchUpdateFirewallRuleRequest : AmazonRoute53GlobalResolverRequest
     {

@@ -16,6 +16,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.Runtime.EventStreams;
 using Xunit;
 
 namespace Amazon.BedrockRuntime;
@@ -686,7 +687,6 @@ public class BedrockChatClientHttpMockedTests : IClassFixture<BedrockChatClientH
     private class StubWebResponseData : IWebResponseData
     {
         private readonly IHttpResponseBody _httpResponseBody;
-
         public StubWebResponseData(string jsonResponse, Dictionary<string, string> headers = null,
             HttpStatusCode statusCode = HttpStatusCode.OK)
         {
@@ -709,6 +709,7 @@ public class BedrockChatClientHttpMockedTests : IClassFixture<BedrockChatClientH
 
         public IHttpResponseBody ResponseBody => _httpResponseBody;
 
+        public Dictionary<string, IEventStreamHeader> EventHeaders { get; set; }
         public string[] GetHeaderNames()
         {
             return Headers.Keys.ToArray();
@@ -722,6 +723,18 @@ public class BedrockChatClientHttpMockedTests : IClassFixture<BedrockChatClientH
         public string GetHeaderValue(string headerName)
         {
             return Headers.ContainsKey(headerName) ? Headers[headerName] : null;
+        }
+
+        public IEventStreamHeader GetEventStreamHeader(string headerName)
+        {
+            if (EventHeaders.ContainsKey(headerName))
+                return EventHeaders[headerName];
+            return null;
+        }
+
+        public bool IsEventHeaderPresent(string headerName)
+        {
+            return EventHeaders.ContainsKey(headerName);
         }
     }
 

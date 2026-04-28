@@ -95,6 +95,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.MaxStatisticResults.Value);
             }
 
+            if(publicRequest.IsSetScopes())
+            {
+                context.Writer.WritePropertyName("Scopes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourceScopesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Scopes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSortOrder())
             {
                 context.Writer.WritePropertyName("SortOrder");

@@ -39,9 +39,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// An array of objects, one for each account whose status wasn’t changed. Each object
+        /// An array of objects, one for each account whose status wasn't changed. Each object
         /// identifies the account and explains why the status of automated sensitive data discovery
-        /// wasn’t changed for the account. This value is null if the request succeeded for all
+        /// wasn't changed for the account. This value is null if the request succeeded for all
         /// specified accounts.
         /// </para>
         /// <para />

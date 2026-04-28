@@ -173,6 +173,22 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListRegistries operation
+        ///</summary>
+        public IListRegistriesPaginator ListRegistries(ListRegistriesRequest request) 
+        {
+            return new ListRegistriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRegistryRecords operation
+        ///</summary>
+        public IListRegistryRecordsPaginator ListRegistryRecords(ListRegistryRecordsRequest request) 
+        {
+            return new ListRegistryRecordsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWorkloadIdentities operation
         ///</summary>
         public IListWorkloadIdentitiesPaginator ListWorkloadIdentities(ListWorkloadIdentitiesRequest request) 

@@ -68,6 +68,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DelegationRequestId", StringUtils.FromString(publicRequest.DelegationRequestId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetDelegationRequestRequestMarshaller _instance = new GetDelegationRequestRequestMarshaller();        

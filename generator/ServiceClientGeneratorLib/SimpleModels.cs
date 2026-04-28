@@ -235,7 +235,9 @@ namespace ServiceClientGenerator
                 this.model.Customizations.ShapeModifiers.TryGetValue(this.ModelName, out var shapeModifier);
                 if (shapeModifier != null)
                 {
-                    list.AddRange(shapeModifier.InjectedPropertyNames.Select(i => new EnumEntry(i)));
+                    list.AddRange(shapeModifier.InjectedPropertyNames
+                        .Where(i => !list.Any(e => e.MarshallName == i))
+                        .Select(i => new EnumEntry(i)));
                 }
 
                 // Add values from enums that are configured to be merged into this enum

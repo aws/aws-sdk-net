@@ -72,6 +72,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PrimaryReplicationGroupId", StringUtils.FromString(publicRequest.PrimaryReplicationGroupId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static FailoverGlobalReplicationGroupRequestMarshaller _instance = new FailoverGlobalReplicationGroupRequestMarshaller();        

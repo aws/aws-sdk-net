@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NetworkInsightsAccessScopeId", StringUtils.FromString(publicRequest.NetworkInsightsAccessScopeId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetNetworkInsightsAccessScopeContentRequestMarshaller _instance = new GetNetworkInsightsAccessScopeContentRequestMarshaller();        

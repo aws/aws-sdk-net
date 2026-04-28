@@ -42,6 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _memoryExecutionRoleArn;
         private List<MemoryStrategyInput> _memoryStrategies = AWSConfigs.InitializeCollections ? new List<MemoryStrategyInput>() : null;
         private string _name;
+        private StreamDeliveryResources _streamDeliveryResources;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -181,6 +182,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamDeliveryResources. 
+        /// <para>
+        /// Configuration for streaming memory record data to external resources.
+        /// </para>
+        /// </summary>
+        public StreamDeliveryResources StreamDeliveryResources
+        {
+            get { return this._streamDeliveryResources; }
+            set { this._streamDeliveryResources = value; }
+        }
+
+        // Check to see if StreamDeliveryResources property is set
+        internal bool IsSetStreamDeliveryResources()
+        {
+            return this._streamDeliveryResources != null;
         }
 
         /// <summary>

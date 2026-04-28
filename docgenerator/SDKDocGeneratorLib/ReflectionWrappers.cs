@@ -4,9 +4,38 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Reflection;
+using System.Runtime.Loader;
 
 namespace SDKDocGenerator
 {
+    /// <summary>
+    /// An isolated AssemblyLoadContext that allows loading assemblies with the same name
+    /// from different paths. This is used for loading supplemental platform assemblies
+    /// (e.g., net8.0) when the primary platform assembly (e.g., net472) is already loaded.
+    /// </summary>
+    public class IsolatedAssemblyLoadContext : AssemblyLoadContext
+    {
+        private readonly string _basePath;
+
+        public IsolatedAssemblyLoadContext(string basePath)
+        {
+            _basePath = Path.GetDirectoryName(basePath) ?? string.Empty;
+        }
+
+        protected override Assembly Load(AssemblyName assemblyName)
+        {
+            // Try to load from the same directory as the main assembly
+            var assemblyPath = Path.Combine(_basePath, $"{assemblyName.Name}.dll");
+            if (File.Exists(assemblyPath))
+            {
+                return LoadFromAssemblyPath(assemblyPath);
+            }
+
+            // Fall back to default context for system assemblies
+            return null;
+        }
+    }
+
     public abstract class AbstractWrapper : MarshalByRefObject
     {
         public string DocId
@@ -46,15 +75,32 @@ namespace SDKDocGenerator
         IDictionary<string, TypeWrapper> _typesByFullName;
         IDictionary<string, IList<TypeWrapper>> _typesByNamespace;
         AbstractTypeProvider _deferredTypesProvider;
+        IsolatedAssemblyLoadContext _isolatedContext;
 
         public AssemblyWrapper(string docId)
             : base(docId)
         {
         }
 
-        public void LoadAssembly(string path)
+        /// <summary>
+        /// Loads the assembly from the specified path.
+        /// </summary>
+        /// <param name="path">The path to the assembly file.</param>
+        /// <param name="useIsolatedContext">
+        /// If true, loads the assembly in an isolated AssemblyLoadContext to avoid
+        /// conflicts when loading multiple versions of the same assembly.
+        /// </param>
+        public void LoadAssembly(string path, bool useIsolatedContext = false)
         {
-            _assembly = Assembly.LoadFrom(path);
+            if (useIsolatedContext)
+            {
+                _isolatedContext = new IsolatedAssemblyLoadContext(path);
+                _assembly = _isolatedContext.LoadFromAssemblyPath(path);
+            }
+            else
+            {
+                _assembly = Assembly.LoadFrom(path);
+            }
 
             _allTypes = new List<TypeWrapper>();
             _typesByNamespace = new Dictionary<string, IList<TypeWrapper>>();
@@ -174,6 +220,23 @@ namespace SDKDocGenerator
         public override string ToString()
         {
             return this._assembly.FullName;
+        }
+
+        /// <summary>
+        /// Unloads the isolated assembly context if one was used.
+        /// This helps release resources when the assembly is no longer needed.
+        /// Note: Full unloading is only available in .NET Core 3.0+ with collectible contexts.
+        /// For netstandard2.0, we just null out references to allow GC.
+        /// </summary>
+        public void Unload()
+        {
+            _assembly = null;
+            _allTypes = null;
+            _typesByFullName = null;
+            _typesByNamespace = null;
+
+            // Just null out the reference; full unloading is not available in all frameworks
+            _isolatedContext = null;
         }
     }
 

@@ -68,6 +68,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.MediaConnectFlow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("mediaLiveChannel", targetDepth))
+                {
+                    var unmarshaller = MediaLiveChannelRouterInputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MediaLiveChannel = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("merge", targetDepth))
                 {
                     var unmarshaller = MergeRouterInputConfigurationUnmarshaller.Instance;

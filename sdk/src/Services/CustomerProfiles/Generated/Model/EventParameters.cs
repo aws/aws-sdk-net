@@ -36,6 +36,7 @@ namespace Amazon.CustomerProfiles.Model
     {
         private string _eventType;
         private double? _eventValueThreshold;
+        private double? _eventWeight;
 
         /// <summary>
         /// Gets and sets the property EventType. 
@@ -72,6 +73,26 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetEventValueThreshold()
         {
             return this._eventValueThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventWeight. 
+        /// <para>
+        /// The weight of the event type. A higher weight means higher importance of the event
+        /// type for the created solution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public double? EventWeight
+        {
+            get { return this._eventWeight; }
+            set { this._eventWeight = value; }
+        }
+
+        // Check to see if EventWeight property is set
+        internal bool IsSetEventWeight()
+        {
+            return this._eventWeight.HasValue; 
         }
 
     }

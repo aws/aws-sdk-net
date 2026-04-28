@@ -69,6 +69,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetNamespaceTemplates())
+            {
+                context.Writer.WritePropertyName("namespaceTemplates");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectNamespaceTemplatesListValue in requestObject.NamespaceTemplates)
+                {
+                        context.Writer.WriteStringValue(requestObjectNamespaceTemplatesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetReflectionConfiguration())
             {
                 context.Writer.WritePropertyName("reflectionConfiguration");

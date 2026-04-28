@@ -68,6 +68,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogicalInterfaceNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("mediaConnectRouterSettings", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<MediaConnectRouterOutputDestinationSettings, MediaConnectRouterOutputDestinationSettingsUnmarshaller>(MediaConnectRouterOutputDestinationSettingsUnmarshaller.Instance);
+                    unmarshalledObject.MediaConnectRouterSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("mediaPackageSettings", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MediaPackageOutputDestinationSettings, MediaPackageOutputDestinationSettingsUnmarshaller>(MediaPackageOutputDestinationSettingsUnmarshaller.Instance);

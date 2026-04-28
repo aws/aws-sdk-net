@@ -128,6 +128,17 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetMaintenanceSchedule())
+            {
+                context.Writer.WritePropertyName("maintenanceSchedule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MaintenanceScheduleMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MaintenanceSchedule, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

@@ -31,7 +31,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Details about the connection between a Lambda function and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
-    /// EFS file system</a>.
+    /// EFS file system</a> or an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+    /// S3 Files file system</a>.
     /// </summary>
     public partial class FileSystemConfig
     {
@@ -41,11 +42,11 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access
-        /// to the file system.
+        /// The Amazon Resource Name (ARN) of the Amazon EFS or Amazon S3 Files access point that
+        /// provides access to the file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=200)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Arn
         {
             get { return this._arn; }

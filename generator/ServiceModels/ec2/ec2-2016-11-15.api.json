@@ -4760,6 +4760,15 @@
       "input":{"shape":"GetCapacityManagerMetricDimensionsRequest"},
       "output":{"shape":"GetCapacityManagerMetricDimensionsResult"}
     },
+    "GetCapacityManagerMonitoredTagKeys":{
+      "name":"GetCapacityManagerMonitoredTagKeys",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetCapacityManagerMonitoredTagKeysRequest"},
+      "output":{"shape":"GetCapacityManagerMonitoredTagKeysResult"}
+    },
     "GetCapacityReservationUsage":{
       "name":"GetCapacityReservationUsage",
       "http":{
@@ -6719,6 +6728,15 @@
       },
       "input":{"shape":"UnmonitorInstancesRequest"},
       "output":{"shape":"UnmonitorInstancesResult"}
+    },
+    "UpdateCapacityManagerMonitoredTagKeys":{
+      "name":"UpdateCapacityManagerMonitoredTagKeys",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateCapacityManagerMonitoredTagKeysRequest"},
+      "output":{"shape":"UpdateCapacityManagerMonitoredTagKeysResult"}
     },
     "UpdateCapacityManagerOrganizationsAccess":{
       "name":"UpdateCapacityManagerOrganizationsAccess",
@@ -10296,7 +10314,31 @@
         "Count":{
           "shape":"Integer",
           "locationName":"count"
+        },
+        "AllocationMetadata":{
+          "shape":"CapacityAllocationMetadataList",
+          "locationName":"allocationMetadataList"
         }
+      }
+    },
+    "CapacityAllocationMetadataEntry":{
+      "type":"structure",
+      "members":{
+        "Key":{
+          "shape":"String",
+          "locationName":"key"
+        },
+        "Value":{
+          "shape":"String",
+          "locationName":"value"
+        }
+      }
+    },
+    "CapacityAllocationMetadataList":{
+      "type":"list",
+      "member":{
+        "shape":"CapacityAllocationMetadataEntry",
+        "locationName":"item"
       }
     },
     "CapacityAllocations":{
@@ -10734,6 +10776,10 @@
           "shape":"String",
           "locationName":"accountId"
         },
+        "AccountName":{
+          "shape":"String",
+          "locationName":"accountName"
+        },
         "InstanceFamily":{
           "shape":"String",
           "locationName":"instanceFamily"
@@ -10789,8 +10835,53 @@
         "ReservationUnusedFinancialOwner":{
           "shape":"String",
           "locationName":"reservationUnusedFinancialOwner"
+        },
+        "Tags":{
+          "shape":"CapacityManagerTagDimensionSet",
+          "locationName":"tagSet"
         }
       }
+    },
+    "CapacityManagerMonitoredTagKey":{
+      "type":"structure",
+      "members":{
+        "TagKey":{
+          "shape":"String",
+          "locationName":"tagKey"
+        },
+        "Status":{
+          "shape":"CapacityManagerMonitoredTagKeyStatus",
+          "locationName":"status"
+        },
+        "StatusMessage":{
+          "shape":"String",
+          "locationName":"statusMessage"
+        },
+        "CapacityManagerProvided":{
+          "shape":"Boolean",
+          "locationName":"capacityManagerProvided"
+        },
+        "EarliestDatapointTimestamp":{
+          "shape":"MillisecondDateTime",
+          "locationName":"earliestDatapointTimestamp"
+        }
+      }
+    },
+    "CapacityManagerMonitoredTagKeyList":{
+      "type":"list",
+      "member":{
+        "shape":"CapacityManagerMonitoredTagKey",
+        "locationName":"item"
+      }
+    },
+    "CapacityManagerMonitoredTagKeyStatus":{
+      "type":"string",
+      "enum":[
+        "activating",
+        "activated",
+        "deactivating",
+        "suspended"
+      ]
     },
     "CapacityManagerStatus":{
       "type":"string",
@@ -10798,6 +10889,26 @@
         "enabled",
         "disabled"
       ]
+    },
+    "CapacityManagerTagDimension":{
+      "type":"structure",
+      "members":{
+        "Key":{
+          "shape":"String",
+          "locationName":"key"
+        },
+        "Value":{
+          "shape":"String",
+          "locationName":"value"
+        }
+      }
+    },
+    "CapacityManagerTagDimensionSet":{
+      "type":"list",
+      "member":{
+        "shape":"CapacityManagerTagDimension",
+        "locationName":"item"
+      }
     },
     "CapacityReservation":{
       "type":"structure",
@@ -12169,10 +12280,15 @@
       "type":"string",
       "pattern":"[a-z]{2}-[a-z]+-[1-9]+"
     },
+    "ConditionValue":{
+      "type":"string",
+      "max":300,
+      "min":0
+    },
     "ConditionValueList":{
       "type":"list",
       "member":{
-        "shape":"String",
+        "shape":"ConditionValue",
         "locationName":"item"
       },
       "max":10,
@@ -13205,6 +13321,7 @@
         },
         "SpotOptions":{"shape":"SpotOptionsRequest"},
         "OnDemandOptions":{"shape":"OnDemandOptionsRequest"},
+        "ReservedCapacityOptions":{"shape":"ReservedCapacityOptionsRequest"},
         "ExcessCapacityTerminationPolicy":{"shape":"FleetExcessCapacityTerminationPolicy"},
         "LaunchTemplateConfigs":{"shape":"FleetLaunchTemplateConfigListRequest"},
         "TargetCapacitySpecification":{"shape":"TargetCapacitySpecificationRequest"},
@@ -16371,6 +16488,23 @@
         "locationName":"item"
       }
     },
+    "DefaultConnectionTrackingConfiguration":{
+      "type":"structure",
+      "members":{
+        "DefaultTcpEstablishedTimeout":{
+          "shape":"DefaultTcpEstablishedTimeout",
+          "locationName":"defaultTcpEstablishedTimeout"
+        },
+        "DefaultUdpTimeout":{
+          "shape":"DefaultUdpTimeout",
+          "locationName":"defaultUdpTimeout"
+        },
+        "DefaultUdpStreamTimeout":{
+          "shape":"DefaultUdpStreamTimeout",
+          "locationName":"defaultUdpStreamTimeout"
+        }
+      }
+    },
     "DefaultEnaQueueCountPerInterface":{"type":"integer"},
     "DefaultHttpTokensEnforcedState":{
       "type":"string",
@@ -16416,9 +16550,13 @@
       "enum":[
         "spot",
         "on-demand",
-        "capacity-block"
+        "capacity-block",
+        "reserved-capacity"
       ]
     },
+    "DefaultTcpEstablishedTimeout":{"type":"integer"},
+    "DefaultUdpStreamTimeout":{"type":"integer"},
+    "DefaultUdpTimeout":{"type":"integer"},
     "DefaultingDhcpOptionsId":{"type":"string"},
     "DeleteCapacityManagerDataExportRequest":{
       "type":"structure",
@@ -27908,6 +28046,7 @@
         "resource-region",
         "availability-zone-id",
         "account-id",
+        "account-name",
         "instance-family",
         "instance-type",
         "instance-platform",
@@ -27922,7 +28061,9 @@
         "reservation-state",
         "reservation-instance-match-criteria",
         "reservation-unused-financial-owner"
-      ]
+      ],
+      "max":300,
+      "min":0
     },
     "FilterList":{
       "type":"list",
@@ -28186,6 +28327,10 @@
           "shape":"OnDemandOptions",
           "locationName":"onDemandOptions"
         },
+        "ReservedCapacityOptions":{
+          "shape":"ReservedCapacityOptions",
+          "locationName":"reservedCapacityOptions"
+        },
         "Tags":{
           "shape":"TagList",
           "locationName":"tagSet"
@@ -28397,6 +28542,10 @@
         "launch",
         "launch-before-terminate"
       ]
+    },
+    "FleetReservationType":{
+      "type":"string",
+      "enum":["interruptible-capacity-reservation"]
     },
     "FleetSet":{
       "type":"list",
@@ -29000,6 +29149,32 @@
         },
         "NextToken":{
           "shape":"NextToken",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "GetCapacityManagerMonitoredTagKeysRequest":{
+      "type":"structure",
+      "members":{
+        "MaxResults":{"shape":"GetCapacityManagerMonitoredTagKeysRequestMaxResults"},
+        "NextToken":{"shape":"String"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "GetCapacityManagerMonitoredTagKeysRequestMaxResults":{
+      "type":"integer",
+      "max":1000,
+      "min":1
+    },
+    "GetCapacityManagerMonitoredTagKeysResult":{
+      "type":"structure",
+      "members":{
+        "CapacityManagerTagKeys":{
+          "shape":"CapacityManagerMonitoredTagKeyList",
+          "locationName":"capacityManagerTagKeySet"
+        },
+        "NextToken":{
+          "shape":"String",
           "locationName":"nextToken"
         }
       }
@@ -30742,6 +30917,7 @@
         "resource-region",
         "availability-zone-id",
         "account-id",
+        "account-name",
         "instance-family",
         "instance-type",
         "instance-platform",
@@ -30756,7 +30932,9 @@
         "reservation-state",
         "reservation-instance-match-criteria",
         "reservation-unused-financial-owner"
-      ]
+      ],
+      "max":300,
+      "min":0
     },
     "GroupBySet":{
       "type":"list",
@@ -33655,7 +33833,8 @@
       "type":"string",
       "enum":[
         "spot",
-        "on-demand"
+        "on-demand",
+        "interruptible-capacity-reservation"
       ]
     },
     "InstanceLifecycleType":{
@@ -43781,6 +43960,10 @@
           "shape":"FlexibleEnaQueuesSupport",
           "locationName":"flexibleEnaQueuesSupport"
         },
+        "ConnectionTrackingConfiguration":{
+          "shape":"DefaultConnectionTrackingConfiguration",
+          "locationName":"connectionTrackingConfiguration"
+        },
         "SecondaryNetworkSupported":{
           "shape":"SecondaryNetworkSupportedFlag",
           "locationName":"secondaryNetworkSupported"
@@ -47886,6 +48069,20 @@
         "odcr"
       ]
     },
+    "ReservationTypeList":{
+      "type":"list",
+      "member":{
+        "shape":"FleetReservationType",
+        "locationName":"item"
+      }
+    },
+    "ReservationTypeListRequest":{
+      "type":"list",
+      "member":{
+        "shape":"FleetReservationType",
+        "locationName":"ReservationType"
+      }
+    },
     "ReservationValue":{
       "type":"structure",
       "members":{
@@ -47900,6 +48097,24 @@
         "RemainingUpfrontValue":{
           "shape":"String",
           "locationName":"remainingUpfrontValue"
+        }
+      }
+    },
+    "ReservedCapacityOptions":{
+      "type":"structure",
+      "members":{
+        "ReservationTypes":{
+          "shape":"ReservationTypeList",
+          "locationName":"reservationTypeSet"
+        }
+      }
+    },
+    "ReservedCapacityOptionsRequest":{
+      "type":"structure",
+      "members":{
+        "ReservationTypes":{
+          "shape":"ReservationTypeListRequest",
+          "locationName":"ReservationType"
         }
       }
     },
@@ -56138,6 +56353,33 @@
       "member":{
         "shape":"UnsuccessfulItem",
         "locationName":"item"
+      }
+    },
+    "UpdateCapacityManagerMonitoredTagKeysRequest":{
+      "type":"structure",
+      "members":{
+        "ActivateTagKeys":{
+          "shape":"ValueStringList",
+          "locationName":"ActivateTagKey"
+        },
+        "DeactivateTagKeys":{
+          "shape":"ValueStringList",
+          "locationName":"DeactivateTagKey"
+        },
+        "DryRun":{"shape":"Boolean"},
+        "ClientToken":{
+          "shape":"String",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "UpdateCapacityManagerMonitoredTagKeysResult":{
+      "type":"structure",
+      "members":{
+        "CapacityManagerTagKeys":{
+          "shape":"CapacityManagerMonitoredTagKeyList",
+          "locationName":"capacityManagerTagKeySet"
+        }
       }
     },
     "UpdateCapacityManagerOrganizationsAccessRequest":{

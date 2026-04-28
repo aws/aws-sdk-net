@@ -46,6 +46,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCodeBased())
+            {
+                context.Writer.WritePropertyName("codeBased");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CodeBasedEvaluatorConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CodeBased, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetLlmAsAJudge())
             {
                 context.Writer.WritePropertyName("llmAsAJudge");

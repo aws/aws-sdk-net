@@ -103,6 +103,8 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetWebIdentityTokenRequestMarshaller _instance = new GetWebIdentityTokenRequestMarshaller();        

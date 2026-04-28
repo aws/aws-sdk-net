@@ -106,6 +106,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
             return request;
         }
                     private static BatchPutAttributesRequestMarshaller _instance = new BatchPutAttributesRequestMarshaller();        

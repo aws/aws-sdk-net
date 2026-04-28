@@ -63,6 +63,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.GlueConnectionName);
             }
 
+            if(requestObject.IsSetGlueConnectionNames())
+            {
+                context.Writer.WritePropertyName("glueConnectionNames");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectGlueConnectionNamesListValue in requestObject.GlueConnectionNames)
+                {
+                        context.Writer.WriteStringValue(requestObjectGlueConnectionNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetGlueVersion())
             {
                 context.Writer.WritePropertyName("glueVersion");

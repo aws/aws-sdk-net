@@ -298,48 +298,5 @@ namespace AWSSDK.ProtocolTests.RpcV2Protocol
             Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
         }
 
-        /// <summary>
-        /// Clients SHOULD tolerate seeing a null value in a dense map, and
-        /// they SHOULD drop the null key-value pair.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("ProtocolTest")]
-        [TestCategory("ResponseTest")]
-        [TestCategory("RpcV2Protocol")]
-        public void RpcV2CborDeserializesDenseSetMapAndSkipsNullResponse()
-        {
-            // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/cbor";
-            webResponseData.Headers["smithy-protocol"] = "rpc-v2-cbor";
-            byte[] bytes = Convert.FromBase64String("oWtkZW5zZVNldE1hcKNheIBheYJhYWFiYXr2");
-            var stream = new MemoryStream(bytes);
-            var context = new CborUnmarshallerContext(stream,true,webResponseData);
-
-            // Act
-            var unmarshalledResponse = new RpcV2CborDenseMapsResponseUnmarshaller().Unmarshall(context);
-            var expectedResponse = new RpcV2CborDenseMapsResponse
-            {
-                DenseSetMap = new Dictionary<string, List<string>>()
-                {
-
-                    { "x",  new List<string>()
-                    {
-                    } },
-                    { "y",  new List<string>()
-                    {
-                        "a",
-                        "b",
-                    } },
-                },
-            };
-
-            // Assert
-            var actualResponse = (RpcV2CborDenseMapsResponse)unmarshalledResponse;
-            Comparer.CompareObjects<RpcV2CborDenseMapsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
-        }
-
     }
 }

@@ -34,12 +34,35 @@ namespace Amazon.ObservabilityAdmin.Model
     /// </summary>
     public partial class TelemetryRule
     {
+        private bool? _allRegions;
         private TelemetryDestinationConfiguration _destinationConfiguration;
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ResourceType _resourceType;
         private string _scope;
         private string _selectionCriteria;
         private List<string> _telemetrySourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TelemetryType _telemetryType;
+
+        /// <summary>
+        /// Gets and sets the property AllRegions. 
+        /// <para>
+        ///  If set to <c>true</c>, the telemetry rule is replicated to all Amazon Web Services
+        /// Regions where Amazon CloudWatch Observability Admin is available in the current partition.
+        /// When new regions become available, the rule automatically replicates to them. Mutually
+        /// exclusive with <c>Regions</c>. 
+        /// </para>
+        /// </summary>
+        public bool? AllRegions
+        {
+            get { return this._allRegions; }
+            set { this._allRegions = value; }
+        }
+
+        // Check to see if AllRegions property is set
+        internal bool IsSetAllRegions()
+        {
+            return this._allRegions.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationConfiguration. 
@@ -57,6 +80,32 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetDestinationConfiguration()
         {
             return this._destinationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
+        ///  An optional list of Amazon Web Services Regions where this telemetry rule should
+        /// be replicated. When specified, the rule is created in the home region and automatically
+        /// replicated to all listed regions. Mutually exclusive with <c>AllRegions</c>. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<string> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -3192,6 +3192,50 @@ namespace Amazon.AppStream
         }
         #endregion
         
+        #region  DrainSessionInstance
+
+        internal virtual DrainSessionInstanceResponse DrainSessionInstance(DrainSessionInstanceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DrainSessionInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DrainSessionInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DrainSessionInstanceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Drains the instance hosting the specified streaming session. The instance stops accepting
+        /// new sessions while existing sessions continue uninterrupted. Once all sessions end,
+        /// the instance is reclaimed and replaced. This only applies to multi-session fleets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DrainSessionInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DrainSessionInstance service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DrainSessionInstance">REST API Reference for DrainSessionInstance Operation</seealso>
+        public virtual Task<DrainSessionInstanceResponse> DrainSessionInstanceAsync(DrainSessionInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DrainSessionInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DrainSessionInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DrainSessionInstanceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  EnableUser
 
         internal virtual EnableUserResponse EnableUser(EnableUserRequest request)

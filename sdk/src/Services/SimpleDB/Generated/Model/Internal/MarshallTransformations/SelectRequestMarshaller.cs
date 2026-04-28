@@ -72,6 +72,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SelectExpression", StringUtils.FromString(publicRequest.SelectExpression));
                 }
             }
+
             return request;
         }
                     private static SelectRequestMarshaller _instance = new SelectRequestMarshaller();        

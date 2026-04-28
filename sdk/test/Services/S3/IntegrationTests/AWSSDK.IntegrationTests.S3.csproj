@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net472;net8.0</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE;ASYNC_AWAIT;LOCAL_FILE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <AssemblyName>AWSSDK.IntegrationTests.S3</AssemblyName>
+    <PackageId>AWSSDK.IntegrationTests.S3</PackageId>
+
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <NoWarn>CS1591,CS0612,CS0618</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="**/obj/**" />
+    <None Remove="**/obj/**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      Use xunit.v3.core directly instead of the xunit.v3 metapackage.
+      The metapackage includes a v2 compatibility shim (xunit 2.x) which causes CS0433
+      type ambiguity between xunit.core v2 and xunit.v3.core. The individual package
+      has no such dependency.
+    -->
+    <PackageReference Include="xunit.v3.core" Version="3.2.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.csproj" />
+    <ProjectReference Include="../../../Common/AWSSDK.CommonTest.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj" />
+    <ProjectReference Include="../../../../src/Services/S3Control/AWSSDK.S3Control.NetFramework.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
+    <ProjectReference Include="../../../../src/Services/S3/AWSSDK.S3.NetFramework.csproj" />
+    <ProjectReference Include="../../../../src/Services/KeyManagementService/AWSSDK.KeyManagementService.NetFramework.csproj" />
+    <ProjectReference Include="../../../../src/Services/SQS/AWSSDK.SQS.NetFramework.csproj" />
+    <ProjectReference Include="../../../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetFramework.csproj" />
+    <ProjectReference Include="../../../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetFramework.csproj" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+    <ProjectReference Include="../../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetStandard.csproj" />
+    <ProjectReference Include="../../../../src/Services/S3Control/AWSSDK.S3Control.NetStandard.csproj" />
+    <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="../../../../src/Services/S3/AWSSDK.S3.NetStandard.csproj" />
+    <ProjectReference Include="../../../../src/Services/KeyManagementService/AWSSDK.KeyManagementService.NetStandard.csproj" />
+    <ProjectReference Include="../../../../src/Services/SQS/AWSSDK.SQS.NetStandard.csproj" />
+    <ProjectReference Include="../../../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetStandard.csproj" />
+    <ProjectReference Include="../../../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetStandard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedResource/*" />
+  </ItemGroup>
+
+</Project>

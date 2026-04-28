@@ -48,10 +48,10 @@
         <value>
             <example>
                 <para>
-                    Creates a new link between RTB applications
+                    Creates a new link between two RTB applications. Requires peerGatewayId to specify the target gateway.
                 </para>
                 <code
-                    title="Create a new link"
+                    title="Create a standard link between gateways"
                     source=".\AWSSDKDocSamples\RTBFabric\RTBFabric.GeneratedSamples.cs"
                     region="example-1" />
             </example>

@@ -42,6 +42,14 @@ namespace Amazon.ConnectCases
         /// Constant RelatedItemCreated for AuditEventType
         /// </summary>
         public static readonly AuditEventType RelatedItemCreated = new AuditEventType("RelatedItem.Created");
+        /// <summary>
+        /// Constant RelatedItemDeleted for AuditEventType
+        /// </summary>
+        public static readonly AuditEventType RelatedItemDeleted = new AuditEventType("RelatedItem.Deleted");
+        /// <summary>
+        /// Constant RelatedItemUpdated for AuditEventType
+        /// </summary>
+        public static readonly AuditEventType RelatedItemUpdated = new AuditEventType("RelatedItem.Updated");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

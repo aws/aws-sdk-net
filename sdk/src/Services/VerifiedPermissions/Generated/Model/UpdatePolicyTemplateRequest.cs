@@ -52,6 +52,7 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class UpdatePolicyTemplateRequest : AmazonVerifiedPermissionsRequest
     {
         private string _description;
+        private string _name;
         private string _policyStoreId;
         private string _policyTemplateId;
         private string _statement;
@@ -76,10 +77,59 @@ namespace Amazon.VerifiedPermissions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Specifies a name for the policy template that is unique among all policy templates
+        /// within the policy store. You can use the name in place of the policy template ID in
+        /// API operations that reference the policy template. The name must be prefixed with
+        /// <c>name/</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you don't include the name in an update request, the existing name is unchanged.
+        /// To remove a name, set it to an empty string (<c>""</c>).
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// If you specify a name that is already associated with another policy template in the
+        /// policy store, you receive a <c>ConflictException</c> error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=150)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyStoreId. 
         /// <para>
         /// Specifies the ID of the policy store that contains the policy template that you want
         /// to update.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify a policy store, use its ID or alias name. When using an alias name, prefix
+        /// it with <c>policy-store-alias/</c>. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ID: <c>PSEXAMPLEabcdefg111111</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name: <c>policy-store-alias/example-policy-store</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -100,6 +150,20 @@ namespace Amazon.VerifiedPermissions.Model
         /// <para>
         /// Specifies the ID of the policy template that you want to update.
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the policy template name in place of the policy template ID. When using
+        /// a name, prefix it with <c>name/</c>. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ID: <c>PTEXAMPLEabcdefg111111</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Name: <c>name/example-policy-template</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
         public string PolicyTemplateId
@@ -150,7 +214,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=10000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Statement
         {
             get { return this._statement; }

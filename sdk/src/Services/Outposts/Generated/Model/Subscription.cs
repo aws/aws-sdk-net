@@ -156,6 +156,11 @@ namespace Amazon.Outposts.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>PENDING</b> - Subscription has been created but billing has not yet commenced
+        /// because the subscription begin date has not been reached.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>CANCELLED</b> - Subscription requests that are cancelled.
         /// </para>
         ///  </li> </ul>

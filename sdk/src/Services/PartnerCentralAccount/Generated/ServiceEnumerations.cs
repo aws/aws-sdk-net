@@ -1097,6 +1097,14 @@ namespace Amazon.PartnerCentralAccount
     {
 
         /// <summary>
+        /// Constant LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION = new ServiceQuotaExceededExceptionReason("LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION");
+        /// <summary>
+        /// Constant LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY = new ServiceQuotaExceededExceptionReason("LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY");
+        /// <summary>
         /// Constant LIMIT_EXCEEDED_NUMBER_OF_DOMAIN for ServiceQuotaExceededExceptionReason
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason LIMIT_EXCEEDED_NUMBER_OF_DOMAIN = new ServiceQuotaExceededExceptionReason("LIMIT_EXCEEDED_NUMBER_OF_DOMAIN");
@@ -1104,6 +1112,10 @@ namespace Amazon.PartnerCentralAccount
         /// Constant LIMIT_EXCEEDED_NUMBER_OF_EMAIL for ServiceQuotaExceededExceptionReason
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason LIMIT_EXCEEDED_NUMBER_OF_EMAIL = new ServiceQuotaExceededExceptionReason("LIMIT_EXCEEDED_NUMBER_OF_EMAIL");
+        /// <summary>
+        /// Constant LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION = new ServiceQuotaExceededExceptionReason("LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

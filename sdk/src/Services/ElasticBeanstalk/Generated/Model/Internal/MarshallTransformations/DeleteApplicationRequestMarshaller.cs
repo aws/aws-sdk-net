@@ -68,6 +68,8 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TerminateEnvByForce", StringUtils.FromBool(publicRequest.TerminateEnvByForce));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteApplicationRequestMarshaller _instance = new DeleteApplicationRequestMarshaller();        

@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Ipv6Native", StringUtils.FromBool(publicRequest.Ipv6Native));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateDefaultSubnetRequestMarshaller _instance = new CreateDefaultSubnetRequestMarshaller();        

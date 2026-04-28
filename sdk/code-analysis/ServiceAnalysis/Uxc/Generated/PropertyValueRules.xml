@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.Uxc.Model.ListServicesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Uxc.Model.ListServicesRequest.NextToken</property>
+    <min>32</min>
+    <max>512</max>
+    <pattern>[-A-Za-z0-9+/_]+=*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Uxc.Model.ListServicesResponse.NextToken</property>
+    <min>32</min>
+    <max>512</max>
+    <pattern>[-A-Za-z0-9+/_]+=*</pattern>
+  </property-value-rule>
+</property-value-rules>

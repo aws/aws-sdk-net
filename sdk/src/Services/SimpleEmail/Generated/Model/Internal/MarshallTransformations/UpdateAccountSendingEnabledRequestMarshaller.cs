@@ -64,6 +64,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Enabled", StringUtils.FromBool(publicRequest.Enabled));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static UpdateAccountSendingEnabledRequestMarshaller _instance = new UpdateAccountSendingEnabledRequestMarshaller();        

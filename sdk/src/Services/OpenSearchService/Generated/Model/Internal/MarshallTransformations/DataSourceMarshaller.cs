@@ -58,6 +58,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DataSourceDescription);
             }
 
+            if(requestObject.IsSetIamRoleForDataSourceArn())
+            {
+                context.Writer.WritePropertyName("iamRoleForDataSourceArn");
+                context.Writer.WriteStringValue(requestObject.IamRoleForDataSourceArn);
+            }
+
         }
 
         /// <summary>

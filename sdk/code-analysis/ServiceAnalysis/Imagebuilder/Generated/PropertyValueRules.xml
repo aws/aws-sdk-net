@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CancelImageCreationRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CancelImageCreationRequest.ImageBuildVersionArn</property>
@@ -12,7 +12,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CancelImageCreationResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CancelImageCreationResponse.ImageBuildVersionArn</property>
@@ -26,7 +26,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CancelLifecycleExecutionRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CancelLifecycleExecutionRequest.LifecycleExecutionId</property>
@@ -44,7 +44,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateComponentRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateComponentRequest.Data</property>
@@ -73,7 +73,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateComponentResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateComponentResponse.ComponentBuildVersionArn</property>
@@ -87,7 +87,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.Description</property>
@@ -131,7 +131,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateContainerRecipeResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateContainerRecipeResponse.ContainerRecipeArn</property>
@@ -145,7 +145,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateDistributionConfigurationRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateDistributionConfigurationRequest.Description</property>
@@ -159,7 +159,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateDistributionConfigurationResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateDistributionConfigurationResponse.DistributionConfigurationArn</property>
@@ -173,7 +173,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImageRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImageRequest.ContainerRecipeArn</property>
@@ -200,7 +200,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImageResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImageResponse.ImageBuildVersionArn</property>
@@ -214,7 +214,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImagePipelineRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImagePipelineRequest.ContainerRecipeArn</property>
@@ -250,7 +250,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImagePipelineResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImagePipelineResponse.ImagePipelineArn</property>
@@ -264,7 +264,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImageRecipeRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImageRecipeRequest.Description</property>
@@ -292,7 +292,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImageRecipeResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImageRecipeResponse.ImageRecipeArn</property>
@@ -306,7 +306,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationRequest.Description</property>
@@ -340,7 +340,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationResponse.InfrastructureConfigurationArn</property>
@@ -354,7 +354,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateLifecyclePolicyRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateLifecyclePolicyRequest.Description</property>
@@ -374,7 +374,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateLifecyclePolicyResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateLifecyclePolicyResponse.LifecyclePolicyArn</property>
@@ -389,7 +389,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateWorkflowRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateWorkflowRequest.Data</property>
@@ -418,7 +418,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateWorkflowResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateWorkflowResponse.WorkflowBuildVersionArn</property>
@@ -539,7 +539,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DistributeImageRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DistributeImageRequest.DistributionConfigurationArn</property>
@@ -559,7 +559,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DistributeImageResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DistributeImageResponse.ImageBuildVersionArn</property>
@@ -815,7 +815,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportComponentRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportComponentRequest.Data</property>
@@ -843,7 +843,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportComponentResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportComponentResponse.ComponentBuildVersionArn</property>
@@ -857,7 +857,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportDiskImageRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportDiskImageRequest.Description</property>
@@ -895,7 +895,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportDiskImageResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportDiskImageResponse.ImageBuildVersionArn</property>
@@ -904,7 +904,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportVmImageRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportVmImageRequest.Description</property>
@@ -932,7 +932,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportVmImageResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportVmImageResponse.RequestId</property>
@@ -991,7 +991,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListContainerRecipesRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListContainerRecipesResponse.NextToken</property>
@@ -1480,7 +1480,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.RetryImageRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.RetryImageRequest.ImageBuildVersionArn</property>
@@ -1489,7 +1489,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.RetryImageResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.RetryImageResponse.ImageBuildVersionArn</property>
@@ -1498,7 +1498,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.SendWorkflowStepActionRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.SendWorkflowStepActionRequest.ImageBuildVersionArn</property>
@@ -1516,7 +1516,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.SendWorkflowStepActionResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.SendWorkflowStepActionResponse.ImageBuildVersionArn</property>
@@ -1529,7 +1529,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.StartImagePipelineExecutionRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.StartImagePipelineExecutionRequest.ImagePipelineArn</property>
@@ -1538,7 +1538,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.StartImagePipelineExecutionResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.StartImagePipelineExecutionResponse.ImageBuildVersionArn</property>
@@ -1552,7 +1552,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.StartResourceStateUpdateRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.StartResourceStateUpdateRequest.ExecutionRole</property>
@@ -1583,7 +1583,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateDistributionConfigurationRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateDistributionConfigurationRequest.Description</property>
@@ -1597,7 +1597,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateDistributionConfigurationResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateDistributionConfigurationResponse.DistributionConfigurationArn</property>
@@ -1611,7 +1611,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateImagePipelineRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateImagePipelineRequest.ContainerRecipeArn</property>
@@ -1647,7 +1647,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateImagePipelineResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateImagePipelineResponse.ImagePipelineArn</property>
@@ -1661,7 +1661,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateInfrastructureConfigurationRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateInfrastructureConfigurationRequest.Description</property>
@@ -1695,7 +1695,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateInfrastructureConfigurationResponse.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateInfrastructureConfigurationResponse.InfrastructureConfigurationArn</property>
@@ -1709,7 +1709,7 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateLifecyclePolicyRequest.ClientToken</property>
     <min>1</min>
-    <max>36</max>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateLifecyclePolicyRequest.Description</property>

@@ -46,6 +46,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAllRegions())
+            {
+                context.Writer.WritePropertyName("AllRegions");
+                context.Writer.WriteBooleanValue(requestObject.AllRegions.Value);
+            }
+
             if(requestObject.IsSetDestinationConfiguration())
             {
                 context.Writer.WritePropertyName("DestinationConfiguration");
@@ -55,6 +61,17 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.DestinationConfiguration, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetRegions())
+            {
+                context.Writer.WritePropertyName("Regions");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectRegionsListValue in requestObject.Regions)
+                {
+                        context.Writer.WriteStringValue(requestObjectRegionsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceType())

@@ -32,6 +32,7 @@ namespace AWSSDK.UnitTests
     {
         private static DateTime _fixedSigningTimestamp = new DateTime(2015, 8, 30, 12, 36, 0, DateTimeKind.Utc);
         private static string _accessKey = "accesskey";
+        private static string _secretKey = "secretkey";
         private static byte[] _signingKey = new byte[32];
         private static byte[] _headerSignature = new byte[64];
 
@@ -88,7 +89,7 @@ namespace AWSSDK.UnitTests
                 {checksumKey, "" }  // checksum will be calculated as the stream is read then replaced at the end
             };
 
-            var headerSigningResult = new AWS4SigningResult(_accessKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
+            var headerSigningResult = new AWS4SigningResult(_accessKey, _secretKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
             var cachedChecksum = new CachedChecksum
             {
                 Value = null,
@@ -116,7 +117,7 @@ namespace AWSSDK.UnitTests
             {
                 {"x-amz-checksum-sha256", "" }  // checksum will be calculated as the stream is read then replaced at the end
             };
-            var headerSigningResult = new AWS4SigningResult(_accessKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
+            var headerSigningResult = new AWS4SigningResult(_accessKey, _secretKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
             var cachedChecksum = new CachedChecksum
             {
                 Value = null,
@@ -154,7 +155,7 @@ namespace AWSSDK.UnitTests
             {
                 {"x-amz-checksum-sha256", "" }  // checksum will be calculated as the stream is read then replaced at the end
             };
-            var headerSigningResult = new AWS4SigningResult(_accessKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
+            var headerSigningResult = new AWS4SigningResult(_accessKey, _secretKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
 
             var expectedContent =
                 "14000;chunk-signature=dd6818ebe851d9f6006431fac25c71960881bf8d86501344f19a43c1a2c2a9a7\r\n" +
@@ -194,7 +195,7 @@ namespace AWSSDK.UnitTests
                 {"header-a", "value-a" },
                 {"header-b", "value-b" }
             };
-            var headerSigningResult = new AWS4SigningResult(_accessKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
+            var headerSigningResult = new AWS4SigningResult(_accessKey, _secretKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
 
             var expectedContent =
                 "B;chunk-signature=6a4d50a3307c001ad83900a73442136a0a0f203520fd8c0e966f655cc830bbe8\r\n" +
@@ -237,7 +238,7 @@ namespace AWSSDK.UnitTests
                 {"header-b", "value-b" },
                 {"x-amz-checksum-sha256", "" }  // checksum will be calculated as the stream is read then replaced at the end
             };
-            var headerSigningResult = new AWS4SigningResult(_accessKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
+            var headerSigningResult = new AWS4SigningResult(_accessKey, _secretKey, _fixedSigningTimestamp, "", "", _signingKey, _headerSignature);
 
             var expectedContent =
                 "B;chunk-signature=6a4d50a3307c001ad83900a73442136a0a0f203520fd8c0e966f655cc830bbe8\r\n" +

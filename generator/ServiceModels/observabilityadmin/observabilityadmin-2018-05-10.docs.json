@@ -93,6 +93,14 @@
         "FieldSelectors$member": null
       }
     },
+    "AllRegions": {
+      "base": null,
+      "refs": {
+        "StartTelemetryEvaluationForOrganizationInput$AllRegions": "<p> If set to <code>true</code>, telemetry evaluation for the organization starts in all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. The current region becomes the home region for managing multi-region evaluation for the organization. When new regions become available, evaluation automatically expands to include them. Mutually exclusive with <code>Regions</code>. </p>",
+        "StartTelemetryEvaluationInput$AllRegions": "<p> If set to <code>true</code>, telemetry evaluation starts in all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. The current region becomes the home region for managing multi-region evaluation. When new regions become available, evaluation automatically expands to include them. Mutually exclusive with <code>Regions</code>. </p>",
+        "TelemetryRule$AllRegions": "<p> If set to <code>true</code>, the telemetry rule is replicated to all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. When new regions become available, the rule automatically replicates to them. Mutually exclusive with <code>Regions</code>. </p>"
+      }
+    },
     "AwsResourceExplorerManagedViewArn": {
       "base": null,
       "refs": {
@@ -217,6 +225,12 @@
       "base": "<p>Information about a data source associated with the telemetry pipeline. For CloudWatch Logs sources, this includes both a name and type extracted from the log event metadata. For third-party sources (such as S3), this includes only a name, with the type field left empty.</p>",
       "refs": {
         "DataSources$member": null
+      }
+    },
+    "DataSourceFilterString": {
+      "base": null,
+      "refs": {
+        "SourceLogsConfiguration$DataSourceSelectionCriteria": "<p>The selection criteria that specifies which data sources to centralize. The selection criteria uses the same filter expression format as <code>LogGroupSelectionCriteria</code>, but operates on <code>DataSourceName</code> and <code>DataSourceType</code> operands. When both <code>LogGroupSelectionCriteria</code> and <code>DataSourceSelectionCriteria</code> are specified, a log event must match both criteria to be centralized.</p>"
       }
     },
     "DataSources": {
@@ -429,6 +443,13 @@
       "base": "<p> The requested operation cannot be completed on the specified resource in the current state. </p>",
       "refs": {}
     },
+    "IsReplicated": {
+      "base": null,
+      "refs": {
+        "GetTelemetryRuleForOrganizationOutput$IsReplicated": "<p> Indicates whether this organization telemetry rule is a replica that was created in this region through multi-region fan-out from the home region. Replicated rules cannot be directly updated or deleted in the spoke region. To modify a replicated rule, make changes in the home region. </p>",
+        "GetTelemetryRuleOutput$IsReplicated": "<p> Indicates whether this telemetry rule is a replica that was created in this region through multi-region fan-out from the home region. Replicated rules cannot be directly updated or deleted in the spoke region. To modify a replicated rule, make changes in the home region. </p>"
+      }
+    },
     "LabelNameCondition": {
       "base": "<p> Condition that matches based on WAF rule labels, with label names limited to 1024 characters. </p>",
       "refs": {
@@ -566,9 +587,9 @@
       }
     },
     "LogGroupNamePattern": {
-      "base": "<p>The pattern used to generate destination log group names during centralization. The pattern can contain static text and dynamic variables that are replaced with source attributes. If a variable cannot be resolved, it inherits the value from its parent variable in the hierarchy. The pattern must be between 1 and 512 characters.</p> <p>Supported variables:</p> <ul> <li> <p> <b>${source.logGroup}</b> — The original log group name from the source account.</p> </li> <li> <p> <b>${source.accountId}</b> — The AWS account ID where the log originated.</p> </li> <li> <p> <b>${source.region}</b> — The AWS Region where the log originated.</p> </li> <li> <p> <b>${source.org.id}</b> — The AWS Organization ID of the source account.</p> </li> <li> <p> <b>${source.org.ouId}</b> — The organizational unit ID of the source account.</p> </li> <li> <p> <b>${source.org.rootId}</b> — The organization Root ID.</p> </li> <li> <p> <b>${source.org.path}</b> — The organizational path from account to root.</p> </li> </ul>",
+      "base": "<p>The pattern used to generate destination log group names during centralization. The pattern can contain static text and dynamic variables that are replaced with source attributes. If a variable cannot be resolved, it inherits the value from its parent variable in the hierarchy. The pattern must be between 1 and 512 characters.</p> <p>Supported variables:</p> <ul> <li> <p> <b>${source.logGroup}</b> — The original log group name from the source account.</p> </li> <li> <p> <b>${source.accountId}</b> — The Amazon Web Services account ID where the log originated.</p> </li> <li> <p> <b>${source.region}</b> — The Amazon Web Services Region where the log originated.</p> </li> <li> <p> <b>${source.org.id}</b> — The Amazon Web Services Organization ID of the source account.</p> </li> <li> <p> <b>${source.org.ouId}</b> — The organizational unit ID of the source account.</p> </li> <li> <p> <b>${source.org.rootId}</b> — The organization Root ID.</p> </li> <li> <p> <b>${source.org.path}</b> — The organizational path from account to root.</p> </li> </ul>",
       "refs": {
-        "LogGroupNameConfiguration$LogGroupNamePattern": "<p>The pattern used to generate destination log group names during centralization. The pattern can contain static text and dynamic variables that are replaced with source attributes. If a variable cannot be resolved, it inherits the value from its parent variable in the hierarchy. The pattern must be between 1 and 512 characters.</p> <p>Supported variables:</p> <ul> <li> <p> <b>${source.logGroup}</b> — The original log group name from the source account.</p> </li> <li> <p> <b>${source.accountId}</b> — The AWS account ID where the log originated.</p> </li> <li> <p> <b>${source.region}</b> — The AWS Region where the log originated.</p> </li> <li> <p> <b>${source.org.id}</b> — The AWS Organization ID of the source account.</p> </li> <li> <p> <b>${source.org.ouId}</b> — The organizational unit ID of the source account.</p> </li> <li> <p> <b>${source.org.rootId}</b> — The organization Root ID.</p> </li> <li> <p> <b>${source.org.path}</b> — The organizational path from account to root.</p> </li> </ul>"
+        "LogGroupNameConfiguration$LogGroupNamePattern": "<p>The pattern used to generate destination log group names during centralization. The pattern can contain static text and dynamic variables that are replaced with source attributes. If a variable cannot be resolved, it inherits the value from its parent variable in the hierarchy. The pattern must be between 1 and 512 characters.</p> <p>Supported variables:</p> <ul> <li> <p> <b>${source.logGroup}</b> — The original log group name from the source account.</p> </li> <li> <p> <b>${source.accountId}</b> — The Amazon Web Services account ID where the log originated.</p> </li> <li> <p> <b>${source.region}</b> — The Amazon Web Services Region where the log originated.</p> </li> <li> <p> <b>${source.org.id}</b> — The Amazon Web Services Organization ID of the source account.</p> </li> <li> <p> <b>${source.org.ouId}</b> — The organizational unit ID of the source account.</p> </li> <li> <p> <b>${source.org.rootId}</b> — The organization Root ID.</p> </li> <li> <p> <b>${source.org.path}</b> — The organizational path from account to root.</p> </li> </ul>"
       }
     },
     "LogType": {
@@ -721,14 +742,37 @@
         "CentralizationRuleSummary$CreatedRegion": "<p>The Amazon Web Services region where the organization centralization rule was created.</p>",
         "CentralizationRuleSummary$DestinationRegion": "<p>The primary destination region of the organization centralization rule.</p>",
         "GetCentralizationRuleForOrganizationOutput$CreatedRegion": "<p>The Amazon Web Services region where the organization centralization rule was created.</p>",
+        "GetTelemetryEvaluationStatusForOrganizationOutput$HomeRegion": "<p> The Amazon Web Services Region that is designated as the home region for multi-region telemetry evaluation for the organization. The home region is the single management point for all multi-region operations on this organization. This field is only present when multi-region telemetry evaluation is active. </p>",
+        "GetTelemetryEvaluationStatusOutput$HomeRegion": "<p> The Amazon Web Services Region that is designated as the home region for multi-region telemetry evaluation. The home region is the single management point for all multi-region operations on this account. This field is only present when multi-region telemetry evaluation is active. </p>",
+        "GetTelemetryRuleForOrganizationOutput$HomeRegion": "<p> The Amazon Web Services Region where the organization telemetry rule was originally created. For replicated rules in spoke regions, this indicates the region that manages the rule. For rules created without multi-region scope, this field is not present. </p>",
+        "GetTelemetryRuleOutput$HomeRegion": "<p> The Amazon Web Services Region where the telemetry rule was originally created. For replicated rules in spoke regions, this indicates the region that manages the rule. For rules created without multi-region scope, this field is not present. </p>",
         "LogsBackupConfiguration$Region": "<p>Logs specific backup destination region within the primary destination account to which log data should be centralized.</p>",
+        "RegionStatus$Region": "<p> The Amazon Web Services Region code (for example, <code>eu-west-1</code> or <code>us-west-2</code>) that this status applies to. </p>",
         "Regions$member": null
+      }
+    },
+    "RegionStatus": {
+      "base": "<p> Represents the status of a multi-region operation in a specific Amazon Web Services Region. This structure is used to report per-region progress for both telemetry evaluation and telemetry rule replication. </p>",
+      "refs": {
+        "RegionStatuses$member": null
+      }
+    },
+    "RegionStatuses": {
+      "base": null,
+      "refs": {
+        "GetTelemetryEvaluationStatusForOrganizationOutput$RegionStatuses": "<p> A list of per-region telemetry evaluation statuses for the organization. Each entry indicates the evaluation status for a specific spoke region included in the multi-region configuration. This field is only present when multi-region telemetry evaluation is active. </p>",
+        "GetTelemetryEvaluationStatusOutput$RegionStatuses": "<p> A list of per-region telemetry evaluation statuses. Each entry indicates the evaluation status for a specific spoke region included in the multi-region configuration. This field is only present when multi-region telemetry evaluation is active. </p>",
+        "GetTelemetryRuleForOrganizationOutput$RegionStatuses": "<p> A list of per-region replication statuses for the organization telemetry rule. Each entry indicates the replication status of the rule in a specific spoke region. This field is only present for rules created with multi-region scope. </p>",
+        "GetTelemetryRuleOutput$RegionStatuses": "<p> A list of per-region replication statuses for the telemetry rule. Each entry indicates the replication status of the rule in a specific spoke region. This field is only present for rules created with multi-region scope. </p>"
       }
     },
     "Regions": {
       "base": null,
       "refs": {
-        "CentralizationRuleSource$Regions": "<p>The list of source regions from which telemetry data should be centralized.</p>"
+        "CentralizationRuleSource$Regions": "<p>The list of source regions from which telemetry data should be centralized.</p>",
+        "StartTelemetryEvaluationForOrganizationInput$Regions": "<p> An optional list of Amazon Web Services Regions to include in multi-region telemetry evaluation for the organization. The current region is always implicitly included and must not be specified in this list. When provided, telemetry evaluation starts in the current region and propagates to all specified regions for the organization. Mutually exclusive with <code>AllRegions</code>. If neither <code>Regions</code> nor <code>AllRegions</code> is provided, the operation applies only to the current region. </p>",
+        "StartTelemetryEvaluationInput$Regions": "<p> An optional list of Amazon Web Services Regions to include in multi-region telemetry evaluation. The current region is always implicitly included and must not be specified in this list. When provided, telemetry evaluation starts in the current region and propagates to all specified regions. Mutually exclusive with <code>AllRegions</code>. If neither <code>Regions</code> nor <code>AllRegions</code> is provided, the operation applies only to the current region. </p>",
+        "TelemetryRule$Regions": "<p> An optional list of Amazon Web Services Regions where this telemetry rule should be replicated. When specified, the rule is created in the home region and automatically replicated to all listed regions. Mutually exclusive with <code>AllRegions</code>. </p>"
       }
     },
     "ResourceArn": {
@@ -754,6 +798,7 @@
         "ListTagsForResourceInput$ResourceARN": "<p> The Amazon Resource Name (ARN) of the telemetry rule resource whose tags you want to list. </p>",
         "LogsBackupConfiguration$KmsKeyArn": "<p>KMS Key ARN belonging to the primary destination account and backup region, to encrypt newly created central log groups in the backup destination.</p>",
         "LogsEncryptionConfiguration$KmsKeyArn": "<p>KMS Key ARN belonging to the primary destination account and region, to encrypt newly created central log groups in the primary destination.</p>",
+        "RegionStatus$RuleArn": "<p> The Amazon Resource Name (ARN) of the telemetry rule in this spoke region. This field is only present for telemetry rule region statuses and is populated when the rule has been successfully created in the spoke region (status is <code>ACTIVE</code>). </p>",
         "TagResourceInput$ResourceARN": "<p> The Amazon Resource Name (ARN) of the telemetry rule resource to tag. </p>",
         "TelemetryPipeline$Arn": "<p>The Amazon Resource Name (ARN) of the telemetry pipeline.</p>",
         "TelemetryPipelineSummary$Arn": "<p>The Amazon Resource Name (ARN) of the telemetry pipeline.</p>",
@@ -893,6 +938,14 @@
       "base": null,
       "refs": {}
     },
+    "StartTelemetryEvaluationForOrganizationInput": {
+      "base": null,
+      "refs": {}
+    },
+    "StartTelemetryEvaluationInput": {
+      "base": null,
+      "refs": {}
+    },
     "Status": {
       "base": null,
       "refs": {
@@ -933,6 +986,8 @@
         "PipelineOutputError$Message": "<p>The detailed error message describing what went wrong during the pipeline test operation for this record.</p>",
         "Processors$member": null,
         "Record$Data": "<p>The data content of the test record used for pipeline validation.</p>",
+        "RegionStatus$Status": "<p> The status of the operation in this region. For telemetry evaluation, valid values include <code>STARTING</code>, <code>RUNNING</code>, and <code>FAILED_START</code>. For telemetry rules, valid values include <code>PENDING</code>, <code>ACTIVE</code>, and <code>FAILED</code>. </p>",
+        "RegionStatus$FailureReason": "<p> The reason for a failure status in this region. This field is only populated when <code>Status</code> indicates a failure. </p>",
         "ResourceNotFoundException$Message": null,
         "ResourceNotFoundException$ResourceId": "<p> The identifier of the resource which could not be found. </p>",
         "ResourceNotFoundException$ResourceType": "<p> The type of the resource which could not be found. </p>",

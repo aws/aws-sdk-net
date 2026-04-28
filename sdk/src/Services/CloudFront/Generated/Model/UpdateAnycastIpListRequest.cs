@@ -38,6 +38,7 @@ namespace Amazon.CloudFront.Model
         private string _id;
         private string _ifMatch;
         private IpAddressType _ipAddressType;
+        private List<IpamCidrConfig> _ipamCidrConfigs = AWSConfigs.InitializeCollections ? new List<IpamCidrConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -107,6 +108,30 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetIpAddressType()
         {
             return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpamCidrConfigs. 
+        /// <para>
+        ///  A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool
+        /// settings for updating the Anycast static IP list. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<IpamCidrConfig> IpamCidrConfigs
+        {
+            get { return this._ipamCidrConfigs; }
+            set { this._ipamCidrConfigs = value; }
+        }
+
+        // Check to see if IpamCidrConfigs property is set
+        internal bool IsSetIpamCidrConfigs()
+        {
+            return this._ipamCidrConfigs != null && (this._ipamCidrConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

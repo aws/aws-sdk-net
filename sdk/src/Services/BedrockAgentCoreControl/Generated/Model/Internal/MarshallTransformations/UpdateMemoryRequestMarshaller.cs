@@ -116,6 +116,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetStreamDeliveryResources())
+            {
+                context.Writer.WritePropertyName("streamDeliveryResources");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StreamDeliveryResourcesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StreamDeliveryResources, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

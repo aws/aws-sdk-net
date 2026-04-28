@@ -725,6 +725,14 @@ namespace Amazon.ApiGatewayV2
     {
 
         /// <summary>
+        /// Constant DISABLE_FAILED for PublishStatus
+        /// </summary>
+        public static readonly PublishStatus DISABLE_FAILED = new PublishStatus("DISABLE_FAILED");
+        /// <summary>
+        /// Constant DISABLE_IN_PROGRESS for PublishStatus
+        /// </summary>
+        public static readonly PublishStatus DISABLE_IN_PROGRESS = new PublishStatus("DISABLE_IN_PROGRESS");
+        /// <summary>
         /// Constant DISABLED for PublishStatus
         /// </summary>
         public static readonly PublishStatus DISABLED = new PublishStatus("DISABLED");

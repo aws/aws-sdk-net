@@ -105,8 +105,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property EvaluatorConfig. 
         /// <para>
-        ///  The configuration of the evaluator, including LLM-as-a-Judge settings for custom
-        /// evaluators. 
+        ///  The configuration of the evaluator, including LLM-as-a-Judge or code-based settings.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

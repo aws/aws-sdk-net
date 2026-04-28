@@ -54,6 +54,15 @@ namespace Amazon.Connect.Model
     /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
     /// Connect Administrator Guide</i>. 
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Important things to know</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Invoke the UpdateTrafficDistribution API in the region that should handle traffic.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateTrafficDistributionRequest : AmazonConnectRequest
     {

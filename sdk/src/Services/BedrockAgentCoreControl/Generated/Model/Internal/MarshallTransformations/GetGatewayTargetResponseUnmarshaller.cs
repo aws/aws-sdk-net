@@ -52,6 +52,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("authorizationData", targetDepth))
+                {
+                    var unmarshaller = AuthorizationDataUnmarshaller.Instance;
+                    response.AuthorizationData = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -92,6 +98,18 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("privateEndpoint", targetDepth))
+                {
+                    var unmarshaller = PrivateEndpointUnmarshaller.Instance;
+                    response.PrivateEndpoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("privateEndpointManagedResources", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ManagedResourceDetails, ManagedResourceDetailsUnmarshaller>(ManagedResourceDetailsUnmarshaller.Instance);
+                    response.PrivateEndpointManagedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

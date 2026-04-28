@@ -72,6 +72,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("HonorCooldown", StringUtils.FromBool(publicRequest.HonorCooldown));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SetDesiredCapacityRequestMarshaller _instance = new SetDesiredCapacityRequestMarshaller();        

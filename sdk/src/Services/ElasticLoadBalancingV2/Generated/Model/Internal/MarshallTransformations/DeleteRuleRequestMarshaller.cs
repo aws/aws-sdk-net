@@ -64,6 +64,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RuleArn", StringUtils.FromString(publicRequest.RuleArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteRuleRequestMarshaller _instance = new DeleteRuleRequestMarshaller();        

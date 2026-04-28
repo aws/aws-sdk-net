@@ -31,11 +31,11 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ExportCertificate operation.
-    /// Exports a private certificate issued by a private certificate authority (CA) or public
-    /// certificate for use anywhere. The exported file contains the certificate, the certificate
-    /// chain, and the encrypted private key associated with the public key that is embedded
-    /// in the certificate. For security, you must assign a passphrase for the private key
-    /// when exporting it. 
+    /// Exports a private certificate issued by a private certificate authority (CA) or a
+    /// public certificate for use anywhere. The exported file contains the certificate, the
+    /// certificate chain, and the encrypted private key associated with the public key that
+    /// is embedded in the certificate. For security, you must assign a passphrase for the
+    /// private key when exporting it. 
     /// 
     ///  
     /// <para>
@@ -44,6 +44,11 @@ namespace Amazon.CertificateManager.Model
     /// a private certificate</a> and <a href="https://docs.aws.amazon.com/acm/latest/userguide/export-public-certificate">Export
     /// a public certificate</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// ACM public certificates created prior to June 17, 2025 cannot be exported.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ExportCertificateRequest : AmazonCertificateManagerRequest
     {

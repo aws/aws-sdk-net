@@ -40,6 +40,9 @@ namespace Amazon.AppStream.Model
         private int? _availableUserSessions;
         private int? _desired;
         private int? _desiredUserSessions;
+        private int? _draining;
+        private int? _drainModeActiveUserSessions;
+        private int? _drainModeUnusedUserSessions;
         private int? _inUse;
         private int? _running;
 
@@ -178,6 +181,62 @@ namespace Amazon.AppStream.Model
         internal bool IsSetDesiredUserSessions()
         {
             return this._desiredUserSessions.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Draining. 
+        /// <para>
+        /// The number of instances in drain mode. This only applies to multi-session fleets.
+        /// </para>
+        /// </summary>
+        public int? Draining
+        {
+            get { return this._draining; }
+            set { this._draining = value; }
+        }
+
+        // Check to see if Draining property is set
+        internal bool IsSetDraining()
+        {
+            return this._draining.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DrainModeActiveUserSessions. 
+        /// <para>
+        /// The number of active user sessions on instances in drain mode. This only applies to
+        /// multi-session fleets.
+        /// </para>
+        /// </summary>
+        public int? DrainModeActiveUserSessions
+        {
+            get { return this._drainModeActiveUserSessions; }
+            set { this._drainModeActiveUserSessions = value; }
+        }
+
+        // Check to see if DrainModeActiveUserSessions property is set
+        internal bool IsSetDrainModeActiveUserSessions()
+        {
+            return this._drainModeActiveUserSessions.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DrainModeUnusedUserSessions. 
+        /// <para>
+        /// The number of unused session slots on instances in drain mode that cannot be used
+        /// for user session provisioning. This only applies to multi-session fleets.
+        /// </para>
+        /// </summary>
+        public int? DrainModeUnusedUserSessions
+        {
+            get { return this._drainModeUnusedUserSessions; }
+            set { this._drainModeUnusedUserSessions = value; }
+        }
+
+        // Check to see if DrainModeUnusedUserSessions property is set
+        internal bool IsSetDrainModeUnusedUserSessions()
+        {
+            return this._drainModeUnusedUserSessions.HasValue; 
         }
 
         /// <summary>

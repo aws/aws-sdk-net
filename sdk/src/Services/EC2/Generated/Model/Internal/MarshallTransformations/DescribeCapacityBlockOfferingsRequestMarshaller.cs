@@ -104,6 +104,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UltraserverType", StringUtils.FromString(publicRequest.UltraserverType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeCapacityBlockOfferingsRequestMarshaller _instance = new DescribeCapacityBlockOfferingsRequestMarshaller();        

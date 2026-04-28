@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetInstanceCount", StringUtils.FromInt(publicRequest.TargetInstanceCount));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static UpdateInterruptibleCapacityReservationAllocationRequestMarshaller _instance = new UpdateInterruptibleCapacityReservationAllocationRequestMarshaller();        

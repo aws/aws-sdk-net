@@ -161,7 +161,8 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Aggregate status for all the AWS Regions in which the Route 53 Global Resolver exists.
+        /// Aggregate status for all the Amazon Web Services Regions in which the Route 53 Global
+        /// Resolver exists.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

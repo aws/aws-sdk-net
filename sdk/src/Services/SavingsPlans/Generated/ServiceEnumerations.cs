@@ -279,6 +279,10 @@ namespace Amazon.SavingsPlans
         /// </summary>
         public static readonly SavingsPlanProductType Neptune = new SavingsPlanProductType("Neptune");
         /// <summary>
+        /// Constant OpenSearch for SavingsPlanProductType
+        /// </summary>
+        public static readonly SavingsPlanProductType OpenSearch = new SavingsPlanProductType("OpenSearch");
+        /// <summary>
         /// Constant RDS for SavingsPlanProductType
         /// </summary>
         public static readonly SavingsPlanProductType RDS = new SavingsPlanProductType("RDS");
@@ -559,6 +563,10 @@ namespace Amazon.SavingsPlans
         /// </summary>
         public static readonly SavingsPlanRateServiceCode AmazonElastiCache = new SavingsPlanRateServiceCode("AmazonElastiCache");
         /// <summary>
+        /// Constant AmazonES for SavingsPlanRateServiceCode
+        /// </summary>
+        public static readonly SavingsPlanRateServiceCode AmazonES = new SavingsPlanRateServiceCode("AmazonES");
+        /// <summary>
         /// Constant AmazonMCS for SavingsPlanRateServiceCode
         /// </summary>
         public static readonly SavingsPlanRateServiceCode AmazonMCS = new SavingsPlanRateServiceCode("AmazonMCS");
@@ -657,6 +665,10 @@ namespace Amazon.SavingsPlans
         /// </summary>
         public static readonly SavingsPlanRateUnit Hrs = new SavingsPlanRateUnit("Hrs");
         /// <summary>
+        /// Constant Jobs for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit Jobs = new SavingsPlanRateUnit("Jobs");
+        /// <summary>
         /// Constant LambdaGBSecond for SavingsPlanRateUnit
         /// </summary>
         public static readonly SavingsPlanRateUnit LambdaGBSecond = new SavingsPlanRateUnit("Lambda-GB-Second");
@@ -664,6 +676,10 @@ namespace Amazon.SavingsPlans
         /// Constant NCUHr for SavingsPlanRateUnit
         /// </summary>
         public static readonly SavingsPlanRateUnit NCUHr = new SavingsPlanRateUnit("NCU-hr");
+        /// <summary>
+        /// Constant OCUHours for SavingsPlanRateUnit
+        /// </summary>
+        public static readonly SavingsPlanRateUnit OCUHours = new SavingsPlanRateUnit("OCU-hours");
         /// <summary>
         /// Constant ReadCapacityUnitHrs for SavingsPlanRateUnit
         /// </summary>

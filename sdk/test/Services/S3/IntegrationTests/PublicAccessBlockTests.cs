@@ -1,44 +1,22 @@
-/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
-
 using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
 using System.Net;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class PublicAccessBlockTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class PublicAccessBlockTests : IClassFixture<S3BucketFixture>
     {
-        private static string bucketName;
-     
-        [ClassInitialize]
-        public static async Task Initialize(TestContext a)
-        {            
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
-        }
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
 
-        [ClassCleanup]
-        public static async Task ClassCleanup()
+        public PublicAccessBlockTests(S3BucketFixture bucket)
         {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);         
-            BaseClean();
+            _client = bucket.Client;
+            _bucketName = bucket.BucketName;
         }
                 
         private async Task<PublicAccessBlockConfiguration> CallPutPublicAccessBlock()
@@ -51,12 +29,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 RestrictPublicBuckets = true
             };
 
-            var putResponse = await Client.PutPublicAccessBlockAsync(new PutPublicAccessBlockRequest
+            var putResponse = await _client.PutPublicAccessBlockAsync(new PutPublicAccessBlockRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 PublicAccessBlockConfiguration = configuration
             });
-            Assert.AreEqual(HttpStatusCode.OK, putResponse.HttpStatusCode);
+            Assert.Equal(HttpStatusCode.OK, putResponse.HttpStatusCode);
 
             return configuration;
         }
@@ -65,19 +43,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             var getRequest = new GetPublicAccessBlockRequest
             {
-                BucketName = bucketName
+                BucketName = _bucketName
             };
 
             if (expectedConfiguration == null)
             {
                 // If expectedConfiguration is null then we want GetPublicAccessBlock to throw an exception because the configuration was removed.
-                await Client.GetPublicAccessBlockAsync(getRequest);
+                await _client.GetPublicAccessBlockAsync(getRequest);
                 Assert.Fail("An expected exception was not thrown");
             }
             
             var getResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetPublicAccessBlockAsync(getRequest);
+                var res = await _client.GetPublicAccessBlockAsync(getRequest);
                 return res.HttpStatusCode == HttpStatusCode.OK
                     && expectedConfiguration.BlockPublicAcls == res.PublicAccessBlockConfiguration.BlockPublicAcls
                     && expectedConfiguration.BlockPublicPolicy == res.PublicAccessBlockConfiguration.BlockPublicPolicy
@@ -85,35 +63,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     && expectedConfiguration.RestrictPublicBuckets == res.PublicAccessBlockConfiguration.RestrictPublicBuckets ? res : null;
             });
                         
-            Assert.AreEqual(expectedConfiguration.BlockPublicAcls, getResponse.PublicAccessBlockConfiguration.BlockPublicAcls);
-            Assert.AreEqual(expectedConfiguration.BlockPublicPolicy, getResponse.PublicAccessBlockConfiguration.BlockPublicPolicy);
-            Assert.AreEqual(expectedConfiguration.IgnorePublicAcls, getResponse.PublicAccessBlockConfiguration.IgnorePublicAcls);
-            Assert.AreEqual(expectedConfiguration.RestrictPublicBuckets, getResponse.PublicAccessBlockConfiguration.RestrictPublicBuckets);
+            Assert.Equal(expectedConfiguration.BlockPublicAcls, getResponse.PublicAccessBlockConfiguration.BlockPublicAcls);
+            Assert.Equal(expectedConfiguration.BlockPublicPolicy, getResponse.PublicAccessBlockConfiguration.BlockPublicPolicy);
+            Assert.Equal(expectedConfiguration.IgnorePublicAcls, getResponse.PublicAccessBlockConfiguration.IgnorePublicAcls);
+            Assert.Equal(expectedConfiguration.RestrictPublicBuckets, getResponse.PublicAccessBlockConfiguration.RestrictPublicBuckets);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestDeletePublicAccessBlock()
         {
             var configuration = await CallPutPublicAccessBlock();
             await CallGetPublicAccessBlock(configuration);
 
-            var deleteResponse = await Client.DeletePublicAccessBlockAsync(new DeletePublicAccessBlockRequest
+            var deleteResponse = await _client.DeletePublicAccessBlockAsync(new DeletePublicAccessBlockRequest
             {
-                BucketName = bucketName
+                BucketName = _bucketName
             });
-            Assert.AreEqual(HttpStatusCode.NoContent, deleteResponse.HttpStatusCode);
+            Assert.Equal(HttpStatusCode.NoContent, deleteResponse.HttpStatusCode);
 
             // Verify the configuration was deleted. This call will throw a public access block configuration was not found message.
-            await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => CallGetPublicAccessBlock(null));
+            await Assert.ThrowsAsync<AmazonS3Exception>(() => CallGetPublicAccessBlock(null));
         }
         
-        [TestMethod]
+        [Fact]
         public async Task TestPutPublicAccessBlock()
         {
             await CallPutPublicAccessBlock();
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestGetPublicAccessBlock()
         {
             string[] testProperties =
@@ -137,15 +115,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 var putRequest = new PutPublicAccessBlockRequest
                 {
-                    BucketName = bucketName,
+                    BucketName = _bucketName,
                     PublicAccessBlockConfiguration = configuration
                 };
 
                 System.Reflection.PropertyInfo property = putRequest.PublicAccessBlockConfiguration.GetType().GetProperty(propertyName);
                 property.SetValue(configuration, true);
 
-                var putResponse = await Client.PutPublicAccessBlockAsync(putRequest);
-                Assert.AreEqual(HttpStatusCode.OK, putResponse.HttpStatusCode);
+                var putResponse = await _client.PutPublicAccessBlockAsync(putRequest);
+                Assert.Equal(HttpStatusCode.OK, putResponse.HttpStatusCode);
                 await CallGetPublicAccessBlock(configuration);                
             }
         }

@@ -89,6 +89,21 @@ namespace AWSSDKDocSamples.Amazon.SimpleEmailV2.Generated
             #endregion
         }
 
+        public void SimpleEmailServiceV2GetEmailAddressInsights()
+        {
+            #region get-email-address-insights-1766162111000
+
+            var client = new AmazonSimpleEmailServiceV2Client();
+            var response = client.GetEmailAddressInsights(new GetEmailAddressInsightsRequest 
+            {
+                EmailAddress = "hello@example.com"
+            });
+
+            MailboxValidation mailboxValidation = response.MailboxValidation;
+
+            #endregion
+        }
+
         public void SimpleEmailServiceV2GetExportJob()
         {
             #region get-export-job-1685699942772

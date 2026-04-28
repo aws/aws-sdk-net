@@ -311,6 +311,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ScheduledInstanceId", StringUtils.FromString(publicRequest.ScheduledInstanceId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RunScheduledInstancesRequestMarshaller _instance = new RunScheduledInstancesRequestMarshaller();        

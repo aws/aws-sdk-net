@@ -43,7 +43,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM study date provided in <c>yyMMdd</c> format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=18)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=36)]
         public string DICOMStudyDate
         {
             get { return this._dicomStudyDate; }
@@ -62,7 +62,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM study time provided in <c>HHmmss.FFFFFF</c> format.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=28)]
+        [AWSProperty(Sensitive=true, Min=0, Max=56)]
         public string DICOMStudyTime
         {
             get { return this._dicomStudyTime; }

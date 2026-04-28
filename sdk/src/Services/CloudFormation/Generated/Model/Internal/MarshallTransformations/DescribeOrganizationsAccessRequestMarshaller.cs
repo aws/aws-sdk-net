@@ -64,6 +64,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("CallAs", StringUtils.FromString(publicRequest.CallAs));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeOrganizationsAccessRequestMarshaller _instance = new DescribeOrganizationsAccessRequestMarshaller();        

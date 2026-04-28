@@ -41,7 +41,9 @@ namespace Amazon.ECS.Model
         private CapacityReservationRequest _capacityReservations;
         private string _ec2InstanceProfileArn;
         private bool? _fipsEnabled;
+        private bool? _instanceMetadataTagsPropagation;
         private InstanceRequirementsRequest _instanceRequirements;
+        private ManagedInstancesLocalStorageConfiguration _localStorageConfiguration;
         private ManagedInstancesMonitoringOptions _monitoring;
         private ManagedInstancesNetworkConfiguration _networkConfiguration;
         private ManagedInstancesStorageConfiguration _storageConfiguration;
@@ -162,8 +164,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions
-        /// and FIPS disabled in other regions.
+        /// If not specified, instances are launched with FIPS enabled in Amazon Web Services
+        /// GovCloud (US) regions and FIPS disabled in other regions.
         /// </para>
         /// </summary>
         public bool? FipsEnabled
@@ -176,6 +178,41 @@ namespace Amazon.ECS.Model
         internal bool IsSetFipsEnabled()
         {
             return this._fipsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceMetadataTagsPropagation. 
+        /// <para>
+        /// Determines whether tags are propagated to the instance metadata service (IMDS) for
+        /// Amazon EC2 instances launched by the Managed Instances capacity provider. When enabled,
+        /// all tags associated with the instance are available through the instance metadata
+        /// service. When disabled, tags are not propagated to IMDS.
+        /// </para>
+        ///  
+        /// <para>
+        /// Disable this setting if your tags contain characters that are not compatible with
+        /// IMDS, such as <c>/</c>. IMDS requires tag keys to match the pattern <c>[0-9a-zA-Z\-_+=,.@:]{1,255}</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <c>true</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
+        /// with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool? InstanceMetadataTagsPropagation
+        {
+            get { return this._instanceMetadataTagsPropagation; }
+            set { this._instanceMetadataTagsPropagation = value; }
+        }
+
+        // Check to see if InstanceMetadataTagsPropagation property is set
+        internal bool IsSetInstanceMetadataTagsPropagation()
+        {
+            return this._instanceMetadataTagsPropagation.HasValue; 
         }
 
         /// <summary>
@@ -207,6 +244,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetInstanceRequirements()
         {
             return this._instanceRequirements != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalStorageConfiguration. 
+        /// <para>
+        /// The local storage configuration for Amazon ECS Managed Instances. This defines how
+        /// ECS uses instance store volumes available on the container instance.
+        /// </para>
+        /// </summary>
+        public ManagedInstancesLocalStorageConfiguration LocalStorageConfiguration
+        {
+            get { return this._localStorageConfiguration; }
+            set { this._localStorageConfiguration = value; }
+        }
+
+        // Check to see if LocalStorageConfiguration property is set
+        internal bool IsSetLocalStorageConfiguration()
+        {
+            return this._localStorageConfiguration != null;
         }
 
         /// <summary>
@@ -255,8 +311,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StorageConfiguration. 
         /// <para>
-        /// The storage configuration for Amazon ECS Managed Instances. This defines the root
-        /// volume size and type for the instances.
+        /// The storage configuration for Amazon ECS Managed Instances. This defines the data
+        /// volume properties for the instances.
         /// </para>
         /// </summary>
         public ManagedInstancesStorageConfiguration StorageConfiguration

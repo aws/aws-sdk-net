@@ -45,6 +45,30 @@ namespace Amazon.BedrockDataAutomation.Model
         }
 
         /// <summary>
+        /// Paginator for ListDataAutomationLibraries operation
+        ///</summary>
+        public IListDataAutomationLibrariesPaginator ListDataAutomationLibraries(ListDataAutomationLibrariesRequest request) 
+        {
+            return new ListDataAutomationLibrariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataAutomationLibraryEntities operation
+        ///</summary>
+        public IListDataAutomationLibraryEntitiesPaginator ListDataAutomationLibraryEntities(ListDataAutomationLibraryEntitiesRequest request) 
+        {
+            return new ListDataAutomationLibraryEntitiesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataAutomationLibraryIngestionJobs operation
+        ///</summary>
+        public IListDataAutomationLibraryIngestionJobsPaginator ListDataAutomationLibraryIngestionJobs(ListDataAutomationLibraryIngestionJobsRequest request) 
+        {
+            return new ListDataAutomationLibraryIngestionJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDataAutomationProjects operation
         ///</summary>
         public IListDataAutomationProjectsPaginator ListDataAutomationProjects(ListDataAutomationProjectsRequest request) 

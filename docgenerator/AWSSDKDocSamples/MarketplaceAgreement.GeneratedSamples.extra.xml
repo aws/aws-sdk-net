@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.BatchCreateBillingAdjustmentRequest(Amazon.MarketplaceAgreement.Model.BatchCreateBillingAdjustmentRequestRequest)" />
+            <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.BatchCreateBillingAdjustmentRequest(Amazon.MarketplaceAgreement.Model.BatchCreateBillingAdjustmentRequestRequest)" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.BatchCreateBillingAdjustmentRequestRequest" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.BatchCreateBillingAdjustmentRequestResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create billing adjustment requests"
+                    source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.CancelAgreementCancellationRequest(Amazon.MarketplaceAgreement.Model.CancelAgreementCancellationRequestRequest)" />
+            <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.CancelAgreementCancellationRequest(Amazon.MarketplaceAgreement.Model.CancelAgreementCancellationRequestRequest)" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.CancelAgreementCancellationRequestRequest" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.CancelAgreementCancellationRequestResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Cancel a cancellation request"
+                    source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.GetAgreementCancellationRequest(Amazon.MarketplaceAgreement.Model.GetAgreementCancellationRequestRequest)" />
+            <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.GetAgreementCancellationRequest(Amazon.MarketplaceAgreement.Model.GetAgreementCancellationRequestRequest)" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementCancellationRequestRequest" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.GetAgreementCancellationRequestResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get a cancellation request"
+                    source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.GetBillingAdjustmentRequest(Amazon.MarketplaceAgreement.Model.GetBillingAdjustmentRequestRequest)" />
+            <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.GetBillingAdjustmentRequest(Amazon.MarketplaceAgreement.Model.GetBillingAdjustmentRequestRequest)" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.GetBillingAdjustmentRequestRequest" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.GetBillingAdjustmentRequestResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get a billing adjustment request"
+                    source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.ListAgreementCancellationRequests(Amazon.MarketplaceAgreement.Model.ListAgreementCancellationRequestsRequest)" />
+            <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.ListAgreementCancellationRequests(Amazon.MarketplaceAgreement.Model.ListAgreementCancellationRequestsRequest)" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.ListAgreementCancellationRequestsRequest" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.ListAgreementCancellationRequestsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List cancellation requests"
+                    source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.ListAgreementInvoiceLineItems(Amazon.MarketplaceAgreement.Model.ListAgreementInvoiceLineItemsRequest)" />
+            <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.ListAgreementInvoiceLineItems(Amazon.MarketplaceAgreement.Model.ListAgreementInvoiceLineItemsRequest)" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.ListAgreementInvoiceLineItemsRequest" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.ListAgreementInvoiceLineItemsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List agreement invoice line items"
+                    source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.ListBillingAdjustmentRequests(Amazon.MarketplaceAgreement.Model.ListBillingAdjustmentRequestsRequest)" />
+            <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.ListBillingAdjustmentRequests(Amazon.MarketplaceAgreement.Model.ListBillingAdjustmentRequestsRequest)" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.ListBillingAdjustmentRequestsRequest" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.ListBillingAdjustmentRequestsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List billing adjustment requests"
+                    source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceAgreement.IAmazonMarketplaceAgreement.SendAgreementCancellationRequest(Amazon.MarketplaceAgreement.Model.SendAgreementCancellationRequestRequest)" />
+            <member name="M:Amazon.MarketplaceAgreement.AmazonMarketplaceAgreementClient.SendAgreementCancellationRequest(Amazon.MarketplaceAgreement.Model.SendAgreementCancellationRequestRequest)" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.SendAgreementCancellationRequestRequest" />
+            <member name="T:Amazon.MarketplaceAgreement.Model.SendAgreementCancellationRequestResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Send a cancellation request"
+                    source=".\AWSSDKDocSamples\MarketplaceAgreement\MarketplaceAgreement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

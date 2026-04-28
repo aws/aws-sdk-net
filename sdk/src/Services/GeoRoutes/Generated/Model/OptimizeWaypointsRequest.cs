@@ -34,6 +34,12 @@ namespace Amazon.GeoRoutes.Model
     /// <c>OptimizeWaypoints</c> calculates the optimal order to travel between a set of
     /// waypoints to minimize either the travel time or the distance travelled during the
     /// journey, based on road network restrictions and the traffic pattern data.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/actions-optimize-waypoints.html">Optimize
+    /// waypoints</a> in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class OptimizeWaypointsRequest : AmazonGeoRoutesRequest
     {
@@ -232,7 +238,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>FastestRoute</c>.
+        /// Default value: <c>FastestRoute</c>.
         /// </para>
         /// </summary>
         public WaypointOptimizationSequencingObjective OptimizeSequencingFor
@@ -250,7 +256,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        /// The start position for the route.
+        /// The start position for the route in World Geodetic System (WGS 84) format: [longitude,
+        /// latitude].
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -315,7 +322,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <c>Car</c> 
+        /// Default value: <c>Car</c> 
         /// </para>
         /// </summary>
         public WaypointOptimizationTravelMode TravelMode

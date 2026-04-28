@@ -5452,6 +5452,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ChatEntryPointParameters.FlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ChatEvent.Content</property>
     <min>1</min>
     <max>16384</max>

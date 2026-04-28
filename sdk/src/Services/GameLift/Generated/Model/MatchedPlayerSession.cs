@@ -67,7 +67,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerSessionId. 
         /// <para>
-        /// A unique identifier for a player session
+        /// A unique identifier for a player session. PlayerSessionId will only be populated for
+        /// player sessions that are in ACTIVE or RESERVED status when the ticket is completed.
         /// </para>
         /// </summary>
         public string PlayerSessionId

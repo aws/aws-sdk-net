@@ -84,6 +84,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DeferMaintenanceStartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DeferMaintenanceStartTime));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyClusterMaintenanceRequestMarshaller _instance = new ModifyClusterMaintenanceRequestMarshaller();        

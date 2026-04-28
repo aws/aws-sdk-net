@@ -71,7 +71,7 @@ namespace Amazon.Route53GlobalResolver.Model
         /// Resolver.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=42)]
+        [AWSProperty(Required=true, Min=1, Max=43)]
         public string Cidr
         {
             get { return this._cidr; }

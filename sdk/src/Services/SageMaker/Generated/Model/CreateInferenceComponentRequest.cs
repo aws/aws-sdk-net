@@ -112,7 +112,6 @@ namespace Amazon.SageMaker.Model
         /// model, container, and compute resources.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public InferenceComponentSpecification Specification
         {
             get { return this._specification; }

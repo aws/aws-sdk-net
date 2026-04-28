@@ -64,6 +64,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("IntegrationIdentifier", StringUtils.FromString(publicRequest.IntegrationIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteIntegrationRequestMarshaller _instance = new DeleteIntegrationRequestMarshaller();        

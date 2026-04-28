@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Travel mode options when the provided travel mode is "Truck".
+    /// Travel mode options when the provided travel mode is <c>Truck</c>.
     /// </summary>
     public partial class RoadSnapTruckOptions
     {
@@ -49,7 +49,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>Kilograms</c> 
+        ///  <b>Unit</b>: <c>kilograms</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
@@ -230,7 +230,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Width. 
         /// <para>
-        /// Width of the vehicle in centimenters.
+        /// Width of the vehicle in centimeters.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=5000)]

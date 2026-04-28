@@ -240,10 +240,12 @@ namespace Amazon.AutoScaling.Model
         /// Valid values: <c>Pending</c> | <c>Pending:Wait</c> | <c>Pending:Proceed</c> | <c>Quarantined</c>
         /// | <c>InService</c> | <c>Terminating</c> | <c>Terminating:Wait</c> | <c>Terminating:Proceed</c>
         /// | <c>Terminating:Retained</c> | <c>Terminated</c> | <c>Detaching</c> | <c>Detached</c>
-        /// | <c>EnteringStandby</c> | <c>Standby</c> | <c>Warmed:Pending</c> | <c>Warmed:Pending:Wait</c>
-        /// | <c>Warmed:Pending:Proceed</c> | <c>Warmed:Pending:Retained</c> | <c>Warmed:Terminating</c>
-        /// | <c>Warmed:Terminating:Wait</c> | <c>Warmed:Terminating:Proceed</c> | <c>Warmed:Terminating:Retained</c>
-        /// | <c>Warmed:Terminated</c> | <c>Warmed:Stopped</c> | <c>Warmed:Running</c> 
+        /// | <c>EnteringStandby</c> | <c>Standby</c> | <c>ReplacingRootVolume</c> | <c>ReplacingRootVolume:Wait</c>
+        /// | <c>ReplacingRootVolume:Proceed</c> | <c>RootVolumeReplaced</c> | <c>Warmed:Pending</c>
+        /// | <c>Warmed:Pending:Wait</c> | <c>Warmed:Pending:Proceed</c> | <c>Warmed:Pending:Retained</c>
+        /// | <c>Warmed:Terminating</c> | <c>Warmed:Terminating:Wait</c> | <c>Warmed:Terminating:Proceed</c>
+        /// | <c>Warmed:Terminating:Retained</c> | <c>Warmed:Terminated</c> | <c>Warmed:Stopped</c>
+        /// | <c>Warmed:Running</c> | <c>Warmed:Hibernated</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

@@ -35,6 +35,7 @@ namespace Amazon.RTBFabric.Model
     public partial class AutoScalingGroupsConfiguration
     {
         private List<string> _autoScalingGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private HealthCheckConfig _healthCheckConfig;
         private string _roleArn;
 
         /// <summary>
@@ -59,6 +60,24 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetAutoScalingGroupNames()
         {
             return this._autoScalingGroupNames != null && (this._autoScalingGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckConfig. 
+        /// <para>
+        /// The health check configuration for the Auto Scaling group managed endpoint.
+        /// </para>
+        /// </summary>
+        public HealthCheckConfig HealthCheckConfig
+        {
+            get { return this._healthCheckConfig; }
+            set { this._healthCheckConfig = value; }
+        }
+
+        // Check to see if HealthCheckConfig property is set
+        internal bool IsSetHealthCheckConfig()
+        {
+            return this._healthCheckConfig != null;
         }
 
         /// <summary>

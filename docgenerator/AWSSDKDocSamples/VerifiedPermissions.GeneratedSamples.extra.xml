@@ -21,6 +21,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.BatchGetPolicy(Amazon.VerifiedPermissions.Model.BatchGetPolicyRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.BatchGetPolicy(Amazon.VerifiedPermissions.Model.BatchGetPolicyRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.BatchGetPolicyRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.BatchGetPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves information about policies using their names instead of their IDs.
+                </para>
+                <code
+                    title="To retrieve policies by name"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.BatchIsAuthorized(Amazon.VerifiedPermissions.Model.BatchIsAuthorizedRequest)" />
             <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.BatchIsAuthorized(Amazon.VerifiedPermissions.Model.BatchIsAuthorizedRequest)" />
             <member name="T:Amazon.VerifiedPermissions.Model.BatchIsAuthorizedRequest" />
@@ -105,31 +124,12 @@
         <value>
             <example>
                 <para>
-                    The following example request creates a static policy with a policy scope that specifies both a principal and a resource. The response includes both the Principal and Resource elements because both were specified in the request policy scope.
-                </para>
-                <code
-                    title="To create a static policy"
-                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.CreatePolicy(Amazon.VerifiedPermissions.Model.CreatePolicyRequest)" />
-            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.CreatePolicy(Amazon.VerifiedPermissions.Model.CreatePolicyRequest)" />
-            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyRequest" />
-            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
                     The following example creates a template-linked policy using the specified policy template and associates the specified principal to use with the new template-linked policy.
                 </para>
                 <code
                     title="To create a template-linked policy"
                     source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
-                    region="example-3" />
+                    region="example-2" />
             </example>
         </value>
     </doc>
@@ -168,6 +168,25 @@
                     title="To create an encrypted policy store"
                     source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
                     region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.CreatePolicyStoreAlias(Amazon.VerifiedPermissions.Model.CreatePolicyStoreAliasRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.CreatePolicyStoreAlias(Amazon.VerifiedPermissions.Model.CreatePolicyStoreAliasRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyStoreAliasRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyStoreAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new policy store alias.
+                </para>
+                <code
+                    title="CreatePolicyStoreAlias"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
             </example>
         </value>
     </doc>
@@ -249,6 +268,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.DeletePolicyStoreAlias(Amazon.VerifiedPermissions.Model.DeletePolicyStoreAliasRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.DeletePolicyStoreAlias(Amazon.VerifiedPermissions.Model.DeletePolicyStoreAliasRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.DeletePolicyStoreAliasRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.DeletePolicyStoreAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the policy store alias with name example-policy-store.
+                </para>
+                <code
+                    title="DeletePolicyStoreAlias"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.DeletePolicyTemplate(Amazon.VerifiedPermissions.Model.DeletePolicyTemplateRequest)" />
             <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.DeletePolicyTemplate(Amazon.VerifiedPermissions.Model.DeletePolicyTemplateRequest)" />
             <member name="T:Amazon.VerifiedPermissions.Model.DeletePolicyTemplateRequest" />
@@ -306,6 +344,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.GetPolicy(Amazon.VerifiedPermissions.Model.GetPolicyRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.GetPolicy(Amazon.VerifiedPermissions.Model.GetPolicyRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves information about a policy using its name instead of its ID.
+                </para>
+                <code
+                    title="To retrieve a policy by name"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.GetPolicyStore(Amazon.VerifiedPermissions.Model.GetPolicyStoreRequest)" />
             <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.GetPolicyStore(Amazon.VerifiedPermissions.Model.GetPolicyStoreRequest)" />
             <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyStoreRequest" />
@@ -344,6 +401,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.GetPolicyStoreAlias(Amazon.VerifiedPermissions.Model.GetPolicyStoreAliasRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.GetPolicyStoreAlias(Amazon.VerifiedPermissions.Model.GetPolicyStoreAliasRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyStoreAliasRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyStoreAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about the policy store alias with name example-policy-store.
+                </para>
+                <code
+                    title="GetPolicyStoreAlias"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.GetPolicyTemplate(Amazon.VerifiedPermissions.Model.GetPolicyTemplateRequest)" />
             <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.GetPolicyTemplate(Amazon.VerifiedPermissions.Model.GetPolicyTemplateRequest)" />
             <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyTemplateRequest" />
@@ -358,6 +434,25 @@
                     title="GetPolicyTemplate"
                     source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
                     region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.GetPolicyTemplate(Amazon.VerifiedPermissions.Model.GetPolicyTemplateRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.GetPolicyTemplate(Amazon.VerifiedPermissions.Model.GetPolicyTemplateRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyTemplateRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details of a policy template using its name instead of its ID.
+                </para>
+                <code
+                    title="To retrieve a policy template by name"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>
@@ -523,6 +618,44 @@ permit(
                     title="ListPolicies - Example 3"
                     source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
                     region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.ListPolicyStoreAliases(Amazon.VerifiedPermissions.Model.ListPolicyStoreAliasesRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.ListPolicyStoreAliases(Amazon.VerifiedPermissions.Model.ListPolicyStoreAliasesRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPolicyStoreAliasesRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPolicyStoreAliasesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists all policy store aliases in the AWS account in the AWS Region in which you call the operation.
+                </para>
+                <code
+                    title="ListPolicyStoreAliases - Example 1"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.ListPolicyStoreAliases(Amazon.VerifiedPermissions.Model.ListPolicyStoreAliasesRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.ListPolicyStoreAliases(Amazon.VerifiedPermissions.Model.ListPolicyStoreAliasesRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPolicyStoreAliasesRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPolicyStoreAliasesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists all policy store aliases associated with the policy store with ID C7v5xMplfFH3i3e4Jrzb1a
+                </para>
+                <code
+                    title="ListPolicyStoreAliases - Example 2"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>

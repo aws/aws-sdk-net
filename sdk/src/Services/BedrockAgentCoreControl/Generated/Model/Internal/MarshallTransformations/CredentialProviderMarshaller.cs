@@ -57,6 +57,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetIamCredentialProvider())
+            {
+                context.Writer.WritePropertyName("iamCredentialProvider");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IamCredentialProviderMarshaller.Instance;
+                marshaller.Marshall(requestObject.IamCredentialProvider, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetOauthCredentialProvider())
             {
                 context.Writer.WritePropertyName("oauthCredentialProvider");

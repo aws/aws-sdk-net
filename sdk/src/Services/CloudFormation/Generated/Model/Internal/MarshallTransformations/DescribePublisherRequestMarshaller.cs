@@ -64,6 +64,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PublisherId", StringUtils.FromString(publicRequest.PublisherId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribePublisherRequestMarshaller _instance = new DescribePublisherRequestMarshaller();        

@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("GroupName", StringUtils.FromString(publicRequest.GroupName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteSecurityGroupRequestMarshaller _instance = new DeleteSecurityGroupRequestMarshaller();        

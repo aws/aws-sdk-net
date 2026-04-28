@@ -88,6 +88,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ResourceRegion", StringUtils.FromString(publicRequest.ResourceRegion));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyIpamResourceCidrRequestMarshaller _instance = new ModifyIpamResourceCidrRequestMarshaller();        

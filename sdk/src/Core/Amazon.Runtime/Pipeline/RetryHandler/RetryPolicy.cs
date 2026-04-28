@@ -194,6 +194,17 @@ namespace Amazon.Runtime
         public virtual void NotifySuccess(IExecutionContext executionContext)
         {    
         }
+
+        /// <summary>
+        /// Virtual method that gets called when a request results in an error.
+        /// This is called for every error, regardless of whether the request will be retried.
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        /// <param name="exception">The exception from the failed request.</param>
+        public virtual void NotifyError(IExecutionContext executionContext, Exception exception)
+        {
+        }
         
         /// <summary>
          /// Virtual method that gets called before a retry request is initiated. The value 

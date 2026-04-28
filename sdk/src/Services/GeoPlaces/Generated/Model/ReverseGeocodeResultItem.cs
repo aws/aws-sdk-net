@@ -53,8 +53,10 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property AccessPoints. 
         /// <para>
-        /// Position of the access point in World Geodetic System (WGS 84) format: [longitude,
-        /// latitude].
+        ///  Position of the access point in World Geodetic System (WGS 84) format: [longitude,
+        /// latitude]. Not available in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions
+        /// for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -96,7 +98,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property AddressNumberCorrected. 
         /// <para>
-        /// Boolean indicating if the address provided has been corrected.
+        ///  Boolean indicating if the address provided has been corrected. Not available in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -158,7 +162,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property FoodTypes. 
         /// <para>
-        /// List of food types offered by this result.
+        ///  List of food types offered by this result. Not available in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -182,7 +188,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Intersections. 
         /// <para>
-        /// All Intersections that are near the provided address.
+        ///  All Intersections that are near the provided address. Not available in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -274,9 +282,11 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property PoliticalView. 
         /// <para>
-        /// The alpha-2 or alpha-3 character code for the political view of a country. The political
+        ///  The alpha-2 or alpha-3 character code for the political view of a country. The political
         /// view applies to the results of the request to represent unresolved territorial claims
-        /// through the point of view of the specified country.
+        /// through the point of view of the specified country. Not available in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=3, Max=3)]
@@ -319,7 +329,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property PostalCodeDetails. 
         /// <para>
-        /// Contains details about the postal code of the place/result. 
+        ///  Contains details about the postal code of the place/result. Not available in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

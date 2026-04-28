@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private InferenceComponentContainerSpecification _container;
         private InferenceComponentDataCacheConfig _dataCacheConfig;
         private string _modelName;
+        private InferenceComponentSchedulingConfig _schedulingConfig;
         private InferenceComponentStartupParameters _startupParameters;
 
         /// <summary>
@@ -162,6 +163,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelName()
         {
             return this._modelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingConfig. 
+        /// <para>
+        /// The scheduling configuration that determines how inference component copies are placed
+        /// across available instances when copies are added or removed.
+        /// </para>
+        /// </summary>
+        public InferenceComponentSchedulingConfig SchedulingConfig
+        {
+            get { return this._schedulingConfig; }
+            set { this._schedulingConfig = value; }
+        }
+
+        // Check to see if SchedulingConfig property is set
+        internal bool IsSetSchedulingConfig()
+        {
+            return this._schedulingConfig != null;
         }
 
         /// <summary>

@@ -100,6 +100,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeTargetGroupsRequestMarshaller _instance = new DescribeTargetGroupsRequestMarshaller();        

@@ -102,7 +102,7 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=6, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string Email
         {
             get { return this._email; }

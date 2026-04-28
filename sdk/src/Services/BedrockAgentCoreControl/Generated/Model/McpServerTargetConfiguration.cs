@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class McpServerTargetConfiguration
     {
         private string _endpoint;
+        private McpToolSchemaConfiguration _mcpToolSchema;
 
         /// <summary>
         /// Gets and sets the property Endpoint. 
@@ -53,6 +54,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetEndpoint()
         {
             return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property McpToolSchema. 
+        /// <para>
+        /// The tool schema configuration for the MCP server target. Supported only when the credential
+        /// provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization
+        /// will be disabled when target is configured with mcpToolSchema.
+        /// </para>
+        /// </summary>
+        public McpToolSchemaConfiguration McpToolSchema
+        {
+            get { return this._mcpToolSchema; }
+            set { this._mcpToolSchema = value; }
+        }
+
+        // Check to see if McpToolSchema property is set
+        internal bool IsSetMcpToolSchema()
+        {
+            return this._mcpToolSchema != null;
         }
 
     }

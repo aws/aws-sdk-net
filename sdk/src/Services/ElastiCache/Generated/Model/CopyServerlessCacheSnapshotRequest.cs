@@ -108,7 +108,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property TargetServerlessCacheSnapshotName. 
         /// <para>
         /// The identifier for the snapshot to be created. Available for Valkey, Redis OSS and
-        /// Serverless Memcached only.
+        /// Serverless Memcached only. This value is stored as a lowercase string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

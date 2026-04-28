@@ -87,6 +87,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ContainerInstance);
             }
 
+            if(publicRequest.IsSetDaemonName())
+            {
+                context.Writer.WritePropertyName("daemonName");
+                context.Writer.WriteStringValue(publicRequest.DaemonName);
+            }
+
             if(publicRequest.IsSetDesiredStatus())
             {
                 context.Writer.WritePropertyName("desiredStatus");

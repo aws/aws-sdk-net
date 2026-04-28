@@ -1047,6 +1047,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VersionDescription", StringUtils.FromString(publicRequest.VersionDescription));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateLaunchTemplateVersionRequestMarshaller _instance = new CreateLaunchTemplateVersionRequestMarshaller();        

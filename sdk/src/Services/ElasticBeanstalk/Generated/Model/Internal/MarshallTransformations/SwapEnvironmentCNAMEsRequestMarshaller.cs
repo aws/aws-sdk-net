@@ -76,6 +76,8 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SourceEnvironmentName", StringUtils.FromString(publicRequest.SourceEnvironmentName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SwapEnvironmentCNAMEsRequestMarshaller _instance = new SwapEnvironmentCNAMEsRequestMarshaller();        

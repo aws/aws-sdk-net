@@ -68,6 +68,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListChangeSetsRequestMarshaller _instance = new ListChangeSetsRequestMarshaller();        

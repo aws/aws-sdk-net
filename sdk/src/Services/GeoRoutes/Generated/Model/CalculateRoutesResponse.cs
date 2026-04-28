@@ -61,8 +61,10 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Notices. 
         /// <para>
-        /// Notices are additional information returned that indicate issues that occurred during
-        /// route calculation.
+        ///  Notices are additional information returned that indicate issues that occurred during
+        /// route calculation. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

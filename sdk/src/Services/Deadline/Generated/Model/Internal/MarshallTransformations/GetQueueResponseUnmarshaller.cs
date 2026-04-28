@@ -130,6 +130,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("schedulingConfiguration", targetDepth))
+                {
+                    var unmarshaller = SchedulingConfigurationUnmarshaller.Instance;
+                    response.SchedulingConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

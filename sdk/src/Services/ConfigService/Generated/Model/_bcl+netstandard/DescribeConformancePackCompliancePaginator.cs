@@ -42,6 +42,12 @@ namespace Amazon.ConfigService.Model
         /// </summary>
         public IPaginatedEnumerable<DescribeConformancePackComplianceResponse> Responses => new PaginatedResponse<DescribeConformancePackComplianceResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the ConformancePackRuleComplianceList
+        /// </summary>
+        public IPaginatedEnumerable<ConformancePackRuleCompliance> ConformancePackRuleComplianceList => 
+            new PaginatedResultKeyResponse<DescribeConformancePackComplianceResponse, ConformancePackRuleCompliance>(this, (i) => i.ConformancePackRuleComplianceList ?? new List<ConformancePackRuleCompliance>());
+
         internal DescribeConformancePackCompliancePaginator(IAmazonConfigService client, DescribeConformancePackComplianceRequest request)
         {
             this._client = client;

@@ -103,6 +103,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateDBSubnetGroupRequestMarshaller _instance = new CreateDBSubnetGroupRequestMarshaller();        

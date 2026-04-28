@@ -80,6 +80,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListServiceSpecificCredentialsRequestMarshaller _instance = new ListServiceSpecificCredentialsRequestMarshaller();        

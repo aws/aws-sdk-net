@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("OrganizationsAccess", StringUtils.FromBool(publicRequest.OrganizationsAccess));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static UpdateCapacityManagerOrganizationsAccessRequestMarshaller _instance = new UpdateCapacityManagerOrganizationsAccessRequestMarshaller();        
