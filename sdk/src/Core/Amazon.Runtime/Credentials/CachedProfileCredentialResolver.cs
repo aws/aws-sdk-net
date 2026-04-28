@@ -15,10 +15,12 @@
 
 using System;
 using System.Collections.Concurrent;
+using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.Internal.Settings;
 
 namespace Amazon.Runtime.Credentials
 {
@@ -102,7 +104,6 @@ namespace Amazon.Runtime.Credentials
             }
             // Same as the sync path: remove from dictionary but do NOT dispose.
             // See comment in TryResolveCredentials for rationale.
-            //InvalidOperationException
             catch (Exception ex) when (ex is AmazonClientException || ex is InvalidDataException || ex is InvalidOperationException)
             {
                 _profileCredentialCache.TryRemove(key, out _);
@@ -182,14 +183,18 @@ namespace Amazon.Runtime.Credentials
 
         /// <summary>
         /// Immutable snapshot of resolved credentials and the file metadata captured at resolution time.
-        /// Invalidation checks last-write timestamp.
+        /// Invalidation checks last-write timestamp for all backing credential files:
+        /// the shared credentials file, the shared config file, and (when applicable) the
+        /// .NET SDK credentials file (DPAPI-encrypted store in AppData\Local\AWSToolkit).
         /// </summary>
         private sealed class ProfileCredentialSnapshot
         {
             private readonly string _credentialsFilePath;
             private readonly string _configFilePath;
+            private readonly string _netSdkCredentialsFilePath;
             private readonly DateTime _credentialsFileWriteTime;
             private readonly DateTime _configFileWriteTime;
+            private readonly DateTime _netSdkCredentialsFileWriteTime;
             public AWSCredentials Credentials { get; }
 
             public ProfileCredentialSnapshot(AWSCredentials credentials, string profilesLocation)
@@ -197,13 +202,16 @@ namespace Amazon.Runtime.Credentials
                 Credentials = credentials;
                 _credentialsFilePath = GetEffectiveCredentialsFilePath(profilesLocation);
                 _configFilePath = SharedCredentialsFile.DefaultConfigFilePath;
+                _netSdkCredentialsFilePath = GetNetSdkCredentialsFilePath(profilesLocation);
                 _credentialsFileWriteTime = GetLastWriteTime(_credentialsFilePath);
                 _configFileWriteTime = GetLastWriteTime(_configFilePath);
+                _netSdkCredentialsFileWriteTime = GetLastWriteTime(_netSdkCredentialsFilePath);
             }
 
             public bool HasFileChanged() =>
                 GetLastWriteTime(_credentialsFilePath) != _credentialsFileWriteTime ||
-                GetLastWriteTime(_configFilePath) != _configFileWriteTime;
+                GetLastWriteTime(_configFilePath) != _configFileWriteTime ||
+                GetLastWriteTime(_netSdkCredentialsFilePath) != _netSdkCredentialsFileWriteTime;
 
             /// <summary>
             /// Resolves the effective credentials file path using the same logic as
@@ -221,6 +229,35 @@ namespace Amazon.Runtime.Credentials
                     return AWSConfigs.AWSProfilesLocation;
 
                 return SharedCredentialsFile.DefaultFilePath;
+            }
+
+            /// <summary>
+            /// Returns the path to the .NET SDK credentials file (RegisteredAccounts.json)
+            /// if the NetSDK store is applicable for this resolution, otherwise null.
+            /// <para />
+            /// The NetSDK store is only used when:
+            /// 1. <paramref name="profilesLocation"/> is null or empty (no custom location override),
+            /// 2. <see cref="UserCrypto.IsUserCryptAvailable"/> is true (Windows with DPAPI support), and
+            /// 3. <see cref="AWSConfigs.DisableLegacyPersistenceStore"/> is false.
+            /// This mirrors the same conditions used by <see cref="CredentialProfileStoreChain.TryGetProfile"/>.
+            /// </summary>
+            private static string GetNetSdkCredentialsFilePath(string profilesLocation)
+            {
+                if (!string.IsNullOrEmpty(profilesLocation))
+                    return null;
+
+                if (AWSConfigs.DisableLegacyPersistenceStore)
+                    return null;
+
+                if (!UserCrypto.IsUserCryptAvailable)
+                    return null;
+
+                var settingsFolder = PersistenceManager.GetSettingsStoreFolder();
+                if (string.IsNullOrEmpty(settingsFolder))
+                    return null;
+
+                return string.Format(CultureInfo.InvariantCulture, @"{0}\{1}.json",
+                    settingsFolder, SettingsConstants.RegisteredProfiles);
             }
 
             private static DateTime GetLastWriteTime(string path) =>
