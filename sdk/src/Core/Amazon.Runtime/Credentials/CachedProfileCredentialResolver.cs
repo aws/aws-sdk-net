@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Credentials
     /// to avoid redundant disk reads under concurrency. The cache is automatically invalidated when
     /// the backing credentials or config file is modified on disk.
     /// </summary>
-    public class CachedProfileCredentialResolver : IDisposable
+    internal class CachedProfileCredentialResolver : IDisposable
     {
         private readonly ConcurrentDictionary<(string ProfileName, string Location), ProfileCredentialEntry> _profileCredentialCache = new();
         private bool _disposed;
@@ -58,14 +58,14 @@ namespace Amazon.Runtime.Credentials
 
                 return ResolveAndCacheProfileCredentials(profile, entry);
             }
-            // If we got here that means we were unable to find a profile with that name.
+            // If we got here that means we failed to find the profile and resolve credentials for that profile.
             // Remove the zombie entry from the dictionary so future callers don't pay
             // semaphore overhead, but do NOT dispose the entry: other threads may still
             // be blocked on entry.ResolutionLock.Wait/WaitAsync. They will wake up,
             // acquire the lock, fail to resolve, and re-throw. The orphaned entry
             // (and its SemaphoreSlim) will be garbage-collected once all references
             // are released — SemaphoreSlim has no unmanaged resources.
-            catch (AmazonClientException)
+            catch (Exception ex) when (ex is AmazonClientException || ex is InvalidDataException || ex is InvalidOperationException)
             {
                 _profileCredentialCache.TryRemove(key, out _);
                 throw;
@@ -102,7 +102,8 @@ namespace Amazon.Runtime.Credentials
             }
             // Same as the sync path: remove from dictionary but do NOT dispose.
             // See comment in TryResolveCredentials for rationale.
-            catch (AmazonClientException)
+            //InvalidOperationException
+            catch (Exception ex) when (ex is AmazonClientException || ex is InvalidDataException || ex is InvalidOperationException)
             {
                 _profileCredentialCache.TryRemove(key, out _);
                 throw;
