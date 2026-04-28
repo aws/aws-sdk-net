@@ -164,7 +164,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             MergeAttributes(request, table);
         }
 
-        internal void ApplyUpdateExpression(UpdateItemRequest request, Table table)
+        internal virtual void ApplyUpdateExpression(UpdateItemRequest request, Table table)
         {
             request.UpdateExpression = this.ExpressionStatement;
             MergeAttributes(request, table);
@@ -395,10 +395,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return parts.Count == 0 ? null : string.Join(" ", parts);
         }
 
-        internal new void ApplyUpdateExpression(UpdateItemRequest request, Table table)
+        internal override void ApplyUpdateExpression(UpdateItemRequest request, Table table)
         {
             base.ExpressionStatement = BuildExpressionStatement();
-            if (AttributeValues != null && AttributeValues.Count > 0)
+            if (AttributeValues is { Count: > 0 })
             {
                 request.ExpressionAttributeValues ??= new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
                 foreach (var kvp in AttributeValues)
@@ -408,6 +408,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
             base.ApplyUpdateExpression(request, table);
         }
+
         private static void AppendOperation(List<string> parts, string operation, List<string> operationParts)
         {
             if (operationParts == null || operationParts.Count == 0)

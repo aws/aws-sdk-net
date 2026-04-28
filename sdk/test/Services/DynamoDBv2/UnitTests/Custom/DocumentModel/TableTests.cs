@@ -329,21 +329,26 @@ namespace AWSSDK_DotNet.UnitTests
                 && r.ExpressionAttributeValues.Count == 1;
 
             if (isAsync)
-                _ddbClientMock.Setup(c => c.UpdateItemAsync(It.Is<UpdateItemRequest>(r => predicate(r)), It.IsAny<CancellationToken>()))
+            {
+                _ddbClientMock.Setup(c =>
+                        c.UpdateItemAsync(It.Is<UpdateItemRequest>(r => predicate(r)), It.IsAny<CancellationToken>()))
                     .ReturnsAsync(new UpdateItemResponse());
+                await InvokeUpdateAsync(request);
+
+                _ddbClientMock.Verify(
+                    c => c.UpdateItemAsync(It.Is<UpdateItemRequest>(r => predicate(r)), It.IsAny<CancellationToken>()),
+                    Times.Once);
+
+            }
             else
+            {
                 _ddbClientMock.Setup(c => c.UpdateItem(It.Is<UpdateItemRequest>(r => predicate(r))))
                     .Returns(new UpdateItemResponse());
 
-            if (isAsync)
-                await InvokeUpdateAsync(request);
-            else
                 InvokeUpdateSync(request);
 
-            if (isAsync)
-                _ddbClientMock.Verify(c => c.UpdateItemAsync(It.Is<UpdateItemRequest>(r => predicate(r)), It.IsAny<CancellationToken>()), Times.Once);
-            else
                 _ddbClientMock.Verify(c => c.UpdateItem(It.Is<UpdateItemRequest>(r => predicate(r))), Times.Once);
+            }
         }
 
         [DataTestMethod]
@@ -369,6 +374,7 @@ namespace AWSSDK_DotNet.UnitTests
             Predicate<UpdateItemRequest> predicate = r =>
                 r.Key.ContainsKey("Id")
                 && r.ConditionExpression == "#N = :v"
+                && r.UpdateExpression== "SET #awsavar1 = :awsavar1, #awsavar2 = :awsavar2 "
                 && r.ExpressionAttributeValues.Count == 3; // :v + converted Count + Prop
 
             if (isAsync)
@@ -1225,6 +1231,76 @@ namespace AWSSDK_DotNet.UnitTests
 
             // Assert
             Assert.IsNull(result);
+            _ddbClientMock.VerifyAll();
+        }
+
+        [TestMethod]
+        public void GivenUpdateExpression_WhenUpdateHelperWithReturnValuesOverloadCalled_ThenUpdateExpressionIsApplied()
+        {
+            var doc = new Document { ["Id"] = "1" };
+            var updateExpression = new UpdateExpression
+            {
+                ExpressionAttributeNames = new Dictionary<string, string> { { "#Count", "Count" } },
+                ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":inc", 1 } }
+            };
+            updateExpression.AddStatement(UpdateExpression.OperationSet, "#Count = #Count + :inc");
+
+            UpdateItemRequest capturedRequest = null;
+
+            _ddbClientMock
+                .Setup(c => c.UpdateItem(It.IsAny<UpdateItemRequest>()))
+                .Callback<UpdateItemRequest>(r => capturedRequest = r)
+                .Returns(new UpdateItemResponse
+                {
+                    Attributes = new Dictionary<string, AttributeValue>
+                    {
+                        { "Id", new AttributeValue { S = "1" } },
+                        { "Count", new AttributeValue { N = "5" } }
+                    }
+                });
+
+            var result = _table.UpdateHelper(doc, ReturnValues.AllNewAttributes, null, updateExpression);
+
+            Assert.IsNotNull(capturedRequest);
+            Assert.IsTrue(capturedRequest.UpdateExpression.Contains("SET #Count = #Count + :inc"));
+            Assert.IsTrue(capturedRequest.ExpressionAttributeNames.ContainsKey("#Count"));
+            Assert.IsTrue(capturedRequest.ExpressionAttributeValues.ContainsKey(":inc"));
+            Assert.IsNotNull(result);
+            _ddbClientMock.VerifyAll();
+        }
+
+        [TestMethod]
+        public void GivenDocumentChangesAndUpdateExpression_WhenUpdateHelperWithReturnValuesOverloadCalled_ThenBothAreIncludedInRequest()
+        {
+            var doc = new Document { ["Id"] = "1", ["Score"] = 10 };
+            var updateExpression = new UpdateExpression
+            {
+                ExpressionAttributeNames = new Dictionary<string, string> { { "#Count", "Count" } },
+                ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":inc", 1 } }
+            };
+            updateExpression.AddStatement(UpdateExpression.OperationSet, "#Count = #Count + :inc");
+
+            UpdateItemRequest capturedRequest = null;
+
+            _ddbClientMock
+                .Setup(c => c.UpdateItem(It.IsAny<UpdateItemRequest>()))
+                .Callback<UpdateItemRequest>(r => capturedRequest = r)
+                .Returns(new UpdateItemResponse
+                {
+                    Attributes = new Dictionary<string, AttributeValue>
+                    {
+                        { "Id", new AttributeValue { S = "1" } },
+                        { "Score", new AttributeValue { N = "10" } },
+                        { "Count", new AttributeValue { N = "2" } }
+                    }
+                });
+
+            var result = _table.UpdateHelper(doc, ReturnValues.AllNewAttributes, null, updateExpression);
+
+            Assert.IsNotNull(capturedRequest);
+            Assert.IsTrue(capturedRequest.UpdateExpression.Contains("#Count = #Count + :inc"));
+            Assert.IsTrue(capturedRequest.ExpressionAttributeNames.ContainsValue("Score"));
+            Assert.IsNotNull(result);
             _ddbClientMock.VerifyAll();
         }
     }

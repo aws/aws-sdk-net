@@ -357,17 +357,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return req;
         }
 
-        protected override void ApplyExpressions(BaseUpdateItemDocumentOperationRequest request, UpdateItemRequest lowLevel)
+        protected override void ApplyExpressions(BaseUpdateItemDocumentOperationRequest request,
+            UpdateItemRequest lowLevel)
         {
-            if(request.UpdateExpression is UpdateExpression ue && ue.IsSet)
-            {
-                ue.ApplyUpdateExpression(lowLevel, Table);
-            }
-            else
-            {
-                if (request.UpdateExpression is { IsSet: true })
-                    request.UpdateExpression.ApplyUpdateExpression(lowLevel, Table);
-            }
+            if (request.UpdateExpression is { IsSet: true })
+                request.UpdateExpression.ApplyUpdateExpression(lowLevel, Table);
+
             if (request.ConditionalExpression is { IsSet: true })
                 request.ConditionalExpression.ApplyConditionalExpression(lowLevel, Table);
         }
