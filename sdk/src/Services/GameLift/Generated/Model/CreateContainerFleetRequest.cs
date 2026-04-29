@@ -351,7 +351,11 @@ namespace Amazon.GameLift.Model
         /// If you set values manually, Amazon GameLift Servers no longer calculates a port range
         /// for you, even if you later remove the manual settings. 
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// The port range must not overlap with the Amazon GameLift Servers reserved port range
+        /// <c>4092-4191</c>. This range is reserved for internal Amazon GameLift Servers services.
+        /// </para>
         /// </summary>
         public ConnectionPortRange InstanceConnectionPortRange
         {
@@ -401,7 +405,11 @@ namespace Amazon.GameLift.Model
         /// If you set values manually, Amazon GameLift Servers no longer calculates a port range
         /// for you, even if you later remove the manual settings. 
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// The port range must not overlap with the Amazon GameLift Servers reserved port range
+        /// <c>4092-4191</c>. This range is reserved for internal Amazon GameLift Servers services.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

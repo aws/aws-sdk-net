@@ -2180,7 +2180,7 @@ namespace Amazon.GameLift
         /// APIs by task</a> 
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">A unique identifier for the game session to add a player to.</param>
+        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to add a player to. The value is always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>.</param>
         /// <param name="playerId">A unique identifier for a player. Player IDs are developer-defined.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2363,7 +2363,7 @@ namespace Amazon.GameLift
         /// APIs by task</a> 
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">A unique identifier for the game session to add players to.</param>
+        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to add players to. The value is always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>.</param>
         /// <param name="playerIds">List of unique identifiers for the players to be added.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4740,6 +4740,114 @@ namespace Amazon.GameLift
         }
         #endregion
         
+        #region  DescribeContainerGroupPortMappings
+
+        internal virtual DescribeContainerGroupPortMappingsResponse DescribeContainerGroupPortMappings(DescribeContainerGroupPortMappingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContainerGroupPortMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContainerGroupPortMappingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContainerGroupPortMappingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <b>This API works with the following fleet types:</b> Container
+        /// 
+        ///  
+        /// <para>
+        /// Retrieves the port mappings for a container group running on a container fleet. Port
+        /// mappings show how container ports are mapped to connection ports on the fleet instance.
+        /// Use this operation to find the connection port for a specific container on a fleet
+        /// instance.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Request options</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Get port mappings for a game server container group. Provide the fleet ID, set <c>ContainerGroupType</c>
+        /// to <c>GAME_SERVER</c>, and specify the <c>ComputeName</c> for the game server container
+        /// group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Get port mappings for a per-instance container group. Provide the fleet ID, set <c>ContainerGroupType</c>
+        /// to <c>PER_INSTANCE</c>, and specify the <c>InstanceId</c> for the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Optionally filter results to a single container by providing a <c>ContainerName</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Results</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation returns the fleet ID, location, container group definition ARN, container
+        /// group type, compute name (for game server container groups), instance ID, and a list
+        /// of <c>ContainerGroupPortMapping</c> objects. Each object contains the container name,
+        /// runtime ID, and a list of port mappings that show how container ports map to connection
+        /// ports on the instance.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-remote-access.html">Connect
+        /// to containers</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Create
+        /// a container group definition</a> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContainerGroupPortMappings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeContainerGroupPortMappings service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.LimitExceededException">
+        /// The requested operation would cause the resource to exceed the allowed service limit.
+        /// Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// The requested resources was not found. The resource was either not created yet or
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeContainerGroupPortMappings">REST API Reference for DescribeContainerGroupPortMappings Operation</seealso>
+        public virtual Task<DescribeContainerGroupPortMappingsResponse> DescribeContainerGroupPortMappingsAsync(DescribeContainerGroupPortMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContainerGroupPortMappingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContainerGroupPortMappingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeContainerGroupPortMappingsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeEC2InstanceLimits
 
         internal virtual DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request)
@@ -4772,27 +4880,29 @@ namespace Amazon.GameLift
         /// Region or in a remote location. For remote locations, limits also differ based on
         /// the combination of home Region and remote location. All requests must specify an Amazon
         /// Web Services Region (either explicitly or as your default settings). To get the limit
-        /// for a remote location, you must also specify the location. For example, the following
-        /// requests all return different results: 
+        /// for a remote location, you must also specify the location. To learn more about how
+        /// Amazon GameLift Servers handles locations, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon
+        /// GameLift Servers service locations</a>. For example, the following requests all return
+        /// different results: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Request specifies the Region <c>ap-northeast-1</c> with no location. The result is
-        /// limits and usage data on all instance types that are deployed in <c>us-east-2</c>,
-        /// by all of the fleets that reside in <c>ap-northeast-1</c>. 
+        /// limits and usage data on all of the fleets that reside in <c>ap-northeast-1</c>, for
+        /// all instance types that are deployed in <c>ap-northeast-1</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Request specifies the Region <c>us-east-1</c> with location <c>ca-central-1</c>. The
-        /// result is limits and usage data on all instance types that are deployed in <c>ca-central-1</c>,
-        /// by all of the fleets that reside in <c>us-east-2</c>. These limits do not affect fleets
-        /// in any other Regions that deploy instances to <c>ca-central-1</c>.
+        /// Request specifies the Region <c>ap-northeast-1</c> with location <c>us-west-2</c>.
+        /// The result is limits and usage data on all of the fleets that reside in <c>ap-northeast-1</c>,
+        /// for all instance types that are deployed in <c>us-west-2</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Request specifies the Region <c>eu-west-1</c> with location <c>ca-central-1</c>. The
-        /// result is limits and usage data on all instance types that are deployed in <c>ca-central-1</c>,
-        /// by all of the fleets that reside in <c>eu-west-1</c>.
+        /// Request specifies the Region <c>us-east-1</c> with location <c>ap-northeast-1</c>.
+        /// The result is limits and usage data on all of the fleets that reside in <c>us-east-1</c>,
+        /// for all instance types that are deployed in <c>ap-northeast-1</c>. These limits do
+        /// not affect fleets in any other Regions that deploy instances to <c>ap-northeast-1</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4876,27 +4986,29 @@ namespace Amazon.GameLift
         /// Region or in a remote location. For remote locations, limits also differ based on
         /// the combination of home Region and remote location. All requests must specify an Amazon
         /// Web Services Region (either explicitly or as your default settings). To get the limit
-        /// for a remote location, you must also specify the location. For example, the following
-        /// requests all return different results: 
+        /// for a remote location, you must also specify the location. To learn more about how
+        /// Amazon GameLift Servers handles locations, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon
+        /// GameLift Servers service locations</a>. For example, the following requests all return
+        /// different results: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Request specifies the Region <c>ap-northeast-1</c> with no location. The result is
-        /// limits and usage data on all instance types that are deployed in <c>us-east-2</c>,
-        /// by all of the fleets that reside in <c>ap-northeast-1</c>. 
+        /// limits and usage data on all of the fleets that reside in <c>ap-northeast-1</c>, for
+        /// all instance types that are deployed in <c>ap-northeast-1</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Request specifies the Region <c>us-east-1</c> with location <c>ca-central-1</c>. The
-        /// result is limits and usage data on all instance types that are deployed in <c>ca-central-1</c>,
-        /// by all of the fleets that reside in <c>us-east-2</c>. These limits do not affect fleets
-        /// in any other Regions that deploy instances to <c>ca-central-1</c>.
+        /// Request specifies the Region <c>ap-northeast-1</c> with location <c>us-west-2</c>.
+        /// The result is limits and usage data on all of the fleets that reside in <c>ap-northeast-1</c>,
+        /// for all instance types that are deployed in <c>us-west-2</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Request specifies the Region <c>eu-west-1</c> with location <c>ca-central-1</c>. The
-        /// result is limits and usage data on all instance types that are deployed in <c>ca-central-1</c>,
-        /// by all of the fleets that reside in <c>eu-west-1</c>.
+        /// Request specifies the Region <c>us-east-1</c> with location <c>ap-northeast-1</c>.
+        /// The result is limits and usage data on all of the fleets that reside in <c>us-east-1</c>,
+        /// for all instance types that are deployed in <c>ap-northeast-1</c>. These limits do
+        /// not affect fleets in any other Regions that deploy instances to <c>ap-northeast-1</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -7432,7 +7544,7 @@ namespace Amazon.GameLift
         /// APIs by task</a> 
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">A unique identifier for the game session to get logs for. </param>
+        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to get logs for. The value is always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -9446,8 +9558,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>gameSessionId</b> -- A unique identifier for the game session. You can use either
-        /// a <c>GameSessionId</c> or <c>GameSessionArn</c> value. 
+        ///  <b>gameSessionId</b> -- An identifier for the game session that is unique across
+        /// all regions. You must use the full ARN value. 
         /// </para>
         ///  </li> <li> 
         /// <para>
