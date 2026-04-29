@@ -50,6 +50,7 @@ namespace Amazon.MediaPackageV2.Model
         private DashSegmentTemplateFormat _segmentTemplateFormat;
         private DashSubtitleConfiguration _subtitleConfiguration;
         private int? _suggestedPresentationDelaySeconds;
+        private UriPathType _uriPathType;
         private DashUtcTiming _utcTiming;
 
         /// <summary>
@@ -387,6 +388,27 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetSuggestedPresentationDelaySeconds()
         {
             return this._suggestedPresentationDelaySeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UriPathType. 
+        /// <para>
+        /// The type of path to use in manifest URIs. <c>LEAF</c> uses leaf-relative paths (for
+        /// example, <c>index_1.mpd</c>). <c>ROOT</c> uses root-relative paths that include the
+        /// full path from root (for example, <c>/out/v1/channel-group/channel/endpoint/index_1.mpd</c>).
+        /// If you don't specify a value, the default is <c>LEAF</c>.
+        /// </para>
+        /// </summary>
+        public UriPathType UriPathType
+        {
+            get { return this._uriPathType; }
+            set { this._uriPathType = value; }
+        }
+
+        // Check to see if UriPathType property is set
+        internal bool IsSetUriPathType()
+        {
+            return this._uriPathType != null;
         }
 
         /// <summary>
