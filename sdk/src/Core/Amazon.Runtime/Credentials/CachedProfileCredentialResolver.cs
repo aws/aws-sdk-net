@@ -340,7 +340,7 @@ namespace Amazon.Runtime.Credentials
                 var settingsFolder = PersistenceManager.GetSettingsStoreFolder();
                 if (string.IsNullOrEmpty(settingsFolder))
                     return null;
-
+                // hardcoded windows backslash is fine here because the encrypted store is for windows only
                 return string.Format(CultureInfo.InvariantCulture, @"{0}\{1}.json",
                     settingsFolder, SettingsConstants.RegisteredProfiles);
             }
