@@ -2,11 +2,11 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Account.Model.AcceptPrimaryEmailUpdateRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.AcceptPrimaryEmailUpdateRequest.Otp</property>
-    <pattern>^[a-zA-Z0-9]{6}$</pattern>
+    <pattern>[a-zA-Z0-9]{6}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.AcceptPrimaryEmailUpdateRequest.PrimaryEmail</property>
@@ -15,11 +15,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.DeleteAlternateContactRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.DisableRegionRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.DisableRegionRequest.RegionName</property>
@@ -28,7 +28,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.EnableRegionRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.EnableRegionRequest.RegionName</property>
@@ -37,37 +37,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.GetAccountInformationRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.GetAccountInformationResponse.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.GetAccountInformationResponse.AccountName</property>
     <min>1</min>
     <max>50</max>
-    <pattern>^[ -;=?-~]+$</pattern>
+    <pattern>[ -;=?-~]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.GetAlternateContactRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.GetContactInformationRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.GetGovCloudAccountInformationRequest.StandardAccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.GetGovCloudAccountInformationResponse.GovCloudAccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.GetPrimaryEmailRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.GetPrimaryEmailResponse.PrimaryEmail</property>
@@ -76,7 +76,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.GetRegionOptStatusRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.GetRegionOptStatusRequest.RegionName</property>
@@ -90,7 +90,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.ListRegionsRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.ListRegionsRequest.MaxResults</property>
@@ -104,23 +104,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.PutAccountNameRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.PutAccountNameRequest.AccountName</property>
     <min>1</min>
     <max>50</max>
-    <pattern>^[ -;=?-~]+$</pattern>
+    <pattern>[ -;=?-~]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.PutAlternateContactRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.PutAlternateContactRequest.EmailAddress</property>
     <min>1</min>
     <max>254</max>
-    <pattern>^[\s]*[\w+=.#|!&amp;-]+@[\w.-]+\.[\w]+[\s]*$</pattern>
+    <pattern>[\s]*[\w+=.#|!&amp;-]+@[\w.-]+\.[\w]+[\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.PutAlternateContactRequest.Name</property>
@@ -131,7 +131,7 @@
     <property>Amazon.Account.Model.PutAlternateContactRequest.PhoneNumber</property>
     <min>1</min>
     <max>25</max>
-    <pattern>^[\s0-9()+-]+$</pattern>
+    <pattern>[\s0-9()+-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.PutAlternateContactRequest.Title</property>
@@ -140,11 +140,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.PutContactInformationRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.StartPrimaryEmailUpdateRequest.AccountId</property>
-    <pattern>^\d{12}$</pattern>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.StartPrimaryEmailUpdateRequest.PrimaryEmail</property>
@@ -155,7 +155,7 @@
     <property>Amazon.Account.Model.AlternateContact.EmailAddress</property>
     <min>1</min>
     <max>254</max>
-    <pattern>^[\s]*[\w+=.#|!&amp;-]+@[\w.-]+\.[\w]+[\s]*$</pattern>
+    <pattern>[\s]*[\w+=.#|!&amp;-]+@[\w.-]+\.[\w]+[\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.AlternateContact.Name</property>
@@ -166,7 +166,7 @@
     <property>Amazon.Account.Model.AlternateContact.PhoneNumber</property>
     <min>1</min>
     <max>25</max>
-    <pattern>^[\s0-9()+-]+$</pattern>
+    <pattern>[\s0-9()+-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.AlternateContact.Title</property>
@@ -217,7 +217,7 @@
     <property>Amazon.Account.Model.ContactInformation.PhoneNumber</property>
     <min>1</min>
     <max>20</max>
-    <pattern>^[+][\s0-9()-]+$</pattern>
+    <pattern>[+][\s0-9()-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.ContactInformation.PostalCode</property>
