@@ -1,3 +1,25 @@
+### 4.0.240.0 (2026-04-29 18:16 UTC)
+* Account (4.0.4.0)
+	* Adds AccountState in the response for the GetAccountInformation API. Each state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.
+* BedrockAgentCore (4.0.21.0)
+	* Adds batch evaluation for running evaluators against multiple agent sessions with server-side orchestration, AI-powered recommendations for optimizing system prompts and tool descriptions, and AB testing with controlled traffic splitting and statistical significance reporting
+* BedrockAgentCoreControl (4.0.31.0)
+	* Adds configuration bundles for versioned, immutable agent configuration snapshots with branch-based lineage
+* CloudFront (4.0.14.0)
+	* Amazon CloudFront now supports cache tag. Tag objects via response headers and invalidate all matching objects in a single request, replacing manual URL tracking and broad wildcards.
+* Deadline (4.0.19.0)
+	* Adds support for rtx-pro-server-6000 GPU accelerator for service-managed fleets.
+* ECR (4.0.13.4)
+	* Removes support for registry policy V1
+* GameLift (4.0.10.0)
+	* Amazon GameLift Servers adds a new DescribeContainerGroupPortMappings API for container fleets, making it easy to discover which connection ports map to your container ports without needing to remotely access the compute.
+* MediaPackageV2 (4.0.12.0)
+	* This feature adds configuration for specifying SCTE marker handling and allow greater control over generated manifest and segment URIs
+* Transfer (4.0.9.0)
+	* This launch will increase the limits for customers to list the contents from the remote directories from 10k to 200k.
+* WorkSpacesWeb (4.0.9.0)
+	* Allow admins to configure IPv6 ranges on IP Access Settings.
+
 ### 4.0.239.0 (2026-04-27 19:22 UTC)
 * ApplicationSignals (4.0.8.0)
 	* Application Signals now supports creating composite Service Level Objectives on Service Operations. Users can now create service SLO on multiple operations.
