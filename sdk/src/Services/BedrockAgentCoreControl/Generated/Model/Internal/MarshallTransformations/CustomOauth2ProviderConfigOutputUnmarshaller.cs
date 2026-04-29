@@ -68,6 +68,18 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.OauthDiscovery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("privateEndpoint", targetDepth))
+                {
+                    var unmarshaller = PrivateEndpointUnmarshaller.Instance;
+                    unmarshalledObject.PrivateEndpoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("privateEndpointOverrides", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PrivateEndpointOverride, PrivateEndpointOverrideUnmarshaller>(PrivateEndpointOverrideUnmarshaller.Instance);
+                    unmarshalledObject.PrivateEndpointOverrides = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

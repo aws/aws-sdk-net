@@ -5,6 +5,7 @@
     "AcceptAddressTransfer": "<p>Accepts an Elastic IP address transfer. For more information, see <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept\">Accept a transferred Elastic IP address</a> in the <i>Amazon VPC User Guide</i>.</p>",
     "AcceptCapacityReservationBillingOwnership": "<p>Accepts a request to assign billing of the available capacity of a shared Capacity Reservation to your account. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/assign-billing.html\"> Billing assignment for shared Amazon EC2 Capacity Reservations</a>.</p>",
     "AcceptReservedInstancesExchangeQuote": "<p>Accepts the Convertible Reserved Instance exchange quote described in the <a>GetReservedInstancesExchangeQuote</a> call.</p>",
+    "AcceptTransitGatewayClientVpnAttachment": "<p>Accepts a Transit Gateway attachment request for a Client VPN endpoint. The Transit Gateway owner must accept the attachment request before the Client VPN endpoint can route traffic through the Transit Gateway.</p>",
     "AcceptTransitGatewayMulticastDomainAssociations": "<p>Accepts a request to associate subnets with a transit gateway multicast domain.</p>",
     "AcceptTransitGatewayPeeringAttachment": "<p>Accepts a transit gateway peering attachment request. The peering attachment must be in the <code>pendingAcceptance</code> state.</p>",
     "AcceptTransitGatewayVpcAttachment": "<p>Accepts a request to attach a VPC to a transit gateway.</p> <p>The VPC attachment must be in the <code>pendingAcceptance</code> state. Use <a>DescribeTransitGatewayVpcAttachments</a> to view your pending VPC attachment requests. Use <a>RejectTransitGatewayVpcAttachment</a> to reject a VPC attachment request.</p>",
@@ -231,6 +232,7 @@
     "DeleteTrafficMirrorSession": "<p>Deletes the specified Traffic Mirror session.</p>",
     "DeleteTrafficMirrorTarget": "<p>Deletes the specified Traffic Mirror target.</p> <p>You cannot delete a Traffic Mirror target that is in use by a Traffic Mirror session.</p>",
     "DeleteTransitGateway": "<p>Deletes the specified transit gateway.</p>",
+    "DeleteTransitGatewayClientVpnAttachment": "<p>Deletes a Transit Gateway attachment for a Client VPN endpoint. The Transit Gateway owner can delete the attachment to remove the association between the Client VPN endpoint and the Transit Gateway.</p>",
     "DeleteTransitGatewayConnect": "<p>Deletes the specified Connect attachment. You must first delete any Connect peers for the attachment.</p>",
     "DeleteTransitGatewayConnectPeer": "<p>Deletes the specified Connect peer.</p>",
     "DeleteTransitGatewayMeteringPolicy": "<p>Deletes a transit gateway metering policy.</p>",
@@ -567,6 +569,7 @@
     "GetLaunchTemplateData": "<p>Retrieves the configuration data of the specified instance. You can use this data to create a launch template. </p> <p>This action calls on other describe actions to get instance information. Depending on your instance configuration, you may need to allow the following actions in your IAM policy: <code>DescribeSpotInstanceRequests</code>, <code>DescribeInstanceCreditSpecifications</code>, <code>DescribeVolumes</code>, and <code>DescribeInstanceAttribute</code>. Or, you can allow <code>describe*</code> depending on your instance requirements.</p>",
     "GetManagedPrefixListAssociations": "<p>Gets information about the resources that are associated with the specified managed prefix list.</p>",
     "GetManagedPrefixListEntries": "<p>Gets information about the entries for a specified managed prefix list.</p>",
+    "GetManagedResourceVisibility": "<p>Retrieves the managed resource visibility configuration for the account. The response indicates whether managed resources are hidden or visible by default.</p>",
     "GetNetworkInsightsAccessScopeAnalysisFindings": "<p>Gets the findings for the specified Network Access Scope analysis.</p>",
     "GetNetworkInsightsAccessScopeContent": "<p>Gets the content for the specified Network Access Scope.</p>",
     "GetPasswordData": "<p>Retrieves the encrypted administrator password for a running Windows instance.</p> <p>The Windows password is generated at boot by the <code>EC2Config</code> service or <code>EC2Launch</code> scripts (Windows Server 2016 and later). This usually only happens the first time an instance is launched. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingConfig_WinAMI.html\">EC2Config</a> and <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2launch.html\">EC2Launch</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For the <code>EC2Config</code> service, the password is not generated for rebundled AMIs unless <code>Ec2SetPassword</code> is enabled before bundling.</p> <p>The password is encrypted using the key pair that you specified when you launched the instance. You must provide the corresponding key pair file.</p> <p>When you launch an instance, password generation and encryption may take a few minutes. If you try to retrieve the password before it's available, the output returns an empty string. We recommend that you wait up to 15 minutes after launching an instance before trying to retrieve the generated password.</p>",
@@ -640,6 +643,7 @@
     "ModifyLaunchTemplate": "<p>Modifies a launch template. You can specify which version of the launch template to set as the default version. When launching an instance, the default version applies when a launch template version is not specified.</p>",
     "ModifyLocalGatewayRoute": "<p>Modifies the specified local gateway route.</p>",
     "ModifyManagedPrefixList": "<p>Modifies the specified managed prefix list.</p> <p>Adding or removing entries in a prefix list creates a new version of the prefix list. Changing the name of the prefix list does not affect the version.</p> <p>If you specify a current version number that does not match the true current version number, the request fails.</p>",
+    "ModifyManagedResourceVisibility": "<p>Modifies the managed resource visibility configuration for the account. Use this operation to control whether managed resources are hidden or visible by default. Visibility settings are account-wide and affect all IAM principals uniformly. Hidden resources remain fully operational and billable.</p>",
     "ModifyNetworkInterfaceAttribute": "<p>Modifies the specified network interface attribute. You can specify only one attribute at a time. You can use this action to attach and detach security groups from an existing EC2 instance.</p>",
     "ModifyPrivateDnsNameOptions": "<p>Modifies the options for instance hostnames for the specified instance.</p>",
     "ModifyPublicIpDnsNameOptions": "<p>Modify public hostname options for a network interface. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html\">EC2 instance hostnames, DNS names, and domains</a> in the <i>Amazon EC2 User Guide</i>.</p>",
@@ -700,6 +704,7 @@
     "RegisterTransitGatewayMulticastGroupMembers": "<p>Registers members (network interfaces) with the transit gateway multicast group. A member is a network interface associated with a supported EC2 instance that receives multicast traffic. For more information, see <a href=\"https://docs.aws.amazon.com/vpc/latest/tgw/tgw-multicast-overview.html\">Multicast on transit gateways</a> in the <i>Amazon Web Services Transit Gateways Guide</i>.</p> <p>After you add the members, use <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html\">SearchTransitGatewayMulticastGroups</a> to verify that the members were added to the transit gateway multicast group.</p>",
     "RegisterTransitGatewayMulticastGroupSources": "<p>Registers sources (network interfaces) with the specified transit gateway multicast group.</p> <p>A multicast source is a network interface attached to a supported instance that sends multicast traffic. For more information about supported instances, see <a href=\"https://docs.aws.amazon.com/vpc/latest/tgw/tgw-multicast-overview.html\">Multicast on transit gateways</a> in the <i>Amazon Web Services Transit Gateways Guide</i>.</p> <p>After you add the source, use <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html\">SearchTransitGatewayMulticastGroups</a> to verify that the source was added to the multicast group.</p>",
     "RejectCapacityReservationBillingOwnership": "<p>Rejects a request to assign billing of the available capacity of a shared Capacity Reservation to your account. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/assign-billing.html\"> Billing assignment for shared Amazon EC2 Capacity Reservations</a>.</p>",
+    "RejectTransitGatewayClientVpnAttachment": "<p>Rejects a Transit Gateway attachment request for a Client VPN endpoint. The Transit Gateway owner can reject the attachment request to prevent the Client VPN endpoint from routing traffic through the Transit Gateway.</p>",
     "RejectTransitGatewayMulticastDomainAssociations": "<p>Rejects a request to associate cross-account subnets with a transit gateway multicast domain.</p>",
     "RejectTransitGatewayPeeringAttachment": "<p>Rejects a transit gateway peering attachment request.</p>",
     "RejectTransitGatewayVpcAttachment": "<p>Rejects a request to attach a VPC to a transit gateway.</p> <p>The VPC attachment must be in the <code>pendingAcceptance</code> state. Use <a>DescribeTransitGatewayVpcAttachments</a> to view your pending VPC attachment requests. Use <a>AcceptTransitGatewayVpcAttachment</a> to accept a VPC attachment request.</p>",
@@ -852,6 +857,16 @@
     },
     "AcceptReservedInstancesExchangeQuoteResult": {
       "base": "<p>The result of the exchange and whether it was <code>successful</code>.</p>",
+      "refs": {
+      }
+    },
+    "AcceptTransitGatewayClientVpnAttachmentRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "AcceptTransitGatewayClientVpnAttachmentResult": {
+      "base": null,
       "refs": {
       }
     },
@@ -2093,11 +2108,13 @@
       "base": null,
       "refs": {
         "AllocateHostsRequest$AvailabilityZoneId": "<p>The ID of the Availability Zone.</p>",
+        "AssociateClientVpnTargetNetworkRequest$AvailabilityZoneId": "<p>The Availability Zone ID for the Transit Gateway association. Required if when associating an Availability Zone with a Client VPN endpoint that uses a Transit Gateway. You cannot specify both <code>AvailabilityZone</code> and <code>AvailabilityZoneId</code>.</p>",
         "AssociateNatGatewayAddressRequest$AvailabilityZoneId": "<p>For regional NAT gateways only: The ID of the Availability Zone where you want to associate an Elastic IP address (EIP). The regional NAT gateway uses a separate EIP in each AZ to handle outbound NAT traffic from that AZ. Use this instead of AvailabilityZone for consistent identification of AZs across Amazon Web Services Regions. </p> <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>",
         "AvailabilityZoneAddress$AvailabilityZoneId": "<p>For regional NAT gateways only: The ID of the Availability Zone where this specific NAT gateway configuration will be active. Each AZ in a regional NAT gateway has its own configuration to handle outbound NAT traffic from that AZ. Use this instead of AvailabilityZone for consistent identification of AZs across Amazon Web Services Regions. </p> <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>",
         "CapacityBlockExtension$AvailabilityZoneId": "<p>The Availability Zone ID of the Capacity Block extension.</p>",
         "CapacityBlockExtensionOffering$AvailabilityZoneId": "<p>The Availability Zone ID of the Capacity Block that will be extended.</p>",
         "CapacityReservationInfo$AvailabilityZoneId": "<p>The ID of the Availability Zone.</p>",
+        "ClientVpnAvailabilityZoneIdSet$member": null,
         "CreateCapacityReservationRequest$AvailabilityZoneId": "<p>The ID of the Availability Zone in which to create the Capacity Reservation.</p>",
         "CreateDefaultSubnetRequest$AvailabilityZoneId": "<p>The ID of the Availability Zone.</p> <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified, but not both.</p>",
         "CreateSecondarySubnetRequest$AvailabilityZoneId": "<p>The ID of the Availability Zone for the secondary subnet. This option is preferred over <code>AvailabilityZone</code> as it provides a consistent identifier across Amazon Web Services accounts. You cannot specify both <code>AvailabilityZone</code> and <code>AvailabilityZoneId</code> in the same request.</p>",
@@ -2148,11 +2165,13 @@
       "base": null,
       "refs": {
         "AllocateHostsRequest$AvailabilityZone": "<p>The Availability Zone in which to allocate the Dedicated Host.</p>",
+        "AssociateClientVpnTargetNetworkRequest$AvailabilityZone": "<p>The Availability Zone name for the Transit Gateway association. Required if when associating an Availability Zone with a Client VPN endpoint that uses a Transit Gateway. You cannot specify both <code>SubnetId</code> and <code>AvailabilityZone</code>.</p>",
         "AssociateNatGatewayAddressRequest$AvailabilityZone": "<p>For regional NAT gateways only: The Availability Zone where you want to associate an Elastic IP address (EIP). The regional NAT gateway uses a separate EIP in each AZ to handle outbound NAT traffic from that AZ.</p> <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>",
         "AvailabilityZoneAddress$AvailabilityZone": "<p>For regional NAT gateways only: The Availability Zone where this specific NAT gateway configuration will be active. Each AZ in a regional NAT gateway has its own configuration to handle outbound NAT traffic from that AZ. </p> <p>A regional NAT gateway is a single NAT Gateway that works across multiple availability zones (AZs) in your VPC, providing redundancy, scalability and availability across all the AZs in a Region.</p>",
         "CapacityBlockExtension$AvailabilityZone": "<p>The Availability Zone of the Capacity Block extension.</p>",
         "CapacityBlockExtensionOffering$AvailabilityZone": "<p>The Availability Zone of the Capacity Block that will be extended.</p>",
         "CapacityReservationInfo$AvailabilityZone": "<p>The Availability Zone for the Capacity Reservation.</p>",
+        "ClientVpnAvailabilityZoneSet$member": null,
         "CreateCapacityReservationRequest$AvailabilityZone": "<p>The Availability Zone in which to create the Capacity Reservation.</p>",
         "CreateDefaultSubnetRequest$AvailabilityZone": "<p>The Availability Zone in which to create the default subnet.</p> <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be specified, but not both.</p>",
         "CreateSecondarySubnetRequest$AvailabilityZone": "<p>The Availability Zone for the secondary subnet. You cannot specify both <code>AvailabilityZone</code> and <code>AvailabilityZoneId</code> in the same request.</p>",
@@ -2374,6 +2393,7 @@
         "AcceptCapacityReservationBillingOwnershipRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "AcceptCapacityReservationBillingOwnershipResult$Return": "<p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>",
         "AcceptReservedInstancesExchangeQuoteRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
+        "AcceptTransitGatewayClientVpnAttachmentRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "AcceptTransitGatewayMulticastDomainAssociationsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "AcceptTransitGatewayPeeringAttachmentRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "AcceptTransitGatewayVpcAttachmentRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
@@ -2670,6 +2690,7 @@
         "DeleteTrafficMirrorFilterRuleRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DeleteTrafficMirrorSessionRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DeleteTrafficMirrorTargetRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
+        "DeleteTransitGatewayClientVpnAttachmentRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DeleteTransitGatewayConnectPeerRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DeleteTransitGatewayConnectRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DeleteTransitGatewayMeteringPolicyEntryRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
@@ -2774,11 +2795,13 @@
         "DescribeInstanceImageMetadataRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeInstanceSqlHaHistoryStatesRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeInstanceSqlHaStatesRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
+        "DescribeInstanceStatusRequest$IncludeManagedResources": "<p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>",
         "DescribeInstanceStatusRequest$DryRun": "<p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeInstanceStatusRequest$IncludeAllInstances": "<p>When <code>true</code>, includes the health status for all instances. When <code>false</code>, includes the health status for running instances only.</p> <p>Default: <code>false</code> </p>",
         "DescribeInstanceTopologyRequest$DryRun": "<p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeInstanceTypeOfferingsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeInstanceTypesRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
+        "DescribeInstancesRequest$IncludeManagedResources": "<p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>",
         "DescribeInstancesRequest$DryRun": "<p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeInternetGatewaysRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeIpamByoasnRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
@@ -2796,7 +2819,9 @@
         "DescribeKeyPairsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeLaunchTemplateVersionsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeLaunchTemplateVersionsRequest$ResolveAlias": "<p>If <code>true</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the AMI ID is displayed in the response for <code>imageId</code>.</p> <p>If <code>false</code>, and if a Systems Manager parameter is specified for <code>ImageId</code>, the parameter is displayed in the response for <code>imageId</code>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id\">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default: <code>false</code> </p>",
+        "DescribeLaunchTemplateVersionsRequest$IncludeManagedResources": "<p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>",
         "DescribeLaunchTemplatesRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
+        "DescribeLaunchTemplatesRequest$IncludeManagedResources": "<p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>",
         "DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeLocalGatewayRouteTableVpcAssociationsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeLocalGatewayRouteTablesRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
@@ -2815,6 +2840,7 @@
         "DescribeNetworkInsightsPathsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeNetworkInterfaceAttributeRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeNetworkInterfaceAttributeResult$AssociatePublicIpAddress": "<p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>",
+        "DescribeNetworkInterfacesRequest$IncludeManagedResources": "<p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>",
         "DescribeNetworkInterfacesRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeOutpostLagsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribePlacementGroupsRequest$DryRun": "<p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
@@ -2875,8 +2901,10 @@
         "DescribeVerifiedAccessInstancesRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeVerifiedAccessTrustProvidersRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeVolumeAttributeRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
+        "DescribeVolumeStatusRequest$IncludeManagedResources": "<p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>",
         "DescribeVolumeStatusRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeVolumesModificationsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
+        "DescribeVolumesRequest$IncludeManagedResources": "<p>Indicates whether to include managed resources in the output. If this parameter is set to <code>true</code>, the output includes resources that are managed by Amazon Web Services services, even if managed resource visibility is set to hidden.</p>",
         "DescribeVolumesRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeVpcAttributeRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "DescribeVpcBlockPublicAccessExclusionsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
@@ -3065,6 +3093,7 @@
         "GetLaunchTemplateDataRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "GetManagedPrefixListAssociationsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "GetManagedPrefixListEntriesRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
+        "GetManagedResourceVisibilityRequest$DryRun": "<p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "GetNetworkInsightsAccessScopeAnalysisFindingsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "GetNetworkInsightsAccessScopeContentRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "GetPasswordDataRequest$DryRun": "<p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
@@ -3235,6 +3264,7 @@
         "ModifyLaunchTemplateRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "ModifyLocalGatewayRouteRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "ModifyManagedPrefixListRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
+        "ModifyManagedResourceVisibilityRequest$DryRun": "<p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "ModifyNetworkInterfaceAttributeRequest$EnablePrimaryIpv6": "<p>If you’re modifying a network interface in a dual-stack or IPv6-only subnet, you have the option to assign a primary IPv6 IP address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a primary IPv6 address. Use this option if the instance that this ENI will be attached to relies on its IPv6 address not changing. Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes the primary IPv6 address.</p>",
         "ModifyNetworkInterfaceAttributeRequest$AssociatePublicIpAddress": "<p>Indicates whether to assign a public IPv4 address to a network interface. This option can be enabled for any network interface but will only apply to the primary network interface (eth0).</p>",
         "ModifyNetworkInterfaceAttributeRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
@@ -3321,6 +3351,7 @@
         "OnDemandOptionsRequest$SingleInstanceType": "<p>Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.</p> <p>Supported only for fleets of type <code>instant</code>.</p>",
         "OnDemandOptionsRequest$SingleAvailabilityZone": "<p>Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.</p> <p>Supported only for fleets of type <code>instant</code>.</p>",
         "OperatorResponse$Managed": "<p>If <code>true</code>, the resource is managed by a service provider.</p>",
+        "OperatorResponse$HiddenByDefault": "<p>If <code>true</code>, the resource is hidden by default based on the managed resource visibility settings for the account.</p>",
         "PeeringConnectionOptions$AllowDnsResolutionFromRemoteVpc": "<p>If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when queried from instances in the peer VPC.</p>",
         "PeeringConnectionOptions$AllowEgressFromLocalClassicLinkToRemoteVpc": "<p>Deprecated.</p>",
         "PeeringConnectionOptions$AllowEgressFromLocalVpcToRemoteClassicLink": "<p>Deprecated.</p>",
@@ -3354,6 +3385,7 @@
         "RegisterTransitGatewayMulticastGroupSourcesRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "RejectCapacityReservationBillingOwnershipRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "RejectCapacityReservationBillingOwnershipResult$Return": "<p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>",
+        "RejectTransitGatewayClientVpnAttachmentRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "RejectTransitGatewayMulticastDomainAssociationsRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "RejectTransitGatewayPeeringAttachmentRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
         "RejectTransitGatewayVpcAttachmentRequest$DryRun": "<p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>",
@@ -4596,6 +4628,22 @@
         "ClientVpnAuthorizationRuleStatus$Code": "<p>The state of the authorization rule.</p>"
       }
     },
+    "ClientVpnAvailabilityZoneIdSet": {
+      "base": null,
+      "refs": {
+        "TargetNetwork$AvailabilityZoneIds": "<p>The Availability Zone IDs for the target network association, if the Client VPN endpoint uses a Transit Gateway.</p>",
+        "TransitGatewayConfigurationDescribeEndpointStructure$AvailabilityZoneIds": "<p>The Availability Zone IDs for the Transit Gateway association.</p>",
+        "TransitGatewayConfigurationInputStructure$AvailabilityZoneIds": "<p>The Availability Zone IDs for the Transit Gateway association. You can specify up to the maximum number of Availability Zones supported by the Transit Gateway. You cannot specify both <code>AvailabilityZones</code> and <code>AvailabilityZoneIds</code>.</p>"
+      }
+    },
+    "ClientVpnAvailabilityZoneSet": {
+      "base": null,
+      "refs": {
+        "TargetNetwork$AvailabilityZones": "<p>The Availability Zone names for the target network association, if the Client VPN endpoint uses a Transit Gateway.</p>",
+        "TransitGatewayConfigurationDescribeEndpointStructure$AvailabilityZones": "<p>The Availability Zone names for the Transit Gateway association.</p>",
+        "TransitGatewayConfigurationInputStructure$AvailabilityZones": "<p>The Availability Zone names for the Transit Gateway association. You can specify up to the maximum number of Availability Zones supported by the Transit Gateway. You cannot specify both <code>AvailabilityZones</code> and <code>AvailabilityZoneIds</code>.</p>"
+      }
+    },
     "ClientVpnConnection": {
       "base": "<p>Describes a client connection.</p>",
       "refs": {
@@ -4660,7 +4708,8 @@
         "ImportClientVpnClientCertificateRevocationListRequest$ClientVpnEndpointId": "<p>The ID of the Client VPN endpoint to which the client certificate revocation list applies.</p>",
         "ModifyClientVpnEndpointRequest$ClientVpnEndpointId": "<p>The ID of the Client VPN endpoint to modify.</p>",
         "RevokeClientVpnIngressRequest$ClientVpnEndpointId": "<p>The ID of the Client VPN endpoint with which the authorization rule is associated.</p>",
-        "TerminateClientVpnConnectionsRequest$ClientVpnEndpointId": "<p>The ID of the Client VPN endpoint to which the client is connected.</p>"
+        "TerminateClientVpnConnectionsRequest$ClientVpnEndpointId": "<p>The ID of the Client VPN endpoint to which the client is connected.</p>",
+        "TransitGatewayClientVpnAttachment$ClientVpnEndpointId": "<p>The ID of the Client VPN endpoint.</p>"
       }
     },
     "ClientVpnEndpointIdList": {
@@ -4680,7 +4729,7 @@
     "ClientVpnEndpointStatusCode": {
       "base": null,
       "refs": {
-        "ClientVpnEndpointStatus$Code": "<p>The state of the Client VPN endpoint. Possible states include:</p> <ul> <li> <p> <code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p> </li> <li> <p> <code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p> </li> <li> <p> <code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p> </li> <li> <p> <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p> </li> </ul>"
+        "ClientVpnEndpointStatus$Code": "<p>The state of the Client VPN endpoint. Possible states include:</p> <ul> <li> <p> <code>pending-associate</code> - The Client VPN endpoint has been created but no target networks have been associated. The Client VPN endpoint cannot accept connections.</p> </li> <li> <p> <code>available</code> - The Client VPN endpoint has been created and a target network has been associated. The Client VPN endpoint can accept connections.</p> </li> <li> <p> <code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p> </li> <li> <p> <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p> </li> <li> <p> <code>pending</code> - The Client VPN endpoint has been created with a Transit Gateway configuration and is waiting for the Transit Gateway attachment to be accepted. The Client VPN endpoint cannot accept connections.</p> </li> </ul>"
       }
     },
     "ClientVpnRoute": {
@@ -7230,6 +7279,16 @@
       }
     },
     "DeleteTrafficMirrorTargetResult": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "DeleteTransitGatewayClientVpnAttachmentRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "DeleteTransitGatewayClientVpnAttachmentResult": {
       "base": null,
       "refs": {
       }
@@ -12808,6 +12867,16 @@
       "refs": {
       }
     },
+    "GetManagedResourceVisibilityRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "GetManagedResourceVisibilityResult": {
+      "base": null,
+      "refs": {
+      }
+    },
     "GetNetworkInsightsAccessScopeAnalysisFindingsMaxResults": {
       "base": null,
       "refs": {
@@ -18137,6 +18206,20 @@
         "DescribeManagedPrefixListsResult$PrefixLists": "<p>Information about the prefix lists.</p>"
       }
     },
+    "ManagedResourceDefaultVisibility": {
+      "base": null,
+      "refs": {
+        "ManagedResourceVisibilitySettings$DefaultVisibility": "<p>The default visibility setting for managed resources. A value of <code>hidden</code> indicates that managed resources are not included in Describe operation responses by default. A value of <code>visible</code> indicates that managed resources are included by default.</p>",
+        "ModifyManagedResourceVisibilityRequest$DefaultVisibility": "<p>The default visibility setting for managed resources. Valid values: <code>hidden</code> | <code>visible</code>.</p>"
+      }
+    },
+    "ManagedResourceVisibilitySettings": {
+      "base": "<p>Describes the managed resource visibility settings for the account.</p>",
+      "refs": {
+        "GetManagedResourceVisibilityResult$Visibility": "<p>The managed resource visibility settings for the account.</p>",
+        "ModifyManagedResourceVisibilityResult$Visibility": "<p>The updated managed resource visibility settings for the account.</p>"
+      }
+    },
     "MarketType": {
       "base": null,
       "refs": {
@@ -18716,6 +18799,18 @@
       "refs": {
       }
     },
+    "ModifyInstanceAttributeUserDataRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "ModifyInstanceAttributeValue": {
+      "base": null,
+      "refs": {
+        "ModifyInstanceAttributeRequest$Value": "<p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>",
+        "ModifyInstanceAttributeUserDataRequest$Value": null
+      }
+    },
     "ModifyInstanceCapacityReservationAttributesRequest": {
       "base": null,
       "refs": {
@@ -18932,6 +19027,16 @@
       }
     },
     "ModifyManagedPrefixListResult": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "ModifyManagedResourceVisibilityRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "ModifyManagedResourceVisibilityResult": {
       "base": null,
       "refs": {
       }
@@ -20384,7 +20489,9 @@
         "PlacementGroup$Operator": "<p>The service provider that manages the Placement Group.</p>",
         "ResponseLaunchTemplateData$Operator": "<p>The entity that manages the launch template.</p>",
         "Volume$Operator": "<p>The service provider that manages the volume.</p>",
-        "VolumeRecycleBinInfo$Operator": "<p>The service provider that manages the volume.</p>"
+        "VolumeModification$Operator": null,
+        "VolumeRecycleBinInfo$Operator": "<p>The service provider that manages the volume.</p>",
+        "VolumeStatusItem$Operator": "<p>The service provider that manages the resource.</p>"
       }
     },
     "OrganizationArnStringList": {
@@ -21676,6 +21783,16 @@
       }
     },
     "RejectCapacityReservationBillingOwnershipResult": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "RejectTransitGatewayClientVpnAttachmentRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "RejectTransitGatewayClientVpnAttachmentResult": {
       "base": null,
       "refs": {
       }
@@ -25407,7 +25524,7 @@
         "EnableFastSnapshotRestoreSuccessItem$OwnerAlias": "<p>The Amazon Web Services owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>",
         "EnableImageDeregistrationProtectionResult$Return": "<p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>",
         "EnableIpamOrganizationAdminAccountRequest$DelegatedAdminAccountId": "<p>The Organizations member account ID that you want to enable as the IPAM account.</p>",
-        "EnableIpamPolicyRequest$OrganizationTargetId": "<p>The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.</p> <p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p>",
+        "EnableIpamPolicyRequest$OrganizationTargetId": "<p>A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.</p> <p>The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.</p>",
         "EncryptionSupport$StateMessage": "<p>A message describing the encryption state.</p>",
         "EventInformation$EventDescription": "<p>The description of the event.</p>",
         "EventInformation$EventSubType": "<p>The event.</p> <p> <code>error</code> events:</p> <ul> <li> <p> <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet does not have the required permissions either to launch or terminate an instance.</p> </li> <li> <p> <code>allLaunchSpecsTemporarilyBlacklisted</code> - None of the configurations are valid, and several attempts to launch instances have failed. For more information, see the description of the event.</p> </li> <li> <p> <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on the number of Spot Instances that you can launch.</p> </li> <li> <p> <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not valid. For more information, see the description of the event.</p> </li> </ul> <p> <code>fleetRequestChange</code> events:</p> <ul> <li> <p> <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and Amazon EC2 is attempting to maintain the target number of running instances.</p> </li> <li> <p> <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot Fleet) - The EC2 Fleet is deleted or the Spot Fleet request is canceled and has no running instances. The EC2 Fleet or Spot Fleet will be deleted two days after its instances are terminated.</p> </li> <li> <p> <code>deleted_running</code> (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet) - The EC2 Fleet is deleted or the Spot Fleet request is canceled and does not launch additional instances. Its existing instances continue to run until they are interrupted or terminated. The request remains in this state until all instances are interrupted or terminated.</p> </li> <li> <p> <code>deleted_terminating</code> (EC2 Fleet) / <code>cancelled_terminating</code> (Spot Fleet) - The EC2 Fleet is deleted or the Spot Fleet request is canceled and its instances are terminating. The request remains in this state until all instances are terminated.</p> </li> <li> <p> <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. If the request was created with <code>TerminateInstancesWithExpiration</code> set, a subsequent <code>terminated</code> event indicates that the instances are terminated.</p> </li> <li> <p> <code>modify_in_progress</code> - The EC2 Fleet or Spot Fleet request is being modified. The request remains in this state until the modification is fully processed.</p> </li> <li> <p> <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was modified.</p> </li> <li> <p> <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and Amazon EC2 is preparing to launch the target number of instances.</p> </li> <li> <p> <code>progress</code> - The EC2 Fleet or Spot Fleet request is in the process of being fulfilled.</p> </li> </ul> <p> <code>instanceChange</code> events:</p> <ul> <li> <p> <code>launched</code> - A new instance was launched.</p> </li> <li> <p> <code>terminated</code> - An instance was terminated by the user.</p> </li> <li> <p> <code>termination_notified</code> - An instance termination notification was sent when a Spot Instance was terminated by Amazon EC2 during scale-down, when the target capacity of the fleet was modified down, for example, from a target capacity of 4 to a target capacity of 3.</p> </li> </ul> <p> <code>Information</code> events:</p> <ul> <li> <p> <code>fleetProgressHalted</code> - The price in every launch specification is not valid because it is below the Spot price (all the launch specifications have produced <code>launchSpecUnusable</code> events). A launch specification might become valid if the Spot price changes.</p> </li> <li> <p> <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and several attempts to launch instances have failed. For more information, see the description of the event.</p> </li> <li> <p> <code>launchSpecUnusable</code> - The price specified in a launch specification is not valid because it is below the Spot price for the requested Spot pools.</p> <p>Note: Even if a fleet with the <code>maintain</code> request type is in the process of being canceled, it may still publish a <code>launchSpecUnusable</code> event. This does not mean that the canceled fleet is attempting to launch a new instance.</p> </li> <li> <p> <code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p> </li> </ul>",
@@ -26052,7 +26169,6 @@
         "ModifyIdentityIdFormatRequest$PrincipalArn": "<p>The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to modify the ID format for all IAM users, IAM roles, and the root user of the account.</p>",
         "ModifyImageAttributeRequest$Attribute": "<p>The name of the attribute to modify.</p> <p>Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </p>",
         "ModifyImageAttributeRequest$Value": "<p>The value of the attribute being modified. This parameter can be used only when the <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.</p>",
-        "ModifyInstanceAttributeRequest$Value": "<p>A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>",
         "ModifyInstanceCreditSpecificationRequest$ClientToken": "<p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring Idempotency</a>.</p>",
         "ModifyInstanceEventStartTimeRequest$InstanceEventId": "<p>The ID of the event whose date and time you are modifying.</p>",
         "ModifyInstanceEventWindowRequest$Name": "<p>The name of the event window.</p>",
@@ -26731,6 +26847,8 @@
         "TransitGatewayAttachmentBgpConfiguration$PeerAddress": "<p>The interior BGP peer IP address for the appliance.</p>",
         "TransitGatewayAttachmentPropagation$TransitGatewayRouteTableId": "<p>The ID of the propagation route table.</p>",
         "TransitGatewayCidrBlockStringList$member": null,
+        "TransitGatewayClientVpnAttachment$ClientVpnOwnerId": "<p>The ID of the Amazon Web Services account that owns the Client VPN endpoint.</p>",
+        "TransitGatewayClientVpnAttachment$CreationTime": "<p>The date and time the Transit Gateway attachment was created.</p>",
         "TransitGatewayConnectPeerConfiguration$TransitGatewayAddress": "<p>The Connect peer IP address on the transit gateway side of the tunnel.</p>",
         "TransitGatewayConnectPeerConfiguration$PeerAddress": "<p>The Connect peer IP address on the appliance side of the tunnel.</p>",
         "TransitGatewayMeteringPolicyEntry$PolicyRuleNumber": "<p>The rule number of the metering policy entry.</p>",
@@ -27124,11 +27242,11 @@
     "SubnetId": {
       "base": null,
       "refs": {
-        "AssociateClientVpnTargetNetworkRequest$SubnetId": "<p>The ID of the subnet to associate with the Client VPN endpoint.</p>",
+        "AssociateClientVpnTargetNetworkRequest$SubnetId": "<p>The ID of the subnet to associate with the Client VPN endpoint. Required for VPC-based endpoints. For Transit Gateway-based endpoints, use <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> instead.</p>",
         "AssociateRouteTableRequest$SubnetId": "<p>The ID of the subnet.</p>",
         "AssociateSubnetCidrBlockRequest$SubnetId": "<p>The ID of your subnet.</p>",
         "AssociatedSubnetList$member": null,
-        "CreateClientVpnRouteRequest$TargetVpcSubnetId": "<p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p> <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p>",
+        "CreateClientVpnRouteRequest$TargetVpcSubnetId": "<p>The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target network of the Client VPN endpoint.</p> <p>Alternatively, if you're adding a route for the local network, specify <code>local</code>.</p> <p>This parameter is required for VPC-based Client VPN endpoints. For Transit Gateway-based endpoints, this parameter is not required.</p>",
         "CreateInstanceConnectEndpointRequest$SubnetId": "<p>The ID of the subnet in which to create the EC2 Instance Connect Endpoint.</p>",
         "CreateNatGatewayRequest$SubnetId": "<p>The ID of the subnet in which to create the NAT gateway.</p>",
         "CreateNetworkInterfaceRequest$SubnetId": "<p>The ID of the subnet to associate with the network interface.</p>",
@@ -28081,12 +28199,14 @@
     "TransitGatewayAttachmentId": {
       "base": null,
       "refs": {
+        "AcceptTransitGatewayClientVpnAttachmentRequest$TransitGatewayAttachmentId": "<p>The ID of the Transit Gateway attachment.</p>",
         "AcceptTransitGatewayMulticastDomainAssociationsRequest$TransitGatewayAttachmentId": "<p>The ID of the transit gateway attachment.</p>",
         "AcceptTransitGatewayPeeringAttachmentRequest$TransitGatewayAttachmentId": "<p>The ID of the transit gateway attachment.</p>",
         "AcceptTransitGatewayVpcAttachmentRequest$TransitGatewayAttachmentId": "<p>The ID of the attachment.</p>",
         "AssociateTransitGatewayMulticastDomainRequest$TransitGatewayAttachmentId": "<p>The ID of the transit gateway attachment to associate with the transit gateway multicast domain.</p>",
         "AssociateTransitGatewayPolicyTableRequest$TransitGatewayAttachmentId": "<p>The ID of the transit gateway attachment to associate with the policy table.</p>",
         "AssociateTransitGatewayRouteTableRequest$TransitGatewayAttachmentId": "<p>The ID of the attachment.</p>",
+        "ClientVpnRoute$TransitGatewayAttachmentId": "<p>The ID of the Transit Gateway attachment, if the route targets a Transit Gateway.</p>",
         "CreateTransitGatewayConnectPeerRequest$TransitGatewayAttachmentId": "<p>The ID of the Connect attachment.</p>",
         "CreateTransitGatewayConnectRequest$TransportTransitGatewayAttachmentId": "<p>The ID of the transit gateway attachment. You can specify a VPC attachment or Amazon Web Services Direct Connect attachment.</p>",
         "CreateTransitGatewayMeteringPolicyEntryRequest$SourceTransitGatewayAttachmentId": "<p>The ID of the source transit gateway attachment for traffic matching.</p>",
@@ -28094,6 +28214,7 @@
         "CreateTransitGatewayPrefixListReferenceRequest$TransitGatewayAttachmentId": "<p>The ID of the attachment to which traffic is routed.</p>",
         "CreateTransitGatewayRouteRequest$TransitGatewayAttachmentId": "<p>The ID of the attachment.</p>",
         "CreateTransitGatewayRouteTableAnnouncementRequest$PeeringAttachmentId": "<p>The ID of the peering attachment.</p>",
+        "DeleteTransitGatewayClientVpnAttachmentRequest$TransitGatewayAttachmentId": "<p>The ID of the Transit Gateway attachment.</p>",
         "DeleteTransitGatewayConnectRequest$TransitGatewayAttachmentId": "<p>The ID of the Connect attachment.</p>",
         "DeleteTransitGatewayPeeringAttachmentRequest$TransitGatewayAttachmentId": "<p>The ID of the transit gateway peering attachment.</p>",
         "DeleteTransitGatewayVpcAttachmentRequest$TransitGatewayAttachmentId": "<p>The ID of the attachment.</p>",
@@ -28105,12 +28226,15 @@
         "GetTransitGatewayAttachmentPropagationsRequest$TransitGatewayAttachmentId": "<p>The ID of the attachment.</p>",
         "ModifyTransitGatewayPrefixListReferenceRequest$TransitGatewayAttachmentId": "<p>The ID of the attachment to which traffic is routed.</p>",
         "ModifyTransitGatewayVpcAttachmentRequest$TransitGatewayAttachmentId": "<p>The ID of the attachment.</p>",
+        "RejectTransitGatewayClientVpnAttachmentRequest$TransitGatewayAttachmentId": "<p>The ID of the Transit Gateway attachment.</p>",
         "RejectTransitGatewayMulticastDomainAssociationsRequest$TransitGatewayAttachmentId": "<p>The ID of the transit gateway attachment.</p>",
         "RejectTransitGatewayPeeringAttachmentRequest$TransitGatewayAttachmentId": "<p>The ID of the transit gateway peering attachment.</p>",
         "RejectTransitGatewayVpcAttachmentRequest$TransitGatewayAttachmentId": "<p>The ID of the attachment.</p>",
         "ReplaceTransitGatewayRouteRequest$TransitGatewayAttachmentId": "<p>The ID of the attachment.</p>",
         "TransitGatewayAssociation$TransitGatewayAttachmentId": "<p>The ID of the attachment.</p>",
         "TransitGatewayAttachmentIdStringList$member": null,
+        "TransitGatewayClientVpnAttachment$TransitGatewayAttachmentId": "<p>The ID of the Transit Gateway attachment.</p>",
+        "TransitGatewayConfigurationDescribeEndpointStructure$TransitGatewayAttachmentId": "<p>The ID of the Transit Gateway attachment.</p>",
         "TransitGatewayConnect$TransitGatewayAttachmentId": "<p>The ID of the Connect attachment.</p>",
         "TransitGatewayConnect$TransportTransitGatewayAttachmentId": "<p>The ID of the attachment from which the Connect attachment was created.</p>",
         "TransitGatewayConnectPeer$TransitGatewayAttachmentId": "<p>The ID of the Connect attachment.</p>",
@@ -28182,12 +28306,39 @@
         "TransitGatewayVpcAttachment$State": "<p>The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.</p>"
       }
     },
+    "TransitGatewayAttachmentStatusType": {
+      "base": null,
+      "refs": {
+        "TransitGatewayClientVpnAttachment$State": "<p>The state of the Transit Gateway attachment.</p>"
+      }
+    },
     "TransitGatewayCidrBlockStringList": {
       "base": null,
       "refs": {
         "ModifyTransitGatewayOptions$AddTransitGatewayCidrBlocks": "<p>Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>",
         "ModifyTransitGatewayOptions$RemoveTransitGatewayCidrBlocks": "<p>Removes CIDR blocks for the transit gateway.</p>",
         "TransitGatewayRequestOptions$TransitGatewayCidrBlocks": "<p>One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.</p>"
+      }
+    },
+    "TransitGatewayClientVpnAttachment": {
+      "base": "<p>Describes a Transit Gateway attachment for a Client VPN endpoint.</p>",
+      "refs": {
+        "AcceptTransitGatewayClientVpnAttachmentResult$TransitGatewayClientVpnAttachment": "<p>Information about the Transit Gateway Client VPN attachment.</p>",
+        "DeleteTransitGatewayClientVpnAttachmentResult$TransitGatewayClientVpnAttachment": "<p>Information about the Transit Gateway Client VPN attachment.</p>",
+        "RejectTransitGatewayClientVpnAttachmentResult$TransitGatewayClientVpnAttachment": "<p>Information about the Transit Gateway Client VPN attachment.</p>"
+      }
+    },
+    "TransitGatewayConfigurationDescribeEndpointStructure": {
+      "base": "<p>Describes the Transit Gateway configuration for a Client VPN endpoint.</p>",
+      "refs": {
+        "ClientVpnEndpoint$TransitGatewayConfiguration": "<p>The Transit Gateway configuration for the Client VPN endpoint.</p>"
+      }
+    },
+    "TransitGatewayConfigurationInputStructure": {
+      "base": "<p>The Transit Gateway configuration for a Client VPN endpoint.</p>",
+      "refs": {
+        "CreateClientVpnEndpointRequest$TransitGatewayConfiguration": "<p>The Transit Gateway configuration for the Client VPN endpoint. Use this parameter to associate the endpoint with a Transit Gateway instead of a VPC. You cannot specify both <code>TransitGatewayConfiguration</code> and <code>VpcId</code>/<code>SecurityGroupIds</code>.</p>",
+        "ModifyClientVpnEndpointRequest$TransitGatewayConfiguration": "<p>The Transit Gateway configuration for the Client VPN endpoint. This option is currently not supported.</p>"
       }
     },
     "TransitGatewayConnect": {
@@ -28273,6 +28424,9 @@
         "ModifyTransitGatewayRequest$TransitGatewayId": "<p>The ID of the transit gateway.</p>",
         "ModifyVpnConnectionRequest$TransitGatewayId": "<p>The ID of the transit gateway.</p>",
         "ReplaceRouteRequest$TransitGatewayId": "<p>The ID of a transit gateway.</p>",
+        "TransitGatewayClientVpnAttachment$TransitGatewayId": "<p>The ID of the Transit Gateway.</p>",
+        "TransitGatewayConfigurationDescribeEndpointStructure$TransitGatewayId": "<p>The ID of the Transit Gateway.</p>",
+        "TransitGatewayConfigurationInputStructure$TransitGatewayId": "<p>The ID of the Transit Gateway to associate with the Client VPN endpoint.</p>",
         "TransitGatewayConnect$TransitGatewayId": "<p>The ID of the transit gateway.</p>",
         "TransitGatewayIdStringList$member": null,
         "TransitGatewayMeteringPolicy$TransitGatewayId": "<p>The ID of the transit gateway associated with the metering policy.</p>",

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContainerMountPoint Marshaller
     /// </summary>
-    public class ContainerMountPointMarshaller : IRequestMarshaller<ContainerMountPoint, JsonMarshallerContext> 
+    public class ContainerMountPointMarshaller : IRequestMarshaller<ContainerMountPoint, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ContainerMountPoint requestObject, JsonMarshallerContext context)
+        public void Marshall(ContainerMountPoint requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAccessLevel())
-            {
-                context.Writer.WritePropertyName("AccessLevel");
-                context.Writer.WriteStringValue(requestObject.AccessLevel);
-            }
 
-            if(requestObject.IsSetContainerPath())
+            if (requestObject.IsSetAccessLevel())
             {
-                context.Writer.WritePropertyName("ContainerPath");
-                context.Writer.WriteStringValue(requestObject.ContainerPath);
+                context.Writer.WriteTextString("AccessLevel");
+                context.Writer.WriteTextString(requestObject.AccessLevel);
             }
-
-            if(requestObject.IsSetInstancePath())
+            if (requestObject.IsSetContainerPath())
             {
-                context.Writer.WritePropertyName("InstancePath");
-                context.Writer.WriteStringValue(requestObject.InstancePath);
+                context.Writer.WriteTextString("ContainerPath");
+                context.Writer.WriteTextString(requestObject.ContainerPath);
             }
-
+            if (requestObject.IsSetInstancePath())
+            {
+                context.Writer.WriteTextString("InstancePath");
+                context.Writer.WriteTextString(requestObject.InstancePath);
+            }
         }
 
         /// <summary>

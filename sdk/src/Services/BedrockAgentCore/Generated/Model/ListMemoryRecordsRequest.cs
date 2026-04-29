@@ -46,6 +46,7 @@ namespace Amazon.BedrockAgentCore.Model
         private string _memoryId;
         private string _memoryStrategyId;
         private string _awsNamespace;
+        private string _namespacePath;
         private string _nextToken;
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// that start with the provided prefix.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Namespace
         {
             get { return this._awsNamespace; }
@@ -124,6 +125,26 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamespacePath. 
+        /// <para>
+        /// Use namespacePath for hierarchical retrievals. Return all memory records where namespace
+        /// falls under the same parent hierarchy.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string NamespacePath
+        {
+            get { return this._namespacePath; }
+            set { this._namespacePath = value; }
+        }
+
+        // Check to see if NamespacePath property is set
+        internal bool IsSetNamespacePath()
+        {
+            return this._namespacePath != null;
         }
 
         /// <summary>

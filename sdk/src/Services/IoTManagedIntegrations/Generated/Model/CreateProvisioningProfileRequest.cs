@@ -31,9 +31,9 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProvisioningProfile operation.
-    /// Create a provisioning profile for a device to execute the provisioning flows using
-    /// a provisioning template. The provisioning template is a document that defines the
-    /// set of resources and policies applied to a device during the provisioning process.
+    /// Create a provisioning profile for executing device provisioning flows. The provisioning
+    /// profile is a document that defines the set of resources and policies applied to a
+    /// device during the provisioning process.
     /// </summary>
     public partial class CreateProvisioningProfileRequest : AmazonIoTManagedIntegrationsRequest
     {
@@ -47,7 +47,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property CaCertificate. 
         /// <para>
-        /// The id of the certificate authority (CA) certificate.
+        /// The body of the PEM-encoded certificate authority (CA) certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -66,7 +66,9 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property ClaimCertificate. 
         /// <para>
-        /// The claim certificate.
+        /// The body of the PEM-encoded claim certificate. If a claim certificate is provided,
+        /// it will be used for the provisioning profile. Otherwise, a claim certificate will
+        /// be generated.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -106,7 +108,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the provisioning template.
+        /// The name of the provisioning profile.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]

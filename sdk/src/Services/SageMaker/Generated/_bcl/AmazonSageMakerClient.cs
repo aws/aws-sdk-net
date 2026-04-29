@@ -1033,6 +1033,197 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateAIBenchmarkJob
+
+
+        /// <summary>
+        /// Creates a benchmark job that runs performance benchmarks against inference infrastructure
+        /// using a predefined AI workload configuration. The benchmark job measures metrics such
+        /// as latency, throughput, and cost for your generative AI inference endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIBenchmarkJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIBenchmarkJob">REST API Reference for CreateAIBenchmarkJob Operation</seealso>
+        public virtual CreateAIBenchmarkJobResponse CreateAIBenchmarkJob(CreateAIBenchmarkJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAIBenchmarkJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIBenchmarkJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAIBenchmarkJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a benchmark job that runs performance benchmarks against inference infrastructure
+        /// using a predefined AI workload configuration. The benchmark job measures metrics such
+        /// as latency, throughput, and cost for your generative AI inference endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIBenchmarkJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIBenchmarkJob">REST API Reference for CreateAIBenchmarkJob Operation</seealso>
+        public virtual Task<CreateAIBenchmarkJobResponse> CreateAIBenchmarkJobAsync(CreateAIBenchmarkJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAIBenchmarkJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIBenchmarkJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAIBenchmarkJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAIRecommendationJob
+
+
+        /// <summary>
+        /// Creates a recommendation job that generates intelligent optimization recommendations
+        /// for generative AI inference deployments. The job analyzes your model, workload configuration,
+        /// and performance targets to recommend optimal instance types, model optimization techniques
+        /// (such as quantization and speculative decoding), and deployment configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIRecommendationJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIRecommendationJob">REST API Reference for CreateAIRecommendationJob Operation</seealso>
+        public virtual CreateAIRecommendationJobResponse CreateAIRecommendationJob(CreateAIRecommendationJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAIRecommendationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIRecommendationJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAIRecommendationJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a recommendation job that generates intelligent optimization recommendations
+        /// for generative AI inference deployments. The job analyzes your model, workload configuration,
+        /// and performance targets to recommend optimal instance types, model optimization techniques
+        /// (such as quantization and speculative decoding), and deployment configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIRecommendationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIRecommendationJob">REST API Reference for CreateAIRecommendationJob Operation</seealso>
+        public virtual Task<CreateAIRecommendationJobResponse> CreateAIRecommendationJobAsync(CreateAIRecommendationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAIRecommendationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIRecommendationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAIRecommendationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAIWorkloadConfig
+
+
+        /// <summary>
+        /// Creates a reusable AI workload configuration that defines datasets, data sources,
+        /// and benchmark tool settings for consistent performance testing of generative AI inference
+        /// deployments on Amazon SageMaker AI.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIWorkloadConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateAIWorkloadConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIWorkloadConfig">REST API Reference for CreateAIWorkloadConfig Operation</seealso>
+        public virtual CreateAIWorkloadConfigResponse CreateAIWorkloadConfig(CreateAIWorkloadConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAIWorkloadConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIWorkloadConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAIWorkloadConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a reusable AI workload configuration that defines datasets, data sources,
+        /// and benchmark tool settings for consistent performance testing of generative AI inference
+        /// deployments on Amazon SageMaker AI.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIWorkloadConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAIWorkloadConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIWorkloadConfig">REST API Reference for CreateAIWorkloadConfig Operation</seealso>
+        public virtual Task<CreateAIWorkloadConfigResponse> CreateAIWorkloadConfigAsync(CreateAIWorkloadConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAIWorkloadConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAIWorkloadConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAIWorkloadConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateAlgorithm
 
 
@@ -6743,6 +6934,155 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteAIBenchmarkJob
+
+
+        /// <summary>
+        /// Deletes the specified AI benchmark job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIBenchmarkJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIBenchmarkJob">REST API Reference for DeleteAIBenchmarkJob Operation</seealso>
+        public virtual DeleteAIBenchmarkJobResponse DeleteAIBenchmarkJob(DeleteAIBenchmarkJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAIBenchmarkJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIBenchmarkJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAIBenchmarkJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified AI benchmark job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIBenchmarkJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIBenchmarkJob">REST API Reference for DeleteAIBenchmarkJob Operation</seealso>
+        public virtual Task<DeleteAIBenchmarkJobResponse> DeleteAIBenchmarkJobAsync(DeleteAIBenchmarkJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAIBenchmarkJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIBenchmarkJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAIBenchmarkJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAIRecommendationJob
+
+
+        /// <summary>
+        /// Deletes the specified AI recommendation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIRecommendationJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIRecommendationJob">REST API Reference for DeleteAIRecommendationJob Operation</seealso>
+        public virtual DeleteAIRecommendationJobResponse DeleteAIRecommendationJob(DeleteAIRecommendationJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAIRecommendationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIRecommendationJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAIRecommendationJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified AI recommendation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIRecommendationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIRecommendationJob">REST API Reference for DeleteAIRecommendationJob Operation</seealso>
+        public virtual Task<DeleteAIRecommendationJobResponse> DeleteAIRecommendationJobAsync(DeleteAIRecommendationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAIRecommendationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIRecommendationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAIRecommendationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAIWorkloadConfig
+
+
+        /// <summary>
+        /// Deletes the specified AI workload configuration. You cannot delete a configuration
+        /// that is referenced by an active benchmark job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIWorkloadConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAIWorkloadConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIWorkloadConfig">REST API Reference for DeleteAIWorkloadConfig Operation</seealso>
+        public virtual DeleteAIWorkloadConfigResponse DeleteAIWorkloadConfig(DeleteAIWorkloadConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAIWorkloadConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIWorkloadConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAIWorkloadConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified AI workload configuration. You cannot delete a configuration
+        /// that is referenced by an active benchmark job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIWorkloadConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAIWorkloadConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIWorkloadConfig">REST API Reference for DeleteAIWorkloadConfig Operation</seealso>
+        public virtual Task<DeleteAIWorkloadConfigResponse> DeleteAIWorkloadConfigAsync(DeleteAIWorkloadConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAIWorkloadConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAIWorkloadConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAIWorkloadConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAlgorithm
 
 
@@ -9866,6 +10206,153 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeActionResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAIBenchmarkJob
+
+
+        /// <summary>
+        /// Returns details of an AI benchmark job, including its status, configuration, target
+        /// endpoint, and timing information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAIBenchmarkJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIBenchmarkJob">REST API Reference for DescribeAIBenchmarkJob Operation</seealso>
+        public virtual DescribeAIBenchmarkJobResponse DescribeAIBenchmarkJob(DescribeAIBenchmarkJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAIBenchmarkJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAIBenchmarkJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAIBenchmarkJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns details of an AI benchmark job, including its status, configuration, target
+        /// endpoint, and timing information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAIBenchmarkJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIBenchmarkJob">REST API Reference for DescribeAIBenchmarkJob Operation</seealso>
+        public virtual Task<DescribeAIBenchmarkJobResponse> DescribeAIBenchmarkJobAsync(DescribeAIBenchmarkJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAIBenchmarkJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAIBenchmarkJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAIBenchmarkJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAIRecommendationJob
+
+
+        /// <summary>
+        /// Returns details of an AI recommendation job, including its status, model source, performance
+        /// targets, optimization recommendations, and deployment configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAIRecommendationJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIRecommendationJob">REST API Reference for DescribeAIRecommendationJob Operation</seealso>
+        public virtual DescribeAIRecommendationJobResponse DescribeAIRecommendationJob(DescribeAIRecommendationJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAIRecommendationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAIRecommendationJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAIRecommendationJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns details of an AI recommendation job, including its status, model source, performance
+        /// targets, optimization recommendations, and deployment configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAIRecommendationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIRecommendationJob">REST API Reference for DescribeAIRecommendationJob Operation</seealso>
+        public virtual Task<DescribeAIRecommendationJobResponse> DescribeAIRecommendationJobAsync(DescribeAIRecommendationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAIRecommendationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAIRecommendationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAIRecommendationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAIWorkloadConfig
+
+
+        /// <summary>
+        /// Returns details of an AI workload configuration, including the dataset configuration,
+        /// benchmark tool settings, tags, and creation time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAIWorkloadConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAIWorkloadConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIWorkloadConfig">REST API Reference for DescribeAIWorkloadConfig Operation</seealso>
+        public virtual DescribeAIWorkloadConfigResponse DescribeAIWorkloadConfig(DescribeAIWorkloadConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAIWorkloadConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAIWorkloadConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAIWorkloadConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns details of an AI workload configuration, including the dataset configuration,
+        /// benchmark tool settings, tags, and creation time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAIWorkloadConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAIWorkloadConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIWorkloadConfig">REST API Reference for DescribeAIWorkloadConfig Operation</seealso>
+        public virtual Task<DescribeAIWorkloadConfigResponse> DescribeAIWorkloadConfigAsync(DescribeAIWorkloadConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAIWorkloadConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAIWorkloadConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAIWorkloadConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -13891,6 +14378,135 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListActionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListActionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAIBenchmarkJobs
+
+
+        /// <summary>
+        /// Returns a list of AI benchmark jobs in your account. You can filter the results by
+        /// name, status, and creation time, and sort the results. The response is paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIBenchmarkJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListAIBenchmarkJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIBenchmarkJobs">REST API Reference for ListAIBenchmarkJobs Operation</seealso>
+        public virtual ListAIBenchmarkJobsResponse ListAIBenchmarkJobs(ListAIBenchmarkJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAIBenchmarkJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIBenchmarkJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAIBenchmarkJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of AI benchmark jobs in your account. You can filter the results by
+        /// name, status, and creation time, and sort the results. The response is paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIBenchmarkJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAIBenchmarkJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIBenchmarkJobs">REST API Reference for ListAIBenchmarkJobs Operation</seealso>
+        public virtual Task<ListAIBenchmarkJobsResponse> ListAIBenchmarkJobsAsync(ListAIBenchmarkJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAIBenchmarkJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIBenchmarkJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAIBenchmarkJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAIRecommendationJobs
+
+
+        /// <summary>
+        /// Returns a list of AI recommendation jobs in your account. You can filter the results
+        /// by name, status, and creation time, and sort the results. The response is paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIRecommendationJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListAIRecommendationJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIRecommendationJobs">REST API Reference for ListAIRecommendationJobs Operation</seealso>
+        public virtual ListAIRecommendationJobsResponse ListAIRecommendationJobs(ListAIRecommendationJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAIRecommendationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIRecommendationJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAIRecommendationJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of AI recommendation jobs in your account. You can filter the results
+        /// by name, status, and creation time, and sort the results. The response is paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIRecommendationJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAIRecommendationJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIRecommendationJobs">REST API Reference for ListAIRecommendationJobs Operation</seealso>
+        public virtual Task<ListAIRecommendationJobsResponse> ListAIRecommendationJobsAsync(ListAIRecommendationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAIRecommendationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIRecommendationJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAIRecommendationJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAIWorkloadConfigs
+
+
+        /// <summary>
+        /// Returns a list of AI workload configurations in your account. You can filter the results
+        /// by name and creation time, and sort the results. The response is paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIWorkloadConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListAIWorkloadConfigs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIWorkloadConfigs">REST API Reference for ListAIWorkloadConfigs Operation</seealso>
+        public virtual ListAIWorkloadConfigsResponse ListAIWorkloadConfigs(ListAIWorkloadConfigsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAIWorkloadConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIWorkloadConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAIWorkloadConfigsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of AI workload configurations in your account. You can filter the results
+        /// by name and creation time, and sort the results. The response is paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIWorkloadConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAIWorkloadConfigs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIWorkloadConfigs">REST API Reference for ListAIWorkloadConfigs Operation</seealso>
+        public virtual Task<ListAIWorkloadConfigsResponse> ListAIWorkloadConfigsAsync(ListAIWorkloadConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAIWorkloadConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAIWorkloadConfigsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAIWorkloadConfigsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -18654,6 +19270,100 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopAIBenchmarkJob
+
+
+        /// <summary>
+        /// Stops a running AI benchmark job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAIBenchmarkJob service method.</param>
+        /// 
+        /// <returns>The response from the StopAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAIBenchmarkJob">REST API Reference for StopAIBenchmarkJob Operation</seealso>
+        public virtual StopAIBenchmarkJobResponse StopAIBenchmarkJob(StopAIBenchmarkJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopAIBenchmarkJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAIBenchmarkJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopAIBenchmarkJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a running AI benchmark job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAIBenchmarkJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAIBenchmarkJob">REST API Reference for StopAIBenchmarkJob Operation</seealso>
+        public virtual Task<StopAIBenchmarkJobResponse> StopAIBenchmarkJobAsync(StopAIBenchmarkJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopAIBenchmarkJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAIBenchmarkJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopAIBenchmarkJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopAIRecommendationJob
+
+
+        /// <summary>
+        /// Stops a running AI recommendation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAIRecommendationJob service method.</param>
+        /// 
+        /// <returns>The response from the StopAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAIRecommendationJob">REST API Reference for StopAIRecommendationJob Operation</seealso>
+        public virtual StopAIRecommendationJobResponse StopAIRecommendationJob(StopAIRecommendationJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopAIRecommendationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAIRecommendationJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopAIRecommendationJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a running AI recommendation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAIRecommendationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAIRecommendationJob">REST API Reference for StopAIRecommendationJob Operation</seealso>
+        public virtual Task<StopAIRecommendationJobResponse> StopAIRecommendationJobAsync(StopAIRecommendationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopAIRecommendationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAIRecommendationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopAIRecommendationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

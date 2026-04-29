@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -59,122 +58,106 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartGameSessionPlacementRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.StartGameSessionPlacement";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GameLift/operation/StartGameSessionPlacement";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDesiredPlayerSessions())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("DesiredPlayerSessions");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestDesiredPlayerSessionsListValue in publicRequest.DesiredPlayerSessions)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDesiredPlayerSessions())
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteTextString("DesiredPlayerSessions");
+                    context.Writer.WriteStartArray(publicRequest.DesiredPlayerSessions.Count);
+                    foreach(var publicRequestDesiredPlayerSessionsListValue in publicRequest.DesiredPlayerSessions)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-                    var marshaller = DesiredPlayerSessionMarshaller.Instance;
-                    marshaller.Marshall(publicRequestDesiredPlayerSessionsListValue, context);
+                        var marshaller = DesiredPlayerSessionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDesiredPlayerSessionsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetGameProperties())
-            {
-                context.Writer.WritePropertyName("GameProperties");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestGamePropertiesListValue in publicRequest.GameProperties)
+                if (publicRequest.IsSetGameProperties())
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteTextString("GameProperties");
+                    context.Writer.WriteStartArray(publicRequest.GameProperties.Count);
+                    foreach(var publicRequestGamePropertiesListValue in publicRequest.GameProperties)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-                    var marshaller = GamePropertyMarshaller.Instance;
-                    marshaller.Marshall(publicRequestGamePropertiesListValue, context);
+                        var marshaller = GamePropertyMarshaller.Instance;
+                        marshaller.Marshall(publicRequestGamePropertiesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetGameSessionData())
-            {
-                context.Writer.WritePropertyName("GameSessionData");
-                context.Writer.WriteStringValue(publicRequest.GameSessionData);
-            }
-
-            if(publicRequest.IsSetGameSessionName())
-            {
-                context.Writer.WritePropertyName("GameSessionName");
-                context.Writer.WriteStringValue(publicRequest.GameSessionName);
-            }
-
-            if(publicRequest.IsSetGameSessionQueueName())
-            {
-                context.Writer.WritePropertyName("GameSessionQueueName");
-                context.Writer.WriteStringValue(publicRequest.GameSessionQueueName);
-            }
-
-            if(publicRequest.IsSetMaximumPlayerSessionCount())
-            {
-                context.Writer.WritePropertyName("MaximumPlayerSessionCount");
-                context.Writer.WriteNumberValue(publicRequest.MaximumPlayerSessionCount.Value);
-            }
-
-            if(publicRequest.IsSetPlacementId())
-            {
-                context.Writer.WritePropertyName("PlacementId");
-                context.Writer.WriteStringValue(publicRequest.PlacementId);
-            }
-
-            if(publicRequest.IsSetPlayerLatencies())
-            {
-                context.Writer.WritePropertyName("PlayerLatencies");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestPlayerLatenciesListValue in publicRequest.PlayerLatencies)
+                if (publicRequest.IsSetGameSessionData())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = PlayerLatencyMarshaller.Instance;
-                    marshaller.Marshall(publicRequestPlayerLatenciesListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("GameSessionData");
+                    context.Writer.WriteTextString(publicRequest.GameSessionData);
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetGameSessionName())
+                {
+                    context.Writer.WriteTextString("GameSessionName");
+                    context.Writer.WriteTextString(publicRequest.GameSessionName);
+                }
+                if (publicRequest.IsSetGameSessionQueueName())
+                {
+                    context.Writer.WriteTextString("GameSessionQueueName");
+                    context.Writer.WriteTextString(publicRequest.GameSessionQueueName);
+                }
+                if (publicRequest.IsSetMaximumPlayerSessionCount())
+                {
+                    context.Writer.WriteTextString("MaximumPlayerSessionCount");
+                    context.Writer.WriteInt32(publicRequest.MaximumPlayerSessionCount.Value);
+                }
+                if (publicRequest.IsSetPlacementId())
+                {
+                    context.Writer.WriteTextString("PlacementId");
+                    context.Writer.WriteTextString(publicRequest.PlacementId);
+                }
+                if (publicRequest.IsSetPlayerLatencies())
+                {
+                    context.Writer.WriteTextString("PlayerLatencies");
+                    context.Writer.WriteStartArray(publicRequest.PlayerLatencies.Count);
+                    foreach(var publicRequestPlayerLatenciesListValue in publicRequest.PlayerLatencies)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetPriorityConfigurationOverride())
+                        var marshaller = PlayerLatencyMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPlayerLatenciesListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetPriorityConfigurationOverride())
+                {
+                    context.Writer.WriteTextString("PriorityConfigurationOverride");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = PriorityConfigurationOverrideMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PriorityConfigurationOverride, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
             {
-                context.Writer.WritePropertyName("PriorityConfigurationOverride");
-                context.Writer.WriteStartObject();
-
-                var marshaller = PriorityConfigurationOverrideMarshaller.Instance;
-                marshaller.Marshall(publicRequest.PriorityConfigurationOverride, context);
-
-                context.Writer.WriteEndObject();
+                CborWriterPool.Return(writer);
             }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static StartGameSessionPlacementRequestMarshaller _instance = new StartGameSessionPlacementRequestMarshaller();        

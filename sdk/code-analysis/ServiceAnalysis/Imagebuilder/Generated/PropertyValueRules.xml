@@ -2627,6 +2627,11 @@
     <pattern>^[A-Za-z0-9]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.RegisterImageOptions.UefiData</property>
+    <min>0</min>
+    <max>64000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.RemediationRecommendation.Text</property>
     <min>1</min>
     <max>1024</max>
@@ -2726,6 +2731,11 @@
     <property>Amazon.Imagebuilder.Model.VulnerablePackage.Version</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.WindowsConfiguration.ImageIndex</property>
+    <min>1</min>
+    <max>4294967295</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Workflow.Arn</property>

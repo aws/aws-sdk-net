@@ -5793,6 +5793,39 @@ namespace Amazon.RDS
         }
         #endregion
         
+        #region  DescribeServerlessV2PlatformVersions
+
+        internal virtual DescribeServerlessV2PlatformVersionsResponse DescribeServerlessV2PlatformVersions(DescribeServerlessV2PlatformVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeServerlessV2PlatformVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServerlessV2PlatformVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServerlessV2PlatformVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the properties of specific platform versions for Aurora Serverless v2.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServerlessV2PlatformVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServerlessV2PlatformVersions service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeServerlessV2PlatformVersions">REST API Reference for DescribeServerlessV2PlatformVersions Operation</seealso>
+        public virtual Task<DescribeServerlessV2PlatformVersionsResponse> DescribeServerlessV2PlatformVersionsAsync(DescribeServerlessV2PlatformVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeServerlessV2PlatformVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServerlessV2PlatformVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeServerlessV2PlatformVersionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeSourceRegions
 
         internal virtual DescribeSourceRegionsResponse DescribeSourceRegions(DescribeSourceRegionsRequest request)

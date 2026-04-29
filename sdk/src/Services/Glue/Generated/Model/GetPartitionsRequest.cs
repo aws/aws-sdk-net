@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetPartitionsRequest : AmazonGlueRequest
     {
+        private AuditContext _auditContext;
         private string _catalogId;
         private string _databaseName;
         private bool? _excludeColumnSchema;
@@ -45,6 +46,21 @@ namespace Amazon.Glue.Model
         private Segment _segment;
         private string _tableName;
         private string _transactionId;
+
+        /// <summary>
+        /// Gets and sets the property AuditContext.
+        /// </summary>
+        public AuditContext AuditContext
+        {
+            get { return this._auditContext; }
+            set { this._auditContext = value; }
+        }
+
+        // Check to see if AuditContext property is set
+        internal bool IsSetAuditContext()
+        {
+            return this._auditContext != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CatalogId. 

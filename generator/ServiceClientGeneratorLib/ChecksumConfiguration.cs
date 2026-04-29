@@ -15,7 +15,12 @@ namespace ServiceClientGenerator
         CRC32,
         SHA256,
         SHA1,
-        CRC64NVME
+        CRC64NVME,
+        SHA512,
+        //MD5,
+        //XXHASH64,
+        //XXHASH3,
+        //XXHASH128
     }
 
     /// <summary>
@@ -80,15 +85,6 @@ namespace ServiceClientGenerator
                     {
                         algorithms.Add(parsedAlgorithm);
                     }
-                    else 
-                    {
-                        invalidAlgorithms.Add(rawAlgorithm.ToString());
-                    }
-                }
-
-                if (invalidAlgorithms.Count > 0)
-                {
-                    throw new ArgumentOutOfRangeException($"Found one or more more unsupported values for {nameof(ChecksumAlgorithm)}: {string.Join(",", invalidAlgorithms)}");
                 }
             }
             return algorithms;

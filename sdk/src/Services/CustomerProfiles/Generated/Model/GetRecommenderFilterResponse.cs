@@ -39,6 +39,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _failureReason;
         private string _recommenderFilterExpression;
         private string _recommenderFilterName;
+        private string _recommenderSchemaName;
         private RecommenderFilterStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -134,6 +135,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetRecommenderFilterName()
         {
             return this._recommenderFilterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommenderSchemaName. 
+        /// <para>
+        /// The name of the recommender schema associated with this recommender filter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string RecommenderSchemaName
+        {
+            get { return this._recommenderSchemaName; }
+            set { this._recommenderSchemaName = value; }
+        }
+
+        // Check to see if RecommenderSchemaName property is set
+        internal bool IsSetRecommenderSchemaName()
+        {
+            return this._recommenderSchemaName != null;
         }
 
         /// <summary>

@@ -533,6 +533,320 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type HarnessConversationRole.
+    /// </summary>
+    public class HarnessConversationRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Assistant for HarnessConversationRole
+        /// </summary>
+        public static readonly HarnessConversationRole Assistant = new HarnessConversationRole("assistant");
+        /// <summary>
+        /// Constant User for HarnessConversationRole
+        /// </summary>
+        public static readonly HarnessConversationRole User = new HarnessConversationRole("user");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessConversationRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessConversationRole FindValue(string value)
+        {
+            return FindValue<HarnessConversationRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessConversationRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessStopReason.
+    /// </summary>
+    public class HarnessStopReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Content_filtered for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Content_filtered = new HarnessStopReason("content_filtered");
+        /// <summary>
+        /// Constant End_turn for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason End_turn = new HarnessStopReason("end_turn");
+        /// <summary>
+        /// Constant Interrupted for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Interrupted = new HarnessStopReason("interrupted");
+        /// <summary>
+        /// Constant Malformed_model_output for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Malformed_model_output = new HarnessStopReason("malformed_model_output");
+        /// <summary>
+        /// Constant Malformed_tool_use for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Malformed_tool_use = new HarnessStopReason("malformed_tool_use");
+        /// <summary>
+        /// Constant Max_iterations_exceeded for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Max_iterations_exceeded = new HarnessStopReason("max_iterations_exceeded");
+        /// <summary>
+        /// Constant Max_output_tokens_exceeded for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Max_output_tokens_exceeded = new HarnessStopReason("max_output_tokens_exceeded");
+        /// <summary>
+        /// Constant Max_tokens for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Max_tokens = new HarnessStopReason("max_tokens");
+        /// <summary>
+        /// Constant Model_context_window_exceeded for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Model_context_window_exceeded = new HarnessStopReason("model_context_window_exceeded");
+        /// <summary>
+        /// Constant Partial_turn for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Partial_turn = new HarnessStopReason("partial_turn");
+        /// <summary>
+        /// Constant Stop_sequence for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Stop_sequence = new HarnessStopReason("stop_sequence");
+        /// <summary>
+        /// Constant Timeout_exceeded for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Timeout_exceeded = new HarnessStopReason("timeout_exceeded");
+        /// <summary>
+        /// Constant Tool_result for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Tool_result = new HarnessStopReason("tool_result");
+        /// <summary>
+        /// Constant Tool_use for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Tool_use = new HarnessStopReason("tool_use");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessStopReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessStopReason FindValue(string value)
+        {
+            return FindValue<HarnessStopReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessStopReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessToolType.
+    /// </summary>
+    public class HarnessToolType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Agentcore_browser for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Agentcore_browser = new HarnessToolType("agentcore_browser");
+        /// <summary>
+        /// Constant Agentcore_code_interpreter for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Agentcore_code_interpreter = new HarnessToolType("agentcore_code_interpreter");
+        /// <summary>
+        /// Constant Agentcore_gateway for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Agentcore_gateway = new HarnessToolType("agentcore_gateway");
+        /// <summary>
+        /// Constant Inline_function for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Inline_function = new HarnessToolType("inline_function");
+        /// <summary>
+        /// Constant Remote_mcp for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Remote_mcp = new HarnessToolType("remote_mcp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessToolType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessToolType FindValue(string value)
+        {
+            return FindValue<HarnessToolType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessToolType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessToolUseStatus.
+    /// </summary>
+    public class HarnessToolUseStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Error for HarnessToolUseStatus
+        /// </summary>
+        public static readonly HarnessToolUseStatus Error = new HarnessToolUseStatus("error");
+        /// <summary>
+        /// Constant Success for HarnessToolUseStatus
+        /// </summary>
+        public static readonly HarnessToolUseStatus Success = new HarnessToolUseStatus("success");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessToolUseStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessToolUseStatus FindValue(string value)
+        {
+            return FindValue<HarnessToolUseStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessToolUseStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessToolUseType.
+    /// </summary>
+    public class HarnessToolUseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Mcp_tool_use for HarnessToolUseType
+        /// </summary>
+        public static readonly HarnessToolUseType Mcp_tool_use = new HarnessToolUseType("mcp_tool_use");
+        /// <summary>
+        /// Constant Server_tool_use for HarnessToolUseType
+        /// </summary>
+        public static readonly HarnessToolUseType Server_tool_use = new HarnessToolUseType("server_tool_use");
+        /// <summary>
+        /// Constant Tool_use for HarnessToolUseType
+        /// </summary>
+        public static readonly HarnessToolUseType Tool_use = new HarnessToolUseType("tool_use");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessToolUseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessToolUseType FindValue(string value)
+        {
+            return FindValue<HarnessToolUseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessToolUseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LanguageRuntime.
     /// </summary>
     public class LanguageRuntime : ConstantClass
@@ -734,6 +1048,56 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Oauth2FlowType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OAuthGrantType.
+    /// </summary>
+    public class OAuthGrantType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHORIZATION_CODE for OAuthGrantType
+        /// </summary>
+        public static readonly OAuthGrantType AUTHORIZATION_CODE = new OAuthGrantType("AUTHORIZATION_CODE");
+        /// <summary>
+        /// Constant CLIENT_CREDENTIALS for OAuthGrantType
+        /// </summary>
+        public static readonly OAuthGrantType CLIENT_CREDENTIALS = new OAuthGrantType("CLIENT_CREDENTIALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OAuthGrantType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OAuthGrantType FindValue(string value)
+        {
+            return FindValue<OAuthGrantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OAuthGrantType(string value)
         {
             return FindValue(value);
         }

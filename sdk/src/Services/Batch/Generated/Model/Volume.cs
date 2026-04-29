@@ -37,6 +37,7 @@ namespace Amazon.Batch.Model
         private EFSVolumeConfiguration _efsVolumeConfiguration;
         private Host _host;
         private string _name;
+        private S3FilesVolumeConfiguration _s3filesVolumeConfiguration;
 
         /// <summary>
         /// Gets and sets the property EfsVolumeConfiguration. 
@@ -104,6 +105,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3filesVolumeConfiguration. 
+        /// <para>
+        /// This parameter is specified when you're using an S3Files file system for job storage.
+        /// </para>
+        /// </summary>
+        public S3FilesVolumeConfiguration S3filesVolumeConfiguration
+        {
+            get { return this._s3filesVolumeConfiguration; }
+            set { this._s3filesVolumeConfiguration = value; }
+        }
+
+        // Check to see if S3filesVolumeConfiguration property is set
+        internal bool IsSetS3filesVolumeConfiguration()
+        {
+            return this._s3filesVolumeConfiguration != null;
         }
 
     }

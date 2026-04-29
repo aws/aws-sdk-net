@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("hiddenByDefault", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.HiddenByDefault = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("managed", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;

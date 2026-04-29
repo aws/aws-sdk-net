@@ -172,7 +172,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PCS, the valid values are <c>PCS_SCHEDULER_LOGS</c> and <c>PCS_JOBCOMP_LOGS</c>.
+        /// For PCS, the valid values are <c>PCS_SCHEDULER_LOGS</c>, <c>PCS_JOBCOMP_LOGS</c>,
+        /// and <c>PCS_SCHEDULER_AUDIT_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -189,6 +190,10 @@ namespace Amazon.CloudWatchLogs.Model
         ///  </li> <li> 
         /// <para>
         /// For Amazon Web Services Security Hub CSPM, the valid value is <c>SECURITY_FINDING_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Web Services Security Hub, the valid value is <c>SECURITY_FINDING_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -249,7 +254,9 @@ namespace Amazon.CloudWatchLogs.Model
         ///  
         /// <para>
         /// For the <c>SECURITY_FINDING_LOGS</c> logType, use a wildcard ARN for the hub resource.
-        /// For example, <c>arn:aws:securityhub:us-east-1:111122223333:hub/*</c> 
+        /// For Amazon Web Services Security Hub CSPM, use <c>arn:aws:securityhub:us-east-1:111122223333:hub/*</c>
+        /// and for Amazon Web Services Security Hub, use <c>arn:aws:securityhub:us-east-1:111122223333:hubv2/*</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

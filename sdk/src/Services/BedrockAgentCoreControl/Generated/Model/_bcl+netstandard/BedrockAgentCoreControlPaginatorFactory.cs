@@ -117,6 +117,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListHarnesses operation
+        ///</summary>
+        public IListHarnessesPaginator ListHarnesses(ListHarnessesRequest request) 
+        {
+            return new ListHarnessesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMemories operation
         ///</summary>
         public IListMemoriesPaginator ListMemories(ListMemoriesRequest request) 

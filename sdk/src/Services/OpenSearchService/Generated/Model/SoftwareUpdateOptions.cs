@@ -35,6 +35,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class SoftwareUpdateOptions
     {
         private bool? _autoSoftwareUpdateEnabled;
+        private bool? _useLatestServiceSoftwareForBlueGreen;
 
         /// <summary>
         /// Gets and sets the property AutoSoftwareUpdateEnabled. 
@@ -52,6 +53,26 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAutoSoftwareUpdateEnabled()
         {
             return this._autoSoftwareUpdateEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseLatestServiceSoftwareForBlueGreen. 
+        /// <para>
+        /// Whether the domain should use the latest service software version during a blue/green
+        /// deployment. If enabled, the domain will automatically use the latest available service
+        /// software when a blue/green deployment is triggered.
+        /// </para>
+        /// </summary>
+        public bool? UseLatestServiceSoftwareForBlueGreen
+        {
+            get { return this._useLatestServiceSoftwareForBlueGreen; }
+            set { this._useLatestServiceSoftwareForBlueGreen = value; }
+        }
+
+        // Check to see if UseLatestServiceSoftwareForBlueGreen property is set
+        internal bool IsSetUseLatestServiceSoftwareForBlueGreen()
+        {
+            return this._useLatestServiceSoftwareForBlueGreen.HasValue; 
         }
 
     }

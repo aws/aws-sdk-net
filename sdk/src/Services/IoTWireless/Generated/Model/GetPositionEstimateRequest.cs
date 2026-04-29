@@ -36,11 +36,28 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class GetPositionEstimateRequest : AmazonIoTWirelessRequest
     {
+        private AdvancedConfiguration _advancedConfiguration;
         private CellTowers _cellTowers;
         private Gnss _gnss;
         private Ip _ip;
         private DateTime? _timestamp;
         private List<WiFiAccessPoint> _wiFiAccessPoints = AWSConfigs.InitializeCollections ? new List<WiFiAccessPoint>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedConfiguration. Optional configuration to customize
+        /// position estimates. If not provided, defaults are applied.
+        /// </summary>
+        public AdvancedConfiguration AdvancedConfiguration
+        {
+            get { return this._advancedConfiguration; }
+            set { this._advancedConfiguration = value; }
+        }
+
+        // Check to see if AdvancedConfiguration property is set
+        internal bool IsSetAdvancedConfiguration()
+        {
+            return this._advancedConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CellTowers. 

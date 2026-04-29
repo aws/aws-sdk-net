@@ -24,7 +24,8 @@ namespace Amazon.Runtime
     public enum SigningAlgorithm 
     { 
         HmacSHA1, 
-        HmacSHA256 
+        HmacSHA256,
+        HmacSHA512
     };
 
     /// <summary>
@@ -128,7 +129,12 @@ namespace Amazon.Runtime
         CRC32,
         SHA256,
         SHA1,
-        CRC64NVME
+        CRC64NVME,
+        MD5,
+        SHA512,
+        XXHASH128,
+        XXHASH3,
+        XXHASH64
     }
 
     /// <summary>

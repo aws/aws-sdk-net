@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutomationEventFilter Marshaller
     /// </summary>
-    public class AutomationEventFilterMarshaller : IRequestMarshaller<AutomationEventFilter, JsonMarshallerContext> 
+    public class AutomationEventFilterMarshaller : IRequestMarshaller<AutomationEventFilter, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AutomationEventFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(AutomationEventFilter requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
-            }
 
-            if(requestObject.IsSetValues())
+            if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("values");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
+            }
+            if (requestObject.IsSetValues())
+            {
+                context.Writer.WriteTextString("values");
+                context.Writer.WriteStartArray(requestObject.Values.Count);
                 foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                        context.Writer.WriteStringValue(requestObjectValuesListValue);
+                        context.Writer.WriteTextString(requestObjectValuesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

@@ -76,6 +76,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     response.KafkaClusters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("logDelivery", targetDepth))
+                {
+                    var unmarshaller = LogDeliveryUnmarshaller.Instance;
+                    response.LogDelivery = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("replicationInfoList", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicationInfoDescription, ReplicationInfoDescriptionUnmarshaller>(ReplicationInfoDescriptionUnmarshaller.Instance);

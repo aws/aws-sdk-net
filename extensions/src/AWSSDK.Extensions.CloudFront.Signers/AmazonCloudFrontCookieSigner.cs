@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography;
 using System.Text;
 
 using Amazon.Util;
@@ -31,6 +32,7 @@ namespace Amazon.CloudFront
         private const string SignatureKey = "CloudFront-Signature";
         private const string PolicyKey = "CloudFront-Policy";
         private const string KeyPairIdKey = "CloudFront-Key-Pair-Id";
+        private const string HashAlgorithmKey = "CloudFront-Hash-Algorithm";
 
         /// <summary>
         /// The supported protocols for accessing restricted content
@@ -56,7 +58,7 @@ namespace Amazon.CloudFront
         /// <param name="protocol">The protocol used to access content using signed cookies.</param>
         /// <param name="distributionDomain">The domain name of the distribution.</param>
         /// <param name="resourcePath">The path for the resource.</param>
-        /// <param name="privateKey">The private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">The private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
         /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
         /// <returns>The signed cookies.</returns>
@@ -79,7 +81,32 @@ namespace Amazon.CloudFront
         /// <param name="protocol">The protocol used to access content using signed cookies.</param>
         /// <param name="distributionDomain">The domain name of the distribution.</param>
         /// <param name="resourcePath">The path for the resource.</param>
-        /// <param name="privateKey">The private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">The private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
+        /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed cookies.</returns>
+        public static CookiesForCannedPolicy GetCookiesForCannedPolicy(Protocols protocol,
+                                                string distributionDomain,
+                                                FileSystemInfo privateKey,
+                                                string resourcePath,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                HashAlgorithmName algorithm)
+        {
+            using (var reader = new StreamReader(File.OpenRead(privateKey.FullName)))
+            {
+                return GetCookiesForCannedPolicy(protocol, distributionDomain, reader, resourcePath, keyPairId, expiresOn, algorithm);
+            }
+        }
+
+        /// <summary>
+        /// Returns signed cookies that grants universal access to private content until a given date.
+        /// </summary>
+        /// <param name="protocol">The protocol used to access content using signed cookies.</param>
+        /// <param name="distributionDomain">The domain name of the distribution.</param>
+        /// <param name="resourcePath">The path for the resource.</param>
+        /// <param name="privateKey">The private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
         /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
         /// <returns>The signed cookies.</returns>
@@ -92,6 +119,29 @@ namespace Amazon.CloudFront
         {
             string url = GenerateResourcePath(protocol, distributionDomain, resourcePath);
             return GetCookiesForCannedPolicy(url, keyPairId, privateKey, expiresOn);
+        }
+
+        /// <summary>
+        /// Returns signed cookies that grants universal access to private content until a given date.
+        /// </summary>
+        /// <param name="protocol">The protocol used to access content using signed cookies.</param>
+        /// <param name="distributionDomain">The domain name of the distribution.</param>
+        /// <param name="resourcePath">The path for the resource.</param>
+        /// <param name="privateKey">The private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
+        /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed cookies.</returns>
+        public static CookiesForCannedPolicy GetCookiesForCannedPolicy(Protocols protocol,
+                                                string distributionDomain,
+                                                TextReader privateKey,
+                                                string resourcePath,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                HashAlgorithmName algorithm)
+        {
+            string url = GenerateResourcePath(protocol, distributionDomain, resourcePath);
+            return GetCookiesForCannedPolicy(url, keyPairId, privateKey, expiresOn, algorithm);
         }
 
         /// <summary>
@@ -110,7 +160,7 @@ namespace Amazon.CloudFront
         /// name.
         /// </param>
         /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
-        /// <param name="privateKey">The RSA private key data that corresponding to the certificate keypair identified by keyPairId.</param>
+        /// <param name="privateKey">The private key data corresponding to the certificate keypair identified by keyPairId. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
         /// <returns>The signed cookies.</returns>
         public static CookiesForCannedPolicy GetCookiesForCannedPolicy(string resourceUrlOrPath,
@@ -140,7 +190,39 @@ namespace Amazon.CloudFront
         /// name.
         /// </param>
         /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
-        /// <param name="privateKey">The RSA private key data that corresponding to the certificate keypair identified by keyPairId.</param>
+        /// <param name="privateKey">The private key data corresponding to the certificate keypair identified by keyPairId. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed cookies.</returns>
+        public static CookiesForCannedPolicy GetCookiesForCannedPolicy(string resourceUrlOrPath,
+                                           string keyPairId,
+                                           FileSystemInfo privateKey,
+                                           DateTime expiresOn,
+                                           HashAlgorithmName algorithm)
+        {
+            using (var reader = new StreamReader(File.OpenRead(privateKey.FullName)))
+            {
+                return GetCookiesForCannedPolicy(resourceUrlOrPath, keyPairId, reader, expiresOn, algorithm);
+            }
+        }
+
+        /// <summary>
+        /// Generate signed cookies that allows access to a specific distribution and
+        /// resource path by applying a access restrictions from a "canned" (simplified)
+        /// policy document.
+        /// </summary>
+        /// <param name="resourceUrlOrPath">
+        /// The URL or path that uniquely identifies a resource within a
+        /// distribution. For standard distributions the resource URL will
+        /// be <tt>"http://" + distributionName + "/" + path</tt>
+        /// (may also include URL parameters. For distributions with the
+        /// HTTPS required protocol, the resource URL must start with
+        /// <tt>"https://"</tt>. RTMP resources do not take the form of a
+        /// URL, and instead the resource path is nothing but the stream's
+        /// name.
+        /// </param>
+        /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
+        /// <param name="privateKey">The private key data corresponding to the certificate keypair identified by keyPairId. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
         /// <returns>The signed cookies.</returns>
         public static CookiesForCannedPolicy GetCookiesForCannedPolicy(string resourceUrlOrPath,
@@ -148,25 +230,40 @@ namespace Amazon.CloudFront
                                            TextReader privateKey,
                                            DateTime expiresOn)
         {
-            AmazonCloudFrontUrlSigner.ValidatePolicyInput(resourceUrlOrPath, "resourceUrlOrPath");
+            PrepareCannedPolicy(resourceUrlOrPath, expiresOn, out string epochSeconds, out byte[] policyBytes);
+            var (signatureBytes, usedAlgorithm) = AmazonCloudFrontUrlSigner.SignData(policyBytes, privateKey);
+            return BuildCannedCookies(keyPairId, epochSeconds, signatureBytes, usedAlgorithm);
+        }
 
-            var cookies = new CookiesForCannedPolicy();
-
-            string epochSeconds = AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn);
-            cookies.Expires = new KeyValuePair<string, string>(
-                ExpiresKey, epochSeconds);
-
-            string cannedPolicy = "{\"Statement\":[{\"Resource\":\"" + resourceUrlOrPath
-                    + "\",\"Condition\":{\"DateLessThan\":{\"AWS:EpochTime\":" + epochSeconds
-                    + "}}}]}";
-            byte[] signatureBytes = AmazonCloudFrontUrlSigner.SignWithSha1RSA(
-                UTF8Encoding.UTF8.GetBytes(cannedPolicy), privateKey);
-            string urlSafeSignature = AmazonCloudFrontUrlSigner.MakeBytesUrlSafe(signatureBytes);
-            cookies.Signature = new KeyValuePair<string, string>(SignatureKey, urlSafeSignature);
-
-            cookies.KeyPairId = new KeyValuePair<string, string>(KeyPairIdKey, keyPairId);
-
-            return cookies;
+        /// <summary>
+        /// Generate signed cookies that allows access to a specific distribution and
+        /// resource path by applying a access restrictions from a "canned" (simplified)
+        /// policy document.
+        /// </summary>
+        /// <param name="resourceUrlOrPath">
+        /// The URL or path that uniquely identifies a resource within a
+        /// distribution. For standard distributions the resource URL will
+        /// be <tt>"http://" + distributionName + "/" + path</tt>
+        /// (may also include URL parameters. For distributions with the
+        /// HTTPS required protocol, the resource URL must start with
+        /// <tt>"https://"</tt>. RTMP resources do not take the form of a
+        /// URL, and instead the resource path is nothing but the stream's
+        /// name.
+        /// </param>
+        /// <param name="keyPairId">Identifier of a public/private certificate keypair already configured in your Amazon Web Services account.</param>
+        /// <param name="privateKey">The private key data corresponding to the certificate keypair identified by keyPairId. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed cookies.</returns>
+        public static CookiesForCannedPolicy GetCookiesForCannedPolicy(string resourceUrlOrPath,
+                                           string keyPairId,
+                                           TextReader privateKey,
+                                           DateTime expiresOn,
+                                           HashAlgorithmName algorithm)
+        {
+            PrepareCannedPolicy(resourceUrlOrPath, expiresOn, out string epochSeconds, out byte[] policyBytes);
+            var (signatureBytes, usedAlgorithm) = AmazonCloudFrontUrlSigner.SignData(policyBytes, privateKey, algorithm);
+            return BuildCannedCookies(keyPairId, epochSeconds, signatureBytes, usedAlgorithm);
         }
 
         /// <summary>
@@ -174,7 +271,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="protocol">The protocol used to access content using signed cookies.</param>
         /// <param name="distributionDomain">The domain name of the distribution.</param>
-        /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="resourcePath">The path for the resource.</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
         /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
@@ -201,7 +298,36 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="protocol">The protocol used to access content using signed cookies.</param>
         /// <param name="distributionDomain">The domain name of the distribution.</param>
-        /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="resourcePath">The path for the resource.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
+        /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
+        /// <param name="activeFrom">The date from which content can be accessed using the generated cookies.</param>
+        /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed cookies.</returns>
+        public static CookiesForCustomPolicy GetCookiesForCustomPolicy(Protocols protocol,
+                                                string distributionDomain,
+                                                FileSystemInfo privateKey,
+                                                string resourcePath,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                DateTime activeFrom,
+                                                string ipRange,
+                                                HashAlgorithmName algorithm)
+        {
+            using (var reader = new StreamReader(File.OpenRead(privateKey.FullName)))
+            {
+                return GetCookiesForCustomPolicy(protocol, distributionDomain, reader, resourcePath, keyPairId, expiresOn, activeFrom, ipRange, algorithm);
+            }
+        }
+
+        /// <summary>
+        /// Returns signed cookies that provides tailored access to private content based on an access time window and an ip range.
+        /// </summary>
+        /// <param name="protocol">The protocol used to access content using signed cookies.</param>
+        /// <param name="distributionDomain">The domain name of the distribution.</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="resourcePath">The path for the resource.</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
         /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
@@ -218,8 +344,34 @@ namespace Amazon.CloudFront
                                                 string ipRange)
         {
             var url = GenerateResourcePath(protocol, distributionDomain, resourcePath);
-            return GetCookiesForCustomPolicy(url, privateKey, keyPairId, expiresOn,
-                activeFrom, ipRange);
+            return GetCookiesForCustomPolicy(url, privateKey, keyPairId, expiresOn, activeFrom, ipRange);
+        }
+
+        /// <summary>
+        /// Returns signed cookies that provides tailored access to private content based on an access time window and an ip range.
+        /// </summary>
+        /// <param name="protocol">The protocol used to access content using signed cookies.</param>
+        /// <param name="distributionDomain">The domain name of the distribution.</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="resourcePath">The path for the resource.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
+        /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
+        /// <param name="activeFrom">The date from which content can be accessed using the generated cookies.</param>
+        /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed cookies.</returns>
+        public static CookiesForCustomPolicy GetCookiesForCustomPolicy(Protocols protocol,
+                                                string distributionDomain,
+                                                TextReader privateKey,
+                                                string resourcePath,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                DateTime activeFrom,
+                                                string ipRange,
+                                                HashAlgorithmName algorithm)
+        {
+            var url = GenerateResourcePath(protocol, distributionDomain, resourcePath);
+            return GetCookiesForCustomPolicy(url, privateKey, keyPairId, expiresOn, activeFrom, ipRange, algorithm);
         }
 
         /// <summary>
@@ -228,34 +380,48 @@ namespace Amazon.CloudFront
         /// <param name="resourceUrlOrPath">
         /// The URL or path for resource within a distribution.
         /// </param>        
-        /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>        
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>        
         /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
         /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
         /// <param name="activeFrom">The date from which content can be accessed using the generated cookies.</param>
         /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
         /// <returns>The signed cookies.</returns>
         public static CookiesForCustomPolicy GetCookiesForCustomPolicy(string resourceUrlOrPath,
-                                                TextReader privateKey,                                                
+                                                TextReader privateKey,
                                                 string keyPairId,
                                                 DateTime expiresOn,
                                                 DateTime activeFrom,
                                                 string ipRange)
         {
-            var cookies = new CookiesForCustomPolicy();
-            var policy = AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(resourceUrlOrPath, expiresOn, 
-                ipRange, activeFrom);
+            string policy = PrepareCustomPolicy(resourceUrlOrPath, expiresOn, ipRange, activeFrom, out byte[] policyBytes);
+            var (signatureBytes, usedAlgorithm) = AmazonCloudFrontUrlSigner.SignData(policyBytes, privateKey);
+            return BuildCustomCookies(keyPairId, policy, signatureBytes, usedAlgorithm);
+        }
 
-            var base64EncodedPolicy = AmazonCloudFrontUrlSigner.MakeStringUrlSafe(policy);
-            cookies.Policy = new KeyValuePair<string, string>(PolicyKey, base64EncodedPolicy);
-
-            byte[] signatureBytes = AmazonCloudFrontUrlSigner.SignWithSha1RSA(
-                Encoding.UTF8.GetBytes(policy), privateKey);
-            string urlSafeSignature = AmazonCloudFrontUrlSigner.MakeBytesUrlSafe(signatureBytes);
-            cookies.Signature = new KeyValuePair<string, string>(SignatureKey, urlSafeSignature);
-
-            cookies.KeyPairId = new KeyValuePair<string, string>(KeyPairIdKey, keyPairId);
-
-            return cookies;
+        /// <summary>
+        /// Returns signed cookies that provides tailored access to private content based on an access time window and an ip range.
+        /// </summary>
+        /// <param name="resourceUrlOrPath">
+        /// The URL or path for resource within a distribution.
+        /// </param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
+        /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
+        /// <param name="activeFrom">The date from which content can be accessed using the generated cookies.</param>
+        /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed cookies.</returns>
+        public static CookiesForCustomPolicy GetCookiesForCustomPolicy(string resourceUrlOrPath,
+                                                TextReader privateKey,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                DateTime activeFrom,
+                                                string ipRange,
+                                                HashAlgorithmName algorithm)
+        {
+            string policy = PrepareCustomPolicy(resourceUrlOrPath, expiresOn, ipRange, activeFrom, out byte[] policyBytes);
+            var (signatureBytes, usedAlgorithm) = AmazonCloudFrontUrlSigner.SignData(policyBytes, privateKey, algorithm);
+            return BuildCustomCookies(keyPairId, policy, signatureBytes, usedAlgorithm);
         }
 
         /// <summary>
@@ -263,10 +429,10 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="protocol">The protocol used to access content using signed cookies.</param>
         /// <param name="distributionDomain">The domain name of the distribution.</param>
-        /// <param name="privateKey">Your private key file. RSA private key (.pem) are supported.</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
         /// <param name="resourcePath">The path for the resource.</param>
         /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
-        /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>        
+        /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
         /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
         /// <returns>The signed cookies.</returns>
         public static CookiesForCustomPolicy GetCookiesForCustomPolicy(Protocols protocol,
@@ -280,6 +446,64 @@ namespace Amazon.CloudFront
             return GetCookiesForCustomPolicy(protocol, distributionDomain, privateKey, resourcePath, keyPairId,
                 expiresOn, DateTime.MinValue, ipRange);
         }
+
+        /// <summary>
+        /// Returns signed cookies that provides tailored access to private content based on an access time window and an ip range.
+        /// </summary>
+        /// <param name="protocol">The protocol used to access content using signed cookies.</param>
+        /// <param name="distributionDomain">The domain name of the distribution.</param>
+        /// <param name="privateKey">Your private key file. RSA and ECDSA private key (.pem) are supported.</param>
+        /// <param name="resourcePath">The path for the resource.</param>
+        /// <param name="keyPairId">The key pair id corresponding to the private key file given.</param>
+        /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
+        /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
+        /// <param name="algorithm">The signing algorithm to use.</param>
+        /// <returns>The signed cookies.</returns>
+        public static CookiesForCustomPolicy GetCookiesForCustomPolicy(Protocols protocol,
+                                                string distributionDomain,
+                                                TextReader privateKey,
+                                                string resourcePath,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                string ipRange,
+                                                HashAlgorithmName algorithm)
+        {
+            return GetCookiesForCustomPolicy(protocol, distributionDomain, privateKey, resourcePath, keyPairId,
+                expiresOn, DateTime.MinValue, ipRange, algorithm);
+        }
+
+        private static void PrepareCannedPolicy(string resourceUrlOrPath, DateTime expiresOn, out string epochSeconds, out byte[] policyBytes)
+        {
+            AmazonCloudFrontUrlSigner.ValidatePolicyInput(resourceUrlOrPath, "resourceUrlOrPath");
+            epochSeconds = AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn);
+            string cannedPolicy = "{\"Statement\":[{\"Resource\":\"" + resourceUrlOrPath + "\",\"Condition\":{\"DateLessThan\":{\"AWS:EpochTime\":" + epochSeconds + "}}}]}";
+            policyBytes = Encoding.UTF8.GetBytes(cannedPolicy);
+        }
+
+        private static CookiesForCannedPolicy BuildCannedCookies(string keyPairId, string epochSeconds, byte[] signatureBytes, HashAlgorithmName algorithm) =>
+            new CookiesForCannedPolicy
+            {
+                Expires = new KeyValuePair<string, string>(ExpiresKey, epochSeconds),
+                Signature = new KeyValuePair<string, string>(SignatureKey, AmazonCloudFrontUrlSigner.MakeBytesUrlSafe(signatureBytes)),
+                KeyPairId = new KeyValuePair<string, string>(KeyPairIdKey, keyPairId),
+                HashAlgorithm = new KeyValuePair<string, string>(HashAlgorithmKey, algorithm.Name)
+            };
+
+        private static string PrepareCustomPolicy(string resourceUrlOrPath, DateTime expiresOn, string ipRange, DateTime activeFrom, out byte[] policyBytes)
+        {
+            string policy = AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(resourceUrlOrPath, expiresOn, ipRange, activeFrom);
+            policyBytes = Encoding.UTF8.GetBytes(policy);
+            return policy;
+        }
+
+        private static CookiesForCustomPolicy BuildCustomCookies(string keyPairId, string policy, byte[] signatureBytes, HashAlgorithmName algorithm) =>
+            new CookiesForCustomPolicy
+            {
+                Policy = new KeyValuePair<string, string>(PolicyKey, AmazonCloudFrontUrlSigner.MakeStringUrlSafe(policy)),
+                Signature = new KeyValuePair<string, string>(SignatureKey, AmazonCloudFrontUrlSigner.MakeBytesUrlSafe(signatureBytes)),
+                KeyPairId = new KeyValuePair<string, string>(KeyPairIdKey, keyPairId),
+                HashAlgorithm = new KeyValuePair<string, string>(HashAlgorithmKey, algorithm.Name)
+            };
 
         /// <summary>
         /// Returns the resource path for the given distribution, object, 
@@ -331,6 +555,11 @@ namespace Amazon.CloudFront
         /// The hashed and signed version of the policy.
         /// </summary>
         public KeyValuePair<string, string> Signature { get; internal set; }
+
+        /// <summary>
+        /// The hash algorithm used during signing.
+        /// </summary>
+        public KeyValuePair<string, string> HashAlgorithm { get; internal set; }
     }
 
     /// <summary>
@@ -356,5 +585,4 @@ namespace Amazon.CloudFront
         /// </summary>
         public KeyValuePair<string, string> Policy { get; internal set; }
     }
-
 }

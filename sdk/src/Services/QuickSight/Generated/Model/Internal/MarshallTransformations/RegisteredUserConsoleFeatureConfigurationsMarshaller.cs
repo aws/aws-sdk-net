@@ -57,6 +57,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetDashboardCustomizationSummary())
+            {
+                context.Writer.WritePropertyName("DashboardCustomizationSummary");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DashboardCustomizationSummaryConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DashboardCustomizationSummary, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRecentSnapshots())
             {
                 context.Writer.WritePropertyName("RecentSnapshots");

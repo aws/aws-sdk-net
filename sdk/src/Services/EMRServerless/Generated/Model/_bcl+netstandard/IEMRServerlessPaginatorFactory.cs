@@ -56,5 +56,15 @@ namespace Amazon.EMRServerless.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListJobRunsPaginator ListJobRuns(ListJobRunsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSessionsPaginator ListSessions(ListSessionsRequest request);
     }
 }

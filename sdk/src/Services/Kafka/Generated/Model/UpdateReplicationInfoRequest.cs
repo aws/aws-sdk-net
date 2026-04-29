@@ -37,9 +37,12 @@ namespace Amazon.Kafka.Model
     {
         private ConsumerGroupReplicationUpdate _consumerGroupReplication;
         private string _currentVersion;
+        private LogDelivery _logDelivery;
         private string _replicatorArn;
         private string _sourceKafkaClusterArn;
+        private string _sourceKafkaClusterId;
         private string _targetKafkaClusterArn;
+        private string _targetKafkaClusterId;
         private TopicReplicationUpdate _topicReplication;
 
         /// <summary>
@@ -80,6 +83,24 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogDelivery. 
+        /// <para>
+        /// Configuration for delivering replicator logs to customer destinations.
+        /// </para>
+        /// </summary>
+        public LogDelivery LogDelivery
+        {
+            get { return this._logDelivery; }
+            set { this._logDelivery = value; }
+        }
+
+        // Check to see if LogDelivery property is set
+        internal bool IsSetLogDelivery()
+        {
+            return this._logDelivery != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplicatorArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the replicator to be updated.
@@ -104,7 +125,6 @@ namespace Amazon.Kafka.Model
         /// The ARN of the source Kafka cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SourceKafkaClusterArn
         {
             get { return this._sourceKafkaClusterArn; }
@@ -118,12 +138,29 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceKafkaClusterId. 
+        /// <para>
+        /// The ID of the source Kafka cluster.
+        /// </para>
+        /// </summary>
+        public string SourceKafkaClusterId
+        {
+            get { return this._sourceKafkaClusterId; }
+            set { this._sourceKafkaClusterId = value; }
+        }
+
+        // Check to see if SourceKafkaClusterId property is set
+        internal bool IsSetSourceKafkaClusterId()
+        {
+            return this._sourceKafkaClusterId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetKafkaClusterArn. 
         /// <para>
         /// The ARN of the target Kafka cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string TargetKafkaClusterArn
         {
             get { return this._targetKafkaClusterArn; }
@@ -134,6 +171,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetTargetKafkaClusterArn()
         {
             return this._targetKafkaClusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetKafkaClusterId. 
+        /// <para>
+        /// The ID of the target Kafka cluster.
+        /// </para>
+        /// </summary>
+        public string TargetKafkaClusterId
+        {
+            get { return this._targetKafkaClusterId; }
+            set { this._targetKafkaClusterId = value; }
+        }
+
+        // Check to see if TargetKafkaClusterId property is set
+        internal bool IsSetTargetKafkaClusterId()
+        {
+            return this._targetKafkaClusterId != null;
         }
 
         /// <summary>

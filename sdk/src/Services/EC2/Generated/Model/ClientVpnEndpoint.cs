@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         private ClientVpnEndpointStatus _status;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TrafficIpAddressType _trafficIpAddressType;
+        private TransitGatewayConfigurationDescribeEndpointStructure _transitGatewayConfiguration;
         private TransportProtocol _transportProtocol;
         private string _vpcId;
         private int? _vpnPort;
@@ -531,6 +532,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTrafficIpAddressType()
         {
             return this._trafficIpAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayConfiguration. 
+        /// <para>
+        /// The Transit Gateway configuration for the Client VPN endpoint.
+        /// </para>
+        /// </summary>
+        public TransitGatewayConfigurationDescribeEndpointStructure TransitGatewayConfiguration
+        {
+            get { return this._transitGatewayConfiguration; }
+            set { this._transitGatewayConfiguration = value; }
+        }
+
+        // Check to see if TransitGatewayConfiguration property is set
+        internal bool IsSetTransitGatewayConfiguration()
+        {
+            return this._transitGatewayConfiguration != null;
         }
 
         /// <summary>

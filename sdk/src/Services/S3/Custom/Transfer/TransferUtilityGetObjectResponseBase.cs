@@ -289,5 +289,55 @@ namespace Amazon.S3.Transfer
         /// </para>
         /// </summary>
         public string WebsiteRedirectLocation { get; set; }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumMD5. 
+        /// <para>
+        /// The Base64 encoded, 128-bit <c>MD5</c> digest of the object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public string ChecksumMD5 { get; set; }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA512. 
+        /// <para>
+        /// The Base64 encoded, 512-bit <c>SHA512</c> digest of the object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA512 { get; set;  }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumXXHASH128. 
+        /// <para>
+        /// The Base64 encoded, 128-bit <c>XXHASH128</c> checksum of the object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public string ChecksumXXHASH128 { get; set;  }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumXXHASH3. 
+        /// <para>
+        /// The Base64 encoded, 64-bit <c>XXHASH3</c> checksum of the object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public string ChecksumXXHASH3 { get; set;  }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumXXHASH64. 
+        /// <para>
+        /// The Base64 encoded, 64-bit <c>XXHASH64</c> checksum of the object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public string ChecksumXXHASH64 { get; set;  }
     }
 }

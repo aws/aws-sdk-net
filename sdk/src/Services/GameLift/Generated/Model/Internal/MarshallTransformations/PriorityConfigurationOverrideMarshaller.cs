@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PriorityConfigurationOverride Marshaller
     /// </summary>
-    public class PriorityConfigurationOverrideMarshaller : IRequestMarshaller<PriorityConfigurationOverride, JsonMarshallerContext> 
+    public class PriorityConfigurationOverrideMarshaller : IRequestMarshaller<PriorityConfigurationOverride, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PriorityConfigurationOverride requestObject, JsonMarshallerContext context)
+        public void Marshall(PriorityConfigurationOverride requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetLocationOrder())
+
+            if (requestObject.IsSetLocationOrder())
             {
-                context.Writer.WritePropertyName("LocationOrder");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("LocationOrder");
+                context.Writer.WriteStartArray(requestObject.LocationOrder.Count);
                 foreach(var requestObjectLocationOrderListValue in requestObject.LocationOrder)
                 {
-                        context.Writer.WriteStringValue(requestObjectLocationOrderListValue);
+                        context.Writer.WriteTextString(requestObjectLocationOrderListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetPlacementFallbackStrategy())
+            if (requestObject.IsSetPlacementFallbackStrategy())
             {
-                context.Writer.WritePropertyName("PlacementFallbackStrategy");
-                context.Writer.WriteStringValue(requestObject.PlacementFallbackStrategy);
+                context.Writer.WriteTextString("PlacementFallbackStrategy");
+                context.Writer.WriteTextString(requestObject.PlacementFallbackStrategy);
             }
-
         }
 
         /// <summary>

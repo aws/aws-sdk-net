@@ -31,6 +31,10 @@ namespace Amazon.BedrockAgentCoreControl
     {
 
         /// <summary>
+        /// Constant NODE_22 for AgentManagedRuntimeType
+        /// </summary>
+        public static readonly AgentManagedRuntimeType NODE_22 = new AgentManagedRuntimeType("NODE_22");
+        /// <summary>
         /// Constant PYTHON_3_10 for AgentManagedRuntimeType
         /// </summary>
         public static readonly AgentManagedRuntimeType PYTHON_3_10 = new AgentManagedRuntimeType("PYTHON_3_10");
@@ -1697,6 +1701,192 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type HarnessStatus.
+    /// </summary>
+    public class HarnessStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for HarnessStatus
+        /// </summary>
+        public static readonly HarnessStatus CREATE_FAILED = new HarnessStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for HarnessStatus
+        /// </summary>
+        public static readonly HarnessStatus CREATING = new HarnessStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for HarnessStatus
+        /// </summary>
+        public static readonly HarnessStatus DELETE_FAILED = new HarnessStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for HarnessStatus
+        /// </summary>
+        public static readonly HarnessStatus DELETING = new HarnessStatus("DELETING");
+        /// <summary>
+        /// Constant READY for HarnessStatus
+        /// </summary>
+        public static readonly HarnessStatus READY = new HarnessStatus("READY");
+        /// <summary>
+        /// Constant UPDATE_FAILED for HarnessStatus
+        /// </summary>
+        public static readonly HarnessStatus UPDATE_FAILED = new HarnessStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for HarnessStatus
+        /// </summary>
+        public static readonly HarnessStatus UPDATING = new HarnessStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessStatus FindValue(string value)
+        {
+            return FindValue<HarnessStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessToolType.
+    /// </summary>
+    public class HarnessToolType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Agentcore_browser for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Agentcore_browser = new HarnessToolType("agentcore_browser");
+        /// <summary>
+        /// Constant Agentcore_code_interpreter for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Agentcore_code_interpreter = new HarnessToolType("agentcore_code_interpreter");
+        /// <summary>
+        /// Constant Agentcore_gateway for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Agentcore_gateway = new HarnessToolType("agentcore_gateway");
+        /// <summary>
+        /// Constant Inline_function for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Inline_function = new HarnessToolType("inline_function");
+        /// <summary>
+        /// Constant Remote_mcp for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Remote_mcp = new HarnessToolType("remote_mcp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessToolType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessToolType FindValue(string value)
+        {
+            return FindValue<HarnessToolType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessToolType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessTruncationStrategy.
+    /// </summary>
+    public class HarnessTruncationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for HarnessTruncationStrategy
+        /// </summary>
+        public static readonly HarnessTruncationStrategy None = new HarnessTruncationStrategy("none");
+        /// <summary>
+        /// Constant Sliding_window for HarnessTruncationStrategy
+        /// </summary>
+        public static readonly HarnessTruncationStrategy Sliding_window = new HarnessTruncationStrategy("sliding_window");
+        /// <summary>
+        /// Constant Summarization for HarnessTruncationStrategy
+        /// </summary>
+        public static readonly HarnessTruncationStrategy Summarization = new HarnessTruncationStrategy("summarization");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessTruncationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessTruncationStrategy FindValue(string value)
+        {
+            return FindValue<HarnessTruncationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessTruncationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InboundTokenClaimValueType.
     /// </summary>
     public class InboundTokenClaimValueType : ConstantClass
@@ -1790,6 +1980,56 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListingMode.
+    /// </summary>
+    public class ListingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for ListingMode
+        /// </summary>
+        public static readonly ListingMode DEFAULT = new ListingMode("DEFAULT");
+        /// <summary>
+        /// Constant DYNAMIC for ListingMode
+        /// </summary>
+        public static readonly ListingMode DYNAMIC = new ListingMode("DYNAMIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListingMode FindValue(string value)
+        {
+            return FindValue<ListingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListingMode(string value)
         {
             return FindValue(value);
         }
@@ -2146,6 +2386,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant DELETING for OnlineEvaluationConfigStatus
         /// </summary>
         public static readonly OnlineEvaluationConfigStatus DELETING = new OnlineEvaluationConfigStatus("DELETING");
+        /// <summary>
+        /// Constant ERROR for OnlineEvaluationConfigStatus
+        /// </summary>
+        public static readonly OnlineEvaluationConfigStatus ERROR = new OnlineEvaluationConfigStatus("ERROR");
         /// <summary>
         /// Constant UPDATE_FAILED for OnlineEvaluationConfigStatus
         /// </summary>
@@ -3128,6 +3372,76 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServerProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for Status
+        /// </summary>
+        public static readonly Status CREATE_FAILED = new Status("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for Status
+        /// </summary>
+        public static readonly Status CREATING = new Status("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for Status
+        /// </summary>
+        public static readonly Status DELETE_FAILED = new Status("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for Status
+        /// </summary>
+        public static readonly Status DELETING = new Status("DELETING");
+        /// <summary>
+        /// Constant READY for Status
+        /// </summary>
+        public static readonly Status READY = new Status("READY");
+        /// <summary>
+        /// Constant UPDATE_FAILED for Status
+        /// </summary>
+        public static readonly Status UPDATE_FAILED = new Status("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for Status
+        /// </summary>
+        public static readonly Status UPDATING = new Status("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
         {
             return FindValue(value);
         }

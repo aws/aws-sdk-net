@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         private bool? _splitTunnel;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private TrafficIpAddressType _trafficIpAddressType;
+        private TransitGatewayConfigurationInputStructure _transitGatewayConfiguration;
         private TransportProtocol _transportProtocol;
         private string _vpcId;
         private int? _vpnPort;
@@ -498,6 +499,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetTrafficIpAddressType()
         {
             return this._trafficIpAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayConfiguration. 
+        /// <para>
+        /// The Transit Gateway configuration for the Client VPN endpoint. Use this parameter
+        /// to associate the endpoint with a Transit Gateway instead of a VPC. You cannot specify
+        /// both <c>TransitGatewayConfiguration</c> and <c>VpcId</c>/<c>SecurityGroupIds</c>.
+        /// </para>
+        /// </summary>
+        public TransitGatewayConfigurationInputStructure TransitGatewayConfiguration
+        {
+            get { return this._transitGatewayConfiguration; }
+            set { this._transitGatewayConfiguration = value; }
+        }
+
+        // Check to see if TransitGatewayConfiguration property is set
+        internal bool IsSetTransitGatewayConfiguration()
+        {
+            return this._transitGatewayConfiguration != null;
         }
 
         /// <summary>

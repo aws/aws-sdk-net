@@ -168,8 +168,12 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Alternatively, if you're adding a route for the local network, specify <c>local</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required for VPC-based Client VPN endpoints. For Transit Gateway-based
+        /// endpoints, this parameter is not required.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string TargetVpcSubnetId
         {
             get { return this._targetVpcSubnetId; }

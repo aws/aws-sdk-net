@@ -42,7 +42,7 @@ namespace Amazon.Runtime.Internal
         /// requests and response context.</param>
         public override Task WaitBeforeRetryAsync(IExecutionContext executionContext)
         {
-            var delay = CalculateRetryDelay(executionContext.RequestContext.Retries, this.MaxBackoffInMilliseconds);
+            var delay = CalculateRetryDelay(executionContext, this.MaxBackoffInMilliseconds);
             return Task.Delay(delay, executionContext.RequestContext.CancellationToken);
         }
     }

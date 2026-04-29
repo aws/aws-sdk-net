@@ -39,6 +39,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _credentialProviderArn;
         private string _name;
         private Oauth2ProviderConfigOutput _oauth2ProviderConfigOutput;
+        private Status _status;
 
         /// <summary>
         /// Gets and sets the property CallbackUrl. 
@@ -130,6 +131,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetOauth2ProviderConfigOutput()
         {
             return this._oauth2ProviderConfigOutput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the OAuth2 credential provider.
+        /// </para>
+        /// </summary>
+        public Status Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

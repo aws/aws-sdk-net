@@ -62,6 +62,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AutoInvestigationEnabled", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.AutoInvestigationEnabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("BurnRateConfigurations", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BurnRateConfiguration, BurnRateConfigurationUnmarshaller>(BurnRateConfigurationUnmarshaller.Instance);

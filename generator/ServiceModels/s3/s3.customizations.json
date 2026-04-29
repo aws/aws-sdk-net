@@ -2641,6 +2641,10 @@
                 "Type" : "List<Tag>",
                 "Marshaller": "Amazon.S3.Util.AmazonS3Util.TagSetToQueryString",
                 "Unmarshaller" : "StringUnmarshaller"
+            },
+            "Expires":{
+                "Type":"string",
+                "Marshaller":"StringUtils.FromString"
             }
         },
         "CreateMultipartUploadOutput":{
@@ -2715,6 +2719,10 @@
             "ChecksumAlgorithm" :{
                 "Type" : "ChecksumAlgorithm",
                 "Marshaller": "S3Transforms.ToStringValue"
+            },
+            "Expires":{
+                "Type":"string",
+                "Marshaller":"StringUtils.FromString"
             }
         },
         "CopyObjectOutput":{
@@ -3031,6 +3039,10 @@
             },
             "ServerSideEncryptionCustomerMethod":{
                 "Type":"ServerSideEncryptionCustomerMethod"
+            },
+            "Expires":{
+                "Type":"string",
+                "Marshaller":"StringUtils.FromString"
             }
         },
         "PutObjectOutput":{
@@ -3063,7 +3075,12 @@
             "ChecksumSHA1",
             "ChecksumSHA256",
             "ETag",
-            "PartNumber"
+            "PartNumber",
+            "ChecksumSHA512",
+            "ChecksumMD5",
+            "ChecksumXXHASH64",
+            "ChecksumXXHASH3",
+            "ChecksumXXHASH128"
         ],
         "TopicConfiguration":[
             "Events",

@@ -38,6 +38,7 @@ namespace Amazon.AppStream.Model
         private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
         private ApplicationSettings _applicationSettings;
         private List<string> _attributesToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ContentRedirection _contentRedirection;
         private bool? _deleteStorageConnectors;
         private string _description;
         private string _displayName;
@@ -115,6 +116,21 @@ namespace Amazon.AppStream.Model
         internal bool IsSetAttributesToDelete()
         {
             return this._attributesToDelete != null && (this._attributesToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentRedirection.
+        /// </summary>
+        public ContentRedirection ContentRedirection
+        {
+            get { return this._contentRedirection; }
+            set { this._contentRedirection = value; }
+        }
+
+        // Check to see if ContentRedirection property is set
+        internal bool IsSetContentRedirection()
+        {
+            return this._contentRedirection != null;
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
     {
         private CascadingControlConfiguration _cascadingControlConfiguration;
         private CommitMode _commitMode;
+        private List<ControlSortConfiguration> _controlSortConfigurations = AWSConfigs.InitializeCollections ? new List<ControlSortConfiguration>() : null;
         private DropDownControlDisplayOptions _displayOptions;
         private string _parameterControlId;
         private ParameterSelectableValues _selectableValues;
@@ -79,6 +80,31 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCommitMode()
         {
             return this._commitMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlSortConfigurations. 
+        /// <para>
+        /// The sort configuration for the values displayed in the control. Only one sort configuration
+        /// can be applied per control.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<ControlSortConfiguration> ControlSortConfigurations
+        {
+            get { return this._controlSortConfigurations; }
+            set { this._controlSortConfigurations = value; }
+        }
+
+        // Check to see if ControlSortConfigurations property is set
+        internal bool IsSetControlSortConfigurations()
+        {
+            return this._controlSortConfigurations != null && (this._controlSortConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

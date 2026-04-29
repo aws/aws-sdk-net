@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// 
+    /// Response containing the ARN, ID, and type of a <c>Config</c>.
     /// </summary>
     public partial class DeleteConfigResponse : AmazonWebServiceResponse
     {

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DeploymentConfiguration Marshaller
     /// </summary>
-    public class DeploymentConfigurationMarshaller : IRequestMarshaller<DeploymentConfiguration, JsonMarshallerContext> 
+    public class DeploymentConfigurationMarshaller : IRequestMarshaller<DeploymentConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DeploymentConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(DeploymentConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetImpairmentStrategy())
-            {
-                context.Writer.WritePropertyName("ImpairmentStrategy");
-                context.Writer.WriteStringValue(requestObject.ImpairmentStrategy);
-            }
 
-            if(requestObject.IsSetMinimumHealthyPercentage())
+            if (requestObject.IsSetImpairmentStrategy())
             {
-                context.Writer.WritePropertyName("MinimumHealthyPercentage");
-                context.Writer.WriteNumberValue(requestObject.MinimumHealthyPercentage.Value);
+                context.Writer.WriteTextString("ImpairmentStrategy");
+                context.Writer.WriteTextString(requestObject.ImpairmentStrategy);
             }
-
-            if(requestObject.IsSetProtectionStrategy())
+            if (requestObject.IsSetMinimumHealthyPercentage())
             {
-                context.Writer.WritePropertyName("ProtectionStrategy");
-                context.Writer.WriteStringValue(requestObject.ProtectionStrategy);
+                context.Writer.WriteTextString("MinimumHealthyPercentage");
+                context.Writer.WriteInt32(requestObject.MinimumHealthyPercentage.Value);
             }
-
+            if (requestObject.IsSetProtectionStrategy())
+            {
+                context.Writer.WriteTextString("ProtectionStrategy");
+                context.Writer.WriteTextString(requestObject.ProtectionStrategy);
+            }
         }
 
         /// <summary>

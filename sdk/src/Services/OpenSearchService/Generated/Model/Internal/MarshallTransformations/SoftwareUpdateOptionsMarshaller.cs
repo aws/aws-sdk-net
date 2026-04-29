@@ -52,6 +52,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.AutoSoftwareUpdateEnabled.Value);
             }
 
+            if(requestObject.IsSetUseLatestServiceSoftwareForBlueGreen())
+            {
+                context.Writer.WritePropertyName("UseLatestServiceSoftwareForBlueGreen");
+                context.Writer.WriteBooleanValue(requestObject.UseLatestServiceSoftwareForBlueGreen.Value);
+            }
+
         }
 
         /// <summary>

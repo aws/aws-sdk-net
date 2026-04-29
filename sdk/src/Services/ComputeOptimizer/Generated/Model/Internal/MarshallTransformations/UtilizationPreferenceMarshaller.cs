@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UtilizationPreference Marshaller
     /// </summary>
-    public class UtilizationPreferenceMarshaller : IRequestMarshaller<UtilizationPreference, JsonMarshallerContext> 
+    public class UtilizationPreferenceMarshaller : IRequestMarshaller<UtilizationPreference, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UtilizationPreference requestObject, JsonMarshallerContext context)
+        public void Marshall(UtilizationPreference requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetMetricName())
-            {
-                context.Writer.WritePropertyName("metricName");
-                context.Writer.WriteStringValue(requestObject.MetricName);
-            }
 
-            if(requestObject.IsSetMetricParameters())
+            if (requestObject.IsSetMetricName())
             {
-                context.Writer.WritePropertyName("metricParameters");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("metricName");
+                context.Writer.WriteTextString(requestObject.MetricName);
+            }
+            if (requestObject.IsSetMetricParameters())
+            {
+                context.Writer.WriteTextString("metricParameters");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CustomizableMetricParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetricParameters, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

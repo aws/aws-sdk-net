@@ -2389,6 +2389,10 @@ namespace Amazon.DataZone
         /// </summary>
         public static readonly GroupSearchType DATAZONE_SSO_GROUP = new GroupSearchType("DATAZONE_SSO_GROUP");
         /// <summary>
+        /// Constant IAM_ROLE_SESSION_GROUP for GroupSearchType
+        /// </summary>
+        public static readonly GroupSearchType IAM_ROLE_SESSION_GROUP = new GroupSearchType("IAM_ROLE_SESSION_GROUP");
+        /// <summary>
         /// Constant SSO_GROUP for GroupSearchType
         /// </summary>
         public static readonly GroupSearchType SSO_GROUP = new GroupSearchType("SSO_GROUP");
@@ -5670,6 +5674,10 @@ namespace Amazon.DataZone
         /// Constant IAM_ROLE for UserType
         /// </summary>
         public static readonly UserType IAM_ROLE = new UserType("IAM_ROLE");
+        /// <summary>
+        /// Constant IAM_ROLE_SESSION for UserType
+        /// </summary>
+        public static readonly UserType IAM_ROLE_SESSION = new UserType("IAM_ROLE_SESSION");
         /// <summary>
         /// Constant IAM_USER for UserType
         /// </summary>

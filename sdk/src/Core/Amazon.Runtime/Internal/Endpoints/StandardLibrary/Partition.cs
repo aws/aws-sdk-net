@@ -99,7 +99,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
 
         private static readonly ReaderWriterLockSlim _locker = new ReaderWriterLockSlim();
         private static Dictionary<string, PartitionAttributesShape> _partitionsByRegionName = new Dictionary<string, PartitionAttributesShape>();
-        private static Dictionary<string, PartitionAttributesShape> _partitionsByRegex = new Dictionary<string, PartitionAttributesShape>();
+        private static List<(Regex Regex, PartitionAttributesShape Partition)> _partitionsByRegex = new List<(Regex, PartitionAttributesShape)>();
         private static PartitionAttributesShape _defaultPartition;
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                     {
                         _defaultPartition = partition.outputs;
                     }
-                    _partitionsByRegex.Add(partition.regionRegex, partition.outputs);
+                    _partitionsByRegex.Add((new Regex(partition.regionRegex, RegexOptions.Compiled), partition.outputs));
                     foreach (var region in partition.regions.Keys)
                     {
                         _partitionsByRegionName.Add(region, partition.outputs);
@@ -149,12 +149,12 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 {
                     return FromPartitionData(partition);
                 }
-                // regex match
-                foreach (var regex in _partitionsByRegex.Keys)
+                // regex match using cached compiled Regex instances
+                foreach (var entry in _partitionsByRegex)
                 {
-                    if (Regex.IsMatch(region, regex))
+                    if (entry.Regex.IsMatch(region))
                     {
-                        return FromPartitionData(_partitionsByRegex[regex]);
+                        return FromPartitionData(entry.Partition);
                     }
                 }
                 return FromPartitionData(_defaultPartition);

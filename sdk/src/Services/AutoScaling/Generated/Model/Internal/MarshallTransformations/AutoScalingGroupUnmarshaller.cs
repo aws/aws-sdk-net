@@ -73,6 +73,17 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZoneDistribution = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AvailabilityZoneIds/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailabilityZoneIds == null)
+                        {
+                            unmarshalledObject.AvailabilityZoneIds = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailabilityZoneIds.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("AvailabilityZoneImpairmentPolicy", targetDepth))
                     {
                         var unmarshaller = AvailabilityZoneImpairmentPolicyUnmarshaller.Instance;

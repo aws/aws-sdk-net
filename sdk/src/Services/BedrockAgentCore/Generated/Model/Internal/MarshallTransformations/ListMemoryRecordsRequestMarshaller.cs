@@ -94,6 +94,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Namespace);
             }
 
+            if(publicRequest.IsSetNamespacePath())
+            {
+                context.Writer.WritePropertyName("namespacePath");
+                context.Writer.WriteStringValue(publicRequest.NamespacePath);
+            }
+
             if(publicRequest.IsSetNextToken())
             {
                 context.Writer.WritePropertyName("nextToken");

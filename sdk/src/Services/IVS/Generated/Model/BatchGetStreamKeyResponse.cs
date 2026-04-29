@@ -34,8 +34,91 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class BatchGetStreamKeyResponse : AmazonWebServiceResponse
     {
+        private string _accessControlAllowOrigin;
+        private string _accessControlExposeHeaders;
+        private string _cacheControl;
+        private string _contentSecurityPolicy;
         private List<BatchError> _errors = AWSConfigs.InitializeCollections ? new List<BatchError>() : null;
         private List<StreamKey> _streamKeys = AWSConfigs.InitializeCollections ? new List<StreamKey>() : null;
+        private string _strictTransportSecurity;
+        private string _xContentTypeOptions;
+        private string _xFrameOptions;
+
+        /// <summary>
+        /// Gets and sets the property AccessControlAllowOrigin. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a>
+        /// in the MDN Web Docs.
+        /// </para>
+        /// </summary>
+        public string AccessControlAllowOrigin
+        {
+            get { return this._accessControlAllowOrigin; }
+            set { this._accessControlAllowOrigin = value; }
+        }
+
+        // Check to see if AccessControlAllowOrigin property is set
+        internal bool IsSetAccessControlAllowOrigin()
+        {
+            return this._accessControlAllowOrigin != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccessControlExposeHeaders. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a>
+        /// in the MDN Web Docs.
+        /// </para>
+        /// </summary>
+        public string AccessControlExposeHeaders
+        {
+            get { return this._accessControlExposeHeaders; }
+            set { this._accessControlExposeHeaders = value; }
+        }
+
+        // Check to see if AccessControlExposeHeaders property is set
+        internal bool IsSetAccessControlExposeHeaders()
+        {
+            return this._accessControlExposeHeaders != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheControl. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a>
+        /// in the MDN Web Docs.
+        /// </para>
+        /// </summary>
+        public string CacheControl
+        {
+            get { return this._cacheControl; }
+            set { this._cacheControl = value; }
+        }
+
+        // Check to see if CacheControl property is set
+        internal bool IsSetCacheControl()
+        {
+            return this._cacheControl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentSecurityPolicy. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a>
+        /// in the MDN Web Docs.
+        /// </para>
+        /// </summary>
+        public string ContentSecurityPolicy
+        {
+            get { return this._contentSecurityPolicy; }
+            set { this._contentSecurityPolicy = value; }
+        }
+
+        // Check to see if ContentSecurityPolicy property is set
+        internal bool IsSetContentSecurityPolicy()
+        {
+            return this._contentSecurityPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Errors.
@@ -75,6 +158,63 @@ namespace Amazon.IVS.Model
         internal bool IsSetStreamKeys()
         {
             return this._streamKeys != null && (this._streamKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StrictTransportSecurity. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
+        /// in the MDN Web Docs.
+        /// </para>
+        /// </summary>
+        public string StrictTransportSecurity
+        {
+            get { return this._strictTransportSecurity; }
+            set { this._strictTransportSecurity = value; }
+        }
+
+        // Check to see if StrictTransportSecurity property is set
+        internal bool IsSetStrictTransportSecurity()
+        {
+            return this._strictTransportSecurity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property XContentTypeOptions. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a>
+        /// in the MDN Web Docs.
+        /// </para>
+        /// </summary>
+        public string XContentTypeOptions
+        {
+            get { return this._xContentTypeOptions; }
+            set { this._xContentTypeOptions = value; }
+        }
+
+        // Check to see if XContentTypeOptions property is set
+        internal bool IsSetXContentTypeOptions()
+        {
+            return this._xContentTypeOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property XFrameOptions. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a>
+        /// in the MDN Web Docs.
+        /// </para>
+        /// </summary>
+        public string XFrameOptions
+        {
+            get { return this._xFrameOptions; }
+            set { this._xFrameOptions = value; }
+        }
+
+        // Check to see if XFrameOptions property is set
+        internal bool IsSetXFrameOptions()
+        {
+            return this._xFrameOptions != null;
         }
 
     }

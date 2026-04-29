@@ -3692,7 +3692,7 @@ namespace Amazon.Neptune
         /// <summary>
         /// Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster
         /// becomes a normal standalone cluster with read-write capability instead of being read-only,
-        /// and no longer receives data from a the primary cluster.
+        /// and no longer receives data from the primary cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveFromGlobalCluster service method.</param>
         /// 
@@ -3714,7 +3714,7 @@ namespace Amazon.Neptune
         /// <summary>
         /// Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster
         /// becomes a normal standalone cluster with read-write capability instead of being read-only,
-        /// and no longer receives data from a the primary cluster.
+        /// and no longer receives data from the primary cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveFromGlobalCluster service method.</param>
         /// <param name="cancellationToken">

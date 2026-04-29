@@ -35,6 +35,7 @@ namespace Amazon.ApplicationSignals.Model
     /// </summary>
     public partial class ServiceLevelIndicatorMetricConfig
     {
+        private CompositeSliConfig _compositeSliConfig;
         private DependencyConfig _dependencyConfig;
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<MetricDataQuery> _metricDataQueries = AWSConfigs.InitializeCollections ? new List<MetricDataQuery>() : null;
@@ -44,6 +45,25 @@ namespace Amazon.ApplicationSignals.Model
         private string _operationName;
         private int? _periodSeconds;
         private string _statistic;
+
+        /// <summary>
+        /// Gets and sets the property CompositeSliConfig. 
+        /// <para>
+        /// The composite SLI configuration for service-level SLOs that monitor multiple operations
+        /// of a service.
+        /// </para>
+        /// </summary>
+        public CompositeSliConfig CompositeSliConfig
+        {
+            get { return this._compositeSliConfig; }
+            set { this._compositeSliConfig = value; }
+        }
+
+        // Check to see if CompositeSliConfig property is set
+        internal bool IsSetCompositeSliConfig()
+        {
+            return this._compositeSliConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DependencyConfig. 

@@ -1387,6 +1387,21 @@ namespace AWSSDKDocSamples.Amazon.RDS.Generated
             #endregion
         }
 
+        public void RDSDescribeServerlessV2PlatformVersions()
+        {
+            #region example-1
+
+            var client = new AmazonRDSClient();
+            var response = client.DescribeServerlessV2PlatformVersions(new DescribeServerlessV2PlatformVersionsRequest 
+            {
+                Engine = "aurora-mysql"
+            });
+
+            List<ServerlessV2PlatformVersionInfo> serverlessV2PlatformVersions = response.ServerlessV2PlatformVersions;
+
+            #endregion
+        }
+
         public void RDSDescribeSourceRegions()
         {
             #region example-1
