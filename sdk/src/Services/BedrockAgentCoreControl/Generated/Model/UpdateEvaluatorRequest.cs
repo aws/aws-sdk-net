@@ -40,6 +40,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _description;
         private EvaluatorConfig _evaluatorConfig;
         private string _evaluatorId;
+        private string _kmsKeyArn;
         private EvaluatorLevel _level;
 
         /// <summary>
@@ -121,6 +122,31 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetEvaluatorId()
         {
             return this._evaluatorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting
+        /// sensitive evaluator data. Specify a new key ARN to rotate the encryption key, or specify
+        /// a key ARN to add encryption to an evaluator that was previously created without one.
+        /// When you rotate to a new key, the service decrypts the existing data with the old
+        /// key and re-encrypts it with the new key. Only symmetric encryption KMS keys are supported.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption
+        /// at rest for AgentCore Evaluations</a>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

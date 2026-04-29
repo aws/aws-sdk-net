@@ -63,7 +63,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property MaxTokens. 
         /// <para>
-        /// The maximum number of tokens to allow in the generated response per iteration.
+        /// The maximum number of tokens to allow in the generated response per model call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
