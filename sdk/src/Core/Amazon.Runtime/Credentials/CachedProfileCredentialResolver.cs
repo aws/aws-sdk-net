@@ -175,43 +175,128 @@ namespace Amazon.Runtime.Credentials
             /// <summary>Replaces the cached snapshot. Must be called while holding <see cref="ResolutionLock"/>.</summary>
             public void Update(AWSCredentials credentials, string profilesLocation)
             {
+                var oldSnapshot = _snapshot;
                 _snapshot = new ProfileCredentialSnapshot(credentials, profilesLocation);
+                oldSnapshot?.Dispose();
             }
 
-            public void Dispose() => ResolutionLock.Dispose();
+            public void Dispose()
+            {
+                _snapshot?.Dispose();
+                ResolutionLock.Dispose();
+            }
         }
 
         /// <summary>
-        /// Immutable snapshot of resolved credentials and the file metadata captured at resolution time.
-        /// Invalidation checks last-write timestamp for all backing credential files:
-        /// the shared credentials file, the shared config file, and (when applicable) the
-        /// .NET SDK credentials file (DPAPI-encrypted store in AppData\Local\AWSToolkit).
+        /// Snapshot of resolved credentials that uses a dual invalidation strategy:
+        /// <para />
+        /// 1. <c>LastWriteTimeUtc</c> — provides immediate, synchronous detection on local file systems.
+        /// 2. <see cref="FileSystemWatcher"/> — provides reliable, push-based detection on network
+        /// file systems (SMB/CIFS) where <c>LastWriteTimeUtc</c> can return stale values due to
+        /// client-side metadata caching (<c>FileInfoCacheLifetime</c>).
+        /// Either signal is sufficient to invalidate the cache. This ensures tests pass without
+        /// artificial delays (local FS timestamps update synchronously) while also being reliable
+        /// in production network-storage environments.
         /// </summary>
-        private sealed class ProfileCredentialSnapshot
+        private sealed class ProfileCredentialSnapshot : IDisposable
         {
+            // FileSystemWatcher sets this flag asynchronously via threadpool callbacks.
+            private volatile bool _watcherDetectedChange;
+
+            // LastWriteTime captured at snapshot creation — provides synchronous detection.
             private readonly string _credentialsFilePath;
             private readonly string _configFilePath;
             private readonly string _netSdkCredentialsFilePath;
             private readonly DateTime _credentialsFileWriteTime;
             private readonly DateTime _configFileWriteTime;
             private readonly DateTime _netSdkCredentialsFileWriteTime;
+
+            private readonly FileSystemWatcher _credentialsWatcher;
+            private readonly FileSystemWatcher _configWatcher;
+            private readonly FileSystemWatcher _netSdkCredentialsWatcher;
+
             public AWSCredentials Credentials { get; }
 
             public ProfileCredentialSnapshot(AWSCredentials credentials, string profilesLocation)
             {
                 Credentials = credentials;
+
                 _credentialsFilePath = GetEffectiveCredentialsFilePath(profilesLocation);
                 _configFilePath = SharedCredentialsFile.DefaultConfigFilePath;
                 _netSdkCredentialsFilePath = GetNetSdkCredentialsFilePath(profilesLocation);
+
+                // Capture current timestamps for synchronous detection.
                 _credentialsFileWriteTime = GetLastWriteTime(_credentialsFilePath);
                 _configFileWriteTime = GetLastWriteTime(_configFilePath);
                 _netSdkCredentialsFileWriteTime = GetLastWriteTime(_netSdkCredentialsFilePath);
+
+                // Set up watchers for async/network-storage detection.
+                _credentialsWatcher = CreateWatcher(_credentialsFilePath);
+                _configWatcher = CreateWatcher(_configFilePath);
+                _netSdkCredentialsWatcher = CreateWatcher(_netSdkCredentialsFilePath);
             }
 
-            public bool HasFileChanged() =>
-                GetLastWriteTime(_credentialsFilePath) != _credentialsFileWriteTime ||
-                GetLastWriteTime(_configFilePath) != _configFileWriteTime ||
-                GetLastWriteTime(_netSdkCredentialsFilePath) != _netSdkCredentialsFileWriteTime;
+            /// <summary>
+            /// Returns true if any of the backing credential files have changed since this
+            /// snapshot was created. Uses two complementary signals:
+            /// 1. <c>FileSystemWatcher</c> callback (async, reliable on network storage).
+            /// 2. <c>LastWriteTimeUtc</c> comparison (sync, reliable on local file systems).
+            /// </summary>
+            public bool HasFileChanged()
+            {
+                // Fast path: watcher already detected a change — no I/O needed.
+                if (_watcherDetectedChange)
+                    return true;
+
+                // Synchronous fallback: check timestamps (handles local FS and the case
+                // where the watcher event hasn't been delivered yet on the threadpool).
+                return GetLastWriteTime(_credentialsFilePath) != _credentialsFileWriteTime ||
+                       GetLastWriteTime(_configFilePath) != _configFileWriteTime ||
+                       GetLastWriteTime(_netSdkCredentialsFilePath) != _netSdkCredentialsFileWriteTime;
+            }
+
+            /// <summary>
+            /// Creates a <see cref="FileSystemWatcher"/> that monitors a single file for changes.
+            /// Returns null if the path is null/empty or the directory does not exist.
+            /// </summary>
+            private FileSystemWatcher CreateWatcher(string filePath)
+            {
+                if (string.IsNullOrEmpty(filePath))
+                    return null;
+
+                var directory = Path.GetDirectoryName(filePath);
+                var fileName = Path.GetFileName(filePath);
+
+                if (string.IsNullOrEmpty(directory) || !Directory.Exists(directory))
+                    return null;
+
+                try
+                {
+                    var watcher = new FileSystemWatcher(directory, fileName)
+                    {
+                        NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.Size | NotifyFilters.FileName,
+                        EnableRaisingEvents = true
+                    };
+                    watcher.Changed += OnFileEvent;
+                    watcher.Created += OnFileEvent;
+                    watcher.Deleted += OnFileEvent;
+                    watcher.Renamed += OnFileRenamed;
+                    // Treat buffer overflow as a change — fail safe rather than returning stale credentials.
+                    watcher.Error += OnWatcherError;
+                    return watcher;
+                }
+                catch (Exception ex) when (!(ex is OutOfMemoryException))
+                {
+                    // If we can't create a watcher (e.g., unsupported filesystem, invalid path,
+                    // or I/O error), mark as changed so we always re-resolve — safe fallback.
+                    _watcherDetectedChange = true;
+                    return null;
+                }
+            }
+
+            private void OnFileEvent(object sender, FileSystemEventArgs e) => _watcherDetectedChange = true;
+            private void OnFileRenamed(object sender, RenamedEventArgs e) => _watcherDetectedChange = true;
+            private void OnWatcherError(object sender, ErrorEventArgs e) => _watcherDetectedChange = true;
 
             /// <summary>
             /// Resolves the effective credentials file path using the same logic as
@@ -262,6 +347,13 @@ namespace Amazon.Runtime.Credentials
 
             private static DateTime GetLastWriteTime(string path) =>
                 string.IsNullOrEmpty(path) ? default : File.GetLastWriteTimeUtc(path);
+
+            public void Dispose()
+            {
+                _credentialsWatcher?.Dispose();
+                _configWatcher?.Dispose();
+                _netSdkCredentialsWatcher?.Dispose();
+            }
         }
     }
 }

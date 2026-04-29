@@ -279,7 +279,7 @@ namespace AWSSDK.UnitTests
                 // Mutate the credentials file.
                 File.WriteAllText(fixture.CredentialsFilePath, BasicProfileText("test-profile", "AKID_UPDATED", "SECRET_UPDATED"));
 
-                var updated = await resolver.ResolveIdentityAsync(config);
+                var updated = await resolver.ResolveIdentityAsync(config).ConfigureAwait(false);
                 Assert.IsNotNull(updated);
                 Assert.AreNotSame(original, updated,
                     "After modifying the credentials file the resolver should return a new credentials object.");
