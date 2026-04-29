@@ -345,6 +345,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.DistributionConfig.CacheBehaviors.Quantity.Value));
                         xmlWriter.WriteEndElement();
                     }
+                    if (publicRequest.DistributionConfig.IsSetCacheTagConfig())
+                    {
+                        xmlWriter.WriteStartElement("CacheTagConfig");
+                        if(publicRequest.DistributionConfig.CacheTagConfig.IsSetHeaderName())
+                            xmlWriter.WriteElementString("HeaderName", StringUtils.FromString(publicRequest.DistributionConfig.CacheTagConfig.HeaderName));
+                        xmlWriter.WriteEndElement();
+                    }
                     if(publicRequest.DistributionConfig.IsSetCallerReference())
                         xmlWriter.WriteElementString("CallerReference", StringUtils.FromString(publicRequest.DistributionConfig.CallerReference));
 
