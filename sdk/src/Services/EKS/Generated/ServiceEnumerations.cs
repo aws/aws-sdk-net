@@ -2567,6 +2567,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType UpgradePolicy = new UpdateParamType("UpgradePolicy");
         /// <summary>
+        /// Constant VendedLogs for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType VendedLogs = new UpdateParamType("VendedLogs");
+        /// <summary>
         /// Constant Version for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType Version = new UpdateParamType("Version");
