@@ -620,6 +620,10 @@ namespace Amazon.Route53GlobalResolver
         /// You don't have permission to perform this operation. Check your IAM permissions and
         /// try again.
         /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
         /// An internal server error occurred. Try again later.
         /// </exception>

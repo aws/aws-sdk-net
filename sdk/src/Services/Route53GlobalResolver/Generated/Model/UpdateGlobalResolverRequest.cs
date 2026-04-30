@@ -50,6 +50,7 @@ namespace Amazon.Route53GlobalResolver.Model
         private GlobalResolverIpAddressType _ipAddressType;
         private string _name;
         private string _observabilityRegion;
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -145,6 +146,31 @@ namespace Amazon.Route53GlobalResolver.Model
         internal bool IsSetObservabilityRegion()
         {
             return this._observabilityRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
+        /// The list of Amazon Web Services Regions where the Global Resolver will operate. The
+        /// resolver will be distributed across these Regions to provide global availability and
+        /// low-latency DNS resolution.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
