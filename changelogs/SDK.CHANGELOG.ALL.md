@@ -1,3 +1,28 @@
+### 4.0.241.0 (2026-04-30 18:16 UTC)
+* BedrockAgentCore (4.0.22.0)
+	* AgentCore Identity now supports on-behalf-of token exchange OAuth2. AgentCore Memory now supports metadata for LongTerm Memory Records.
+* BedrockAgentCoreControl (4.0.32.0)
+	* AgentCore Identity now supports on-behalf-of token exchange OAuth2. AgentCore Memory now supports metadata for LongTerm Memory Records.
+* DataZone (4.0.27.0)
+	* Adds support for asynchronous notebook runs
+* EKS (4.0.16.0)
+	* Vended logs update param for capability vended logs feature
+* Kafka (4.0.9.0)
+	* Adds support for ZookeeperAccess field to control the Client-Zookeeper connectivity.
+* ObservabilityAdmin (4.0.11.0)
+	* Observability Admin enablement launch for AWS Kafka, Bedrock Agent Core Workload Identity and OTel metric enablement.
+* PaymentCryptography (4.0.9.0)
+	* Adds support for resource-based policies on AWS Payment Cryptography keys, enabling cross-account key sharing. Also adds Multi-Party Approval (MPA) team association APIs for protecting sensitive import root public key operations.
+* Route53GlobalResolver (4.0.2.0)
+	* Adds support for regions in the UpdateGlobalResolver input.
+* SageMaker (4.0.54.0)
+	* Add InstancePools support to Endpoint for flexible provisioning across a prioritized list of instance types. Add Specifications support to InferenceComponent for per-instance-type model configurations.
+* SSOAdmin (4.0.6.0)
+	* Add InstanceArn and IdentityStoreArn in the response of CreateApplication API and IdentityStoreArn in the response of DescribeApplication API
+* Core 4.0.6.0
+	* [Breaking Change] The AWSSDK ZIP artifact now organizes extension assemblies into dedicated subfolders under `extensions/` (for example, `extensions\CrtIntegration\AWSSDK.Extensions.CrtIntegration.dll`). Each subfolder contains only the extension DLL and its third-party dependencies - transitive `AWSSDK` service DLLs remain in the root directory and are not duplicated. There is no impact for customers installing the SDK via NuGet, which is the recommended installation method as described in our [developer guide](https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-install-assemblies.html).
+	* Update `System.Text.Json` dependency to `8.0.6` (for `net472` and `netstandard2.0` frameworks)
+
 ### 4.0.240.0 (2026-04-29 18:16 UTC)
 * Account (4.0.4.0)
 	* Adds AccountState in the response for the GetAccountInformation API. Each state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.
