@@ -167,6 +167,21 @@ namespace AWSSDK.Benchmarks
                 Console.WriteLine(_resourceMonitor.GetSummary("DynamoDBLatency"));
             }
 
+            // Delete auto-created table to avoid ongoing costs (5000 RCU / 5000 WCU)
+            if (_createdTable && _dynamoClient != null)
+            {
+                Console.WriteLine($"Deleting DynamoDB table '{_tableName}'...");
+                try
+                {
+                    _dynamoClient.DeleteTableAsync(_tableName).GetAwaiter().GetResult();
+                    Console.WriteLine($"Table '{_tableName}' deleted.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Warning: Failed to delete table '{_tableName}': {ex.Message}");
+                }
+            }
+
             _dynamoClient?.Dispose();
         }
 

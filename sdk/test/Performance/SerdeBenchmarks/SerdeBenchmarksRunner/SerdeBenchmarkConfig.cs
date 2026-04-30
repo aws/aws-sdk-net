@@ -31,7 +31,7 @@ namespace AWSSDK.Benchmarks.Serde;
 /// With 71 tests, this configuration targets ~12-18 minutes total runtime.
 /// 
 /// BDN Throughput mode reports P50, P90, P95 from per-iteration averages.
-/// Max is included as a proxy for P99 (BDN v0.13.7 does not support custom percentiles).
+/// Max is included as an upper-bound outlier indicator.
 /// </summary>
 public class SerdeBenchmarkConfig : ManualConfig
 {
@@ -49,7 +49,7 @@ public class SerdeBenchmarkConfig : ManualConfig
         AddColumn(StatisticColumn.P50);
         AddColumn(StatisticColumn.P90);
         AddColumn(StatisticColumn.P95);
-        AddColumn(StatisticColumn.Max);  // P100 = Max, proxy for P99
+        AddColumn(StatisticColumn.Max);  // P100 = Max, useful as upper-bound outlier indicator
 
         WithSummaryStyle(SummaryStyle.Default
             .WithTimeUnit(TimeUnit.Nanosecond)

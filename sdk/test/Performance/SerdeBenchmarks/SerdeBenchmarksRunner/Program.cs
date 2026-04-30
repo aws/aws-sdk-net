@@ -48,7 +48,7 @@ internal class Program
             cultureInfo: System.Globalization.CultureInfo.InvariantCulture,
             printUnitsInHeader: false,
             timeUnit: Perfolizer.Horology.TimeUnit.Nanosecond,
-            sizeUnit: SizeUnit.B);
+            sizeUnit: Perfolizer.Metrology.SizeUnit.B);
         config.WithSummaryStyle(summaryStyle);
 
         // Add CSV exporter
@@ -56,14 +56,14 @@ internal class Program
             cultureInfo: System.Globalization.CultureInfo.InvariantCulture,
             printUnitsInHeader: false,
             timeUnit: Perfolizer.Horology.TimeUnit.Nanosecond,
-            sizeUnit: SizeUnit.B);
+            sizeUnit: Perfolizer.Metrology.SizeUnit.B);
         config.AddExporter(new CsvExporter(CsvSeparator.CurrentCulture, csvConfig));
 
-        // Add percentile columns (P100/Max = proxy for P99 in BDN v0.13.7)
+        // Add percentile columns
         config.AddColumn(StatisticColumn.P50);
         config.AddColumn(StatisticColumn.P90);
         config.AddColumn(StatisticColumn.P95);
-        config.AddColumn(StatisticColumn.Max);  // P100 = Max, proxy for P99
+        config.AddColumn(StatisticColumn.Max);  // P100 = Max, upper-bound outlier indicator
 
         // Run all serde benchmark classes via BenchmarkSwitcher
         BenchmarkSwitcher.FromTypes(new[]

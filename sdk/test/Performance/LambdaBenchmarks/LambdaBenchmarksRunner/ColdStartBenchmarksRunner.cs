@@ -14,6 +14,7 @@
  */
 
 using System.Text;
+using Amazon;
 using Amazon.Lambda;
 using Amazon.Lambda.Model;
 using BenchmarkDotNet.Attributes;
@@ -37,14 +38,20 @@ namespace LambdaBenchmarksRunner;
 /// Prerequisites: Lambda functions must be pre-deployed using Deploy-LambdaColdStart.ps1.
 /// 
 /// Configuration:
-///   - 512MB memory, us-east-1, .NET 8.0 runtime
+///   - 512MB memory, .NET 8.0 runtime
 ///   - x86_64 and arm64 architectures (via [Params])
 ///   - Forces cold start each iteration by updating environment variable
 ///   - Reads total duration from LogResult (LogType=Tail), confirms cold start via Init Duration
 ///   - Minimum 100 iterations (network operation)
 ///
+/// Region resolution (in order):
+///   1. BENCHMARK_REGION environment variable (e.g. BENCHMARK_REGION=us-west-2)
+///   2. SDK default region resolution (AWS_REGION, config file, etc.)
+///   3. Falls back to us-east-1
+///
 /// Usage:
 ///   dotnet run -c Release -- --filter *ColdStart*
+///   BENCHMARK_REGION=us-west-2 dotnet run -c Release -- --filter *ColdStart*
 /// </summary>
 /// <summary>
 /// BenchmarkDotNet config for Lambda cold start benchmarks.
@@ -89,7 +96,11 @@ public class ColdStartBenchmarksRunner
     [GlobalSetup]
     public void GlobalSetup()
     {
-        _lambdaClient = new AmazonLambdaClient(Amazon.RegionEndpoint.USEast1);
+        var regionEnv = System.Environment.GetEnvironmentVariable("BENCHMARK_REGION");
+        var region = !string.IsNullOrEmpty(regionEnv)
+            ? RegionEndpoint.GetBySystemName(regionEnv)
+            : RegionEndpoint.USEast1;
+        _lambdaClient = new AmazonLambdaClient(region);
         _iterationCount = 0;
     }
 

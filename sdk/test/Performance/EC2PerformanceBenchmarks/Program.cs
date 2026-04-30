@@ -18,13 +18,13 @@ namespace AWSSDK.Benchmarks
             var summaryStyle = new SummaryStyle(
                 cultureInfo: System.Globalization.CultureInfo.InvariantCulture,
                 printUnitsInHeader: false,
-                timeUnit: Perfolizer.Horology.TimeUnit.Millisecond, sizeUnit: SizeUnit.B);
+                timeUnit: Perfolizer.Horology.TimeUnit.Millisecond, sizeUnit: Perfolizer.Metrology.SizeUnit.B);
             config.WithSummaryStyle(summaryStyle);
             //When exporting results, use milliseconds so that when pushing to cloudwatch we only have to parse ms
             var csvConfig = new SummaryStyle(
                 cultureInfo: System.Globalization.CultureInfo.InvariantCulture,
                 printUnitsInHeader: false,
-                timeUnit: Perfolizer.Horology.TimeUnit.Millisecond, sizeUnit: SizeUnit.B);
+                timeUnit: Perfolizer.Horology.TimeUnit.Millisecond, sizeUnit: Perfolizer.Metrology.SizeUnit.B);
             var csvExporter = new CsvExporter(CsvSeparator.CurrentCulture, csvConfig);
             config.AddExporter(csvExporter);
 
