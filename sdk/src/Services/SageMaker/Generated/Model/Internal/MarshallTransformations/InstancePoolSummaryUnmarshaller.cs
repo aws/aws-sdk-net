@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InferenceComponentRuntimeConfigSummary Object
+    /// Response Unmarshaller for InstancePoolSummary Object
     /// </summary>  
-    public class InferenceComponentRuntimeConfigSummaryUnmarshaller : IJsonUnmarshaller<InferenceComponentRuntimeConfigSummary, JsonUnmarshallerContext>
+    public class InstancePoolSummaryUnmarshaller : IJsonUnmarshaller<InstancePoolSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InferenceComponentRuntimeConfigSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InstancePoolSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            InferenceComponentRuntimeConfigSummary unmarshalledObject = new InferenceComponentRuntimeConfigSummary();
+            InstancePoolSummary unmarshalledObject = new InstancePoolSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CurrentCopyCount", targetDepth))
+                if (context.TestExpression("CurrentInstanceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CurrentCopyCount = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CurrentInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DesiredCopyCount", targetDepth))
+                if (context.TestExpression("InstanceType", targetDepth))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DesiredCopyCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PlacementStatus", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<InferenceComponentPlacementStatus, InferenceComponentPlacementStatusUnmarshaller>(InferenceComponentPlacementStatusUnmarshaller.Instance);
-                    unmarshalledObject.PlacementStatus = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static InferenceComponentRuntimeConfigSummaryUnmarshaller _instance = new InferenceComponentRuntimeConfigSummaryUnmarshaller();        
+        private static InstancePoolSummaryUnmarshaller _instance = new InstancePoolSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InferenceComponentRuntimeConfigSummaryUnmarshaller Instance
+        public static InstancePoolSummaryUnmarshaller Instance
         {
             get
             {

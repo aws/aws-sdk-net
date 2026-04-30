@@ -11974,6 +11974,10 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.InferenceComponentPlacementStatus.CurrentCopyCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.InferenceComponentRollingUpdatePolicy.MaximumExecutionTimeoutInSeconds</property>
     <min>600</min>
     <max>28800</max>
@@ -12211,6 +12215,21 @@
     <min>0</min>
     <max>1</max>
     <pattern>1|2</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.InstancePool.ModelNameOverride</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]([\-a-zA-Z0-9]*[a-zA-Z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.InstancePool.Priority</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.InstancePoolSummary.CurrentInstanceCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.IntegerParameterRange.MaxValue</property>
@@ -14107,6 +14126,11 @@
     <min>0</min>
     <max>63</max>
     <pattern>[a-zA-Z0-9]([\-a-zA-Z0-9]*[a-zA-Z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariant.VariantInstanceProvisionTimeoutInSeconds</property>
+    <min>300</min>
+    <max>3600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariant.VariantName</property>

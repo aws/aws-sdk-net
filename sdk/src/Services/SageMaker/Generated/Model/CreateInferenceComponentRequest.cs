@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private string _inferenceComponentName;
         private InferenceComponentRuntimeConfig _runtimeConfig;
         private InferenceComponentSpecification _specification;
+        private List<InferenceComponentSpecification> _specifications = AWSConfigs.InitializeCollections ? new List<InferenceComponentSpecification>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _variantName;
 
@@ -122,6 +123,33 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSpecification()
         {
             return this._specification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Specifications. 
+        /// <para>
+        /// A list of specification objects for the inference component, one per instance type.
+        /// Use this parameter when you want to deploy a different model or resource configuration
+        /// for the inference component on each instance type. You can use either this parameter
+        /// or the singular <c>Specification</c> parameter, but not both.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<InferenceComponentSpecification> Specifications
+        {
+            get { return this._specifications; }
+            set { this._specifications = value; }
+        }
+
+        // Check to see if Specifications property is set
+        internal bool IsSetSpecifications()
+        {
+            return this._specifications != null && (this._specifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
