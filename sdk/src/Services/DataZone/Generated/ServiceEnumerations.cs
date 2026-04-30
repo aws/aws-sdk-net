@@ -3145,6 +3145,126 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type NetworkAccessType.
+    /// </summary>
+    public class NetworkAccessType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PUBLIC_INTERNET_ONLY for NetworkAccessType
+        /// </summary>
+        public static readonly NetworkAccessType PUBLIC_INTERNET_ONLY = new NetworkAccessType("PUBLIC_INTERNET_ONLY");
+        /// <summary>
+        /// Constant VPC_ONLY for NetworkAccessType
+        /// </summary>
+        public static readonly NetworkAccessType VPC_ONLY = new NetworkAccessType("VPC_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkAccessType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkAccessType FindValue(string value)
+        {
+            return FindValue<NetworkAccessType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkAccessType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotebookRunStatus.
+    /// </summary>
+    public class NotebookRunStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for NotebookRunStatus
+        /// </summary>
+        public static readonly NotebookRunStatus FAILED = new NotebookRunStatus("FAILED");
+        /// <summary>
+        /// Constant QUEUED for NotebookRunStatus
+        /// </summary>
+        public static readonly NotebookRunStatus QUEUED = new NotebookRunStatus("QUEUED");
+        /// <summary>
+        /// Constant RUNNING for NotebookRunStatus
+        /// </summary>
+        public static readonly NotebookRunStatus RUNNING = new NotebookRunStatus("RUNNING");
+        /// <summary>
+        /// Constant STARTING for NotebookRunStatus
+        /// </summary>
+        public static readonly NotebookRunStatus STARTING = new NotebookRunStatus("STARTING");
+        /// <summary>
+        /// Constant STOPPED for NotebookRunStatus
+        /// </summary>
+        public static readonly NotebookRunStatus STOPPED = new NotebookRunStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for NotebookRunStatus
+        /// </summary>
+        public static readonly NotebookRunStatus STOPPING = new NotebookRunStatus("STOPPING");
+        /// <summary>
+        /// Constant SUCCEEDED for NotebookRunStatus
+        /// </summary>
+        public static readonly NotebookRunStatus SUCCEEDED = new NotebookRunStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotebookRunStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotebookRunStatus FindValue(string value)
+        {
+            return FindValue<NotebookRunStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotebookRunStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NotificationResourceType.
     /// </summary>
     public class NotificationResourceType : ConstantClass
@@ -3478,6 +3598,52 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OverallDeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageManager.
+    /// </summary>
+    public class PackageManager : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UV for PackageManager
+        /// </summary>
+        public static readonly PackageManager UV = new PackageManager("UV");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageManager(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageManager FindValue(string value)
+        {
+            return FindValue<PackageManager>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageManager(string value)
         {
             return FindValue(value);
         }
@@ -5326,6 +5492,60 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Timezone(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TriggerSourceType.
+    /// </summary>
+    public class TriggerSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANUAL for TriggerSourceType
+        /// </summary>
+        public static readonly TriggerSourceType MANUAL = new TriggerSourceType("MANUAL");
+        /// <summary>
+        /// Constant SCHEDULED for TriggerSourceType
+        /// </summary>
+        public static readonly TriggerSourceType SCHEDULED = new TriggerSourceType("SCHEDULED");
+        /// <summary>
+        /// Constant WORKFLOW for TriggerSourceType
+        /// </summary>
+        public static readonly TriggerSourceType WORKFLOW = new TriggerSourceType("WORKFLOW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TriggerSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TriggerSourceType FindValue(string value)
+        {
+            return FindValue<TriggerSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TriggerSourceType(string value)
         {
             return FindValue(value);
         }
