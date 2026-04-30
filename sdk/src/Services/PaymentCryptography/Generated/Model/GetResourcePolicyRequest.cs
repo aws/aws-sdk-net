@@ -30,15 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartKeyUsage operation.
-    /// Enables an Amazon Web Services Payment Cryptography key, which makes it active for
-    /// cryptographic operations within Amazon Web Services Payment Cryptography
+    /// Container for the parameters to the GetResourcePolicy operation.
+    /// Returns the resource-based policy attached to an Amazon Web Services Payment Cryptography
+    /// key.
     /// 
     ///  
     /// <para>
-    ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
-    /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
-    /// policies</a>.
+    ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+    /// Services accounts.
     /// </para>
     ///  
     /// <para>
@@ -46,32 +45,37 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_PutResourcePolicy.html">PutResourcePolicy</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteResourcePolicy.html">DeleteResourcePolicy</a>
     /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class StartKeyUsageRequest : AmazonPaymentCryptographyRequest
+    public partial class GetResourcePolicyRequest : AmazonPaymentCryptographyRequest
     {
-        private string _keyIdentifier;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property KeyIdentifier. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The <c>KeyArn</c> of the key.
+        /// The <c>KeyARN</c> of the key whose resource-based policy you want to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=7, Max=322)]
-        public string KeyIdentifier
+        [AWSProperty(Required=true, Min=70, Max=150)]
+        public string ResourceArn
         {
-            get { return this._keyIdentifier; }
-            set { this._keyIdentifier = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if KeyIdentifier property is set
-        internal bool IsSetKeyIdentifier()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._keyIdentifier != null;
+            return this._resourceArn != null;
         }
 
     }

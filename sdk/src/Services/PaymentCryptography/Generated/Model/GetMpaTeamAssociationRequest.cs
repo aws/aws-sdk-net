@@ -30,15 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartKeyUsage operation.
-    /// Enables an Amazon Web Services Payment Cryptography key, which makes it active for
-    /// cryptographic operations within Amazon Web Services Payment Cryptography
+    /// Container for the parameters to the GetMpaTeamAssociation operation.
+    /// Returns the Multi-Party Approval (MPA) team association for a protected operation.
     /// 
     ///  
     /// <para>
-    ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
-    /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
-    /// policies</a>.
+    ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+    /// Services accounts.
     /// </para>
     ///  
     /// <para>
@@ -46,32 +44,38 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AssociateMpaTeam.html">AssociateMpaTeam</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisassociateMpaTeam.html">DisassociateMpaTeam</a>
     /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class StartKeyUsageRequest : AmazonPaymentCryptographyRequest
+    public partial class GetMpaTeamAssociationRequest : AmazonPaymentCryptographyRequest
     {
-        private string _keyIdentifier;
+        private MpaOperation _action;
 
         /// <summary>
-        /// Gets and sets the property KeyIdentifier. 
+        /// Gets and sets the property Action. 
         /// <para>
-        /// The <c>KeyArn</c> of the key.
+        /// The protected operation whose MPA team association you want to retrieve. Currently,
+        /// the only supported value is <c>IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=7, Max=322)]
-        public string KeyIdentifier
+        [AWSProperty(Required=true)]
+        public MpaOperation Action
         {
-            get { return this._keyIdentifier; }
-            set { this._keyIdentifier = value; }
+            get { return this._action; }
+            set { this._action = value; }
         }
 
-        // Check to see if KeyIdentifier property is set
-        internal bool IsSetKeyIdentifier()
+        // Check to see if Action property is set
+        internal bool IsSetAction()
         {
-            return this._keyIdentifier != null;
+            return this._action != null;
         }
 
     }

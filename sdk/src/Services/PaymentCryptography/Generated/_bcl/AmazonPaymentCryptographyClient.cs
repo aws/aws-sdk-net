@@ -313,8 +313,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -440,8 +441,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -546,6 +548,247 @@ namespace Amazon.PaymentCryptography
             options.ResponseUnmarshaller = AddKeyReplicationRegionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<AddKeyReplicationRegionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateMpaTeam
+
+
+        /// <summary>
+        /// Associates a Multi-Party Approval (MPA) team with a protected operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/mpa.html">Multi-Party
+        /// Approval</a> in the <i>Amazon Web Services Payment Cryptography User Guide.</i> 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisassociateMpaTeam.html">DisassociateMpaTeam</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetMpaTeamAssociation.html">GetMpaTeamAssociation</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateMpaTeam service method.</param>
+        /// 
+        /// <returns>The response from the AssociateMpaTeam service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/AssociateMpaTeam">REST API Reference for AssociateMpaTeam Operation</seealso>
+        public virtual AssociateMpaTeamResponse AssociateMpaTeam(AssociateMpaTeamRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateMpaTeamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMpaTeamResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateMpaTeamResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates a Multi-Party Approval (MPA) team with a protected operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/mpa.html">Multi-Party
+        /// Approval</a> in the <i>Amazon Web Services Payment Cryptography User Guide.</i> 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisassociateMpaTeam.html">DisassociateMpaTeam</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetMpaTeamAssociation.html">GetMpaTeamAssociation</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateMpaTeam service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateMpaTeam service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/AssociateMpaTeam">REST API Reference for AssociateMpaTeam Operation</seealso>
+        public virtual Task<AssociateMpaTeamResponse> AssociateMpaTeamAsync(AssociateMpaTeamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateMpaTeamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMpaTeamResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateMpaTeamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1460,8 +1703,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1589,8 +1833,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -1694,6 +1939,225 @@ namespace Amazon.PaymentCryptography
             options.ResponseUnmarshaller = DeleteKeyResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteKeyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Removes the resource-based policy attached to an Amazon Web Services Payment Cryptography
+        /// key.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_PutResourcePolicy.html">PutResourcePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetResourcePolicy.html">GetResourcePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes the resource-based policy attached to an Amazon Web Services Payment Cryptography
+        /// key.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_PutResourcePolicy.html">PutResourcePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetResourcePolicy.html">GetResourcePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1941,6 +2405,245 @@ namespace Amazon.PaymentCryptography
             options.ResponseUnmarshaller = DisableDefaultKeyReplicationRegionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DisableDefaultKeyReplicationRegionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateMpaTeam
+
+
+        /// <summary>
+        /// Removes the association between a Multi-Party Approval (MPA) team and a protected
+        /// operation.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AssociateMpaTeam.html">AssociateMpaTeam</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetMpaTeamAssociation.html">GetMpaTeamAssociation</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMpaTeam service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateMpaTeam service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DisassociateMpaTeam">REST API Reference for DisassociateMpaTeam Operation</seealso>
+        public virtual DisassociateMpaTeamResponse DisassociateMpaTeam(DisassociateMpaTeamRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateMpaTeamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMpaTeamResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateMpaTeamResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes the association between a Multi-Party Approval (MPA) team and a protected
+        /// operation.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AssociateMpaTeam.html">AssociateMpaTeam</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetMpaTeamAssociation.html">GetMpaTeamAssociation</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMpaTeam service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateMpaTeam service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/DisassociateMpaTeam">REST API Reference for DisassociateMpaTeam Operation</seealso>
+        public virtual Task<DisassociateMpaTeamResponse> DisassociateMpaTeamAsync(DisassociateMpaTeamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateMpaTeamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMpaTeamResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateMpaTeamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2451,8 +3154,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -2807,8 +3511,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -3527,8 +4232,9 @@ namespace Amazon.PaymentCryptography
         /// 
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -3630,8 +4336,9 @@ namespace Amazon.PaymentCryptography
         /// 
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -3725,6 +4432,243 @@ namespace Amazon.PaymentCryptography
             options.ResponseUnmarshaller = GetKeyResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetKeyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMpaTeamAssociation
+
+
+        /// <summary>
+        /// Returns the Multi-Party Approval (MPA) team association for a protected operation.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AssociateMpaTeam.html">AssociateMpaTeam</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisassociateMpaTeam.html">DisassociateMpaTeam</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMpaTeamAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetMpaTeamAssociation service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetMpaTeamAssociation">REST API Reference for GetMpaTeamAssociation Operation</seealso>
+        public virtual GetMpaTeamAssociationResponse GetMpaTeamAssociation(GetMpaTeamAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetMpaTeamAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMpaTeamAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetMpaTeamAssociationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the Multi-Party Approval (MPA) team association for a protected operation.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_AssociateMpaTeam.html">AssociateMpaTeam</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DisassociateMpaTeam.html">DisassociateMpaTeam</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMpaTeamAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMpaTeamAssociation service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetMpaTeamAssociation">REST API Reference for GetMpaTeamAssociation Operation</seealso>
+        public virtual Task<GetMpaTeamAssociationResponse> GetMpaTeamAssociationAsync(GetMpaTeamAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetMpaTeamAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMpaTeamAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMpaTeamAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4276,8 +5220,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicKeyCertificate service method.</param>
@@ -4365,8 +5310,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicKeyCertificate service method.</param>
@@ -4440,6 +5386,205 @@ namespace Amazon.PaymentCryptography
             options.ResponseUnmarshaller = GetPublicKeyCertificateResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetPublicKeyCertificateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResourcePolicy
+
+
+        /// <summary>
+        /// Returns the resource-based policy attached to an Amazon Web Services Payment Cryptography
+        /// key.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_PutResourcePolicy.html">PutResourcePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteResourcePolicy.html">DeleteResourcePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the resource-based policy attached to an Amazon Web Services Payment Cryptography
+        /// key.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_PutResourcePolicy.html">PutResourcePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteResourcePolicy.html">DeleteResourcePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4702,8 +5847,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -5067,8 +6213,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -5661,8 +6808,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -5764,8 +6912,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -5858,6 +7007,277 @@ namespace Amazon.PaymentCryptography
 
         #endregion
         
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Attaches or replaces a resource-based policy on an Amazon Web Services Payment Cryptography
+        /// key. A resource-based policy can grant cross-account access to your key.
+        /// 
+        ///  
+        /// <para>
+        /// If the policy would grant public access, the request fails with a <c>PublicPolicyException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove a resource-based policy from a key, use <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteResourcePolicy.html">DeleteResourcePolicy</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetResourcePolicy.html">GetResourcePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteResourcePolicy.html">DeleteResourcePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.PublicPolicyException">
+        /// The resource-based policy would grant public access to the key.
+        /// 
+        ///  
+        /// <para>
+        /// Modify the policy to restrict access to specific principals and resubmit the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Attaches or replaces a resource-based policy on an Amazon Web Services Payment Cryptography
+        /// key. A resource-based policy can grant cross-account access to your key.
+        /// 
+        ///  
+        /// <para>
+        /// If the policy would grant public access, the request fails with a <c>PublicPolicyException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove a resource-based policy from a key, use <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteResourcePolicy.html">DeleteResourcePolicy</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetResourcePolicy.html">GetResourcePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteResourcePolicy.html">DeleteResourcePolicy</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by PaymentCryptography.</returns>
+        /// <exception cref="Amazon.PaymentCryptography.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown when the caller lacks the necessary IAM permissions to perform
+        /// the requested operation. Verify that your IAM policy includes the required permissions
+        /// for the specific Amazon Web Services Payment Cryptography action you're attempting.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ConflictException">
+        /// This request can cause an inconsistent state for the resource.
+        /// 
+        ///  
+        /// <para>
+        /// The requested operation conflicts with the current state of the resource. For example,
+        /// attempting to delete a key that is currently being used, or trying to create a resource
+        /// that already exists.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// This indicates a server-side error within the Amazon Web Services Payment Cryptography
+        /// service. If this error persists, contact support for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.PublicPolicyException">
+        /// The resource-based policy would grant public access to the key.
+        /// 
+        ///  
+        /// <para>
+        /// Modify the policy to restrict access to specific principals and resubmit the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ResourceNotFoundException">
+        /// The request was denied due to resource not found.
+        /// 
+        ///  
+        /// <para>
+        /// The specified key, alias, or other resource does not exist in your account or region.
+        /// Verify that the resource identifier is correct and that the resource exists in the
+        /// expected region.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceQuotaExceededException">
+        /// This request would cause a service quota to be exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// You have reached the maximum number of keys, aliases, or other resources allowed in
+        /// your account. Review your current usage and consider deleting unused resources or
+        /// requesting a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Web Services Payment Cryptography service is temporarily unavailable. This
+        /// is typically a temporary condition - retry your request after a brief delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// You have exceeded the rate limits for Amazon Web Services Payment Cryptography API
+        /// calls. Implement exponential backoff and retry logic in your application to handle
+        /// throttling gracefully.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptography.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// 
+        ///  
+        /// <para>
+        /// One or more parameters in your request are invalid. Check the parameter values, formats,
+        /// and constraints specified in the API documentation.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-2021-09-14/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RemoveKeyReplicationRegions
 
 
@@ -5881,8 +7301,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  </important> 
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -6002,8 +7423,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  </important> 
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -6123,8 +7545,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -6251,8 +7674,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -6379,8 +7803,9 @@ namespace Amazon.PaymentCryptography
         /// 
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -6490,8 +7915,9 @@ namespace Amazon.PaymentCryptography
         /// 
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -6613,8 +8039,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -6734,8 +8161,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -6869,8 +8297,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -6997,8 +8426,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -7124,8 +8554,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -7234,8 +8665,9 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-        /// Services accounts.
+        ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+        /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+        /// policies</a>.
         /// </para>
         ///  
         /// <para>

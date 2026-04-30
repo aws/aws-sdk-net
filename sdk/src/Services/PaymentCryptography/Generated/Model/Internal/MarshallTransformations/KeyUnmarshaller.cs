@@ -128,6 +128,12 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeyState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MpaStatus", targetDepth))
+                {
+                    var unmarshaller = MpaStatusUnmarshaller.Instance;
+                    unmarshalledObject.MpaStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("MultiRegionKeyType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
