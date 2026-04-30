@@ -56,6 +56,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("clientAuthenticationMethod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClientAuthenticationMethod = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("clientId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -66,6 +72,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = Oauth2DiscoveryUnmarshaller.Instance;
                     unmarshalledObject.OauthDiscovery = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("onBehalfOfTokenExchangeConfig", targetDepth))
+                {
+                    var unmarshaller = OnBehalfOfTokenExchangeConfigTypeUnmarshaller.Instance;
+                    unmarshalledObject.OnBehalfOfTokenExchangeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("privateEndpoint", targetDepth))

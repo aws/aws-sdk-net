@@ -1477,6 +1477,18 @@
     <pattern>mem-[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.MemoryRecordLeftExpression.MetadataKey</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\s._:/=+@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.MemoryRecordMetadataValue.StringValue</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9\s._:/=+@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordOutput.MemoryRecordId</property>
     <min>40</min>
     <max>50</max>

@@ -1181,6 +1181,88 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type MemoryRecordOperatorType.
+    /// </summary>
+    public class MemoryRecordOperatorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AFTER for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType AFTER = new MemoryRecordOperatorType("AFTER");
+        /// <summary>
+        /// Constant BEFORE for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType BEFORE = new MemoryRecordOperatorType("BEFORE");
+        /// <summary>
+        /// Constant CONTAINS for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType CONTAINS = new MemoryRecordOperatorType("CONTAINS");
+        /// <summary>
+        /// Constant EQUALS_TO for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType EQUALS_TO = new MemoryRecordOperatorType("EQUALS_TO");
+        /// <summary>
+        /// Constant EXISTS for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType EXISTS = new MemoryRecordOperatorType("EXISTS");
+        /// <summary>
+        /// Constant GREATER_THAN for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType GREATER_THAN = new MemoryRecordOperatorType("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUALS for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType GREATER_THAN_OR_EQUALS = new MemoryRecordOperatorType("GREATER_THAN_OR_EQUALS");
+        /// <summary>
+        /// Constant LESS_THAN for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType LESS_THAN = new MemoryRecordOperatorType("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUALS for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType LESS_THAN_OR_EQUALS = new MemoryRecordOperatorType("LESS_THAN_OR_EQUALS");
+        /// <summary>
+        /// Constant NOT_EXISTS for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType NOT_EXISTS = new MemoryRecordOperatorType("NOT_EXISTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MemoryRecordOperatorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MemoryRecordOperatorType FindValue(string value)
+        {
+            return FindValue<MemoryRecordOperatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MemoryRecordOperatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MemoryRecordStatus.
     /// </summary>
     public class MemoryRecordStatus : ConstantClass
@@ -1294,6 +1376,10 @@ namespace Amazon.BedrockAgentCore
         /// Constant M2M for Oauth2FlowType
         /// </summary>
         public static readonly Oauth2FlowType M2M = new Oauth2FlowType("M2M");
+        /// <summary>
+        /// Constant ON_BEHALF_OF_TOKEN_EXCHANGE for Oauth2FlowType
+        /// </summary>
+        public static readonly Oauth2FlowType ON_BEHALF_OF_TOKEN_EXCHANGE = new Oauth2FlowType("ON_BEHALF_OF_TOKEN_EXCHANGE");
         /// <summary>
         /// Constant USER_FEDERATION for Oauth2FlowType
         /// </summary>

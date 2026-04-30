@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class SemanticMemoryStrategyInput
     {
         private string _description;
+        private MemoryRecordSchema _memoryRecordSchema;
         private string _name;
         private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _namespaceTemplates = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -56,6 +57,21 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryRecordSchema.
+        /// </summary>
+        public MemoryRecordSchema MemoryRecordSchema
+        {
+            get { return this._memoryRecordSchema; }
+            set { this._memoryRecordSchema = value; }
+        }
+
+        // Check to see if MemoryRecordSchema property is set
+        internal bool IsSetMemoryRecordSchema()
+        {
+            return this._memoryRecordSchema != null;
         }
 
         /// <summary>

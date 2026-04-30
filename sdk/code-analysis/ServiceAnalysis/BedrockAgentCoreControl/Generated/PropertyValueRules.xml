@@ -2953,12 +2953,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CustomOauth2ProviderConfigInput.ClientId</property>
-    <min>1</min>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CustomOauth2ProviderConfigInput.ClientSecret</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -3299,6 +3299,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.IndexedKey.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\s._:/=+@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.InferenceConfiguration.MaxTokens</property>
     <min>1</min>
   </property-value-rule>
@@ -3373,6 +3379,16 @@
     <property>Amazon.BedrockAgentCoreControl.Model.LinkedinOauth2ProviderConfigOutput.ClientId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.LlmExtractionConfig.Definition</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.LlmExtractionConfig.LlmExtractionInstruction</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.ManagedResourceDetails.ResourceAssociationArn</property>
@@ -3471,6 +3487,12 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.MetadataSchemaEntry.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\s._:/=+@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.MicrosoftOauth2ProviderConfigInput.ClientId</property>
     <min>1</min>
     <max>256</max>
@@ -3538,7 +3560,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.Oauth2Discovery.DiscoveryUrl</property>
-    <pattern>.+/\.well-known/openid-configuration</pattern>
+    <pattern>.+/\.well-known/(openid-configuration|oauth-authorization-server)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.OAuthCredentialProvider.DefaultReturnUrl</property>
@@ -3920,6 +3942,11 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.StaticRoute.TargetName</property>
     <pattern>([0-9a-zA-Z][-]?){1,100}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.StringListValidation.MaxItems</property>
+    <min>1</min>
+    <max>5</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.SummaryConsolidationOverride.AppendToPrompt</property>

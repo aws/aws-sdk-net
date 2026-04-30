@@ -25,6 +25,60 @@ namespace Amazon.BedrockAgentCoreControl
 {
 
     /// <summary>
+    /// Constants used for properties of type ActorTokenContentType.
+    /// </summary>
+    public class ActorTokenContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_IAM_ID_TOKEN_JWT for ActorTokenContentType
+        /// </summary>
+        public static readonly ActorTokenContentType AWS_IAM_ID_TOKEN_JWT = new ActorTokenContentType("AWS_IAM_ID_TOKEN_JWT");
+        /// <summary>
+        /// Constant M2M for ActorTokenContentType
+        /// </summary>
+        public static readonly ActorTokenContentType M2M = new ActorTokenContentType("M2M");
+        /// <summary>
+        /// Constant NONE for ActorTokenContentType
+        /// </summary>
+        public static readonly ActorTokenContentType NONE = new ActorTokenContentType("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActorTokenContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActorTokenContentType FindValue(string value)
+        {
+            return FindValue<ActorTokenContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActorTokenContentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AgentManagedRuntimeType.
     /// </summary>
     public class AgentManagedRuntimeType : ConstantClass
@@ -602,6 +656,60 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClaimMatchOperatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClientAuthenticationMethodType.
+    /// </summary>
+    public class ClientAuthenticationMethodType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_IAM_ID_TOKEN_JWT for ClientAuthenticationMethodType
+        /// </summary>
+        public static readonly ClientAuthenticationMethodType AWS_IAM_ID_TOKEN_JWT = new ClientAuthenticationMethodType("AWS_IAM_ID_TOKEN_JWT");
+        /// <summary>
+        /// Constant CLIENT_SECRET_BASIC for ClientAuthenticationMethodType
+        /// </summary>
+        public static readonly ClientAuthenticationMethodType CLIENT_SECRET_BASIC = new ClientAuthenticationMethodType("CLIENT_SECRET_BASIC");
+        /// <summary>
+        /// Constant CLIENT_SECRET_POST for ClientAuthenticationMethodType
+        /// </summary>
+        public static readonly ClientAuthenticationMethodType CLIENT_SECRET_POST = new ClientAuthenticationMethodType("CLIENT_SECRET_POST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientAuthenticationMethodType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientAuthenticationMethodType FindValue(string value)
+        {
+            return FindValue<ClientAuthenticationMethodType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientAuthenticationMethodType(string value)
         {
             return FindValue(value);
         }
@@ -2455,6 +2563,60 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type MetadataValueType.
+    /// </summary>
+    public class MetadataValueType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NUMBER for MetadataValueType
+        /// </summary>
+        public static readonly MetadataValueType NUMBER = new MetadataValueType("NUMBER");
+        /// <summary>
+        /// Constant STRING for MetadataValueType
+        /// </summary>
+        public static readonly MetadataValueType STRING = new MetadataValueType("STRING");
+        /// <summary>
+        /// Constant STRINGLIST for MetadataValueType
+        /// </summary>
+        public static readonly MetadataValueType STRINGLIST = new MetadataValueType("STRINGLIST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetadataValueType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetadataValueType FindValue(string value)
+        {
+            return FindValue<MetadataValueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetadataValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NetworkMode.
     /// </summary>
     public class NetworkMode : ConstantClass
@@ -2518,6 +2680,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant CLIENT_CREDENTIALS for OAuthGrantType
         /// </summary>
         public static readonly OAuthGrantType CLIENT_CREDENTIALS = new OAuthGrantType("CLIENT_CREDENTIALS");
+        /// <summary>
+        /// Constant TOKEN_EXCHANGE for OAuthGrantType
+        /// </summary>
+        public static readonly OAuthGrantType TOKEN_EXCHANGE = new OAuthGrantType("TOKEN_EXCHANGE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2548,6 +2714,56 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OAuthGrantType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OnBehalfOfTokenExchangeGrantTypeType.
+    /// </summary>
+    public class OnBehalfOfTokenExchangeGrantTypeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JWT_AUTHORIZATION_GRANT for OnBehalfOfTokenExchangeGrantTypeType
+        /// </summary>
+        public static readonly OnBehalfOfTokenExchangeGrantTypeType JWT_AUTHORIZATION_GRANT = new OnBehalfOfTokenExchangeGrantTypeType("JWT_AUTHORIZATION_GRANT");
+        /// <summary>
+        /// Constant TOKEN_EXCHANGE for OnBehalfOfTokenExchangeGrantTypeType
+        /// </summary>
+        public static readonly OnBehalfOfTokenExchangeGrantTypeType TOKEN_EXCHANGE = new OnBehalfOfTokenExchangeGrantTypeType("TOKEN_EXCHANGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OnBehalfOfTokenExchangeGrantTypeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnBehalfOfTokenExchangeGrantTypeType FindValue(string value)
+        {
+            return FindValue<OnBehalfOfTokenExchangeGrantTypeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnBehalfOfTokenExchangeGrantTypeType(string value)
         {
             return FindValue(value);
         }

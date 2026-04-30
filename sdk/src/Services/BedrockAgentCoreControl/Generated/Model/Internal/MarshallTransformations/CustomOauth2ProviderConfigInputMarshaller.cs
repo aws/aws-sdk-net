@@ -46,6 +46,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetClientAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("clientAuthenticationMethod");
+                context.Writer.WriteStringValue(requestObject.ClientAuthenticationMethod);
+            }
+
             if(requestObject.IsSetClientId())
             {
                 context.Writer.WritePropertyName("clientId");
@@ -65,6 +71,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 
                 var marshaller = Oauth2DiscoveryMarshaller.Instance;
                 marshaller.Marshall(requestObject.OauthDiscovery, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetOnBehalfOfTokenExchangeConfig())
+            {
+                context.Writer.WritePropertyName("onBehalfOfTokenExchangeConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OnBehalfOfTokenExchangeConfigTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnBehalfOfTokenExchangeConfig, context);
 
                 context.Writer.WriteEndObject();
             }

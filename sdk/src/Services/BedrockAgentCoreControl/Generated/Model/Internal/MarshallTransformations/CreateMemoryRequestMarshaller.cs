@@ -102,6 +102,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.EventExpiryDuration.Value);
             }
 
+            if(publicRequest.IsSetIndexedKeys())
+            {
+                context.Writer.WritePropertyName("indexedKeys");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIndexedKeysListValue in publicRequest.IndexedKeys)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = IndexedKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequestIndexedKeysListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetMemoryExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("memoryExecutionRoleArn");
