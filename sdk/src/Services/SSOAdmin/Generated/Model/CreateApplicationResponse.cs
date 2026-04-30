@@ -35,6 +35,8 @@ namespace Amazon.SSOAdmin.Model
     public partial class CreateApplicationResponse : AmazonWebServiceResponse
     {
         private string _applicationArn;
+        private string _identityStoreArn;
+        private string _instanceArn;
 
         /// <summary>
         /// Gets and sets the property ApplicationArn. 
@@ -53,6 +55,46 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetApplicationArn()
         {
             return this._applicationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityStoreArn. 
+        /// <para>
+        /// The ARN of the identity store that is connected to the instance of IAM Identity Center.
+        /// </para>
+        /// </summary>
+        public string IdentityStoreArn
+        {
+            get { return this._identityStoreArn; }
+            set { this._identityStoreArn = value; }
+        }
+
+        // Check to see if IdentityStoreArn property is set
+        internal bool IsSetIdentityStoreArn()
+        {
+            return this._identityStoreArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceArn. 
+        /// <para>
+        /// The ARN of the instance of IAM Identity Center under which the operation will run.
+        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon
+        /// Web Services General Reference</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=1224)]
+        public string InstanceArn
+        {
+            get { return this._instanceArn; }
+            set { this._instanceArn = value; }
+        }
+
+        // Check to see if InstanceArn property is set
+        internal bool IsSetInstanceArn()
+        {
+            return this._instanceArn != null;
         }
 
     }
