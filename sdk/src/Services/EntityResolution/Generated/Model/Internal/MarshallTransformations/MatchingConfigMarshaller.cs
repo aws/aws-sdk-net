@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RuleConditionProperties Marshaller
+    /// MatchingConfig Marshaller
     /// </summary>
-    public class RuleConditionPropertiesMarshaller : IRequestMarshaller<RuleConditionProperties, JsonMarshallerContext> 
+    public class MatchingConfigMarshaller : IRequestMarshaller<MatchingConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,35 +42,14 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuleConditionProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(MatchingConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMatchingConfig())
+            if(requestObject.IsSetEnableTransitiveMatching())
             {
-                context.Writer.WritePropertyName("matchingConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MatchingConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.MatchingConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetRules())
-            {
-                context.Writer.WritePropertyName("rules");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectRulesListValue in requestObject.Rules)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = RuleConditionMarshaller.Instance;
-                    marshaller.Marshall(requestObjectRulesListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("enableTransitiveMatching");
+                context.Writer.WriteBooleanValue(requestObject.EnableTransitiveMatching.Value);
             }
 
         }
@@ -78,7 +57,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RuleConditionPropertiesMarshaller Instance = new RuleConditionPropertiesMarshaller();
+        public readonly static MatchingConfigMarshaller Instance = new MatchingConfigMarshaller();
 
     }
 }

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RuleConditionProperties Object
+    /// Response Unmarshaller for MatchingConfig Object
     /// </summary>  
-    public class RuleConditionPropertiesUnmarshaller : IJsonUnmarshaller<RuleConditionProperties, JsonUnmarshallerContext>
+    public class MatchingConfigUnmarshaller : IJsonUnmarshaller<MatchingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuleConditionProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MatchingConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            RuleConditionProperties unmarshalledObject = new RuleConditionProperties();
+            MatchingConfig unmarshalledObject = new MatchingConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("matchingConfig", targetDepth))
+                if (context.TestExpression("enableTransitiveMatching", targetDepth))
                 {
-                    var unmarshaller = MatchingConfigUnmarshaller.Instance;
-                    unmarshalledObject.MatchingConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("rules", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RuleCondition, RuleConditionUnmarshaller>(RuleConditionUnmarshaller.Instance);
-                    unmarshalledObject.Rules = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableTransitiveMatching = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         }
 
 
-        private static RuleConditionPropertiesUnmarshaller _instance = new RuleConditionPropertiesUnmarshaller();        
+        private static MatchingConfigUnmarshaller _instance = new MatchingConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RuleConditionPropertiesUnmarshaller Instance
+        public static MatchingConfigUnmarshaller Instance
         {
             get
             {
