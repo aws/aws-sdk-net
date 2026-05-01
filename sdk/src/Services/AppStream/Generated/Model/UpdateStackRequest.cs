@@ -36,6 +36,7 @@ namespace Amazon.AppStream.Model
     public partial class UpdateStackRequest : AmazonAppStreamRequest
     {
         private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
+        private AgentAccessConfigForUpdate _agentAccessConfig;
         private ApplicationSettings _applicationSettings;
         private List<string> _attributesToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ContentRedirection _contentRedirection;
@@ -73,6 +74,26 @@ namespace Amazon.AppStream.Model
         internal bool IsSetAccessEndpoints()
         {
             return this._accessEndpoints != null && (this._accessEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentAccessConfig. 
+        /// <para>
+        /// The configuration for agent access on the stack. Specify this to update agent access
+        /// settings. To remove agent access, use AttributesToDelete with the AGENT_ACCESS_CONFIG
+        /// value.
+        /// </para>
+        /// </summary>
+        public AgentAccessConfigForUpdate AgentAccessConfig
+        {
+            get { return this._agentAccessConfig; }
+            set { this._agentAccessConfig = value; }
+        }
+
+        // Check to see if AgentAccessConfig property is set
+        internal bool IsSetAgentAccessConfig()
+        {
+            return this._agentAccessConfig != null;
         }
 
         /// <summary>

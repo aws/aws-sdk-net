@@ -91,6 +91,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetAgentAccessConfig())
+            {
+                context.Writer.WritePropertyName("AgentAccessConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AgentAccessConfigForUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AgentAccessConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetApplicationSettings())
             {
                 context.Writer.WritePropertyName("ApplicationSettings");
