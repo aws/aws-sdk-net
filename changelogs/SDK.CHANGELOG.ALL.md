@@ -1,3 +1,25 @@
+### 4.0.242.0 (2026-05-01 18:26 UTC)
+* AppStream (4.0.10.0)
+	* Amazon WorkSpaces Applications now enables AI agents to securely operate desktop applications. Administrators configure stacks to provide agents access to WorkSpaces. Agents can click, type, and take screenshots. Agents authenticate with AWS IAM credentials with activity logged in AWS CloudTrail.
+* CloudWatch (4.0.10.0)
+	* This release adds tag support for CloudWatch Dashboards. The PutDashboard API now accepts a Tags parameter, allowing you to tag dashboards at creation time. Additionally, the TagResource, UntagResource, and ListTagsForResource APIs now support dashboard ARNs as resources.
+* CloudWatchLogs (4.0.23.0)
+	* Adds support for filtering log groups by tags in the ListLogGroups API via the new logGroupTags parameter.
+* DynamoDBv2 (4.0.18.0)
+	* Replace AttributesToGet usage with ProjectionExpression for batch get requests
+* EntityResolution (4.0.7.0)
+	* Add support for transitive matching in AWS Entity Resolution rule-based matching workflows. When enabled, records that match through different rules are grouped together into the same match group, allowing related records to be connected across rule levels.
+* IdentityManagement (4.0.9.21)
+	* Added guidance for CreateOpenIDConnectProvider to include multiple thumbprints when OIDC discovery and JWKS endpoints use different hosts or certificates
+* IoT (4.0.7.0)
+	* AWS IoT HTTP rule actions now support cross-topic batching, combining messages from different MQTT topics into single HTTP requests.
+* QConnect (4.0.10.0)
+	* Added reasoning details, statusDescription, and timeToFirstTokenMs fields to the ListSpans response in Amazon Q in Connect to provide visibility into model thinking, error diagnostics, and inference latency metrics.
+* QuickSight (4.0.20.0)
+	* Add IdentityProviderCACertificatesBundleS3Uri for private CA certs with OAuth datasources. 256-char limit for FontFamily in themes. ControlTitleFormatText on all 13 filters. ControlTitleFontConfiguration. ContextRegion for cross-region identity context. Story,scenario in CreateCustomCapability API.
+* Extensions.Bedrock.MEAI (4.0.6.12)
+	* Fixed TypeInitializationException crash in BedrockChatClient tool calling under NativeAOT caused by circular static initialization in BedrockJsonContext
+
 ### 4.0.241.0 (2026-04-30 18:16 UTC)
 * BedrockAgentCore (4.0.22.0)
 	* AgentCore Identity now supports on-behalf-of token exchange OAuth2. AgentCore Memory now supports metadata for LongTerm Memory Records.
