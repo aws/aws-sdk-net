@@ -3,13 +3,13 @@ extensions\BedrockMEAI\AWSSDK.Extensions.Bedrock.MEAI.dll
 extensions\BedrockMEAI\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\BedrockMEAI\Microsoft.Extensions.AI.Abstractions.dll
 extensions\BedrockMEAI\System.Buffers.dll
+extensions\BedrockMEAI\System.IO.Pipelines.dll
 extensions\BedrockMEAI\System.Memory.dll
 extensions\BedrockMEAI\System.Numerics.Vectors.dll
 extensions\BedrockMEAI\System.Runtime.CompilerServices.Unsafe.dll
 extensions\BedrockMEAI\System.Text.Encodings.Web.dll
 extensions\BedrockMEAI\System.Text.Json.dll
 extensions\BedrockMEAI\System.Threading.Tasks.Extensions.dll
-extensions\BedrockMEAI\System.ValueTuple.dll
 extensions\CborProtocol\AWSSDK.Extensions.CborProtocol.dll
 extensions\CborProtocol\Microsoft.Bcl.AsyncInterfaces.dll
 extensions\CborProtocol\Microsoft.Bcl.HashCode.dll
