@@ -52,7 +52,7 @@ namespace Amazon.CloudWatch.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Max=30)]
+        [AWSProperty(Required=true, Min=0, Max=150)]
         public Dictionary<string, string> ContributorAttributes
         {
             get { return this._contributorAttributes; }
