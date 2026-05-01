@@ -72,6 +72,24 @@ internal partial class BedrockJsonContext : JsonSerializerContext
             return options;
         }
 
-        return Default.Options;
+        // When reflection is disabled (NativeAOT / trimming), we cannot access the static
+        // "Default" singleton here because it is also a static member of this class.
+        // Accessing Default.Options during the static field initializer for DefaultOptions
+        // causes a circular dependency: the static constructor is already running to
+        // initialize DefaultOptions, so Default is still null, producing a
+        // NullReferenceException that permanently breaks the type.
+        //
+        // Instead, create a fresh JsonSerializerOptions and attach a new instance of this
+        // source-generated context as the TypeInfoResolver. This gives us the same
+        // source-generated metadata without the circular static initialization issue.
+        var aotOptions = new JsonSerializerOptions(JsonSerializerDefaults.Web)
+        {
+            TypeInfoResolver = new BedrockJsonContext(),
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            WriteIndented = true,
+        };
+
+        aotOptions.MakeReadOnly();
+        return aotOptions;
     }
 }
