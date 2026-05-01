@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FilterTextFieldControl Marshaller
+    /// ControlTitleFontConfiguration Marshaller
     /// </summary>
-    public class FilterTextFieldControlMarshaller : IRequestMarshaller<FilterTextFieldControl, JsonMarshallerContext> 
+    public class ControlTitleFontConfigurationMarshaller : IRequestMarshaller<ControlTitleFontConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,48 +42,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FilterTextFieldControl requestObject, JsonMarshallerContext context)
+        public void Marshall(ControlTitleFontConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetControlTitleFormatText())
+            if(requestObject.IsSetFontConfiguration())
             {
-                context.Writer.WritePropertyName("ControlTitleFormatText");
+                context.Writer.WritePropertyName("FontConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = ControlTitleFormatTextMarshaller.Instance;
-                marshaller.Marshall(requestObject.ControlTitleFormatText, context);
+                var marshaller = FontConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FontConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetDisplayOptions())
+            if(requestObject.IsSetTextAlignment())
             {
-                context.Writer.WritePropertyName("DisplayOptions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = TextFieldControlDisplayOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.DisplayOptions, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetFilterControlId())
-            {
-                context.Writer.WritePropertyName("FilterControlId");
-                context.Writer.WriteStringValue(requestObject.FilterControlId);
-            }
-
-            if(requestObject.IsSetSourceFilterId())
-            {
-                context.Writer.WritePropertyName("SourceFilterId");
-                context.Writer.WriteStringValue(requestObject.SourceFilterId);
-            }
-
-            if(requestObject.IsSetTitle())
-            {
-                context.Writer.WritePropertyName("Title");
-                context.Writer.WriteStringValue(requestObject.Title);
+                context.Writer.WritePropertyName("TextAlignment");
+                context.Writer.WriteStringValue(requestObject.TextAlignment);
             }
 
         }
@@ -91,7 +68,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FilterTextFieldControlMarshaller Instance = new FilterTextFieldControlMarshaller();
+        public readonly static ControlTitleFontConfigurationMarshaller Instance = new ControlTitleFontConfigurationMarshaller();
 
     }
 }

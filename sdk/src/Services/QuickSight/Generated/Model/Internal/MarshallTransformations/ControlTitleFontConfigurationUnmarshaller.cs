@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OAuthParameters Object
+    /// Response Unmarshaller for ControlTitleFontConfiguration Object
     /// </summary>  
-    public class OAuthParametersUnmarshaller : IJsonUnmarshaller<OAuthParameters, JsonUnmarshallerContext>
+    public class ControlTitleFontConfigurationUnmarshaller : IJsonUnmarshaller<ControlTitleFontConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OAuthParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ControlTitleFontConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            OAuthParameters unmarshalledObject = new OAuthParameters();
+            ControlTitleFontConfiguration unmarshalledObject = new ControlTitleFontConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,16 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IdentityProviderCACertificatesBundleS3Uri", targetDepth))
+                if (context.TestExpression("FontConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdentityProviderCACertificatesBundleS3Uri = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityProviderResourceUri", targetDepth))
+                if (context.TestExpression("TextAlignment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdentityProviderResourceUri = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IdentityProviderVpcConnectionProperties", targetDepth))
-                {
-                    var unmarshaller = VpcConnectionPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.IdentityProviderVpcConnectionProperties = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("OAuthScope", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OAuthScope = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TokenProviderUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TokenProviderUrl = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.TextAlignment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +73,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static OAuthParametersUnmarshaller _instance = new OAuthParametersUnmarshaller();        
+        private static ControlTitleFontConfigurationUnmarshaller _instance = new ControlTitleFontConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OAuthParametersUnmarshaller Instance
+        public static ControlTitleFontConfigurationUnmarshaller Instance
         {
             get
             {

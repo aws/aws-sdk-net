@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FilterRelativeDateTimeControl Object
+    /// Response Unmarshaller for ControlTitleFormatText Object
     /// </summary>  
-    public class FilterRelativeDateTimeControlUnmarshaller : IJsonUnmarshaller<FilterRelativeDateTimeControl, JsonUnmarshallerContext>
+    public class ControlTitleFormatTextUnmarshaller : IJsonUnmarshaller<ControlTitleFormatText, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FilterRelativeDateTimeControl Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ControlTitleFormatText Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            FilterRelativeDateTimeControl unmarshalledObject = new FilterRelativeDateTimeControl();
+            ControlTitleFormatText unmarshalledObject = new ControlTitleFormatText();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,16 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CommitMode", targetDepth))
+                if (context.TestExpression("PlainText", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CommitMode = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.PlainText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ControlTitleFormatText", targetDepth))
-                {
-                    var unmarshaller = ControlTitleFormatTextUnmarshaller.Instance;
-                    unmarshalledObject.ControlTitleFormatText = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DisplayOptions", targetDepth))
-                {
-                    var unmarshaller = RelativeDateTimeControlDisplayOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DisplayOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FilterControlId", targetDepth))
+                if (context.TestExpression("RichText", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterControlId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SourceFilterId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceFilterId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Title", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.RichText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +73,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static FilterRelativeDateTimeControlUnmarshaller _instance = new FilterRelativeDateTimeControlUnmarshaller();        
+        private static ControlTitleFormatTextUnmarshaller _instance = new ControlTitleFormatTextUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FilterRelativeDateTimeControlUnmarshaller Instance
+        public static ControlTitleFormatTextUnmarshaller Instance
         {
             get
             {

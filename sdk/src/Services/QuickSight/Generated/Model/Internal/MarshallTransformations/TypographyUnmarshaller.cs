@@ -68,6 +68,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.AxisTitleFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ControlTitleFontConfiguration", targetDepth))
+                {
+                    var unmarshaller = ControlTitleFontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ControlTitleFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DataLabelFontConfiguration", targetDepth))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;

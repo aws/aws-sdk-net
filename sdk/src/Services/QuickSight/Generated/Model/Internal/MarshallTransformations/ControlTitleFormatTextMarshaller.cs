@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DefaultFilterControlConfiguration Marshaller
+    /// ControlTitleFormatText Marshaller
     /// </summary>
-    public class DefaultFilterControlConfigurationMarshaller : IRequestMarshaller<DefaultFilterControlConfiguration, JsonMarshallerContext> 
+    public class ControlTitleFormatTextMarshaller : IRequestMarshaller<ControlTitleFormatText, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,36 +42,20 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DefaultFilterControlConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ControlTitleFormatText requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetControlOptions())
+            if(requestObject.IsSetPlainText())
             {
-                context.Writer.WritePropertyName("ControlOptions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DefaultFilterControlOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ControlOptions, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("PlainText");
+                context.Writer.WriteStringValue(requestObject.PlainText);
             }
 
-            if(requestObject.IsSetControlTitleFormatText())
+            if(requestObject.IsSetRichText())
             {
-                context.Writer.WritePropertyName("ControlTitleFormatText");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ControlTitleFormatTextMarshaller.Instance;
-                marshaller.Marshall(requestObject.ControlTitleFormatText, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetTitle())
-            {
-                context.Writer.WritePropertyName("Title");
-                context.Writer.WriteStringValue(requestObject.Title);
+                context.Writer.WritePropertyName("RichText");
+                context.Writer.WriteStringValue(requestObject.RichText);
             }
 
         }
@@ -79,7 +63,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DefaultFilterControlConfigurationMarshaller Instance = new DefaultFilterControlConfigurationMarshaller();
+        public readonly static ControlTitleFormatTextMarshaller Instance = new ControlTitleFormatTextMarshaller();
 
     }
 }

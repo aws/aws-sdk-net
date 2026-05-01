@@ -150,6 +150,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _sapMaterialStockAction;
         private CapabilityState _sapPhysicalInventoryAction;
         private CapabilityState _sapProductMasterDataAction;
+        private CapabilityState _scenario;
         private CapabilityState _selfUpgradeUserRole;
         private CapabilityState _serviceNowAction;
         private CapabilityState _shareAmazonBedrockARSAction;
@@ -205,6 +206,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _slackAction;
         private CapabilityState _smartsheetAction;
         private CapabilityState _space;
+        private CapabilityState _story;
         private CapabilityState _subscribeDashboardEmailReports;
         private CapabilityState _textractAction;
         private CapabilityState _topic;
@@ -2353,6 +2355,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Scenario. 
+        /// <para>
+        /// The ability to perform Scenario-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Scenario
+        {
+            get { return this._scenario; }
+            set { this._scenario = value; }
+        }
+
+        // Check to see if Scenario property is set
+        internal bool IsSetScenario()
+        {
+            return this._scenario != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SelfUpgradeUserRole. 
         /// <para>
         /// The ability to enable users to upgrade their user role.
@@ -3340,6 +3360,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSpace()
         {
             return this._space != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Story. 
+        /// <para>
+        /// The ability to perform Story-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Story
+        {
+            get { return this._story; }
+            set { this._story = value; }
+        }
+
+        // Check to see if Story property is set
+        internal bool IsSetStory()
+        {
+            return this._story != null;
         }
 
         /// <summary>

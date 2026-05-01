@@ -76,6 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContextRegion())
+            {
+                context.Writer.WritePropertyName("ContextRegion");
+                context.Writer.WriteStringValue(publicRequest.ContextRegion);
+            }
+
             if(publicRequest.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("Namespace");

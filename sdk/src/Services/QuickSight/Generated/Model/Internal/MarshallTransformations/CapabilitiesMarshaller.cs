@@ -742,6 +742,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SAPProductMasterDataAction);
             }
 
+            if(requestObject.IsSetScenario())
+            {
+                context.Writer.WritePropertyName("Scenario");
+                context.Writer.WriteStringValue(requestObject.Scenario);
+            }
+
             if(requestObject.IsSetSelfUpgradeUserRole())
             {
                 context.Writer.WritePropertyName("SelfUpgradeUserRole");
@@ -1070,6 +1076,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Space");
                 context.Writer.WriteStringValue(requestObject.Space);
+            }
+
+            if(requestObject.IsSetStory())
+            {
+                context.Writer.WritePropertyName("Story");
+                context.Writer.WriteStringValue(requestObject.Story);
             }
 
             if(requestObject.IsSetSubscribeDashboardEmailReports())

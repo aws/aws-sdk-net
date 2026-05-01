@@ -68,6 +68,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetControlTitleFontConfiguration())
+            {
+                context.Writer.WritePropertyName("ControlTitleFontConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ControlTitleFontConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ControlTitleFontConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDataLabelFontConfiguration())
             {
                 context.Writer.WritePropertyName("DataLabelFontConfiguration");
