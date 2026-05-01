@@ -4728,11 +4728,9 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You can optionally filter the list by log group class, by using regular expressions
-        /// in your request to match strings in the log group names, by using the fieldIndexes
-        /// parameter to filter log groups based on which field indexes are configured, by using
-        /// the dataSources parameter to filter log groups by data source types, and by using
-        /// the fieldIndexNames parameter to filter by specific field index names.
+        /// You can optionally filter the results by log group class, log group name pattern,
+        /// field indexes, data sources, field index names, or log group tags. If you specify
+        /// more than one filter type, the results include log groups that satisfy all filters.
         /// </para>
         ///  
         /// <para>
@@ -7154,7 +7152,8 @@ namespace Amazon.CloudWatchLogs
         /// Or the <c>queryString</c> must include a <c>SOURCE</c> command to select log groups
         /// for the query. The <c>SOURCE</c> command can select log groups based on log group
         /// name prefix, account ID, and log class, or select data sources using dataSource syntax
-        /// in LogsQL, PPL, and SQL. 
+        /// in LogsQL, PPL, and SQL. In LogsQL, the <c>SOURCE</c> command also supports filtering
+        /// by log group tags. 
         /// </para>
         ///  
         /// <para>
