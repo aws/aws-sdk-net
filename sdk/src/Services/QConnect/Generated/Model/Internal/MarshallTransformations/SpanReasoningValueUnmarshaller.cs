@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SpanMessageValue Object
+    /// Response Unmarshaller for SpanReasoningValue Object
     /// </summary>  
-    public class SpanMessageValueUnmarshaller : IJsonUnmarshaller<SpanMessageValue, JsonUnmarshallerContext>
+    public class SpanReasoningValueUnmarshaller : IJsonUnmarshaller<SpanReasoningValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SpanMessageValue Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SpanReasoningValue Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SpanMessageValue unmarshalledObject = new SpanMessageValue();
+            SpanReasoningValue unmarshalledObject = new SpanReasoningValue();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reasoning", targetDepth))
+                if (context.TestExpression("value", targetDepth))
                 {
-                    var unmarshaller = SpanReasoningValueUnmarshaller.Instance;
-                    unmarshalledObject.Reasoning = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("text", targetDepth))
-                {
-                    var unmarshaller = SpanTextValueUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("toolResult", targetDepth))
-                {
-                    var unmarshaller = SpanToolResultValueUnmarshaller.Instance;
-                    unmarshalledObject.ToolResult = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("toolUse", targetDepth))
-                {
-                    var unmarshaller = SpanToolUseValueUnmarshaller.Instance;
-                    unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static SpanMessageValueUnmarshaller _instance = new SpanMessageValueUnmarshaller();        
+        private static SpanReasoningValueUnmarshaller _instance = new SpanReasoningValueUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SpanMessageValueUnmarshaller Instance
+        public static SpanReasoningValueUnmarshaller Instance
         {
             get
             {

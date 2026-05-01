@@ -65,6 +65,7 @@ namespace Amazon.QConnect.Model
         private string _sessionName;
         private List<SpanMessageValue> _systemInstructions = AWSConfigs.InitializeCollections ? new List<SpanMessageValue>() : null;
         private float? _temperature;
+        private int? _timeToFirstTokenMs;
         private float? _topp;
         private int? _usageInputTokens;
         private int? _usageOutputTokens;
@@ -644,6 +645,25 @@ namespace Amazon.QConnect.Model
         internal bool IsSetTemperature()
         {
             return this._temperature.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeToFirstTokenMs. 
+        /// <para>
+        /// Time to first token in milliseconds, measured from when Amazon Bedrock was invoked
+        /// to when the first token was returned
+        /// </para>
+        /// </summary>
+        public int? TimeToFirstTokenMs
+        {
+            get { return this._timeToFirstTokenMs; }
+            set { this._timeToFirstTokenMs = value; }
+        }
+
+        // Check to see if TimeToFirstTokenMs property is set
+        internal bool IsSetTimeToFirstTokenMs()
+        {
+            return this._timeToFirstTokenMs.HasValue; 
         }
 
         /// <summary>
