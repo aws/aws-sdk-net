@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Add thread safety note to all generated service client classes (https://github.com/aws/aws-sdk-net/issues/2098)"
-    ]
-  }
-}

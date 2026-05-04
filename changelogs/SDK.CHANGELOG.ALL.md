@@ -1,3 +1,26 @@
+### 4.0.243.0 (2026-05-04 18:24 UTC)
+* BedrockAgentCoreControl (4.0.33.0)
+	* Amazon Bedrock AgentCore gateways now support MCP Sessions and response streaming from MCP targets. Session timeouts can be set between 15 minutes and 8 hours, and response streaming enables forwarding stream events sent by MCP targets to gateway users.
+* CloudWatchLogs (4.0.24.0)
+	* Adding an additional optional deliverySourceConfiguration field to PutDeliverySource API. This enables customers to pass service-specific configurations through IngestionHub such as tracing enablement or sampling rates that will be propagated to the source resource.
+* EC2 (4.0.86.0)
+	* This feature allows customers to change the tunnel bandwidth on existing VPN connections using the ModifyVpnConnectionOptions API
+* GeoRoutes (4.0.4.0)
+	* Added support for TravelTimeExceedsDriverWorkHours, ViolatedBlockedRoad, and ViolatedVehicleRestriction notice codes to the CalculateRoutes API response.
+* LexModelBuildingService (4.0.3.0)
+	* Lex V1 is deprecated, use Lex V2 instead
+* MediaLive (4.0.20.0)
+	* Updates the type of the MediaLiveRouterOutputConnectionMap.
+* SecurityAgent (4.0.1.0)
+	* AWS Security Agent is adding a new target domain verification method for private VPC penetration testing. Additionally, the target domain resource will now have a verification status reason field to surface additional details about domain verification
+* VPCLattice (4.0.5.0)
+	* Amazon VPC Lattice now supports privately resolvable DNS resources
+* Extensions.Bedrock.MEAI (4.0.7.0)
+	* Update `IChatClient` with latest `BedrockRuntime` / M.E.AI (adding support for multi-modal tool returns and citations with URIs)
+* Core 4.0.6.1
+	* Add thread safety note to all generated service client classes (https://github.com/aws/aws-sdk-net/issues/2098)
+	* All service and extension packages updated to require new Core
+
 ### 4.0.242.0 (2026-05-01 18:26 UTC)
 * AppStream (4.0.10.0)
 	* Amazon WorkSpaces Applications now enables AI agents to securely operate desktop applications. Administrators configure stacks to provide agents access to WorkSpaces. Agents can click, type, and take screenshots. Agents authenticate with AWS IAM credentials with activity logged in AWS CloudTrail.
