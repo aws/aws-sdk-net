@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Configuration for on-behalf-of token exchange
+    /// Configuration for on-behalf-of token exchange.
     /// </summary>
     public partial class OnBehalfOfTokenExchangeConfigType
     {
@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property TokenExchangeGrantTypeConfig. 
         /// <para>
-        /// Configuration specific to TOKEN_EXCHANGE grant type (RFC 8693)
+        /// Configuration specific to the TOKEN_EXCHANGE grant type (RFC 8693).
         /// </para>
         /// </summary>
         public TokenExchangeGrantTypeConfigType TokenExchangeGrantTypeConfig

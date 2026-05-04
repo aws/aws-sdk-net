@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Configuration for RFC 8693 Token Exchange
+    /// Configuration for RFC 8693 token exchange.
     /// </summary>
     public partial class TokenExchangeGrantTypeConfigType
     {
@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ActorTokenScopes. 
         /// <para>
-        /// Only valid when actorTokenContent is M2M
+        /// The scopes for the actor token. Only valid when actorTokenContent is M2M.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -37,6 +37,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private string _instructions;
         private SearchType _searchType;
+        private SessionConfiguration _sessionConfiguration;
+        private StreamingConfiguration _streamingConfiguration;
         private List<string> _supportedVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -76,6 +78,44 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetSearchType()
         {
             return this._searchType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionConfiguration. 
+        /// <para>
+        /// The session configuration for the MCP gateway. This configuration controls session
+        /// behavior, including session timeout settings.
+        /// </para>
+        /// </summary>
+        public SessionConfiguration SessionConfiguration
+        {
+            get { return this._sessionConfiguration; }
+            set { this._sessionConfiguration = value; }
+        }
+
+        // Check to see if SessionConfiguration property is set
+        internal bool IsSetSessionConfiguration()
+        {
+            return this._sessionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamingConfiguration. 
+        /// <para>
+        /// The streaming configuration for the MCP gateway. This configuration controls whether
+        /// response streaming is enabled for the gateway.
+        /// </para>
+        /// </summary>
+        public StreamingConfiguration StreamingConfiguration
+        {
+            get { return this._streamingConfiguration; }
+            set { this._streamingConfiguration = value; }
+        }
+
+        // Check to see if StreamingConfiguration property is set
+        internal bool IsSetStreamingConfiguration()
+        {
+            return this._streamingConfiguration != null;
         }
 
         /// <summary>

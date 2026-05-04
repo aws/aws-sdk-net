@@ -68,6 +68,18 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.SearchType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("sessionConfiguration", targetDepth))
+                {
+                    var unmarshaller = SessionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SessionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("streamingConfiguration", targetDepth))
+                {
+                    var unmarshaller = StreamingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.StreamingConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("supportedVersions", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

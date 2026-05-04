@@ -65,8 +65,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property RoutingDomain. 
         /// <para>
-        /// An intermediate publicly resolvable domain used as the VPC Lattice resource configuration
-        /// endpoint. Required when your private endpoint uses a domain that is not publicly resolvable.
+        /// An intermediate domain to use as the resource configuration endpoint instead of the
+        /// actual target domain. Use this when you want to route traffic through an intermediate
+        /// component such as a VPC endpoint or internal load balancer. For more information,
+        /// see xref:lattice-vpc-egress-routing-domain[Route traffic through an intermediate domain].
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]
