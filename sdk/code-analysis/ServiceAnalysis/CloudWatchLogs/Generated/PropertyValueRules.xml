@@ -1838,6 +1838,16 @@
     <pattern>[\w_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeliverySourceConfigurationSchema.DefaultValue</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeliverySourceConfigurationSchema.KeyName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.Destination.AccessPolicy</property>
     <min>1</min>
   </property-value-rule>
@@ -2515,6 +2525,16 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.S3TableIntegrationSource.StatusReason</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.S3TablesIntegration.DatasourceName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.S3TablesIntegration.DatasourceType</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ScheduledQuerySummary.CreationTime</property>

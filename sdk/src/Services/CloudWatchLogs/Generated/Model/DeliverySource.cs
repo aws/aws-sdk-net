@@ -77,10 +77,13 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class DeliverySource
     {
         private string _arn;
+        private Dictionary<string, string> _deliverySourceConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _logType;
         private string _name;
         private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _service;
+        private DeliverySourceStatus _status;
+        private DeliverySourceStatusReason _statusReason;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -99,6 +102,29 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeliverySourceConfiguration. 
+        /// <para>
+        /// The map of key-value pairs that configure the delivery source.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> DeliverySourceConfiguration
+        {
+            get { return this._deliverySourceConfiguration; }
+            set { this._deliverySourceConfiguration = value; }
+        }
+
+        // Check to see if DeliverySourceConfiguration property is set
+        internal bool IsSetDeliverySourceConfiguration()
+        {
+            return this._deliverySourceConfiguration != null && (this._deliverySourceConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,6 +207,45 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetService()
         {
             return this._service != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the delivery source. A delivery source can have the status <c>ACTIVE</c>
+        /// or <c>INACTIVE</c>. Note: This value is defined for selective log types.
+        /// </para>
+        /// </summary>
+        public DeliverySourceStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The reason for the status of the delivery source. A status reason of <c>RESOURCE_DELETED</c>
+        /// indicates that the resource associated with the delivery source has been deleted.
+        /// Note: This value is defined for selective log types.
+        /// </para>
+        /// </summary>
+        public DeliverySourceStatusReason StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
         /// <summary>

@@ -98,6 +98,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeliveryDestinationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("deliverySourceConfiguration", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<DeliverySourceConfigurationSchema, DeliverySourceConfigurationSchemaUnmarshaller>(DeliverySourceConfigurationSchemaUnmarshaller.Instance);
+                    unmarshalledObject.DeliverySourceConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("logType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -108,6 +114,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("s3TablesIntegration", targetDepth))
+                {
+                    var unmarshaller = S3TablesIntegrationUnmarshaller.Instance;
+                    unmarshalledObject.S3TablesIntegration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("service", targetDepth))

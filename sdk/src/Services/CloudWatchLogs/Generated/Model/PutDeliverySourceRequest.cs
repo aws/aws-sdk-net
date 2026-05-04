@@ -84,10 +84,35 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class PutDeliverySourceRequest : AmazonCloudWatchLogsRequest
     {
+        private Dictionary<string, string> _deliverySourceConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _logType;
         private string _name;
         private string _resourceArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property DeliverySourceConfiguration. 
+        /// <para>
+        /// A map of key-value pairs to configure the delivery source. Both keys and values must
+        /// be between 1 and 255 characters in length. For example, <c>{"samplingRate": "50"}</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> DeliverySourceConfiguration
+        {
+            get { return this._deliverySourceConfiguration; }
+            set { this._deliverySourceConfiguration = value; }
+        }
+
+        // Check to see if DeliverySourceConfiguration property is set
+        internal bool IsSetDeliverySourceConfiguration()
+        {
+            return this._deliverySourceConfiguration != null && (this._deliverySourceConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property LogType. 
