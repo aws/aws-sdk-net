@@ -94,8 +94,8 @@
     /// <para>Implementation for accessing <#= this.Config.ClassName #></para>
     /// <para>
     /// Service client instances are thread-safe and can be shared across multiple threads.
-    /// It is recommended to create a single client instance and reuse it for the lifetime
-    /// of your application.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
     /// </para>
     ///
 <#+
