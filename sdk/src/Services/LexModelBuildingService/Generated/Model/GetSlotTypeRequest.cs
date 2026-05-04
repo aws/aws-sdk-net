@@ -39,6 +39,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// This operation requires permissions for the <c>lex:GetSlotType</c> action.
     /// </para>
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class GetSlotTypeRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _name;

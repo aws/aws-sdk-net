@@ -34,6 +34,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// Gets a list of tags associated with the specified resource. Only bots, bot aliases,
     /// and bot channels can have tags associated with them.
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class ListTagsForResourceRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _resourceArn;
