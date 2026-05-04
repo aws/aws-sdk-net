@@ -15,7 +15,6 @@
 
 using System;
 using System.Collections.Concurrent;
-using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -30,10 +29,14 @@ namespace Amazon.Runtime.Credentials
     /// Each unique (ProfileName, Location) pair gets its own cache entry with a per-key semaphore
     /// to avoid redundant disk reads under concurrency. The cache is automatically invalidated when
     /// the backing credentials or config file is modified on disk.
+    /// <para />
+    /// File system watchers are shared across all entries that depend on the same file path,
+    /// minimizing kernel resource consumption (one watcher per unique file, not per profile).
     /// </summary>
     internal class CachedProfileCredentialResolver : IDisposable
     {
         private readonly ConcurrentDictionary<(string ProfileName, string Location), ProfileCredentialEntry> _profileCredentialCache = new();
+        private readonly ConcurrentDictionary<string, SharedFileWatcher> _fileWatchers = new();
         private bool _disposed;
 
         /// <summary>
@@ -123,17 +126,40 @@ namespace Amazon.Runtime.Credentials
             => _profileCredentialCache.GetOrAdd(key, _ => new ProfileCredentialEntry());
 
         /// <summary>
+        /// Gets or creates a shared file watcher for the given file path.
+        /// Returns null if the path is null or empty.
+        /// Multiple entries that depend on the same file path will share the same watcher,
+        /// minimizing kernel resource usage.
+        /// </summary>
+        private SharedFileWatcher GetOrCreateFileWatcher(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath)) return null;
+            return _fileWatchers.GetOrAdd(filePath, path => new SharedFileWatcher(path));
+        }
+
+        /// <summary>
         /// Performs the actual disk read and updates the entry's cached credentials.
         /// Must only be called while holding <paramref name="entry"/>.ResolutionLock.
         /// </summary>
-        private static AWSCredentials ResolveAndCacheProfileCredentials(Profile profile, ProfileCredentialEntry entry)
+        private AWSCredentials ResolveAndCacheProfileCredentials(Profile profile, ProfileCredentialEntry entry)
         {
             var source = new CredentialProfileStoreChain(profile.Location);
             if (!source.TryGetProfile(profile.Name, out CredentialProfile storedProfile))
                 throw new AmazonClientException($"Unable to find the \"{profile.Name}\" profile specified in the client configuration.");
 
             var credentials = storedProfile.GetAWSCredentials(source, true);
-            entry.Update(credentials, source.ProfilesLocation);
+
+            // Resolve file paths and obtain shared watchers.
+            var credentialsFilePath = GetEffectiveCredentialsFilePath(source.ProfilesLocation);
+            var configFilePath = SharedCredentialsFile.DefaultConfigFilePath;
+            var netSdkCredentialsFilePath = GetNetSdkCredentialsFilePath(source.ProfilesLocation);
+
+            var credentialsWatcher = GetOrCreateFileWatcher(credentialsFilePath);
+            var configWatcher = GetOrCreateFileWatcher(configFilePath);
+            var netSdkWatcher = GetOrCreateFileWatcher(netSdkCredentialsFilePath);
+
+            entry.Update(credentials, credentialsWatcher, configWatcher, netSdkWatcher);
+
             return credentials;
         }
 
@@ -150,133 +176,89 @@ namespace Amazon.Runtime.Credentials
             {
                 foreach (var entry in _profileCredentialCache.Values)
                     entry.Dispose();
+
+                foreach (var watcher in _fileWatchers.Values)
+                    watcher.Dispose();
             }
             _disposed = true;
         }
 
         /// <summary>
-        /// Holds the per-profile resolution lock, file system watchers, and the cached credentials.
-        /// <para />
-        /// The watchers are created once on first successful resolution and live for the lifetime
-        /// of the entry. This avoids watcher churn (create/dispose on every re-resolution) and
-        /// ensures the watchers are fully "warmed up" and actively listening for changes at all times.
-        /// <para />
-        /// A dual invalidation strategy is used:
-        /// <list type="number">
-        /// <item><c>FileSystemWatcher</c> — push-based, reliable on network file systems (SMB/CIFS)
-        /// where <c>LastWriteTimeUtc</c> can return stale values due to client-side metadata caching.</item>
-        /// <item><c>LastWriteTimeUtc</c> — synchronous fallback, reliable on local file systems and
-        /// handles the case where a watcher event hasn't been delivered yet on the threadpool.</item>
-        /// </list>
-        /// Either signal is sufficient to invalidate the cache.
+        /// Resolves the effective credentials file path using the same logic as
+        /// <see cref="SharedCredentialsFile.SetUpFilePath"/>:
+        /// 1. If <paramref name="profilesLocation"/> is provided, use it directly.
+        /// 2. Else if <see cref="AWSConfigs.AWSProfilesLocation"/> is set, use that.
+        /// 3. Else fall back to <see cref="SharedCredentialsFile.DefaultFilePath"/>.
         /// </summary>
-        private sealed class ProfileCredentialEntry : IDisposable
+        private static string GetEffectiveCredentialsFilePath(string profilesLocation)
         {
-            public readonly SemaphoreSlim ResolutionLock = new SemaphoreSlim(1, 1);
+            if (!string.IsNullOrEmpty(profilesLocation))
+                return profilesLocation;
 
-            // Cached credentials — written only while holding ResolutionLock; read lock-free on the fast path.
-            private volatile AWSCredentials _cachedCredentials;
+            if (!string.IsNullOrEmpty(AWSConfigs.AWSProfilesLocation))
+                return AWSConfigs.AWSProfilesLocation;
 
-            // Timestamps captured at the time credentials were last resolved — provides synchronous detection.
-            private DateTime _credentialsFileWriteTime;
-            private DateTime _configFileWriteTime;
-            private DateTime _netSdkCredentialsFileWriteTime;
+            return SharedCredentialsFile.DefaultFilePath;
+        }
 
-            // File paths being monitored.
-            private string _credentialsFilePath;
-            private string _configFilePath;
-            private string _netSdkCredentialsFilePath;
+        /// <summary>
+        /// Returns the path to the .NET SDK credentials file (RegisteredAccounts.json)
+        /// if the NetSDK store is applicable for this resolution, otherwise null.
+        /// <para />
+        /// The NetSDK store is only used when:
+        /// 1. <paramref name="profilesLocation"/> is null or empty (no custom location override),
+        /// 2. <see cref="UserCrypto.IsUserCryptAvailable"/> is true (Windows with DPAPI support), and
+        /// 3. <see cref="AWSConfigs.DisableLegacyPersistenceStore"/> is false.
+        /// This mirrors the same conditions used by <see cref="CredentialProfileStoreChain.TryGetProfile"/>.
+        /// </summary>
+        private static string GetNetSdkCredentialsFilePath(string profilesLocation)
+        {
+            if (!string.IsNullOrEmpty(profilesLocation))
+                return null;
 
-            // Long-lived watchers — created once on first resolution, survive across re-resolutions.
-            private FileSystemWatcher _credentialsWatcher;
-            private FileSystemWatcher _configWatcher;
-            private FileSystemWatcher _netSdkCredentialsWatcher;
-            private bool _watchersInitialized;
+            if (AWSConfigs.DisableLegacyPersistenceStore)
+                return null;
 
-            // Set asynchronously by FileSystemWatcher callbacks on the threadpool.
-            private volatile bool _fileChanged;
+            if (!UserCrypto.IsUserCryptAvailable)
+                return null;
+
+            var settingsFolder = PersistenceManager.GetSettingsStoreFolder();
+            if (string.IsNullOrEmpty(settingsFolder))
+                return null;
+
+            return Path.Combine(settingsFolder, SettingsConstants.RegisteredProfiles + ".json");
+        }
+
+        /// <summary>
+        /// A shared file system watcher for a single file path. Multiple <see cref="ProfileCredentialEntry"/>
+        /// instances may depend on the same file (e.g., <c>~/.aws/config</c>), but only one OS-level
+        /// watcher is created per unique file path.
+        /// <para />
+        /// When a change is detected, the <see cref="HasChanged"/> flag is set to true. Entries check
+        /// this flag on the fast path and reset it after re-resolving credentials.
+        /// </summary>
+        private sealed class SharedFileWatcher : IDisposable
+        {
+            private volatile bool _hasChanged;
+            private readonly FileSystemWatcher _watcher;
 
             /// <summary>
-            /// Returns cached credentials if the backing files have not changed, otherwise null.
-            /// This is the lock-free fast path.
+            /// Gets whether a file change has been detected since the last reset.
             /// </summary>
-            public AWSCredentials GetIfValid()
+            public bool HasChanged => _hasChanged;
+
+            public SharedFileWatcher(string filePath)
             {
-                var creds = _cachedCredentials;
-                if (creds == null) return null;
-
-                if (HasFileChanged()) return null;
-
-                return creds;
+                _watcher = TryCreateWatcher(filePath);
             }
 
             /// <summary>
-            /// Updates the cached credentials and refreshes the file timestamps.
-            /// Also initializes watchers on first call. Must be called while holding <see cref="ResolutionLock"/>.
+            /// Resets the change flag. Called after credentials have been re-resolved.
             /// </summary>
-            public void Update(AWSCredentials credentials, string profilesLocation)
+            public void ResetChangeFlag() => _hasChanged = false;
+
+            private FileSystemWatcher TryCreateWatcher(string filePath)
             {
-                // Resolve file paths (these are deterministic for a given entry, but we
-                // compute them here because profilesLocation is only known after resolution).
-                _credentialsFilePath = GetEffectiveCredentialsFilePath(profilesLocation);
-                _configFilePath = SharedCredentialsFile.DefaultConfigFilePath;
-                _netSdkCredentialsFilePath = GetNetSdkCredentialsFilePath(profilesLocation);
-
-                // Capture current timestamps for synchronous detection.
-                _credentialsFileWriteTime = GetLastWriteTime(_credentialsFilePath);
-                _configFileWriteTime = GetLastWriteTime(_configFilePath);
-                _netSdkCredentialsFileWriteTime = GetLastWriteTime(_netSdkCredentialsFilePath);
-
-                // Initialize watchers once — they live for the lifetime of this entry.
-                if (!_watchersInitialized)
-                {
-                    _credentialsWatcher = CreateWatcher(_credentialsFilePath);
-                    _configWatcher = CreateWatcher(_configFilePath);
-                    _netSdkCredentialsWatcher = CreateWatcher(_netSdkCredentialsFilePath);
-                    _watchersInitialized = true;
-                }
-
-                // Reset the change flag and store the new credentials.
-                // Order matters: reset flag before setting credentials so that a concurrent
-                // reader on the fast path doesn't see stale credentials with a cleared flag.
-                _fileChanged = false;
-                _cachedCredentials = credentials;
-            }
-
-            /// <summary>
-            /// Returns true if any of the backing credential files have changed since the
-            /// last resolution. Uses two complementary signals:
-            /// 1. <c>FileSystemWatcher</c> callback (async, reliable on network storage).
-            /// 2. <c>LastWriteTimeUtc</c> comparison (sync, reliable on local file systems).
-            /// </summary>
-            private bool HasFileChanged()
-            {
-                // Fast path: watcher already detected a change — no I/O needed.
-                if (_fileChanged)
-                    return true;
-
-                // Synchronous fallback: check timestamps (handles local FS and the case
-                // where the watcher event hasn't been delivered yet on the threadpool).
-                if (GetLastWriteTime(_credentialsFilePath) != _credentialsFileWriteTime ||
-                    GetLastWriteTime(_configFilePath) != _configFileWriteTime ||
-                    GetLastWriteTime(_netSdkCredentialsFilePath) != _netSdkCredentialsFileWriteTime)
-                {
-                    _fileChanged = true;
-                    return true;
-                }
-
-                return false;
-            }
-
-            /// <summary>
-            /// Creates a <see cref="FileSystemWatcher"/> that monitors a single file for changes.
-            /// Returns null if the path is null/empty or the directory does not exist.
-            /// </summary>
-            private FileSystemWatcher CreateWatcher(string filePath)
-            {
-                if (string.IsNullOrEmpty(filePath))
-                    return null;
-
                 var directory = Path.GetDirectoryName(filePath);
                 var fileName = Path.GetFileName(filePath);
 
@@ -301,70 +283,92 @@ namespace Amazon.Runtime.Credentials
                 catch (Exception ex) when (!(ex is OutOfMemoryException))
                 {
                     // If we can't create a watcher (e.g., unsupported filesystem, invalid path,
-                    // or I/O error), mark as changed so we always re-resolve — safe fallback.
-                    _fileChanged = true;
+                    // or I/O error), return null. The cache will never auto-invalidate for this
+                    // file, but credentials will still be re-resolved on application restart.
                     return null;
                 }
             }
 
-            private void OnFileEvent(object sender, FileSystemEventArgs e) => _fileChanged = true;
-            private void OnFileRenamed(object sender, RenamedEventArgs e) => _fileChanged = true;
-            private void OnWatcherError(object sender, ErrorEventArgs e) => _fileChanged = true;
-
-            /// <summary>
-            /// Resolves the effective credentials file path using the same logic as
-            /// <see cref="SharedCredentialsFile.SetUpFilePath"/>:
-            /// 1. If <paramref name="profilesLocation"/> is provided, use it directly.
-            /// 2. Else if <see cref="AWSConfigs.AWSProfilesLocation"/> is set, use that.
-            /// 3. Else fall back to <see cref="SharedCredentialsFile.DefaultFilePath"/>.
-            /// </summary>
-            private static string GetEffectiveCredentialsFilePath(string profilesLocation)
-            {
-                if (!string.IsNullOrEmpty(profilesLocation))
-                    return profilesLocation;
-
-                if (!string.IsNullOrEmpty(AWSConfigs.AWSProfilesLocation))
-                    return AWSConfigs.AWSProfilesLocation;
-
-                return SharedCredentialsFile.DefaultFilePath;
-            }
-
-            /// <summary>
-            /// Returns the path to the .NET SDK credentials file (RegisteredAccounts.json)
-            /// if the NetSDK store is applicable for this resolution, otherwise null.
-            /// <para />
-            /// The NetSDK store is only used when:
-            /// 1. <paramref name="profilesLocation"/> is null or empty (no custom location override),
-            /// 2. <see cref="UserCrypto.IsUserCryptAvailable"/> is true (Windows with DPAPI support), and
-            /// 3. <see cref="AWSConfigs.DisableLegacyPersistenceStore"/> is false.
-            /// This mirrors the same conditions used by <see cref="CredentialProfileStoreChain.TryGetProfile"/>.
-            /// </summary>
-            private static string GetNetSdkCredentialsFilePath(string profilesLocation)
-            {
-                if (!string.IsNullOrEmpty(profilesLocation))
-                    return null;
-
-                if (AWSConfigs.DisableLegacyPersistenceStore)
-                    return null;
-
-                if (!UserCrypto.IsUserCryptAvailable)
-                    return null;
-
-                var settingsFolder = PersistenceManager.GetSettingsStoreFolder();
-                if (string.IsNullOrEmpty(settingsFolder))
-                    return null;
-
-                return Path.Combine(settingsFolder, SettingsConstants.RegisteredProfiles + ".json");
-            }
-
-            private static DateTime GetLastWriteTime(string path) =>
-                string.IsNullOrEmpty(path) ? default : File.GetLastWriteTimeUtc(path);
+            private void OnFileEvent(object sender, FileSystemEventArgs e) => _hasChanged = true;
+            private void OnFileRenamed(object sender, RenamedEventArgs e) => _hasChanged = true;
+            private void OnWatcherError(object sender, ErrorEventArgs e) => _hasChanged = true;
 
             public void Dispose()
             {
-                _credentialsWatcher?.Dispose();
-                _configWatcher?.Dispose();
-                _netSdkCredentialsWatcher?.Dispose();
+                _watcher?.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// Holds the per-profile resolution lock, cached credentials, and references to shared file watchers.
+        /// Cache invalidation is purely push-based via <see cref="SharedFileWatcher"/> flags.
+        /// </summary>
+        private sealed class ProfileCredentialEntry : IDisposable
+        {
+            public readonly SemaphoreSlim ResolutionLock = new SemaphoreSlim(1, 1);
+
+            // Cached credentials — written only while holding ResolutionLock; read lock-free on the fast path.
+            private volatile AWSCredentials _cachedCredentials;
+
+            // References to shared watchers.
+            private SharedFileWatcher _credentialsWatcher;
+            private SharedFileWatcher _configWatcher;
+            private SharedFileWatcher _netSdkCredentialsWatcher;
+
+            /// <summary>
+            /// Returns cached credentials if the backing files have not changed, otherwise null.
+            /// This is the lock-free fast path — purely in-memory, no I/O.
+            /// </summary>
+            public AWSCredentials GetIfValid()
+            {
+                var creds = _cachedCredentials;
+                if (creds == null) return null;
+
+                if (HasFileChanged()) return null;
+
+                return creds;
+            }
+
+            /// <summary>
+            /// Updates the cached credentials and resets watcher flags.
+            /// Must be called while holding <see cref="ResolutionLock"/>.
+            /// </summary>
+            public void Update(
+                AWSCredentials credentials,
+                SharedFileWatcher credentialsWatcher, SharedFileWatcher configWatcher, SharedFileWatcher netSdkWatcher)
+            {
+                // Store shared watcher references and reset their change flags.
+                _credentialsWatcher = credentialsWatcher;
+                _configWatcher = configWatcher;
+                _netSdkCredentialsWatcher = netSdkWatcher;
+                credentialsWatcher?.ResetChangeFlag();
+                configWatcher?.ResetChangeFlag();
+                netSdkWatcher?.ResetChangeFlag();
+
+                // Store the new credentials last so concurrent readers on the fast path
+                // see the reset flags before they see the new credentials.
+                _cachedCredentials = credentials;
+            }
+
+            /// <summary>
+            /// Returns true if any of the backing credential files have changed since the
+            /// last resolution. Checks the shared watcher flags — purely in-memory, no I/O.
+            /// </summary>
+            private bool HasFileChanged()
+            {
+                if ((_credentialsWatcher != null && _credentialsWatcher.HasChanged) ||
+                    (_configWatcher != null && _configWatcher.HasChanged) ||
+                    (_netSdkCredentialsWatcher != null && _netSdkCredentialsWatcher.HasChanged))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public void Dispose()
+            {
+                // Only dispose the semaphore — watchers are shared and owned by CachedProfileCredentialResolver.
                 ResolutionLock.Dispose();
             }
         }

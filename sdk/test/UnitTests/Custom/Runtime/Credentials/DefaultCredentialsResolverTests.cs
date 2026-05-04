@@ -538,6 +538,9 @@ namespace AWSSDK.UnitTests
                 // Modify the file so the cache is invalidated on next read.
                 File.WriteAllText(fixture.CredentialsFilePath, BasicProfileText("refresh-profile", "AKID_NEW", "SECRET_NEW"));
 
+                // Give the FileSystemWatcher time to deliver the change event on the threadpool.
+                Thread.Sleep(100);
+
                 // Now launch many threads that all compete to re-resolve.
                 var barrier = new ManualResetEventSlim(false);
                 var results = new AWSCredentials[threadCount];
