@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Specified resource was not found
+    /// The specified resource was not found. Verify that the resource identifier is correct
+    /// and that the resource exists in the specified agent space or account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Represents a single step in pentest job execution
+    /// Represents a step in the pentest job execution pipeline. Steps include preflight,
+    /// static analysis, pentest, and finalizing.
     /// </summary>
     public partial class Step
     {
@@ -42,7 +43,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Timestamp when the step was created
+        /// The date and time the step was created, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -60,7 +61,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the execution step
+        /// The name of the step. Valid values include PREFLIGHT, STATIC_ANALYSIS, PENTEST, and
+        /// FINALIZING.
         /// </para>
         /// </summary>
         public StepName Name
@@ -78,7 +80,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Current status of the step
+        /// The current status of the step.
         /// </para>
         /// </summary>
         public StepStatus Status
@@ -96,7 +98,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Timestamp when the step was last updated
+        /// The date and time the step was last updated, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt

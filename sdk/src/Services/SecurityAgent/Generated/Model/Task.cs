@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Represents a task within a pentest job
+    /// Represents an individual security test task within a pentest job. Each task targets
+    /// a specific risk type or endpoint and executes independently.
     /// </summary>
     public partial class Task
     {
@@ -51,7 +52,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Identifier of the agent space this task belongs to
+        /// The unique identifier of the agent space.
         /// </para>
         /// </summary>
         public string AgentSpaceId
@@ -69,7 +70,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Categories. 
         /// <para>
-        /// List of categories associated with this task
+        /// The list of categories assigned to the task.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -92,7 +93,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Timestamp when the task was created
+        /// The date and time the task was created, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -110,7 +111,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Detailed description of the task's purpose and scope
+        /// A description of the task.
         /// </para>
         /// </summary>
         public string Description
@@ -128,7 +129,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ExecutionStatus. 
         /// <para>
-        /// Current status of the task execution
+        /// The current execution status of the task.
         /// </para>
         /// </summary>
         public TaskExecutionStatus ExecutionStatus
@@ -146,7 +147,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property LogsLocation. 
         /// <para>
-        /// Location of execution logs for auditing and review
+        /// The location of the task execution logs.
         /// </para>
         /// </summary>
         public LogLocation LogsLocation
@@ -164,7 +165,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property PentestId. 
         /// <para>
-        /// Identifier of the parent pentest
+        /// The unique identifier of the pentest associated with the task.
         /// </para>
         /// </summary>
         public string PentestId
@@ -182,7 +183,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property PentestJobId. 
         /// <para>
-        /// Identifier of the pentest job this task belongs to
+        /// The unique identifier of the pentest job that contains the task.
         /// </para>
         /// </summary>
         public string PentestJobId
@@ -200,7 +201,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RiskType. 
         /// <para>
-        /// Type of security risk this task is designed to test
+        /// The type of security risk the task is testing for.
         /// </para>
         /// </summary>
         public RiskType RiskType
@@ -218,7 +219,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetEndpoint. 
         /// <para>
-        /// Target endpoint for this security test
+        /// The target endpoint being tested by the task.
         /// </para>
         /// </summary>
         public Endpoint TargetEndpoint
@@ -236,7 +237,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        /// Unique identifier for the task
+        /// The unique identifier of the task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -255,7 +256,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// Title or name of the task
+        /// The title of the task.
         /// </para>
         /// </summary>
         public string Title
@@ -273,7 +274,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Timestamp when the task was last updated
+        /// The date and time the task was last updated, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt

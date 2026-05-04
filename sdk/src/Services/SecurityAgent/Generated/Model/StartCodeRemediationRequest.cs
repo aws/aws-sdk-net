@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the StartCodeRemediation operation.
-    /// Starts code remediation for the specified findings
+    /// Initiates code remediation for one or more security findings. This creates pull requests
+    /// in integrated repositories to fix the identified vulnerabilities.
     /// </summary>
     public partial class StartCodeRemediationRequest : AmazonSecurityAgentRequest
     {
@@ -42,7 +43,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// ID of the agent space where the pentest job exists
+        /// The unique identifier of the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +62,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property FindingIds. 
         /// <para>
-        /// Identifiers of the findings to start code remediation for
+        /// The list of finding identifiers to initiate code remediation for.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -85,7 +86,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property PentestJobId. 
         /// <para>
-        /// Identifier of the pentest job to start code remediation for
+        /// The unique identifier of the pentest job that produced the findings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

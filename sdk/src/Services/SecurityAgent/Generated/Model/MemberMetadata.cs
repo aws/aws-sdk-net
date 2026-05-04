@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Metadata associated with the member
+    /// Contains metadata about a member. This is a union type that contains member-type-specific
+    /// metadata.
     /// </summary>
     public partial class MemberMetadata
     {
@@ -39,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// User metadata for USER members
+        /// The user metadata for the member.
         /// </para>
         /// </summary>
         public UserMetadata User

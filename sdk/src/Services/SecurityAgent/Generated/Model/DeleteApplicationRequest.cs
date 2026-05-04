@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplication operation.
-    /// Deletes an application
+    /// Deletes an application and its associated configuration, including IAM Identity Center
+    /// settings.
     /// </summary>
     public partial class DeleteApplicationRequest : AmazonSecurityAgentRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// Application ID
+        /// The unique identifier of the application to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

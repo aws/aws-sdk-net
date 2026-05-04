@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Membership summary for list operations
+    /// Contains summary information about a membership.
     /// </summary>
     public partial class MembershipSummary
     {
@@ -48,7 +48,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Agent space identifier
+        /// The unique identifier of the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,7 +67,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// Application identifier
+        /// The unique identifier of the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -86,7 +86,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        /// Configuration specific to the member type
+        /// The configuration for the membership.
         /// </para>
         /// </summary>
         public MembershipConfig Config
@@ -104,7 +104,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Timestamp when the membership was created (ISO 8601)
+        /// The date and time the membership was created, in UTC format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -123,7 +123,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// User ID who created the membership
+        /// The identifier of the entity that created the membership.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -142,7 +142,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MembershipId. 
         /// <para>
-        /// Member identifier (userId or agentSpaceId)
+        /// The unique identifier of the membership.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,7 +161,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MemberType. 
         /// <para>
-        /// Type of member
+        /// The type of member.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -180,7 +180,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// Member-specific metadata
+        /// The metadata for the member.
         /// </para>
         /// </summary>
         public MemberMetadata Metadata
@@ -198,7 +198,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Timestamp when the membership was last updated (ISO 8601)
+        /// The date and time the membership was last updated, in UTC format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -217,7 +217,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedBy. 
         /// <para>
-        /// User ID who last updated the membership
+        /// The identifier of the entity that last updated the membership.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Application summary for list operations
+    /// Contains summary information about an application.
     /// </summary>
     public partial class ApplicationSummary
     {
@@ -42,7 +42,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// Unique identifier of the application
+        /// The unique identifier of the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// Name of the application, automatically assigned by the service
+        /// The name of the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DefaultKmsKeyId. 
         /// <para>
-        /// Default KMS key identifier used to encrypt application data
+        /// The identifier of the default AWS KMS key used to encrypt data for the application.
         /// </para>
         /// </summary>
         public string DefaultKmsKeyId
@@ -98,7 +98,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Domain where the application is available
+        /// The domain associated with the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

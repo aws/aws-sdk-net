@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for ListTagsForResource operation
+    /// Output for ListTagsForResource operation.
     /// </summary>
     public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags associated with the resource
+        /// The tags associated with the resource.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

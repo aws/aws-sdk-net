@@ -31,8 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFindings operation.
-    /// Lists findings with filtering and pagination support. When filters are applied, the
-    /// actual number of results returned may be less than the specified limit
+    /// Lists the security findings for a pentest job.
     /// </summary>
     public partial class ListFindingsRequest : AmazonSecurityAgentRequest
     {
@@ -49,7 +48,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// ID of the agent space where the pentest job exists
+        /// The unique identifier of the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -68,7 +67,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Confidence. 
         /// <para>
-        /// Filter findings by confidence level
+        /// Filter findings by confidence level.
         /// </para>
         /// </summary>
         public ConfidenceLevel Confidence
@@ -86,7 +85,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of findings to return in a single request (default: 50)
+        /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         public int? MaxResults
@@ -104,7 +103,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Filter findings by name (case-insensitive substring search)
+        /// Filter findings by name.
         /// </para>
         /// </summary>
         public string Name
@@ -122,7 +121,9 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token for pagination
+        /// A token to use for paginating results that are returned in the response. Set the value
+        /// of this parameter to null for the first request. For subsequent calls, use the nextToken
+        /// value returned from the previous request.
         /// </para>
         /// </summary>
         public string NextToken
@@ -140,7 +141,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property PentestJobId. 
         /// <para>
-        /// Identifier of the pentest job for which to retrieve associated findings
+        /// The unique identifier of the pentest job to list findings for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -159,7 +160,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RiskLevel. 
         /// <para>
-        /// Filter findings by risk level
+        /// Filter findings by risk level.
         /// </para>
         /// </summary>
         public RiskLevel RiskLevel
@@ -177,7 +178,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RiskType. 
         /// <para>
-        /// Filter findings by risk type
+        /// Filter findings by risk type.
         /// </para>
         /// </summary>
         public string RiskType
@@ -195,7 +196,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Filter findings by status
+        /// Filter findings by status.
         /// </para>
         /// </summary>
         public FindingStatus Status

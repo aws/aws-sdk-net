@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Details of code review settings
+    /// The code review settings for an agent space, controlling which types of scanning are
+    /// enabled.
     /// </summary>
     public partial class CodeReviewSettings
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ControlsScanning. 
         /// <para>
-        /// Whether Controls are utilized for code review analysis
+        /// Indicates whether controls scanning is enabled for code reviews.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property GeneralPurposeScanning. 
         /// <para>
-        /// Whether general purpose analysis is performed for code review
+        /// Indicates whether general-purpose scanning is enabled for code reviews.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

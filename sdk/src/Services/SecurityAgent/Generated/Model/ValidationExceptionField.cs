@@ -60,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// Gets and sets the property Path. 
         /// <para>
         /// A JSONPointer expression to the structure member whose value failed to satisfy the
-        /// modeled constraints.
+        /// modeled constraint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

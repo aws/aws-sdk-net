@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Verification details to verify registered target domain
+    /// Contains the verification details for a target domain, including the verification
+    /// method and provider-specific details.
     /// </summary>
     public partial class VerificationDetails
     {
@@ -41,7 +42,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DnsTxt. 
         /// <para>
-        /// Represents dns txt verification details
+        /// The DNS TXT verification details.
         /// </para>
         /// </summary>
         public DnsVerification DnsTxt
@@ -59,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property HttpRoute. 
         /// <para>
-        /// Represents http route verification details
+        /// The HTTP route verification details.
         /// </para>
         /// </summary>
         public HttpVerification HttpRoute
@@ -77,7 +78,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Method. 
         /// <para>
-        /// Type of domain ownership verification method
+        /// The verification method used for the target domain.
         /// </para>
         /// </summary>
         public DomainVerificationMethod Method

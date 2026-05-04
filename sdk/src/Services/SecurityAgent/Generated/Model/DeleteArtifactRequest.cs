@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteArtifact operation.
-    /// Delete an Artifact from the given agent space
+    /// Deletes an artifact from an agent space.
     /// </summary>
     public partial class DeleteArtifactRequest : AmazonSecurityAgentRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Unique identifier of the agent space
+        /// The unique identifier of the agent space that contains the artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ArtifactId. 
         /// <para>
-        /// Unique identifier of the artifact
+        /// The unique identifier of the artifact to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

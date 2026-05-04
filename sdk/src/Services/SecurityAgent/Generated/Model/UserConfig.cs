@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// User membership configuration
+    /// The configuration for a user membership, including the role assigned to the user within
+    /// the agent space.
     /// </summary>
     public partial class UserConfig
     {
@@ -39,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// Role of the user associated to the agent space
+        /// The role assigned to the user. Currently, only MEMBER is supported.
         /// </para>
         /// </summary>
         public UserRole Role

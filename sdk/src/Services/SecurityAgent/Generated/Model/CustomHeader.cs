@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Custom headers to be set for network requests
+    /// A custom HTTP header to include in network traffic during penetration testing.
     /// </summary>
     public partial class CustomHeader
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of header to set value for
+        /// The name of the custom header.
         /// </para>
         /// </summary>
         public string Name
@@ -58,7 +58,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Value to set for header
+        /// The value of the custom header.
         /// </para>
         /// </summary>
         public string Value

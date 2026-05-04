@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Information about task for code remediation
+    /// Represents a code remediation task that was initiated to fix a security finding.
     /// </summary>
     public partial class CodeRemediationTask
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Current status of the code remediation task
+        /// The current status of the code remediation task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// Reason for the current code remediation task status
+        /// The reason for the current status of the code remediation task.
         /// </para>
         /// </summary>
         public string StatusReason
@@ -78,7 +78,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TaskDetails. 
         /// <para>
-        /// Details of the code remediation for each repository
+        /// The list of details for the code remediation task, including repository name, code
+        /// diff link, and pull request link.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

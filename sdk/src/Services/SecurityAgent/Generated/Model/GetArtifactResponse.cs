@@ -43,7 +43,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Unique identifier of the agent space
+        /// The unique identifier of the agent space that contains the artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Artifact. 
         /// <para>
-        /// Artifact details
+        /// The artifact content and type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +81,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ArtifactId. 
         /// <para>
-        /// Unique identifier of the artifact
+        /// The unique identifier of the artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property FileName. 
         /// <para>
-        /// Name of the artifact file
+        /// The file name of the artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +119,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Timestamp when the artifact was last updated
+        /// The date and time the artifact was last updated, in UTC format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

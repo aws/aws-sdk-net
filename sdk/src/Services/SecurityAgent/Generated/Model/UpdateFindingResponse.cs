@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for the UpdateFinding operation
+    /// Output for the UpdateFinding operation.
     /// </summary>
     public partial class UpdateFindingResponse : AmazonWebServiceResponse
     {

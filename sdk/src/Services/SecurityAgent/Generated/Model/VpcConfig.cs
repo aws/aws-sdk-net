@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Customer VPC configuration that the Security Agent accesses
+    /// The VPC configuration for a pentest, specifying the VPC, security groups, and subnets
+    /// to use during testing.
     /// </summary>
     public partial class VpcConfig
     {
@@ -41,7 +42,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupArns. 
         /// <para>
-        /// List of security group ARNs or IDs in the customer VPC
+        /// The Amazon Resource Names (ARNs) of the security groups for the VPC configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -64,7 +65,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property SubnetArns. 
         /// <para>
-        /// List of subnet ARNs or IDs in the customer VPC
+        /// The Amazon Resource Names (ARNs) of the subnets for the VPC configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -87,7 +88,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property VpcArn. 
         /// <para>
-        /// ARN or ID of the customer VPC
+        /// The Amazon Resource Name (ARN) of the VPC.
         /// </para>
         /// </summary>
         public string VpcArn

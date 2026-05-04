@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIntegration operation.
-    /// Creates the Integration of the Security Agent App with an external Provider
+    /// Creates a new integration with a third-party provider, such as GitHub, for code review
+    /// and remediation.
     /// </summary>
     public partial class CreateIntegrationRequest : AmazonSecurityAgentRequest
     {
@@ -44,7 +45,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// Provider-specific input parameters
+        /// The provider-specific input required to create the integration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +64,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IntegrationDisplayName. 
         /// <para>
-        /// Display name for the integration
+        /// The display name for the integration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +83,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// KMS key ID for encrypting integration details
+        /// The identifier of the AWS KMS key to use for encrypting data associated with the integration.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -100,7 +101,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// Provider to integrate with
+        /// The integration provider. Currently, only GITHUB is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +120,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to associate with the integration
+        /// The tags to associate with the integration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

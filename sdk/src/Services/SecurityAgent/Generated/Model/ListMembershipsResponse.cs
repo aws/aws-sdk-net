@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Response structure for listing members associated to an agent space
+    /// Response structure for listing members associated to an agent space.
     /// </summary>
     public partial class ListMembershipsResponse : AmazonWebServiceResponse
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MembershipSummaries. 
         /// <para>
-        /// List of membership summaries
+        /// The list of membership summaries.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -64,7 +64,9 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token for next page of results
+        /// A token to use for paginating results that are returned in the response. Set the value
+        /// of this parameter to null for the first request. For subsequent calls, use the nextToken
+        /// value returned from the previous request.
         /// </para>
         /// </summary>
         public string NextToken
