@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         /// | <c>visible</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ManagedResourceDefaultVisibility DefaultVisibility
         {
             get { return this._defaultVisibility; }
