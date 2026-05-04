@@ -39,6 +39,7 @@ namespace Amazon.MediaLive.Model
         private string _activeMotionGraphicsActionName;
         private string _activeMotionGraphicsUri;
         private ChannelEngineVersionResponse _channelEngineVersion;
+        private Dictionary<string, MediaConnectRouterOutputConnection> _mediaConnectRouterOutputConnectionMap = AWSConfigs.InitializeCollections ? new Dictionary<string, MediaConnectRouterOutputConnection>() : null;
         private string _pipelineId;
 
         /// <summary>
@@ -121,6 +122,28 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetChannelEngineVersion()
         {
             return this._channelEngineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaConnectRouterOutputConnectionMap. A map of output
+        /// names to the MediaConnect Router connection for this pipeline. Only present for channels
+        /// with MediaConnect Router outputs.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, MediaConnectRouterOutputConnection> MediaConnectRouterOutputConnectionMap
+        {
+            get { return this._mediaConnectRouterOutputConnectionMap; }
+            set { this._mediaConnectRouterOutputConnectionMap = value; }
+        }
+
+        // Check to see if MediaConnectRouterOutputConnectionMap property is set
+        internal bool IsSetMediaConnectRouterOutputConnectionMap()
+        {
+            return this._mediaConnectRouterOutputConnectionMap != null && (this._mediaConnectRouterOutputConnectionMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
