@@ -39,6 +39,11 @@ namespace Amazon.Route53GlobalResolver
 {
     /// <summary>
     /// <para>Implementation for accessing Route53GlobalResolver</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Route 53 Global Resolver is a global, internet-accessible DNS resolver that
     /// enables customers to resolve and forward traffic for both public and private domains

@@ -39,6 +39,11 @@ namespace Amazon.MediaStoreData
 {
     /// <summary>
     /// <para>Implementation for accessing MediaStoreData</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// An AWS Elemental MediaStore asset is an object, similar to an object in the Amazon
     /// S3 service. Objects are the fundamental entities that are stored in AWS Elemental

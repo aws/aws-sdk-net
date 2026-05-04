@@ -39,6 +39,11 @@ namespace Amazon.ComprehendMedical
 {
     /// <summary>
     /// <para>Implementation for accessing ComprehendMedical</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Comprehend Medical extracts structured information from unstructured clinical
     /// text. Use these actions to gain insight in your documents. Amazon Comprehend Medical

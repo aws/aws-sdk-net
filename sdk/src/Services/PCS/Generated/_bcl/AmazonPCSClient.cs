@@ -39,6 +39,11 @@ namespace Amazon.PCS
 {
     /// <summary>
     /// <para>Implementation for accessing PCS</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Parallel Computing Service (PCS) is a managed service that makes it easier for you
     /// to run and scale your high performance computing (HPC) workloads, and build scientific

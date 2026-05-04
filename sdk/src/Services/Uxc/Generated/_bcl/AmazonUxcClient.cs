@@ -39,6 +39,11 @@ namespace Amazon.Uxc
 {
     /// <summary>
     /// <para>Implementation for accessing Uxc</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This is the Amazon Web Services User Experience Customization (UXC) API Reference.
     /// Amazon Web Services User Experience Customization (UXC) is a utility that provides

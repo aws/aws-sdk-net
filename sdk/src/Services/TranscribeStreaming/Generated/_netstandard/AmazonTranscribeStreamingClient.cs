@@ -39,6 +39,11 @@ namespace Amazon.TranscribeStreaming
 {
     /// <summary>
     /// <para>Implementation for accessing TranscribeStreaming</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Transcribe streaming offers four main types of real-time transcription: <b>Standard</b>,
     /// <b>Medical</b>, <b>Call Analytics</b>, and <b>Health Scribe</b>.

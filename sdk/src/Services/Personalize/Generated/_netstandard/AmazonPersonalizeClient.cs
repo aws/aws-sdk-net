@@ -39,6 +39,11 @@ namespace Amazon.Personalize
 {
     /// <summary>
     /// <para>Implementation for accessing Personalize</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Personalize is a machine learning service that makes it easy to add individualized
     /// recommendations to customers.

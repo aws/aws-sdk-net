@@ -39,6 +39,11 @@ namespace Amazon.Outposts
 {
     /// <summary>
     /// <para>Implementation for accessing Outposts</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services
     /// infrastructure, APIs, and tools to customer premises. By providing local access to

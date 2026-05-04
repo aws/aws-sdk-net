@@ -39,6 +39,11 @@ namespace Amazon.Evs
 {
     /// <summary>
     /// <para>Implementation for accessing Evs</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Elastic VMware Service (Amazon EVS) is a service that you can use to deploy
     /// a VMware Cloud Foundation (VCF) software environment directly on EC2 bare metal instances

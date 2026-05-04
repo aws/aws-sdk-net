@@ -39,6 +39,11 @@ namespace Amazon.OpenSearchService
 {
     /// <summary>
     /// <para>Implementation for accessing OpenSearchService</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Use the Amazon OpenSearch Service configuration API to create, configure, and manage
     /// OpenSearch Service domains. The endpoint for configuration service requests is Region

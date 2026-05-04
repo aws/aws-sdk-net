@@ -39,6 +39,11 @@ namespace Amazon.PersonalizeEvents
 {
     /// <summary>
     /// <para>Implementation for accessing PersonalizeEvents</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Personalize can consume real-time user event data, such as <i>stream</i> or
     /// <i>click</i> data, and use it for model training either alone or combined with historical

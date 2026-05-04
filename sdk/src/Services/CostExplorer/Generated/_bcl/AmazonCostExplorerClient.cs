@@ -39,6 +39,11 @@ namespace Amazon.CostExplorer
 {
     /// <summary>
     /// <para>Implementation for accessing CostExplorer</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You can use the Cost Explorer API to programmatically query your cost and usage data.
     /// You can query for aggregated data such as total monthly costs or total daily usage.

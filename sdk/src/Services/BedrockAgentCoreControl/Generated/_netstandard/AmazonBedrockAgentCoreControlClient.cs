@@ -39,6 +39,11 @@ namespace Amazon.BedrockAgentCoreControl
 {
     /// <summary>
     /// <para>Implementation for accessing BedrockAgentCoreControl</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Welcome to the Amazon Bedrock AgentCore Control plane API reference. Control plane
     /// actions configure, create, modify, and monitor Amazon Web Services resources.

@@ -39,6 +39,11 @@ namespace Amazon.CloudWatch
 {
     /// <summary>
     /// <para>Implementation for accessing CloudWatch</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services) resources
     /// and the applications you run on Amazon Web Services in real time. You can use CloudWatch

@@ -39,6 +39,11 @@ namespace Amazon.AmplifyUIBuilder
 {
     /// <summary>
     /// <para>Implementation for accessing AmplifyUIBuilder</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The Amplify UI Builder API provides a programmatic interface for creating and configuring
     /// user interface (UI) component libraries and themes for use in your Amplify applications.

@@ -39,6 +39,11 @@ namespace Amazon.PaymentCryptography
 {
     /// <summary>
     /// <para>Implementation for accessing PaymentCryptography</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Web Services Payment Cryptography Control Plane APIs manage encryption keys
     /// for use during payment-related cryptographic operations. You can create, import, export,

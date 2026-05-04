@@ -39,6 +39,11 @@ namespace Amazon.CodeGuruReviewer
 {
     /// <summary>
     /// <para>Implementation for accessing CodeGuruReviewer</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This section provides documentation for the Amazon CodeGuru Reviewer API operations.
     /// CodeGuru Reviewer is a service that uses program analysis and machine learning to

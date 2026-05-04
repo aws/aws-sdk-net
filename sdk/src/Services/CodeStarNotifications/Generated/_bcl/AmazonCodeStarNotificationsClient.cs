@@ -39,6 +39,11 @@ namespace Amazon.CodeStarNotifications
 {
     /// <summary>
     /// <para>Implementation for accessing CodeStarNotifications</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This CodeStar Notifications API Reference provides descriptions and usage examples
     /// of the operations and data types for the CodeStar Notifications API. You can use the

@@ -39,6 +39,11 @@ namespace Amazon.IoTFleetWise
 {
     /// <summary>
     /// <para>Implementation for accessing IoTFleetWise</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Web Services IoT FleetWise is a fully managed service that you can use to collect,
     /// model, and transfer vehicle data to the Amazon Web Services cloud at scale. With Amazon

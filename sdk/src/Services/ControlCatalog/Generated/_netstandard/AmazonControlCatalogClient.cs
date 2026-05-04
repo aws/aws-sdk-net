@@ -39,6 +39,11 @@ namespace Amazon.ControlCatalog
 {
     /// <summary>
     /// <para>Implementation for accessing ControlCatalog</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Welcome to the Control Catalog API reference. This guide is for developers who need
     /// detailed information about how to programmatically identify and filter the common

@@ -39,6 +39,11 @@ namespace Amazon.Route53Domains
 {
     /// <summary>
     /// <para>Implementation for accessing Route53Domains</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Route 53 API actions let you register domain names and perform related operations.
     /// </summary>

@@ -39,6 +39,11 @@ namespace Amazon.PartnerCentralAccount
 {
     /// <summary>
     /// <para>Implementation for accessing PartnerCentralAccount</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS Partner Central Account service provides APIs for managing partner accounts, connections,
     /// and profiles within the AWS Partner Network. This service enables partners to create

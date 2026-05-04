@@ -39,6 +39,11 @@ namespace Amazon.SecurityHub
 {
     /// <summary>
     /// <para>Implementation for accessing SecurityHub</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Security Hub CSPM provides you with a comprehensive view of your security state in
     /// Amazon Web Services and helps you assess your Amazon Web Services environment against

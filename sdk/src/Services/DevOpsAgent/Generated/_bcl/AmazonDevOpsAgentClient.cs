@@ -39,6 +39,11 @@ namespace Amazon.DevOpsAgent
 {
     /// <summary>
     /// <para>Implementation for accessing DevOpsAgent</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS DevOps Agent is a frontier agent that resolves and proactively prevents incidents,
     /// continuously improving reliability and performance. AWS DevOps Agent investigates

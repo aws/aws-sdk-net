@@ -39,6 +39,11 @@ namespace Amazon.PrometheusService
 {
     /// <summary>
     /// <para>Implementation for accessing PrometheusService</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Managed Service for Prometheus is a serverless, Prometheus-compatible monitoring
     /// service for container metrics that makes it easier to securely monitor container environments

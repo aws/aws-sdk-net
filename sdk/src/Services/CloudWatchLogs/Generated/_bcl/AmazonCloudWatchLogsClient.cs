@@ -39,6 +39,11 @@ namespace Amazon.CloudWatchLogs
 {
     /// <summary>
     /// <para>Implementation for accessing CloudWatchLogs</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
     /// EC2 instances, CloudTrail, and other sources. You can then retrieve the associated

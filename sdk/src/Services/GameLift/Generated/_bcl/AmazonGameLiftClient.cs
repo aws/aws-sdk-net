@@ -39,6 +39,11 @@ namespace Amazon.GameLift
 {
     /// <summary>
     /// <para>Implementation for accessing GameLift</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon GameLift Servers provides solutions for hosting session-based multiplayer game
     /// servers in the cloud, including tools for deploying, operating, and scaling game servers.

@@ -39,6 +39,11 @@ namespace Amazon.Proton
 {
     /// <summary>
     /// <para>Implementation for accessing Proton</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This is the Proton Service API Reference. It provides descriptions, syntax and usage
     /// examples for each of the <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Operations.html">actions</a>

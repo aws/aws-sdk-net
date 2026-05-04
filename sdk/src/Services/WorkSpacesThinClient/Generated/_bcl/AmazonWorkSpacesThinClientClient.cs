@@ -39,6 +39,11 @@ namespace Amazon.WorkSpacesThinClient
 {
     /// <summary>
     /// <para>Implementation for accessing WorkSpacesThinClient</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon WorkSpaces Thin Client is an affordable device built to work with Amazon Web
     /// Services End User Computing (EUC) virtual desktops to provide users with a complete
