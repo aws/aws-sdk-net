@@ -61,6 +61,10 @@ public class AwsJson10Benchmarks
     private PutItemRequest _putItemShallowM = null!;
     private PutItemRequest _putItemShallowL = null!;
 
+    // Cached unmarshaller instances to avoid reflection overhead during measurement
+    private IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext> _healthcheckUnmarshaller = null!;
+    private IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext> _getItemUnmarshaller = null!;
+
     [GlobalSetup]
     public void Setup()
     {
@@ -86,6 +90,9 @@ public class AwsJson10Benchmarks
         _putItemShallowS = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateShallowMapItem<AV>(S, TestDataHelpers.SmallShallowMapKeys) };
         _putItemShallowM = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateShallowMapItem<AV>(S, TestDataHelpers.MediumShallowMapKeys) };
         _putItemShallowL = new PutItemRequest { TableName = "TestTable", Item = TestDataHelpers.CreateShallowMapItem<AV>(S, TestDataHelpers.LargeShallowMapKeys) };
+
+        _healthcheckUnmarshaller = GetUnmarshallerInstance(typeof(HealthcheckResponseUnmarshaller));
+        _getItemUnmarshaller = GetUnmarshallerInstance(typeof(GetItemResponseUnmarshaller));
     }
 
     private static string BuildGetItemJson(int attrCount)
@@ -101,29 +108,33 @@ public class AwsJson10Benchmarks
         return $"{{\"Item\":{{\"pk\":{{\"S\":\"binary-item\"}},\"data\":{{\"B\":\"{Convert.ToBase64String(data)}\"}}}}}}";
     }
 
-    private void UnmarshallJson(byte[] bytes, Type unmarshallerType)
+    private static IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext> GetUnmarshallerInstance(Type unmarshallerType)
+    {
+        return (IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext>)
+            unmarshallerType.GetMethod("GetInstance", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public)!.Invoke(null, null)!;
+    }
+
+    private void UnmarshallJson(byte[] bytes, IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext> unmarshaller)
     {
         using var stream = new MemoryStream(bytes);
         var wr = new WebResponseData { Headers = { { "x-amzn-RequestId", "test-id" }, { "Content-Length", bytes.Length.ToString() }, { "Content-Type", "application/x-amz-json-1.0" } } };
-        var unmarshaller = (IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext>)
-            unmarshallerType.GetMethod("GetInstance", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public)!.Invoke(null, null)!;
         using var ctx = new JsonUnmarshallerContext(stream, false, wr);
         unmarshaller.Unmarshall(ctx);
     }
 
     // --- Healthcheck ---
     [Benchmark] public void awsJson1_0_HealthcheckRequest_Example() => HealthcheckRequestMarshaller.Instance.Marshall(_healthcheckRequest);
-    [Benchmark] public void awsJson1_0_HealthcheckResponse_Example() => UnmarshallJson(_healthcheckResponseBytes, typeof(HealthcheckResponseUnmarshaller));
+    [Benchmark] public void awsJson1_0_HealthcheckResponse_Example() => UnmarshallJson(_healthcheckResponseBytes, _healthcheckUnmarshaller);
 
     // --- GetItem ---
     [Benchmark] public void awsJson1_0_GetItemInput_Baseline() => GetItemRequestMarshaller.Instance.Marshall(_getItemBaseline);
-    [Benchmark] public void awsJson1_0_GetItemOutput_Baseline() => UnmarshallJson(_getItemOutputBaselineBytes, typeof(GetItemResponseUnmarshaller));
-    [Benchmark] public void awsJson1_0_GetItemOutput_S() => UnmarshallJson(_getItemOutputSBytes, typeof(GetItemResponseUnmarshaller));
-    [Benchmark] public void awsJson1_0_GetItemOutput_M() => UnmarshallJson(_getItemOutputMBytes, typeof(GetItemResponseUnmarshaller));
-    [Benchmark] public void awsJson1_0_GetItemOutput_L() => UnmarshallJson(_getItemOutputLBytes, typeof(GetItemResponseUnmarshaller));
-    [Benchmark] public void awsJson1_0_GetItemOutputBinary_S() => UnmarshallJson(_getItemOutputBinarySBytes, typeof(GetItemResponseUnmarshaller));
-    [Benchmark] public void awsJson1_0_GetItemOutputBinary_M() => UnmarshallJson(_getItemOutputBinaryMBytes, typeof(GetItemResponseUnmarshaller));
-    [Benchmark] public void awsJson1_0_GetItemOutputBinary_L() => UnmarshallJson(_getItemOutputBinaryLBytes, typeof(GetItemResponseUnmarshaller));
+    [Benchmark] public void awsJson1_0_GetItemOutput_Baseline() => UnmarshallJson(_getItemOutputBaselineBytes, _getItemUnmarshaller);
+    [Benchmark] public void awsJson1_0_GetItemOutput_S() => UnmarshallJson(_getItemOutputSBytes, _getItemUnmarshaller);
+    [Benchmark] public void awsJson1_0_GetItemOutput_M() => UnmarshallJson(_getItemOutputMBytes, _getItemUnmarshaller);
+    [Benchmark] public void awsJson1_0_GetItemOutput_L() => UnmarshallJson(_getItemOutputLBytes, _getItemUnmarshaller);
+    [Benchmark] public void awsJson1_0_GetItemOutputBinary_S() => UnmarshallJson(_getItemOutputBinarySBytes, _getItemUnmarshaller);
+    [Benchmark] public void awsJson1_0_GetItemOutputBinary_M() => UnmarshallJson(_getItemOutputBinaryMBytes, _getItemUnmarshaller);
+    [Benchmark] public void awsJson1_0_GetItemOutputBinary_L() => UnmarshallJson(_getItemOutputBinaryLBytes, _getItemUnmarshaller);
 
     // --- PutItem ---
     [Benchmark] public void awsJson1_0_PutItemRequest_Baseline() => PutItemRequestMarshaller.Instance.Marshall(_putItemBaseline);

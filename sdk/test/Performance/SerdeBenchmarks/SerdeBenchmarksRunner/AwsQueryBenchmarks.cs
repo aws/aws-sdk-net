@@ -77,7 +77,7 @@ public class AwsQueryBenchmarks
     {
         using var stream = new MemoryStream(bytes);
         var wr = new WebResponseData { ContentType = "text/xml", Headers = { { "x-amzn-RequestId", "test-id" }, { "Content-Length", bytes.Length.ToString() }, { "Content-Type", "text/xml" } } };
-        var ctx = new XmlUnmarshallerContext(stream, false, wr);
+        using var ctx = new XmlUnmarshallerContext(stream, false, wr);
         GetMetricDataResponseUnmarshaller.Instance.Unmarshall(ctx);
     }
 

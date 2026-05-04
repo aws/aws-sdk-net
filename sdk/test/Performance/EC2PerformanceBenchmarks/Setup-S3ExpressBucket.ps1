@@ -24,7 +24,8 @@
 param(
     [Parameter(Mandatory=$true)]
     [string]$BucketName,
-    [string]$Region = "us-east-1"
+    [string]$Region = "us-east-1",
+    [string]$AvailabilityZone = "use1-az4"
 )
 
 Write-Host "Creating S3 Express One Zone directory bucket '$BucketName' in $Region..."
@@ -32,7 +33,7 @@ Write-Host "Creating S3 Express One Zone directory bucket '$BucketName' in $Regi
 $config = @{
     Location = @{
         Type = "AvailabilityZone"
-        Name = "use1-az4"
+        Name = $AvailabilityZone
     }
     Bucket = @{
         Type = "Directory"

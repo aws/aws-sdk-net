@@ -17,7 +17,6 @@ using BenchmarkDotNet.Columns;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Reports;
-using BenchmarkDotNet.Toolchains.InProcess.Emit;
 using Perfolizer.Horology;
 
 namespace AWSSDK.Benchmarks.Serde;
@@ -25,7 +24,7 @@ namespace AWSSDK.Benchmarks.Serde;
 /// <summary>
 /// Shared BenchmarkDotNet configuration for serde benchmarks.
 /// 
-/// Configures RunStrategy.Throughput with 5 warmup iterations and max 15 measurement
+/// Configures RunStrategy.Throughput with 5 warmup iterations and max 20 measurement
 /// iterations, letting BenchmarkDotNet automatically determine invocation counts for
 /// accurate measurement of fast micro-benchmarks (μs-scale serde operations).
 /// With 71 tests, this configuration targets ~12-18 minutes total runtime.

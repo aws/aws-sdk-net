@@ -42,6 +42,9 @@ public class RestXmlBenchmarks
     private byte[] _getObjectLBytes = null!;
     private WebResponseData _getObjectHeaders = null!;
 
+    // Cached unmarshaller instance to avoid reflection overhead during measurement
+    private IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext> _copyObjectUnmarshaller = null!;
+
     [GlobalSetup]
     public void Setup()
     {
@@ -75,21 +78,28 @@ public class RestXmlBenchmarks
         _getObjectMBytes = new byte[1024 * 100]; Random.Shared.NextBytes(_getObjectMBytes);
         _getObjectLBytes = new byte[1024 * 1024]; Random.Shared.NextBytes(_getObjectLBytes);
         _getObjectHeaders = new WebResponseData { ContentType = "application/octet-stream", Headers = { { "x-amzn-RequestId", "test-id" }, { "Content-Type", "application/octet-stream" }, { "ETag", "\"d41d8cd98f00b204e9800998ecf8427e\"" }, { "Last-Modified", "Mon, 01 Jan 2024 00:00:00 GMT" } } };
+
+        _copyObjectUnmarshaller = GetUnmarshallerInstance(typeof(CopyObjectResponseUnmarshaller));
     }
 
-    private void UnmarshallXml(byte[] bytes, Type unmarshallerType)
+    private static IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext> GetUnmarshallerInstance(Type unmarshallerType)
+    {
+        return (IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext>)
+            unmarshallerType.GetMethod("GetInstance", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public)!.Invoke(null, null)!;
+    }
+
+    private void UnmarshallXml(byte[] bytes, IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext> unmarshaller)
     {
         using var stream = new MemoryStream(bytes);
         var wr = new WebResponseData { ContentType = "application/xml", Headers = { { "x-amzn-RequestId", "test-id" }, { "Content-Length", bytes.Length.ToString() }, { "Content-Type", "application/xml" } } };
-        var unmarshaller = (IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext>)unmarshallerType.GetMethod("GetInstance", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Public)!.Invoke(null, null)!;
-        var ctx = new XmlUnmarshallerContext(stream, false, wr);
+        using var ctx = new XmlUnmarshallerContext(stream, false, wr);
         unmarshaller.Unmarshall(ctx);
     }
 
     [Benchmark] public void restXml_CopyObjectRequest_Baseline() => CopyObjectRequestMarshaller.Instance.Marshall(_copyObjectBaseline);
     [Benchmark] public void restXml_CopyObjectRequest_M() => CopyObjectRequestMarshaller.Instance.Marshall(_copyObjectMedium);
-    [Benchmark] public void restXml_CopyObjectOutput_Baseline() => UnmarshallXml(_copyOutputBaselineBytes, typeof(CopyObjectResponseUnmarshaller));
-    [Benchmark] public void restXml_CopyObjectOutput_M() => UnmarshallXml(_copyOutputMBytes, typeof(CopyObjectResponseUnmarshaller));
+    [Benchmark] public void restXml_CopyObjectOutput_Baseline() => UnmarshallXml(_copyOutputBaselineBytes, _copyObjectUnmarshaller);
+    [Benchmark] public void restXml_CopyObjectOutput_M() => UnmarshallXml(_copyOutputMBytes, _copyObjectUnmarshaller);
     [Benchmark] public void restXml_PutObject_S() { _putObjectS.Body.Position = 0; PutObjectRequestMarshaller.Instance.Marshall(_putObjectS); }
     [Benchmark] public void restXml_PutObject_M() { _putObjectM.Body.Position = 0; PutObjectRequestMarshaller.Instance.Marshall(_putObjectM); }
     [Benchmark] public void restXml_PutObject_L() { _putObjectL.Body.Position = 0; PutObjectRequestMarshaller.Instance.Marshall(_putObjectL); }
@@ -99,7 +109,7 @@ public class RestXmlBenchmarks
     {
         using var stream = new MemoryStream(_getObjectSBytes);
         _getObjectHeaders.Headers["Content-Length"] = _getObjectSBytes.Length.ToString();
-        var ctx = new XmlUnmarshallerContext(stream, false, _getObjectHeaders);
+        using var ctx = new XmlUnmarshallerContext(stream, false, _getObjectHeaders);
         GetObjectResponseUnmarshaller.Instance.Unmarshall(ctx);
     }
 
@@ -108,7 +118,7 @@ public class RestXmlBenchmarks
     {
         using var stream = new MemoryStream(_getObjectMBytes);
         _getObjectHeaders.Headers["Content-Length"] = _getObjectMBytes.Length.ToString();
-        var ctx = new XmlUnmarshallerContext(stream, false, _getObjectHeaders);
+        using var ctx = new XmlUnmarshallerContext(stream, false, _getObjectHeaders);
         GetObjectResponseUnmarshaller.Instance.Unmarshall(ctx);
     }
 
@@ -117,7 +127,7 @@ public class RestXmlBenchmarks
     {
         using var stream = new MemoryStream(_getObjectLBytes);
         _getObjectHeaders.Headers["Content-Length"] = _getObjectLBytes.Length.ToString();
-        var ctx = new XmlUnmarshallerContext(stream, false, _getObjectHeaders);
+        using var ctx = new XmlUnmarshallerContext(stream, false, _getObjectHeaders);
         GetObjectResponseUnmarshaller.Instance.Unmarshall(ctx);
     }
 }
