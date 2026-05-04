@@ -42,6 +42,7 @@ namespace Amazon.VPCLattice.Model
         private ResourceGatewayIpAddressType _ipAddressType;
         private int? _ipv4AddressesPerEni;
         private string _name;
+        private ResourceConfigDnsResolution _resourceConfigDnsResolution;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -148,6 +149,40 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceConfigDnsResolution. 
+        /// <para>
+        /// Indicates how DNS is resolved for resource configurations associated to this resource
+        /// gateway. ResourceConfigDnsResolution is set at creation time and cannot be changed.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IN_VPC</c> - DNS resolution occurs privately within the resource gateway's VPC.
+        /// DNS queries for resources behind this resource gateway resolve using the DNS resolvers
+        /// defined in the VPC's DHCP option sets. Use this when your resource domain names are
+        /// hosted in private Route 53 hosted zones or on-premises DNS servers reachable from
+        /// the VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PUBLIC</c> - DNS resolution occurs against public DNS resolvers. DNS queries for
+        /// resources behind this resource gateway resolve using standard public DNS. Use this
+        /// when your resource domain names are publicly resolvable.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResourceConfigDnsResolution ResourceConfigDnsResolution
+        {
+            get { return this._resourceConfigDnsResolution; }
+            set { this._resourceConfigDnsResolution = value; }
+        }
+
+        // Check to see if ResourceConfigDnsResolution property is set
+        internal bool IsSetResourceConfigDnsResolution()
+        {
+            return this._resourceConfigDnsResolution != null;
         }
 
         /// <summary>
