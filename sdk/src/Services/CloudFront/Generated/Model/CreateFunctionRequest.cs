@@ -57,6 +57,7 @@ namespace Amazon.CloudFront.Model
         private MemoryStream _functionCode;
         private FunctionConfig _functionConfig;
         private string _name;
+        private Tags _tags;
 
         /// <summary>
         /// Gets and sets the property FunctionCode. 
@@ -116,6 +117,21 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// </summary>
+        public Tags Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null;
         }
 
     }
