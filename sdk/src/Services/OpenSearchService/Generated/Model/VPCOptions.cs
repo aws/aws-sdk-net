@@ -36,8 +36,29 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class VPCOptions
     {
+        private bool? _egressEnabled;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property EgressEnabled. 
+        /// <para>
+        /// Controls whether egress traffic from the domain is routed through the customer VPC.
+        /// When <c>true</c>, outbound traffic flows through the VPC. When <c>false</c>, outbound
+        /// traffic goes through the public internet.
+        /// </para>
+        /// </summary>
+        public bool? EgressEnabled
+        {
+            get { return this._egressEnabled; }
+            set { this._egressEnabled = value; }
+        }
+
+        // Check to see if EgressEnabled property is set
+        internal bool IsSetEgressEnabled()
+        {
+            return this._egressEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
