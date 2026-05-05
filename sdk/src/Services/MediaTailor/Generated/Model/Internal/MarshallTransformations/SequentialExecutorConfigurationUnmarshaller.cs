@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManifestServiceInteractionLog Object
+    /// Response Unmarshaller for SequentialExecutorConfiguration Object
     /// </summary>  
-    public class ManifestServiceInteractionLogUnmarshaller : IJsonUnmarshaller<ManifestServiceInteractionLog, JsonUnmarshallerContext>
+    public class SequentialExecutorConfigurationUnmarshaller : IJsonUnmarshaller<SequentialExecutorConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ManifestServiceInteractionLog Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SequentialExecutorConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ManifestServiceInteractionLog unmarshalledObject = new ManifestServiceInteractionLog();
+            SequentialExecutorConfiguration unmarshalledObject = new SequentialExecutorConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,28 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExcludeEventTypes", targetDepth))
+                if (context.TestExpression("FunctionList", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ExcludeEventTypes = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<FunctionRef, FunctionRefUnmarshaller>(FunctionRefUnmarshaller.Instance);
+                    unmarshalledObject.FunctionList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublishOptInEventTypes", targetDepth))
+                if (context.TestExpression("Output", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.PublishOptInEventTypes = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Output = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Runtime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Runtime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TimeoutMilliseconds", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TimeoutMilliseconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +85,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManifestServiceInteractionLogUnmarshaller _instance = new ManifestServiceInteractionLogUnmarshaller();        
+        private static SequentialExecutorConfigurationUnmarshaller _instance = new SequentialExecutorConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManifestServiceInteractionLogUnmarshaller Instance
+        public static SequentialExecutorConfigurationUnmarshaller Instance
         {
             get
             {

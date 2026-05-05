@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ManifestServiceInteractionLog Marshaller
+    /// CustomOutputConfiguration Marshaller
     /// </summary>
-    public class ManifestServiceInteractionLogMarshaller : IRequestMarshaller<ManifestServiceInteractionLog, JsonMarshallerContext> 
+    public class CustomOutputConfigurationMarshaller : IRequestMarshaller<CustomOutputConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,28 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ManifestServiceInteractionLog requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomOutputConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetExcludeEventTypes())
+            if(requestObject.IsSetOutput())
             {
-                context.Writer.WritePropertyName("ExcludeEventTypes");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectExcludeEventTypesListValue in requestObject.ExcludeEventTypes)
+                context.Writer.WritePropertyName("Output");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectOutputKvp in requestObject.Output)
                 {
-                        context.Writer.WriteStringValue(requestObjectExcludeEventTypesListValue);
+                    context.Writer.WritePropertyName(requestObjectOutputKvp.Key);
+                    var requestObjectOutputValue = requestObjectOutputKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectOutputValue);
                 }
-                context.Writer.WriteEndArray();
+                context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetPublishOptInEventTypes())
+            if(requestObject.IsSetRuntime())
             {
-                context.Writer.WritePropertyName("PublishOptInEventTypes");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectPublishOptInEventTypesListValue in requestObject.PublishOptInEventTypes)
-                {
-                        context.Writer.WriteStringValue(requestObjectPublishOptInEventTypesListValue);
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("Runtime");
+                context.Writer.WriteStringValue(requestObject.Runtime);
             }
 
         }
@@ -73,7 +71,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ManifestServiceInteractionLogMarshaller Instance = new ManifestServiceInteractionLogMarshaller();
+        public readonly static CustomOutputConfigurationMarshaller Instance = new CustomOutputConfigurationMarshaller();
 
     }
 }
