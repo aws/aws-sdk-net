@@ -287,6 +287,12 @@ namespace Amazon.Runtime
             {
                 httpMessageHandler.ConnectTimeout = clientConfig.ConnectTimeout.Value;
             }
+
+            if (clientConfig.TcpKeepAlive.Enabled)
+            {
+                httpMessageHandler.KeepAlivePingDelay = clientConfig.TcpKeepAlive.Timeout.Value;
+                httpMessageHandler.KeepAlivePingTimeout = clientConfig.TcpKeepAlive.Interval.Value;
+            }
 #else
             var httpMessageHandler = new HttpClientHandler();
 #endif

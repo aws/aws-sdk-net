@@ -103,9 +103,7 @@ namespace Amazon.Runtime
         private ResponseChecksumValidation? responseChecksumValidation = null;
 
         private CredentialProfileStoreChain credentialProfileStoreChain;
-#if BCL
         private readonly TcpKeepAlive tcpKeepAlive = new TcpKeepAlive();
-#endif
 
         /// <summary>
         /// Controls whether the resolved endpoint will include the account id. This allows for direct routing of traffic
@@ -796,7 +794,6 @@ namespace Amazon.Runtime
             return GetWebProxyWithCredentials(Environment.GetEnvironmentVariable("https_proxy"));
         }
 
-#if BCL
         /// <summary>
         /// Specifies the TCP keep-alive values to use for service requests.
         /// </summary>
@@ -804,7 +801,6 @@ namespace Amazon.Runtime
         {
             get { return this.tcpKeepAlive; }
         }
-#endif
 
         #region Constructor 
         protected ClientConfig(IDefaultConfigurationProvider defaultConfigurationProvider)
@@ -1082,13 +1078,11 @@ namespace Amazon.Runtime
         {
             if (RegionEndpoint == null && string.IsNullOrEmpty(this.ServiceURL))
                 throw new AmazonClientException("No RegionEndpoint or ServiceURL configured");
-#if BCL
             if (TcpKeepAlive.Enabled)
             {
                 ValidateTcpKeepAliveTimeSpan(TcpKeepAlive.Timeout, "TcpKeepAlive.Timeout");
                 ValidateTcpKeepAliveTimeSpan(TcpKeepAlive.Interval, "TcpKeepAlive.Interval");
             }
-#endif
         }
 
         /// <summary>
@@ -1175,7 +1169,6 @@ namespace Amazon.Runtime
             }
         }
 
-#if BCL
         private static void ValidateTcpKeepAliveTimeSpan(TimeSpan? value, string paramName)
         {
             if (!value.HasValue)
@@ -1189,7 +1182,6 @@ namespace Amazon.Runtime
             }
         }
 
-#endif
         /// <summary>
         /// Returns the request timeout value if its value is set, 
         /// else returns client timeout value.
