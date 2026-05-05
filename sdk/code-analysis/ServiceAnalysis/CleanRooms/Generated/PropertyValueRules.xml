@@ -2845,7 +2845,7 @@
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedJobWorkerComputeConfiguration.Number</property>
     <min>4</min>
-    <max>128</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedQuery.Id</property>

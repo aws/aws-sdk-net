@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Ec2AmiResource Marshaller
     /// </summary>
-    public class Ec2AmiResourceMarshaller : IRequestMarshaller<Ec2AmiResource, JsonMarshallerContext> 
+    public class Ec2AmiResourceMarshaller : IRequestMarshaller<Ec2AmiResource, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Ec2AmiResource requestObject, JsonMarshallerContext context)
+        public void Marshall(Ec2AmiResource requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAmiId())
-            {
-                context.Writer.WritePropertyName("AmiId");
-                context.Writer.WriteStringValue(requestObject.AmiId);
-            }
 
-            if(requestObject.IsSetSnowballAmiId())
+            if (requestObject.IsSetAmiId())
             {
-                context.Writer.WritePropertyName("SnowballAmiId");
-                context.Writer.WriteStringValue(requestObject.SnowballAmiId);
+                context.Writer.WriteTextString("AmiId");
+                context.Writer.WriteTextString(requestObject.AmiId);
             }
-
+            if (requestObject.IsSetSnowballAmiId())
+            {
+                context.Writer.WriteTextString("SnowballAmiId");
+                context.Writer.WriteTextString(requestObject.SnowballAmiId);
+            }
         }
 
         /// <summary>

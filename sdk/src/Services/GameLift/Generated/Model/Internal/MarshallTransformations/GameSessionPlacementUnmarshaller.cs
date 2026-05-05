@@ -29,154 +29,205 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GameSessionPlacement Object
     /// </summary>  
-    public class GameSessionPlacementUnmarshaller : IJsonUnmarshaller<GameSessionPlacement, JsonUnmarshallerContext>
+    public class GameSessionPlacementUnmarshaller : ICborUnmarshaller<GameSessionPlacement, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GameSessionPlacement Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public GameSessionPlacement Unmarshall(CborUnmarshallerContext context)
         {
             GameSessionPlacement unmarshalledObject = new GameSessionPlacement();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DnsName", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EndTime", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameProperties", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<GameProperty, GamePropertyUnmarshaller>(GamePropertyUnmarshaller.Instance);
-                    unmarshalledObject.GameProperties = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameSessionArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameSessionArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameSessionData", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameSessionData = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameSessionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameSessionId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameSessionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameSessionName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameSessionQueueName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameSessionQueueName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameSessionRegion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameSessionRegion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IpAddress", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MatchmakerData", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MatchmakerData = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MaximumPlayerSessionCount", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaximumPlayerSessionCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PlacedPlayerSessions", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<PlacedPlayerSession, PlacedPlayerSessionUnmarshaller>(PlacedPlayerSessionUnmarshaller.Instance);
-                    unmarshalledObject.PlacedPlayerSessions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PlacementId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlacementId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PlayerGatewayStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlayerGatewayStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PlayerLatencies", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<PlayerLatency, PlayerLatencyUnmarshaller>(PlayerLatencyUnmarshaller.Instance);
-                    unmarshalledObject.PlayerLatencies = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Port", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PriorityConfigurationOverride", targetDepth))
-                {
-                    var unmarshaller = PriorityConfigurationOverrideUnmarshaller.Instance;
-                    unmarshalledObject.PriorityConfigurationOverride = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StartTime", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "DnsName":
+                        {
+                            context.AddPathSegment("DnsName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DnsName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EndTime":
+                        {
+                            context.AddPathSegment("EndTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameProperties":
+                        {
+                            context.AddPathSegment("GameProperties");
+                            var unmarshaller = new CborListUnmarshaller<GameProperty, GamePropertyUnmarshaller>(GamePropertyUnmarshaller.Instance);
+                            unmarshalledObject.GameProperties = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameSessionArn":
+                        {
+                            context.AddPathSegment("GameSessionArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameSessionArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameSessionData":
+                        {
+                            context.AddPathSegment("GameSessionData");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameSessionData = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameSessionId":
+                        {
+                            context.AddPathSegment("GameSessionId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameSessionId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameSessionName":
+                        {
+                            context.AddPathSegment("GameSessionName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameSessionName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameSessionQueueName":
+                        {
+                            context.AddPathSegment("GameSessionQueueName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameSessionQueueName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameSessionRegion":
+                        {
+                            context.AddPathSegment("GameSessionRegion");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameSessionRegion = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IpAddress":
+                        {
+                            context.AddPathSegment("IpAddress");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MatchmakerData":
+                        {
+                            context.AddPathSegment("MatchmakerData");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.MatchmakerData = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MaximumPlayerSessionCount":
+                        {
+                            context.AddPathSegment("MaximumPlayerSessionCount");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.MaximumPlayerSessionCount = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PlacedPlayerSessions":
+                        {
+                            context.AddPathSegment("PlacedPlayerSessions");
+                            var unmarshaller = new CborListUnmarshaller<PlacedPlayerSession, PlacedPlayerSessionUnmarshaller>(PlacedPlayerSessionUnmarshaller.Instance);
+                            unmarshalledObject.PlacedPlayerSessions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PlacementId":
+                        {
+                            context.AddPathSegment("PlacementId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.PlacementId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PlayerGatewayStatus":
+                        {
+                            context.AddPathSegment("PlayerGatewayStatus");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.PlayerGatewayStatus = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PlayerLatencies":
+                        {
+                            context.AddPathSegment("PlayerLatencies");
+                            var unmarshaller = new CborListUnmarshaller<PlayerLatency, PlayerLatencyUnmarshaller>(PlayerLatencyUnmarshaller.Instance);
+                            unmarshalledObject.PlayerLatencies = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Port":
+                        {
+                            context.AddPathSegment("Port");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PriorityConfigurationOverride":
+                        {
+                            context.AddPathSegment("PriorityConfigurationOverride");
+                            var unmarshaller = PriorityConfigurationOverrideUnmarshaller.Instance;
+                            unmarshalledObject.PriorityConfigurationOverride = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StartTime":
+                        {
+                            context.AddPathSegment("StartTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Status":
+                        {
+                            context.AddPathSegment("Status");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

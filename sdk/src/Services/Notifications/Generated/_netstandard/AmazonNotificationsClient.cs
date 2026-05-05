@@ -39,6 +39,11 @@ namespace Amazon.Notifications
 {
     /// <summary>
     /// <para>Implementation for accessing Notifications</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The <i>User Notifications API Reference</i> provides descriptions, API request parameters,
     /// and the JSON response for each of the User Notifications API actions.

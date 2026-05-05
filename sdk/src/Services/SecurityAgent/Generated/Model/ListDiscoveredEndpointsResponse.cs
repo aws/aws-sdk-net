@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for the ListDiscoveredEndpoints operation
+    /// Output for the ListDiscoveredEndpoints operation.
     /// </summary>
     public partial class ListDiscoveredEndpointsResponse : AmazonWebServiceResponse
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DiscoveredEndpoints. 
         /// <para>
-        /// List of discovered endpoints for the pentest job
+        /// The list of discovered endpoints.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -63,7 +63,9 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token for pagination to retrieve the next set of results
+        /// A token to use for paginating results that are returned in the response. Set the value
+        /// of this parameter to null for the first request. For subsequent calls, use the nextToken
+        /// value returned from the previous request.
         /// </para>
         /// </summary>
         public string NextToken

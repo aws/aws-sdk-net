@@ -33,7 +33,7 @@ namespace Amazon.Neptune.Model
     /// Container for the parameters to the RemoveFromGlobalCluster operation.
     /// Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster
     /// becomes a normal standalone cluster with read-write capability instead of being read-only,
-    /// and no longer receives data from a the primary cluster.
+    /// and no longer receives data from the primary cluster.
     /// </summary>
     public partial class RemoveFromGlobalClusterRequest : AmazonNeptuneRequest
     {

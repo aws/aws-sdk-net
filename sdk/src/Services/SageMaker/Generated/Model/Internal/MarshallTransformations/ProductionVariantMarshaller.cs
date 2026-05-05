@@ -111,6 +111,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
             }
 
+            if(requestObject.IsSetInstancePools())
+            {
+                context.Writer.WritePropertyName("InstancePools");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectInstancePoolsListValue in requestObject.InstancePools)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InstancePoolMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInstancePoolsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
@@ -160,6 +176,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.ServerlessConfig, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetVariantInstanceProvisionTimeoutInSeconds())
+            {
+                context.Writer.WritePropertyName("VariantInstanceProvisionTimeoutInSeconds");
+                context.Writer.WriteNumberValue(requestObject.VariantInstanceProvisionTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetVariantName())

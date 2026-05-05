@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class FilterDateTimePickerControl
     {
         private CommitMode _commitMode;
+        private ControlTitleFormatText _controlTitleFormatText;
         private DateTimePickerControlDisplayOptions _displayOptions;
         private string _filterControlId;
         private string _sourceFilterId;
@@ -57,6 +58,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCommitMode()
         {
             return this._commitMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlTitleFormatText. 
+        /// <para>
+        /// The title text format configuration for the control.
+        /// </para>
+        /// </summary>
+        public ControlTitleFormatText ControlTitleFormatText
+        {
+            get { return this._controlTitleFormatText; }
+            set { this._controlTitleFormatText = value; }
+        }
+
+        // Check to see if ControlTitleFormatText property is set
+        internal bool IsSetControlTitleFormatText()
+        {
+            return this._controlTitleFormatText != null;
         }
 
         /// <summary>
@@ -121,7 +140,7 @@ namespace Amazon.QuickSight.Model
         /// The title of the <c>FilterDateTimePickerControl</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Title
         {
             get { return this._title; }

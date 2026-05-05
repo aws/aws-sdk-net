@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for the BatchGetTargetDomains operation
+    /// Output for the BatchGetTargetDomains operation.
     /// </summary>
     public partial class BatchGetTargetDomainsResponse : AmazonWebServiceResponse
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property NotFound. 
         /// <para>
-        /// List of target domain IDs that could not be found
+        /// The list of target domain identifiers that were not found.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -63,7 +63,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomains. 
         /// <para>
-        /// List of target domains that were successfully retrieved
+        /// The list of target domains that were found.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

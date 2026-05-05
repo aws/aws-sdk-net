@@ -39,7 +39,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ArtifactMetadataList. 
         /// <para>
-        /// List of artifact metadata
+        /// The list of artifact metadata items that were found.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

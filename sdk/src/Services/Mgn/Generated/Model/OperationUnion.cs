@@ -35,7 +35,65 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class OperationUnion
     {
+        private DeleteOperation _delete;
+        private MergeOperation _merge;
+        private SplitOperation _split;
         private UpdateOperation _update;
+
+        /// <summary>
+        /// Gets and sets the property Delete. 
+        /// <para>
+        /// A delete operation to remove a construct from the mapping.
+        /// </para>
+        /// </summary>
+        public DeleteOperation Delete
+        {
+            get { return this._delete; }
+            set { this._delete = value; }
+        }
+
+        // Check to see if Delete property is set
+        internal bool IsSetDelete()
+        {
+            return this._delete != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Merge. 
+        /// <para>
+        /// A merge operation to combine constructs from different segments.
+        /// </para>
+        /// </summary>
+        public MergeOperation Merge
+        {
+            get { return this._merge; }
+            set { this._merge = value; }
+        }
+
+        // Check to see if Merge property is set
+        internal bool IsSetMerge()
+        {
+            return this._merge != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Split. 
+        /// <para>
+        /// A split operation to divide a construct into multiple constructs with specified CIDR
+        /// blocks.
+        /// </para>
+        /// </summary>
+        public SplitOperation Split
+        {
+            get { return this._split; }
+            set { this._split = value; }
+        }
+
+        // Check to see if Split property is set
+        internal bool IsSetSplit()
+        {
+            return this._split != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Update. 

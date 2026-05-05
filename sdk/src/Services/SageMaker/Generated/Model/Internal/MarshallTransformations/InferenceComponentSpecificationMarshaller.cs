@@ -85,6 +85,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetInstanceType())
+            {
+                context.Writer.WritePropertyName("InstanceType");
+                context.Writer.WriteStringValue(requestObject.InstanceType);
+            }
+
             if(requestObject.IsSetModelName())
             {
                 context.Writer.WritePropertyName("ModelName");

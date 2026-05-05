@@ -109,6 +109,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetSpecifications())
+            {
+                context.Writer.WritePropertyName("Specifications");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSpecificationsListValue in publicRequest.Specifications)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InferenceComponentSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSpecificationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

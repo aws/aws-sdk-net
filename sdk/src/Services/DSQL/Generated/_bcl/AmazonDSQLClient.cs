@@ -39,6 +39,11 @@ namespace Amazon.DSQL
 {
     /// <summary>
     /// <para>Implementation for accessing DSQL</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This is an interface reference for Amazon Aurora DSQL. It contains documentation for
     /// one of the programming or command line interfaces you can use to manage Amazon Aurora

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// 
+    /// Output for the <c>ListTagsForResource</c> operation.
     /// </summary>
     public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {

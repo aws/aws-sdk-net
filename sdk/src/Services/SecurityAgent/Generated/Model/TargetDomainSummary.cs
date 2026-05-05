@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Summary information for a target domain
+    /// Contains summary information about a target domain.
     /// </summary>
     public partial class TargetDomainSummary
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// Name of the registered target domain
+        /// The domain name of the target domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomainId. 
         /// <para>
-        /// Unique identifier of the target domain
+        /// The unique identifier of the target domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property VerificationStatus. 
         /// <para>
-        /// Current verification status of the registered target domain
+        /// The current verification status of the target domain.
         /// </para>
         /// </summary>
         public TargetDomainStatus VerificationStatus

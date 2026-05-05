@@ -46,6 +46,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetConsumerAccountRoleArn())
+            {
+                context.Writer.WritePropertyName("ConsumerAccountRoleArn");
+                context.Writer.WriteStringValue(requestObject.ConsumerAccountRoleArn);
+            }
+
             if(requestObject.IsSetIdentityCenterConfiguration())
             {
                 context.Writer.WritePropertyName("IdentityCenterConfiguration");

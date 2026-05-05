@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Summary information about an integration
+    /// Contains summary information about an integration.
     /// </summary>
     public partial class IntegrationSummary
     {
@@ -43,7 +43,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// Display name for the integration
+        /// The display name of the integration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property InstallationId. 
         /// <para>
-        /// Installation identifier from the provider
+        /// The installation identifier from the integration provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +81,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IntegrationId. 
         /// <para>
-        /// Unique identifier of the integration
+        /// The unique identifier of the integration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// Provider type
+        /// The integration provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +119,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
-        /// Type of provider integration
+        /// The type of the integration provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

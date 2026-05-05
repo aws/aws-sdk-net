@@ -69,7 +69,48 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class GetQueryResultsRequest : AmazonCloudWatchLogsRequest
     {
+        private int? _maxItems;
+        private string _nextToken;
         private string _queryId;
+
+        /// <summary>
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// The maximum number of log events to return in the response. The maximum is 10,000
+        /// log events.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
+        public int? MaxItems
+        {
+            get { return this._maxItems; }
+            set { this._maxItems = value; }
+        }
+
+        // Check to see if MaxItems property is set
+        internal bool IsSetMaxItems()
+        {
+            return this._maxItems.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of items to return. The token expires after 1 hour.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property QueryId. 

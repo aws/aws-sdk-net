@@ -82,13 +82,15 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void CredentialsAreReevaluatedWhenProfileChanges()
         {
-            var identityResolver = new DefaultAWSCredentialsIdentityResolver();
-            var initialIdentity = identityResolver.ResolveIdentity(clientConfig: null);
-            Assert.IsFalse(initialIdentity is DefaultInstanceProfileAWSCredentials);
+            using (var identityResolver = new DefaultAWSCredentialsIdentityResolver())
+            {
+                var initialIdentity = identityResolver.ResolveIdentity(clientConfig: null);
+                Assert.IsFalse(initialIdentity is DefaultInstanceProfileAWSCredentials);
 
-            // Since the specified profile does not exist, the identity resolver will throw an exception.
-            Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "non-existent-profile");
-            Assert.ThrowsException<ProfileNotFoundException>(() => identityResolver.ResolveIdentity(clientConfig: null));
+                // Since the specified profile does not exist, the identity resolver will throw an exception.
+                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "non-existent-profile");
+                Assert.ThrowsException<ProfileNotFoundException>(() => identityResolver.ResolveIdentity(clientConfig: null));
+            }
         }
 
         /// <summary>
@@ -107,14 +109,16 @@ namespace AWSSDK.UnitTests
             Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, "foo");
             Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, "bar");
 
-            var identityResolver = new DefaultAWSCredentialsIdentityResolver();
-            var resolvedIdentity = identityResolver.ResolveIdentity(new AmazonS3Config
+            using (var identityResolver = new DefaultAWSCredentialsIdentityResolver())
             {
-                Profile = new Profile(profileName)
-            });
+                var resolvedIdentity = identityResolver.ResolveIdentity(new AmazonS3Config
+                {
+                    Profile = new Profile(profileName)
+                });
 
-            Assert.IsNotNull(resolvedIdentity);
-            Assert.IsTrue(resolvedIdentity is EnvironmentVariablesAWSCredentials);
+                Assert.IsNotNull(resolvedIdentity);
+                Assert.IsTrue(resolvedIdentity is EnvironmentVariablesAWSCredentials);
+            }
         }
     }
 }

@@ -35,6 +35,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class JWTOptionsOutput
     {
         private bool? _enabled;
+        private string _jwksUrl;
         private string _publicKey;
         private string _rolesKey;
         private string _subjectKey;
@@ -55,6 +56,26 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JwksUrl. 
+        /// <para>
+        /// The configured JWKS URL endpoint from which the cluster retrieves public keys to verify
+        /// JWT requests.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string JwksUrl
+        {
+            get { return this._jwksUrl; }
+            set { this._jwksUrl = value; }
+        }
+
+        // Check to see if JwksUrl property is set
+        internal bool IsSetJwksUrl()
+        {
+            return this._jwksUrl != null;
         }
 
         /// <summary>

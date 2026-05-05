@@ -70,6 +70,12 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
                     response.AccountName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AccountState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AccountState = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

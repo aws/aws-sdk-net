@@ -9745,6 +9745,110 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type ElementalInferenceFeature.
+    /// </summary>
+    public class ElementalInferenceFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SMART_CROP for ElementalInferenceFeature
+        /// </summary>
+        public static readonly ElementalInferenceFeature SMART_CROP = new ElementalInferenceFeature("SMART_CROP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ElementalInferenceFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ElementalInferenceFeature FindValue(string value)
+        {
+            return FindValue<ElementalInferenceFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ElementalInferenceFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ElementalInferenceFeedManagementState.
+    /// </summary>
+    public class ElementalInferenceFeedManagementState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATED for ElementalInferenceFeedManagementState
+        /// </summary>
+        public static readonly ElementalInferenceFeedManagementState ASSOCIATED = new ElementalInferenceFeedManagementState("ASSOCIATED");
+        /// <summary>
+        /// Constant CREATED for ElementalInferenceFeedManagementState
+        /// </summary>
+        public static readonly ElementalInferenceFeedManagementState CREATED = new ElementalInferenceFeedManagementState("CREATED");
+        /// <summary>
+        /// Constant DELETED for ElementalInferenceFeedManagementState
+        /// </summary>
+        public static readonly ElementalInferenceFeedManagementState DELETED = new ElementalInferenceFeedManagementState("DELETED");
+        /// <summary>
+        /// Constant PENDING_DELETION for ElementalInferenceFeedManagementState
+        /// </summary>
+        public static readonly ElementalInferenceFeedManagementState PENDING_DELETION = new ElementalInferenceFeedManagementState("PENDING_DELETION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ElementalInferenceFeedManagementState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ElementalInferenceFeedManagementState FindValue(string value)
+        {
+            return FindValue<ElementalInferenceFeedManagementState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ElementalInferenceFeedManagementState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EmbeddedConvert608To708.
     /// </summary>
     public class EmbeddedConvert608To708 : ConstantClass
@@ -22390,6 +22494,10 @@ namespace Amazon.MediaConvert
         /// Constant FIT_NO_UPSCALE for ScalingBehavior
         /// </summary>
         public static readonly ScalingBehavior FIT_NO_UPSCALE = new ScalingBehavior("FIT_NO_UPSCALE");
+        /// <summary>
+        /// Constant SMART_CROP for ScalingBehavior
+        /// </summary>
+        public static readonly ScalingBehavior SMART_CROP = new ScalingBehavior("SMART_CROP");
         /// <summary>
         /// Constant STRETCH_TO_OUTPUT for ScalingBehavior
         /// </summary>

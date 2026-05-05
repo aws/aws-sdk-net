@@ -39,6 +39,11 @@ namespace Amazon.Pipes
 {
     /// <summary>
     /// <para>Implementation for accessing Pipes</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon EventBridge Pipes connects event sources to targets. Pipes reduces the need
     /// for specialized knowledge and integration code when developing event driven architectures.

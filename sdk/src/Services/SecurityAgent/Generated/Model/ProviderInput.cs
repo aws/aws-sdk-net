@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Provider-specific input parameters for integration
+    /// The provider-specific input for creating an integration. This is a union type that
+    /// contains provider-specific configuration.
     /// </summary>
     public partial class ProviderInput
     {
@@ -39,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Github. 
         /// <para>
-        /// GitHub integration input
+        /// The GitHub-specific input for creating an integration.
         /// </para>
         /// </summary>
         public GitHubIntegrationInput Github

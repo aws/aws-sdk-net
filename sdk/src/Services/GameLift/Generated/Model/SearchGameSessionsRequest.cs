@@ -85,8 +85,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>gameSessionId</b> -- A unique identifier for the game session. You can use either
-    /// a <c>GameSessionId</c> or <c>GameSessionArn</c> value. 
+    ///  <b>gameSessionId</b> -- An identifier for the game session that is unique across
+    /// all regions. You must use the full ARN value. 
     /// </para>
     ///  </li> <li> 
     /// <para>

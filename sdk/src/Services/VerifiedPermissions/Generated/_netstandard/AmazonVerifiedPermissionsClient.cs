@@ -39,6 +39,11 @@ namespace Amazon.VerifiedPermissions
 {
     /// <summary>
     /// <para>Implementation for accessing VerifiedPermissions</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Verified Permissions is a permissions management service from Amazon Web Services.
     /// You can use Verified Permissions to manage permissions for your application, and authorize

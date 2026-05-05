@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCore.Model
         private MemoryContent _content;
         private string _memoryRecordId;
         private string _memoryStrategyId;
+        private Dictionary<string, MemoryRecordMetadataValue> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, MemoryRecordMetadataValue>() : null;
         private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _timestamp;
 
@@ -94,6 +95,30 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetMemoryStrategyId()
         {
             return this._memoryStrategyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Metadata key-value pairs to be stored with the memory record.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public Dictionary<string, MemoryRecordMetadataValue> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

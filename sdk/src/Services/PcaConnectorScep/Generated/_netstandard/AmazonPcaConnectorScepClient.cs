@@ -39,6 +39,11 @@ namespace Amazon.PcaConnectorScep
 {
     /// <summary>
     /// <para>Implementation for accessing PcaConnectorScep</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Connector for SCEP creates a connector between Amazon Web Services Private CA and
     /// your SCEP-enabled clients and devices. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/scep-connector.htmlconnector-for-scep.html">Connector

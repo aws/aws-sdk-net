@@ -73,6 +73,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAutoInvestigationEnabled())
+            {
+                context.Writer.WritePropertyName("AutoInvestigationEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.AutoInvestigationEnabled.Value);
+            }
+
             if(publicRequest.IsSetBurnRateConfigurations())
             {
                 context.Writer.WritePropertyName("BurnRateConfigurations");
@@ -87,6 +93,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetCreateRecommendedSlo())
+            {
+                context.Writer.WritePropertyName("CreateRecommendedSlo");
+                context.Writer.WriteBooleanValue(publicRequest.CreateRecommendedSlo.Value);
             }
 
             if(publicRequest.IsSetDescription())

@@ -39,6 +39,11 @@ namespace Amazon.PinpointSMSVoiceV2
 {
     /// <summary>
     /// <para>Implementation for accessing PinpointSMSVoiceV2</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Welcome to the <i>End User Messaging SMS, version 2 API Reference</i>. This guide
     /// provides information about End User Messaging SMS, version 2 API resources, including

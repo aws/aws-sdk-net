@@ -137,6 +137,22 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.LogGroupNamePattern);
             }
 
+            if(publicRequest.IsSetLogGroupTags())
+            {
+                context.Writer.WritePropertyName("logGroupTags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLogGroupTagsListValue in publicRequest.LogGroupTags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestLogGroupTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetNextToken())
             {
                 context.Writer.WritePropertyName("nextToken");

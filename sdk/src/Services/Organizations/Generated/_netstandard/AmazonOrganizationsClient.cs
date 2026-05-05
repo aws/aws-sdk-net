@@ -39,6 +39,11 @@ namespace Amazon.Organizations
 {
     /// <summary>
     /// <para>Implementation for accessing Organizations</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Organizations is a web service that enables you to consolidate your multiple Amazon
     /// Web Services accounts into an <i>organization</i> and centrally manage your accounts

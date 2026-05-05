@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for the DeleteTargetDomain operation
+    /// Output for the DeleteTargetDomain operation.
     /// </summary>
     public partial class DeleteTargetDomainResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomainId. 
         /// <para>
-        /// Unique identifier of the deleted target domain
+        /// The unique identifier of the deleted target domain.
         /// </para>
         /// </summary>
         public string TargetDomainId

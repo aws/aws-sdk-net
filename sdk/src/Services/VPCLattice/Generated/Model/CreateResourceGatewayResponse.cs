@@ -39,6 +39,7 @@ namespace Amazon.VPCLattice.Model
         private ResourceGatewayIpAddressType _ipAddressType;
         private int? _ipv4AddressesPerEni;
         private string _name;
+        private ResourceConfigDnsResolution _resourceConfigDnsResolution;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ResourceGatewayStatus _status;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -136,6 +137,25 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceConfigDnsResolution. 
+        /// <para>
+        /// The DNS resolution type for resource configurations that are associated with this
+        /// resource gateway.
+        /// </para>
+        /// </summary>
+        public ResourceConfigDnsResolution ResourceConfigDnsResolution
+        {
+            get { return this._resourceConfigDnsResolution; }
+            set { this._resourceConfigDnsResolution = value; }
+        }
+
+        // Check to see if ResourceConfigDnsResolution property is set
+        internal bool IsSetResourceConfigDnsResolution()
+        {
+            return this._resourceConfigDnsResolution != null;
         }
 
         /// <summary>

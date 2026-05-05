@@ -39,6 +39,11 @@ namespace Amazon.Budgets
 {
     /// <summary>
     /// <para>Implementation for accessing Budgets</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Use the Amazon Web Services Budgets API to plan your service usage, service costs,
     /// and instance reservations. This API reference provides descriptions, syntax, and usage

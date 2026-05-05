@@ -29,82 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LicenseConfiguration Object
     /// </summary>  
-    public class LicenseConfigurationUnmarshaller : IJsonUnmarshaller<LicenseConfiguration, JsonUnmarshallerContext>
+    public class LicenseConfigurationUnmarshaller : ICborUnmarshaller<LicenseConfiguration, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LicenseConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LicenseConfiguration Unmarshall(CborUnmarshallerContext context)
         {
             LicenseConfiguration unmarshalledObject = new LicenseConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("instanceType", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("licenseEdition", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseEdition = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("licenseModel", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseModel = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("licenseName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("licenseVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("metricsSource", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<MetricSource, MetricSourceUnmarshaller>(MetricSourceUnmarshaller.Instance);
-                    unmarshalledObject.MetricsSource = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("numberOfCores", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfCores = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("operatingSystem", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "instanceType":
+                        {
+                            context.AddPathSegment("InstanceType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "licenseEdition":
+                        {
+                            context.AddPathSegment("LicenseEdition");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LicenseEdition = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "licenseModel":
+                        {
+                            context.AddPathSegment("LicenseModel");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LicenseModel = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "licenseName":
+                        {
+                            context.AddPathSegment("LicenseName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LicenseName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "licenseVersion":
+                        {
+                            context.AddPathSegment("LicenseVersion");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LicenseVersion = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "metricsSource":
+                        {
+                            context.AddPathSegment("MetricsSource");
+                            var unmarshaller = new CborListUnmarshaller<MetricSource, MetricSourceUnmarshaller>(MetricSourceUnmarshaller.Instance);
+                            unmarshalledObject.MetricsSource = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "numberOfCores":
+                        {
+                            context.AddPathSegment("NumberOfCores");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.NumberOfCores = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "operatingSystem":
+                        {
+                            context.AddPathSegment("OperatingSystem");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Member-specific configuration
+    /// The configuration for a membership. This is a union type that contains member-type-specific
+    /// configuration.
     /// </summary>
     public partial class MembershipConfig
     {
@@ -39,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// Configuration for user members
+        /// The user configuration for the membership.
         /// </para>
         /// </summary>
         public UserConfig User

@@ -39,6 +39,11 @@ namespace Amazon.EMRContainers
 {
     /// <summary>
     /// <para>Implementation for accessing EMRContainers</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon EMR on EKS provides a deployment option for Amazon EMR that allows you to run
     /// open-source big data frameworks on Amazon Elastic Kubernetes Service (Amazon EKS).

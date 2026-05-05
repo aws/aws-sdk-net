@@ -39,6 +39,11 @@ namespace Amazon.ConnectWisdomService
 {
     /// <summary>
     /// <para>Implementation for accessing ConnectWisdomService</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Connect Wisdom delivers agents the information they need to solve customer
     /// issues as they're actively speaking with customers. Agents can search across connected

@@ -319,7 +319,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The protocol type of the gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public GatewayProtocolType ProtocolType
         {
             get { return this._protocolType; }

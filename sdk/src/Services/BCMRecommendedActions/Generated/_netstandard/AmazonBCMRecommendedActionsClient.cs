@@ -39,6 +39,11 @@ namespace Amazon.BCMRecommendedActions
 {
     /// <summary>
     /// <para>Implementation for accessing BCMRecommendedActions</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You can use the Billing and Cost Management Recommended Actions API to programmatically
     /// query your best practices and recommendations to optimize your costs.

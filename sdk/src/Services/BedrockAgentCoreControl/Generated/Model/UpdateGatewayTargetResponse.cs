@@ -44,6 +44,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _name;
         private PrivateEndpoint _privateEndpoint;
         private List<ManagedResourceDetails> _privateEndpointManagedResources = AWSConfigs.InitializeCollections ? new List<ManagedResourceDetails>() : null;
+        private TargetProtocolType _protocolType;
         private TargetStatus _status;
         private List<string> _statusReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TargetConfiguration _targetConfiguration;
@@ -245,6 +246,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetPrivateEndpointManagedResources()
         {
             return this._privateEndpointManagedResources != null && (this._privateEndpointManagedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProtocolType. 
+        /// <para>
+        /// The protocol type of the updated gateway target.
+        /// </para>
+        /// </summary>
+        public TargetProtocolType ProtocolType
+        {
+            get { return this._protocolType; }
+            set { this._protocolType = value; }
+        }
+
+        // Check to see if ProtocolType property is set
+        internal bool IsSetProtocolType()
+        {
+            return this._protocolType != null;
         }
 
         /// <summary>

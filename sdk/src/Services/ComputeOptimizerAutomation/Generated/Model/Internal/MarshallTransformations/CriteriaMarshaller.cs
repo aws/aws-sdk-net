@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Criteria Marshaller
     /// </summary>
-    public class CriteriaMarshaller : IRequestMarshaller<Criteria, JsonMarshallerContext> 
+    public class CriteriaMarshaller : IRequestMarshaller<Criteria, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,138 +45,131 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Criteria requestObject, JsonMarshallerContext context)
+        public void Marshall(Criteria requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEbsVolumeSizeInGib())
+
+            if (requestObject.IsSetEbsVolumeSizeInGib())
             {
-                context.Writer.WritePropertyName("ebsVolumeSizeInGib");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ebsVolumeSizeInGib");
+                context.Writer.WriteStartArray(requestObject.EbsVolumeSizeInGib.Count);
                 foreach(var requestObjectEbsVolumeSizeInGibListValue in requestObject.EbsVolumeSizeInGib)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = IntegerCriteriaConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectEbsVolumeSizeInGibListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetEbsVolumeType())
+            if (requestObject.IsSetEbsVolumeType())
             {
-                context.Writer.WritePropertyName("ebsVolumeType");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ebsVolumeType");
+                context.Writer.WriteStartArray(requestObject.EbsVolumeType.Count);
                 foreach(var requestObjectEbsVolumeTypeListValue in requestObject.EbsVolumeType)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = StringCriteriaConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectEbsVolumeTypeListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetEstimatedMonthlySavings())
+            if (requestObject.IsSetEstimatedMonthlySavings())
             {
-                context.Writer.WritePropertyName("estimatedMonthlySavings");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("estimatedMonthlySavings");
+                context.Writer.WriteStartArray(requestObject.EstimatedMonthlySavings.Count);
                 foreach(var requestObjectEstimatedMonthlySavingsListValue in requestObject.EstimatedMonthlySavings)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = DoubleCriteriaConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectEstimatedMonthlySavingsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetLookBackPeriodInDays())
+            if (requestObject.IsSetLookBackPeriodInDays())
             {
-                context.Writer.WritePropertyName("lookBackPeriodInDays");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("lookBackPeriodInDays");
+                context.Writer.WriteStartArray(requestObject.LookBackPeriodInDays.Count);
                 foreach(var requestObjectLookBackPeriodInDaysListValue in requestObject.LookBackPeriodInDays)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = IntegerCriteriaConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectLookBackPeriodInDaysListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetRegion())
+            if (requestObject.IsSetRegion())
             {
-                context.Writer.WritePropertyName("region");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("region");
+                context.Writer.WriteStartArray(requestObject.Region.Count);
                 foreach(var requestObjectRegionListValue in requestObject.Region)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = StringCriteriaConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectRegionListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetResourceArn())
+            if (requestObject.IsSetResourceArn())
             {
-                context.Writer.WritePropertyName("resourceArn");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("resourceArn");
+                context.Writer.WriteStartArray(requestObject.ResourceArn.Count);
                 foreach(var requestObjectResourceArnListValue in requestObject.ResourceArn)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = StringCriteriaConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceArnListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetResourceTag())
+            if (requestObject.IsSetResourceTag())
             {
-                context.Writer.WritePropertyName("resourceTag");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("resourceTag");
+                context.Writer.WriteStartArray(requestObject.ResourceTag.Count);
                 foreach(var requestObjectResourceTagListValue in requestObject.ResourceTag)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ResourceTagsCriteriaConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceTagListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetRestartNeeded())
+            if (requestObject.IsSetRestartNeeded())
             {
-                context.Writer.WritePropertyName("restartNeeded");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("restartNeeded");
+                context.Writer.WriteStartArray(requestObject.RestartNeeded.Count);
                 foreach(var requestObjectRestartNeededListValue in requestObject.RestartNeeded)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = StringCriteriaConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectRestartNeededListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

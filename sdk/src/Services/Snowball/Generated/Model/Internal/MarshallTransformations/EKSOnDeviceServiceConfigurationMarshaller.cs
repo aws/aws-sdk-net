@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EKSOnDeviceServiceConfiguration Marshaller
     /// </summary>
-    public class EKSOnDeviceServiceConfigurationMarshaller : IRequestMarshaller<EKSOnDeviceServiceConfiguration, JsonMarshallerContext> 
+    public class EKSOnDeviceServiceConfigurationMarshaller : IRequestMarshaller<EKSOnDeviceServiceConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EKSOnDeviceServiceConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(EKSOnDeviceServiceConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEKSAnywhereVersion())
-            {
-                context.Writer.WritePropertyName("EKSAnywhereVersion");
-                context.Writer.WriteStringValue(requestObject.EKSAnywhereVersion);
-            }
 
-            if(requestObject.IsSetKubernetesVersion())
+            if (requestObject.IsSetEKSAnywhereVersion())
             {
-                context.Writer.WritePropertyName("KubernetesVersion");
-                context.Writer.WriteStringValue(requestObject.KubernetesVersion);
+                context.Writer.WriteTextString("EKSAnywhereVersion");
+                context.Writer.WriteTextString(requestObject.EKSAnywhereVersion);
             }
-
+            if (requestObject.IsSetKubernetesVersion())
+            {
+                context.Writer.WriteTextString("KubernetesVersion");
+                context.Writer.WriteTextString(requestObject.KubernetesVersion);
+            }
         }
 
         /// <summary>

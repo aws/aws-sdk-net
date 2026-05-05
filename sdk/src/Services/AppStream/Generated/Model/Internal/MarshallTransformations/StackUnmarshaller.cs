@@ -62,6 +62,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccessEndpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AgentAccessConfig", targetDepth))
+                {
+                    var unmarshaller = AgentAccessConfigUnmarshaller.Instance;
+                    unmarshalledObject.AgentAccessConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ApplicationSettings", targetDepth))
                 {
                     var unmarshaller = ApplicationSettingsResponseUnmarshaller.Instance;

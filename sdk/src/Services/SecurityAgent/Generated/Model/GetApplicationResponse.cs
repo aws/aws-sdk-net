@@ -44,7 +44,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// Application ID
+        /// The unique identifier of the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// Name of the application, automatically assigned by the service
+        /// The name of the application.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -81,7 +81,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DefaultKmsKeyId. 
         /// <para>
-        /// Default KMS key identifier used to encrypt application data
+        /// The identifier of the default AWS KMS key used to encrypt data for the application.
         /// </para>
         /// </summary>
         public string DefaultKmsKeyId
@@ -99,7 +99,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Domain where the application is available
+        /// The domain associated with the application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,7 +118,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IdcConfiguration. 
         /// <para>
-        /// IAM Identity Center configuration for the application
+        /// The IAM Identity Center configuration for the application.
         /// </para>
         /// </summary>
         public IdCConfiguration IdcConfiguration
@@ -136,7 +136,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+        /// The Amazon Resource Name (ARN) of the IAM role associated with the application.
         /// </para>
         /// </summary>
         public string RoleArn

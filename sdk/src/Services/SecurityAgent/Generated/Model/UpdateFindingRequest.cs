@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFinding operation.
-    /// Updates an existing security finding with new details or status
+    /// Updates the status or risk level of a security finding.
     /// </summary>
     public partial class UpdateFindingRequest : AmazonSecurityAgentRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// ID of the agent space where the finding exists
+        /// The unique identifier of the agent space that contains the finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property FindingId. 
         /// <para>
-        /// Identifier of the finding to update
+        /// The unique identifier of the finding to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +81,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RiskLevel. 
         /// <para>
-        /// Updated severity level of the identified risk
+        /// The updated risk level for the finding.
         /// </para>
         /// </summary>
         public RiskLevel RiskLevel
@@ -99,7 +99,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Updated status of the finding
+        /// The updated status for the finding.
         /// </para>
         /// </summary>
         public FindingStatus Status

@@ -39,10 +39,8 @@ namespace Amazon.MediaLive.Model
         private OutputLocationRef _destination;
 
         /// <summary>
-        /// Gets and sets the property ConnectedRouterInputs. Shows the MediaConnect Router Inputs
-        /// that are connected to this output. This parameter is purely informative, and editing
-        /// it will have no effect. To connect or disconnect MediaConnect Router Inputs, go to
-        /// MediaConnect.
+        /// Gets and sets the property ConnectedRouterInputs. This parameter is deprecated and
+        /// unused.
         /// </summary>
         public MediaConnectRouterOutputConnectionMap ConnectedRouterInputs
         {

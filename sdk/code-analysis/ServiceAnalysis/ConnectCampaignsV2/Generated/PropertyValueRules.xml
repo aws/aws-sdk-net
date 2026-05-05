@@ -53,6 +53,12 @@
     <pattern>[-:/a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.DeleteCampaignEntryLimitsRequest.Id</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[-:/a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.DeleteConnectInstanceConfigRequest.ConnectInstanceId</property>
     <min>1</min>
     <max>256</max>
@@ -227,6 +233,12 @@
     <pattern>[-:/a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.UpdateCampaignEntryLimitsRequest.Id</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[-:/a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.UpdateCampaignFlowAssociationRequest.ConnectCampaignFlowArn</property>
     <min>20</min>
     <max>500</max>
@@ -387,6 +399,16 @@
     <property>Amazon.ConnectCampaignsV2.Model.EncryptionConfig.KeyArn</property>
     <min>0</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.EntryLimitsConfig.MaxEntryCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.EntryLimitsConfig.MinEntryInterval</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>P(?:([-+]?[0-9]+)D)?(T(?:([-+]?[0-9]+)H)?(?:([-+]?[0-9]+)M)?(?:([-+]?[0-9]+)(?:[.,]([0-9]{0,9}))?S)?)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.EventTrigger.CustomerProfilesDomainArn</property>

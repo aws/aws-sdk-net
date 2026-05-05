@@ -39,6 +39,11 @@ namespace Amazon.AuditManager
 {
     /// <summary>
     /// <para>Implementation for accessing AuditManager</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Welcome to the Audit Manager API reference. This guide is for developers who need
     /// detailed information about the Audit Manager API operations, data types, and errors.

@@ -73,6 +73,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdvancedConfiguration())
+            {
+                context.Writer.WritePropertyName("AdvancedConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AdvancedConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AdvancedConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetCellTowers())
             {
                 context.Writer.WritePropertyName("CellTowers");

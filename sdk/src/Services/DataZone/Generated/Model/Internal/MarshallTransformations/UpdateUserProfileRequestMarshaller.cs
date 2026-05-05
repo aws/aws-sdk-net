@@ -79,6 +79,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetSessionName())
+            {
+                context.Writer.WritePropertyName("sessionName");
+                context.Writer.WriteStringValue(publicRequest.SessionName);
+            }
+
             if(publicRequest.IsSetStatus())
             {
                 context.Writer.WritePropertyName("status");

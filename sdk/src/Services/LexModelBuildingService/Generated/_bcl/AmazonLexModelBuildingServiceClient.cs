@@ -39,6 +39,11 @@ namespace Amazon.LexModelBuildingService
 {
     /// <summary>
     /// <para>Implementation for accessing LexModelBuildingService</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Lex Build-Time Actions 
     /// <para>
@@ -311,6 +316,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateBotVersion">REST API Reference for CreateBotVersion Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual CreateBotVersionResponse CreateBotVersion(CreateBotVersionRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -368,6 +374,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateBotVersion">REST API Reference for CreateBotVersion Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<CreateBotVersionResponse> CreateBotVersionAsync(CreateBotVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -427,6 +434,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateIntentVersion">REST API Reference for CreateIntentVersion Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual CreateIntentVersionResponse CreateIntentVersion(CreateIntentVersionRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -485,6 +493,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateIntentVersion">REST API Reference for CreateIntentVersion Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<CreateIntentVersionResponse> CreateIntentVersionAsync(CreateIntentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -544,6 +553,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateSlotTypeVersion">REST API Reference for CreateSlotTypeVersion Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual CreateSlotTypeVersionResponse CreateSlotTypeVersion(CreateSlotTypeVersionRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -602,6 +612,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/CreateSlotTypeVersion">REST API Reference for CreateSlotTypeVersion Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<CreateSlotTypeVersionResponse> CreateSlotTypeVersionAsync(CreateSlotTypeVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -682,6 +693,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBot">REST API Reference for DeleteBot Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual DeleteBotResponse DeleteBot(DeleteBotRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -761,6 +773,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBot">REST API Reference for DeleteBot Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<DeleteBotResponse> DeleteBotAsync(DeleteBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -829,6 +842,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotAlias">REST API Reference for DeleteBotAlias Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual DeleteBotAliasResponse DeleteBotAlias(DeleteBotAliasRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -896,6 +910,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotAlias">REST API Reference for DeleteBotAlias Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<DeleteBotAliasResponse> DeleteBotAliasAsync(DeleteBotAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -939,6 +954,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotChannelAssociation">REST API Reference for DeleteBotChannelAssociation Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual DeleteBotChannelAssociationResponse DeleteBotChannelAssociation(DeleteBotChannelAssociationRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -981,6 +997,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotChannelAssociation">REST API Reference for DeleteBotChannelAssociation Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<DeleteBotChannelAssociationResponse> DeleteBotChannelAssociationAsync(DeleteBotChannelAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1045,6 +1062,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">REST API Reference for DeleteBotVersion Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual DeleteBotVersionResponse DeleteBotVersion(DeleteBotVersionRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1108,6 +1126,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">REST API Reference for DeleteBotVersion Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<DeleteBotVersionResponse> DeleteBotVersionAsync(DeleteBotVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1186,6 +1205,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">REST API Reference for DeleteIntent Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual DeleteIntentResponse DeleteIntent(DeleteIntentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1263,6 +1283,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">REST API Reference for DeleteIntent Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<DeleteIntentResponse> DeleteIntentAsync(DeleteIntentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1327,6 +1348,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">REST API Reference for DeleteIntentVersion Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual DeleteIntentVersionResponse DeleteIntentVersion(DeleteIntentVersionRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1390,6 +1412,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">REST API Reference for DeleteIntentVersion Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<DeleteIntentVersionResponse> DeleteIntentVersionAsync(DeleteIntentVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1468,6 +1491,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">REST API Reference for DeleteSlotType Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual DeleteSlotTypeResponse DeleteSlotType(DeleteSlotTypeRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1545,6 +1569,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">REST API Reference for DeleteSlotType Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<DeleteSlotTypeResponse> DeleteSlotTypeAsync(DeleteSlotTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1609,6 +1634,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">REST API Reference for DeleteSlotTypeVersion Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual DeleteSlotTypeVersionResponse DeleteSlotTypeVersion(DeleteSlotTypeVersionRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1672,6 +1698,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">REST API Reference for DeleteSlotTypeVersion Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<DeleteSlotTypeVersionResponse> DeleteSlotTypeVersionAsync(DeleteSlotTypeVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1725,6 +1752,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">REST API Reference for DeleteUtterances Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual DeleteUtterancesResponse DeleteUtterances(DeleteUtterancesRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1777,6 +1805,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">REST API Reference for DeleteUtterances Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<DeleteUtterancesResponse> DeleteUtterancesAsync(DeleteUtterancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1817,6 +1846,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBot">REST API Reference for GetBot Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetBotResponse GetBot(GetBotRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1856,6 +1886,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBot">REST API Reference for GetBot Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetBotResponse> GetBotAsync(GetBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1896,6 +1927,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAlias">REST API Reference for GetBotAlias Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetBotAliasResponse GetBotAlias(GetBotAliasRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1935,6 +1967,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAlias">REST API Reference for GetBotAlias Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetBotAliasResponse> GetBotAliasAsync(GetBotAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -1971,6 +2004,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAliases">REST API Reference for GetBotAliases Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetBotAliasesResponse GetBotAliases(GetBotAliasesRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2006,6 +2040,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotAliases">REST API Reference for GetBotAliases Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetBotAliasesResponse> GetBotAliasesAsync(GetBotAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2046,6 +2081,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociation">REST API Reference for GetBotChannelAssociation Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetBotChannelAssociationResponse GetBotChannelAssociation(GetBotChannelAssociationRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2085,6 +2121,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociation">REST API Reference for GetBotChannelAssociation Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetBotChannelAssociationResponse> GetBotChannelAssociationAsync(GetBotChannelAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2122,6 +2159,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociations">REST API Reference for GetBotChannelAssociations Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetBotChannelAssociationsResponse GetBotChannelAssociations(GetBotChannelAssociationsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2158,6 +2196,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotChannelAssociations">REST API Reference for GetBotChannelAssociations Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetBotChannelAssociationsResponse> GetBotChannelAssociationsAsync(GetBotChannelAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2207,6 +2246,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBots">REST API Reference for GetBots Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetBotsResponse GetBots(GetBotsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2255,6 +2295,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBots">REST API Reference for GetBots Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetBotsResponse> GetBotsAsync(GetBotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2306,6 +2347,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotVersions">REST API Reference for GetBotVersions Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetBotVersionsResponse GetBotVersions(GetBotVersionsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2356,6 +2398,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBotVersions">REST API Reference for GetBotVersions Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetBotVersionsResponse> GetBotVersionsAsync(GetBotVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2395,6 +2438,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinIntent">REST API Reference for GetBuiltinIntent Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetBuiltinIntentResponse GetBuiltinIntent(GetBuiltinIntentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2433,6 +2477,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinIntent">REST API Reference for GetBuiltinIntent Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetBuiltinIntentResponse> GetBuiltinIntentAsync(GetBuiltinIntentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2469,6 +2514,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinIntents">REST API Reference for GetBuiltinIntents Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetBuiltinIntentsResponse GetBuiltinIntents(GetBuiltinIntentsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2504,6 +2550,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinIntents">REST API Reference for GetBuiltinIntents Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetBuiltinIntentsResponse> GetBuiltinIntentsAsync(GetBuiltinIntentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2545,6 +2592,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinSlotTypes">REST API Reference for GetBuiltinSlotTypes Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetBuiltinSlotTypesResponse GetBuiltinSlotTypes(GetBuiltinSlotTypesRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2585,6 +2633,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetBuiltinSlotTypes">REST API Reference for GetBuiltinSlotTypes Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetBuiltinSlotTypesResponse> GetBuiltinSlotTypesAsync(GetBuiltinSlotTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2619,6 +2668,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport">REST API Reference for GetExport Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetExportResponse GetExport(GetExportRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2652,6 +2702,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetExport">REST API Reference for GetExport Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetExportResponse> GetExportAsync(GetExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2686,6 +2737,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport">REST API Reference for GetImport Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetImportResponse GetImport(GetImportRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2719,6 +2771,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport">REST API Reference for GetImport Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetImportResponse> GetImportAsync(GetImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2759,6 +2812,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntent">REST API Reference for GetIntent Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetIntentResponse GetIntent(GetIntentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2798,6 +2852,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntent">REST API Reference for GetIntent Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetIntentResponse> GetIntentAsync(GetIntentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2847,6 +2902,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntents">REST API Reference for GetIntents Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetIntentsResponse GetIntents(GetIntentsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2895,6 +2951,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntents">REST API Reference for GetIntents Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetIntentsResponse> GetIntentsAsync(GetIntentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2947,6 +3004,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntentVersions">REST API Reference for GetIntentVersions Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetIntentVersionsResponse GetIntentVersions(GetIntentVersionsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -2998,6 +3056,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetIntentVersions">REST API Reference for GetIntentVersions Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetIntentVersionsResponse> GetIntentVersionsAsync(GetIntentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3034,6 +3093,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigration">REST API Reference for GetMigration Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetMigrationResponse GetMigration(GetMigrationRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3069,6 +3129,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigration">REST API Reference for GetMigration Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetMigrationResponse> GetMigrationAsync(GetMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3100,6 +3161,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigrations">REST API Reference for GetMigrations Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetMigrationsResponse GetMigrations(GetMigrationsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3130,6 +3192,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetMigrations">REST API Reference for GetMigrations Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetMigrationsResponse> GetMigrationsAsync(GetMigrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3170,6 +3233,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotType">REST API Reference for GetSlotType Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetSlotTypeResponse GetSlotType(GetSlotTypeRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3209,6 +3273,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotType">REST API Reference for GetSlotType Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetSlotTypeResponse> GetSlotTypeAsync(GetSlotTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3258,6 +3323,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypes">REST API Reference for GetSlotTypes Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetSlotTypesResponse GetSlotTypes(GetSlotTypesRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3306,6 +3372,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypes">REST API Reference for GetSlotTypes Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetSlotTypesResponse> GetSlotTypesAsync(GetSlotTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3358,6 +3425,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypeVersions">REST API Reference for GetSlotTypeVersions Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetSlotTypeVersionsResponse GetSlotTypeVersions(GetSlotTypeVersionsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3409,6 +3477,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetSlotTypeVersions">REST API Reference for GetSlotTypeVersions Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetSlotTypeVersionsResponse> GetSlotTypeVersionsAsync(GetSlotTypeVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3473,6 +3542,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">REST API Reference for GetUtterancesView Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual GetUtterancesViewResponse GetUtterancesView(GetUtterancesViewRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3536,6 +3606,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">REST API Reference for GetUtterancesView Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<GetUtterancesViewResponse> GetUtterancesViewAsync(GetUtterancesViewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3571,6 +3642,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3605,6 +3677,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3663,6 +3736,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBot">REST API Reference for PutBot Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual PutBotResponse PutBot(PutBotRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3720,6 +3794,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBot">REST API Reference for PutBot Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<PutBotResponse> PutBotAsync(PutBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3765,6 +3840,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBotAlias">REST API Reference for PutBotAlias Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual PutBotAliasResponse PutBotAlias(PutBotAliasRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3809,6 +3885,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBotAlias">REST API Reference for PutBotAlias Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<PutBotAliasResponse> PutBotAliasAsync(PutBotAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -3917,6 +3994,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutIntent">REST API Reference for PutIntent Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual PutIntentResponse PutIntent(PutIntentRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4024,6 +4102,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutIntent">REST API Reference for PutIntent Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<PutIntentResponse> PutIntentAsync(PutIntentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4082,6 +4161,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutSlotType">REST API Reference for PutSlotType Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual PutSlotTypeResponse PutSlotType(PutSlotTypeRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4139,6 +4219,7 @@ namespace Amazon.LexModelBuildingService
         /// in the request. Check the resource's checksum and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutSlotType">REST API Reference for PutSlotType Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<PutSlotTypeResponse> PutSlotTypeAsync(PutSlotTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4170,6 +4251,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport">REST API Reference for StartImport Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual StartImportResponse StartImport(StartImportRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4200,6 +4282,7 @@ namespace Amazon.LexModelBuildingService
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport">REST API Reference for StartImport Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<StartImportResponse> StartImportAsync(StartImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4245,6 +4328,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual StartMigrationResponse StartMigration(StartMigrationRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4289,6 +4373,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<StartMigrationResponse> StartMigrationAsync(StartMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4327,6 +4412,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4364,6 +4450,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4401,6 +4488,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -4437,6 +4525,7 @@ namespace Amazon.LexModelBuildingService
         /// The resource specified in the request was not found. Check the resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();

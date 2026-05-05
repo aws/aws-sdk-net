@@ -50,6 +50,12 @@ namespace Amazon.Runtime
                     {
                         return false;
                     }
+                    if (UseNewRetries2026)
+                    {
+                        executionContext.RequestContext.LastCapacityType = IsThrottlingError(exception) ?
+                            CapacityManager.CapacityType.Throttling : CapacityManager.CapacityType.Retry;
+                        StoreRetryAfterHeader(executionContext, exception);
+                    }
                     return OnRetry(executionContext, isClockSkewError, IsThrottlingError(exception));
                 }
             }

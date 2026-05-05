@@ -29,64 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ServiceConfiguration Object
     /// </summary>  
-    public class ServiceConfigurationUnmarshaller : IJsonUnmarshaller<ServiceConfiguration, JsonUnmarshallerContext>
+    public class ServiceConfigurationUnmarshaller : ICborUnmarshaller<ServiceConfiguration, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ServiceConfiguration Unmarshall(CborUnmarshallerContext context)
         {
             ServiceConfiguration unmarshalledObject = new ServiceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("autoScalingConfiguration", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoScalingConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("containerConfigurations", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ContainerConfiguration, ContainerConfigurationUnmarshaller>(ContainerConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.ContainerConfigurations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("cpu", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Cpu = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("memory", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Memory = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("taskDefinitionArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskDefinitionArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "autoScalingConfiguration":
+                        {
+                            context.AddPathSegment("AutoScalingConfiguration");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AutoScalingConfiguration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "containerConfigurations":
+                        {
+                            context.AddPathSegment("ContainerConfigurations");
+                            var unmarshaller = new CborListUnmarshaller<ContainerConfiguration, ContainerConfigurationUnmarshaller>(ContainerConfigurationUnmarshaller.Instance);
+                            unmarshalledObject.ContainerConfigurations = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "cpu":
+                        {
+                            context.AddPathSegment("Cpu");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "memory":
+                        {
+                            context.AddPathSegment("Memory");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "taskDefinitionArn":
+                        {
+                            context.AddPathSegment("TaskDefinitionArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.TaskDefinitionArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

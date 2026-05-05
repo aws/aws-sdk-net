@@ -170,6 +170,41 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SplitTunnel", StringUtils.FromBool(publicRequest.SplitTunnel));
                 }
+                if(publicRequest.IsSetTransitGatewayConfiguration())
+                {
+                    if(publicRequest.TransitGatewayConfiguration.IsSetAvailabilityZoneIds())
+                    {
+                        if (publicRequest.TransitGatewayConfiguration.AvailabilityZoneIds.Count == 0)
+                            request.Parameters.Add("TransitGatewayConfiguration" + "." + "AvailabilityZoneId", "");
+                        else
+                        {
+                             int publicRequestTransitGatewayConfigurationlistValueIndex = 1;
+                             foreach(var publicRequestTransitGatewayConfigurationlistValue in publicRequest.TransitGatewayConfiguration.AvailabilityZoneIds)
+                             {
+                                 request.Parameters.Add("TransitGatewayConfiguration" + "." + "AvailabilityZoneId" + "." + publicRequestTransitGatewayConfigurationlistValueIndex, StringUtils.FromString(publicRequestTransitGatewayConfigurationlistValue));
+                                 publicRequestTransitGatewayConfigurationlistValueIndex++;
+                             }
+                        }
+                    }
+                    if(publicRequest.TransitGatewayConfiguration.IsSetAvailabilityZones())
+                    {
+                        if (publicRequest.TransitGatewayConfiguration.AvailabilityZones.Count == 0)
+                            request.Parameters.Add("TransitGatewayConfiguration" + "." + "AvailabilityZone", "");
+                        else
+                        {
+                             int publicRequestTransitGatewayConfigurationlistValueIndex = 1;
+                             foreach(var publicRequestTransitGatewayConfigurationlistValue in publicRequest.TransitGatewayConfiguration.AvailabilityZones)
+                             {
+                                 request.Parameters.Add("TransitGatewayConfiguration" + "." + "AvailabilityZone" + "." + publicRequestTransitGatewayConfigurationlistValueIndex, StringUtils.FromString(publicRequestTransitGatewayConfigurationlistValue));
+                                 publicRequestTransitGatewayConfigurationlistValueIndex++;
+                             }
+                        }
+                    }
+                    if(publicRequest.TransitGatewayConfiguration.IsSetTransitGatewayId())
+                    {
+                        request.Parameters.Add("TransitGatewayConfiguration" + "." + "TransitGatewayId", StringUtils.FromString(publicRequest.TransitGatewayConfiguration.TransitGatewayId));
+                    }
+                }
                 if(publicRequest.IsSetVpcId())
                 {
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));

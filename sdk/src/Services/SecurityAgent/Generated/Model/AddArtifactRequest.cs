@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the AddArtifact operation.
-    /// Adds an Artifact for the given agent space
+    /// Uploads an artifact to an agent space. Artifacts provide additional context for security
+    /// testing, such as architecture diagrams, API specifications, or configuration files.
     /// </summary>
     public partial class AddArtifactRequest : AmazonSecurityAgentRequest
     {
@@ -43,7 +44,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Unique identifier of the agent space
+        /// The unique identifier of the agent space to add the artifact to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +63,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ArtifactContent. 
         /// <para>
-        /// Binary content of the artifact
+        /// The binary content of the artifact to upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +82,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ArtifactType. 
         /// <para>
-        /// Type of the artifact file
+        /// The file type of the artifact. Valid values include TXT, PNG, JPEG, MD, PDF, DOCX,
+        /// DOC, JSON, and YAML.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +102,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property FileName. 
         /// <para>
-        /// Name of the artifact file
+        /// The file name of the artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

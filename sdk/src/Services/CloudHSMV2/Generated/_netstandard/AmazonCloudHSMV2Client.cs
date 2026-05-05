@@ -39,6 +39,11 @@ namespace Amazon.CloudHSMV2
 {
     /// <summary>
     /// <para>Implementation for accessing CloudHSMV2</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// For more information about CloudHSM, see <a href="http://aws.amazon.com/cloudhsm/">CloudHSM</a>
     /// and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/"> CloudHSM

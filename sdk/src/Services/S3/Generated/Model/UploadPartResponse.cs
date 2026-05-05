@@ -38,8 +38,13 @@ namespace Amazon.S3.Model
         private string _checksumCRC32;
         private string _checksumCRC32C;
         private string _checksumCRC64NVME;
+        private string _checksumMD5;
         private string _checksumSHA1;
         private string _checksumSHA256;
+        private string _checksumSHA512;
+        private string _checksumXXHASH128;
+        private string _checksumXXHASH3;
+        private string _checksumXXHASH64;
         private string _eTag;
         private int? _partNumber;
         private RequestCharged _requestCharged;
@@ -70,13 +75,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC32. 
         /// <para>
-        /// The Base64 encoded, 32-bit <c>CRC32 checksum</c> of the object. This checksum is only
-        /// present if the checksum was uploaded with the object. When you use an API operation
-        /// on an object that was uploaded using multipart uploads, this value may not be a direct
-        /// checksum value of the full object. Instead, it's a calculation based on the checksum
-        /// values of each individual part. For more information about how checksums are calculated
-        /// with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// The Base64 encoded, 32-bit <c>CRC32</c> checksum of the part. This will only be present
+        /// if the checksum was provided in the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumCRC32
@@ -94,13 +95,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC32C. 
         /// <para>
-        /// The Base64 encoded, 32-bit <c>CRC32C</c> checksum of the object. This checksum is
-        /// only present if the checksum was uploaded with the object. When you use an API operation
-        /// on an object that was uploaded using multipart uploads, this value may not be a direct
-        /// checksum value of the full object. Instead, it's a calculation based on the checksum
-        /// values of each individual part. For more information about how checksums are calculated
-        /// with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// The Base64 encoded, 32-bit <c>CRC32C</c> checksum of the part. This will only be present
+        /// if the checksum was provided in the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumCRC32C
@@ -118,9 +115,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC64NVME. 
         /// <para>
-        /// This header can be used as a data integrity check to verify that the data received
-        /// is the same data that was originally sent. This header specifies the Base64 encoded,
-        /// 64-bit <c>CRC64NVME</c> checksum of the part. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// The Base64 encoded, 64-bit <c>CRC64NVME</c> checksum of the part. This will only be
+        /// present if the checksum was provided in the request. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
         /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -137,15 +134,31 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChecksumMD5. 
+        /// <para>
+        /// The Base64 encoded, 128-bit <c>MD5</c> checksum of the part. This will only be present
+        /// if the checksum was provided in the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumMD5
+        {
+            get { return this._checksumMD5; }
+            set { this._checksumMD5 = value; }
+        }
+
+        // Check to see if ChecksumMD5 property is set
+        internal bool IsSetChecksumMD5()
+        {
+            return this._checksumMD5 != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ChecksumSHA1. 
         /// <para>
-        /// The Base64 encoded, 160-bit <c>SHA1</c> digest of the object. This checksum is only
-        /// present if the checksum was uploaded with the object. When you use the API operation
-        /// on an object that was uploaded using multipart uploads, this value may not be a direct
-        /// checksum value of the full object. Instead, it's a calculation based on the checksum
-        /// values of each individual part. For more information about how checksums are calculated
-        /// with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// The Base64 encoded, 160-bit <c>SHA1</c> checksum of the part. This will only be present
+        /// if the checksum was provided in the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumSHA1
@@ -163,13 +176,10 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumSHA256. 
         /// <para>
-        /// The Base64 encoded, 256-bit <c>SHA256</c> digest of the object. This checksum is only
-        /// present if the checksum was uploaded with the object. When you use an API operation
-        /// on an object that was uploaded using multipart uploads, this value may not be a direct
-        /// checksum value of the full object. Instead, it's a calculation based on the checksum
-        /// values of each individual part. For more information about how checksums are calculated
-        /// with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// The Base64 encoded, 256-bit <c>SHA256</c> checksum of the part. This will only be
+        /// present if the checksum was provided in the request. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumSHA256
@@ -182,6 +192,90 @@ namespace Amazon.S3.Model
         internal bool IsSetChecksumSHA256()
         {
             return this._checksumSHA256 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA512. 
+        /// <para>
+        /// The Base64 encoded, 512-bit <c>SHA512</c> checksum of the part. This will only be
+        /// present if the checksum was provided in the request. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA512
+        {
+            get { return this._checksumSHA512; }
+            set { this._checksumSHA512 = value; }
+        }
+
+        // Check to see if ChecksumSHA512 property is set
+        internal bool IsSetChecksumSHA512()
+        {
+            return this._checksumSHA512 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumXXHASH128. 
+        /// <para>
+        /// The Base64 encoded, 128-bit <c>XXHASH128</c> checksum of the part. This will only
+        /// be present if the checksum was provided in the request. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumXXHASH128
+        {
+            get { return this._checksumXXHASH128; }
+            set { this._checksumXXHASH128 = value; }
+        }
+
+        // Check to see if ChecksumXXHASH128 property is set
+        internal bool IsSetChecksumXXHASH128()
+        {
+            return this._checksumXXHASH128 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumXXHASH3. 
+        /// <para>
+        /// The Base64 encoded, 64-bit <c>XXHASH3</c> checksum of the part. This will only be
+        /// present if the checksum was provided in the request. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumXXHASH3
+        {
+            get { return this._checksumXXHASH3; }
+            set { this._checksumXXHASH3 = value; }
+        }
+
+        // Check to see if ChecksumXXHASH3 property is set
+        internal bool IsSetChecksumXXHASH3()
+        {
+            return this._checksumXXHASH3 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumXXHASH64. 
+        /// <para>
+        /// The Base64 encoded, 64-bit <c>XXHASH64</c> checksum of the part. This will only be
+        /// present if the checksum was provided in the request. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumXXHASH64
+        {
+            get { return this._checksumXXHASH64; }
+            set { this._checksumXXHASH64 = value; }
+        }
+
+        // Check to see if ChecksumXXHASH64 property is set
+        internal bool IsSetChecksumXXHASH64()
+        {
+            return this._checksumXXHASH64 != null;
         }
 
         /// <summary>

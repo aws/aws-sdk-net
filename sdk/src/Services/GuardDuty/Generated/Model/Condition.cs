@@ -55,6 +55,10 @@ namespace Amazon.GuardDuty.Model
         /// Represents the <i>equal</i> condition to be applied to a single field when querying
         /// for findings.
         /// </para>
+        ///  
+        /// <para>
+        /// Max values: 50
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -79,6 +83,10 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Represents an <i>equal</i> <b/> condition to be applied to a single field when querying
         /// for findings.
+        /// </para>
+        ///  
+        /// <para>
+        /// Max values: 50
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -291,6 +299,10 @@ namespace Amazon.GuardDuty.Model
         /// Represents the <i>not equal</i> condition to be applied to a single field when querying
         /// for findings.
         /// </para>
+        ///  
+        /// <para>
+        /// Max values: 50
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -315,6 +327,10 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Represents a <i>not equal</i> <b/> condition to be applied to a single field when
         /// querying for findings.
+        /// </para>
+        ///  
+        /// <para>
+        /// Max values: 50
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

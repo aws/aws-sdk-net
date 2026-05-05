@@ -92,6 +92,12 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IdentityStoreArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IdentityStoreArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("InstanceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

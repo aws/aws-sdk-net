@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Files containing relevant data for review
+    /// Represents an artifact that provides context for security testing, such as documentation,
+    /// diagrams, or configuration files.
     /// </summary>
     public partial class Artifact
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Contents. 
         /// <para>
-        /// The content of the artifact
+        /// The content of the artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The file type of the artifact
+        /// The file type of the artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

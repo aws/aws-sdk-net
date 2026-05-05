@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastSoftwareUpdateTime;
         private DateTime? _launchTime;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private ClusterNetworkInterfaceDetails _networkInterface;
         private string _nodeLogicalId;
         private VpcConfig _overrideVpcConfig;
         private ClusterInstancePlacement _placement;
@@ -284,6 +285,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLifeCycleConfig()
         {
             return this._lifeCycleConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterface. 
+        /// <para>
+        /// The network interface configuration for the cluster node.
+        /// </para>
+        /// </summary>
+        public ClusterNetworkInterfaceDetails NetworkInterface
+        {
+            get { return this._networkInterface; }
+            set { this._networkInterface = value; }
+        }
+
+        // Check to see if NetworkInterface property is set
+        internal bool IsSetNetworkInterface()
+        {
+            return this._networkInterface != null;
         }
 
         /// <summary>

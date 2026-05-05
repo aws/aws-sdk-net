@@ -56,6 +56,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("http", targetDepth))
+                {
+                    var unmarshaller = HttpTargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Http = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("mcp", targetDepth))
                 {
                     var unmarshaller = McpTargetConfigurationUnmarshaller.Instance;

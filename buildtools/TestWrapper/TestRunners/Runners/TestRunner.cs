@@ -21,8 +21,8 @@ namespace TestWrapper.TestRunners
         }
 
         private readonly static TimeSpan MAX_SINGLE_EXEC_TIME = TimeSpan.FromHours(2);
-        private const int MAX_TEST_RUNS_DEFAULT = 15;
-        private const int MAX_CONSECUTIVE_FAILURES_DEFAULT = 5;
+        private const int MAX_TEST_RUNS_DEFAULT = 5;
+        private const int MAX_CONSECUTIVE_FAILURES_DEFAULT = 3;
         private static readonly HashSet<char> CHARS_TO_QUOTE_ON = new HashSet<char>
         {
             ' ',

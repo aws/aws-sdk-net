@@ -104,8 +104,12 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <b>Cross-account use</b>: Yes. The source KMS key and destination KMS key can be
     /// in different Amazon Web Services accounts. Either or both KMS keys can be in a different
-    /// account than the caller. To specify a KMS key in a different account, you must use
-    /// its key ARN or alias ARN.
+    /// account than the caller. To specify a KMS key in a different account, use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+    /// ARN</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-alias-ARN">alias
+    /// ARN</a>. A short <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
+    /// ID</a> is also acceptable for the source key when decrypting symmetric ciphertexts,
+    /// though using a full key ARN is recommended to be more explicit about the intended
+    /// KMS key.
     /// </para>
     ///  
     /// <para>
@@ -502,7 +506,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using
         /// an alias name, prefix it with <c>"alias/"</c>. To specify a KMS key in a different
-        /// Amazon Web Services account, you must use the key ARN or alias ARN.
+        /// Amazon Web Services account, you should use the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>

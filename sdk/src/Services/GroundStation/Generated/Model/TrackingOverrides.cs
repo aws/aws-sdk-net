@@ -42,7 +42,6 @@ namespace Amazon.GroundStation.Model
         /// Program track settings to override for antenna tracking during the contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProgramTrackSettings ProgramTrackSettings
         {
             get { return this._programTrackSettings; }

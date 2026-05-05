@@ -84,10 +84,35 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class PutDeliverySourceRequest : AmazonCloudWatchLogsRequest
     {
+        private Dictionary<string, string> _deliverySourceConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _logType;
         private string _name;
         private string _resourceArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property DeliverySourceConfiguration. 
+        /// <para>
+        /// A map of key-value pairs to configure the delivery source. Both keys and values must
+        /// be between 1 and 255 characters in length. For example, <c>{"samplingRate": "50"}</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> DeliverySourceConfiguration
+        {
+            get { return this._deliverySourceConfiguration; }
+            set { this._deliverySourceConfiguration = value; }
+        }
+
+        // Check to see if DeliverySourceConfiguration property is set
+        internal bool IsSetDeliverySourceConfiguration()
+        {
+            return this._deliverySourceConfiguration != null && (this._deliverySourceConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property LogType. 
@@ -172,7 +197,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For PCS, the valid values are <c>PCS_SCHEDULER_LOGS</c> and <c>PCS_JOBCOMP_LOGS</c>.
+        /// For PCS, the valid values are <c>PCS_SCHEDULER_LOGS</c>, <c>PCS_JOBCOMP_LOGS</c>,
+        /// and <c>PCS_SCHEDULER_AUDIT_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -189,6 +215,10 @@ namespace Amazon.CloudWatchLogs.Model
         ///  </li> <li> 
         /// <para>
         /// For Amazon Web Services Security Hub CSPM, the valid value is <c>SECURITY_FINDING_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Web Services Security Hub, the valid value is <c>SECURITY_FINDING_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -249,7 +279,9 @@ namespace Amazon.CloudWatchLogs.Model
         ///  
         /// <para>
         /// For the <c>SECURITY_FINDING_LOGS</c> logType, use a wildcard ARN for the hub resource.
-        /// For example, <c>arn:aws:securityhub:us-east-1:111122223333:hub/*</c> 
+        /// For Amazon Web Services Security Hub CSPM, use <c>arn:aws:securityhub:us-east-1:111122223333:hub/*</c>
+        /// and for Amazon Web Services Security Hub, use <c>arn:aws:securityhub:us-east-1:111122223333:hubv2/*</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

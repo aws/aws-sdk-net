@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class UpdateMemoryRequest : AmazonBedrockAgentCoreControlRequest
     {
+        private List<IndexedKey> _addIndexedKeys = AWSConfigs.InitializeCollections ? new List<IndexedKey>() : null;
         private string _clientToken;
         private string _description;
         private int? _eventExpiryDuration;
@@ -42,6 +43,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _memoryId;
         private ModifyMemoryStrategies _memoryStrategies;
         private StreamDeliveryResources _streamDeliveryResources;
+
+        /// <summary>
+        /// Gets and sets the property AddIndexedKeys. 
+        /// <para>
+        /// Additional metadata keys to index. Previously indexed keys cannot be removed.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<IndexedKey> AddIndexedKeys
+        {
+            get { return this._addIndexedKeys; }
+            set { this._addIndexedKeys = value; }
+        }
+
+        // Check to see if AddIndexedKeys property is set
+        internal bool IsSetAddIndexedKeys()
+        {
+            return this._addIndexedKeys != null && (this._addIndexedKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 

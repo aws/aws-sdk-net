@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for the BatchGetFindings operation
+    /// Output for the BatchGetFindings operation.
     /// </summary>
     public partial class BatchGetFindingsResponse : AmazonWebServiceResponse
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Findings. 
         /// <para>
-        /// List of successfully retrieved findings
+        /// The list of findings that were found.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -63,7 +63,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property NotFound. 
         /// <para>
-        /// List of finding IDs that could not be found
+        /// The list of finding identifiers that were not found.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -114,6 +114,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetWebAuthnMfaSettings())
+            {
+                context.Writer.WritePropertyName("WebAuthnMfaSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WebAuthnMfaSettingsTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WebAuthnMfaSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

@@ -39,6 +39,11 @@ namespace Amazon.MPA
 {
     /// <summary>
     /// <para>Implementation for accessing MPA</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Multi-party approval is a capability of <a href="http://aws.amazon.com/organizations">Organizations</a>
     /// that allows you to protect a predefined list of operations through a distributed approval

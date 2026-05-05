@@ -187,6 +187,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.SuggestedPresentationDelaySeconds.Value);
             }
 
+            if(requestObject.IsSetUriPathType())
+            {
+                context.Writer.WritePropertyName("UriPathType");
+                context.Writer.WriteStringValue(requestObject.UriPathType);
+            }
+
             if(requestObject.IsSetUtcTiming())
             {
                 context.Writer.WritePropertyName("UtcTiming");

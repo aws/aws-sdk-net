@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Authentication information used to access protected resources
+    /// The authentication configuration for an actor, specifying the provider type and credentials.
     /// </summary>
     public partial class Authentication
     {
@@ -40,7 +40,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
-        /// Provider type for the authentication credentials
+        /// The type of authentication provider. Valid values include SECRETS_MANAGER, AWS_LAMBDA,
+        /// AWS_IAM_ROLE, and AWS_INTERNAL.
         /// </para>
         /// </summary>
         public AuthenticationProviderType ProviderType
@@ -58,7 +59,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Authentication credential value or reference
+        /// The authentication value, such as a secret ARN, Lambda function ARN, or IAM role ARN,
+        /// depending on the provider type.
         /// </para>
         /// </summary>
         public string Value

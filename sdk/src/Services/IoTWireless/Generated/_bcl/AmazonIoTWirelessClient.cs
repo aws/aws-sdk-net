@@ -39,6 +39,11 @@ namespace Amazon.IoTWireless
 {
     /// <summary>
     /// <para>Implementation for accessing IoTWireless</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS IoT Wireless provides bi-directional communication between internet-connected
     /// wireless devices and the AWS Cloud. To onboard both <a href="https://docs.aws.amazon.com/iot-wireless/latest/developerguide/iot-lorawan.html">LoRaWAN</a>

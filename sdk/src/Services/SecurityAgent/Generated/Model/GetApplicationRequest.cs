@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the GetApplication operation.
-    /// Retrieves application details by application ID
+    /// Retrieves information about an application.
     /// </summary>
     public partial class GetApplicationRequest : AmazonSecurityAgentRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// Application ID
+        /// The unique identifier of the application to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

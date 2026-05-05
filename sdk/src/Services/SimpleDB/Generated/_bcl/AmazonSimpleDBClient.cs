@@ -39,6 +39,11 @@ namespace Amazon.SimpleDB
 {
     /// <summary>
     /// <para>Implementation for accessing SimpleDB</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon SimpleDB is a web service providing the core database functions of data indexing
     /// and querying in the cloud. By offloading the time and effort associated with building

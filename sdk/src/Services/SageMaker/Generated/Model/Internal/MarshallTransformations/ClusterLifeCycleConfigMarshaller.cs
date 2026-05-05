@@ -52,6 +52,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.OnCreate);
             }
 
+            if(requestObject.IsSetOnInitComplete())
+            {
+                context.Writer.WritePropertyName("OnInitComplete");
+                context.Writer.WriteStringValue(requestObject.OnInitComplete);
+            }
+
             if(requestObject.IsSetSourceS3Uri())
             {
                 context.Writer.WritePropertyName("SourceS3Uri");

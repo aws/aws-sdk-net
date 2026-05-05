@@ -46,6 +46,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetFactorConfiguration())
+            {
+                context.Writer.WritePropertyName("FactorConfiguration");
+                context.Writer.WriteStringValue(requestObject.FactorConfiguration);
+            }
+
             if(requestObject.IsSetRelyingPartyId())
             {
                 context.Writer.WritePropertyName("RelyingPartyId");

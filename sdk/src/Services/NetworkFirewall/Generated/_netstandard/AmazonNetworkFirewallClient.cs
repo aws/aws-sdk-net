@@ -39,6 +39,11 @@ namespace Amazon.NetworkFirewall
 {
     /// <summary>
     /// <para>Implementation for accessing NetworkFirewall</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This is the API Reference for Network Firewall. This guide is for developers who need
     /// detailed information about the Network Firewall API actions, data types, and errors.

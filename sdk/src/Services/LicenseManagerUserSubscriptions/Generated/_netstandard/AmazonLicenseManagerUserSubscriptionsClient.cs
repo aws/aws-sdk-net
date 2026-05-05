@@ -39,6 +39,11 @@ namespace Amazon.LicenseManagerUserSubscriptions
 {
     /// <summary>
     /// <para>Implementation for accessing LicenseManagerUserSubscriptions</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// With License Manager, you can create user-based subscriptions to utilize licensed
     /// software with a per user subscription fee on Amazon EC2 instances.

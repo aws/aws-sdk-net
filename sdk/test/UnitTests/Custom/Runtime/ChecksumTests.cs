@@ -47,6 +47,7 @@ namespace AWSSDK.UnitTests
         [DataRow(CoreChecksumAlgorithm.CRC64NVME, "", "AAAAAAAAAAA=")]
         [DataRow(CoreChecksumAlgorithm.CRC64NVME, "abc", "BeXKuz/B+us=")]
         [DataRow(CoreChecksumAlgorithm.CRC64NVME, "Hello world", "OOJZ0D8xKts=")]
+        [DataRow(CoreChecksumAlgorithm.SHA512, "Hello world", "t/eDuu2Cl/DbkXRiGE/08I5pwtXl95qUJgD5cl9Yzh8pwYE5v4CwbA//K900c4RS7PQMSIwip+PYDN9vnBwNRw==")]
         [DataTestMethod]
         public void CalculateChecksumTest(CoreChecksumAlgorithm algorithm, string content, string expectedBase64Checksum)
         {
@@ -73,6 +74,7 @@ namespace AWSSDK.UnitTests
         // Checksum required and specified using different value than default
         [DataRow(true, false, CoreChecksumAlgorithm.CRC32C, RequestChecksumCalculation.WHEN_REQUIRED, "", "x-amz-checksum-crc32c")]
         [DataRow(true, false, CoreChecksumAlgorithm.SHA256, RequestChecksumCalculation.WHEN_SUPPORTED, "", "x-amz-checksum-sha256")]
+        [DataRow(true, false, CoreChecksumAlgorithm.SHA512, RequestChecksumCalculation.WHEN_SUPPORTED, "" , "x-amz-checksum-sha512")]
 
         // Checksum specified but another value was already set (pre-calculated header takes precedence)
         [DataRow(true, false, CoreChecksumAlgorithm.CRC32, RequestChecksumCalculation.WHEN_REQUIRED, "x-amz-checksum-crc32", "x-amz-checksum-crc32")]

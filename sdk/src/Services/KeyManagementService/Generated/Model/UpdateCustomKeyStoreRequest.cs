@@ -79,8 +79,10 @@ namespace Amazon.KeyManagementService.Model
     /// friendly name (<c>NewCustomKeyStoreName</c>), to tell KMS about a change to the <c>kmsuser</c>
     /// crypto user password (<c>KeyStorePassword</c>), or to associate the custom key store
     /// with a different, but related, CloudHSM cluster (<c>CloudHsmClusterId</c>). To update
-    /// any property of an CloudHSM key store, the <c>ConnectionState</c> of the CloudHSM
-    /// key store must be <c>DISCONNECTED</c>. 
+    /// most properties of an CloudHSM key store, the <c>ConnectionState</c> of the CloudHSM
+    /// key store must be <c>DISCONNECTED</c>. However, you can update the <c>CustomKeyStoreName</c>
+    /// of an AWS CloudHSM key store when it is in the <c>CONNECTED</c> or <c>DISCONNECTED</c>
+    /// state.
     /// </para>
     ///  
     /// <para>
@@ -271,8 +273,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// To change this value, an CloudHSM key store must be disconnected. An external key
-        /// store can be connected or disconnected.
+        /// To change this value, the custom key store can be connected or disconnected.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

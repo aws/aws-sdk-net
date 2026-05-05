@@ -44,7 +44,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// Display name for the integration
+        /// The display name of the integration.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -62,7 +62,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property InstallationId. 
         /// <para>
-        /// Installation identifier from the provider
+        /// The installation identifier from the integration provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +81,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IntegrationId. 
         /// <para>
-        /// Unique identifier of the integration
+        /// The unique identifier of the integration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// KMS key ID for encrypting integration details
+        /// The identifier of the AWS KMS key used to encrypt data associated with the integration.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -118,7 +118,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// Provider type
+        /// The integration provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -137,7 +137,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
-        /// Type of provider integration
+        /// The type of the integration provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

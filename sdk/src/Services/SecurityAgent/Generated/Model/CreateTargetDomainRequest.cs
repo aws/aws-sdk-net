@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTargetDomain operation.
-    /// Creates a target domain record
+    /// Creates a new target domain for penetration testing. A target domain is a web domain
+    /// that must be registered and verified before it can be tested.
     /// </summary>
     public partial class CreateTargetDomainRequest : AmazonSecurityAgentRequest
     {
@@ -42,7 +43,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to associate with the target domain
+        /// The tags to associate with the target domain.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -65,7 +66,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomainName. 
         /// <para>
-        /// Domain name of the target domain
+        /// The domain name to register as a target domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +85,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property VerificationMethod. 
         /// <para>
-        /// Verification method for the target domain
+        /// The method to use for verifying domain ownership. Valid values are DNS_TXT, HTTP_ROUTE,
+        /// and PRIVATE_VPC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

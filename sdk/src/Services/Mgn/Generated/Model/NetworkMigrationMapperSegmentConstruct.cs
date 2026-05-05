@@ -40,6 +40,7 @@ namespace Amazon.Mgn.Model
         private string _constructType;
         private DateTime? _createdAt;
         private string _description;
+        private bool? _excluded;
         private string _logicalid;
         private string _name;
         private Dictionary<string, string> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -118,6 +119,24 @@ namespace Amazon.Mgn.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Excluded. 
+        /// <para>
+        /// Whether this construct is excluded from the migration.
+        /// </para>
+        /// </summary>
+        public bool? Excluded
+        {
+            get { return this._excluded; }
+            set { this._excluded = value; }
+        }
+
+        // Check to see if Excluded property is set
+        internal bool IsSetExcluded()
+        {
+            return this._excluded.HasValue; 
         }
 
         /// <summary>

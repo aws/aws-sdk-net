@@ -141,7 +141,7 @@ namespace AWSSDK.UnitTests
         public void RetryQuotaReachedAfterASingleRetry()
         {
             var config = CreateConfig();
-            var capacityManager = new CapacityManager(throttleRetryCount: 1, throttleRetryCost: 5, throttleCost: 1, timeoutRetryCost: 10);
+            var capacityManager = new CapacityManager(initialRetryTokens: 5, retryCost: 5, noRetryIncrement: 1, timeoutRetryCost: 10, throttlingRetryCost: 0);
             RunRetryTest((executionContext, retryPolicy) =>
             {
                 Tester.Reset();
@@ -180,7 +180,7 @@ namespace AWSSDK.UnitTests
         public void NoRetriesAtAllIfRetryQuotaIs0()
         {
             var config = CreateConfig();
-            var capacityManager = new CapacityManager(throttleRetryCount: 0, throttleRetryCost: 5, throttleCost: 1, timeoutRetryCost: 10);
+            var capacityManager = new CapacityManager(initialRetryTokens: 0, retryCost: 5, noRetryIncrement: 1, timeoutRetryCost: 10, throttlingRetryCost: 0);
             RunRetryTest((executionContext, retryPolicy) =>
             {
                 Tester.Reset();

@@ -58,6 +58,18 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                     response.ApplicationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IdentityStoreArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IdentityStoreArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("InstanceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InstanceArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

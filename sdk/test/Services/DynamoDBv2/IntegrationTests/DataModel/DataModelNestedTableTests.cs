@@ -121,6 +121,47 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         [Fact]
+        public async Task TestContext_SaveAndBatchGet_WithDerivedTypeItems_ByHashKey()
+        {
+            var model1 = CreateNestedTypeItem(out var id1);
+            var model2 = new ModelA2
+            {
+                Id = Guid.NewGuid(),
+                MyType = new A { Name = "A1", MyPropA = 1 },
+                MyInterface = new InterfaceB
+                {
+                    S2 = 2,
+                    S1 = "s1",
+                    S4 = "s4"
+                },
+                DictionaryClasses = new Dictionary<string, A>
+                {
+                    { "A", new A { Name = "A1", MyPropA = 1 } },
+                    { "B", new B { Name = "A1", MyPropA = 1, MyPropB = 2 } }
+                }
+            };
+
+            var transactWrite = _context.CreateTransactWrite<ModelA>();
+            transactWrite.AddSaveItems(new[] { model1, model2 });
+            await transactWrite.ExecuteAsync();
+
+            var batchGet = _context.CreateBatchGet<ModelA>();
+            batchGet.AddKey(id1);
+            batchGet.AddKey(model2.Id);
+            await batchGet.ExecuteAsync();
+
+            Assert.Equal(2, batchGet.Results.Count);
+
+            var storedModel1 = batchGet.Results.FirstOrDefault(m => m.Id == id1);
+            var storedModel2 = batchGet.Results.FirstOrDefault(m => m.Id == model2.Id);
+
+            Assert.NotNull(storedModel1);
+            Assert.NotNull(storedModel2);
+            Assert.IsType<ModelA1>(storedModel1);
+            Assert.IsType<ModelA2>(storedModel2);
+        }
+
+        [Fact]
         public async Task TestContext_TransactWriteAndLoad_WithLocalSecondaryIndexRangeKey()
         {
             var model = new ModelA2

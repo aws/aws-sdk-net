@@ -39,6 +39,11 @@ namespace Amazon.NetworkMonitor
 {
     /// <summary>
     /// <para>Implementation for accessing NetworkMonitor</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon CloudWatch Network Monitor is an Amazon Web Services active network monitoring
     /// service that identifies if a network issues exists within the Amazon Web Services

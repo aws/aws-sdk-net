@@ -56,6 +56,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("autoRepairConfiguration", targetDepth))
+                {
+                    var unmarshaller = AutoRepairConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AutoRepairConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("infrastructureOptimization", targetDepth))
                 {
                     var unmarshaller = InfrastructureOptimizationUnmarshaller.Instance;

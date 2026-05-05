@@ -39,6 +39,11 @@ namespace Amazon.SageMakerMetrics
 {
     /// <summary>
     /// <para>Implementation for accessing SageMakerMetrics</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Contains all data plane API operations and data types for Amazon SageMaker Metrics.
     /// Use these APIs to put and retrieve (get) features related to your training run.

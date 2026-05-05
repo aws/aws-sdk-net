@@ -95,6 +95,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetLogDelivery())
+            {
+                context.Writer.WritePropertyName("logDelivery");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogDeliveryMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LogDelivery, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetReplicationInfoList())
             {
                 context.Writer.WritePropertyName("replicationInfoList");

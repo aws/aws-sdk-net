@@ -39,6 +39,11 @@ namespace Amazon.FinSpaceData
 {
     /// <summary>
     /// <para>Implementation for accessing FinSpaceData</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The FinSpace APIs let you take actions inside the FinSpace.
     /// </summary>

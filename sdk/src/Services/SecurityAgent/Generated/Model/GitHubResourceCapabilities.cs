@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Capabilities for GitHub repositories
+    /// The capabilities enabled for a GitHub resource integration.
     /// </summary>
     public partial class GitHubResourceCapabilities
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property LeaveComments. 
         /// <para>
-        /// Post code review comments on pull requests
+        /// Indicates whether the integration can leave comments on pull requests.
         /// </para>
         /// </summary>
         public bool? LeaveComments
@@ -58,7 +58,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RemediateCode. 
         /// <para>
-        /// Create pull requests with automated fixes
+        /// Indicates whether the integration can create code remediation pull requests.
         /// </para>
         /// </summary>
         public bool? RemediateCode

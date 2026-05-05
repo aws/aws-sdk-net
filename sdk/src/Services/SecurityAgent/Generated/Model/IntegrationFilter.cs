@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Filter criteria for integrations
+    /// A filter for listing integrations. This is a union type where you can filter by provider
+    /// or provider type.
     /// </summary>
     public partial class IntegrationFilter
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// Filter by provider
+        /// Filter integrations by provider.
         /// </para>
         /// </summary>
         public Provider Provider
@@ -58,7 +59,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
-        /// Filter by provider type
+        /// Filter integrations by provider type.
         /// </para>
         /// </summary>
         public ProviderType ProviderType

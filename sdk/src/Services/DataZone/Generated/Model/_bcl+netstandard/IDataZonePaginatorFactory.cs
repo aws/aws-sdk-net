@@ -238,6 +238,16 @@ namespace Amazon.DataZone.Model
         IListMetadataGenerationRunsPaginator ListMetadataGenerationRuns(ListMetadataGenerationRunsRequest request);
 
         /// <summary>
+        /// Paginator for ListNotebookRuns operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNotebookRunsPaginator ListNotebookRuns(ListNotebookRunsRequest request);
+
+        /// <summary>
         /// Paginator for ListNotifications operation
         ///</summary>
         [AWSPaginator(

@@ -119,6 +119,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The capabilities of the device such as light bulb.
         /// </para>
         /// </summary>
+        [Obsolete("Capabilities has been deprecated, use CapabilityReport instead")]
         [AWSProperty(Min=1, Max=65535)]
         public string Capabilities
         {

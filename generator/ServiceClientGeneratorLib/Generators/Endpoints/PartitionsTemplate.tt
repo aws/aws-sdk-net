@@ -20,6 +20,8 @@
  *  AWS SDK for .NET
  *
  */
+using System.Text.RegularExpressions;
+
 namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
 {
     /// <summary>
@@ -40,7 +42,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 supportsDualStack = <#=partition.outputs.supportsDualStack.ToString().ToLower()#>,
                 implicitGlobalRegion = "<#=partition.outputs.implicitGlobalRegion#>"
             };
-            _partitionsByRegex.Add(@"<#=partition.regionRegex#>", <#=partition.id.ToVariableName()#>);
+            _partitionsByRegex.Add((new Regex(@"<#=partition.regionRegex#>", RegexOptions.Compiled), <#=partition.id.ToVariableName()#>));
 <#     foreach(var region in partition.regions.Keys) { #>
             _partitionsByRegionName.Add("<#=region#>", <#=partition.id.ToVariableName()#>);
 <#     } #>

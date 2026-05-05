@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Tag Marshaller
     /// </summary>
-    public class TagMarshaller : IRequestMarshaller<Tag, JsonMarshallerContext> 
+    public class TagMarshaller : IRequestMarshaller<Tag, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Tag requestObject, JsonMarshallerContext context)
+        public void Marshall(Tag requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetKey())
-            {
-                context.Writer.WritePropertyName("Key");
-                context.Writer.WriteStringValue(requestObject.Key);
-            }
 
-            if(requestObject.IsSetValue())
+            if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("Value");
-                context.Writer.WriteStringValue(requestObject.Value);
+                context.Writer.WriteTextString("Key");
+                context.Writer.WriteTextString(requestObject.Key);
             }
-
+            if (requestObject.IsSetValue())
+            {
+                context.Writer.WriteTextString("Value");
+                context.Writer.WriteTextString(requestObject.Value);
+            }
         }
 
         /// <summary>

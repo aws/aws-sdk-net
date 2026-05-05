@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         private string _serverCertificateArn;
         private int? _sessionTimeoutHours;
         private bool? _splitTunnel;
+        private TransitGatewayConfigurationInputStructure _transitGatewayConfiguration;
         private string _vpcId;
         private int? _vpnPort;
 
@@ -362,6 +363,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetSplitTunnel()
         {
             return this._splitTunnel.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayConfiguration. 
+        /// <para>
+        /// The Transit Gateway configuration for the Client VPN endpoint. This option is currently
+        /// not supported.
+        /// </para>
+        /// </summary>
+        public TransitGatewayConfigurationInputStructure TransitGatewayConfiguration
+        {
+            get { return this._transitGatewayConfiguration; }
+            set { this._transitGatewayConfiguration = value; }
+        }
+
+        // Check to see if TransitGatewayConfiguration property is set
+        internal bool IsSetTransitGatewayConfiguration()
+        {
+            return this._transitGatewayConfiguration != null;
         }
 
         /// <summary>

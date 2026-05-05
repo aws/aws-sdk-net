@@ -100,6 +100,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.Oauth2ProviderConfigOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

@@ -1049,6 +1049,10 @@ namespace Amazon.GeoRoutes
         /// </summary>
         public static readonly RouteFerryNoticeCode SeasonalClosure = new RouteFerryNoticeCode("SeasonalClosure");
         /// <summary>
+        /// Constant ViolatedAvoidAreas for RouteFerryNoticeCode
+        /// </summary>
+        public static readonly RouteFerryNoticeCode ViolatedAvoidAreas = new RouteFerryNoticeCode("ViolatedAvoidAreas");
+        /// <summary>
         /// Constant ViolatedAvoidFerry for RouteFerryNoticeCode
         /// </summary>
         public static readonly RouteFerryNoticeCode ViolatedAvoidFerry = new RouteFerryNoticeCode("ViolatedAvoidFerry");
@@ -1056,6 +1060,10 @@ namespace Amazon.GeoRoutes
         /// Constant ViolatedAvoidRailFerry for RouteFerryNoticeCode
         /// </summary>
         public static readonly RouteFerryNoticeCode ViolatedAvoidRailFerry = new RouteFerryNoticeCode("ViolatedAvoidRailFerry");
+        /// <summary>
+        /// Constant ViolatedVehicleRestriction for RouteFerryNoticeCode
+        /// </summary>
+        public static readonly RouteFerryNoticeCode ViolatedVehicleRestriction = new RouteFerryNoticeCode("ViolatedVehicleRestriction");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1824,6 +1832,10 @@ namespace Amazon.GeoRoutes
         /// Constant Other for RoutePedestrianNoticeCode
         /// </summary>
         public static readonly RoutePedestrianNoticeCode Other = new RoutePedestrianNoticeCode("Other");
+        /// <summary>
+        /// Constant ViolatedAvoidAreas for RoutePedestrianNoticeCode
+        /// </summary>
+        public static readonly RoutePedestrianNoticeCode ViolatedAvoidAreas = new RoutePedestrianNoticeCode("ViolatedAvoidAreas");
         /// <summary>
         /// Constant ViolatedAvoidDirtRoad for RoutePedestrianNoticeCode
         /// </summary>
@@ -3310,6 +3322,10 @@ namespace Amazon.GeoRoutes
         /// Constant TollTransponder for RouteVehicleNoticeCode
         /// </summary>
         public static readonly RouteVehicleNoticeCode TollTransponder = new RouteVehicleNoticeCode("TollTransponder");
+        /// <summary>
+        /// Constant TravelTimeExceedsDriverWorkHours for RouteVehicleNoticeCode
+        /// </summary>
+        public static readonly RouteVehicleNoticeCode TravelTimeExceedsDriverWorkHours = new RouteVehicleNoticeCode("TravelTimeExceedsDriverWorkHours");
         /// <summary>
         /// Constant ViolatedAvoidControlledAccessHighway for RouteVehicleNoticeCode
         /// </summary>

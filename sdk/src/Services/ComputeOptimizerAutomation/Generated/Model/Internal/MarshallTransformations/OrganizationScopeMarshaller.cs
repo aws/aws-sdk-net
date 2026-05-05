@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OrganizationScope Marshaller
     /// </summary>
-    public class OrganizationScopeMarshaller : IRequestMarshaller<OrganizationScope, JsonMarshallerContext> 
+    public class OrganizationScopeMarshaller : IRequestMarshaller<OrganizationScope, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,21 +45,21 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OrganizationScope requestObject, JsonMarshallerContext context)
+        public void Marshall(OrganizationScope requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAccountIds())
+
+            if (requestObject.IsSetAccountIds())
             {
-                context.Writer.WritePropertyName("accountIds");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("accountIds");
+                context.Writer.WriteStartArray(requestObject.AccountIds.Count);
                 foreach(var requestObjectAccountIdsListValue in requestObject.AccountIds)
                 {
-                        context.Writer.WriteStringValue(requestObjectAccountIdsListValue);
+                        context.Writer.WriteTextString(requestObjectAccountIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

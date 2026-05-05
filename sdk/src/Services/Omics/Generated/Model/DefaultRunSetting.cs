@@ -39,8 +39,10 @@ namespace Amazon.Omics.Model
     {
         private CacheBehavior _cacheBehavior;
         private string _cacheId;
+        private string _configurationName;
         private RunLogLevel _logLevel;
         private string _name;
+        private NetworkingMode _networkingMode;
         private string _outputBucketOwnerId;
         private string _outputUri;
         private Amazon.Runtime.Documents.Document _parameters;
@@ -95,6 +97,25 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConfigurationName. 
+        /// <para>
+        /// Optional configuration name to use for the workflow run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ConfigurationName
+        {
+            get { return this._configurationName; }
+            set { this._configurationName = value; }
+        }
+
+        // Check to see if ConfigurationName property is set
+        internal bool IsSetConfigurationName()
+        {
+            return this._configurationName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogLevel. 
         /// <para>
         /// The verbosity level for CloudWatch Logs emitted during each run.
@@ -131,6 +152,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkingMode. 
+        /// <para>
+        /// Optional configuration for run networking behavior. If not specified, this will default
+        /// to RESTRICTED.
+        /// </para>
+        /// </summary>
+        public NetworkingMode NetworkingMode
+        {
+            get { return this._networkingMode; }
+            set { this._networkingMode = value; }
+        }
+
+        // Check to see if NetworkingMode property is set
+        internal bool IsSetNetworkingMode()
+        {
+            return this._networkingMode != null;
         }
 
         /// <summary>

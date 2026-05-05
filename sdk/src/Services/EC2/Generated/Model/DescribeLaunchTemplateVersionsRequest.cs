@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
     {
         private bool? _dryRun;
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private bool? _includeManagedResources;
         private string _launchTemplateId;
         private string _launchTemplateName;
         private int? _maxResults;
@@ -152,6 +153,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeManagedResources. 
+        /// <para>
+        /// Indicates whether to include managed resources in the output. If this parameter is
+        /// set to <c>true</c>, the output includes resources that are managed by Amazon Web Services
+        /// services, even if managed resource visibility is set to hidden.
+        /// </para>
+        /// </summary>
+        public bool? IncludeManagedResources
+        {
+            get { return this._includeManagedResources; }
+            set { this._includeManagedResources = value; }
+        }
+
+        // Check to see if IncludeManagedResources property is set
+        internal bool IsSetIncludeManagedResources()
+        {
+            return this._includeManagedResources.HasValue; 
         }
 
         /// <summary>

@@ -49,6 +49,7 @@ namespace Amazon.SageMaker.Model
         private ClusterKubernetesConfigDetails _kubernetesConfig;
         private ClusterLifeCycleConfig _lifeCycleConfig;
         private int? _minCount;
+        private ClusterNetworkInterfaceDetails _networkInterface;
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _overrideVpcConfig;
         private ScheduledUpdateConfig _scheduledUpdateConfig;
@@ -359,6 +360,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMinCount()
         {
             return this._minCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterface. 
+        /// <para>
+        /// The network interface configuration for the instance group.
+        /// </para>
+        /// </summary>
+        public ClusterNetworkInterfaceDetails NetworkInterface
+        {
+            get { return this._networkInterface; }
+            set { this._networkInterface = value; }
+        }
+
+        // Check to see if NetworkInterface property is set
+        internal bool IsSetNetworkInterface()
+        {
+            return this._networkInterface != null;
         }
 
         /// <summary>

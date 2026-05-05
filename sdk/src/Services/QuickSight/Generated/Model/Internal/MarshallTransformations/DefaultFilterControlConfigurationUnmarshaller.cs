@@ -62,6 +62,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ControlOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ControlTitleFormatText", targetDepth))
+                {
+                    var unmarshaller = ControlTitleFormatTextUnmarshaller.Instance;
+                    unmarshalledObject.ControlTitleFormatText = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Title", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

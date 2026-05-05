@@ -109,6 +109,14 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Paginator for ListRecommenderSchemas operation
+        ///</summary>
+        public IListRecommenderSchemasPaginator ListRecommenderSchemas(ListRecommenderSchemasRequest request) 
+        {
+            return new ListRecommenderSchemasPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRuleBasedMatches operation
         ///</summary>
         public IListRuleBasedMatchesPaginator ListRuleBasedMatches(ListRuleBasedMatchesRequest request) 

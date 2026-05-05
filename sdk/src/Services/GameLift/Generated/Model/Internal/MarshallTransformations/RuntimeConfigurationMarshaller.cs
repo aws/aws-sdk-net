@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuntimeConfiguration Marshaller
     /// </summary>
-    public class RuntimeConfigurationMarshaller : IRequestMarshaller<RuntimeConfiguration, JsonMarshallerContext> 
+    public class RuntimeConfigurationMarshaller : IRequestMarshaller<RuntimeConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,38 +45,36 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuntimeConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(RuntimeConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetGameSessionActivationTimeoutSeconds())
-            {
-                context.Writer.WritePropertyName("GameSessionActivationTimeoutSeconds");
-                context.Writer.WriteNumberValue(requestObject.GameSessionActivationTimeoutSeconds.Value);
-            }
 
-            if(requestObject.IsSetMaxConcurrentGameSessionActivations())
+            if (requestObject.IsSetGameSessionActivationTimeoutSeconds())
             {
-                context.Writer.WritePropertyName("MaxConcurrentGameSessionActivations");
-                context.Writer.WriteNumberValue(requestObject.MaxConcurrentGameSessionActivations.Value);
+                context.Writer.WriteTextString("GameSessionActivationTimeoutSeconds");
+                context.Writer.WriteInt32(requestObject.GameSessionActivationTimeoutSeconds.Value);
             }
-
-            if(requestObject.IsSetServerProcesses())
+            if (requestObject.IsSetMaxConcurrentGameSessionActivations())
             {
-                context.Writer.WritePropertyName("ServerProcesses");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("MaxConcurrentGameSessionActivations");
+                context.Writer.WriteInt32(requestObject.MaxConcurrentGameSessionActivations.Value);
+            }
+            if (requestObject.IsSetServerProcesses())
+            {
+                context.Writer.WriteTextString("ServerProcesses");
+                context.Writer.WriteStartArray(requestObject.ServerProcesses.Count);
                 foreach(var requestObjectServerProcessesListValue in requestObject.ServerProcesses)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ServerProcessMarshaller.Instance;
                     marshaller.Marshall(requestObjectServerProcessesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

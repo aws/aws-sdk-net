@@ -5782,6 +5782,7 @@
       "members":{
         "WorkGroup":{"shape":"WorkGroup"},
         "RoleArn":{"shape":"RoleArn"},
+        "ConsumerAccountRoleArn":{"shape":"RoleArn"},
         "IdentityCenterConfiguration":{"shape":"IdentityCenterConfiguration"}
       }
     },
@@ -6583,6 +6584,12 @@
         "CREATE_FAILED"
       ]
     },
+    "CACertificatesBundleS3Uri":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"^s3://.+/.+"
+    },
     "CIDR":{
       "type":"string",
       "pattern":"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(3[0-2]|[1-2][0-9]|[1-9]))$"
@@ -6905,7 +6912,10 @@
         "Research":{"shape":"CapabilityState"},
         "SelfUpgradeUserRole":{"shape":"CapabilityState"},
         "Extension":{"shape":"CapabilityState"},
-        "ManageSharedFolders":{"shape":"CapabilityState"}
+        "ManageSharedFolders":{"shape":"CapabilityState"},
+        "GenerateAnalyses":{"shape":"CapabilityState"},
+        "Story":{"shape":"CapabilityState"},
+        "Scenario":{"shape":"CapabilityState"}
       }
     },
     "CapabilityState":{
@@ -7829,6 +7839,50 @@
       "type":"list",
       "member":{"shape":"ColumnIdentifier"},
       "max":4,
+      "min":1
+    },
+    "ControlSortConfiguration":{
+      "type":"structure",
+      "members":{
+        "SelectableValuesSort":{"shape":"SelectableValuesSort"},
+        "ControlColumnSort":{"shape":"AggregationSortConfiguration"}
+      }
+    },
+    "ControlSortConfigurationList":{
+      "type":"list",
+      "member":{"shape":"ControlSortConfiguration"},
+      "max":1
+    },
+    "ControlSortDirection":{
+      "type":"string",
+      "enum":[
+        "ASC",
+        "DESC",
+        "USER_DEFINED_ORDER"
+      ]
+    },
+    "ControlTitleFontConfiguration":{
+      "type":"structure",
+      "members":{
+        "FontConfiguration":{"shape":"FontConfiguration"},
+        "TextAlignment":{"shape":"HorizontalTextAlignment"}
+      }
+    },
+    "ControlTitleFormatText":{
+      "type":"structure",
+      "members":{
+        "PlainText":{"shape":"ControlTitlePlainText"},
+        "RichText":{"shape":"ControlTitleRichText"}
+      }
+    },
+    "ControlTitlePlainText":{
+      "type":"string",
+      "max":2048,
+      "min":1
+    },
+    "ControlTitleRichText":{
+      "type":"string",
+      "max":4096,
       "min":1
     },
     "Coordinate":{
@@ -9136,6 +9190,13 @@
         "DISABLED"
       ]
     },
+    "DashboardCustomizationSummaryConfigurations":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{"shape":"Boolean"}
+      }
+    },
     "DashboardCustomizationVisualOptions":{
       "type":"structure",
       "members":{
@@ -10054,6 +10115,7 @@
         "RdsParameters":{"shape":"RdsParameters"},
         "RedshiftParameters":{"shape":"RedshiftParameters"},
         "S3Parameters":{"shape":"S3Parameters"},
+        "S3TablesParameters":{"shape":"S3TablesParameters"},
         "S3KnowledgeBaseParameters":{"shape":"S3KnowledgeBaseParameters"},
         "ServiceNowParameters":{"shape":"ServiceNowParameters"},
         "SnowflakeParameters":{"shape":"SnowflakeParameters"},
@@ -10132,6 +10194,7 @@
         "PRESTO",
         "REDSHIFT",
         "S3",
+        "S3_TABLES",
         "SALESFORCE",
         "SERVICENOW",
         "SNOWFLAKE",
@@ -10614,13 +10677,11 @@
     },
     "DefaultFilterControlConfiguration":{
       "type":"structure",
-      "required":[
-        "Title",
-        "ControlOptions"
-      ],
+      "required":["ControlOptions"],
       "members":{
         "Title":{"shape":"SheetControlTitle"},
-        "ControlOptions":{"shape":"DefaultFilterControlOptions"}
+        "ControlOptions":{"shape":"DefaultFilterControlOptions"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "DefaultFilterControlOptions":{
@@ -10641,7 +10702,8 @@
         "DisplayOptions":{"shape":"DropDownControlDisplayOptions"},
         "Type":{"shape":"SheetControlListType"},
         "SelectableValues":{"shape":"FilterSelectableValues"},
-        "CommitMode":{"shape":"CommitMode"}
+        "CommitMode":{"shape":"CommitMode"},
+        "ControlSortConfigurations":{"shape":"ControlSortConfigurationList"}
       }
     },
     "DefaultFilterListControlOptions":{
@@ -10649,7 +10711,8 @@
       "members":{
         "DisplayOptions":{"shape":"ListControlDisplayOptions"},
         "Type":{"shape":"SheetControlListType"},
-        "SelectableValues":{"shape":"FilterSelectableValues"}
+        "SelectableValues":{"shape":"FilterSelectableValues"},
+        "ControlSortConfigurations":{"shape":"ControlSortConfigurationList"}
       }
     },
     "DefaultFormatting":{
@@ -14319,7 +14382,6 @@
       "type":"structure",
       "required":[
         "FilterControlId",
-        "Title",
         "SourceFilterId"
       ],
       "members":{
@@ -14328,14 +14390,14 @@
         "SourceFilterId":{"shape":"ShortRestrictiveResourceId"},
         "DisplayOptions":{"shape":"DateTimePickerControlDisplayOptions"},
         "Type":{"shape":"SheetControlDateTimePickerType"},
-        "CommitMode":{"shape":"CommitMode"}
+        "CommitMode":{"shape":"CommitMode"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "FilterDropDownControl":{
       "type":"structure",
       "required":[
         "FilterControlId",
-        "Title",
         "SourceFilterId"
       ],
       "members":{
@@ -14346,7 +14408,9 @@
         "Type":{"shape":"SheetControlListType"},
         "SelectableValues":{"shape":"FilterSelectableValues"},
         "CascadingControlConfiguration":{"shape":"CascadingControlConfiguration"},
-        "CommitMode":{"shape":"CommitMode"}
+        "CommitMode":{"shape":"CommitMode"},
+        "ControlSortConfigurations":{"shape":"ControlSortConfigurationList"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "FilterGroup":{
@@ -14389,7 +14453,6 @@
       "type":"structure",
       "required":[
         "FilterControlId",
-        "Title",
         "SourceFilterId"
       ],
       "members":{
@@ -14399,7 +14462,9 @@
         "DisplayOptions":{"shape":"ListControlDisplayOptions"},
         "Type":{"shape":"SheetControlListType"},
         "SelectableValues":{"shape":"FilterSelectableValues"},
-        "CascadingControlConfiguration":{"shape":"CascadingControlConfiguration"}
+        "CascadingControlConfiguration":{"shape":"CascadingControlConfiguration"},
+        "ControlSortConfigurations":{"shape":"ControlSortConfigurationList"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "FilterNullOption":{
@@ -14450,7 +14515,6 @@
       "type":"structure",
       "required":[
         "FilterControlId",
-        "Title",
         "SourceFilterId"
       ],
       "members":{
@@ -14458,7 +14522,8 @@
         "Title":{"shape":"SheetControlTitle"},
         "SourceFilterId":{"shape":"ShortRestrictiveResourceId"},
         "DisplayOptions":{"shape":"RelativeDateTimeControlDisplayOptions"},
-        "CommitMode":{"shape":"CommitMode"}
+        "CommitMode":{"shape":"CommitMode"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "FilterScopeConfiguration":{
@@ -14478,7 +14543,6 @@
       "type":"structure",
       "required":[
         "FilterControlId",
-        "Title",
         "SourceFilterId",
         "MaximumValue",
         "MinimumValue",
@@ -14492,14 +14556,14 @@
         "Type":{"shape":"SheetControlSliderType"},
         "MaximumValue":{"shape":"Double"},
         "MinimumValue":{"shape":"Double"},
-        "StepSize":{"shape":"Double"}
+        "StepSize":{"shape":"Double"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "FilterTextAreaControl":{
       "type":"structure",
       "required":[
         "FilterControlId",
-        "Title",
         "SourceFilterId"
       ],
       "members":{
@@ -14507,21 +14571,22 @@
         "Title":{"shape":"SheetControlTitle"},
         "SourceFilterId":{"shape":"ShortRestrictiveResourceId"},
         "Delimiter":{"shape":"TextAreaControlDelimiter"},
-        "DisplayOptions":{"shape":"TextAreaControlDisplayOptions"}
+        "DisplayOptions":{"shape":"TextAreaControlDisplayOptions"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "FilterTextFieldControl":{
       "type":"structure",
       "required":[
         "FilterControlId",
-        "Title",
         "SourceFilterId"
       ],
       "members":{
         "FilterControlId":{"shape":"ShortRestrictiveResourceId"},
         "Title":{"shape":"SheetControlTitle"},
         "SourceFilterId":{"shape":"ShortRestrictiveResourceId"},
-        "DisplayOptions":{"shape":"TextFieldControlDisplayOptions"}
+        "DisplayOptions":{"shape":"TextFieldControlDisplayOptions"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "FilterVisualScope":{
@@ -14697,7 +14762,7 @@
     "Font":{
       "type":"structure",
       "members":{
-        "FontFamily":{"shape":"String"}
+        "FontFamily":{"shape":"LimitedString"}
       }
     },
     "FontConfiguration":{
@@ -14708,7 +14773,7 @@
         "FontColor":{"shape":"HexColor"},
         "FontWeight":{"shape":"FontWeight"},
         "FontStyle":{"shape":"FontStyle"},
-        "FontFamily":{"shape":"String"}
+        "FontFamily":{"shape":"LimitedString"}
       }
     },
     "FontDecoration":{
@@ -15830,7 +15895,8 @@
         },
         "UserIdentifier":{"shape":"UserIdentifier"},
         "Namespace":{"shape":"Namespace"},
-        "SessionExpiresAt":{"shape":"Timestamp"}
+        "SessionExpiresAt":{"shape":"Timestamp"},
+        "ContextRegion":{"shape":"Region"}
       }
     },
     "GetIdentityContextResponse":{
@@ -19669,7 +19735,8 @@
         "TokenProviderUrl":{"shape":"TokenProviderUrl"},
         "OAuthScope":{"shape":"OAuthScope"},
         "IdentityProviderVpcConnectionProperties":{"shape":"VpcConnectionProperties"},
-        "IdentityProviderResourceUri":{"shape":"IdentityProviderResourceUri"}
+        "IdentityProviderResourceUri":{"shape":"IdentityProviderResourceUri"},
+        "IdentityProviderCACertificatesBundleS3Uri":{"shape":"CACertificatesBundleS3Uri"}
       }
     },
     "OAuthScope":{
@@ -19863,14 +19930,14 @@
       "type":"structure",
       "required":[
         "ParameterControlId",
-        "Title",
         "SourceParameterName"
       ],
       "members":{
         "ParameterControlId":{"shape":"ShortRestrictiveResourceId"},
         "Title":{"shape":"SheetControlTitle"},
         "SourceParameterName":{"shape":"ParameterName"},
-        "DisplayOptions":{"shape":"DateTimePickerControlDisplayOptions"}
+        "DisplayOptions":{"shape":"DateTimePickerControlDisplayOptions"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "ParameterDeclaration":{
@@ -19891,7 +19958,6 @@
       "type":"structure",
       "required":[
         "ParameterControlId",
-        "Title",
         "SourceParameterName"
       ],
       "members":{
@@ -19902,14 +19968,15 @@
         "Type":{"shape":"SheetControlListType"},
         "SelectableValues":{"shape":"ParameterSelectableValues"},
         "CascadingControlConfiguration":{"shape":"CascadingControlConfiguration"},
-        "CommitMode":{"shape":"CommitMode"}
+        "CommitMode":{"shape":"CommitMode"},
+        "ControlSortConfigurations":{"shape":"ControlSortConfigurationList"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "ParameterListControl":{
       "type":"structure",
       "required":[
         "ParameterControlId",
-        "Title",
         "SourceParameterName"
       ],
       "members":{
@@ -19919,7 +19986,9 @@
         "DisplayOptions":{"shape":"ListControlDisplayOptions"},
         "Type":{"shape":"SheetControlListType"},
         "SelectableValues":{"shape":"ParameterSelectableValues"},
-        "CascadingControlConfiguration":{"shape":"CascadingControlConfiguration"}
+        "CascadingControlConfiguration":{"shape":"CascadingControlConfiguration"},
+        "ControlSortConfigurations":{"shape":"ControlSortConfigurationList"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "ParameterName":{
@@ -19944,7 +20013,6 @@
       "type":"structure",
       "required":[
         "ParameterControlId",
-        "Title",
         "SourceParameterName",
         "MaximumValue",
         "MinimumValue",
@@ -19957,14 +20025,14 @@
         "DisplayOptions":{"shape":"SliderControlDisplayOptions"},
         "MaximumValue":{"shape":"Double"},
         "MinimumValue":{"shape":"Double"},
-        "StepSize":{"shape":"Double"}
+        "StepSize":{"shape":"Double"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "ParameterTextAreaControl":{
       "type":"structure",
       "required":[
         "ParameterControlId",
-        "Title",
         "SourceParameterName"
       ],
       "members":{
@@ -19972,21 +20040,22 @@
         "Title":{"shape":"SheetControlTitle"},
         "SourceParameterName":{"shape":"ParameterName"},
         "Delimiter":{"shape":"TextAreaControlDelimiter"},
-        "DisplayOptions":{"shape":"TextAreaControlDisplayOptions"}
+        "DisplayOptions":{"shape":"TextAreaControlDisplayOptions"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "ParameterTextFieldControl":{
       "type":"structure",
       "required":[
         "ParameterControlId",
-        "Title",
         "SourceParameterName"
       ],
       "members":{
         "ParameterControlId":{"shape":"ShortRestrictiveResourceId"},
         "Title":{"shape":"SheetControlTitle"},
         "SourceParameterName":{"shape":"ParameterName"},
-        "DisplayOptions":{"shape":"TextFieldControlDisplayOptions"}
+        "DisplayOptions":{"shape":"TextFieldControlDisplayOptions"},
+        "ControlTitleFormatText":{"shape":"ControlTitleFormatText"}
       }
     },
     "ParameterValueType":{
@@ -21417,6 +21486,10 @@
       "type":"list",
       "member":{"shape":"RefreshSchedule"}
     },
+    "Region":{
+      "type":"string",
+      "pattern":"[a-z]+-[a-z]+-[0-9]{1}"
+    },
     "RegisterUserRequest":{
       "type":"structure",
       "required":[
@@ -21477,7 +21550,8 @@
         "AmazonQInQuickSight":{"shape":"AmazonQInQuickSightConsoleConfigurations"},
         "Schedules":{"shape":"SchedulesConfigurations"},
         "RecentSnapshots":{"shape":"RecentSnapshotsConfigurations"},
-        "ThresholdAlerts":{"shape":"ThresholdAlertsConfigurations"}
+        "ThresholdAlerts":{"shape":"ThresholdAlertsConfigurations"},
+        "DashboardCustomizationSummary":{"shape":"DashboardCustomizationSummaryConfigurations"}
       }
     },
     "RegisteredUserDashboardEmbeddingConfiguration":{
@@ -21497,7 +21571,8 @@
         "AmazonQInQuickSight":{"shape":"AmazonQInQuickSightDashboardConfigurations"},
         "Schedules":{"shape":"SchedulesConfigurations"},
         "RecentSnapshots":{"shape":"RecentSnapshotsConfigurations"},
-        "ThresholdAlerts":{"shape":"ThresholdAlertsConfigurations"}
+        "ThresholdAlerts":{"shape":"ThresholdAlertsConfigurations"},
+        "DashboardCustomizationSummary":{"shape":"DashboardCustomizationSummaryConfigurations"}
       }
     },
     "RegisteredUserDashboardVisualEmbeddingConfiguration":{
@@ -21997,6 +22072,16 @@
         "DataSourceArn":{"shape":"Arn"},
         "UploadSettings":{"shape":"UploadSettings"},
         "InputColumns":{"shape":"InputColumnList"}
+      }
+    },
+    "S3TableBucketArn":{
+      "type":"string",
+      "pattern":"^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-zA-Z0-9-_]{3,63})$"
+    },
+    "S3TablesParameters":{
+      "type":"structure",
+      "members":{
+        "TableBucketArn":{"shape":"S3TableBucketArn"}
       }
     },
     "S3Uri":{
@@ -22576,6 +22661,13 @@
       "type":"string",
       "enum":["ALL_VALUES"]
     },
+    "SelectableValuesSort":{
+      "type":"structure",
+      "required":["Direction"],
+      "members":{
+        "Direction":{"shape":"ControlSortDirection"}
+      }
+    },
     "SelectedFieldList":{
       "type":"list",
       "member":{"shape":"FieldId"},
@@ -22946,7 +23038,7 @@
     "SheetControlTitle":{
       "type":"string",
       "max":2048,
-      "min":1
+      "min":0
     },
     "SheetControlsOption":{
       "type":"structure",
@@ -25850,7 +25942,8 @@
         "LegendValueFontConfiguration":{"shape":"FontConfiguration"},
         "DataLabelFontConfiguration":{"shape":"FontConfiguration"},
         "VisualTitleFontConfiguration":{"shape":"VisualTitleFontConfiguration"},
-        "VisualSubtitleFontConfiguration":{"shape":"VisualSubtitleFontConfiguration"}
+        "VisualSubtitleFontConfiguration":{"shape":"VisualSubtitleFontConfiguration"},
+        "ControlTitleFontConfiguration":{"shape":"ControlTitleFontConfiguration"}
       }
     },
     "UIColorPalette":{

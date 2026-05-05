@@ -35,26 +35,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class PrivateEndpoint
     {
-        private ManagedLatticeResource _managedLatticeResource;
+        private ManagedVpcResource _managedVpcResource;
         private SelfManagedLatticeResource _selfManagedLatticeResource;
 
         /// <summary>
-        /// Gets and sets the property ManagedLatticeResource. 
+        /// Gets and sets the property ManagedVpcResource. 
         /// <para>
         /// Configuration for connecting to a private resource using a managed VPC Lattice resource.
         /// The gateway creates and manages the VPC Lattice resources on your behalf.
         /// </para>
         /// </summary>
-        public ManagedLatticeResource ManagedLatticeResource
+        public ManagedVpcResource ManagedVpcResource
         {
-            get { return this._managedLatticeResource; }
-            set { this._managedLatticeResource = value; }
+            get { return this._managedVpcResource; }
+            set { this._managedVpcResource = value; }
         }
 
-        // Check to see if ManagedLatticeResource property is set
-        internal bool IsSetManagedLatticeResource()
+        // Check to see if ManagedVpcResource property is set
+        internal bool IsSetManagedVpcResource()
         {
-            return this._managedLatticeResource != null;
+            return this._managedVpcResource != null;
         }
 
         /// <summary>

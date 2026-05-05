@@ -35,6 +35,8 @@ namespace Amazon.GroundStation.Model
     public partial class ProgramTrackSettings
     {
         private AzElProgramTrackSettings _azEl;
+        private OemProgramTrackSettings _oem;
+        private TleProgramTrackSettings _tle;
 
         /// <summary>
         /// Gets and sets the property AzEl. 
@@ -52,6 +54,42 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetAzEl()
         {
             return this._azEl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Oem. 
+        /// <para>
+        /// Program track settings for <a>OEMEphemeris</a>.
+        /// </para>
+        /// </summary>
+        public OemProgramTrackSettings Oem
+        {
+            get { return this._oem; }
+            set { this._oem = value; }
+        }
+
+        // Check to see if Oem property is set
+        internal bool IsSetOem()
+        {
+            return this._oem != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tle. 
+        /// <para>
+        /// Program track settings for <a>TLEEphemeris</a>.
+        /// </para>
+        /// </summary>
+        public TleProgramTrackSettings Tle
+        {
+            get { return this._tle; }
+            set { this._tle = value; }
+        }
+
+        // Check to see if Tle property is set
+        internal bool IsSetTle()
+        {
+            return this._tle != null;
         }
 
     }

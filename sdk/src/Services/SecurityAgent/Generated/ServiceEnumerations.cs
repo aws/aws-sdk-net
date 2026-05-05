@@ -494,6 +494,10 @@ namespace Amazon.SecurityAgent
         /// Constant HTTP_ROUTE for DomainVerificationMethod
         /// </summary>
         public static readonly DomainVerificationMethod HTTP_ROUTE = new DomainVerificationMethod("HTTP_ROUTE");
+        /// <summary>
+        /// Constant PRIVATE_VPC for DomainVerificationMethod
+        /// </summary>
+        public static readonly DomainVerificationMethod PRIVATE_VPC = new DomainVerificationMethod("PRIVATE_VPC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

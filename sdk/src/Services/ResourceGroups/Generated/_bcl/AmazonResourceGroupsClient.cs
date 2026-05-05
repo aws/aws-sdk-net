@@ -39,6 +39,11 @@ namespace Amazon.ResourceGroups
 {
     /// <summary>
     /// <para>Implementation for accessing ResourceGroups</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Resource Groups lets you organize Amazon Web Services resources such as Amazon Elastic
     /// Compute Cloud instances, Amazon Relational Database Service databases, and Amazon

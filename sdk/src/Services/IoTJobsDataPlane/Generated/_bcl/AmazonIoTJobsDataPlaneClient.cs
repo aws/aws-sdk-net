@@ -39,6 +39,11 @@ namespace Amazon.IoTJobsDataPlane
 {
     /// <summary>
     /// <para>Implementation for accessing IoTJobsDataPlane</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// IoT Jobs is a service that allows you to define a set of jobs — remote operations
     /// that are sent to and executed on one or more devices connected to Amazon Web Services
