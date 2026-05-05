@@ -37,6 +37,7 @@ namespace Amazon.MarketplaceAgreement.Model
     #endif
     public partial class AccessDeniedException : AmazonMarketplaceAgreementException
     {
+        private AccessDeniedExceptionReason _reason;
 
         /// <summary>
         /// Default constructor for AccessDeniedException
@@ -105,6 +106,7 @@ namespace Amazon.MarketplaceAgreement.Model
         protected AccessDeniedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (AccessDeniedExceptionReason)info.GetValue("Reason", typeof(AccessDeniedExceptionReason));
             this.RequestId = (string)info.GetValue("RequestId", typeof(string));
         }
 
@@ -121,9 +123,28 @@ namespace Amazon.MarketplaceAgreement.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
             info.AddValue("RequestId", this.RequestId);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason for the access denied exception.
+        /// </para>
+        /// </summary>
+        public AccessDeniedExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

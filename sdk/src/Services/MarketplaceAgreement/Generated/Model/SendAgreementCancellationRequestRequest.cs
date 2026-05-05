@@ -104,10 +104,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property ReasonCode. 
         /// <para>
-        /// The reason code for the cancellation request. Valid values include <c>INCORRECT_TERMS_ACCEPTED</c>,
-        /// <c>REPLACING_AGREEMENT</c>, <c>TEST_AGREEMENT</c>, <c>ALTERNATIVE_PROCUREMENT_CHANNEL</c>,
-        /// <c>PRODUCT_DISCONTINUED</c>, <c>UNINTENDED_RENEWAL</c>, <c>BUYER_DISSATISFACTION</c>,
-        /// and <c>OTHER</c>.
+        /// The reason code for the cancellation request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

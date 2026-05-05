@@ -133,8 +133,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to specify where to start pagination. Use the <c>nextToken</c> value from
-        /// a previous response to retrieve the next page of results.
+        /// A token to specify where to start pagination.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

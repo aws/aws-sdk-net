@@ -34,13 +34,11 @@ namespace Amazon.MarketplaceAgreement.Model
     /// Allows sellers (proposers) to submit billing adjustment requests for one or more invoices
     /// within an agreement. Each entry in the batch specifies an invoice and the adjustment
     /// amount. The operation returns successfully created adjustment request IDs and any
-    /// errors for entries that failed validation.
+    /// errors for entries that failed to process.
     /// 
     ///  <note> 
     /// <para>
-    /// Each entry requires a unique <c>clientToken</c> for idempotency. A <c>ValidationException</c>
-    /// is returned if the adjustment amount exceeds the maximum refundable amount for the
-    /// invoice.
+    /// Each entry requires a unique <c>clientToken</c> for idempotency.
     /// </para>
     ///  </note>
     /// </summary>

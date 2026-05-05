@@ -37,6 +37,14 @@ namespace Amazon.MarketplaceAgreement.Model
         }
 
         /// <summary>
+        /// Paginator for GetAgreementEntitlements operation
+        ///</summary>
+        public IGetAgreementEntitlementsPaginator GetAgreementEntitlements(GetAgreementEntitlementsRequest request) 
+        {
+            return new GetAgreementEntitlementsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetAgreementTerms operation
         ///</summary>
         public IGetAgreementTermsPaginator GetAgreementTerms(GetAgreementTermsRequest request) 
@@ -50,6 +58,14 @@ namespace Amazon.MarketplaceAgreement.Model
         public IListAgreementCancellationRequestsPaginator ListAgreementCancellationRequests(ListAgreementCancellationRequestsRequest request) 
         {
             return new ListAgreementCancellationRequestsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgreementCharges operation
+        ///</summary>
+        public IListAgreementChargesPaginator ListAgreementCharges(ListAgreementChargesRequest request) 
+        {
+            return new ListAgreementChargesPaginator(this.client, request);
         }
 
         /// <summary>

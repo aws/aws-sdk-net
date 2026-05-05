@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
-    /// The entity that issues the AWS invoice.
+    /// The entity responsible for issuing the invoice.
     /// </summary>
     public partial class InvoicingEntity
     {
@@ -40,7 +40,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        /// The branch name of the invoicing entity.
+        /// The branch where the issuing entity is operating from.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -59,7 +59,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property LegalName. 
         /// <para>
-        /// The legal name of the invoicing entity.
+        /// Legal name of the entity issuing the invoice.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
