@@ -187,15 +187,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Internal/private methods
 
-        internal void ExecuteHelper(Expression projectionExpression = default)
+        internal void ExecuteHelper()
         {
-            var items = GetMultiTransactGet().GetItems(projectionExpression);
+            var items = GetMultiTransactGet().GetItems();
             Results = items.Values.SingleOrDefault() ?? new List<Document>();
         }
 
-        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken, Expression projectionExpression = default)
+        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
-            var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken, projectionExpression).ConfigureAwait(false);
+            var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken).ConfigureAwait(false);
             Results = items.Values.SingleOrDefault() ?? new List<Document>();
         }
 
@@ -285,9 +285,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Internal/private methods
 
-        internal void ExecuteHelper(Expression projectionExpression = default)
+        internal void ExecuteHelper()
         {
-            var items = GetMultiTransactGet().GetItems(projectionExpression);
+            var items = GetMultiTransactGet().GetItems();
             var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactGet)}";
 
             foreach (var transactionPart in TransactionParts)
@@ -298,9 +298,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken, Expression projectionExpression = default)
+        internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
-            var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken, projectionExpression).ConfigureAwait(false);
+            var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken).ConfigureAwait(false);
             var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactGet)}";
 
             foreach (var transactionPart in TransactionParts)
@@ -351,14 +351,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public methods
 
-        public Dictionary<DocumentTransactGet, List<Document>> GetItems(Expression projectionExpression = default)
+        public Dictionary<DocumentTransactGet, List<Document>> GetItems()
         {
-            return GetItemsHelper(projectionExpression);
+            return GetItemsHelper();
         }
 
-        public Task<Dictionary<DocumentTransactGet, List<Document>>> GetItemsAsync(CancellationToken cancellationToken, Expression projectionExpression = default)
+        public Task<Dictionary<DocumentTransactGet, List<Document>>> GetItemsAsync(CancellationToken cancellationToken)
         {
-            return GetItemsHelperAsync(cancellationToken, projectionExpression);
+            return GetItemsHelperAsync(cancellationToken);
         }
 
         #endregion
@@ -366,11 +366,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Private helper methods
 
-        private Dictionary<DocumentTransactGet, List<Document>> GetItemsHelper(Expression projectionExpression = default)
+        private Dictionary<DocumentTransactGet, List<Document>> GetItemsHelper()
         {
             if (Items == null || !Items.Any()) return new Dictionary<DocumentTransactGet, List<Document>>();
 
-            var request = ConstructRequest(isAsync: false, projectionExpression);
+            var request = ConstructRequest(isAsync: false);
 #if NETSTANDARD
             // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
             var internalClient = Items[0].TransactionPart.TargetTable.DDBClient as AmazonDynamoDBClient;
@@ -386,19 +386,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return GetDocuments(response.Responses);
         }
 
-        private async Task<Dictionary<DocumentTransactGet, List<Document>>> GetItemsHelperAsync(CancellationToken cancellationToken, Expression projectionExpression = default)
+        private async Task<Dictionary<DocumentTransactGet, List<Document>>> GetItemsHelperAsync(CancellationToken cancellationToken)
         {
             if (Items == null || !Items.Any()) return new Dictionary<DocumentTransactGet, List<Document>>();
 
-            var request = ConstructRequest(isAsync: true, projectionExpression);
+            var request = ConstructRequest(isAsync: true);
             var dynamoDbClient = Items[0].TransactionPart.TargetTable.DDBClient;
             var response = await dynamoDbClient.TransactGetItemsAsync(request, cancellationToken).ConfigureAwait(false);
             return GetDocuments(response.Responses);
         }
 
-        private TransactGetItemsRequest ConstructRequest(bool isAsync, Expression projectionExpression = default)
+        private TransactGetItemsRequest ConstructRequest(bool isAsync)
         {
-            var transactItems = Items.Select(item => item.GetRequest(projectionExpression)).ToList();
+            var transactItems = Items.Select(item => item.GetRequest()).ToList();
             var request = new TransactGetItemsRequest { TransactItems = transactItems };
             Items[0].TransactionPart.TargetTable.UpdateRequestUserAgentDetails(request, isAsync);
             return request;
@@ -454,7 +454,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Methods
 
-        public TransactGetItem GetRequest(Expression projectionExpresion = default)
+        public TransactGetItem GetRequest()
         {
             var currentConfig = OperationConfig ?? new TransactGetItemOperationConfig();
 
@@ -469,11 +469,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return new TransactGetItem { Get = get };
             }
 
-            if(projectionExpresion != default && projectionExpresion.IsSet)
-            {
-                get.ProjectionExpression = projectionExpresion.ExpressionStatement;
-                get.ExpressionAttributeNames = projectionExpresion.ExpressionAttributeNames;
-            }
+            //if(projectionExpresion != default && projectionExpresion.IsSet)
+            //{
+            //    get.ProjectionExpression = projectionExpresion.ExpressionStatement;
+            //    get.ExpressionAttributeNames = projectionExpresion.ExpressionAttributeNames;
+            //}
 
             return new TransactGetItem { Get = get };
         }

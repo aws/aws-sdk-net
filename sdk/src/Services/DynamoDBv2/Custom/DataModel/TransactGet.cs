@@ -131,6 +131,16 @@ namespace Amazon.DynamoDBv2.DataModel
         public void AddKey(object hashKey, object rangeKey)
         {
             Key key = _context.MakeKey(hashKey, rangeKey, _storageConfig, _config);
+
+            if (_storageConfig.ProjectionExpression != null && _storageConfig.ProjectionExpression.IsSet) 
+            {
+                var operationConfig = new TransactGetItemOperationConfig()
+                {
+                    ProjectionExpression = _storageConfig.ProjectionExpression,
+                };
+                DocumentTransaction.AddKeyHelper(key, operationConfig);
+            }
+
             DocumentTransaction.AddKeyHelper(key);
         }
 
@@ -138,6 +148,16 @@ namespace Amazon.DynamoDBv2.DataModel
         public void AddKey(T keyObject)
         {
             Key key = _context.MakeKey(keyObject, _storageConfig, _config);
+
+            if (_storageConfig.ProjectionExpression != null && _storageConfig.ProjectionExpression.IsSet)
+            {
+                var operationConfig = new TransactGetItemOperationConfig()
+                {
+                    ProjectionExpression = _storageConfig.ProjectionExpression,
+                };
+                DocumentTransaction.AddKeyHelper(key, operationConfig);
+            }
+
             DocumentTransaction.AddKeyHelper(key);
         }
 
@@ -173,13 +193,13 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private void ExecuteHelper()
         {
-            DocumentTransaction.ExecuteHelper(_storageConfig.ProjectionExpression);
+            DocumentTransaction.ExecuteHelper();
             PopulateResults();
         }
 
         private async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
-            await DocumentTransaction.ExecuteHelperAsync(cancellationToken, _storageConfig.ProjectionExpression).ConfigureAwait(false);
+            await DocumentTransaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             PopulateResults();
         }
 
