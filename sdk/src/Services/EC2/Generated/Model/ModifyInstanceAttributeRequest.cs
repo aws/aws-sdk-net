@@ -457,6 +457,7 @@ namespace Amazon.EC2.Model
         /// <c>disableApiTermination</c>, or <c>instanceInitiatedShutdownBehavior</c> attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Value
         {
             get { return this._value; }

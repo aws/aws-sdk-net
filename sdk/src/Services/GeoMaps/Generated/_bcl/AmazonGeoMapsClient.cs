@@ -39,6 +39,11 @@ namespace Amazon.GeoMaps
 {
     /// <summary>
     /// <para>Implementation for accessing GeoMaps</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Integrate high-quality base map data into your applications using <a href="https://maplibre.org">MapLibre</a>.
     /// Capabilities include: 

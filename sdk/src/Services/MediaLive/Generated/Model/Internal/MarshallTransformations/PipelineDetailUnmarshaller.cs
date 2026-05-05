@@ -86,6 +86,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ChannelEngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("mediaConnectRouterOutputConnectionMap", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, MediaConnectRouterOutputConnection, StringUnmarshaller, MediaConnectRouterOutputConnectionUnmarshaller>(StringUnmarshaller.Instance, MediaConnectRouterOutputConnectionUnmarshaller.Instance);
+                    unmarshalledObject.MediaConnectRouterOutputConnectionMap = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("pipelineId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

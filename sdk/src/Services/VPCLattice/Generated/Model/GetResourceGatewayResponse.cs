@@ -40,8 +40,11 @@ namespace Amazon.VPCLattice.Model
         private ResourceGatewayIpAddressType _ipAddressType;
         private int? _ipv4AddressesPerEni;
         private DateTime? _lastUpdatedAt;
+        private string _managedBy;
         private string _name;
+        private ResourceConfigDnsResolution _resourceConfigDnsResolution;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _serviceManaged;
         private ResourceGatewayStatus _status;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
@@ -158,6 +161,24 @@ namespace Amazon.VPCLattice.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// The AWS service that manages the resource gateway.
+        /// </para>
+        /// </summary>
+        public string ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the resource gateway.
@@ -174,6 +195,25 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceConfigDnsResolution. 
+        /// <para>
+        /// The DNS resolution type for resource configurations that are associated with this
+        /// resource gateway.
+        /// </para>
+        /// </summary>
+        public ResourceConfigDnsResolution ResourceConfigDnsResolution
+        {
+            get { return this._resourceConfigDnsResolution; }
+            set { this._resourceConfigDnsResolution = value; }
+        }
+
+        // Check to see if ResourceConfigDnsResolution property is set
+        internal bool IsSetResourceConfigDnsResolution()
+        {
+            return this._resourceConfigDnsResolution != null;
         }
 
         /// <summary>
@@ -197,6 +237,24 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetSecurityGroupIds()
         {
             return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceManaged. 
+        /// <para>
+        /// Indicates whether the resource gateway is managed by an AWS service.
+        /// </para>
+        /// </summary>
+        public bool? ServiceManaged
+        {
+            get { return this._serviceManaged; }
+            set { this._serviceManaged = value; }
+        }
+
+        // Check to see if ServiceManaged property is set
+        internal bool IsSetServiceManaged()
+        {
+            return this._serviceManaged.HasValue; 
         }
 
         /// <summary>

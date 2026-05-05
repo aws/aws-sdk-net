@@ -118,6 +118,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.Specification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Specifications", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<InferenceComponentSpecificationSummary, InferenceComponentSpecificationSummaryUnmarshaller>(InferenceComponentSpecificationSummaryUnmarshaller.Instance);
+                    response.Specifications = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("VariantName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

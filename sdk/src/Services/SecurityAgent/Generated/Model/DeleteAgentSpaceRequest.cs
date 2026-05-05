@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAgentSpace operation.
-    /// Deletes an agent space record
+    /// Deletes an agent space and all of its associated resources, including pentests, findings,
+    /// and artifacts.
     /// </summary>
     public partial class DeleteAgentSpaceRequest : AmazonSecurityAgentRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Unique identifier of the agent space to delete
+        /// The unique identifier of the agent space to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

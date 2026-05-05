@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Unexpected server error occurred
+    /// An unexpected error occurred during the processing of your request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -39,6 +39,11 @@ namespace Amazon.DAX
 {
     /// <summary>
     /// <para>Implementation for accessing DAX</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// DAX is a managed caching service engineered for Amazon DynamoDB. DAX dramatically
     /// speeds up database reads by caching frequently-accessed data from DynamoDB, so applications

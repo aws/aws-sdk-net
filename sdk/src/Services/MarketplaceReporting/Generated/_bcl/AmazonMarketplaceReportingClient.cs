@@ -39,6 +39,11 @@ namespace Amazon.MarketplaceReporting
 {
     /// <summary>
     /// <para>Implementation for accessing MarketplaceReporting</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The Amazon Web Services Marketplace <c>GetBuyerDashboard</c> API enables you to get
     /// a procurement insights dashboard programmatically. The API gets the agreement and

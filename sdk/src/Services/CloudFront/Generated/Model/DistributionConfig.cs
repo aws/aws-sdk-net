@@ -37,6 +37,7 @@ namespace Amazon.CloudFront.Model
         private Aliases _aliases;
         private string _anycastIpListId;
         private CacheBehaviors _cacheBehaviors;
+        private CacheTagConfig _cacheTagConfig;
         private string _callerReference;
         private string _comment;
         private ConnectionFunctionAssociation _connectionFunctionAssociation;
@@ -148,6 +149,41 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetCacheBehaviors()
         {
             return this._cacheBehaviors != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheTagConfig. 
+        /// <para>
+        /// Configuration for cache tag extraction from origin responses. When specified, CloudFront
+        /// reads the header named in <c>HeaderName</c> from origin responses and stores the comma-separated
+        /// values as cache tags on the object.
+        /// </para>
+        ///  
+        /// <para>
+        /// Distributions without <c>CacheTagConfig</c> do not extract tags. When <c>CacheTagConfig</c>
+        /// is removed from a distribution via <c>UpdateDistribution</c>, CloudFront stops extracting
+        /// tags from origin responses.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Changing the <c>HeaderName</c> on an existing distribution does not retroactively
+        /// affect previously cached objects. Tag-based invalidations will not apply to objects
+        /// already cached using a previous header. To ensure tag invalidations function after
+        /// updating the header name, use path-based invalidations to recache all objects that
+        /// use cache tags.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public CacheTagConfig CacheTagConfig
+        {
+            get { return this._cacheTagConfig; }
+            set { this._cacheTagConfig = value; }
+        }
+
+        // Check to see if CacheTagConfig property is set
+        internal bool IsSetCacheTagConfig()
+        {
+            return this._cacheTagConfig != null;
         }
 
         /// <summary>

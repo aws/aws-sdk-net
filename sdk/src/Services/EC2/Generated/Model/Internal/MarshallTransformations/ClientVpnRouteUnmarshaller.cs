@@ -91,6 +91,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TargetSubnet = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("transitGatewayAttachmentId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayAttachmentId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("type", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

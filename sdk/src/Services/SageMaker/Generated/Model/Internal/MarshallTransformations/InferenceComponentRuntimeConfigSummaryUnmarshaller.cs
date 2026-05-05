@@ -68,6 +68,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DesiredCopyCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PlacementStatus", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<InferenceComponentPlacementStatus, InferenceComponentPlacementStatusUnmarshaller>(InferenceComponentPlacementStatusUnmarshaller.Instance);
+                    unmarshalledObject.PlacementStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

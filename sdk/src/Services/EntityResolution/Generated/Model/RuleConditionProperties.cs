@@ -34,7 +34,26 @@ namespace Amazon.EntityResolution.Model
     /// </summary>
     public partial class RuleConditionProperties
     {
+        private MatchingConfig _matchingConfig;
         private List<RuleCondition> _rules = AWSConfigs.InitializeCollections ? new List<RuleCondition>() : null;
+
+        /// <summary>
+        /// Gets and sets the property MatchingConfig. 
+        /// <para>
+        /// An object that contains configuration settings for the matching process.
+        /// </para>
+        /// </summary>
+        public MatchingConfig MatchingConfig
+        {
+            get { return this._matchingConfig; }
+            set { this._matchingConfig = value; }
+        }
+
+        // Check to see if MatchingConfig property is set
+        internal bool IsSetMatchingConfig()
+        {
+            return this._matchingConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Rules. 

@@ -91,6 +91,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetAgentAccessConfig())
+            {
+                context.Writer.WritePropertyName("AgentAccessConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AgentAccessConfigForUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AgentAccessConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetApplicationSettings())
             {
                 context.Writer.WritePropertyName("ApplicationSettings");
@@ -111,6 +122,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestAttributesToDeleteListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetContentRedirection())
+            {
+                context.Writer.WritePropertyName("ContentRedirection");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ContentRedirectionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ContentRedirection, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetDeleteStorageConnectors())

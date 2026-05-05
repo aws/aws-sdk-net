@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Represents a security vulnerability or issue discovered during testing
+    /// Represents a security finding discovered during a pentest job. A finding contains
+    /// details about a vulnerability, including its risk level, confidence, and remediation
+    /// status.
     /// </summary>
     public partial class Finding
     {
@@ -56,7 +58,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Identifier of the agent space that created this finding
+        /// The unique identifier of the agent space associated with the finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,7 +77,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AttackScript. 
         /// <para>
-        /// Proof-of-concept code demonstrating the vulnerability
+        /// The attack script used to reproduce the finding.
         /// </para>
         /// </summary>
         public string AttackScript
@@ -93,7 +95,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CodeRemediationTask. 
         /// <para>
-        /// Code remediation task associated with this finding
+        /// The code remediation task associated with the finding, if code remediation was initiated.
         /// </para>
         /// </summary>
         public CodeRemediationTask CodeRemediationTask
@@ -111,7 +113,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Confidence. 
         /// <para>
-        /// Confidence level of the finding
+        /// The confidence level of the finding. Valid values include FALSE_POSITIVE, UNCONFIRMED,
+        /// LOW, MEDIUM, and HIGH.
         /// </para>
         /// </summary>
         public ConfidenceLevel Confidence
@@ -129,7 +132,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Timestamp when the finding was created
+        /// The date and time the finding was created, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -147,7 +150,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Detailed description of the security vulnerability
+        /// A description of the finding.
         /// </para>
         /// </summary>
         public string Description
@@ -165,7 +168,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property FindingId. 
         /// <para>
-        /// Unique identifier for the finding
+        /// The unique identifier of the finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -184,7 +187,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedBy. 
         /// <para>
-        /// Identifier of the task or agent that last updated this finding
+        /// The identifier of the entity that last updated the finding.
         /// </para>
         /// </summary>
         public string LastUpdatedBy
@@ -202,7 +205,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name or title of the finding
+        /// The name of the finding.
         /// </para>
         /// </summary>
         public string Name
@@ -220,7 +223,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property PentestId. 
         /// <para>
-        /// Identifier of the parent pentest
+        /// The unique identifier of the pentest associated with the finding.
         /// </para>
         /// </summary>
         public string PentestId
@@ -238,7 +241,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property PentestJobId. 
         /// <para>
-        /// Identifier of the pentest job
+        /// The unique identifier of the pentest job that produced the finding.
         /// </para>
         /// </summary>
         public string PentestJobId
@@ -256,7 +259,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Reasoning. 
         /// <para>
-        /// Justification for the assigned risk score
+        /// The reasoning behind the finding, explaining why it was identified as a vulnerability.
         /// </para>
         /// </summary>
         public string Reasoning
@@ -274,7 +277,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RiskLevel. 
         /// <para>
-        /// Severity level of the identified risk
+        /// The risk level of the finding. Valid values include UNKNOWN, INFORMATIONAL, LOW, MEDIUM,
+        /// HIGH, and CRITICAL.
         /// </para>
         /// </summary>
         public RiskLevel RiskLevel
@@ -292,7 +296,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RiskScore. 
         /// <para>
-        /// Risk score associated with the finding
+        /// The numerical risk score of the finding.
         /// </para>
         /// </summary>
         public string RiskScore
@@ -310,7 +314,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RiskType. 
         /// <para>
-        /// Type of security risk identified
+        /// The type of security risk identified by the finding.
         /// </para>
         /// </summary>
         public string RiskType
@@ -328,7 +332,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Current status of the finding
+        /// The current status of the finding. Valid values include ACTIVE, RESOLVED, ACCEPTED,
+        /// and FALSE_POSITIVE.
         /// </para>
         /// </summary>
         public FindingStatus Status
@@ -346,7 +351,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        /// Identifier of the associated task
+        /// The unique identifier of the task that produced the finding.
         /// </para>
         /// </summary>
         public string TaskId
@@ -364,7 +369,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Timestamp when the finding was last updated
+        /// The date and time the finding was last updated, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt

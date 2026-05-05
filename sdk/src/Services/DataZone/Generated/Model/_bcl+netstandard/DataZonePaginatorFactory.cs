@@ -205,6 +205,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListNotebookRuns operation
+        ///</summary>
+        public IListNotebookRunsPaginator ListNotebookRuns(ListNotebookRunsRequest request) 
+        {
+            return new ListNotebookRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNotifications operation
         ///</summary>
         public IListNotificationsPaginator ListNotifications(ListNotificationsRequest request) 

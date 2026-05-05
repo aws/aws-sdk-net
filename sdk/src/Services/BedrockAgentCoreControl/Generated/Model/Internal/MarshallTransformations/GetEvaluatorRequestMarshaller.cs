@@ -65,7 +65,11 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetEvaluatorId())
                 throw new AmazonBedrockAgentCoreControlException("Request object does not have required field EvaluatorId set");
             request.AddPathResource("{evaluatorId}", StringUtils.FromString(publicRequest.EvaluatorId));
+            
+            if (publicRequest.IsSetIncludedData())
+                request.Parameters.Add("includedData", StringUtils.FromString(publicRequest.IncludedData));
             request.ResourcePath = "/evaluators/{evaluatorId}";
+            request.UseQueryString = true;
 
             return request;
         }

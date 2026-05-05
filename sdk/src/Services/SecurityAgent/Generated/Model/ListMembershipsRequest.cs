@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMemberships operation.
-    /// Lists all members associated to an agent space with pagination support
+    /// Returns a paginated list of membership summaries for the specified agent space within
+    /// an application.
     /// </summary>
     public partial class ListMembershipsRequest : AmazonSecurityAgentRequest
     {
@@ -44,7 +45,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Agent space identifier
+        /// The unique identifier of the agent space to list memberships for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +64,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// Application identifier
+        /// The unique identifier of the application that contains the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +83,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to return
+        /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         public int? MaxResults
@@ -100,7 +101,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MemberType. 
         /// <para>
-        /// Filter by member type
+        /// Filter memberships by member type.
         /// </para>
         /// </summary>
         public MembershipTypeFilter MemberType
@@ -118,7 +119,9 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token for pagination
+        /// A token to use for paginating results that are returned in the response. Set the value
+        /// of this parameter to null for the first request. For subsequent calls, use the nextToken
+        /// value returned from the previous request.
         /// </para>
         /// </summary>
         public string NextToken

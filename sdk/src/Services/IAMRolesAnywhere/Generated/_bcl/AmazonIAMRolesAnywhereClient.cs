@@ -39,6 +39,11 @@ namespace Amazon.IAMRolesAnywhere
 {
     /// <summary>
     /// <para>Implementation for accessing IAMRolesAnywhere</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Identity and Access Management Roles Anywhere provides a secure way for your workloads
     /// such as servers, containers, and applications that run outside of Amazon Web Services

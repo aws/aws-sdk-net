@@ -39,6 +39,11 @@ namespace Amazon.CloudWatchRUM
 {
     /// <summary>
     /// <para>Implementation for accessing CloudWatchRUM</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// With Amazon CloudWatch RUM, you can perform real-user monitoring to collect client-side
     /// data about your web application performance from actual user sessions in real time.

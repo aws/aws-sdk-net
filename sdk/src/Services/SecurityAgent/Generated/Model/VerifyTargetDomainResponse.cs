@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for verifying ownership for a registered target domain in an agent space
+    /// Output for verifying ownership for a registered target domain in an agent space.
     /// </summary>
     public partial class VerifyTargetDomainResponse : AmazonWebServiceResponse
     {
@@ -39,12 +39,13 @@ namespace Amazon.SecurityAgent.Model
         private TargetDomainStatus _status;
         private string _targetDomainId;
         private DateTime? _updatedAt;
+        private string _verificationStatusReason;
         private DateTime? _verifiedAt;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Timestamp when the target domain was registered
+        /// The date and time the target domain was created, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -62,7 +63,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// Name of the registered target domain
+        /// The domain name of the target domain.
         /// </para>
         /// </summary>
         public string DomainName
@@ -80,7 +81,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Current verification status of the registered target domain
+        /// The verification status of the target domain.
         /// </para>
         /// </summary>
         public TargetDomainStatus Status
@@ -98,7 +99,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomainId. 
         /// <para>
-        /// Unique identifier of the target domain
+        /// The unique identifier of the target domain.
         /// </para>
         /// </summary>
         public string TargetDomainId
@@ -116,7 +117,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Timestamp when the target domain was last updated
+        /// The date and time the target domain was last updated, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt
@@ -132,9 +133,27 @@ namespace Amazon.SecurityAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property VerificationStatusReason. 
+        /// <para>
+        /// The reason for the current target domain verification status.
+        /// </para>
+        /// </summary>
+        public string VerificationStatusReason
+        {
+            get { return this._verificationStatusReason; }
+            set { this._verificationStatusReason = value; }
+        }
+
+        // Check to see if VerificationStatusReason property is set
+        internal bool IsSetVerificationStatusReason()
+        {
+            return this._verificationStatusReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VerifiedAt. 
         /// <para>
-        /// Timestamp when the target domain was last successfully verified
+        /// The date and time the target domain was verified, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? VerifiedAt

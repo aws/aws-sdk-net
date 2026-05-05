@@ -71,8 +71,6 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            if (string.IsNullOrEmpty(publicRequest.UserId))
-                throw new AmazonDevOpsAgentException("Request object does not have required field UserId set");
             
             if (publicRequest.IsSetUserId())
                 request.Parameters.Add("userId", StringUtils.FromString(publicRequest.UserId));

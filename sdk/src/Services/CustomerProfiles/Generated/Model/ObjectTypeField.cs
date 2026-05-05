@@ -80,6 +80,8 @@ namespace Amazon.CustomerProfiles.Model
         /// Gets and sets the property Target. 
         /// <para>
         /// The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.
+        /// Do not include sensitive or personally identifiable information (PII) in the target
+        /// field name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

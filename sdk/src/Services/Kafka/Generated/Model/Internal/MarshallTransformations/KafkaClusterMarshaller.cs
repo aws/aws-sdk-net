@@ -57,6 +57,39 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetApacheKafkaCluster())
+            {
+                context.Writer.WritePropertyName("apacheKafkaCluster");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ApacheKafkaClusterMarshaller.Instance;
+                marshaller.Marshall(requestObject.ApacheKafkaCluster, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetClientAuthentication())
+            {
+                context.Writer.WritePropertyName("clientAuthentication");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KafkaClusterClientAuthenticationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ClientAuthentication, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetEncryptionInTransit())
+            {
+                context.Writer.WritePropertyName("encryptionInTransit");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KafkaClusterEncryptionInTransitMarshaller.Instance;
+                marshaller.Marshall(requestObject.EncryptionInTransit, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetVpcConfig())
             {
                 context.Writer.WritePropertyName("vpcConfig");

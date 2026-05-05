@@ -39,6 +39,11 @@ namespace Amazon.ECS
 {
     /// <summary>
     /// <para>Implementation for accessing ECS</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Elastic Container Service 
     /// <para>

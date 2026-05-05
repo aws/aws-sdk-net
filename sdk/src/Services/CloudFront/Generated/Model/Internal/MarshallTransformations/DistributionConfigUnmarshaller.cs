@@ -74,6 +74,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.CacheBehaviors = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CacheTagConfig", targetDepth))
+                    {
+                        var unmarshaller = CacheTagConfigUnmarshaller.Instance;
+                        unmarshalledObject.CacheTagConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CallerReference", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

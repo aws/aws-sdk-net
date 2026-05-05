@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for TagResource operation
+    /// Output for TagResource operation.
     /// </summary>
     public partial class TagResourceResponse : AmazonWebServiceResponse
     {

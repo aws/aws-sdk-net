@@ -295,6 +295,260 @@ namespace Amazon.LocationService
 
 
     /// <summary>
+    /// Constants used for properties of type JobAction.
+    /// </summary>
+    public class JobAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ValidateAddress for JobAction
+        /// </summary>
+        public static readonly JobAction ValidateAddress = new JobAction("ValidateAddress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobAction FindValue(string value)
+        {
+            return FindValue<JobAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobErrorCode.
+    /// </summary>
+    public class JobErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InternalServerError for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode InternalServerError = new JobErrorCode("InternalServerError");
+        /// <summary>
+        /// Constant ValidationError for JobErrorCode
+        /// </summary>
+        public static readonly JobErrorCode ValidationError = new JobErrorCode("ValidationError");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobErrorCode FindValue(string value)
+        {
+            return FindValue<JobErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobInputFormat.
+    /// </summary>
+    public class JobInputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Parquet for JobInputFormat
+        /// </summary>
+        public static readonly JobInputFormat Parquet = new JobInputFormat("Parquet");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobInputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobInputFormat FindValue(string value)
+        {
+            return FindValue<JobInputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobInputFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobOutputFormat.
+    /// </summary>
+    public class JobOutputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Parquet for JobOutputFormat
+        /// </summary>
+        public static readonly JobOutputFormat Parquet = new JobOutputFormat("Parquet");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobOutputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobOutputFormat FindValue(string value)
+        {
+            return FindValue<JobOutputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobOutputFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobStatus.
+    /// </summary>
+    public class JobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cancelled for JobStatus
+        /// </summary>
+        public static readonly JobStatus Cancelled = new JobStatus("Cancelled");
+        /// <summary>
+        /// Constant Cancelling for JobStatus
+        /// </summary>
+        public static readonly JobStatus Cancelling = new JobStatus("Cancelling");
+        /// <summary>
+        /// Constant Completed for JobStatus
+        /// </summary>
+        public static readonly JobStatus Completed = new JobStatus("Completed");
+        /// <summary>
+        /// Constant Failed for JobStatus
+        /// </summary>
+        public static readonly JobStatus Failed = new JobStatus("Failed");
+        /// <summary>
+        /// Constant Pending for JobStatus
+        /// </summary>
+        public static readonly JobStatus Pending = new JobStatus("Pending");
+        /// <summary>
+        /// Constant Running for JobStatus
+        /// </summary>
+        public static readonly JobStatus Running = new JobStatus("Running");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobStatus FindValue(string value)
+        {
+            return FindValue<JobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OptimizationMode.
     /// </summary>
     public class OptimizationMode : ConstantClass
@@ -674,6 +928,56 @@ namespace Amazon.LocationService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TravelMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidateAddressAdditionalFeature.
+    /// </summary>
+    public class ValidateAddressAdditionalFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CountrySpecificAttributes for ValidateAddressAdditionalFeature
+        /// </summary>
+        public static readonly ValidateAddressAdditionalFeature CountrySpecificAttributes = new ValidateAddressAdditionalFeature("CountrySpecificAttributes");
+        /// <summary>
+        /// Constant Position for ValidateAddressAdditionalFeature
+        /// </summary>
+        public static readonly ValidateAddressAdditionalFeature Position = new ValidateAddressAdditionalFeature("Position");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidateAddressAdditionalFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidateAddressAdditionalFeature FindValue(string value)
+        {
+            return FindValue<ValidateAddressAdditionalFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidateAddressAdditionalFeature(string value)
         {
             return FindValue(value);
         }

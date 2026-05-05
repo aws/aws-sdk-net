@@ -46,6 +46,17 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCompositeSliConfig())
+            {
+                context.Writer.WritePropertyName("CompositeSliConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CompositeSliConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.CompositeSliConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDependencyConfig())
             {
                 context.Writer.WritePropertyName("DependencyConfig");

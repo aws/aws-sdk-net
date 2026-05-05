@@ -52,6 +52,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Description);
             }
 
+            if(requestObject.IsSetMemoryRecordSchema())
+            {
+                context.Writer.WritePropertyName("memoryRecordSchema");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MemoryRecordSchemaMarshaller.Instance;
+                marshaller.Marshall(requestObject.MemoryRecordSchema, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

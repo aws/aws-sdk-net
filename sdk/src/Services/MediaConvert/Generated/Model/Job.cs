@@ -42,6 +42,7 @@ namespace Amazon.MediaConvert.Model
         private string _clientRequestToken;
         private DateTime? _createdAt;
         private JobPhase _currentPhase;
+        private ElementalInferenceConfiguration _elementalInferenceConfiguration;
         private int? _errorCode;
         private string _errorMessage;
         private List<HopDestination> _hopDestinations = AWSConfigs.InitializeCollections ? new List<HopDestination>() : null;
@@ -190,6 +191,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCurrentPhase()
         {
             return this._currentPhase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElementalInferenceConfiguration. The Elemental Inference
+        /// configuration used in this job.
+        /// </summary>
+        public ElementalInferenceConfiguration ElementalInferenceConfiguration
+        {
+            get { return this._elementalInferenceConfiguration; }
+            set { this._elementalInferenceConfiguration = value; }
+        }
+
+        // Check to see if ElementalInferenceConfiguration property is set
+        internal bool IsSetElementalInferenceConfiguration()
+        {
+            return this._elementalInferenceConfiguration != null;
         }
 
         /// <summary>

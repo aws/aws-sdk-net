@@ -29,88 +29,117 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FleetDeployment Object
     /// </summary>  
-    public class FleetDeploymentUnmarshaller : IJsonUnmarshaller<FleetDeployment, JsonUnmarshallerContext>
+    public class FleetDeploymentUnmarshaller : ICborUnmarshaller<FleetDeployment, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FleetDeployment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FleetDeployment Unmarshall(CborUnmarshallerContext context)
         {
             FleetDeployment unmarshalledObject = new FleetDeployment();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DeploymentConfiguration", targetDepth))
-                {
-                    var unmarshaller = DeploymentConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DeploymentId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DeploymentStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FleetId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FleetId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GameServerBinaryArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameServerBinaryArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PerInstanceBinaryArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PerInstanceBinaryArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RollbackGameServerBinaryArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RollbackGameServerBinaryArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RollbackPerInstanceBinaryArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RollbackPerInstanceBinaryArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "CreationTime":
+                        {
+                            context.AddPathSegment("CreationTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DeploymentConfiguration":
+                        {
+                            context.AddPathSegment("DeploymentConfiguration");
+                            var unmarshaller = DeploymentConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.DeploymentConfiguration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DeploymentId":
+                        {
+                            context.AddPathSegment("DeploymentId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DeploymentStatus":
+                        {
+                            context.AddPathSegment("DeploymentStatus");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DeploymentStatus = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "FleetId":
+                        {
+                            context.AddPathSegment("FleetId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.FleetId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GameServerBinaryArn":
+                        {
+                            context.AddPathSegment("GameServerBinaryArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GameServerBinaryArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PerInstanceBinaryArn":
+                        {
+                            context.AddPathSegment("PerInstanceBinaryArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.PerInstanceBinaryArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RollbackGameServerBinaryArn":
+                        {
+                            context.AddPathSegment("RollbackGameServerBinaryArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RollbackGameServerBinaryArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RollbackPerInstanceBinaryArn":
+                        {
+                            context.AddPathSegment("RollbackPerInstanceBinaryArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RollbackPerInstanceBinaryArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class DefaultFilterControlConfiguration
     {
         private DefaultFilterControlOptions _controlOptions;
+        private ControlTitleFormatText _controlTitleFormatText;
         private string _title;
 
         /// <summary>
@@ -57,13 +58,31 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ControlTitleFormatText. 
+        /// <para>
+        /// The title text format configuration for the default filter control.
+        /// </para>
+        /// </summary>
+        public ControlTitleFormatText ControlTitleFormatText
+        {
+            get { return this._controlTitleFormatText; }
+            set { this._controlTitleFormatText = value; }
+        }
+
+        // Check to see if ControlTitleFormatText property is set
+        internal bool IsSetControlTitleFormatText()
+        {
+            return this._controlTitleFormatText != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
         /// The title of the <c>DefaultFilterControlConfiguration</c>. This title is shared by
         /// all controls that are tied to this filter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Title
         {
             get { return this._title; }

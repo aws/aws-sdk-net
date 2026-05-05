@@ -1598,6 +1598,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.DescribeServerlessV2PlatformVersions(Amazon.RDS.Model.DescribeServerlessV2PlatformVersionsRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.DescribeServerlessV2PlatformVersions(Amazon.RDS.Model.DescribeServerlessV2PlatformVersionsRequest)" />
+            <member name="T:Amazon.RDS.Model.DescribeServerlessV2PlatformVersionsRequest" />
+            <member name="T:Amazon.RDS.Model.DescribeServerlessV2PlatformVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example displays details about each of the serverless platform versions for the specified DB engine.
+                </para>
+                <code
+                    title="To describe the serverless platform versions for the Aurora MySQL DB engine"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.RDS.IAmazonRDS.DescribeSourceRegions(Amazon.RDS.Model.DescribeSourceRegionsRequest)" />
             <member name="M:Amazon.RDS.AmazonRDSClient.DescribeSourceRegions(Amazon.RDS.Model.DescribeSourceRegionsRequest)" />
             <member name="T:Amazon.RDS.Model.DescribeSourceRegionsRequest" />

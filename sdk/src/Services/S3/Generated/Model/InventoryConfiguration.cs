@@ -128,6 +128,14 @@ namespace Amazon.S3.Model
         /// <para>
         /// Contains the optional fields that are included in the inventory results.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The following optional fields are supported for directory buckets <c>Size | LastModifiedDate
+        /// | StorageClass | ETag | IsMultipartUploaded | EncryptionStatus | BucketKeyStatus |
+        /// ChecksumAlgorithm | LifecycleExpirationDate.</c> Throws MalformedXML error if unsupported
+        /// optional field is provided. 
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

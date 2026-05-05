@@ -34,8 +34,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CustomOauth2ProviderConfigOutput
     {
+        private ClientAuthenticationMethodType _clientAuthenticationMethod;
         private string _clientId;
         private Oauth2Discovery _oauthDiscovery;
+        private OnBehalfOfTokenExchangeConfigType _onBehalfOfTokenExchangeConfig;
+        private PrivateEndpoint _privateEndpoint;
+        private List<PrivateEndpointOverride> _privateEndpointOverrides = AWSConfigs.InitializeCollections ? new List<PrivateEndpointOverride>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ClientAuthenticationMethod. 
+        /// <para>
+        /// The client authentication method used when authenticating with the token endpoint.
+        /// </para>
+        /// </summary>
+        public ClientAuthenticationMethodType ClientAuthenticationMethod
+        {
+            get { return this._clientAuthenticationMethod; }
+            set { this._clientAuthenticationMethod = value; }
+        }
+
+        // Check to see if ClientAuthenticationMethod property is set
+        internal bool IsSetClientAuthenticationMethod()
+        {
+            return this._clientAuthenticationMethod != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientId. 
@@ -73,6 +95,69 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetOauthDiscovery()
         {
             return this._oauthDiscovery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnBehalfOfTokenExchangeConfig. 
+        /// <para>
+        /// The configuration for on-behalf-of token exchange.
+        /// </para>
+        /// </summary>
+        public OnBehalfOfTokenExchangeConfigType OnBehalfOfTokenExchangeConfig
+        {
+            get { return this._onBehalfOfTokenExchangeConfig; }
+            set { this._onBehalfOfTokenExchangeConfig = value; }
+        }
+
+        // Check to see if OnBehalfOfTokenExchangeConfig property is set
+        internal bool IsSetOnBehalfOfTokenExchangeConfig()
+        {
+            return this._onBehalfOfTokenExchangeConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateEndpoint. 
+        /// <para>
+        /// The default private endpoint for the custom OAuth2 provider, enabling secure connectivity
+        /// through a VPC Lattice resource configuration.
+        /// </para>
+        /// </summary>
+        public PrivateEndpoint PrivateEndpoint
+        {
+            get { return this._privateEndpoint; }
+            set { this._privateEndpoint = value; }
+        }
+
+        // Check to see if PrivateEndpoint property is set
+        internal bool IsSetPrivateEndpoint()
+        {
+            return this._privateEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateEndpointOverrides. 
+        /// <para>
+        /// The list of private endpoint overrides for the custom OAuth2 provider. Each override
+        /// maps a specific domain to a private endpoint, enabling secure connectivity through
+        /// VPC Lattice resource configurations.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<PrivateEndpointOverride> PrivateEndpointOverrides
+        {
+            get { return this._privateEndpointOverrides; }
+            set { this._privateEndpointOverrides = value; }
+        }
+
+        // Check to see if PrivateEndpointOverrides property is set
+        internal bool IsSetPrivateEndpointOverrides()
+        {
+            return this._privateEndpointOverrides != null && (this._privateEndpointOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

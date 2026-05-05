@@ -39,6 +39,11 @@ namespace Amazon.Detective
 {
     /// <summary>
     /// <para>Implementation for accessing Detective</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Detective uses machine learning and purpose-built visualizations to help you to analyze
     /// and investigate security issues across your Amazon Web Services (Amazon Web Services)

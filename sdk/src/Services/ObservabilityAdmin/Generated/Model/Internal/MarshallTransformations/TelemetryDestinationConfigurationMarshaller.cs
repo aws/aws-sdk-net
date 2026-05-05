@@ -91,6 +91,17 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMskMonitoringParameters())
+            {
+                context.Writer.WritePropertyName("MskMonitoringParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MskMonitoringParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.MskMonitoringParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRetentionInDays())
             {
                 context.Writer.WritePropertyName("RetentionInDays");

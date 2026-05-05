@@ -3338,6 +3338,11 @@
     <pattern>[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.Span.StatusDescription</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.SpanAttributes.AgentId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
@@ -3448,6 +3453,11 @@
   <property-value-rule>
     <property>Amazon.QConnect.Model.SpanMessage.MessageId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.SpanReasoningValue.Value</property>
+    <min>1</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.SpanTextValue.Value</property>

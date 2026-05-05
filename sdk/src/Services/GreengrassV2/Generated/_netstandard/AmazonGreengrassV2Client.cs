@@ -39,6 +39,11 @@ namespace Amazon.GreengrassV2
 {
     /// <summary>
     /// <para>Implementation for accessing GreengrassV2</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// IoT Greengrass brings local compute, messaging, data management, sync, and ML inference
     /// capabilities to edge devices. This enables devices to collect and analyze data closer

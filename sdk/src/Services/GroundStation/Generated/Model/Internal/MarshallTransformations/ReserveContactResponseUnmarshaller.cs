@@ -58,6 +58,12 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     response.ContactId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("versionId", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.VersionId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

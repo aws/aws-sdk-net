@@ -46,6 +46,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBatchAcrossTopics())
+            {
+                context.Writer.WritePropertyName("batchAcrossTopics");
+                context.Writer.WriteBooleanValue(requestObject.BatchAcrossTopics.Value);
+            }
+
             if(requestObject.IsSetMaxBatchOpenMs())
             {
                 context.Writer.WritePropertyName("maxBatchOpenMs");

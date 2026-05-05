@@ -39,7 +39,10 @@ namespace AWSSDK_DotNet.UnitTests
             int throttleRetryCount = 5; 
             int throttleRetryCost = 5; 
             int throttleCost = 1;
-            CapacityManager capacityManagerInstance = new CapacityManager(throttleRetryCount, throttleRetryCost, throttleCost);
+            CapacityManager capacityManagerInstance = new CapacityManager(
+                initialRetryTokens: throttleRetryCost * throttleRetryCount, 
+                retryCost: throttleRetryCost, noRetryIncrement: throttleCost, 
+                timeoutRetryCost: throttleRetryCost, throttlingRetryCost: 0);
             retryCapacity = capacityManagerInstance.GetRetryCapacity("AcquireCapacityUnitTest");
             Assert.IsNotNull(retryCapacity);
             Assert.IsTrue(capacityManagerInstance.TryAcquireCapacity(retryCapacity));
@@ -61,7 +64,10 @@ namespace AWSSDK_DotNet.UnitTests
             int throttleRetryCount = 0;
             int throttleRetryCost = 5;
             int throttleCost = 1;
-            CapacityManager capacityManagerInstance = new CapacityManager(throttleRetryCount, throttleRetryCost, throttleCost);
+            CapacityManager capacityManagerInstance = new CapacityManager(
+                initialRetryTokens: throttleRetryCost * throttleRetryCount, 
+                retryCost: throttleRetryCost, noRetryIncrement: throttleCost, 
+                timeoutRetryCost: throttleRetryCost, throttlingRetryCost: 0);
             retryCapacity = capacityManagerInstance.GetRetryCapacity("AcquireCapacityInvalidUnitTest");
             Assert.IsNotNull(retryCapacity);
             Assert.IsFalse(capacityManagerInstance.TryAcquireCapacity(retryCapacity));
@@ -83,7 +89,10 @@ namespace AWSSDK_DotNet.UnitTests
             int throttleRetryCount = 5;
             int throttleRetryCost = 5;
             int throttleCost = 1;
-            CapacityManager capacityManagerInstance = new CapacityManager(throttleRetryCount, throttleRetryCost, throttleCost);
+            CapacityManager capacityManagerInstance = new CapacityManager(
+                initialRetryTokens: throttleRetryCost * throttleRetryCount, 
+                retryCost: throttleRetryCost, noRetryIncrement: throttleCost, 
+                timeoutRetryCost: throttleRetryCost, throttlingRetryCost: 0);
             retryCapacity = capacityManagerInstance.GetRetryCapacity("ReleaseCapacityUnitTest");
             Assert.IsNotNull(retryCapacity);
             Assert.IsTrue(capacityManagerInstance.TryAcquireCapacity(retryCapacity));
@@ -112,7 +121,10 @@ namespace AWSSDK_DotNet.UnitTests
             int throttleRetryCount = 5;
             int throttleRetryCost = 5;
             int throttleCost = 1;
-            CapacityManager capacityManagerInstance = new CapacityManager(throttleRetryCount, throttleRetryCost, throttleCost);
+            CapacityManager capacityManagerInstance = new CapacityManager(
+                initialRetryTokens: throttleRetryCost * throttleRetryCount, 
+                retryCost: throttleRetryCost, noRetryIncrement: throttleCost, 
+                timeoutRetryCost: throttleRetryCost, throttlingRetryCost: 0);
             retryCapacity = capacityManagerInstance.GetRetryCapacity("ReleaseCapacityInvalidUnitTest");
             Assert.IsNotNull(retryCapacity);
 

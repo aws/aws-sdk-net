@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIntegration operation.
-    /// Deletes the Integration of the Security Agent App with an external Provider
+    /// Deletes an integration with a third-party provider.
     /// </summary>
     public partial class DeleteIntegrationRequest : AmazonSecurityAgentRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IntegrationId. 
         /// <para>
-        /// Unique identifier of the integration
+        /// The unique identifier of the integration to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

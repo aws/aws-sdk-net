@@ -952,6 +952,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GetKeyLastUsage(Amazon.KeyManagementService.Model.GetKeyLastUsageRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GetKeyLastUsage(Amazon.KeyManagementService.Model.GetKeyLastUsageRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GetKeyLastUsageRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GetKeyLastUsageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves usage information about the last successful cryptographic operation performed with the specified KMS key, including the operation type, timestamp, and associated AWS CloudTrail event ID.
+                </para>
+                <code
+                    title="To retrieve the last usage for a KMS key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-retrieve-the-last-usage-for-a-kms-key-1773253500001" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GetKeyPolicy(Amazon.KeyManagementService.Model.GetKeyPolicyRequest)" />
             <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GetKeyPolicy(Amazon.KeyManagementService.Model.GetKeyPolicyRequest)" />
             <member name="T:Amazon.KeyManagementService.Model.GetKeyPolicyRequest" />

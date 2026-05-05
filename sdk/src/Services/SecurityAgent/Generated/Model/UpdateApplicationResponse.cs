@@ -39,7 +39,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// Application ID
+        /// The unique identifier of the updated application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

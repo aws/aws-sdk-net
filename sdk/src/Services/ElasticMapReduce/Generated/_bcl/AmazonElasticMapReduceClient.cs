@@ -39,6 +39,11 @@ namespace Amazon.ElasticMapReduce
 {
     /// <summary>
     /// <para>Implementation for accessing ElasticMapReduce</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon EMR is a web service that makes it easier to process large amounts of data
     /// efficiently. Amazon EMR uses Hadoop processing combined with several Amazon Web Services

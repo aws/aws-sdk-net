@@ -39,6 +39,11 @@ namespace Amazon.PaymentCryptographyData
 {
     /// <summary>
     /// <para>Implementation for accessing PaymentCryptographyData</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You use the Amazon Web Services Payment Cryptography Data Plane to manage how encryption
     /// keys are used for payment-related transaction processing and associated cryptographic

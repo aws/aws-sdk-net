@@ -62,6 +62,18 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     unmarshalledObject.AzEl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("oem", targetDepth))
+                {
+                    var unmarshaller = OemProgramTrackSettingsUnmarshaller.Instance;
+                    unmarshalledObject.Oem = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("tle", targetDepth))
+                {
+                    var unmarshaller = TleProgramTrackSettingsUnmarshaller.Instance;
+                    unmarshalledObject.Tle = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

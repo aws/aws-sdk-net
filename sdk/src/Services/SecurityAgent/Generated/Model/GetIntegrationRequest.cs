@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIntegration operation.
-    /// Gets Integration metadata from the provided id
+    /// Retrieves information about an integration.
     /// </summary>
     public partial class GetIntegrationRequest : AmazonSecurityAgentRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IntegrationId. 
         /// <para>
-        /// Unique identifier of the integration
+        /// The unique identifier of the integration to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

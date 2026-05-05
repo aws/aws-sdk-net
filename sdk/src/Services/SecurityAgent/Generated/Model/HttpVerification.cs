@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Represents http route verification details
+    /// Contains HTTP route verification details for a target domain, including the route
+    /// path and token to serve for domain ownership verification.
     /// </summary>
     public partial class HttpVerification
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RoutePath. 
         /// <para>
-        /// Route path where verification token should be placed
+        /// The HTTP route path where the verification token must be served.
         /// </para>
         /// </summary>
         public string RoutePath
@@ -58,7 +59,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Token. 
         /// <para>
-        /// Token used to verify domain ownership
+        /// The verification token to serve at the specified route path.
         /// </para>
         /// </summary>
         public string Token

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for the CreateTargetDomain operation
+    /// Output for the CreateTargetDomain operation.
     /// </summary>
     public partial class CreateTargetDomainResponse : AmazonWebServiceResponse
     {
@@ -39,12 +39,13 @@ namespace Amazon.SecurityAgent.Model
         private string _targetDomainId;
         private VerificationDetails _verificationDetails;
         private TargetDomainStatus _verificationStatus;
+        private string _verificationStatusReason;
         private DateTime? _verifiedAt;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Timestamp when the target domain was registered
+        /// The date and time the target domain was created, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -62,7 +63,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// Name of the created target domain
+        /// The domain name of the target domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +82,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomainId. 
         /// <para>
-        /// Unique identifier of the created target domain
+        /// The unique identifier of the created target domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +101,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property VerificationDetails. 
         /// <para>
-        /// Verification details to verify registered target domain
+        /// The verification details for the target domain, including the verification token and
+        /// instructions.
         /// </para>
         /// </summary>
         public VerificationDetails VerificationDetails
@@ -118,7 +120,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property VerificationStatus. 
         /// <para>
-        /// Current verification status of the registered target domain
+        /// The current verification status of the target domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -135,9 +137,27 @@ namespace Amazon.SecurityAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property VerificationStatusReason. 
+        /// <para>
+        /// The reason for the current target domain verification status.
+        /// </para>
+        /// </summary>
+        public string VerificationStatusReason
+        {
+            get { return this._verificationStatusReason; }
+            set { this._verificationStatusReason = value; }
+        }
+
+        // Check to see if VerificationStatusReason property is set
+        internal bool IsSetVerificationStatusReason()
+        {
+            return this._verificationStatusReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VerifiedAt. 
         /// <para>
-        /// Timestamp when the target domain was last successfully verified
+        /// The date and time the target domain was verified, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? VerifiedAt

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// IdC configuration containing application and instance ARNs
+    /// The IAM Identity Center configuration for an application.
     /// </summary>
     public partial class IdCConfiguration
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IdcApplicationArn. 
         /// <para>
-        /// ARN of the IAM Identity Center application associated with this application
+        /// The Amazon Resource Name (ARN) of the IAM Identity Center application.
         /// </para>
         /// </summary>
         public string IdcApplicationArn
@@ -58,7 +58,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IdcInstanceArn. 
         /// <para>
-        /// ARN of the IAM Identity Center instance used for user authentication
+        /// The Amazon Resource Name (ARN) of the IAM Identity Center instance.
         /// </para>
         /// </summary>
         public string IdcInstanceArn

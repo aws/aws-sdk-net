@@ -48,6 +48,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// This operation requires permission for the <c>lex:GetBots</c> action.
     /// </para>
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class GetBotsRequest : AmazonLexModelBuildingServiceRequest
     {
         private int? _maxResults;

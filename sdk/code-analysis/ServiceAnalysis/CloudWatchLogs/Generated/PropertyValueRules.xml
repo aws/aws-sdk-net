@@ -920,6 +920,15 @@
     <max>10485760</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetQueryResultsRequest.MaxItems</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetQueryResultsRequest.NextToken</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetQueryResultsRequest.QueryId</property>
     <min>1</min>
     <max>256</max>
@@ -927,6 +936,10 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetQueryResultsResponse.EncryptionKey</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetQueryResultsResponse.NextToken</property>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetScheduledQueryRequest.Identifier</property>
@@ -1825,6 +1838,16 @@
     <pattern>[\w_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeliverySourceConfigurationSchema.DefaultValue</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DeliverySourceConfigurationSchema.KeyName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.Destination.AccessPolicy</property>
     <min>1</min>
   </property-value-rule>
@@ -2495,8 +2518,23 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.S3TableIntegrationSource.ParentSourceIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.S3TableIntegrationSource.StatusReason</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.S3TablesIntegration.DatasourceName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.S3TablesIntegration.DatasourceType</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ScheduledQuerySummary.CreationTime</property>
@@ -2588,6 +2626,12 @@
     <property>Amazon.CloudWatchLogs.Model.SubstituteStringEntry.To</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.TagFilter.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.TooManyTagsException.ResourceName</property>

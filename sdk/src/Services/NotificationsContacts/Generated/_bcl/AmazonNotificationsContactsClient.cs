@@ -39,6 +39,11 @@ namespace Amazon.NotificationsContacts
 {
     /// <summary>
     /// <para>Implementation for accessing NotificationsContacts</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS User Notifications Contacts is a service that allows you to create and manage
     /// email contacts for AWS User Notifications. The AWS User Notifications Contacts API

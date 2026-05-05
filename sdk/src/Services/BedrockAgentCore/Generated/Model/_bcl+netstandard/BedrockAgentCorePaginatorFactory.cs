@@ -37,11 +37,27 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
+        /// Paginator for ListABTests operation
+        ///</summary>
+        public IListABTestsPaginator ListABTests(ListABTestsRequest request) 
+        {
+            return new ListABTestsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListActors operation
         ///</summary>
         public IListActorsPaginator ListActors(ListActorsRequest request) 
         {
             return new ListActorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBatchEvaluations operation
+        ///</summary>
+        public IListBatchEvaluationsPaginator ListBatchEvaluations(ListBatchEvaluationsRequest request) 
+        {
+            return new ListBatchEvaluationsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -66,6 +82,14 @@ namespace Amazon.BedrockAgentCore.Model
         public IListMemoryRecordsPaginator ListMemoryRecords(ListMemoryRecordsRequest request) 
         {
             return new ListMemoryRecordsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRecommendations operation
+        ///</summary>
+        public IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request) 
+        {
+            return new ListRecommendationsPaginator(this.client, request);
         }
 
         /// <summary>

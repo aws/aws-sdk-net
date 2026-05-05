@@ -39,6 +39,11 @@ namespace Amazon.Amplify
 {
     /// <summary>
     /// <para>Implementation for accessing Amplify</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amplify enables developers to develop and deploy cloud-powered mobile and web apps.
     /// Amplify Hosting provides a continuous delivery and hosting service for web applications.

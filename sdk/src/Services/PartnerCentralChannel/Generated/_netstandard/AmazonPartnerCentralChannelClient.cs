@@ -39,6 +39,11 @@ namespace Amazon.PartnerCentralChannel
 {
     /// <summary>
     /// <para>Implementation for accessing PartnerCentralChannel</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS Partner Central Channel service for managing partner relationships, handshakes,
     /// and program management accounts.

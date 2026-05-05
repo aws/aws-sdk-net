@@ -39,6 +39,7 @@ namespace Amazon.DataZone.Model
         private GluePropertiesOutput _glueProperties;
         private HyperPodPropertiesOutput _hyperPodProperties;
         private IamPropertiesOutput _iamProperties;
+        private LakehousePropertiesOutput _lakehouseProperties;
         private MlflowPropertiesOutput _mlflowProperties;
         private RedshiftPropertiesOutput _redshiftProperties;
         private S3PropertiesOutput _s3Properties;
@@ -135,6 +136,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetIamProperties()
         {
             return this._iamProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LakehouseProperties. 
+        /// <para>
+        /// The lakehouse properties of a connection.
+        /// </para>
+        /// </summary>
+        public LakehousePropertiesOutput LakehouseProperties
+        {
+            get { return this._lakehouseProperties; }
+            set { this._lakehouseProperties = value; }
+        }
+
+        // Check to see if LakehouseProperties property is set
+        internal bool IsSetLakehouseProperties()
+        {
+            return this._lakehouseProperties != null;
         }
 
         /// <summary>

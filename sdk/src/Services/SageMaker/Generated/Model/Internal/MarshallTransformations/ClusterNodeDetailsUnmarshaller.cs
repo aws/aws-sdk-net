@@ -128,6 +128,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.LifeCycleConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("NetworkInterface", targetDepth))
+                {
+                    var unmarshaller = ClusterNetworkInterfaceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.NetworkInterface = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("NodeLogicalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

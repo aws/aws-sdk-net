@@ -868,6 +868,24 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceGetKeyLastUsage()
+        {
+            #region to-retrieve-the-last-usage-for-a-kms-key-1773253500001
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GetKeyLastUsage(new GetKeyLastUsageRequest 
+            {
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key to get usage information for. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key. Alias names are not supported.
+            });
+
+            DateTime keyCreationDate = response.KeyCreationDate; // The date and time when the KMS key was created.
+            string keyId = response.KeyId; // The globally unique identifier for the KMS key.
+            KeyLastUsageData keyLastUsage = response.KeyLastUsage; // Contains usage information about the last time the KMS key was used for a successful cryptographic operation.
+            DateTime trackingStartDate = response.TrackingStartDate; // The date from which AWS KMS began recording cryptographic activity for this key, or the date the KMS key was created, whichever is later.
+
+            #endregion
+        }
+
         public void KeyManagementServiceGetKeyPolicy()
         {
             #region to-retrieve-a-key-policy-1479170128325

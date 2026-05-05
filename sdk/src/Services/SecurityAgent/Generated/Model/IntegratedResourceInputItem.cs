@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Input item for updating an integrated resource
+    /// Represents an input item for updating integrated resources, including the resource
+    /// and its capabilities.
     /// </summary>
     public partial class IntegratedResourceInputItem
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
-        /// Provider-specific capabilities for the resource
+        /// The capabilities to enable for the integrated resource.
         /// </para>
         /// </summary>
         public ProviderResourceCapabilities Capabilities
@@ -58,7 +59,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// Configuration of the resource
+        /// The integrated resource to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

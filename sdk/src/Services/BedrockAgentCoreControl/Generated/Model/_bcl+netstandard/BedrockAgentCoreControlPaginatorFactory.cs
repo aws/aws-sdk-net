@@ -93,11 +93,35 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListConfigurationBundles operation
+        ///</summary>
+        public IListConfigurationBundlesPaginator ListConfigurationBundles(ListConfigurationBundlesRequest request) 
+        {
+            return new ListConfigurationBundlesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConfigurationBundleVersions operation
+        ///</summary>
+        public IListConfigurationBundleVersionsPaginator ListConfigurationBundleVersions(ListConfigurationBundleVersionsRequest request) 
+        {
+            return new ListConfigurationBundleVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEvaluators operation
         ///</summary>
         public IListEvaluatorsPaginator ListEvaluators(ListEvaluatorsRequest request) 
         {
             return new ListEvaluatorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGatewayRules operation
+        ///</summary>
+        public IListGatewayRulesPaginator ListGatewayRules(ListGatewayRulesRequest request) 
+        {
+            return new ListGatewayRulesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -114,6 +138,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         public IListGatewayTargetsPaginator ListGatewayTargets(ListGatewayTargetsRequest request) 
         {
             return new ListGatewayTargetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListHarnesses operation
+        ///</summary>
+        public IListHarnessesPaginator ListHarnesses(ListHarnessesRequest request) 
+        {
+            return new ListHarnessesPaginator(this.client, request);
         }
 
         /// <summary>

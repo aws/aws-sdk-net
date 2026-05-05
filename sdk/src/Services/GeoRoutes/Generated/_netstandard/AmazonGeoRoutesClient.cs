@@ -39,6 +39,11 @@ namespace Amazon.GeoRoutes
 {
     /// <summary>
     /// <para>Implementation for accessing GeoRoutes</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// With the Amazon Location Routes API you can calculate routes and estimate travel time
     /// based on up-to-date road network and live traffic information.

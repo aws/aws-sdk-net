@@ -39,6 +39,11 @@ namespace Amazon.SimSpaceWeaver
 {
     /// <summary>
     /// <para>Implementation for accessing SimSpaceWeaver</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// SimSpace Weaver (SimSpace Weaver) is a service that you can use to build and run large-scale
     /// spatial simulations in the Amazon Web Services Cloud. For example, you can create

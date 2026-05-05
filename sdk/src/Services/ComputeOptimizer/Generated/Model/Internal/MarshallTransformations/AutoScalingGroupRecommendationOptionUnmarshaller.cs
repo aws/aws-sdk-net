@@ -29,82 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutoScalingGroupRecommendationOption Object
     /// </summary>  
-    public class AutoScalingGroupRecommendationOptionUnmarshaller : IJsonUnmarshaller<AutoScalingGroupRecommendationOption, JsonUnmarshallerContext>
+    public class AutoScalingGroupRecommendationOptionUnmarshaller : ICborUnmarshaller<AutoScalingGroupRecommendationOption, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoScalingGroupRecommendationOption Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AutoScalingGroupRecommendationOption Unmarshall(CborUnmarshallerContext context)
         {
             AutoScalingGroupRecommendationOption unmarshalledObject = new AutoScalingGroupRecommendationOption();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("configuration", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = AutoScalingGroupConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("instanceGpuInfo", targetDepth))
-                {
-                    var unmarshaller = GpuInfoUnmarshaller.Instance;
-                    unmarshalledObject.InstanceGpuInfo = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("migrationEffort", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MigrationEffort = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("performanceRisk", targetDepth))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.PerformanceRisk = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("projectedUtilizationMetrics", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<UtilizationMetric, UtilizationMetricUnmarshaller>(UtilizationMetricUnmarshaller.Instance);
-                    unmarshalledObject.ProjectedUtilizationMetrics = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("rank", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Rank = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("savingsOpportunity", targetDepth))
-                {
-                    var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
-                    unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("savingsOpportunityAfterDiscounts", targetDepth))
-                {
-                    var unmarshaller = AutoScalingGroupSavingsOpportunityAfterDiscountsUnmarshaller.Instance;
-                    unmarshalledObject.SavingsOpportunityAfterDiscounts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "configuration":
+                        {
+                            context.AddPathSegment("Configuration");
+                            var unmarshaller = AutoScalingGroupConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.Configuration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "instanceGpuInfo":
+                        {
+                            context.AddPathSegment("InstanceGpuInfo");
+                            var unmarshaller = GpuInfoUnmarshaller.Instance;
+                            unmarshalledObject.InstanceGpuInfo = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "migrationEffort":
+                        {
+                            context.AddPathSegment("MigrationEffort");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.MigrationEffort = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "performanceRisk":
+                        {
+                            context.AddPathSegment("PerformanceRisk");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.PerformanceRisk = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "projectedUtilizationMetrics":
+                        {
+                            context.AddPathSegment("ProjectedUtilizationMetrics");
+                            var unmarshaller = new CborListUnmarshaller<UtilizationMetric, UtilizationMetricUnmarshaller>(UtilizationMetricUnmarshaller.Instance);
+                            unmarshalledObject.ProjectedUtilizationMetrics = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "rank":
+                        {
+                            context.AddPathSegment("Rank");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.Rank = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "savingsOpportunity":
+                        {
+                            context.AddPathSegment("SavingsOpportunity");
+                            var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
+                            unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "savingsOpportunityAfterDiscounts":
+                        {
+                            context.AddPathSegment("SavingsOpportunityAfterDiscounts");
+                            var unmarshaller = AutoScalingGroupSavingsOpportunityAfterDiscountsUnmarshaller.Instance;
+                            unmarshalledObject.SavingsOpportunityAfterDiscounts = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

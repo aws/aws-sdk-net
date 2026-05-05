@@ -38,7 +38,7 @@ namespace Amazon.BedrockAgentCore.Model
         private DateTime? _createdAt;
         private string _memoryRecordId;
         private string _memoryStrategyId;
-        private Dictionary<string, MetadataValue> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, MetadataValue>() : null;
+        private Dictionary<string, MemoryRecordMetadataValue> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, MemoryRecordMetadataValue>() : null;
         private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _score;
 
@@ -129,8 +129,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=15)]
-        public Dictionary<string, MetadataValue> Metadata
+        [AWSProperty(Min=1, Max=20)]
+        public Dictionary<string, MemoryRecordMetadataValue> Metadata
         {
             get { return this._metadata; }
             set { this._metadata = value; }

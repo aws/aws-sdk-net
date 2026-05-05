@@ -29,112 +29,149 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ECSServiceRecommendation Object
     /// </summary>  
-    public class ECSServiceRecommendationUnmarshaller : IJsonUnmarshaller<ECSServiceRecommendation, JsonUnmarshallerContext>
+    public class ECSServiceRecommendationUnmarshaller : ICborUnmarshaller<ECSServiceRecommendation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ECSServiceRecommendation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ECSServiceRecommendation Unmarshall(CborUnmarshallerContext context)
         {
             ECSServiceRecommendation unmarshalledObject = new ECSServiceRecommendation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("accountId", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currentPerformanceRisk", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentPerformanceRisk = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currentServiceConfiguration", targetDepth))
-                {
-                    var unmarshaller = ServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CurrentServiceConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("effectiveRecommendationPreferences", targetDepth))
-                {
-                    var unmarshaller = ECSEffectiveRecommendationPreferencesUnmarshaller.Instance;
-                    unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("finding", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Finding = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("findingReasonCodes", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.FindingReasonCodes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lastRefreshTimestamp", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("launchType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LaunchType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lookbackPeriodInDays", targetDepth))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LookbackPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("serviceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("serviceRecommendationOptions", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ECSServiceRecommendationOption, ECSServiceRecommendationOptionUnmarshaller>(ECSServiceRecommendationOptionUnmarshaller.Instance);
-                    unmarshalledObject.ServiceRecommendationOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("utilizationMetrics", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ECSServiceUtilizationMetric, ECSServiceUtilizationMetricUnmarshaller>(ECSServiceUtilizationMetricUnmarshaller.Instance);
-                    unmarshalledObject.UtilizationMetrics = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "accountId":
+                        {
+                            context.AddPathSegment("AccountId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currentPerformanceRisk":
+                        {
+                            context.AddPathSegment("CurrentPerformanceRisk");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CurrentPerformanceRisk = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currentServiceConfiguration":
+                        {
+                            context.AddPathSegment("CurrentServiceConfiguration");
+                            var unmarshaller = ServiceConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.CurrentServiceConfiguration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "effectiveRecommendationPreferences":
+                        {
+                            context.AddPathSegment("EffectiveRecommendationPreferences");
+                            var unmarshaller = ECSEffectiveRecommendationPreferencesUnmarshaller.Instance;
+                            unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "finding":
+                        {
+                            context.AddPathSegment("Finding");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Finding = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "findingReasonCodes":
+                        {
+                            context.AddPathSegment("FindingReasonCodes");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.FindingReasonCodes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lastRefreshTimestamp":
+                        {
+                            context.AddPathSegment("LastRefreshTimestamp");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "launchType":
+                        {
+                            context.AddPathSegment("LaunchType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LaunchType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lookbackPeriodInDays":
+                        {
+                            context.AddPathSegment("LookbackPeriodInDays");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.LookbackPeriodInDays = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "serviceArn":
+                        {
+                            context.AddPathSegment("ServiceArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ServiceArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "serviceRecommendationOptions":
+                        {
+                            context.AddPathSegment("ServiceRecommendationOptions");
+                            var unmarshaller = new CborListUnmarshaller<ECSServiceRecommendationOption, ECSServiceRecommendationOptionUnmarshaller>(ECSServiceRecommendationOptionUnmarshaller.Instance);
+                            unmarshalledObject.ServiceRecommendationOptions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "tags":
+                        {
+                            context.AddPathSegment("Tags");
+                            var unmarshaller = new CborListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                            unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "utilizationMetrics":
+                        {
+                            context.AddPathSegment("UtilizationMetrics");
+                            var unmarshaller = new CborListUnmarshaller<ECSServiceUtilizationMetric, ECSServiceUtilizationMetricUnmarshaller>(ECSServiceUtilizationMetricUnmarshaller.Instance);
+                            unmarshalledObject.UtilizationMetrics = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

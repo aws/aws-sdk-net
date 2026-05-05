@@ -40,6 +40,7 @@ namespace Amazon.DataZone.Model
         private int? _maxResults;
         private string _name;
         private string _nextToken;
+        private string _projectCategory;
         private string _userIdentifier;
 
         /// <summary>
@@ -141,6 +142,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectCategory. 
+        /// <para>
+        /// A parameter to filter projects by their category.
+        /// </para>
+        /// </summary>
+        public string ProjectCategory
+        {
+            get { return this._projectCategory; }
+            set { this._projectCategory = value; }
+        }
+
+        // Check to see if ProjectCategory property is set
+        internal bool IsSetProjectCategory()
+        {
+            return this._projectCategory != null;
         }
 
         /// <summary>

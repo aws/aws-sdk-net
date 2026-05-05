@@ -39,6 +39,11 @@ namespace Amazon.AppConfig
 {
     /// <summary>
     /// <para>Implementation for accessing AppConfig</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AppConfig feature flags and dynamic configurations help software builders quickly
     /// and securely adjust application behavior in production environments without full code

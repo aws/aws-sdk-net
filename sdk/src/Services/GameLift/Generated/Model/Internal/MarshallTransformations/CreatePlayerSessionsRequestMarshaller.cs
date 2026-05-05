@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -59,64 +58,54 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreatePlayerSessionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.CreatePlayerSessions";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GameLift/operation/CreatePlayerSessions";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetGameSessionId())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("GameSessionId");
-                context.Writer.WriteStringValue(publicRequest.GameSessionId);
-            }
-
-            if(publicRequest.IsSetPlayerDataMap())
-            {
-                context.Writer.WritePropertyName("PlayerDataMap");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestPlayerDataMapKvp in publicRequest.PlayerDataMap)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetGameSessionId())
                 {
-                    context.Writer.WritePropertyName(publicRequestPlayerDataMapKvp.Key);
-                    var publicRequestPlayerDataMapValue = publicRequestPlayerDataMapKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestPlayerDataMapValue);
+                    context.Writer.WriteTextString("GameSessionId");
+                    context.Writer.WriteTextString(publicRequest.GameSessionId);
                 }
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetPlayerIds())
-            {
-                context.Writer.WritePropertyName("PlayerIds");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestPlayerIdsListValue in publicRequest.PlayerIds)
+                if (publicRequest.IsSetPlayerDataMap())
                 {
-                        context.Writer.WriteStringValue(publicRequestPlayerIdsListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
+                    context.Writer.WriteTextString("PlayerDataMap");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestPlayerDataMapKvp in publicRequest.PlayerDataMap)
+                    {
+                        context.Writer.WriteTextString(publicRequestPlayerDataMapKvp.Key);
+                        var publicRequestPlayerDataMapValue = publicRequestPlayerDataMapKvp.Value;
 
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
+                            context.Writer.WriteTextString(publicRequestPlayerDataMapValue);
+                    }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetPlayerIds())
+                {
+                    context.Writer.WriteTextString("PlayerIds");
+                    context.Writer.WriteStartArray(publicRequest.PlayerIds.Count);
+                    foreach(var publicRequestPlayerIdsListValue in publicRequest.PlayerIds)
+                    {
+                            context.Writer.WriteTextString(publicRequestPlayerIdsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static CreatePlayerSessionsRequestMarshaller _instance = new CreatePlayerSessionsRequestMarshaller();        

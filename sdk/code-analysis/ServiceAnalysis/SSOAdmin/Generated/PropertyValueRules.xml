@@ -102,6 +102,12 @@
     <pattern>arn:aws(-[a-z]{1,5}){0,3}:sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.CreateApplicationResponse.InstanceArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>arn:aws(-[a-z]{1,5}){0,3}:sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSOAdmin.Model.CreateApplicationAssignmentRequest.ApplicationArn</property>
     <min>10</min>
     <max>1224</max>

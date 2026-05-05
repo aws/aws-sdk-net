@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIntegratedResources operation.
-    /// Lists the integrated resources for an agent space
+    /// Lists the integrated resources for an agent space, optionally filtered by integration
+    /// or resource type.
     /// </summary>
     public partial class ListIntegratedResourcesRequest : AmazonSecurityAgentRequest
     {
@@ -44,7 +45,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Unique identifier of the agent space
+        /// The unique identifier of the agent space to list integrated resources for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +64,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IntegrationId. 
         /// <para>
-        /// Filter integrated resources by a specific integration
+        /// The unique identifier of the integration to filter by.
         /// </para>
         /// </summary>
         public string IntegrationId
@@ -81,7 +82,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to return
+        /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         public int? MaxResults
@@ -99,7 +100,9 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token for pagination
+        /// A token to use for paginating results that are returned in the response. Set the value
+        /// of this parameter to null for the first request. For subsequent calls, use the nextToken
+        /// value returned from the previous request.
         /// </para>
         /// </summary>
         public string NextToken
@@ -117,7 +120,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Filter integrated resources by resource type
+        /// The type of resource to filter by.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

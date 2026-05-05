@@ -36,10 +36,32 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class OAuthParameters
     {
+        private string _identityProviderCACertificatesBundleS3Uri;
         private string _identityProviderResourceUri;
         private VpcConnectionProperties _identityProviderVpcConnectionProperties;
         private string _oAuthScope;
         private string _tokenProviderUrl;
+
+        /// <summary>
+        /// Gets and sets the property IdentityProviderCACertificatesBundleS3Uri. 
+        /// <para>
+        /// The S3 URI of the identity provider's CA certificates bundle in PEM format. Use this
+        /// parameter to provide a custom CA certificate bundle for the identity provider when
+        /// the default trust store does not include the required certificates.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string IdentityProviderCACertificatesBundleS3Uri
+        {
+            get { return this._identityProviderCACertificatesBundleS3Uri; }
+            set { this._identityProviderCACertificatesBundleS3Uri = value; }
+        }
+
+        // Check to see if IdentityProviderCACertificatesBundleS3Uri property is set
+        internal bool IsSetIdentityProviderCACertificatesBundleS3Uri()
+        {
+            return this._identityProviderCACertificatesBundleS3Uri != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IdentityProviderResourceUri. 

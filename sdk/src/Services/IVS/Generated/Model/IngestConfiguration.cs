@@ -37,9 +37,9 @@ namespace Amazon.IVS.Model
     /// <para>
     ///  <b>Note:</b> IngestConfiguration is deprecated in favor of <a>IngestConfigurations</a>
     /// but retained to ensure backward compatibility. If multitrack is not enabled, IngestConfiguration
-    /// and IngestConfigurations contain the same data, namely information about track0 (the
+    /// and IngestConfigurations contain the same data, namely information about Track0 (the
     /// sole track). If multitrack is enabled, IngestConfiguration contains data for only
-    /// the first track (track0) and IngestConfigurations contains data for all tracks.
+    /// the first track (Track0) and IngestConfigurations contains data for all tracks.
     /// </para>
     /// </summary>
     public partial class IngestConfiguration

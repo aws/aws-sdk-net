@@ -90,7 +90,6 @@ namespace Amazon.DataZone.Model
         /// the Amazon DataZone domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string DomainExecutionRole
         {
             get { return this._domainExecutionRole; }

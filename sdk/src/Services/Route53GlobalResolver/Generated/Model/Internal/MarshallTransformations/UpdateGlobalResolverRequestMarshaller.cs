@@ -100,6 +100,17 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ObservabilityRegion);
             }
 
+            if(publicRequest.IsSetRegions())
+            {
+                context.Writer.WritePropertyName("regions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRegionsListValue in publicRequest.Regions)
+                {
+                        context.Writer.WriteStringValue(publicRequestRegionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

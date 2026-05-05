@@ -38,6 +38,7 @@ namespace Amazon.Kafka.Model
         private string _clusterArn;
         private ConnectivityInfo _connectivityInfo;
         private string _currentVersion;
+        private ZookeeperAccess _zookeeperAccess;
 
         /// <summary>
         /// Gets and sets the property ClusterArn.             
@@ -64,7 +65,6 @@ namespace Amazon.Kafka.Model
         /// Information about the broker access configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ConnectivityInfo ConnectivityInfo
         {
             get { return this._connectivityInfo; }
@@ -96,6 +96,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetCurrentVersion()
         {
             return this._currentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZookeeperAccess.             
+        /// <para>
+        /// Access control settings for zookeeper
+        /// </para>
+        /// </summary>
+        public ZookeeperAccess ZookeeperAccess
+        {
+            get { return this._zookeeperAccess; }
+            set { this._zookeeperAccess = value; }
+        }
+
+        // Check to see if ZookeeperAccess property is set
+        internal bool IsSetZookeeperAccess()
+        {
+            return this._zookeeperAccess != null;
         }
 
     }

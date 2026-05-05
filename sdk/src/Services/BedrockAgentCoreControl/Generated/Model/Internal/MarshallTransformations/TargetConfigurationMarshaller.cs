@@ -46,6 +46,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetHttp())
+            {
+                context.Writer.WritePropertyName("http");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HttpTargetConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Http, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMcp())
             {
                 context.Writer.WritePropertyName("mcp");

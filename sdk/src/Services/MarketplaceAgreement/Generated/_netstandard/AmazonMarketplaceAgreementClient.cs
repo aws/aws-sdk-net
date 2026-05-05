@@ -39,6 +39,11 @@ namespace Amazon.MarketplaceAgreement
 {
     /// <summary>
     /// <para>Implementation for accessing MarketplaceAgreement</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS Marketplace is a curated digital catalog that customers can use to find, buy,
     /// deploy, and manage third-party software, data, and services to build solutions and

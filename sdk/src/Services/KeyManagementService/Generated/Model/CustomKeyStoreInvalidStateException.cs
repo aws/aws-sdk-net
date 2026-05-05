@@ -61,8 +61,9 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> <li> 
     /// <para>
     /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
-    /// on a custom key store that is not disconnected. This operation is valid only when
-    /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
+    /// on a custom key store that is not disconnected. <c>UpdateCustomKeyStore</c> can be
+    /// called on a custom key store in the <c>CONNECTED</c> state only to update <c>NewCustomKeyStoreName</c>.
+    /// For all other properties, the custom key store <c>ConnectionState</c> must be <c>DISCONNECTED</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>

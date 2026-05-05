@@ -68,7 +68,7 @@ namespace Amazon.GroundStation.Model
         /// Name of a ground station.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=500)]
+        [AWSProperty(Required=true, Min=4, Max=97)]
         public string GroundStation
         {
             get { return this._groundStation; }

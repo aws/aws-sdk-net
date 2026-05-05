@@ -47,6 +47,7 @@ namespace Amazon.QConnect.Model
         private SpanType _spanType;
         private DateTime? _startTimestamp;
         private SpanStatus _status;
+        private string _statusDescription;
 
         /// <summary>
         /// Gets and sets the property AssistantId. 
@@ -273,6 +274,25 @@ namespace Amazon.QConnect.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDescription. 
+        /// <para>
+        /// Human-readable error description when status is ERROR or TIMEOUT
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string StatusDescription
+        {
+            get { return this._statusDescription; }
+            set { this._statusDescription = value; }
+        }
+
+        // Check to see if StatusDescription property is set
+        internal bool IsSetStatusDescription()
+        {
+            return this._statusDescription != null;
         }
 
     }

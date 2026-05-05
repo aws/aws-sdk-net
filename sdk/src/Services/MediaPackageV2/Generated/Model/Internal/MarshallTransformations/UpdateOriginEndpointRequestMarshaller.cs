@@ -186,6 +186,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.StartoverWindowSeconds.Value);
             }
 
+            if(publicRequest.IsSetUriSeparator())
+            {
+                context.Writer.WritePropertyName("UriSeparator");
+                context.Writer.WriteStringValue(publicRequest.UriSeparator);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

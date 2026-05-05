@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PlayerLatency Marshaller
     /// </summary>
-    public class PlayerLatencyMarshaller : IRequestMarshaller<PlayerLatency, JsonMarshallerContext> 
+    public class PlayerLatencyMarshaller : IRequestMarshaller<PlayerLatency, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,35 +45,26 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PlayerLatency requestObject, JsonMarshallerContext context)
+        public void Marshall(PlayerLatency requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetLatencyInMilliseconds())
-            {
-                context.Writer.WritePropertyName("LatencyInMilliseconds");
-                if(StringUtils.IsSpecialFloatValue(requestObject.LatencyInMilliseconds.Value))
-                {
-                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.LatencyInMilliseconds.Value));
-                }
-                else
-                {
-                    context.Writer.WriteNumberValue(requestObject.LatencyInMilliseconds.Value);
-                }
-            }
 
-            if(requestObject.IsSetPlayerId())
+            if (requestObject.IsSetLatencyInMilliseconds())
             {
-                context.Writer.WritePropertyName("PlayerId");
-                context.Writer.WriteStringValue(requestObject.PlayerId);
+                context.Writer.WriteTextString("LatencyInMilliseconds");
+                context.Writer.WriteOptimizedNumber(requestObject.LatencyInMilliseconds.Value);
             }
-
-            if(requestObject.IsSetRegionIdentifier())
+            if (requestObject.IsSetPlayerId())
             {
-                context.Writer.WritePropertyName("RegionIdentifier");
-                context.Writer.WriteStringValue(requestObject.RegionIdentifier);
+                context.Writer.WriteTextString("PlayerId");
+                context.Writer.WriteTextString(requestObject.PlayerId);
             }
-
+            if (requestObject.IsSetRegionIdentifier())
+            {
+                context.Writer.WriteTextString("RegionIdentifier");
+                context.Writer.WriteTextString(requestObject.RegionIdentifier);
+            }
         }
 
         /// <summary>

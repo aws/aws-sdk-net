@@ -39,6 +39,11 @@ namespace Amazon.Imagebuilder
 {
     /// <summary>
     /// <para>Implementation for accessing Imagebuilder</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// EC2 Image Builder is a fully managed Amazon Web Services service that makes it easier
     /// to automate the creation, management, and deployment of customized, secure, and up-to-date

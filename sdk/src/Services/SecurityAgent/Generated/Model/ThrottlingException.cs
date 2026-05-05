@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Request denied due to throttling
+    /// The request was denied due to request throttling.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -132,7 +132,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Quota code for throttling limit
+        /// Quota code for throttling limit.
         /// </para>
         /// </summary>
         public string QuotaCode
@@ -150,7 +150,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Service code for throttling limit
+        /// Service code for throttling limit.
         /// </para>
         /// </summary>
         public string ServiceCode

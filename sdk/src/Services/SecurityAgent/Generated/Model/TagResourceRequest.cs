@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds tags to a Security Agent resource
+    /// Adds tags to a resource.
     /// </summary>
     public partial class TagResourceRequest : AmazonSecurityAgentRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// ARN of the resource to tag
+        /// The Amazon Resource Name (ARN) of the resource to tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to add to the resource
+        /// The tags to add to the resource.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

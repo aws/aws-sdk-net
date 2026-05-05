@@ -47,6 +47,7 @@ namespace Amazon.MediaPackageV2.Model
         private DateTime? _modifiedAt;
         private List<ListMssManifestConfiguration> _mssManifests = AWSConfigs.InitializeCollections ? new List<ListMssManifestConfiguration>() : null;
         private string _originEndpointName;
+        private UriSeparator _uriSeparator;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -315,6 +316,24 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetOriginEndpointName()
         {
             return this._originEndpointName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UriSeparator. 
+        /// <para>
+        /// The separator character used in generated URIs for this origin endpoint.
+        /// </para>
+        /// </summary>
+        public UriSeparator UriSeparator
+        {
+            get { return this._uriSeparator; }
+            set { this._uriSeparator = value; }
+        }
+
+        // Check to see if UriSeparator property is set
+        internal bool IsSetUriSeparator()
+        {
+            return this._uriSeparator != null;
         }
 
     }

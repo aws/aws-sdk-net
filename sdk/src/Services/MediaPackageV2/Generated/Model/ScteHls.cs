@@ -35,6 +35,7 @@ namespace Amazon.MediaPackageV2.Model
     public partial class ScteHls
     {
         private AdMarkerHls _adMarkerHls;
+        private ScteInManifests _scteInManifests;
 
         /// <summary>
         /// Gets and sets the property AdMarkerHls. 
@@ -72,6 +73,30 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetAdMarkerHls()
         {
             return this._adMarkerHls != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScteInManifests. 
+        /// <para>
+        /// Controls which SCTE-35 events appear in HLS manifests. <c>ALL</c> includes all non-implicit
+        /// SCTE-35 events. <c>MATCHES_FILTER</c> includes only events whose type matches the
+        /// configured <c>ScteFilter</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value, the default is <c>ALL</c>.
+        /// </para>
+        /// </summary>
+        public ScteInManifests ScteInManifests
+        {
+            get { return this._scteInManifests; }
+            set { this._scteInManifests = value; }
+        }
+
+        // Check to see if ScteInManifests property is set
+        internal bool IsSetScteInManifests()
+        {
+            return this._scteInManifests != null;
         }
 
     }

@@ -39,6 +39,11 @@ namespace Amazon.DevOpsGuru
 {
     /// <summary>
     /// <para>Implementation for accessing DevOpsGuru</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon DevOps Guru is a fully managed service that helps you identify anomalous behavior
     /// in business critical operational applications. You specify the Amazon Web Services

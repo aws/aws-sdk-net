@@ -56,10 +56,10 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("managedLatticeResource", targetDepth))
+                if (context.TestExpression("managedVpcResource", targetDepth))
                 {
-                    var unmarshaller = ManagedLatticeResourceUnmarshaller.Instance;
-                    unmarshalledObject.ManagedLatticeResource = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = ManagedVpcResourceUnmarshaller.Instance;
+                    unmarshalledObject.ManagedVpcResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("selfManagedLatticeResource", targetDepth))

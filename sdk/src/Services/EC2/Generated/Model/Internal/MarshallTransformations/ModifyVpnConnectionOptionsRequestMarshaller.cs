@@ -79,6 +79,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("RemoteIpv6NetworkCidr", StringUtils.FromString(publicRequest.RemoteIpv6NetworkCidr));
                 }
+                if(publicRequest.IsSetTunnelBandwidth())
+                {
+                    request.Parameters.Add("TunnelBandwidth", StringUtils.FromString(publicRequest.TunnelBandwidth));
+                }
                 if(publicRequest.IsSetVpnConnectionId())
                 {
                     request.Parameters.Add("VpnConnectionId", StringUtils.FromString(publicRequest.VpnConnectionId));

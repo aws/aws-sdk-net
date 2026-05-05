@@ -39,6 +39,11 @@ namespace Amazon.KeyspacesStreams
 {
     /// <summary>
     /// <para>Implementation for accessing KeyspacesStreams</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Keyspaces (for Apache Cassandra) change data capture (CDC) records change events
     /// for Amazon Keyspaces tables. The change events captured in a stream are time-ordered

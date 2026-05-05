@@ -39,6 +39,11 @@ namespace Amazon.ElementalInference
 {
     /// <summary>
     /// <para>Implementation for accessing ElementalInference</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This is the AWS Elemental Inference REST API Reference. It provides information on
     /// the URL, request contents, and response contents of each AWS Elemental Inference REST

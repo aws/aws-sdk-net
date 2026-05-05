@@ -28,6 +28,16 @@ namespace Amazon.GroundStation.Model
     {
 
         /// <summary>
+        /// Paginator for ListAntennas operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAntennasPaginator ListAntennas(ListAntennasRequest request);
+
+        /// <summary>
         /// Paginator for ListConfigs operation
         ///</summary>
         [AWSPaginator(
@@ -48,6 +58,16 @@ namespace Amazon.GroundStation.Model
         IListContactsPaginator ListContacts(ListContactsRequest request);
 
         /// <summary>
+        /// Paginator for ListContactVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListContactVersionsPaginator ListContactVersions(ListContactVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListDataflowEndpointGroups operation
         ///</summary>
         [AWSPaginator(
@@ -66,6 +86,16 @@ namespace Amazon.GroundStation.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListEphemeridesPaginator ListEphemerides(ListEphemeridesRequest request);
+
+        /// <summary>
+        /// Paginator for ListGroundStationReservations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListGroundStationReservationsPaginator ListGroundStationReservations(ListGroundStationReservationsRequest request);
 
         /// <summary>
         /// Paginator for ListGroundStations operation

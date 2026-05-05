@@ -34,7 +34,46 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class UpdateOperation
     {
+        private bool? _excluded;
+        private string _name;
         private Dictionary<string, string> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Excluded. 
+        /// <para>
+        /// Whether to exclude this construct from the migration.
+        /// </para>
+        /// </summary>
+        public bool? Excluded
+        {
+            get { return this._excluded; }
+            set { this._excluded = value; }
+        }
+
+        // Check to see if Excluded property is set
+        internal bool IsSetExcluded()
+        {
+            return this._excluded.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The updated name for the construct.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Properties. 

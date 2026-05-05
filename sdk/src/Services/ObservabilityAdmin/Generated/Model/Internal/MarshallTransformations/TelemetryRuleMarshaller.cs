@@ -46,6 +46,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAllowFieldUpdates())
+            {
+                context.Writer.WritePropertyName("AllowFieldUpdates");
+                context.Writer.WriteBooleanValue(requestObject.AllowFieldUpdates.Value);
+            }
+
             if(requestObject.IsSetAllRegions())
             {
                 context.Writer.WritePropertyName("AllRegions");

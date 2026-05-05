@@ -60,8 +60,8 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The setting value for the setting name. Valid value for basic scan type: <c>AWS_NATIVE</c>.
-        /// Valid values for registry policy scope: <c>V1</c> or <c>V2</c>. Valid values for blob
-        /// mounting: <c>ENABLED</c> or <c>DISABLED</c>.
+        /// Valid values for registry policy scope: <c>V2</c>. Valid values for blob mounting:
+        /// <c>ENABLED</c> or <c>DISABLED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

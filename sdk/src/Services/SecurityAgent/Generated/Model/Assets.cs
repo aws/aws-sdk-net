@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Collection of assets to be tested or used during a pentest
+    /// The collection of assets used in a pentest configuration, including endpoints, actors,
+    /// documents, source code repositories, and integrated repositories.
     /// </summary>
     public partial class Assets
     {
@@ -43,7 +44,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Actors. 
         /// <para>
-        /// List of actors that interact with the system
+        /// The list of actors used during penetration testing.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -66,7 +67,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Documents. 
         /// <para>
-        /// List of documents providing context for testing
+        /// The list of documents that provide context for the pentest.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -89,7 +90,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Endpoints. 
         /// <para>
-        /// List of web application endpoints to test
+        /// The list of endpoints to test during the pentest.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -112,7 +113,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IntegratedRepositories. 
         /// <para>
-        /// List of integrated code repositories
+        /// The list of integrated repositories associated with the pentest.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -135,7 +136,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property SourceCode. 
         /// <para>
-        /// List of source code repositories for static analysis
+        /// The list of source code repositories to analyze during the pentest.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

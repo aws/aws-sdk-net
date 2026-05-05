@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Configuration for network traffic filtering
+    /// The network traffic configuration for a pentest, including custom headers and traffic
+    /// rules.
     /// </summary>
     public partial class NetworkTrafficConfig
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CustomHeaders. 
         /// <para>
-        /// Custom headers for requests
+        /// The list of custom HTTP headers to include in network traffic during testing.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -63,7 +64,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// Traffic filtering rules
+        /// The list of network traffic rules that control which URLs are allowed or denied during
+        /// testing.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

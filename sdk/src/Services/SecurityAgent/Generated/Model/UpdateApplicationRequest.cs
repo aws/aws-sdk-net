@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
-    /// Updates application configuration
+    /// Updates the configuration of an existing application, including the IAM role and default
+    /// KMS key.
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonSecurityAgentRequest
     {
@@ -42,7 +43,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// Application ID
+        /// The unique identifier of the application to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +62,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DefaultKmsKeyId. 
         /// <para>
-        /// Default KMS key identifier. Use an empty string to remove the default KMS key.
+        /// The updated identifier of the default AWS KMS key for the application.
         /// </para>
         /// </summary>
         public string DefaultKmsKeyId
@@ -79,7 +80,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+        /// The updated Amazon Resource Name (ARN) of the IAM role for the application.
         /// </para>
         /// </summary>
         public string RoleArn

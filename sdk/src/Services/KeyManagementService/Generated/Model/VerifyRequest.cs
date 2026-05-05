@@ -279,7 +279,14 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// ED25519_PH_SHA_512 signing algorithm requires KMS <c>MessageType:DIGEST</c> 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// When you specify the ED25519_PH_SHA_512 signing algorithm with <c>MessageType:DIGEST</c>,
+        /// KMS still performs the SHA-512 prehash described in <a href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-5.pdf#page=39">Step
+        /// 1 of Section 7.8.1 in FIPS 186-5</a>. This means the input is hashed twice: once by
+        /// you and once by KMS. 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// When the value of <c>MessageType</c> is <c>DIGEST</c>, the length of the <c>Message</c>
         /// value must match the length of hashed messages for the specified signing algorithm.

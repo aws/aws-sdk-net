@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Response structure for adding a single member to an agent space
+    /// Response structure for adding a single member to an agent space.
     /// </summary>
     public partial class CreateMembershipResponse : AmazonWebServiceResponse
     {

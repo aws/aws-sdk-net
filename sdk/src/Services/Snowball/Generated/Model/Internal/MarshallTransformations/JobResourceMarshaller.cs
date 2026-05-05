@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// JobResource Marshaller
     /// </summary>
-    public class JobResourceMarshaller : IRequestMarshaller<JobResource, JsonMarshallerContext> 
+    public class JobResourceMarshaller : IRequestMarshaller<JobResource, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,58 +45,56 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(JobResource requestObject, JsonMarshallerContext context)
+        public void Marshall(JobResource requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEc2AmiResources())
+
+            if (requestObject.IsSetEc2AmiResources())
             {
-                context.Writer.WritePropertyName("Ec2AmiResources");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Ec2AmiResources");
+                context.Writer.WriteStartArray(requestObject.Ec2AmiResources.Count);
                 foreach(var requestObjectEc2AmiResourcesListValue in requestObject.Ec2AmiResources)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = Ec2AmiResourceMarshaller.Instance;
                     marshaller.Marshall(requestObjectEc2AmiResourcesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetLambdaResources())
+            if (requestObject.IsSetLambdaResources())
             {
-                context.Writer.WritePropertyName("LambdaResources");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("LambdaResources");
+                context.Writer.WriteStartArray(requestObject.LambdaResources.Count);
                 foreach(var requestObjectLambdaResourcesListValue in requestObject.LambdaResources)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = LambdaResourceMarshaller.Instance;
                     marshaller.Marshall(requestObjectLambdaResourcesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetS3Resources())
+            if (requestObject.IsSetS3Resources())
             {
-                context.Writer.WritePropertyName("S3Resources");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("S3Resources");
+                context.Writer.WriteStartArray(requestObject.S3Resources.Count);
                 foreach(var requestObjectS3ResourcesListValue in requestObject.S3Resources)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = S3ResourceMarshaller.Instance;
                     marshaller.Marshall(requestObjectS3ResourcesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

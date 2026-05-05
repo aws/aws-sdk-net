@@ -39,6 +39,11 @@ namespace Amazon.Textract
 {
     /// <summary>
     /// <para>Implementation for accessing Textract</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Textract detects and analyzes text in documents and converts it into machine-readable
     /// text. This is the API reference documentation for Amazon Textract.

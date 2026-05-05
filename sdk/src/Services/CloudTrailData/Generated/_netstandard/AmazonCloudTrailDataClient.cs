@@ -39,6 +39,11 @@ namespace Amazon.CloudTrailData
 {
     /// <summary>
     /// <para>Implementation for accessing CloudTrailData</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The CloudTrail Data Service lets you ingest events into CloudTrail from any source
     /// in your hybrid environments, such as in-house or SaaS applications hosted on-premises

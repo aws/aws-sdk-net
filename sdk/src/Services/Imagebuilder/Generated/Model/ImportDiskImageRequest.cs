@@ -50,9 +50,11 @@ namespace Amazon.Imagebuilder.Model
         private string _name;
         private string _osVersion;
         private string _platform;
+        private RegisterImageOptions _registerImageOptions;
         private string _semanticVersion;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uri;
+        private WindowsConfiguration _windowsConfiguration;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -213,6 +215,24 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RegisterImageOptions. 
+        /// <para>
+        /// Configures Secure Boot and UEFI settings for the imported image.
+        /// </para>
+        /// </summary>
+        public RegisterImageOptions RegisterImageOptions
+        {
+            get { return this._registerImageOptions; }
+            set { this._registerImageOptions = value; }
+        }
+
+        // Check to see if RegisterImageOptions property is set
+        internal bool IsSetRegisterImageOptions()
+        {
+            return this._registerImageOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SemanticVersion. 
         /// <para>
         /// The semantic version to attach to the image that's created during the import process.
@@ -273,6 +293,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetUri()
         {
             return this._uri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WindowsConfiguration. 
+        /// <para>
+        /// Specifies Windows settings for ISO imports.
+        /// </para>
+        /// </summary>
+        public WindowsConfiguration WindowsConfiguration
+        {
+            get { return this._windowsConfiguration; }
+            set { this._windowsConfiguration = value; }
+        }
+
+        // Check to see if WindowsConfiguration property is set
+        internal bool IsSetWindowsConfiguration()
+        {
+            return this._windowsConfiguration != null;
         }
 
     }

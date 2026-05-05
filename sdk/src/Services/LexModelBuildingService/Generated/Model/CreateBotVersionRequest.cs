@@ -50,6 +50,7 @@ namespace Amazon.LexModelBuildingService.Model
     ///  This operation requires permission for the <c>lex:CreateBotVersion</c> action. 
     /// </para>
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class CreateBotVersionRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _checksum;
