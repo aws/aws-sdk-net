@@ -76,6 +76,7 @@ namespace UnitTests
             "DefaultAWSCredentials",
             "AuthSchemePreference",
             "SigV4aSigningRegionSet",
+            "TcpKeepAlive",
         };
 
         [Fact]
