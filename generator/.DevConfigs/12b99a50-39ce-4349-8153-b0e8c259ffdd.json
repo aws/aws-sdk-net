@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Dry-run only: Added performance benchmarks for EC2, Lambda cold start, and serde operations."
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}
