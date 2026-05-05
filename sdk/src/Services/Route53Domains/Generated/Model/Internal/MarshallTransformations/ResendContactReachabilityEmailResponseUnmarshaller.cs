@@ -103,6 +103,10 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
                 {
                     return OperationLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TLDInMaintenance"))
+                {
+                    return TLDInMaintenanceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedTLD"))
                 {
                     return UnsupportedTLDExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
