@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+#if NET8_0_OR_GREATER
+#nullable enable
+
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,7 +25,7 @@ using Microsoft.Extensions.AI;
 using Moq;
 using Xunit;
 
-namespace BedrockMEAIRealtimeTests;
+namespace Amazon.BedrockRuntime;
 
 public class BedrockRealtimeClientTests
 {
@@ -252,3 +255,5 @@ public class BedrockRealtimeClientTests
 
     #endregion
 }
+
+#endif

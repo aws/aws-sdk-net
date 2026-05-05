@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+#if NET8_0_OR_GREATER
+#nullable enable
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,7 +30,7 @@ using Microsoft.Extensions.AI;
 using Moq;
 using Xunit;
 
-namespace BedrockMEAIRealtimeTests;
+namespace Amazon.BedrockRuntime;
 
 public class BedrockRealtimeSessionTests
 {
@@ -43,7 +46,7 @@ public class BedrockRealtimeSessionTests
         runtimeMock.Setup(r => r.InvokeModelWithBidirectionalStreamAsync(
                 It.IsAny<InvokeModelWithBidirectionalStreamRequest>(),
                 It.IsAny<CancellationToken>()))
-            .Returns<InvokeModelWithBidirectionalStreamRequest, CancellationToken>(async (req, ct) =>
+            .Returns<InvokeModelWithBidirectionalStreamRequest, CancellationToken>((req, ct) =>
             {
                 // Start consuming events from the publisher in the background
                 _ = Task.Run(async () =>
@@ -71,7 +74,7 @@ public class BedrockRealtimeSessionTests
                     }
                 });
 
-                return new Mock<InvokeModelWithBidirectionalStreamResponse>().Object;
+                return Task.FromResult(new Mock<InvokeModelWithBidirectionalStreamResponse>().Object);
             });
 
         var client = new BedrockNovaRealtimeClient(runtimeMock.Object, modelId);
@@ -92,7 +95,7 @@ public class BedrockRealtimeSessionTests
         runtimeMock.Setup(r => r.InvokeModelWithBidirectionalStreamAsync(
                 It.IsAny<InvokeModelWithBidirectionalStreamRequest>(),
                 It.IsAny<CancellationToken>()))
-            .Returns<InvokeModelWithBidirectionalStreamRequest, CancellationToken>(async (req, ct) =>
+            .Returns<InvokeModelWithBidirectionalStreamRequest, CancellationToken>((req, ct) =>
             {
                 _ = Task.Run(async () =>
                 {
@@ -119,7 +122,7 @@ public class BedrockRealtimeSessionTests
                     }
                 });
 
-                return new Mock<InvokeModelWithBidirectionalStreamResponse>().Object;
+                return Task.FromResult(new Mock<InvokeModelWithBidirectionalStreamResponse>().Object);
             });
 
         var client = new BedrockNovaRealtimeClient(runtimeMock.Object, modelId);
@@ -1226,3 +1229,5 @@ public class BedrockRealtimeSessionTests
 
     #endregion
 }
+
+#endif
