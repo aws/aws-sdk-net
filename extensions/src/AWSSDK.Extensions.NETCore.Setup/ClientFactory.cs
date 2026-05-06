@@ -235,6 +235,11 @@ namespace Amazon.Extensions.NETCore.Setup
                 options = new AWSOptions();
             }
 
+            if (!string.IsNullOrEmpty(options.Profile))
+            {
+                config.Profile = new Profile(options.Profile, options.ProfilesLocation);
+            }
+
             var defaultConfig = options.DefaultClientConfig;
 
 
