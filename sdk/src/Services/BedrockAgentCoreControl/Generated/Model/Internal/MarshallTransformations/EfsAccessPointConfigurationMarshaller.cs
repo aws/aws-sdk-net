@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FilesystemConfiguration Marshaller
+    /// EfsAccessPointConfiguration Marshaller
     /// </summary>
-    public class FilesystemConfigurationMarshaller : IRequestMarshaller<FilesystemConfiguration, JsonMarshallerContext> 
+    public class EfsAccessPointConfigurationMarshaller : IRequestMarshaller<EfsAccessPointConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,20 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FilesystemConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(EfsAccessPointConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEfsAccessPoint())
+            if(requestObject.IsSetAccessPointArn())
             {
-                context.Writer.WritePropertyName("efsAccessPoint");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EfsAccessPointConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.EfsAccessPoint, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("accessPointArn");
+                context.Writer.WriteStringValue(requestObject.AccessPointArn);
             }
 
-            if(requestObject.IsSetS3FilesAccessPoint())
+            if(requestObject.IsSetMountPath())
             {
-                context.Writer.WritePropertyName("s3FilesAccessPoint");
-                context.Writer.WriteStartObject();
-
-                var marshaller = S3FilesAccessPointConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3FilesAccessPoint, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetSessionStorage())
-            {
-                context.Writer.WritePropertyName("sessionStorage");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SessionStorageConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SessionStorage, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("mountPath");
+                context.Writer.WriteStringValue(requestObject.MountPath);
             }
 
         }
@@ -84,7 +63,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FilesystemConfigurationMarshaller Instance = new FilesystemConfigurationMarshaller();
+        public readonly static EfsAccessPointConfigurationMarshaller Instance = new EfsAccessPointConfigurationMarshaller();
 
     }
 }

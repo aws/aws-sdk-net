@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FilesystemConfiguration Object
+    /// Response Unmarshaller for S3FilesAccessPointConfiguration Object
     /// </summary>  
-    public class FilesystemConfigurationUnmarshaller : IJsonUnmarshaller<FilesystemConfiguration, JsonUnmarshallerContext>
+    public class S3FilesAccessPointConfigurationUnmarshaller : IJsonUnmarshaller<S3FilesAccessPointConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FilesystemConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public S3FilesAccessPointConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            FilesystemConfiguration unmarshalledObject = new FilesystemConfiguration();
+            S3FilesAccessPointConfiguration unmarshalledObject = new S3FilesAccessPointConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("efsAccessPoint", targetDepth))
+                if (context.TestExpression("accessPointArn", targetDepth))
                 {
-                    var unmarshaller = EfsAccessPointConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EfsAccessPoint = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccessPointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3FilesAccessPoint", targetDepth))
+                if (context.TestExpression("mountPath", targetDepth))
                 {
-                    var unmarshaller = S3FilesAccessPointConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.S3FilesAccessPoint = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("sessionStorage", targetDepth))
-                {
-                    var unmarshaller = SessionStorageConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SessionStorage = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MountPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static FilesystemConfigurationUnmarshaller _instance = new FilesystemConfigurationUnmarshaller();        
+        private static S3FilesAccessPointConfigurationUnmarshaller _instance = new S3FilesAccessPointConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FilesystemConfigurationUnmarshaller Instance
+        public static S3FilesAccessPointConfigurationUnmarshaller Instance
         {
             get
             {
