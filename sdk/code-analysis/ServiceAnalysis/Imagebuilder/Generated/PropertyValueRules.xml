@@ -876,8 +876,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportDiskImageRequest.Name</property>
-    <min>1</min>
-    <max>1024</max>
+    <pattern>^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImportDiskImageRequest.OsVersion</property>
