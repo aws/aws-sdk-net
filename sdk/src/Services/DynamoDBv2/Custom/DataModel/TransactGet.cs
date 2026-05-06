@@ -131,31 +131,22 @@ namespace Amazon.DynamoDBv2.DataModel
         public void AddKey(object hashKey, object rangeKey)
         {
             Key key = _context.MakeKey(hashKey, rangeKey, _storageConfig, _config);
-
-            if (_storageConfig.ProjectionExpression != null && _storageConfig.ProjectionExpression.IsSet) 
-            {
-                var operationConfig = new TransactGetItemOperationConfig()
-                {
-                    ProjectionExpression = _storageConfig.ProjectionExpression,
-                };
-                DocumentTransaction.AddKeyHelper(key, operationConfig);
-            }
-
-            DocumentTransaction.AddKeyHelper(key);
+            AddKey(key);
         }
 
         /// <inheritdoc/>
         public void AddKey(T keyObject)
         {
             Key key = _context.MakeKey(keyObject, _storageConfig, _config);
+            AddKey(key);
+        }
 
+        private void AddKey(Key key)
+        {
             if (_storageConfig.ProjectionExpression != null && _storageConfig.ProjectionExpression.IsSet)
             {
-                var operationConfig = new TransactGetItemOperationConfig()
-                {
-                    ProjectionExpression = _storageConfig.ProjectionExpression,
-                };
-                DocumentTransaction.AddKeyHelper(key, operationConfig);
+                DocumentTransaction.AddKeyHelper(key, _storageConfig.ProjectionExpression);
+                return;
             }
 
             DocumentTransaction.AddKeyHelper(key);

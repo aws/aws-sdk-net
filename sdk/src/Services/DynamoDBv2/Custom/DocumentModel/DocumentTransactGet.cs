@@ -209,6 +209,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
             });
         }
 
+        internal void AddKeyHelper(Key key, Expression projectionExpression)
+        {
+            Items.Add(new TransactGetRequestItem
+            {
+                Key = key,
+                TransactionPart = this,
+                OperationConfig = new TransactGetItemOperationConfig
+                { 
+                    ProjectionExpression = projectionExpression 
+                }
+            });
+        }
+
         private MultiTransactGet GetMultiTransactGet()
         {
             return new MultiTransactGet
