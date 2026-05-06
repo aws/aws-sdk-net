@@ -82,6 +82,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAudioFillerSettings())
+            {
+                context.Writer.WritePropertyName("audioFillerSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AudioFillerSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AudioFillerSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
