@@ -62,7 +62,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The key-value tag pairs you want to associate to your environment. For example, <c>"Environment":
-        /// "Staging"</c>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// "Staging"</c>. For more information, refer to <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// Amazon Web Services resources</a>.
         /// </para>
         /// <para />
