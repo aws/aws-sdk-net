@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DateRange Object
+    /// Response Unmarshaller for RecommendationError Object
     /// </summary>  
-    public class DateRangeUnmarshaller : IJsonUnmarshaller<DateRange, JsonUnmarshallerContext>
+    public class RecommendationErrorUnmarshaller : IJsonUnmarshaller<RecommendationError, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DateRange Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RecommendationError Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DateRange unmarshalledObject = new DateRange();
+            RecommendationError unmarshalledObject = new RecommendationError();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Comparison", targetDepth))
+                if (context.TestExpression("Code", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Comparison = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Unit", targetDepth))
+                if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Unit = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Value", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static DateRangeUnmarshaller _instance = new DateRangeUnmarshaller();        
+        private static RecommendationErrorUnmarshaller _instance = new RecommendationErrorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DateRangeUnmarshaller Instance
+        public static RecommendationErrorUnmarshaller Instance
         {
             get
             {

@@ -46,6 +46,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetComparison())
+            {
+                context.Writer.WritePropertyName("Comparison");
+                context.Writer.WriteStringValue(requestObject.Comparison);
+            }
+
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("Unit");

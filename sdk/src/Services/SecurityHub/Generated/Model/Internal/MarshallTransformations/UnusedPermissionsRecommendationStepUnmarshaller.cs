@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DateRange Object
+    /// Response Unmarshaller for UnusedPermissionsRecommendationStep Object
     /// </summary>  
-    public class DateRangeUnmarshaller : IJsonUnmarshaller<DateRange, JsonUnmarshallerContext>
+    public class UnusedPermissionsRecommendationStepUnmarshaller : IJsonUnmarshaller<UnusedPermissionsRecommendationStep, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DateRange Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public UnusedPermissionsRecommendationStep Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DateRange unmarshalledObject = new DateRange();
+            UnusedPermissionsRecommendationStep unmarshalledObject = new UnusedPermissionsRecommendationStep();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,34 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Comparison", targetDepth))
+                if (context.TestExpression("ExistingPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Comparison = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ExistingPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Unit", targetDepth))
+                if (context.TestExpression("ExistingPolicyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Unit = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ExistingPolicyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Value", targetDepth))
+                if (context.TestExpression("PolicyUpdatedAt", targetDepth))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.PolicyUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RecommendedAction", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecommendedAction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RecommendedPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecommendedPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +91,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         }
 
 
-        private static DateRangeUnmarshaller _instance = new DateRangeUnmarshaller();        
+        private static UnusedPermissionsRecommendationStepUnmarshaller _instance = new UnusedPermissionsRecommendationStepUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DateRangeUnmarshaller Instance
+        public static UnusedPermissionsRecommendationStepUnmarshaller Instance
         {
             get
             {
