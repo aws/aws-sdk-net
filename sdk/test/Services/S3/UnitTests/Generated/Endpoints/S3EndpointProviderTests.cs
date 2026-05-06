@@ -3949,6 +3949,23 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
+        [Description("validates against access point host label")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `invalid.bucket#`")]
+        public void Validates_against_access_point_host_label_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Accelerate"] = false;
+            parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:invalid.bucket#";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
         [Description("object lambda @us-east-1")]
         public void Object_lambda_useast1_Test()
         {
