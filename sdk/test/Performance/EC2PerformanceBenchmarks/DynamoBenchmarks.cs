@@ -21,7 +21,6 @@ using Amazon.Runtime.Internal.Util;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Order;
-using Microsoft.CodeAnalysis.Operations;
 using System;
 using System.Text.Json;
 
@@ -29,6 +28,7 @@ namespace AWSSDK.Benchmarks
 {
     [MemoryDiagnoser]
     [Orderer(methodOrderPolicy: MethodOrderPolicy.Declared)]
+    [Config(typeof(SdkBenchmarkConfig))]
     public class DynamoBenchmarks
     {
         private const string SampleDataFolder = "sample_data";
@@ -43,8 +43,8 @@ namespace AWSSDK.Benchmarks
         private PutItemRequest? _putItemRequest;
         private List<string>? _bookTitleList;
         private GetItemRequest? _getItemRequest;
-        private Document _putItemDocument;
-        private Table? _table;
+    private Document _putItemDocument;
+    private ITable? _table;
         private List<GetItemRequest> _getItemRequests;
         private QueryFilter? _queryFilter;
         private DynamoDBContext _dynamoDbContext;
@@ -504,7 +504,7 @@ namespace AWSSDK.Benchmarks
                 PropertyNameCaseInsensitive = true
             };
             books = JsonSerializer.Deserialize<List<Book>>(jsonData, options);
-            Table booksTable = Table.LoadTable(_dynamoDbClient, tableName);
+            ITable booksTable = Table.LoadTable(_dynamoDbClient, tableName);
 
             foreach (var book in books)
             {

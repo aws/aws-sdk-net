@@ -1,0 +1,442 @@
+{
+  "version": "2.0",
+  "service": null,
+  "operations": {
+    "GetItem": "<pre><code>From Amazon DynamoDB. Deserialization of recursive structures. </code></pre>",
+    "GetMetricData": "<pre><code>As seen in Amazon CloudWatch </code></pre>",
+    "Healthcheck": "<pre><code>A response that only says &quot;OK&quot;, if it can. </code></pre>",
+    "PutItem": "<pre><code>From Amazon DynamoDB. Serialization of recursive structures. </code></pre>",
+    "PutMetricData": "<pre><code>As seen in Amazon CloudWatch. </code></pre>"
+  },
+  "shapes": {
+    "AttributeNameList": {
+      "base": null,
+      "refs": {
+        "GetItemInput$AttributesToGet": null
+      }
+    },
+    "AttributeValue": {
+      "base": "<pre><code>The famous recursive structure from Amazon DynamoDB. </code></pre>",
+      "refs": {
+        "AttributeValueList$member": null,
+        "AttributeValueMap$value": null,
+        "ExpectedAttributeValue$Value": null,
+        "ExpressionAttributeValueMap$value": null
+      }
+    },
+    "AttributeValueList": {
+      "base": null,
+      "refs": {
+        "AttributeValue$L": null,
+        "ExpectedAttributeValue$AttributeValueList": null
+      }
+    },
+    "AttributeValueMap": {
+      "base": null,
+      "refs": {
+        "AttributeValue$M": null,
+        "GetItemInput$Key": null,
+        "GetItemOutput$Item": null,
+        "ItemCollectionMetrics$ItemCollectionKey": null,
+        "PutItemInput$Item": null,
+        "PutItemOutput$Attributes": null
+      }
+    },
+    "BinarySet": {
+      "base": null,
+      "refs": {
+        "AttributeValue$BS": null
+      }
+    },
+    "Blob": {
+      "base": null,
+      "refs": {
+        "AttributeValue$B": null,
+        "BinarySet$member": null
+      }
+    },
+    "Boolean": {
+      "base": null,
+      "refs": {
+        "AttributeValue$NULL": null,
+        "AttributeValue$BOOL": null,
+        "ExpectedAttributeValue$Exists": null,
+        "GetItemInput$ConsistentRead": null,
+        "MetricDataQuery$ReturnData": null,
+        "PutMetricDataInput$StrictEntityValidation": null
+      }
+    },
+    "ConsumedCapacity": {
+      "base": null,
+      "refs": {
+        "GetItemOutput$ConsumedCapacity": null,
+        "PutItemOutput$ConsumedCapacity": null
+      }
+    },
+    "Counts": {
+      "base": null,
+      "refs": {
+        "MetricDatum$Counts": null
+      }
+    },
+    "Dimension": {
+      "base": null,
+      "refs": {
+        "Dimensions$member": null
+      }
+    },
+    "DimensionNameString": {
+      "base": null,
+      "refs": {
+        "Dimension$Name": null
+      }
+    },
+    "DimensionValueString": {
+      "base": null,
+      "refs": {
+        "Dimension$Value": null
+      }
+    },
+    "Dimensions": {
+      "base": null,
+      "refs": {
+        "Metric$Dimensions": null,
+        "MetricDatum$Dimensions": null
+      }
+    },
+    "Double": {
+      "base": null,
+      "refs": {
+        "ConsumedCapacity$CapacityUnits": null,
+        "ConsumedCapacity$ReadCapacityUnits": null,
+        "ConsumedCapacity$WriteCapacityUnits": null,
+        "Counts$member": null,
+        "MetricDatum$Value": null,
+        "SizeEstimateRange$member": null,
+        "StatisticSet$SampleCount": null,
+        "StatisticSet$Sum": null,
+        "StatisticSet$Minimum": null,
+        "StatisticSet$Maximum": null,
+        "Values$member": null
+      }
+    },
+    "Entity": {
+      "base": null,
+      "refs": {
+        "EntityMetricDatum$Entity": null
+      }
+    },
+    "EntityAttributesMap": {
+      "base": null,
+      "refs": {
+        "Entity$Attributes": null
+      }
+    },
+    "EntityAttributesMapKeyString": {
+      "base": null,
+      "refs": {
+        "EntityAttributesMap$key": null
+      }
+    },
+    "EntityAttributesMapValueString": {
+      "base": null,
+      "refs": {
+        "EntityAttributesMap$value": null
+      }
+    },
+    "EntityKeyAttributesMap": {
+      "base": null,
+      "refs": {
+        "Entity$KeyAttributes": null
+      }
+    },
+    "EntityKeyAttributesMapKeyString": {
+      "base": null,
+      "refs": {
+        "EntityKeyAttributesMap$key": null
+      }
+    },
+    "EntityKeyAttributesMapValueString": {
+      "base": null,
+      "refs": {
+        "EntityKeyAttributesMap$value": null
+      }
+    },
+    "EntityMetricDataList": {
+      "base": null,
+      "refs": {
+        "PutMetricDataInput$EntityMetricData": null
+      }
+    },
+    "EntityMetricDatum": {
+      "base": null,
+      "refs": {
+        "EntityMetricDataList$member": null
+      }
+    },
+    "ExpectedAttributeMap": {
+      "base": null,
+      "refs": {
+        "PutItemInput$Expected": null
+      }
+    },
+    "ExpectedAttributeValue": {
+      "base": null,
+      "refs": {
+        "ExpectedAttributeMap$value": null
+      }
+    },
+    "ExpressionAttributeNameMap": {
+      "base": null,
+      "refs": {
+        "GetItemInput$ExpressionAttributeNames": null,
+        "PutItemInput$ExpressionAttributeNames": null
+      }
+    },
+    "ExpressionAttributeValueMap": {
+      "base": null,
+      "refs": {
+        "PutItemInput$ExpressionAttributeValues": null
+      }
+    },
+    "GetItemInput": {
+      "base": null,
+      "refs": {}
+    },
+    "GetItemOutput": {
+      "base": null,
+      "refs": {}
+    },
+    "GetMetricDataInput": {
+      "base": null,
+      "refs": {}
+    },
+    "GetMetricDataOutput": {
+      "base": null,
+      "refs": {}
+    },
+    "HealthcheckOutput": {
+      "base": null,
+      "refs": {}
+    },
+    "Integer": {
+      "base": null,
+      "refs": {
+        "GetMetricDataInput$MaxDatapoints": null,
+        "MetricDatum$StorageResolution": null,
+        "MetricStat$Period": null
+      }
+    },
+    "ItemCollectionMetrics": {
+      "base": null,
+      "refs": {
+        "PutItemOutput$ItemCollectionMetrics": null
+      }
+    },
+    "LabelOptions": {
+      "base": null,
+      "refs": {
+        "GetMetricDataInput$LabelOptions": null
+      }
+    },
+    "MessageData": {
+      "base": null,
+      "refs": {
+        "MetricDataResultMessages$member": null
+      }
+    },
+    "Metric": {
+      "base": null,
+      "refs": {
+        "MetricStat$Metric": null
+      }
+    },
+    "MetricData": {
+      "base": null,
+      "refs": {
+        "EntityMetricDatum$MetricData": null,
+        "PutMetricDataInput$MetricData": null
+      }
+    },
+    "MetricDataQueries": {
+      "base": null,
+      "refs": {
+        "GetMetricDataInput$MetricDataQueries": null
+      }
+    },
+    "MetricDataQuery": {
+      "base": null,
+      "refs": {
+        "MetricDataQueries$member": null
+      }
+    },
+    "MetricDataQueryExpressionString": {
+      "base": null,
+      "refs": {
+        "MetricDataQuery$Expression": null
+      }
+    },
+    "MetricDataQueryIdString": {
+      "base": null,
+      "refs": {
+        "MetricDataQuery$Id": null
+      }
+    },
+    "MetricDataQueryPeriodInteger": {
+      "base": null,
+      "refs": {
+        "MetricDataQuery$Period": null
+      }
+    },
+    "MetricDataResult": {
+      "base": null,
+      "refs": {
+        "MetricDataResults$member": null
+      }
+    },
+    "MetricDataResultMessages": {
+      "base": null,
+      "refs": {
+        "GetMetricDataOutput$Messages": null,
+        "MetricDataResult$Messages": null
+      }
+    },
+    "MetricDataResults": {
+      "base": null,
+      "refs": {
+        "GetMetricDataOutput$MetricDataResults": null
+      }
+    },
+    "MetricDatum": {
+      "base": null,
+      "refs": {
+        "MetricData$member": null
+      }
+    },
+    "MetricStat": {
+      "base": null,
+      "refs": {
+        "MetricDataQuery$MetricStat": null
+      }
+    },
+    "NumberSet": {
+      "base": null,
+      "refs": {
+        "AttributeValue$NS": null
+      }
+    },
+    "PutItemInput": {
+      "base": null,
+      "refs": {}
+    },
+    "PutItemOutput": {
+      "base": null,
+      "refs": {}
+    },
+    "PutMetricDataInput": {
+      "base": null,
+      "refs": {}
+    },
+    "ScanBy": {
+      "base": null,
+      "refs": {
+        "GetMetricDataInput$ScanBy": null
+      }
+    },
+    "SizeEstimateRange": {
+      "base": null,
+      "refs": {
+        "ItemCollectionMetrics$SizeEstimateRangeGB": null
+      }
+    },
+    "StandardUnit": {
+      "base": null,
+      "refs": {
+        "MetricDatum$Unit": null,
+        "MetricStat$Unit": null
+      }
+    },
+    "StatisticSet": {
+      "base": null,
+      "refs": {
+        "MetricDatum$StatisticValues": null
+      }
+    },
+    "StatusCode": {
+      "base": null,
+      "refs": {
+        "MetricDataResult$StatusCode": null
+      }
+    },
+    "String": {
+      "base": null,
+      "refs": {
+        "AttributeNameList$member": null,
+        "AttributeValue$S": null,
+        "AttributeValue$N": null,
+        "AttributeValueMap$key": null,
+        "ConsumedCapacity$TableName": null,
+        "ExpectedAttributeMap$key": null,
+        "ExpectedAttributeValue$ComparisonOperator": null,
+        "ExpressionAttributeNameMap$key": null,
+        "ExpressionAttributeNameMap$value": null,
+        "ExpressionAttributeValueMap$key": null,
+        "GetItemInput$TableName": null,
+        "GetItemInput$ReturnConsumedCapacity": null,
+        "GetItemInput$ProjectionExpression": null,
+        "GetMetricDataInput$NextToken": null,
+        "GetMetricDataOutput$NextToken": null,
+        "HealthcheckOutput$ok": null,
+        "LabelOptions$Timezone": null,
+        "MessageData$Code": null,
+        "MessageData$Value": null,
+        "Metric$Namespace": null,
+        "Metric$MetricName": null,
+        "MetricDataQuery$Label": null,
+        "MetricDataQuery$AccountId": null,
+        "MetricDataResult$Id": null,
+        "MetricDataResult$Label": null,
+        "MetricDatum$MetricName": null,
+        "MetricStat$Stat": null,
+        "NumberSet$member": null,
+        "PutItemInput$TableName": null,
+        "PutItemInput$ReturnValues": null,
+        "PutItemInput$ReturnConsumedCapacity": null,
+        "PutItemInput$ReturnItemCollectionMetrics": null,
+        "PutItemInput$ConditionalOperator": null,
+        "PutItemInput$ConditionExpression": null,
+        "PutItemInput$ReturnValuesOnConditionCheckFailure": null,
+        "PutMetricDataInput$Namespace": null,
+        "StringSet$member": null
+      }
+    },
+    "StringSet": {
+      "base": null,
+      "refs": {
+        "AttributeValue$SS": null
+      }
+    },
+    "Timestamp": {
+      "base": null,
+      "refs": {
+        "GetMetricDataInput$StartTime": null,
+        "GetMetricDataInput$EndTime": null,
+        "MetricDatum$Timestamp": null,
+        "Timestamps$member": null
+      }
+    },
+    "Timestamps": {
+      "base": null,
+      "refs": {
+        "MetricDataResult$Timestamps": null
+      }
+    },
+    "Values": {
+      "base": null,
+      "refs": {
+        "MetricDataResult$Values": null,
+        "MetricDatum$Values": null
+      }
+    }
+  }
+}
