@@ -1,3 +1,21 @@
+### 4.0.246.0 (2026-05-07 18:38 UTC)
+* BCMDataExports (4.0.4.0)
+	* With this release, customers can configure their data exports to generate additional integration artifacts for Athena and Redshift.
+* BedrockAgentCore (4.0.23.0)
+	* Launching AgentCore payments - a capability that provides secure, instant microtransaction payments for AI agents to access paid APIs, MCP servers, and content. It handles payment processing for x402 protocol, payment limits, and 3P wallet integrations with Coinbase CDP and Stripe (Privy).
+* BedrockAgentCoreControl (4.0.35.0)
+	* Launching AgentCore payments - a capability that provides secure, instant microtransaction payments for AI agents to access paid APIs, MCP servers, and content. It handles payment processing for x402 protocol, payment limits, and 3P wallet integrations with Coinbase CDP and Stripe (Privy).
+* EC2 (4.0.87.0)
+	* DescribeInstanceTypes now accepts an IncludeUnsupportedInRegion parameter. When set, the response also lists instance types that are not available in the current Region. Each instance type includes a SupportedInRegion field indicating its regional availability.
+* GuardDuty (4.0.18.6)
+	* This is a documentation update
+* Invoicing (4.0.7.0)
+	* Updated ListInvoiceSummaries API to add new ReceiverRole filter in Request and Response
+* Route53Resolver (4.0.6.0)
+	* Adds supports for DNS64 on inbound endpoints and IPv6 forwarding through the internet gateway (IGW) on outbound endpoints, making it easier to manage hybrid DNS across IPv4 and IPv6 networks.
+* Extensions.NETCore.Setup (4.0.3.37)
+	* Fix #3538. Allow service specific endpoints to work with SSO profiles.
+
 ### 4.0.245.0 (2026-05-06 18:38 UTC)
 * BedrockAgentCoreControl (4.0.34.0)
 	* Adds support for bring-your-own file system in AgentCore Runtime. Developers can mount Amazon S3 Files and Amazon EFS access points directly into agent sessions using filesystemConfigurations.
