@@ -21112,7 +21112,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified instance types. By default, all instance types for the current
-        /// Region are described. Alternatively, you can filter the results.
+        /// Region are described. Alternatively, you can filter the results. To include instance
+        /// types that are not supported in the current Region, set <c>IncludeUnsupportedInRegion</c>
+        /// to <c>true</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes service method.</param>
         /// 
@@ -21130,7 +21132,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified instance types. By default, all instance types for the current
-        /// Region are described. Alternatively, you can filter the results.
+        /// Region are described. Alternatively, you can filter the results. To include instance
+        /// types that are not supported in the current Region, set <c>IncludeUnsupportedInRegion</c>
+        /// to <c>true</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes service method.</param>
         /// <param name="cancellationToken">
