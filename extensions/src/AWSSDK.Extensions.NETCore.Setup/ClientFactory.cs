@@ -39,14 +39,17 @@ namespace Amazon.Extensions.NETCore.Setup
         private static readonly object[] EMPTY_PARAMETERS = Array.Empty<object>();
 
         private AWSOptions _awsOptions;
+        private Action<ClientConfig, IServiceProvider> _configAction;
 
         /// <summary>
         /// Constructs an instance of the ClientFactory
         /// </summary>
         /// <param name="awsOptions">The AWS options used for creating service clients.</param>
-        internal ClientFactory(AWSOptions awsOptions)
+        /// <param name="configAction">An optional action to configure the ClientConfig using services from the IServiceProvider.</param>
+        internal ClientFactory(AWSOptions awsOptions, Action<ClientConfig, IServiceProvider> configAction = null)
         {
             _awsOptions = awsOptions;
+            _configAction = configAction;
         }
 
         /// <summary>
@@ -72,7 +75,30 @@ namespace Amazon.Extensions.NETCore.Setup
                 }
             }
 
-            return CreateServiceClient(logger, options);
+            if (_configAction == null)
+            {
+                return CreateServiceClient(logger, options);
+            }
+
+            PerformGlobalConfig(logger, options);
+            var credentials = CreateCredentials(logger, options);
+
+            if (!string.IsNullOrEmpty(options?.SessionRoleArn))
+            {
+                if (string.IsNullOrEmpty(options?.ExternalId))
+                {
+                    credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName);
+                }
+                else
+                {
+                    credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName, new AssumeRoleAWSCredentialsOptions() { ExternalId = options.ExternalId });
+                }
+            }
+
+            var config = CreateConfig(options);
+            _configAction(config, provider);
+            var client = CreateClient(credentials, config);
+            return client as IAmazonService;
         }
 
         /// <summary>
