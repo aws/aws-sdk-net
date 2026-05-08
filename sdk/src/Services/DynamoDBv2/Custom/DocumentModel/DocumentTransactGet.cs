@@ -477,11 +477,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 TableName = TransactionPart.TargetTable.TableName
             };
 
-            if(currentConfig.ProjectionExpression != null && currentConfig.ProjectionExpression.IsSet)
-            {
-                currentConfig.ProjectionExpression.ApplyExpression(get, TransactionPart.TargetTable);
-                return new TransactGetItem { Get = get };
-            }
+            currentConfig.ProjectionExpression?.ApplyExpression(get, TransactionPart.TargetTable);
 
             return new TransactGetItem { Get = get };
         }
