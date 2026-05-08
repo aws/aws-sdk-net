@@ -1573,7 +1573,6 @@ namespace AWSSDK_DotNet.UnitTests
             // ExpressionAttributeNames
             x.TransactItems[0].Get.ExpressionAttributeNames != null &&
             x.TransactItems[0].Get.ExpressionAttributeNames.Count == 6 &&
-            // ProjectionExpression (atenție la spații)
             x.TransactItems[0].Get.ProjectionExpression.Replace(" ", "")
                 == "#P0,#P1,#P2,#P3,#P4,#P5"
                 )))
