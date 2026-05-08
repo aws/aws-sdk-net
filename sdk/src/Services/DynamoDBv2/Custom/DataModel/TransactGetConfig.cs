@@ -23,10 +23,20 @@ namespace Amazon.DynamoDBv2.DataModel
     public class TransactGetConfig : BaseOperationConfig
     {
         /// <summary>
+        /// If true, only attributes that are mapped to properties on the .NET type will be retrieved,
+        /// using a projection expression. If false, all attributes of the item are retrieved.
+        /// </summary>
+        /// <remarks>
+        /// Defaults to true, matching the auto-projection behavior of Query and Scan operations.
+        /// Individual items can override this via <see cref="TransactGetItemConfig.ProjectionExpression"/>.
+        /// </remarks>
+        public bool ProjectMappedAttributesOnly { get; set; } = true;
+
+        /// <summary>
         /// If true, all <see cref="DateTime"/> properties are retrieved in UTC timezone while reading data from DynamoDB. Else, the local timezone is used.
         /// </summary>
         /// <remarks>
-        /// This setting is only applicable to the high-level library. Service calls made via 
+        /// This setting is only applicable to the high-level library. Service calls made via
         /// <see cref="AmazonDynamoDBClient"/> will always return <see cref="DateTime"/> attributes in UTC.
         /// </remarks>
         public bool? RetrieveDateTimeInUtc { get; set; }

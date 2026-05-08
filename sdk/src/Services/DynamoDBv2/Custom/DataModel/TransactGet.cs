@@ -74,6 +74,28 @@ namespace Amazon.DynamoDBv2.DataModel
         void AddKey(T keyObject);
 
         /// <summary>
+        /// Add a single item to get, identified by its hash primary key, with per-item configuration.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to get.</param>
+        /// <param name="itemConfig">Per-item configuration such as a projection expression.</param>
+        void AddKey(object hashKey, TransactGetItemConfig itemConfig);
+
+        /// <summary>
+        /// Add a single item to get, identified by its hash-and-range primary key, with per-item configuration.
+        /// </summary>
+        /// <param name="hashKey">Hash key of the item to get.</param>
+        /// <param name="rangeKey">Range key of the item to get.</param>
+        /// <param name="itemConfig">Per-item configuration such as a projection expression.</param>
+        void AddKey(object hashKey, object rangeKey, TransactGetItemConfig itemConfig);
+
+        /// <summary>
+        /// Add a single item to get, with per-item configuration.
+        /// </summary>
+        /// <param name="keyObject">Object key of the item to get.</param>
+        /// <param name="itemConfig">Per-item configuration such as a projection expression.</param>
+        void AddKey(T keyObject, TransactGetItemConfig itemConfig);
+
+        /// <summary>
         /// Add multiple items to get.
         /// </summary>
         /// <param name="keyObjects">Object keys of the items to get.</param>
@@ -117,6 +139,7 @@ namespace Amazon.DynamoDBv2.DataModel
         private readonly DynamoDBContext _context;
         private readonly DynamoDBFlatConfig _config;
         private readonly ItemStorageConfig _storageConfig;
+        private readonly bool _projectMappedAttributesOnly;
 
         /// <inheritdoc/>
         public List<T> Results { get; } = new();
@@ -131,14 +154,34 @@ namespace Amazon.DynamoDBv2.DataModel
         public void AddKey(object hashKey, object rangeKey)
         {
             Key key = _context.MakeKey(hashKey, rangeKey, _storageConfig, _config);
-            DocumentTransaction.AddKeyHelper(key);
+            DocumentTransaction.AddKeyHelper(key, BuildOperationConfig(null));
         }
 
         /// <inheritdoc/>
         public void AddKey(T keyObject)
         {
             Key key = _context.MakeKey(keyObject, _storageConfig, _config);
-            DocumentTransaction.AddKeyHelper(key);
+            DocumentTransaction.AddKeyHelper(key, BuildOperationConfig(null));
+        }
+
+        /// <inheritdoc/>
+        public void AddKey(object hashKey, TransactGetItemConfig itemConfig)
+        {
+            AddKey(hashKey, null, itemConfig);
+        }
+
+        /// <inheritdoc/>
+        public void AddKey(object hashKey, object rangeKey, TransactGetItemConfig itemConfig)
+        {
+            Key key = _context.MakeKey(hashKey, rangeKey, _storageConfig, _config);
+            DocumentTransaction.AddKeyHelper(key, BuildOperationConfig(itemConfig));
+        }
+
+        /// <inheritdoc/>
+        public void AddKey(T keyObject, TransactGetItemConfig itemConfig)
+        {
+            Key key = _context.MakeKey(keyObject, _storageConfig, _config);
+            DocumentTransaction.AddKeyHelper(key, BuildOperationConfig(itemConfig));
         }
 
         /// <inheritdoc/>
@@ -156,10 +199,11 @@ namespace Amazon.DynamoDBv2.DataModel
             return new MultiTableTransactGet(this, otherTransactionParts);
         }
 
-        internal TransactGet(DynamoDBContext context, DynamoDBFlatConfig config)
+        internal TransactGet(DynamoDBContext context, DynamoDBFlatConfig config, bool projectMappedAttributesOnly = true)
         {
             _context = context;
             _config = config;
+            _projectMappedAttributesOnly = projectMappedAttributesOnly;
             _storageConfig = context.StorageConfigCache.GetConfig<T>(config);
             var table = context.GetTargetTable(_storageConfig, config);
 
@@ -169,6 +213,28 @@ namespace Amazon.DynamoDBv2.DataModel
 
             TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
+        }
+
+        private TransactGetItemOperationConfig BuildOperationConfig(TransactGetItemConfig itemConfig)
+        {
+            if (!string.IsNullOrWhiteSpace(itemConfig?.ProjectionExpression))
+            {
+                var expression = new Expression
+                {
+                    ExpressionStatement = itemConfig.ProjectionExpression,
+                    ExpressionAttributeNames = itemConfig.ExpressionAttributeNames != null
+                        ? new Dictionary<string, string>(itemConfig.ExpressionAttributeNames)
+                        : new Dictionary<string, string>()
+                };
+                return new TransactGetItemOperationConfig { ProjectionExpression = expression };
+            }
+
+            if (_projectMappedAttributesOnly && _storageConfig.ProjectionExpression.IsSet)
+            {
+                return new TransactGetItemOperationConfig { ProjectionExpression = _storageConfig.ProjectionExpression };
+            }
+
+            return null;
         }
 
         private void ExecuteHelper()

@@ -316,8 +316,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <inheritdoc/>
         public ITransactGet<T> CreateTransactGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(TransactGetConfig transactGetConfig)
         {
+            var projectMappedAttributesOnly = transactGetConfig?.ProjectMappedAttributesOnly ?? true;
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(transactGetConfig?.ToDynamoDBOperationConfig(), this.Config);
-            return new TransactGet<T>(this, config);
+            return new TransactGet<T>(this, config, projectMappedAttributesOnly);
         }
 
         /// <inheritdoc/>
