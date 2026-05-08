@@ -102,8 +102,7 @@ namespace AWSSDK.UnitTests
                 // Mutate the RegisteredAccounts.json file with updated credentials.
                 fixture.SetFileContents(
                     NetSdkBasicProfileJson("netsdk-profile", "AKID_UPDATED", "SECRET_UPDATED"));
-                // due to flakiness in this test where the test runs too quickly, we will wind the clock forward for this file.
-                File.SetLastWriteTimeUtc(Path.Combine(fixture.DirectoryPath, "RegisteredAccounts.json"), DateTime.UtcNow + TimeSpan.FromSeconds(5));
+                System.Threading.Thread.Sleep(500);
                 var updated = resolver.ResolveIdentity(config);
                 Assert.IsNotNull(updated);
                 Assert.AreNotSame(original, updated,
@@ -134,8 +133,7 @@ namespace AWSSDK.UnitTests
                 // Mutate the RegisteredAccounts.json file.
                 fixture.SetFileContents(
                     NetSdkBasicProfileJson("netsdk-profile", "AKID_UPDATED", "SECRET_UPDATED"));
-                // due to flakiness in this test where the test runs too quickly, we will wind the clock forward for this file.
-                File.SetLastWriteTimeUtc(Path.Combine(fixture.DirectoryPath, "RegisteredAccounts.json"), DateTime.UtcNow + TimeSpan.FromSeconds(5));
+                
                 var updated = await resolver.ResolveIdentityAsync(config);
                 Assert.IsNotNull(updated);
                 Assert.AreNotSame(original, updated,
