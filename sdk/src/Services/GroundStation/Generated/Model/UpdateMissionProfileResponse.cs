@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// 
+    /// Response containing the ID of a mission profile.
     /// </summary>
     public partial class UpdateMissionProfileResponse : AmazonWebServiceResponse
     {

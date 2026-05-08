@@ -2319,6 +2319,56 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type RecommenderSchemaStatus.
+    /// </summary>
+    public class RecommenderSchemaStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RecommenderSchemaStatus
+        /// </summary>
+        public static readonly RecommenderSchemaStatus ACTIVE = new RecommenderSchemaStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETING for RecommenderSchemaStatus
+        /// </summary>
+        public static readonly RecommenderSchemaStatus DELETING = new RecommenderSchemaStatus("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommenderSchemaStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommenderSchemaStatus FindValue(string value)
+        {
+            return FindValue<RecommenderSchemaStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommenderSchemaStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecommenderStatus.
     /// </summary>
     public class RecommenderStatus : ConstantClass
@@ -3657,9 +3707,37 @@ namespace Amazon.CustomerProfiles
         /// </summary>
         public static readonly TrainingMetricName Hit = new TrainingMetricName("hit");
         /// <summary>
+        /// Constant Mean_reciprocal_rank_at_25 for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Mean_reciprocal_rank_at_25 = new TrainingMetricName("mean_reciprocal_rank_at_25");
+        /// <summary>
+        /// Constant Normalized_discounted_cumulative_gain_at_10 for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Normalized_discounted_cumulative_gain_at_10 = new TrainingMetricName("normalized_discounted_cumulative_gain_at_10");
+        /// <summary>
+        /// Constant Normalized_discounted_cumulative_gain_at_25 for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Normalized_discounted_cumulative_gain_at_25 = new TrainingMetricName("normalized_discounted_cumulative_gain_at_25");
+        /// <summary>
+        /// Constant Normalized_discounted_cumulative_gain_at_5 for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Normalized_discounted_cumulative_gain_at_5 = new TrainingMetricName("normalized_discounted_cumulative_gain_at_5");
+        /// <summary>
         /// Constant Popularity for TrainingMetricName
         /// </summary>
         public static readonly TrainingMetricName Popularity = new TrainingMetricName("popularity");
+        /// <summary>
+        /// Constant Precision_at_10 for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Precision_at_10 = new TrainingMetricName("precision_at_10");
+        /// <summary>
+        /// Constant Precision_at_25 for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Precision_at_25 = new TrainingMetricName("precision_at_25");
+        /// <summary>
+        /// Constant Precision_at_5 for TrainingMetricName
+        /// </summary>
+        public static readonly TrainingMetricName Precision_at_5 = new TrainingMetricName("precision_at_5");
         /// <summary>
         /// Constant Recall for TrainingMetricName
         /// </summary>

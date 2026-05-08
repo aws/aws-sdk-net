@@ -44,8 +44,11 @@ namespace Amazon.ApplicationSignals.Model
         /// <para>
         /// The arithmetic operation to use when comparing the specified metric to the threshold.
         /// </para>
+        ///  
+        /// <para>
+        /// This is not required if <c>CreateRecommendedSlo</c> is set to <c>true</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ServiceLevelIndicatorComparisonOperator ComparisonOperator
         {
             get { return this._comparisonOperator; }
@@ -65,8 +68,11 @@ namespace Amazon.ApplicationSignals.Model
         /// Specify the threshold value that the observed <c>Latency</c> metric values are to
         /// be compared to.
         /// </para>
+        ///  
+        /// <para>
+        /// This is not required if <c>CreateRecommendedSlo</c> is set to <c>true</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public double? MetricThreshold
         {
             get { return this._metricThreshold; }

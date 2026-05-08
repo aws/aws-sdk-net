@@ -73,6 +73,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdConfigurationArn())
+            {
+                context.Writer.WritePropertyName("adConfigurationArn");
+                context.Writer.WriteStringValue(publicRequest.AdConfigurationArn);
+            }
+
             if(publicRequest.IsSetArn())
             {
                 context.Writer.WritePropertyName("arn");

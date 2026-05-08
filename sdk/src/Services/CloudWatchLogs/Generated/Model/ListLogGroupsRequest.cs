@@ -40,11 +40,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// You can optionally filter the list by log group class, by using regular expressions
-    /// in your request to match strings in the log group names, by using the fieldIndexes
-    /// parameter to filter log groups based on which field indexes are configured, by using
-    /// the dataSources parameter to filter log groups by data source types, and by using
-    /// the fieldIndexNames parameter to filter by specific field index names.
+    /// You can optionally filter the results by log group class, log group name pattern,
+    /// field indexes, data sources, field index names, or log group tags. If you specify
+    /// more than one filter type, the results include log groups that satisfy all filters.
     /// </para>
     ///  
     /// <para>
@@ -61,6 +59,7 @@ namespace Amazon.CloudWatchLogs.Model
         private int? _limit;
         private LogGroupClass _logGroupClass;
         private string _logGroupNamePattern;
+        private List<TagFilter> _logGroupTags = AWSConfigs.InitializeCollections ? new List<TagFilter>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -248,6 +247,31 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetLogGroupNamePattern()
         {
             return this._logGroupNamePattern != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogGroupTags. 
+        /// <para>
+        /// An array of tag filters to return only log groups that have specific tags. Multiple
+        /// filters are combined with AND logic.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<TagFilter> LogGroupTags
+        {
+            get { return this._logGroupTags; }
+            set { this._logGroupTags = value; }
+        }
+
+        // Check to see if LogGroupTags property is set
+        internal bool IsSetLogGroupTags()
+        {
+            return this._logGroupTags != null && (this._logGroupTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

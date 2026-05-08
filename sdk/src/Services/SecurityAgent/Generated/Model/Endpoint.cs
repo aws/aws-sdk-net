@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Represents a web application endpoint to be tested
+    /// Represents a target endpoint for penetration testing.
     /// </summary>
     public partial class Endpoint
     {
@@ -39,7 +39,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Uri. 
         /// <para>
-        /// URI of the endpoint to test
+        /// The URI of the endpoint.
         /// </para>
         /// </summary>
         public string Uri

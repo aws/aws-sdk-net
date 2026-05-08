@@ -130,10 +130,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property WebAuthnConfiguration. 
         /// <para>
-        /// Shows user pool configuration for sign-in with passkey authenticators like biometric
-        /// devices and security keys. Passkeys are not eligible MFA factors. They are instead
-        /// an eligible primary sign-in factor for <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based
-        /// authentication</a>, or the <c>USER_AUTH</c> flow.
+        /// Shows user pool configuration for sign-in with passkey authenticators such as biometric
+        /// devices and security keys. Includes relying-party configuration, user-verification
+        /// requirements, and whether passkeys can satisfy MFA requirements.
         /// </para>
         /// </summary>
         public WebAuthnConfigurationType WebAuthnConfiguration

@@ -96,10 +96,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorTypeName != null && errorTypeName.Equals("DashboardNotFoundError"))
-                {
-                    return DashboardNotFoundErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorTypeName != null && errorTypeName.Equals("InternalServiceFault"))
                 {
                     return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

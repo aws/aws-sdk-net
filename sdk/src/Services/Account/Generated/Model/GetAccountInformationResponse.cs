@@ -37,6 +37,7 @@ namespace Amazon.Account.Model
         private DateTime? _accountCreatedDate;
         private string _accountId;
         private string _accountName;
+        private AccountState _accountState;
 
         /// <summary>
         /// Gets and sets the property AccountCreatedDate. 
@@ -109,6 +110,30 @@ namespace Amazon.Account.Model
         internal bool IsSetAccountName()
         {
             return this._accountName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccountState. 
+        /// <para>
+        /// The state of the account. Each account state represents a specific phase in the account
+        /// lifecycle. Use this information to manage account access, automate workflows, or trigger
+        /// actions based on account state changes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>PENDING_ACTIVATION | ACTIVE | SUSPENDED | CLOSED</c> 
+        /// </para>
+        /// </summary>
+        public AccountState AccountState
+        {
+            get { return this._accountState; }
+            set { this._accountState = value; }
+        }
+
+        // Check to see if AccountState property is set
+        internal bool IsSetAccountState()
+        {
+            return this._accountState != null;
         }
 
     }

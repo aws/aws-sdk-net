@@ -194,6 +194,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("S3TablesParameters", targetDepth))
+                {
+                    var unmarshaller = S3TablesParametersUnmarshaller.Instance;
+                    unmarshalledObject.S3TablesParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ServiceNowParameters", targetDepth))
                 {
                     var unmarshaller = ServiceNowParametersUnmarshaller.Instance;

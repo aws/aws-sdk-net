@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetTargetDomains operation.
-    /// Retrieves multiple target domains in a single request
+    /// Retrieves information about one or more target domains.
     /// </summary>
     public partial class BatchGetTargetDomainsRequest : AmazonSecurityAgentRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomainIds. 
         /// <para>
-        /// List of target domain IDs to retrieve
+        /// The list of target domain identifiers to retrieve.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

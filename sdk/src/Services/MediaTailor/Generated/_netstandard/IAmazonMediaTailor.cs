@@ -244,6 +244,27 @@ namespace Amazon.MediaTailor
 
         #endregion
                 
+        #region  DeleteFunction
+
+
+
+        /// <summary>
+        /// Deletes a function. MediaTailor prevents deletion of a function that is still referenced
+        /// by a playback configuration or by another function. Remove all references before deleting.
+        /// For more information about functions, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions.html">Working
+        /// with functions</a> in the <i>MediaTailor User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFunction service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
+        Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteLiveSource
 
 
@@ -492,6 +513,26 @@ namespace Amazon.MediaTailor
 
         #endregion
                 
+        #region  GetFunction
+
+
+
+        /// <summary>
+        /// Retrieves the configuration and metadata for a function. For more information about
+        /// functions, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions.html">Working
+        /// with functions</a> in the <i>MediaTailor User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFunction service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetFunction">REST API Reference for GetFunction Operation</seealso>
+        Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetPlaybackConfiguration
 
 
@@ -567,6 +608,26 @@ namespace Amazon.MediaTailor
         /// <returns>The response from the ListChannels service method, as returned by MediaTailor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListChannels">REST API Reference for ListChannels Operation</seealso>
         Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListFunctions
+
+
+
+        /// <summary>
+        /// Retrieves all functions associated with your AWS account in the current Region. For
+        /// more information about functions, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions.html">Working
+        /// with functions</a> in the <i>MediaTailor User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFunctions service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
+        Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -705,6 +766,27 @@ namespace Amazon.MediaTailor
         /// <returns>The response from the PutChannelPolicy service method, as returned by MediaTailor.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutChannelPolicy">REST API Reference for PutChannelPolicy Operation</seealso>
         Task<PutChannelPolicyResponse> PutChannelPolicyAsync(PutChannelPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutFunction
+
+
+
+        /// <summary>
+        /// Creates or updates a function. A function defines reusable logic that MediaTailor
+        /// executes at lifecycle hooks during ad insertion. For more information about functions,
+        /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions.html">Working
+        /// with functions</a> in the <i>MediaTailor User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutFunction service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutFunction">REST API Reference for PutFunction Operation</seealso>
+        Task<PutFunctionResponse> PutFunctionAsync(PutFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

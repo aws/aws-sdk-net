@@ -1663,6 +1663,76 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
+    /// Constants used for properties of type AudioFillerType.
+    /// </summary>
+    public class AudioFillerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MELODY_CHIPPER_CHIME for AudioFillerType
+        /// </summary>
+        public static readonly AudioFillerType MELODY_CHIPPER_CHIME = new AudioFillerType("MELODY_CHIPPER_CHIME");
+        /// <summary>
+        /// Constant MELODY_CURIOUS_CRAWL for AudioFillerType
+        /// </summary>
+        public static readonly AudioFillerType MELODY_CURIOUS_CRAWL = new AudioFillerType("MELODY_CURIOUS_CRAWL");
+        /// <summary>
+        /// Constant MELODY_PATIENT_PING for AudioFillerType
+        /// </summary>
+        public static readonly AudioFillerType MELODY_PATIENT_PING = new AudioFillerType("MELODY_PATIENT_PING");
+        /// <summary>
+        /// Constant MELODY_PONDERING_PONG for AudioFillerType
+        /// </summary>
+        public static readonly AudioFillerType MELODY_PONDERING_PONG = new AudioFillerType("MELODY_PONDERING_PONG");
+        /// <summary>
+        /// Constant MELODY_RISING_RIPPLE for AudioFillerType
+        /// </summary>
+        public static readonly AudioFillerType MELODY_RISING_RIPPLE = new AudioFillerType("MELODY_RISING_RIPPLE");
+        /// <summary>
+        /// Constant TYPING_KINETIC_KEYS for AudioFillerType
+        /// </summary>
+        public static readonly AudioFillerType TYPING_KINETIC_KEYS = new AudioFillerType("TYPING_KINETIC_KEYS");
+        /// <summary>
+        /// Constant TYPING_QUIET_QWERTY for AudioFillerType
+        /// </summary>
+        public static readonly AudioFillerType TYPING_QUIET_QWERTY = new AudioFillerType("TYPING_QUIET_QWERTY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioFillerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioFillerType FindValue(string value)
+        {
+            return FindValue<AudioFillerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioFillerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AudioRecognitionStrategy.
     /// </summary>
     public class AudioRecognitionStrategy : ConstantClass

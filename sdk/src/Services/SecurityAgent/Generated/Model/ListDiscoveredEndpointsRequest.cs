@@ -31,8 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDiscoveredEndpoints operation.
-    /// Lists discovered endpoints associated with a pentest job with optional URI prefix
-    /// filtering
+    /// Returns a paginated list of endpoints discovered during a pentest job execution.
     /// </summary>
     public partial class ListDiscoveredEndpointsRequest : AmazonSecurityAgentRequest
     {
@@ -45,7 +44,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// ID of the agent space where the pentest job exists
+        /// The unique identifier of the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +63,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of discovered endpoints to return in a single request (default: 50)
+        /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         public int? MaxResults
@@ -82,7 +81,9 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token for pagination
+        /// A token to use for paginating results that are returned in the response. Set the value
+        /// of this parameter to null for the first request. For subsequent calls, use the nextToken
+        /// value returned from the previous request.
         /// </para>
         /// </summary>
         public string NextToken
@@ -100,7 +101,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property PentestJobId. 
         /// <para>
-        /// Identifier of the pentest job for which to retrieve discovered endpoints
+        /// The unique identifier of the pentest job to list discovered endpoints for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +120,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// Optional URI prefix filter to narrow down results
+        /// A prefix to filter discovered endpoints by URI.
         /// </para>
         /// </summary>
         public string Prefix

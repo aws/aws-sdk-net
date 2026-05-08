@@ -270,6 +270,11 @@ namespace Amazon.GameLift.Model
         /// previously set this parameter manually, you can't reset this to use the calculated
         /// settings.
         /// </para>
+        ///  
+        /// <para>
+        /// The port range must not overlap with the Amazon GameLift Servers reserved port range
+        /// <c>4092-4191</c>. This range is reserved for internal Amazon GameLift Servers services.
+        /// </para>
         /// </summary>
         public ConnectionPortRange InstanceConnectionPortRange
         {
@@ -287,6 +292,11 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property InstanceInboundPermissionAuthorizations. 
         /// <para>
         /// A set of ports to add to the container fleet's inbound permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// The port range must not overlap with the Amazon GameLift Servers reserved port range
+        /// <c>4092-4191</c>. This range is reserved for internal Amazon GameLift Servers services.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

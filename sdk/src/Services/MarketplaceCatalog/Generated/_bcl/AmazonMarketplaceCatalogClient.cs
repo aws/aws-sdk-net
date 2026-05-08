@@ -39,6 +39,11 @@ namespace Amazon.MarketplaceCatalog
 {
     /// <summary>
     /// <para>Implementation for accessing MarketplaceCatalog</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Catalog API actions allow you to manage your entities through list, describe, and
     /// update capabilities. An <i>entity</i> can be a product or an offer on AWS Marketplace.

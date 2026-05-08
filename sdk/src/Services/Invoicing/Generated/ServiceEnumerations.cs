@@ -25,6 +25,110 @@ namespace Amazon.Invoicing
 {
 
     /// <summary>
+    /// Constants used for properties of type BillingEntity.
+    /// </summary>
+    public class BillingEntity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS for BillingEntity
+        /// </summary>
+        public static readonly BillingEntity AWS = new BillingEntity("AWS");
+        /// <summary>
+        /// Constant AWS_MARKETPLACE for BillingEntity
+        /// </summary>
+        public static readonly BillingEntity AWS_MARKETPLACE = new BillingEntity("AWS_MARKETPLACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillingEntity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingEntity FindValue(string value)
+        {
+            return FindValue<BillingEntity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillingEntity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BillType.
+    /// </summary>
+    public class BillType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANNIVERSARY for BillType
+        /// </summary>
+        public static readonly BillType ANNIVERSARY = new BillType("ANNIVERSARY");
+        /// <summary>
+        /// Constant PURCHASE for BillType
+        /// </summary>
+        public static readonly BillType PURCHASE = new BillType("PURCHASE");
+        /// <summary>
+        /// Constant REFUND for BillType
+        /// </summary>
+        public static readonly BillType REFUND = new BillType("REFUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillType FindValue(string value)
+        {
+            return FindValue<BillType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BuyerDomain.
     /// </summary>
     public class BuyerDomain : ConstantClass
@@ -233,6 +337,106 @@ namespace Amazon.Invoicing
 
 
     /// <summary>
+    /// Constants used for properties of type EinvoiceDeliveryStatus.
+    /// </summary>
+    public class EinvoiceDeliveryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELIVERED for EinvoiceDeliveryStatus
+        /// </summary>
+        public static readonly EinvoiceDeliveryStatus DELIVERED = new EinvoiceDeliveryStatus("DELIVERED");
+        /// <summary>
+        /// Constant NOT_DELIVERED for EinvoiceDeliveryStatus
+        /// </summary>
+        public static readonly EinvoiceDeliveryStatus NOT_DELIVERED = new EinvoiceDeliveryStatus("NOT_DELIVERED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EinvoiceDeliveryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EinvoiceDeliveryStatus FindValue(string value)
+        {
+            return FindValue<EinvoiceDeliveryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EinvoiceDeliveryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InvoiceFrequency.
+    /// </summary>
+    public class InvoiceFrequency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ONE_TIME for InvoiceFrequency
+        /// </summary>
+        public static readonly InvoiceFrequency ONE_TIME = new InvoiceFrequency("ONE_TIME");
+        /// <summary>
+        /// Constant RECURRING for InvoiceFrequency
+        /// </summary>
+        public static readonly InvoiceFrequency RECURRING = new InvoiceFrequency("RECURRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InvoiceFrequency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvoiceFrequency FindValue(string value)
+        {
+            return FindValue<InvoiceFrequency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvoiceFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InvoiceType.
     /// </summary>
     public class InvoiceType : ConstantClass
@@ -246,6 +450,10 @@ namespace Amazon.Invoicing
         /// Constant INVOICE for InvoiceType
         /// </summary>
         public static readonly InvoiceType INVOICE = new InvoiceType("INVOICE");
+        /// <summary>
+        /// Constant PAYMENT_RECEIPT for InvoiceType
+        /// </summary>
+        public static readonly InvoiceType PAYMENT_RECEIPT = new InvoiceType("PAYMENT_RECEIPT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -545,6 +753,118 @@ namespace Amazon.Invoicing
 
 
     /// <summary>
+    /// Constants used for properties of type ReceiverRole.
+    /// </summary>
+    public class ReceiverRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUYER for ReceiverRole
+        /// </summary>
+        public static readonly ReceiverRole BUYER = new ReceiverRole("BUYER");
+        /// <summary>
+        /// Constant RESELLER for ReceiverRole
+        /// </summary>
+        public static readonly ReceiverRole RESELLER = new ReceiverRole("RESELLER");
+        /// <summary>
+        /// Constant SELLER for ReceiverRole
+        /// </summary>
+        public static readonly ReceiverRole SELLER = new ReceiverRole("SELLER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReceiverRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReceiverRole FindValue(string value)
+        {
+            return FindValue<ReceiverRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReceiverRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupplementalDocumentType.
+    /// </summary>
+    public class SupplementalDocumentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GOVERNMENT_INVOICE for SupplementalDocumentType
+        /// </summary>
+        public static readonly SupplementalDocumentType GOVERNMENT_INVOICE = new SupplementalDocumentType("GOVERNMENT_INVOICE");
+        /// <summary>
+        /// Constant PAYMENT_RECEIPT for SupplementalDocumentType
+        /// </summary>
+        public static readonly SupplementalDocumentType PAYMENT_RECEIPT = new SupplementalDocumentType("PAYMENT_RECEIPT");
+        /// <summary>
+        /// Constant SUPPLEMENT for SupplementalDocumentType
+        /// </summary>
+        public static readonly SupplementalDocumentType SUPPLEMENT = new SupplementalDocumentType("SUPPLEMENT");
+        /// <summary>
+        /// Constant TAX_E_INVOICE for SupplementalDocumentType
+        /// </summary>
+        public static readonly SupplementalDocumentType TAX_E_INVOICE = new SupplementalDocumentType("TAX_E_INVOICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupplementalDocumentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupplementalDocumentType FindValue(string value)
+        {
+            return FindValue<SupplementalDocumentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupplementalDocumentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SupplierDomain.
     /// </summary>
     public class SupplierDomain : ConstantClass
@@ -584,6 +904,56 @@ namespace Amazon.Invoicing
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SupplierDomain(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TaxAuthorityStatus.
+    /// </summary>
+    public class TaxAuthorityStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for TaxAuthorityStatus
+        /// </summary>
+        public static readonly TaxAuthorityStatus CANCELLED = new TaxAuthorityStatus("CANCELLED");
+        /// <summary>
+        /// Constant ISSUED for TaxAuthorityStatus
+        /// </summary>
+        public static readonly TaxAuthorityStatus ISSUED = new TaxAuthorityStatus("ISSUED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TaxAuthorityStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaxAuthorityStatus FindValue(string value)
+        {
+            return FindValue<TaxAuthorityStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaxAuthorityStatus(string value)
         {
             return FindValue(value);
         }

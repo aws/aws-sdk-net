@@ -39,6 +39,11 @@ namespace Amazon.Lightsail
 {
     /// <summary>
     /// <para>Implementation for accessing Lightsail</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Lightsail is the easiest way to get started with Amazon Web Services (Amazon
     /// Web Services) for developers who need to build websites or web applications. It includes

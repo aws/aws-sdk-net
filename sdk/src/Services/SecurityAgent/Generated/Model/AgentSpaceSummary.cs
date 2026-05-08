@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Summary information for an agent space
+    /// Contains summary information about an agent space.
     /// </summary>
     public partial class AgentSpaceSummary
     {
@@ -42,7 +42,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Unique identifier of the agent space
+        /// The unique identifier of the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Timestamp when the agent space was created
+        /// The date and time the agent space was created, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -79,7 +79,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the agent space
+        /// The name of the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,7 +98,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Timestamp when the agent space was last updated
+        /// The date and time the agent space was last updated, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt

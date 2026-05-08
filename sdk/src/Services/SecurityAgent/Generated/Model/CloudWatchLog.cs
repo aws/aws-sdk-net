@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Reference to logs stored in CloudWatch
+    /// The Amazon CloudWatch Logs configuration for pentest job logging.
     /// </summary>
     public partial class CloudWatchLog
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property LogGroup. 
         /// <para>
-        /// Name of the CloudWatch log group
+        /// The name of the CloudWatch log group.
         /// </para>
         /// </summary>
         public string LogGroup
@@ -58,7 +58,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property LogStream. 
         /// <para>
-        /// Name of the CloudWatch log stream
+        /// The name of the CloudWatch log stream.
         /// </para>
         /// </summary>
         public string LogStream

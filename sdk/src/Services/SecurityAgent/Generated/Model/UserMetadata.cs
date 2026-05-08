@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// User-specific metadata
+    /// Contains metadata about a user member, including the username and email address.
     /// </summary>
     public partial class UserMetadata
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        /// User email address
+        /// The email address of the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// User name/display name
+        /// The username of the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -167,6 +167,20 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetFunctionMapping())
+            {
+                context.Writer.WritePropertyName("FunctionMapping");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFunctionMappingKvp in publicRequest.FunctionMapping)
+                {
+                    context.Writer.WritePropertyName(publicRequestFunctionMappingKvp.Key);
+                    var publicRequestFunctionMappingValue = publicRequestFunctionMappingKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestFunctionMappingValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetInsertionMode())
             {
                 context.Writer.WritePropertyName("InsertionMode");

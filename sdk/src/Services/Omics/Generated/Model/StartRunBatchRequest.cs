@@ -39,7 +39,8 @@ namespace Amazon.Omics.Model
     ///  
     /// <para>
     ///  <c>StartRunBatch</c> validates common fields synchronously and returns immediately
-    /// with a batch ID and status <c>PENDING</c>. Runs are submitted gradually and asynchronously
+    /// with a batch ID and status <c>CREATING</c>. The batch transitions to <c>PENDING</c>
+    /// once initial setup completes. Runs are then submitted gradually and asynchronously
     /// at a rate governed by your <c>StartRun</c> throughput quota.
     /// </para>
     /// </summary>

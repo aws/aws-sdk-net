@@ -40,6 +40,7 @@ namespace Amazon.ObservabilityAdmin.Model
         private DestinationType _destinationType;
         private ELBLoadBalancerLoggingParameters _elbLoadBalancerLoggingParameters;
         private LogDeliveryParameters _logDeliveryParameters;
+        private MskMonitoringParameters _mskMonitoringParameters;
         private int? _retentionInDays;
         private VPCFlowLogParameters _vpcFlowLogParameters;
         private WAFLoggingParameters _wafLoggingParameters;
@@ -137,6 +138,25 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetLogDeliveryParameters()
         {
             return this._logDeliveryParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MskMonitoringParameters. 
+        /// <para>
+        ///  Configuration parameters specific to MSK monitoring when MSK is the resource type.
+        /// 
+        /// </para>
+        /// </summary>
+        public MskMonitoringParameters MskMonitoringParameters
+        {
+            get { return this._mskMonitoringParameters; }
+            set { this._mskMonitoringParameters = value; }
+        }
+
+        // Check to see if MskMonitoringParameters property is set
+        internal bool IsSetMskMonitoringParameters()
+        {
+            return this._mskMonitoringParameters != null;
         }
 
         /// <summary>

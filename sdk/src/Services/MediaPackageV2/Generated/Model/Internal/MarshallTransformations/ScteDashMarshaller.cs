@@ -52,6 +52,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AdMarkerDash);
             }
 
+            if(requestObject.IsSetScteInManifests())
+            {
+                context.Writer.WritePropertyName("ScteInManifests");
+                context.Writer.WriteStringValue(requestObject.ScteInManifests);
+            }
+
         }
 
         /// <summary>

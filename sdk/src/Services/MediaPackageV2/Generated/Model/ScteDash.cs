@@ -35,6 +35,7 @@ namespace Amazon.MediaPackageV2.Model
     public partial class ScteDash
     {
         private AdMarkerDash _adMarkerDash;
+        private ScteInManifests _scteInManifests;
 
         /// <summary>
         /// Gets and sets the property AdMarkerDash. 
@@ -68,6 +69,30 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetAdMarkerDash()
         {
             return this._adMarkerDash != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScteInManifests. 
+        /// <para>
+        /// Controls which SCTE-35 events appear in DASH manifests. <c>ALL</c> includes all non-implicit
+        /// SCTE-35 events. <c>MATCHES_FILTER</c> includes only events whose type matches the
+        /// configured <c>ScteFilter</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value, the default is <c>ALL</c>.
+        /// </para>
+        /// </summary>
+        public ScteInManifests ScteInManifests
+        {
+            get { return this._scteInManifests; }
+            set { this._scteInManifests = value; }
+        }
+
+        // Check to see if ScteInManifests property is set
+        internal bool IsSetScteInManifests()
+        {
+            return this._scteInManifests != null;
         }
 
     }

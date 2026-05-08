@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private AmazonQInQuickSightDashboardConfigurations _amazonQInQuickSight;
         private BookmarksConfigurations _bookmarks;
+        private DashboardCustomizationSummaryConfigurations _dashboardCustomizationSummary;
         private RecentSnapshotsConfigurations _recentSnapshots;
         private SchedulesConfigurations _schedules;
         private SharedViewConfigurations _sharedView;
@@ -76,6 +77,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetBookmarks()
         {
             return this._bookmarks != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DashboardCustomizationSummary. 
+        /// <para>
+        /// The dashboard customization summary configuration for an embedded Quick Sight dashboard.
+        /// </para>
+        /// </summary>
+        public DashboardCustomizationSummaryConfigurations DashboardCustomizationSummary
+        {
+            get { return this._dashboardCustomizationSummary; }
+            set { this._dashboardCustomizationSummary = value; }
+        }
+
+        // Check to see if DashboardCustomizationSummary property is set
+        internal bool IsSetDashboardCustomizationSummary()
+        {
+            return this._dashboardCustomizationSummary != null;
         }
 
         /// <summary>

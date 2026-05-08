@@ -32,6 +32,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// This is the response object from the GetBots operation.
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class GetBotsResponse : AmazonWebServiceResponse
     {
         private List<BotMetadata> _bots = AWSConfigs.InitializeCollections ? new List<BotMetadata>() : null;

@@ -220,7 +220,11 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the run batch.
+        /// The current status of the run batch. Possible values: <c>CREATING</c> (initial setup),
+        /// <c>PENDING</c> (ready to submit runs), <c>SUBMITTING</c> (submitting runs), <c>INPROGRESS</c>
+        /// (runs executing), <c>STOPPING</c> (cancellation in progress), <c>PROCESSED</c> (all
+        /// runs completed), <c>CANCELLED</c> (batch cancelled), <c>FAILED</c> (batch failed),
+        /// <c>RUNS_DELETING</c> (deleting runs), <c>RUNS_DELETED</c> (runs deleted).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

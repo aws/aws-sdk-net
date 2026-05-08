@@ -69,6 +69,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field UserIdentifier set");
             request.AddPathResource("{userIdentifier}", StringUtils.FromString(publicRequest.UserIdentifier));
             
+            if (publicRequest.IsSetSessionName())
+                request.Parameters.Add("sessionName", StringUtils.FromString(publicRequest.SessionName));
+            
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/user-profiles/{userIdentifier}";

@@ -39,7 +39,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ArtifactId. 
         /// <para>
-        /// Unique identifier of the created artifact
+        /// The unique identifier assigned to the uploaded artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

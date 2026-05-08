@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Input parameters for GitHub integration
+    /// The input required to create a GitHub integration, including the OAuth authorization
+    /// code and CSRF state.
     /// </summary>
     public partial class GitHubIntegrationInput
     {
@@ -41,7 +42,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// Authorization code from OAuth flow
+        /// The OAuth authorization code received from GitHub.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +61,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property OrganizationName. 
         /// <para>
-        /// Name of the GitHub organization
+        /// The name of the GitHub organization to integrate with.
         /// </para>
         /// </summary>
         public string OrganizationName
@@ -78,7 +79,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// CSRF state token for OAuth security
+        /// The CSRF state token for validating the OAuth flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

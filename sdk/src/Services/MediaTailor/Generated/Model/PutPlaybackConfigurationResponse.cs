@@ -42,6 +42,7 @@ namespace Amazon.MediaTailor.Model
         private CdnConfiguration _cdnConfiguration;
         private Dictionary<string, Dictionary<string, string>> _configurationAliases = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
         private DashConfiguration _dashConfiguration;
+        private Dictionary<string, string> _functionMapping = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private HlsConfiguration _hlsConfiguration;
         private InsertionMode _insertionMode;
         private LivePreRollConfiguration _livePreRollConfiguration;
@@ -216,6 +217,33 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetDashConfiguration()
         {
             return this._dashConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FunctionMapping. 
+        /// <para>
+        /// A map of lifecycle hook event names to function identifiers. The function mapping
+        /// specifies which function MediaTailor executes at each lifecycle hook during ad insertion.
+        /// Valid keys are <c>PRE_SESSION_INITIALIZATION</c> and <c>PRE_ADS_REQUEST</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions
+        /// lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> FunctionMapping
+        {
+            get { return this._functionMapping; }
+            set { this._functionMapping = value; }
+        }
+
+        // Check to see if FunctionMapping property is set
+        internal bool IsSetFunctionMapping()
+        {
+            return this._functionMapping != null && (this._functionMapping.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

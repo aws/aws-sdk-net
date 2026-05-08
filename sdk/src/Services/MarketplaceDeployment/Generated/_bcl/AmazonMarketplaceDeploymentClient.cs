@@ -39,6 +39,11 @@ namespace Amazon.MarketplaceDeployment
 {
     /// <summary>
     /// <para>Implementation for accessing MarketplaceDeployment</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The AWS Marketplace Deployment Service supports the Quick Launch experience, which
     /// is a deployment option for software as a service (SaaS) products. Quick Launch simplifies

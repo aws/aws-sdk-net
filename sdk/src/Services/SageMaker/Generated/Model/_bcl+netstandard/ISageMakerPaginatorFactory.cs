@@ -58,6 +58,36 @@ namespace Amazon.SageMaker.Model
         IListActionsPaginator ListActions(ListActionsRequest request);
 
         /// <summary>
+        /// Paginator for ListAIBenchmarkJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAIBenchmarkJobsPaginator ListAIBenchmarkJobs(ListAIBenchmarkJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAIRecommendationJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAIRecommendationJobsPaginator ListAIRecommendationJobs(ListAIRecommendationJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAIWorkloadConfigs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAIWorkloadConfigsPaginator ListAIWorkloadConfigs(ListAIWorkloadConfigsRequest request);
+
+        /// <summary>
         /// Paginator for ListAlgorithms operation
         ///</summary>
         [AWSPaginator(

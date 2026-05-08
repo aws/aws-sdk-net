@@ -39,6 +39,11 @@ namespace Amazon.ChimeSDKMediaPipelines
 {
     /// <summary>
     /// <para>Implementation for accessing ChimeSDKMediaPipelines</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The Amazon Chime SDK media pipeline APIs in this section allow software developers
     /// to create Amazon Chime SDK media pipelines that capture, concatenate, or stream your

@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CsrfState. 
         /// <para>
-        /// CSRF state token for OAuth security
+        /// The CSRF state token to use when completing the OAuth flow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RedirectTo. 
         /// <para>
-        /// OAuth redirect URL
+        /// The URL to redirect the user to for completing the OAuth authorization.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

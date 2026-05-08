@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyTargetDomain operation.
-    /// Verifies ownership for a registered target domain
+    /// Initiates verification of a target domain. This checks whether the domain ownership
+    /// verification token has been properly configured.
     /// </summary>
     public partial class VerifyTargetDomainRequest : AmazonSecurityAgentRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomainId. 
         /// <para>
-        /// Unique identifier of the target domain
+        /// The unique identifier of the target domain to verify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

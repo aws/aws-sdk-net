@@ -58,6 +58,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CompositeRuleEvaluationMethod);
             }
 
+            if(requestObject.IsSetCustomLogGroupPrefix())
+            {
+                context.Writer.WritePropertyName("CustomLogGroupPrefix");
+                context.Writer.WriteStringValue(requestObject.CustomLogGroupPrefix);
+            }
+
             if(requestObject.IsSetResultsS3Prefix())
             {
                 context.Writer.WritePropertyName("ResultsS3Prefix");

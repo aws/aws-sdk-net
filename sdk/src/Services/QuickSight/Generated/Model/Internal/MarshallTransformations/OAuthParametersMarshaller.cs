@@ -46,6 +46,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetIdentityProviderCACertificatesBundleS3Uri())
+            {
+                context.Writer.WritePropertyName("IdentityProviderCACertificatesBundleS3Uri");
+                context.Writer.WriteStringValue(requestObject.IdentityProviderCACertificatesBundleS3Uri);
+            }
+
             if(requestObject.IsSetIdentityProviderResourceUri())
             {
                 context.Writer.WritePropertyName("IdentityProviderResourceUri");

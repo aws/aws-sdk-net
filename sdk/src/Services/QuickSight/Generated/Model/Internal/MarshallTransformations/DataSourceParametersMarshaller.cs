@@ -299,6 +299,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetS3TablesParameters())
+            {
+                context.Writer.WritePropertyName("S3TablesParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3TablesParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3TablesParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetServiceNowParameters())
             {
                 context.Writer.WritePropertyName("ServiceNowParameters");

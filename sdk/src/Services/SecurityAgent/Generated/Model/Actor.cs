@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Represents an entity that interacts with the system during security testing
+    /// Represents an actor used during penetration testing. An actor defines a user or entity
+    /// that interacts with the target application, including authentication credentials and
+    /// target URIs.
     /// </summary>
     public partial class Actor
     {
@@ -42,7 +44,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Authentication. 
         /// <para>
-        /// Authentication information used by the actor to access resources
+        /// The authentication configuration for the actor.
         /// </para>
         /// </summary>
         public Authentication Authentication
@@ -60,7 +62,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Additional description or details about the actor
+        /// A description of the actor.
         /// </para>
         /// </summary>
         public string Description
@@ -78,7 +80,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// Unique identifier for the actor (case-insensitive)
+        /// The unique identifier for the actor.
         /// </para>
         /// </summary>
         public string Identifier
@@ -96,7 +98,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Uris. 
         /// <para>
-        /// List of URIs accessible with the actor's credentials
+        /// The list of URIs that the actor targets during testing.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -39,6 +39,11 @@ namespace Amazon.ServiceQuotas
 {
     /// <summary>
     /// <para>Implementation for accessing ServiceQuotas</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// With Service Quotas, you can view and manage your quotas easily as your Amazon Web
     /// Services workloads grow. Quotas, also referred to as limits, are the maximum number

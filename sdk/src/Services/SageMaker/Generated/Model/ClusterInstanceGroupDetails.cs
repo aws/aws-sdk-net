@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private string _currentImageId;
         private string _desiredImageId;
         private string _executionRole;
+        private ClusterImageVersionStatus _imageVersionStatus;
         private string _instanceGroupName;
         private ClusterInstanceRequirementDetails _instanceRequirements;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
@@ -49,6 +50,7 @@ namespace Amazon.SageMaker.Model
         private ClusterKubernetesConfigDetails _kubernetesConfig;
         private ClusterLifeCycleConfig _lifeCycleConfig;
         private int? _minCount;
+        private ClusterNetworkInterfaceDetails _networkInterface;
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _overrideVpcConfig;
         private ScheduledUpdateConfig _scheduledUpdateConfig;
@@ -194,6 +196,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExecutionRole()
         {
             return this._executionRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageVersionStatus. 
+        /// <para>
+        /// The status of the image version for the instance group. Indicates whether the instance
+        /// group is running the latest image version or if an update is available.
+        /// </para>
+        /// </summary>
+        public ClusterImageVersionStatus ImageVersionStatus
+        {
+            get { return this._imageVersionStatus; }
+            set { this._imageVersionStatus = value; }
+        }
+
+        // Check to see if ImageVersionStatus property is set
+        internal bool IsSetImageVersionStatus()
+        {
+            return this._imageVersionStatus != null;
         }
 
         /// <summary>
@@ -359,6 +380,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMinCount()
         {
             return this._minCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterface. 
+        /// <para>
+        /// The network interface configuration for the instance group.
+        /// </para>
+        /// </summary>
+        public ClusterNetworkInterfaceDetails NetworkInterface
+        {
+            get { return this._networkInterface; }
+            set { this._networkInterface = value; }
+        }
+
+        // Check to see if NetworkInterface property is set
+        internal bool IsSetNetworkInterface()
+        {
+            return this._networkInterface != null;
         }
 
         /// <summary>

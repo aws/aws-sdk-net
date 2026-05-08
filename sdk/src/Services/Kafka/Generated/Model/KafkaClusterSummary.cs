@@ -35,6 +35,7 @@ namespace Amazon.Kafka.Model
     public partial class KafkaClusterSummary
     {
         private AmazonMskCluster _amazonMskCluster;
+        private ApacheKafkaCluster _apacheKafkaCluster;
         private string _kafkaClusterAlias;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetAmazonMskCluster()
         {
             return this._amazonMskCluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApacheKafkaCluster. 
+        /// <para>
+        /// Details of an Apache Kafka Cluster.
+        /// </para>
+        /// </summary>
+        public ApacheKafkaCluster ApacheKafkaCluster
+        {
+            get { return this._apacheKafkaCluster; }
+            set { this._apacheKafkaCluster = value; }
+        }
+
+        // Check to see if ApacheKafkaCluster property is set
+        internal bool IsSetApacheKafkaCluster()
+        {
+            return this._apacheKafkaCluster != null;
         }
 
         /// <summary>

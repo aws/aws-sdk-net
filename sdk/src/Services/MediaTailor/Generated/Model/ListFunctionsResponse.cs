@@ -1,0 +1,91 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the mediatailor-2018-04-23.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.MediaTailor.Model
+{
+    /// <summary>
+    /// This is the response object from the ListFunctions operation.
+    /// </summary>
+    public partial class ListFunctionsResponse : AmazonWebServiceResponse
+    {
+        private List<Function> _items = AWSConfigs.InitializeCollections ? new List<Function>() : null;
+        private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A list of functions associated with your account in the current Region.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Function> Items
+        {
+            get { return this._items; }
+            set { this._items = value; }
+        }
+
+        // Check to see if Items property is set
+        internal bool IsSetItems()
+        {
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Pagination token returned by the list request when results exceed the maximum allowed.
+        /// Use the token to fetch the next page of results.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the first <c>ListFunctions</c> request, omit this value. For subsequent requests,
+        /// get the value of <c>NextToken</c> from the previous response and specify that value
+        /// for <c>NextToken</c> in the request. Continue making requests until the response no
+        /// longer includes a <c>NextToken</c> value, which indicates that all results have been
+        /// retrieved.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+    }
+}

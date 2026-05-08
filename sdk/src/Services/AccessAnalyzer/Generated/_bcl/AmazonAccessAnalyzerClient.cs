@@ -39,6 +39,11 @@ namespace Amazon.AccessAnalyzer
 {
     /// <summary>
     /// <para>Implementation for accessing AccessAnalyzer</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Identity and Access Management Access Analyzer helps you to set, verify, and refine
     /// your IAM policies by providing a suite of capabilities. Its features include findings

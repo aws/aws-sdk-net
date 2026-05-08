@@ -43,6 +43,10 @@ namespace Amazon.Deadline
         /// </summary>
         public static readonly AcceleratorName L40s = new AcceleratorName("l40s");
         /// <summary>
+        /// Constant RtxProServer6000 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName RtxProServer6000 = new AcceleratorName("rtx-pro-server-6000");
+        /// <summary>
         /// Constant T4 for AcceleratorName
         /// </summary>
         public static readonly AcceleratorName T4 = new AcceleratorName("t4");

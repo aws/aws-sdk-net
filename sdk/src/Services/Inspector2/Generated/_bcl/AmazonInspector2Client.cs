@@ -39,6 +39,11 @@ namespace Amazon.Inspector2
 {
     /// <summary>
     /// <para>Implementation for accessing Inspector2</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Inspector is a vulnerability discovery service that automates continuous scanning
     /// for security vulnerabilities within your Amazon EC2, Amazon ECR, and Amazon Web Services

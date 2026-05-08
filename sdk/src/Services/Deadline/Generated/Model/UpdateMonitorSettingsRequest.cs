@@ -61,8 +61,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Monitor settings as key-value pairs. Keys present in the request are upserted; keys
-        /// absent are left unchanged. Send an empty string value to delete a key.
+        /// The monitor settings to update as key-value pairs. Keys present in the request are
+        /// upserted; keys absent are left unchanged. Send an empty string value to delete a key.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

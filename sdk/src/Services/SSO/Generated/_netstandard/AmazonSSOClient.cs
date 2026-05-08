@@ -39,6 +39,11 @@ namespace Amazon.SSO
 {
     /// <summary>
     /// <para>Implementation for accessing SSO</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS IAM Identity Center (successor to AWS Single Sign-On) Portal is a web service
     /// that makes it easy for you to assign user access to IAM Identity Center resources

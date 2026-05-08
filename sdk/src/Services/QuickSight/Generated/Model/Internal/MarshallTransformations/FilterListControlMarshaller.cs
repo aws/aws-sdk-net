@@ -57,6 +57,33 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetControlSortConfigurations())
+            {
+                context.Writer.WritePropertyName("ControlSortConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectControlSortConfigurationsListValue in requestObject.ControlSortConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ControlSortConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectControlSortConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetControlTitleFormatText())
+            {
+                context.Writer.WritePropertyName("ControlTitleFormatText");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ControlTitleFormatTextMarshaller.Instance;
+                marshaller.Marshall(requestObject.ControlTitleFormatText, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDisplayOptions())
             {
                 context.Writer.WritePropertyName("DisplayOptions");

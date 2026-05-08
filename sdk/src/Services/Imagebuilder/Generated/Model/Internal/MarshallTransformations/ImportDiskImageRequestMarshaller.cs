@@ -131,6 +131,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Platform);
             }
 
+            if(publicRequest.IsSetRegisterImageOptions())
+            {
+                context.Writer.WritePropertyName("registerImageOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RegisterImageOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RegisterImageOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSemanticVersion())
             {
                 context.Writer.WritePropertyName("semanticVersion");
@@ -155,6 +166,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("uri");
                 context.Writer.WriteStringValue(publicRequest.Uri);
+            }
+
+            if(publicRequest.IsSetWindowsConfiguration())
+            {
+                context.Writer.WritePropertyName("windowsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WindowsConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WindowsConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Integrated resource details from a provider
+    /// Represents an integrated resource from a third-party provider. This is a union type
+    /// that contains provider-specific resource information.
     /// </summary>
     public partial class IntegratedResource
     {
@@ -39,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property GithubRepository. 
         /// <para>
-        /// GitHub repository resource
+        /// The GitHub repository resource information.
         /// </para>
         /// </summary>
         public GitHubRepositoryResource GithubRepository

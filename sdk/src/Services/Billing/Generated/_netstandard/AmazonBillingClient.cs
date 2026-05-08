@@ -39,6 +39,11 @@ namespace Amazon.Billing
 {
     /// <summary>
     /// <para>Implementation for accessing Billing</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You can use the Billing API to programatically list the billing views available to
     /// you for a given time period. A billing view represents a set of billing data. 

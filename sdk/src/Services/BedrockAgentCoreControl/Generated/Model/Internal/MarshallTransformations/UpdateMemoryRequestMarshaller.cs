@@ -76,6 +76,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAddIndexedKeys())
+            {
+                context.Writer.WritePropertyName("addIndexedKeys");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAddIndexedKeysListValue in publicRequest.AddIndexedKeys)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = IndexedKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAddIndexedKeysListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");

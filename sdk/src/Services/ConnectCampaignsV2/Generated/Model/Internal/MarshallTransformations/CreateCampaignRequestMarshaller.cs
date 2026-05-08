@@ -118,6 +118,17 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ConnectInstanceId);
             }
 
+            if(publicRequest.IsSetEntryLimitsConfig())
+            {
+                context.Writer.WritePropertyName("entryLimitsConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EntryLimitsConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EntryLimitsConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

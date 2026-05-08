@@ -25,6 +25,138 @@ namespace Amazon.BedrockAgentCore
 {
 
     /// <summary>
+    /// Constants used for properties of type ABTestExecutionStatus.
+    /// </summary>
+    public class ABTestExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_STARTED for ABTestExecutionStatus
+        /// </summary>
+        public static readonly ABTestExecutionStatus NOT_STARTED = new ABTestExecutionStatus("NOT_STARTED");
+        /// <summary>
+        /// Constant PAUSED for ABTestExecutionStatus
+        /// </summary>
+        public static readonly ABTestExecutionStatus PAUSED = new ABTestExecutionStatus("PAUSED");
+        /// <summary>
+        /// Constant RUNNING for ABTestExecutionStatus
+        /// </summary>
+        public static readonly ABTestExecutionStatus RUNNING = new ABTestExecutionStatus("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for ABTestExecutionStatus
+        /// </summary>
+        public static readonly ABTestExecutionStatus STOPPED = new ABTestExecutionStatus("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ABTestExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ABTestExecutionStatus FindValue(string value)
+        {
+            return FindValue<ABTestExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ABTestExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ABTestStatus.
+    /// </summary>
+    public class ABTestStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ABTestStatus
+        /// </summary>
+        public static readonly ABTestStatus ACTIVE = new ABTestStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for ABTestStatus
+        /// </summary>
+        public static readonly ABTestStatus CREATE_FAILED = new ABTestStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for ABTestStatus
+        /// </summary>
+        public static readonly ABTestStatus CREATING = new ABTestStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for ABTestStatus
+        /// </summary>
+        public static readonly ABTestStatus DELETE_FAILED = new ABTestStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for ABTestStatus
+        /// </summary>
+        public static readonly ABTestStatus DELETING = new ABTestStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ABTestStatus
+        /// </summary>
+        public static readonly ABTestStatus FAILED = new ABTestStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ABTestStatus
+        /// </summary>
+        public static readonly ABTestStatus UPDATE_FAILED = new ABTestStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for ABTestStatus
+        /// </summary>
+        public static readonly ABTestStatus UPDATING = new ABTestStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ABTestStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ABTestStatus FindValue(string value)
+        {
+            return FindValue<ABTestStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ABTestStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutomationStreamStatus.
     /// </summary>
     public class AutomationStreamStatus : ConstantClass
@@ -68,6 +200,142 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AutomationStreamStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchEvaluationStatus.
+    /// </summary>
+    public class BatchEvaluationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for BatchEvaluationStatus
+        /// </summary>
+        public static readonly BatchEvaluationStatus COMPLETED = new BatchEvaluationStatus("COMPLETED");
+        /// <summary>
+        /// Constant COMPLETED_WITH_ERRORS for BatchEvaluationStatus
+        /// </summary>
+        public static readonly BatchEvaluationStatus COMPLETED_WITH_ERRORS = new BatchEvaluationStatus("COMPLETED_WITH_ERRORS");
+        /// <summary>
+        /// Constant DELETING for BatchEvaluationStatus
+        /// </summary>
+        public static readonly BatchEvaluationStatus DELETING = new BatchEvaluationStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for BatchEvaluationStatus
+        /// </summary>
+        public static readonly BatchEvaluationStatus FAILED = new BatchEvaluationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for BatchEvaluationStatus
+        /// </summary>
+        public static readonly BatchEvaluationStatus IN_PROGRESS = new BatchEvaluationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for BatchEvaluationStatus
+        /// </summary>
+        public static readonly BatchEvaluationStatus PENDING = new BatchEvaluationStatus("PENDING");
+        /// <summary>
+        /// Constant STOPPED for BatchEvaluationStatus
+        /// </summary>
+        public static readonly BatchEvaluationStatus STOPPED = new BatchEvaluationStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for BatchEvaluationStatus
+        /// </summary>
+        public static readonly BatchEvaluationStatus STOPPING = new BatchEvaluationStatus("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchEvaluationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchEvaluationStatus FindValue(string value)
+        {
+            return FindValue<BatchEvaluationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchEvaluationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BlockchainChainId.
+    /// </summary>
+    public class BlockchainChainId : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASE for BlockchainChainId
+        /// </summary>
+        public static readonly BlockchainChainId BASE = new BlockchainChainId("BASE");
+        /// <summary>
+        /// Constant BASE_SEPOLIA for BlockchainChainId
+        /// </summary>
+        public static readonly BlockchainChainId BASE_SEPOLIA = new BlockchainChainId("BASE_SEPOLIA");
+        /// <summary>
+        /// Constant ETHEREUM for BlockchainChainId
+        /// </summary>
+        public static readonly BlockchainChainId ETHEREUM = new BlockchainChainId("ETHEREUM");
+        /// <summary>
+        /// Constant SOLANA for BlockchainChainId
+        /// </summary>
+        public static readonly BlockchainChainId SOLANA = new BlockchainChainId("SOLANA");
+        /// <summary>
+        /// Constant SOLANA_DEVNET for BlockchainChainId
+        /// </summary>
+        public static readonly BlockchainChainId SOLANA_DEVNET = new BlockchainChainId("SOLANA_DEVNET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BlockchainChainId(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BlockchainChainId FindValue(string value)
+        {
+            return FindValue<BlockchainChainId>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BlockchainChainId(string value)
         {
             return FindValue(value);
         }
@@ -218,6 +486,80 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BrowserSessionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CloudWatchLogsFilterOperator.
+    /// </summary>
+    public class CloudWatchLogsFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Contains for CloudWatchLogsFilterOperator
+        /// </summary>
+        public static readonly CloudWatchLogsFilterOperator Contains = new CloudWatchLogsFilterOperator("Contains");
+        /// <summary>
+        /// Constant Equals for CloudWatchLogsFilterOperator
+        /// </summary>
+        public new static readonly CloudWatchLogsFilterOperator Equals = new CloudWatchLogsFilterOperator("Equals");
+        /// <summary>
+        /// Constant GreaterThan for CloudWatchLogsFilterOperator
+        /// </summary>
+        public static readonly CloudWatchLogsFilterOperator GreaterThan = new CloudWatchLogsFilterOperator("GreaterThan");
+        /// <summary>
+        /// Constant GreaterThanOrEqual for CloudWatchLogsFilterOperator
+        /// </summary>
+        public static readonly CloudWatchLogsFilterOperator GreaterThanOrEqual = new CloudWatchLogsFilterOperator("GreaterThanOrEqual");
+        /// <summary>
+        /// Constant LessThan for CloudWatchLogsFilterOperator
+        /// </summary>
+        public static readonly CloudWatchLogsFilterOperator LessThan = new CloudWatchLogsFilterOperator("LessThan");
+        /// <summary>
+        /// Constant LessThanOrEqual for CloudWatchLogsFilterOperator
+        /// </summary>
+        public static readonly CloudWatchLogsFilterOperator LessThanOrEqual = new CloudWatchLogsFilterOperator("LessThanOrEqual");
+        /// <summary>
+        /// Constant NotContains for CloudWatchLogsFilterOperator
+        /// </summary>
+        public static readonly CloudWatchLogsFilterOperator NotContains = new CloudWatchLogsFilterOperator("NotContains");
+        /// <summary>
+        /// Constant NotEquals for CloudWatchLogsFilterOperator
+        /// </summary>
+        public static readonly CloudWatchLogsFilterOperator NotEquals = new CloudWatchLogsFilterOperator("NotEquals");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloudWatchLogsFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudWatchLogsFilterOperator FindValue(string value)
+        {
+            return FindValue<CloudWatchLogsFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudWatchLogsFilterOperator(string value)
         {
             return FindValue(value);
         }
@@ -383,6 +725,102 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type CryptoWalletNetwork.
+    /// </summary>
+    public class CryptoWalletNetwork : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ETHEREUM for CryptoWalletNetwork
+        /// </summary>
+        public static readonly CryptoWalletNetwork ETHEREUM = new CryptoWalletNetwork("ETHEREUM");
+        /// <summary>
+        /// Constant SOLANA for CryptoWalletNetwork
+        /// </summary>
+        public static readonly CryptoWalletNetwork SOLANA = new CryptoWalletNetwork("SOLANA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CryptoWalletNetwork(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CryptoWalletNetwork FindValue(string value)
+        {
+            return FindValue<CryptoWalletNetwork>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CryptoWalletNetwork(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Currency.
+    /// </summary>
+    public class Currency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USD for Currency
+        /// </summary>
+        public static readonly Currency USD = new Currency("USD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Currency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Currency FindValue(string value)
+        {
+            return FindValue<Currency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Currency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DescriptorType.
     /// </summary>
     public class DescriptorType : ConstantClass
@@ -533,6 +971,366 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type HarnessConversationRole.
+    /// </summary>
+    public class HarnessConversationRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Assistant for HarnessConversationRole
+        /// </summary>
+        public static readonly HarnessConversationRole Assistant = new HarnessConversationRole("assistant");
+        /// <summary>
+        /// Constant User for HarnessConversationRole
+        /// </summary>
+        public static readonly HarnessConversationRole User = new HarnessConversationRole("user");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessConversationRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessConversationRole FindValue(string value)
+        {
+            return FindValue<HarnessConversationRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessConversationRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessStopReason.
+    /// </summary>
+    public class HarnessStopReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Content_filtered for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Content_filtered = new HarnessStopReason("content_filtered");
+        /// <summary>
+        /// Constant End_turn for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason End_turn = new HarnessStopReason("end_turn");
+        /// <summary>
+        /// Constant Interrupted for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Interrupted = new HarnessStopReason("interrupted");
+        /// <summary>
+        /// Constant Malformed_model_output for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Malformed_model_output = new HarnessStopReason("malformed_model_output");
+        /// <summary>
+        /// Constant Malformed_tool_use for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Malformed_tool_use = new HarnessStopReason("malformed_tool_use");
+        /// <summary>
+        /// Constant Max_iterations_exceeded for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Max_iterations_exceeded = new HarnessStopReason("max_iterations_exceeded");
+        /// <summary>
+        /// Constant Max_output_tokens_exceeded for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Max_output_tokens_exceeded = new HarnessStopReason("max_output_tokens_exceeded");
+        /// <summary>
+        /// Constant Max_tokens for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Max_tokens = new HarnessStopReason("max_tokens");
+        /// <summary>
+        /// Constant Model_context_window_exceeded for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Model_context_window_exceeded = new HarnessStopReason("model_context_window_exceeded");
+        /// <summary>
+        /// Constant Partial_turn for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Partial_turn = new HarnessStopReason("partial_turn");
+        /// <summary>
+        /// Constant Stop_sequence for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Stop_sequence = new HarnessStopReason("stop_sequence");
+        /// <summary>
+        /// Constant Timeout_exceeded for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Timeout_exceeded = new HarnessStopReason("timeout_exceeded");
+        /// <summary>
+        /// Constant Tool_result for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Tool_result = new HarnessStopReason("tool_result");
+        /// <summary>
+        /// Constant Tool_use for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Tool_use = new HarnessStopReason("tool_use");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessStopReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessStopReason FindValue(string value)
+        {
+            return FindValue<HarnessStopReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessStopReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessToolType.
+    /// </summary>
+    public class HarnessToolType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Agentcore_browser for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Agentcore_browser = new HarnessToolType("agentcore_browser");
+        /// <summary>
+        /// Constant Agentcore_code_interpreter for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Agentcore_code_interpreter = new HarnessToolType("agentcore_code_interpreter");
+        /// <summary>
+        /// Constant Agentcore_gateway for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Agentcore_gateway = new HarnessToolType("agentcore_gateway");
+        /// <summary>
+        /// Constant Inline_function for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Inline_function = new HarnessToolType("inline_function");
+        /// <summary>
+        /// Constant Remote_mcp for HarnessToolType
+        /// </summary>
+        public static readonly HarnessToolType Remote_mcp = new HarnessToolType("remote_mcp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessToolType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessToolType FindValue(string value)
+        {
+            return FindValue<HarnessToolType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessToolType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessToolUseStatus.
+    /// </summary>
+    public class HarnessToolUseStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Error for HarnessToolUseStatus
+        /// </summary>
+        public static readonly HarnessToolUseStatus Error = new HarnessToolUseStatus("error");
+        /// <summary>
+        /// Constant Success for HarnessToolUseStatus
+        /// </summary>
+        public static readonly HarnessToolUseStatus Success = new HarnessToolUseStatus("success");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessToolUseStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessToolUseStatus FindValue(string value)
+        {
+            return FindValue<HarnessToolUseStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessToolUseStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessToolUseType.
+    /// </summary>
+    public class HarnessToolUseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Mcp_tool_use for HarnessToolUseType
+        /// </summary>
+        public static readonly HarnessToolUseType Mcp_tool_use = new HarnessToolUseType("mcp_tool_use");
+        /// <summary>
+        /// Constant Server_tool_use for HarnessToolUseType
+        /// </summary>
+        public static readonly HarnessToolUseType Server_tool_use = new HarnessToolUseType("server_tool_use");
+        /// <summary>
+        /// Constant Tool_use for HarnessToolUseType
+        /// </summary>
+        public static readonly HarnessToolUseType Tool_use = new HarnessToolUseType("tool_use");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessToolUseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessToolUseType FindValue(string value)
+        {
+            return FindValue<HarnessToolUseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessToolUseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstrumentBalanceToken.
+    /// </summary>
+    public class InstrumentBalanceToken : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USDC for InstrumentBalanceToken
+        /// </summary>
+        public static readonly InstrumentBalanceToken USDC = new InstrumentBalanceToken("USDC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstrumentBalanceToken(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstrumentBalanceToken FindValue(string value)
+        {
+            return FindValue<InstrumentBalanceToken>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstrumentBalanceToken(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LanguageRuntime.
     /// </summary>
     public class LanguageRuntime : ConstantClass
@@ -580,6 +1378,88 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LanguageRuntime(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MemoryRecordOperatorType.
+    /// </summary>
+    public class MemoryRecordOperatorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AFTER for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType AFTER = new MemoryRecordOperatorType("AFTER");
+        /// <summary>
+        /// Constant BEFORE for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType BEFORE = new MemoryRecordOperatorType("BEFORE");
+        /// <summary>
+        /// Constant CONTAINS for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType CONTAINS = new MemoryRecordOperatorType("CONTAINS");
+        /// <summary>
+        /// Constant EQUALS_TO for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType EQUALS_TO = new MemoryRecordOperatorType("EQUALS_TO");
+        /// <summary>
+        /// Constant EXISTS for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType EXISTS = new MemoryRecordOperatorType("EXISTS");
+        /// <summary>
+        /// Constant GREATER_THAN for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType GREATER_THAN = new MemoryRecordOperatorType("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUALS for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType GREATER_THAN_OR_EQUALS = new MemoryRecordOperatorType("GREATER_THAN_OR_EQUALS");
+        /// <summary>
+        /// Constant LESS_THAN for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType LESS_THAN = new MemoryRecordOperatorType("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUALS for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType LESS_THAN_OR_EQUALS = new MemoryRecordOperatorType("LESS_THAN_OR_EQUALS");
+        /// <summary>
+        /// Constant NOT_EXISTS for MemoryRecordOperatorType
+        /// </summary>
+        public static readonly MemoryRecordOperatorType NOT_EXISTS = new MemoryRecordOperatorType("NOT_EXISTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MemoryRecordOperatorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MemoryRecordOperatorType FindValue(string value)
+        {
+            return FindValue<MemoryRecordOperatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MemoryRecordOperatorType(string value)
         {
             return FindValue(value);
         }
@@ -701,6 +1581,10 @@ namespace Amazon.BedrockAgentCore
         /// </summary>
         public static readonly Oauth2FlowType M2M = new Oauth2FlowType("M2M");
         /// <summary>
+        /// Constant ON_BEHALF_OF_TOKEN_EXCHANGE for Oauth2FlowType
+        /// </summary>
+        public static readonly Oauth2FlowType ON_BEHALF_OF_TOKEN_EXCHANGE = new Oauth2FlowType("ON_BEHALF_OF_TOKEN_EXCHANGE");
+        /// <summary>
         /// Constant USER_FEDERATION for Oauth2FlowType
         /// </summary>
         public static readonly Oauth2FlowType USER_FEDERATION = new Oauth2FlowType("USER_FEDERATION");
@@ -734,6 +1618,60 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Oauth2FlowType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OAuthGrantType.
+    /// </summary>
+    public class OAuthGrantType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHORIZATION_CODE for OAuthGrantType
+        /// </summary>
+        public static readonly OAuthGrantType AUTHORIZATION_CODE = new OAuthGrantType("AUTHORIZATION_CODE");
+        /// <summary>
+        /// Constant CLIENT_CREDENTIALS for OAuthGrantType
+        /// </summary>
+        public static readonly OAuthGrantType CLIENT_CREDENTIALS = new OAuthGrantType("CLIENT_CREDENTIALS");
+        /// <summary>
+        /// Constant TOKEN_EXCHANGE for OAuthGrantType
+        /// </summary>
+        public static readonly OAuthGrantType TOKEN_EXCHANGE = new OAuthGrantType("TOKEN_EXCHANGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OAuthGrantType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OAuthGrantType FindValue(string value)
+        {
+            return FindValue<OAuthGrantType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OAuthGrantType(string value)
         {
             return FindValue(value);
         }
@@ -795,6 +1733,318 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type PaymentHttpMethodType.
+    /// </summary>
+    public class PaymentHttpMethodType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE for PaymentHttpMethodType
+        /// </summary>
+        public static readonly PaymentHttpMethodType DELETE = new PaymentHttpMethodType("DELETE");
+        /// <summary>
+        /// Constant GET for PaymentHttpMethodType
+        /// </summary>
+        public static readonly PaymentHttpMethodType GET = new PaymentHttpMethodType("GET");
+        /// <summary>
+        /// Constant PATCH for PaymentHttpMethodType
+        /// </summary>
+        public static readonly PaymentHttpMethodType PATCH = new PaymentHttpMethodType("PATCH");
+        /// <summary>
+        /// Constant POST for PaymentHttpMethodType
+        /// </summary>
+        public static readonly PaymentHttpMethodType POST = new PaymentHttpMethodType("POST");
+        /// <summary>
+        /// Constant PUT for PaymentHttpMethodType
+        /// </summary>
+        public static readonly PaymentHttpMethodType PUT = new PaymentHttpMethodType("PUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentHttpMethodType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentHttpMethodType FindValue(string value)
+        {
+            return FindValue<PaymentHttpMethodType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentHttpMethodType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PaymentInstrumentStatus.
+    /// </summary>
+    public class PaymentInstrumentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for PaymentInstrumentStatus
+        /// </summary>
+        public static readonly PaymentInstrumentStatus ACTIVE = new PaymentInstrumentStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for PaymentInstrumentStatus
+        /// </summary>
+        public static readonly PaymentInstrumentStatus DELETED = new PaymentInstrumentStatus("DELETED");
+        /// <summary>
+        /// Constant FAILED for PaymentInstrumentStatus
+        /// </summary>
+        public static readonly PaymentInstrumentStatus FAILED = new PaymentInstrumentStatus("FAILED");
+        /// <summary>
+        /// Constant INITIATED for PaymentInstrumentStatus
+        /// </summary>
+        public static readonly PaymentInstrumentStatus INITIATED = new PaymentInstrumentStatus("INITIATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentInstrumentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentInstrumentStatus FindValue(string value)
+        {
+            return FindValue<PaymentInstrumentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentInstrumentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PaymentInstrumentType.
+    /// </summary>
+    public class PaymentInstrumentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EMBEDDED_CRYPTO_WALLET for PaymentInstrumentType
+        /// </summary>
+        public static readonly PaymentInstrumentType EMBEDDED_CRYPTO_WALLET = new PaymentInstrumentType("EMBEDDED_CRYPTO_WALLET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentInstrumentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentInstrumentType FindValue(string value)
+        {
+            return FindValue<PaymentInstrumentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentInstrumentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PaymentSessionStatus.
+    /// </summary>
+    public class PaymentSessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for PaymentSessionStatus
+        /// </summary>
+        public static readonly PaymentSessionStatus ACTIVE = new PaymentSessionStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for PaymentSessionStatus
+        /// </summary>
+        public static readonly PaymentSessionStatus DELETED = new PaymentSessionStatus("DELETED");
+        /// <summary>
+        /// Constant EXPIRED for PaymentSessionStatus
+        /// </summary>
+        public static readonly PaymentSessionStatus EXPIRED = new PaymentSessionStatus("EXPIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentSessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentSessionStatus FindValue(string value)
+        {
+            return FindValue<PaymentSessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentSessionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PaymentStatus.
+    /// </summary>
+    public class PaymentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROOF_GENERATED for PaymentStatus
+        /// </summary>
+        public static readonly PaymentStatus PROOF_GENERATED = new PaymentStatus("PROOF_GENERATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentStatus FindValue(string value)
+        {
+            return FindValue<PaymentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PaymentType.
+    /// </summary>
+    public class PaymentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRYPTO_X402 for PaymentType
+        /// </summary>
+        public static readonly PaymentType CRYPTO_X402 = new PaymentType("CRYPTO_X402");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentType FindValue(string value)
+        {
+            return FindValue<PaymentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProgrammingLanguage.
     /// </summary>
     public class ProgrammingLanguage : ConstantClass
@@ -842,6 +2092,118 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProgrammingLanguage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationStatus.
+    /// </summary>
+    public class RecommendationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus COMPLETED = new RecommendationStatus("COMPLETED");
+        /// <summary>
+        /// Constant DELETING for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus DELETING = new RecommendationStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus FAILED = new RecommendationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus IN_PROGRESS = new RecommendationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus PENDING = new RecommendationStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationStatus FindValue(string value)
+        {
+            return FindValue<RecommendationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationType.
+    /// </summary>
+    public class RecommendationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SYSTEM_PROMPT_RECOMMENDATION for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType SYSTEM_PROMPT_RECOMMENDATION = new RecommendationType("SYSTEM_PROMPT_RECOMMENDATION");
+        /// <summary>
+        /// Constant TOOL_DESCRIPTION_RECOMMENDATION for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType TOOL_DESCRIPTION_RECOMMENDATION = new RecommendationType("TOOL_DESCRIPTION_RECOMMENDATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationType FindValue(string value)
+        {
+            return FindValue<RecommendationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationType(string value)
         {
             return FindValue(value);
         }

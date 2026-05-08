@@ -683,18 +683,21 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private void AddAttributeNameToProjectionExpression(string derivedTypeAttributeName)
         {
-            StringBuilder _projectionExpressionBuilder = new StringBuilder();
-            var expressionAttributeName = "#P" + ProjectionExpression.ExpressionAttributeNames.Count.ToString(CultureInfo.InvariantCulture);
-            if (_projectionExpressionBuilder.Length == 0 && !string.IsNullOrEmpty(ProjectionExpression.ExpressionStatement))
+            var expressionAttributeCount = ProjectionExpression.ExpressionAttributeNames.Count;
+            var expressionAttributeName = "#P" + expressionAttributeCount.ToString(CultureInfo.InvariantCulture);
+
+            var currentExpressionStatement = ProjectionExpression.ExpressionStatement;
+            if (string.IsNullOrEmpty(currentExpressionStatement))
             {
-                _projectionExpressionBuilder.Append(ProjectionExpression.ExpressionStatement);
+                ProjectionExpression.ExpressionStatement = expressionAttributeName;
             }
-            if (ProjectionExpression.ExpressionAttributeNames.Count > 0)
+            else
             {
-                _projectionExpressionBuilder.Append(", ");
+                ProjectionExpression.ExpressionStatement = expressionAttributeCount > 0
+                    ? string.Concat(currentExpressionStatement, ", ", expressionAttributeName)
+                    : string.Concat(currentExpressionStatement, expressionAttributeName);
             }
-            _projectionExpressionBuilder.Append(expressionAttributeName);
-            ProjectionExpression.ExpressionStatement = _projectionExpressionBuilder.ToString();
+
             ProjectionExpression.ExpressionAttributeNames.Add(expressionAttributeName, derivedTypeAttributeName);
         }
 
@@ -708,8 +711,10 @@ namespace Amazon.DynamoDBv2.DataModel
             // keep the AttributesToGet setting for flows that are not yet migrated to use ProjectionExpression
             if (!AttributesToGet.Contains(attributeName))
                 AttributesToGet.Add(attributeName);
+
             if (!ProjectionExpression.ExpressionAttributeNames.ContainsValue(attributeName))
                 AddAttributeNameToProjectionExpression(attributeName);
+
             if (value.StoreAsEpoch)
                 AttributesToStoreAsEpoch.Add(attributeName);
             if (value.StoreAsEpochLong)

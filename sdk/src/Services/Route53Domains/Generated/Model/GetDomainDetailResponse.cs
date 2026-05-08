@@ -416,8 +416,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Reseller. 
         /// <para>
-        /// Reseller of the domain. Domains registered or transferred using Route 53 domains will
-        /// have <c>"Amazon"</c> as the reseller. 
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public string Reseller

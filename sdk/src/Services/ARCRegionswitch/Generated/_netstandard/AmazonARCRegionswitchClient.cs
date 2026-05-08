@@ -39,6 +39,11 @@ namespace Amazon.ARCRegionswitch
 {
     /// <summary>
     /// <para>Implementation for accessing ARCRegionswitch</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Application Recovery Controller (ARC) Region switch helps you to quickly and
     /// reliably shift traffic away from an impaired Amazon Web Services Region to a healthy

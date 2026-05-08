@@ -29,88 +29,117 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RecommendationSummary Object
     /// </summary>  
-    public class RecommendationSummaryUnmarshaller : IJsonUnmarshaller<RecommendationSummary, JsonUnmarshallerContext>
+    public class RecommendationSummaryUnmarshaller : ICborUnmarshaller<RecommendationSummary, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecommendationSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RecommendationSummary Unmarshall(CborUnmarshallerContext context)
         {
             RecommendationSummary unmarshalledObject = new RecommendationSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("accountId", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("aggregatedSavingsOpportunity", targetDepth))
-                {
-                    var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
-                    unmarshalledObject.AggregatedSavingsOpportunity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currentPerformanceRiskRatings", targetDepth))
-                {
-                    var unmarshaller = CurrentPerformanceRiskRatingsUnmarshaller.Instance;
-                    unmarshalledObject.CurrentPerformanceRiskRatings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("idleSavingsOpportunity", targetDepth))
-                {
-                    var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
-                    unmarshalledObject.IdleSavingsOpportunity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("idleSummaries", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<IdleSummary, IdleSummaryUnmarshaller>(IdleSummaryUnmarshaller.Instance);
-                    unmarshalledObject.IdleSummaries = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("inferredWorkloadSavings", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<InferredWorkloadSaving, InferredWorkloadSavingUnmarshaller>(InferredWorkloadSavingUnmarshaller.Instance);
-                    unmarshalledObject.InferredWorkloadSavings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("recommendationResourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationResourceType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("savingsOpportunity", targetDepth))
-                {
-                    var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
-                    unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("summaries", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Summary, SummaryUnmarshaller>(SummaryUnmarshaller.Instance);
-                    unmarshalledObject.Summaries = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "accountId":
+                        {
+                            context.AddPathSegment("AccountId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "aggregatedSavingsOpportunity":
+                        {
+                            context.AddPathSegment("AggregatedSavingsOpportunity");
+                            var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
+                            unmarshalledObject.AggregatedSavingsOpportunity = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currentPerformanceRiskRatings":
+                        {
+                            context.AddPathSegment("CurrentPerformanceRiskRatings");
+                            var unmarshaller = CurrentPerformanceRiskRatingsUnmarshaller.Instance;
+                            unmarshalledObject.CurrentPerformanceRiskRatings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "idleSavingsOpportunity":
+                        {
+                            context.AddPathSegment("IdleSavingsOpportunity");
+                            var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
+                            unmarshalledObject.IdleSavingsOpportunity = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "idleSummaries":
+                        {
+                            context.AddPathSegment("IdleSummaries");
+                            var unmarshaller = new CborListUnmarshaller<IdleSummary, IdleSummaryUnmarshaller>(IdleSummaryUnmarshaller.Instance);
+                            unmarshalledObject.IdleSummaries = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "inferredWorkloadSavings":
+                        {
+                            context.AddPathSegment("InferredWorkloadSavings");
+                            var unmarshaller = new CborListUnmarshaller<InferredWorkloadSaving, InferredWorkloadSavingUnmarshaller>(InferredWorkloadSavingUnmarshaller.Instance);
+                            unmarshalledObject.InferredWorkloadSavings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "recommendationResourceType":
+                        {
+                            context.AddPathSegment("RecommendationResourceType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RecommendationResourceType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "savingsOpportunity":
+                        {
+                            context.AddPathSegment("SavingsOpportunity");
+                            var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
+                            unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "summaries":
+                        {
+                            context.AddPathSegment("Summaries");
+                            var unmarshaller = new CborListUnmarshaller<Summary, SummaryUnmarshaller>(SummaryUnmarshaller.Instance);
+                            unmarshalledObject.Summaries = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

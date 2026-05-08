@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Information about a source code repository for static analysis
+    /// Represents a source code repository used for security analysis during a pentest.
     /// </summary>
     public partial class SourceCodeRepository
     {
@@ -39,7 +39,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property S3Location. 
         /// <para>
-        /// S3 storage location of the repository
+        /// The Amazon S3 location of the source code repository archive.
         /// </para>
         /// </summary>
         public string S3Location

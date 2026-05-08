@@ -39,6 +39,11 @@ namespace Amazon.SSMQuickSetup
 {
     /// <summary>
     /// <para>Implementation for accessing SSMQuickSetup</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Quick Setup helps you quickly configure frequently used services and features with
     /// recommended best practices. Quick Setup simplifies setting up services, including

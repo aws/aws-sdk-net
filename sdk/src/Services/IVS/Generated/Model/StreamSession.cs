@@ -91,9 +91,9 @@ namespace Amazon.IVS.Model
         /// <para>
         ///  <b>Note:</b> <c>ingestConfiguration</c> is deprecated in favor of <c>ingestConfigurations</c>
         /// but retained to ensure backward compatibility. If multitrack is not enabled, <c>ingestConfiguration</c>
-        /// and <c>ingestConfigurations</c> contain the same data, namely information about track0
+        /// and <c>ingestConfigurations</c> contain the same data, namely information about Track0
         /// (the sole track). If multitrack is enabled, <c>ingestConfiguration</c> contains data
-        /// for only the first track (track0) and <c>ingestConfigurations</c> contains data for
+        /// for only the first track (Track0) and <c>ingestConfigurations</c> contains data for
         /// all tracks.
         /// </para>
         /// </summary>
@@ -113,7 +113,7 @@ namespace Amazon.IVS.Model
         /// Gets and sets the property IngestConfigurations. 
         /// <para>
         /// The properties of the incoming RTMP stream. If multitrack is enabled, <c>ingestConfigurations</c>
-        /// contains data for all tracks; otherwise, it contains data only for track0 (the sole
+        /// contains data for all tracks; otherwise, it contains data only for Track0 (the sole
         /// track).
         /// </para>
         /// </summary>

@@ -46,6 +46,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetControlTitleFormatText())
+            {
+                context.Writer.WritePropertyName("ControlTitleFormatText");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ControlTitleFormatTextMarshaller.Instance;
+                marshaller.Marshall(requestObject.ControlTitleFormatText, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDelimiter())
             {
                 context.Writer.WritePropertyName("Delimiter");

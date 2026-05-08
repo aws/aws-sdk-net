@@ -57,7 +57,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The name for the new global database (up to 64 alpha-numeric characters.
+        /// The name for the new global database (up to 64 alpha-numeric characters).
         /// </para>
         /// </summary>
         public string DatabaseName

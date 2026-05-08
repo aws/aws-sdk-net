@@ -46,6 +46,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetClientAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("clientAuthenticationMethod");
+                context.Writer.WriteStringValue(requestObject.ClientAuthenticationMethod);
+            }
+
             if(requestObject.IsSetClientId())
             {
                 context.Writer.WritePropertyName("clientId");
@@ -67,6 +73,44 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.OauthDiscovery, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetOnBehalfOfTokenExchangeConfig())
+            {
+                context.Writer.WritePropertyName("onBehalfOfTokenExchangeConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OnBehalfOfTokenExchangeConfigTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnBehalfOfTokenExchangeConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPrivateEndpoint())
+            {
+                context.Writer.WritePropertyName("privateEndpoint");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PrivateEndpointMarshaller.Instance;
+                marshaller.Marshall(requestObject.PrivateEndpoint, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPrivateEndpointOverrides())
+            {
+                context.Writer.WritePropertyName("privateEndpointOverrides");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPrivateEndpointOverridesListValue in requestObject.PrivateEndpointOverrides)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PrivateEndpointOverrideMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPrivateEndpointOverridesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
         }

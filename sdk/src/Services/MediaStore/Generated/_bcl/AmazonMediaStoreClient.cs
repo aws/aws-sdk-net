@@ -39,6 +39,11 @@ namespace Amazon.MediaStore
 {
     /// <summary>
     /// <para>Implementation for accessing MediaStore</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// An AWS Elemental MediaStore container is a namespace that holds folders and objects.
     /// You use a container endpoint to create, read, and delete objects.

@@ -14,42 +14,40 @@
  */
 
 using BenchmarkDotNet.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BenchmarkDotNet.Configs;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.Model.Internal.MarshallTransformations;
 using Amazon.EC2.Model;
 using Amazon.EC2.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Transform;
-using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
-using BenchmarkDotNet.Running;
 using System.Text;
-using Amazon.S3;
-using Amazon.S3.Util;
-using Amazon;
-using Amazon.S3.Model;
-using System.Threading.Tasks;
-using System;
-using System.Diagnostics;
-using System.IO;
 using AWSSDK_DotNet.UnitTests.TestTools;
+
 namespace AWSSDK.Benchmarks
 {
+    /// <summary>
+    /// Benchmarks for marshalling (serialization) and unmarshalling (deserialization)
+    /// of AWS SDK request/response objects across JSON and XML protocols.
+    /// Uses InProcessEmitToolchain (via SdkBenchmarkConfig) to avoid assembly resolution
+    /// issues with internal SDK types when BenchmarkDotNet runs benchmarks out-of-process.
+    /// </summary>
+    [Config(typeof(SdkBenchmarkConfig))]
     public class MarshallAndUnmarshallBenchmarks
     {
-        PutItemRequest jsonRequest;
+        #region JSON Marshall/Unmarshall (DynamoDB - RestJson protocol)
+
+        private PutItemRequest jsonRequest;
+
         [GlobalSetup(Targets = new[] { nameof(MarshallJSON) })]
-        public void setupForMarshallJSON()
+        public void SetupForMarshallJSON()
         {
             jsonRequest = InstantiateClassGenerator.Execute<PutItemRequest>();
         }
 
         /// <summary>
-        /// Test marshalling a DynamoDB PutItem request from object to JSON
+        /// Test marshalling a DynamoDB PutItem request from object to JSON.
+        /// Measures the serialization performance of the RestJson protocol.
         /// </summary>
         [Benchmark]
         public void MarshallJSON()
@@ -58,49 +56,56 @@ namespace AWSSDK.Benchmarks
             marshaller.Marshall(jsonRequest);
         }
 
-        private UnmarshallerContext jsonResponseContext;
+        private string jsonResponseString;
+        private byte[] jsonResponseBytes;
+
         [GlobalSetup(Targets = new[] { nameof(UnmarshallJSON) })]
-        public void setupForUnmarshallJSON()
+        public void SetupForUnmarshallJSON()
         {
             var service_model = Utils.LoadServiceModel("dynamodb");
             var operation = service_model.FindOperation("PutItem");
-
-            var jsonResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
-
-            jsonResponseContext = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            jsonResponseString = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            jsonResponseBytes = Encoding.UTF8.GetBytes(jsonResponseString);
         }
 
-
         /// <summary>
-        /// Test unmarshalling a DynamoDB PutItem request from JSON to the response object
+        /// Test unmarshalling a DynamoDB PutItem response from JSON to the response object.
+        /// Measures the deserialization performance of the RestJson protocol using System.Text.Json.
+        /// A new stream and context are created per iteration to avoid stream position issues.
         /// </summary>
         [Benchmark]
         public void UnmarshallJSON()
         {
-            PutItemResponseUnmarshaller.Instance.Unmarshall(jsonResponseContext);
+            // Create a fresh stream and context for each iteration since v4's
+            // StreamingUtf8JsonReader consumes the stream during unmarshalling
+            using var stream = new MemoryStream(jsonResponseBytes);
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"Content-Length", jsonResponseBytes.Length.ToString()}
+                }
+            };
+            using var context = new JsonUnmarshallerContext(stream, false, webResponse);
+            PutItemResponseUnmarshaller.Instance.Unmarshall(context);
         }
+
+        #endregion
+
+        #region XML Marshall/Unmarshall (EC2 - EC2/Query protocol)
 
         private RunInstancesRequest runInstancesRequest;
 
-        #region XML Marshall/Unmarshall
         [GlobalSetup(Targets = new[] { nameof(MarshallXML) })]
-        public void setupForMarshallXML()
+        public void SetupForMarshallXML()
         {
             runInstancesRequest = InstantiateClassGenerator.Execute<RunInstancesRequest>();
         }
 
-
         /// <summary>
-        /// Test marshalling an EC2 RunInstances request from the request object to XML
+        /// Test marshalling an EC2 RunInstances request from the request object to XML.
+        /// Measures the serialization performance of the EC2/Query protocol.
         /// </summary>
         [Benchmark]
         public void MarshallXML()
@@ -109,19 +114,19 @@ namespace AWSSDK.Benchmarks
             marshaller.Marshall(runInstancesRequest);
         }
 
-
         private string xmlResponse;
+
         [GlobalSetup(Targets = new[] { nameof(UnmarshallXML) })]
-        public void setupForUnmarshallXML()
+        public void SetupForUnmarshallXML()
         {
             var service_model = Utils.LoadServiceModel("ec2");
             var operation = service_model.FindOperation("RunInstances");
-
             xmlResponse = new XmlSampleGenerator(service_model, operation).Execute();
         }
 
         /// <summary>
-        /// Test unmarshalling an EC2 RunInstances response from XML to the response object
+        /// Test unmarshalling an EC2 RunInstances response from XML to the response object.
+        /// Measures the deserialization performance of the EC2/Query protocol.
         /// </summary>
         [Benchmark]
         public void UnmarshallXML()
@@ -130,7 +135,7 @@ namespace AWSSDK.Benchmarks
             var response = RunInstancesResponseUnmarshaller.Instance.Unmarshall(context)
                 as RunInstancesResponse;
         }
-        #endregion
 
+        #endregion
     }
 }

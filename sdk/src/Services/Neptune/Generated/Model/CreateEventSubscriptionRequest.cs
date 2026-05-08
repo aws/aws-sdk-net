@@ -68,7 +68,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         ///  A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b>
-        /// to create the subscription but not active it.
+        /// to create the subscription but not activate it.
         /// </para>
         /// </summary>
         public bool? Enabled

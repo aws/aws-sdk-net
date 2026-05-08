@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private InferenceComponentComputeResourceRequirements _computeResourceRequirements;
         private InferenceComponentContainerSpecificationSummary _container;
         private InferenceComponentDataCacheConfigSummary _dataCacheConfig;
+        private ProductionVariantInstanceType _instanceType;
         private string _modelName;
         private InferenceComponentSchedulingConfig _schedulingConfig;
         private InferenceComponentStartupParameters _startupParameters;
@@ -115,6 +116,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDataCacheConfig()
         {
             return this._dataCacheConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The ML compute instance type associated with this inference component specification.
+        /// </para>
+        /// </summary>
+        public ProductionVariantInstanceType InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
         /// <summary>

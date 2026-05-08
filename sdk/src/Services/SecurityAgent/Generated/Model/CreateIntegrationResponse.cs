@@ -39,7 +39,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IntegrationId. 
         /// <para>
-        /// Unique identifier of the created integration
+        /// The unique identifier of the created integration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

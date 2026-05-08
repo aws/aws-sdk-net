@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// AWS resource configurations associated with the agent space
+    /// The AWS resources associated with an agent space, including VPCs, log groups, S3 buckets,
+    /// secrets, Lambda functions, and IAM roles.
     /// </summary>
     public partial class AWSResources
     {
@@ -44,7 +45,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IamRoles. 
         /// <para>
-        /// IAM role ARNs that the Security Agent can assume to access customer resources
+        /// The IAM roles associated with the agent space.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -67,7 +68,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionArns. 
         /// <para>
-        /// Lambda function ARNs or names used to retrieve tester credentials for pentests
+        /// The Amazon Resource Names (ARNs) of the Lambda functions associated with the agent
+        /// space.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -90,7 +92,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property LogGroups. 
         /// <para>
-        /// CloudWatch log group ARNs or names used to store Security Agent logs
+        /// The Amazon Resource Names (ARNs) of the CloudWatch log groups associated with the
+        /// agent space.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -113,7 +116,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property S3Buckets. 
         /// <para>
-        /// S3 bucket ARNs or names used to store Security Agent artifacts
+        /// The Amazon Resource Names (ARNs) of the S3 buckets associated with the agent space.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -136,7 +139,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property SecretArns. 
         /// <para>
-        /// SecretsManager secret ARNs or names used to store tester credentials for pentests
+        /// The Amazon Resource Names (ARNs) of the Secrets Manager secrets associated with the
+        /// agent space.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -159,7 +163,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Vpcs. 
         /// <para>
-        /// VPC configurations that the Security Agent accesses in the customer environment
+        /// The VPC configurations associated with the agent space.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

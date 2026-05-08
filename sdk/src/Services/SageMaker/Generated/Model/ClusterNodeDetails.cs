@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private ClusterCapacityType _capacityType;
         private string _currentImageId;
         private string _desiredImageId;
+        private ClusterImageVersionStatus _imageVersionStatus;
         private string _instanceGroupName;
         private string _instanceId;
         private ClusterInstanceStatusDetails _instanceStatus;
@@ -47,6 +48,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastSoftwareUpdateTime;
         private DateTime? _launchTime;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private ClusterNetworkInterfaceDetails _networkInterface;
         private string _nodeLogicalId;
         private VpcConfig _overrideVpcConfig;
         private ClusterInstancePlacement _placement;
@@ -112,6 +114,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDesiredImageId()
         {
             return this._desiredImageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageVersionStatus. 
+        /// <para>
+        /// The status of the image version for the cluster node.
+        /// </para>
+        /// </summary>
+        public ClusterImageVersionStatus ImageVersionStatus
+        {
+            get { return this._imageVersionStatus; }
+            set { this._imageVersionStatus = value; }
+        }
+
+        // Check to see if ImageVersionStatus property is set
+        internal bool IsSetImageVersionStatus()
+        {
+            return this._imageVersionStatus != null;
         }
 
         /// <summary>
@@ -284,6 +304,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLifeCycleConfig()
         {
             return this._lifeCycleConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterface. 
+        /// <para>
+        /// The network interface configuration for the cluster node.
+        /// </para>
+        /// </summary>
+        public ClusterNetworkInterfaceDetails NetworkInterface
+        {
+            get { return this._networkInterface; }
+            set { this._networkInterface = value; }
+        }
+
+        // Check to see if NetworkInterface property is set
+        internal bool IsSetNetworkInterface()
+        {
+            return this._networkInterface != null;
         }
 
         /// <summary>

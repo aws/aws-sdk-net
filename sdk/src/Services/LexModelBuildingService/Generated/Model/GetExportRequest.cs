@@ -33,6 +33,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// Container for the parameters to the GetExport operation.
     /// Exports the contents of a Amazon Lex resource in a specified format.
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class GetExportRequest : AmazonLexModelBuildingServiceRequest
     {
         private ExportType _exportType;

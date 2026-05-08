@@ -34,13 +34,6 @@ namespace Amazon.MarketplaceAgreement.Model
     /// Retrieves detailed information about a specific billing adjustment request. Sellers
     /// (proposers) can use this operation to view the status and details of a billing adjustment
     /// request they submitted.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// A <c>ResourceNotFoundException</c> is returned if the billing adjustment request does
-    /// not exist or the caller does not have permission to access it.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class GetBillingAdjustmentRequestRequest : AmazonMarketplaceAgreementRequest
     {

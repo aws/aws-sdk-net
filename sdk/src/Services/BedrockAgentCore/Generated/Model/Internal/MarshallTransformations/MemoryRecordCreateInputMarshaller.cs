@@ -63,6 +63,25 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.MemoryStrategyId);
             }
 
+            if(requestObject.IsSetMetadata())
+            {
+                context.Writer.WritePropertyName("metadata");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectMetadataKvp in requestObject.Metadata)
+                {
+                    context.Writer.WritePropertyName(requestObjectMetadataKvp.Key);
+                    var requestObjectMetadataValue = requestObjectMetadataKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MemoryRecordMetadataValueMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMetadataValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetNamespaces())
             {
                 context.Writer.WritePropertyName("namespaces");

@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -59,63 +58,51 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateGameServerRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.UpdateGameServer";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/GameLift/operation/UpdateGameServer";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-10-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetGameServerData())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("GameServerData");
-                context.Writer.WriteStringValue(publicRequest.GameServerData);
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetGameServerData())
+                {
+                    context.Writer.WriteTextString("GameServerData");
+                    context.Writer.WriteTextString(publicRequest.GameServerData);
+                }
+                if (publicRequest.IsSetGameServerGroupName())
+                {
+                    context.Writer.WriteTextString("GameServerGroupName");
+                    context.Writer.WriteTextString(publicRequest.GameServerGroupName);
+                }
+                if (publicRequest.IsSetGameServerId())
+                {
+                    context.Writer.WriteTextString("GameServerId");
+                    context.Writer.WriteTextString(publicRequest.GameServerId);
+                }
+                if (publicRequest.IsSetHealthCheck())
+                {
+                    context.Writer.WriteTextString("HealthCheck");
+                    context.Writer.WriteTextString(publicRequest.HealthCheck);
+                }
+                if (publicRequest.IsSetUtilizationStatus())
+                {
+                    context.Writer.WriteTextString("UtilizationStatus");
+                    context.Writer.WriteTextString(publicRequest.UtilizationStatus);
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-
-            if(publicRequest.IsSetGameServerGroupName())
+            finally
             {
-                context.Writer.WritePropertyName("GameServerGroupName");
-                context.Writer.WriteStringValue(publicRequest.GameServerGroupName);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetGameServerId())
-            {
-                context.Writer.WritePropertyName("GameServerId");
-                context.Writer.WriteStringValue(publicRequest.GameServerId);
-            }
-
-            if(publicRequest.IsSetHealthCheck())
-            {
-                context.Writer.WritePropertyName("HealthCheck");
-                context.Writer.WriteStringValue(publicRequest.HealthCheck);
-            }
-
-            if(publicRequest.IsSetUtilizationStatus())
-            {
-                context.Writer.WritePropertyName("UtilizationStatus");
-                context.Writer.WriteStringValue(publicRequest.UtilizationStatus);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static UpdateGameServerRequestMarshaller _instance = new UpdateGameServerRequestMarshaller();        

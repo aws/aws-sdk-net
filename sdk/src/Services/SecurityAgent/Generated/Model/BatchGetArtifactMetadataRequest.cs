@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetArtifactMetadata operation.
-    /// Retrieve the list of artifact metadata for the given agent space
+    /// Retrieves metadata for one or more artifacts in an agent space.
     /// </summary>
     public partial class BatchGetArtifactMetadataRequest : AmazonSecurityAgentRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Unique identifier of the agent space
+        /// The unique identifier of the agent space that contains the artifacts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ArtifactIds. 
         /// <para>
-        /// List of artifact identifiers
+        /// The list of artifact identifiers to retrieve metadata for.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

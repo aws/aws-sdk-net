@@ -39,6 +39,11 @@ namespace Amazon.Deadline
 {
     /// <summary>
     /// <para>Implementation for accessing Deadline</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The Amazon Web Services Deadline Cloud API provides infrastructure and centralized
     /// management for your projects. Use the Deadline Cloud API to onboard users, assign

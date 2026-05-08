@@ -104,6 +104,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InitialVariantWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("InstancePools", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<InstancePool, InstancePoolUnmarshaller>(InstancePoolUnmarshaller.Instance);
+                    unmarshalledObject.InstancePools = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("InstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -138,6 +144,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProductionVariantServerlessConfigUnmarshaller.Instance;
                     unmarshalledObject.ServerlessConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("VariantInstanceProvisionTimeoutInSeconds", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.VariantInstanceProvisionTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VariantName", targetDepth))

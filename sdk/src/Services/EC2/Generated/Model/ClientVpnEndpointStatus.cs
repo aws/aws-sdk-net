@@ -62,6 +62,12 @@ namespace Amazon.EC2.Model
         ///  <c>deleted</c> - The Client VPN endpoint has been deleted. The Client VPN endpoint
         /// cannot accept connections.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>pending</c> - The Client VPN endpoint has been created with a Transit Gateway
+        /// configuration and is waiting for the Transit Gateway attachment to be accepted. The
+        /// Client VPN endpoint cannot accept connections.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ClientVpnEndpointStatusCode Code

@@ -149,10 +149,6 @@ namespace Amazon.Evs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, Amazon EVS supports only the <c>i4i.metal</c> instance type.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
         /// EC2 instances created through Amazon EVS do not support associating an IAM instance
         /// profile.
         /// </para>

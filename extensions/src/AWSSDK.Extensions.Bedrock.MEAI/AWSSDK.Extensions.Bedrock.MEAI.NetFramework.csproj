@@ -17,6 +17,7 @@
     <LangVersion>Latest</LangVersion>
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <SignAssembly>True</SignAssembly>
   </PropertyGroup>
   
   <ItemGroup>
@@ -37,7 +38,7 @@
   </Choose>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="9.9.1" />
+    <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="10.5.1" />
   </ItemGroup>
   
   <ItemGroup>

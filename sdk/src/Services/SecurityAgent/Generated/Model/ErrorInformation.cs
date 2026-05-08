@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Error information regarding the pentest job
+    /// Contains error information for a pentest job that encountered an error.
     /// </summary>
     public partial class ErrorInformation
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// Pentest job failure error code
+        /// The error code. Valid values include CLIENT_ERROR, INTERNAL_ERROR, and STOPPED_BY_USER.
         /// </para>
         /// </summary>
         public ErrorCode Code
@@ -58,7 +58,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Pentest job failure error message
+        /// A message describing the error.
         /// </para>
         /// </summary>
         public string Message

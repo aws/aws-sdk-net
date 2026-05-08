@@ -46,6 +46,17 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCustomAdTypes())
+            {
+                context.Writer.WritePropertyName("CustomAdTypes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCustomAdTypesListValue in requestObject.CustomAdTypes)
+                {
+                        context.Writer.WriteStringValue(requestObjectCustomAdTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetScteFilter())
             {
                 context.Writer.WritePropertyName("ScteFilter");

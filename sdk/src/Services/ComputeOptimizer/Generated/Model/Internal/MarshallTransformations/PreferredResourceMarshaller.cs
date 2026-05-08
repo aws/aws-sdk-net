@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PreferredResource Marshaller
     /// </summary>
-    public class PreferredResourceMarshaller : IRequestMarshaller<PreferredResource, JsonMarshallerContext> 
+    public class PreferredResourceMarshaller : IRequestMarshaller<PreferredResource, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,38 +45,36 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PreferredResource requestObject, JsonMarshallerContext context)
+        public void Marshall(PreferredResource requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetExcludeList())
+
+            if (requestObject.IsSetExcludeList())
             {
-                context.Writer.WritePropertyName("excludeList");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("excludeList");
+                context.Writer.WriteStartArray(requestObject.ExcludeList.Count);
                 foreach(var requestObjectExcludeListListValue in requestObject.ExcludeList)
                 {
-                        context.Writer.WriteStringValue(requestObjectExcludeListListValue);
+                        context.Writer.WriteTextString(requestObjectExcludeListListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetIncludeList())
+            if (requestObject.IsSetIncludeList())
             {
-                context.Writer.WritePropertyName("includeList");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("includeList");
+                context.Writer.WriteStartArray(requestObject.IncludeList.Count);
                 foreach(var requestObjectIncludeListListValue in requestObject.IncludeList)
                 {
-                        context.Writer.WriteStringValue(requestObjectIncludeListListValue);
+                        context.Writer.WriteTextString(requestObjectIncludeListListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetName())
+            if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
-
         }
 
         /// <summary>

@@ -83,6 +83,60 @@ namespace Amazon.PaymentCryptography
 
 
     /// <summary>
+    /// Constants used for properties of type AssociationState.
+    /// </summary>
+    public class AssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AssociationState
+        /// </summary>
+        public static readonly AssociationState ACTIVE = new AssociationState("ACTIVE");
+        /// <summary>
+        /// Constant DELETE_PENDING for AssociationState
+        /// </summary>
+        public static readonly AssociationState DELETE_PENDING = new AssociationState("DELETE_PENDING");
+        /// <summary>
+        /// Constant UPDATE_PENDING for AssociationState
+        /// </summary>
+        public static readonly AssociationState UPDATE_PENDING = new AssociationState("UPDATE_PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationState FindValue(string value)
+        {
+            return FindValue<AssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeriveKeyUsage.
     /// </summary>
     public class DeriveKeyUsage : ConstantClass
@@ -943,6 +997,52 @@ namespace Amazon.PaymentCryptography
 
 
     /// <summary>
+    /// Constants used for properties of type MpaOperation.
+    /// </summary>
+    public class MpaOperation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE for MpaOperation
+        /// </summary>
+        public static readonly MpaOperation IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE = new MpaOperation("IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MpaOperation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MpaOperation FindValue(string value)
+        {
+            return FindValue<MpaOperation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MpaOperation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MultiRegionKeyType.
     /// </summary>
     public class MultiRegionKeyType : ConstantClass
@@ -986,6 +1086,64 @@ namespace Amazon.PaymentCryptography
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MultiRegionKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SessionStatus.
+    /// </summary>
+    public class SessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus APPROVED = new SessionStatus("APPROVED");
+        /// <summary>
+        /// Constant CANCELLED for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus CANCELLED = new SessionStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus FAILED = new SessionStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for SessionStatus
+        /// </summary>
+        public static readonly SessionStatus PENDING = new SessionStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionStatus FindValue(string value)
+        {
+            return FindValue<SessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionStatus(string value)
         {
             return FindValue(value);
         }

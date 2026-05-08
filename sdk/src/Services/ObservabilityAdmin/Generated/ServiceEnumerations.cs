@@ -553,6 +553,64 @@ namespace Amazon.ObservabilityAdmin
 
 
     /// <summary>
+    /// Constants used for properties of type MskEnhancedMonitoringLevel.
+    /// </summary>
+    public class MskEnhancedMonitoringLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for MskEnhancedMonitoringLevel
+        /// </summary>
+        public static readonly MskEnhancedMonitoringLevel DEFAULT = new MskEnhancedMonitoringLevel("DEFAULT");
+        /// <summary>
+        /// Constant PER_BROKER for MskEnhancedMonitoringLevel
+        /// </summary>
+        public static readonly MskEnhancedMonitoringLevel PER_BROKER = new MskEnhancedMonitoringLevel("PER_BROKER");
+        /// <summary>
+        /// Constant PER_TOPIC_PER_BROKER for MskEnhancedMonitoringLevel
+        /// </summary>
+        public static readonly MskEnhancedMonitoringLevel PER_TOPIC_PER_BROKER = new MskEnhancedMonitoringLevel("PER_TOPIC_PER_BROKER");
+        /// <summary>
+        /// Constant PER_TOPIC_PER_PARTITION for MskEnhancedMonitoringLevel
+        /// </summary>
+        public static readonly MskEnhancedMonitoringLevel PER_TOPIC_PER_PARTITION = new MskEnhancedMonitoringLevel("PER_TOPIC_PER_PARTITION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MskEnhancedMonitoringLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MskEnhancedMonitoringLevel FindValue(string value)
+        {
+            return FindValue<MskEnhancedMonitoringLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MskEnhancedMonitoringLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OutputFormat.
     /// </summary>
     public class OutputFormat : ConstantClass
@@ -679,6 +737,10 @@ namespace Amazon.ObservabilityAdmin
         /// </summary>
         public static readonly ResourceType AWSBedrockAgentCoreRuntime = new ResourceType("AWS::BedrockAgentCore::Runtime");
         /// <summary>
+        /// Constant AWSBedrockAgentCoreWorkloadIdentity for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSBedrockAgentCoreWorkloadIdentity = new ResourceType("AWS::BedrockAgentCore::WorkloadIdentity");
+        /// <summary>
         /// Constant AWSCloudFrontDistribution for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCloudFrontDistribution = new ResourceType("AWS::CloudFront::Distribution");
@@ -686,6 +748,10 @@ namespace Amazon.ObservabilityAdmin
         /// Constant AWSCloudTrail for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCloudTrail = new ResourceType("AWS::CloudTrail");
+        /// <summary>
+        /// Constant AWSCloudWatchOTelEnrichment for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCloudWatchOTelEnrichment = new ResourceType("AWS::CloudWatch::OTelEnrichment");
         /// <summary>
         /// Constant AWSEC2Instance for ResourceType
         /// </summary>
@@ -707,6 +773,10 @@ namespace Amazon.ObservabilityAdmin
         /// </summary>
         public static readonly ResourceType AWSLambdaFunction = new ResourceType("AWS::Lambda::Function");
         /// <summary>
+        /// Constant AWSMSKCluster for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSMSKCluster = new ResourceType("AWS::MSK::Cluster");
+        /// <summary>
         /// Constant AWSRoute53ResolverResolverEndpoint for ResourceType
         /// </summary>
         public static readonly ResourceType AWSRoute53ResolverResolverEndpoint = new ResourceType("AWS::Route53Resolver::ResolverEndpoint");
@@ -714,6 +784,10 @@ namespace Amazon.ObservabilityAdmin
         /// Constant AWSSecurityHubHub for ResourceType
         /// </summary>
         public static readonly ResourceType AWSSecurityHubHub = new ResourceType("AWS::SecurityHub::Hub");
+        /// <summary>
+        /// Constant AWSSecurityHubHubV2 for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSecurityHubHubV2 = new ResourceType("AWS::SecurityHub::HubV2");
         /// <summary>
         /// Constant AWSWAFv2WebACL for ResourceType
         /// </summary>

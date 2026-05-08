@@ -81,7 +81,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The initial status of the run batch.
+        /// The initial status of the run batch. Returns <c>CREATING</c> while the batch is being
+        /// initialized.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

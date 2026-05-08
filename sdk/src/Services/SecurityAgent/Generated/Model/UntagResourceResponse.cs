@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for UntagResource operation
+    /// Output for UntagResource operation.
     /// </summary>
     public partial class UntagResourceResponse : AmazonWebServiceResponse
     {

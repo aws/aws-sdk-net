@@ -52,6 +52,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.LivyEndpointEnabled.Value);
             }
 
+            if(requestObject.IsSetSessionEnabled())
+            {
+                context.Writer.WritePropertyName("sessionEnabled");
+                context.Writer.WriteBooleanValue(requestObject.SessionEnabled.Value);
+            }
+
             if(requestObject.IsSetStudioEnabled())
             {
                 context.Writer.WritePropertyName("studioEnabled");

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContainerPortRange Marshaller
     /// </summary>
-    public class ContainerPortRangeMarshaller : IRequestMarshaller<ContainerPortRange, JsonMarshallerContext> 
+    public class ContainerPortRangeMarshaller : IRequestMarshaller<ContainerPortRange, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ContainerPortRange requestObject, JsonMarshallerContext context)
+        public void Marshall(ContainerPortRange requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetFromPort())
-            {
-                context.Writer.WritePropertyName("FromPort");
-                context.Writer.WriteNumberValue(requestObject.FromPort.Value);
-            }
 
-            if(requestObject.IsSetProtocol())
+            if (requestObject.IsSetFromPort())
             {
-                context.Writer.WritePropertyName("Protocol");
-                context.Writer.WriteStringValue(requestObject.Protocol);
+                context.Writer.WriteTextString("FromPort");
+                context.Writer.WriteInt32(requestObject.FromPort.Value);
             }
-
-            if(requestObject.IsSetToPort())
+            if (requestObject.IsSetProtocol())
             {
-                context.Writer.WritePropertyName("ToPort");
-                context.Writer.WriteNumberValue(requestObject.ToPort.Value);
+                context.Writer.WriteTextString("Protocol");
+                context.Writer.WriteTextString(requestObject.Protocol);
             }
-
+            if (requestObject.IsSetToPort())
+            {
+                context.Writer.WriteTextString("ToPort");
+                context.Writer.WriteInt32(requestObject.ToPort.Value);
+            }
         }
 
         /// <summary>

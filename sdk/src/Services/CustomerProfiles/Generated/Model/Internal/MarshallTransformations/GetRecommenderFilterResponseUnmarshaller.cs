@@ -82,6 +82,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.RecommenderFilterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RecommenderSchemaName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RecommenderSchemaName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

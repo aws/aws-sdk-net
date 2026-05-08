@@ -50,6 +50,8 @@ namespace Amazon.Batch.Model
         private RepositoryCredentials _repositoryCredentials;
         private List<ResourceRequirement> _resourceRequirements = AWSConfigs.InitializeCollections ? new List<ResourceRequirement>() : null;
         private List<Secret> _secrets = AWSConfigs.InitializeCollections ? new List<Secret>() : null;
+        private int? _startTimeout;
+        private int? _stopTimeout;
         private List<Ulimit> _ulimits = AWSConfigs.InitializeCollections ? new List<Ulimit>() : null;
         private string _user;
 
@@ -470,6 +472,51 @@ namespace Amazon.Batch.Model
         internal bool IsSetSecrets()
         {
             return this._secrets != null && (this._secrets.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTimeout. 
+        /// <para>
+        /// Time duration (in seconds) to wait before giving up on resolving dependencies for
+        /// a container. The minimum value is 2 seconds and the maximum value for Fargate is 120
+        /// seconds.
+        /// </para>
+        /// </summary>
+        public int? StartTimeout
+        {
+            get { return this._startTimeout; }
+            set { this._startTimeout = value; }
+        }
+
+        // Check to see if StartTimeout property is set
+        internal bool IsSetStartTimeout()
+        {
+            return this._startTimeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StopTimeout. 
+        /// <para>
+        /// Time duration (in seconds) to wait before the container is forcefully killed if it
+        /// doesn't exit normally on its own. The minimum value is 2 seconds and the maximum value
+        /// for Fargate is 120 seconds. If the parameter is not specified, the default value of
+        /// 30 seconds is used. For tasks that use the EC2 launch type, if the <c>stopTimeout</c>
+        /// parameter isn't specified, the value set for the Amazon ECS container agent configuration
+        /// variable <c>ECS_CONTAINER_STOP_TIMEOUT</c> is used. If neither the <c>stopTimeout</c>
+        /// parameter nor the <c>ECS_CONTAINER_STOP_TIMEOUT</c> agent configuration variable are
+        /// set, then the default value of 30 seconds is used.
+        /// </para>
+        /// </summary>
+        public int? StopTimeout
+        {
+            get { return this._stopTimeout; }
+            set { this._stopTimeout = value; }
+        }
+
+        // Check to see if StopTimeout property is set
+        internal bool IsSetStopTimeout()
+        {
+            return this._stopTimeout.HasValue; 
         }
 
         /// <summary>

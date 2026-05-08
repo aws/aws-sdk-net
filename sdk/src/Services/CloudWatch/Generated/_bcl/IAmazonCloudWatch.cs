@@ -296,16 +296,14 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete.
-        /// If there is an error during this call, no dashboards are deleted.
+        /// If there is an error during this call, the operation attempts to delete as many dashboards
+        /// as possible.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDashboards service method.</param>
         /// 
         /// <returns>The response from the DeleteDashboards service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
         /// This operation attempted to create a resource that already exists.
-        /// </exception>
-        /// <exception cref="Amazon.CloudWatch.Model.DashboardNotFoundErrorException">
-        /// The specified dashboard does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Request processing has failed due to some unknown error, exception, or failure.
@@ -320,7 +318,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete.
-        /// If there is an error during this call, no dashboards are deleted.
+        /// If there is an error during this call, the operation attempts to delete as many dashboards
+        /// as possible.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDashboards service method.</param>
         /// <param name="cancellationToken">
@@ -330,9 +329,6 @@ namespace Amazon.CloudWatch
         /// <returns>The response from the DeleteDashboards service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
         /// This operation attempted to create a resource that already exists.
-        /// </exception>
-        /// <exception cref="Amazon.CloudWatch.Model.DashboardNotFoundErrorException">
-        /// The specified dashboard does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Request processing has failed due to some unknown error, exception, or failure.
@@ -1850,7 +1846,7 @@ namespace Amazon.CloudWatch
         /// Returns the current status of vended metric enrichment for the account, including
         /// whether CloudWatch vended metrics are enriched with resource ARN and resource tag
         /// labels and queryable using PromQL. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">Supported
-        /// AWS infrastructure metrics</a>.
+        /// Amazon Web Services infrastructure metrics</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOTelEnrichment service method.</param>
         /// 
@@ -1864,7 +1860,7 @@ namespace Amazon.CloudWatch
         /// Returns the current status of vended metric enrichment for the account, including
         /// whether CloudWatch vended metrics are enriched with resource ARN and resource tag
         /// labels and queryable using PromQL. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">Supported
-        /// AWS infrastructure metrics</a>.
+        /// Amazon Web Services infrastructure metrics</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOTelEnrichment service method.</param>
         /// <param name="cancellationToken">
@@ -2298,8 +2294,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Displays the tags associated with a CloudWatch resource. Currently, alarms and Contributor
-        /// Insights rules support tagging.
+        /// Displays the tags associated with a CloudWatch resource. Currently, alarms, dashboards,
+        /// metric streams and Contributor Insights rules support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -2319,8 +2315,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Displays the tags associated with a CloudWatch resource. Currently, alarms and Contributor
-        /// Insights rules support tagging.
+        /// Displays the tags associated with a CloudWatch resource. Currently, alarms, dashboards,
+        /// metric streams and Contributor Insights rules support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -3641,10 +3637,10 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Enables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
-        /// AWS resources</a> in the account. Once enabled, metrics that contain a resource identifier
-        /// dimension (for example, EC2 <c>CPUUtilization</c> with an <c>InstanceId</c> dimension)
-        /// are enriched with resource ARN and resource tag labels and become queryable using
-        /// PromQL.
+        /// Amazon Web Services resources</a> in the account. Once enabled, metrics that contain
+        /// a resource identifier dimension (for example, EC2 <c>CPUUtilization</c> with an <c>InstanceId</c>
+        /// dimension) are enriched with resource ARN and resource tag labels and become queryable
+        /// using PromQL.
         /// 
         ///  
         /// <para>
@@ -3663,10 +3659,10 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Enables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
-        /// AWS resources</a> in the account. Once enabled, metrics that contain a resource identifier
-        /// dimension (for example, EC2 <c>CPUUtilization</c> with an <c>InstanceId</c> dimension)
-        /// are enriched with resource ARN and resource tag labels and become queryable using
-        /// PromQL.
+        /// Amazon Web Services resources</a> in the account. Once enabled, metrics that contain
+        /// a resource identifier dimension (for example, EC2 <c>CPUUtilization</c> with an <c>InstanceId</c>
+        /// dimension) are enriched with resource ARN and resource tag labels and become queryable
+        /// using PromQL.
         /// 
         ///  
         /// <para>
@@ -3737,8 +3733,9 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Disables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
-        /// AWS resources</a> in the account. After disabling, these metrics are no longer enriched
-        /// with resource ARN and resource tag labels, and cannot be queried using PromQL.
+        /// Amazon Web Services resources</a> in the account. After disabling, these metrics are
+        /// no longer enriched with resource ARN and resource tag labels, and cannot be queried
+        /// using PromQL.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopOTelEnrichment service method.</param>
         /// 
@@ -3750,8 +3747,9 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Disables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
-        /// AWS resources</a> in the account. After disabling, these metrics are no longer enriched
-        /// with resource ARN and resource tag labels, and cannot be queried using PromQL.
+        /// Amazon Web Services resources</a> in the account. After disabling, these metrics are
+        /// no longer enriched with resource ARN and resource tag labels, and cannot be queried
+        /// using PromQL.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopOTelEnrichment service method.</param>
         /// <param name="cancellationToken">
@@ -3769,8 +3767,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently,
-        /// the only CloudWatch resources that can be tagged are alarms and Contributor Insights
-        /// rules.
+        /// the only CloudWatch resources that can be tagged are alarms, dashboards, metric streams
+        /// and Contributor Insights rules.
         /// 
         ///  
         /// <para>
@@ -3821,8 +3819,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently,
-        /// the only CloudWatch resources that can be tagged are alarms and Contributor Insights
-        /// rules.
+        /// the only CloudWatch resources that can be tagged are alarms, dashboards, metric streams
+        /// and Contributor Insights rules.
         /// 
         ///  
         /// <para>
@@ -3878,7 +3876,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Removes one or more tags from the specified resource.
+        /// Removes one or more tags from the specified resource. Currently, alarms, dashboards,
+        /// metric streams and Contributor Insights rules support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -3904,7 +3903,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Removes one or more tags from the specified resource.
+        /// Removes one or more tags from the specified resource. Currently, alarms, dashboards,
+        /// metric streams and Contributor Insights rules support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

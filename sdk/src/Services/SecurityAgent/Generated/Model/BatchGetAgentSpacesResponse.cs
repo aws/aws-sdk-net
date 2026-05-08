@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for the BatchGetAgentSpaces operation
+    /// Output for the BatchGetAgentSpaces operation.
     /// </summary>
     public partial class BatchGetAgentSpacesResponse : AmazonWebServiceResponse
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaces. 
         /// <para>
-        /// List of agent spaces that were successfully retrieved
+        /// The list of agent spaces that were found.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -63,7 +63,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property NotFound. 
         /// <para>
-        /// List of agent space IDs that could not be found
+        /// The list of agent space identifiers that were not found.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

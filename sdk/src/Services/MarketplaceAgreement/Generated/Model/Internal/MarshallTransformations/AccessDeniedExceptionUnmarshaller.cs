@@ -72,6 +72,12 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
+                    if (context.TestExpression("reason", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                     if (context.TestExpression("requestId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

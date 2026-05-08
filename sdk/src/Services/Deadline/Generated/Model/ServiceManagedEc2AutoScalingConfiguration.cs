@@ -41,8 +41,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property ScaleOutWorkersPerMinute. 
         /// <para>
-        /// The number of workers that can be added per minute to the fleet. The default is a
-        /// service-defined value that balances efficiency with cost.
+        /// The number of workers that can be added per minute to the fleet. The default is 10
+        /// workers per minute.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]

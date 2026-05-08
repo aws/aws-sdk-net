@@ -81,7 +81,6 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         private readonly ReadStrategy _readStrategy = ReadStrategy.ReadDirect;
-
         /// <summary>
         /// Initializes a chunked upload stream
         /// </summary>

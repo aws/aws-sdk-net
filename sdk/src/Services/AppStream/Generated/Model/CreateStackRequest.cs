@@ -37,6 +37,7 @@ namespace Amazon.AppStream.Model
     public partial class CreateStackRequest : AmazonAppStreamRequest
     {
         private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
+        private AgentAccessConfig _agentAccessConfig;
         private ApplicationSettings _applicationSettings;
         private ContentRedirection _contentRedirection;
         private string _description;
@@ -73,6 +74,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetAccessEndpoints()
         {
             return this._accessEndpoints != null && (this._accessEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentAccessConfig. 
+        /// <para>
+        /// The configuration for agent access on the stack. If specified, agent access is enabled
+        /// for the stack.
+        /// </para>
+        /// </summary>
+        public AgentAccessConfig AgentAccessConfig
+        {
+            get { return this._agentAccessConfig; }
+            set { this._agentAccessConfig = value; }
+        }
+
+        // Check to see if AgentAccessConfig property is set
+        internal bool IsSetAgentAccessConfig()
+        {
+            return this._agentAccessConfig != null;
         }
 
         /// <summary>

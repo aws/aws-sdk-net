@@ -341,6 +341,14 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeServerlessV2PlatformVersions operation
+        ///</summary>
+        public IDescribeServerlessV2PlatformVersionsPaginator DescribeServerlessV2PlatformVersions(DescribeServerlessV2PlatformVersionsRequest request) 
+        {
+            return new DescribeServerlessV2PlatformVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeSourceRegions operation
         ///</summary>
         public IDescribeSourceRegionsPaginator DescribeSourceRegions(DescribeSourceRegionsRequest request) 

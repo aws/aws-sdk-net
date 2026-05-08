@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMembership operation.
-    /// Removes a single member associated to an agent space
+    /// Deletes a membership, revoking a user's access to an agent space.
     /// </summary>
     public partial class DeleteMembershipRequest : AmazonSecurityAgentRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Agent space identifier
+        /// The unique identifier of the agent space to revoke access from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// Application identifier
+        /// The unique identifier of the application that contains the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +81,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MembershipId. 
         /// <para>
-        /// Member identifier (userId or agentSpaceId)
+        /// The unique identifier of the membership to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MemberType. 
         /// <para>
-        /// Type of member (USER or AGENT_SPACE)
+        /// The type of member to remove.
         /// </para>
         /// </summary>
         public MembershipType MemberType

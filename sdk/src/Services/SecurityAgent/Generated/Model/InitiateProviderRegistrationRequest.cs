@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the InitiateProviderRegistration operation.
-    /// Initiates the registration of Security Agent App for an external Provider
+    /// Initiates the OAuth registration flow with a third-party provider. Returns a redirect
+    /// URL and CSRF state token for completing the authorization.
     /// </summary>
     public partial class InitiateProviderRegistrationRequest : AmazonSecurityAgentRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// Provider to register with
+        /// The provider to initiate registration with. Currently, only GITHUB is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

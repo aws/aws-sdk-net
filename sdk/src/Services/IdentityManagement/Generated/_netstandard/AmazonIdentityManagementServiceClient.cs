@@ -39,6 +39,11 @@ namespace Amazon.IdentityManagement
 {
     /// <summary>
     /// <para>Implementation for accessing IdentityManagementService</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Identity and Access Management 
     /// <para>
@@ -50,6 +55,73 @@ namespace Amazon.IdentityManagement
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/">Identity and Access Management
     /// User Guide</a>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Programmatic access to IAM</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// We recommend that you use the Amazon Web Services SDKs to make programmatic API calls
+    /// to IAM. The Amazon Web Services SDKs consist of libraries and sample code for various
+    /// programming languages and platforms (for example, Java, Ruby, .NET, iOS, and Android).
+    /// The SDKs provide a convenient way to create programmatic access to IAM and Amazon
+    /// Web Services. For example, the SDKs take care of tasks such as cryptographically signing
+    /// requests, managing errors, and retrying requests automatically. For more information,
+    /// see <a href="http://aws.amazon.com/tools/">Tools to build on Amazon Web Services</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Alternatively, you can also use the IAM Query API to make direct calls to the IAM
+    /// service. For more information about calling the IAM Query API, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+    /// query requests</a> in the <i>Identity and Access Management User Guide</i>. IAM supports
+    /// GET and POST requests for all actions. That is, the API does not require you to use
+    /// GET for some actions and POST for others. However, GET requests are subject to the
+    /// limitation size of a URL. Therefore, for operations that require larger sizes, use
+    /// a POST request.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Signing requests</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Requests must be signed using an access key ID and a secret access key. We strongly
+    /// recommend that you do not use your Amazon Web Services account access key ID and secret
+    /// access key for everyday work with IAM. You can use the access key ID and secret access
+    /// key for an IAM user or you can use the Security Token Service to generate temporary
+    /// security credentials and use those to sign requests.
+    /// </para>
+    ///  
+    /// <para>
+    /// To sign requests, we recommend that you use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4</a>. If you have an existing application that uses Signature Version 2,
+    /// you do not have to update it to use Signature Version 4. However, some operations
+    /// now require Signature Version 4. The documentation for operations that require version
+    /// 4 indicate this requirement.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Additional resources</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">Amazon
+    /// Web Services security credentials</a>. This topic provides general information about
+    /// the types of credentials used for accessing Amazon Web Services.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM
+    /// best practices</a>. This topic presents a list of suggestions for using the IAM service
+    /// to help secure your Amazon Web Services resources.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// Amazon Web Services API requests</a>. This set of topics walk you through the process
+    /// of signing a request using an access key ID and secret access key.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonIdentityManagementServiceClient : AmazonServiceClient, IAmazonIdentityManagementService
     {

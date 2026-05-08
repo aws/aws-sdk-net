@@ -39,6 +39,11 @@ namespace Amazon.SavingsPlans
 {
     /// <summary>
     /// <para>Implementation for accessing SavingsPlans</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Savings Plans are a pricing model that offer significant savings on Amazon Web Services
     /// usage (for example, on Amazon EC2 instances). You commit to a consistent amount of

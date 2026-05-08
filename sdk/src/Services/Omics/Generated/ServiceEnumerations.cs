@@ -151,6 +151,10 @@ namespace Amazon.Omics
         /// </summary>
         public static readonly BatchStatus CANCELLED = new BatchStatus("CANCELLED");
         /// <summary>
+        /// Constant CREATING for BatchStatus
+        /// </summary>
+        public static readonly BatchStatus CREATING = new BatchStatus("CREATING");
+        /// <summary>
         /// Constant FAILED for BatchStatus
         /// </summary>
         public static readonly BatchStatus FAILED = new BatchStatus("FAILED");

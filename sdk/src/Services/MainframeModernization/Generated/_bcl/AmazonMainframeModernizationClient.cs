@@ -39,6 +39,11 @@ namespace Amazon.MainframeModernization
 {
     /// <summary>
     /// <para>Implementation for accessing MainframeModernization</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Web Services Mainframe Modernization provides tools and resources to help you
     /// plan and implement migration and modernization from mainframes to Amazon Web Services

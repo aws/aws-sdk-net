@@ -39,6 +39,11 @@ namespace Amazon.DirectoryServiceData
 {
     /// <summary>
     /// <para>Implementation for accessing DirectoryServiceData</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Web Services Directory Service Data is an extension of Directory Service.
     /// This API reference provides detailed information about Directory Service Data operations

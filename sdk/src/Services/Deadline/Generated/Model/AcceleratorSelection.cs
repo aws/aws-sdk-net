@@ -63,6 +63,10 @@ namespace Amazon.Deadline.Model
         /// <para>
         ///  <c>l40s</c> - NVIDIA L40S Tensor Core GPU (48 GiB memory)
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>rtx-pro-server-6000</c> - NVIDIA RTX PRO Server 6000 GPU (96 GiB memory)
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -95,6 +99,11 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>grid:r580</c> - <a href="https://docs.nvidia.com/vgpu/19.0/index.html">NVIDIA
+        /// vGPU software 19</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>grid:r570</c> - <a href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA
         /// vGPU software 18</a> 
         /// </para>
@@ -115,11 +124,16 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>t4</c> and <c>a10g</c>: Support all runtimes (<c>grid:r570</c>, <c>grid:r535</c>)
+        ///  <c>t4</c> and <c>a10g</c>: Support all runtimes (<c>grid:r580</c>, <c>grid:r570</c>,
+        /// <c>grid:r535</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>l4</c> and <c>l40s</c>: Only support <c>grid:r570</c> and newer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>rtx-pro-server-6000</c>: Only supports <c>grid:r580</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -128,7 +142,7 @@ namespace Amazon.Deadline.Model
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// When you specify <c>latest</c>, it resolves to <c>grid:r570</c> for all currently
+        /// When you specify <c>latest</c>, it resolves to <c>grid:r580</c> for all currently
         /// supported accelerators.
         /// </para>
         ///  </note>

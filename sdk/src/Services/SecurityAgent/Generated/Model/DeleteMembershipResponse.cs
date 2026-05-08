@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Response structure for removing a single member from an agent space
+    /// Response structure for removing a single member from an agent space.
     /// </summary>
     public partial class DeleteMembershipResponse : AmazonWebServiceResponse
     {

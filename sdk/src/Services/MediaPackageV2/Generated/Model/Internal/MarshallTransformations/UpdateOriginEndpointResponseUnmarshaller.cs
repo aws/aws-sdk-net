@@ -154,6 +154,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("UriSeparator", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UriSeparator = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

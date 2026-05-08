@@ -33,6 +33,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// Container for the parameters to the UntagResource operation.
     /// Removes tags from a bot, bot alias or bot channel.
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class UntagResourceRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _resourceArn;

@@ -143,8 +143,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time when the billing adjustment request was created, as a POSIX timestamp
-        /// (Unix epoch seconds).
+        /// The date and time when the billing adjustment request was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -220,8 +219,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The date and time when the billing adjustment request was last updated, as a POSIX
-        /// timestamp (Unix epoch seconds).
+        /// The date and time when the billing adjustment request was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

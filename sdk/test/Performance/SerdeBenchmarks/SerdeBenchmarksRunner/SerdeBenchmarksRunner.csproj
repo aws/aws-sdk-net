@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
+    <!-- Serde benchmark test service clients -->
+    <ProjectReference Include="..\..\..\Services\RestJsonDataPlane\AWSSDK.RestJsonDataPlane.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\Services\JsonRpc10DataPlane\AWSSDK.JsonRpc10DataPlane.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\Services\RpcCborDataPlane\AWSSDK.RpcCborDataPlane.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\Services\RestXmlDataPlane\AWSSDK.RestXmlDataPlane.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\Services\QueryDataPlane\AWSSDK.QueryDataPlane.NetStandard.csproj" />
+    <!-- Extensions for CBOR protocol support -->
+    <ProjectReference Include="..\..\..\..\..\extensions\src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetStandard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.15.2" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+</Project>

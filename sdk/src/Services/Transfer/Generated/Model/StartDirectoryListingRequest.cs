@@ -75,7 +75,7 @@ namespace Amazon.Transfer.Model
     ///  <c>truncated</c>: a flag indicating whether the list output contains all of the items
     /// contained in the remote directory or not. If your <c>Truncated</c> output value is
     /// true, you can increase the value provided in the optional <c>max-items</c> input attribute
-    /// to be able to list more items (up to the maximum allowed list size of 10,000 items).
+    /// to be able to list more items (up to the maximum allowed list size of 200,000 items).
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -112,7 +112,7 @@ namespace Amazon.Transfer.Model
         /// to retrieve. The default value is 1,000.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10000)]
+        [AWSProperty(Min=1)]
         public int? MaxItems
         {
             get { return this._maxItems; }

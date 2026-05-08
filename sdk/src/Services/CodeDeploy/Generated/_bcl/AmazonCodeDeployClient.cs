@@ -39,6 +39,11 @@ namespace Amazon.CodeDeploy
 {
     /// <summary>
     /// <para>Implementation for accessing CodeDeploy</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// CodeDeploy is a deployment service that automates application deployments to Amazon
     /// EC2 instances, on-premises instances running in your own facility, serverless Lambda

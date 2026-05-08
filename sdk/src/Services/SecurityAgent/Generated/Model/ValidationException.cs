@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// A standard error for input validation failures. This should be thrown by services
-    /// when a member of the input structure falls outside of the modeled or documented constraints.
+    /// The input fails to satisfy the constraints specified by the service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -130,8 +129,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property FieldList. 
         /// <para>
-        /// A list of specific failures encountered while validating the input. A member can appear
-        /// in this list more than once if it failed to satisfy multiple constraints.
+        /// A list of specific failures encountered during validation.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

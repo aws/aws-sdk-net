@@ -334,6 +334,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GenerateRecommendedPolicyV2Request.MetadataUid</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.GetAggregatorV2Request.AggregatorV2Arn</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -484,6 +488,19 @@
     <property>Amazon.SecurityHub.Model.GetInsightsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GetRecommendedPolicyV2Request.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GetRecommendedPolicyV2Request.MetadataUid</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GetRecommendedPolicyV2Response.ResourceArn</property>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.GetResourcesStatisticsV2Request.MaxStatisticResults</property>
@@ -6842,6 +6859,14 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RecommendationError.Code</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RecommendationError.Message</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.Record.JsonPath</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -7484,6 +7509,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.UnprocessedStandardsControlAssociationUpdate.ErrorReason</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UnusedPermissionsRecommendationStep.ExistingPolicy</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UnusedPermissionsRecommendationStep.ExistingPolicyId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UnusedPermissionsRecommendationStep.RecommendedAction</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.UnusedPermissionsRecommendationStep.RecommendedPolicy</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

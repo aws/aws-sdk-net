@@ -287,6 +287,68 @@ namespace Amazon.MediaPackageV2
 
 
     /// <summary>
+    /// Constants used for properties of type CustomAdType.
+    /// </summary>
+    public class CustomAdType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALTERNATE_CONTENT_OPPORTUNITY for CustomAdType
+        /// </summary>
+        public static readonly CustomAdType ALTERNATE_CONTENT_OPPORTUNITY = new CustomAdType("ALTERNATE_CONTENT_OPPORTUNITY");
+        /// <summary>
+        /// Constant CHAPTER for CustomAdType
+        /// </summary>
+        public static readonly CustomAdType CHAPTER = new CustomAdType("CHAPTER");
+        /// <summary>
+        /// Constant NETWORK for CustomAdType
+        /// </summary>
+        public static readonly CustomAdType NETWORK = new CustomAdType("NETWORK");
+        /// <summary>
+        /// Constant PROGRAM for CustomAdType
+        /// </summary>
+        public static readonly CustomAdType PROGRAM = new CustomAdType("PROGRAM");
+        /// <summary>
+        /// Constant UNSCHEDULED_EVENT for CustomAdType
+        /// </summary>
+        public static readonly CustomAdType UNSCHEDULED_EVENT = new CustomAdType("UNSCHEDULED_EVENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomAdType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomAdType FindValue(string value)
+        {
+            return FindValue<CustomAdType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomAdType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DashCompactness.
     /// </summary>
     public class DashCompactness : ConstantClass
@@ -1185,9 +1247,21 @@ namespace Amazon.MediaPackageV2
     {
 
         /// <summary>
+        /// Constant ALTERNATE_CONTENT_OPPORTUNITY for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter ALTERNATE_CONTENT_OPPORTUNITY = new ScteFilter("ALTERNATE_CONTENT_OPPORTUNITY");
+        /// <summary>
         /// Constant BREAK for ScteFilter
         /// </summary>
         public static readonly ScteFilter BREAK = new ScteFilter("BREAK");
+        /// <summary>
+        /// Constant CHAPTER for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter CHAPTER = new ScteFilter("CHAPTER");
+        /// <summary>
+        /// Constant DISTRIBUTOR_AD_BLOCK for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter DISTRIBUTOR_AD_BLOCK = new ScteFilter("DISTRIBUTOR_AD_BLOCK");
         /// <summary>
         /// Constant DISTRIBUTOR_ADVERTISEMENT for ScteFilter
         /// </summary>
@@ -1201,9 +1275,21 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ScteFilter DISTRIBUTOR_PLACEMENT_OPPORTUNITY = new ScteFilter("DISTRIBUTOR_PLACEMENT_OPPORTUNITY");
         /// <summary>
+        /// Constant DISTRIBUTOR_PROMO for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter DISTRIBUTOR_PROMO = new ScteFilter("DISTRIBUTOR_PROMO");
+        /// <summary>
+        /// Constant NETWORK for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter NETWORK = new ScteFilter("NETWORK");
+        /// <summary>
         /// Constant PROGRAM for ScteFilter
         /// </summary>
         public static readonly ScteFilter PROGRAM = new ScteFilter("PROGRAM");
+        /// <summary>
+        /// Constant PROVIDER_AD_BLOCK for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter PROVIDER_AD_BLOCK = new ScteFilter("PROVIDER_AD_BLOCK");
         /// <summary>
         /// Constant PROVIDER_ADVERTISEMENT for ScteFilter
         /// </summary>
@@ -1217,9 +1303,17 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ScteFilter PROVIDER_PLACEMENT_OPPORTUNITY = new ScteFilter("PROVIDER_PLACEMENT_OPPORTUNITY");
         /// <summary>
+        /// Constant PROVIDER_PROMO for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter PROVIDER_PROMO = new ScteFilter("PROVIDER_PROMO");
+        /// <summary>
         /// Constant SPLICE_INSERT for ScteFilter
         /// </summary>
         public static readonly ScteFilter SPLICE_INSERT = new ScteFilter("SPLICE_INSERT");
+        /// <summary>
+        /// Constant UNSCHEDULED_EVENT for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter UNSCHEDULED_EVENT = new ScteFilter("UNSCHEDULED_EVENT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1257,6 +1351,56 @@ namespace Amazon.MediaPackageV2
 
 
     /// <summary>
+    /// Constants used for properties of type ScteInManifests.
+    /// </summary>
+    public class ScteInManifests : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ScteInManifests
+        /// </summary>
+        public static readonly ScteInManifests ALL = new ScteInManifests("ALL");
+        /// <summary>
+        /// Constant MATCHES_FILTER for ScteInManifests
+        /// </summary>
+        public static readonly ScteInManifests MATCHES_FILTER = new ScteInManifests("MATCHES_FILTER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScteInManifests(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScteInManifests FindValue(string value)
+        {
+            return FindValue<ScteInManifests>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScteInManifests(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScteInSegments.
     /// </summary>
     public class ScteInSegments : ConstantClass
@@ -1266,6 +1410,10 @@ namespace Amazon.MediaPackageV2
         /// Constant ALL for ScteInSegments
         /// </summary>
         public static readonly ScteInSegments ALL = new ScteInSegments("ALL");
+        /// <summary>
+        /// Constant MATCHES_FILTER for ScteInSegments
+        /// </summary>
+        public static readonly ScteInSegments MATCHES_FILTER = new ScteInSegments("MATCHES_FILTER");
         /// <summary>
         /// Constant NONE for ScteInSegments
         /// </summary>
@@ -1357,6 +1505,106 @@ namespace Amazon.MediaPackageV2
 
 
     /// <summary>
+    /// Constants used for properties of type UriPathType.
+    /// </summary>
+    public class UriPathType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LEAF for UriPathType
+        /// </summary>
+        public static readonly UriPathType LEAF = new UriPathType("LEAF");
+        /// <summary>
+        /// Constant ROOT for UriPathType
+        /// </summary>
+        public static readonly UriPathType ROOT = new UriPathType("ROOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UriPathType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UriPathType FindValue(string value)
+        {
+            return FindValue<UriPathType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UriPathType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UriSeparator.
+    /// </summary>
+    public class UriSeparator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HYPHEN for UriSeparator
+        /// </summary>
+        public static readonly UriSeparator HYPHEN = new UriSeparator("HYPHEN");
+        /// <summary>
+        /// Constant UNDERSCORE for UriSeparator
+        /// </summary>
+        public static readonly UriSeparator UNDERSCORE = new UriSeparator("UNDERSCORE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UriSeparator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UriSeparator FindValue(string value)
+        {
+            return FindValue<UriSeparator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UriSeparator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionType.
     /// </summary>
     public class ValidationExceptionType : ConstantClass
@@ -1394,6 +1642,10 @@ namespace Amazon.MediaPackageV2
         /// Constant CONTAINER_TYPE_IMMUTABLE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType CONTAINER_TYPE_IMMUTABLE = new ValidationExceptionType("CONTAINER_TYPE_IMMUTABLE");
+        /// <summary>
+        /// Constant CUSTOM_AD_TYPES_INVALID_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CUSTOM_AD_TYPES_INVALID_CONFIGURATION = new ValidationExceptionType("CUSTOM_AD_TYPES_INVALID_CONFIGURATION");
         /// <summary>
         /// Constant DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE for ValidationExceptionType
         /// </summary>
@@ -1670,6 +1922,10 @@ namespace Amazon.MediaPackageV2
         /// Constant ROLE_ARN_NOT_ASSUMABLE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType ROLE_ARN_NOT_ASSUMABLE = new ValidationExceptionType("ROLE_ARN_NOT_ASSUMABLE");
+        /// <summary>
+        /// Constant SCTE_IN_MANIFESTS_INVALID_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType SCTE_IN_MANIFESTS_INVALID_CONFIGURATION = new ValidationExceptionType("SCTE_IN_MANIFESTS_INVALID_CONFIGURATION");
         /// <summary>
         /// Constant SECRET_ARN_RESOURCE_NOT_FOUND for ValidationExceptionType
         /// </summary>

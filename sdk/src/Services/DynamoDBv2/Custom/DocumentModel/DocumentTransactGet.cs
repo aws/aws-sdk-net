@@ -13,7 +13,6 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Telemetry.Tracing;
 using System;

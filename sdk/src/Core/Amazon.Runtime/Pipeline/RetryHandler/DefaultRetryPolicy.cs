@@ -31,7 +31,7 @@ namespace Amazon.Runtime.Internal
         //The status code returned from a service request when an invalid endpoint is used.
         private const int INVALID_ENDPOINT_EXCEPTION_STATUSCODE = 421;
         //Holds on to the singleton instance.
-        private static readonly CapacityManager _capacityManagerInstance = new CapacityManager(throttleRetryCount: 100, throttleRetryCost: 5, throttleCost: 1);
+        private static readonly CapacityManager _capacityManagerInstance = new CapacityManager(initialRetryTokens: 500, retryCost: 5, noRetryIncrement: 1, timeoutRetryCost: 5, throttlingRetryCost: 0);
 
         private static readonly HashSet<string> _netStandardRetryErrorMessages = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {

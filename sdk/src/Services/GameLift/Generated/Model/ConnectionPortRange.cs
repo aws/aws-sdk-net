@@ -33,6 +33,12 @@ namespace Amazon.GameLift.Model
     /// The set of port numbers to open on each instance in a container fleet. Connection
     /// ports are used by inbound traffic to connect with processes that are running in containers
     /// on the fleet.
+    /// 
+    ///  
+    /// <para>
+    /// The port range must not overlap with the Amazon GameLift Servers reserved port range
+    /// <c>4092-4191</c>. This range is reserved for internal Amazon GameLift Servers services.
+    /// </para>
     /// </summary>
     public partial class ConnectionPortRange
     {

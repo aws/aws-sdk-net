@@ -37,6 +37,8 @@ namespace Amazon.Route53Resolver.Model
     /// </summary>
     public partial class UpdateResolverEndpointRequest : AmazonRoute53ResolverRequest
     {
+        private bool? _dns64Enabled;
+        private bool? _ipv6InternetAccessEnabled;
         private string _name;
         private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resolverEndpointId;
@@ -44,6 +46,58 @@ namespace Amazon.Route53Resolver.Model
         private bool? _rniEnhancedMetricsEnabled;
         private bool? _targetNameServerMetricsEnabled;
         private List<UpdateIpAddress> _updateIpAddresses = AWSConfigs.InitializeCollections ? new List<UpdateIpAddress>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Dns64Enabled. 
+        /// <para>
+        /// Specifies whether DNS64 is enabled for the inbound Resolver endpoint. When set to
+        /// <c>true</c>, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services
+        /// by prepending the <c>64:ff9b::/96</c> prefix to the IPv4 address. This enables IPv6-only
+        /// clients that send queries through the inbound endpoint to reach IPv4-only services.
+        /// DNS64 works with NAT64 to provide complete IPv6-to-IPv4 translation.
+        /// </para>
+        /// </summary>
+        public bool? Dns64Enabled
+        {
+            get { return this._dns64Enabled; }
+            set { this._dns64Enabled = value; }
+        }
+
+        // Check to see if Dns64Enabled property is set
+        internal bool IsSetDns64Enabled()
+        {
+            return this._dns64Enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6InternetAccessEnabled. 
+        /// <para>
+        /// Specifies whether IPv6 internet access is enabled for the outbound Resolver endpoint.
+        /// When set to <c>true</c>, the endpoint elastic network interfaces (ENIs) can forward
+        /// DNS queries to public IPv6 targets through an internet gateway.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you enable IPv6 internet access, use network controls like security groups, NACLs,
+        /// or egress-only internet gateways to protect the endpoint ENIs from unsolicited ingress
+        /// traffic. Be aware that some network controls can affect DNS query throughput due to
+        /// connection tracking. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/userguide/security-group-connection-tracking.html">Amazon
+        /// EC2 security group connection tracking</a> and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-resolver-endpoint-scaling.html">Resolver
+        /// endpoint scaling</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public bool? Ipv6InternetAccessEnabled
+        {
+            get { return this._ipv6InternetAccessEnabled; }
+            set { this._ipv6InternetAccessEnabled = value; }
+        }
+
+        // Check to see if Ipv6InternetAccessEnabled property is set
+        internal bool IsSetIpv6InternetAccessEnabled()
+        {
+            return this._ipv6InternetAccessEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

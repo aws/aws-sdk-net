@@ -39,6 +39,11 @@ namespace Amazon.ChimeSDKIdentity
 {
     /// <summary>
     /// <para>Implementation for accessing ChimeSDKIdentity</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The Amazon Chime SDK Identity APIs in this section allow software developers to create
     /// and manage unique instances of their messaging applications. These APIs provide the

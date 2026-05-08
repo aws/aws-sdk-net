@@ -56,6 +56,18 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("efsAccessPoint", targetDepth))
+                {
+                    var unmarshaller = EfsAccessPointConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EfsAccessPoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("s3FilesAccessPoint", targetDepth))
+                {
+                    var unmarshaller = S3FilesAccessPointConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3FilesAccessPoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("sessionStorage", targetDepth))
                 {
                     var unmarshaller = SessionStorageConfigurationUnmarshaller.Instance;

@@ -62,6 +62,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private EmailMfaSettingsType _emailMfaSettings;
         private SMSMfaSettingsType _smsMfaSettings;
         private SoftwareTokenMfaSettingsType _softwareTokenMfaSettings;
+        private WebAuthnMfaSettingsType _webAuthnMfaSettings;
 
         /// <summary>
         /// Gets and sets the property AccessToken. 
@@ -142,6 +143,29 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSoftwareTokenMfaSettings()
         {
             return this._softwareTokenMfaSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebAuthnMfaSettings. 
+        /// <para>
+        /// User preferences for passkey MFA. Activates or deactivates passkey MFA for the user.
+        /// When activated, passkey authentication requires user verification, and passkey sign-in
+        /// is available when MFA is required. To activate this setting, the <c>FactorConfiguration</c>
+        /// of your user pool <c>WebAuthnConfiguration</c> must be <c>MULTI_FACTOR_WITH_USER_VERIFICATION</c>.
+        /// To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+        /// Essentials tier</a> or higher.
+        /// </para>
+        /// </summary>
+        public WebAuthnMfaSettingsType WebAuthnMfaSettings
+        {
+            get { return this._webAuthnMfaSettings; }
+            set { this._webAuthnMfaSettings = value; }
+        }
+
+        // Check to see if WebAuthnMfaSettings property is set
+        internal bool IsSetWebAuthnMfaSettings()
+        {
+            return this._webAuthnMfaSettings != null;
         }
 
     }

@@ -52,7 +52,6 @@ namespace Amazon.SageMaker.Model
         /// The configuration for the restricted instance groups (RIG) environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public EnvironmentConfig EnvironmentConfig
         {
             get { return this._environmentConfig; }

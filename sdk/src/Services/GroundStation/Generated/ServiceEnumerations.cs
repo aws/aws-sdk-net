@@ -1171,6 +1171,56 @@ namespace Amazon.GroundStation
 
 
     /// <summary>
+    /// Constants used for properties of type MaintenanceType.
+    /// </summary>
+    public class MaintenanceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PLANNED for MaintenanceType
+        /// </summary>
+        public static readonly MaintenanceType PLANNED = new MaintenanceType("PLANNED");
+        /// <summary>
+        /// Constant UNPLANNED for MaintenanceType
+        /// </summary>
+        public static readonly MaintenanceType UNPLANNED = new MaintenanceType("UNPLANNED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MaintenanceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaintenanceType FindValue(string value)
+        {
+            return FindValue<MaintenanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaintenanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Polarization.
     /// </summary>
     public class Polarization : ConstantClass
@@ -1225,6 +1275,56 @@ namespace Amazon.GroundStation
 
 
     /// <summary>
+    /// Constants used for properties of type ReservationType.
+    /// </summary>
+    public class ReservationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTACT for ReservationType
+        /// </summary>
+        public static readonly ReservationType CONTACT = new ReservationType("CONTACT");
+        /// <summary>
+        /// Constant MAINTENANCE for ReservationType
+        /// </summary>
+        public static readonly ReservationType MAINTENANCE = new ReservationType("MAINTENANCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationType FindValue(string value)
+        {
+            return FindValue<ReservationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TelemetrySinkType.
     /// </summary>
     public class TelemetrySinkType : ConstantClass
@@ -1264,6 +1364,154 @@ namespace Amazon.GroundStation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TelemetrySinkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VersionFailureReasonCode.
+    /// </summary>
+    public class VersionFailureReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AZEL_EPHEMERIS_INVALID_STATUS for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode AZEL_EPHEMERIS_INVALID_STATUS = new VersionFailureReasonCode("AZEL_EPHEMERIS_INVALID_STATUS");
+        /// <summary>
+        /// Constant AZEL_EPHEMERIS_NOT_FOUND for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode AZEL_EPHEMERIS_NOT_FOUND = new VersionFailureReasonCode("AZEL_EPHEMERIS_NOT_FOUND");
+        /// <summary>
+        /// Constant AZEL_EPHEMERIS_TIME_RANGE_INVALID for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode AZEL_EPHEMERIS_TIME_RANGE_INVALID = new VersionFailureReasonCode("AZEL_EPHEMERIS_TIME_RANGE_INVALID");
+        /// <summary>
+        /// Constant AZEL_EPHEMERIS_WRONG_GROUND_STATION for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode AZEL_EPHEMERIS_WRONG_GROUND_STATION = new VersionFailureReasonCode("AZEL_EPHEMERIS_WRONG_GROUND_STATION");
+        /// <summary>
+        /// Constant EPHEMERIS_NOT_ENABLED for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode EPHEMERIS_NOT_ENABLED = new VersionFailureReasonCode("EPHEMERIS_NOT_ENABLED");
+        /// <summary>
+        /// Constant EPHEMERIS_NOT_FOUND for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode EPHEMERIS_NOT_FOUND = new VersionFailureReasonCode("EPHEMERIS_NOT_FOUND");
+        /// <summary>
+        /// Constant EPHEMERIS_TIME_RANGE_INVALID for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode EPHEMERIS_TIME_RANGE_INVALID = new VersionFailureReasonCode("EPHEMERIS_TIME_RANGE_INVALID");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode INTERNAL_ERROR = new VersionFailureReasonCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant INVALID_SATELLITE_ARN for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode INVALID_SATELLITE_ARN = new VersionFailureReasonCode("INVALID_SATELLITE_ARN");
+        /// <summary>
+        /// Constant INVALID_UPDATE_CONTACT_REQUEST for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode INVALID_UPDATE_CONTACT_REQUEST = new VersionFailureReasonCode("INVALID_UPDATE_CONTACT_REQUEST");
+        /// <summary>
+        /// Constant NOT_ONBOARDED_TO_AZEL_EPHEMERIS for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode NOT_ONBOARDED_TO_AZEL_EPHEMERIS = new VersionFailureReasonCode("NOT_ONBOARDED_TO_AZEL_EPHEMERIS");
+        /// <summary>
+        /// Constant SATELLITE_DOES_NOT_MATCH_EPHEMERIS for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode SATELLITE_DOES_NOT_MATCH_EPHEMERIS = new VersionFailureReasonCode("SATELLITE_DOES_NOT_MATCH_EPHEMERIS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VersionFailureReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VersionFailureReasonCode FindValue(string value)
+        {
+            return FindValue<VersionFailureReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VersionFailureReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VersionStatus.
+    /// </summary>
+    public class VersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus ACTIVE = new VersionStatus("ACTIVE");
+        /// <summary>
+        /// Constant FAILED_TO_UPDATE for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus FAILED_TO_UPDATE = new VersionStatus("FAILED_TO_UPDATE");
+        /// <summary>
+        /// Constant SUPERSEDED for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus SUPERSEDED = new VersionStatus("SUPERSEDED");
+        /// <summary>
+        /// Constant UPDATING for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus UPDATING = new VersionStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VersionStatus FindValue(string value)
+        {
+            return FindValue<VersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VersionStatus(string value)
         {
             return FindValue(value);
         }

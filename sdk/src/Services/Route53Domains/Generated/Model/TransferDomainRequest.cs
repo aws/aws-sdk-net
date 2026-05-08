@@ -230,15 +230,21 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DurationInYears. 
         /// <para>
-        /// The number of years that you want to register the domain for. Domains are registered
-        /// for a minimum of one year. The maximum period depends on the top-level domain.
+        /// Reserved for future use.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently, the effect of a domain transfer on the registration period varies by TLD.
+        /// For information about how transferring a domain affects the expiration date, see the
+        /// Transfer Term column in the pricing information at <a href="http://aws.amazon.com/route53/pricing/">Amazon
+        /// Route 53 Pricing</a>.
         /// </para>
         ///  
         /// <para>
         /// Default: 1
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=10)]
         public int? DurationInYears
         {
             get { return this._durationInYears; }

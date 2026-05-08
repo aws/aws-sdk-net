@@ -84,8 +84,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time when the cancellation request was originally created, as a POSIX
-        /// timestamp (Unix epoch seconds).
+        /// The date and time when the cancellation request was originally created.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -177,8 +176,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The date and time when the cancellation request was cancelled, as a POSIX timestamp
-        /// (Unix epoch seconds).
+        /// The date and time when the cancellation request was cancelled.
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt

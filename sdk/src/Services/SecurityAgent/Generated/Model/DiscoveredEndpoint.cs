@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Represents a discovered endpoint during pentest execution
+    /// Represents an endpoint discovered during a pentest job.
     /// </summary>
     public partial class DiscoveredEndpoint
     {
@@ -45,7 +45,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Identifier of the agent space where the endpoint was discovered
+        /// The unique identifier of the agent space associated with the discovered endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +64,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Additional description of the endpoint
+        /// A description of the discovered endpoint.
         /// </para>
         /// </summary>
         public string Description
@@ -82,7 +82,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Evidence. 
         /// <para>
-        /// Optional evidence or additional information about the endpoint
+        /// The evidence that led to the discovery of the endpoint.
         /// </para>
         /// </summary>
         public string Evidence
@@ -100,7 +100,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// Operation or action associated with the endpoint
+        /// The HTTP operation associated with the discovered endpoint.
         /// </para>
         /// </summary>
         public string Operation
@@ -118,7 +118,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property PentestJobId. 
         /// <para>
-        /// Identifier of the pentest job that discovered this endpoint
+        /// The unique identifier of the pentest job that discovered the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -137,7 +137,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        /// Identifier of the task that discovered this endpoint
+        /// The unique identifier of the task that discovered the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -156,7 +156,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Uri. 
         /// <para>
-        /// The URI of the discovered endpoint
+        /// The URI of the discovered endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

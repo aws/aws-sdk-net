@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// GitHub repository resource details
+    /// Represents a GitHub repository resource used in an integration.
     /// </summary>
     public partial class GitHubRepositoryResource
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the resource e.g. repository name, etc
+        /// The name of the GitHub repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// Owner of the repository
+        /// The owner of the GitHub repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -91,6 +91,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         Assert.NotNull(firstObjectPart.ChecksumSHA1);
                     if (expectedChecksumAlgorithm == ChecksumAlgorithm.SHA256)
                         Assert.NotNull(firstObjectPart.ChecksumSHA256);
+                    if (expectedChecksumAlgorithm == ChecksumAlgorithm.SHA512)
+                        Assert.NotNull(firstObjectPart.ChecksumSHA512);
+                    if (expectedChecksumAlgorithm == ChecksumAlgorithm.MD5)
+                        Assert.NotNull(firstObjectPart.ChecksumMD5);
+                    if (expectedChecksumAlgorithm == ChecksumAlgorithm.XXHASH3)
+                        Assert.NotNull(firstObjectPart.ChecksumXXHASH3);
+                    if (expectedChecksumAlgorithm == ChecksumAlgorithm.XXHASH64)
+                        Assert.NotNull(firstObjectPart.ChecksumXXHASH64);
+                    if (expectedChecksumAlgorithm == ChecksumAlgorithm.XXHASH128)
+                        Assert.NotNull(firstObjectPart.ChecksumXXHASH128);
                     Assert.Equal(1, firstObjectPart.PartNumber);
                     Assert.True(firstObjectPart.Size > 0);
                 }

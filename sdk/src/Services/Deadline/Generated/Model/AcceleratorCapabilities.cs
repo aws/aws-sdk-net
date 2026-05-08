@@ -57,6 +57,10 @@ namespace Amazon.Deadline.Model
     /// <para>
     ///  <c>l40s</c>: Uses G6e instance family
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>rtx-pro-server-6000</c>: Uses G7e instance family
+    /// </para>
     ///  </li> </ul> </note>
     /// </summary>
     public partial class AcceleratorCapabilities

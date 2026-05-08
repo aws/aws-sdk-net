@@ -142,6 +142,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.MinInstanceCount.Value);
             }
 
+            if(requestObject.IsSetNetworkInterface())
+            {
+                context.Writer.WritePropertyName("NetworkInterface");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterNetworkInterfaceMarshaller.Instance;
+                marshaller.Marshall(requestObject.NetworkInterface, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetOnStartDeepHealthChecks())
             {
                 context.Writer.WritePropertyName("OnStartDeepHealthChecks");

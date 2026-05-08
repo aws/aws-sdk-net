@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Information about an integrated repository
+    /// Represents a code repository that is integrated with the service through a third-party
+    /// provider.
     /// </summary>
     public partial class IntegratedRepository
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IntegrationId. 
         /// <para>
-        /// Integration identifier
+        /// The unique identifier of the integration that provides access to the repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ProviderResourceId. 
         /// <para>
-        /// External provider resource identifier, e.g., Github repository identifier
+        /// The provider-specific resource identifier for the repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

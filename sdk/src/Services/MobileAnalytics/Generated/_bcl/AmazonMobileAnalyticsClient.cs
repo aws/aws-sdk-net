@@ -39,6 +39,11 @@ namespace Amazon.MobileAnalytics
 {
     /// <summary>
     /// <para>Implementation for accessing MobileAnalytics</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Mobile Analytics is a service for collecting, visualizing, and understanding
     /// app usage data at scale.

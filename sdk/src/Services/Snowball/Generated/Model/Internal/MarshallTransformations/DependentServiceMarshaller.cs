@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DependentService Marshaller
     /// </summary>
-    public class DependentServiceMarshaller : IRequestMarshaller<DependentService, JsonMarshallerContext> 
+    public class DependentServiceMarshaller : IRequestMarshaller<DependentService, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DependentService requestObject, JsonMarshallerContext context)
+        public void Marshall(DependentService requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetServiceName())
-            {
-                context.Writer.WritePropertyName("ServiceName");
-                context.Writer.WriteStringValue(requestObject.ServiceName);
-            }
 
-            if(requestObject.IsSetServiceVersion())
+            if (requestObject.IsSetServiceName())
             {
-                context.Writer.WritePropertyName("ServiceVersion");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("ServiceName");
+                context.Writer.WriteTextString(requestObject.ServiceName);
+            }
+            if (requestObject.IsSetServiceVersion())
+            {
+                context.Writer.WriteTextString("ServiceVersion");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ServiceVersionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServiceVersion, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

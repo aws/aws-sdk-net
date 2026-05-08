@@ -36,6 +36,7 @@ namespace Amazon.EMRServerless.Model
     public partial class InteractiveConfiguration
     {
         private bool? _livyEndpointEnabled;
+        private bool? _sessionEnabled;
         private bool? _studioEnabled;
 
         /// <summary>
@@ -54,6 +55,25 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetLivyEndpointEnabled()
         {
             return this._livyEndpointEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionEnabled. 
+        /// <para>
+        /// Enables interactive sessions on the application. When set to <c>true</c>, you can
+        /// start interactive sessions using the <c>StartSession</c> operation.
+        /// </para>
+        /// </summary>
+        public bool? SessionEnabled
+        {
+            get { return this._sessionEnabled; }
+            set { this._sessionEnabled = value; }
+        }
+
+        // Check to see if SessionEnabled property is set
+        internal bool IsSetSessionEnabled()
+        {
+            return this._sessionEnabled.HasValue; 
         }
 
         /// <summary>

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Network traffic filtering rule
+    /// A rule that controls network traffic during penetration testing by allowing or denying
+    /// traffic to specific URL patterns.
     /// </summary>
     public partial class NetworkTrafficRule
     {
@@ -41,7 +42,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Effect. 
         /// <para>
-        /// Action to take when the rule matches
+        /// The effect of the rule. Valid values are ALLOW and DENY.
         /// </para>
         /// </summary>
         public NetworkTrafficRuleEffect Effect
@@ -59,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property NetworkTrafficRuleType. 
         /// <para>
-        /// Type of network traffic rule
+        /// The type of the network traffic rule. Currently, only URL is supported.
         /// </para>
         /// </summary>
         public NetworkTrafficRuleType NetworkTrafficRuleType
@@ -77,7 +78,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Pattern. 
         /// <para>
-        /// Pattern to match against
+        /// The URL pattern to match for the rule.
         /// </para>
         /// </summary>
         public string Pattern

@@ -78,6 +78,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
+            if (publicRequest.IsSetProjectCategory())
+                request.Parameters.Add("projectCategory", StringUtils.FromString(publicRequest.ProjectCategory));
+            
             if (publicRequest.IsSetUserIdentifier())
                 request.Parameters.Add("userIdentifier", StringUtils.FromString(publicRequest.UserIdentifier));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/projects";

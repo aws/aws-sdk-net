@@ -68,6 +68,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.PrincipalType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ServiceOptions", targetDepth))
+                {
+                    var unmarshaller = ServiceOptionsUnmarshaller.Instance;
+                    unmarshalledObject.ServiceOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

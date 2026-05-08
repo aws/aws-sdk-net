@@ -138,6 +138,16 @@ namespace Amazon.SecurityHub.Model
         IGetInsightsPaginator GetInsights(GetInsightsRequest request);
 
         /// <summary>
+        /// Paginator for GetRecommendedPolicyV2 operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetRecommendedPolicyV2Paginator GetRecommendedPolicyV2(GetRecommendedPolicyV2Request request);
+
+        /// <summary>
         /// Paginator for GetResourcesTrendsV2 operation
         ///</summary>
         [AWSPaginator(

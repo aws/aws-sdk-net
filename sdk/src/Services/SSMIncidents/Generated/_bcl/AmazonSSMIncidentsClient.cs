@@ -39,6 +39,11 @@ namespace Amazon.SSMIncidents
 {
     /// <summary>
     /// <para>Implementation for accessing SSMIncidents</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Systems Manager Incident Manager is an incident management console designed to help
     /// users mitigate and recover from incidents affecting their Amazon Web Services-hosted

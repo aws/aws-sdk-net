@@ -39,7 +39,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Monitor settings as key-value pairs.
+        /// The monitor settings as key-value pairs.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

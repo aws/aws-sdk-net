@@ -45,13 +45,7 @@ namespace Amazon.S3.Model
         /// </summary>
         public LifecycleConfiguration Configuration
         {
-            get 
-            {
-                if (this._configuration == null)
-                    this._configuration = new LifecycleConfiguration();
-
-                return this._configuration; 
-            }
+            get { return this._configuration ?? new LifecycleConfiguration();}
             set { this._configuration = value; }
         }
 

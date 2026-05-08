@@ -98,6 +98,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("IncludeAllInstances", StringUtils.FromBool(publicRequest.IncludeAllInstances));
                 }
+                if(publicRequest.IsSetIncludeManagedResources())
+                {
+                    request.Parameters.Add("IncludeManagedResources", StringUtils.FromBool(publicRequest.IncludeManagedResources));
+                }
                 if(publicRequest.IsSetInstanceIds())
                 {
                     if (publicRequest.InstanceIds.Count == 0)

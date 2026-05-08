@@ -202,7 +202,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to assign to the prefetch schedule. Tags are key-value pairs that you can
+        /// The tags assigned to the prefetch schedule. Tags are key-value pairs that you can
         /// associate with Amazon resources to help with organization, access control, and cost
         /// tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
         /// AWS Elemental MediaTailor Resources</a>.

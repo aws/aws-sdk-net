@@ -39,6 +39,11 @@ namespace Amazon.CloudSearchDomain
 {
     /// <summary>
     /// <para>Implementation for accessing CloudSearchDomain</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You use the AmazonCloudSearch2013 API to upload documents to a search domain and search
     /// those documents. 

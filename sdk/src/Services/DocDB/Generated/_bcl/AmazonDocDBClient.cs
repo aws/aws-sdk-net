@@ -39,6 +39,11 @@ namespace Amazon.DocDB
 {
     /// <summary>
     /// <para>Implementation for accessing DocDB</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon DocumentDB is a fast, reliable, and fully managed database service. Amazon
     /// DocumentDB makes it easy to set up, operate, and scale MongoDB-compatible databases

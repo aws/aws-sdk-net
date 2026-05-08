@@ -39,6 +39,11 @@ namespace Amazon.S3Files
 {
     /// <summary>
     /// <para>Implementation for accessing S3Files</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// S3 Files makes S3 buckets accessible as high-performance file systems powered by EFS.
     /// This service enables file system interface access to S3 data with sub-millisecond

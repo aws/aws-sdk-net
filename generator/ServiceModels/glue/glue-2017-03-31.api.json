@@ -7834,7 +7834,8 @@
       "members":{
         "CloudWatchMetricsEnabled":{"shape":"NullableBoolean"},
         "ResultsS3Prefix":{"shape":"UriString"},
-        "CompositeRuleEvaluationMethod":{"shape":"DQCompositeRuleEvaluationMethod"}
+        "CompositeRuleEvaluationMethod":{"shape":"DQCompositeRuleEvaluationMethod"},
+        "CustomLogGroupPrefix":{"shape":"GenericString"}
       }
     },
     "DataQualityGlueTable":{
@@ -8020,7 +8021,8 @@
       "members":{
         "DataSource":{"shape":"DataSource"},
         "StartedBefore":{"shape":"Timestamp"},
-        "StartedAfter":{"shape":"Timestamp"}
+        "StartedAfter":{"shape":"Timestamp"},
+        "RulesetName":{"shape":"NameString"}
       }
     },
     "DataQualityRulesetEvaluationRunList":{
@@ -10485,7 +10487,8 @@
         "CatalogId":{"shape":"CatalogIdString"},
         "DatabaseName":{"shape":"NameString"},
         "TableName":{"shape":"NameString"},
-        "PartitionValues":{"shape":"ValueStringList"}
+        "PartitionValues":{"shape":"ValueStringList"},
+        "AuditContext":{"shape":"AuditContext"}
       }
     },
     "GetPartitionResponse":{
@@ -10510,7 +10513,8 @@
         "MaxResults":{"shape":"PageSize"},
         "ExcludeColumnSchema":{"shape":"BooleanNullable"},
         "TransactionId":{"shape":"TransactionIdString"},
-        "QueryAsOfTime":{"shape":"Timestamp"}
+        "QueryAsOfTime":{"shape":"Timestamp"},
+        "AuditContext":{"shape":"AuditContext"}
       }
     },
     "GetPartitionsResponse":{
@@ -10795,7 +10799,8 @@
         "CatalogId":{"shape":"CatalogIdString"},
         "DatabaseName":{"shape":"NameString"},
         "TableName":{"shape":"NameString"},
-        "VersionId":{"shape":"VersionString"}
+        "VersionId":{"shape":"VersionString"},
+        "AuditContext":{"shape":"AuditContext"}
       }
     },
     "GetTableVersionResponse":{
@@ -10819,7 +10824,8 @@
         "DatabaseName":{"shape":"NameString"},
         "TableName":{"shape":"NameString"},
         "NextToken":{"shape":"Token"},
-        "MaxResults":{"shape":"CatalogGetterPageSize"}
+        "MaxResults":{"shape":"CatalogGetterPageSize"},
+        "AuditContext":{"shape":"AuditContext"}
       }
     },
     "GetTableVersionsResponse":{

@@ -34,8 +34,44 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class Scte
     {
+        private List<string> _customAdTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _scteFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ScteInSegments _scteInSegments;
+
+        /// <summary>
+        /// Gets and sets the property CustomAdTypes. 
+        /// <para>
+        /// A list of additional non-Ad SCTE-35 event types to treat as advertisements. When configured,
+        /// events matching these types produce ad markers (such as <c>SCTE35-OUT</c> and <c>SCTE35-IN</c>
+        /// in HLS DATERANGE tags) in manifests.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>PROGRAM</c> | <c>CHAPTER</c> | <c>UNSCHEDULED_EVENT</c> | <c>ALTERNATE_CONTENT_OPPORTUNITY</c>
+        /// | <c>NETWORK</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify any values, the default is empty (only default ad types are used).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=25)]
+        public List<string> CustomAdTypes
+        {
+            get { return this._customAdTypes; }
+            set { this._customAdTypes = value; }
+        }
+
+        // Check to see if CustomAdTypes property is set
+        internal bool IsSetCustomAdTypes()
+        {
+            return this._customAdTypes != null && (this._customAdTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ScteFilter. 
@@ -74,11 +110,16 @@ namespace Amazon.MediaPackageV2.Model
         /// <para>
         /// All – SCTE-35 messages are embedded in segment data
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MatchesFilter – SCTE-35 messages which match the ScteFilter are embedded in segment
+        /// data
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  For DASH manifests, when set to <c>All</c>, an <c>InbandEventStream</c> tag signals
-        /// that SCTE messages are present in segments. This setting works independently of manifest
-        /// ad markers.
+        ///  For DASH manifests, when set to <c>All</c> or <c>MatchesFilter</c>, an <c>InbandEventStream</c>
+        /// tag signals that SCTE messages are present in segments. This setting works independently
+        /// of manifest ad markers.
         /// </para>
         /// </summary>
         public ScteInSegments ScteInSegments

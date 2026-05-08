@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTime;
         private InferenceComponentRuntimeConfigSummary _runtimeConfig;
         private InferenceComponentSpecificationSummary _specification;
+        private List<InferenceComponentSpecificationSummary> _specifications = AWSConfigs.InitializeCollections ? new List<InferenceComponentSpecificationSummary>() : null;
         private string _variantName;
 
         /// <summary>
@@ -251,6 +252,33 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSpecification()
         {
             return this._specification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Specifications. 
+        /// <para>
+        /// A list of specification summaries for the inference component, one per instance type.
+        /// This parameter is populated when the inference component was created with multiple
+        /// specifications. When this parameter is populated, the singular <c>Specification</c>
+        /// parameter is not returned.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<InferenceComponentSpecificationSummary> Specifications
+        {
+            get { return this._specifications; }
+            set { this._specifications = value; }
+        }
+
+        // Check to see if Specifications property is set
+        internal bool IsSetSpecifications()
+        {
+            return this._specifications != null && (this._specifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

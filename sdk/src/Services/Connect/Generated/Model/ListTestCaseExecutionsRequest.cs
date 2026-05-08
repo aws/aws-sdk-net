@@ -36,11 +36,11 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListTestCaseExecutionsRequest : AmazonConnectRequest
     {
-        private DateTime? _endTime;
+        private long? _endTime;
         private string _instanceId;
         private int? _maxResults;
         private string _nextToken;
-        private DateTime? _startTime;
+        private long? _startTime;
         private TestCaseExecutionStatus _status;
         private string _testCaseId;
         private string _testCaseName;
@@ -51,7 +51,8 @@ namespace Amazon.Connect.Model
         /// Filter executions that started before this time.
         /// </para>
         /// </summary>
-        public DateTime? EndTime
+        [AWSProperty(Min=0)]
+        public long? EndTime
         {
             get { return this._endTime; }
             set { this._endTime = value; }
@@ -126,7 +127,8 @@ namespace Amazon.Connect.Model
         /// Filter executions that started after this time.
         /// </para>
         /// </summary>
-        public DateTime? StartTime
+        [AWSProperty(Min=0)]
+        public long? StartTime
         {
             get { return this._startTime; }
             set { this._startTime = value; }

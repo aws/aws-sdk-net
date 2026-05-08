@@ -39,6 +39,11 @@ namespace Amazon.TaxSettings
 {
     /// <summary>
     /// <para>Implementation for accessing TaxSettings</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You can use the tax setting API to programmatically set, modify, and delete the tax
     /// registration number (TRN), associated business legal name, and address (Collectively

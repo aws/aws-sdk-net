@@ -39,6 +39,11 @@ namespace Amazon.QueryProtocol
 {
     /// <summary>
     /// <para>Implementation for accessing QueryProtocol</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// A query service that sends query requests and XML responses.
     /// </summary>

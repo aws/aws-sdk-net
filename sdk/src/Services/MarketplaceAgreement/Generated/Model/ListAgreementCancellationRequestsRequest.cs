@@ -38,8 +38,7 @@ namespace Amazon.MarketplaceAgreement.Model
     ///  <note> 
     /// <para>
     ///  <c>PartyType</c> is a required parameter. A <c>ValidationException</c> is returned
-    /// if <c>PartyType</c> is not provided. Pagination is supported through <c>maxResults</c>
-    /// (1-50, default 20) and <c>nextToken</c> parameters.
+    /// if <c>PartyType</c> is not provided.
     /// </para>
     ///  </note>
     /// </summary>
@@ -132,8 +131,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to specify where to start pagination. Use the <c>nextToken</c> value from
-        /// a previous response to retrieve the next page of results.
+        /// A token to specify where to start pagination.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]
@@ -173,8 +171,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// An optional parameter to filter cancellation requests by status. Valid values include
-        /// <c>PENDING_APPROVAL</c>, <c>APPROVED</c>, <c>REJECTED</c>, <c>CANCELLED</c>, and <c>VALIDATION_FAILED</c>.
+        /// An optional parameter to filter cancellation requests by status.
         /// </para>
         /// </summary>
         public AgreementCancellationRequestStatus Status

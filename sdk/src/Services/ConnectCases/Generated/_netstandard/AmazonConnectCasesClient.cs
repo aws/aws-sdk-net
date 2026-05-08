@@ -39,6 +39,11 @@ namespace Amazon.ConnectCases
 {
     /// <summary>
     /// <para>Implementation for accessing ConnectCases</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// <ul> <li> 
     /// <para>
@@ -2959,6 +2964,10 @@ namespace Amazon.ConnectCases
         /// We couldn't find the requested resource. Check that your resources exists and were
         /// created in the same Amazon Web Services Region as your request, and try your request
         /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.

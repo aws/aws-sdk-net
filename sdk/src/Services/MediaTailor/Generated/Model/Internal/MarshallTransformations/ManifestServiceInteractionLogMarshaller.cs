@@ -57,6 +57,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetPublishOptInEventTypes())
+            {
+                context.Writer.WritePropertyName("PublishOptInEventTypes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPublishOptInEventTypesListValue in requestObject.PublishOptInEventTypes)
+                {
+                        context.Writer.WriteStringValue(requestObjectPublishOptInEventTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class GetQueryResultsResponse : AmazonWebServiceResponse
     {
         private string _encryptionKey;
+        private string _nextToken;
         private QueryLanguage _queryLanguage;
         private List<List<ResultField>> _results = AWSConfigs.InitializeCollections ? new List<List<ResultField>>() : null;
         private QueryStatistics _statistics;
@@ -60,6 +61,27 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetEncryptionKey()
         {
             return this._encryptionKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If there are more log events remaining in the results, the response includes a <c>nextToken</c>.
+        /// You can use this token in a subsequent <c>GetQueryResults</c> request to get the next
+        /// set of results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

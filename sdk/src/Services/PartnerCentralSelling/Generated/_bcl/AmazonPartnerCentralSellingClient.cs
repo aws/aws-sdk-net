@@ -39,6 +39,11 @@ namespace Amazon.PartnerCentralSelling
 {
     /// <summary>
     /// <para>Implementation for accessing PartnerCentralSelling</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS Partner Central API for Selling 
     /// <para>

@@ -29,52 +29,69 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for JobResource Object
     /// </summary>  
-    public class JobResourceUnmarshaller : IJsonUnmarshaller<JobResource, JsonUnmarshallerContext>
+    public class JobResourceUnmarshaller : ICborUnmarshaller<JobResource, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public JobResource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public JobResource Unmarshall(CborUnmarshallerContext context)
         {
             JobResource unmarshalledObject = new JobResource();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Ec2AmiResources", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<Ec2AmiResource, Ec2AmiResourceUnmarshaller>(Ec2AmiResourceUnmarshaller.Instance);
-                    unmarshalledObject.Ec2AmiResources = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LambdaResources", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<LambdaResource, LambdaResourceUnmarshaller>(LambdaResourceUnmarshaller.Instance);
-                    unmarshalledObject.LambdaResources = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("S3Resources", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<S3Resource, S3ResourceUnmarshaller>(S3ResourceUnmarshaller.Instance);
-                    unmarshalledObject.S3Resources = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Ec2AmiResources":
+                        {
+                            context.AddPathSegment("Ec2AmiResources");
+                            var unmarshaller = new CborListUnmarshaller<Ec2AmiResource, Ec2AmiResourceUnmarshaller>(Ec2AmiResourceUnmarshaller.Instance);
+                            unmarshalledObject.Ec2AmiResources = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "LambdaResources":
+                        {
+                            context.AddPathSegment("LambdaResources");
+                            var unmarshaller = new CborListUnmarshaller<LambdaResource, LambdaResourceUnmarshaller>(LambdaResourceUnmarshaller.Instance);
+                            unmarshalledObject.LambdaResources = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "S3Resources":
+                        {
+                            context.AddPathSegment("S3Resources");
+                            var unmarshaller = new CborListUnmarshaller<S3Resource, S3ResourceUnmarshaller>(S3ResourceUnmarshaller.Instance);
+                            unmarshalledObject.S3Resources = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -98,6 +98,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("indexedKeys", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<IndexedKey, IndexedKeyUnmarshaller>(IndexedKeyUnmarshaller.Instance);
+                    unmarshalledObject.IndexedKeys = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("memoryExecutionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

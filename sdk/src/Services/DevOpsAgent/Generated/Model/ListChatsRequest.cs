@@ -96,10 +96,12 @@ namespace Amazon.DevOpsAgent.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The user identifier to list chats for
+        /// The user identifier to list chats for. This field is deprecated and will be ignored
+        /// — the service resolves user identity from the authenticated session.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [Obsolete("userId is managed by the service and should not be provided by the caller")]
+        [AWSProperty(Min=1, Max=128)]
         public string UserId
         {
             get { return this._userId; }

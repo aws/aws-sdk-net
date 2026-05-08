@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Metadata specific to a GitHub repository integrated resource
+    /// Contains metadata about a GitHub repository that is integrated with the service.
     /// </summary>
     public partial class GitHubRepositoryMetadata
     {
@@ -42,7 +42,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AccessType. 
         /// <para>
-        /// Access / Visibility Type of the integrated resource
+        /// The access type of the GitHub repository. Valid values are PRIVATE and PUBLIC.
         /// </para>
         /// </summary>
         public AccessType AccessType
@@ -60,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the resource e.g. repository name, etc
+        /// The name of the GitHub repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// Owner of the repository
+        /// The owner of the GitHub repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,7 +98,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ProviderResourceId. 
         /// <para>
-        /// Unique resource identifier from the vendor
+        /// The provider-specific resource identifier for the GitHub repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
