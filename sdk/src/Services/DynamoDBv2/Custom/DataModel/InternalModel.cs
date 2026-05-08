@@ -708,7 +708,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
             config.AddPropertyStorage(propertyName, value);
 
-            // keep the AttributesToGet setting for flows that are not yet migrated to use ProjectionExpression
             if (!AttributesToGet.Contains(attributeName))
                 AttributesToGet.Add(attributeName);
 
