@@ -36,6 +36,7 @@ namespace Amazon.Runtime.Credentials
     internal class CachedProfileCredentialResolver : IDisposable
     {
         private readonly ConcurrentDictionary<(string ProfileName, string Location), ProfileCredentialEntry> _profileCredentialCache = new();
+        // key is the filePath
         private readonly ConcurrentDictionary<string, SharedFileWatcher> _fileWatchers = new();
         private bool _disposed;
 
