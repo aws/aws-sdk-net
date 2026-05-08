@@ -307,6 +307,56 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.Equal(model1.ManagerName, storedModel.ManagerName);
         }
 
+        [Fact]
+        public async Task TestContext_TransactGet_WithDerivedTypeItems()
+        {
+            var model1 = CreateNestedTypeItem(out var id);
+            var model2 = new ModelA2
+            {
+                Id = Guid.NewGuid(),
+                MyType = new A { Name = "A1", MyPropA = 1 },
+                MyInterface = new InterfaceB()
+                {
+                    S2 = 2,
+                    S1 = "s1",
+                    S4 = "s4"
+                },
+                DictionaryClasses = new Dictionary<string, A>()
+                {
+                    { "A", new A { Name = "A1", MyPropA = 1 } },
+                    { "B", new B { Name = "A1", MyPropA = 1, MyPropB = 2 } }
+                }
+            };
+
+            var transactWrite = _context.CreateTransactWrite<ModelA>();
+            transactWrite.AddSaveItems(new[] { model1, model2 });
+            await transactWrite.ExecuteAsync();
+
+            var transactGetModel1 = _context.CreateTransactGet<ModelA>();
+            transactGetModel1.AddKey(id, new TransactGetItemOperationConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.TOTAL});
+            await transactGetModel1.ExecuteAsync();
+
+            Assert.Equal(1, transactGetModel1.Results.Count);
+            var storedModel1 = transactGetModel1.Results[0];
+
+            var transactGetModel2 = _context.CreateTransactGet<ModelA>();
+            transactGetModel2.AddKey(model2.Id);
+            await transactGetModel2.ExecuteAsync();
+
+            Assert.Equal(1, transactGetModel2.Results.Count);
+            var storedModel2 = transactGetModel2.Results[0];
+
+            Assert.Equal(model1.Id, storedModel1.Id);
+            Assert.Equal(model1.GetType(), storedModel1.GetType());
+            Assert.Equal(model2.Id, storedModel2.Id);
+            Assert.Equal(model2.GetType(), storedModel2.GetType());
+
+            var myInterface = model2.MyInterface as InterfaceB;
+            var storedInterface = model2.MyInterface as InterfaceB;
+
+            Assert.Equal(myInterface.S4, storedInterface.S4);
+        }
+
         private ModelA CreateNestedTypeItem(out Guid id)
         {
             var a1 = new A { Name = "A1", MyPropA = 1 };

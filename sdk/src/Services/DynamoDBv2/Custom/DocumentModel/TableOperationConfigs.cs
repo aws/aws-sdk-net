@@ -402,6 +402,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// If any of the requested attributes are not found, they do not appear in the result.
         /// </summary>
         public Expression ProjectionExpression { get; set; }
+
+        /// <summary>
+        /// Controls whether DynamoDB returns capacity consumption details for each Query request.
+        /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
     }
 
     /// <summary>

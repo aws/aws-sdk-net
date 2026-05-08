@@ -398,7 +398,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private TransactGetItemsRequest ConstructRequest(bool isAsync)
         {
             var transactItems = Items.Select(item => item.GetRequest()).ToList();
-            var request = new TransactGetItemsRequest { TransactItems = transactItems };
+            var returnConsumedCapacity =
+                Items.Any(x => x.OperationConfig?.ReturnConsumedCapacity == ReturnConsumedCapacity.TOTAL) ? ReturnConsumedCapacity.TOTAL :
+                Items.Any(x => x.OperationConfig?.ReturnConsumedCapacity == ReturnConsumedCapacity.INDEXES) ? ReturnConsumedCapacity.INDEXES :
+                ReturnConsumedCapacity.NONE;
+
+            var request = new TransactGetItemsRequest 
+            { 
+                TransactItems = transactItems,
+                ReturnConsumedCapacity = returnConsumedCapacity
+            };
             Items[0].TransactionPart.TargetTable.UpdateRequestUserAgentDetails(request, isAsync);
             return request;
         }
@@ -461,6 +470,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 Key = Key,
                 TableName = TransactionPart.TargetTable.TableName
+                //update with return consumed capacity
             };
 
             currentConfig.ProjectionExpression?.ApplyExpression(get, TransactionPart.TargetTable);
