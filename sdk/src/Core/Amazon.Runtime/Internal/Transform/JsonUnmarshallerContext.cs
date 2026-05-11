@@ -48,6 +48,8 @@ namespace Amazon.Runtime.Internal.Transform
         private const string DELIMITER = "/";
         #region Private members
 
+        private Stream baseStream;
+        // Created lazily on first Peek() call.
         private StreamReader streamReader = null;
         private JsonPathStack stack = new JsonPathStack();
         private JsonTokenType? currentToken = null;
@@ -130,11 +132,11 @@ namespace Amazon.Runtime.Internal.Transform
             }
             
             if (this.FlexibleChecksumStream != null) // either just flexible checksum, or flexible checksum wrapping the older CRC stream
-                streamReader = new StreamReader(this.FlexibleChecksumStream);
+                baseStream = this.FlexibleChecksumStream;
             else if (this.CrcStream != null)
-                streamReader = new StreamReader(this.CrcStream);
+                baseStream = this.CrcStream;
             else
-                streamReader = new StreamReader(responseStream);
+                baseStream = responseStream;
         }
 
         #endregion
@@ -308,7 +310,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>
         public Stream Stream
         {
-            get { return streamReader.BaseStream; }
+            get { return baseStream; }
         }
 
         /// <summary>
@@ -317,6 +319,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns>The next (non-whitespace) character in the jsonStream, or -1 if at the end.</returns>
         public int Peek()
         {
+            EnsureStreamReader();
             // Per MSDN documentation on StreamReader.Peek(), it's perfectly acceptable to cast
             // int returned by Peek() to char.
             unchecked
@@ -328,6 +331,12 @@ namespace Amazon.Runtime.Internal.Transform
             }
             return StreamPeek();
 
+        }
+
+        private void EnsureStreamReader()
+        {
+            if (streamReader == null)
+                streamReader = new StreamReader(baseStream);
         }
 
         #endregion
@@ -416,6 +425,12 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         streamReader.Dispose();
                         streamReader = null;
+                        baseStream = null;
+                    }
+                    else if (baseStream != null)
+                    {
+                        baseStream.Dispose();
+                        baseStream = null;
                     }
                 }
                 disposed = true;

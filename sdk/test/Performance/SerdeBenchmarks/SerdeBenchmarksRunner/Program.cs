@@ -32,6 +32,7 @@ namespace AWSSDK.Benchmarks.Serde;
 ///   dotnet run -c Release -- --filter *RpcV2Cbor*      # Run only RpcV2Cbor benchmarks
 ///   dotnet run -c Release -- --filter *RestXml*        # Run only RestXml benchmarks
 ///   dotnet run -c Release -- --filter *AwsQuery*       # Run only AwsQuery benchmarks
+///   dotnet run -c Release -- --filter *Sqs*            # Run only SQS benchmarks
 ///
 /// Results are output to BenchmarkDotNet.Artifacts/results/ in CSV, GitHub Markdown, and HTML formats.
 /// Each benchmark class uses [SimpleJob] with explicit warmupCount=10 and iterationCount=1000
@@ -72,7 +73,8 @@ internal class Program
             typeof(AwsJson10Benchmarks),
             typeof(RpcV2CborBenchmarks),
             typeof(RestXmlBenchmarks),
-            typeof(AwsQueryBenchmarks)
+            typeof(AwsQueryBenchmarks),
+            typeof(SqsBenchmarks)
         }).Run(args, config);
     }
 }
