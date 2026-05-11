@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Runtime.CompilerServices;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -46,8 +47,12 @@ namespace Amazon.Runtime.Internal.Transform
 
         private StreamReader streamReader;
         private XmlTextReader _xmlTextReader;
-        private Stack<string> stack = new Stack<string>();
-        private string stackString = "";
+        private int _depth = 0;
+        private string stackString = "/";
+        private StringBuilder _pathBuilder = new StringBuilder("/", 128);
+        private List<int> _pathSegmentLengths = new List<int>(16);
+        private string _cachedPath = "/";
+        private bool _pathDirty = false;
         private Dictionary<string, string> attributeValues;
         private List<string> attributeNames;
         private IEnumerator<string> attributeEnumerator;
@@ -167,7 +172,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>
         public override int CurrentDepth
         {
-            get { return stack.Count; }
+            get { return _depth; }
         }
 
         /// <summary>
@@ -237,7 +242,13 @@ namespace Amazon.Runtime.Internal.Transform
             if (attributeEnumerator != null && attributeEnumerator.MoveNext())
             {
                 this.nodeType = XmlNodeType.Attribute;
-                stackString = string.Format(CultureInfo.InvariantCulture, "{0}/@{1}", StackToPath(stack), attributeEnumerator.Current);
+                int savedLength = _pathBuilder.Length;
+                _pathBuilder.Append("/@");
+                _pathBuilder.Append(attributeEnumerator.Current);
+                _cachedPath = _pathBuilder.ToString();
+                _pathBuilder.Length = savedLength;
+                stackString = _cachedPath;
+                _pathDirty = true;
             }
             else
             {
@@ -248,21 +259,21 @@ namespace Amazon.Runtime.Internal.Transform
                 if (currentlyProcessingEmptyElement)
                 {
                     nodeType = XmlNodeType.EndElement;
-                    stack.Pop();
-                    stackString = StackToPath(stack);
+                    _depth--;
+                    PopPathSegment();
+                    stackString = GetCurrentPathFromBuilder();
                     XmlReader.Read();
                     currentlyProcessingEmptyElement = false;
                 }
                 else if (XmlReader.IsEmptyElement)
                 {
-                    //This is a shorthand form of an empty element <element /> and we want to allow it
                     nodeType = XmlNodeType.Element;
-                    stack.Push(XmlReader.LocalName);
-                    stackString = StackToPath(stack);
+                    var localName = XmlReader.LocalName;
+                    _depth++;
+                    PushPathSegment(localName);
+                    stackString = GetCurrentPathFromBuilder();
                     currentlyProcessingEmptyElement = true;
                     nodeContent = String.Empty;
-
-                    //Defer reading so that on next pass we can treat this same element as the end element.
                 }
                 else
                 {
@@ -270,26 +281,24 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         case XmlNodeType.EndElement:
                             this.nodeType = XmlNodeType.EndElement;
-                            stack.Pop();
-                            stackString = StackToPath(stack);
+                            _depth--;
+                            PopPathSegment();
+                            stackString = GetCurrentPathFromBuilder();
                             XmlReader.Read();
                             break;
                         case XmlNodeType.Element:
                             nodeType = XmlNodeType.Element;
-                            stack.Push(XmlReader.LocalName);
-                            stackString = StackToPath(stack);
+                            var localName = XmlReader.LocalName;
+                            _depth++;
+                            PushPathSegment(localName);
+                            stackString = GetCurrentPathFromBuilder();
                             this.ReadElement();
                             break;
                         default:
-                            // Advance past any unhandled node types (e.g. Text nodes between sibling
-                            // elements in malformed/HTML responses) to prevent an infinite loop.
                             XmlReader.Read();
-
-                            // Ensure the context state does not continue to reflect the previous node
-                            // after advancing the underlying XmlReader past an unhandled node type.
                             nodeType = XmlNodeType.None;
                             nodeContent = string.Empty;
-                            stackString = StackToPath(stack);
+                            stackString = GetCurrentPathFromBuilder();
                             break;
                     }
                 }
@@ -309,34 +318,80 @@ namespace Amazon.Runtime.Internal.Transform
             get { return this.nodeType == XmlNodeType.Attribute; }
         }
 
+        public new bool TestExpression(string expression, int startingStackDepth)
+        {
+            if (this.nodeType == XmlNodeType.Attribute)
+            {
+                return UnmarshallerContext.TestExpression(expression, startingStackDepth, stackString, _depth);
+            }
+            return UnmarshallerContext.TestExpressionInternal(expression, startingStackDepth, _pathBuilder, _depth);
+        }
+
         #endregion
 
         #region Private Methods
 
-        private static string StackToPath(Stack<string> stack)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private void PushPathSegment(string segment)
         {
-            string path = null;
-            foreach (string s in stack.ToArray())
+            int addedLength = segment.Length;
+            if (_pathBuilder.Length > 1)
             {
-                path = null == path ? s : string.Format(CultureInfo.InvariantCulture, "{0}/{1}", s, path);
+                _pathBuilder.Append('/');
+                addedLength++;
             }
-            return "/" + path;
+            _pathBuilder.Append(segment);
+            _pathSegmentLengths.Add(addedLength);
+            _pathDirty = true;
         }
 
-        // Move to the next element, cache the attributes collection
-        // and attempt to cache the inner text of the element if applicable.
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private void PopPathSegment()
+        {
+            if (_pathSegmentLengths.Count == 0)
+                return;
+            int lastIndex = _pathSegmentLengths.Count - 1;
+            int lengthToRemove = _pathSegmentLengths[lastIndex];
+            _pathSegmentLengths.RemoveAt(lastIndex);
+            _pathBuilder.Length -= lengthToRemove;
+            _pathDirty = true;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private string GetCurrentPathFromBuilder()
+        {
+            if (_pathDirty)
+            {
+                _cachedPath = _pathBuilder.ToString();
+                _pathDirty = false;
+            }
+            return _cachedPath;
+        }
+
         private void ReadElement()
         {
             if (XmlReader.HasAttributes)
             {
-                attributeValues = new Dictionary<string, string>();
-                attributeNames = new List<string>();
+                if (attributeValues == null)
+                {
+                    attributeValues = new Dictionary<string, string>(4);
+                    attributeNames = new List<string>(4);
+                }
+                else
+                {
+                    attributeValues.Clear();
+                    attributeNames.Clear();
+                }
                 while (XmlReader.MoveToNextAttribute())
                 {
                     attributeValues.Add(XmlReader.LocalName, XmlReader.Value);
                     attributeNames.Add(XmlReader.LocalName);
                 }
                 attributeEnumerator = attributeNames.GetEnumerator();
+            }
+            else
+            {
+                attributeEnumerator = null;
             }
             XmlReader.MoveToElement();
             XmlReader.Read();

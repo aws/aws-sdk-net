@@ -199,7 +199,7 @@ namespace Amazon.Runtime.Internal.Transform
             return currentPath.EndsWith(expression, StringComparison.OrdinalIgnoreCase);
         }
 
-        private static bool TestExpression(string expression, int startingStackDepth, string currentPath, int currentDepth)
+        internal static bool TestExpression(string expression, int startingStackDepth, string currentPath, int currentDepth)
         {
             if (expression.Equals("."))
                 return true;
@@ -217,6 +217,41 @@ namespace Amazon.Runtime.Internal.Transform
                    && currentPath.Length > expression.Length
                    && currentPath[currentPath.Length - expression.Length - 1] == '/'
                    && currentPath.EndsWith(expression, StringComparison.OrdinalIgnoreCase);
+        }
+
+        internal static bool TestExpressionInternal(string expression, int startingStackDepth, System.Text.StringBuilder pathBuilder, int currentDepth)
+        {
+            if (expression.Equals("."))
+                return true;
+
+            int index = -1;
+            while ((index = expression.IndexOf("/", index + 1, StringComparison.Ordinal)) > -1)
+            {
+                if (expression[0] != '@')
+                {
+                    startingStackDepth++;
+                }
+            }
+
+            if (startingStackDepth != currentDepth)
+                return false;
+
+            int pathLength = pathBuilder.Length;
+            int exprLength = expression.Length;
+
+            if (pathLength <= exprLength)
+                return false;
+
+            if (pathBuilder[pathLength - exprLength - 1] != '/')
+                return false;
+
+            int pathOffset = pathLength - exprLength;
+            for (int i = 0; i < exprLength; i++)
+            {
+                if (char.ToUpperInvariant(pathBuilder[pathOffset + i]) != char.ToUpperInvariant(expression[i]))
+                    return false;
+            }
+            return true;
         }
 
         #region Abstract members
