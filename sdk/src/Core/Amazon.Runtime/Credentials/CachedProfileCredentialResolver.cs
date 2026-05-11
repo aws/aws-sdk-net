@@ -235,28 +235,26 @@ namespace Amazon.Runtime.Credentials
         /// instances may depend on the same file (e.g., <c>~/.aws/config</c>), but only one OS-level
         /// watcher is created per unique file path.
         /// <para />
-        /// When a change is detected, the <see cref="HasChanged"/> flag is set to true. Entries check
-        /// this flag on the fast path and reset it after re-resolving credentials.
+        /// When a change is detected, a monotonic <see cref="ChangeToken"/> is incremented. Each
+        /// <see cref="ProfileCredentialEntry"/> stores the token value it last observed; validity is
+        /// determined by comparing the stored token to the current token rather than resetting shared state.
+        /// This avoids cross-entry interference when multiple profiles depend on the same file.
         /// </summary>
         private sealed class SharedFileWatcher : IDisposable
         {
-            private volatile bool _hasChanged;
+            private long _changeToken;
             private readonly FileSystemWatcher _watcher;
 
             /// <summary>
-            /// Gets whether a file change has been detected since the last reset.
+            /// Gets the current monotonic change token. Each file system event increments this value.
+            /// Entries compare their last-seen token against this to determine staleness.
             /// </summary>
-            public bool HasChanged => _hasChanged;
+            public long ChangeToken => Interlocked.Read(ref _changeToken);
 
             public SharedFileWatcher(string filePath)
             {
                 _watcher = TryCreateWatcher(filePath);
             }
-
-            /// <summary>
-            /// Resets the change flag. Called after credentials have been re-resolved.
-            /// </summary>
-            public void ResetChangeFlag() => _hasChanged = false;
 
             private FileSystemWatcher TryCreateWatcher(string filePath)
             {
@@ -290,9 +288,9 @@ namespace Amazon.Runtime.Credentials
                 }
             }
 
-            private void OnFileEvent(object sender, FileSystemEventArgs e) => _hasChanged = true;
-            private void OnFileRenamed(object sender, RenamedEventArgs e) => _hasChanged = true;
-            private void OnWatcherError(object sender, ErrorEventArgs e) => _hasChanged = true;
+            private void OnFileEvent(object sender, FileSystemEventArgs e) => Interlocked.Increment(ref _changeToken);
+            private void OnFileRenamed(object sender, RenamedEventArgs e) => Interlocked.Increment(ref _changeToken);
+            private void OnWatcherError(object sender, ErrorEventArgs e) => Interlocked.Increment(ref _changeToken);
 
             public void Dispose()
             {
@@ -302,7 +300,9 @@ namespace Amazon.Runtime.Credentials
 
         /// <summary>
         /// Holds the per-profile resolution lock, cached credentials, and references to shared file watchers.
-        /// Cache invalidation is purely push-based via <see cref="SharedFileWatcher"/> flags.
+        /// Cache invalidation is purely push-based via <see cref="SharedFileWatcher"/> change tokens.
+        /// Each entry stores the last-seen token for each watcher at the time credentials were resolved;
+        /// staleness is determined by comparing stored tokens to current watcher tokens.
         /// </summary>
         private sealed class ProfileCredentialEntry : IDisposable
         {
@@ -315,6 +315,12 @@ namespace Amazon.Runtime.Credentials
             private SharedFileWatcher _credentialsWatcher;
             private SharedFileWatcher _configWatcher;
             private SharedFileWatcher _netSdkCredentialsWatcher;
+
+            // Last-seen change tokens captured at the time credentials were resolved.
+            // These are per-entry, so resolving one profile does not affect another.
+            private long _lastSeenCredentialsToken;
+            private long _lastSeenConfigToken;
+            private long _lastSeenNetSdkToken;
 
             /// <summary>
             /// Returns cached credentials if the backing files have not changed, otherwise null.
@@ -331,38 +337,45 @@ namespace Amazon.Runtime.Credentials
             }
 
             /// <summary>
-            /// Updates the cached credentials and resets watcher flags.
+            /// Updates the cached credentials and captures the current change tokens from each watcher.
             /// Must be called while holding <see cref="ResolutionLock"/>.
+            /// No shared state is reset — each entry independently tracks its own last-seen tokens.
             /// </summary>
             public void Update(
                 AWSCredentials credentials,
                 SharedFileWatcher credentialsWatcher, SharedFileWatcher configWatcher, SharedFileWatcher netSdkWatcher)
             {
-                // Store shared watcher references and reset their change flags.
+                // Store shared watcher references.
                 _credentialsWatcher = credentialsWatcher;
                 _configWatcher = configWatcher;
                 _netSdkCredentialsWatcher = netSdkWatcher;
-                credentialsWatcher?.ResetChangeFlag();
-                configWatcher?.ResetChangeFlag();
-                netSdkWatcher?.ResetChangeFlag();
+
+                // Capture the current change tokens. These are compared on the fast path
+                // to determine if the file has changed since this resolution.
+                _lastSeenCredentialsToken = credentialsWatcher?.ChangeToken ?? 0;
+                _lastSeenConfigToken = configWatcher?.ChangeToken ?? 0;
+                _lastSeenNetSdkToken = netSdkWatcher?.ChangeToken ?? 0;
 
                 // Store the new credentials last so concurrent readers on the fast path
-                // see the reset flags before they see the new credentials.
+                // see the captured tokens before they see the new credentials.
                 _cachedCredentials = credentials;
             }
 
             /// <summary>
             /// Returns true if any of the backing credential files have changed since the
-            /// last resolution. Checks the shared watcher flags — purely in-memory, no I/O.
+            /// last resolution. Compares per-entry last-seen tokens to current watcher tokens —
+            /// purely in-memory, no I/O, and no shared state modification.
             /// </summary>
             private bool HasFileChanged()
             {
-                if ((_credentialsWatcher != null && _credentialsWatcher.HasChanged) ||
-                    (_configWatcher != null && _configWatcher.HasChanged) ||
-                    (_netSdkCredentialsWatcher != null && _netSdkCredentialsWatcher.HasChanged))
-                {
+                if (_credentialsWatcher != null && _credentialsWatcher.ChangeToken != _lastSeenCredentialsToken)
                     return true;
-                }
+
+                if (_configWatcher != null && _configWatcher.ChangeToken != _lastSeenConfigToken)
+                    return true;
+
+                if (_netSdkCredentialsWatcher != null && _netSdkCredentialsWatcher.ChangeToken != _lastSeenNetSdkToken)
+                    return true;
 
                 return false;
             }
