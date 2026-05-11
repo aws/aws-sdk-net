@@ -163,6 +163,7 @@ namespace Amazon.Runtime.Internal.Transform
         {
             get
             {
+                EnsureStreamReader();
                 return (CurrentTokenType == JsonTokenType.None) && (!streamReader.EndOfStream);
             }
         }
