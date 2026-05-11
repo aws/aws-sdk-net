@@ -116,6 +116,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <inheritdoc/>
         public List<Document> Results { get; internal set; }
+        // add consumed capacity
 
         #endregion
 
@@ -392,6 +393,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var request = ConstructRequest(isAsync: true);
             var dynamoDbClient = Items[0].TransactionPart.TargetTable.DDBClient;
             var response = await dynamoDbClient.TransactGetItemsAsync(request, cancellationToken).ConfigureAwait(false);
+            // map capacity response
             return GetDocuments(response.Responses);
         }
 

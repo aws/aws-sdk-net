@@ -28,6 +28,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             await TestMultiTableDocumentBatchWriteHelper(hashTable, hashRangeTable);
             await TestMultiTableDocumentTransactWriteHelper(hashTable, hashRangeTable, conversion);
+            await TestMultiTableDocumentTransactGetHelper(hashTable,hashRangeTable, conversion);
         }
 
         [Theory]
@@ -324,6 +325,86 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.Equal(0, hTransactGet.Results.Count);
                 Assert.Equal(0, hrTransactGet.Results.Count);
             }
+        }
+
+        private async Task TestMultiTableDocumentTransactGetHelper(ITable hashTable, ITable hashRangeTable, DynamoDBEntryConversion conversion)
+        {
+            // Test multi-table transactional put
+            var multiTableDocumentTransactWrite = new MultiTableDocumentTransactWrite();
+
+            var hDoc1 = new Document
+            {
+                ["Id"] = 6011,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Price"] = 1000,
+                ["Garbage"] = "asdf"
+            };
+
+            var hDoc2 = new Document
+            {
+                ["Id"] = 6012,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Price"] = 500,
+                ["Garbage"] = "hjkl"
+            };
+
+            {
+                var transactWrite = hashTable.CreateTransactWrite();
+                transactWrite.AddDocumentToPut(hDoc1);
+                transactWrite.AddDocumentToPut(hDoc2);
+                multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
+            }
+
+            var hrDoc1 = new Document
+            {
+                ["Name"] = "Alan",
+                ["Age"] = 30,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Score"] = 100,
+                ["Garbage"] = "xcvb"
+            };
+
+            var hrDoc2 = new Document
+            {
+                ["Name"] = "Diane",
+                ["Age"] = 40,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Score"] = 150,
+                ["Garbage"] = "qwer"
+            };
+
+            {
+                var transactWrite = hashRangeTable.CreateTransactWrite();
+                transactWrite.AddDocumentToPut(hrDoc1);
+                transactWrite.AddDocumentToPut(hrDoc2);
+                multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
+            }
+
+            await multiTableDocumentTransactWrite.ExecuteAsync();
+
+            {
+                var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
+
+                var hTransactGet = hashTable.CreateTransactGet();
+                hTransactGet.AddKey(hashKey: 6011, new TransactGetItemOperationConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.TOTAL });
+                hTransactGet.AddKey(hashKey: 6012, new TransactGetItemOperationConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+                multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
+
+                var hrTransactGet = hashRangeTable.CreateTransactGet();
+                hrTransactGet.AddKey(hashKey: "Alan", rangeKey: 30, new TransactGetItemOperationConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.TOTAL });
+                hrTransactGet.AddKey(hashKey: "Diane", rangeKey: 40, new TransactGetItemOperationConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+                multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
+
+                await multiTableDocumentTransactGet.ExecuteAsync();
+                Assert.Equal(2, hTransactGet.Results.Count);
+                Assert.Equal(2, hrTransactGet.Results.Count);
+                Assert.True(AreValuesEqual(hDoc1, hTransactGet.Results[0], conversion));
+                Assert.True(AreValuesEqual(hDoc2, hTransactGet.Results[1], conversion));
+                Assert.True(AreValuesEqual(hrDoc1, hrTransactGet.Results[0], conversion));
+                Assert.True(AreValuesEqual(hrDoc2, hrTransactGet.Results[1], conversion));
+            }
+
+            
         }
 
         private bool AreValuesEqual(Document docA, Document docB, DynamoDBEntryConversion conversion = null)
