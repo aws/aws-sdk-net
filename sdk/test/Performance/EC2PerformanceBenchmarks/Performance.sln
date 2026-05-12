@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.6.33829.357
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11716.220 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Performance", "Performance.csproj", "{EF9F666C-DB56-4B98-A103-B2DA70658F35}"
 EndProject
@@ -28,6 +28,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoDBBenchmarks", "..\DynamoDBPerformanceBenchmarks\DynamoDBBenchmarks.csproj", "{FFD64C51-5C33-9057-A599-5EFC2A7DE91F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.CborProtocol.NetStandard", "..\..\..\..\extensions\src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetStandard.csproj", "{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClientGeneratorLib", "..\..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj", "{524C7BC1-C0E9-331A-7778-64838B83B234}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.CommonTest", "..\..\Common\AWSSDK.CommonTest.csproj", "{B4EBD623-7026-059D-F716-C9DAAFEDA3DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.SecurityToken.NetStandard", "..\..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.NetStandard.csproj", "{38E53260-7C07-B1CB-F5D6-667DBFEFDD16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Lambda.NetStandard", "..\..\..\src\Services\Lambda\AWSSDK.Lambda.NetStandard.csproj", "{81CE53DE-295C-B1A4-CF67-21FAE667AFE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Core.NetFramework", "..\..\..\src\Core\AWSSDK.Core.NetFramework.csproj", "{62931933-8A83-75D5-047D-E5B36DA8F7AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.S3.NetFramework", "..\..\..\src\Services\S3\AWSSDK.S3.NetFramework.csproj", "{9553F987-5195-FA27-D05B-A89AAFA4E6EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +99,30 @@ Global
 		{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC3E3614-3BB1-79F6-40ED-447C07AE49D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{524C7BC1-C0E9-331A-7778-64838B83B234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{524C7BC1-C0E9-331A-7778-64838B83B234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{524C7BC1-C0E9-331A-7778-64838B83B234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{524C7BC1-C0E9-331A-7778-64838B83B234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4EBD623-7026-059D-F716-C9DAAFEDA3DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4EBD623-7026-059D-F716-C9DAAFEDA3DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4EBD623-7026-059D-F716-C9DAAFEDA3DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4EBD623-7026-059D-F716-C9DAAFEDA3DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38E53260-7C07-B1CB-F5D6-667DBFEFDD16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38E53260-7C07-B1CB-F5D6-667DBFEFDD16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38E53260-7C07-B1CB-F5D6-667DBFEFDD16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38E53260-7C07-B1CB-F5D6-667DBFEFDD16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81CE53DE-295C-B1A4-CF67-21FAE667AFE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81CE53DE-295C-B1A4-CF67-21FAE667AFE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81CE53DE-295C-B1A4-CF67-21FAE667AFE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81CE53DE-295C-B1A4-CF67-21FAE667AFE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62931933-8A83-75D5-047D-E5B36DA8F7AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62931933-8A83-75D5-047D-E5B36DA8F7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62931933-8A83-75D5-047D-E5B36DA8F7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62931933-8A83-75D5-047D-E5B36DA8F7AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9553F987-5195-FA27-D05B-A89AAFA4E6EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9553F987-5195-FA27-D05B-A89AAFA4E6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9553F987-5195-FA27-D05B-A89AAFA4E6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9553F987-5195-FA27-D05B-A89AAFA4E6EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
