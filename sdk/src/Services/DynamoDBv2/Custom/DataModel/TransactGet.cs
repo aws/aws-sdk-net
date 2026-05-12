@@ -145,7 +145,10 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (_storageConfig.ProjectionExpression != null && _storageConfig.ProjectionExpression.IsSet)
             {
-                DocumentTransaction.AddKeyHelper(key, _storageConfig.ProjectionExpression);
+                DocumentTransaction.AddKeyHelper(key, new TransactGetItemOperationConfig()
+                {
+                    ProjectionExpression = _storageConfig.ProjectionExpression,
+                });
                 return;
             }
 

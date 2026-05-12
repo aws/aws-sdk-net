@@ -13,13 +13,13 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime.Telemetry.Tracing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -205,19 +205,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Key = key,
                 TransactionPart = this,
                 OperationConfig = operationConfig
-            });
-        }
-
-        internal void AddKeyHelper(Key key, Expression projectionExpression)
-        {
-            Items.Add(new TransactGetRequestItem
-            {
-                Key = key,
-                TransactionPart = this,
-                OperationConfig = new TransactGetItemOperationConfig
-                { 
-                    ProjectionExpression = projectionExpression 
-                }
             });
         }
 

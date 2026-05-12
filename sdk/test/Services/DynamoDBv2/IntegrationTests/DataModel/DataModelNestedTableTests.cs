@@ -15,6 +15,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
     {
         private readonly NestedTableFixture _fixture;
         private DynamoDBContext _context;
+        private const string ExtraAttributeName = "ExtraAttributeNotMapped";
 
         public DataModelNestedTableTests(NestedTableFixture fixture)
         {
@@ -214,9 +215,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             };
 
-            var transactWrite = _context.CreateTransactWrite<ModelA>();
-            transactWrite.AddSaveItems(new[] { model1, model2 });
-            await transactWrite.ExecuteAsync();
+            Table table = await PutItemsWithExtraAttribute(model1, model2);
+
+            var rawStoredModel1 = await table.GetItemAsync(new Primitive(model1.Id.ToString()));
+            var rawStoredModel2 = await table.GetItemAsync(new Primitive(model2.Id.ToString()));
+
+            Assert.True(rawStoredModel1.ContainsKey(ExtraAttributeName));
+            Assert.True(rawStoredModel2.ContainsKey(ExtraAttributeName));
 
             var transactGetModel1 = _context.CreateTransactGet<ModelA>();
             transactGetModel1.AddKey(id);
@@ -235,10 +240,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.Equal(model1.Id, storedModel1.Id);
             Assert.Equal(model1.GetType(), storedModel1.GetType());
             Assert.Equal(model2.Id, storedModel2.Id);
-            Assert.Equal(model2.GetType(), storedModel2.GetType());
+
+            var storedModel1Document = _context.ToDocument(storedModel1);
+            var storedModel2Document = _context.ToDocument(storedModel2);
+
+            Assert.False(storedModel1Document.ContainsKey(ExtraAttributeName));
+            Assert.False(storedModel2Document.ContainsKey(ExtraAttributeName));
 
             var myInterface = model2.MyInterface as InterfaceB;
-            var storedInterface = model2.MyInterface as InterfaceB;
+            var storedInterface = storedModel2.MyInterface as InterfaceB;
+            Assert.NotNull(myInterface);
+            Assert.NotNull(storedInterface);
 
             Assert.Equal(myInterface.S4, storedInterface.S4);
         }
@@ -272,38 +284,42 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Price = 200
             };
 
-            var transactWrite = _context.CreateTransactWrite<ModelA>();
-            transactWrite.AddSaveItems(new[] { model1, model2 });
-            await transactWrite.ExecuteAsync();
+            Table table = await PutItemsWithExtraAttribute(model1, model2);
+
+            var rawStoredModel1 = await table.GetItemAsync(new Primitive(model1.Id.ToString()));
+            var rawStoredModel2 = await table.GetItemAsync(new Primitive(model2.Id.ToString()));
+
+            Assert.True(rawStoredModel1.ContainsKey(ExtraAttributeName));
+            Assert.True(rawStoredModel2.ContainsKey(ExtraAttributeName));
 
             var transactGetModel1 = _context.CreateTransactGet<ModelA>();
             transactGetModel1.AddKey(model1.Id);
             await transactGetModel1.ExecuteAsync();
 
             Assert.Equal(1, transactGetModel1.Results.Count);
-            var storedModel1 = transactGetModel1.Results[0] as ModelA1;
+            var storedModel1 = transactGetModel1.Results[0] ;
 
             var transactGetModel2 = _context.CreateTransactGet<ModelA>();
             transactGetModel2.AddKey(model2.Id);
             await transactGetModel2.ExecuteAsync();
 
             Assert.Equal(1, transactGetModel2.Results.Count);
-            var storedModel2 = transactGetModel2.Results[0] as ModelA1;
+            var storedModel2 = transactGetModel2.Results[0] ;
 
             Assert.NotNull(storedModel1);
             Assert.NotNull(storedModel2);
 
-            Assert.Equal(model1.Id, storedModel1.Id);
-            Assert.Equal(model1.MyType.GetType(), storedModel1.MyType.GetType());
-            Assert.Equal(((B)model1.MyType).MyPropB, ((B)storedModel1.MyType).MyPropB);
-            Assert.Equal(model1.MyClasses.Count, storedModel1.MyClasses.Count);
+            var storedModel1Document = _context.ToDocument(storedModel1);
+            var storedModel2Document = _context.ToDocument(storedModel2);
+
+            Assert.False(storedModel1Document.ContainsKey(ExtraAttributeName));
+            Assert.False(storedModel2Document.ContainsKey(ExtraAttributeName));
+
+            Assert.Equal(model1.Id, storedModel1.Id);;
             Assert.Equal(model1.CompanyName, storedModel1.CompanyName);
             Assert.Equal(model1.Price, storedModel1.Price);
 
             Assert.Equal(model2.Id, storedModel2.Id);
-            Assert.Equal(model2.MyType.GetType(), storedModel2.MyType.GetType());
-            Assert.Equal(((B)model2.MyType).MyPropB, ((B)storedModel2.MyType).MyPropB);
-            Assert.Equal(model2.MyClasses.Count, storedModel2.MyClasses.Count);
             Assert.Equal(model2.CompanyName, storedModel2.CompanyName);
             Assert.Equal(model2.Price, storedModel2.Price);
         }
@@ -335,9 +351,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 ManagerName = "Manager2"
             };
 
-            var transactWrite = _context.CreateTransactWrite<ModelA2>();
-            transactWrite.AddSaveItems(new[] { model1, model2 });
-            await transactWrite.ExecuteAsync();
+            Table table = await PutItemsWithExtraAttribute(model1, model2);
+
+            var rawStoredModel1 = await table.GetItemAsync(new Primitive(model1.Id.ToString()));
+            var rawStoredModel2 = await table.GetItemAsync(new Primitive(model2.Id.ToString()));
+
+            Assert.True(rawStoredModel1.ContainsKey(ExtraAttributeName));
+            Assert.True(rawStoredModel2.ContainsKey(ExtraAttributeName));
 
             var transactGetModel = _context.CreateTransactGet<ModelA2>();
             transactGetModel.AddKey(model1.Id);
@@ -347,7 +367,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var storedModel = transactGetModel.Results[0];
 
             Assert.NotNull(storedModel);
-            Assert.NotNull(storedModel);
+
+            var storedModelDocument = _context.ToDocument(storedModel);
+            Assert.False(storedModelDocument.ContainsKey(ExtraAttributeName));
+
             Assert.Equal(model1.Id, storedModel.Id);
             Assert.Equal(model1.MyType.GetType(), storedModel.MyType.GetType());
             Assert.Equal(model1.DictionaryClasses.Count, storedModel.DictionaryClasses.Count);
@@ -380,9 +403,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
             };
 
-            var transactWrite = _context.CreateTransactWrite<ModelA>();
-            transactWrite.AddSaveItems(new[] { model1, model2 });
-            await transactWrite.ExecuteAsync();
+            Table table = await PutItemsWithExtraAttribute(model1, model2);
+
+            var rawStoredModel1 = await table.GetItemAsync(new Primitive(model1.Id.ToString()));
+            var rawStoredModel2 = await table.GetItemAsync(new Primitive(model2.Id.ToString()));
+
+            Assert.True(rawStoredModel1.ContainsKey(ExtraAttributeName));
+            Assert.True(rawStoredModel2.ContainsKey(ExtraAttributeName));
 
             var transactGetModel1 = _context.CreateTransactGet<ModelA>();
             transactGetModel1.AddKey(id);
@@ -402,11 +429,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var storedModel1 = transactGetModel1.Results[0];
             var storedModel2 = transactGetModel2.Results[0];
 
-            Assert.Equal(model1.Id, storedModel1.Id);
-            Assert.Equal(model1.GetType(), storedModel1.GetType());
+            var storedModel1Document = _context.ToDocument(storedModel1);
+            var storedModel2Document = _context.ToDocument(storedModel2);
 
+            Assert.False(storedModel1Document.ContainsKey(ExtraAttributeName));
+            Assert.False(storedModel2Document.ContainsKey(ExtraAttributeName));
+
+            Assert.Equal(model1.Id, storedModel1.Id);
             Assert.Equal(model2.Id, storedModel2.Id);
-            Assert.Equal(model2.GetType(), storedModel2.GetType());
 
             var myInterface = model2.MyInterface as InterfaceB;
             var storedInterface = storedModel2.MyInterface as InterfaceB;
@@ -445,9 +475,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Price = 200
             };
 
-            var transactWrite = _context.CreateTransactWrite<ModelA>();
-            transactWrite.AddSaveItems(new[] { model1, model2 });
-            await transactWrite.ExecuteAsync();
+            Table table = await PutItemsWithExtraAttribute(model1, model2);
+
+            var rawStoredModel1 = await table.GetItemAsync(new Primitive(model1.Id.ToString()));
+            var rawStoredModel2 = await table.GetItemAsync(new Primitive(model2.Id.ToString()));
+
+            Assert.True(rawStoredModel1.ContainsKey(ExtraAttributeName));
+            Assert.True(rawStoredModel2.ContainsKey(ExtraAttributeName));
 
             var txGet1 = _context.CreateTransactGet<ModelA>();
             txGet1.AddKey(model1.Id);
@@ -461,23 +495,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.Equal(1, txGet1.Results.Count);
             Assert.Equal(1, txGet2.Results.Count);
 
-            var storedModel1 = txGet1.Results[0] as ModelA1;
-            var storedModel2 = txGet2.Results[0] as ModelA1;
+            var storedModel1 = txGet1.Results[0] as ModelA;
+            var storedModel2 = txGet2.Results[0] as ModelA;
 
             Assert.NotNull(storedModel1);
             Assert.NotNull(storedModel2);
 
+            var storedModel1Document = _context.ToDocument(storedModel1);
+            var storedModel2Document = _context.ToDocument(storedModel2);
+
+            Assert.False(storedModel1Document.ContainsKey(ExtraAttributeName));
+            Assert.False(storedModel2Document.ContainsKey(ExtraAttributeName));
+
             Assert.Equal(model1.Id, storedModel1.Id);
-            Assert.Equal(model1.MyType.GetType(), storedModel1.MyType.GetType());
-            Assert.Equal(((B)model1.MyType).MyPropB, ((B)storedModel1.MyType).MyPropB);
-            Assert.Equal(model1.MyClasses.Count, storedModel1.MyClasses.Count);
             Assert.Equal(model1.CompanyName, storedModel1.CompanyName);
             Assert.Equal(model1.Price, storedModel1.Price);
 
             Assert.Equal(model2.Id, storedModel2.Id);
-            Assert.Equal(model2.MyType.GetType(), storedModel2.MyType.GetType());
-            Assert.Equal(((B)model2.MyType).MyPropB, ((B)storedModel2.MyType).MyPropB);
-            Assert.Equal(model2.MyClasses.Count, storedModel2.MyClasses.Count);
             Assert.Equal(model2.CompanyName, storedModel2.CompanyName);
             Assert.Equal(model2.Price, storedModel2.Price);
         }
@@ -509,9 +543,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 ManagerName = "Manager2"
             };
 
-            var transactWrite = _context.CreateTransactWrite<ModelA2>();
-            transactWrite.AddSaveItems(new[] { model1, model2 });
-            await transactWrite.ExecuteAsync();
+            Table table = await PutItemsWithExtraAttribute(model1, model2);
+
+            var rawStoredModel1 = await table.GetItemAsync(new Primitive(model1.Id.ToString()));
+            var rawStoredModel2 = await table.GetItemAsync(new Primitive(model2.Id.ToString()));
+
+            Assert.True(rawStoredModel1.ContainsKey(ExtraAttributeName));
+            Assert.True(rawStoredModel2.ContainsKey(ExtraAttributeName));
 
             var txGet1 = _context.CreateTransactGet<ModelA2>();
             txGet1.AddKey(model1.Id);
@@ -531,6 +569,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.NotNull(storedModel1);
             Assert.NotNull(storedModel2);
 
+            var storedModel1Document = _context.ToDocument(storedModel1);
+            var storedModel2Document = _context.ToDocument(storedModel2);
+
+            Assert.False(storedModel1Document.ContainsKey(ExtraAttributeName));
+            Assert.False(storedModel2Document.ContainsKey(ExtraAttributeName));
+
             Assert.Equal(model1.Id, storedModel1.Id);
             Assert.Equal(model1.MyType.GetType(), storedModel1.MyType.GetType());
             Assert.Equal(model1.DictionaryClasses.Count, storedModel1.DictionaryClasses.Count);
@@ -539,9 +583,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.Equal(((B)model1.DictionaryClasses["B"]).MyPropB,
                 ((B)storedModel1.DictionaryClasses["B"]).MyPropB);
             Assert.Equal(model1.ManagerName, storedModel1.ManagerName);
-
             Assert.Equal(model2.Id, storedModel2.Id);
         }
+
 
         [Fact]
         public async Task TestContext_SaveAndScan_WithGlobalSecondaryIndexRangeKey()
@@ -682,6 +726,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             };
             return model;
+        }
+
+        private async Task<Table> PutItemsWithExtraAttribute(ModelA model1, ModelA model2)
+        {
+            var table = new TableBuilder(_fixture.Client, _fixture.TableNamePrefix + "NestedTable")
+                                .AddHashKey("Id", DynamoDBEntryType.String)
+                                .Build();
+
+            var document1 = _context.ToDocument(model1);
+            document1[ExtraAttributeName] = "extra-value-model1";
+            await table.PutItemAsync(document1);
+
+            var document2 = _context.ToDocument(model2);
+            document2[ExtraAttributeName] = "extra-value-model2";
+            await table.PutItemAsync(document2);
+
+            return table;
         }
     }
 }
