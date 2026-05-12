@@ -4544,6 +4544,76 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  GenerateRecommendedPolicyV2
+
+
+        /// <summary>
+        /// Begins the recommended policy generation to remediate a Security Hub finding. <c>GenerateRecommendedPolicyV2</c>
+        /// only supports findings for unused permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateRecommendedPolicyV2 service method.</param>
+        /// 
+        /// <returns>The response from the GenerateRecommendedPolicyV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GenerateRecommendedPolicyV2">REST API Reference for GenerateRecommendedPolicyV2 Operation</seealso>
+        GenerateRecommendedPolicyV2Response GenerateRecommendedPolicyV2(GenerateRecommendedPolicyV2Request request);
+
+
+
+        /// <summary>
+        /// Begins the recommended policy generation to remediate a Security Hub finding. <c>GenerateRecommendedPolicyV2</c>
+        /// only supports findings for unused permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateRecommendedPolicyV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateRecommendedPolicyV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GenerateRecommendedPolicyV2">REST API Reference for GenerateRecommendedPolicyV2 Operation</seealso>
+        Task<GenerateRecommendedPolicyV2Response> GenerateRecommendedPolicyV2Async(GenerateRecommendedPolicyV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAdministratorAccount
 
 
@@ -5949,6 +6019,76 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMembers">REST API Reference for GetMembers Operation</seealso>
         Task<GetMembersResponse> GetMembersAsync(GetMembersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetRecommendedPolicyV2
+
+
+        /// <summary>
+        /// Retrieves the recommended policy to remediate a Security Hub finding. <c>GetRecommendedPolicyV2</c>
+        /// only supports findings for unused permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommendedPolicyV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetRecommendedPolicyV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetRecommendedPolicyV2">REST API Reference for GetRecommendedPolicyV2 Operation</seealso>
+        GetRecommendedPolicyV2Response GetRecommendedPolicyV2(GetRecommendedPolicyV2Request request);
+
+
+
+        /// <summary>
+        /// Retrieves the recommended policy to remediate a Security Hub finding. <c>GetRecommendedPolicyV2</c>
+        /// only supports findings for unused permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommendedPolicyV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecommendedPolicyV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetRecommendedPolicyV2">REST API Reference for GetRecommendedPolicyV2 Operation</seealso>
+        Task<GetRecommendedPolicyV2Response> GetRecommendedPolicyV2Async(GetRecommendedPolicyV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

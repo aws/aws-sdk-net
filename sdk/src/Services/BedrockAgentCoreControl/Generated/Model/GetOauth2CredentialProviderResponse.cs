@@ -144,7 +144,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason for the failure if the OAuth2 credential provider is in a failed state.
+        /// The reason for failure if the OAuth2 credential provider is in a failed state.
         /// </para>
         /// </summary>
         public string FailureReason

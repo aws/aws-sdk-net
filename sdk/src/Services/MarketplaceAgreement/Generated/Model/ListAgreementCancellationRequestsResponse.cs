@@ -64,8 +64,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to retrieve the next page of results. If <c>null</c>, there are no more results
-        /// to retrieve.
+        /// The token used for pagination. The field is <c>null</c> if there are no more results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

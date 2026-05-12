@@ -198,6 +198,36 @@ namespace Amazon.BedrockAgentCoreControl.Model
         IListOnlineEvaluationConfigsPaginator ListOnlineEvaluationConfigs(ListOnlineEvaluationConfigsRequest request);
 
         /// <summary>
+        /// Paginator for ListPaymentConnectors operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPaymentConnectorsPaginator ListPaymentConnectors(ListPaymentConnectorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPaymentCredentialProviders operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPaymentCredentialProvidersPaginator ListPaymentCredentialProviders(ListPaymentCredentialProvidersRequest request);
+
+        /// <summary>
+        /// Paginator for ListPaymentManagers operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPaymentManagersPaginator ListPaymentManagers(ListPaymentManagersRequest request);
+
+        /// <summary>
         /// Paginator for ListPolicies operation
         ///</summary>
         [AWSPaginator(

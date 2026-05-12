@@ -34,8 +34,30 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class DateRange
     {
+        private DateRangeComparison _comparison;
         private DateRangeUnit _unit;
         private int? _value;
+
+        /// <summary>
+        /// Gets and sets the property Comparison. 
+        /// <para>
+        /// The condition to apply to a date range filter. If you specify <c>WITHIN</c>, Security
+        /// Hub filters for dates within the specified date range. If you specify <c>OLDER_THAN</c>,
+        /// Security Hub filters for dates before the specified date range. If you don't specify
+        /// a value, the default is <c>WITHIN</c>.
+        /// </para>
+        /// </summary>
+        public DateRangeComparison Comparison
+        {
+            get { return this._comparison; }
+            set { this._comparison = value; }
+        }
+
+        // Check to see if Comparison property is set
+        internal bool IsSetComparison()
+        {
+            return this._comparison != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Unit. 

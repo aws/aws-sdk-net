@@ -445,6 +445,12 @@
     <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.InvoiceSummary.CommercialInvoiceId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.InvoiceSummary.InvoiceId</property>
     <min>0</min>
     <max>1024</max>
@@ -639,6 +645,12 @@
     <property>Amazon.Invoicing.Model.ResourceTag.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.SupplementalDocument.DocumentId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Invoicing.Model.SupplementalDocument.DocumentUrl</property>

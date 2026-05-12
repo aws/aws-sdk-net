@@ -173,6 +173,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListPaymentConnectors operation
+        ///</summary>
+        public IListPaymentConnectorsPaginator ListPaymentConnectors(ListPaymentConnectorsRequest request) 
+        {
+            return new ListPaymentConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPaymentCredentialProviders operation
+        ///</summary>
+        public IListPaymentCredentialProvidersPaginator ListPaymentCredentialProviders(ListPaymentCredentialProvidersRequest request) 
+        {
+            return new ListPaymentCredentialProvidersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPaymentManagers operation
+        ///</summary>
+        public IListPaymentManagersPaginator ListPaymentManagers(ListPaymentManagersRequest request) 
+        {
+            return new ListPaymentManagersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPolicies operation
         ///</summary>
         public IListPoliciesPaginator ListPolicies(ListPoliciesRequest request) 

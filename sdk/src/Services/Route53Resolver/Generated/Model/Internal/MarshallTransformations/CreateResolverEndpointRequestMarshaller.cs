@@ -87,6 +87,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Direction);
             }
 
+            if(publicRequest.IsSetDns64Enabled())
+            {
+                context.Writer.WritePropertyName("Dns64Enabled");
+                context.Writer.WriteBooleanValue(publicRequest.Dns64Enabled.Value);
+            }
+
             if(publicRequest.IsSetIpAddresses())
             {
                 context.Writer.WritePropertyName("IpAddresses");
@@ -101,6 +107,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIpv6InternetAccessEnabled())
+            {
+                context.Writer.WritePropertyName("Ipv6InternetAccessEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.Ipv6InternetAccessEnabled.Value);
             }
 
             if(publicRequest.IsSetName())

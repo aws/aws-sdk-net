@@ -37,6 +37,7 @@ namespace Amazon.MedicalImaging.Model
         private string _dataAccessRoleArn;
         private string _datastoreId;
         private DateTime? _endedAt;
+        private ImportConfiguration _importConfiguration;
         private string _inputs3Uri;
         private string _jobId;
         private string _jobName;
@@ -99,6 +100,24 @@ namespace Amazon.MedicalImaging.Model
         internal bool IsSetEndedAt()
         {
             return this._endedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportConfiguration. 
+        /// <para>
+        /// The object containing <c>DicomJsonMetadataImportConfiguration</c>.
+        /// </para>
+        /// </summary>
+        public ImportConfiguration ImportConfiguration
+        {
+            get { return this._importConfiguration; }
+            set { this._importConfiguration = value; }
+        }
+
+        // Check to see if ImportConfiguration property is set
+        internal bool IsSetImportConfiguration()
+        {
+            return this._importConfiguration != null;
         }
 
         /// <summary>

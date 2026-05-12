@@ -21,10 +21,12 @@ using System.Threading.Tasks;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
 
 namespace AWSSDK.Benchmarks
 {
     [MemoryDiagnoser]
+    [Config(typeof(SdkBenchmarkConfig))]
     public class SQSBenchmarks
     {
         private IAmazonSQS _sqsClient;

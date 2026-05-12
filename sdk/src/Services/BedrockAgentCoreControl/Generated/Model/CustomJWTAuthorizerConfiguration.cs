@@ -180,9 +180,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property PrivateEndpointOverrides. 
         /// <para>
-        /// A list of private endpoint overrides for the JWT authorizer. Each override maps a
-        /// specific domain to a private endpoint, enabling secure connectivity through VPC Lattice
-        /// resource configurations.
+        /// The private endpoint overrides for the custom JWT authorizer configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

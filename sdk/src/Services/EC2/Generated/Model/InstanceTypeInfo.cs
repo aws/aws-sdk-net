@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         private ProcessorInfo _processorInfo;
         private RebootMigrationSupport _rebootMigrationSupport;
         private List<string> _supportedBootModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _supportedInRegion;
         private List<string> _supportedRootDeviceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _supportedUsageClasses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _supportedVirtualizationTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -562,6 +563,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSupportedBootModes()
         {
             return this._supportedBootModes != null && (this._supportedBootModes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedInRegion. 
+        /// <para>
+        /// Indicates whether the instance type is supported in the current Region.
+        /// </para>
+        /// </summary>
+        public bool? SupportedInRegion
+        {
+            get { return this._supportedInRegion; }
+            set { this._supportedInRegion = value; }
+        }
+
+        // Check to see if SupportedInRegion property is set
+        internal bool IsSetSupportedInRegion()
+        {
+            return this._supportedInRegion.HasValue; 
         }
 
         /// <summary>

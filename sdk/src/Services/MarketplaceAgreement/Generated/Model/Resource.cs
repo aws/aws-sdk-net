@@ -65,7 +65,8 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type of the resource, which is the product. Values include <c>SaaSProduct</c> or <c>AmiProduct</c>.
+        /// Type of the resource, which is the product (for example, <c>SaaSProduct</c>, <c>AmiProduct</c>,
+        /// <c>ContainerProduct</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -58,6 +58,16 @@ namespace Amazon.MediaTailor.Model
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
 
         /// <summary>
+        /// Paginator for ListFunctions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListFunctionsPaginator ListFunctions(ListFunctionsRequest request);
+
+        /// <summary>
         /// Paginator for ListLiveSources operation
         ///</summary>
         [AWSPaginator(

@@ -63,6 +63,12 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.InvoicingEntity);
             }
 
+            if(requestObject.IsSetReceiverRole())
+            {
+                context.Writer.WritePropertyName("ReceiverRole");
+                context.Writer.WriteStringValue(requestObject.ReceiverRole);
+            }
+
             if(requestObject.IsSetTimeInterval())
             {
                 context.Writer.WritePropertyName("TimeInterval");

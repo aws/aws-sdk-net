@@ -34,6 +34,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class DescribeBotLocaleResponse : AmazonWebServiceResponse
     {
+        private AudioFillerSettings _audioFillerSettings;
         private string _botId;
         private List<BotLocaleHistoryEvent> _botLocaleHistoryEvents = AWSConfigs.InitializeCollections ? new List<BotLocaleHistoryEvent>() : null;
         private BotLocaleStatus _botLocaleStatus;
@@ -54,6 +55,24 @@ namespace Amazon.LexModelsV2.Model
         private SpeechRecognitionSettings _speechRecognitionSettings;
         private UnifiedSpeechSettings _unifiedSpeechSettings;
         private VoiceSettings _voiceSettings;
+
+        /// <summary>
+        /// Gets and sets the property AudioFillerSettings. 
+        /// <para>
+        /// The audio filler settings configured for the bot locale.
+        /// </para>
+        /// </summary>
+        public AudioFillerSettings AudioFillerSettings
+        {
+            get { return this._audioFillerSettings; }
+            set { this._audioFillerSettings = value; }
+        }
+
+        // Check to see if AudioFillerSettings property is set
+        internal bool IsSetAudioFillerSettings()
+        {
+            return this._audioFillerSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BotId. 

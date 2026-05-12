@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
-    /// The request could not be completed due to a conflict with the current state of the
-    /// resource.
+    /// Request was denied due to a resource conflict.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -135,7 +134,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The unique identifier for the resource.
+        /// The unique identifier of the resource involved in the conflict.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -154,7 +153,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource.
+        /// The type of the resource involved in the conflict.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

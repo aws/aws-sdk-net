@@ -93,6 +93,17 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DataAccessRoleArn);
             }
 
+            if(publicRequest.IsSetImportConfiguration())
+            {
+                context.Writer.WritePropertyName("importConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImportConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ImportConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetInputOwnerAccountId())
             {
                 context.Writer.WritePropertyName("inputOwnerAccountId");

@@ -83,7 +83,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time when the payment request was created, in ISO 8601 format.
+        /// The time when the payment request was created.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt

@@ -34,7 +34,45 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class FilesystemConfiguration
     {
+        private EfsAccessPointConfiguration _efsAccessPoint;
+        private S3FilesAccessPointConfiguration _s3FilesAccessPoint;
         private SessionStorageConfiguration _sessionStorage;
+
+        /// <summary>
+        /// Gets and sets the property EfsAccessPoint. 
+        /// <para>
+        /// Configuration for an Amazon EFS access point to mount into the AgentCore Runtime.
+        /// </para>
+        /// </summary>
+        public EfsAccessPointConfiguration EfsAccessPoint
+        {
+            get { return this._efsAccessPoint; }
+            set { this._efsAccessPoint = value; }
+        }
+
+        // Check to see if EfsAccessPoint property is set
+        internal bool IsSetEfsAccessPoint()
+        {
+            return this._efsAccessPoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3FilesAccessPoint. 
+        /// <para>
+        /// Configuration for an Amazon S3 Files access point to mount into the AgentCore Runtime.
+        /// </para>
+        /// </summary>
+        public S3FilesAccessPointConfiguration S3FilesAccessPoint
+        {
+            get { return this._s3FilesAccessPoint; }
+            set { this._s3FilesAccessPoint = value; }
+        }
+
+        // Check to see if S3FilesAccessPoint property is set
+        internal bool IsSetS3FilesAccessPoint()
+        {
+            return this._s3FilesAccessPoint != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SessionStorage. 
