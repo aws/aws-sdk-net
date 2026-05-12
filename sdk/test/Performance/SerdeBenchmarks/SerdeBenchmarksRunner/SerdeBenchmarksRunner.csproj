@@ -27,8 +27,6 @@
     <ProjectReference Include="..\..\..\Services\RpcCborDataPlane\AWSSDK.RpcCborDataPlane.NetStandard.csproj" />
     <ProjectReference Include="..\..\..\Services\RestXmlDataPlane\AWSSDK.RestXmlDataPlane.NetStandard.csproj" />
     <ProjectReference Include="..\..\..\Services\QueryDataPlane\AWSSDK.QueryDataPlane.NetStandard.csproj" />
-    <!-- Real SQS service for protocol-level profiling (awsJson1.0 with X-Amz-Query-Mode) -->
-    <ProjectReference Include="..\..\..\..\src\Services\SQS\AWSSDK.SQS.NetStandard.csproj" />
     <!-- Extensions for CBOR protocol support -->
     <ProjectReference Include="..\..\..\..\..\extensions\src\AWSSDK.Extensions.CborProtocol\AWSSDK.Extensions.CborProtocol.NetStandard.csproj" />
   </ItemGroup>
