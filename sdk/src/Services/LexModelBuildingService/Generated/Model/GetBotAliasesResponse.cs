@@ -32,6 +32,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// This is the response object from the GetBotAliases operation.
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class GetBotAliasesResponse : AmazonWebServiceResponse
     {
         private List<BotAliasMetadata> _botAliases = AWSConfigs.InitializeCollections ? new List<BotAliasMetadata>() : null;

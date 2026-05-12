@@ -35,11 +35,33 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class AutomatedReasoningPolicyBuildResultAssets
     {
+        private AutomatedReasoningPolicyBuildResultAssetManifest _assetManifest;
         private AutomatedReasoningPolicyBuildLog _buildLog;
+        private AutomatedReasoningPolicySourceDocument _document;
+        private AutomatedReasoningPolicyFidelityReport _fidelityReport;
         private AutomatedReasoningPolicyGeneratedTestCases _generatedTestCases;
         private AutomatedReasoningPolicyDefinition _policyDefinition;
         private AutomatedReasoningPolicyScenarios _policyScenarios;
         private AutomatedReasoningPolicyDefinitionQualityReport _qualityReport;
+
+        /// <summary>
+        /// Gets and sets the property AssetManifest. 
+        /// <para>
+        /// A manifest listing all available artifacts produced by the build workflow. This provides
+        /// a catalog of all assets that can be retrieved, including their types, names, and identifiers.
+        /// </para>
+        /// </summary>
+        public AutomatedReasoningPolicyBuildResultAssetManifest AssetManifest
+        {
+            get { return this._assetManifest; }
+            set { this._assetManifest = value; }
+        }
+
+        // Check to see if AssetManifest property is set
+        internal bool IsSetAssetManifest()
+        {
+            return this._assetManifest != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BuildLog. 
@@ -58,6 +80,45 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetBuildLog()
         {
             return this._buildLog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Document. 
+        /// <para>
+        /// A source document that was used as input during the build workflow. This allows you
+        /// to retrieve the original documents that were processed to generate the policy.
+        /// </para>
+        /// </summary>
+        public AutomatedReasoningPolicySourceDocument Document
+        {
+            get { return this._document; }
+            set { this._document = value; }
+        }
+
+        // Check to see if Document property is set
+        internal bool IsSetDocument()
+        {
+            return this._document != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FidelityReport. 
+        /// <para>
+        /// A comprehensive fidelity report that measures how accurately the generated policy
+        /// represents the source documents. The report includes coverage and accuracy scores,
+        /// along with detailed grounding information for rules and variables.
+        /// </para>
+        /// </summary>
+        public AutomatedReasoningPolicyFidelityReport FidelityReport
+        {
+            get { return this._fidelityReport; }
+            set { this._fidelityReport = value; }
+        }
+
+        // Check to see if FidelityReport property is set
+        internal bool IsSetFidelityReport()
+        {
+            return this._fidelityReport != null;
         }
 
         /// <summary>

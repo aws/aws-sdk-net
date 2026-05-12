@@ -94,6 +94,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetIncludeUnsupportedInRegion())
+                {
+                    request.Parameters.Add("IncludeUnsupportedInRegion", StringUtils.FromBool(publicRequest.IncludeUnsupportedInRegion));
+                }
                 if(publicRequest.IsSetInstanceTypes())
                 {
                     if (publicRequest.InstanceTypes.Count == 0)
@@ -117,6 +121,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeInstanceTypesRequestMarshaller _instance = new DescribeInstanceTypesRequestMarshaller();        

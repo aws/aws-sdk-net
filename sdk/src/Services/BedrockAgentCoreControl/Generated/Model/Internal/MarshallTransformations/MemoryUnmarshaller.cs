@@ -98,6 +98,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("indexedKeys", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<IndexedKey, IndexedKeyUnmarshaller>(IndexedKeyUnmarshaller.Instance);
+                    unmarshalledObject.IndexedKeys = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("memoryExecutionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -120,6 +126,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonListUnmarshaller<MemoryStrategy, MemoryStrategyUnmarshaller>(MemoryStrategyUnmarshaller.Instance);
                     unmarshalledObject.Strategies = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("streamDeliveryResources", targetDepth))
+                {
+                    var unmarshaller = StreamDeliveryResourcesUnmarshaller.Instance;
+                    unmarshalledObject.StreamDeliveryResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updatedAt", targetDepth))

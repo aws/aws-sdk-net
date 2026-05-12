@@ -106,7 +106,7 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetTemplateComponents())
             {
                 context.Writer.WritePropertyName("templateComponents");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.TemplateComponents));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.TemplateComponents);
             }
 
             writer.WriteEndObject();

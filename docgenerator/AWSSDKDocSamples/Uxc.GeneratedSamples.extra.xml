@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Uxc.IAmazonUxc.GetAccountCustomizations(Amazon.Uxc.Model.GetAccountCustomizationsRequest)" />
+            <member name="M:Amazon.Uxc.AmazonUxcClient.GetAccountCustomizations(Amazon.Uxc.Model.GetAccountCustomizationsRequest)" />
+            <member name="T:Amazon.Uxc.Model.GetAccountCustomizationsRequest" />
+            <member name="T:Amazon.Uxc.Model.GetAccountCustomizationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves all account customization settings
+                </para>
+                <code
+                    title="Get account customizations"
+                    source=".\AWSSDKDocSamples\Uxc\Uxc.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Uxc.IAmazonUxc.ListServices(Amazon.Uxc.Model.ListServicesRequest)" />
+            <member name="M:Amazon.Uxc.AmazonUxcClient.ListServices(Amazon.Uxc.Model.ListServicesRequest)" />
+            <member name="T:Amazon.Uxc.Model.ListServicesRequest" />
+            <member name="T:Amazon.Uxc.Model.ListServicesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves a paginated list of available AWS services
+                </para>
+                <code
+                    title="List available services"
+                    source=".\AWSSDKDocSamples\Uxc\Uxc.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Uxc.IAmazonUxc.UpdateAccountCustomizations(Amazon.Uxc.Model.UpdateAccountCustomizationsRequest)" />
+            <member name="M:Amazon.Uxc.AmazonUxcClient.UpdateAccountCustomizations(Amazon.Uxc.Model.UpdateAccountCustomizationsRequest)" />
+            <member name="T:Amazon.Uxc.Model.UpdateAccountCustomizationsRequest" />
+            <member name="T:Amazon.Uxc.Model.UpdateAccountCustomizationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates account customization settings with new values
+                </para>
+                <code
+                    title="Update account customizations"
+                    source=".\AWSSDKDocSamples\Uxc\Uxc.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

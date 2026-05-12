@@ -39,6 +39,11 @@ namespace Amazon.InternetMonitor
 {
     /// <summary>
     /// <para>Implementation for accessing InternetMonitor</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon CloudWatch Internet Monitor provides visibility into how internet issues impact
     /// the performance and availability between your applications hosted on Amazon Web Services

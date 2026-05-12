@@ -83,6 +83,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PoolState", StringUtils.FromString(publicRequest.PoolState));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static PutWarmPoolRequestMarshaller _instance = new PutWarmPoolRequestMarshaller();        

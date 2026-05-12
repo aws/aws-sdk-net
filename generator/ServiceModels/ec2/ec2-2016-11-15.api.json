@@ -41,6 +41,15 @@
       "input":{"shape":"AcceptReservedInstancesExchangeQuoteRequest"},
       "output":{"shape":"AcceptReservedInstancesExchangeQuoteResult"}
     },
+    "AcceptTransitGatewayClientVpnAttachment":{
+      "name":"AcceptTransitGatewayClientVpnAttachment",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AcceptTransitGatewayClientVpnAttachmentRequest"},
+      "output":{"shape":"AcceptTransitGatewayClientVpnAttachmentResult"}
+    },
     "AcceptTransitGatewayMulticastDomainAssociations":{
       "name":"AcceptTransitGatewayMulticastDomainAssociations",
       "http":{
@@ -2054,6 +2063,15 @@
       },
       "input":{"shape":"DeleteTransitGatewayRequest"},
       "output":{"shape":"DeleteTransitGatewayResult"}
+    },
+    "DeleteTransitGatewayClientVpnAttachment":{
+      "name":"DeleteTransitGatewayClientVpnAttachment",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteTransitGatewayClientVpnAttachmentRequest"},
+      "output":{"shape":"DeleteTransitGatewayClientVpnAttachmentResult"}
     },
     "DeleteTransitGatewayConnect":{
       "name":"DeleteTransitGatewayConnect",
@@ -4760,6 +4778,15 @@
       "input":{"shape":"GetCapacityManagerMetricDimensionsRequest"},
       "output":{"shape":"GetCapacityManagerMetricDimensionsResult"}
     },
+    "GetCapacityManagerMonitoredTagKeys":{
+      "name":"GetCapacityManagerMonitoredTagKeys",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetCapacityManagerMonitoredTagKeysRequest"},
+      "output":{"shape":"GetCapacityManagerMonitoredTagKeysResult"}
+    },
     "GetCapacityReservationUsage":{
       "name":"GetCapacityReservationUsage",
       "http":{
@@ -5056,6 +5083,15 @@
       },
       "input":{"shape":"GetManagedPrefixListEntriesRequest"},
       "output":{"shape":"GetManagedPrefixListEntriesResult"}
+    },
+    "GetManagedResourceVisibility":{
+      "name":"GetManagedResourceVisibility",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetManagedResourceVisibilityRequest"},
+      "output":{"shape":"GetManagedResourceVisibilityResult"}
     },
     "GetNetworkInsightsAccessScopeAnalysisFindings":{
       "name":"GetNetworkInsightsAccessScopeAnalysisFindings",
@@ -5710,6 +5746,15 @@
       "input":{"shape":"ModifyManagedPrefixListRequest"},
       "output":{"shape":"ModifyManagedPrefixListResult"}
     },
+    "ModifyManagedResourceVisibility":{
+      "name":"ModifyManagedResourceVisibility",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyManagedResourceVisibilityRequest"},
+      "output":{"shape":"ModifyManagedResourceVisibilityResult"}
+    },
     "ModifyNetworkInterfaceAttribute":{
       "name":"ModifyNetworkInterfaceAttribute",
       "http":{
@@ -6244,6 +6289,15 @@
       "input":{"shape":"RejectCapacityReservationBillingOwnershipRequest"},
       "output":{"shape":"RejectCapacityReservationBillingOwnershipResult"}
     },
+    "RejectTransitGatewayClientVpnAttachment":{
+      "name":"RejectTransitGatewayClientVpnAttachment",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RejectTransitGatewayClientVpnAttachmentRequest"},
+      "output":{"shape":"RejectTransitGatewayClientVpnAttachmentResult"}
+    },
     "RejectTransitGatewayMulticastDomainAssociations":{
       "name":"RejectTransitGatewayMulticastDomainAssociations",
       "http":{
@@ -6720,6 +6774,15 @@
       "input":{"shape":"UnmonitorInstancesRequest"},
       "output":{"shape":"UnmonitorInstancesResult"}
     },
+    "UpdateCapacityManagerMonitoredTagKeys":{
+      "name":"UpdateCapacityManagerMonitoredTagKeys",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateCapacityManagerMonitoredTagKeysRequest"},
+      "output":{"shape":"UpdateCapacityManagerMonitoredTagKeysResult"}
+    },
     "UpdateCapacityManagerOrganizationsAccess":{
       "name":"UpdateCapacityManagerOrganizationsAccess",
       "http":{
@@ -6930,6 +6993,23 @@
         "ExchangeId":{
           "shape":"String",
           "locationName":"exchangeId"
+        }
+      }
+    },
+    "AcceptTransitGatewayClientVpnAttachmentRequest":{
+      "type":"structure",
+      "required":["TransitGatewayAttachmentId"],
+      "members":{
+        "TransitGatewayAttachmentId":{"shape":"TransitGatewayAttachmentId"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "AcceptTransitGatewayClientVpnAttachmentResult":{
+      "type":"structure",
+      "members":{
+        "TransitGatewayClientVpnAttachment":{
+          "shape":"TransitGatewayClientVpnAttachment",
+          "locationName":"transitGatewayClientVpnAttachment"
         }
       }
     },
@@ -7626,7 +7706,7 @@
           "locationName":"quantity"
         },
         "AvailabilityZone":{
-          "shape":"String",
+          "shape":"AvailabilityZoneName",
           "locationName":"availabilityZone"
         }
       }
@@ -8353,10 +8433,7 @@
     },
     "AssociateClientVpnTargetNetworkRequest":{
       "type":"structure",
-      "required":[
-        "ClientVpnEndpointId",
-        "SubnetId"
-      ],
+      "required":["ClientVpnEndpointId"],
       "members":{
         "ClientVpnEndpointId":{"shape":"ClientVpnEndpointId"},
         "SubnetId":{"shape":"SubnetId"},
@@ -8364,7 +8441,9 @@
           "shape":"String",
           "idempotencyToken":true
         },
-        "DryRun":{"shape":"Boolean"}
+        "DryRun":{"shape":"Boolean"},
+        "AvailabilityZone":{"shape":"AvailabilityZoneName"},
+        "AvailabilityZoneId":{"shape":"AvailabilityZoneId"}
       }
     },
     "AssociateClientVpnTargetNetworkResult":{
@@ -10296,7 +10375,31 @@
         "Count":{
           "shape":"Integer",
           "locationName":"count"
+        },
+        "AllocationMetadata":{
+          "shape":"CapacityAllocationMetadataList",
+          "locationName":"allocationMetadataList"
         }
+      }
+    },
+    "CapacityAllocationMetadataEntry":{
+      "type":"structure",
+      "members":{
+        "Key":{
+          "shape":"String",
+          "locationName":"key"
+        },
+        "Value":{
+          "shape":"String",
+          "locationName":"value"
+        }
+      }
+    },
+    "CapacityAllocationMetadataList":{
+      "type":"list",
+      "member":{
+        "shape":"CapacityAllocationMetadataEntry",
+        "locationName":"item"
       }
     },
     "CapacityAllocations":{
@@ -10405,6 +10508,10 @@
         "CurrencyCode":{
           "shape":"String",
           "locationName":"currencyCode"
+        },
+        "ZoneType":{
+          "shape":"String",
+          "locationName":"zoneType"
         }
       }
     },
@@ -10458,6 +10565,10 @@
         "Tenancy":{
           "shape":"CapacityReservationTenancy",
           "locationName":"tenancy"
+        },
+        "ZoneType":{
+          "shape":"String",
+          "locationName":"zoneType"
         }
       }
     },
@@ -10553,6 +10664,10 @@
         "CapacityBlockDurationMinutes":{
           "shape":"Integer",
           "locationName":"capacityBlockDurationMinutes"
+        },
+        "ZoneType":{
+          "shape":"String",
+          "locationName":"zoneType"
         }
       }
     },
@@ -10722,6 +10837,10 @@
           "shape":"String",
           "locationName":"accountId"
         },
+        "AccountName":{
+          "shape":"String",
+          "locationName":"accountName"
+        },
         "InstanceFamily":{
           "shape":"String",
           "locationName":"instanceFamily"
@@ -10777,8 +10896,53 @@
         "ReservationUnusedFinancialOwner":{
           "shape":"String",
           "locationName":"reservationUnusedFinancialOwner"
+        },
+        "Tags":{
+          "shape":"CapacityManagerTagDimensionSet",
+          "locationName":"tagSet"
         }
       }
+    },
+    "CapacityManagerMonitoredTagKey":{
+      "type":"structure",
+      "members":{
+        "TagKey":{
+          "shape":"String",
+          "locationName":"tagKey"
+        },
+        "Status":{
+          "shape":"CapacityManagerMonitoredTagKeyStatus",
+          "locationName":"status"
+        },
+        "StatusMessage":{
+          "shape":"String",
+          "locationName":"statusMessage"
+        },
+        "CapacityManagerProvided":{
+          "shape":"Boolean",
+          "locationName":"capacityManagerProvided"
+        },
+        "EarliestDatapointTimestamp":{
+          "shape":"MillisecondDateTime",
+          "locationName":"earliestDatapointTimestamp"
+        }
+      }
+    },
+    "CapacityManagerMonitoredTagKeyList":{
+      "type":"list",
+      "member":{
+        "shape":"CapacityManagerMonitoredTagKey",
+        "locationName":"item"
+      }
+    },
+    "CapacityManagerMonitoredTagKeyStatus":{
+      "type":"string",
+      "enum":[
+        "activating",
+        "activated",
+        "deactivating",
+        "suspended"
+      ]
     },
     "CapacityManagerStatus":{
       "type":"string",
@@ -10786,6 +10950,26 @@
         "enabled",
         "disabled"
       ]
+    },
+    "CapacityManagerTagDimension":{
+      "type":"structure",
+      "members":{
+        "Key":{
+          "shape":"String",
+          "locationName":"key"
+        },
+        "Value":{
+          "shape":"String",
+          "locationName":"value"
+        }
+      }
+    },
+    "CapacityManagerTagDimensionSet":{
+      "type":"list",
+      "member":{
+        "shape":"CapacityManagerTagDimension",
+        "locationName":"item"
+      }
     },
     "CapacityReservation":{
       "type":"structure",
@@ -11683,6 +11867,20 @@
         "revoking"
       ]
     },
+    "ClientVpnAvailabilityZoneIdSet":{
+      "type":"list",
+      "member":{
+        "shape":"AvailabilityZoneId",
+        "locationName":"item"
+      }
+    },
+    "ClientVpnAvailabilityZoneSet":{
+      "type":"list",
+      "member":{
+        "shape":"AvailabilityZoneName",
+        "locationName":"item"
+      }
+    },
     "ClientVpnConnection":{
       "type":"structure",
       "members":{
@@ -11889,6 +12087,10 @@
         "TrafficIpAddressType":{
           "shape":"TrafficIpAddressType",
           "locationName":"trafficIpAddressType"
+        },
+        "TransitGatewayConfiguration":{
+          "shape":"TransitGatewayConfigurationDescribeEndpointStructure",
+          "locationName":"transitGatewayConfiguration"
         }
       }
     },
@@ -11939,7 +12141,8 @@
         "pending-associate",
         "available",
         "deleting",
-        "deleted"
+        "deleted",
+        "pending"
       ]
     },
     "ClientVpnRoute":{
@@ -11972,6 +12175,10 @@
         "Description":{
           "shape":"String",
           "locationName":"description"
+        },
+        "TransitGatewayAttachmentId":{
+          "shape":"TransitGatewayAttachmentId",
+          "locationName":"transitGatewayAttachmentId"
         }
       }
     },
@@ -12157,10 +12364,15 @@
       "type":"string",
       "pattern":"[a-z]{2}-[a-z]+-[1-9]+"
     },
+    "ConditionValue":{
+      "type":"string",
+      "max":300,
+      "min":0
+    },
     "ConditionValueList":{
       "type":"list",
       "member":{
-        "shape":"String",
+        "shape":"ConditionValue",
         "locationName":"item"
       },
       "max":10,
@@ -12884,7 +13096,8 @@
         "ClientRouteEnforcementOptions":{"shape":"ClientRouteEnforcementOptions"},
         "DisconnectOnSessionTimeout":{"shape":"Boolean"},
         "EndpointIpAddressType":{"shape":"EndpointIpAddressType"},
-        "TrafficIpAddressType":{"shape":"TrafficIpAddressType"}
+        "TrafficIpAddressType":{"shape":"TrafficIpAddressType"},
+        "TransitGatewayConfiguration":{"shape":"TransitGatewayConfigurationInputStructure"}
       }
     },
     "CreateClientVpnEndpointResult":{
@@ -12908,8 +13121,7 @@
       "type":"structure",
       "required":[
         "ClientVpnEndpointId",
-        "DestinationCidrBlock",
-        "TargetVpcSubnetId"
+        "DestinationCidrBlock"
       ],
       "members":{
         "ClientVpnEndpointId":{"shape":"ClientVpnEndpointId"},
@@ -13193,6 +13405,7 @@
         },
         "SpotOptions":{"shape":"SpotOptionsRequest"},
         "OnDemandOptions":{"shape":"OnDemandOptionsRequest"},
+        "ReservedCapacityOptions":{"shape":"ReservedCapacityOptionsRequest"},
         "ExcessCapacityTerminationPolicy":{"shape":"FleetExcessCapacityTerminationPolicy"},
         "LaunchTemplateConfigs":{"shape":"FleetLaunchTemplateConfigListRequest"},
         "TargetCapacitySpecification":{"shape":"TargetCapacitySpecificationRequest"},
@@ -14405,6 +14618,7 @@
         },
         "SpreadLevel":{"shape":"SpreadLevel"},
         "LinkedGroupId":{"shape":"PlacementGroupId"},
+        "Operator":{"shape":"OperatorRequest"},
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
@@ -16358,7 +16572,32 @@
         "locationName":"item"
       }
     },
+    "DefaultConnectionTrackingConfiguration":{
+      "type":"structure",
+      "members":{
+        "DefaultTcpEstablishedTimeout":{
+          "shape":"DefaultTcpEstablishedTimeout",
+          "locationName":"defaultTcpEstablishedTimeout"
+        },
+        "DefaultUdpTimeout":{
+          "shape":"DefaultUdpTimeout",
+          "locationName":"defaultUdpTimeout"
+        },
+        "DefaultUdpStreamTimeout":{
+          "shape":"DefaultUdpStreamTimeout",
+          "locationName":"defaultUdpStreamTimeout"
+        }
+      }
+    },
     "DefaultEnaQueueCountPerInterface":{"type":"integer"},
+    "DefaultHttpTokensEnforcedState":{
+      "type":"string",
+      "enum":[
+        "disabled",
+        "enabled",
+        "no-preference"
+      ]
+    },
     "DefaultInstanceMetadataEndpointState":{
       "type":"string",
       "enum":[
@@ -16395,9 +16634,13 @@
       "enum":[
         "spot",
         "on-demand",
-        "capacity-block"
+        "capacity-block",
+        "reserved-capacity"
       ]
     },
+    "DefaultTcpEstablishedTimeout":{"type":"integer"},
+    "DefaultUdpStreamTimeout":{"type":"integer"},
+    "DefaultUdpTimeout":{"type":"integer"},
     "DefaultingDhcpOptionsId":{"type":"string"},
     "DeleteCapacityManagerDataExportRequest":{
       "type":"structure",
@@ -17683,6 +17926,23 @@
         }
       }
     },
+    "DeleteTransitGatewayClientVpnAttachmentRequest":{
+      "type":"structure",
+      "required":["TransitGatewayAttachmentId"],
+      "members":{
+        "TransitGatewayAttachmentId":{"shape":"TransitGatewayAttachmentId"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "DeleteTransitGatewayClientVpnAttachmentResult":{
+      "type":"structure",
+      "members":{
+        "TransitGatewayClientVpnAttachment":{
+          "shape":"TransitGatewayClientVpnAttachment",
+          "locationName":"transitGatewayClientVpnAttachment"
+        }
+      }
+    },
     "DeleteTransitGatewayConnectPeerRequest":{
       "type":"structure",
       "required":["TransitGatewayConnectPeerId"],
@@ -18695,7 +18955,8 @@
         "NextToken":{"shape":"String"},
         "MaxResults":{"shape":"DescribeCapacityBlockOfferingsMaxResults"},
         "UltraserverType":{"shape":"String"},
-        "UltraserverCount":{"shape":"Integer"}
+        "UltraserverCount":{"shape":"Integer"},
+        "AllAvailabilityZones":{"shape":"Boolean"}
       }
     },
     "DescribeCapacityBlockOfferingsResult":{
@@ -20504,6 +20765,7 @@
         },
         "MaxResults":{"shape":"Integer"},
         "NextToken":{"shape":"String"},
+        "IncludeManagedResources":{"shape":"Boolean"},
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
@@ -20616,7 +20878,8 @@
           "locationName":"Filter"
         },
         "MaxResults":{"shape":"DITMaxResults"},
-        "NextToken":{"shape":"NextToken"}
+        "NextToken":{"shape":"NextToken"},
+        "IncludeUnsupportedInRegion":{"shape":"IncludeUnsupportedInRegion"}
       }
     },
     "DescribeInstanceTypesResult":{
@@ -20639,6 +20902,7 @@
           "shape":"InstanceIdStringList",
           "locationName":"InstanceId"
         },
+        "IncludeManagedResources":{"shape":"Boolean"},
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
@@ -21073,7 +21337,8 @@
           "shape":"FilterList",
           "locationName":"Filter"
         },
-        "ResolveAlias":{"shape":"Boolean"}
+        "ResolveAlias":{"shape":"Boolean"},
+        "IncludeManagedResources":{"shape":"Boolean"}
       }
     },
     "DescribeLaunchTemplateVersionsResult":{
@@ -21111,7 +21376,8 @@
           "locationName":"Filter"
         },
         "NextToken":{"shape":"String"},
-        "MaxResults":{"shape":"DescribeLaunchTemplatesMaxResults"}
+        "MaxResults":{"shape":"DescribeLaunchTemplatesMaxResults"},
+        "IncludeManagedResources":{"shape":"Boolean"}
       }
     },
     "DescribeLaunchTemplatesResult":{
@@ -21754,6 +22020,7 @@
       "members":{
         "NextToken":{"shape":"String"},
         "MaxResults":{"shape":"DescribeNetworkInterfacesMaxResults"},
+        "IncludeManagedResources":{"shape":"Boolean"},
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
@@ -23708,6 +23975,7 @@
           "shape":"VolumeIdStringList",
           "locationName":"VolumeId"
         },
+        "IncludeManagedResources":{"shape":"Boolean"},
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
@@ -23767,6 +24035,7 @@
           "shape":"VolumeIdStringList",
           "locationName":"VolumeId"
         },
+        "IncludeManagedResources":{"shape":"Boolean"},
         "DryRun":{
           "shape":"Boolean",
           "locationName":"dryRun"
@@ -27886,6 +28155,7 @@
         "resource-region",
         "availability-zone-id",
         "account-id",
+        "account-name",
         "instance-family",
         "instance-type",
         "instance-platform",
@@ -27900,7 +28170,9 @@
         "reservation-state",
         "reservation-instance-match-criteria",
         "reservation-unused-financial-owner"
-      ]
+      ],
+      "max":300,
+      "min":0
     },
     "FilterList":{
       "type":"list",
@@ -28164,6 +28436,10 @@
           "shape":"OnDemandOptions",
           "locationName":"onDemandOptions"
         },
+        "ReservedCapacityOptions":{
+          "shape":"ReservedCapacityOptions",
+          "locationName":"reservedCapacityOptions"
+        },
         "Tags":{
           "shape":"TagList",
           "locationName":"tagSet"
@@ -28375,6 +28651,10 @@
         "launch",
         "launch-before-terminate"
       ]
+    },
+    "FleetReservationType":{
+      "type":"string",
+      "enum":["interruptible-capacity-reservation"]
     },
     "FleetSet":{
       "type":"list",
@@ -28978,6 +29258,32 @@
         },
         "NextToken":{
           "shape":"NextToken",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "GetCapacityManagerMonitoredTagKeysRequest":{
+      "type":"structure",
+      "members":{
+        "MaxResults":{"shape":"GetCapacityManagerMonitoredTagKeysRequestMaxResults"},
+        "NextToken":{"shape":"String"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "GetCapacityManagerMonitoredTagKeysRequestMaxResults":{
+      "type":"integer",
+      "max":1000,
+      "min":1
+    },
+    "GetCapacityManagerMonitoredTagKeysResult":{
+      "type":"structure",
+      "members":{
+        "CapacityManagerTagKeys":{
+          "shape":"CapacityManagerMonitoredTagKeyList",
+          "locationName":"capacityManagerTagKeySet"
+        },
+        "NextToken":{
+          "shape":"String",
           "locationName":"nextToken"
         }
       }
@@ -29909,6 +30215,21 @@
         }
       }
     },
+    "GetManagedResourceVisibilityRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "GetManagedResourceVisibilityResult":{
+      "type":"structure",
+      "members":{
+        "Visibility":{
+          "shape":"ManagedResourceVisibilitySettings",
+          "locationName":"visibility"
+        }
+      }
+    },
     "GetNetworkInsightsAccessScopeAnalysisFindingsMaxResults":{
       "type":"integer",
       "max":1000,
@@ -30720,6 +31041,7 @@
         "resource-region",
         "availability-zone-id",
         "account-id",
+        "account-name",
         "instance-family",
         "instance-type",
         "instance-platform",
@@ -30734,7 +31056,9 @@
         "reservation-state",
         "reservation-instance-match-criteria",
         "reservation-unused-financial-owner"
-      ]
+      ],
+      "max":300,
+      "min":0
     },
     "GroupBySet":{
       "type":"list",
@@ -31156,6 +31480,13 @@
       "type":"integer",
       "max":23,
       "min":0
+    },
+    "HttpTokensEnforcedState":{
+      "type":"string",
+      "enum":[
+        "disabled",
+        "enabled"
+      ]
     },
     "HttpTokensState":{
       "type":"string",
@@ -32608,6 +32939,7 @@
         }
       }
     },
+    "IncludeUnsupportedInRegion":{"type":"boolean"},
     "InferenceAcceleratorInfo":{
       "type":"structure",
       "members":{
@@ -33626,7 +33958,8 @@
       "type":"string",
       "enum":[
         "spot",
-        "on-demand"
+        "on-demand",
+        "interruptible-capacity-reservation"
       ]
     },
     "InstanceLifecycleType":{
@@ -33704,6 +34037,10 @@
         "ManagedExceptionMessage":{
           "shape":"String",
           "locationName":"managedExceptionMessage"
+        },
+        "HttpTokensEnforced":{
+          "shape":"HttpTokensEnforcedState",
+          "locationName":"httpTokensEnforced"
         }
       }
     },
@@ -35853,7 +36190,34 @@
         "r8id.48xlarge",
         "r8id.96xlarge",
         "r8id.metal-48xl",
-        "r8id.metal-96xl"
+        "r8id.metal-96xl",
+        "c8id.large",
+        "c8id.xlarge",
+        "c8id.2xlarge",
+        "c8id.4xlarge",
+        "c8id.8xlarge",
+        "c8id.12xlarge",
+        "c8id.16xlarge",
+        "c8id.24xlarge",
+        "c8id.32xlarge",
+        "c8id.48xlarge",
+        "c8id.96xlarge",
+        "c8id.metal-48xl",
+        "c8id.metal-96xl",
+        "m8id.large",
+        "m8id.xlarge",
+        "m8id.2xlarge",
+        "m8id.4xlarge",
+        "m8id.8xlarge",
+        "m8id.12xlarge",
+        "m8id.16xlarge",
+        "m8id.24xlarge",
+        "m8id.32xlarge",
+        "m8id.48xlarge",
+        "m8id.96xlarge",
+        "m8id.metal-48xl",
+        "m8id.metal-96xl",
+        "hpc8a.96xlarge"
       ]
     },
     "InstanceTypeHypervisor":{
@@ -35989,6 +36353,10 @@
         "RebootMigrationSupport":{
           "shape":"RebootMigrationSupport",
           "locationName":"rebootMigrationSupport"
+        },
+        "SupportedInRegion":{
+          "shape":"SupportedInRegion",
+          "locationName":"supportedInRegion"
         }
       }
     },
@@ -40585,6 +40953,22 @@
         "locationName":"item"
       }
     },
+    "ManagedResourceDefaultVisibility":{
+      "type":"string",
+      "enum":[
+        "hidden",
+        "visible"
+      ]
+    },
+    "ManagedResourceVisibilitySettings":{
+      "type":"structure",
+      "members":{
+        "DefaultVisibility":{
+          "shape":"ManagedResourceDefaultVisibility",
+          "locationName":"defaultVisibility"
+        }
+      }
+    },
     "MarketType":{
       "type":"string",
       "enum":[
@@ -41016,7 +41400,8 @@
         "SessionTimeoutHours":{"shape":"Integer"},
         "ClientLoginBannerOptions":{"shape":"ClientLoginBannerOptions"},
         "ClientRouteEnforcementOptions":{"shape":"ClientRouteEnforcementOptions"},
-        "DisconnectOnSessionTimeout":{"shape":"Boolean"}
+        "DisconnectOnSessionTimeout":{"shape":"Boolean"},
+        "TransitGatewayConfiguration":{"shape":"TransitGatewayConfigurationInputStructure"}
       }
     },
     "ModifyClientVpnEndpointResult":{
@@ -41244,7 +41629,7 @@
           "locationName":"attribute"
         },
         "Value":{
-          "shape":"String",
+          "shape":"ModifyInstanceAttributeValue",
           "locationName":"value"
         },
         "BlockDeviceMappings":{
@@ -41292,6 +41677,16 @@
           "locationName":"enaSupport"
         }
       }
+    },
+    "ModifyInstanceAttributeUserDataRequest":{
+      "type":"structure",
+      "members":{
+        "Value":{"shape":"ModifyInstanceAttributeValue"}
+      }
+    },
+    "ModifyInstanceAttributeValue":{
+      "type":"string",
+      "sensitive":true
     },
     "ModifyInstanceCapacityReservationAttributesRequest":{
       "type":"structure",
@@ -41474,7 +41869,8 @@
         "HttpPutResponseHopLimit":{"shape":"BoxedInteger"},
         "HttpEndpoint":{"shape":"DefaultInstanceMetadataEndpointState"},
         "InstanceMetadataTags":{"shape":"DefaultInstanceMetadataTagsState"},
-        "DryRun":{"shape":"Boolean"}
+        "DryRun":{"shape":"Boolean"},
+        "HttpTokensEnforced":{"shape":"DefaultHttpTokensEnforcedState"}
       }
     },
     "ModifyInstanceMetadataDefaultsResult":{
@@ -41858,6 +42254,23 @@
         "PrefixList":{
           "shape":"ManagedPrefixList",
           "locationName":"prefixList"
+        }
+      }
+    },
+    "ModifyManagedResourceVisibilityRequest":{
+      "type":"structure",
+      "required":["DefaultVisibility"],
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "DefaultVisibility":{"shape":"ManagedResourceDefaultVisibility"}
+      }
+    },
+    "ModifyManagedResourceVisibilityResult":{
+      "type":"structure",
+      "members":{
+        "Visibility":{
+          "shape":"ManagedResourceVisibilitySettings",
+          "locationName":"visibility"
         }
       }
     },
@@ -42921,6 +43334,7 @@
         "RemoteIpv4NetworkCidr":{"shape":"String"},
         "LocalIpv6NetworkCidr":{"shape":"String"},
         "RemoteIpv6NetworkCidr":{"shape":"String"},
+        "TunnelBandwidth":{"shape":"VpnTunnelBandwidth"},
         "DryRun":{"shape":"Boolean"}
       }
     },
@@ -43719,6 +44133,10 @@
         "FlexibleEnaQueuesSupport":{
           "shape":"FlexibleEnaQueuesSupport",
           "locationName":"flexibleEnaQueuesSupport"
+        },
+        "ConnectionTrackingConfiguration":{
+          "shape":"DefaultConnectionTrackingConfiguration",
+          "locationName":"connectionTrackingConfiguration"
         },
         "SecondaryNetworkSupported":{
           "shape":"SecondaryNetworkSupportedFlag",
@@ -44730,6 +45148,10 @@
         "Principal":{
           "shape":"String",
           "locationName":"principal"
+        },
+        "HiddenByDefault":{
+          "shape":"Boolean",
+          "locationName":"hiddenByDefault"
         }
       }
     },
@@ -45432,6 +45854,10 @@
         "LinkedGroupId":{
           "shape":"PlacementGroupId",
           "locationName":"linkedGroupId"
+        },
+        "Operator":{
+          "shape":"OperatorResponse",
+          "locationName":"operator"
         }
       }
     },
@@ -46866,6 +47292,23 @@
         }
       }
     },
+    "RejectTransitGatewayClientVpnAttachmentRequest":{
+      "type":"structure",
+      "required":["TransitGatewayAttachmentId"],
+      "members":{
+        "TransitGatewayAttachmentId":{"shape":"TransitGatewayAttachmentId"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "RejectTransitGatewayClientVpnAttachmentResult":{
+      "type":"structure",
+      "members":{
+        "TransitGatewayClientVpnAttachment":{
+          "shape":"TransitGatewayClientVpnAttachment",
+          "locationName":"transitGatewayClientVpnAttachment"
+        }
+      }
+    },
     "RejectTransitGatewayMulticastDomainAssociationsRequest":{
       "type":"structure",
       "members":{
@@ -47821,6 +48264,20 @@
         "odcr"
       ]
     },
+    "ReservationTypeList":{
+      "type":"list",
+      "member":{
+        "shape":"FleetReservationType",
+        "locationName":"item"
+      }
+    },
+    "ReservationTypeListRequest":{
+      "type":"list",
+      "member":{
+        "shape":"FleetReservationType",
+        "locationName":"ReservationType"
+      }
+    },
     "ReservationValue":{
       "type":"structure",
       "members":{
@@ -47835,6 +48292,24 @@
         "RemainingUpfrontValue":{
           "shape":"String",
           "locationName":"remainingUpfrontValue"
+        }
+      }
+    },
+    "ReservedCapacityOptions":{
+      "type":"structure",
+      "members":{
+        "ReservationTypes":{
+          "shape":"ReservationTypeList",
+          "locationName":"reservationTypeSet"
+        }
+      }
+    },
+    "ReservedCapacityOptionsRequest":{
+      "type":"structure",
+      "members":{
+        "ReservationTypes":{
+          "shape":"ReservationTypeListRequest",
+          "locationName":"ReservationType"
         }
       }
     },
@@ -53349,6 +53824,7 @@
         "locationName":"item"
       }
     },
+    "SupportedInRegion":{"type":"boolean"},
     "SupportedIpAddressTypes":{
       "type":"list",
       "member":{
@@ -53572,6 +54048,14 @@
         "SecurityGroups":{
           "shape":"ValueStringList",
           "locationName":"securityGroups"
+        },
+        "AvailabilityZones":{
+          "shape":"ClientVpnAvailabilityZoneSet",
+          "locationName":"availabilityZoneSet"
+        },
+        "AvailabilityZoneIds":{
+          "shape":"ClientVpnAvailabilityZoneIdSet",
+          "locationName":"availabilityZoneIdSet"
         }
       }
     },
@@ -54322,7 +54806,8 @@
         "connect",
         "peering",
         "tgw-peering",
-        "network-function"
+        "network-function",
+        "client-vpn"
       ]
     },
     "TransitGatewayAttachmentState":{
@@ -54343,11 +54828,86 @@
         "failing"
       ]
     },
+    "TransitGatewayAttachmentStatusType":{
+      "type":"string",
+      "enum":[
+        "pending-acceptance",
+        "pending",
+        "rejected",
+        "available",
+        "deleting",
+        "deleted"
+      ]
+    },
     "TransitGatewayCidrBlockStringList":{
       "type":"list",
       "member":{
         "shape":"String",
         "locationName":"item"
+      }
+    },
+    "TransitGatewayClientVpnAttachment":{
+      "type":"structure",
+      "members":{
+        "TransitGatewayAttachmentId":{
+          "shape":"TransitGatewayAttachmentId",
+          "locationName":"transitGatewayAttachmentId"
+        },
+        "TransitGatewayId":{
+          "shape":"TransitGatewayId",
+          "locationName":"transitGatewayId"
+        },
+        "ClientVpnEndpointId":{
+          "shape":"ClientVpnEndpointId",
+          "locationName":"clientVpnEndpointId"
+        },
+        "ClientVpnOwnerId":{
+          "shape":"String",
+          "locationName":"clientVpnOwnerId"
+        },
+        "State":{
+          "shape":"TransitGatewayAttachmentStatusType",
+          "locationName":"state"
+        },
+        "CreationTime":{
+          "shape":"String",
+          "locationName":"creationTime"
+        }
+      }
+    },
+    "TransitGatewayConfigurationDescribeEndpointStructure":{
+      "type":"structure",
+      "members":{
+        "TransitGatewayId":{
+          "shape":"TransitGatewayId",
+          "locationName":"transitGatewayId"
+        },
+        "TransitGatewayAttachmentId":{
+          "shape":"TransitGatewayAttachmentId",
+          "locationName":"transitGatewayAttachmentId"
+        },
+        "AvailabilityZones":{
+          "shape":"ClientVpnAvailabilityZoneSet",
+          "locationName":"availabilityZoneSet"
+        },
+        "AvailabilityZoneIds":{
+          "shape":"ClientVpnAvailabilityZoneIdSet",
+          "locationName":"availabilityZoneIdSet"
+        }
+      }
+    },
+    "TransitGatewayConfigurationInputStructure":{
+      "type":"structure",
+      "members":{
+        "TransitGatewayId":{"shape":"TransitGatewayId"},
+        "AvailabilityZones":{
+          "shape":"ClientVpnAvailabilityZoneSet",
+          "locationName":"AvailabilityZone"
+        },
+        "AvailabilityZoneIds":{
+          "shape":"ClientVpnAvailabilityZoneIdSet",
+          "locationName":"AvailabilityZoneId"
+        }
       }
     },
     "TransitGatewayConnect":{
@@ -56075,6 +56635,33 @@
         "locationName":"item"
       }
     },
+    "UpdateCapacityManagerMonitoredTagKeysRequest":{
+      "type":"structure",
+      "members":{
+        "ActivateTagKeys":{
+          "shape":"ValueStringList",
+          "locationName":"ActivateTagKey"
+        },
+        "DeactivateTagKeys":{
+          "shape":"ValueStringList",
+          "locationName":"DeactivateTagKey"
+        },
+        "DryRun":{"shape":"Boolean"},
+        "ClientToken":{
+          "shape":"String",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "UpdateCapacityManagerMonitoredTagKeysResult":{
+      "type":"structure",
+      "members":{
+        "CapacityManagerTagKeys":{
+          "shape":"CapacityManagerMonitoredTagKeyList",
+          "locationName":"capacityManagerTagKeySet"
+        }
+      }
+    },
     "UpdateCapacityManagerOrganizationsAccessRequest":{
       "type":"structure",
       "required":["OrganizationsAccess"],
@@ -57499,6 +58086,10 @@
         "EndTime":{
           "shape":"DateTime",
           "locationName":"endTime"
+        },
+        "Operator":{
+          "shape":"OperatorResponse",
+          "locationName":"operator"
         }
       }
     },
@@ -57765,6 +58356,10 @@
         "AvailabilityZoneId":{
           "shape":"String",
           "locationName":"availabilityZoneId"
+        },
+        "Operator":{
+          "shape":"OperatorResponse",
+          "locationName":"operator"
         }
       }
     },

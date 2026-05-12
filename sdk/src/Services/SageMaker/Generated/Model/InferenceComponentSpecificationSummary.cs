@@ -38,7 +38,9 @@ namespace Amazon.SageMaker.Model
         private InferenceComponentComputeResourceRequirements _computeResourceRequirements;
         private InferenceComponentContainerSpecificationSummary _container;
         private InferenceComponentDataCacheConfigSummary _dataCacheConfig;
+        private ProductionVariantInstanceType _instanceType;
         private string _modelName;
+        private InferenceComponentSchedulingConfig _schedulingConfig;
         private InferenceComponentStartupParameters _startupParameters;
 
         /// <summary>
@@ -117,6 +119,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The ML compute instance type associated with this inference component specification.
+        /// </para>
+        /// </summary>
+        public ProductionVariantInstanceType InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
         /// The name of the SageMaker AI model object that is deployed with the inference component.
@@ -133,6 +153,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelName()
         {
             return this._modelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingConfig. 
+        /// <para>
+        /// The scheduling configuration that determines how inference component copies are placed
+        /// across available instances when copies are added or removed.
+        /// </para>
+        /// </summary>
+        public InferenceComponentSchedulingConfig SchedulingConfig
+        {
+            get { return this._schedulingConfig; }
+            set { this._schedulingConfig = value; }
+        }
+
+        // Check to see if SchedulingConfig property is set
+        internal bool IsSetSchedulingConfig()
+        {
+            return this._schedulingConfig != null;
         }
 
         /// <summary>

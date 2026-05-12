@@ -78,6 +78,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     request.Parameters.Add("LoadBalancerName", StringUtils.FromString(publicRequest.LoadBalancerName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DisableAvailabilityZonesForLoadBalancerRequestMarshaller _instance = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller();        

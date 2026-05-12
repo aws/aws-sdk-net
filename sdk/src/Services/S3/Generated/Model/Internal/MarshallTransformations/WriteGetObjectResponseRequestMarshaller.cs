@@ -89,6 +89,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-fwd-header-x-amz-checksum-crc64nvme"] = publicRequest.ChecksumCRC64NVME;
             }
         
+            if (publicRequest.IsSetChecksumMD5()) 
+            {
+                request.Headers["x-amz-fwd-header-x-amz-checksum-md5"] = publicRequest.ChecksumMD5;
+            }
+        
             if (publicRequest.IsSetChecksumSHA1()) 
             {
                 request.Headers["x-amz-fwd-header-x-amz-checksum-sha1"] = publicRequest.ChecksumSHA1;
@@ -97,6 +102,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetChecksumSHA256()) 
             {
                 request.Headers["x-amz-fwd-header-x-amz-checksum-sha256"] = publicRequest.ChecksumSHA256;
+            }
+        
+            if (publicRequest.IsSetChecksumSHA512()) 
+            {
+                request.Headers["x-amz-fwd-header-x-amz-checksum-sha512"] = publicRequest.ChecksumSHA512;
+            }
+        
+            if (publicRequest.IsSetChecksumXXHASH128()) 
+            {
+                request.Headers["x-amz-fwd-header-x-amz-checksum-xxhash128"] = publicRequest.ChecksumXXHASH128;
+            }
+        
+            if (publicRequest.IsSetChecksumXXHASH3()) 
+            {
+                request.Headers["x-amz-fwd-header-x-amz-checksum-xxhash3"] = publicRequest.ChecksumXXHASH3;
+            }
+        
+            if (publicRequest.IsSetChecksumXXHASH64()) 
+            {
+                request.Headers["x-amz-fwd-header-x-amz-checksum-xxhash64"] = publicRequest.ChecksumXXHASH64;
             }
         
             if (publicRequest.IsSetContentDisposition()) 

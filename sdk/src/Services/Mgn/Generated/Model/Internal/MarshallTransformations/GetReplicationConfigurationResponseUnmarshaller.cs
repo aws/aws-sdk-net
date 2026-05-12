@@ -142,6 +142,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.StagingAreaTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("storeSnapshotOnLocalZone", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    response.StoreSnapshotOnLocalZone = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("useDedicatedReplicationServer", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

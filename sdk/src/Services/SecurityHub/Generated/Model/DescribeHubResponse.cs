@@ -55,10 +55,10 @@ namespace Amazon.SecurityHub.Model
         /// When you automatically enable new controls, you can interact with the controls in
         /// the console and programmatically immediately after release. However, automatically
         /// enabled controls have a temporary default status of <c>DISABLED</c>. It can take up
-        /// to several days for Security Hub to process the control release and designate the
-        /// control as <c>ENABLED</c> in your account. During the processing period, you can manually
-        /// enable or disable a control, and Security Hub will maintain that designation regardless
-        /// of whether you have <c>AutoEnableControls</c> set to <c>true</c>.
+        /// to several days for Security Hub CSPM to process the control release and designate
+        /// the control as <c>ENABLED</c> in your account. During the processing period, you can
+        /// manually enable or disable a control, and Security Hub CSPM will maintain that designation
+        /// regardless of whether you have <c>AutoEnableControls</c> set to <c>true</c>.
         /// </para>
         /// </summary>
         public bool? AutoEnableControls
@@ -77,20 +77,20 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ControlFindingGenerator. 
         /// <para>
         /// Specifies whether the calling account has consolidated control findings turned on.
-        /// If the value for this field is set to <c>SECURITY_CONTROL</c>, Security Hub generates
+        /// If the value for this field is set to <c>SECURITY_CONTROL</c>, Security Hub CSPM generates
         /// a single finding for a control check even when the check applies to multiple enabled
         /// standards.
         /// </para>
         ///  
         /// <para>
-        /// If the value for this field is set to <c>STANDARD_CONTROL</c>, Security Hub generates
+        /// If the value for this field is set to <c>STANDARD_CONTROL</c>, Security Hub CSPM generates
         /// separate findings for a control check when the check applies to multiple enabled standards.
         /// </para>
         ///  
         /// <para>
         /// The value for this field in a member account matches the value in the administrator
         /// account. For accounts that aren't part of an organization, the default value of this
-        /// field is <c>SECURITY_CONTROL</c> if you enabled Security Hub on or after February
+        /// field is <c>SECURITY_CONTROL</c> if you enabled Security Hub CSPM on or after February
         /// 23, 2023.
         /// </para>
         /// </summary>
@@ -127,7 +127,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SubscribedAt. 
         /// <para>
-        /// The date and time when Security Hub was enabled in the account.
+        /// The date and time when Security Hub CSPM was enabled in the account.
         /// </para>
         /// </summary>
         public string SubscribedAt

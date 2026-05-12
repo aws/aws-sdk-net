@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class EvaluateRequest : AmazonBedrockAgentCoreRequest
     {
         private EvaluationInput _evaluationInput;
+        private List<EvaluationReferenceInput> _evaluationReferenceInputs = AWSConfigs.InitializeCollections ? new List<EvaluationReferenceInput>() : null;
         private EvaluationTarget _evaluationTarget;
         private string _evaluatorId;
 
@@ -60,6 +61,34 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetEvaluationInput()
         {
             return this._evaluationInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationReferenceInputs. 
+        /// <para>
+        ///  Ground truth data to compare against agent responses during evaluation. Allows to
+        /// provide expected responses, assertions, and expected tool trajectories at different
+        /// evaluation levels. Session-level reference inputs apply to the entire conversation,
+        /// while trace-level reference inputs target specific request-response interactions identified
+        /// by trace ID. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
+        public List<EvaluationReferenceInput> EvaluationReferenceInputs
+        {
+            get { return this._evaluationReferenceInputs; }
+            set { this._evaluationReferenceInputs = value; }
+        }
+
+        // Check to see if EvaluationReferenceInputs property is set
+        internal bool IsSetEvaluationReferenceInputs()
+        {
+            return this._evaluationReferenceInputs != null && (this._evaluationReferenceInputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -87,7 +116,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <para>
         ///  The unique identifier of the evaluator to use for scoring. Can be a built-in evaluator
         /// (e.g., <c>Builtin.Helpfulness</c>, <c>Builtin.Correctness</c>) or a custom evaluator
-        /// ARN created through the control plane API. 
+        /// Id created through the control plane API. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

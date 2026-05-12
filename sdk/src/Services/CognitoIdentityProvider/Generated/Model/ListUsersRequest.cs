@@ -33,6 +33,12 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// Container for the parameters to the ListUsers operation.
     /// Given a user pool ID, returns a list of users and their basic details in a user pool.
     /// 
+    ///  
+    /// <para>
+    /// This operation is eventually consistent. You might experience a delay before results
+    /// are up-to-date. To validate the existence or configuration of an individual user,
+    /// use <c>AdminGetUser</c>.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
@@ -210,6 +216,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of users that you want Amazon Cognito to return in the response.
+        /// In some SDK contexts, this operation might return fewer items than you specify in
+        /// the <c>Limit</c> parameter without having reached the end of the full list. If the
+        /// response contains a <c>PaginationToken</c>, then there are more results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]

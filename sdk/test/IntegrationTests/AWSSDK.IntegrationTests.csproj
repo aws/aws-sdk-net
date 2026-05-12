@@ -1,0 +1,111 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net472;net8.0</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE;LOCAL_FILE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <AssemblyName>AWSSDK.IntegrationTests</AssemblyName>
+    <PackageId>AWSSDK.IntegrationTests</PackageId>
+
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <NoWarn>CS1591,CS0612,CS0618</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="**/obj/**" />
+    <None Remove="**/obj/**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Include="../Services/*/IntegrationTests/*.cs" />
+    <Compile Include="../Services/*/IntegrationTests/*/*.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Include="Tests/ListObjectsResponse.xml" />
+    <EmbeddedResource Include="../Services/S3/IntegrationTests/EmbeddedResource/*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      Use xunit.v3.core directly instead of the xunit.v3 metapackage.
+      The metapackage includes a v2 compatibility shim (xunit 2.x) which causes CS0433
+      type ambiguity between xunit.core v2 and xunit.v3.core. The individual package
+      has no such dependency.
+    -->
+    <PackageReference Include="xunit.v3.core" Version="3.2.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+
+    <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <ProjectReference Include="../../src/Core/AWSSDK.Core.NetFramework.csproj" />
+    <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/APIGateway/AWSSDK.APIGateway.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/CloudWatch/AWSSDK.CloudWatch.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/DynamoDBStreams/AWSSDK.DynamoDBStreams.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/GameLift/AWSSDK.GameLift.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/IoT/AWSSDK.IoT.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/IotData/AWSSDK.IotData.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/Polly/AWSSDK.Polly.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/Route53/AWSSDK.Route53.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/S3Control/AWSSDK.S3Control.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/CognitoSync/AWSSDK.CognitoSync.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/EC2/AWSSDK.EC2.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/IdentityManagement/AWSSDK.IdentityManagement.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/Lightsail/AWSSDK.Lightsail.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/Batch/AWSSDK.Batch.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/SQS/AWSSDK.SQS.NetFramework.csproj" />
+    <ProjectReference Include="../../src/Services/TranscribeStreaming/AWSSDK.TranscribeStreaming.NetFramework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+    <ProjectReference Include="../../src/Core/AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/APIGateway/AWSSDK.APIGateway.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/CloudWatch/AWSSDK.CloudWatch.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/DynamoDBStreams/AWSSDK.DynamoDBStreams.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/GameLift/AWSSDK.GameLift.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/IoT/AWSSDK.IoT.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/IotData/AWSSDK.IotData.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/Polly/AWSSDK.Polly.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/Route53/AWSSDK.Route53.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/S3Control/AWSSDK.S3Control.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/CognitoSync/AWSSDK.CognitoSync.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/EC2/AWSSDK.EC2.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/IdentityManagement/AWSSDK.IdentityManagement.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/Lightsail/AWSSDK.Lightsail.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/Batch/AWSSDK.Batch.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/SQS/AWSSDK.SQS.NetStandard.csproj" />
+    <ProjectReference Include="../../src/Services/TranscribeStreaming/AWSSDK.TranscribeStreaming.NetStandard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="this-is-a-test.flac">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

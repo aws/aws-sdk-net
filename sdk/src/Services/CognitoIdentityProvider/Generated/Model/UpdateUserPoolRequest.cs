@@ -37,8 +37,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  <important> 
     /// <para>
-    /// If you don't provide a value for an attribute, Amazon Cognito sets it to its default
-    /// value.
+    /// With the exception of <c>UserPoolTier</c>, if you don't provide a value for an attribute,
+    /// Amazon Cognito sets it to its default value.
     /// </para>
     ///  </important> <note> 
     /// <para>

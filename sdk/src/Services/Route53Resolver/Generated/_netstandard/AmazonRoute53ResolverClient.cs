@@ -39,6 +39,11 @@ namespace Amazon.Route53Resolver
 {
     /// <summary>
     /// <para>Implementation for accessing Route53Resolver</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// When you create a VPC using Amazon VPC, you automatically get DNS resolution within
     /// the VPC from Route 53 Resolver. By default, Resolver answers DNS queries for VPC domain
@@ -1434,6 +1439,9 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
         /// One or more parameters in this request are not valid.
         /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ResourceInUseException">
         /// The resource that you tried to update or delete is currently in use.
         /// </exception>
@@ -1685,6 +1693,9 @@ namespace Amazon.Route53Resolver
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
         /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
         /// The specified resource doesn't exist.

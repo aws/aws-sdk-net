@@ -171,6 +171,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TotalTargetCapacity", StringUtils.FromInt(publicRequest.TotalTargetCapacity));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateCapacityReservationFleetRequestMarshaller _instance = new CreateCapacityReservationFleetRequestMarshaller();        

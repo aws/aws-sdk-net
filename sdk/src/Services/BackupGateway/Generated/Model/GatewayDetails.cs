@@ -34,6 +34,7 @@ namespace Amazon.BackupGateway.Model
     /// </summary>
     public partial class GatewayDetails
     {
+        private DateTime? _deprecationDate;
         private string _gatewayArn;
         private string _gatewayDisplayName;
         private GatewayType _gatewayType;
@@ -41,7 +42,27 @@ namespace Amazon.BackupGateway.Model
         private DateTime? _lastSeenTime;
         private MaintenanceStartTime _maintenanceStartTime;
         private DateTime? _nextUpdateAvailabilityTime;
+        private string _softwareVersion;
         private string _vpcEndpoint;
+
+        /// <summary>
+        /// Gets and sets the property DeprecationDate. 
+        /// <para>
+        /// Date after which this gateway will not receive software updates for new features and
+        /// bug fixes.
+        /// </para>
+        /// </summary>
+        public DateTime? DeprecationDate
+        {
+            get { return this._deprecationDate; }
+            set { this._deprecationDate = value; }
+        }
+
+        // Check to see if DeprecationDate property is set
+        internal bool IsSetDeprecationDate()
+        {
+            return this._deprecationDate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property GatewayArn. 
@@ -50,7 +71,7 @@ namespace Amazon.BackupGateway.Model
         /// to return a list of gateways for your account and Amazon Web Services Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=50, Max=500)]
+        [AWSProperty(Min=50, Max=180)]
         public string GatewayArn
         {
             get { return this._gatewayArn; }
@@ -174,6 +195,25 @@ namespace Amazon.BackupGateway.Model
         internal bool IsSetNextUpdateAvailabilityTime()
         {
             return this._nextUpdateAvailabilityTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwareVersion. 
+        /// <para>
+        /// The version number of the software running on the gateway appliance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string SoftwareVersion
+        {
+            get { return this._softwareVersion; }
+            set { this._softwareVersion = value; }
+        }
+
+        // Check to see if SoftwareVersion property is set
+        internal bool IsSetSoftwareVersion()
+        {
+            return this._softwareVersion != null;
         }
 
         /// <summary>

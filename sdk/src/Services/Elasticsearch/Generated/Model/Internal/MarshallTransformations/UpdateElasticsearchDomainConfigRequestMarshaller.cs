@@ -129,6 +129,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetDeploymentStrategyOptions())
+            {
+                context.Writer.WritePropertyName("DeploymentStrategyOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentStrategyOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeploymentStrategyOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDomainEndpointOptions())
             {
                 context.Writer.WritePropertyName("DomainEndpointOptions");

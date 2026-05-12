@@ -82,6 +82,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TerminateInstances", StringUtils.FromBool(publicRequest.TerminateInstances));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CancelSpotFleetRequestsRequestMarshaller _instance = new CancelSpotFleetRequestsRequestMarshaller();        

@@ -2034,8 +2034,18 @@ namespace Amazon.Neptune
         /// </param>
         /// 
         /// <returns>The response from the ModifyGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterAlreadyExistsException">
+        /// The <c>GlobalClusterIdentifier</c> already exists. Choose a new global database identifier
+        /// (unique name) to create a new global database cluster.
+        /// </exception>
         /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
         /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
         /// The global cluster is in an invalid state and can't perform the requested operation.
@@ -2108,7 +2118,7 @@ namespace Amazon.Neptune
         /// <summary>
         /// Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster
         /// becomes a normal standalone cluster with read-write capability instead of being read-only,
-        /// and no longer receives data from a the primary cluster.
+        /// and no longer receives data from the primary cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveFromGlobalCluster service method.</param>
         /// <param name="cancellationToken">

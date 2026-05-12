@@ -35,7 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// For more information about this processor including examples, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Processors.html#CloudWatch-Logs-Transformation-Grok">grok</a>
+    /// For more information about this processor including examples, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Configurable.html#CloudWatch-Logs-Transformation-Grok">grok</a>
     /// in the <i>CloudWatch Logs User Guide</i>.
     /// </para>
     /// </summary>
@@ -48,7 +48,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property Match. 
         /// <para>
         /// The grok pattern to match against the log event. For a list of supported grok patterns,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Processors.html#Grok-Patterns">Supported
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation-Configurable.html#CloudWatch-Logs-Transformation-Grok">Supported
         /// grok patterns</a>.
         /// </para>
         /// </summary>

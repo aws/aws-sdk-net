@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NetworkInterfacePermissionId", StringUtils.FromString(publicRequest.NetworkInterfacePermissionId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteNetworkInterfacePermissionRequestMarshaller _instance = new DeleteNetworkInterfacePermissionRequestMarshaller();        

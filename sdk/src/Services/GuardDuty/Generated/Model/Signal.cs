@@ -60,7 +60,7 @@ namespace Amazon.GuardDuty.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=400)]
+        [AWSProperty(Min=0, Max=400)]
         public List<string> ActorIds
         {
             get { return this._actorIds; }
@@ -117,7 +117,7 @@ namespace Amazon.GuardDuty.Model
         /// The description of the signal.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2000)]
+        [AWSProperty(Min=0, Max=2000)]
         public string Description
         {
             get { return this._description; }
@@ -141,7 +141,7 @@ namespace Amazon.GuardDuty.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=400)]
+        [AWSProperty(Min=0, Max=400)]
         public List<string> EndpointIds
         {
             get { return this._endpointIds; }
@@ -223,7 +223,7 @@ namespace Amazon.GuardDuty.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=400)]
+        [AWSProperty(Min=0, Max=400)]
         public List<string> ResourceUids
         {
             get { return this._resourceUids; }
@@ -267,7 +267,7 @@ namespace Amazon.GuardDuty.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=400)]
+        [AWSProperty(Min=0, Max=400)]
         public List<Indicator> SignalIndicators
         {
             get { return this._signalIndicators; }

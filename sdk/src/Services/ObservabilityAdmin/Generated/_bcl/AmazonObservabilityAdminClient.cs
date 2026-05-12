@@ -39,6 +39,11 @@ namespace Amazon.ObservabilityAdmin
 {
     /// <summary>
     /// <para>Implementation for accessing ObservabilityAdmin</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You can use Amazon CloudWatch Observability Admin to discover and understand the
     /// state of telemetry configuration in CloudWatch for your Amazon Web Services Organization
@@ -3259,7 +3264,7 @@ namespace Amazon.ObservabilityAdmin
         ///  </dd> <dt>Okta Sources (SSO, Auth0)</dt> <dd> 
         /// <para>
         ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>domain</c>,
-        /// <c>range</c> (SSO only), OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
+        /// <c>range</c>, OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
         /// </para>
         ///  </dd> <dt>Palo Alto Networks</dt> <dd> 
         /// <para>
@@ -3373,7 +3378,7 @@ namespace Amazon.ObservabilityAdmin
         ///  </dd> <dt>Okta Sources (SSO, Auth0)</dt> <dd> 
         /// <para>
         ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>domain</c>,
-        /// <c>range</c> (SSO only), OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
+        /// <c>range</c>, OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
         /// </para>
         ///  </dd> <dt>Palo Alto Networks</dt> <dd> 
         /// <para>

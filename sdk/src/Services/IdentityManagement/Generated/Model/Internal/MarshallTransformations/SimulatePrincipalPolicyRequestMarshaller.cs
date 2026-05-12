@@ -179,6 +179,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ResourcePolicy", StringUtils.FromString(publicRequest.ResourcePolicy));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SimulatePrincipalPolicyRequestMarshaller _instance = new SimulatePrincipalPolicyRequestMarshaller();        

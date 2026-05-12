@@ -52,6 +52,7 @@ namespace Amazon.S3Control.Model
     public partial class GetDataAccessRequest : AmazonS3ControlRequest
     {
         private string _accountId;
+        private string _auditContext;
         private int? _durationSeconds;
         private Permission _permission;
         private Privilege _privilege;
@@ -75,6 +76,26 @@ namespace Amazon.S3Control.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuditContext. 
+        /// <para>
+        /// The context to identify the job or query associated with the credential request. This
+        /// information will be displayed in CloudTrail log in your account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string AuditContext
+        {
+            get { return this._auditContext; }
+            set { this._auditContext = value; }
+        }
+
+        // Check to see if AuditContext property is set
+        internal bool IsSetAuditContext()
+        {
+            return this._auditContext != null;
         }
 
         /// <summary>

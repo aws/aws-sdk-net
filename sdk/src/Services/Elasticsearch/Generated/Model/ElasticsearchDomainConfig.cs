@@ -40,6 +40,7 @@ namespace Amazon.Elasticsearch.Model
         private AutoTuneOptionsStatus _autoTuneOptions;
         private ChangeProgressDetails _changeProgressDetails;
         private CognitoOptionsStatus _cognitoOptions;
+        private DeploymentStrategyOptionsStatus _deploymentStrategyOptions;
         private DomainEndpointOptionsStatus _domainEndpointOptions;
         private EBSOptionsStatus _ebsOptions;
         private ElasticsearchClusterConfigStatus _elasticsearchClusterConfig;
@@ -159,6 +160,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetCognitoOptions()
         {
             return this._cognitoOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentStrategyOptions. 
+        /// <para>
+        /// Specifies <c>DeploymentStrategyOptions</c> for the domain. 
+        /// </para>
+        /// </summary>
+        public DeploymentStrategyOptionsStatus DeploymentStrategyOptions
+        {
+            get { return this._deploymentStrategyOptions; }
+            set { this._deploymentStrategyOptions = value; }
+        }
+
+        // Check to see if DeploymentStrategyOptions property is set
+        internal bool IsSetDeploymentStrategyOptions()
+        {
+            return this._deploymentStrategyOptions != null;
         }
 
         /// <summary>

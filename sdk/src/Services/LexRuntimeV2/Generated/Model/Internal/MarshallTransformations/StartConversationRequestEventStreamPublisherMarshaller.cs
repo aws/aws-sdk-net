@@ -20,6 +20,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Amazon.Runtime.EventStreams;
+using System.Collections.Generic;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
@@ -53,12 +54,14 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             byte[] eventPayload;
             string contentType;
             string eventType;
+            IList<EventStreamHeader> eventHeaders;
             if (evnt is AudioInputEvent)
             {
                 var memoryStream = new MemoryStream();
                 var context = CreateJsonMarshallerContext(memoryStream);
                 context.Writer.WriteStartObject();
                 AudioInputEventMarshaller.Instance.Marshall((AudioInputEvent)evnt, context);
+                eventHeaders = context.Request.EventHeaders;
                 context.Writer.WriteEndObject();
                 context.Writer.Flush();
 
@@ -72,6 +75,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 var context = CreateJsonMarshallerContext(memoryStream);
                 context.Writer.WriteStartObject();
                 ConfigurationEventMarshaller.Instance.Marshall((ConfigurationEvent)evnt, context);
+                eventHeaders = context.Request.EventHeaders;
                 context.Writer.WriteEndObject();
                 context.Writer.Flush();
 
@@ -85,6 +89,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 var context = CreateJsonMarshallerContext(memoryStream);
                 context.Writer.WriteStartObject();
                 DisconnectionEventMarshaller.Instance.Marshall((DisconnectionEvent)evnt, context);
+                eventHeaders = context.Request.EventHeaders;
                 context.Writer.WriteEndObject();
                 context.Writer.Flush();
 
@@ -98,6 +103,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 var context = CreateJsonMarshallerContext(memoryStream);
                 context.Writer.WriteStartObject();
                 DTMFInputEventMarshaller.Instance.Marshall((DTMFInputEvent)evnt, context);
+                eventHeaders = context.Request.EventHeaders;
                 context.Writer.WriteEndObject();
                 context.Writer.Flush();
 
@@ -111,6 +117,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 var context = CreateJsonMarshallerContext(memoryStream);
                 context.Writer.WriteStartObject();
                 PlaybackCompletionEventMarshaller.Instance.Marshall((PlaybackCompletionEvent)evnt, context);
+                eventHeaders = context.Request.EventHeaders;
                 context.Writer.WriteEndObject();
                 context.Writer.Flush();
 
@@ -124,6 +131,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 var context = CreateJsonMarshallerContext(memoryStream);
                 context.Writer.WriteStartObject();
                 TextInputEventMarshaller.Instance.Marshall((TextInputEvent)evnt, context);
+                eventHeaders = context.Request.EventHeaders;
                 context.Writer.WriteEndObject();
                 context.Writer.Flush();
 
@@ -136,7 +144,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 throw new Amazon.Runtime.AmazonClientException($"Type {evnt.GetType().FullName} is not a known event type for this streaming operation");
             }
 
-            return CreateEventStreamMessage(eventType: eventType, contentType: contentType, marshalledEventHeaders: null, eventPayload: eventPayload);
+            return CreateEventStreamMessage(eventType: eventType, contentType: contentType, marshalledEventHeaders: eventHeaders, eventPayload: eventPayload);
         }
     }
 }

@@ -121,6 +121,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ResetAllParameters", StringUtils.FromBool(publicRequest.ResetAllParameters));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ResetDBClusterParameterGroupRequestMarshaller _instance = new ResetDBClusterParameterGroupRequestMarshaller();        

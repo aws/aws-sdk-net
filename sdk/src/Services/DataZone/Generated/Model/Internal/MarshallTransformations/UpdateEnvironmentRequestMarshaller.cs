@@ -91,6 +91,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetEnvironmentConfigurationName())
+            {
+                context.Writer.WritePropertyName("environmentConfigurationName");
+                context.Writer.WriteStringValue(publicRequest.EnvironmentConfigurationName);
+            }
+
             if(publicRequest.IsSetGlossaryTerms())
             {
                 context.Writer.WritePropertyName("glossaryTerms");

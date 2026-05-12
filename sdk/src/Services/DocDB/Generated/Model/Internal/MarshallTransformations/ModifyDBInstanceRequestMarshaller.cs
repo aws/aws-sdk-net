@@ -108,6 +108,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PromotionTier", StringUtils.FromInt(publicRequest.PromotionTier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyDBInstanceRequestMarshaller _instance = new ModifyDBInstanceRequestMarshaller();        

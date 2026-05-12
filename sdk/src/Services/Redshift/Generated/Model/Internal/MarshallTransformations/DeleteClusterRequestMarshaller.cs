@@ -76,6 +76,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SkipFinalClusterSnapshot", StringUtils.FromBool(publicRequest.SkipFinalClusterSnapshot));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteClusterRequestMarshaller _instance = new DeleteClusterRequestMarshaller();        

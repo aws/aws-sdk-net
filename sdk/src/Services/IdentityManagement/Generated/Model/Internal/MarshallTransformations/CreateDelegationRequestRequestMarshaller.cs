@@ -134,6 +134,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SessionDuration", StringUtils.FromInt(publicRequest.SessionDuration));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateDelegationRequestRequestMarshaller _instance = new CreateDelegationRequestRequestMarshaller();        

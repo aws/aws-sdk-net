@@ -46,6 +46,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetChatEntryPointParameters())
+            {
+                context.Writer.WritePropertyName("ChatEntryPointParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ChatEntryPointParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.ChatEntryPointParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");

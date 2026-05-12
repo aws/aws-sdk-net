@@ -68,6 +68,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SwitchoverTimeout", StringUtils.FromInt(publicRequest.SwitchoverTimeout));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SwitchoverBlueGreenDeploymentRequestMarshaller _instance = new SwitchoverBlueGreenDeploymentRequestMarshaller();        

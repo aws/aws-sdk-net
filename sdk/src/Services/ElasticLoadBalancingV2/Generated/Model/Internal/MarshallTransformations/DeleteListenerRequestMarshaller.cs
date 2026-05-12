@@ -64,6 +64,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ListenerArn", StringUtils.FromString(publicRequest.ListenerArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteListenerRequestMarshaller _instance = new DeleteListenerRequestMarshaller();        

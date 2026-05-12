@@ -89,6 +89,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VirtualMFADeviceName", StringUtils.FromString(publicRequest.VirtualMFADeviceName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateVirtualMFADeviceRequestMarshaller _instance = new CreateVirtualMFADeviceRequestMarshaller();        

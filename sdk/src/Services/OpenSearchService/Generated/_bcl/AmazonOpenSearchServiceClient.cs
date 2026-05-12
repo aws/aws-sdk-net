@@ -39,6 +39,11 @@ namespace Amazon.OpenSearchService
 {
     /// <summary>
     /// <para>Implementation for accessing OpenSearchService</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Use the Amazon OpenSearch Service configuration API to create, configure, and manage
     /// OpenSearch Service domains. The endpoint for configuration service requests is Region
@@ -2125,6 +2130,87 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DeregisterCapability
+
+
+        /// <summary>
+        /// Deregisters a capability from an OpenSearch UI application. This operation removes
+        /// the capability and its associated configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterCapability service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterCapability service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeregisterCapability">REST API Reference for DeregisterCapability Operation</seealso>
+        public virtual DeregisterCapabilityResponse DeregisterCapability(DeregisterCapabilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeregisterCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterCapabilityResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterCapabilityResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deregisters a capability from an OpenSearch UI application. This operation removes
+        /// the capability and its associated configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterCapability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterCapability service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeregisterCapability">REST API Reference for DeregisterCapability Operation</seealso>
+        public virtual Task<DeregisterCapabilityResponse> DeregisterCapabilityAsync(DeregisterCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeregisterCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterCapabilityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterCapabilityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDomain
 
 
@@ -2738,6 +2824,87 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = DescribeInboundConnectionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeInboundConnectionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInsightDetails
+
+
+        /// <summary>
+        /// Describes the details of an existing insight for an Amazon OpenSearch Service domain.
+        /// Returns detailed fields associated with the specified insight, such as text descriptions
+        /// and metric data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightDetails service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInsightDetails service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInsightDetails">REST API Reference for DescribeInsightDetails Operation</seealso>
+        public virtual DescribeInsightDetailsResponse DescribeInsightDetails(DescribeInsightDetailsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeInsightDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInsightDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInsightDetailsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the details of an existing insight for an Amazon OpenSearch Service domain.
+        /// Returns detailed fields associated with the specified insight, such as text descriptions
+        /// and metric data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInsightDetails service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInsightDetails">REST API Reference for DescribeInsightDetails Operation</seealso>
+        public virtual Task<DescribeInsightDetailsResponse> DescribeInsightDetailsAsync(DescribeInsightDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeInsightDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInsightDetailsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInsightDetailsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3397,6 +3564,79 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCapability
+
+
+        /// <summary>
+        /// Retrieves information about a registered capability for an OpenSearch UI application,
+        /// including its configuration and current status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapability service method.</param>
+        /// 
+        /// <returns>The response from the GetCapability service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetCapability">REST API Reference for GetCapability Operation</seealso>
+        public virtual GetCapabilityResponse GetCapability(GetCapabilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapabilityResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapabilityResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a registered capability for an OpenSearch UI application,
+        /// including its configuration and current status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapability service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetCapability">REST API Reference for GetCapability Operation</seealso>
+        public virtual Task<GetCapabilityResponse> GetCapabilityAsync(GetCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapabilityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCapabilityResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4522,6 +4762,87 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  ListInsights
+
+
+        /// <summary>
+        /// Lists insights for an Amazon OpenSearch Service domain or Amazon Web Services account.
+        /// Returns a paginated list of insights based on the specified entity, filters, time
+        /// range, and sort order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInsights service method.</param>
+        /// 
+        /// <returns>The response from the ListInsights service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
+        public virtual ListInsightsResponse ListInsights(ListInsightsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInsightsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists insights for an Amazon OpenSearch Service domain or Amazon Web Services account.
+        /// Returns a paginated list of insights based on the specified entity, filters, time
+        /// range, and sort order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInsights service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
+        public virtual Task<ListInsightsResponse> ListInsightsAsync(ListInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListInsightsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListInstanceTypeDetails
 
 
@@ -5230,6 +5551,99 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  RegisterCapability
+
+
+        /// <summary>
+        /// Registers a capability for an OpenSearch UI application. Use this operation to enable
+        /// specific capabilities, such as AI features, for a given application. The capability
+        /// configuration defines the type and settings of the capability to register. For more
+        /// information about the AI features, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application-ai-assistant.html">Agentic
+        /// AI for OpenSearch UI</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCapability service method.</param>
+        /// 
+        /// <returns>The response from the RegisterCapability service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ServiceQuotaExceededException">
+        /// An exception for when a request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RegisterCapability">REST API Reference for RegisterCapability Operation</seealso>
+        public virtual RegisterCapabilityResponse RegisterCapability(RegisterCapabilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterCapabilityResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterCapabilityResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Registers a capability for an OpenSearch UI application. Use this operation to enable
+        /// specific capabilities, such as AI features, for a given application. The capability
+        /// configuration defines the type and settings of the capability to register. For more
+        /// information about the AI features, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application-ai-assistant.html">Agentic
+        /// AI for OpenSearch UI</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterCapability service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterCapability service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ServiceQuotaExceededException">
+        /// An exception for when a request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RegisterCapability">REST API Reference for RegisterCapability Operation</seealso>
+        public virtual Task<RegisterCapabilityResponse> RegisterCapabilityAsync(RegisterCapabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterCapabilityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterCapabilityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RejectInboundConnection
 
 
@@ -5417,6 +5831,81 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = RevokeVpcEndpointAccessResponseUnmarshaller.Instance;
             
             return InvokeAsync<RevokeVpcEndpointAccessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RollbackServiceSoftwareUpdate
+
+
+        /// <summary>
+        /// Rolls back a service software update for a domain to the previous version. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+        /// software updates in Amazon OpenSearch Service</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RollbackServiceSoftwareUpdate service method.</param>
+        /// 
+        /// <returns>The response from the RollbackServiceSoftwareUpdate service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RollbackServiceSoftwareUpdate">REST API Reference for RollbackServiceSoftwareUpdate Operation</seealso>
+        public virtual RollbackServiceSoftwareUpdateResponse RollbackServiceSoftwareUpdate(RollbackServiceSoftwareUpdateRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RollbackServiceSoftwareUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RollbackServiceSoftwareUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<RollbackServiceSoftwareUpdateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Rolls back a service software update for a domain to the previous version. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+        /// software updates in Amazon OpenSearch Service</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RollbackServiceSoftwareUpdate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RollbackServiceSoftwareUpdate service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RollbackServiceSoftwareUpdate">REST API Reference for RollbackServiceSoftwareUpdate Operation</seealso>
+        public virtual Task<RollbackServiceSoftwareUpdateResponse> RollbackServiceSoftwareUpdateAsync(RollbackServiceSoftwareUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RollbackServiceSoftwareUpdateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RollbackServiceSoftwareUpdateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RollbackServiceSoftwareUpdateResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5750,6 +6239,9 @@ namespace Amazon.OpenSearchService
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
         /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
@@ -5785,6 +6277,9 @@ namespace Amazon.OpenSearchService
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
         /// An exception for accessing or deleting a resource that doesn't exist.

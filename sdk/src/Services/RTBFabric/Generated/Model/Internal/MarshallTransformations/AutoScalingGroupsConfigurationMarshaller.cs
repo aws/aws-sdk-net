@@ -57,6 +57,17 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetHealthCheckConfig())
+            {
+                context.Writer.WritePropertyName("healthCheckConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HealthCheckConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.HealthCheckConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");

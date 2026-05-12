@@ -93,11 +93,35 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListConfigurationBundles operation
+        ///</summary>
+        public IListConfigurationBundlesPaginator ListConfigurationBundles(ListConfigurationBundlesRequest request) 
+        {
+            return new ListConfigurationBundlesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConfigurationBundleVersions operation
+        ///</summary>
+        public IListConfigurationBundleVersionsPaginator ListConfigurationBundleVersions(ListConfigurationBundleVersionsRequest request) 
+        {
+            return new ListConfigurationBundleVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEvaluators operation
         ///</summary>
         public IListEvaluatorsPaginator ListEvaluators(ListEvaluatorsRequest request) 
         {
             return new ListEvaluatorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGatewayRules operation
+        ///</summary>
+        public IListGatewayRulesPaginator ListGatewayRules(ListGatewayRulesRequest request) 
+        {
+            return new ListGatewayRulesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -114,6 +138,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         public IListGatewayTargetsPaginator ListGatewayTargets(ListGatewayTargetsRequest request) 
         {
             return new ListGatewayTargetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListHarnesses operation
+        ///</summary>
+        public IListHarnessesPaginator ListHarnesses(ListHarnessesRequest request) 
+        {
+            return new ListHarnessesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -138,6 +170,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
         public IListOnlineEvaluationConfigsPaginator ListOnlineEvaluationConfigs(ListOnlineEvaluationConfigsRequest request) 
         {
             return new ListOnlineEvaluationConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPaymentConnectors operation
+        ///</summary>
+        public IListPaymentConnectorsPaginator ListPaymentConnectors(ListPaymentConnectorsRequest request) 
+        {
+            return new ListPaymentConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPaymentCredentialProviders operation
+        ///</summary>
+        public IListPaymentCredentialProvidersPaginator ListPaymentCredentialProviders(ListPaymentCredentialProvidersRequest request) 
+        {
+            return new ListPaymentCredentialProvidersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPaymentManagers operation
+        ///</summary>
+        public IListPaymentManagersPaginator ListPaymentManagers(ListPaymentManagersRequest request) 
+        {
+            return new ListPaymentManagersPaginator(this.client, request);
         }
 
         /// <summary>
@@ -170,6 +226,22 @@ namespace Amazon.BedrockAgentCoreControl.Model
         public IListPolicyGenerationsPaginator ListPolicyGenerations(ListPolicyGenerationsRequest request) 
         {
             return new ListPolicyGenerationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRegistries operation
+        ///</summary>
+        public IListRegistriesPaginator ListRegistries(ListRegistriesRequest request) 
+        {
+            return new ListRegistriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRegistryRecords operation
+        ///</summary>
+        public IListRegistryRecordsPaginator ListRegistryRecords(ListRegistryRecordsRequest request) 
+        {
+            return new ListRegistryRecordsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -31,19 +31,21 @@ namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
     /// The result of the <c>ResolveCustomer</c> operation. Contains the <c>CustomerIdentifier</c>
-    /// along with the <c>CustomerAWSAccountId</c> and <c>ProductCode</c>.
+    /// along with the <c>CustomerAWSAccountId</c>, <c>ProductCode</c>, and <c>LicenseArn</c>.
     /// </summary>
     public partial class ResolveCustomerResponse : AmazonWebServiceResponse
     {
         private string _customerAWSAccountId;
         private string _customerIdentifier;
+        private string _licenseArn;
         private string _productCode;
 
         /// <summary>
         /// Gets and sets the property CustomerAWSAccountId. 
         /// <para>
         /// The <c>CustomerAWSAccountId</c> provides the Amazon Web Services account ID associated
-        /// with the <c>CustomerIdentifier</c> for the individual customer.
+        /// with the <c>CustomerIdentifier</c> for the individual customer. Calls to <c>BatchMeterUsage</c>
+        /// require <c>CustomerAWSAccountId</c> for each <c>UsageRecord</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -63,7 +65,6 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Gets and sets the property CustomerIdentifier. 
         /// <para>
         /// The <c>CustomerIdentifier</c> is used to identify an individual customer in your application.
-        /// Calls to <c>BatchMeterUsage</c> require <c>CustomerIdentifiers</c> for each <c>UsageRecord</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -80,13 +81,39 @@ namespace Amazon.AWSMarketplaceMetering.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LicenseArn. 
+        /// <para>
+        /// The <c>LicenseArn</c> is a unique identifier for a specific granted license. These
+        /// are typically used for software purchased through Amazon Web Services Marketplace.
+        /// Calls to <c>BatchMeterUsage</c> require <c>LicenseArn</c> for each <c>UsageRecord</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Once you receive the <c>CustomerAWSAccountId</c> and <c>LicenseArn</c> in the response,
+        /// store that for future purposes/API calls/integrations.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string LicenseArn
+        {
+            get { return this._licenseArn; }
+            set { this._licenseArn = value; }
+        }
+
+        // Check to see if LicenseArn property is set
+        internal bool IsSetLicenseArn()
+        {
+            return this._licenseArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ProductCode. 
         /// <para>
         /// The product code is returned to confirm that the buyer is registering for your product.
         /// Subsequent <c>BatchMeterUsage</c> calls should be made using this product code.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string ProductCode
         {
             get { return this._productCode; }

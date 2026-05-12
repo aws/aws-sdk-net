@@ -64,6 +64,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Domain", StringUtils.FromString(publicRequest.Domain));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static VerifyDomainIdentityRequestMarshaller _instance = new VerifyDomainIdentityRequestMarshaller();        

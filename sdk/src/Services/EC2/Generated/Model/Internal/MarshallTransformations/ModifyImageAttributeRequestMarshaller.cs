@@ -219,6 +219,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Value", StringUtils.FromString(publicRequest.Value));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyImageAttributeRequestMarshaller _instance = new ModifyImageAttributeRequestMarshaller();        

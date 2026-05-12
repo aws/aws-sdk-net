@@ -180,7 +180,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// index syntax and quotas</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5120)]
+        [AWSProperty(Required=true, Min=1, Max=51200)]
         public string PolicyDocument
         {
             get { return this._policyDocument; }

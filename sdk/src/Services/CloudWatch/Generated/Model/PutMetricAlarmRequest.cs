@@ -32,8 +32,8 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Container for the parameters to the PutMetricAlarm operation.
     /// Creates or updates an alarm and associates it with the specified metric, metric math
-    /// expression, anomaly detection model, or Metrics Insights query. For more information
-    /// about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+    /// expression, anomaly detection model, Metrics Insights query, or PromQL query. For
+    /// more information about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
     /// alarms on Metrics Insights queries</a>.
     /// 
     ///  
@@ -43,8 +43,9 @@ namespace Amazon.CloudWatch.Model
     ///  
     /// <para>
     /// When this operation creates an alarm, the alarm state is immediately set to <c>INSUFFICIENT_DATA</c>.
-    /// The alarm is then evaluated and its state is set appropriately. Any actions associated
-    /// with the new state are then executed.
+    /// For PromQL alarms, the alarm state is instead immediately set to <c>OK</c>. The alarm
+    /// is then evaluated and its state is set appropriately. Any actions associated with
+    /// the new state are then executed.
     /// </para>
     ///  
     /// <para>
@@ -117,6 +118,8 @@ namespace Amazon.CloudWatch.Model
         private int? _datapointsToAlarm;
         private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private string _evaluateLowSampleCountPercentile;
+        private EvaluationCriteria _evaluationCriteria;
+        private int? _evaluationInterval;
         private int? _evaluationPeriods;
         private string _extendedStatistic;
         private List<string> _insufficientDataActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -331,7 +334,6 @@ namespace Amazon.CloudWatch.Model
         /// models.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ComparisonOperator ComparisonOperator
         {
             get { return this._comparisonOperator; }
@@ -419,6 +421,64 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EvaluationCriteria. 
+        /// <para>
+        /// The evaluation criteria for the alarm. For each <c>PutMetricAlarm</c> operation, you
+        /// must specify either <c>MetricName</c>, a <c>Metrics</c> array, or an <c>EvaluationCriteria</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use the <c>EvaluationCriteria</c> parameter, you cannot include the <c>Namespace</c>,
+        /// <c>MetricName</c>, <c>Dimensions</c>, <c>Period</c>, <c>Unit</c>, <c>Statistic</c>,
+        /// <c>ExtendedStatistic</c>, <c>Metrics</c>, <c>Threshold</c>, <c>ComparisonOperator</c>,
+        /// <c>ThresholdMetricId</c>, <c>EvaluationPeriods</c>, or <c>DatapointsToAlarm</c> parameters
+        /// of <c>PutMetricAlarm</c> in the same operation. Instead, all evaluation parameters
+        /// are defined within this structure.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example of how to use this parameter, see the <b>PromQL alarm</b> example on
+        /// this page.
+        /// </para>
+        /// </summary>
+        public EvaluationCriteria EvaluationCriteria
+        {
+            get { return this._evaluationCriteria; }
+            set { this._evaluationCriteria = value; }
+        }
+
+        // Check to see if EvaluationCriteria property is set
+        internal bool IsSetEvaluationCriteria()
+        {
+            return this._evaluationCriteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationInterval. 
+        /// <para>
+        /// The frequency, in seconds, at which the alarm is evaluated. Valid values are 10, 20,
+        /// 30, and any multiple of 60.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required for alarms that use <c>EvaluationCriteria</c>, and cannot
+        /// be specified for alarms configured with <c>MetricName</c> or <c>Metrics</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=3600)]
+        public int? EvaluationInterval
+        {
+            get { return this._evaluationInterval; }
+            set { this._evaluationInterval = value; }
+        }
+
+        // Check to see if EvaluationInterval property is set
+        internal bool IsSetEvaluationInterval()
+        {
+            return this._evaluationInterval.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EvaluationPeriods. 
         /// <para>
         /// The number of periods over which data is compared to the specified threshold. If you
@@ -427,7 +487,7 @@ namespace Amazon.CloudWatch.Model
         /// of N" alarm, this value is the N.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public int? EvaluationPeriods
         {
             get { return this._evaluationPeriods; }
@@ -634,7 +694,8 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property MetricName. 
         /// <para>
         /// The name for the metric associated with the alarm. For each <c>PutMetricAlarm</c>
-        /// operation, you must specify either <c>MetricName</c> or a <c>Metrics</c> array.
+        /// operation, you must specify either <c>MetricName</c>, a <c>Metrics</c> array, or an
+        /// <c>EvaluationCriteria</c>.
         /// </para>
         ///  
         /// <para>
@@ -662,7 +723,7 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// An array of <c>MetricDataQuery</c> structures that enable you to create an alarm based
         /// on the result of a metric math expression. For each <c>PutMetricAlarm</c> operation,
-        /// you must specify either <c>MetricName</c> or a <c>Metrics</c> array.
+        /// you must specify either <c>MetricName</c>, a <c>Metrics</c> array, or an <c>EvaluationCriteria</c>.
         /// </para>
         ///  
         /// <para>
@@ -1015,6 +1076,10 @@ namespace Amazon.CloudWatch.Model
         /// missing data even if you choose a different option for <c>TreatMissingData</c>. When
         /// an <c>AWS/DynamoDB</c> metric has missing data, alarms that evaluate that metric remain
         /// in their current state.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// This parameter is not applicable to PromQL alarms.
         /// </para>
         ///  </note>
         /// </summary>

@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("AssociationId", StringUtils.FromString(publicRequest.AssociationId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DisassociateIamInstanceProfileRequestMarshaller _instance = new DisassociateIamInstanceProfileRequestMarshaller();        

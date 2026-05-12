@@ -39,6 +39,11 @@ namespace Amazon.SageMakerFeatureStoreRuntime
 {
     /// <summary>
     /// <para>Implementation for accessing SageMakerFeatureStoreRuntime</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Contains all data plane API operations and data types for the Amazon SageMaker Feature
     /// Store. Use this API to put, delete, and retrieve (get) features from a feature store.

@@ -1207,6 +1207,36 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeAutomationJobRequest.AutomationGroupId</property>
+    <pattern>[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeAutomationJobRequest.AutomationId</property>
+    <pattern>[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeAutomationJobRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeAutomationJobRequest.JobId</property>
+    <pattern>[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeAutomationJobResponse.InputPayload</property>
+    <min>1</min>
+    <max>7000000</max>
+    <pattern>[\s\S]*[{\[].*[}\]]\s*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeAutomationJobResponse.OutputPayload</property>
+    <min>1</min>
+    <max>7000000</max>
+    <pattern>[\s\S]*[{\[].*[}\]]\s*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeBrandRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1993,6 +2023,10 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetIdentityContextRequest.ContextRegion</property>
+    <pattern>[a-z]+-[a-z]+-[0-9]{1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.GetIdentityContextRequest.Namespace</property>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
@@ -2728,6 +2762,30 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.StartAssetBundleImportJobResponse.RequestId</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.StartAutomationJobRequest.AutomationGroupId</property>
+    <pattern>[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.StartAutomationJobRequest.AutomationId</property>
+    <pattern>[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.StartAutomationJobRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.StartAutomationJobRequest.InputPayload</property>
+    <min>1</min>
+    <max>7000000</max>
+    <pattern>[\s\S]*[{\[].*[}\]]\s*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.StartAutomationJobResponse.JobId</property>
+    <pattern>[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.StartDashboardSnapshotJobRequest.AwsAccountId</property>
@@ -3834,6 +3892,11 @@
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.AthenaParameters.ConsumerAccountRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.AthenaParameters.RoleArn</property>
     <min>20</min>
     <max>2048</max>
@@ -4220,6 +4283,16 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ContributionAnalysisFactor.FieldName</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ControlTitleFormatText.PlainText</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ControlTitleFormatText.RichText</property>
+    <min>1</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.Coordinate.Latitude</property>
@@ -4703,7 +4776,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DefaultFilterControlConfiguration.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -4861,7 +4934,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.FilterDateTimePickerControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -4878,7 +4951,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.FilterDropDownControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -4901,7 +4974,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.FilterListControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -4923,7 +4996,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.FilterRelativeDateTimeControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -4940,7 +5013,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.FilterSliderControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -4967,7 +5040,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.FilterTextAreaControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -4984,7 +5057,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.FilterTextFieldControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -5030,8 +5103,16 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.Font.FontFamily</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.FontConfiguration.FontColor</property>
     <pattern>^#[A-F0-9]{6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.FontConfiguration.FontFamily</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ForecastComputation.ComputationId</property>
@@ -5816,6 +5897,27 @@
     <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.OAuthClientCredentials.ClientId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.OAuthClientCredentials.ClientSecret</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.OAuthClientCredentials.Username</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.OAuthParameters.IdentityProviderCACertificatesBundleS3Uri</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^s3://.+/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.OAuthParameters.IdentityProviderResourceUri</property>
     <min>1</min>
     <max>2048</max>
@@ -5916,7 +6018,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ParameterDateTimePickerControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -5933,7 +6035,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ParameterDropDownControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -5950,7 +6052,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ParameterListControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -5967,7 +6069,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ParameterSliderControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -5989,7 +6091,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ParameterTextAreaControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -6006,7 +6108,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ParameterTextFieldControl.Title</property>
-    <min>1</min>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -6476,6 +6578,10 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.S3TablesParameters.TableBucketArn</property>
+    <pattern>^(arn:aws[-a-z0-9]*:[a-z0-9]+:[-a-z0-9]*:[0-9]{12}:bucket/[a-zA-Z0-9-_]{3,63})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.SankeyDiagramVisual.VisualContentAltText</property>
     <min>1</min>
     <max>1024</max>
@@ -6643,6 +6749,12 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.SheetTooltip.SheetId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.SheetVisualScopingConfiguration.SheetId</property>
     <min>1</min>
     <max>512</max>
@@ -6713,6 +6825,15 @@
     <min>1</min>
     <max>64</max>
     <pattern>[0-9a-zA-Z-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SparklinesOptions.FieldId</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SparklinesOptions.LineColor</property>
+    <pattern>^#[A-F0-9]{6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.SparkParameters.Host</property>
@@ -7047,6 +7168,17 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.TooltipSheetDefinition.Name</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.TooltipSheetDefinition.SheetId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.TopBottomFilter.FilterId</property>

@@ -122,6 +122,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Deleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DeploymentStrategyOptions", targetDepth))
+                {
+                    var unmarshaller = DeploymentStrategyOptionsUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentStrategyOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DomainEndpointOptions", targetDepth))
                 {
                     var unmarshaller = DomainEndpointOptionsUnmarshaller.Instance;

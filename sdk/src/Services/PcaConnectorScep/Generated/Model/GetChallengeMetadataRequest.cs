@@ -31,7 +31,7 @@ namespace Amazon.PcaConnectorScep.Model
 {
     /// <summary>
     /// Container for the parameters to the GetChallengeMetadata operation.
-    /// Retrieves the metadata for the specified <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.
+    /// Retrieves the metadata for the specified <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.
     /// </summary>
     public partial class GetChallengeMetadataRequest : AmazonPcaConnectorScepRequest
     {

@@ -47,6 +47,7 @@ namespace Amazon.ARCRegionswitch.Model
         private string _latestVersion;
         private ExecutionMode _mode;
         private string _planArn;
+        private string _recoveryExecutionId;
         private string _targetRegion;
 
         /// <summary>
@@ -143,6 +144,25 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetPlanArn()
         {
             return this._planArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecoveryExecutionId. 
+        /// <para>
+        /// The execution identifier of the recovery execution that ran in the opposite region
+        /// post-recovery is ran in. Required when starting a post-recovery execution.
+        /// </para>
+        /// </summary>
+        public string RecoveryExecutionId
+        {
+            get { return this._recoveryExecutionId; }
+            set { this._recoveryExecutionId = value; }
+        }
+
+        // Check to see if RecoveryExecutionId property is set
+        internal bool IsSetRecoveryExecutionId()
+        {
+            return this._recoveryExecutionId != null;
         }
 
         /// <summary>

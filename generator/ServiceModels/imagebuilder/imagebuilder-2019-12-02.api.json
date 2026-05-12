@@ -754,7 +754,9 @@
       "errors":[
         {"shape":"ServiceException"},
         {"shape":"ClientException"},
-        {"shape":"ServiceUnavailableException"}
+        {"shape":"ServiceUnavailableException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"TooManyRequestsException"}
       ]
     },
     "ImportVmImage":{
@@ -1576,7 +1578,7 @@
     },
     "ClientToken":{
       "type":"string",
-      "max":36,
+      "max":64,
       "min":1
     },
     "Component":{
@@ -1955,6 +1957,7 @@
         "schedule":{"shape":"Schedule"},
         "status":{"shape":"PipelineStatus"},
         "tags":{"shape":"TagMap"},
+        "imageTags":{"shape":"TagMap"},
         "clientToken":{
           "shape":"ClientToken",
           "idempotencyToken":true
@@ -3003,6 +3006,7 @@
         "dateNextRun":{"shape":"DateTime"},
         "tags":{"shape":"TagMap"},
         "imageScanningConfiguration":{"shape":"ImageScanningConfiguration"},
+        "imageTags":{"shape":"TagMap"},
         "executionRole":{"shape":"RoleNameOrArn"},
         "workflows":{"shape":"WorkflowConfigurationList"},
         "loggingConfiguration":{"shape":"PipelineLoggingConfiguration"},
@@ -3298,7 +3302,7 @@
         "clientToken"
       ],
       "members":{
-        "name":{"shape":"NonEmptyString"},
+        "name":{"shape":"ResourceName"},
         "semanticVersion":{"shape":"VersionNumber"},
         "description":{"shape":"NonEmptyString"},
         "platform":{"shape":"NonEmptyString"},
@@ -3308,6 +3312,8 @@
         "uri":{"shape":"Uri"},
         "loggingConfiguration":{"shape":"ImageLoggingConfiguration"},
         "tags":{"shape":"TagMap"},
+        "registerImageOptions":{"shape":"RegisterImageOptions"},
+        "windowsConfiguration":{"shape":"WindowsConfiguration"},
         "clientToken":{
           "shape":"ClientToken",
           "idempotencyToken":true
@@ -3532,7 +3538,10 @@
       "members":{
         "launchTemplateId":{"shape":"LaunchTemplateId"},
         "accountId":{"shape":"AccountId"},
-        "setDefaultVersion":{"shape":"Boolean"}
+        "setDefaultVersion":{
+          "shape":"Boolean",
+          "box":true
+        }
       }
     },
     "LaunchTemplateConfigurationList":{
@@ -3901,7 +3910,7 @@
           "shape":"RestrictedInteger",
           "box":true
         },
-        "nextToken":{"shape":"NonEmptyString"}
+        "nextToken":{"shape":"PaginationToken"}
       }
     },
     "ListContainerRecipesResponse":{
@@ -4547,6 +4556,13 @@
       "type":"list",
       "member":{"shape":"NonEmptyString"}
     },
+    "RegisterImageOptions":{
+      "type":"structure",
+      "members":{
+        "secureBootEnabled":{"shape":"NullableBoolean"},
+        "uefiData":{"shape":"UefiData"}
+      }
+    },
     "Remediation":{
       "type":"structure",
       "members":{
@@ -4935,6 +4951,11 @@
       "error":{"httpStatusCode":429},
       "exception":true
     },
+    "UefiData":{
+      "type":"string",
+      "max":64000,
+      "min":0
+    },
     "UntagResourceRequest":{
       "type":"structure",
       "required":[
@@ -5008,7 +5029,8 @@
         "imageScanningConfiguration":{"shape":"ImageScanningConfiguration"},
         "workflows":{"shape":"WorkflowConfigurationList"},
         "loggingConfiguration":{"shape":"PipelineLoggingConfiguration"},
-        "executionRole":{"shape":"RoleNameOrArn"}
+        "executionRole":{"shape":"RoleNameOrArn"},
+        "imageTags":{"shape":"TagMap"}
       }
     },
     "UpdateImagePipelineResponse":{
@@ -5129,6 +5151,18 @@
     "WildcardVersionNumber":{
       "type":"string",
       "pattern":"^(?:[0-9]+|x)\\.(?:[0-9]+|x)\\.(?:[0-9]+|x)$"
+    },
+    "WindowsConfiguration":{
+      "type":"structure",
+      "required":["imageIndex"],
+      "members":{
+        "imageIndex":{"shape":"WindowsConfigurationImageIndex"}
+      }
+    },
+    "WindowsConfigurationImageIndex":{
+      "type":"long",
+      "max":4294967295,
+      "min":1
     },
     "Workflow":{
       "type":"structure",

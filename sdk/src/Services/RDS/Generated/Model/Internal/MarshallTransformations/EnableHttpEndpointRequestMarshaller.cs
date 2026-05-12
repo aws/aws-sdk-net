@@ -64,6 +64,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static EnableHttpEndpointRequestMarshaller _instance = new EnableHttpEndpointRequestMarshaller();        

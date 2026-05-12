@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SecondaryNetworkId", StringUtils.FromString(publicRequest.SecondaryNetworkId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteSecondaryNetworkRequestMarshaller _instance = new DeleteSecondaryNetworkRequestMarshaller();        

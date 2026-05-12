@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private CmafIngestGroupSettings _cmafIngestGroupSettings;
         private FrameCaptureGroupSettings _frameCaptureGroupSettings;
         private HlsGroupSettings _hlsGroupSettings;
+        private MediaConnectRouterGroupSettings _mediaConnectRouterGroupSettings;
         private MediaPackageGroupSettings _mediaPackageGroupSettings;
         private MsSmoothGroupSettings _msSmoothGroupSettings;
         private MultiplexGroupSettings _multiplexGroupSettings;
@@ -103,6 +104,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetHlsGroupSettings()
         {
             return this._hlsGroupSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaConnectRouterGroupSettings.
+        /// </summary>
+        public MediaConnectRouterGroupSettings MediaConnectRouterGroupSettings
+        {
+            get { return this._mediaConnectRouterGroupSettings; }
+            set { this._mediaConnectRouterGroupSettings = value; }
+        }
+
+        // Check to see if MediaConnectRouterGroupSettings property is set
+        internal bool IsSetMediaConnectRouterGroupSettings()
+        {
+            return this._mediaConnectRouterGroupSettings != null;
         }
 
         /// <summary>

@@ -265,6 +265,60 @@ namespace Amazon.MPA
 
 
     /// <summary>
+    /// Constants used for properties of type ApproverLastActivity.
+    /// </summary>
+    public class ApproverLastActivity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASELINED for ApproverLastActivity
+        /// </summary>
+        public static readonly ApproverLastActivity BASELINED = new ApproverLastActivity("BASELINED");
+        /// <summary>
+        /// Constant RESPONDED_TO_INVITATION for ApproverLastActivity
+        /// </summary>
+        public static readonly ApproverLastActivity RESPONDED_TO_INVITATION = new ApproverLastActivity("RESPONDED_TO_INVITATION");
+        /// <summary>
+        /// Constant VOTED for ApproverLastActivity
+        /// </summary>
+        public static readonly ApproverLastActivity VOTED = new ApproverLastActivity("VOTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApproverLastActivity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApproverLastActivity FindValue(string value)
+        {
+            return FindValue<ApproverLastActivity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApproverLastActivity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterField.
     /// </summary>
     public class FilterField : ConstantClass
@@ -1000,6 +1054,10 @@ namespace Amazon.MPA
     public class SessionStatusCode : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ALL_APPROVERS_IN_SESSION for SessionStatusCode
+        /// </summary>
+        public static readonly SessionStatusCode ALL_APPROVERS_IN_SESSION = new SessionStatusCode("ALL_APPROVERS_IN_SESSION");
         /// <summary>
         /// Constant CONFIGURATION_CHANGED for SessionStatusCode
         /// </summary>

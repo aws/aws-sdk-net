@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private string _copySourceArn;
         private CredentialPair _credentialPair;
         private KeyPairCredentials _keyPairCredentials;
+        private OAuthClientCredentials _oAuthClientCredentials;
         private string _secretArn;
         private WebProxyCredentials _webProxyCredentials;
 
@@ -97,6 +98,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetKeyPairCredentials()
         {
             return this._keyPairCredentials != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OAuthClientCredentials. 
+        /// <para>
+        /// The OAuth client credentials for connecting to a data source using OAuth 2.0 client
+        /// credentials (2LO) authentication. For more information, see <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_OAuthClientCredentials.html">OAuthClientCredentials</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        public OAuthClientCredentials OAuthClientCredentials
+        {
+            get { return this._oAuthClientCredentials; }
+            set { this._oAuthClientCredentials = value; }
+        }
+
+        // Check to see if OAuthClientCredentials property is set
+        internal bool IsSetOAuthClientCredentials()
+        {
+            return this._oAuthClientCredentials != null;
         }
 
         /// <summary>

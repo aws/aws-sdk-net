@@ -53,8 +53,8 @@ namespace Amazon.SecurityHub.Model
     /// <para>
     /// If a <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
     /// <c>BatchImportFindings</c> </a> request for a new finding only provides <c>Label</c>
-    /// or only provides <c>Normalized</c>, Security Hub automatically populates the value
-    /// of the other field.
+    /// or only provides <c>Normalized</c>, Security Hub CSPM automatically populates the
+    /// value of the other field.
     /// </para>
     ///  
     /// <para>
@@ -66,9 +66,9 @@ namespace Amazon.SecurityHub.Model
     ///  
     /// <para>
     /// If the top-level <c>Finding.Severity</c> object is present, but <c>Finding.FindingProviderFields</c>
-    /// isn't present, Security Hub creates the <c>FindingProviderFields.Severity</c> object
-    /// and copies the entire <c>Finding.Severity</c> object into it. This ensures that the
-    /// original, provider-supplied details are retained within the <c>FindingProviderFields.Severity</c>
+    /// isn't present, Security Hub CSPM creates the <c>FindingProviderFields.Severity</c>
+    /// object and copies the entire <c>Finding.Severity</c> object into it. This ensures
+    /// that the original, provider-supplied details are retained within the <c>FindingProviderFields.Severity</c>
     /// object, even if the top-level <c>Severity</c> object is overwritten. 
     /// </para>
     /// </summary>

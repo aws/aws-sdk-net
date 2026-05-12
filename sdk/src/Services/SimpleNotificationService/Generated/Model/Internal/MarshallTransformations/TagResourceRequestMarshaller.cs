@@ -85,6 +85,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        

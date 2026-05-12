@@ -39,6 +39,11 @@ namespace Amazon.RTBFabric
 {
     /// <summary>
     /// <para>Implementation for accessing RTBFabric</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Web Services RTB Fabric provides secure, low-latency infrastructure for connecting
     /// real-time bidding (RTB) applications. Rather than hosting applications directly, RTB

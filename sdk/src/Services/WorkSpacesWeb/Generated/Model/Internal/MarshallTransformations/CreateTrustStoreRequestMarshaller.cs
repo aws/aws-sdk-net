@@ -79,7 +79,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestCertificateListListValue in publicRequest.CertificateList)
                 {
-                    context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequestCertificateListListValue));
+                    StringUtils.WriteBase64StringValue(context.Writer, publicRequestCertificateListListValue);
                 }
                 context.Writer.WriteEndArray();
             }

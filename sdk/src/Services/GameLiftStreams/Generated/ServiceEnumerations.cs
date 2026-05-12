@@ -100,6 +100,10 @@ namespace Amazon.GameLiftStreams
         /// Constant InternalError for ApplicationStatusReason
         /// </summary>
         public static readonly ApplicationStatusReason InternalError = new ApplicationStatusReason("internalError");
+        /// <summary>
+        /// Constant SourceModified for ApplicationStatusReason
+        /// </summary>
+        public static readonly ApplicationStatusReason SourceModified = new ApplicationStatusReason("sourceModified");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -371,6 +375,14 @@ namespace Amazon.GameLiftStreams
         /// </summary>
         public static readonly StreamClass Gen5n_win2022 = new StreamClass("gen5n_win2022");
         /// <summary>
+        /// Constant Gen6e_pro for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6e_pro = new StreamClass("gen6e_pro");
+        /// <summary>
+        /// Constant Gen6e_pro_win2022 for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6e_pro_win2022 = new StreamClass("gen6e_pro_win2022");
+        /// <summary>
         /// Constant Gen6n_high for StreamClass
         /// </summary>
         public static readonly StreamClass Gen6n_high = new StreamClass("gen6n_high");
@@ -378,6 +390,10 @@ namespace Amazon.GameLiftStreams
         /// Constant Gen6n_medium for StreamClass
         /// </summary>
         public static readonly StreamClass Gen6n_medium = new StreamClass("gen6n_medium");
+        /// <summary>
+        /// Constant Gen6n_medium_win2022 for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6n_medium_win2022 = new StreamClass("gen6n_medium_win2022");
         /// <summary>
         /// Constant Gen6n_pro for StreamClass
         /// </summary>
@@ -390,6 +406,10 @@ namespace Amazon.GameLiftStreams
         /// Constant Gen6n_small for StreamClass
         /// </summary>
         public static readonly StreamClass Gen6n_small = new StreamClass("gen6n_small");
+        /// <summary>
+        /// Constant Gen6n_small_win2022 for StreamClass
+        /// </summary>
+        public static readonly StreamClass Gen6n_small_win2022 = new StreamClass("gen6n_small_win2022");
         /// <summary>
         /// Constant Gen6n_ultra for StreamClass
         /// </summary>

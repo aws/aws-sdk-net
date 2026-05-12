@@ -63,14 +63,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ConfigurationPolicy. 
         /// <para>
-        ///  An object that defines how Security Hub is configured. It includes whether Security
-        /// Hub is enabled or disabled, a list of enabled security standards, a list of enabled
+        ///  An object that defines how Security Hub CSPM is configured. It includes whether Security
+        /// Hub CSPM is enabled or disabled, a list of enabled security standards, a list of enabled
         /// or disabled security controls, and a list of custom parameter values for specified
         /// controls. If the request included a list of security controls that are enabled in
-        /// the configuration policy, Security Hub disables all other controls (including newly
-        /// released controls). If the request included a list of security controls that are disabled
-        /// in the configuration policy, Security Hub enables all other controls (including newly
-        /// released controls). 
+        /// the configuration policy, Security Hub CSPM disables all other controls (including
+        /// newly released controls). If the request included a list of security controls that
+        /// are disabled in the configuration policy, Security Hub CSPM enables all other controls
+        /// (including newly released controls). 
         /// </para>
         /// </summary>
         public Policy ConfigurationPolicy

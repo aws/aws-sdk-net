@@ -1149,6 +1149,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for GetCapacityManagerMonitoredTagKeys operation
+        ///</summary>
+        public IGetCapacityManagerMonitoredTagKeysPaginator GetCapacityManagerMonitoredTagKeys(GetCapacityManagerMonitoredTagKeysRequest request) 
+        {
+            return new GetCapacityManagerMonitoredTagKeysPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetGroupsForCapacityReservation operation
         ///</summary>
         public IGetGroupsForCapacityReservationPaginator GetGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request) 

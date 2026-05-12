@@ -35,7 +35,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class EvaluatorConfig
     {
+        private CodeBasedEvaluatorConfig _codeBased;
         private LlmAsAJudgeEvaluatorConfig _llmAsAJudge;
+
+        /// <summary>
+        /// Gets and sets the property CodeBased. 
+        /// <para>
+        ///  Configuration for a code-based evaluator that uses a customer-managed Lambda function
+        /// to programmatically assess agent performance. 
+        /// </para>
+        /// </summary>
+        public CodeBasedEvaluatorConfig CodeBased
+        {
+            get { return this._codeBased; }
+            set { this._codeBased = value; }
+        }
+
+        // Check to see if CodeBased property is set
+        internal bool IsSetCodeBased()
+        {
+            return this._codeBased != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LlmAsAJudge. 

@@ -127,7 +127,7 @@
     <property>Amazon.PartnerCentralAccount.Model.CancelConnectionInvitationResponse.InvitationMessage</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]+</pattern>
+    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD\n]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralAccount.Model.CancelConnectionInvitationResponse.InviterEmail</property>
@@ -215,7 +215,7 @@
     <property>Amazon.PartnerCentralAccount.Model.CreateConnectionInvitationRequest.Message</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]+</pattern>
+    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD\n]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralAccount.Model.CreateConnectionInvitationRequest.Name</property>
@@ -253,7 +253,7 @@
     <property>Amazon.PartnerCentralAccount.Model.CreateConnectionInvitationResponse.InvitationMessage</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]+</pattern>
+    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD\n]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralAccount.Model.CreateConnectionInvitationResponse.InviterEmail</property>
@@ -435,7 +435,7 @@
     <property>Amazon.PartnerCentralAccount.Model.GetConnectionInvitationResponse.InvitationMessage</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]+</pattern>
+    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD\n]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralAccount.Model.GetConnectionInvitationResponse.InviterEmail</property>
@@ -776,7 +776,7 @@
     <property>Amazon.PartnerCentralAccount.Model.RejectConnectionInvitationResponse.InvitationMessage</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]+</pattern>
+    <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD\n]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralAccount.Model.RejectConnectionInvitationResponse.InviterEmail</property>

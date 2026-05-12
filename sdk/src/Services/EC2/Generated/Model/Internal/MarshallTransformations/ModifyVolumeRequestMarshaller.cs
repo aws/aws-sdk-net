@@ -88,6 +88,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VolumeType", StringUtils.FromString(publicRequest.VolumeType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyVolumeRequestMarshaller _instance = new ModifyVolumeRequestMarshaller();        

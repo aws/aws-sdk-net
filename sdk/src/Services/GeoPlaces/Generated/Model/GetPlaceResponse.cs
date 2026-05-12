@@ -59,8 +59,10 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property AccessPoints. 
         /// <para>
-        /// Position of the access point in World Geodetic System (WGS 84) format: [longitude,
-        /// latitude].
+        ///  Position of the access point in World Geodetic System (WGS 84) format: [longitude,
+        /// latitude]. Not available in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions
+        /// for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -84,8 +86,10 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property AccessRestrictions. 
         /// <para>
-        /// Indicates known access restrictions on a vehicle access point. The index correlates
+        ///  Indicates known access restrictions on a vehicle access point. The index correlates
         /// to an access point and indicates if access through this point has some form of restriction.
+        /// Not available in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -127,7 +131,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property AddressNumberCorrected. 
         /// <para>
-        /// Boolean indicating if the address provided has been corrected.
+        ///  Boolean indicating if the address provided has been corrected. Not available in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -194,7 +200,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Contacts. 
         /// <para>
-        /// List of potential contact methods for the result/place.
+        ///  List of potential contact methods for the result/place. Not available in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public Contacts Contacts
@@ -212,7 +220,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property FoodTypes. 
         /// <para>
-        /// List of food types offered by this result.
+        ///  List of food types offered by this result. Not available in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -236,7 +246,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property MainAddress. 
         /// <para>
-        /// The main address corresponding to a place of type Secondary Address.
+        ///  The main address corresponding to a place of type Secondary Address. Not available
+        /// in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public RelatedPlace MainAddress
@@ -284,7 +296,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property OpeningHours. 
         /// <para>
-        /// List of opening hours objects.
+        ///  List of opening hours objects. Not available in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -308,7 +322,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Phonemes. 
         /// <para>
-        /// How the various components of the result's address are pronounced in various languages.
+        ///  How the various components of the result's address are pronounced in various languages.
+        /// Not available in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         public PhonemeDetails Phonemes
@@ -364,9 +380,11 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property PoliticalView. 
         /// <para>
-        /// The alpha-2 or alpha-3 character code for the political view of a country. The political
+        ///  The alpha-2 or alpha-3 character code for the political view of a country. The political
         /// view applies to the results of the request to represent unresolved territorial claims
-        /// through the point of view of the specified country.
+        /// through the point of view of the specified country. Not available in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=3, Max=3)]
@@ -409,7 +427,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property PostalCodeDetails. 
         /// <para>
-        /// Contains details about the postal code of the place/result. 
+        ///  Contains details about the postal code of the place/result. Not available in <c>ap-southeast-1</c>
+        /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -457,9 +477,11 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property SecondaryAddresses. 
         /// <para>
-        /// All secondary addresses that are associated with a main address. A secondary address
+        ///  All secondary addresses that are associated with a main address. A secondary address
         /// is one that includes secondary designators, such as a Suite or Unit Number, Building,
-        /// or Floor information.
+        /// or Floor information. Not available in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
         /// </para>
         ///  <note> 
         /// <para>

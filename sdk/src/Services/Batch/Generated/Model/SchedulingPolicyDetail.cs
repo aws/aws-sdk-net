@@ -37,6 +37,7 @@ namespace Amazon.Batch.Model
         private string _arn;
         private FairsharePolicy _fairsharePolicy;
         private string _name;
+        private QuotaSharePolicy _quotaSharePolicy;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -94,6 +95,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuotaSharePolicy. 
+        /// <para>
+        /// The quota share scheduling policy details.
+        /// </para>
+        /// </summary>
+        public QuotaSharePolicy QuotaSharePolicy
+        {
+            get { return this._quotaSharePolicy; }
+            set { this._quotaSharePolicy = value; }
+        }
+
+        // Check to see if QuotaSharePolicy property is set
+        internal bool IsSetQuotaSharePolicy()
+        {
+            return this._quotaSharePolicy != null;
         }
 
         /// <summary>

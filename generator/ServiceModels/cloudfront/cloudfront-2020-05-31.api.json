@@ -3713,6 +3713,13 @@
         "custom"
       ]
     },
+    "CacheTagConfig":{
+      "type":"structure",
+      "required":["HeaderName"],
+      "members":{
+        "HeaderName":{"shape":"string"}
+      }
+    },
     "CachedMethods":{
       "type":"structure",
       "required":[
@@ -4527,7 +4534,8 @@
       "members":{
         "Name":{"shape":"FunctionName"},
         "FunctionConfig":{"shape":"FunctionConfig"},
-        "FunctionCode":{"shape":"FunctionBlob"}
+        "FunctionCode":{"shape":"FunctionBlob"},
+        "Tags":{"shape":"Tags"}
       }
     },
     "CreateFunctionResult":{
@@ -4646,7 +4654,8 @@
       "members":{
         "Name":{"shape":"KeyValueStoreName"},
         "Comment":{"shape":"KeyValueStoreComment"},
-        "ImportSource":{"shape":"ImportSource"}
+        "ImportSource":{"shape":"ImportSource"},
+        "Tags":{"shape":"Tags"}
       }
     },
     "CreateKeyValueStoreResult":{
@@ -5629,7 +5638,8 @@
         "TenantConfig":{"shape":"TenantConfig"},
         "ConnectionMode":{"shape":"ConnectionMode"},
         "ViewerMtlsConfig":{"shape":"ViewerMtlsConfig"},
-        "ConnectionFunctionAssociation":{"shape":"ConnectionFunctionAssociation"}
+        "ConnectionFunctionAssociation":{"shape":"ConnectionFunctionAssociation"},
+        "CacheTagConfig":{"shape":"CacheTagConfig"}
       }
     },
     "DistributionConfigWithTags":{
@@ -11649,6 +11659,7 @@
           "locationName":"Id"
         },
         "IpAddressType":{"shape":"IpAddressType"},
+        "IpamCidrConfigs":{"shape":"IpamCidrConfigList"},
         "IfMatch":{
           "shape":"string",
           "location":"header",

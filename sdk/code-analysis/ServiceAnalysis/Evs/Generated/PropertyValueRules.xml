@@ -22,6 +22,20 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Evs.Model.CreateEntitlementRequest.ClientToken</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.CreateEntitlementRequest.ConnectorId</property>
+    <pattern>(cnctr-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.CreateEntitlementRequest.EnvironmentId</property>
+    <pattern>(env-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Evs.Model.CreateEnvironmentRequest.ClientToken</property>
     <min>1</min>
     <max>100</max>
@@ -46,6 +60,28 @@
     <pattern>vpc-[a-f0-9]{8}([a-f0-9]{9})?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Evs.Model.CreateEnvironmentConnectorRequest.ApplianceFqdn</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.CreateEnvironmentConnectorRequest.ClientToken</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.CreateEnvironmentConnectorRequest.EnvironmentId</property>
+    <pattern>(env-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.CreateEnvironmentConnectorRequest.SecretIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@!-]+|[a-zA-Z0-9/_+=.@!-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Evs.Model.CreateEnvironmentHostRequest.ClientToken</property>
     <min>1</min>
     <max>100</max>
@@ -61,6 +97,20 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Evs.Model.DeleteEntitlementRequest.ClientToken</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.DeleteEntitlementRequest.ConnectorId</property>
+    <pattern>(cnctr-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.DeleteEntitlementRequest.EnvironmentId</property>
+    <pattern>(env-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Evs.Model.DeleteEnvironmentRequest.ClientToken</property>
     <min>1</min>
     <max>100</max>
@@ -68,6 +118,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Evs.Model.DeleteEnvironmentRequest.EnvironmentId</property>
+    <pattern>(env-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.DeleteEnvironmentConnectorRequest.ClientToken</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.DeleteEnvironmentConnectorRequest.ConnectorId</property>
+    <pattern>(cnctr-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.DeleteEnvironmentConnectorRequest.EnvironmentId</property>
     <pattern>(env-[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -110,6 +174,15 @@
     <pattern>(env-[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Evs.Model.ListEnvironmentConnectorsRequest.EnvironmentId</property>
+    <pattern>(env-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.ListEnvironmentConnectorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Evs.Model.ListEnvironmentHostsRequest.EnvironmentId</property>
     <pattern>(env-[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
@@ -139,6 +212,19 @@
     <pattern>arn:aws:evs:[a-z]{2}-[a-z]+-[0-9]:[0-9]{12}:environment/[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Evs.Model.ListVmEntitlementsRequest.ConnectorId</property>
+    <pattern>(cnctr-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.ListVmEntitlementsRequest.EnvironmentId</property>
+    <pattern>(env-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.ListVmEntitlementsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Evs.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
@@ -149,6 +235,52 @@
     <min>1</min>
     <max>1011</max>
     <pattern>arn:aws:evs:[a-z]{2}-[a-z]+-[0-9]:[0-9]{12}:environment/[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.UpdateEnvironmentConnectorRequest.ApplianceFqdn</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.UpdateEnvironmentConnectorRequest.ClientToken</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.UpdateEnvironmentConnectorRequest.ConnectorId</property>
+    <pattern>(cnctr-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.UpdateEnvironmentConnectorRequest.EnvironmentId</property>
+    <pattern>(env-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.UpdateEnvironmentConnectorRequest.SecretIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@!-]+|[a-zA-Z0-9/_+=.@!-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.Connector.ApplianceFqdn</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.Connector.ConnectorId</property>
+    <pattern>(cnctr-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.Connector.EnvironmentId</property>
+    <pattern>(env-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.Connector.SecretArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>(arn:aws:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@!-]+|[a-zA-Z0-9/_+=.@!-]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Evs.Model.EipAssociation.AllocationId</property>
@@ -332,5 +464,24 @@
     <min>15</min>
     <max>24</max>
     <pattern>subnet-[a-f0-9]{8}([a-f0-9]{9})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.VmEntitlement.ConnectorId</property>
+    <pattern>(cnctr-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.VmEntitlement.EnvironmentId</property>
+    <pattern>(env-[a-zA-Z0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.VmEntitlement.VmId</property>
+    <min>4</min>
+    <max>1024</max>
+    <pattern>vm-[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Evs.Model.VmEntitlement.VmName</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
 </property-value-rules>

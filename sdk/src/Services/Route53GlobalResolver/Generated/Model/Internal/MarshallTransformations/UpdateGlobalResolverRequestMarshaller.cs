@@ -82,6 +82,12 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetIpAddressType())
+            {
+                context.Writer.WritePropertyName("ipAddressType");
+                context.Writer.WriteStringValue(publicRequest.IpAddressType);
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -92,6 +98,17 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("observabilityRegion");
                 context.Writer.WriteStringValue(publicRequest.ObservabilityRegion);
+            }
+
+            if(publicRequest.IsSetRegions())
+            {
+                context.Writer.WritePropertyName("regions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRegionsListValue in publicRequest.Regions)
+                {
+                        context.Writer.WriteStringValue(publicRequestRegionsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();

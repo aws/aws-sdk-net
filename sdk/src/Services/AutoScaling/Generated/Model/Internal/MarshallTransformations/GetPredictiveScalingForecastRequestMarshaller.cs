@@ -76,6 +76,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetPredictiveScalingForecastRequestMarshaller _instance = new GetPredictiveScalingForecastRequestMarshaller();        

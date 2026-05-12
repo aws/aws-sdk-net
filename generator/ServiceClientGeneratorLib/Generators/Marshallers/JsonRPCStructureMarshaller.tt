@@ -44,6 +44,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 	{
 		foreach(var member in members)
 		{
+			bool isSparse = member.Shape.IsSparse;
 			if (member.ModelShape.IsEventStream)
 				continue;
 #>
@@ -61,12 +62,17 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 				else
 				{
 #>
-<#=new string(' ', level * 4)#>                context.Request.Content = UTF8Encoding.UTF8.GetBytes(requestObject.<#=member.PropertyName#>));
+<#=new string(' ', level * 4)#>                context.Request.Content = UTF8Encoding.UTF8.GetBytes(requestObject.<#=member.PropertyName#>);
 <#+
 				}
 #>
 <#=new string(' ', level * 4)#>            }
 <#+
+				continue;
+			}
+			else if (member.IsEventHeader)
+			{
+				ProcessEventHeaders(level, member);
 				continue;
 			}
 			else
@@ -75,15 +81,17 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#>                context.Writer.WritePropertyName("<#=member.MarshallName#>");
 <#+
 			}
+
 			string memberProperty = variableName + "." + member.PropertyName;
 			// Only append .Value for nullable types that aren't already complex types
-			if (member.IsNullable && !member.IsStructure && !member.IsList && !member.IsMap) 
+			if (member.IsNullable && !isSparse && !member.IsStructure && !member.IsList && !member.IsMap) 
 			{
 				memberProperty += ".Value";
 			}
+
 			if(member.IsStructure || member.IsList || member.IsMap)
 			{
-				this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape);
+				this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape, isSparse);
 			}
             else if(!string.IsNullOrEmpty(member.CustomMarshallerTransformation))
             {
@@ -94,7 +102,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			else if(member.IsMemoryStream)
 			{
 #>
-<#=new string(' ', level * 4)#>                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(<#=variableName + "." + member.PropertyName#>));
+<#=new string(' ', level * 4)#>                StringUtils.WriteBase64StringValue(context.Writer, <#=variableName + "." + member.PropertyName#>);
 <#+
 			}
 			else
@@ -134,7 +142,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 				}
 				else
 				{
-					DetermineNormalJsonWriteMethod(member.Shape, memberProperty, level);
+					DetermineNormalJsonWriteMethod(member.Shape, memberProperty, level, isSparse);
 #>
 <#+
 				}
@@ -165,18 +173,18 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#+
     }
 
-	protected void ProcessStructure(int level, string variableName, Shape structure)
+	protected void ProcessStructure(int level, string variableName, Shape structure, bool isSparse)
 	{
 			string flatVariableName = variableName.Replace(".", "");
-
 			if(structure.IsList)
 			{
+				string listValueName = flatVariableName + "ListValue";
 #>
 <#=new string(' ', level * 4)#>            context.Writer.WriteStartArray();
 <#=new string(' ', level * 4)#>            foreach(var <#=flatVariableName#>ListValue in <#=variableName#>)
 <#=new string(' ', level * 4)#>            {
 <#+ 
-				ProcessStructure(level + 1, flatVariableName + "ListValue", structure.ListShape);
+				ProcessStructure(level + 1, listValueName, structure.ListShape, isSparse);
 #>
 <#=new string(' ', level * 4)#>            }
 <#=new string(' ', level * 4)#>            context.Writer.WriteEndArray();
@@ -184,7 +192,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			}
 			else if(structure.IsMap)
 			{
-				ProcessMap(level, variableName, structure);
+				ProcessMap(level, variableName, structure, isSparse);
 			}
 			else if(structure.IsDocument)
 			{
@@ -207,7 +215,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			else if(structure.IsMemoryStream)
 			{
 #>
-<#=new string(' ', level * 4)#>            context.Writer.WriteStringValue(StringUtils.FromMemoryStream(<#=variableName#>));
+<#=new string(' ', level * 4)#>            StringUtils.WriteBase64StringValue(context.Writer, <#=variableName#>);
 <#+
 			}
 			else
@@ -221,13 +229,13 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 				}
 				else
 				{
-					DetermineNormalJsonWriteMethod(structure, variableName, level);
+					DetermineNormalJsonWriteMethod(structure, variableName, level, isSparse);
 				}
 				
 			}
 	}
 
-	protected void ProcessMap(int level, string variableName, Shape structure)
+	protected void ProcessMap(int level, string variableName, Shape structure, bool isSparse)
 	{
 		string flatVariableName = variableName.Replace(".", "");
 #>
@@ -238,15 +246,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#>                var <#=flatVariableName#>Value = <#=flatVariableName#>Kvp.Value;
 
 <#+             // Check for null values - only null checks for sparse maps as defined in customizations
-
-                bool isNullableMap = false;
-                if (this.Structure != null)
-                {
-                    var memberWithMap = this.Structure.Members.FirstOrDefault(m => m.PropertyName == variableName.Split('.').Last());
-                    isNullableMap = (memberWithMap != null && memberWithMap.UseNullable);
-                }
-                
-                if (isNullableMap)
+                if (isSparse)
                 {
 #>
 <#=new string(' ', level * 4)#>                if (<#=flatVariableName#>Value == null)
@@ -260,7 +260,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 
                 if(structure.ValueShape.IsBoolean)
                 {
-                    if(isNullableMap)
+                    if(isSparse)
                     {
 #>
 <#=new string(' ', level * 4)#>                    context.Writer.WriteBooleanValue(<#=flatVariableName#>Value.Value);
@@ -275,7 +275,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
                 }
                 else if(structure.ValueShape.IsInt || structure.ValueShape.IsLong || structure.ValueShape.IsFloat || structure.ValueShape.IsDouble)
                 {
-                    if(isNullableMap)
+                    if(isSparse)
                     {
 #>
 <#=new string(' ', level * 4)#>                    context.Writer.WriteNumberValue(<#=flatVariableName#>Value.Value);
@@ -290,7 +290,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
                 }
                 else if(structure.ValueShape.IsTimeStamp)
                 {
-                    if(isNullableMap)
+                    if(isSparse)
                     {
                         if (structure.ValueShape.data[Shape.TimestampFormatKey] != null && !string.Equals(structure.ValueShape.data["timestampFormat"].ToString(), "unixTimestamp"))
                         {
@@ -323,18 +323,18 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
                 }
                 else
                 {
-                    if(isNullableMap)
+                    if(isSparse)
                     {
-                            ProcessStructure(level + 2, flatVariableName + "Value", structure.ValueShape);
+                            ProcessStructure(level + 2, flatVariableName + "Value", structure.ValueShape, isSparse);
                     }
                     else
                     {
-                            ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape);
+                            ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape, isSparse);
                     }
                 }
 
                 // Close the else block for nullable maps
-                if (isNullableMap)
+                if (isSparse)
                 {
 #>
 <#=new string(' ', level * 4)#>                }
@@ -364,7 +364,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 
 	/// https://smithy.io/2.0/aws/protocols/aws-restjson1-protocol.html#json-shape-serialization
 	/// timestamps in json protocols use unixtimestamp if none is specified (by default)
-	protected void DetermineNormalJsonWriteMethod(Shape shape, string memberProperty, int level)
+	protected void DetermineNormalJsonWriteMethod(Shape shape, string memberProperty, int level, bool isSparse = false)
 	{
 		// One of the overloads for WriteStringValue accepts a datetime, which by default always uses ISO 8601-1 format.
 		// If the timestamp format is UnixTimestamp or there is none specified, we need to write raw value in epoch seconds,
@@ -385,27 +385,130 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			}
 			else
 			{
+				if (isSparse)
+				{
+#>
+<#=new string(' ', level * 4)#>	               if (<#=memberProperty#> != null)
+<#=new string(' ', level * 4)#>	                   context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(<#=memberProperty#>.Value)));
+<#=new string(' ', level * 4)#>	               else
+<#=new string(' ', level * 4)#>	                   context.Writer.WriteNullValue();
+<#+
+				}
+				else
+				{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(<#=memberProperty#>)));
 <#+
+				}
 			}
 		}
 		else if (shape.IsInt || shape.IsLong || shape.IsFloat || shape.IsDouble)
 		{
+			if (isSparse)
+			{
+#>
+<#=new string(' ', level * 4)#>				   if (<#=memberProperty#> != null)
+<#=new string(' ', level * 4)#>				       context.Writer.WriteNumberValue(<#=memberProperty#>.Value);
+<#=new string(' ', level * 4)#>				   else
+<#=new string(' ', level * 4)#>				       context.Writer.WriteNullValue();
+<#+
+			}
+			else
+			{
 			// Simple numeric value
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteNumberValue(<#=memberProperty#>);
 <#+
+			}
 		}
 		else if (shape.IsBoolean)
 		{
+			if (isSparse)
+			{
+#>
+<#=new string(' ', level * 4)#>				   if (<#=memberProperty#> != null)
+<#=new string(' ', level * 4)#>				       context.Writer.WriteBooleanValue(<#=memberProperty#>.Value);
+<#=new string(' ', level * 4)#>				   else
+<#=new string(' ', level * 4)#>				       context.Writer.WriteNullValue();
+<#+
+			}
+			else
+			{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.WriteBooleanValue(<#=memberProperty#>);
 <#+
+			}
 		}
 		else
 		{
 			throw new Exception ("Unknown primitive type encountered");
 		}
+	}
+#>
+<#+
+	void ProcessEventHeaders(int level, Member member)
+	{
+		var eventHeaderVariable = member.ModeledName.ToCamelCase() + "Header";
+#>
+<#=new string(' ', level * 4)#>                var <#=eventHeaderVariable#> = new Amazon.Runtime.EventStreams.EventStreamHeader("<#=member.ModeledName#>");
+<#+
+		if (member.Shape.IsString)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetString(requestObject.<#=member.PropertyName#>);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+		if (member.Shape.IsBoolean)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetBool(requestObject.<#=member.PropertyName#>.Value);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+		if (member.Shape.IsInt)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetInt32(requestObject.<#=member.PropertyName#>.Value);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+		if (member.Shape.IsLong)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetInt64(requestObject.<#=member.PropertyName#>.Value);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+		if (member.Shape.IsMemoryStream)
+		{
+#>
+<#=new string(' ', level * 4)#>				if (requestObject.<#=member.PropertyName#>.TryGetBuffer(out var segment))
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					context.Request.EventHeaders.Add(new EventStreamHeader("<#=eventHeaderVariable#>", segment.Array, segment.Offset, segment.Count));
+<#=new string(' ', level * 4)#>				}
+<#=new string(' ', level * 4)#>				else
+<#=new string(' ', level * 4)#>				{
+<#=new string(' ', level * 4)#>					headers.Add(new EventStreamHeader("<#=eventHeaderVariable#>", requestObject.<#=member.PropertyName#>.ToArray()));
+<#=new string(' ', level * 4)#>				}
+<#+
+		}
+		if (member.Shape.IsTimeStamp)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetTimestamp(requestObject.<#=member.PropertyName#>.Value);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+		if (member.Shape.IsDouble)
+		{
+#>
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetDouble(requestObject.<#=member.PropertyName#>.Value);
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
+<#+
+		}
+#>
+<#=new string(' ', level * 4)#>			}
+<#+
 	}
 #>

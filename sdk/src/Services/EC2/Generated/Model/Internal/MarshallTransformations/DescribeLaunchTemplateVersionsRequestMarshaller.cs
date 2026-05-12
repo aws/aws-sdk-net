@@ -94,6 +94,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetIncludeManagedResources())
+                {
+                    request.Parameters.Add("IncludeManagedResources", StringUtils.FromBool(publicRequest.IncludeManagedResources));
+                }
                 if(publicRequest.IsSetLaunchTemplateId())
                 {
                     request.Parameters.Add("LaunchTemplateId", StringUtils.FromString(publicRequest.LaunchTemplateId));
@@ -137,6 +141,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeLaunchTemplateVersionsRequestMarshaller _instance = new DescribeLaunchTemplateVersionsRequestMarshaller();        

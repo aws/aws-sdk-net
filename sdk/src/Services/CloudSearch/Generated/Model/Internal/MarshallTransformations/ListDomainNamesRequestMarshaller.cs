@@ -60,6 +60,8 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             if(publicRequest != null)
             {
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListDomainNamesRequestMarshaller _instance = new ListDomainNamesRequestMarshaller();        

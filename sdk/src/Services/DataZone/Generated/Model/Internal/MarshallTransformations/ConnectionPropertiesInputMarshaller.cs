@@ -101,6 +101,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetLakehouseProperties())
+            {
+                context.Writer.WritePropertyName("lakehouseProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LakehousePropertiesInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.LakehouseProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMlflowProperties())
             {
                 context.Writer.WritePropertyName("mlflowProperties");
@@ -152,6 +163,28 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
                 var marshaller = SparkGluePropertiesInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.SparkGlueProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetWorkflowsMwaaProperties())
+            {
+                context.Writer.WritePropertyName("workflowsMwaaProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WorkflowsMwaaPropertiesInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.WorkflowsMwaaProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetWorkflowsServerlessProperties())
+            {
+                context.Writer.WritePropertyName("workflowsServerlessProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WorkflowsServerlessPropertiesInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.WorkflowsServerlessProperties, context);
 
                 context.Writer.WriteEndObject();
             }

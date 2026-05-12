@@ -40,13 +40,14 @@ namespace Amazon.MarketplaceEntitlementService.Model
         private string _customerIdentifier;
         private string _dimension;
         private DateTime? _expirationDate;
+        private string _licenseArn;
         private string _productCode;
         private EntitlementValue _value;
 
         /// <summary>
         /// Gets and sets the property CustomerAWSAccountId. 
         /// <para>
-        ///  The <c>CustomerAWSAccountID</c> parameter specifies the AWS account ID of the buyer.
+        ///  The <c>CustomerAWSAccountId</c> parameter specifies the AWS account ID of the buyer.
         /// 
         /// </para>
         /// </summary>
@@ -121,6 +122,25 @@ namespace Amazon.MarketplaceEntitlementService.Model
         internal bool IsSetExpirationDate()
         {
             return this._expirationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseArn. 
+        /// <para>
+        /// The <c>LicenseArn</c> is a unique identifier for a specific granted license. These
+        /// are used for software purchased through AWS Marketplace.
+        /// </para>
+        /// </summary>
+        public string LicenseArn
+        {
+            get { return this._licenseArn; }
+            set { this._licenseArn = value; }
+        }
+
+        // Check to see if LicenseArn property is set
+        internal bool IsSetLicenseArn()
+        {
+            return this._licenseArn != null;
         }
 
         /// <summary>

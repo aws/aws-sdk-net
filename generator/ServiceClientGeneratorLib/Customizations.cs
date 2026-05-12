@@ -404,7 +404,6 @@ namespace ServiceClientGenerator
         public const string ConditionKey = "condition";
         public const string NoArgOverloadsKey = "noArgOverloads";
         public const string SuppressResultGenerationKey = "suppressResultGeneration";
-        public const string UseNullableTypeKey = "useNullableType";
         public const string EmitIsSetPropertiesKey = "emitIsSetProperties";
         public const string GlobalShapeKey = "*";
         public const string ShapeSubstitutionsKey = "shapeSubstitutions";
@@ -827,30 +826,6 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Determines if the property has a customization to be set to nullable
-        /// </summary>
-        /// <param name="shapeName">The name of the shape the property is in</param>
-        /// <param name="propertyName">The name of the property</param>
-        /// <returns>If the property is to be nullable</returns>
-        public bool UseNullable(string shapeName, string propertyName)
-        {
-            var data = _documentRoot[UseNullableTypeKey];
-            if (data == null)
-                return false;
-
-            var shape = data[shapeName] as JsonData;
-            if (shape == null || !shape.IsArray)
-                return false;
-
-            foreach (var name in shape)
-            {
-                if (string.Equals(name.ToString(), propertyName))
-                    return true;
-            }
-            return false;
-        }
-
-        /// <summary>
         /// Determines if the collection property can be empty when being
         /// sent to the service.
         /// </summary>
@@ -1077,7 +1052,6 @@ namespace ServiceClientGenerator
             public const string DeprecatedMessageKey = "deprecatedMessage";
             public const string ExcludeFromMarshallingKey = "excludeFromMarshalling";
             public const string SkipXmlTestExpressionKey = "skipXmlTestExpression";
-            public const string NewObjectIfNullKey = "newObjectIfNull";
             public const string ShapeDocumentationKey = "shapeDocumentation";
             public const string ShapeModifierXmlNamespaceKey = "xmlNamespace";
             public const string OriginalMemberIsOutsideContainingShapeKey = "originalMemberIsOutsideContainingShape";
@@ -1091,7 +1065,6 @@ namespace ServiceClientGenerator
             private readonly Dictionary<string, JsonData> _injectedProperties;
             private readonly HashSet<string> _excludedMarshallingProperties;
             private readonly HashSet<string> _skipXmlTestExpressionProperties;
-            private readonly HashSet<string> _newObjectIfNullProperties;
             private readonly HashSet<string> _shapeDocumentation;
             private readonly string _shapeModifierXmlNamespace;
             private readonly Dictionary<string, JsonData> _predicateListUnmarshallers;
@@ -1113,7 +1086,6 @@ namespace ServiceClientGenerator
                 _injectedProperties = ParseInjections(data);
                 _excludedMarshallingProperties = ParseExcludedMarshallingProperties(data);
                 _skipXmlTestExpressionProperties = ParseSkipXmlTestExpressionProperties(data);
-                _newObjectIfNullProperties = ParseNewObjectIfNullProperties(data);
                 _shapeDocumentation = ParseShapeDocumentation(data);
                 _shapeModifierXmlNamespace = ParseXmlNamespace(data);
                 _predicateListUnmarshallers = ParsePredicateListUnmarshallers(data);
@@ -1322,38 +1294,6 @@ namespace ServiceClientGenerator
 
             public HashSet<string> SkipXmlTestExpressionProperties { get { return _skipXmlTestExpressionProperties; } }
 
-            #endregion
-
-            #region NewObjectIfNull
-
-            private static HashSet<string> ParseNewObjectIfNullProperties(JsonData data)
-            {
-                var customData = data[ShapeModifier.NewObjectIfNullKey];
-
-                var newObjectIfNullHashSet = customData?.Cast<object>()
-                    .Select(member => member.ToString());
-
-                return new HashSet<string>(newObjectIfNullHashSet ?? new string[0]);
-            }
-
-            /// <summary>
-            /// Use this customization when you want the getter of a property to create the object if the object is null.
-            /// For example
-            /// public LifecycleConfiguration Configuration
-            ///   {
-            ///   get 
-            ///    {
-            ///      if (this.configuration == null)
-            ///        this.configuration = new LifecycleConfiguration();
-            ///      return this.configuration; 
-            ///    }
-            /// 
-            ///  For the actual customization entry:
-            ///             "newObjectIfNull":[
-            ///    "Configuration"
-            /// ]
-            /// </summary>
-            public HashSet<string> NewObjectIfNullProperties { get { return _newObjectIfNullProperties; } }
             #endregion
 
             #region ShapeDocumentation

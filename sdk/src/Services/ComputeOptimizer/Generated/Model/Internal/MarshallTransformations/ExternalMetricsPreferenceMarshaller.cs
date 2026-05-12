@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExternalMetricsPreference Marshaller
     /// </summary>
-    public class ExternalMetricsPreferenceMarshaller : IRequestMarshaller<ExternalMetricsPreference, JsonMarshallerContext> 
+    public class ExternalMetricsPreferenceMarshaller : IRequestMarshaller<ExternalMetricsPreference, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ExternalMetricsPreference requestObject, JsonMarshallerContext context)
+        public void Marshall(ExternalMetricsPreference requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetSource())
-            {
-                context.Writer.WritePropertyName("source");
-                context.Writer.WriteStringValue(requestObject.Source);
-            }
 
+            if (requestObject.IsSetSource())
+            {
+                context.Writer.WriteTextString("source");
+                context.Writer.WriteTextString(requestObject.Source);
+            }
         }
 
         /// <summary>

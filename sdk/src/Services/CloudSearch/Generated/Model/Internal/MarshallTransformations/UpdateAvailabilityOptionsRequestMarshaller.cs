@@ -68,6 +68,8 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     request.Parameters.Add("MultiAZ", StringUtils.FromBool(publicRequest.MultiAZ));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static UpdateAvailabilityOptionsRequestMarshaller _instance = new UpdateAvailabilityOptionsRequestMarshaller();        

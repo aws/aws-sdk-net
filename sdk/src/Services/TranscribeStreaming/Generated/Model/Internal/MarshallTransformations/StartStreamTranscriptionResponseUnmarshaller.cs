@@ -82,6 +82,8 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                 response.RequestId = context.ResponseData.GetHeaderValue("x-amzn-request-id");
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-session-id"))
                 response.SessionId = context.ResponseData.GetHeaderValue("x-amzn-transcribe-session-id");
+            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-session-resume-window"))
+                response.SessionResumeWindow = int.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-session-resume-window"), CultureInfo.InvariantCulture);
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-show-speaker-label"))
                 response.ShowSpeakerLabel = bool.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-show-speaker-label"));
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-vocabulary-filter-method"))

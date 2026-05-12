@@ -81,6 +81,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.InstanceGroupName);
             }
 
+            if(requestObject.IsSetInstanceRequirements())
+            {
+                context.Writer.WritePropertyName("InstanceRequirements");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterInstanceRequirementsMarshaller.Instance;
+                marshaller.Marshall(requestObject.InstanceRequirements, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetInstanceStorageConfigs())
             {
                 context.Writer.WritePropertyName("InstanceStorageConfigs");
@@ -129,6 +140,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("MinInstanceCount");
                 context.Writer.WriteNumberValue(requestObject.MinInstanceCount.Value);
+            }
+
+            if(requestObject.IsSetNetworkInterface())
+            {
+                context.Writer.WritePropertyName("NetworkInterface");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterNetworkInterfaceMarshaller.Instance;
+                marshaller.Marshall(requestObject.NetworkInterface, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOnStartDeepHealthChecks())

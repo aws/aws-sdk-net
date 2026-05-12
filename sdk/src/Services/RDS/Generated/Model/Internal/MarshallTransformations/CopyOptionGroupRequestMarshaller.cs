@@ -93,6 +93,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetOptionGroupIdentifier", StringUtils.FromString(publicRequest.TargetOptionGroupIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CopyOptionGroupRequestMarshaller _instance = new CopyOptionGroupRequestMarshaller();        

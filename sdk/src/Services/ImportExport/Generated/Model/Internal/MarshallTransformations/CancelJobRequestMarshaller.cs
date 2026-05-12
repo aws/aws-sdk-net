@@ -68,6 +68,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                     request.Parameters.Add("JobId", StringUtils.FromString(publicRequest.JobId));
                 }
             }
+
             return request;
         }
                     private static CancelJobRequestMarshaller _instance = new CancelJobRequestMarshaller();        

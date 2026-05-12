@@ -84,6 +84,17 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetLibraryFilter())
+            {
+                context.Writer.WritePropertyName("libraryFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataAutomationLibraryFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LibraryFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("maxResults");

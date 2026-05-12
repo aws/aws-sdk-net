@@ -39,6 +39,11 @@ namespace Amazon.CustomerProfiles
 {
     /// <summary>
     /// <para>Implementation for accessing CustomerProfiles</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Connect Customer Profiles <ul> <li> 
     /// <para>
@@ -880,6 +885,104 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  CreateRecommenderFilter
+
+        internal virtual CreateRecommenderFilterResponse CreateRecommenderFilter(CreateRecommenderFilterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderFilterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRecommenderFilterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a recommender filter. A recommender filter specifies which items to include
+        /// or exclude from recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommenderFilter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRecommenderFilter service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommenderFilter">REST API Reference for CreateRecommenderFilter Operation</seealso>
+        public virtual Task<CreateRecommenderFilterResponse> CreateRecommenderFilterAsync(CreateRecommenderFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderFilterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRecommenderFilterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateRecommenderSchema
+
+        internal virtual CreateRecommenderSchemaResponse CreateRecommenderSchema(CreateRecommenderSchemaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderSchemaResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRecommenderSchemaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a recommender schema. A recommender schema defines the set of data columns
+        /// available for training recommenders and filters under a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommenderSchema service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRecommenderSchema service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommenderSchema">REST API Reference for CreateRecommenderSchema Operation</seealso>
+        public virtual Task<CreateRecommenderSchemaResponse> CreateRecommenderSchemaAsync(CreateRecommenderSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderSchemaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRecommenderSchemaResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateSegmentDefinition
 
         internal virtual CreateSegmentDefinitionResponse CreateSegmentDefinition(CreateSegmentDefinitionRequest request)
@@ -1660,6 +1763,102 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = DeleteRecommenderResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRecommenderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteRecommenderFilter
+
+        internal virtual DeleteRecommenderFilterResponse DeleteRecommenderFilter(DeleteRecommenderFilterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderFilterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRecommenderFilterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a recommender filter from a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommenderFilter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRecommenderFilter service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommenderFilter">REST API Reference for DeleteRecommenderFilter Operation</seealso>
+        public virtual Task<DeleteRecommenderFilterResponse> DeleteRecommenderFilterAsync(DeleteRecommenderFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderFilterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRecommenderFilterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteRecommenderSchema
+
+        internal virtual DeleteRecommenderSchemaResponse DeleteRecommenderSchema(DeleteRecommenderSchemaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderSchemaResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRecommenderSchemaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a recommender schema from a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommenderSchema service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRecommenderSchema service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommenderSchema">REST API Reference for DeleteRecommenderSchema Operation</seealso>
+        public virtual Task<DeleteRecommenderSchemaResponse> DeleteRecommenderSchemaAsync(DeleteRecommenderSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderSchemaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRecommenderSchemaResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2742,6 +2941,102 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = GetRecommenderResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRecommenderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetRecommenderFilter
+
+        internal virtual GetRecommenderFilterResponse GetRecommenderFilter(GetRecommenderFilterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderFilterResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecommenderFilterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific recommender filter in a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommenderFilter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecommenderFilter service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommenderFilter">REST API Reference for GetRecommenderFilter Operation</seealso>
+        public virtual Task<GetRecommenderFilterResponse> GetRecommenderFilterAsync(GetRecommenderFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderFilterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRecommenderFilterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetRecommenderSchema
+
+        internal virtual GetRecommenderSchemaResponse GetRecommenderSchema(GetRecommenderSchemaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderSchemaResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecommenderSchemaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific recommender schema in a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommenderSchema service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecommenderSchema service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommenderSchema">REST API Reference for GetRecommenderSchema Operation</seealso>
+        public virtual Task<GetRecommenderSchemaResponse> GetRecommenderSchemaAsync(GetRecommenderSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderSchemaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRecommenderSchemaResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4003,6 +4298,54 @@ namespace Amazon.CustomerProfiles
         }
         #endregion
         
+        #region  ListRecommenderFilters
+
+        internal virtual ListRecommenderFiltersResponse ListRecommenderFilters(ListRecommenderFiltersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderFiltersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderFiltersResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommenderFiltersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of recommender filters in the specified domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenderFilters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecommenderFilters service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderFilters">REST API Reference for ListRecommenderFilters Operation</seealso>
+        public virtual Task<ListRecommenderFiltersResponse> ListRecommenderFiltersAsync(ListRecommenderFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderFiltersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderFiltersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRecommenderFiltersResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListRecommenderRecipes
 
         internal virtual ListRecommenderRecipesResponse ListRecommenderRecipes(ListRecommenderRecipesRequest request)
@@ -4093,6 +4436,54 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = ListRecommendersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRecommendersResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListRecommenderSchemas
+
+        internal virtual ListRecommenderSchemasResponse ListRecommenderSchemas(ListRecommenderSchemasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderSchemasResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommenderSchemasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of recommender schemas in the specified domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenderSchemas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecommenderSchemas service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderSchemas">REST API Reference for ListRecommenderSchemas Operation</seealso>
+        public virtual Task<ListRecommenderSchemasResponse> ListRecommenderSchemasAsync(ListRecommenderSchemasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderSchemasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRecommenderSchemasResponse>(request, options, cancellationToken);
         }
         #endregion
         

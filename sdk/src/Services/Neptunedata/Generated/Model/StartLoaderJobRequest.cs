@@ -121,7 +121,7 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property EdgeOnlyLoad. 
         /// <para>
-        ///  <b> <c>edgeOnlyLoad</c> </b>   –   A flag that controls file processing order during
+        ///  <b> <c>edgeOnlyLoad</c> </b> - A flag that controls file processing order during
         /// bulk loading.
         /// </para>
         ///  
@@ -156,7 +156,7 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property FailOnError. 
         /// <para>
-        ///  <b> <c>failOnError</c> </b>   –   A flag to toggle a complete stop on an error.
+        ///  <b> <c>failOnError</c> </b> - A flag to toggle a complete stop on an error.
         /// </para>
         ///  
         /// <para>
@@ -286,9 +286,9 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>RESUME</c>   –   In RESUME mode, the loader looks for a previous load from this
-        /// source, and if it finds one, resumes that load job. If no previous load job is found,
-        /// the loader stops.
+        ///  <c>RESUME</c> - In RESUME mode, the loader looks for a previous load from this source,
+        /// and if it finds one, resumes that load job. If no previous load job is found, the
+        /// loader stops.
         /// </para>
         ///  
         /// <para>
@@ -300,14 +300,14 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>NEW</c>   –   In NEW mode, the creates a new load request regardless of any previous
+        ///  <c>NEW</c> - In NEW mode, the creates a new load request regardless of any previous
         /// loads. You can use this mode to reload all the data from a source after dropping previously
         /// loaded data from your Neptune cluster, or to load new data available at the same source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>AUTO</c>   –   In AUTO mode, the loader looks for a previous load job from the
-        /// same source, and if it finds one, resumes that job, just as in <c>RESUME</c> mode.
+        ///  <c>AUTO</c> - In AUTO mode, the loader looks for a previous load job from the same
+        /// source, and if it finds one, resumes that job, just as in <c>RESUME</c> mode.
         /// </para>
         ///  
         /// <para>
@@ -400,8 +400,8 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <c>namedGraphUri</c> </b>   –   The default graph for all RDF formats when no
-        /// graph is specified (for non-quads formats and NQUAD entries with no graph).
+        ///  <b> <c>namedGraphUri</c> </b> - The default graph for all RDF formats when no graph
+        /// is specified (for non-quads formats and NQUAD entries with no graph).
         /// </para>
         ///  
         /// <para>
@@ -409,7 +409,7 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <c>baseUri</c> </b>   –   The base URI for RDF/XML and Turtle formats.
+        ///  <b> <c>baseUri</c> </b> - The base URI for RDF/XML and Turtle formats.
         /// </para>
         ///  
         /// <para>
@@ -417,8 +417,8 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <c>allowEmptyStrings</c> </b>   –   Gremlin users need to be able to pass empty
-        /// string values("") as node and edge properties when loading CSV data. If <c>allowEmptyStrings</c>
+        ///  <b> <c>allowEmptyStrings</c> </b> - Gremlin users need to be able to pass empty string
+        /// values("") as node and edge properties when loading CSV data. If <c>allowEmptyStrings</c>
         /// is set to <c>false</c> (the default), such empty strings are treated as nulls and
         /// are not loaded.
         /// </para>

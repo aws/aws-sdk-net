@@ -143,6 +143,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ClientName);
             }
 
+            if(publicRequest.IsSetClientSecret())
+            {
+                context.Writer.WritePropertyName("ClientSecret");
+                context.Writer.WriteStringValue(publicRequest.ClientSecret);
+            }
+
             if(publicRequest.IsSetDefaultRedirectURI())
             {
                 context.Writer.WritePropertyName("DefaultRedirectURI");

@@ -76,6 +76,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Status", StringUtils.FromString(publicRequest.Status));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeDataSharesForConsumerRequestMarshaller _instance = new DescribeDataSharesForConsumerRequestMarshaller();        

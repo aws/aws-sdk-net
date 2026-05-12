@@ -124,6 +124,17 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetResourceShareConfiguration())
+            {
+                context.Writer.WritePropertyName("resourceShareConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourceShareConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ResourceShareConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSources())
             {
                 context.Writer.WritePropertyName("sources");

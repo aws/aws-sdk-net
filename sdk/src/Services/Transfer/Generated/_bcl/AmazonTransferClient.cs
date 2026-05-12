@@ -39,6 +39,11 @@ namespace Amazon.Transfer
 {
     /// <summary>
     /// <para>Implementation for accessing Transfer</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Transfer Family is a fully managed service that enables the transfer of files over
     /// the File Transfer Protocol (FTP), File Transfer Protocol over SSL (FTPS), or Secure
@@ -4504,7 +4509,7 @@ namespace Amazon.Transfer
         ///  <c>truncated</c>: a flag indicating whether the list output contains all of the items
         /// contained in the remote directory or not. If your <c>Truncated</c> output value is
         /// true, you can increase the value provided in the optional <c>max-items</c> input attribute
-        /// to be able to list more items (up to the maximum allowed list size of 10,000 items).
+        /// to be able to list more items (up to the maximum allowed list size of 200,000 items).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4584,7 +4589,7 @@ namespace Amazon.Transfer
         ///  <c>truncated</c>: a flag indicating whether the list output contains all of the items
         /// contained in the remote directory or not. If your <c>Truncated</c> output value is
         /// true, you can increase the value provided in the optional <c>max-items</c> input attribute
-        /// to be able to list more items (up to the maximum allowed list size of 10,000 items).
+        /// to be able to list more items (up to the maximum allowed list size of 200,000 items).
         /// </para>
         ///  </li> </ul>
         /// </summary>

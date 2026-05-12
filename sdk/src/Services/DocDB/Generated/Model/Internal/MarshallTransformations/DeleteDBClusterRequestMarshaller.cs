@@ -72,6 +72,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SkipFinalSnapshot", StringUtils.FromBool(publicRequest.SkipFinalSnapshot));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteDBClusterRequestMarshaller _instance = new DeleteDBClusterRequestMarshaller();        

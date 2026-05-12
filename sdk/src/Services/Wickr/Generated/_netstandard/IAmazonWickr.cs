@@ -1323,6 +1323,59 @@ namespace Amazon.Wickr
 
         #endregion
                 
+        #region  GetOpentdfConfig
+
+
+
+        /// <summary>
+        /// Retrieves the OpenTDF integration configuration for a Wickr network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOpentdfConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOpentdfConfig service method, as returned by Wickr.</returns>
+        /// <exception cref="Amazon.Wickr.Model.BadRequestErrorException">
+        /// The request was invalid or malformed. This error occurs when the request parameters
+        /// do not meet the API requirements, such as invalid field values, missing required parameters,
+        /// or improperly formatted data.
+        /// </exception>
+        /// <exception cref="Amazon.Wickr.Model.ForbiddenErrorException">
+        /// Access to the requested resource is forbidden. This error occurs when the authenticated
+        /// user does not have the necessary permissions to perform the requested operation, even
+        /// though they are authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.Wickr.Model.InternalServerErrorException">
+        /// An unexpected error occurred on the server while processing the request. This indicates
+        /// a problem with the Wickr service itself rather than with the request. If this error
+        /// persists, contact Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.Wickr.Model.RateLimitErrorException">
+        /// The request was throttled because too many requests were sent in a short period of
+        /// time. Wait a moment and retry the request. Consider implementing exponential backoff
+        /// in your application.
+        /// </exception>
+        /// <exception cref="Amazon.Wickr.Model.ResourceNotFoundErrorException">
+        /// The requested resource could not be found. This error occurs when you try to access
+        /// or modify a network, user, bot, security group, or other resource that doesn't exist
+        /// or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.Wickr.Model.UnauthorizedErrorException">
+        /// The request was not authenticated or the authentication credentials were invalid.
+        /// This error occurs when the request lacks valid authentication credentials or the credentials
+        /// have expired.
+        /// </exception>
+        /// <exception cref="Amazon.Wickr.Model.ValidationErrorException">
+        /// One or more fields in the request failed validation. This error provides detailed
+        /// information about which fields were invalid and why, allowing you to correct the request
+        /// and retry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wickr-2024-02-01/GetOpentdfConfig">REST API Reference for GetOpentdfConfig Operation</seealso>
+        Task<GetOpentdfConfigResponse> GetOpentdfConfigAsync(GetOpentdfConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetSecurityGroup
 
 
@@ -2020,6 +2073,60 @@ namespace Amazon.Wickr
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wickr-2024-02-01/RegisterOidcConfigTest">REST API Reference for RegisterOidcConfigTest Operation</seealso>
         Task<RegisterOidcConfigTestResponse> RegisterOidcConfigTestAsync(RegisterOidcConfigTestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RegisterOpentdfConfig
+
+
+
+        /// <summary>
+        /// Registers and saves OpenTDF configuration for a Wickr network, enabling attribute-based
+        /// access control for Wickr through an OpenTDF provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterOpentdfConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterOpentdfConfig service method, as returned by Wickr.</returns>
+        /// <exception cref="Amazon.Wickr.Model.BadRequestErrorException">
+        /// The request was invalid or malformed. This error occurs when the request parameters
+        /// do not meet the API requirements, such as invalid field values, missing required parameters,
+        /// or improperly formatted data.
+        /// </exception>
+        /// <exception cref="Amazon.Wickr.Model.ForbiddenErrorException">
+        /// Access to the requested resource is forbidden. This error occurs when the authenticated
+        /// user does not have the necessary permissions to perform the requested operation, even
+        /// though they are authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.Wickr.Model.InternalServerErrorException">
+        /// An unexpected error occurred on the server while processing the request. This indicates
+        /// a problem with the Wickr service itself rather than with the request. If this error
+        /// persists, contact Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.Wickr.Model.RateLimitErrorException">
+        /// The request was throttled because too many requests were sent in a short period of
+        /// time. Wait a moment and retry the request. Consider implementing exponential backoff
+        /// in your application.
+        /// </exception>
+        /// <exception cref="Amazon.Wickr.Model.ResourceNotFoundErrorException">
+        /// The requested resource could not be found. This error occurs when you try to access
+        /// or modify a network, user, bot, security group, or other resource that doesn't exist
+        /// or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.Wickr.Model.UnauthorizedErrorException">
+        /// The request was not authenticated or the authentication credentials were invalid.
+        /// This error occurs when the request lacks valid authentication credentials or the credentials
+        /// have expired.
+        /// </exception>
+        /// <exception cref="Amazon.Wickr.Model.ValidationErrorException">
+        /// One or more fields in the request failed validation. This error provides detailed
+        /// information about which fields were invalid and why, allowing you to correct the request
+        /// and retry.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wickr-2024-02-01/RegisterOpentdfConfig">REST API Reference for RegisterOpentdfConfig Operation</seealso>
+        Task<RegisterOpentdfConfigResponse> RegisterOpentdfConfigAsync(RegisterOpentdfConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

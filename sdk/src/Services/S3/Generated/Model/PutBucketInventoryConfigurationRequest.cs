@@ -31,16 +31,10 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketInventoryConfiguration operation.
-    /// <note> 
-    /// <para>
-    /// This operation is not supported for directory buckets.
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// This implementation of the <c>PUT</c> action adds an S3 Inventory configuration (identified
     /// by the inventory ID) to the bucket. You can have up to 1,000 inventory configurations
     /// per bucket. 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Amazon S3 inventory generates inventories of the objects in the bucket on a daily
@@ -66,7 +60,18 @@ namespace Amazon.S3.Model
     /// policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-9">
     /// Granting Permissions for Amazon S3 Inventory and Storage Class Analysis</a>.
     /// </para>
-    ///  </important> <dl> <dt>Permissions</dt> <dd> 
+    ///  </important> <note> 
+    /// <para>
+    ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+    /// API operation to the Regional endpoint. These endpoints support path-style requests
+    /// in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+    /// </c>. Virtual-hosted-style requests aren't supported. For more information about endpoints
+    /// in Availability Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+    /// and Zonal endpoints for directory buckets in Availability Zones</a> in the <i>Amazon
+    /// S3 User Guide</i>. For more information about endpoints in Local Zones, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+    /// for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </note> <dl> <dt>Permissions</dt> <dd> 
     /// <para>
     /// To use this operation, you must have permission to perform the <c>s3:PutInventoryConfiguration</c>
     /// action. The bucket owner has this permission by default and can grant this permission
@@ -80,15 +85,35 @@ namespace Amazon.S3.Model
     /// in the destination bucket can also access all object metadata fields that are available
     /// in the inventory report. 
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// To restrict access to an inventory report, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-use-case-10">Restricting
+    ///  <b>General purpose bucket permissions</b> - The <c>s3:PutInventoryConfiguration</c>
+    /// permission is required in a policy. For more information about general purpose buckets
+    /// permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+    /// Bucket Policies and User Policies</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Directory bucket permissions</b> - To grant access to this API operation, you
+    /// must have the <c>s3express:PutInventoryConfiguration</c> permission in an IAM identity-based
+    /// policy instead of a bucket policy. For more information about directory bucket policies
+    /// and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+    /// Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in the
+    /// <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// To restrict access to an inventory report, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-s3-inventory">Restricting
     /// access to an Amazon S3 Inventory report</a> in the <i>Amazon S3 User Guide</i>. For
     /// more information about the metadata fields available in S3 Inventory, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-inventory.html#storage-inventory-contents">Amazon
     /// S3 Inventory lists</a> in the <i>Amazon S3 User Guide</i>. For more information about
     /// permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
     /// related to bucket subresource operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Identity
     /// and access management in Amazon S3</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
+    /// <para>
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region-code</i>.amazonaws.com</c>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
@@ -156,6 +181,17 @@ namespace Amazon.S3.Model
         /// <para>
         /// The name of the bucket where the inventory configuration will be stored.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Directory buckets </b> - When you use this operation with a directory bucket,
+        /// you must use path-style requests in the format <c>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must
+        /// be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must
+        /// also follow the format <c> <i>bucket-base-name</i>--<i>zone-id</i>--x-s3</c> (for
+        /// example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information
+        /// about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+        /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i> 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BucketName
@@ -177,6 +213,12 @@ namespace Amazon.S3.Model
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
         /// <c>403 Forbidden</c> (access denied).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, this header is not supported in this API operation. If you
+        /// specify this header, the request fails with the HTTP status code <c>501 Not Implemented</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ExpectedBucketOwner
         {

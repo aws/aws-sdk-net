@@ -32,14 +32,25 @@ namespace Amazon.Route53GlobalResolver.Model
     /// <summary>
     /// Container for the parameters to the UpdateGlobalResolver operation.
     /// Updates the configuration of a Route 53 Global Resolver instance. You can modify the
-    /// name, description, and observability region.
+    /// name, description, and observability Region.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+    /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+    /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+    /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateGlobalResolverRequest : AmazonRoute53GlobalResolverRequest
     {
         private string _description;
         private string _globalResolverId;
+        private GlobalResolverIpAddressType _ipAddressType;
         private string _name;
         private string _observabilityRegion;
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -80,6 +91,25 @@ namespace Amazon.Route53GlobalResolver.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the Global Resolver. Valid values are IPV4 or DUAL_STACK for
+        /// both IPv4 and IPv6 support.
+        /// </para>
+        /// </summary>
+        public GlobalResolverIpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the Global Resolver.
@@ -101,8 +131,8 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property ObservabilityRegion. 
         /// <para>
-        /// The AWS Regions in which the users' Global Resolver query resolution logs will be
-        /// propagated.
+        /// The Amazon Web Services Regions in which the users' Global Resolver query resolution
+        /// logs will be propagated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=32)]
@@ -116,6 +146,31 @@ namespace Amazon.Route53GlobalResolver.Model
         internal bool IsSetObservabilityRegion()
         {
             return this._observabilityRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
+        /// The list of Amazon Web Services Regions where the Global Resolver will operate. The
+        /// resolver will be distributed across these Regions to provide global availability and
+        /// low-latency DNS resolution.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

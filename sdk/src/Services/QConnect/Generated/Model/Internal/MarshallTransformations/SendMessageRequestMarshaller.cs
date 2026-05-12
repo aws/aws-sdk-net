@@ -149,6 +149,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.OrchestratorUseCase);
             }
 
+            if(publicRequest.IsSetOriginRequestId())
+            {
+                context.Writer.WritePropertyName("originRequestId");
+                context.Writer.WriteStringValue(publicRequest.OriginRequestId);
+            }
+
             if(publicRequest.IsSetType())
             {
                 context.Writer.WritePropertyName("type");

@@ -62,6 +62,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     unmarshalledObject.BackupConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("LogGroupNameConfiguration", targetDepth))
+                {
+                    var unmarshaller = LogGroupNameConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LogGroupNameConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("LogsEncryptionConfiguration", targetDepth))
                 {
                     var unmarshaller = LogsEncryptionConfigurationUnmarshaller.Instance;

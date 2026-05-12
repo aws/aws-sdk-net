@@ -76,7 +76,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The client secret of the requested app client, if the client has a secret.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=24, Max=64)]
         public string ClientSecret
         {
             get { return this._clientSecret; }

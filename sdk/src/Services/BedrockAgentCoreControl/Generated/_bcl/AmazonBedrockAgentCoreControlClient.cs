@@ -39,6 +39,11 @@ namespace Amazon.BedrockAgentCoreControl
 {
     /// <summary>
     /// <para>Implementation for accessing BedrockAgentCoreControl</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Welcome to the Amazon Bedrock AgentCore Control plane API reference. Control plane
     /// actions configure, create, modify, and monitor Amazon Web Services resources.
@@ -764,13 +769,93 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  CreateConfigurationBundle
+
+
+        /// <summary>
+        /// Creates a new configuration bundle resource. A configuration bundle stores versioned
+        /// component configurations for agent evaluation workflows.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationBundle service method.</param>
+        /// 
+        /// <returns>The response from the CreateConfigurationBundle service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateConfigurationBundle">REST API Reference for CreateConfigurationBundle Operation</seealso>
+        public virtual CreateConfigurationBundleResponse CreateConfigurationBundle(CreateConfigurationBundleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationBundleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConfigurationBundleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new configuration bundle resource. A configuration bundle stores versioned
+        /// component configurations for agent evaluation workflows.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationBundle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConfigurationBundle service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateConfigurationBundle">REST API Reference for CreateConfigurationBundle Operation</seealso>
+        public virtual Task<CreateConfigurationBundleResponse> CreateConfigurationBundleAsync(CreateConfigurationBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateConfigurationBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConfigurationBundleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateConfigurationBundleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEvaluator
 
 
         /// <summary>
-        /// Creates a custom evaluator for agent quality assessment. Custom evaluators use LLM-as-a-Judge
-        /// configurations with user-defined prompts, rating scales, and model settings to evaluate
-        /// agent performance at tool call, trace, or session levels.
+        /// Creates a custom evaluator for agent quality assessment. Custom evaluators can use
+        /// either LLM-as-a-Judge configurations with user-defined prompts, rating scales, and
+        /// model settings, or code-based configurations with customer-managed Lambda functions
+        /// to evaluate agent performance at tool call, trace, or session levels.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEvaluator service method.</param>
         /// 
@@ -805,9 +890,10 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Creates a custom evaluator for agent quality assessment. Custom evaluators use LLM-as-a-Judge
-        /// configurations with user-defined prompts, rating scales, and model settings to evaluate
-        /// agent performance at tool call, trace, or session levels.
+        /// Creates a custom evaluator for agent quality assessment. Custom evaluators can use
+        /// either LLM-as-a-Judge configurations with user-defined prompts, rating scales, and
+        /// model settings, or code-based configurations with customer-managed Lambda functions
+        /// to evaluate agent performance at tool call, trace, or session levels.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEvaluator service method.</param>
         /// <param name="cancellationToken">
@@ -936,6 +1022,93 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  CreateGatewayRule
+
+
+        /// <summary>
+        /// Creates a rule for a gateway. Rules define conditions and actions that control how
+        /// requests are routed and processed through the gateway, including principal-based access
+        /// control and path-based routing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGatewayRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateGatewayRule service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateGatewayRule">REST API Reference for CreateGatewayRule Operation</seealso>
+        public virtual CreateGatewayRuleResponse CreateGatewayRule(CreateGatewayRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGatewayRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGatewayRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGatewayRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a rule for a gateway. Rules define conditions and actions that control how
+        /// requests are routed and processed through the gateway, including principal-based access
+        /// control and path-based routing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGatewayRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGatewayRule service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateGatewayRule">REST API Reference for CreateGatewayRule Operation</seealso>
+        public virtual Task<CreateGatewayRuleResponse> CreateGatewayRuleAsync(CreateGatewayRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGatewayRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGatewayRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateGatewayRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateGatewayTarget
 
 
@@ -1017,6 +1190,83 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = CreateGatewayTargetResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateGatewayTargetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateHarness
+
+
+        /// <summary>
+        /// Operation to create a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHarness service method.</param>
+        /// 
+        /// <returns>The response from the CreateHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateHarness">REST API Reference for CreateHarness Operation</seealso>
+        public virtual CreateHarnessResponse CreateHarness(CreateHarnessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHarnessResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHarnessResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Operation to create a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHarness service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateHarness">REST API Reference for CreateHarness Operation</seealso>
+        public virtual Task<CreateHarnessResponse> CreateHarnessAsync(CreateHarnessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHarnessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateHarnessResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1294,6 +1544,295 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  CreatePaymentConnector
+
+
+        /// <summary>
+        /// Creates a new payment connector for a payment manager. A payment connector integrates
+        /// with a supported payment provider to enable payment processing capabilities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentConnector service method.</param>
+        /// 
+        /// <returns>The response from the CreatePaymentConnector service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePaymentConnector">REST API Reference for CreatePaymentConnector Operation</seealso>
+        public virtual CreatePaymentConnectorResponse CreatePaymentConnector(CreatePaymentConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePaymentConnectorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new payment connector for a payment manager. A payment connector integrates
+        /// with a supported payment provider to enable payment processing capabilities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePaymentConnector service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePaymentConnector">REST API Reference for CreatePaymentConnector Operation</seealso>
+        public virtual Task<CreatePaymentConnectorResponse> CreatePaymentConnectorAsync(CreatePaymentConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentConnectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePaymentConnectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreatePaymentCredentialProvider
+
+
+        /// <summary>
+        /// Creates a new payment credential provider for storing authentication credentials used
+        /// by payment connectors to communicate with external payment providers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentCredentialProvider service method.</param>
+        /// 
+        /// <returns>The response from the CreatePaymentCredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.DecryptionFailureException">
+        /// Exception thrown when decryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.EncryptionFailureException">
+        /// Exception thrown when encryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceLimitExceededException">
+        /// Exception thrown when a resource limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePaymentCredentialProvider">REST API Reference for CreatePaymentCredentialProvider Operation</seealso>
+        public virtual CreatePaymentCredentialProviderResponse CreatePaymentCredentialProvider(CreatePaymentCredentialProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentCredentialProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePaymentCredentialProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new payment credential provider for storing authentication credentials used
+        /// by payment connectors to communicate with external payment providers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentCredentialProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePaymentCredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.DecryptionFailureException">
+        /// Exception thrown when decryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.EncryptionFailureException">
+        /// Exception thrown when encryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceLimitExceededException">
+        /// Exception thrown when a resource limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePaymentCredentialProvider">REST API Reference for CreatePaymentCredentialProvider Operation</seealso>
+        public virtual Task<CreatePaymentCredentialProviderResponse> CreatePaymentCredentialProviderAsync(CreatePaymentCredentialProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentCredentialProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePaymentCredentialProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreatePaymentManager
+
+
+        /// <summary>
+        /// Creates a new payment manager in your Amazon Web Services account. A payment manager
+        /// serves as the top-level resource for managing payment processing capabilities, including
+        /// payment connectors that integrate with supported payment providers.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify <c>CUSTOM_JWT</c> as the <c>authorizerType</c>, you must provide an
+        /// <c>authorizerConfiguration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentManager service method.</param>
+        /// 
+        /// <returns>The response from the CreatePaymentManager service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePaymentManager">REST API Reference for CreatePaymentManager Operation</seealso>
+        public virtual CreatePaymentManagerResponse CreatePaymentManager(CreatePaymentManagerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentManagerResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePaymentManagerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new payment manager in your Amazon Web Services account. A payment manager
+        /// serves as the top-level resource for managing payment processing capabilities, including
+        /// payment connectors that integrate with supported payment providers.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify <c>CUSTOM_JWT</c> as the <c>authorizerType</c>, you must provide an
+        /// <c>authorizerConfiguration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentManager service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePaymentManager service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePaymentManager">REST API Reference for CreatePaymentManager Operation</seealso>
+        public virtual Task<CreatePaymentManagerResponse> CreatePaymentManagerAsync(CreatePaymentManagerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentManagerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePaymentManagerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreatePolicy
 
 
@@ -1478,6 +2017,198 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = CreatePolicyEngineResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreatePolicyEngineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRegistry
+
+
+        /// <summary>
+        /// Creates a new registry in your Amazon Web Services account. A registry serves as a
+        /// centralized catalog for organizing and managing registry records, including MCP servers,
+        /// A2A agents, agent skills, and custom resource types.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify <c>CUSTOM_JWT</c> as the <c>authorizerType</c>, you must provide an
+        /// <c>authorizerConfiguration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegistry service method.</param>
+        /// 
+        /// <returns>The response from the CreateRegistry service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
+        public virtual CreateRegistryResponse CreateRegistry(CreateRegistryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRegistryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRegistryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new registry in your Amazon Web Services account. A registry serves as a
+        /// centralized catalog for organizing and managing registry records, including MCP servers,
+        /// A2A agents, agent skills, and custom resource types.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify <c>CUSTOM_JWT</c> as the <c>authorizerType</c>, you must provide an
+        /// <c>authorizerConfiguration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRegistry service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
+        public virtual Task<CreateRegistryResponse> CreateRegistryAsync(CreateRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRegistryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRegistryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRegistryRecord
+
+
+        /// <summary>
+        /// Creates a new registry record within the specified registry. A registry record represents
+        /// an individual AI resource's metadata in the registry. This could be an MCP server
+        /// (and associated tools), A2A agent, agent skill, or a custom resource with a custom
+        /// schema.
+        /// 
+        ///  
+        /// <para>
+        /// The record is processed asynchronously and returns HTTP 202 Accepted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegistryRecord service method.</param>
+        /// 
+        /// <returns>The response from the CreateRegistryRecord service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateRegistryRecord">REST API Reference for CreateRegistryRecord Operation</seealso>
+        public virtual CreateRegistryRecordResponse CreateRegistryRecord(CreateRegistryRecordRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRegistryRecordResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRegistryRecordResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new registry record within the specified registry. A registry record represents
+        /// an individual AI resource's metadata in the registry. This could be an MCP server
+        /// (and associated tools), A2A agent, agent skill, or a custom resource with a custom
+        /// schema.
+        /// 
+        ///  
+        /// <para>
+        /// The record is processed asynchronously and returns HTTP 202 Accepted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegistryRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRegistryRecord service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateRegistryRecord">REST API Reference for CreateRegistryRecord Operation</seealso>
+        public virtual Task<CreateRegistryRecordResponse> CreateRegistryRecordAsync(CreateRegistryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRegistryRecordResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRegistryRecordResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2025,6 +2756,83 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  DeleteConfigurationBundle
+
+
+        /// <summary>
+        /// Deletes a configuration bundle and all of its versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationBundle service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConfigurationBundle service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteConfigurationBundle">REST API Reference for DeleteConfigurationBundle Operation</seealso>
+        public virtual DeleteConfigurationBundleResponse DeleteConfigurationBundle(DeleteConfigurationBundleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationBundleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConfigurationBundleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a configuration bundle and all of its versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationBundle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConfigurationBundle service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteConfigurationBundle">REST API Reference for DeleteConfigurationBundle Operation</seealso>
+        public virtual Task<DeleteConfigurationBundleResponse> DeleteConfigurationBundleAsync(DeleteConfigurationBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConfigurationBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConfigurationBundleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteConfigurationBundleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteEvaluator
 
 
@@ -2181,11 +2989,95 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  DeleteGatewayRule
+
+
+        /// <summary>
+        /// Deletes a gateway rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGatewayRule service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteGatewayRule">REST API Reference for DeleteGatewayRule Operation</seealso>
+        public virtual DeleteGatewayRuleResponse DeleteGatewayRule(DeleteGatewayRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGatewayRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGatewayRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGatewayRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a gateway rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGatewayRule service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteGatewayRule">REST API Reference for DeleteGatewayRule Operation</seealso>
+        public virtual Task<DeleteGatewayRuleResponse> DeleteGatewayRuleAsync(DeleteGatewayRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGatewayRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGatewayRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteGatewayRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteGatewayTarget
 
 
         /// <summary>
         /// Deletes a gateway target.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a target that is in a pending authorization state (<c>CREATE_PENDING_AUTH</c>,
+        /// <c>UPDATE_PENDING_AUTH</c>, or <c>SYNCHRONIZE_PENDING_AUTH</c>). Wait for the authorization
+        /// to complete or fail before deleting the target.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayTarget service method.</param>
         /// 
@@ -2221,6 +3113,13 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Deletes a gateway target.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete a target that is in a pending authorization state (<c>CREATE_PENDING_AUTH</c>,
+        /// <c>UPDATE_PENDING_AUTH</c>, or <c>SYNCHRONIZE_PENDING_AUTH</c>). Wait for the authorization
+        /// to complete or fail before deleting the target.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayTarget service method.</param>
         /// <param name="cancellationToken">
@@ -2254,6 +3153,83 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = DeleteGatewayTargetResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteGatewayTargetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteHarness
+
+
+        /// <summary>
+        /// Operation to delete a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHarness service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteHarness">REST API Reference for DeleteHarness Operation</seealso>
+        public virtual DeleteHarnessResponse DeleteHarness(DeleteHarnessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHarnessResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHarnessResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Operation to delete a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHarness service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteHarness">REST API Reference for DeleteHarness Operation</seealso>
+        public virtual Task<DeleteHarnessResponse> DeleteHarnessAsync(DeleteHarnessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHarnessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteHarnessResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2347,6 +3323,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
         /// This exception is thrown when a request is denied per access permissions
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
         /// This exception is thrown if there was an unexpected error during processing of request
         /// </exception>
@@ -2385,6 +3364,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <returns>The response from the DeleteOauth2CredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
         /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
         /// This exception is thrown if there was an unexpected error during processing of request
@@ -2489,6 +3471,231 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = DeleteOnlineEvaluationConfigResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteOnlineEvaluationConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePaymentConnector
+
+
+        /// <summary>
+        /// Deletes a payment connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentConnector service method.</param>
+        /// 
+        /// <returns>The response from the DeletePaymentConnector service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePaymentConnector">REST API Reference for DeletePaymentConnector Operation</seealso>
+        public virtual DeletePaymentConnectorResponse DeletePaymentConnector(DeletePaymentConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePaymentConnectorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a payment connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePaymentConnector service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePaymentConnector">REST API Reference for DeletePaymentConnector Operation</seealso>
+        public virtual Task<DeletePaymentConnectorResponse> DeletePaymentConnectorAsync(DeletePaymentConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentConnectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePaymentConnectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePaymentCredentialProvider
+
+
+        /// <summary>
+        /// Deletes a payment credential provider and its associated stored credentials.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentCredentialProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeletePaymentCredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePaymentCredentialProvider">REST API Reference for DeletePaymentCredentialProvider Operation</seealso>
+        public virtual DeletePaymentCredentialProviderResponse DeletePaymentCredentialProvider(DeletePaymentCredentialProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentCredentialProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePaymentCredentialProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a payment credential provider and its associated stored credentials.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentCredentialProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePaymentCredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePaymentCredentialProvider">REST API Reference for DeletePaymentCredentialProvider Operation</seealso>
+        public virtual Task<DeletePaymentCredentialProviderResponse> DeletePaymentCredentialProviderAsync(DeletePaymentCredentialProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentCredentialProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePaymentCredentialProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePaymentManager
+
+
+        /// <summary>
+        /// Deletes a payment manager. All payment connectors associated with the payment manager
+        /// must be deleted before the payment manager can be deleted. This operation initiates
+        /// the deletion process asynchronously.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentManager service method.</param>
+        /// 
+        /// <returns>The response from the DeletePaymentManager service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePaymentManager">REST API Reference for DeletePaymentManager Operation</seealso>
+        public virtual DeletePaymentManagerResponse DeletePaymentManager(DeletePaymentManagerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentManagerResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePaymentManagerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a payment manager. All payment connectors associated with the payment manager
+        /// must be deleted before the payment manager can be deleted. This operation initiates
+        /// the deletion process asynchronously.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentManager service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePaymentManager service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePaymentManager">REST API Reference for DeletePaymentManager Operation</seealso>
+        public virtual Task<DeletePaymentManagerResponse> DeletePaymentManagerAsync(DeletePaymentManagerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentManagerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePaymentManagerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2657,6 +3864,164 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = DeletePolicyEngineResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeletePolicyEngineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRegistry
+
+
+        /// <summary>
+        /// Deletes a registry. The registry must contain zero records before it can be deleted.
+        /// This operation initiates the deletion process asynchronously.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistry service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRegistry service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
+        public virtual DeleteRegistryResponse DeleteRegistry(DeleteRegistryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRegistryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a registry. The registry must contain zero records before it can be deleted.
+        /// This operation initiates the deletion process asynchronously.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRegistry service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
+        public virtual Task<DeleteRegistryResponse> DeleteRegistryAsync(DeleteRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRegistryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRegistryRecord
+
+
+        /// <summary>
+        /// Deletes a registry record. The record's status transitions to <c>DELETING</c> and
+        /// the record is removed asynchronously.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistryRecord service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRegistryRecord service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteRegistryRecord">REST API Reference for DeleteRegistryRecord Operation</seealso>
+        public virtual DeleteRegistryRecordResponse DeleteRegistryRecord(DeleteRegistryRecordRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRegistryRecordResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRegistryRecordResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a registry record. The record's status transitions to <c>DELETING</c> and
+        /// the record is removed asynchronously.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistryRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRegistryRecord service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteRegistryRecord">REST API Reference for DeleteRegistryRecord Operation</seealso>
+        public virtual Task<DeleteRegistryRecordResponse> DeleteRegistryRecordAsync(DeleteRegistryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRegistryRecordResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRegistryRecordResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3263,6 +4628,152 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  GetConfigurationBundle
+
+
+        /// <summary>
+        /// Gets the latest version of a configuration bundle. By default, returns the latest
+        /// version on the mainline branch. Use <c>GetConfigurationBundleVersion</c> to retrieve
+        /// a specific historical version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationBundle service method.</param>
+        /// 
+        /// <returns>The response from the GetConfigurationBundle service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetConfigurationBundle">REST API Reference for GetConfigurationBundle Operation</seealso>
+        public virtual GetConfigurationBundleResponse GetConfigurationBundle(GetConfigurationBundleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConfigurationBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationBundleResponseUnmarshaller.Instance;
+
+            return Invoke<GetConfigurationBundleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the latest version of a configuration bundle. By default, returns the latest
+        /// version on the mainline branch. Use <c>GetConfigurationBundleVersion</c> to retrieve
+        /// a specific historical version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationBundle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConfigurationBundle service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetConfigurationBundle">REST API Reference for GetConfigurationBundle Operation</seealso>
+        public virtual Task<GetConfigurationBundleResponse> GetConfigurationBundleAsync(GetConfigurationBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConfigurationBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationBundleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetConfigurationBundleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConfigurationBundleVersion
+
+
+        /// <summary>
+        /// Gets a specific version of a configuration bundle by its version identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationBundleVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetConfigurationBundleVersion service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetConfigurationBundleVersion">REST API Reference for GetConfigurationBundleVersion Operation</seealso>
+        public virtual GetConfigurationBundleVersionResponse GetConfigurationBundleVersion(GetConfigurationBundleVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConfigurationBundleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationBundleVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetConfigurationBundleVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a specific version of a configuration bundle by its version identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfigurationBundleVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConfigurationBundleVersion service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetConfigurationBundleVersion">REST API Reference for GetConfigurationBundleVersion Operation</seealso>
+        public virtual Task<GetConfigurationBundleVersionResponse> GetConfigurationBundleVersionAsync(GetConfigurationBundleVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConfigurationBundleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationBundleVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetConfigurationBundleVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEvaluator
 
 
@@ -3407,6 +4918,77 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  GetGatewayRule
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific gateway rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayRule service method.</param>
+        /// 
+        /// <returns>The response from the GetGatewayRule service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetGatewayRule">REST API Reference for GetGatewayRule Operation</seealso>
+        public virtual GetGatewayRuleResponse GetGatewayRule(GetGatewayRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGatewayRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGatewayRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetGatewayRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific gateway rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGatewayRule service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetGatewayRule">REST API Reference for GetGatewayRule Operation</seealso>
+        public virtual Task<GetGatewayRuleResponse> GetGatewayRuleAsync(GetGatewayRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGatewayRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGatewayRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetGatewayRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetGatewayTarget
 
 
@@ -3474,6 +5056,77 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = GetGatewayTargetResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetGatewayTargetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetHarness
+
+
+        /// <summary>
+        /// Operation to get a single Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHarness service method.</param>
+        /// 
+        /// <returns>The response from the GetHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetHarness">REST API Reference for GetHarness Operation</seealso>
+        public virtual GetHarnessResponse GetHarness(GetHarnessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHarnessResponseUnmarshaller.Instance;
+
+            return Invoke<GetHarnessResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Operation to get a single Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHarness service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetHarness">REST API Reference for GetHarness Operation</seealso>
+        public virtual Task<GetHarnessResponse> GetHarnessAsync(GetHarnessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHarnessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetHarnessResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3707,6 +5360,233 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  GetPaymentConnector
+
+
+        /// <summary>
+        /// Retrieves information about a specific payment connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentConnector service method.</param>
+        /// 
+        /// <returns>The response from the GetPaymentConnector service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPaymentConnector">REST API Reference for GetPaymentConnector Operation</seealso>
+        public virtual GetPaymentConnectorResponse GetPaymentConnector(GetPaymentConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<GetPaymentConnectorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a specific payment connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPaymentConnector service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPaymentConnector">REST API Reference for GetPaymentConnector Operation</seealso>
+        public virtual Task<GetPaymentConnectorResponse> GetPaymentConnectorAsync(GetPaymentConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentConnectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPaymentConnectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPaymentCredentialProvider
+
+
+        /// <summary>
+        /// Retrieves information about a specific payment credential provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentCredentialProvider service method.</param>
+        /// 
+        /// <returns>The response from the GetPaymentCredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.DecryptionFailureException">
+        /// Exception thrown when decryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPaymentCredentialProvider">REST API Reference for GetPaymentCredentialProvider Operation</seealso>
+        public virtual GetPaymentCredentialProviderResponse GetPaymentCredentialProvider(GetPaymentCredentialProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentCredentialProviderResponseUnmarshaller.Instance;
+
+            return Invoke<GetPaymentCredentialProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a specific payment credential provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentCredentialProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPaymentCredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.DecryptionFailureException">
+        /// Exception thrown when decryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPaymentCredentialProvider">REST API Reference for GetPaymentCredentialProvider Operation</seealso>
+        public virtual Task<GetPaymentCredentialProviderResponse> GetPaymentCredentialProviderAsync(GetPaymentCredentialProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentCredentialProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPaymentCredentialProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPaymentManager
+
+
+        /// <summary>
+        /// Retrieves information about a specific payment manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentManager service method.</param>
+        /// 
+        /// <returns>The response from the GetPaymentManager service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPaymentManager">REST API Reference for GetPaymentManager Operation</seealso>
+        public virtual GetPaymentManagerResponse GetPaymentManager(GetPaymentManagerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentManagerResponseUnmarshaller.Instance;
+
+            return Invoke<GetPaymentManagerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a specific payment manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentManager service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPaymentManager service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPaymentManager">REST API Reference for GetPaymentManager Operation</seealso>
+        public virtual Task<GetPaymentManagerResponse> GetPaymentManagerAsync(GetPaymentManagerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentManagerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPaymentManagerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPolicy
 
 
@@ -3928,6 +5808,154 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = GetPolicyGenerationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetPolicyGenerationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRegistry
+
+
+        /// <summary>
+        /// Retrieves information about a specific registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistry service method.</param>
+        /// 
+        /// <returns>The response from the GetRegistry service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetRegistry">REST API Reference for GetRegistry Operation</seealso>
+        public virtual GetRegistryResponse GetRegistry(GetRegistryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistryResponseUnmarshaller.Instance;
+
+            return Invoke<GetRegistryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a specific registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRegistry service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetRegistry">REST API Reference for GetRegistry Operation</seealso>
+        public virtual Task<GetRegistryResponse> GetRegistryAsync(GetRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRegistryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRegistryRecord
+
+
+        /// <summary>
+        /// Retrieves information about a specific registry record.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistryRecord service method.</param>
+        /// 
+        /// <returns>The response from the GetRegistryRecord service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetRegistryRecord">REST API Reference for GetRegistryRecord Operation</seealso>
+        public virtual GetRegistryRecordResponse GetRegistryRecord(GetRegistryRecordRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistryRecordResponseUnmarshaller.Instance;
+
+            return Invoke<GetRegistryRecordResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a specific registry record.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistryRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRegistryRecord service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetRegistryRecord">REST API Reference for GetRegistryRecord Operation</seealso>
+        public virtual Task<GetRegistryRecordResponse> GetRegistryRecordAsync(GetRegistryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistryRecordResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRegistryRecordResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4648,6 +6676,144 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  ListConfigurationBundles
+
+
+        /// <summary>
+        /// Lists all configuration bundles in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationBundles service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationBundles service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListConfigurationBundles">REST API Reference for ListConfigurationBundles Operation</seealso>
+        public virtual ListConfigurationBundlesResponse ListConfigurationBundles(ListConfigurationBundlesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConfigurationBundlesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationBundlesResponseUnmarshaller.Instance;
+
+            return Invoke<ListConfigurationBundlesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all configuration bundles in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationBundles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConfigurationBundles service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListConfigurationBundles">REST API Reference for ListConfigurationBundles Operation</seealso>
+        public virtual Task<ListConfigurationBundlesResponse> ListConfigurationBundlesAsync(ListConfigurationBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConfigurationBundlesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationBundlesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListConfigurationBundlesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListConfigurationBundleVersions
+
+
+        /// <summary>
+        /// Lists all versions of a configuration bundle, with optional filtering by branch name
+        /// or creation source.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationBundleVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationBundleVersions service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListConfigurationBundleVersions">REST API Reference for ListConfigurationBundleVersions Operation</seealso>
+        public virtual ListConfigurationBundleVersionsResponse ListConfigurationBundleVersions(ListConfigurationBundleVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConfigurationBundleVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationBundleVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConfigurationBundleVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all versions of a configuration bundle, with optional filtering by branch name
+        /// or creation source.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationBundleVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConfigurationBundleVersions service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListConfigurationBundleVersions">REST API Reference for ListConfigurationBundleVersions Operation</seealso>
+        public virtual Task<ListConfigurationBundleVersionsResponse> ListConfigurationBundleVersionsAsync(ListConfigurationBundleVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConfigurationBundleVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationBundleVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListConfigurationBundleVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListEvaluators
 
 
@@ -4711,6 +6877,77 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = ListEvaluatorsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListEvaluatorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListGatewayRules
+
+
+        /// <summary>
+        /// Lists all rules for a gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayRules service method.</param>
+        /// 
+        /// <returns>The response from the ListGatewayRules service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListGatewayRules">REST API Reference for ListGatewayRules Operation</seealso>
+        public virtual ListGatewayRulesResponse ListGatewayRules(ListGatewayRulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGatewayRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListGatewayRulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all rules for a gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGatewayRules service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListGatewayRules">REST API Reference for ListGatewayRules Operation</seealso>
+        public virtual Task<ListGatewayRulesResponse> ListGatewayRulesAsync(ListGatewayRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGatewayRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGatewayRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListGatewayRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4841,6 +7078,71 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = ListGatewayTargetsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListGatewayTargetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListHarnesses
+
+
+        /// <summary>
+        /// Operation to list Harnesses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHarnesses service method.</param>
+        /// 
+        /// <returns>The response from the ListHarnesses service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnesses">REST API Reference for ListHarnesses Operation</seealso>
+        public virtual ListHarnessesResponse ListHarnesses(ListHarnessesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHarnessesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHarnessesResponseUnmarshaller.Instance;
+
+            return Invoke<ListHarnessesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Operation to list Harnesses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHarnesses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHarnesses service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListHarnesses">REST API Reference for ListHarnesses Operation</seealso>
+        public virtual Task<ListHarnessesResponse> ListHarnessesAsync(ListHarnessesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListHarnessesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHarnessesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListHarnessesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5060,6 +7362,215 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = ListOnlineEvaluationConfigsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListOnlineEvaluationConfigsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPaymentConnectors
+
+
+        /// <summary>
+        /// Lists all payment connectors for a specified payment manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentConnectors service method.</param>
+        /// 
+        /// <returns>The response from the ListPaymentConnectors service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPaymentConnectors">REST API Reference for ListPaymentConnectors Operation</seealso>
+        public virtual ListPaymentConnectorsResponse ListPaymentConnectors(ListPaymentConnectorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentConnectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPaymentConnectorsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all payment connectors for a specified payment manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPaymentConnectors service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPaymentConnectors">REST API Reference for ListPaymentConnectors Operation</seealso>
+        public virtual Task<ListPaymentConnectorsResponse> ListPaymentConnectorsAsync(ListPaymentConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentConnectorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPaymentConnectorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPaymentCredentialProviders
+
+
+        /// <summary>
+        /// Lists all payment credential providers in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentCredentialProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListPaymentCredentialProviders service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPaymentCredentialProviders">REST API Reference for ListPaymentCredentialProviders Operation</seealso>
+        public virtual ListPaymentCredentialProvidersResponse ListPaymentCredentialProviders(ListPaymentCredentialProvidersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentCredentialProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentCredentialProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListPaymentCredentialProvidersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all payment credential providers in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentCredentialProviders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPaymentCredentialProviders service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPaymentCredentialProviders">REST API Reference for ListPaymentCredentialProviders Operation</seealso>
+        public virtual Task<ListPaymentCredentialProvidersResponse> ListPaymentCredentialProvidersAsync(ListPaymentCredentialProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentCredentialProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentCredentialProvidersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPaymentCredentialProvidersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPaymentManagers
+
+
+        /// <summary>
+        /// Lists all payment managers in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentManagers service method.</param>
+        /// 
+        /// <returns>The response from the ListPaymentManagers service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPaymentManagers">REST API Reference for ListPaymentManagers Operation</seealso>
+        public virtual ListPaymentManagersResponse ListPaymentManagers(ListPaymentManagersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentManagersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentManagersResponseUnmarshaller.Instance;
+
+            return Invoke<ListPaymentManagersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all payment managers in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentManagers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPaymentManagers service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPaymentManagers">REST API Reference for ListPaymentManagers Operation</seealso>
+        public virtual Task<ListPaymentManagersResponse> ListPaymentManagersAsync(ListPaymentManagersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentManagersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentManagersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPaymentManagersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5356,6 +7867,154 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = ListPolicyGenerationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListPolicyGenerationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRegistries
+
+
+        /// <summary>
+        /// Lists all registries in the account. You can optionally filter results by status using
+        /// the <c>status</c> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegistries service method.</param>
+        /// 
+        /// <returns>The response from the ListRegistries service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
+        public virtual ListRegistriesResponse ListRegistries(ListRegistriesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRegistriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegistriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRegistriesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all registries in the account. You can optionally filter results by status using
+        /// the <c>status</c> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegistries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRegistries service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
+        public virtual Task<ListRegistriesResponse> ListRegistriesAsync(ListRegistriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRegistriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegistriesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRegistriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRegistryRecords
+
+
+        /// <summary>
+        /// Lists registry records within a registry. You can optionally filter results using
+        /// the <c>name</c>, <c>status</c>, and <c>descriptorType</c> parameters. When multiple
+        /// filters are specified, they are combined using AND logic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegistryRecords service method.</param>
+        /// 
+        /// <returns>The response from the ListRegistryRecords service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListRegistryRecords">REST API Reference for ListRegistryRecords Operation</seealso>
+        public virtual ListRegistryRecordsResponse ListRegistryRecords(ListRegistryRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRegistryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegistryRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRegistryRecordsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists registry records within a registry. You can optionally filter results using
+        /// the <c>name</c>, <c>status</c>, and <c>descriptorType</c> parameters. When multiple
+        /// filters are specified, they are combined using AND logic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegistryRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRegistryRecords service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListRegistryRecords">REST API Reference for ListRegistryRecords Operation</seealso>
+        public virtual Task<ListRegistryRecordsResponse> ListRegistryRecordsAsync(ListRegistryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRegistryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegistryRecordsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRegistryRecordsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5797,11 +8456,106 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  SubmitRegistryRecordForApproval
+
+
+        /// <summary>
+        /// Submits a registry record for approval. This transitions the record from <c>DRAFT</c>
+        /// status to <c>PENDING_APPROVAL</c> status. If the registry has auto-approval enabled,
+        /// the record is automatically approved.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitRegistryRecordForApproval service method.</param>
+        /// 
+        /// <returns>The response from the SubmitRegistryRecordForApproval service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/SubmitRegistryRecordForApproval">REST API Reference for SubmitRegistryRecordForApproval Operation</seealso>
+        public virtual SubmitRegistryRecordForApprovalResponse SubmitRegistryRecordForApproval(SubmitRegistryRecordForApprovalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SubmitRegistryRecordForApprovalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubmitRegistryRecordForApprovalResponseUnmarshaller.Instance;
+
+            return Invoke<SubmitRegistryRecordForApprovalResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Submits a registry record for approval. This transitions the record from <c>DRAFT</c>
+        /// status to <c>PENDING_APPROVAL</c> status. If the registry has auto-approval enabled,
+        /// the record is automatically approved.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitRegistryRecordForApproval service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SubmitRegistryRecordForApproval service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/SubmitRegistryRecordForApproval">REST API Reference for SubmitRegistryRecordForApproval Operation</seealso>
+        public virtual Task<SubmitRegistryRecordForApprovalResponse> SubmitRegistryRecordForApprovalAsync(SubmitRegistryRecordForApprovalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SubmitRegistryRecordForApprovalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SubmitRegistryRecordForApprovalResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SubmitRegistryRecordForApprovalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SynchronizeGatewayTargets
 
 
         /// <summary>
-        /// The gateway targets.
+        /// Synchronizes the gateway targets by fetching the latest tool definitions from the
+        /// target endpoints.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot synchronize a target that is in a pending authorization state (<c>CREATE_PENDING_AUTH</c>,
+        /// <c>UPDATE_PENDING_AUTH</c>, or <c>SYNCHRONIZE_PENDING_AUTH</c>). Wait for the authorization
+        /// to complete or fail before synchronizing.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot synchronize a target that has a static tool schema (<c>mcpToolSchema</c>)
+        /// configured. Remove the static schema through an <c>UpdateGatewayTarget</c> call to
+        /// enable dynamic tool synchronization.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SynchronizeGatewayTargets service method.</param>
         /// 
@@ -5839,7 +8593,21 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// The gateway targets.
+        /// Synchronizes the gateway targets by fetching the latest tool definitions from the
+        /// target endpoints.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot synchronize a target that is in a pending authorization state (<c>CREATE_PENDING_AUTH</c>,
+        /// <c>UPDATE_PENDING_AUTH</c>, or <c>SYNCHRONIZE_PENDING_AUTH</c>). Wait for the authorization
+        /// to complete or fail before synchronizing.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot synchronize a target that has a static tool schema (<c>mcpToolSchema</c>)
+        /// configured. Remove the static schema through an <c>UpdateGatewayTarget</c> call to
+        /// enable dynamic tool synchronization.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SynchronizeGatewayTargets service method.</param>
         /// <param name="cancellationToken">
@@ -6329,6 +9097,85 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  UpdateConfigurationBundle
+
+
+        /// <summary>
+        /// Updates a configuration bundle by creating a new version with the specified changes.
+        /// Each update creates a new version in the version history.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationBundle service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConfigurationBundle service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateConfigurationBundle">REST API Reference for UpdateConfigurationBundle Operation</seealso>
+        public virtual UpdateConfigurationBundleResponse UpdateConfigurationBundle(UpdateConfigurationBundleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationBundleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConfigurationBundleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a configuration bundle by creating a new version with the specified changes.
+        /// Each update creates a new version in the version history.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationBundle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConfigurationBundle service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateConfigurationBundle">REST API Reference for UpdateConfigurationBundle Operation</seealso>
+        public virtual Task<UpdateConfigurationBundleResponse> UpdateConfigurationBundleAsync(UpdateConfigurationBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationBundleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationBundleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateConfigurationBundleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateEvaluator
 
 
@@ -6497,11 +9344,95 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  UpdateGatewayRule
+
+
+        /// <summary>
+        /// Updates a gateway rule's priority, conditions, actions, or description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGatewayRule service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateGatewayRule">REST API Reference for UpdateGatewayRule Operation</seealso>
+        public virtual UpdateGatewayRuleResponse UpdateGatewayRule(UpdateGatewayRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGatewayRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a gateway rule's priority, conditions, actions, or description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGatewayRule service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateGatewayRule">REST API Reference for UpdateGatewayRule Operation</seealso>
+        public virtual Task<UpdateGatewayRuleResponse> UpdateGatewayRuleAsync(UpdateGatewayRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGatewayRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGatewayRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateGatewayRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateGatewayTarget
 
 
         /// <summary>
         /// Updates an existing gateway target.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot update a target that is in a pending authorization state (<c>CREATE_PENDING_AUTH</c>,
+        /// <c>UPDATE_PENDING_AUTH</c>, or <c>SYNCHRONIZE_PENDING_AUTH</c>). Wait for the authorization
+        /// to complete or fail before updating the target.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayTarget service method.</param>
         /// 
@@ -6540,6 +9471,13 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Updates an existing gateway target.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot update a target that is in a pending authorization state (<c>CREATE_PENDING_AUTH</c>,
+        /// <c>UPDATE_PENDING_AUTH</c>, or <c>SYNCHRONIZE_PENDING_AUTH</c>). Wait for the authorization
+        /// to complete or fail before updating the target.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayTarget service method.</param>
         /// <param name="cancellationToken">
@@ -6576,6 +9514,83 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = UpdateGatewayTargetResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateGatewayTargetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateHarness
+
+
+        /// <summary>
+        /// Operation to update a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHarness service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateHarness">REST API Reference for UpdateHarness Operation</seealso>
+        public virtual UpdateHarnessResponse UpdateHarness(UpdateHarnessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHarnessResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHarnessResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Operation to update a Harness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHarness service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHarness service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateHarness">REST API Reference for UpdateHarness Operation</seealso>
+        public virtual Task<UpdateHarnessResponse> UpdateHarnessAsync(UpdateHarnessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateHarnessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHarnessResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateHarnessResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6851,6 +9866,279 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  UpdatePaymentConnector
+
+
+        /// <summary>
+        /// Updates an existing payment connector. This operation uses PATCH semantics, so you
+        /// only need to specify the fields you want to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePaymentConnector service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePaymentConnector service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePaymentConnector">REST API Reference for UpdatePaymentConnector Operation</seealso>
+        public virtual UpdatePaymentConnectorResponse UpdatePaymentConnector(UpdatePaymentConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePaymentConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePaymentConnectorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing payment connector. This operation uses PATCH semantics, so you
+        /// only need to specify the fields you want to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePaymentConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePaymentConnector service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePaymentConnector">REST API Reference for UpdatePaymentConnector Operation</seealso>
+        public virtual Task<UpdatePaymentConnectorResponse> UpdatePaymentConnectorAsync(UpdatePaymentConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePaymentConnectorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePaymentConnectorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePaymentCredentialProvider
+
+
+        /// <summary>
+        /// Updates an existing payment credential provider with new authentication credentials.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePaymentCredentialProvider service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePaymentCredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.DecryptionFailureException">
+        /// Exception thrown when decryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.EncryptionFailureException">
+        /// Exception thrown when encryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePaymentCredentialProvider">REST API Reference for UpdatePaymentCredentialProvider Operation</seealso>
+        public virtual UpdatePaymentCredentialProviderResponse UpdatePaymentCredentialProvider(UpdatePaymentCredentialProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePaymentCredentialProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePaymentCredentialProviderResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing payment credential provider with new authentication credentials.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePaymentCredentialProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePaymentCredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.DecryptionFailureException">
+        /// Exception thrown when decryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.EncryptionFailureException">
+        /// Exception thrown when encryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePaymentCredentialProvider">REST API Reference for UpdatePaymentCredentialProvider Operation</seealso>
+        public virtual Task<UpdatePaymentCredentialProviderResponse> UpdatePaymentCredentialProviderAsync(UpdatePaymentCredentialProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePaymentCredentialProviderResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePaymentCredentialProviderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePaymentManager
+
+
+        /// <summary>
+        /// Updates an existing payment manager. This operation uses PATCH semantics, so you only
+        /// need to specify the fields you want to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePaymentManager service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePaymentManager service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePaymentManager">REST API Reference for UpdatePaymentManager Operation</seealso>
+        public virtual UpdatePaymentManagerResponse UpdatePaymentManager(UpdatePaymentManagerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePaymentManagerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePaymentManagerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing payment manager. This operation uses PATCH semantics, so you only
+        /// need to specify the fields you want to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePaymentManager service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePaymentManager service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePaymentManager">REST API Reference for UpdatePaymentManager Operation</seealso>
+        public virtual Task<UpdatePaymentManagerResponse> UpdatePaymentManagerAsync(UpdatePaymentManagerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePaymentManagerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePaymentManagerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdatePolicy
 
 
@@ -7015,6 +10303,251 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = UpdatePolicyEngineResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdatePolicyEngineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRegistry
+
+
+        /// <summary>
+        /// Updates an existing registry. This operation uses PATCH semantics, so you only need
+        /// to specify the fields you want to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistry service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRegistry service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
+        public virtual UpdateRegistryResponse UpdateRegistry(UpdateRegistryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRegistryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing registry. This operation uses PATCH semantics, so you only need
+        /// to specify the fields you want to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRegistry service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
+        public virtual Task<UpdateRegistryResponse> UpdateRegistryAsync(UpdateRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRegistryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRegistryRecord
+
+
+        /// <summary>
+        /// Updates an existing registry record. This operation uses PATCH semantics, so you only
+        /// need to specify the fields you want to change. The update is processed asynchronously
+        /// and returns HTTP 202 Accepted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistryRecord service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRegistryRecord service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateRegistryRecord">REST API Reference for UpdateRegistryRecord Operation</seealso>
+        public virtual UpdateRegistryRecordResponse UpdateRegistryRecord(UpdateRegistryRecordRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryRecordResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRegistryRecordResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing registry record. This operation uses PATCH semantics, so you only
+        /// need to specify the fields you want to change. The update is processed asynchronously
+        /// and returns HTTP 202 Accepted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistryRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRegistryRecord service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateRegistryRecord">REST API Reference for UpdateRegistryRecord Operation</seealso>
+        public virtual Task<UpdateRegistryRecordResponse> UpdateRegistryRecordAsync(UpdateRegistryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryRecordResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRegistryRecordResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRegistryRecordStatus
+
+
+        /// <summary>
+        /// Updates the status of a registry record. Use this operation to approve, reject, or
+        /// deprecate a registry record.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistryRecordStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRegistryRecordStatus service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateRegistryRecordStatus">REST API Reference for UpdateRegistryRecordStatus Operation</seealso>
+        public virtual UpdateRegistryRecordStatusResponse UpdateRegistryRecordStatus(UpdateRegistryRecordStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRecordStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryRecordStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRegistryRecordStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the status of a registry record. Use this operation to approve, reject, or
+        /// deprecate a registry record.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistryRecordStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRegistryRecordStatus service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateRegistryRecordStatus">REST API Reference for UpdateRegistryRecordStatus Operation</seealso>
+        public virtual Task<UpdateRegistryRecordStatusResponse> UpdateRegistryRecordStatusAsync(UpdateRegistryRecordStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRecordStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryRecordStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRegistryRecordStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -90,7 +90,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetImageFile())
             {
                 context.Writer.WritePropertyName("ImageFile");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.ImageFile));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.ImageFile);
             }
 
             if(publicRequest.IsSetUserPoolId())

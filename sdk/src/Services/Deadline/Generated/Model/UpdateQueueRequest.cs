@@ -48,6 +48,7 @@ namespace Amazon.Deadline.Model
         private List<string> _requiredFileSystemLocationNamesToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _requiredFileSystemLocationNamesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
+        private SchedulingConfiguration _schedulingConfiguration;
 
         /// <summary>
         /// Gets and sets the property AllowedStorageProfileIdsToAdd. 
@@ -322,6 +323,34 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulingConfiguration. 
+        /// <para>
+        /// The scheduling configuration for the queue. This configuration determines how workers
+        /// are assigned to jobs in the queue.
+        /// </para>
+        ///  
+        /// <para>
+        /// When updating the scheduling configuration, the entire configuration is replaced.
+        /// </para>
+        ///  
+        /// <para>
+        /// In-progress tasks run to completion before the new scheduling configuration takes
+        /// effect.
+        /// </para>
+        /// </summary>
+        public SchedulingConfiguration SchedulingConfiguration
+        {
+            get { return this._schedulingConfiguration; }
+            set { this._schedulingConfiguration = value; }
+        }
+
+        // Check to see if SchedulingConfiguration property is set
+        internal bool IsSetSchedulingConfiguration()
+        {
+            return this._schedulingConfiguration != null;
         }
 
     }

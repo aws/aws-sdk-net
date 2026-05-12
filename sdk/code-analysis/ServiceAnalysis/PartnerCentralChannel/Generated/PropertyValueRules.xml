@@ -546,6 +546,12 @@
     <pattern>[0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralChannel.Model.ResoldUnifiedOperations.ChargeAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralChannel.Model.RevokeServicePeriodHandshakeDetail.MinimumNoticeDays</property>
     <min>1</min>
     <max>10</max>

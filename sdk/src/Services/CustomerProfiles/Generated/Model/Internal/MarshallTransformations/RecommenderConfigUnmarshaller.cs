@@ -62,6 +62,18 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IncludedColumns", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string,StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.IncludedColumns = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("InferenceConfig", targetDepth))
+                {
+                    var unmarshaller = InferenceConfigUnmarshaller.Instance;
+                    unmarshalledObject.InferenceConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TrainingFrequency", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

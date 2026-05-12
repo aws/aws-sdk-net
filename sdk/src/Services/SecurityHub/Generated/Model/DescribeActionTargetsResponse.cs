@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// A list of <c>ActionTarget</c> objects. Each object includes the <c>ActionTargetArn</c>,
         /// <c>Description</c>, and <c>Name</c> of a custom action target available in Security
-        /// Hub.
+        /// Hub CSPM.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

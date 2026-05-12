@@ -96,6 +96,8 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Qux", StringUtils.FromMemoryStream(publicRequest.Qux));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SimpleInputParamsRequestMarshaller _instance = new SimpleInputParamsRequestMarshaller();        

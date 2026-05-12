@@ -76,6 +76,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ServiceNamespace", StringUtils.FromString(publicRequest.ServiceNamespace));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetServiceLastAccessedDetailsWithEntitiesRequestMarshaller _instance = new GetServiceLastAccessedDetailsWithEntitiesRequestMarshaller();        

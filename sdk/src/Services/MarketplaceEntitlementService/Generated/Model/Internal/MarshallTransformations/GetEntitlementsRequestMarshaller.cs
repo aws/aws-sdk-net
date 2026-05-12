@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransformations
 {
@@ -59,70 +58,59 @@ namespace Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransforma
         public IRequest Marshall(GetEntitlementsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MarketplaceEntitlementService");
-            string target = "AWSMPEntitlementService.GetEntitlements";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/AWSMPEntitlementService/operation/GetEntitlements";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-01-11";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetFilter())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("Filter");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetFilter())
                 {
-                    context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
-                    var publicRequestFilterValue = publicRequestFilterKvp.Value;
-
-                    context.Writer.WriteStartArray();
-                    foreach(var publicRequestFilterValueListValue in publicRequestFilterValue)
+                    context.Writer.WriteTextString("Filter");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestFilterKvp in publicRequest.Filter)
                     {
-                            context.Writer.WriteStringValue(publicRequestFilterValueListValue);
+                        context.Writer.WriteTextString(publicRequestFilterKvp.Key);
+                        var publicRequestFilterValue = publicRequestFilterKvp.Value;
+
+                        context.Writer.WriteStartArray(publicRequestFilterValue.Count);
+                        foreach(var publicRequestFilterValueListValue in publicRequestFilterValue)
+                        {
+                                context.Writer.WriteTextString(publicRequestFilterValueListValue);
+                        }
+                        context.Writer.WriteEndArray();
                     }
-                    context.Writer.WriteEndArray();
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndObject();
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("MaxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                if (publicRequest.IsSetProductCode())
+                {
+                    context.Writer.WriteTextString("ProductCode");
+                    context.Writer.WriteTextString(publicRequest.ProductCode);
+                }
+                writer.WriteEndMap();
+                request.Content = writer.Encode();
             }
-
-            if(publicRequest.IsSetMaxResults())
+            finally
             {
-                context.Writer.WritePropertyName("MaxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("NextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-
-            if(publicRequest.IsSetProductCode())
-            {
-                context.Writer.WritePropertyName("ProductCode");
-                context.Writer.WriteStringValue(publicRequest.ProductCode);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static GetEntitlementsRequestMarshaller _instance = new GetEntitlementsRequestMarshaller();        

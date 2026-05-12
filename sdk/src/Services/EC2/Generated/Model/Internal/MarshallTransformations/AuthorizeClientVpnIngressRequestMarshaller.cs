@@ -92,6 +92,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetNetworkCidr", StringUtils.FromString(publicRequest.TargetNetworkCidr));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static AuthorizeClientVpnIngressRequestMarshaller _instance = new AuthorizeClientVpnIngressRequestMarshaller();        

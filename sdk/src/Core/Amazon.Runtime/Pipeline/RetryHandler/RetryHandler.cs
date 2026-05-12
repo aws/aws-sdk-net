@@ -111,10 +111,31 @@ namespace Amazon.Runtime.Internal
                         continue;
                     }
                     
+                    // Notify the retry policy of the error so it can update its rate limiting
+                    // state (e.g. adaptive retry token bucket). This must be called for every
+                    // error, regardless of whether the request will be retried, to ensure the
+                    // client send rate is adjusted even when retries are disabled.
+                    this.RetryPolicy.NotifyError(executionContext, exception);
+
                     // Standard retry logic
                     shouldRetry = this.RetryPolicy.Retry(executionContext, exception);
                     if (!shouldRetry)
                     {
+                        // SEP 2.1: Long-polling operations must always back off when the error is
+                        // retryable and retry quota is exhausted (but NOT when max attempts is reached).
+                        // The RetryLimitReached check distinguishes quota exhaustion from max attempts.
+                        if (IsLongPollingOperation(executionContext)
+                            && requestContext.IsLastExceptionRetryable
+                            && !this.RetryPolicy.RetryLimitReached(executionContext))
+                        {
+                            // Temporarily increment Retries so the backoff formula computes the
+                            // delay for the correct attempt index (i=1 for first failure), then
+                            // restore the original value so LogForError reports accurately.
+                            requestContext.Retries++;
+                            this.RetryPolicy.WaitBeforeRetry(executionContext);
+                            requestContext.Retries--;
+                        }
+
                         LogForError(requestContext, exception);
                         throw;
                     }
@@ -199,10 +220,31 @@ namespace Amazon.Runtime.Internal
                         continue;
                     }
                     
+                    // Notify the retry policy of the error so it can update its rate limiting
+                    // state (e.g. adaptive retry token bucket). This must be called for every
+                    // error, regardless of whether the request will be retried, to ensure the
+                    // client send rate is adjusted even when retries are disabled.
+                    this.RetryPolicy.NotifyError(executionContext, capturedException.SourceException);
+
                     // Standard retry logic
                     shouldRetry = await this.RetryPolicy.RetryAsync(executionContext, capturedException.SourceException).ConfigureAwait(false);
                     if (!shouldRetry)
                     {
+                        // SEP 2.1: Long-polling operations must always back off when the error is
+                        // retryable and retry quota is exhausted (but NOT when max attempts is reached).
+                        // The RetryLimitReached check distinguishes quota exhaustion from max attempts.
+                        if (IsLongPollingOperation(executionContext)
+                            && requestContext.IsLastExceptionRetryable
+                            && !this.RetryPolicy.RetryLimitReached(executionContext))
+                        {
+                            // Temporarily increment Retries so the backoff formula computes the
+                            // delay for the correct attempt index (i=1 for first failure), then
+                            // restore the original value so LogForError reports accurately.
+                            requestContext.Retries++;
+                            await RetryPolicy.WaitBeforeRetryAsync(executionContext).ConfigureAwait(false);
+                            requestContext.Retries--;
+                        }
+
                         LogForError(requestContext, capturedException.SourceException);
                         capturedException.Throw();
                     }
@@ -334,6 +376,35 @@ namespace Amazon.Runtime.Internal
                 return true;
             }
             
+            return false;
+        }
+
+        /// <summary>
+        /// Determines if the current operation is a long-polling operation that should always back off
+        /// when retryable, even if retry quota is exhausted.
+        /// </summary>
+        private static bool IsLongPollingOperation(IExecutionContext executionContext)
+        {
+            if (!RetryPolicy.UseNewRetries2026) return false;
+
+            // TODO: Check longPoll trait from model when available in C2J models.
+            // Until the trait is available, use hard-coded service/operation combinations.
+            var serviceId = executionContext.RequestContext.ClientConfig?.ServiceId;
+            var operationName = AWSSDKUtils.ExtractOperationName(executionContext.RequestContext.RequestName);
+
+            if (string.Equals(serviceId, "SQS", StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(operationName, "ReceiveMessage", StringComparison.OrdinalIgnoreCase))
+                return true;
+
+            if (string.Equals(serviceId, "SFN", StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(operationName, "GetActivityTask", StringComparison.OrdinalIgnoreCase))
+                return true;
+
+            if (string.Equals(serviceId, "SWF", StringComparison.OrdinalIgnoreCase) &&
+                (string.Equals(operationName, "PollForActivityTask", StringComparison.OrdinalIgnoreCase) ||
+                 string.Equals(operationName, "PollForDecisionTask", StringComparison.OrdinalIgnoreCase)))
+                return true;
+
             return false;
         }
 

@@ -63,6 +63,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SelectedTooltipType);
             }
 
+            if(requestObject.IsSetSheetTooltip())
+            {
+                context.Writer.WritePropertyName("SheetTooltip");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SheetTooltipMarshaller.Instance;
+                marshaller.Marshall(requestObject.SheetTooltip, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTooltipVisibility())
             {
                 context.Writer.WritePropertyName("TooltipVisibility");

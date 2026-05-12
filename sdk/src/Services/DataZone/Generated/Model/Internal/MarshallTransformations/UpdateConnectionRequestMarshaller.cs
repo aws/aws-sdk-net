@@ -90,6 +90,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetConfigurations())
+            {
+                context.Writer.WritePropertyName("configurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestConfigurationsListValue in publicRequest.Configurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

@@ -52,6 +52,29 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Endpoint);
             }
 
+            if(requestObject.IsSetListingMode())
+            {
+                context.Writer.WritePropertyName("listingMode");
+                context.Writer.WriteStringValue(requestObject.ListingMode);
+            }
+
+            if(requestObject.IsSetMcpToolSchema())
+            {
+                context.Writer.WritePropertyName("mcpToolSchema");
+                context.Writer.WriteStartObject();
+
+                var marshaller = McpToolSchemaConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.McpToolSchema, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetResourcePriority())
+            {
+                context.Writer.WritePropertyName("resourcePriority");
+                context.Writer.WriteNumberValue(requestObject.ResourcePriority.Value);
+            }
+
         }
 
         /// <summary>

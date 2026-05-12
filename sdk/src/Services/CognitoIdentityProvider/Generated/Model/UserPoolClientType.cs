@@ -293,8 +293,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes
-        /// only.
+        /// Amazon Cognito requires HTTPS over HTTP for callback URLs to <c>http://localhost</c>,
+        /// <c>http://127.0.0.1</c> and <c>http://[::1]</c>. These callback URLs are for testing
+        /// purposes only. You can specify custom TCP ports for your callback URLs.
         /// </para>
         ///  
         /// <para>
@@ -363,7 +364,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The app client secret.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=24, Max=64)]
         public string ClientSecret
         {
             get { return this._clientSecret; }
@@ -424,8 +425,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes
-        /// only.
+        /// Amazon Cognito requires HTTPS over HTTP for callback URLs to <c>http://localhost</c>,
+        /// <c>http://127.0.0.1</c> and <c>http://[::1]</c>. These callback URLs are for testing
+        /// purposes only. You can specify custom TCP ports for your callback URLs.
         /// </para>
         ///  
         /// <para>

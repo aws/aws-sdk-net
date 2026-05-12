@@ -74,8 +74,23 @@ namespace Amazon.Polly.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  If you request <c>ogg_opus</c> as the <c>OutputFormat</c>, the <c>ContentType</c>
+        /// returned is audio/ogg. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  If you request <c>pcm</c> as the <c>OutputFormat</c>, the <c>ContentType</c> returned
         /// is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  If you request <c>mu-law</c> as the <c>OutputFormat</c>, the <c>ContentType</c> returned
+        /// is audio/mulaw. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  If you request <c>a-law</c> as the <c>OutputFormat</c>, the <c>ContentType</c> returned
+        /// is audio/alaw. 
         /// </para>
         ///  </li> <li> 
         /// <para>

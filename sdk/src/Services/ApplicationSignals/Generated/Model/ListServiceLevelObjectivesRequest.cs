@@ -39,6 +39,7 @@ namespace Amazon.ApplicationSignals.Model
         private bool? _includeLinkedAccounts;
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _maxResults;
+        private MetricSource _metricSource;
         private List<string> _metricSourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
         private string _operationName;
@@ -164,6 +165,24 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetricSource. 
+        /// <para>
+        /// Identifies the metric source to filter SLOs by.
+        /// </para>
+        /// </summary>
+        public MetricSource MetricSource
+        {
+            get { return this._metricSource; }
+            set { this._metricSource = value; }
+        }
+
+        // Check to see if MetricSource property is set
+        internal bool IsSetMetricSource()
+        {
+            return this._metricSource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MetricSourceTypes. 
         /// <para>
         /// Use this optional field to only include SLOs with the specified metric source types
@@ -179,7 +198,19 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CloudWatch metric
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AppMonitor
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Canary
         /// </para>
         ///  </li> </ul>
         /// <para />

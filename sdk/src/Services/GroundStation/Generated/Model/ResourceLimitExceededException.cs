@@ -127,7 +127,10 @@ namespace Amazon.GroundStation.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property ParameterName.
+        /// Gets and sets the property ParameterName. 
+        /// <para>
+        /// Name of the parameter that exceeded the resource limit.
+        /// </para>
         /// </summary>
         public string ParameterName
         {

@@ -89,6 +89,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateInstanceProfileRequestMarshaller _instance = new CreateInstanceProfileRequestMarshaller();        

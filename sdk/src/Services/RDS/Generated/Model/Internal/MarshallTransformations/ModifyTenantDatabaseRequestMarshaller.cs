@@ -88,6 +88,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TenantDBName", StringUtils.FromString(publicRequest.TenantDBName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyTenantDatabaseRequestMarshaller _instance = new ModifyTenantDatabaseRequestMarshaller();        

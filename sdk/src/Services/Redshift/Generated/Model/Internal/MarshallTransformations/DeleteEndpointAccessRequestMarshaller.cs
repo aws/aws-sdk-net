@@ -64,6 +64,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("EndpointName", StringUtils.FromString(publicRequest.EndpointName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteEndpointAccessRequestMarshaller _instance = new DeleteEndpointAccessRequestMarshaller();        

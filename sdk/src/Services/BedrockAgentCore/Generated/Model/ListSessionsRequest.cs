@@ -36,12 +36,17 @@ namespace Amazon.BedrockAgentCore.Model
     /// 
     ///  
     /// <para>
+    /// Empty sessions are automatically deleted after one day.
+    /// </para>
+    ///  
+    /// <para>
     /// To use this operation, you must have the <c>bedrock-agentcore:ListSessions</c> permission.
     /// </para>
     /// </summary>
     public partial class ListSessionsRequest : AmazonBedrockAgentCoreRequest
     {
         private string _actorId;
+        private SessionFilter _filter;
         private int? _maxResults;
         private string _memoryId;
         private string _nextToken;
@@ -63,6 +68,24 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetActorId()
         {
             return this._actorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// Filter criteria to apply when listing sessions.
+        /// </para>
+        /// </summary>
+        public SessionFilter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
         }
 
         /// <summary>

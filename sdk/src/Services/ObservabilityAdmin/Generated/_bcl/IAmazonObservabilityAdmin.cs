@@ -2575,7 +2575,7 @@ namespace Amazon.ObservabilityAdmin
         ///  </dd> <dt>Okta Sources (SSO, Auth0)</dt> <dd> 
         /// <para>
         ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>domain</c>,
-        /// <c>range</c> (SSO only), OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
+        /// <c>range</c>, OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
         /// </para>
         ///  </dd> <dt>Palo Alto Networks</dt> <dd> 
         /// <para>
@@ -2683,7 +2683,7 @@ namespace Amazon.ObservabilityAdmin
         ///  </dd> <dt>Okta Sources (SSO, Auth0)</dt> <dd> 
         /// <para>
         ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>domain</c>,
-        /// <c>range</c> (SSO only), OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
+        /// <c>range</c>, OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
         /// </para>
         ///  </dd> <dt>Palo Alto Networks</dt> <dd> 
         /// <para>

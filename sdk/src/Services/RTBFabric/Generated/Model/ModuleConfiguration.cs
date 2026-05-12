@@ -105,6 +105,7 @@ namespace Amazon.RTBFabric.Model
         /// The version of the module.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=25)]
         public string Version
         {
             get { return this._version; }

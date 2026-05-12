@@ -39,6 +39,11 @@ namespace Amazon.IoTSiteWise
 {
     /// <summary>
     /// <para>Implementation for accessing IoTSiteWise</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Welcome to the IoT SiteWise API Reference. IoT SiteWise is an Amazon Web Services
     /// service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial

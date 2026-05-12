@@ -31,7 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the GetProvisioningProfile operation.
-    /// Get a provisioning profile by template name.
+    /// Get details of a provisioning profile.
     /// </summary>
     public partial class GetProvisioningProfileRequest : AmazonIoTManagedIntegrationsRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The provisioning template the device uses for the provisioning process.
+        /// The id of a provisioning profile.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

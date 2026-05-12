@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NetworkAclId", StringUtils.FromString(publicRequest.NetworkAclId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ReplaceNetworkAclAssociationRequestMarshaller _instance = new ReplaceNetworkAclAssociationRequestMarshaller();        

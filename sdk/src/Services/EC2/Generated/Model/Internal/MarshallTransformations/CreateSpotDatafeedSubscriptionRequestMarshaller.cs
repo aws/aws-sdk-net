@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Prefix", StringUtils.FromString(publicRequest.Prefix));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateSpotDatafeedSubscriptionRequestMarshaller _instance = new CreateSpotDatafeedSubscriptionRequestMarshaller();        

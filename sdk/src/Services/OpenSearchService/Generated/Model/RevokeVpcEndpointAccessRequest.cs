@@ -39,6 +39,7 @@ namespace Amazon.OpenSearchService.Model
         private string _account;
         private string _domainName;
         private AWSServicePrincipal _service;
+        private ServiceOptions _serviceOptions;
 
         /// <summary>
         /// Gets and sets the property Account. 
@@ -93,6 +94,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetService()
         {
             return this._service != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceOptions. 
+        /// <para>
+        /// The options for the service, including the supported Regions for the endpoint access.
+        /// </para>
+        /// </summary>
+        public ServiceOptions ServiceOptions
+        {
+            get { return this._serviceOptions; }
+            set { this._serviceOptions = value; }
+        }
+
+        // Check to see if ServiceOptions property is set
+        internal bool IsSetServiceOptions()
+        {
+            return this._serviceOptions != null;
         }
 
     }

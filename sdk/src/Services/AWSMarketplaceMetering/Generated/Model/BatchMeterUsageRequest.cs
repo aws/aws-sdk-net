@@ -33,11 +33,12 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// Container for the parameters to the BatchMeterUsage operation.
     /// <important> 
     /// <para>
-    ///  The <c>CustomerIdentifier</c> and <c>CustomerAWSAccountID</c> are mutually exclusive
-    /// parameters. You must use one or the other, but not both in the same API request. For
-    /// new implementations, we recommend using the <c>CustomerAWSAccountID</c>. Your current
-    /// integration will continue to work. When updating your implementation, consider migrating
-    /// to <c>CustomerAWSAccountID</c> for improved integration. 
+    /// Amazon Web Services Marketplace is introducing Concurrent Agreements, enabling buyers
+    /// to make multiple purchases per Amazon Web Services account. Starting June 1, 2026,
+    /// new SaaS products must use <c>CustomerAWSAccountId</c> (instead of <c>CustomerIdentifier</c>),
+    /// <c>LicenseArn</c> (instead of <c>ProductCode</c>) to support this feature. Existing
+    /// integrations will continue to work. Review the new integration for Concurrent Agreements
+    /// <a href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.
     /// </para>
     ///  </important> 
     /// <para>
@@ -90,7 +91,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// product.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string ProductCode
         {
             get { return this._productCode; }

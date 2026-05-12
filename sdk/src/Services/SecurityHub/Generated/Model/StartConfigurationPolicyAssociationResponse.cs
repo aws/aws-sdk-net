@@ -83,8 +83,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property AssociationType. 
         /// <para>
         ///  Indicates whether the association between the specified target and the configuration
-        /// was directly applied by the Security Hub delegated administrator or inherited from
-        /// a parent. 
+        /// was directly applied by the Security Hub CSPM delegated administrator or inherited
+        /// from a parent. 
         /// </para>
         /// </summary>
         public AssociationType AssociationType

@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class CredentialProvider
     {
         private ApiKeyCredentialProvider _apiKeyCredentialProvider;
+        private IamCredentialProvider _iamCredentialProvider;
         private OAuthCredentialProvider _oauthCredentialProvider;
 
         /// <summary>
@@ -55,6 +56,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetApiKeyCredentialProvider()
         {
             return this._apiKeyCredentialProvider != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamCredentialProvider. 
+        /// <para>
+        /// The IAM credential provider. This provider uses IAM authentication with SigV4 signing
+        /// to access the target endpoint.
+        /// </para>
+        /// </summary>
+        public IamCredentialProvider IamCredentialProvider
+        {
+            get { return this._iamCredentialProvider; }
+            set { this._iamCredentialProvider = value; }
+        }
+
+        // Check to see if IamCredentialProvider property is set
+        internal bool IsSetIamCredentialProvider()
+        {
+            return this._iamCredentialProvider != null;
         }
 
         /// <summary>

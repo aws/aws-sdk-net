@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WirelessConnection Marshaller
     /// </summary>
-    public class WirelessConnectionMarshaller : IRequestMarshaller<WirelessConnection, JsonMarshallerContext> 
+    public class WirelessConnectionMarshaller : IRequestMarshaller<WirelessConnection, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(WirelessConnection requestObject, JsonMarshallerContext context)
+        public void Marshall(WirelessConnection requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetIsWifiEnabled())
-            {
-                context.Writer.WritePropertyName("IsWifiEnabled");
-                context.Writer.WriteBooleanValue(requestObject.IsWifiEnabled.Value);
-            }
 
+            if (requestObject.IsSetIsWifiEnabled())
+            {
+                context.Writer.WriteTextString("IsWifiEnabled");
+                context.Writer.WriteBoolean(requestObject.IsWifiEnabled.Value);
+            }
         }
 
         /// <summary>

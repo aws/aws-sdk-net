@@ -55,6 +55,7 @@ namespace Amazon.GameLift.Model
         private ProtectionPolicy _newGameSessionProtectionPolicy;
         private string _perInstanceContainerGroupDefinitionArn;
         private string _perInstanceContainerGroupDefinitionName;
+        private PlayerGatewayMode _playerGatewayMode;
         private ContainerFleetStatus _status;
 
         /// <summary>
@@ -515,6 +516,31 @@ namespace Amazon.GameLift.Model
         internal bool IsSetPerInstanceContainerGroupDefinitionName()
         {
             return this._perInstanceContainerGroupDefinitionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlayerGatewayMode. 
+        /// <para>
+        /// Indicates whether player gateway is enabled for this container fleet. Player gateway
+        /// provides benefits such as DDoS protection with negligible impact to latency.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <c>ENABLED</c> or <c>REQUIRED</c>, game clients can use player gateway to connect
+        /// with the game server. If <c>DISABLED</c>, game clients cannot use player gateway.
+        /// Instead, they have to directly connect to the game server.
+        /// </para>
+        /// </summary>
+        public PlayerGatewayMode PlayerGatewayMode
+        {
+            get { return this._playerGatewayMode; }
+            set { this._playerGatewayMode = value; }
+        }
+
+        // Check to see if PlayerGatewayMode property is set
+        internal bool IsSetPlayerGatewayMode()
+        {
+            return this._playerGatewayMode != null;
         }
 
         /// <summary>

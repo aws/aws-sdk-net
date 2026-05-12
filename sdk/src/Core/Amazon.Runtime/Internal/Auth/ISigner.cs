@@ -29,6 +29,7 @@ namespace Amazon.Runtime.Internal.Auth
     /// the service to authenticate the SDK customer's identity.
     /// </para>
     /// </summary>
+    [AWSIsBackwardsCompatible]
     public interface ISigner
     {
         /// <summary> 
@@ -73,11 +74,11 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Creates an event signer based on the signer used to sign the request.
         /// </summary>
-        /// <param name="identity">The identity to sign the request with.</param>
+        /// <param name="awsSecretKey">The AWS secret key used to sign the initial request. All events must be signed with the same secret key.</param>
         /// <param name="region">The region to authenticate for.</param>
         /// <param name="service">The service to authenticate for.</param>
         /// <param name="requestSignature">The signature computed for the original request.</param>
         /// <returns></returns>
-        IEventSigner CreateEventSigner(BaseIdentity identity, string region, string service, string requestSignature);
+        IEventSigner CreateEventSigner(string awsSecretKey, string region, string service, string requestSignature);
     }
 }

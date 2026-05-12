@@ -81,7 +81,7 @@ namespace Amazon.QuickSight.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=0, Max=75)]
         public List<string> TargetVisuals
         {
             get { return this._targetVisuals; }

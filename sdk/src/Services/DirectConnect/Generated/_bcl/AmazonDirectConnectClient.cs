@@ -39,6 +39,11 @@ namespace Amazon.DirectConnect
 {
     /// <summary>
     /// <para>Implementation for accessing DirectConnect</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Direct Connect links your internal network to an Direct Connect location over a standard
     /// Ethernet fiber-optic cable. One end of the cable is connected to your router, the

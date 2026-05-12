@@ -121,6 +121,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TransitGatewayId", StringUtils.FromString(publicRequest.TransitGatewayId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateTransitGatewayMulticastDomainRequestMarshaller _instance = new CreateTransitGatewayMulticastDomainRequestMarshaller();        

@@ -39,6 +39,11 @@ namespace Amazon.B2bi
 {
     /// <summary>
     /// <para>Implementation for accessing B2bi</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This is the <i>Amazon Web Services B2B Data Interchange API Reference</i>. It provides
     /// descriptions, API request parameters, and the XML response for each of the B2BI API

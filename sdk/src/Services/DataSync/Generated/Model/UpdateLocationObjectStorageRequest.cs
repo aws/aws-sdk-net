@@ -131,7 +131,8 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies configuration information for a customer-managed secret, such as an authentication
         /// token or set of credentials that DataSync uses to access a specific transfer location,
-        /// and a customer-managed KMS key.
+        /// and a customer-managed Identity and Access Management (IAM) role that provides access
+        /// to the secret.
         /// </para>
         /// </summary>
         public CustomSecretConfig CustomSecretConfig

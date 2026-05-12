@@ -74,6 +74,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("s3filesVolumeConfiguration", targetDepth))
+                {
+                    var unmarshaller = S3FilesVolumeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3filesVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

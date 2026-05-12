@@ -39,6 +39,11 @@ namespace Amazon.MediaTailor
 {
     /// <summary>
     /// <para>Implementation for accessing MediaTailor</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion
     /// and linear channels. With MediaTailor, you can assemble existing content into a linear
@@ -614,6 +619,42 @@ namespace Amazon.MediaTailor
         }
         #endregion
         
+        #region  DeleteFunction
+
+        internal virtual DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFunctionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a function. MediaTailor prevents deletion of a function that is still referenced
+        /// by a playback configuration or by another function. Remove all references before deleting.
+        /// For more information about functions, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions.html">Working
+        /// with functions</a> in the <i>MediaTailor User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFunction service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
+        public virtual Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFunctionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteLiveSource
 
         internal virtual DeleteLiveSourceResponse DeleteLiveSource(DeleteLiveSourceRequest request)
@@ -1057,6 +1098,41 @@ namespace Amazon.MediaTailor
         }
         #endregion
         
+        #region  GetFunction
+
+        internal virtual GetFunctionResponse GetFunction(GetFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<GetFunctionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the configuration and metadata for a function. For more information about
+        /// functions, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions.html">Working
+        /// with functions</a> in the <i>MediaTailor User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFunction service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetFunction">REST API Reference for GetFunction Operation</seealso>
+        public virtual Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFunctionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetPlaybackConfiguration
 
         internal virtual GetPlaybackConfigurationResponse GetPlaybackConfiguration(GetPlaybackConfigurationRequest request)
@@ -1192,6 +1268,41 @@ namespace Amazon.MediaTailor
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListFunctions
+
+        internal virtual ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFunctionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves all functions associated with your AWS account in the current Region. For
+        /// more information about functions, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions.html">Working
+        /// with functions</a> in the <i>MediaTailor User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFunctions service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
+        public virtual Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFunctionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFunctionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFunctionsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1435,6 +1546,42 @@ namespace Amazon.MediaTailor
             options.ResponseUnmarshaller = PutChannelPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutChannelPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  PutFunction
+
+        internal virtual PutFunctionResponse PutFunction(PutFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<PutFunctionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates a function. A function defines reusable logic that MediaTailor
+        /// executes at lifecycle hooks during ad insertion. For more information about functions,
+        /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions.html">Working
+        /// with functions</a> in the <i>MediaTailor User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutFunction service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutFunction">REST API Reference for PutFunction Operation</seealso>
+        public virtual Task<PutFunctionResponse> PutFunctionAsync(PutFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutFunctionResponse>(request, options, cancellationToken);
         }
         #endregion
         

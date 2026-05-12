@@ -62,6 +62,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccessEndpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AgentAccessConfig", targetDepth))
+                {
+                    var unmarshaller = AgentAccessConfigUnmarshaller.Instance;
+                    unmarshalledObject.AgentAccessConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ApplicationSettings", targetDepth))
                 {
                     var unmarshaller = ApplicationSettingsResponseUnmarshaller.Instance;
@@ -72,6 +78,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ContentRedirection", targetDepth))
+                {
+                    var unmarshaller = ContentRedirectionUnmarshaller.Instance;
+                    unmarshalledObject.ContentRedirection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreatedTime", targetDepth))

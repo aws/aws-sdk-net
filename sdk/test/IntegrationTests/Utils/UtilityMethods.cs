@@ -1,5 +1,4 @@
 ﻿using Amazon.Runtime;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -101,19 +100,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             return SHA256.Create().ComputeHash(data);
         }
 
-        public static void  CompareFiles(string file1, string file2)
+        public static void CompareFiles(string file1, string file2)
         {
-            byte[] file1MD5 = computeHash(file1);
-            byte[] file2MD5 = computeHash(file2);
+            byte[] file1MD5 = ComputeHash(file1);
+            byte[] file2MD5 = ComputeHash(file2);
 
-            Assert.AreEqual(file1MD5.Length, file2MD5.Length);
+            if (file1MD5.Length != file2MD5.Length)
+                throw new InvalidOperationException($"File MD5 length mismatch: {file1} vs {file2}");
+
             for (int i = 0; i < file1MD5.Length; i++)
             {
-                Assert.AreEqual(file1MD5[i], file2MD5[i], "MD5 of files do not match");
+                if (file1MD5[i] != file2MD5[i])
+                    throw new InvalidOperationException($"MD5 of files do not match: {file1} vs {file2}");
             }
         }
 
-        private static byte[] computeHash(string file)
+        private static byte[] ComputeHash(string file)
         {
             Stream fileStream = File.OpenRead(file);
             byte[] fileMD5 = new MD5Managed().ComputeHash(fileStream);
@@ -352,8 +354,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
         public static string GenerateName(string name)
         {
-            return name + DateTime.UtcNow.Ticks;
+            return name + Guid.NewGuid().ToString("N");
         }
+
         public class ListSleeper
         {
             private int attempt;

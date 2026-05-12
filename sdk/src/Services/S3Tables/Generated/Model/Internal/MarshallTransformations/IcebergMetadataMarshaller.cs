@@ -82,6 +82,17 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSchemaV2())
+            {
+                context.Writer.WritePropertyName("schemaV2");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IcebergSchemaV2Marshaller.Instance;
+                marshaller.Marshall(requestObject.SchemaV2, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetWriteOrder())
             {
                 context.Writer.WritePropertyName("writeOrder");

@@ -611,7 +611,7 @@ namespace Amazon.Neptune.Model
         /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
         /// If you are creating a DB instance with the same Amazon account that owns the KMS encryption
         /// key used to encrypt the new DB instance, then you can use the KMS key alias instead
-        /// of the ARN for the KM encryption key.
+        /// of the ARN for the KMS encryption key.
         /// </para>
         ///  
         /// <para>

@@ -31,7 +31,12 @@ namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchUpdateRecommendationResourceExclusion operation.
-    /// Update one or more exclusion status for a list of recommendation resources
+    /// Update one or more exclusion statuses for a list of recommendation resources. This
+    /// API supports up to 25 unique recommendation resource ARNs per request. This API currently
+    /// doesn't support prioritized recommendation resources. This API updates global recommendations,
+    /// eliminating the need to call the API in each AWS Region. After submitting an exclusion
+    /// update, note that it might take a few minutes for the changes to be reflected in the
+    /// system.
     /// </summary>
     public partial class BatchUpdateRecommendationResourceExclusionRequest : AmazonTrustedAdvisorRequest
     {
@@ -48,7 +53,7 @@ namespace Amazon.TrustedAdvisor.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<RecommendationResourceExclusion> RecommendationResourceExclusions
         {
             get { return this._recommendationResourceExclusions; }

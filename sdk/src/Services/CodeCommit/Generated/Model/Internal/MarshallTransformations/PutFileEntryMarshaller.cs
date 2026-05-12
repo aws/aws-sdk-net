@@ -49,7 +49,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileContent())
             {
                 context.Writer.WritePropertyName("fileContent");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.FileContent));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.FileContent);
             }
 
             if(requestObject.IsSetFileMode())

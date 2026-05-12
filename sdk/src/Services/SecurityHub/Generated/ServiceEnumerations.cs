@@ -999,6 +999,56 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type DateRangeComparison.
+    /// </summary>
+    public class DateRangeComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OLDER_THAN for DateRangeComparison
+        /// </summary>
+        public static readonly DateRangeComparison OLDER_THAN = new DateRangeComparison("OLDER_THAN");
+        /// <summary>
+        /// Constant WITHIN for DateRangeComparison
+        /// </summary>
+        public static readonly DateRangeComparison WITHIN = new DateRangeComparison("WITHIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DateRangeComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DateRangeComparison FindValue(string value)
+        {
+            return FindValue<DateRangeComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DateRangeComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DateRangeUnit.
     /// </summary>
     public class DateRangeUnit : ConstantClass
@@ -1301,6 +1351,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly GroupByField MetadataProductUid = new GroupByField("metadata.product.uid");
         /// <summary>
+        /// Constant MetadataProductVendor_name for GroupByField
+        /// </summary>
+        public static readonly GroupByField MetadataProductVendor_name = new GroupByField("metadata.product.vendor_name");
+        /// <summary>
         /// Constant ResourcesType for GroupByField
         /// </summary>
         public static readonly GroupByField ResourcesType = new GroupByField("resources.type");
@@ -1424,6 +1478,10 @@ namespace Amazon.SecurityHub
     public class IntegrationV2Type : ConstantClass
     {
 
+        /// <summary>
+        /// Constant EXTENDED_PLAN for IntegrationV2Type
+        /// </summary>
+        public static readonly IntegrationV2Type EXTENDED_PLAN = new IntegrationV2Type("EXTENDED_PLAN");
         /// <summary>
         /// Constant RECEIVE_FINDINGS_FROM_SECURITY_HUB for IntegrationV2Type
         /// </summary>
@@ -2594,6 +2652,106 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Partition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationStatus.
+    /// </summary>
+    public class RecommendationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus FAILED = new RecommendationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus IN_PROGRESS = new RecommendationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus SUCCEEDED = new RecommendationStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationStatus FindValue(string value)
+        {
+            return FindValue<RecommendationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationType.
+    /// </summary>
+    public class RecommendationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UNUSED_PERMISSION_RECOMMENDATION for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType UNUSED_PERMISSION_RECOMMENDATION = new RecommendationType("UNUSED_PERMISSION_RECOMMENDATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationType FindValue(string value)
+        {
+            return FindValue<RecommendationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationType(string value)
         {
             return FindValue(value);
         }

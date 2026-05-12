@@ -101,6 +101,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static UploadServerCertificateRequestMarshaller _instance = new UploadServerCertificateRequestMarshaller();        

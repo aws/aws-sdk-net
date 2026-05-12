@@ -45,11 +45,43 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeTrainingPlanExtensionHistory operation
+        ///</summary>
+        public IDescribeTrainingPlanExtensionHistoryPaginator DescribeTrainingPlanExtensionHistory(DescribeTrainingPlanExtensionHistoryRequest request) 
+        {
+            return new DescribeTrainingPlanExtensionHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListActions operation
         ///</summary>
         public IListActionsPaginator ListActions(ListActionsRequest request) 
         {
             return new ListActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAIBenchmarkJobs operation
+        ///</summary>
+        public IListAIBenchmarkJobsPaginator ListAIBenchmarkJobs(ListAIBenchmarkJobsRequest request) 
+        {
+            return new ListAIBenchmarkJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAIRecommendationJobs operation
+        ///</summary>
+        public IListAIRecommendationJobsPaginator ListAIRecommendationJobs(ListAIRecommendationJobsRequest request) 
+        {
+            return new ListAIRecommendationJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAIWorkloadConfigs operation
+        ///</summary>
+        public IListAIWorkloadConfigsPaginator ListAIWorkloadConfigs(ListAIWorkloadConfigsRequest request) 
+        {
+            return new ListAIWorkloadConfigsPaginator(this.client, request);
         }
 
         /// <summary>

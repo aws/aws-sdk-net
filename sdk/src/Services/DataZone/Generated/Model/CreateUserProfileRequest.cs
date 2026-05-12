@@ -37,6 +37,7 @@ namespace Amazon.DataZone.Model
     {
         private string _clientToken;
         private string _domainIdentifier;
+        private string _sessionName;
         private string _userIdentifier;
         private UserType _userType;
 
@@ -76,6 +77,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDomainIdentifier()
         {
             return this._domainIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionName. 
+        /// <para>
+        /// The session name for IAM role sessions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=64)]
+        public string SessionName
+        {
+            get { return this._sessionName; }
+            set { this._sessionName = value; }
+        }
+
+        // Check to see if SessionName property is set
+        internal bool IsSetSessionName()
+        {
+            return this._sessionName != null;
         }
 
         /// <summary>

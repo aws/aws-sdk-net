@@ -1,84 +1,70 @@
-﻿using Amazon;
-using Amazon.S3;
+﻿using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Amazon.S3Control;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
 using System;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class MultiRegionAccessPointsTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class MultiRegionAccessPointsTests
     {
-        private static string _bucketName;
-        private static string _mrapArn;
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
+        private readonly string _mrapArn;
 
-        [ClassInitialize]
-        public static async Task Setup(TestContext context)
+        public MultiRegionAccessPointsTests(ChecksumMrapFixture mrapFixture)
         {
-            _bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
-            _mrapArn = await S3TestUtils.GetOrCreateTestMRAP(new AmazonS3ControlClient(RegionEndpoint.USWest2), Client);
+            _client = mrapFixture.Client;
+            _bucketName = mrapFixture.BucketName;
+            _mrapArn = mrapFixture.MrapArn;
         }
 
-        [ClassCleanup]
-        public static async Task Cleanup()
-        {
-            // Delete the objects in the MRAP bucket, but leave the
-            // MRAP and bucket for future test runs
-            await S3TestUtils.DeleteObjects(Client, _mrapArn);
-
-            // Delete the entire bucket used for the SigV4 tests
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, _bucketName);
-        }
-
-        [TestMethod]
+        [Fact]
         public async Task PutObjectUnchunkedAndUnsigned()
         {
-            await S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, "dotnet-sdk-test-unchunked-unsigned", false, true);
+            await S3TestUtils.PutAndGetObjectTestHelper(_client, _mrapArn, "dotnet-sdk-test-unchunked-unsigned", false, true);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task PutObjectUnchunked()
         {
-            await S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, "dotnet-sdk-test-unchunked", false);
+            await S3TestUtils.PutAndGetObjectTestHelper(_client, _mrapArn, "dotnet-sdk-test-unchunked", false);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task PutObjectChunked()
         {
-            await S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, "dotnet-sdk-test-chunked");
+            await S3TestUtils.PutAndGetObjectTestHelper(_client, _mrapArn, "dotnet-sdk-test-chunked");
         }
 
-        [TestMethod]
+        [Fact]
         public void TestPresigingOver7DaysThrowsException()
         {
-            Assert.ThrowsException<ArgumentException>(() => 
-                Client.GetPreSignedURL(new GetPreSignedUrlRequest
+            Assert.Throws<ArgumentException>(() => 
+                _client.GetPreSignedURL(new GetPreSignedUrlRequest
                 {
                     BucketName = _mrapArn,
                     Key = "dotnet-sdk-test",
                     Verb = HttpVerb.GET,
-                    Expires = DateTime.UtcNow.AddDays(8) // SigV4a limit is also 7 days
+                    Expires = DateTime.UtcNow.AddDays(8)
                 })
             );
         }
 
-        // Copied from KeyNameTests.AwkwardKeyNameBases, but as DataRows for separate results
-        [DataRow(@"ObjectWith\InKeyname")]
-        [DataRow(@"ObjectWith/InKeyname")]
-        [DataRow(@"ObjectWith\InKeynÄme")]
-        [DataRow(@"ObjectWith/InKeynÄme")]
-        [DataRow(@"ObjectWith!InKeynÄme")]
-        [DataRow(@"ObjectWith$InKeyname.Ext")]
-        [DataRow(@"ObjectWith!and?\+forgood:measureThis=And&InKeynÄme")]
-        [DataTestMethod]
+        [Theory]
+        [InlineData(@"ObjectWith\InKeyname")]
+        [InlineData(@"ObjectWith/InKeyname")]
+        [InlineData(@"ObjectWith\InKeynÄme")]
+        [InlineData(@"ObjectWith/InKeynÄme")]
+        [InlineData(@"ObjectWith!InKeynÄme")]
+        [InlineData(@"ObjectWith$InKeyname.Ext")]
+        [InlineData(@"ObjectWith!and?\+forgood:measureThis=And&InKeynÄme")]
         public async Task PutAndGetQuestionableKeys(string keyVariant)
         {
             var keyName = "dotnet-sdk-test-" + keyVariant;
-            await S3TestUtils.PutAndGetObjectTestHelper(Client, _mrapArn, keyName, false);
+            await S3TestUtils.PutAndGetObjectTestHelper(_client, _mrapArn, keyName, false);
         }
     }
 }

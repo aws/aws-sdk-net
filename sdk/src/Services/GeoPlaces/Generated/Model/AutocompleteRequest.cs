@@ -135,7 +135,9 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property IntendedUse. 
         /// <para>
-        /// Indicates if the results will be stored. Defaults to <c>SingleUse</c>, if left empty.
+        ///  Indicates if the query results will be persisted in customer infrastructure. Defaults
+        /// to <c>SingleUse</c> (not stored). Currently, <c>Autocomplete</c> does not support
+        /// storage of results. 
         /// </para>
         /// </summary>
         public AutocompleteIntendedUse IntendedUse

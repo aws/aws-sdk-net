@@ -62,6 +62,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AssetConfiguration", targetDepth))
+                {
+                    var unmarshaller = AssetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AssetConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

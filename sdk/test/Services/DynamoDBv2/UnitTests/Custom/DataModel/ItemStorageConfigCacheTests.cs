@@ -267,7 +267,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void GetConfig_WithTypeMappings_PopulatesConfigFromMappings()
         {
-            var typeMapping = new TypeMapping(typeof(ContextInternalTests.TestEntity), "CustomTestTable");
+            var typeMapping = new TypeMapping(typeof(ContextInternalTests.ContextTestEntity), "CustomTestTable");
             typeMapping.AddProperty(new PropertyConfig("Id")
             {
                 Attribute = "CustomId",
@@ -285,7 +285,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var flatConfig = new DynamoDBFlatConfig(null, context.Config);
 
-            var config = context.StorageConfigCache.GetConfig(typeof(ContextInternalTests.TestEntity), flatConfig,
+            var config = context.StorageConfigCache.GetConfig(typeof(ContextInternalTests.ContextTestEntity), flatConfig,
                 conversionOnly: false);
 
             Assert.IsNotNull(config);

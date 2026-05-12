@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// GameServerGroupAutoScalingPolicy Marshaller
     /// </summary>
-    public class GameServerGroupAutoScalingPolicyMarshaller : IRequestMarshaller<GameServerGroupAutoScalingPolicy, JsonMarshallerContext> 
+    public class GameServerGroupAutoScalingPolicyMarshaller : IRequestMarshaller<GameServerGroupAutoScalingPolicy, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GameServerGroupAutoScalingPolicy requestObject, JsonMarshallerContext context)
+        public void Marshall(GameServerGroupAutoScalingPolicy requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEstimatedInstanceWarmup())
-            {
-                context.Writer.WritePropertyName("EstimatedInstanceWarmup");
-                context.Writer.WriteNumberValue(requestObject.EstimatedInstanceWarmup.Value);
-            }
 
-            if(requestObject.IsSetTargetTrackingConfiguration())
+            if (requestObject.IsSetEstimatedInstanceWarmup())
             {
-                context.Writer.WritePropertyName("TargetTrackingConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("EstimatedInstanceWarmup");
+                context.Writer.WriteInt32(requestObject.EstimatedInstanceWarmup.Value);
+            }
+            if (requestObject.IsSetTargetTrackingConfiguration())
+            {
+                context.Writer.WriteTextString("TargetTrackingConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = TargetTrackingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TargetTrackingConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

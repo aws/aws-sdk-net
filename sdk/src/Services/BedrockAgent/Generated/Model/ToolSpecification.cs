@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgent.Model
         private string _description;
         private ToolInputSchema _inputSchema;
         private string _name;
+        private bool? _strict;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -94,6 +95,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Strict. 
+        /// <para>
+        /// Whether to enforce strict JSON schema adherence for the tool input
+        /// </para>
+        /// </summary>
+        public bool? Strict
+        {
+            get { return this._strict; }
+            set { this._strict = value; }
+        }
+
+        // Check to see if Strict property is set
+        internal bool IsSetStrict()
+        {
+            return this._strict.HasValue; 
         }
 
     }

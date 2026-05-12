@@ -76,6 +76,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NamespaceArn", StringUtils.FromString(publicRequest.NamespaceArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListRecommendationsRequestMarshaller _instance = new ListRecommendationsRequestMarshaller();        

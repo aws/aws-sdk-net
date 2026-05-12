@@ -71,13 +71,19 @@ namespace Amazon.GameLift.Model
         /// href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update
         /// the value of a game property</a>. 
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// Avoid using periods (".") in property keys if you plan to search for game sessions
         /// by properties. Property keys containing periods cannot be searched and will be filtered
         /// out from search results due to search index limitations.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use SearchGameSessions API, there is a limit of 500 game property keys across
+        /// all game sessions and all fleets per region. If the limit is exceeded, there will
+        /// potentially be game session entries missing from SearchGameSessions API results.
+        /// </para>
+        ///  </li> </ul> </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -100,7 +106,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// A unique identifier for the game session to update. 
+        /// An identifier for the game session that is unique across all regions to update. The
+        /// value is always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;ID string&gt;</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

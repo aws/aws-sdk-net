@@ -70,6 +70,20 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         request.Parameters.Add("AvailabilityZoneDistribution" + "." + "CapacityDistributionStrategy", StringUtils.FromString(publicRequest.AvailabilityZoneDistribution.CapacityDistributionStrategy));
                     }
                 }
+                if(publicRequest.IsSetAvailabilityZoneIds())
+                {
+                    if (publicRequest.AvailabilityZoneIds.Count == 0)
+                        request.Parameters.Add("AvailabilityZoneIds", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AvailabilityZoneIds)
+                         {
+                             request.Parameters.Add("AvailabilityZoneIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetAvailabilityZoneImpairmentPolicy())
                 {
                     if(publicRequest.AvailabilityZoneImpairmentPolicy.IsSetImpairedZoneHealthCheckBehavior())
@@ -609,6 +623,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VPCZoneIdentifier", StringUtils.FromString(publicRequest.VPCZoneIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static UpdateAutoScalingGroupRequestMarshaller _instance = new UpdateAutoScalingGroupRequestMarshaller();        

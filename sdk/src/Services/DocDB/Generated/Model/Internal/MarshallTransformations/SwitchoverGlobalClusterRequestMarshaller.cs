@@ -68,6 +68,8 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetDbClusterIdentifier", StringUtils.FromString(publicRequest.TargetDbClusterIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SwitchoverGlobalClusterRequestMarshaller _instance = new SwitchoverGlobalClusterRequestMarshaller();        

@@ -62,6 +62,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
             
                 request.HostPrefix = $"foo.";
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static EndpointOperationRequestMarshaller _instance = new EndpointOperationRequestMarshaller();        

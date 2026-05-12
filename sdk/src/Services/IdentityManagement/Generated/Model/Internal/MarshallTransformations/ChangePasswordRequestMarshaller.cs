@@ -68,6 +68,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("OldPassword", StringUtils.FromString(publicRequest.OldPassword));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ChangePasswordRequestMarshaller _instance = new ChangePasswordRequestMarshaller();        

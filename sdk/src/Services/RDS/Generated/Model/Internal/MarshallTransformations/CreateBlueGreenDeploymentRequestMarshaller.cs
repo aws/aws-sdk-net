@@ -125,6 +125,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UpgradeTargetStorageConfig", StringUtils.FromBool(publicRequest.UpgradeTargetStorageConfig));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateBlueGreenDeploymentRequestMarshaller _instance = new CreateBlueGreenDeploymentRequestMarshaller();        

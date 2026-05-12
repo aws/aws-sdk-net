@@ -1418,6 +1418,16 @@ namespace Amazon.EC2.Model
         IGetCapacityManagerMetricDimensionsPaginator GetCapacityManagerMetricDimensions(GetCapacityManagerMetricDimensionsRequest request);
 
         /// <summary>
+        /// Paginator for GetCapacityManagerMonitoredTagKeys operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetCapacityManagerMonitoredTagKeysPaginator GetCapacityManagerMonitoredTagKeys(GetCapacityManagerMonitoredTagKeysRequest request);
+
+        /// <summary>
         /// Paginator for GetGroupsForCapacityReservation operation
         ///</summary>
         [AWSPaginator(

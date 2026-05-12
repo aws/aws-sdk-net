@@ -41,6 +41,7 @@ namespace Amazon.MediaPackageV2.Model
         private int? _programDateTimeIntervalSeconds;
         private ScteHls _scteHls;
         private StartTag _startTag;
+        private UriPathType _uriPathType;
         private string _url;
         private bool? _urlEncodeChildManifest;
 
@@ -177,6 +178,25 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetStartTag()
         {
             return this._startTag != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UriPathType. 
+        /// <para>
+        /// The type of path used in manifest URIs. <c>LEAF</c> indicates leaf-relative paths.
+        /// <c>ROOT</c> indicates root-relative paths that include the full path from root.
+        /// </para>
+        /// </summary>
+        public UriPathType UriPathType
+        {
+            get { return this._uriPathType; }
+            set { this._uriPathType = value; }
+        }
+
+        // Check to see if UriPathType property is set
+        internal bool IsSetUriPathType()
+        {
+            return this._uriPathType != null;
         }
 
         /// <summary>

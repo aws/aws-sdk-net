@@ -58,6 +58,12 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     response.Attributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("connectivityType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ConnectivityType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LinkId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("logSettings", targetDepth))
+                {
+                    var unmarshaller = LinkLogSettingsUnmarshaller.Instance;
+                    response.LogSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("peerGatewayId", targetDepth))

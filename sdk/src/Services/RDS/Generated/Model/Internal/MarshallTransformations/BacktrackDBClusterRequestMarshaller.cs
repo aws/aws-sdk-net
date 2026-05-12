@@ -76,6 +76,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UseEarliestTimeOnPointInTimeUnavailable", StringUtils.FromBool(publicRequest.UseEarliestTimeOnPointInTimeUnavailable));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static BacktrackDBClusterRequestMarshaller _instance = new BacktrackDBClusterRequestMarshaller();        

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ResourceTagsCriteriaCondition Marshaller
     /// </summary>
-    public class ResourceTagsCriteriaConditionMarshaller : IRequestMarshaller<ResourceTagsCriteriaCondition, JsonMarshallerContext> 
+    public class ResourceTagsCriteriaConditionMarshaller : IRequestMarshaller<ResourceTagsCriteriaCondition, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,33 +45,31 @@ namespace Amazon.ComputeOptimizerAutomation.Model.Internal.MarshallTransformatio
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ResourceTagsCriteriaCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(ResourceTagsCriteriaCondition requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetComparison())
-            {
-                context.Writer.WritePropertyName("comparison");
-                context.Writer.WriteStringValue(requestObject.Comparison);
-            }
 
-            if(requestObject.IsSetKey())
+            if (requestObject.IsSetComparison())
             {
-                context.Writer.WritePropertyName("key");
-                context.Writer.WriteStringValue(requestObject.Key);
+                context.Writer.WriteTextString("comparison");
+                context.Writer.WriteTextString(requestObject.Comparison);
             }
-
-            if(requestObject.IsSetValues())
+            if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("values");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("key");
+                context.Writer.WriteTextString(requestObject.Key);
+            }
+            if (requestObject.IsSetValues())
+            {
+                context.Writer.WriteTextString("values");
+                context.Writer.WriteStartArray(requestObject.Values.Count);
                 foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                        context.Writer.WriteStringValue(requestObjectValuesListValue);
+                        context.Writer.WriteTextString(requestObjectValuesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

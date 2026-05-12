@@ -93,6 +93,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetDBParameterGroupIdentifier", StringUtils.FromString(publicRequest.TargetDBParameterGroupIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CopyDBParameterGroupRequestMarshaller _instance = new CopyDBParameterGroupRequestMarshaller();        

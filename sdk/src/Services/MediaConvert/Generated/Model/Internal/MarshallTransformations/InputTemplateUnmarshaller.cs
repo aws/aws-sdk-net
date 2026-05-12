@@ -146,6 +146,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.InputScanType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("multiViewSettings", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<MultiViewSettings, MultiViewSettingsUnmarshaller>(MultiViewSettingsUnmarshaller.Instance);
+                    unmarshalledObject.MultiViewSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("position", targetDepth))
                 {
                     var unmarshaller = RectangleUnmarshaller.Instance;

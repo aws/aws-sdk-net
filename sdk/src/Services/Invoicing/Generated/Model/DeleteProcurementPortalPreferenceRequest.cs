@@ -31,8 +31,15 @@ namespace Amazon.Invoicing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProcurementPortalPreference operation.
+    /// <i> <b>This feature API is subject to changing at any time. For more information,
+    /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+    /// Terms</a> (Betas and Previews).</b> </i> 
+    /// 
+    ///  
+    /// <para>
     /// Deletes an existing procurement portal preference. This action cannot be undone. Active
     /// e-invoice delivery and PO retrieval configurations will be terminated.
+    /// </para>
     /// </summary>
     public partial class DeleteProcurementPortalPreferenceRequest : AmazonInvoicingRequest
     {

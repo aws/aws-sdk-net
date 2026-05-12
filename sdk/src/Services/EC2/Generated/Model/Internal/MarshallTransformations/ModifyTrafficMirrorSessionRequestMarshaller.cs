@@ -106,6 +106,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VirtualNetworkId", StringUtils.FromInt(publicRequest.VirtualNetworkId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyTrafficMirrorSessionRequestMarshaller _instance = new ModifyTrafficMirrorSessionRequestMarshaller();        

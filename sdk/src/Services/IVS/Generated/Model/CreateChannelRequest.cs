@@ -35,6 +35,7 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class CreateChannelRequest : AmazonIVSRequest
     {
+        private string _adConfigurationArn;
         private bool? _authorized;
         private ContainerFormat _containerFormat;
         private bool? _insecureIngest;
@@ -46,6 +47,25 @@ namespace Amazon.IVS.Model
         private string _recordingConfigurationArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ChannelType _type;
+
+        /// <summary>
+        /// Gets and sets the property AdConfigurationArn. 
+        /// <para>
+        /// ARN of the ad configuration associated with the channel.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string AdConfigurationArn
+        {
+            get { return this._adConfigurationArn; }
+            set { this._adConfigurationArn = value; }
+        }
+
+        // Check to see if AdConfigurationArn property is set
+        internal bool IsSetAdConfigurationArn()
+        {
+            return this._adConfigurationArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Authorized. 

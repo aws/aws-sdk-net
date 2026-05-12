@@ -137,6 +137,20 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetImageTags())
+            {
+                context.Writer.WritePropertyName("imageTags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestImageTagsKvp in publicRequest.ImageTags)
+                {
+                    context.Writer.WritePropertyName(publicRequestImageTagsKvp.Key);
+                    var publicRequestImageTagsValue = publicRequestImageTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestImageTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetImageTestsConfiguration())
             {
                 context.Writer.WritePropertyName("imageTestsConfiguration");

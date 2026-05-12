@@ -72,6 +72,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ReservedNodeId", StringUtils.FromString(publicRequest.ReservedNodeId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetReservedNodeExchangeOfferingsRequestMarshaller _instance = new GetReservedNodeExchangeOfferingsRequestMarshaller();        

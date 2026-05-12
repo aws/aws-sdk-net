@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Force", StringUtils.FromBool(publicRequest.Force));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DetachNetworkInterfaceRequestMarshaller _instance = new DetachNetworkInterfaceRequestMarshaller();        

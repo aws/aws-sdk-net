@@ -45,6 +45,8 @@ namespace Amazon.SageMaker.Model
         private long? _durationHours;
         private long? _durationMinutes;
         private DateTime? _endTime;
+        private DateTime? _extensionEndTime;
+        private DateTime? _extensionStartTime;
         private int? _instanceCount;
         private ReservedCapacityInstanceType _instanceType;
         private ReservedCapacityType _reservedCapacityType;
@@ -126,6 +128,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtensionEndTime. 
+        /// <para>
+        /// The end time of the extension for the reserved capacity offering.
+        /// </para>
+        /// </summary>
+        public DateTime? ExtensionEndTime
+        {
+            get { return this._extensionEndTime; }
+            set { this._extensionEndTime = value; }
+        }
+
+        // Check to see if ExtensionEndTime property is set
+        internal bool IsSetExtensionEndTime()
+        {
+            return this._extensionEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtensionStartTime. 
+        /// <para>
+        /// The start time of the extension for the reserved capacity offering.
+        /// </para>
+        /// </summary>
+        public DateTime? ExtensionStartTime
+        {
+            get { return this._extensionStartTime; }
+            set { this._extensionStartTime = value; }
+        }
+
+        // Check to see if ExtensionStartTime property is set
+        internal bool IsSetExtensionStartTime()
+        {
+            return this._extensionStartTime.HasValue; 
         }
 
         /// <summary>

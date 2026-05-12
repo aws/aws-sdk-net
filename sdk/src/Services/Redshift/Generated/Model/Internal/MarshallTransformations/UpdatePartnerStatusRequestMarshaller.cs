@@ -84,6 +84,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("StatusMessage", StringUtils.FromString(publicRequest.StatusMessage));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static UpdatePartnerStatusRequestMarshaller _instance = new UpdatePartnerStatusRequestMarshaller();        

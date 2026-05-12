@@ -37,6 +37,7 @@ namespace Amazon.MarketplaceAgreement.Model
         private string _agreementDuration;
         private DateTime? _agreementEndDate;
         private DateTime? _agreementStartDate;
+        private string _id;
         private string _type;
 
         /// <summary>
@@ -98,6 +99,25 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetAgreementStartDate()
         {
             return this._agreementStartDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the term.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
         }
 
         /// <summary>

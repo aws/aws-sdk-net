@@ -92,6 +92,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DestinationPhoneNumber);
             }
 
+            if(publicRequest.IsSetRcsAgentId())
+            {
+                context.Writer.WritePropertyName("RcsAgentId");
+                context.Writer.WriteStringValue(publicRequest.RcsAgentId);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

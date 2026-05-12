@@ -119,6 +119,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetActionType", StringUtils.FromString(publicRequest.TargetActionType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeScheduledActionsRequestMarshaller _instance = new DescribeScheduledActionsRequestMarshaller();        

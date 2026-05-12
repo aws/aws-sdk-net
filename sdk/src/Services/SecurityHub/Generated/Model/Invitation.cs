@@ -42,8 +42,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID of the Security Hub administrator account that the invitation was sent
-        /// from.
+        /// The account ID of the Security Hub CSPM administrator account that the invitation
+        /// was sent from.
         /// </para>
         /// </summary>
         public string AccountId

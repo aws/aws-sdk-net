@@ -35,6 +35,7 @@ namespace Amazon.AutoScaling.Model
     public partial class Instance
     {
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _healthStatus;
         private string _imageId;
         private string _instanceId;
@@ -62,6 +63,25 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        ///  The Availability Zone ID where the instance was launched. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>

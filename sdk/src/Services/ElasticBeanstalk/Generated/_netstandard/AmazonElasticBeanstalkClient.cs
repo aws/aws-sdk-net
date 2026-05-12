@@ -39,6 +39,11 @@ namespace Amazon.ElasticBeanstalk
 {
     /// <summary>
     /// <para>Implementation for accessing ElasticBeanstalk</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS Elastic Beanstalk 
     /// <para>
@@ -1994,6 +1999,12 @@ namespace Amazon.ElasticBeanstalk
         ///  Setting the <c>InfoType</c> to <c>bundle</c> compresses the application server log
         /// files for every Amazon EC2 instance into a <c>.zip</c> file. Legacy and .NET containers
         /// do not support bundle logs. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Setting the <c>InfoType</c> to <c>analyze</c> collects recent events, instance health,
+        /// and logs from your environment and sends them to Amazon Bedrock in your account to
+        /// generate diagnostic insights and recommended next steps. 
         /// </para>
         ///  
         /// <para>

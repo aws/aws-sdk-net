@@ -153,6 +153,9 @@ namespace Amazon.Runtime.Internal.Transform
                 case CoreChecksumAlgorithm.SHA1:
                     FlexibleChecksumStream = new HashStream<HashingWrapperSHA1>(responseStream, checksum, contentLength);
                     break;
+                case CoreChecksumAlgorithm.SHA512:
+                    FlexibleChecksumStream = new HashStream<HashingWrapperSHA512>(responseStream, checksum, contentLength);
+                    break;
                 default:
                     throw new AmazonClientException($"Unsupported checksum algorithm {algorithm}");
             }

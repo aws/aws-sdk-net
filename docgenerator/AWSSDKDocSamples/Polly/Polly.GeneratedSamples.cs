@@ -85,6 +85,32 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
             #endregion
         }
 
+        public void PollyStartSpeechSynthesisStream()
+        {
+            #region to-start-speech-synthesis-stream-1741791835844
+
+            var client = new AmazonPollyClient();
+            var response = client.StartSpeechSynthesisStream(new StartSpeechSynthesisStreamRequest 
+            {
+                ActionStreamPublisher = new StartSpeechSynthesisStreamActionStream {
+                    CloseStreamEvent = new CloseStreamEvent {  },
+                    TextEvent = new TextEvent {
+                        Text = "Hello, this is a test of bidirectional streaming synthesis.",
+                        TextType = "text"
+                    }
+                }, // The input event stream. Send TextEvent messages with text to synthesize, and a CloseStreamEvent to signal the end of input.
+                Engine = "generative", // The engine to use for synthesis.
+                LanguageCode = "en-US",
+                OutputFormat = "pcm", // The audio format.
+                SampleRate = "16000",
+                VoiceId = "Joanna"
+            });
+
+            StartSpeechSynthesisStreamEventStream eventStream = response.EventStream; // The output event stream. AudioEvent messages contain synthesized audio chunks, and StreamClosedEvent signals completion with the total character count.
+
+            #endregion
+        }
+
         public void PollySynthesizeSpeech()
         {
             #region to-synthesize-speech-1482186064046

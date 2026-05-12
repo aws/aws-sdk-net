@@ -35,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// The Security Hub console continues to use <c>GetMasterAccount</c>. It will eventually
+    /// The Security Hub CSPM console continues to use <c>GetMasterAccount</c>. It will eventually
     /// change to use <c>GetAdministratorAccount</c>. Any IAM policies that specifically control
     /// access to this function must continue to use <c>GetMasterAccount</c>. You should also
     /// add <c>GetAdministratorAccount</c> to your policies to ensure that the correct permissions
@@ -43,8 +43,8 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  
     /// <para>
-    /// Provides the details for the Security Hub administrator account for the current member
-    /// account.
+    /// Provides the details for the Security Hub CSPM administrator account for the current
+    /// member account.
     /// </para>
     ///  
     /// <para>

@@ -1,22 +1,27 @@
 ﻿using Amazon.EC2;
 using Amazon.EC2.Model;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 {
-    [TestClass]
-    [TestCategory("EC2")]
-    public class TaggingTests : TestBase<AmazonEC2Client>
+    [Trait("Category", "EC2")]
+    public class TaggingTests : IClassFixture<EC2ClientFixture>
     {
         private const string tagName = "DotNetNullTestTag";
+        private readonly AmazonEC2Client _client;
 
-        [TestMethod]
+        public TaggingTests(EC2ClientFixture fixture)
+        {
+            _client = fixture.Client;
+        }
+
+        [Fact]
         public async Task TestNullTags()
         {
-            var createResponse = await Client.CreateVpcAsync(new CreateVpcRequest
+            var createResponse = await _client.CreateVpcAsync(new CreateVpcRequest
             {
                 CidrBlock = "10.0.0.0/16",
                 InstanceTenancy = Tenancy.Default
@@ -28,7 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
             try
             {
-                await Client.CreateTagsAsync(new CreateTagsRequest
+                await _client.CreateTagsAsync(new CreateTagsRequest
                 {
                     Resources = new List<string> { vpcId },
                     Tags = new List<Tag>
@@ -37,7 +42,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
                     }
                 });
 
-                var describeTagsResponse = await Client.DescribeTagsAsync(new DescribeTagsRequest
+                var describeTagsResponse = await _client.DescribeTagsAsync(new DescribeTagsRequest
                 {
                     Filters = new List<Filter>
                     {
@@ -47,7 +52,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 
                 var tagDescriptions = describeTagsResponse.Tags;
                 TagDescription newTag = null;
-                
+
                 foreach (var tag in tagDescriptions)
                 {
                     if (tag.Key == tagName)
@@ -56,13 +61,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
                     }
                 }
 
-                Assert.IsNotNull(newTag);
-                Assert.IsTrue(string.IsNullOrEmpty(newTag.Value));
+                Assert.NotNull(newTag);
+                Assert.True(string.IsNullOrEmpty(newTag.Value));
 
                 var tags = tagDescriptions
                     .Select(td => new Tag(td.Key, td.Value ?? ""))
                     .ToList();
-                await Client.CreateTagsAsync(new CreateTagsRequest
+                await _client.CreateTagsAsync(new CreateTagsRequest
                 {
                     Resources = new List<string> { vpcId },
                     Tags = tags
@@ -71,7 +76,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
                 tags = tagDescriptions
                     .Select(td => new Tag(td.Key, td.Value))
                     .ToList();
-                await Client.CreateTagsAsync(new CreateTagsRequest
+                await _client.CreateTagsAsync(new CreateTagsRequest
                 {
                     Resources = new List<string> { vpcId },
                     Tags = tags
@@ -79,7 +84,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             }
             finally
             {
-                await Client.DeleteVpcAsync(new DeleteVpcRequest
+                await _client.DeleteVpcAsync(new DeleteVpcRequest
                 {
                     VpcId = vpcId
                 });

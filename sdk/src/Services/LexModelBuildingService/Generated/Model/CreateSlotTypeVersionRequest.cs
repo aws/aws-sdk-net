@@ -51,6 +51,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// This operation requires permissions for the <c>lex:CreateSlotTypeVersion</c> action.
     /// </para>
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class CreateSlotTypeVersionRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _checksum;

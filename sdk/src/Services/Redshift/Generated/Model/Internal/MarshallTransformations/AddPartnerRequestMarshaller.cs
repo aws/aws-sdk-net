@@ -76,6 +76,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PartnerName", StringUtils.FromString(publicRequest.PartnerName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static AddPartnerRequestMarshaller _instance = new AddPartnerRequestMarshaller();        

@@ -67,8 +67,8 @@ namespace Amazon.KeyspacesStreams.Model
         /// Gets and sets the property NextShardIterator. 
         /// <para>
         ///  The next position in the shard from which to start sequentially reading data records.
-        /// If null, the shard has been closed and the requested iterator doesn't return any more
-        /// data. 
+        /// If null, the shard has been closed and the requested iterator will not return any
+        /// more data. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

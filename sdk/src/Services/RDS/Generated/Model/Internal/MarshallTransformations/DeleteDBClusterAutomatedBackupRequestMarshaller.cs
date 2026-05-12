@@ -64,6 +64,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DbClusterResourceId", StringUtils.FromString(publicRequest.DbClusterResourceId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteDBClusterAutomatedBackupRequestMarshaller _instance = new DeleteDBClusterAutomatedBackupRequestMarshaller();        

@@ -39,6 +39,11 @@ namespace Amazon.WorkMailMessageFlow
 {
     /// <summary>
     /// <para>Implementation for accessing WorkMailMessageFlow</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The WorkMail Message Flow API provides access to email messages as they are being
     /// sent and received by a WorkMail organization.

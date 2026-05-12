@@ -65,7 +65,11 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetRecommendationIdentifier())
                 throw new AmazonTrustedAdvisorException("Request object does not have required field RecommendationIdentifier set");
             request.AddPathResource("{recommendationIdentifier}", StringUtils.FromString(publicRequest.RecommendationIdentifier));
+            
+            if (publicRequest.IsSetLanguage())
+                request.Parameters.Add("language", StringUtils.FromString(publicRequest.Language));
             request.ResourcePath = "/v1/recommendations/{recommendationIdentifier}";
+            request.UseQueryString = true;
 
             return request;
         }

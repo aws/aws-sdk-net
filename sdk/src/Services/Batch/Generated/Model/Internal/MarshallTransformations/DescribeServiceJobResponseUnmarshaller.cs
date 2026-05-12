@@ -106,6 +106,24 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     response.LatestAttempt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("preemptionConfiguration", targetDepth))
+                {
+                    var unmarshaller = ServiceJobPreemptionConfigurationUnmarshaller.Instance;
+                    response.PreemptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("preemptionSummary", targetDepth))
+                {
+                    var unmarshaller = ServiceJobPreemptionSummaryUnmarshaller.Instance;
+                    response.PreemptionSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("quotaShareName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.QuotaShareName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("retryStrategy", targetDepth))
                 {
                     var unmarshaller = ServiceJobRetryStrategyUnmarshaller.Instance;

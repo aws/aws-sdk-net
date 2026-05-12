@@ -46,12 +46,14 @@ namespace Amazon.SageMaker.Model
         private ProductionVariantInferenceAmiVersion _inferenceAmiVersion;
         private int? _initialInstanceCount;
         private float? _initialVariantWeight;
+        private List<InstancePool> _instancePools = AWSConfigs.InitializeCollections ? new List<InstancePool>() : null;
         private ProductionVariantInstanceType _instanceType;
         private ProductionVariantManagedInstanceScaling _managedInstanceScaling;
         private int? _modelDataDownloadTimeoutInSeconds;
         private string _modelName;
         private ProductionVariantRoutingConfig _routingConfig;
         private ProductionVariantServerlessConfig _serverlessConfig;
+        private int? _variantInstanceProvisionTimeoutInSeconds;
         private string _variantName;
         private int? _volumeSizeInGB;
 
@@ -221,6 +223,23 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// NVIDIA Container Toolkit with disabled CUDA-compat mounting
         /// </para>
+        ///  </li> </ul> </dd> <dt>al2023-ami-sagemaker-inference-gpu-4-1</dt> <dd> <ul> <li>
+        /// 
+        /// <para>
+        /// Accelerator: GPU
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NVIDIA driver version: 580
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CUDA version: 13.0
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NVIDIA Container Toolkit with disabled CUDA-compat mounting
+        /// </para>
         ///  </li> </ul> </dd> <dt>al2-ami-sagemaker-inference-neuron-2</dt> <dd> <ul> <li> 
         /// <para>
         /// Accelerator: Inferentia2 and Trainium
@@ -282,6 +301,32 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInitialVariantWeight()
         {
             return this._initialVariantWeight.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstancePools. 
+        /// <para>
+        /// A list of instance pools for the production variant. Each instance pool specifies
+        /// an instance type and its priority for provisioning. Use instance pools to configure
+        /// heterogeneous endpoints that deploy models across multiple instance types.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<InstancePool> InstancePools
+        {
+            get { return this._instancePools; }
+            set { this._instancePools = value; }
+        }
+
+        // Check to see if InstancePools property is set
+        internal bool IsSetInstancePools()
+        {
+            return this._instancePools != null && (this._instancePools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -398,6 +443,33 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetServerlessConfig()
         {
             return this._serverlessConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VariantInstanceProvisionTimeoutInSeconds. 
+        /// <para>
+        /// The timeout value, in seconds, for provisioning instances for the production variant.
+        /// When SageMaker encounters an insufficient capacity error while provisioning instances,
+        /// it retries with the next instance pool (if configured) or waits until the timeout
+        /// expires. This timeout applies only to capacity provisioning and does not include the
+        /// time for model download or container startup.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: 300 to 3600.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=300, Max=3600)]
+        public int? VariantInstanceProvisionTimeoutInSeconds
+        {
+            get { return this._variantInstanceProvisionTimeoutInSeconds; }
+            set { this._variantInstanceProvisionTimeoutInSeconds = value; }
+        }
+
+        // Check to see if VariantInstanceProvisionTimeoutInSeconds property is set
+        internal bool IsSetVariantInstanceProvisionTimeoutInSeconds()
+        {
+            return this._variantInstanceProvisionTimeoutInSeconds.HasValue; 
         }
 
         /// <summary>

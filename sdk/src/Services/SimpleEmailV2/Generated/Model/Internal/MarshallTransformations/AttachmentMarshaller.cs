@@ -85,7 +85,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRawContent())
             {
                 context.Writer.WritePropertyName("RawContent");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.RawContent));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.RawContent);
             }
 
         }

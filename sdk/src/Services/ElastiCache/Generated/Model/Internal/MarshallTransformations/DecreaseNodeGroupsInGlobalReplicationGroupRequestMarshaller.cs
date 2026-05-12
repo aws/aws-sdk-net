@@ -100,6 +100,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NodeGroupCount", StringUtils.FromInt(publicRequest.NodeGroupCount));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DecreaseNodeGroupsInGlobalReplicationGroupRequestMarshaller _instance = new DecreaseNodeGroupsInGlobalReplicationGroupRequestMarshaller();        

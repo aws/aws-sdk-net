@@ -37,8 +37,8 @@ namespace Amazon.IVS.Model
     /// <para>
     ///  <b>Note:</b> Use IngestConfigurations instead of <a>IngestConfiguration</a> (which
     /// is deprecated). If multitrack is not enabled, IngestConfiguration and IngestConfigurations
-    /// contain the same data, namely information about track0 (the sole track). If multitrack
-    /// is enabled, IngestConfiguration contains data for only the first track (track0) and
+    /// contain the same data, namely information about Track0 (the sole track). If multitrack
+    /// is enabled, IngestConfiguration contains data for only the first track (Track0) and
     /// IngestConfigurations contains data for all tracks.
     /// </para>
     /// </summary>

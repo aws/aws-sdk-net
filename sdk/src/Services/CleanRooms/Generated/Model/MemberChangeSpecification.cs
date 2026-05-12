@@ -87,13 +87,18 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The following values are currently not supported: <c>CAN_QUERY</c>, <c>CAN_RECEIVE_RESULTS,</c>
-        /// and <c>CAN_RUN_JOB</c>. 
+        /// The following values are currently not supported: <c>CAN_QUERY</c> and <c>CAN_RUN_JOB</c>.
+        /// 
         /// </para>
         ///  
         /// <para>
         /// Set the value of <c>memberAbilities</c> to <c>[]</c> to allow a member to contribute
         /// data.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set the value of <c>memberAbilities</c> to <c>[CAN_RECEIVE_RESULTS]</c> to allow a
+        /// member to contribute data and receive results.
         /// </para>
         ///  </note>
         /// <para />

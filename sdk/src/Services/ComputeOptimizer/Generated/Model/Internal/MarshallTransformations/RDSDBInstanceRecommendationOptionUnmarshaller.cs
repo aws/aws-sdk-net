@@ -29,70 +29,93 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RDSDBInstanceRecommendationOption Object
     /// </summary>  
-    public class RDSDBInstanceRecommendationOptionUnmarshaller : IJsonUnmarshaller<RDSDBInstanceRecommendationOption, JsonUnmarshallerContext>
+    public class RDSDBInstanceRecommendationOptionUnmarshaller : ICborUnmarshaller<RDSDBInstanceRecommendationOption, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RDSDBInstanceRecommendationOption Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RDSDBInstanceRecommendationOption Unmarshall(CborUnmarshallerContext context)
         {
             RDSDBInstanceRecommendationOption unmarshalledObject = new RDSDBInstanceRecommendationOption();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("dbInstanceClass", targetDepth))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DbInstanceClass = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("performanceRisk", targetDepth))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.PerformanceRisk = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("projectedUtilizationMetrics", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RDSDBUtilizationMetric, RDSDBUtilizationMetricUnmarshaller>(RDSDBUtilizationMetricUnmarshaller.Instance);
-                    unmarshalledObject.ProjectedUtilizationMetrics = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("rank", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Rank = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("savingsOpportunity", targetDepth))
-                {
-                    var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
-                    unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("savingsOpportunityAfterDiscounts", targetDepth))
-                {
-                    var unmarshaller = RDSInstanceSavingsOpportunityAfterDiscountsUnmarshaller.Instance;
-                    unmarshalledObject.SavingsOpportunityAfterDiscounts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "dbInstanceClass":
+                        {
+                            context.AddPathSegment("DbInstanceClass");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DbInstanceClass = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "performanceRisk":
+                        {
+                            context.AddPathSegment("PerformanceRisk");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.PerformanceRisk = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "projectedUtilizationMetrics":
+                        {
+                            context.AddPathSegment("ProjectedUtilizationMetrics");
+                            var unmarshaller = new CborListUnmarshaller<RDSDBUtilizationMetric, RDSDBUtilizationMetricUnmarshaller>(RDSDBUtilizationMetricUnmarshaller.Instance);
+                            unmarshalledObject.ProjectedUtilizationMetrics = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "rank":
+                        {
+                            context.AddPathSegment("Rank");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.Rank = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "savingsOpportunity":
+                        {
+                            context.AddPathSegment("SavingsOpportunity");
+                            var unmarshaller = SavingsOpportunityUnmarshaller.Instance;
+                            unmarshalledObject.SavingsOpportunity = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "savingsOpportunityAfterDiscounts":
+                        {
+                            context.AddPathSegment("SavingsOpportunityAfterDiscounts");
+                            var unmarshaller = RDSInstanceSavingsOpportunityAfterDiscountsUnmarshaller.Instance;
+                            unmarshalledObject.SavingsOpportunityAfterDiscounts = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

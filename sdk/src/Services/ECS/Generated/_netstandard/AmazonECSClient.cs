@@ -39,6 +39,11 @@ namespace Amazon.ECS
 {
     /// <summary>
     /// <para>Implementation for accessing ECS</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Elastic Container Service 
     /// <para>
@@ -48,7 +53,7 @@ namespace Amazon.ECS
     /// by launching your services or tasks on Fargate. For more control, you can host your
     /// tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) or External (on-premises)
     /// instances that you manage.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Amazon ECS makes it easy to launch and stop container-based applications with simple
@@ -61,6 +66,8 @@ namespace Amazon.ECS
     /// based on your resource needs, isolation policies, and availability requirements. With
     /// Amazon ECS, you don't need to operate your own cluster management and configuration
     /// management systems. You also don't need to worry about scaling your management infrastructure.
+    /// 
+    /// </para>
     /// 
     /// </para>
     /// </summary>
@@ -310,6 +317,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the CreateCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -392,6 +402,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -420,6 +433,89 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateDaemon
+
+        internal virtual CreateDaemonResponse CreateDaemon(CreateDaemonRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDaemonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDaemonResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDaemonResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new daemon in the specified cluster and capacity providers. A daemon deploys
+        /// cross-cutting software agents such as security monitoring, telemetry, and logging
+        /// independently across your Amazon ECS infrastructure.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon ECS deploys exactly one daemon task on each container instance of the specified
+        /// capacity providers. When a container instance registers with the cluster, Amazon ECS
+        /// automatically starts daemon tasks. Amazon ECS starts a daemon task before scheduling
+        /// other tasks.
+        /// </para>
+        ///  
+        /// <para>
+        /// Daemons are essential for instance health - if a daemon task stops, Amazon ECS automatically
+        /// drains and replaces that container instance.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// ECS Managed Daemons is only supported for Amazon ECS Managed Instances Capacity Providers.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDaemon service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDaemon service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformUnknownException">
+        /// The specified platform version doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateDaemon">REST API Reference for CreateDaemon Operation</seealso>
+        public virtual Task<CreateDaemonResponse> CreateDaemonAsync(CreateDaemonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDaemonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDaemonResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDaemonResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -898,6 +994,9 @@ namespace Amazon.ECS
         /// ECS service event messages</a>. 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
         /// The specified namespace wasn't found.
         /// </exception>
@@ -955,6 +1054,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeleteAccountSetting service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1005,6 +1107,14 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeleteAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
@@ -1017,6 +1127,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TargetNotFoundException">
         /// The specified target wasn't found. You can view your available container instances
@@ -1075,6 +1188,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeleteCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1098,6 +1214,13 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
         /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
+        /// There's already a current Amazon ECS container agent update in progress on the container
+        /// instance that's specified. If the container agent becomes disconnected while it's
+        /// in a transitional stage, such as <c>PENDING</c> or <c>STAGING</c>, the update process
+        /// can get stuck in that state. However, when the agent reconnects, it resumes where
+        /// it stopped previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
         public virtual Task<DeleteCapacityProviderResponse> DeleteCapacityProviderAsync(DeleteCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1142,6 +1265,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeleteCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1198,6 +1324,144 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteDaemon
+
+        internal virtual DeleteDaemonResponse DeleteDaemon(DeleteDaemonRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDaemonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDaemonResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDaemonResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified daemon. The daemon must be in an <c>ACTIVE</c> state to be deleted.
+        /// Deleting a daemon stops all running daemon tasks on the associated container instances.
+        /// Amazon ECS drains existing container instances and provisions new instances without
+        /// the deleted daemon. Amazon ECS automatically launches replacement tasks for your Amazon
+        /// ECS services.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// ECS Managed Daemons is only supported for Amazon ECS Managed Instances Capacity Providers.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDaemon service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDaemon service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.DaemonNotActiveException">
+        /// The specified daemon isn't active. You can't update a daemon that's inactive. If you
+        /// have previously deleted a daemon, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateDaemon.html">CreateDaemon</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.DaemonNotFoundException">
+        /// The specified daemon wasn't found. You can view your available daemons with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListDaemons.html">ListDaemons</a>.
+        /// Amazon ECS daemons are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteDaemon">REST API Reference for DeleteDaemon Operation</seealso>
+        public virtual Task<DeleteDaemonResponse> DeleteDaemonAsync(DeleteDaemonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDaemonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDaemonResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDaemonResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteDaemonTaskDefinition
+
+        internal virtual DeleteDaemonTaskDefinitionResponse DeleteDaemonTaskDefinition(DeleteDaemonTaskDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDaemonTaskDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDaemonTaskDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDaemonTaskDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified daemon task definition. After a daemon task definition is deleted,
+        /// no new daemons can be created using this definition. Existing daemons that reference
+        /// the deleted daemon task definition continue to run.
+        /// 
+        ///  
+        /// <para>
+        /// A daemon task definition must be in an <c>ACTIVE</c> state to be deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDaemonTaskDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDaemonTaskDefinition service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteDaemonTaskDefinition">REST API Reference for DeleteDaemonTaskDefinition Operation</seealso>
+        public virtual Task<DeleteDaemonTaskDefinitionResponse> DeleteDaemonTaskDefinitionAsync(DeleteDaemonTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDaemonTaskDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDaemonTaskDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDaemonTaskDefinitionResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1327,6 +1591,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeleteService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1495,6 +1762,9 @@ namespace Amazon.ECS
         /// ECS service event messages</a>. 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
@@ -1568,6 +1838,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeregisterContainerInstance service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1647,6 +1920,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DeregisterTaskDefinition service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1697,6 +1973,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DescribeCapacityProviders service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1760,6 +2039,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DescribeClusters service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1811,6 +2093,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DescribeContainerInstances service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -1840,6 +2125,259 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = DescribeContainerInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeContainerInstancesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeDaemon
+
+        internal virtual DescribeDaemonResponse DescribeDaemon(DescribeDaemonRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDaemonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDaemonResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDaemonResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the specified daemon.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDaemon service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDaemon service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.DaemonNotFoundException">
+        /// The specified daemon wasn't found. You can view your available daemons with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListDaemons.html">ListDaemons</a>.
+        /// Amazon ECS daemons are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeDaemon">REST API Reference for DescribeDaemon Operation</seealso>
+        public virtual Task<DescribeDaemonResponse> DescribeDaemonAsync(DescribeDaemonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDaemonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDaemonResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDaemonResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeDaemonDeployments
+
+        internal virtual DescribeDaemonDeploymentsResponse DescribeDaemonDeployments(DescribeDaemonDeploymentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDaemonDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDaemonDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDaemonDeploymentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more of your daemon deployments.
+        /// 
+        ///  
+        /// <para>
+        /// A daemon deployment orchestrates the progressive rollout of daemon task updates across
+        /// container instances managed by the daemon's capacity providers. Each deployment includes
+        /// circuit breaker and alarm-based rollback capabilities.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDaemonDeployments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDaemonDeployments service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeDaemonDeployments">REST API Reference for DescribeDaemonDeployments Operation</seealso>
+        public virtual Task<DescribeDaemonDeploymentsResponse> DescribeDaemonDeploymentsAsync(DescribeDaemonDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDaemonDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDaemonDeploymentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDaemonDeploymentsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeDaemonRevisions
+
+        internal virtual DescribeDaemonRevisionsResponse DescribeDaemonRevisions(DescribeDaemonRevisionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDaemonRevisionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDaemonRevisionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDaemonRevisionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more of your daemon revisions.
+        /// 
+        ///  
+        /// <para>
+        /// A daemon revision is a snapshot of a daemon's configuration at the time a deployment
+        /// was initiated. It captures the daemon task definition, container images, tag propagation,
+        /// and execute command settings. Daemon revisions are immutable.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDaemonRevisions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDaemonRevisions service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeDaemonRevisions">REST API Reference for DescribeDaemonRevisions Operation</seealso>
+        public virtual Task<DescribeDaemonRevisionsResponse> DescribeDaemonRevisionsAsync(DescribeDaemonRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDaemonRevisionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDaemonRevisionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDaemonRevisionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeDaemonTaskDefinition
+
+        internal virtual DescribeDaemonTaskDefinitionResponse DescribeDaemonTaskDefinition(DescribeDaemonTaskDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDaemonTaskDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDaemonTaskDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDaemonTaskDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a daemon task definition. You can specify a <c>family</c> and <c>revision</c>
+        /// to find information about a specific daemon task definition, or you can simply specify
+        /// the family to find the latest <c>ACTIVE</c> revision in that family.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDaemonTaskDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDaemonTaskDefinition service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeDaemonTaskDefinition">REST API Reference for DescribeDaemonTaskDefinition Operation</seealso>
+        public virtual Task<DescribeDaemonTaskDefinitionResponse> DescribeDaemonTaskDefinitionAsync(DescribeDaemonTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDaemonTaskDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDaemonTaskDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDaemonTaskDefinitionResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2088,6 +2626,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DescribeServices service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2151,6 +2692,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DescribeTaskDefinition service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2212,6 +2756,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the DescribeTasks service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2493,6 +3040,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListAccountSettings service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2548,6 +3098,14 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
         /// Amazon ECS clusters are Region specific.
@@ -2560,6 +3118,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
         public virtual Task<ListAttributesResponse> ListAttributesAsync(ListAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2594,6 +3155,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListClusters service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2647,6 +3211,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListContainerInstances service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2676,6 +3243,182 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListContainerInstancesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListDaemonDeployments
+
+        internal virtual ListDaemonDeploymentsResponse ListDaemonDeployments(ListDaemonDeploymentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDaemonDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDaemonDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDaemonDeploymentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of daemon deployments for a specified daemon. You can filter the results
+        /// by status or creation time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDaemonDeployments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDaemonDeployments service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListDaemonDeployments">REST API Reference for ListDaemonDeployments Operation</seealso>
+        public virtual Task<ListDaemonDeploymentsResponse> ListDaemonDeploymentsAsync(ListDaemonDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDaemonDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDaemonDeploymentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDaemonDeploymentsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListDaemons
+
+        internal virtual ListDaemonsResponse ListDaemons(ListDaemonsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDaemonsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDaemonsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDaemonsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of daemons. You can filter the results by cluster or capacity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDaemons service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDaemons service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListDaemons">REST API Reference for ListDaemons Operation</seealso>
+        public virtual Task<ListDaemonsResponse> ListDaemonsAsync(ListDaemonsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDaemonsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDaemonsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDaemonsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListDaemonTaskDefinitions
+
+        internal virtual ListDaemonTaskDefinitionsResponse ListDaemonTaskDefinitions(ListDaemonTaskDefinitionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDaemonTaskDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDaemonTaskDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDaemonTaskDefinitionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of daemon task definitions that are registered to your account. You
+        /// can filter the results by family name, status, or both to find daemon task definitions
+        /// that match your criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDaemonTaskDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDaemonTaskDefinitions service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListDaemonTaskDefinitions">REST API Reference for ListDaemonTaskDefinitions Operation</seealso>
+        public virtual Task<ListDaemonTaskDefinitionsResponse> ListDaemonTaskDefinitionsAsync(ListDaemonTaskDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDaemonTaskDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDaemonTaskDefinitionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDaemonTaskDefinitionsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2719,6 +3462,10 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -2773,6 +3520,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListServices service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2832,6 +3582,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListServicesByNamespace service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2885,6 +3638,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -2948,6 +3704,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListTaskDefinitionFamilies service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3000,6 +3759,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListTaskDefinitions service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3057,6 +3819,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the ListTasks service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3123,6 +3888,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the PutAccountSetting service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3174,6 +3942,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the PutAccountSettingDefault service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3228,10 +3999,18 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the PutAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.AttributeLimitExceededException">
         /// You can apply up to 10 custom attributes for each resource. You can view the attributes
         /// of a resource with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListAttributes.html">ListAttributes</a>.
         /// You can remove existing attributes on a resource with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteAttributes.html">DeleteAttributes</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
         /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
@@ -3245,6 +4024,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.TargetNotFoundException">
         /// The specified target wasn't found. You can view your available container instances
@@ -3310,6 +4092,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the PutClusterCapacityProviders service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3349,6 +4134,77 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = PutClusterCapacityProvidersResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutClusterCapacityProvidersResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  RegisterDaemonTaskDefinition
+
+        internal virtual RegisterDaemonTaskDefinitionResponse RegisterDaemonTaskDefinition(RegisterDaemonTaskDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterDaemonTaskDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDaemonTaskDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDaemonTaskDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Registers a new daemon task definition from the supplied <c>family</c> and <c>containerDefinitions</c>.
+        /// Optionally, you can add data volumes to your containers with the <c>volumes</c> parameter.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/daemon-task-definitions.html">Daemon
+        /// task definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// A daemon task definition is a template that describes the containers that form a daemon.
+        /// Daemons deploy cross-cutting software agents such as security monitoring, telemetry,
+        /// and logging across your Amazon ECS infrastructure.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each time you call <c>RegisterDaemonTaskDefinition</c>, a new revision of the daemon
+        /// task definition is created. You can't modify a revision after you register it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDaemonTaskDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterDaemonTaskDefinition service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterDaemonTaskDefinition">REST API Reference for RegisterDaemonTaskDefinition Operation</seealso>
+        public virtual Task<RegisterDaemonTaskDefinitionResponse> RegisterDaemonTaskDefinitionAsync(RegisterDaemonTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterDaemonTaskDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDaemonTaskDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterDaemonTaskDefinitionResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -3395,6 +4251,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the RegisterTaskDefinition service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3408,6 +4267,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -3626,6 +4488,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the StartTask service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3643,6 +4508,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -3795,6 +4663,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the StopTask service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3845,10 +4716,12 @@ namespace Amazon.ECS
         /// <para>
         /// This action is only used by the Amazon ECS agent, and it is not intended for use outside
         /// of the agent.
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         /// Sent to acknowledge that an attachment changed states.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubmitAttachmentStateChanges service method.</param>
@@ -3864,6 +4737,10 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -3913,6 +4790,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -3930,6 +4810,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
         /// The specified resource wasn't found.
@@ -3970,6 +4853,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4033,6 +4919,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the UpdateCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4090,6 +4979,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the UpdateCluster service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4147,6 +5039,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the UpdateClusterSettings service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4167,6 +5062,13 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
+        /// There's already a current Amazon ECS container agent update in progress on the container
+        /// instance that's specified. If the container agent becomes disconnected while it's
+        /// in a transitional stage, such as <c>PENDING</c> or <c>STAGING</c>, the update process
+        /// can get stuck in that state. However, when the agent reconnects, it resumes where
+        /// it stopped previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">REST API Reference for UpdateClusterSettings Operation</seealso>
         public virtual Task<UpdateClusterSettingsResponse> UpdateClusterSettingsAsync(UpdateClusterSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4229,6 +5131,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the UpdateContainerAgent service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4365,6 +5270,9 @@ namespace Amazon.ECS
         /// </param>
         /// 
         /// <returns>The response from the UpdateContainerInstancesState service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
@@ -4394,6 +5302,96 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = UpdateContainerInstancesStateResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateContainerInstancesStateResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateDaemon
+
+        internal virtual UpdateDaemonResponse UpdateDaemon(UpdateDaemonRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDaemonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDaemonResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDaemonResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the specified daemon. When you update a daemon, a new deployment is triggered
+        /// that progressively rolls out the changes to the container instances associated with
+        /// the daemon's capacity providers. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/daemon-deployments.html">Daemon
+        /// deployments</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon ECS drains existing container instances and provisions new instances with the
+        /// updated daemon. Amazon ECS automatically launches replacement tasks for your services.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Updating a daemon triggers a rolling deployment that drains and replaces container
+        /// instances. Plan updates during maintenance windows to minimize impact on running services.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// ECS Managed Daemons is only supported for Amazon ECS Managed Instances Capacity Providers.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDaemon service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDaemon service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.DaemonNotActiveException">
+        /// The specified daemon isn't active. You can't update a daemon that's inactive. If you
+        /// have previously deleted a daemon, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateDaemon.html">CreateDaemon</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.DaemonNotFoundException">
+        /// The specified daemon wasn't found. You can view your available daemons with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListDaemons.html">ListDaemons</a>.
+        /// Amazon ECS daemons are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformUnknownException">
+        /// The specified platform version doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateDaemon">REST API Reference for UpdateDaemon Operation</seealso>
+        public virtual Task<UpdateDaemonResponse> UpdateDaemonAsync(UpdateDaemonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDaemonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDaemonResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDaemonResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4934,6 +5932,9 @@ namespace Amazon.ECS
         /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
         /// ECS service event messages</a>. 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.LimitExceededException">
+        /// The limit for the resource was exceeded.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.

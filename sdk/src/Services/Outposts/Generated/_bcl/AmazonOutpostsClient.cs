@@ -39,6 +39,11 @@ namespace Amazon.Outposts
 {
     /// <summary>
     /// <para>Implementation for accessing Outposts</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services
     /// infrastructure, APIs, and tools to customer premises. By providing local access to
@@ -566,6 +571,71 @@ namespace Amazon.Outposts
             options.ResponseUnmarshaller = CreateOutpostResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateOutpostResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRenewal
+
+
+        /// <summary>
+        /// Creates a renewal contract for the specified Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRenewal service method.</param>
+        /// 
+        /// <returns>The response from the CreateRenewal service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateRenewal">REST API Reference for CreateRenewal Operation</seealso>
+        public virtual CreateRenewalResponse CreateRenewal(CreateRenewalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRenewalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRenewalResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRenewalResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a renewal contract for the specified Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRenewal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRenewal service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateRenewal">REST API Reference for CreateRenewal Operation</seealso>
+        public virtual Task<CreateRenewalResponse> CreateRenewalAsync(CreateRenewalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRenewalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRenewalResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRenewalResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1321,6 +1391,71 @@ namespace Amazon.Outposts
             options.ResponseUnmarshaller = GetOutpostSupportedInstanceTypesResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetOutpostSupportedInstanceTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRenewalPricing
+
+
+        /// <summary>
+        /// Gets all available renewal pricing options for the specified Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRenewalPricing service method.</param>
+        /// 
+        /// <returns>The response from the GetRenewalPricing service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetRenewalPricing">REST API Reference for GetRenewalPricing Operation</seealso>
+        public virtual GetRenewalPricingResponse GetRenewalPricing(GetRenewalPricingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRenewalPricingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRenewalPricingResponseUnmarshaller.Instance;
+
+            return Invoke<GetRenewalPricingResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets all available renewal pricing options for the specified Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRenewalPricing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRenewalPricing service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetRenewalPricing">REST API Reference for GetRenewalPricing Operation</seealso>
+        public virtual Task<GetRenewalPricingResponse> GetRenewalPricingAsync(GetRenewalPricingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRenewalPricingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRenewalPricingResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRenewalPricingResponse>(request, options, cancellationToken);
         }
 
         #endregion

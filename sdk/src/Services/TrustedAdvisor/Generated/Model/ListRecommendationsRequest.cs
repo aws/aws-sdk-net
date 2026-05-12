@@ -31,7 +31,8 @@ namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRecommendations operation.
-    /// List a filterable set of Recommendations
+    /// List a filterable set of Recommendations. This API provides global recommendations,
+    /// eliminating the need to call the API in each AWS Region.
     /// </summary>
     public partial class ListRecommendationsRequest : AmazonTrustedAdvisorRequest
     {
@@ -39,6 +40,7 @@ namespace Amazon.TrustedAdvisor.Model
         private string _awsService;
         private DateTime? _beforeLastUpdatedAt;
         private string _checkIdentifier;
+        private RecommendationLanguage _language;
         private int? _maxResults;
         private string _nextToken;
         private RecommendationPillar _pillar;
@@ -118,6 +120,24 @@ namespace Amazon.TrustedAdvisor.Model
         internal bool IsSetCheckIdentifier()
         {
             return this._checkIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The ISO 639-1 code for the language that you want your recommendations to appear in.
+        /// </para>
+        /// </summary>
+        public RecommendationLanguage Language
+        {
+            get { return this._language; }
+            set { this._language = value; }
+        }
+
+        // Check to see if Language property is set
+        internal bool IsSetLanguage()
+        {
+            return this._language != null;
         }
 
         /// <summary>

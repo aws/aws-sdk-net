@@ -42,7 +42,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property CapacityUnit. 
         /// <para>
         /// The unit of measure for the service job capacity usage. For service jobs, this is
-        /// <c>NUM_INSTANCES</c>.
+        /// the instance type.
         /// </para>
         /// </summary>
         public string CapacityUnit

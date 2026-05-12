@@ -40,6 +40,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private EvaluatorConfig _evaluatorConfig;
         private string _evaluatorId;
         private string _evaluatorName;
+        private string _kmsKeyArn;
         private EvaluatorLevel _level;
         private bool? _lockedForModification;
         private EvaluatorStatus _status;
@@ -105,8 +106,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property EvaluatorConfig. 
         /// <para>
-        ///  The configuration of the evaluator, including LLM-as-a-Judge settings for custom
-        /// evaluators. 
+        ///  The configuration of the evaluator, including LLM-as-a-Judge or code-based settings.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -158,6 +159,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetEvaluatorName()
         {
             return this._evaluatorName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt the
+        /// evaluator's sensitive data. This field is only present for evaluators encrypted with
+        /// a customer managed key. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

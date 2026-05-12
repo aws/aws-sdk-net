@@ -41,6 +41,7 @@ namespace Amazon.RAM.Model
         private string _name;
         private string _owningAccountId;
         private string _resourceShareArn;
+        private ResourceShareConfiguration _resourceShareConfiguration;
         private ResourceShareStatus _status;
         private string _statusMessage;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -206,6 +207,24 @@ namespace Amazon.RAM.Model
         internal bool IsSetResourceShareArn()
         {
             return this._resourceShareArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareConfiguration. 
+        /// <para>
+        /// The configuration of the resource share
+        /// </para>
+        /// </summary>
+        public ResourceShareConfiguration ResourceShareConfiguration
+        {
+            get { return this._resourceShareConfiguration; }
+            set { this._resourceShareConfiguration = value; }
+        }
+
+        // Check to see if ResourceShareConfiguration property is set
+        internal bool IsSetResourceShareConfiguration()
+        {
+            return this._resourceShareConfiguration != null;
         }
 
         /// <summary>

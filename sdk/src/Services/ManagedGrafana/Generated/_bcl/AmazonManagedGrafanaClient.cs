@@ -39,6 +39,11 @@ namespace Amazon.ManagedGrafana
 {
     /// <summary>
     /// <para>Implementation for accessing ManagedGrafana</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Managed Grafana is a fully managed and secure data visualization service that
     /// you can use to instantly query, correlate, and visualize operational metrics, logs,
@@ -1676,7 +1681,7 @@ namespace Amazon.ManagedGrafana
 
         /// <summary>
         /// Returns a list of Amazon Managed Grafana workspaces in the account, with some information
-        /// about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.
+        /// about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkspaces service method.</param>
         /// 
@@ -1703,7 +1708,7 @@ namespace Amazon.ManagedGrafana
 
         /// <summary>
         /// Returns a list of Amazon Managed Grafana workspaces in the account, with some information
-        /// about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.
+        /// about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkspaces service method.</param>
         /// <param name="cancellationToken">

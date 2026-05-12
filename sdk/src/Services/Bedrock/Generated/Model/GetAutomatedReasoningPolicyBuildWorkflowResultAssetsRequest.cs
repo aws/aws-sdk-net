@@ -36,14 +36,38 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest : AmazonBedrockRequest
     {
+        private string _assetId;
         private AutomatedReasoningPolicyBuildResultAssetType _assetType;
         private string _buildWorkflowId;
         private string _policyArn;
 
         /// <summary>
+        /// Gets and sets the property AssetId. 
+        /// <para>
+        /// The unique identifier of the specific asset to retrieve when multiple assets of the
+        /// same type exist. This is required when retrieving SOURCE_DOCUMENT assets, as multiple
+        /// source documents may have been used in the workflow. The asset ID can be obtained
+        /// from the asset manifest.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=36)]
+        public string AssetId
+        {
+            get { return this._assetId; }
+            set { this._assetId = value; }
+        }
+
+        // Check to see if AssetId property is set
+        internal bool IsSetAssetId()
+        {
+            return this._assetId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AssetType. 
         /// <para>
-        /// The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION).
+        /// The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION,
+        /// GENERATED_TEST_CASES, POLICY_SCENARIOS, FIDELITY_REPORT, ASSET_MANIFEST, SOURCE_DOCUMENT).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

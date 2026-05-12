@@ -289,7 +289,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// Jobs that are created without specifying a Glue version default to Glue 0.9.
+        /// If not provided in the update request, the Glue version retains the value from the
+        /// existing job definition.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

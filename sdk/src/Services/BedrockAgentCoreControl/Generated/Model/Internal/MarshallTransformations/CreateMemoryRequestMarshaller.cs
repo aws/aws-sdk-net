@@ -102,6 +102,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.EventExpiryDuration.Value);
             }
 
+            if(publicRequest.IsSetIndexedKeys())
+            {
+                context.Writer.WritePropertyName("indexedKeys");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIndexedKeysListValue in publicRequest.IndexedKeys)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = IndexedKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequestIndexedKeysListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetMemoryExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("memoryExecutionRoleArn");
@@ -128,6 +144,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetStreamDeliveryResources())
+            {
+                context.Writer.WritePropertyName("streamDeliveryResources");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StreamDeliveryResourcesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StreamDeliveryResources, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetTags())

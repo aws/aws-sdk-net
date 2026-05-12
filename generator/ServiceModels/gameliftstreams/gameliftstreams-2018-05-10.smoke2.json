@@ -18,56 +18,8 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "ListStreamSessions",
-    "operationName" : "ListStreamSessions",
-    "input" : {
-      "Identifier" : "abcdefghi"
-    },
-    "expectation" : {
-      "failure" : {
-        "errorId" : "ResourceNotFoundException"
-      }
-    },
-    "config" : {
-      "region" : "us-west-2",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "ListStreamGroups",
-    "operationName" : "ListStreamGroups",
-    "input" : { },
-    "expectation" : {
-      "success" : { }
-    },
-    "config" : {
-      "region" : "us-west-2",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "GetStreamSession",
-    "operationName" : "GetStreamSession",
-    "input" : {
-      "Identifier" : "abcdefghi",
-      "StreamSessionIdentifier" : "jklmnopqr"
-    },
-    "expectation" : {
-      "failure" : {
-        "errorId" : "ResourceNotFoundException"
-      }
-    },
-    "config" : {
-      "region" : "us-west-2",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "ListApplications",
-    "operationName" : "ListApplications",
+    "id" : "ListStreamSessionsByAccount",
+    "operationName" : "ListStreamSessionsByAccount",
     "input" : { },
     "expectation" : {
       "success" : { }
@@ -113,8 +65,56 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "ListStreamSessionsByAccount",
-    "operationName" : "ListStreamSessionsByAccount",
+    "id" : "GetStreamSession",
+    "operationName" : "GetStreamSession",
+    "input" : {
+      "Identifier" : "abcdefghi",
+      "StreamSessionIdentifier" : "jklmnopqr"
+    },
+    "expectation" : {
+      "failure" : {
+        "errorId" : "ResourceNotFoundException"
+      }
+    },
+    "config" : {
+      "region" : "us-west-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListStreamGroups",
+    "operationName" : "ListStreamGroups",
+    "input" : { },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-west-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListStreamSessions",
+    "operationName" : "ListStreamSessions",
+    "input" : {
+      "Identifier" : "abcdefghi"
+    },
+    "expectation" : {
+      "failure" : {
+        "errorId" : "ResourceNotFoundException"
+      }
+    },
+    "config" : {
+      "region" : "us-west-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListApplications",
+    "operationName" : "ListApplications",
     "input" : { },
     "expectation" : {
       "success" : { }

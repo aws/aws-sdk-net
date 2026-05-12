@@ -39,6 +39,11 @@ namespace Amazon.GeoMaps
 {
     /// <summary>
     /// <para>Implementation for accessing GeoMaps</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Integrate high-quality base map data into your applications using <a href="https://maplibre.org">MapLibre</a>.
     /// Capabilities include: 
@@ -371,10 +376,18 @@ namespace Amazon.GeoMaps
 
 
         /// <summary>
-        /// <c>GetStaticMap</c> provides high-quality static map images with customizable options.
+        /// <note> 
+        /// <para>
+        /// This operation is not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
+        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers. 
+        /// 
+        ///  </note> 
+        /// <para>
+        ///  <c>GetStaticMap</c> provides high-quality static map images with customizable options.
         /// You can modify the map's appearance and overlay additional information. It's an ideal
         /// solution for applications requiring tailored static map snapshots.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// For more information, see the following topics in the <i>Amazon Location Service Developer
@@ -396,6 +409,7 @@ namespace Amazon.GeoMaps
         /// on the static map</a> 
         /// </para>
         ///  </li> </ul>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStaticMap service method.</param>
         /// <param name="cancellationToken">
@@ -480,7 +494,7 @@ namespace Amazon.GeoMaps
 
 
         /// <summary>
-        /// <c>GetTile</c> returns a tile. Map tiles are used by clients to render a map. they're
+        /// <c>GetTile</c> returns a tile. Map tiles are used by clients to render a map. They're
         /// addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom)
         /// level.
         /// 

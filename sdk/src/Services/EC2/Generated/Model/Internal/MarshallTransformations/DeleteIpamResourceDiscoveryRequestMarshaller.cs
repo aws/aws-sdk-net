@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("IpamResourceDiscoveryId", StringUtils.FromString(publicRequest.IpamResourceDiscoveryId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteIpamResourceDiscoveryRequestMarshaller _instance = new DeleteIpamResourceDiscoveryRequestMarshaller();        

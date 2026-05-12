@@ -53,6 +53,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// see <a>security-iam</a>.
     /// </para>
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class PutBotRequest : AmazonLexModelBuildingServiceRequest
     {
         private Statement _abortStatement;

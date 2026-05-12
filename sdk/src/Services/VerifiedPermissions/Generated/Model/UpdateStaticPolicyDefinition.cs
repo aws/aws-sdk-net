@@ -96,7 +96,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=10000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Statement
         {
             get { return this._statement; }

@@ -52,6 +52,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.BucketName);
             }
 
+            if(requestObject.IsSetExpectedBucketOwner())
+            {
+                context.Writer.WritePropertyName("expectedBucketOwner");
+                context.Writer.WriteStringValue(requestObject.ExpectedBucketOwner);
+            }
+
             if(requestObject.IsSetKeyPrefix())
             {
                 context.Writer.WritePropertyName("keyPrefix");

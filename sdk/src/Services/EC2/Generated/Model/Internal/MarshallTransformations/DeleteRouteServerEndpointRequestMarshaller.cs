@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RouteServerEndpointId", StringUtils.FromString(publicRequest.RouteServerEndpointId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteRouteServerEndpointRequestMarshaller _instance = new DeleteRouteServerEndpointRequestMarshaller();        

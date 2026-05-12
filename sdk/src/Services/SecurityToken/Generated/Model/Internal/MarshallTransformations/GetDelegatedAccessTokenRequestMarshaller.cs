@@ -64,6 +64,8 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TradeInToken", StringUtils.FromString(publicRequest.TradeInToken));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetDelegatedAccessTokenRequestMarshaller _instance = new GetDelegatedAccessTokenRequestMarshaller();        

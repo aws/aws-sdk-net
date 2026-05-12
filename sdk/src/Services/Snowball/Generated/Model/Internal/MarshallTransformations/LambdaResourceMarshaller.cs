@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// LambdaResource Marshaller
     /// </summary>
-    public class LambdaResourceMarshaller : IRequestMarshaller<LambdaResource, JsonMarshallerContext> 
+    public class LambdaResourceMarshaller : IRequestMarshaller<LambdaResource, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +45,31 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LambdaResource requestObject, JsonMarshallerContext context)
+        public void Marshall(LambdaResource requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEventTriggers())
+
+            if (requestObject.IsSetEventTriggers())
             {
-                context.Writer.WritePropertyName("EventTriggers");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("EventTriggers");
+                context.Writer.WriteStartArray(requestObject.EventTriggers.Count);
                 foreach(var requestObjectEventTriggersListValue in requestObject.EventTriggers)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = EventTriggerDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectEventTriggersListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetLambdaArn())
+            if (requestObject.IsSetLambdaArn())
             {
-                context.Writer.WritePropertyName("LambdaArn");
-                context.Writer.WriteStringValue(requestObject.LambdaArn);
+                context.Writer.WriteTextString("LambdaArn");
+                context.Writer.WriteTextString(requestObject.LambdaArn);
             }
-
         }
 
         /// <summary>

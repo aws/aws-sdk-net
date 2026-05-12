@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private string _origin;
         private ClientVpnRouteStatus _status;
         private string _targetSubnet;
+        private string _transitGatewayAttachmentId;
         private string _type;
 
         /// <summary>
@@ -151,6 +152,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTargetSubnet()
         {
             return this._targetSubnet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayAttachmentId. 
+        /// <para>
+        /// The ID of the Transit Gateway attachment, if the route targets a Transit Gateway.
+        /// </para>
+        /// </summary>
+        public string TransitGatewayAttachmentId
+        {
+            get { return this._transitGatewayAttachmentId; }
+            set { this._transitGatewayAttachmentId = value; }
+        }
+
+        // Check to see if TransitGatewayAttachmentId property is set
+        internal bool IsSetTransitGatewayAttachmentId()
+        {
+            return this._transitGatewayAttachmentId != null;
         }
 
         /// <summary>

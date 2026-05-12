@@ -45,6 +45,7 @@ namespace Amazon.RTBFabric.Model
         private string _gatewayId;
         private string _linkId;
         private LinkLogSettings _logSettings;
+        private long? _timeoutInMillis;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -70,7 +71,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=8, Max=32)]
         public string GatewayId
         {
             get { return this._gatewayId; }
@@ -89,7 +90,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the link.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=6, Max=30)]
         public string LinkId
         {
             get { return this._linkId; }
@@ -119,6 +120,25 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetLogSettings()
         {
             return this._logSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeoutInMillis. 
+        /// <para>
+        /// The timeout value in milliseconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=100, Max=5000)]
+        public long? TimeoutInMillis
+        {
+            get { return this._timeoutInMillis; }
+            set { this._timeoutInMillis = value; }
+        }
+
+        // Check to see if TimeoutInMillis property is set
+        internal bool IsSetTimeoutInMillis()
+        {
+            return this._timeoutInMillis.HasValue; 
         }
 
     }

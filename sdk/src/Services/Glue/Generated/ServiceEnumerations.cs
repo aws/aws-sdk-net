@@ -5505,6 +5505,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type OverwriteChildResourcePermissionsWithDefaultEnum.
+    /// </summary>
+    public class OverwriteChildResourcePermissionsWithDefaultEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Accept for OverwriteChildResourcePermissionsWithDefaultEnum
+        /// </summary>
+        public static readonly OverwriteChildResourcePermissionsWithDefaultEnum Accept = new OverwriteChildResourcePermissionsWithDefaultEnum("Accept");
+        /// <summary>
+        /// Constant Deny for OverwriteChildResourcePermissionsWithDefaultEnum
+        /// </summary>
+        public static readonly OverwriteChildResourcePermissionsWithDefaultEnum Deny = new OverwriteChildResourcePermissionsWithDefaultEnum("Deny");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverwriteChildResourcePermissionsWithDefaultEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverwriteChildResourcePermissionsWithDefaultEnum FindValue(string value)
+        {
+            return FindValue<OverwriteChildResourcePermissionsWithDefaultEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverwriteChildResourcePermissionsWithDefaultEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ParamType.
     /// </summary>
     public class ParamType : ConstantClass

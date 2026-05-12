@@ -39,6 +39,11 @@ namespace Amazon.MWAA
 {
     /// <summary>
     /// <para>Implementation for accessing MWAA</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Managed Workflows for Apache Airflow 
     /// <para>
@@ -52,8 +57,8 @@ namespace Amazon.MWAA
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>api.airflow.{region}.amazonaws.com</c> - This endpoint is used for environment
-    /// management.
+    ///  <c>api.airflow.{region}.amazonaws.com</c> (use <c>api.airflow.{region}.api.aws</c>
+    /// for IPv6) - This endpoint is used for environment management.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -97,8 +102,8 @@ namespace Amazon.MWAA
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <c>env.airflow.{region}.amazonaws.com</c> - This endpoint is used to operate the
-    /// Airflow environment.
+    ///  <c>env.airflow.{region}.amazonaws.com</c> (use <c>env.airflow.{region}.api.aws</c>
+    /// for IPv6) - This endpoint is used to operate the Airflow environment.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -405,6 +410,9 @@ namespace Amazon.MWAA
         /// <exception cref="Amazon.MWAA.Model.InternalServerException">
         /// InternalServerException: An internal error has occurred.
         /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.ServiceUnavailableException">
+        /// ServiceUnavailableException: The service is currently unavailable.
+        /// </exception>
         /// <exception cref="Amazon.MWAA.Model.ValidationException">
         /// ValidationException: The provided input is not valid.
         /// </exception>
@@ -430,6 +438,9 @@ namespace Amazon.MWAA
         /// <returns>The response from the CreateEnvironment service method, as returned by MWAA.</returns>
         /// <exception cref="Amazon.MWAA.Model.InternalServerException">
         /// InternalServerException: An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.ServiceUnavailableException">
+        /// ServiceUnavailableException: The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.MWAA.Model.ValidationException">
         /// ValidationException: The provided input is not valid.
@@ -532,6 +543,9 @@ namespace Amazon.MWAA
         /// <exception cref="Amazon.MWAA.Model.ResourceNotFoundException">
         /// ResourceNotFoundException: The resource is not available.
         /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.ServiceUnavailableException">
+        /// ServiceUnavailableException: The service is currently unavailable.
+        /// </exception>
         /// <exception cref="Amazon.MWAA.Model.ValidationException">
         /// ValidationException: The provided input is not valid.
         /// </exception>
@@ -560,6 +574,9 @@ namespace Amazon.MWAA
         /// </exception>
         /// <exception cref="Amazon.MWAA.Model.ResourceNotFoundException">
         /// ResourceNotFoundException: The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.ServiceUnavailableException">
+        /// ServiceUnavailableException: The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.MWAA.Model.ValidationException">
         /// ValidationException: The provided input is not valid.
@@ -1030,6 +1047,9 @@ namespace Amazon.MWAA
         /// <exception cref="Amazon.MWAA.Model.ResourceNotFoundException">
         /// ResourceNotFoundException: The resource is not available.
         /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.ServiceUnavailableException">
+        /// ServiceUnavailableException: The service is currently unavailable.
+        /// </exception>
         /// <exception cref="Amazon.MWAA.Model.ValidationException">
         /// ValidationException: The provided input is not valid.
         /// </exception>
@@ -1058,6 +1078,9 @@ namespace Amazon.MWAA
         /// </exception>
         /// <exception cref="Amazon.MWAA.Model.ResourceNotFoundException">
         /// ResourceNotFoundException: The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.ServiceUnavailableException">
+        /// ServiceUnavailableException: The service is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.MWAA.Model.ValidationException">
         /// ValidationException: The provided input is not valid.

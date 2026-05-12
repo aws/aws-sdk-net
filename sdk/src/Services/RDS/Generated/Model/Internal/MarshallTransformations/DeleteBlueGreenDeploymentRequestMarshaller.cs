@@ -68,6 +68,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DeleteTarget", StringUtils.FromBool(publicRequest.DeleteTarget));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteBlueGreenDeploymentRequestMarshaller _instance = new DeleteBlueGreenDeploymentRequestMarshaller();        

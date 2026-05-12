@@ -48,6 +48,7 @@ namespace Amazon.GroundStation.Model
         private string _satelliteArn;
         private DateTime? _startTime;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private ContactVersion _version;
         private DateTime? _visibilityEndTime;
         private DateTime? _visibilityStartTime;
 
@@ -200,8 +201,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property PostPassEndTime. 
         /// <para>
-        /// Amount of time after a contact ends that you’d like to receive a CloudWatch event
-        /// indicating the pass has finished.
+        /// End time in UTC of the post-pass period, at which you receive a CloudWatch event indicating
+        /// the pass has finished.
         /// </para>
         /// </summary>
         public DateTime? PostPassEndTime
@@ -219,8 +220,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property PrePassStartTime. 
         /// <para>
-        /// Amount of time prior to contact start you’d like to receive a CloudWatch event indicating
-        /// an upcoming pass.
+        /// Start time in UTC of the pre-pass period, at which you receive a CloudWatch event
+        /// indicating an upcoming pass.
         /// </para>
         /// </summary>
         public DateTime? PrePassStartTime
@@ -311,6 +312,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// Version information for a contact.
+        /// </para>
+        /// </summary>
+        public ContactVersion Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
         /// <summary>

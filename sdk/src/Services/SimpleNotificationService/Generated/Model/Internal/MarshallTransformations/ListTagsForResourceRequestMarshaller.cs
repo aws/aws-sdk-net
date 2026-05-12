@@ -64,6 +64,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        

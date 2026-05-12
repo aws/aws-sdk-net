@@ -687,6 +687,158 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateAIBenchmarkJob
+
+
+        /// <summary>
+        /// Creates a benchmark job that runs performance benchmarks against inference infrastructure
+        /// using a predefined AI workload configuration. The benchmark job measures metrics such
+        /// as latency, throughput, and cost for your generative AI inference endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIBenchmarkJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIBenchmarkJob">REST API Reference for CreateAIBenchmarkJob Operation</seealso>
+        CreateAIBenchmarkJobResponse CreateAIBenchmarkJob(CreateAIBenchmarkJobRequest request);
+
+
+
+        /// <summary>
+        /// Creates a benchmark job that runs performance benchmarks against inference infrastructure
+        /// using a predefined AI workload configuration. The benchmark job measures metrics such
+        /// as latency, throughput, and cost for your generative AI inference endpoints.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIBenchmarkJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIBenchmarkJob">REST API Reference for CreateAIBenchmarkJob Operation</seealso>
+        Task<CreateAIBenchmarkJobResponse> CreateAIBenchmarkJobAsync(CreateAIBenchmarkJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAIRecommendationJob
+
+
+        /// <summary>
+        /// Creates a recommendation job that generates intelligent optimization recommendations
+        /// for generative AI inference deployments. The job analyzes your model, workload configuration,
+        /// and performance targets to recommend optimal instance types, model optimization techniques
+        /// (such as quantization and speculative decoding), and deployment configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIRecommendationJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIRecommendationJob">REST API Reference for CreateAIRecommendationJob Operation</seealso>
+        CreateAIRecommendationJobResponse CreateAIRecommendationJob(CreateAIRecommendationJobRequest request);
+
+
+
+        /// <summary>
+        /// Creates a recommendation job that generates intelligent optimization recommendations
+        /// for generative AI inference deployments. The job analyzes your model, workload configuration,
+        /// and performance targets to recommend optimal instance types, model optimization techniques
+        /// (such as quantization and speculative decoding), and deployment configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIRecommendationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIRecommendationJob">REST API Reference for CreateAIRecommendationJob Operation</seealso>
+        Task<CreateAIRecommendationJobResponse> CreateAIRecommendationJobAsync(CreateAIRecommendationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAIWorkloadConfig
+
+
+        /// <summary>
+        /// Creates a reusable AI workload configuration that defines datasets, data sources,
+        /// and benchmark tool settings for consistent performance testing of generative AI inference
+        /// deployments on Amazon SageMaker AI.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIWorkloadConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateAIWorkloadConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIWorkloadConfig">REST API Reference for CreateAIWorkloadConfig Operation</seealso>
+        CreateAIWorkloadConfigResponse CreateAIWorkloadConfig(CreateAIWorkloadConfigRequest request);
+
+
+
+        /// <summary>
+        /// Creates a reusable AI workload configuration that defines datasets, data sources,
+        /// and benchmark tool settings for consistent performance testing of generative AI inference
+        /// deployments on Amazon SageMaker AI.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAIWorkloadConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAIWorkloadConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAIWorkloadConfig">REST API Reference for CreateAIWorkloadConfig Operation</seealso>
+        Task<CreateAIWorkloadConfigResponse> CreateAIWorkloadConfigAsync(CreateAIWorkloadConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateAlgorithm
 
 
@@ -5513,6 +5665,116 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteAIBenchmarkJob
+
+
+        /// <summary>
+        /// Deletes the specified AI benchmark job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIBenchmarkJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIBenchmarkJob">REST API Reference for DeleteAIBenchmarkJob Operation</seealso>
+        DeleteAIBenchmarkJobResponse DeleteAIBenchmarkJob(DeleteAIBenchmarkJobRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified AI benchmark job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIBenchmarkJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIBenchmarkJob">REST API Reference for DeleteAIBenchmarkJob Operation</seealso>
+        Task<DeleteAIBenchmarkJobResponse> DeleteAIBenchmarkJobAsync(DeleteAIBenchmarkJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAIRecommendationJob
+
+
+        /// <summary>
+        /// Deletes the specified AI recommendation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIRecommendationJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIRecommendationJob">REST API Reference for DeleteAIRecommendationJob Operation</seealso>
+        DeleteAIRecommendationJobResponse DeleteAIRecommendationJob(DeleteAIRecommendationJobRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified AI recommendation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIRecommendationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIRecommendationJob">REST API Reference for DeleteAIRecommendationJob Operation</seealso>
+        Task<DeleteAIRecommendationJobResponse> DeleteAIRecommendationJobAsync(DeleteAIRecommendationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAIWorkloadConfig
+
+
+        /// <summary>
+        /// Deletes the specified AI workload configuration. You cannot delete a configuration
+        /// that is referenced by an active benchmark job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIWorkloadConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAIWorkloadConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIWorkloadConfig">REST API Reference for DeleteAIWorkloadConfig Operation</seealso>
+        DeleteAIWorkloadConfigResponse DeleteAIWorkloadConfig(DeleteAIWorkloadConfigRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified AI workload configuration. You cannot delete a configuration
+        /// that is referenced by an active benchmark job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAIWorkloadConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAIWorkloadConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAIWorkloadConfig">REST API Reference for DeleteAIWorkloadConfig Operation</seealso>
+        Task<DeleteAIWorkloadConfigResponse> DeleteAIWorkloadConfigAsync(DeleteAIWorkloadConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteAlgorithm
 
 
@@ -7873,6 +8135,114 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeAIBenchmarkJob
+
+
+        /// <summary>
+        /// Returns details of an AI benchmark job, including its status, configuration, target
+        /// endpoint, and timing information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAIBenchmarkJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIBenchmarkJob">REST API Reference for DescribeAIBenchmarkJob Operation</seealso>
+        DescribeAIBenchmarkJobResponse DescribeAIBenchmarkJob(DescribeAIBenchmarkJobRequest request);
+
+
+
+        /// <summary>
+        /// Returns details of an AI benchmark job, including its status, configuration, target
+        /// endpoint, and timing information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAIBenchmarkJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIBenchmarkJob">REST API Reference for DescribeAIBenchmarkJob Operation</seealso>
+        Task<DescribeAIBenchmarkJobResponse> DescribeAIBenchmarkJobAsync(DescribeAIBenchmarkJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAIRecommendationJob
+
+
+        /// <summary>
+        /// Returns details of an AI recommendation job, including its status, model source, performance
+        /// targets, optimization recommendations, and deployment configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAIRecommendationJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIRecommendationJob">REST API Reference for DescribeAIRecommendationJob Operation</seealso>
+        DescribeAIRecommendationJobResponse DescribeAIRecommendationJob(DescribeAIRecommendationJobRequest request);
+
+
+
+        /// <summary>
+        /// Returns details of an AI recommendation job, including its status, model source, performance
+        /// targets, optimization recommendations, and deployment configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAIRecommendationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIRecommendationJob">REST API Reference for DescribeAIRecommendationJob Operation</seealso>
+        Task<DescribeAIRecommendationJobResponse> DescribeAIRecommendationJobAsync(DescribeAIRecommendationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAIWorkloadConfig
+
+
+        /// <summary>
+        /// Returns details of an AI workload configuration, including the dataset configuration,
+        /// benchmark tool settings, tags, and creation time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAIWorkloadConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAIWorkloadConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIWorkloadConfig">REST API Reference for DescribeAIWorkloadConfig Operation</seealso>
+        DescribeAIWorkloadConfigResponse DescribeAIWorkloadConfig(DescribeAIWorkloadConfigRequest request);
+
+
+
+        /// <summary>
+        /// Returns details of an AI workload configuration, including the dataset configuration,
+        /// benchmark tool settings, tags, and creation time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAIWorkloadConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAIWorkloadConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAIWorkloadConfig">REST API Reference for DescribeAIWorkloadConfig Operation</seealso>
+        Task<DescribeAIWorkloadConfigResponse> DescribeAIWorkloadConfigAsync(DescribeAIWorkloadConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeAlgorithm
 
 
@@ -10057,6 +10427,44 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeTrainingPlanExtensionHistory
+
+
+        /// <summary>
+        /// Retrieves the extension history for a specified training plan. The response includes
+        /// details about each extension, such as the offering ID, start and end dates, status,
+        /// payment status, and cost information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrainingPlanExtensionHistory service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrainingPlanExtensionHistory service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlanExtensionHistory">REST API Reference for DescribeTrainingPlanExtensionHistory Operation</seealso>
+        DescribeTrainingPlanExtensionHistoryResponse DescribeTrainingPlanExtensionHistory(DescribeTrainingPlanExtensionHistoryRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the extension history for a specified training plan. The response includes
+        /// details about each extension, such as the offering ID, start and end dates, status,
+        /// payment status, and cost information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrainingPlanExtensionHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrainingPlanExtensionHistory service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlanExtensionHistory">REST API Reference for DescribeTrainingPlanExtensionHistory Operation</seealso>
+        Task<DescribeTrainingPlanExtensionHistoryResponse> DescribeTrainingPlanExtensionHistoryAsync(DescribeTrainingPlanExtensionHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeTransformJob
 
 
@@ -10445,6 +10853,66 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ExtendTrainingPlan
+
+
+        /// <summary>
+        /// Extends an existing training plan by purchasing an extension offering. This allows
+        /// you to add additional compute capacity time to your training plan without creating
+        /// a new plan or reconfiguring your workloads.
+        /// 
+        ///  
+        /// <para>
+        /// To find available extension offerings, use the <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchTrainingPlanOfferings.html">SearchTrainingPlanOfferings</a>
+        /// </c> API with the <c>TrainingPlanArn</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// To view the history of extensions for a training plan, use the <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingPlanExtensionHistory.html">DescribeTrainingPlanExtensionHistory</a>
+        /// </c> API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExtendTrainingPlan service method.</param>
+        /// 
+        /// <returns>The response from the ExtendTrainingPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ExtendTrainingPlan">REST API Reference for ExtendTrainingPlan Operation</seealso>
+        ExtendTrainingPlanResponse ExtendTrainingPlan(ExtendTrainingPlanRequest request);
+
+
+
+        /// <summary>
+        /// Extends an existing training plan by purchasing an extension offering. This allows
+        /// you to add additional compute capacity time to your training plan without creating
+        /// a new plan or reconfiguring your workloads.
+        /// 
+        ///  
+        /// <para>
+        /// To find available extension offerings, use the <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchTrainingPlanOfferings.html">SearchTrainingPlanOfferings</a>
+        /// </c> API with the <c>TrainingPlanArn</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// To view the history of extensions for a training plan, use the <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingPlanExtensionHistory.html">DescribeTrainingPlanExtensionHistory</a>
+        /// </c> API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExtendTrainingPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExtendTrainingPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ExtendTrainingPlan">REST API Reference for ExtendTrainingPlan Operation</seealso>
+        Task<ExtendTrainingPlanResponse> ExtendTrainingPlanAsync(ExtendTrainingPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetDeviceFleetReport
 
 
@@ -10718,6 +11186,96 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListActions">REST API Reference for ListActions Operation</seealso>
         Task<ListActionsResponse> ListActionsAsync(ListActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAIBenchmarkJobs
+
+
+        /// <summary>
+        /// Returns a list of AI benchmark jobs in your account. You can filter the results by
+        /// name, status, and creation time, and sort the results. The response is paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIBenchmarkJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListAIBenchmarkJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIBenchmarkJobs">REST API Reference for ListAIBenchmarkJobs Operation</seealso>
+        ListAIBenchmarkJobsResponse ListAIBenchmarkJobs(ListAIBenchmarkJobsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of AI benchmark jobs in your account. You can filter the results by
+        /// name, status, and creation time, and sort the results. The response is paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIBenchmarkJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAIBenchmarkJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIBenchmarkJobs">REST API Reference for ListAIBenchmarkJobs Operation</seealso>
+        Task<ListAIBenchmarkJobsResponse> ListAIBenchmarkJobsAsync(ListAIBenchmarkJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAIRecommendationJobs
+
+
+        /// <summary>
+        /// Returns a list of AI recommendation jobs in your account. You can filter the results
+        /// by name, status, and creation time, and sort the results. The response is paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIRecommendationJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListAIRecommendationJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIRecommendationJobs">REST API Reference for ListAIRecommendationJobs Operation</seealso>
+        ListAIRecommendationJobsResponse ListAIRecommendationJobs(ListAIRecommendationJobsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of AI recommendation jobs in your account. You can filter the results
+        /// by name, status, and creation time, and sort the results. The response is paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIRecommendationJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAIRecommendationJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIRecommendationJobs">REST API Reference for ListAIRecommendationJobs Operation</seealso>
+        Task<ListAIRecommendationJobsResponse> ListAIRecommendationJobsAsync(ListAIRecommendationJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAIWorkloadConfigs
+
+
+        /// <summary>
+        /// Returns a list of AI workload configurations in your account. You can filter the results
+        /// by name and creation time, and sort the results. The response is paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIWorkloadConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListAIWorkloadConfigs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIWorkloadConfigs">REST API Reference for ListAIWorkloadConfigs Operation</seealso>
+        ListAIWorkloadConfigsResponse ListAIWorkloadConfigs(ListAIWorkloadConfigsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of AI workload configurations in your account. You can filter the results
+        /// by name and creation time, and sort the results. The response is paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAIWorkloadConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAIWorkloadConfigs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAIWorkloadConfigs">REST API Reference for ListAIWorkloadConfigs Operation</seealso>
+        Task<ListAIWorkloadConfigsResponse> ListAIWorkloadConfigsAsync(ListAIWorkloadConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -13835,6 +14393,46 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StartClusterHealthCheck
+
+
+        /// <summary>
+        /// Start deep health checks for a SageMaker HyperPod cluster. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeClusterNode.html">DescribeClusterNode</a>
+        /// API to track progress of the deep health checks. The unhealthy nodes will be automatically
+        /// rebooted or replaced. Please see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-resiliency-node-labels.html">
+        /// Resilience-related Kubernetes labels by SageMaker HyperPod</a> for details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartClusterHealthCheck service method.</param>
+        /// 
+        /// <returns>The response from the StartClusterHealthCheck service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartClusterHealthCheck">REST API Reference for StartClusterHealthCheck Operation</seealso>
+        StartClusterHealthCheckResponse StartClusterHealthCheck(StartClusterHealthCheckRequest request);
+
+
+
+        /// <summary>
+        /// Start deep health checks for a SageMaker HyperPod cluster. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeClusterNode.html">DescribeClusterNode</a>
+        /// API to track progress of the deep health checks. The unhealthy nodes will be automatically
+        /// rebooted or replaced. Please see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-resiliency-node-labels.html">
+        /// Resilience-related Kubernetes labels by SageMaker HyperPod</a> for details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartClusterHealthCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartClusterHealthCheck service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartClusterHealthCheck">REST API Reference for StartClusterHealthCheck Operation</seealso>
+        Task<StartClusterHealthCheckResponse> StartClusterHealthCheckAsync(StartClusterHealthCheckRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartEdgeDeploymentStage
 
 
@@ -14128,6 +14726,74 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartSession">REST API Reference for StartSession Operation</seealso>
         Task<StartSessionResponse> StartSessionAsync(StartSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopAIBenchmarkJob
+
+
+        /// <summary>
+        /// Stops a running AI benchmark job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAIBenchmarkJob service method.</param>
+        /// 
+        /// <returns>The response from the StopAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAIBenchmarkJob">REST API Reference for StopAIBenchmarkJob Operation</seealso>
+        StopAIBenchmarkJobResponse StopAIBenchmarkJob(StopAIBenchmarkJobRequest request);
+
+
+
+        /// <summary>
+        /// Stops a running AI benchmark job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAIBenchmarkJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopAIBenchmarkJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAIBenchmarkJob">REST API Reference for StopAIBenchmarkJob Operation</seealso>
+        Task<StopAIBenchmarkJobResponse> StopAIBenchmarkJobAsync(StopAIBenchmarkJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopAIRecommendationJob
+
+
+        /// <summary>
+        /// Stops a running AI recommendation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAIRecommendationJob service method.</param>
+        /// 
+        /// <returns>The response from the StopAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAIRecommendationJob">REST API Reference for StopAIRecommendationJob Operation</seealso>
+        StopAIRecommendationJobResponse StopAIRecommendationJob(StopAIRecommendationJobRequest request);
+
+
+
+        /// <summary>
+        /// Stops a running AI recommendation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAIRecommendationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopAIRecommendationJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAIRecommendationJob">REST API Reference for StopAIRecommendationJob Operation</seealso>
+        Task<StopAIRecommendationJobResponse> StopAIRecommendationJobAsync(StopAIRecommendationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

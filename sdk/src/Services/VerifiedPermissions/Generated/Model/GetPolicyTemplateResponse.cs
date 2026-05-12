@@ -37,6 +37,7 @@ namespace Amazon.VerifiedPermissions.Model
         private DateTime? _createdDate;
         private string _description;
         private DateTime? _lastUpdatedDate;
+        private string _name;
         private string _policyStoreId;
         private string _policyTemplateId;
         private string _statement;
@@ -99,6 +100,26 @@ namespace Amazon.VerifiedPermissions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the policy template, if one was assigned when the policy template was
+        /// created or last updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=150)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyStoreId. 
         /// <para>
         /// The ID of the policy store that contains the policy template.
@@ -142,7 +163,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// The content of the body of the policy template written in the Cedar policy language.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=10000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Statement
         {
             get { return this._statement; }

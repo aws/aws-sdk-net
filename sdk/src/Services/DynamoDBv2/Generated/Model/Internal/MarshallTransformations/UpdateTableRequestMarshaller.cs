@@ -119,6 +119,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetGlobalTableSettingsReplicationMode())
+            {
+                context.Writer.WritePropertyName("GlobalTableSettingsReplicationMode");
+                context.Writer.WriteStringValue(publicRequest.GlobalTableSettingsReplicationMode);
+            }
+
             if(publicRequest.IsSetGlobalTableWitnessUpdates())
             {
                 context.Writer.WritePropertyName("GlobalTableWitnessUpdates");

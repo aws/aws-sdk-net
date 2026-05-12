@@ -60,6 +60,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             if(publicRequest != null)
             {
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetSMSSandboxAccountStatusRequestMarshaller _instance = new GetSMSSandboxAccountStatusRequestMarshaller();        

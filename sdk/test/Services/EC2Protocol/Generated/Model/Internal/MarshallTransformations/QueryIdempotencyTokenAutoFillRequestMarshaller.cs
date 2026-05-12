@@ -68,6 +68,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Token", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static QueryIdempotencyTokenAutoFillRequestMarshaller _instance = new QueryIdempotencyTokenAutoFillRequestMarshaller();        

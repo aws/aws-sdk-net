@@ -130,6 +130,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Vlan", StringUtils.FromInt(publicRequest.Vlan));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateLocalGatewayVirtualInterfaceRequestMarshaller _instance = new CreateLocalGatewayVirtualInterfaceRequestMarshaller();        

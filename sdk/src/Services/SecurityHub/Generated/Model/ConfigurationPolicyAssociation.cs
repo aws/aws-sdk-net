@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides details about the association between an Security Hub configuration and
-    /// a target account, organizational unit, or the root. An association can exist between
+    /// Provides details about the association between an Security Hub CSPM configuration
+    /// and a target account, organizational unit, or the root. An association can exist between
     /// a target and a configuration policy, or between a target and self-managed behavior.
     /// </summary>
     public partial class ConfigurationPolicyAssociation

@@ -72,6 +72,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UserGroupId", StringUtils.FromString(publicRequest.UserGroupId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeUserGroupsRequestMarshaller _instance = new DescribeUserGroupsRequestMarshaller();        

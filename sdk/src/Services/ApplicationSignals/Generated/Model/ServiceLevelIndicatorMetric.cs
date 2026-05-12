@@ -35,11 +35,32 @@ namespace Amazon.ApplicationSignals.Model
     /// </summary>
     public partial class ServiceLevelIndicatorMetric
     {
+        private CompositeSliConfig _compositeSliConfig;
         private DependencyConfig _dependencyConfig;
         private Dictionary<string, string> _keyAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<MetricDataQuery> _metricDataQueries = AWSConfigs.InitializeCollections ? new List<MetricDataQuery>() : null;
+        private MetricSource _metricSource;
         private ServiceLevelIndicatorMetricType _metricType;
         private string _operationName;
+
+        /// <summary>
+        /// Gets and sets the property CompositeSliConfig. 
+        /// <para>
+        /// The composite SLI configuration for service-level SLOs that monitor multiple operations
+        /// of a service.
+        /// </para>
+        /// </summary>
+        public CompositeSliConfig CompositeSliConfig
+        {
+            get { return this._compositeSliConfig; }
+            set { this._compositeSliConfig = value; }
+        }
+
+        // Check to see if CompositeSliConfig property is set
+        internal bool IsSetCompositeSliConfig()
+        {
+            return this._compositeSliConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DependencyConfig. 
@@ -134,6 +155,25 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetMetricDataQueries()
         {
             return this._metricDataQueries != null && (this._metricDataQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricSource. 
+        /// <para>
+        /// Identifies the metric source for SLOs on resources other than Application Signals
+        /// services.
+        /// </para>
+        /// </summary>
+        public MetricSource MetricSource
+        {
+            get { return this._metricSource; }
+            set { this._metricSource = value; }
+        }
+
+        // Check to see if MetricSource property is set
+        internal bool IsSetMetricSource()
+        {
+            return this._metricSource != null;
         }
 
         /// <summary>

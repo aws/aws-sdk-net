@@ -44,9 +44,9 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property AvoidActionsForDistance. 
         /// <para>
-        /// Avoids actions for the provided distance. This is typically to consider for users
-        /// in moving vehicles who may not have sufficient time to make an action at an origin
-        /// or a destination.
+        /// The distance in meters from the destination point within which certain routing actions
+        /// (such as U-turns or left turns across traffic) are restricted. This helps generate
+        /// more practical routes by avoiding potentially dangerous maneuvers near the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=2000)]

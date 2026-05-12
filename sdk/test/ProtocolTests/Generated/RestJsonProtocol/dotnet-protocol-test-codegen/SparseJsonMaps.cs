@@ -177,6 +177,93 @@ namespace AWSSDK.ProtocolTests.RestJson
         }
 
         /// <summary>
+        /// A request that contains a sparse map of sets
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonSerializesSparseSetMapRequest()
+        {
+            // Arrange
+            var request = new SparseJsonMapsRequest
+            {
+                SparseSetMap = new Dictionary<string, List<string>>()
+                {
+
+                    { "x",  new List<string>()
+                    {
+                    } },
+                    { "y",  new List<string>()
+                    {
+                        "a",
+                        "b",
+                    } },
+                },
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new SparseJsonMapsRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            var expectedBody = "{\n    \"sparseSetMap\": {\n        \"x\": [],\n        \"y\": [\"a\", \"b\"]\n    }\n}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/SparseJsonMaps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+        }
+
+        /// <summary>
+        /// A request that contains a sparse map of sets.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonSerializesSparseSetMapAndRetainsNullRequest()
+        {
+            // Arrange
+            var request = new SparseJsonMapsRequest
+            {
+                SparseSetMap = new Dictionary<string, List<string>>()
+                {
+
+                    { "x",  new List<string>()
+                    {
+                    } },
+                    { "y",  new List<string>()
+                    {
+                        "a",
+                        "b",
+                    } },
+                    { "z", null },
+                },
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new SparseJsonMapsRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            var expectedBody = "{\n    \"sparseSetMap\": {\n        \"x\": [],\n        \"y\": [\"a\", \"b\"],\n        \"z\": null\n    }\n}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/SparseJsonMaps", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+        }
+
+        /// <summary>
         /// Deserializes JSON maps
         /// </summary>
         [TestMethod]
@@ -297,6 +384,89 @@ namespace AWSSDK.ProtocolTests.RestJson
                 {
 
                     { "x", false },
+                },
+            };
+
+            // Assert
+            var actualResponse = (SparseJsonMapsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<SparseJsonMapsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// A response that contains a sparse map of sets
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonDeserializesSparseSetMapResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/json";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"sparseSetMap\": {\n        \"x\": [],\n        \"y\": [\"a\", \"b\"]\n    }\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new SparseJsonMapsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new SparseJsonMapsResponse
+            {
+                SparseSetMap = new Dictionary<string, List<string>>()
+                {
+
+                    { "x",  new List<string>()
+                    {
+                    } },
+                    { "y",  new List<string>()
+                    {
+                        "a",
+                        "b",
+                    } },
+                },
+            };
+
+            // Assert
+            var actualResponse = (SparseJsonMapsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<SparseJsonMapsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// A response that contains a sparse map of sets.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonDeserializesSparseSetMapAndRetainsNullResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/json";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"sparseSetMap\": {\n        \"x\": [],\n        \"y\": [\"a\", \"b\"],\n        \"z\": null\n    }\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new SparseJsonMapsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new SparseJsonMapsResponse
+            {
+                SparseSetMap = new Dictionary<string, List<string>>()
+                {
+
+                    { "x",  new List<string>()
+                    {
+                    } },
+                    { "y",  new List<string>()
+                    {
+                        "a",
+                        "b",
+                    } },
+                    { "z", null },
                 },
             };
 

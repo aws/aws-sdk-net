@@ -86,8 +86,12 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// The <c>StartLiveTail</c> API routes requests to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>
-    /// using SDK host prefix injection. VPC endpoint support is not available for this API.
+    /// The <c>StartLiveTail</c> API routes requests using SDK host prefix injection. SDK
+    /// versions released before April 1, 2026 route to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>,
+    /// which does not support VPC endpoints. SDK versions released on or after April 1, 2026
+    /// route to <c>stream-logs.<i>Region</i>.amazonaws.com</c>, which supports VPC endpoints.
+    /// To set up a VPC endpoint for this API, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs">Creating
+    /// a VPC endpoint for CloudWatch Logs </a>.
     /// </para>
     ///  </note> <important> 
     /// <para>

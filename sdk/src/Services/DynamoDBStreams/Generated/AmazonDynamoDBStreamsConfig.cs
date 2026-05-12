@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBStreams
     public partial class AmazonDynamoDBStreamsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DynamoDB Streams", "4.0.4.14");
+            InternalSDKUtils.BuildUserAgentString("DynamoDB Streams", "4.0.4.28");
 
         private static readonly AmazonDynamoDBStreamsEndpointResolver EndpointResolver =
             new AmazonDynamoDBStreamsEndpointResolver();
@@ -57,7 +57,6 @@ namespace Amazon.DynamoDBStreams
         {
             base.ServiceId = "DynamoDB Streams";
             this.AuthenticationServiceName = "dynamodb";
-            this.MaxErrorRetry = 10;
             this.EndpointProvider = new AmazonDynamoDBStreamsEndpointProvider();
         }
 

@@ -104,6 +104,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.TableOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Tooltip", targetDepth))
+                {
+                    var unmarshaller = TooltipOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Tooltip = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TotalOptions", targetDepth))
                 {
                     var unmarshaller = TotalOptionsUnmarshaller.Instance;

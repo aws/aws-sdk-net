@@ -96,6 +96,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyClusterIamRolesRequestMarshaller _instance = new ModifyClusterIamRolesRequestMarshaller();        

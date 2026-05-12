@@ -35,6 +35,7 @@ namespace Amazon.Omics.Model
     public partial class RunListItem
     {
         private string _arn;
+        private string _batchId;
         private DateTime? _creationTime;
         private string _id;
         private string _name;
@@ -64,6 +65,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BatchId. 
+        /// <para>
+        /// The run's batch ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=18)]
+        public string BatchId
+        {
+            get { return this._batchId; }
+            set { this._batchId = value; }
+        }
+
+        // Check to see if BatchId property is set
+        internal bool IsSetBatchId()
+        {
+            return this._batchId != null;
         }
 
         /// <summary>

@@ -36,5 +36,15 @@ namespace Amazon.CertificateManager.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListCertificatesPaginator ListCertificates(ListCertificatesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchCertificates operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchCertificatesPaginator SearchCertificates(SearchCertificatesRequest request);
     }
 }

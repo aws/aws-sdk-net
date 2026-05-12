@@ -63,8 +63,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AdministratorId. 
         /// <para>
-        /// The Amazon Web Services account ID of the Security Hub administrator account associated
-        /// with this member account.
+        /// The Amazon Web Services account ID of the Security Hub CSPM administrator account
+        /// associated with this member account.
         /// </para>
         /// </summary>
         public string AdministratorId
@@ -122,8 +122,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The Amazon Web Services account ID of the Security Hub administrator account associated
-        /// with this member account.
+        /// The Amazon Web Services account ID of the Security Hub CSPM administrator account
+        /// associated with this member account.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use AdministratorId instead.")]

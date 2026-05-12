@@ -93,6 +93,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PolicyTypeName", StringUtils.FromString(publicRequest.PolicyTypeName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateLoadBalancerPolicyRequestMarshaller _instance = new CreateLoadBalancerPolicyRequestMarshaller();        

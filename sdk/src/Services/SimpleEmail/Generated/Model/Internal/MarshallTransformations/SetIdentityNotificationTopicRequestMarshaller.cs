@@ -72,6 +72,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SnsTopic", StringUtils.FromString(publicRequest.SnsTopic));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SetIdentityNotificationTopicRequestMarshaller _instance = new SetIdentityNotificationTopicRequestMarshaller();        

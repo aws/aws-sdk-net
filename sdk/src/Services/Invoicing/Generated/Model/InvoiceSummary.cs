@@ -37,14 +37,22 @@ namespace Amazon.Invoicing.Model
         private string _accountId;
         private InvoiceCurrencyAmount _baseCurrencyAmount;
         private BillingPeriod _billingPeriod;
+        private List<string> _billSourceAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private int? _billSourceAccountsTotalCount;
+        private BillType _billType;
+        private string _commercialInvoiceId;
         private DateTime? _dueDate;
+        private EinvoiceDeliveryStatus _einvoiceDeliveryStatus;
         private Entity _entity;
+        private InvoiceFrequency _invoiceFrequency;
         private string _invoiceId;
         private InvoiceType _invoiceType;
         private DateTime? _issuedDate;
         private string _originalInvoiceId;
         private InvoiceCurrencyAmount _paymentCurrencyAmount;
         private string _purchaseOrderNumber;
+        private ReceiverRole _receiverRole;
+        private TaxAuthorityStatus _taxAuthorityStatus;
         private InvoiceCurrencyAmount _taxCurrencyAmount;
 
         /// <summary>
@@ -102,6 +110,86 @@ namespace Amazon.Invoicing.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BillSourceAccounts. 
+        /// <para>
+        ///  The list of Amazon Web Services account IDs that are the bill source of the invoice.
+        /// Currently, only a single bill source account is returned.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> BillSourceAccounts
+        {
+            get { return this._billSourceAccounts; }
+            set { this._billSourceAccounts = value; }
+        }
+
+        // Check to see if BillSourceAccounts property is set
+        internal bool IsSetBillSourceAccounts()
+        {
+            return this._billSourceAccounts != null && (this._billSourceAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillSourceAccountsTotalCount. 
+        /// <para>
+        ///  The total number of accounts that are the bill source of the invoice. 
+        /// </para>
+        /// </summary>
+        public int? BillSourceAccountsTotalCount
+        {
+            get { return this._billSourceAccountsTotalCount; }
+            set { this._billSourceAccountsTotalCount = value; }
+        }
+
+        // Check to see if BillSourceAccountsTotalCount property is set
+        internal bool IsSetBillSourceAccountsTotalCount()
+        {
+            return this._billSourceAccountsTotalCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillType. 
+        /// <para>
+        ///  The type of the bill. 
+        /// </para>
+        /// </summary>
+        public BillType BillType
+        {
+            get { return this._billType; }
+            set { this._billType = value; }
+        }
+
+        // Check to see if BillType property is set
+        internal bool IsSetBillType()
+        {
+            return this._billType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CommercialInvoiceId. 
+        /// <para>
+        ///  The commercial invoice ID. This is only applicable for tax invoices and identifies
+        /// the associated commercial invoice. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string CommercialInvoiceId
+        {
+            get { return this._commercialInvoiceId; }
+            set { this._commercialInvoiceId = value; }
+        }
+
+        // Check to see if CommercialInvoiceId property is set
+        internal bool IsSetCommercialInvoiceId()
+        {
+            return this._commercialInvoiceId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DueDate. 
         /// <para>
         ///  The invoice due date. 
@@ -120,6 +208,24 @@ namespace Amazon.Invoicing.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EinvoiceDeliveryStatus. 
+        /// <para>
+        ///  The e-invoice delivery status. 
+        /// </para>
+        /// </summary>
+        public EinvoiceDeliveryStatus EinvoiceDeliveryStatus
+        {
+            get { return this._einvoiceDeliveryStatus; }
+            set { this._einvoiceDeliveryStatus = value; }
+        }
+
+        // Check to see if EinvoiceDeliveryStatus property is set
+        internal bool IsSetEinvoiceDeliveryStatus()
+        {
+            return this._einvoiceDeliveryStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Entity. 
         /// <para>
         /// The organization name providing Amazon Web Services services.
@@ -135,6 +241,24 @@ namespace Amazon.Invoicing.Model
         internal bool IsSetEntity()
         {
             return this._entity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvoiceFrequency. 
+        /// <para>
+        ///  The frequency of the invoice. 
+        /// </para>
+        /// </summary>
+        public InvoiceFrequency InvoiceFrequency
+        {
+            get { return this._invoiceFrequency; }
+            set { this._invoiceFrequency = value; }
+        }
+
+        // Check to see if InvoiceFrequency property is set
+        internal bool IsSetInvoiceFrequency()
+        {
+            return this._invoiceFrequency != null;
         }
 
         /// <summary>
@@ -246,6 +370,43 @@ namespace Amazon.Invoicing.Model
         internal bool IsSetPurchaseOrderNumber()
         {
             return this._purchaseOrderNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReceiverRole. 
+        /// <para>
+        /// The role of the invoice receiver.
+        /// </para>
+        /// </summary>
+        public ReceiverRole ReceiverRole
+        {
+            get { return this._receiverRole; }
+            set { this._receiverRole = value; }
+        }
+
+        // Check to see if ReceiverRole property is set
+        internal bool IsSetReceiverRole()
+        {
+            return this._receiverRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaxAuthorityStatus. 
+        /// <para>
+        ///  The current status of an invoice as reported to the tax authority. This captures
+        /// scenarios where an invoice may be cancelled after issuance. 
+        /// </para>
+        /// </summary>
+        public TaxAuthorityStatus TaxAuthorityStatus
+        {
+            get { return this._taxAuthorityStatus; }
+            set { this._taxAuthorityStatus = value; }
+        }
+
+        // Check to see if TaxAuthorityStatus property is set
+        internal bool IsSetTaxAuthorityStatus()
+        {
+            return this._taxAuthorityStatus != null;
         }
 
         /// <summary>

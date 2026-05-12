@@ -32,6 +32,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// This is the response object from the ListTagsForResource operation.
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;

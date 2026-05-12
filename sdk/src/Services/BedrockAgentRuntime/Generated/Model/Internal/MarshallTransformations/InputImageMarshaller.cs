@@ -55,7 +55,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInlineContent())
             {
                 context.Writer.WritePropertyName("inlineContent");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.InlineContent));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.InlineContent);
             }
 
         }

@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("State", StringUtils.FromString(publicRequest.State));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static EnableSnapshotBlockPublicAccessRequestMarshaller _instance = new EnableSnapshotBlockPublicAccessRequestMarshaller();        

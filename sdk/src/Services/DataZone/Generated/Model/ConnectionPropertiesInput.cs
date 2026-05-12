@@ -39,11 +39,14 @@ namespace Amazon.DataZone.Model
         private GluePropertiesInput _glueProperties;
         private HyperPodPropertiesInput _hyperPodProperties;
         private IamPropertiesInput _iamProperties;
+        private LakehousePropertiesInput _lakehouseProperties;
         private MlflowPropertiesInput _mlflowProperties;
         private RedshiftPropertiesInput _redshiftProperties;
         private S3PropertiesInput _s3Properties;
         private SparkEmrPropertiesInput _sparkEmrProperties;
         private SparkGluePropertiesInput _sparkGlueProperties;
+        private WorkflowsMwaaPropertiesInput _workflowsMwaaProperties;
+        private WorkflowsServerlessPropertiesInput _workflowsServerlessProperties;
 
         /// <summary>
         /// Gets and sets the property AmazonQProperties. 
@@ -136,6 +139,24 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LakehouseProperties. 
+        /// <para>
+        /// The lakehouse properties of a connection.
+        /// </para>
+        /// </summary>
+        public LakehousePropertiesInput LakehouseProperties
+        {
+            get { return this._lakehouseProperties; }
+            set { this._lakehouseProperties = value; }
+        }
+
+        // Check to see if LakehouseProperties property is set
+        internal bool IsSetLakehouseProperties()
+        {
+            return this._lakehouseProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MlflowProperties. 
         /// <para>
         /// The MLflow properties of a connection.
@@ -223,6 +244,42 @@ namespace Amazon.DataZone.Model
         internal bool IsSetSparkGlueProperties()
         {
             return this._sparkGlueProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowsMwaaProperties. 
+        /// <para>
+        /// The Amazon MWAA properties of a connection.
+        /// </para>
+        /// </summary>
+        public WorkflowsMwaaPropertiesInput WorkflowsMwaaProperties
+        {
+            get { return this._workflowsMwaaProperties; }
+            set { this._workflowsMwaaProperties = value; }
+        }
+
+        // Check to see if WorkflowsMwaaProperties property is set
+        internal bool IsSetWorkflowsMwaaProperties()
+        {
+            return this._workflowsMwaaProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowsServerlessProperties. 
+        /// <para>
+        /// The MWAA serverless properties of a connection.
+        /// </para>
+        /// </summary>
+        public WorkflowsServerlessPropertiesInput WorkflowsServerlessProperties
+        {
+            get { return this._workflowsServerlessProperties; }
+            set { this._workflowsServerlessProperties = value; }
+        }
+
+        // Check to see if WorkflowsServerlessProperties property is set
+        internal bool IsSetWorkflowsServerlessProperties()
+        {
+            return this._workflowsServerlessProperties != null;
         }
 
     }

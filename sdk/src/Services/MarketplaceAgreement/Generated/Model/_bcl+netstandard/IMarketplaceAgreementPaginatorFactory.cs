@@ -28,6 +28,16 @@ namespace Amazon.MarketplaceAgreement.Model
     {
 
         /// <summary>
+        /// Paginator for GetAgreementEntitlements operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetAgreementEntitlementsPaginator GetAgreementEntitlements(GetAgreementEntitlementsRequest request);
+
+        /// <summary>
         /// Paginator for GetAgreementTerms operation
         ///</summary>
         [AWSPaginator(
@@ -36,6 +46,56 @@ namespace Amazon.MarketplaceAgreement.Model
             OutputToken = new[] { "NextToken" }
         )]
         IGetAgreementTermsPaginator GetAgreementTerms(GetAgreementTermsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgreementCancellationRequests operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgreementCancellationRequestsPaginator ListAgreementCancellationRequests(ListAgreementCancellationRequestsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgreementCharges operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgreementChargesPaginator ListAgreementCharges(ListAgreementChargesRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgreementInvoiceLineItems operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgreementInvoiceLineItemsPaginator ListAgreementInvoiceLineItems(ListAgreementInvoiceLineItemsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgreementPaymentRequests operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgreementPaymentRequestsPaginator ListAgreementPaymentRequests(ListAgreementPaymentRequestsRequest request);
+
+        /// <summary>
+        /// Paginator for ListBillingAdjustmentRequests operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListBillingAdjustmentRequestsPaginator ListBillingAdjustmentRequests(ListBillingAdjustmentRequestsRequest request);
 
         /// <summary>
         /// Paginator for SearchAgreements operation

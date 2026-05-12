@@ -66,7 +66,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetStream())
             {
                 context.Writer.WritePropertyName("TargetString");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.TargetStream));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.TargetStream);
             }
 
             if(requestObject.IsSetTextTransformation())

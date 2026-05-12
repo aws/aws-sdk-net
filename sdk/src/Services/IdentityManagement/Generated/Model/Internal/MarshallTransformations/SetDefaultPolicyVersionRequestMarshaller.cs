@@ -68,6 +68,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VersionId", StringUtils.FromString(publicRequest.VersionId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SetDefaultPolicyVersionRequestMarshaller _instance = new SetDefaultPolicyVersionRequestMarshaller();        

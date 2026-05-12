@@ -100,6 +100,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TimeZone", StringUtils.FromString(publicRequest.TimeZone));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static PutScheduledUpdateGroupActionRequestMarshaller _instance = new PutScheduledUpdateGroupActionRequestMarshaller();        

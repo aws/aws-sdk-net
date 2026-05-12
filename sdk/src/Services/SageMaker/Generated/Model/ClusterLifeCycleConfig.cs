@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ClusterLifeCycleConfig
     {
         private string _onCreate;
+        private string _onInitComplete;
         private string _sourceS3Uri;
 
         /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.SageMaker.Model
         /// This entrypoint script runs during cluster creation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string OnCreate
         {
             get { return this._onCreate; }
@@ -55,6 +56,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOnCreate()
         {
             return this._onCreate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnInitComplete. 
+        /// <para>
+        /// The file name of the entrypoint script of lifecycle scripts under <c>SourceS3Uri</c>.
+        /// This script runs on the node after the AMI-based initialization is complete.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string OnInitComplete
+        {
+            get { return this._onInitComplete; }
+            set { this._onInitComplete = value; }
+        }
+
+        // Check to see if OnInitComplete property is set
+        internal bool IsSetOnInitComplete()
+        {
+            return this._onInitComplete != null;
         }
 
         /// <summary>
@@ -71,7 +92,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string SourceS3Uri
         {
             get { return this._sourceS3Uri; }

@@ -68,6 +68,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
             }
+
             return request;
         }
                     private static ListDomainsRequestMarshaller _instance = new ListDomainsRequestMarshaller();        

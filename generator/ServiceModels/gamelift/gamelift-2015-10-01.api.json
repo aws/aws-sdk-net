@@ -4,13 +4,17 @@
     "apiVersion":"2015-10-01",
     "endpointPrefix":"gamelift",
     "jsonVersion":"1.1",
-    "protocol":"json",
-    "protocols":["json"],
+    "protocol":"smithy-rpc-v2-cbor",
+    "protocols":[
+      "smithy-rpc-v2-cbor",
+      "json"
+    ],
     "serviceFullName":"Amazon GameLift",
     "serviceId":"GameLift",
     "signatureVersion":"v4",
     "targetPrefix":"GameLift",
     "uid":"gamelift-2015-10-01",
+    "xmlNamespace":"http://gamelift.amazonaws.com/doc/",
     "auth":["aws.auth#sigv4"]
   },
   "operations":{
@@ -683,6 +687,23 @@
         {"shape":"UnsupportedRegionException"}
       ]
     },
+    "DescribeContainerGroupPortMappings":{
+      "name":"DescribeContainerGroupPortMappings",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeContainerGroupPortMappingsInput"},
+      "output":{"shape":"DescribeContainerGroupPortMappingsOutput"},
+      "errors":[
+        {"shape":"InternalServiceException"},
+        {"shape":"NotFoundException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"UnsupportedRegionException"}
+      ]
+    },
     "DescribeEC2InstanceLimits":{
       "name":"DescribeEC2InstanceLimits",
       "http":{
@@ -1158,6 +1179,24 @@
         {"shape":"InvalidRequestException"},
         {"shape":"NotFoundException"},
         {"shape":"InternalServiceException"}
+      ]
+    },
+    "GetPlayerConnectionDetails":{
+      "name":"GetPlayerConnectionDetails",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetPlayerConnectionDetailsInput"},
+      "output":{"shape":"GetPlayerConnectionDetailsOutput"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"NotFoundException"},
+        {"shape":"InvalidGameSessionStatusException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"UnsupportedRegionException"}
       ]
     },
     "ListAliases":{
@@ -2000,7 +2039,7 @@
         "Name":{"shape":"FreeText"},
         "Version":{"shape":"FreeText"},
         "Status":{"shape":"BuildStatus"},
-        "SizeOnDisk":{"shape":"PositiveLong"},
+        "SizeOnDisk":{"shape":"WholeNumberLong"},
         "OperatingSystem":{"shape":"OperatingSystem"},
         "CreationTime":{"shape":"Timestamp"},
         "ServerSdkVersion":{"shape":"ServerSdkVersion"}
@@ -2242,7 +2281,8 @@
         "Status":{"shape":"ContainerFleetStatus"},
         "DeploymentDetails":{"shape":"DeploymentDetails"},
         "LogConfiguration":{"shape":"LogConfiguration"},
-        "LocationAttributes":{"shape":"ContainerFleetLocationAttributesList"}
+        "LocationAttributes":{"shape":"ContainerFleetLocationAttributesList"},
+        "PlayerGatewayMode":{"shape":"PlayerGatewayMode"}
       }
     },
     "ContainerFleetBillingType":{
@@ -2261,7 +2301,8 @@
       "type":"structure",
       "members":{
         "Location":{"shape":"LocationStringModel"},
-        "Status":{"shape":"ContainerFleetLocationStatus"}
+        "Status":{"shape":"ContainerFleetLocationStatus"},
+        "PlayerGatewayStatus":{"shape":"PlayerGatewayStatus"}
       }
     },
     "ContainerFleetLocationAttributesList":{
@@ -2350,6 +2391,18 @@
         "COPYING",
         "FAILED"
       ]
+    },
+    "ContainerGroupPortMapping":{
+      "type":"structure",
+      "members":{
+        "ContainerName":{"shape":"NonZeroAnd128MaxAsciiString"},
+        "ContainerRuntimeId":{"shape":"NonEmptyString"},
+        "ContainerPortMappings":{"shape":"ContainerPortMappingList"}
+      }
+    },
+    "ContainerGroupPortMappingList":{
+      "type":"list",
+      "member":{"shape":"ContainerGroupPortMapping"}
     },
     "ContainerGroupType":{
       "type":"string",
@@ -2446,6 +2499,18 @@
         "ContainerPortRanges":{"shape":"ContainerPortRangeList"}
       }
     },
+    "ContainerPortMapping":{
+      "type":"structure",
+      "members":{
+        "ContainerPort":{"shape":"PortNumber"},
+        "ConnectionPort":{"shape":"PortNumber"},
+        "Protocol":{"shape":"IpProtocol"}
+      }
+    },
+    "ContainerPortMappingList":{
+      "type":"list",
+      "member":{"shape":"ContainerPortMapping"}
+    },
     "ContainerPortRange":{
       "type":"structure",
       "required":[
@@ -2536,7 +2601,8 @@
         "NewGameSessionProtectionPolicy":{"shape":"ProtectionPolicy"},
         "GameSessionCreationLimitPolicy":{"shape":"GameSessionCreationLimitPolicy"},
         "LogConfiguration":{"shape":"LogConfiguration"},
-        "Tags":{"shape":"TagList"}
+        "Tags":{"shape":"TagList"},
+        "PlayerGatewayMode":{"shape":"PlayerGatewayMode"}
       }
     },
     "CreateContainerFleetOutput":{
@@ -2597,7 +2663,9 @@
         "Tags":{"shape":"TagList"},
         "ComputeType":{"shape":"ComputeType"},
         "AnywhereConfiguration":{"shape":"AnywhereConfiguration"},
-        "InstanceRoleCredentialsProvider":{"shape":"InstanceRoleCredentialsProvider"}
+        "InstanceRoleCredentialsProvider":{"shape":"InstanceRoleCredentialsProvider"},
+        "PlayerGatewayMode":{"shape":"PlayerGatewayMode"},
+        "PlayerGatewayConfiguration":{"shape":"PlayerGatewayConfiguration"}
       }
     },
     "CreateFleetLocationsInput":{
@@ -3178,6 +3246,32 @@
       "type":"structure",
       "members":{
         "ContainerGroupDefinition":{"shape":"ContainerGroupDefinition"}
+      }
+    },
+    "DescribeContainerGroupPortMappingsInput":{
+      "type":"structure",
+      "required":[
+        "FleetId",
+        "ContainerGroupType"
+      ],
+      "members":{
+        "FleetId":{"shape":"FleetIdOrArn"},
+        "ContainerGroupType":{"shape":"ContainerGroupType"},
+        "ComputeName":{"shape":"ComputeNameOrArn"},
+        "InstanceId":{"shape":"InstanceId"},
+        "ContainerName":{"shape":"NonZeroAnd128MaxAsciiString"}
+      }
+    },
+    "DescribeContainerGroupPortMappingsOutput":{
+      "type":"structure",
+      "members":{
+        "FleetId":{"shape":"FleetId"},
+        "Location":{"shape":"LocationStringModel"},
+        "ContainerGroupDefinitionArn":{"shape":"ContainerGroupDefinitionArn"},
+        "ContainerGroupType":{"shape":"ContainerGroupType"},
+        "ComputeName":{"shape":"ComputeName"},
+        "InstanceId":{"shape":"InstanceId"},
+        "ContainerGroupPortMappings":{"shape":"ContainerGroupPortMappingList"}
       }
     },
     "DescribeEC2InstanceLimitsInput":{
@@ -4300,7 +4394,9 @@
         "CertificateConfiguration":{"shape":"CertificateConfiguration"},
         "ComputeType":{"shape":"ComputeType"},
         "AnywhereConfiguration":{"shape":"AnywhereConfiguration"},
-        "InstanceRoleCredentialsProvider":{"shape":"InstanceRoleCredentialsProvider"}
+        "InstanceRoleCredentialsProvider":{"shape":"InstanceRoleCredentialsProvider"},
+        "PlayerGatewayMode":{"shape":"PlayerGatewayMode"},
+        "PlayerGatewayConfiguration":{"shape":"PlayerGatewayConfiguration"}
       }
     },
     "FleetAttributesList":{
@@ -4747,6 +4843,13 @@
       "type":"list",
       "member":{"shape":"GameServerInstance"}
     },
+    "GameServerIpProtocolSupported":{
+      "type":"string",
+      "enum":[
+        "IPv4",
+        "DUAL_STACK"
+      ]
+    },
     "GameServerProtectionPolicy":{
       "type":"string",
       "enum":[
@@ -4786,7 +4889,9 @@
         "CreatorId":{"shape":"NonZeroAndMaxString"},
         "GameSessionData":{"shape":"LargeGameSessionData"},
         "MatchmakerData":{"shape":"MatchmakerData"},
-        "Location":{"shape":"LocationStringModel"}
+        "Location":{"shape":"LocationStringModel"},
+        "ComputeName":{"shape":"ComputeName"},
+        "PlayerGatewayStatus":{"shape":"PlayerGatewayStatus"}
       }
     },
     "GameSessionActivationTimeoutSeconds":{
@@ -4801,7 +4906,8 @@
         "IpAddress":{"shape":"IpAddress"},
         "DnsName":{"shape":"DnsName"},
         "Port":{"shape":"PositiveInteger"},
-        "MatchedPlayerSessions":{"shape":"MatchedPlayerSessionList"}
+        "MatchedPlayerSessions":{"shape":"MatchedPlayerSessionList"},
+        "PlayerGatewayStatus":{"shape":"PlayerGatewayStatus"}
       }
     },
     "GameSessionCreationLimitPolicy":{
@@ -4859,7 +4965,8 @@
         "PlacedPlayerSessions":{"shape":"PlacedPlayerSessionList"},
         "GameSessionData":{"shape":"LargeGameSessionData"},
         "MatchmakerData":{"shape":"MatchmakerData"},
-        "PriorityConfigurationOverride":{"shape":"PriorityConfigurationOverride"}
+        "PriorityConfigurationOverride":{"shape":"PriorityConfigurationOverride"},
+        "PlayerGatewayStatus":{"shape":"PlayerGatewayStatus"}
       }
     },
     "GameSessionPlacementState":{
@@ -5013,6 +5120,24 @@
       "type":"structure",
       "members":{
         "InstanceAccess":{"shape":"InstanceAccess"}
+      }
+    },
+    "GetPlayerConnectionDetailsInput":{
+      "type":"structure",
+      "required":[
+        "GameSessionId",
+        "PlayerIds"
+      ],
+      "members":{
+        "GameSessionId":{"shape":"ArnStringModel"},
+        "PlayerIds":{"shape":"PlayerIdList"}
+      }
+    },
+    "GetPlayerConnectionDetailsOutput":{
+      "type":"structure",
+      "members":{
+        "GameSessionId":{"shape":"ArnStringModel"},
+        "PlayerConnectionDetails":{"shape":"PlayerConnectionDetailList"}
       }
     },
     "IamRoleArn":{
@@ -5531,7 +5656,8 @@
       "type":"structure",
       "members":{
         "Location":{"shape":"LocationStringModel"},
-        "Status":{"shape":"FleetStatus"}
+        "Status":{"shape":"FleetStatus"},
+        "PlayerGatewayStatus":{"shape":"PlayerGatewayStatus"}
       }
     },
     "LocationStateList":{
@@ -5731,6 +5857,11 @@
       "max":2147483647,
       "min":1
     },
+    "MaxString":{
+      "type":"string",
+      "max":1024,
+      "min":0
+    },
     "MaximumGameServerContainerGroupsPerInstance":{
       "type":"integer",
       "max":5000,
@@ -5771,7 +5902,7 @@
     "NodeJsVersion":{
       "type":"string",
       "max":16,
-      "pattern":"^\\d+\\.[x0-9]+$"
+      "pattern":"^[0-9]+\\.(?:x|[0-9]+)$"
     },
     "NonBlankAndLengthConstraintString":{
       "type":"string",
@@ -5893,6 +6024,31 @@
       "type":"list",
       "member":{"shape":"PlayerAttributeString"}
     },
+    "PlayerConnectionDetail":{
+      "type":"structure",
+      "members":{
+        "PlayerId":{"shape":"PlayerId"},
+        "Endpoints":{"shape":"PlayerConnectionEndpointList"},
+        "PlayerGatewayToken":{"shape":"MaxString"},
+        "Expiration":{"shape":"Timestamp"}
+      }
+    },
+    "PlayerConnectionDetailList":{
+      "type":"list",
+      "member":{"shape":"PlayerConnectionDetail"},
+      "min":1
+    },
+    "PlayerConnectionEndpoint":{
+      "type":"structure",
+      "members":{
+        "IpAddress":{"shape":"IpAddress"},
+        "Port":{"shape":"PortNumber"}
+      }
+    },
+    "PlayerConnectionEndpointList":{
+      "type":"list",
+      "member":{"shape":"PlayerConnectionEndpoint"}
+    },
     "PlayerData":{
       "type":"string",
       "max":2048,
@@ -5902,6 +6058,27 @@
       "type":"map",
       "key":{"shape":"NonZeroAndMaxString"},
       "value":{"shape":"PlayerData"}
+    },
+    "PlayerGatewayConfiguration":{
+      "type":"structure",
+      "members":{
+        "GameServerIpProtocolSupported":{"shape":"GameServerIpProtocolSupported"}
+      }
+    },
+    "PlayerGatewayMode":{
+      "type":"string",
+      "enum":[
+        "DISABLED",
+        "ENABLED",
+        "REQUIRED"
+      ]
+    },
+    "PlayerGatewayStatus":{
+      "type":"string",
+      "enum":[
+        "DISABLED",
+        "ENABLED"
+      ]
     },
     "PlayerId":{
       "type":"string",
@@ -6004,10 +6181,6 @@
     },
     "PositiveInteger":{
       "type":"integer",
-      "min":1
-    },
-    "PositiveLong":{
-      "type":"long",
       "min":1
     },
     "PriorityConfiguration":{
@@ -6280,7 +6453,7 @@
         "ScriptArn":{"shape":"ScriptArn"},
         "Name":{"shape":"NonZeroAndMaxString"},
         "Version":{"shape":"NonZeroAndMaxString"},
-        "SizeOnDisk":{"shape":"PositiveLong"},
+        "SizeOnDisk":{"shape":"WholeNumberLong"},
         "CreationTime":{"shape":"Timestamp"},
         "StorageLocation":{"shape":"S3Location"},
         "NodeJsVersion":{"shape":"NodeJsVersion"}
@@ -7035,6 +7208,10 @@
     },
     "WholeNumber":{
       "type":"integer",
+      "min":0
+    },
+    "WholeNumberLong":{
+      "type":"long",
       "min":0
     },
     "ZeroCapacityStrategy":{

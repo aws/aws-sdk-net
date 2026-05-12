@@ -80,6 +80,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PolicyName", StringUtils.FromString(publicRequest.PolicyName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ExecutePolicyRequestMarshaller _instance = new ExecutePolicyRequestMarshaller();        

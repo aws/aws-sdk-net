@@ -68,6 +68,8 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetDBInstanceIdentifier", StringUtils.FromString(publicRequest.TargetDBInstanceIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static FailoverDBClusterRequestMarshaller _instance = new FailoverDBClusterRequestMarshaller();        

@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ImageId", StringUtils.FromString(publicRequest.ImageId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static EnableImageRequestMarshaller _instance = new EnableImageRequestMarshaller();        

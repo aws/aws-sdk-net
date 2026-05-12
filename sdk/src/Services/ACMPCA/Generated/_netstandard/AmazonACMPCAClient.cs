@@ -39,6 +39,11 @@ namespace Amazon.ACMPCA
 {
     /// <summary>
     /// <para>Implementation for accessing ACMPCA</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This is the <i>Amazon Web Services Private Certificate Authority API Reference</i>.
     /// It provides descriptions, syntax, and usage examples for each of the actions and data

@@ -53,7 +53,7 @@ namespace Amazon.Imagebuilder.Model
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=36)]
+        [AWSProperty(Min=1, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }

@@ -41,9 +41,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PropagateTags. 
         /// <para>
-        /// Determines whether to propagate the tags from the task definition to &#x2028;the Amazon
-        /// EBS volume. Tags can only propagate to a <c>SERVICE</c> specified in &#x2028;<c>ServiceVolumeConfiguration</c>.
-        /// If no value is specified, the tags aren't &#x2028;propagated.
+        /// Determines whether to propagate the tags from the task definition to the Amazon EBS
+        /// volume. Tags can only propagate to a <c>SERVICE</c> specified in <c>ServiceVolumeConfiguration</c>.
+        /// If no value is specified, the tags aren't propagated.
         /// </para>
         /// </summary>
         public PropagateTags PropagateTags

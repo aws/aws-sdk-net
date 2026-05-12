@@ -38,6 +38,16 @@ namespace Amazon.SageMaker.Model
         ICreateHubContentPresignedUrlsPaginator CreateHubContentPresignedUrls(CreateHubContentPresignedUrlsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeTrainingPlanExtensionHistory operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeTrainingPlanExtensionHistoryPaginator DescribeTrainingPlanExtensionHistory(DescribeTrainingPlanExtensionHistoryRequest request);
+
+        /// <summary>
         /// Paginator for ListActions operation
         ///</summary>
         [AWSPaginator(
@@ -46,6 +56,36 @@ namespace Amazon.SageMaker.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListActionsPaginator ListActions(ListActionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAIBenchmarkJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAIBenchmarkJobsPaginator ListAIBenchmarkJobs(ListAIBenchmarkJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAIRecommendationJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAIRecommendationJobsPaginator ListAIRecommendationJobs(ListAIRecommendationJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAIWorkloadConfigs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAIWorkloadConfigsPaginator ListAIWorkloadConfigs(ListAIWorkloadConfigsRequest request);
 
         /// <summary>
         /// Paginator for ListAlgorithms operation

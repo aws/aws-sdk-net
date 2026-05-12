@@ -32,7 +32,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the ListConfigurationPolicyAssociations operation.
     /// Provides information about the associations for your configuration policies and self-managed
-    /// behavior. Only the Security Hub delegated administrator can invoke this operation
+    /// behavior. Only the Security Hub CSPM delegated administrator can invoke this operation
     /// from the home Region.
     /// </summary>
     public partial class ListConfigurationPolicyAssociationsRequest : AmazonSecurityHubRequest

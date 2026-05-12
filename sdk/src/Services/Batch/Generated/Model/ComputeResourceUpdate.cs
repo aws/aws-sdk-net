@@ -48,6 +48,7 @@ namespace Amazon.Batch.Model
         private int? _maxvCpus;
         private int? _minvCpus;
         private string _placementGroup;
+        private ComputeScalingPolicy _scalingPolicy;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -199,7 +200,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances
         /// in the compute environment. If <c>Ec2Configuration</c> isn't specified, the default
-        /// is <c>ECS_AL2</c>.
+        /// is <c>ECS_AL2023</c> for EC2 (ECS) compute environments and <c>EKS_AL2023</c> for
+        /// EKS compute environments.
         /// </para>
         ///  
         /// <para>
@@ -294,9 +296,9 @@ namespace Amazon.Batch.Model
         /// instance types that you intend to use for that compute environment. For example, if
         /// your compute environment uses A1 instance types, the compute resource AMI that you
         /// choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the
-        /// Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon
-        /// ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.
+        /// Amazon ECS-optimized Amazon Linux 2023 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon
+        /// ECS-optimized Amazon Linux 2023 AMI</a> in the <i>Amazon Elastic Container Service
+        /// Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -562,6 +564,30 @@ namespace Amazon.Batch.Model
         internal bool IsSetPlacementGroup()
         {
             return this._placementGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalingPolicy. 
+        /// <para>
+        /// The scaling policy configuration for the compute environment.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+        /// specify it.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ComputeScalingPolicy ScalingPolicy
+        {
+            get { return this._scalingPolicy; }
+            set { this._scalingPolicy = value; }
+        }
+
+        // Check to see if ScalingPolicy property is set
+        internal bool IsSetScalingPolicy()
+        {
+            return this._scalingPolicy != null;
         }
 
         /// <summary>

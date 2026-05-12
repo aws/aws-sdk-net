@@ -34,8 +34,47 @@ namespace Amazon.Invoicing.Model
     /// </summary>
     public partial class SupplementalDocument
     {
+        private string _documentId;
+        private SupplementalDocumentType _documentType;
         private string _documentUrl;
         private DateTime? _documentUrlExpirationDate;
+
+        /// <summary>
+        /// Gets and sets the property DocumentId. 
+        /// <para>
+        /// The ID of the supplemental document.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string DocumentId
+        {
+            get { return this._documentId; }
+            set { this._documentId = value; }
+        }
+
+        // Check to see if DocumentId property is set
+        internal bool IsSetDocumentId()
+        {
+            return this._documentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentType. 
+        /// <para>
+        /// The type of supplemental document.
+        /// </para>
+        /// </summary>
+        public SupplementalDocumentType DocumentType
+        {
+            get { return this._documentType; }
+            set { this._documentType = value; }
+        }
+
+        // Check to see if DocumentType property is set
+        internal bool IsSetDocumentType()
+        {
+            return this._documentType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DocumentUrl. 

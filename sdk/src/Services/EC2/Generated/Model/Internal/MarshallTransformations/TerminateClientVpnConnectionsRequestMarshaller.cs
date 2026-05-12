@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Username", StringUtils.FromString(publicRequest.Username));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static TerminateClientVpnConnectionsRequestMarshaller _instance = new TerminateClientVpnConnectionsRequestMarshaller();        

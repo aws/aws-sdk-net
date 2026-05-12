@@ -75,11 +75,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("HttpTokens", StringUtils.FromString(publicRequest.HttpTokens));
                 }
+                if(publicRequest.IsSetHttpTokensEnforced())
+                {
+                    request.Parameters.Add("HttpTokensEnforced", StringUtils.FromString(publicRequest.HttpTokensEnforced));
+                }
                 if(publicRequest.IsSetInstanceMetadataTags())
                 {
                     request.Parameters.Add("InstanceMetadataTags", StringUtils.FromString(publicRequest.InstanceMetadataTags));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyInstanceMetadataDefaultsRequestMarshaller _instance = new ModifyInstanceMetadataDefaultsRequestMarshaller();        

@@ -76,6 +76,17 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.TargetIdleCapacity.Value);
             }
 
+            if(requestObject.IsSetVpcTransitConfiguration())
+            {
+                context.Writer.WritePropertyName("VpcTransitConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VpcTransitConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcTransitConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

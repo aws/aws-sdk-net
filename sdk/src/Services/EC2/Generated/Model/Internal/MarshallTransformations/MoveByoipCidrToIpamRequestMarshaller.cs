@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("IpamPoolOwner", StringUtils.FromString(publicRequest.IpamPoolOwner));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static MoveByoipCidrToIpamRequestMarshaller _instance = new MoveByoipCidrToIpamRequestMarshaller();        

@@ -43,6 +43,7 @@ namespace Amazon.MediaLive.Model
         private List<OutputDestination> _destinations = AWSConfigs.InitializeCollections ? new List<OutputDestination>() : null;
         private bool? _dryRun;
         private EncoderSettings _encoderSettings;
+        private InferenceSettings _inferenceSettings;
         private List<InputAttachment> _inputAttachments = AWSConfigs.InitializeCollections ? new List<InputAttachment>() : null;
         private InputSpecification _inputSpecification;
         private LinkedChannelSettings _linkedChannelSettings;
@@ -188,6 +189,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetEncoderSettings()
         {
             return this._encoderSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceSettings. Include this setting to include Elemental
+        /// Inference features in this channel.
+        /// </summary>
+        public InferenceSettings InferenceSettings
+        {
+            get { return this._inferenceSettings; }
+            set { this._inferenceSettings = value; }
+        }
+
+        // Check to see if InferenceSettings property is set
+        internal bool IsSetInferenceSettings()
+        {
+            return this._inferenceSettings != null;
         }
 
         /// <summary>

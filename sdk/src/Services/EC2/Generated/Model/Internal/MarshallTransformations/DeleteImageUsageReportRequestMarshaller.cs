@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ReportId", StringUtils.FromString(publicRequest.ReportId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteImageUsageReportRequestMarshaller _instance = new DeleteImageUsageReportRequestMarshaller();        

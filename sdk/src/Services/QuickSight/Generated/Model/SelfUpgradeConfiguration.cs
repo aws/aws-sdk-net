@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The self-upgrade configuration for the Quick Suite account.
+    /// The self-upgrade configuration for the Quick account.
     /// </summary>
     public partial class SelfUpgradeConfiguration
     {
@@ -39,8 +39,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SelfUpgradeStatus. 
         /// <para>
-        /// Status set for the self-upgrade configuration for the Quick Suite account. It can
-        /// contain the following values:
+        /// Status set for the self-upgrade configuration for the Quick account. It can contain
+        /// the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

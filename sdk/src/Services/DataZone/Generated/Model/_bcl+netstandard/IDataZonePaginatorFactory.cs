@@ -238,6 +238,16 @@ namespace Amazon.DataZone.Model
         IListMetadataGenerationRunsPaginator ListMetadataGenerationRuns(ListMetadataGenerationRunsRequest request);
 
         /// <summary>
+        /// Paginator for ListNotebookRuns operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNotebookRunsPaginator ListNotebookRuns(ListNotebookRunsRequest request);
+
+        /// <summary>
         /// Paginator for ListNotifications operation
         ///</summary>
         [AWSPaginator(
@@ -346,6 +356,16 @@ namespace Amazon.DataZone.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListTimeSeriesDataPointsPaginator ListTimeSeriesDataPoints(ListTimeSeriesDataPointsRequest request);
+
+        /// <summary>
+        /// Paginator for QueryGraph operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IQueryGraphPaginator QueryGraph(QueryGraphRequest request);
 
         /// <summary>
         /// Paginator for Search operation

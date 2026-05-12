@@ -91,6 +91,10 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
+        /// The maximum value you can specify is 36,500 days (approximately 100 years).
+        /// </para>
+        ///  
+        /// <para>
         /// Before the lock date, you can delete Vault Lock from the vault using <c>DeleteBackupVaultLockConfiguration</c>
         /// or change the Vault Lock configuration using <c>PutBackupVaultLockConfiguration</c>.
         /// On and after the lock date, the Vault Lock becomes immutable and cannot be changed

@@ -48,7 +48,7 @@ namespace Amazon.KeyspacesStreams.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         ///  The maximum number of shard objects to return in a single <c>GetStream</c> request.
-        /// Default value is 100. The minimum value is 1 and the maximum value is 100. 
+        /// The default value is 100. The minimum value is 1 and the maximum value is 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -69,7 +69,7 @@ namespace Amazon.KeyspacesStreams.Model
         /// <para>
         ///  An optional pagination token provided by a previous <c>GetStream</c> operation. If
         /// this parameter is specified, the response includes only records beyond the token,
-        /// up to the value specified by <c>maxResults</c>. 
+        /// up to the value specified by <c>MaxResults</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=80, Max=3000)]
@@ -89,8 +89,8 @@ namespace Amazon.KeyspacesStreams.Model
         /// Gets and sets the property ShardFilter. 
         /// <para>
         ///  Optional filter criteria to apply when retrieving shards. You can filter shards based
-        /// on their state or other attributes to narrow down the results returned by the <c>GetStream</c>
-        /// operation. 
+        /// on their parent <c>shardID</c> to get a list of children shards to narrow down the
+        /// results returned by the <c>GetStream</c> operation. 
         /// </para>
         /// </summary>
         public ShardFilter ShardFilter

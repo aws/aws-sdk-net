@@ -40,6 +40,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _segmentDefinitionArn;
         private string _segmentDefinitionName;
         private SegmentGroup _segmentGroups;
+        private SegmentSort _segmentSort;
         private string _segmentSqlQuery;
         private SegmentType _segmentType;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -155,6 +156,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetSegmentGroups()
         {
             return this._segmentGroups != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentSort. 
+        /// <para>
+        /// The segment sort.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public SegmentSort SegmentSort
+        {
+            get { return this._segmentSort; }
+            set { this._segmentSort = value; }
+        }
+
+        // Check to see if SegmentSort property is set
+        internal bool IsSetSegmentSort()
+        {
+            return this._segmentSort != null;
         }
 
         /// <summary>

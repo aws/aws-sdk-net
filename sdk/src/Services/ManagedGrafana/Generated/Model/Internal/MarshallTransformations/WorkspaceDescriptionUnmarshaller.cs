@@ -122,6 +122,12 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("kmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("licenseExpiration", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

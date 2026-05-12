@@ -667,7 +667,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainRequest.DomainExecutionRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainRequest.KmsKeyIdentifier</property>
@@ -677,11 +677,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainRequest.ServiceRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainResponse.DomainExecutionRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainResponse.Id</property>
@@ -701,7 +701,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainResponse.ServiceRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateDomainUnitRequest.ClientToken</property>
@@ -762,6 +762,12 @@
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateEnvironmentRequest.EnvironmentConfigurationName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w -]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.CreateEnvironmentRequest.EnvironmentProfileIdentifier</property>
     <pattern>[a-zA-Z0-9_-]{0,36}</pattern>
   </property-value-rule>
@@ -793,6 +799,12 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateEnvironmentResponse.EnvironmentConfigurationId</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateEnvironmentResponse.EnvironmentConfigurationName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateEnvironmentResponse.EnvironmentProfileId</property>
@@ -1153,6 +1165,10 @@
     <pattern>[\w -]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateProjectRequest.ProjectExecutionRole</property>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.CreateProjectRequest.ProjectProfileId</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
@@ -1393,6 +1409,11 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateUserProfileRequest.DomainIdentifier</property>
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateUserProfileRequest.SessionName</property>
+    <min>2</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateUserProfileRequest.UserIdentifier</property>
@@ -2033,7 +2054,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetDomainResponse.DomainExecutionRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetDomainResponse.Id</property>
@@ -2053,7 +2074,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetDomainResponse.ServiceRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetDomainUnitRequest.DomainIdentifier</property>
@@ -2124,6 +2145,12 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetEnvironmentResponse.EnvironmentConfigurationId</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetEnvironmentResponse.EnvironmentConfigurationName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetEnvironmentResponse.EnvironmentProfileId</property>
@@ -2208,11 +2235,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetEnvironmentBlueprintConfigurationResponse.ManageAccessRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetEnvironmentBlueprintConfigurationResponse.ProvisioningRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetEnvironmentCredentialsRequest.DomainIdentifier</property>
@@ -2515,6 +2542,34 @@
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.GetNotebookRunRequest.DomainIdentifier</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetNotebookRunRequest.Identifier</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetNotebookRunResponse.DomainId</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetNotebookRunResponse.Id</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetNotebookRunResponse.NotebookId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetNotebookRunResponse.OwningProjectId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetNotebookRunResponse.ScheduleId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.GetProjectRequest.DomainIdentifier</property>
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
@@ -2770,6 +2825,11 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetUserProfileRequest.DomainIdentifier</property>
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetUserProfileRequest.SessionName</property>
+    <min>2</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetUserProfileRequest.UserIdentifier</property>
@@ -3303,6 +3363,37 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.ListNotebookRunsRequest.DomainIdentifier</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListNotebookRunsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListNotebookRunsRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListNotebookRunsRequest.NotebookIdentifier</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListNotebookRunsRequest.OwningProjectIdentifier</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListNotebookRunsRequest.ScheduleIdentifier</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListNotebookRunsResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.ListNotificationsRequest.DomainIdentifier</property>
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
@@ -3699,11 +3790,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.PutEnvironmentBlueprintConfigurationRequest.ManageAccessRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.PutEnvironmentBlueprintConfigurationRequest.ProvisioningRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.PutEnvironmentBlueprintConfigurationResponse.DomainId</property>
@@ -3719,11 +3810,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.PutEnvironmentBlueprintConfigurationResponse.ManageAccessRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.PutEnvironmentBlueprintConfigurationResponse.ProvisioningRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.QueryGraphRequest.DomainIdentifier</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.QueryGraphRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.QueryGraphRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.QueryGraphResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.RejectPredictionsRequest.ClientToken</property>
@@ -4011,6 +4121,74 @@
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookRunRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookRunRequest.DomainIdentifier</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookRunRequest.NotebookIdentifier</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookRunRequest.OwningProjectIdentifier</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookRunRequest.ScheduleIdentifier</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookRunResponse.DomainId</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookRunResponse.Id</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookRunResponse.NotebookId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookRunResponse.OwningProjectId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookRunResponse.ScheduleId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StopNotebookRunRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StopNotebookRunRequest.DomainIdentifier</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StopNotebookRunRequest.Identifier</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StopNotebookRunResponse.DomainId</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StopNotebookRunResponse.Id</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StopNotebookRunResponse.OwningProjectId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateAccountPoolRequest.Description</property>
     <min>0</min>
     <max>2048</max>
@@ -4192,7 +4370,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainRequest.DomainExecutionRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainRequest.Identifier</property>
@@ -4200,11 +4378,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainRequest.ServiceRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainResponse.DomainExecutionRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainResponse.Id</property>
@@ -4218,7 +4396,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainResponse.ServiceRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateDomainUnitRequest.Description</property>
@@ -4273,6 +4451,12 @@
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateEnvironmentRequest.EnvironmentConfigurationName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w -]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateEnvironmentRequest.Identifier</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
@@ -4300,6 +4484,12 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateEnvironmentResponse.EnvironmentConfigurationId</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateEnvironmentResponse.EnvironmentConfigurationName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateEnvironmentResponse.EnvironmentProfileId</property>
@@ -4826,6 +5016,11 @@
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateUserProfileRequest.SessionName</property>
+    <min>2</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateUserProfileRequest.UserIdentifier</property>
     <pattern>.*(^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$|^[a-zA-Z_0-9+=,.@-]+$|^arn:aws:iam::\d{12}:.+$).*</pattern>
   </property-value-rule>
@@ -5207,6 +5402,15 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.ComputeConfig.InstanceType</property>
+    <pattern>(ml|sc)\.[a-z][0-9]+[a-z]*\.[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.Configuration.Classification</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.ConnectionSummary.ConnectionId</property>
     <min>0</min>
     <max>128</max>
@@ -5448,6 +5652,11 @@
     <pattern>[a-z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.EntityPattern.Identifier</property>
+    <min>1</min>
+    <max>2086</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentActionSummary.DomainId</property>
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
@@ -5473,11 +5682,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentBlueprintConfigurationItem.ManageAccessRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentBlueprintConfigurationItem.ProvisioningRoleArn</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentBlueprintSummary.Description</property>
@@ -5604,6 +5813,12 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentSummary.EnvironmentConfigurationId</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.EnvironmentSummary.EnvironmentConfigurationName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w -]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentSummary.EnvironmentProfileId</property>
@@ -5900,7 +6115,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.LakeFormationConfiguration.LocationRegistrationRole</property>
-    <pattern>arn:aws[^:]*:iam::\d{12}:(role|role/service-role)/[\w+=,.@-]*</pattern>
+    <pattern>arn:aws[^:]*:iam::\d{12}:role(/[a-zA-Z0-9+=,.@_-]+)*/[a-zA-Z0-9+=,.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.LineageEventSummary.DomainId</property>
@@ -5909,6 +6124,19 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.LineageEventSummary.Id</property>
     <pattern>[a-z0-9]{14}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageNodeItem.DomainId</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageNodeItem.Id</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.LineageNodeItem.TypeRevision</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.LineageNodeReference.Id</property>
@@ -6032,6 +6260,31 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.NotebookRunError.Message</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.NotebookRunSummary.DomainId</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.NotebookRunSummary.Id</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.NotebookRunSummary.NotebookId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.NotebookRunSummary.OwningProjectId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.NotebookRunSummary.ScheduleId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.NotificationOutput.DomainIdentifier</property>
     <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
@@ -6074,6 +6327,11 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.OwnerUserProperties.UserIdentifier</property>
     <pattern>.*(^([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$|^[a-zA-Z_0-9+=,.@-]+$|^arn:aws:iam::\d{12}:.+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.PackageConfig.PackageSpecification</property>
+    <min>0</min>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.PhysicalConnectionRequirements.AvailabilityZone</property>
@@ -6236,6 +6494,11 @@
     <property>Amazon.DataZone.Model.RelationalFilterConfiguration.SchemaName</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.RelationPattern.MaxPathLength</property>
+    <min>1</min>
+    <max>5</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.ResourceTag.Key</property>
@@ -6471,6 +6734,18 @@
     <pattern>[a-zA-Z_0-9+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.StorageConfig.KmsKeyArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StorageConfig.ProjectS3Path</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>s3://.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.SubscribedAsset.AssetId</property>
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
@@ -6667,6 +6942,11 @@
     <property>Amazon.DataZone.Model.TextMatchItem.Attribute</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.TimeoutConfig.RunTimeoutInMinutes</property>
+    <min>60</min>
+    <max>1440</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.TimeSeriesDataPointFormInput.Content</property>

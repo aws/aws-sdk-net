@@ -39,6 +39,11 @@ namespace Amazon.CloudWatch
 {
     /// <summary>
     /// <para>Implementation for accessing CloudWatch</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services) resources
     /// and the applications you run on Amazon Web Services in real time. You can use CloudWatch
@@ -277,6 +282,89 @@ namespace Amazon.CloudWatch
         #endregion
 
 
+        #region  DeleteAlarmMuteRule
+
+
+        /// <summary>
+        /// Deletes a specific alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a mute rule, any alarms that are currently being muted by that rule
+        /// are immediately unmuted. If those alarms are in an ALARM state, their configured actions
+        /// will trigger.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent. If you delete a mute rule that does not exist, the operation
+        /// succeeds without returning an error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a mute rule, you need the <c>cloudwatch:DeleteAlarmMuteRule</c> permission
+        /// on the alarm mute rule resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarmMuteRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarmMuteRule">REST API Reference for DeleteAlarmMuteRule Operation</seealso>
+        public virtual DeleteAlarmMuteRuleResponse DeleteAlarmMuteRule(DeleteAlarmMuteRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlarmMuteRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAlarmMuteRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a specific alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a mute rule, any alarms that are currently being muted by that rule
+        /// are immediately unmuted. If those alarms are in an ALARM state, their configured actions
+        /// will trigger.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent. If you delete a mute rule that does not exist, the operation
+        /// succeeds without returning an error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a mute rule, you need the <c>cloudwatch:DeleteAlarmMuteRule</c> permission
+        /// on the alarm mute rule resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarmMuteRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarmMuteRule">REST API Reference for DeleteAlarmMuteRule Operation</seealso>
+        public virtual Task<DeleteAlarmMuteRuleResponse> DeleteAlarmMuteRuleAsync(DeleteAlarmMuteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlarmMuteRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAlarmMuteRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAlarms
 
 
@@ -468,16 +556,14 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete.
-        /// If there is an error during this call, no dashboards are deleted.
+        /// If there is an error during this call, the operation attempts to delete as many dashboards
+        /// as possible.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDashboards service method.</param>
         /// 
         /// <returns>The response from the DeleteDashboards service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
         /// This operation attempted to create a resource that already exists.
-        /// </exception>
-        /// <exception cref="Amazon.CloudWatch.Model.DashboardNotFoundErrorException">
-        /// The specified dashboard does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Request processing has failed due to some unknown error, exception, or failure.
@@ -498,7 +584,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete.
-        /// If there is an error during this call, no dashboards are deleted.
+        /// If there is an error during this call, the operation attempts to delete as many dashboards
+        /// as possible.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDashboards service method.</param>
         /// <param name="cancellationToken">
@@ -508,9 +595,6 @@ namespace Amazon.CloudWatch
         /// <returns>The response from the DeleteDashboards service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
         /// This operation attempted to create a resource that already exists.
-        /// </exception>
-        /// <exception cref="Amazon.CloudWatch.Model.DashboardNotFoundErrorException">
-        /// The specified dashboard does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
         /// Request processing has failed due to some unknown error, exception, or failure.
@@ -1352,6 +1436,117 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetAlarmMuteRule
+
+
+        /// <summary>
+        /// Retrieves details for a specific alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns complete information about the mute rule, including its configuration,
+        /// status, targeted alarms, and metadata.
+        /// </para>
+        ///  
+        /// <para>
+        /// The returned status indicates the current state of the mute rule:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>SCHEDULED</b>: The mute rule is configured and will become active in the future
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ACTIVE</b>: The mute rule is currently muting alarm actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>EXPIRED</b>: The mute rule has passed its expiration date and will no longer become
+        /// active
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve details for a mute rule, you need the <c>cloudwatch:GetAlarmMuteRule</c>
+        /// permission on the alarm mute rule resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAlarmMuteRule service method.</param>
+        /// 
+        /// <returns>The response from the GetAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetAlarmMuteRule">REST API Reference for GetAlarmMuteRule Operation</seealso>
+        public virtual GetAlarmMuteRuleResponse GetAlarmMuteRule(GetAlarmMuteRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAlarmMuteRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetAlarmMuteRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves details for a specific alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns complete information about the mute rule, including its configuration,
+        /// status, targeted alarms, and metadata.
+        /// </para>
+        ///  
+        /// <para>
+        /// The returned status indicates the current state of the mute rule:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>SCHEDULED</b>: The mute rule is configured and will become active in the future
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ACTIVE</b>: The mute rule is currently muting alarm actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>EXPIRED</b>: The mute rule has passed its expiration date and will no longer become
+        /// active
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve details for a mute rule, you need the <c>cloudwatch:GetAlarmMuteRule</c>
+        /// permission on the alarm mute rule resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAlarmMuteRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetAlarmMuteRule">REST API Reference for GetAlarmMuteRule Operation</seealso>
+        public virtual Task<GetAlarmMuteRuleResponse> GetAlarmMuteRuleAsync(GetAlarmMuteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAlarmMuteRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAlarmMuteRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDashboard
 
 
@@ -2174,6 +2369,144 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetOTelEnrichment
+
+
+        /// <summary>
+        /// Returns the current status of vended metric enrichment for the account, including
+        /// whether CloudWatch vended metrics are enriched with resource ARN and resource tag
+        /// labels and queryable using PromQL. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">Supported
+        /// Amazon Web Services infrastructure metrics</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOTelEnrichment service method.</param>
+        /// 
+        /// <returns>The response from the GetOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetOTelEnrichment">REST API Reference for GetOTelEnrichment Operation</seealso>
+        public virtual GetOTelEnrichmentResponse GetOTelEnrichment(GetOTelEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<GetOTelEnrichmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the current status of vended metric enrichment for the account, including
+        /// whether CloudWatch vended metrics are enriched with resource ARN and resource tag
+        /// labels and queryable using PromQL. For the list of supported resources, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">Supported
+        /// Amazon Web Services infrastructure metrics</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOTelEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetOTelEnrichment">REST API Reference for GetOTelEnrichment Operation</seealso>
+        public virtual Task<GetOTelEnrichmentResponse> GetOTelEnrichmentAsync(GetOTelEnrichmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetOTelEnrichmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetOTelEnrichmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAlarmMuteRules
+
+
+        /// <summary>
+        /// Lists alarm mute rules in your Amazon Web Services account and region.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by alarm name to find all mute rules targeting a specific
+        /// alarm, or by status to find rules that are scheduled, active, or expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination for accounts with many mute rules. Use the <c>MaxRecords</c>
+        /// and <c>NextToken</c> parameters to retrieve results in multiple calls.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list mute rules, you need the <c>cloudwatch:ListAlarmMuteRules</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmMuteRules service method.</param>
+        /// 
+        /// <returns>The response from the ListAlarmMuteRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListAlarmMuteRules">REST API Reference for ListAlarmMuteRules Operation</seealso>
+        public virtual ListAlarmMuteRulesResponse ListAlarmMuteRules(ListAlarmMuteRulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAlarmMuteRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlarmMuteRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAlarmMuteRulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists alarm mute rules in your Amazon Web Services account and region.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by alarm name to find all mute rules targeting a specific
+        /// alarm, or by status to find rules that are scheduled, active, or expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination for accounts with many mute rules. Use the <c>MaxRecords</c>
+        /// and <c>NextToken</c> parameters to retrieve results in multiple calls.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list mute rules, you need the <c>cloudwatch:ListAlarmMuteRules</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmMuteRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAlarmMuteRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListAlarmMuteRules">REST API Reference for ListAlarmMuteRules Operation</seealso>
+        public virtual Task<ListAlarmMuteRulesResponse> ListAlarmMuteRulesAsync(ListAlarmMuteRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAlarmMuteRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlarmMuteRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAlarmMuteRulesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDashboards
 
 
@@ -2574,8 +2907,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Displays the tags associated with a CloudWatch resource. Currently, alarms and Contributor
-        /// Insights rules support tagging.
+        /// Displays the tags associated with a CloudWatch resource. Currently, alarms, dashboards,
+        /// metric streams and Contributor Insights rules support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -2601,8 +2934,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Displays the tags associated with a CloudWatch resource. Currently, alarms and Contributor
-        /// Insights rules support tagging.
+        /// Displays the tags associated with a CloudWatch resource. Currently, alarms, dashboards,
+        /// metric streams and Contributor Insights rules support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2627,6 +2960,143 @@ namespace Amazon.CloudWatch
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAlarmMuteRule
+
+
+        /// <summary>
+        /// Creates or updates an alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// Alarm mute rules automatically mute alarm actions during predefined time windows.
+        /// When a mute rule is active, targeted alarms continue to evaluate metrics and transition
+        /// between states, but their configured actions (such as Amazon SNS notifications or
+        /// Auto Scaling actions) are muted.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create mute rules with recurring schedules using <c>cron</c> expressions or
+        /// one-time mute windows using <c>at</c> expressions. Each mute rule can target up to
+        /// 100 specific alarms by name.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a rule name that already exists, this operation updates the existing
+        /// rule with the new configuration.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create or update a mute rule, you must have the <c>cloudwatch:PutAlarmMuteRule</c>
+        /// permission on two types of resources: the alarm mute rule resource itself, and each
+        /// alarm that the rule targets.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, If you want to allow a user to create mute rules that target only specific
+        /// alarms named "WebServerCPUAlarm" and "DatabaseConnectionAlarm", you would create an
+        /// IAM policy with one statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the alarm
+        /// mute rule resource (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute-rule:*</c>),
+        /// and another statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the targeted
+        /// alarm resources (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:WebServerCPUAlarm</c>
+        /// and <c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:DatabaseConnectionAlarm</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use IAM policy conditions to allow targeting alarms based on resource
+        /// tags. For example, you can restrict users to create/update mute rules to only target
+        /// alarms that have a specific tag key-value pair, such as <c>Team=TeamA</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAlarmMuteRule service method.</param>
+        /// 
+        /// <returns>The response from the PutAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The quota for alarms for this customer has already been reached.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAlarmMuteRule">REST API Reference for PutAlarmMuteRule Operation</seealso>
+        public virtual PutAlarmMuteRuleResponse PutAlarmMuteRule(PutAlarmMuteRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAlarmMuteRuleResponseUnmarshaller.Instance;
+
+            return Invoke<PutAlarmMuteRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates or updates an alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// Alarm mute rules automatically mute alarm actions during predefined time windows.
+        /// When a mute rule is active, targeted alarms continue to evaluate metrics and transition
+        /// between states, but their configured actions (such as Amazon SNS notifications or
+        /// Auto Scaling actions) are muted.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create mute rules with recurring schedules using <c>cron</c> expressions or
+        /// one-time mute windows using <c>at</c> expressions. Each mute rule can target up to
+        /// 100 specific alarms by name.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a rule name that already exists, this operation updates the existing
+        /// rule with the new configuration.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create or update a mute rule, you must have the <c>cloudwatch:PutAlarmMuteRule</c>
+        /// permission on two types of resources: the alarm mute rule resource itself, and each
+        /// alarm that the rule targets.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, If you want to allow a user to create mute rules that target only specific
+        /// alarms named "WebServerCPUAlarm" and "DatabaseConnectionAlarm", you would create an
+        /// IAM policy with one statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the alarm
+        /// mute rule resource (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute-rule:*</c>),
+        /// and another statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the targeted
+        /// alarm resources (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:WebServerCPUAlarm</c>
+        /// and <c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:DatabaseConnectionAlarm</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use IAM policy conditions to allow targeting alarms based on resource
+        /// tags. For example, you can restrict users to create/update mute rules to only target
+        /// alarms that have a specific tag key-value pair, such as <c>Team=TeamA</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAlarmMuteRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The quota for alarms for this customer has already been reached.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAlarmMuteRule">REST API Reference for PutAlarmMuteRule Operation</seealso>
+        public virtual Task<PutAlarmMuteRuleResponse> PutAlarmMuteRuleAsync(PutAlarmMuteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAlarmMuteRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAlarmMuteRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3193,8 +3663,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Creates or updates an alarm and associates it with the specified metric, metric math
-        /// expression, anomaly detection model, or Metrics Insights query. For more information
-        /// about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+        /// expression, anomaly detection model, Metrics Insights query, or PromQL query. For
+        /// more information about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
         /// alarms on Metrics Insights queries</a>.
         /// 
         ///  
@@ -3204,8 +3674,9 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// When this operation creates an alarm, the alarm state is immediately set to <c>INSUFFICIENT_DATA</c>.
-        /// The alarm is then evaluated and its state is set appropriately. Any actions associated
-        /// with the new state are then executed.
+        /// For PromQL alarms, the alarm state is instead immediately set to <c>OK</c>. The alarm
+        /// is then evaluated and its state is set appropriately. Any actions associated with
+        /// the new state are then executed.
         /// </para>
         ///  
         /// <para>
@@ -3287,8 +3758,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Creates or updates an alarm and associates it with the specified metric, metric math
-        /// expression, anomaly detection model, or Metrics Insights query. For more information
-        /// about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+        /// expression, anomaly detection model, Metrics Insights query, or PromQL query. For
+        /// more information about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
         /// alarms on Metrics Insights queries</a>.
         /// 
         ///  
@@ -3298,8 +3769,9 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// When this operation creates an alarm, the alarm state is immediately set to <c>INSUFFICIENT_DATA</c>.
-        /// The alarm is then evaluated and its state is set appropriately. Any actions associated
-        /// with the new state are then executed.
+        /// For PromQL alarms, the alarm state is instead immediately set to <c>OK</c>. The alarm
+        /// is then evaluated and its state is set appropriately. Any actions associated with
+        /// the new state are then executed.
         /// </para>
         ///  
         /// <para>
@@ -3929,6 +4401,69 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  StartOTelEnrichment
+
+
+        /// <summary>
+        /// Enables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
+        /// Amazon Web Services resources</a> in the account. Once enabled, metrics that contain
+        /// a resource identifier dimension (for example, EC2 <c>CPUUtilization</c> with an <c>InstanceId</c>
+        /// dimension) are enriched with resource ARN and resource tag labels and become queryable
+        /// using PromQL.
+        /// 
+        ///  
+        /// <para>
+        /// Before calling this operation, you must enable resource tags on telemetry for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
+        /// resource tags on telemetry</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOTelEnrichment service method.</param>
+        /// 
+        /// <returns>The response from the StartOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartOTelEnrichment">REST API Reference for StartOTelEnrichment Operation</seealso>
+        public virtual StartOTelEnrichmentResponse StartOTelEnrichment(StartOTelEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<StartOTelEnrichmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Enables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
+        /// Amazon Web Services resources</a> in the account. Once enabled, metrics that contain
+        /// a resource identifier dimension (for example, EC2 <c>CPUUtilization</c> with an <c>InstanceId</c>
+        /// dimension) are enriched with resource ARN and resource tag labels and become queryable
+        /// using PromQL.
+        /// 
+        ///  
+        /// <para>
+        /// Before calling this operation, you must enable resource tags on telemetry for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
+        /// resource tags on telemetry</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOTelEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartOTelEnrichment">REST API Reference for StartOTelEnrichment Operation</seealso>
+        public virtual Task<StartOTelEnrichmentResponse> StartOTelEnrichmentAsync(StartOTelEnrichmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOTelEnrichmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartOTelEnrichmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopMetricStreams
 
 
@@ -3988,13 +4523,60 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  StopOTelEnrichment
+
+
+        /// <summary>
+        /// Disables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
+        /// Amazon Web Services resources</a> in the account. After disabling, these metrics are
+        /// no longer enriched with resource ARN and resource tag labels, and cannot be queried
+        /// using PromQL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopOTelEnrichment service method.</param>
+        /// 
+        /// <returns>The response from the StopOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopOTelEnrichment">REST API Reference for StopOTelEnrichment Operation</seealso>
+        public virtual StopOTelEnrichmentResponse StopOTelEnrichment(StopOTelEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<StopOTelEnrichmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
+        /// Amazon Web Services resources</a> in the account. After disabling, these metrics are
+        /// no longer enriched with resource ARN and resource tag labels, and cannot be queried
+        /// using PromQL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopOTelEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopOTelEnrichment">REST API Reference for StopOTelEnrichment Operation</seealso>
+        public virtual Task<StopOTelEnrichmentResponse> StopOTelEnrichmentAsync(StopOTelEnrichmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopOTelEnrichmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopOTelEnrichmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
 
         /// <summary>
         /// Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently,
-        /// the only CloudWatch resources that can be tagged are alarms and Contributor Insights
-        /// rules.
+        /// the only CloudWatch resources that can be tagged are alarms, dashboards, metric streams
+        /// and Contributor Insights rules.
         /// 
         ///  
         /// <para>
@@ -4051,8 +4633,8 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// Assigns one or more tags (key-value pairs) to the specified CloudWatch resource. Currently,
-        /// the only CloudWatch resources that can be tagged are alarms and Contributor Insights
-        /// rules.
+        /// the only CloudWatch resources that can be tagged are alarms, dashboards, metric streams
+        /// and Contributor Insights rules.
         /// 
         ///  
         /// <para>
@@ -4115,7 +4697,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Removes one or more tags from the specified resource.
+        /// Removes one or more tags from the specified resource. Currently, alarms, dashboards,
+        /// metric streams and Contributor Insights rules support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -4147,7 +4730,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Removes one or more tags from the specified resource.
+        /// Removes one or more tags from the specified resource. Currently, alarms, dashboards,
+        /// metric streams and Contributor Insights rules support tagging.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

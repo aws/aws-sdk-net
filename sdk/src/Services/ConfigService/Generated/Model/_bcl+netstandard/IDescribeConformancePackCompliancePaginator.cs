@@ -30,5 +30,10 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeConformancePackComplianceResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the ConformancePackRuleComplianceList
+        /// </summary>
+        IPaginatedEnumerable<ConformancePackRuleCompliance> ConformancePackRuleComplianceList { get; }
     }
 }

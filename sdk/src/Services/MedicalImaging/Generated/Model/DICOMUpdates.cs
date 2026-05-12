@@ -43,7 +43,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM tags to be removed from <c>ImageSetMetadata</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=10000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=30000)]
         public MemoryStream RemovableAttributes
         {
             get { return this._removableAttributes; }
@@ -62,7 +62,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM tags that need to be updated in <c>ImageSetMetadata</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=10000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=30000)]
         public MemoryStream UpdatableAttributes
         {
             get { return this._updatableAttributes; }

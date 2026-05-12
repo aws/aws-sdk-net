@@ -140,7 +140,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using Valkey 7.2 and later, Redis OSS version <c>3.2.6</c>, or Redis OSS <c>4.x</c>
+        /// using Valkey <c>7.2</c> and later, Redis OSS version <c>3.2.6</c>, or Redis OSS <c>4.x</c>
         /// and later.
         /// </para>
         ///  

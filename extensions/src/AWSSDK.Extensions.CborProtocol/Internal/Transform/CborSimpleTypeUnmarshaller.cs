@@ -608,8 +608,7 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
             {
                 var pair = kvUnmarshaller.Unmarshall(context);
 
-                if (pair.Value != null)
-                    dictionary.Add(pair.Key, pair.Value);
+                dictionary.Add(pair.Key, pair.Value);
             }
 
             reader.ReadEndMap();

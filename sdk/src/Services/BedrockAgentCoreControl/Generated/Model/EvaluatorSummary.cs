@@ -40,6 +40,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _evaluatorId;
         private string _evaluatorName;
         private EvaluatorType _evaluatorType;
+        private string _kmsKeyArn;
         private EvaluatorLevel _level;
         private bool? _lockedForModification;
         private EvaluatorStatus _status;
@@ -158,6 +159,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetEvaluatorType()
         {
             return this._evaluatorType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt the
+        /// evaluator's sensitive data. This field is only present for evaluators encrypted with
+        /// a customer managed key. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

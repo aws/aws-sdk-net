@@ -39,6 +39,11 @@ namespace Amazon.QBusiness
 {
     /// <summary>
     /// <para>Implementation for accessing QBusiness</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This is the <i>Amazon Q Business</i> API Reference. Amazon Q Business is a fully managed,
     /// generative-AI powered enterprise chat assistant that you can deploy within your organization.

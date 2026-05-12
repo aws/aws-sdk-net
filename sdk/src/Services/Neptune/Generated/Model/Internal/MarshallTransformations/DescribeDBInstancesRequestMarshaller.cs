@@ -103,6 +103,8 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeDBInstancesRequestMarshaller _instance = new DescribeDBInstancesRequestMarshaller();        

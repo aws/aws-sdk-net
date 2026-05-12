@@ -78,7 +78,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetData())
             {
                 context.Writer.WritePropertyName("Data");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Data));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Data);
             }
 
             if(publicRequest.IsSetExplicitHashKey())

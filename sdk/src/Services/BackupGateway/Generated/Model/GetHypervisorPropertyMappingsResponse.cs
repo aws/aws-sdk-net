@@ -79,8 +79,7 @@ namespace Amazon.BackupGateway.Model
         /// <summary>
         /// Gets and sets the property VmwareToAwsTagMappings. 
         /// <para>
-        /// This is a display of the mappings of on-premises VMware tags to the Amazon Web Services
-        /// tags.
+        /// This is a display of the mappings of VMware tags to the Amazon Web Services tags.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

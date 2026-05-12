@@ -39,6 +39,11 @@ namespace Amazon.EC2
 {
     /// <summary>
     /// <para>Implementation for accessing EC2</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Elastic Compute Cloud 
     /// <para>
@@ -402,6 +407,51 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = AcceptReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
             
             return InvokeAsync<AcceptReservedInstancesExchangeQuoteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AcceptTransitGatewayClientVpnAttachment
+
+
+        /// <summary>
+        /// Accepts a Transit Gateway attachment request for a Client VPN endpoint. The Transit
+        /// Gateway owner must accept the attachment request before the Client VPN endpoint can
+        /// route traffic through the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayClientVpnAttachment service method.</param>
+        /// 
+        /// <returns>The response from the AcceptTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayClientVpnAttachment">REST API Reference for AcceptTransitGatewayClientVpnAttachment Operation</seealso>
+        public virtual AcceptTransitGatewayClientVpnAttachmentResponse AcceptTransitGatewayClientVpnAttachment(AcceptTransitGatewayClientVpnAttachmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AcceptTransitGatewayClientVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptTransitGatewayClientVpnAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptTransitGatewayClientVpnAttachmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Accepts a Transit Gateway attachment request for a Client VPN endpoint. The Transit
+        /// Gateway owner must accept the attachment request before the Client VPN endpoint can
+        /// route traffic through the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayClientVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayClientVpnAttachment">REST API Reference for AcceptTransitGatewayClientVpnAttachment Operation</seealso>
+        public virtual Task<AcceptTransitGatewayClientVpnAttachmentResponse> AcceptTransitGatewayClientVpnAttachmentAsync(AcceptTransitGatewayClientVpnAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AcceptTransitGatewayClientVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptTransitGatewayClientVpnAttachmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AcceptTransitGatewayClientVpnAttachmentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3202,8 +3252,9 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action is not applicable for Linux/Unix instances or Windows instances that are
-        /// backed by Amazon EBS.
+        /// This action is no longer supported. To create an AMI, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
+        /// Create an Amazon EBS-backed AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3231,8 +3282,9 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action is not applicable for Linux/Unix instances or Windows instances that are
-        /// backed by Amazon EBS.
+        /// This action is no longer supported. To create an AMI, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
+        /// Create an Amazon EBS-backed AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -14554,6 +14606,51 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteTransitGatewayClientVpnAttachment
+
+
+        /// <summary>
+        /// Deletes a Transit Gateway attachment for a Client VPN endpoint. The Transit Gateway
+        /// owner can delete the attachment to remove the association between the Client VPN endpoint
+        /// and the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayClientVpnAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayClientVpnAttachment">REST API Reference for DeleteTransitGatewayClientVpnAttachment Operation</seealso>
+        public virtual DeleteTransitGatewayClientVpnAttachmentResponse DeleteTransitGatewayClientVpnAttachment(DeleteTransitGatewayClientVpnAttachmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayClientVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayClientVpnAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayClientVpnAttachmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a Transit Gateway attachment for a Client VPN endpoint. The Transit Gateway
+        /// owner can delete the attachment to remove the association between the Client VPN endpoint
+        /// and the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayClientVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayClientVpnAttachment">REST API Reference for DeleteTransitGatewayClientVpnAttachment Operation</seealso>
+        public virtual Task<DeleteTransitGatewayClientVpnAttachmentResponse> DeleteTransitGatewayClientVpnAttachmentAsync(DeleteTransitGatewayClientVpnAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayClientVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayClientVpnAttachmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTransitGatewayClientVpnAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTransitGatewayConnect
 
 
@@ -21015,7 +21112,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified instance types. By default, all instance types for the current
-        /// Region are described. Alternatively, you can filter the results.
+        /// Region are described. Alternatively, you can filter the results. To include instance
+        /// types that are not supported in the current Region, set <c>IncludeUnsupportedInRegion</c>
+        /// to <c>true</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes service method.</param>
         /// 
@@ -21033,7 +21132,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified instance types. By default, all instance types for the current
-        /// Region are described. Alternatively, you can filter the results.
+        /// Region are described. Alternatively, you can filter the results. To include instance
+        /// types that are not supported in the current Region, set <c>IncludeUnsupportedInRegion</c>
+        /// to <c>true</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes service method.</param>
         /// <param name="cancellationToken">
@@ -33114,6 +33215,51 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetCapacityManagerMonitoredTagKeys
+
+
+        /// <summary>
+        /// Retrieves the tag keys that are currently being monitored by EC2 Capacity Manager.
+        /// Monitored tag keys are included as dimensions in capacity metric data, enabling you
+        /// to group and filter metrics by tag values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerMonitoredTagKeys service method.</param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerMonitoredTagKeys service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMonitoredTagKeys">REST API Reference for GetCapacityManagerMonitoredTagKeys Operation</seealso>
+        public virtual GetCapacityManagerMonitoredTagKeysResponse GetCapacityManagerMonitoredTagKeys(GetCapacityManagerMonitoredTagKeysRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerMonitoredTagKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerMonitoredTagKeysResponseUnmarshaller.Instance;
+
+            return Invoke<GetCapacityManagerMonitoredTagKeysResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the tag keys that are currently being monitored by EC2 Capacity Manager.
+        /// Monitored tag keys are included as dimensions in capacity metric data, enabling you
+        /// to group and filter metrics by tag values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityManagerMonitoredTagKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityManagerMonitoredTagKeys service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerMonitoredTagKeys">REST API Reference for GetCapacityManagerMonitoredTagKeys Operation</seealso>
+        public virtual Task<GetCapacityManagerMonitoredTagKeysResponse> GetCapacityManagerMonitoredTagKeysAsync(GetCapacityManagerMonitoredTagKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCapacityManagerMonitoredTagKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCapacityManagerMonitoredTagKeysResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCapacityManagerMonitoredTagKeysResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCapacityReservationUsage
 
 
@@ -35025,6 +35171,49 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = GetManagedPrefixListEntriesResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetManagedPrefixListEntriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetManagedResourceVisibility
+
+
+        /// <summary>
+        /// Retrieves the managed resource visibility configuration for the account. The response
+        /// indicates whether managed resources are hidden or visible by default.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedResourceVisibility service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedResourceVisibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedResourceVisibility">REST API Reference for GetManagedResourceVisibility Operation</seealso>
+        public virtual GetManagedResourceVisibilityResponse GetManagedResourceVisibility(GetManagedResourceVisibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetManagedResourceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedResourceVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedResourceVisibilityResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the managed resource visibility configuration for the account. The response
+        /// indicates whether managed resources are hidden or visible by default.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedResourceVisibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedResourceVisibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedResourceVisibility">REST API Reference for GetManagedResourceVisibility Operation</seealso>
+        public virtual Task<GetManagedResourceVisibilityResponse> GetManagedResourceVisibilityAsync(GetManagedResourceVisibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetManagedResourceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedResourceVisibilityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetManagedResourceVisibilityResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -39330,6 +39519,53 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyManagedResourceVisibility
+
+
+        /// <summary>
+        /// Modifies the managed resource visibility configuration for the account. Use this operation
+        /// to control whether managed resources are hidden or visible by default. Visibility
+        /// settings are account-wide and affect all IAM principals uniformly. Hidden resources
+        /// remain fully operational and billable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyManagedResourceVisibility service method.</param>
+        /// 
+        /// <returns>The response from the ModifyManagedResourceVisibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedResourceVisibility">REST API Reference for ModifyManagedResourceVisibility Operation</seealso>
+        public virtual ModifyManagedResourceVisibilityResponse ModifyManagedResourceVisibility(ModifyManagedResourceVisibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyManagedResourceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyManagedResourceVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyManagedResourceVisibilityResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the managed resource visibility configuration for the account. Use this operation
+        /// to control whether managed resources are hidden or visible by default. Visibility
+        /// settings are account-wide and affect all IAM principals uniformly. Hidden resources
+        /// remain fully operational and billable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyManagedResourceVisibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyManagedResourceVisibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedResourceVisibility">REST API Reference for ModifyManagedResourceVisibility Operation</seealso>
+        public virtual Task<ModifyManagedResourceVisibilityResponse> ModifyManagedResourceVisibilityAsync(ModifyManagedResourceVisibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyManagedResourceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyManagedResourceVisibilityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyManagedResourceVisibilityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyNetworkInterfaceAttribute
 
 
@@ -42958,6 +43194,51 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RejectTransitGatewayClientVpnAttachment
+
+
+        /// <summary>
+        /// Rejects a Transit Gateway attachment request for a Client VPN endpoint. The Transit
+        /// Gateway owner can reject the attachment request to prevent the Client VPN endpoint
+        /// from routing traffic through the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayClientVpnAttachment service method.</param>
+        /// 
+        /// <returns>The response from the RejectTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayClientVpnAttachment">REST API Reference for RejectTransitGatewayClientVpnAttachment Operation</seealso>
+        public virtual RejectTransitGatewayClientVpnAttachmentResponse RejectTransitGatewayClientVpnAttachment(RejectTransitGatewayClientVpnAttachmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RejectTransitGatewayClientVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectTransitGatewayClientVpnAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<RejectTransitGatewayClientVpnAttachmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Rejects a Transit Gateway attachment request for a Client VPN endpoint. The Transit
+        /// Gateway owner can reject the attachment request to prevent the Client VPN endpoint
+        /// from routing traffic through the Transit Gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayClientVpnAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectTransitGatewayClientVpnAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayClientVpnAttachment">REST API Reference for RejectTransitGatewayClientVpnAttachment Operation</seealso>
+        public virtual Task<RejectTransitGatewayClientVpnAttachmentResponse> RejectTransitGatewayClientVpnAttachmentAsync(RejectTransitGatewayClientVpnAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RejectTransitGatewayClientVpnAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectTransitGatewayClientVpnAttachmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RejectTransitGatewayClientVpnAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RejectTransitGatewayMulticastDomainAssociations
 
 
@@ -46550,6 +46831,51 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = UnmonitorInstancesResponseUnmarshaller.Instance;
             
             return InvokeAsync<UnmonitorInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCapacityManagerMonitoredTagKeys
+
+
+        /// <summary>
+        /// Activates or deactivates tag keys for monitoring by EC2 Capacity Manager. Activated
+        /// tag keys are included as dimensions in capacity metric data, enabling you to group
+        /// and filter metrics by tag values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityManagerMonitoredTagKeys service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCapacityManagerMonitoredTagKeys service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerMonitoredTagKeys">REST API Reference for UpdateCapacityManagerMonitoredTagKeys Operation</seealso>
+        public virtual UpdateCapacityManagerMonitoredTagKeysResponse UpdateCapacityManagerMonitoredTagKeys(UpdateCapacityManagerMonitoredTagKeysRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCapacityManagerMonitoredTagKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCapacityManagerMonitoredTagKeysResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCapacityManagerMonitoredTagKeysResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Activates or deactivates tag keys for monitoring by EC2 Capacity Manager. Activated
+        /// tag keys are included as dimensions in capacity metric data, enabling you to group
+        /// and filter metrics by tag values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityManagerMonitoredTagKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCapacityManagerMonitoredTagKeys service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerMonitoredTagKeys">REST API Reference for UpdateCapacityManagerMonitoredTagKeys Operation</seealso>
+        public virtual Task<UpdateCapacityManagerMonitoredTagKeysResponse> UpdateCapacityManagerMonitoredTagKeysAsync(UpdateCapacityManagerMonitoredTagKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCapacityManagerMonitoredTagKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCapacityManagerMonitoredTagKeysResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateCapacityManagerMonitoredTagKeysResponse>(request, options, cancellationToken);
         }
 
         #endregion

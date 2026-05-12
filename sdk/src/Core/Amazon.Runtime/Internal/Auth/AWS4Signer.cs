@@ -136,14 +136,9 @@ namespace Amazon.Runtime.Internal.Auth
         }
 
         /// <inheritdoc/>
-        public override IEventSigner CreateEventSigner(BaseIdentity identity, string region, string service, string requestSignature)
+        public override IEventSigner CreateEventSigner(string awsSecretKey, string region, string service, string requestSignature)
         {
-            if (identity is not AWSCredentials credentials)
-            {
-                throw new AmazonClientException($"The identity parameter must be of type AWSCredentials for the signer {nameof(AWS4Signer)}.");
-            }
-
-            return new AWS4EventSigner(credentials, region, service, requestSignature);
+            return new AWS4EventSigner(awsSecretKey, region, service, requestSignature);
         }
 
         /// <summary>
@@ -405,7 +400,7 @@ namespace Amazon.Runtime.Internal.Auth
 
             var stringToSign = stringToSignBuilder.ToString();
             var signature = ComputeKeyedHash(SignerAlgorithm, key, stringToSign);
-            return new AWS4SigningResult(awsAccessKey, signedAt, signedHeaders, scope, key, signature);
+            return new AWS4SigningResult(awsAccessKey, awsSecretAccessKey, signedAt, signedHeaders, scope, key, signature);
         }
 
         /// <summary>

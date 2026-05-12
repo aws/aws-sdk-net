@@ -107,6 +107,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VersionBump", StringUtils.FromString(publicRequest.VersionBump));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ActivateTypeRequestMarshaller _instance = new ActivateTypeRequestMarshaller();        

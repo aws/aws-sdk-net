@@ -153,6 +153,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetInferenceSettings())
+            {
+                context.Writer.WritePropertyName("inferenceSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InferenceSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetInputAttachments())
             {
                 context.Writer.WritePropertyName("inputAttachments");
@@ -218,6 +229,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("roleArn");
                 context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetSpecialRouterSettings())
+            {
+                context.Writer.WritePropertyName("specialRouterSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SpecialRouterSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SpecialRouterSettings, context);
+
+                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();

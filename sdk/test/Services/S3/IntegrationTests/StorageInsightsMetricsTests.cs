@@ -1,46 +1,26 @@
-/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- *
- *  http://aws.amazon.com/apache2.0
- *
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
 using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AWSSDK_DotNet.IntegrationTests.Tests.S3.Fixtures;
+using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
-    [TestClass]
-    [TestCategory("S3")]
-    public class StorageInsightsMetricsTests : TestBase<AmazonS3Client>
+    [Trait("Category", "S3")]
+    public class StorageInsightsMetricsTests : IClassFixture<S3BucketFixture>
     {
-        public static string bucketName;
+        private readonly AmazonS3Client _client;
+        private readonly string _bucketName;
         private const string accessPointArn = "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint";
 
-        [TestInitialize]
-        public async Task Init()
+        public StorageInsightsMetricsTests(S3BucketFixture fixture)
         {
-            bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
+            _client = fixture.Client;
+            _bucketName = fixture.BucketName;
         }
 
-        [TestCleanup]
-        public async Task Cleanup()
-        {
-            await AmazonS3Util.DeleteS3BucketWithObjectsAsync(Client, bucketName);
-        }
-
-        [TestMethod]
+        [Fact]
         public async Task BucketAnalyticsConfigurationsTestWithSigV4()
         {
             await BucketMetricsConfigurationsAndFilterTest();
@@ -53,7 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             var putBucketMetricsConfigurationRequest = new PutBucketMetricsConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 MetricsId = "configId",
                 MetricsConfiguration = new MetricsConfiguration
                 {
@@ -69,24 +49,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            var putBucketMetricsConfigurationResponse = await Client.PutBucketMetricsConfigurationAsync(putBucketMetricsConfigurationRequest);
+            var putBucketMetricsConfigurationResponse = await _client.PutBucketMetricsConfigurationAsync(putBucketMetricsConfigurationRequest);
             var getBucketMetricsConfigurationRequest = new GetBucketMetricsConfigurationRequest
             {
                 MetricsId = "configId",
-                BucketName = bucketName
+                BucketName = _bucketName
             };
                         
             var getBucketMetricsConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetBucketMetricsConfigurationAsync(getBucketMetricsConfigurationRequest);
+                var res = await _client.GetBucketMetricsConfigurationAsync(getBucketMetricsConfigurationRequest);
                 return res.MetricsConfiguration?.MetricsId == getBucketMetricsConfigurationRequest.MetricsId ? res : null;
             });
 
             var getMetricsConfiguration = getBucketMetricsConfigurationResponse.MetricsConfiguration;
             var putMetricsConfiguration = putBucketMetricsConfigurationRequest.MetricsConfiguration;
-            Assert.AreEqual(getMetricsConfiguration.MetricsId, putMetricsConfiguration.MetricsId);
-            Assert.AreEqual(((MetricsTagPredicate)getMetricsConfiguration.MetricsFilter.MetricsFilterPredicate).Tag.Key, "tagK");
-            Assert.AreEqual(((MetricsTagPredicate)getMetricsConfiguration.MetricsFilter.MetricsFilterPredicate).Tag.Value, "tagV");
+            Assert.Equal(getMetricsConfiguration.MetricsId, putMetricsConfiguration.MetricsId);
+            Assert.Equal(((MetricsTagPredicate)getMetricsConfiguration.MetricsFilter.MetricsFilterPredicate).Tag.Key, "tagK");
+            Assert.Equal(((MetricsTagPredicate)getMetricsConfiguration.MetricsFilter.MetricsFilterPredicate).Tag.Value, "tagV");
 
             await ListBucketMetrics();
             await DeleteBucketMetricsAndValidate();
@@ -96,7 +76,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             var putBucketMetricsConfigurationRequest = new PutBucketMetricsConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 MetricsId = "configId",
                 MetricsConfiguration = new MetricsConfiguration
                 {
@@ -108,23 +88,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            var putBucketMetricsConfigurationResponse = await Client.PutBucketMetricsConfigurationAsync(putBucketMetricsConfigurationRequest);
+            var putBucketMetricsConfigurationResponse = await _client.PutBucketMetricsConfigurationAsync(putBucketMetricsConfigurationRequest);
             var getBucketMetricsConfigurationRequest = new GetBucketMetricsConfigurationRequest
             {
                 MetricsId = "configId",
-                BucketName = bucketName
+                BucketName = _bucketName
             };
                         
             var getBucketMetricsConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetBucketMetricsConfigurationAsync(getBucketMetricsConfigurationRequest);
+                var res = await _client.GetBucketMetricsConfigurationAsync(getBucketMetricsConfigurationRequest);
                 return res.MetricsConfiguration?.MetricsId == getBucketMetricsConfigurationRequest.MetricsId ? res : null;
             });
 
             var getMetricsConfiguration = getBucketMetricsConfigurationResponse.MetricsConfiguration;
             var putMetricsConfiguration = putBucketMetricsConfigurationRequest.MetricsConfiguration;
-            Assert.AreEqual(getMetricsConfiguration.MetricsId, putMetricsConfiguration.MetricsId);
-            Assert.AreEqual(((MetricsPrefixPredicate)getMetricsConfiguration.MetricsFilter.MetricsFilterPredicate).Prefix, "string");
+            Assert.Equal(getMetricsConfiguration.MetricsId, putMetricsConfiguration.MetricsId);
+            Assert.Equal(((MetricsPrefixPredicate)getMetricsConfiguration.MetricsFilter.MetricsFilterPredicate).Prefix, "string");
 
             await ListBucketMetrics();
             await DeleteBucketMetricsAndValidate();
@@ -134,7 +114,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             var putBucketMetricsConfigurationRequest = new PutBucketMetricsConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 MetricsId = "configId",
                 MetricsConfiguration = new MetricsConfiguration
                 {
@@ -146,23 +126,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            var putBucketMetricsConfigurationResponse = await Client.PutBucketMetricsConfigurationAsync(putBucketMetricsConfigurationRequest);
+            var putBucketMetricsConfigurationResponse = await _client.PutBucketMetricsConfigurationAsync(putBucketMetricsConfigurationRequest);
             var getBucketMetricsConfigurationRequest = new GetBucketMetricsConfigurationRequest
             {
                 MetricsId = "configId",
-                BucketName = bucketName
+                BucketName = _bucketName
             };
 
             var getBucketMetricsConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetBucketMetricsConfigurationAsync(getBucketMetricsConfigurationRequest);
+                var res = await _client.GetBucketMetricsConfigurationAsync(getBucketMetricsConfigurationRequest);
                 return res.MetricsConfiguration?.MetricsId == getBucketMetricsConfigurationRequest.MetricsId ? res : null;
             });
 
             var getMetricsConfiguration = getBucketMetricsConfigurationResponse.MetricsConfiguration;
             var putMetricsConfiguration = putBucketMetricsConfigurationRequest.MetricsConfiguration;
-            Assert.AreEqual(getMetricsConfiguration.MetricsId, putMetricsConfiguration.MetricsId);
-            Assert.AreEqual(((MetricsAccessPointArnPredicate)getMetricsConfiguration.MetricsFilter.MetricsFilterPredicate).AccessPointArn, accessPointArn);
+            Assert.Equal(getMetricsConfiguration.MetricsId, putMetricsConfiguration.MetricsId);
+            Assert.Equal(((MetricsAccessPointArnPredicate)getMetricsConfiguration.MetricsFilter.MetricsFilterPredicate).AccessPointArn, accessPointArn);
 
             await ListBucketMetrics();
             await DeleteBucketMetricsAndValidate();
@@ -183,7 +163,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             var putBucketMetricsConfigurationRequest = new PutBucketMetricsConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 MetricsId = "configId",
                 MetricsConfiguration = new MetricsConfiguration
                 {
@@ -195,37 +175,37 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             };
 
-            var putBucketMetricsConfigurationResponse = await Client.PutBucketMetricsConfigurationAsync(putBucketMetricsConfigurationRequest);
+            var putBucketMetricsConfigurationResponse = await _client.PutBucketMetricsConfigurationAsync(putBucketMetricsConfigurationRequest);
             var getBucketMetricsConfigurationRequest = new GetBucketMetricsConfigurationRequest
             {
                 MetricsId = "configId",
-                BucketName = bucketName
+                BucketName = _bucketName
             };
                         
             var getBucketMetricsConfigurationResponse = await S3TestUtils.WaitForConsistencyAsync(async () =>
             {
-                var res = await Client.GetBucketMetricsConfigurationAsync(getBucketMetricsConfigurationRequest);
+                var res = await _client.GetBucketMetricsConfigurationAsync(getBucketMetricsConfigurationRequest);
                 return res.MetricsConfiguration?.MetricsId == getBucketMetricsConfigurationRequest.MetricsId ? res : null;
             });
 
             var getMetricsConfiguration = getBucketMetricsConfigurationResponse.MetricsConfiguration;
             var putMetricsConfiguration = putBucketMetricsConfigurationRequest.MetricsConfiguration;
-            Assert.AreEqual(getMetricsConfiguration.MetricsId, putMetricsConfiguration.MetricsId);
+            Assert.Equal(getMetricsConfiguration.MetricsId, putMetricsConfiguration.MetricsId);
 
             foreach (var predicate in ((MetricsNAryOperator)getMetricsConfiguration.MetricsFilter.MetricsFilterPredicate).Operands)
             {
                 if (predicate is MetricsPrefixPredicate prefixPredicate)
                 {
-                    Assert.AreEqual(prefixPredicate.Prefix, "string");
+                    Assert.Equal(prefixPredicate.Prefix, "string");
                 }
                 else if (predicate is MetricsTagPredicate tagPredicate)
                 {
-                    Assert.AreEqual(tagPredicate.Tag.Key, "tagK");
-                    Assert.AreEqual(tagPredicate.Tag.Value, "tagV");
+                    Assert.Equal(tagPredicate.Tag.Key, "tagK");
+                    Assert.Equal(tagPredicate.Tag.Value, "tagV");
                 }
                 else
                 {
-                    Assert.AreEqual(((MetricsAccessPointArnPredicate)predicate).AccessPointArn, accessPointArn);
+                    Assert.Equal(((MetricsAccessPointArnPredicate)predicate).AccessPointArn, accessPointArn);
                 }
             }
 
@@ -233,26 +213,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             await DeleteBucketMetricsAndValidate();
         }
 
-        private static async Task ListBucketMetrics()
+        private async Task ListBucketMetrics()
         {
-            var listResponse = await Client.ListBucketMetricsConfigurationsAsync(new ListBucketMetricsConfigurationsRequest
+            var listResponse = await _client.ListBucketMetricsConfigurationsAsync(new ListBucketMetricsConfigurationsRequest
             {
-                BucketName = bucketName
+                BucketName = _bucketName
             });
-            Assert.IsTrue(listResponse.MetricsConfigurationList.Count > 0);
+            Assert.True(listResponse.MetricsConfigurationList.Count > 0);
         }
 
-        private static async Task DeleteBucketMetricsAndValidate()
+        private async Task DeleteBucketMetricsAndValidate()
         {
-            await Client.DeleteBucketMetricsConfigurationAsync(new DeleteBucketMetricsConfigurationRequest
+            await _client.DeleteBucketMetricsConfigurationAsync(new DeleteBucketMetricsConfigurationRequest
             {
-                BucketName = bucketName,
+                BucketName = _bucketName,
                 MetricsId = "configId"
             });
 
-            var response = await Client.ListObjectsAsync(new ListObjectsRequest
+            var response = await _client.ListObjectsAsync(new ListObjectsRequest
             {
-                BucketName = bucketName
+                BucketName = _bucketName
             });
 
             var successFlag = true;
@@ -261,7 +241,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 successFlag = false;
             }
 
-            Assert.IsTrue(successFlag);
+            Assert.True(successFlag);
         }
     }
 }

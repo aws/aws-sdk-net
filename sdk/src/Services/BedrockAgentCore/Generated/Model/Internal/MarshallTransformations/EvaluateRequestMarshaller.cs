@@ -87,6 +87,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetEvaluationReferenceInputs())
+            {
+                context.Writer.WritePropertyName("evaluationReferenceInputs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEvaluationReferenceInputsListValue in publicRequest.EvaluationReferenceInputs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EvaluationReferenceInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEvaluationReferenceInputsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetEvaluationTarget())
             {
                 context.Writer.WritePropertyName("evaluationTarget");

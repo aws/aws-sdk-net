@@ -832,6 +832,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UserData", StringUtils.FromString(publicRequest.UserData));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RunInstancesRequestMarshaller _instance = new RunInstancesRequestMarshaller();        

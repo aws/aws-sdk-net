@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetListing(Amazon.MarketplaceDiscovery.Model.GetListingRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetListing(Amazon.MarketplaceDiscovery.Model.GetListingRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetListingRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetListingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetListing for SaaS listing"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetListing(Amazon.MarketplaceDiscovery.Model.GetListingRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetListing(Amazon.MarketplaceDiscovery.Model.GetListingRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetListingRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetListingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetListing for AMI listing with video"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetListing(Amazon.MarketplaceDiscovery.Model.GetListingRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetListing(Amazon.MarketplaceDiscovery.Model.GetListingRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetListingRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetListingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetListing for multi-product listing"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOffer(Amazon.MarketplaceDiscovery.Model.GetOfferRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOffer(Amazon.MarketplaceDiscovery.Model.GetOfferRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke GetOffer for Contract Pricing offer"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOffer(Amazon.MarketplaceDiscovery.Model.GetOfferRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOffer(Amazon.MarketplaceDiscovery.Model.GetOfferRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke GetOffer for Usage Pricing offer"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOffer(Amazon.MarketplaceDiscovery.Model.GetOfferRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOffer(Amazon.MarketplaceDiscovery.Model.GetOfferRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke GetOffer for BYOL Pricing offer"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOffer(Amazon.MarketplaceDiscovery.Model.GetOfferRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOffer(Amazon.MarketplaceDiscovery.Model.GetOfferRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke GetOffer for FREE Pricing offer"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferSet(Amazon.MarketplaceDiscovery.Model.GetOfferSetRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferSet(Amazon.MarketplaceDiscovery.Model.GetOfferSetRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferSetRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get offer set with multiple products"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetOfferTerms for Usage-based ML Model offer"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetOfferTerms for BYOL offer"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetOfferTerms for configurable upfront pricing"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetOfferTerms for free trial offer"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetOfferTerms for recurring payment"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-5" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetOfferTerms for variable payment"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-6" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetOfferTerms for renewal term"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-7" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetOfferTerms for support term"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-8" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetOfferTerms for validity term with dates"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-9" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetProduct(Amazon.MarketplaceDiscovery.Model.GetProductRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetProduct(Amazon.MarketplaceDiscovery.Model.GetProductRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetProductRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetProductResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetProduct for SaaS product with DEPLOYED status"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetProduct(Amazon.MarketplaceDiscovery.Model.GetProductRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetProduct(Amazon.MarketplaceDiscovery.Model.GetProductRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetProductRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetProductResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetProduct for AMI product with NOT_DEPLOYED status"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetProduct(Amazon.MarketplaceDiscovery.Model.GetProductRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetProduct(Amazon.MarketplaceDiscovery.Model.GetProductRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetProductRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetProductResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetProduct for professional services with NOT_APPLICABLE status"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List AMI Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List API Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List CloudFormation Template Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List Container Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List Helm Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-5" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List EKS Add-On Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-6" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List EC2 Image Builder Component Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-7" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List Data Exchange Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-8" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List Professional Services Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-9" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List SaaS Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-10" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List SageMaker Algorithm Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-11" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List SageMaker Model Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-12" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListPurchaseOptions(Amazon.MarketplaceDiscovery.Model.ListPurchaseOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListPurchaseOptions(Amazon.MarketplaceDiscovery.Model.ListPurchaseOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListPurchaseOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListPurchaseOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Filter by Product ID"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListPurchaseOptions(Amazon.MarketplaceDiscovery.Model.ListPurchaseOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListPurchaseOptions(Amazon.MarketplaceDiscovery.Model.ListPurchaseOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListPurchaseOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListPurchaseOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Filter by Seller with Private Offerset"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.SearchFacets(Amazon.MarketplaceDiscovery.Model.SearchFacetsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.SearchFacets(Amazon.MarketplaceDiscovery.Model.SearchFacetsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.SearchFacetsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.SearchFacetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieve available facet values for listings in the machine learning category
+                </para>
+                <code
+                    title="Get facets for machine learning category"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.SearchFacets(Amazon.MarketplaceDiscovery.Model.SearchFacetsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.SearchFacets(Amazon.MarketplaceDiscovery.Model.SearchFacetsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.SearchFacetsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.SearchFacetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieve facets for security listings with ratings between 3.0 and 5.0 stars
+                </para>
+                <code
+                    title="Get facets with term and rating range filters"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.SearchListings(Amazon.MarketplaceDiscovery.Model.SearchListingsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.SearchListings(Amazon.MarketplaceDiscovery.Model.SearchListingsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.SearchListingsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.SearchListingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Search for SaaS listings in the machine learning category with sorting by relevance
+                </para>
+                <code
+                    title="Search for machine learning listings"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -49,7 +49,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetB())
             {
                 context.Writer.WritePropertyName("B");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.B));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.B);
             }
 
             if(requestObject.IsSetBOOL())
@@ -64,7 +64,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStartArray();
                 foreach(var requestObjectBSListValue in requestObject.BS)
                 {
-                    context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObjectBSListValue));
+                    StringUtils.WriteBase64StringValue(context.Writer, requestObjectBSListValue);
                 }
                 context.Writer.WriteEndArray();
             }

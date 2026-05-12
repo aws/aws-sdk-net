@@ -31,7 +31,8 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListExports operation.
-    /// Lists completed exports within the past 90 days.
+    /// Lists completed exports within the past 90 days, in reverse alphanumeric order of
+    /// <c>ExportArn</c>.
     /// </summary>
     public partial class ListExportsRequest : AmazonDynamoDBRequest
     {

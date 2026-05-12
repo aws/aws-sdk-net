@@ -49,7 +49,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroundTruth())
             {
                 context.Writer.WritePropertyName("GroundTruth");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.GroundTruth));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.GroundTruth);
             }
 
         }

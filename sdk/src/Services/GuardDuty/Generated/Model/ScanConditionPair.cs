@@ -63,7 +63,7 @@ namespace Amazon.GuardDuty.Model
         /// <b>key</b> will be matched.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

@@ -120,6 +120,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PreviewNextCidr", StringUtils.FromBool(publicRequest.PreviewNextCidr));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static AllocateIpamPoolCidrRequestMarshaller _instance = new AllocateIpamPoolCidrRequestMarshaller();        

@@ -75,6 +75,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAuditContext())
+            {
+                context.Writer.WritePropertyName("AuditContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AuditContextMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AuditContext, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetCatalogId())
             {
                 context.Writer.WritePropertyName("CatalogId");
@@ -101,6 +112,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetQuerySessionContext())
+            {
+                context.Writer.WritePropertyName("QuerySessionContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QuerySessionContextMarshaller.Instance;
+                marshaller.Marshall(publicRequest.QuerySessionContext, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetTableName())

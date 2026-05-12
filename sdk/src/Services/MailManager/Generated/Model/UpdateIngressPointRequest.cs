@@ -40,6 +40,7 @@ namespace Amazon.MailManager.Model
         private string _ingressPointName;
         private string _ruleSetId;
         private IngressPointStatusToUpdate _statusToUpdate;
+        private TlsPolicy _tlsPolicy;
         private string _trafficPolicyId;
 
         /// <summary>
@@ -134,6 +135,26 @@ namespace Amazon.MailManager.Model
         internal bool IsSetStatusToUpdate()
         {
             return this._statusToUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsPolicy. 
+        /// <para>
+        /// The Transport Layer Security (TLS) policy for the ingress point. Valid values are
+        /// REQUIRED, OPTIONAL. Only ingress endpoints using REQUIRED or OPTIONAL as TlsPolicy
+        /// can be updated.
+        /// </para>
+        /// </summary>
+        public TlsPolicy TlsPolicy
+        {
+            get { return this._tlsPolicy; }
+            set { this._tlsPolicy = value; }
+        }
+
+        // Check to see if TlsPolicy property is set
+        internal bool IsSetTlsPolicy()
+        {
+            return this._tlsPolicy != null;
         }
 
         /// <summary>

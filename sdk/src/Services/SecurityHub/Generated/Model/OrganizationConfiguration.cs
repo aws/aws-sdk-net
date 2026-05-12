@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides information about the way an organization is configured in Security Hub.
+    /// Provides information about the way an organization is configured in Security Hub
+    /// CSPM.
     /// </summary>
     public partial class OrganizationConfiguration
     {
@@ -45,20 +46,20 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use local configuration, the Security Hub delegated administrator can set <c>AutoEnable</c>
-        /// to <c>true</c> and <c>AutoEnableStandards</c> to <c>DEFAULT</c>. This automatically
-        /// enables Security Hub and default security standards in new organization accounts.
-        /// These new account settings must be set separately in each Amazon Web Services Region,
-        /// and settings may be different in each Region. 
+        /// If you use local configuration, the Security Hub CSPM delegated administrator can
+        /// set <c>AutoEnable</c> to <c>true</c> and <c>AutoEnableStandards</c> to <c>DEFAULT</c>.
+        /// This automatically enables Security Hub CSPM and default security standards in new
+        /// organization accounts. These new account settings must be set separately in each Amazon
+        /// Web Services Region, and settings may be different in each Region. 
         /// </para>
         ///  
         /// <para>
         ///  If you use central configuration, the delegated administrator can create configuration
-        /// policies. Configuration policies can be used to configure Security Hub, security standards,
-        /// and security controls in multiple accounts and Regions. If you want new organization
-        /// accounts to use a specific configuration, you can create a configuration policy and
-        /// associate it with the root or specific organizational units (OUs). New accounts will
-        /// inherit the policy from the root or their assigned OU. 
+        /// policies. Configuration policies can be used to configure Security Hub CSPM, security
+        /// standards, and security controls in multiple accounts and Regions. If you want new
+        /// organization accounts to use a specific configuration, you can create a configuration
+        /// policy and associate it with the root or specific organizational units (OUs). New
+        /// accounts will inherit the policy from the root or their assigned OU. 
         /// </para>
         /// </summary>
         public OrganizationConfigurationConfigurationType ConfigurationType

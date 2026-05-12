@@ -3,6 +3,7 @@ using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using System;
 using System.Threading.Tasks;
 
@@ -101,8 +102,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             TestBucket = listBucketsResponse.Buckets.Find(bucket => bucket.BucketName.StartsWith(BucketPrefix));
             if (TestBucket == null)
             {
-                // add ticks to bucket name because the bucket namespace is shared globally
-                var bucketName = BucketPrefix + DateTime.UtcNow.Ticks;
+                var bucketName = UtilityMethods.GenerateName(BucketPrefix);
 
                 // Create the bucket but don't run the test.
                 // If the bucket is ready the next time this test runs we'll test then.
@@ -114,6 +114,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
             else if (TestBucket.CreationDate.Value.AddHours(TemporaryRedirectMaxExpirationHours) < DateTime.UtcNow)
             {
+                // Clear the entire cache so each test starts from a clean state and can observe
+                // the SDK re-populating the cache from scratch.
+                // BucketRegionTestRunner is only used by BucketRegionTests, so this does not
+                // affect other test classes. The SDK handles cache misses gracefully via redirect,
+                // so any concurrently running tests are unaffected.
                 BucketRegionDetector.BucketRegionCache.Clear();
                 TestBucketIsReady = true;
             }

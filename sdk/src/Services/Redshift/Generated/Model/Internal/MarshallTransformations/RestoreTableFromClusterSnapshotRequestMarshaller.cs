@@ -96,6 +96,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetSchemaName", StringUtils.FromString(publicRequest.TargetSchemaName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RestoreTableFromClusterSnapshotRequestMarshaller _instance = new RestoreTableFromClusterSnapshotRequestMarshaller();        

@@ -2359,7 +2359,7 @@
       "type":"string",
       "max":200,
       "min":0,
-      "pattern":"arn:aws:cleanrooms:[\\w]{2}-[\\w]{4,9}-[\\d]:[\\d]{12}:membership/[\\d\\w-]+/analysistemplate/[\\d\\w-]+"
+      "pattern":"arn:aws[-a-z]*:cleanrooms:[\\w]{2}-[\\w]{4,9}-[\\d]:[\\d]{12}:membership/[\\d\\w-]+/analysistemplate/[\\d\\w-]+"
     },
     "AnalysisTemplateArnList":{
       "type":"list",
@@ -2597,6 +2597,12 @@
       "max":50,
       "min":1
     },
+    "AthenaCatalogName":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-zA-Z0-9_-]+"
+    },
     "AthenaDatabaseName":{
       "type":"string",
       "max":128,
@@ -2642,6 +2648,10 @@
         "tableName":{
           "shape":"AthenaTableName",
           "documentation":"<p> The table reference.</p>"
+        },
+        "catalogName":{
+          "shape":"AthenaCatalogName",
+          "documentation":"<p> The catalog name.</p>"
         }
       },
       "documentation":"<p> A reference to a table within Athena.</p>"
@@ -8165,7 +8175,7 @@
         },
         "memberAbilities":{
           "shape":"MemberAbilities",
-          "documentation":"<p>The abilities granted to the collaboration member. These determine what actions the member can perform within the collaboration.</p> <note> <p>The following values are currently not supported: <code>CAN_QUERY</code>, <code>CAN_RECEIVE_RESULTS,</code> and <code>CAN_RUN_JOB</code>. </p> <p>Set the value of <code>memberAbilities</code> to <code>[]</code> to allow a member to contribute data.</p> </note>"
+          "documentation":"<p>The abilities granted to the collaboration member. These determine what actions the member can perform within the collaboration.</p> <note> <p>The following values are currently not supported: <code>CAN_QUERY</code> and <code>CAN_RUN_JOB</code>. </p> <p>Set the value of <code>memberAbilities</code> to <code>[]</code> to allow a member to contribute data.</p> <p>Set the value of <code>memberAbilities</code> to <code>[CAN_RECEIVE_RESULTS]</code> to allow a member to contribute data and receive results.</p> </note>"
         },
         "displayName":{
           "shape":"DisplayName",
@@ -9483,6 +9493,10 @@
         "number":{
           "shape":"ProtectedJobWorkerComputeConfigurationNumberInteger",
           "documentation":"<p>The number of workers for a PySpark job.</p>"
+        },
+        "properties":{
+          "shape":"WorkerComputeConfigurationProperties",
+          "documentation":"<p>The configuration properties for the worker compute environment. These properties allow you to customize the compute settings for your Clean Rooms workloads.</p>"
         }
       },
       "documentation":"<p>The configuration of the compute resources for a PySpark job.</p>"
@@ -9490,7 +9504,7 @@
     "ProtectedJobWorkerComputeConfigurationNumberInteger":{
       "type":"integer",
       "box":true,
-      "max":128,
+      "max":1024,
       "min":4
     },
     "ProtectedJobWorkerComputeType":{
@@ -9964,6 +9978,7 @@
     },
     "ResultFormat":{
       "type":"string",
+      "documentation":"<p>File format of the returned data.</p>",
       "enum":[
         "CSV",
         "PARQUET"
@@ -11401,7 +11416,8 @@
         },
         "number":{
           "shape":"WorkerComputeConfigurationNumberInteger",
-          "documentation":"<p> The number of workers.</p> <p>SQL queries support a minimum value of 2 and a maximum value of 400. </p> <p>PySpark jobs support a minimum value of 4 and a maximum value of 128.</p>"
+          "documentation":"<p> The number of workers.</p> <p>SQL queries support a minimum value of 2 and a maximum value of 400. </p> <p>PySpark jobs support a minimum value of 4 and a maximum value of 128.</p>",
+          "box":true
         },
         "properties":{
           "shape":"WorkerComputeConfigurationProperties",
@@ -11421,7 +11437,7 @@
       "members":{
         "spark":{
           "shape":"SparkProperties",
-          "documentation":"<p>The Spark configuration properties for SQL workloads. This map contains key-value pairs that configure Apache Spark settings to optimize performance for your data processing jobs. You can specify up to 50 Spark properties, with each key being 1-200 characters and each value being 0-500 characters. These properties allow you to adjust compute capacity for large datasets and complex workloads.</p>"
+          "documentation":"<p>The Spark configuration properties for SQL and PySpark workloads. This map contains key-value pairs that configure Apache Spark settings to optimize performance for your data processing jobs. You can specify up to 50 Spark properties, with each key being 1-200 characters and each value being 0-500 characters. These properties allow you to adjust compute capacity for large datasets and complex workloads.</p>"
         }
       },
       "documentation":"<p>The configuration properties that define the compute environment settings for workers in Clean Rooms. These properties enable customization of the underlying compute environment to optimize performance for your specific workloads.</p>",

@@ -39,6 +39,11 @@ namespace Amazon.AppMesh
 {
     /// <summary>
     /// <para>Implementation for accessing AppMesh</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor
     /// and control microservices. App Mesh standardizes how your microservices communicate,

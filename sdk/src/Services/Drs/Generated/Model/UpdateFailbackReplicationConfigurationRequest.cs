@@ -37,6 +37,7 @@ namespace Amazon.Drs.Model
     public partial class UpdateFailbackReplicationConfigurationRequest : AmazonDrsRequest
     {
         private long? _bandwidthThrottling;
+        private InternetProtocol _internetProtocol;
         private string _name;
         private string _recoveryInstanceID;
         private bool? _usePrivateIP;
@@ -59,6 +60,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetBandwidthThrottling()
         {
             return this._bandwidthThrottling.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InternetProtocol. 
+        /// <para>
+        /// Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)
+        /// </para>
+        /// </summary>
+        public InternetProtocol InternetProtocol
+        {
+            get { return this._internetProtocol; }
+            set { this._internetProtocol = value; }
+        }
+
+        // Check to see if InternetProtocol property is set
+        internal bool IsSetInternetProtocol()
+        {
+            return this._internetProtocol != null;
         }
 
         /// <summary>

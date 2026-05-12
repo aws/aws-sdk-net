@@ -83,6 +83,7 @@ namespace Amazon.QuickSight.Model
         /// The font family that you want to use.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string FontFamily
         {
             get { return this._fontFamily; }

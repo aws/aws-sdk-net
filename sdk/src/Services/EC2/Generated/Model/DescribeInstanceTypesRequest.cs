@@ -32,12 +32,15 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeInstanceTypes operation.
     /// Describes the specified instance types. By default, all instance types for the current
-    /// Region are described. Alternatively, you can filter the results.
+    /// Region are described. Alternatively, you can filter the results. To include instance
+    /// types that are not supported in the current Region, set <c>IncludeUnsupportedInRegion</c>
+    /// to <c>true</c>.
     /// </summary>
     public partial class DescribeInstanceTypesRequest : AmazonEC2Request
     {
         private bool? _dryRun;
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private bool? _includeUnsupportedInRegion;
         private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
@@ -353,6 +356,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeUnsupportedInRegion. 
+        /// <para>
+        /// If <c>true</c>, the response includes instance types that are not supported in the
+        /// current Region, in addition to the supported types. Default: <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? IncludeUnsupportedInRegion
+        {
+            get { return this._includeUnsupportedInRegion; }
+            set { this._includeUnsupportedInRegion = value; }
+        }
+
+        // Check to see if IncludeUnsupportedInRegion property is set
+        internal bool IsSetIncludeUnsupportedInRegion()
+        {
+            return this._includeUnsupportedInRegion.HasValue; 
         }
 
         /// <summary>

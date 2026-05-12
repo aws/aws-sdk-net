@@ -64,6 +64,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("EmailAddress", StringUtils.FromString(publicRequest.EmailAddress));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static VerifyEmailAddressRequestMarshaller _instance = new VerifyEmailAddressRequestMarshaller();        

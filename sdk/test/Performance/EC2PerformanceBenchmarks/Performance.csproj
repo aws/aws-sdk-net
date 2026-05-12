@@ -18,7 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.13.7" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.15.2" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
   </ItemGroup>
 
@@ -32,6 +32,8 @@
     <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.NetStandard.csproj" />
     <ProjectReference Include="..\..\..\src\Services\SimpleNotificationService\AWSSDK.SimpleNotificationService.NetStandard.csproj" />
     <ProjectReference Include="..\..\..\src\Services\SQS\AWSSDK.SQS.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\Lambda\AWSSDK.Lambda.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.NetStandard.csproj" />
     <ProjectReference Include="..\..\UnitTests\Custom\AWSSDK.UnitTestUtilities.csproj" />
   </ItemGroup>
 

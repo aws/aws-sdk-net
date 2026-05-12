@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UseLongIds", StringUtils.FromBool(publicRequest.UseLongIds));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyIdFormatRequestMarshaller _instance = new ModifyIdFormatRequestMarshaller();        

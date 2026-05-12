@@ -49,7 +49,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCisRuleDetails())
             {
                 context.Writer.WritePropertyName("cisRuleDetails");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.CisRuleDetails));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.CisRuleDetails);
             }
 
             if(requestObject.IsSetRuleId())

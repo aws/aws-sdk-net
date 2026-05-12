@@ -64,6 +64,8 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                     request.Parameters.Add("EncodedMessage", StringUtils.FromString(publicRequest.EncodedMessage));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DecodeAuthorizationMessageRequestMarshaller _instance = new DecodeAuthorizationMessageRequestMarshaller();        

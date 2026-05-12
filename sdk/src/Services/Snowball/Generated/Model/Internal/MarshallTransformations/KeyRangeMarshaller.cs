@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// KeyRange Marshaller
     /// </summary>
-    public class KeyRangeMarshaller : IRequestMarshaller<KeyRange, JsonMarshallerContext> 
+    public class KeyRangeMarshaller : IRequestMarshaller<KeyRange, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(KeyRange requestObject, JsonMarshallerContext context)
+        public void Marshall(KeyRange requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetBeginMarker())
-            {
-                context.Writer.WritePropertyName("BeginMarker");
-                context.Writer.WriteStringValue(requestObject.BeginMarker);
-            }
 
-            if(requestObject.IsSetEndMarker())
+            if (requestObject.IsSetBeginMarker())
             {
-                context.Writer.WritePropertyName("EndMarker");
-                context.Writer.WriteStringValue(requestObject.EndMarker);
+                context.Writer.WriteTextString("BeginMarker");
+                context.Writer.WriteTextString(requestObject.BeginMarker);
             }
-
+            if (requestObject.IsSetEndMarker())
+            {
+                context.Writer.WriteTextString("EndMarker");
+                context.Writer.WriteTextString(requestObject.EndMarker);
+            }
         }
 
         /// <summary>

@@ -90,6 +90,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetQuotaSharePolicy())
+            {
+                context.Writer.WritePropertyName("quotaSharePolicy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QuotaSharePolicyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.QuotaSharePolicy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

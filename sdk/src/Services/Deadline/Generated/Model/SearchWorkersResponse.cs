@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// This is the response object from the SearchWorkers operation.
+    /// Shared output fields for all Search operations (nextItemOffset, totalResults).
     /// </summary>
     public partial class SearchWorkersResponse : AmazonWebServiceResponse
     {

@@ -303,6 +303,10 @@ namespace Amazon.TrustedAdvisor
         /// </summary>
         public static readonly RecommendationSource Cost_explorer = new RecommendationSource("cost_explorer");
         /// <summary>
+        /// Constant Cost_optimization_hub for RecommendationSource
+        /// </summary>
+        public static readonly RecommendationSource Cost_optimization_hub = new RecommendationSource("cost_optimization_hub");
+        /// <summary>
         /// Constant Lse for RecommendationSource
         /// </summary>
         public static readonly RecommendationSource Lse = new RecommendationSource("lse");
@@ -530,6 +534,52 @@ namespace Amazon.TrustedAdvisor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StatusReason.
+    /// </summary>
+    public class StatusReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant No_data_ok for StatusReason
+        /// </summary>
+        public static readonly StatusReason No_data_ok = new StatusReason("no_data_ok");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StatusReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatusReason FindValue(string value)
+        {
+            return FindValue<StatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatusReason(string value)
         {
             return FindValue(value);
         }

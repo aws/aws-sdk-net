@@ -68,6 +68,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Archive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Bounce", targetDepth))
+                {
+                    var unmarshaller = BounceActionUnmarshaller.Instance;
+                    unmarshalledObject.Bounce = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DeliverToMailbox", targetDepth))
                 {
                     var unmarshaller = DeliverToMailboxActionUnmarshaller.Instance;
@@ -84,6 +90,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DropActionUnmarshaller.Instance;
                     unmarshalledObject.Drop = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("InvokeLambda", targetDepth))
+                {
+                    var unmarshaller = InvokeLambdaActionUnmarshaller.Instance;
+                    unmarshalledObject.InvokeLambda = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PublishToSns", targetDepth))

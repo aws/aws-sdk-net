@@ -72,6 +72,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RoleArn", StringUtils.FromString(publicRequest.RoleArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static AddRoleToDBInstanceRequestMarshaller _instance = new AddRoleToDBInstanceRequestMarshaller();        

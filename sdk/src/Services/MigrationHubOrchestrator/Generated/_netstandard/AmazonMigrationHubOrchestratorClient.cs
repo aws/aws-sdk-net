@@ -39,6 +39,11 @@ namespace Amazon.MigrationHubOrchestrator
 {
     /// <summary>
     /// <para>Implementation for accessing MigrationHubOrchestrator</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This API reference provides descriptions, syntax, and other details about each of
     /// the actions and data types for AWS Migration Hub Orchestrator. The topic for each

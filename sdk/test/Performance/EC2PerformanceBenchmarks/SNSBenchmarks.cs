@@ -17,6 +17,7 @@ using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
 using AWSSDK.Benchmarks;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ using System.Threading.Tasks;
 namespace AWSSDK.Benchmarks
 {
     [MemoryDiagnoser]
+    [Config(typeof(SdkBenchmarkConfig))]
     public class SNSBenchmarks
     {
         private static Random random = new Random();

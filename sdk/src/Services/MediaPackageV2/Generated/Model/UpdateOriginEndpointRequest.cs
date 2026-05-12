@@ -54,6 +54,7 @@ namespace Amazon.MediaPackageV2.Model
         private string _originEndpointName;
         private Segment _segment;
         private int? _startoverWindowSeconds;
+        private UriSeparator _uriSeparator;
 
         /// <summary>
         /// Gets and sets the property ChannelGroupName. 
@@ -315,7 +316,7 @@ namespace Amazon.MediaPackageV2.Model
         /// the window. The maximum startover window is 1,209,600 seconds (14 days).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=1209600)]
+        [AWSProperty(Min=0, Max=1209600)]
         public int? StartoverWindowSeconds
         {
             get { return this._startoverWindowSeconds; }
@@ -326,6 +327,26 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetStartoverWindowSeconds()
         {
             return this._startoverWindowSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UriSeparator. 
+        /// <para>
+        /// The separator character to use in generated URIs for this origin endpoint. This setting
+        /// applies to all manifest types on the endpoint. If you don't specify a value in the
+        /// update request, the current value is preserved.
+        /// </para>
+        /// </summary>
+        public UriSeparator UriSeparator
+        {
+            get { return this._uriSeparator; }
+            set { this._uriSeparator = value; }
+        }
+
+        // Check to see if UriSeparator property is set
+        internal bool IsSetUriSeparator()
+        {
+            return this._uriSeparator != null;
         }
 
     }

@@ -101,6 +101,12 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointAsyncRequest.Filename</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^(?!.*\..*\.)[a-zA-Z0-9][a-zA-Z0-9-_\.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMakerRuntime.Model.InvokeEndpointAsyncRequest.InferenceId</property>
     <min>1</min>
     <max>64</max>
@@ -120,6 +126,12 @@
     <property>Amazon.SageMakerRuntime.Model.InvokeEndpointAsyncRequest.RequestTTLSeconds</property>
     <min>60</min>
     <max>21600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerRuntime.Model.InvokeEndpointAsyncRequest.S3OutputPathExtension</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^(?!s3:|https:)[a-zA-Z0-9!_.*'()/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerRuntime.Model.InvokeEndpointAsyncResponse.FailureLocation</property>

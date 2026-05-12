@@ -1513,6 +1513,10 @@ namespace Amazon.ECR
         /// </summary>
         public static readonly UpstreamRegistry AzureContainerRegistry = new UpstreamRegistry("azure-container-registry");
         /// <summary>
+        /// Constant Chainguard for UpstreamRegistry
+        /// </summary>
+        public static readonly UpstreamRegistry Chainguard = new UpstreamRegistry("chainguard");
+        /// <summary>
         /// Constant DockerHub for UpstreamRegistry
         /// </summary>
         public static readonly UpstreamRegistry DockerHub = new UpstreamRegistry("docker-hub");

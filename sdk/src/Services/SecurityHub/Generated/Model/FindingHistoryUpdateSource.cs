@@ -63,7 +63,7 @@ namespace Amazon.SecurityHub.Model
         ///  Describes the type of finding change event, such as a call to <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
         /// <c>BatchImportFindings</c> </a> (by an integrated Amazon Web Services service or third
         /// party partner integration) or <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
-        /// <c>BatchUpdateFindings</c> </a> (by a Security Hub customer). 
+        /// <c>BatchUpdateFindings</c> </a> (by a Security Hub CSPM customer). 
         /// </para>
         /// </summary>
         public FindingHistoryUpdateSourceType Type

@@ -76,6 +76,8 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TerminateResources", StringUtils.FromBool(publicRequest.TerminateResources));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static TerminateEnvironmentRequestMarshaller _instance = new TerminateEnvironmentRequestMarshaller();        

@@ -45,6 +45,7 @@ namespace Amazon.BedrockAgentCore.Model
         private ProgrammingLanguage _language;
         private string _path;
         private List<string> _paths = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private LanguageRuntime _runtime;
         private string _taskId;
 
         /// <summary>
@@ -150,8 +151,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property Language. 
         /// <para>
         /// The programming language of the code to execute. This tells the code interpreter which
-        /// language runtime to use for execution. Common values include 'python', 'javascript',
-        /// and 'r'.
+        /// language runtime to use for execution.
         /// </para>
         /// </summary>
         public ProgrammingLanguage Language
@@ -206,6 +206,25 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetPaths()
         {
             return this._paths != null && (this._paths.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Runtime. 
+        /// <para>
+        /// The runtime environment to use for code execution. If not specified, defaults to <c>deno</c>
+        /// for JavaScript and TypeScript.
+        /// </para>
+        /// </summary>
+        public LanguageRuntime Runtime
+        {
+            get { return this._runtime; }
+            set { this._runtime = value; }
+        }
+
+        // Check to see if Runtime property is set
+        internal bool IsSetRuntime()
+        {
+            return this._runtime != null;
         }
 
         /// <summary>

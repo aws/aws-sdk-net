@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("KeyType", StringUtils.FromString(publicRequest.KeyType));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetInstanceTpmEkPubRequestMarshaller _instance = new GetInstanceTpmEkPubRequestMarshaller();        

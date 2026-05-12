@@ -1346,6 +1346,144 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateQueueEmailAddresses
+
+
+        /// <summary>
+        /// Associates a set of email addresses with a queue to enable agents to select different
+        /// "From" (system) email addresses when replying to inbound email contacts or initiating
+        /// outbound email contacts. This allows agents to handle email contacts across different
+        /// brands and business units within the same queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can associate up to 49 additional email addresses with a single queue, plus 1
+        /// default outbound email address, for a total of 50.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The email addresses must already exist in the Amazon Connect instance before they
+        /// can be associated with a queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents will be able to select from these associated email addresses when handling
+        /// email contacts in the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For inbound email contacts, agents can select from email addresses associated with
+        /// the queue where the contact was accepted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For outbound email contacts, agents can select from email addresses associated with
+        /// their default outbound queue configured in their routing profile.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateQueueEmailAddresses service method.</param>
+        /// 
+        /// <returns>The response from the AssociateQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueEmailAddresses">REST API Reference for AssociateQueueEmailAddresses Operation</seealso>
+        AssociateQueueEmailAddressesResponse AssociateQueueEmailAddresses(AssociateQueueEmailAddressesRequest request);
+
+
+
+        /// <summary>
+        /// Associates a set of email addresses with a queue to enable agents to select different
+        /// "From" (system) email addresses when replying to inbound email contacts or initiating
+        /// outbound email contacts. This allows agents to handle email contacts across different
+        /// brands and business units within the same queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can associate up to 49 additional email addresses with a single queue, plus 1
+        /// default outbound email address, for a total of 50.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The email addresses must already exist in the Amazon Connect instance before they
+        /// can be associated with a queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents will be able to select from these associated email addresses when handling
+        /// email contacts in the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For inbound email contacts, agents can select from email addresses associated with
+        /// the queue where the contact was accepted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For outbound email contacts, agents can select from email addresses associated with
+        /// their default outbound queue configured in their routing profile.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateQueueEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueEmailAddresses">REST API Reference for AssociateQueueEmailAddresses Operation</seealso>
+        Task<AssociateQueueEmailAddressesResponse> AssociateQueueEmailAddressesAsync(AssociateQueueEmailAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssociateQueueQuickConnects
 
 
@@ -3937,9 +4075,9 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Creates a new notification to be delivered to specified recipients. Notifications
-        /// can include localized content with embedded links, and an optional expiration time.
-        /// Recipients can be specified as individual user ARNs or instance ARNs to target all
-        /// users in an instance.
+        /// can include localized content with links, and an optional expiration time. Recipients
+        /// can be specified as individual user ARNs or instance ARNs to target all users in an
+        /// instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotification service method.</param>
         /// 
@@ -3972,9 +4110,9 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Creates a new notification to be delivered to specified recipients. Notifications
-        /// can include localized content with embedded links, and an optional expiration time.
-        /// Recipients can be specified as individual user ARNs or instance ARNs to target all
-        /// users in an instance.
+        /// can include localized content with links, and an optional expiration time. Recipients
+        /// can be specified as individual user ARNs or instance ARNs to target all users in an
+        /// instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotification service method.</param>
         /// <param name="cancellationToken">
@@ -8480,6 +8618,80 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribeAttachedFilesConfiguration
+
+
+        /// <summary>
+        /// Describes the attached files configuration for the specified Amazon Connect instance
+        /// and attachment scope.
+        /// 
+        ///  
+        /// <para>
+        /// If a custom configuration exists for the specified attachment scope, the custom configuration
+        /// is returned. If no custom configuration exists, the default configuration values for
+        /// that attachment scope are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAttachedFilesConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAttachedFilesConfiguration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAttachedFilesConfiguration">REST API Reference for DescribeAttachedFilesConfiguration Operation</seealso>
+        DescribeAttachedFilesConfigurationResponse DescribeAttachedFilesConfiguration(DescribeAttachedFilesConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Describes the attached files configuration for the specified Amazon Connect instance
+        /// and attachment scope.
+        /// 
+        ///  
+        /// <para>
+        /// If a custom configuration exists for the specified attachment scope, the custom configuration
+        /// is returned. If no custom configuration exists, the default configuration values for
+        /// that attachment scope are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAttachedFilesConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAttachedFilesConfiguration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAttachedFilesConfiguration">REST API Reference for DescribeAttachedFilesConfiguration Operation</seealso>
+        Task<DescribeAttachedFilesConfigurationResponse> DescribeAttachedFilesConfigurationAsync(DescribeAttachedFilesConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeAuthenticationProfile
 
 
@@ -11668,6 +11880,118 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateQueueEmailAddresses
+
+
+        /// <summary>
+        /// Removes the association between a set of email addresses and a queue. After disassociation,
+        /// agents will no longer be able to select these email addresses as "From" addresses
+        /// when replying to inbound email contacts or initiating outbound email contacts in this
+        /// queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Agents will no longer see these email addresses in their "From" address selection
+        /// options for this queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The email addresses themselves are not deleted from the instance, only their availability
+        /// for agent selection in this queue is removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Changes take effect immediately and will affect the agent experience in the Contact
+        /// Control Panel (CCP).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateQueueEmailAddresses service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueEmailAddresses">REST API Reference for DisassociateQueueEmailAddresses Operation</seealso>
+        DisassociateQueueEmailAddressesResponse DisassociateQueueEmailAddresses(DisassociateQueueEmailAddressesRequest request);
+
+
+
+        /// <summary>
+        /// Removes the association between a set of email addresses and a queue. After disassociation,
+        /// agents will no longer be able to select these email addresses as "From" addresses
+        /// when replying to inbound email contacts or initiating outbound email contacts in this
+        /// queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Agents will no longer see these email addresses in their "From" address selection
+        /// options for this queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The email addresses themselves are not deleted from the instance, only their availability
+        /// for agent selection in this queue is removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Changes take effect immediately and will affect the agent experience in the Contact
+        /// Control Panel (CCP).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateQueueEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueEmailAddresses">REST API Reference for DisassociateQueueEmailAddresses Operation</seealso>
+        Task<DisassociateQueueEmailAddressesResponse> DisassociateQueueEmailAddressesAsync(DisassociateQueueEmailAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisassociateQueueQuickConnects
 
 
@@ -13966,6 +14290,80 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListAttachedFilesConfigurations
+
+
+        /// <summary>
+        /// Provides summary information about the attached files configurations for the specified
+        /// Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// This API returns effective configurations (custom overrides or defaults) for each
+        /// attachment scope. If no custom configuration exists for a scope, the default configuration
+        /// values are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedFilesConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachedFilesConfigurations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAttachedFilesConfigurations">REST API Reference for ListAttachedFilesConfigurations Operation</seealso>
+        ListAttachedFilesConfigurationsResponse ListAttachedFilesConfigurations(ListAttachedFilesConfigurationsRequest request);
+
+
+
+        /// <summary>
+        /// Provides summary information about the attached files configurations for the specified
+        /// Amazon Connect instance.
+        /// 
+        ///  
+        /// <para>
+        /// This API returns effective configurations (custom overrides or defaults) for each
+        /// attachment scope. If no custom configuration exists for a scope, the default configuration
+        /// values are returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachedFilesConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAttachedFilesConfigurations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAttachedFilesConfigurations">REST API Reference for ListAttachedFilesConfigurations Operation</seealso>
+        Task<ListAttachedFilesConfigurationsResponse> ListAttachedFilesConfigurationsAsync(ListAttachedFilesConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListAuthenticationProfiles
 
 
@@ -16145,6 +16543,128 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPrompts">REST API Reference for ListPrompts Operation</seealso>
         Task<ListPromptsResponse> ListPromptsAsync(ListPromptsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListQueueEmailAddresses
+
+
+        /// <summary>
+        /// Lists all email addresses that are currently associated with a specific queue, providing
+        /// details about which "From" email addresses agents can select when handling email contacts.
+        /// This helps administrators manage agent email address options and understand the available
+        /// choices for different brands and business units.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The response includes metadata about each email address available for agent selection,
+        /// including whether it's configured as the default outbound email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents can select from these email addresses when replying to inbound contacts or
+        /// initiating outbound contacts in this queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The list includes both explicitly associated email addresses and any default outbound
+        /// email address configured for the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Results are paginated to handle queues with many associated email addresses (up to
+        /// 50 per queue).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueueEmailAddresses service method.</param>
+        /// 
+        /// <returns>The response from the ListQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueEmailAddresses">REST API Reference for ListQueueEmailAddresses Operation</seealso>
+        ListQueueEmailAddressesResponse ListQueueEmailAddresses(ListQueueEmailAddressesRequest request);
+
+
+
+        /// <summary>
+        /// Lists all email addresses that are currently associated with a specific queue, providing
+        /// details about which "From" email addresses agents can select when handling email contacts.
+        /// This helps administrators manage agent email address options and understand the available
+        /// choices for different brands and business units.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The response includes metadata about each email address available for agent selection,
+        /// including whether it's configured as the default outbound email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents can select from these email addresses when replying to inbound contacts or
+        /// initiating outbound contacts in this queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The list includes both explicitly associated email addresses and any default outbound
+        /// email address configured for the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Results are paginated to handle queues with many associated email addresses (up to
+        /// 50 per queue).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueueEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueEmailAddresses">REST API Reference for ListQueueEmailAddresses Operation</seealso>
+        Task<ListQueueEmailAddressesResponse> ListQueueEmailAddressesAsync(ListQueueEmailAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -18937,9 +19457,7 @@ namespace Amazon.Connect
         /// <para>
         /// A Search operation, unlike a List operation, takes time to index changes to resource
         /// (create, update or delete). If you don't see updated information for recently changed
-        /// contact evaluations, try calling the API again in a few seconds. Contact Evaluations
-        /// may not be fully backfilled with historical data in all regions yet, however all recently
-        /// created Contact Evaluations should be available for search.
+        /// contact evaluations, try calling the API again in a few seconds.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -18998,9 +19516,7 @@ namespace Amazon.Connect
         /// <para>
         /// A Search operation, unlike a List operation, takes time to index changes to resource
         /// (create, update or delete). If you don't see updated information for recently changed
-        /// contact evaluations, try calling the API again in a few seconds. Contact Evaluations
-        /// may not be fully backfilled with historical data in all regions yet, however all recently
-        /// created Contact Evaluations should be available for search.
+        /// contact evaluations, try calling the API again in a few seconds.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -23250,6 +23766,80 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateAttachedFilesConfiguration
+
+
+        /// <summary>
+        /// Updates the attached files configuration for the specified Amazon Connect instance
+        /// and attachment scope.
+        /// 
+        ///  
+        /// <para>
+        /// If no instance-specific configuration exists, this operation creates one. Partial
+        /// updates are supported—only specified fields are updated, while unspecified fields
+        /// retain their current values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAttachedFilesConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAttachedFilesConfiguration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAttachedFilesConfiguration">REST API Reference for UpdateAttachedFilesConfiguration Operation</seealso>
+        UpdateAttachedFilesConfigurationResponse UpdateAttachedFilesConfiguration(UpdateAttachedFilesConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Updates the attached files configuration for the specified Amazon Connect instance
+        /// and attachment scope.
+        /// 
+        ///  
+        /// <para>
+        /// If no instance-specific configuration exists, this operation creates one. Partial
+        /// updates are supported—only specified fields are updated, while unspecified fields
+        /// retain their current values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAttachedFilesConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAttachedFilesConfiguration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAttachedFilesConfiguration">REST API Reference for UpdateAttachedFilesConfiguration Operation</seealso>
+        Task<UpdateAttachedFilesConfigurationResponse> UpdateAttachedFilesConfigurationAsync(UpdateAttachedFilesConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateAuthenticationProfile
 
 
@@ -26741,6 +27331,15 @@ namespace Amazon.Connect
         /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
         /// Connect Administrator Guide</i>. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Invoke the UpdateTrafficDistribution API in the region that should handle traffic.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficDistribution service method.</param>
         /// 
@@ -26792,6 +27391,15 @@ namespace Amazon.Connect
         /// telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon
         /// Connect Administrator Guide</i>. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Invoke the UpdateTrafficDistribution API in the region that should handle traffic.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficDistribution service method.</param>
         /// <param name="cancellationToken">

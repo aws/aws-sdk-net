@@ -44,7 +44,7 @@ namespace Amazon.CleanRoomsML.Model
         /// The number of compute workers that are used.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=400)]
+        [AWSProperty(Min=2, Max=1024)]
         public int? Number
         {
             get { return this._number; }

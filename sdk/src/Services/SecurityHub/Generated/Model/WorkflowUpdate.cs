@@ -54,7 +54,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Security Hub also resets <c>WorkFlowStatus</c> from <c>NOTIFIED</c> or <c>RESOLVED</c>
+        /// Security Hub CSPM also resets <c>WorkFlowStatus</c> from <c>NOTIFIED</c> or <c>RESOLVED</c>
         /// to <c>NEW</c> in the following cases:
         /// </para>
         ///  <ul> <li> 

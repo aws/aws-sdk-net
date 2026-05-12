@@ -40,6 +40,8 @@ namespace Amazon.Connect.Model
         private EmailReference _email;
         private EmailMessageReference _emailMessage;
         private EmailMessageReference _emailMessagePlainText;
+        private EmailMessageReference _emailMessagePlainTextRedacted;
+        private EmailMessageReference _emailMessageRedacted;
         private NumberReference _number;
         private StringReference _string;
         private UrlReference _url;
@@ -133,6 +135,36 @@ namespace Amazon.Connect.Model
         internal bool IsSetEmailMessagePlainText()
         {
             return this._emailMessagePlainText != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailMessagePlainTextRedacted.
+        /// </summary>
+        public EmailMessageReference EmailMessagePlainTextRedacted
+        {
+            get { return this._emailMessagePlainTextRedacted; }
+            set { this._emailMessagePlainTextRedacted = value; }
+        }
+
+        // Check to see if EmailMessagePlainTextRedacted property is set
+        internal bool IsSetEmailMessagePlainTextRedacted()
+        {
+            return this._emailMessagePlainTextRedacted != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailMessageRedacted.
+        /// </summary>
+        public EmailMessageReference EmailMessageRedacted
+        {
+            get { return this._emailMessageRedacted; }
+            set { this._emailMessageRedacted = value; }
+        }
+
+        // Check to see if EmailMessageRedacted property is set
+        internal bool IsSetEmailMessageRedacted()
+        {
+            return this._emailMessageRedacted != null;
         }
 
         /// <summary>

@@ -73,7 +73,7 @@ namespace Amazon.BackupGateway.Model
         /// Amazon Web Services Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=50, Max=500)]
+        [AWSProperty(Required=true, Min=50, Max=180)]
         public string GatewayArn
         {
             get { return this._gatewayArn; }

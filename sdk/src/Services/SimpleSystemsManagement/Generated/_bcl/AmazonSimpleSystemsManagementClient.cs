@@ -39,6 +39,11 @@ namespace Amazon.SimpleSystemsManagement
 {
     /// <summary>
     /// <para>Implementation for accessing SimpleSystemsManagement</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services
     /// applications and resources and a secure end-to-end management solution for hybrid
@@ -10013,10 +10018,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
-        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
-        /// to that date. Existing customers can continue to use the service as normal. For more
-        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Amazon Web Services Systems Manager Change Manager is no longer open to new customers.
+        /// Existing customers can continue to use the service as normal. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
         /// Web Services Systems Manager Change Manager availability change</a>.
         /// </para>
         ///  </important> 
@@ -10053,10 +10057,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
-        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
-        /// to that date. Existing customers can continue to use the service as normal. For more
-        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Amazon Web Services Systems Manager Change Manager is no longer open to new customers.
+        /// Existing customers can continue to use the service as normal. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
         /// Web Services Systems Manager Change Manager availability change</a>.
         /// </para>
         ///  </important> 
@@ -13121,10 +13124,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
-        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
-        /// to that date. Existing customers can continue to use the service as normal. For more
-        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Amazon Web Services Systems Manager Change Manager is no longer open to new customers.
+        /// Existing customers can continue to use the service as normal. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
         /// Web Services Systems Manager Change Manager availability change</a>.
         /// </para>
         ///  </important> 
@@ -13180,10 +13182,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
-        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
-        /// to that date. Existing customers can continue to use the service as normal. For more
-        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Amazon Web Services Systems Manager Change Manager is no longer open to new customers.
+        /// Existing customers can continue to use the service as normal. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
         /// Web Services Systems Manager Change Manager availability change</a>.
         /// </para>
         ///  </important> 
@@ -14115,10 +14116,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
-        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
-        /// to that date. Existing customers can continue to use the service as normal. For more
-        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Amazon Web Services Systems Manager Change Manager is no longer open to new customers.
+        /// Existing customers can continue to use the service as normal. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
         /// Web Services Systems Manager Change Manager availability change</a>.
         /// </para>
         ///  </important> 
@@ -14160,10 +14160,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// <important> 
         /// <para>
-        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
-        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
-        /// to that date. Existing customers can continue to use the service as normal. For more
-        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Amazon Web Services Systems Manager Change Manager is no longer open to new customers.
+        /// Existing customers can continue to use the service as normal. For more information,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
         /// Web Services Systems Manager Change Manager availability change</a>.
         /// </para>
         ///  </important> 

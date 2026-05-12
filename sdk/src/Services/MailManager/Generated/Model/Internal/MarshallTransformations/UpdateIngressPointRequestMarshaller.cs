@@ -110,6 +110,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.StatusToUpdate);
             }
 
+            if(publicRequest.IsSetTlsPolicy())
+            {
+                context.Writer.WritePropertyName("TlsPolicy");
+                context.Writer.WriteStringValue(publicRequest.TlsPolicy);
+            }
+
             if(publicRequest.IsSetTrafficPolicyId())
             {
                 context.Writer.WritePropertyName("TrafficPolicyId");

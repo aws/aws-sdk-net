@@ -1,18 +1,11 @@
 {
   "version" : 2,
   "testCases" : [ {
-    "id" : "CalculateRouteMatrixSuccess",
-    "operationName" : "CalculateRouteMatrix",
+    "id" : "CalculateRoutesSuccess",
+    "operationName" : "CalculateRoutes",
     "input" : {
-      "Origins" : [ {
-        "Position" : [ -123.11679, 49.28147 ]
-      } ],
-      "Destinations" : [ {
-        "Position" : [ -123.11231, 49.28897192166 ]
-      } ],
-      "RoutingBoundary" : {
-        "Unbounded" : true
-      }
+      "Origin" : [ -123.253374, 49.351673 ],
+      "Destination" : [ -123.930756, 49.1314 ]
     },
     "expectation" : {
       "success" : { }
@@ -43,11 +36,18 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "CalculateRoutesSuccess",
-    "operationName" : "CalculateRoutes",
+    "id" : "CalculateRouteMatrixSuccess",
+    "operationName" : "CalculateRouteMatrix",
     "input" : {
-      "Origin" : [ -123.253374, 49.351673 ],
-      "Destination" : [ -123.930756, 49.1314 ]
+      "Origins" : [ {
+        "Position" : [ -123.11679, 49.28147 ]
+      } ],
+      "Destinations" : [ {
+        "Position" : [ -123.11231, 49.28897192166 ]
+      } ],
+      "RoutingBoundary" : {
+        "Unbounded" : true
+      }
     },
     "expectation" : {
       "success" : { }

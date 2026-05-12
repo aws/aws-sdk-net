@@ -105,6 +105,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.PlanArn);
             }
 
+            if(publicRequest.IsSetRecoveryExecutionId())
+            {
+                context.Writer.WritePropertyName("recoveryExecutionId");
+                context.Writer.WriteStringValue(publicRequest.RecoveryExecutionId);
+            }
+
             if(publicRequest.IsSetTargetRegion())
             {
                 context.Writer.WritePropertyName("targetRegion");

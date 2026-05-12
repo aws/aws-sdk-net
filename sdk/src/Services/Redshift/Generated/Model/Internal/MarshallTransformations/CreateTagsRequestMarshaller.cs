@@ -85,6 +85,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateTagsRequestMarshaller _instance = new CreateTagsRequestMarshaller();        

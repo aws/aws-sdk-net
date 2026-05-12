@@ -93,6 +93,14 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Paginator for ListQuotaShares operation
+        ///</summary>
+        public IListQuotaSharesPaginator ListQuotaShares(ListQuotaSharesRequest request) 
+        {
+            return new ListQuotaSharesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSchedulingPolicies operation
         ///</summary>
         public IListSchedulingPoliciesPaginator ListSchedulingPolicies(ListSchedulingPoliciesRequest request) 

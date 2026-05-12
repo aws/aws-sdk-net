@@ -110,6 +110,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
             return request;
         }
                     private static BatchDeleteAttributesRequestMarshaller _instance = new BatchDeleteAttributesRequestMarshaller();        

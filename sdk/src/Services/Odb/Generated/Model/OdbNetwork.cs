@@ -42,6 +42,7 @@ namespace Amazon.Odb.Model
         private string _customDomainName;
         private string _defaultDnsPrefix;
         private string _displayName;
+        private List<string> _ec2PlacementGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ManagedServices _managedServices;
         private List<OciDnsForwardingConfig> _ociDnsForwardingConfigs = AWSConfigs.InitializeCollections ? new List<OciDnsForwardingConfig>() : null;
         private string _ociNetworkAnchorId;
@@ -204,6 +205,29 @@ namespace Amazon.Odb.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ec2PlacementGroupIds. 
+        /// <para>
+        /// The list of EC2 Placement Group IDs associated with your ODB network.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Ec2PlacementGroupIds
+        {
+            get { return this._ec2PlacementGroupIds; }
+            set { this._ec2PlacementGroupIds = value; }
+        }
+
+        // Check to see if Ec2PlacementGroupIds property is set
+        internal bool IsSetEc2PlacementGroupIds()
+        {
+            return this._ec2PlacementGroupIds != null && (this._ec2PlacementGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

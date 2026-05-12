@@ -76,16 +76,34 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     response.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("externalInboundEndpoint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ExternalInboundEndpoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("gatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("gatewayType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GatewayType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("inboundLinksCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InboundLinksCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("listenerConfig", targetDepth))
+                {
+                    var unmarshaller = ListenerConfigUnmarshaller.Instance;
+                    response.ListenerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("managedEndpointConfiguration", targetDepth))

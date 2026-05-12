@@ -68,6 +68,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMediaLiveChannel())
+            {
+                context.Writer.WritePropertyName("mediaLiveChannel");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MediaLiveChannelRouterInputConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.MediaLiveChannel, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetMerge())
             {
                 context.Writer.WritePropertyName("merge");

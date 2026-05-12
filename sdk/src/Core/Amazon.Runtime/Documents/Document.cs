@@ -20,8 +20,10 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
-using ThirdParty.RuntimeBackports;
 using System.Text.Json;
+using System.Text.Json.Serialization;
+
+using ThirdParty.RuntimeBackports;
 namespace Amazon.Runtime.Documents
 {
     /// <summary>
@@ -51,6 +53,7 @@ namespace Amazon.Runtime.Documents
     /// Document Types specification specifies support for arbitrary precision integers.  However, the dotnet implementation
     /// is limited to representing numbers as either <see cref="double"/>, <see cref="int"/> or <see cref="long"/>.
     /// </remarks>
+    [JsonConverter(typeof(DocumentJsonConverter))]
     public partial struct Document : IEquatable<Document>, IEnumerable<Document>, IEnumerable<KeyValuePair<string, Document>>
     {
         private readonly bool _dataBool;
@@ -438,6 +441,8 @@ namespace Amazon.Runtime.Documents
                 case JsonValueKind.True:
                     return new Document(jsonElement.GetBoolean());
                 case JsonValueKind.Number:
+                    if (jsonElement.TryGetInt32(out int intValue))
+                        return new Document(intValue);
                     if (jsonElement.TryGetInt64(out long longValue))
                         return new Document(longValue);
                     if (jsonElement.TryGetDouble(out double doubleValue))

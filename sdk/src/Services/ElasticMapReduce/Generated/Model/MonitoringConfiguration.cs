@@ -30,11 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Contains CloudWatch log configuration metadata and settings.
+    /// Contains CloudWatch log configuration and S3 logging configuration metadata and settings.
     /// </summary>
     public partial class MonitoringConfiguration
     {
         private CloudWatchLogConfiguration _cloudWatchLogConfiguration;
+        private S3LoggingConfiguration _s3LoggingConfiguration;
 
         /// <summary>
         /// Gets and sets the property CloudWatchLogConfiguration. 
@@ -53,6 +54,26 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetCloudWatchLogConfiguration()
         {
             return this._cloudWatchLogConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3LoggingConfiguration. 
+        /// <para>
+        /// S3 logging configuration that controls how different types of logs (system logs, application
+        /// logs, and persistent UI logs) are uploaded to S3. Each log type can be configured
+        /// with a specific upload policy.
+        /// </para>
+        /// </summary>
+        public S3LoggingConfiguration S3LoggingConfiguration
+        {
+            get { return this._s3LoggingConfiguration; }
+            set { this._s3LoggingConfiguration = value; }
+        }
+
+        // Check to see if S3LoggingConfiguration property is set
+        internal bool IsSetS3LoggingConfiguration()
+        {
+            return this._s3LoggingConfiguration != null;
         }
 
     }

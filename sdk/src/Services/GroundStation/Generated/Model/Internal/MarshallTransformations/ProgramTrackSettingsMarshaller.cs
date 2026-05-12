@@ -57,6 +57,28 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetOem())
+            {
+                context.Writer.WritePropertyName("oem");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OemProgramTrackSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Oem, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetTle())
+            {
+                context.Writer.WritePropertyName("tle");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TleProgramTrackSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Tle, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

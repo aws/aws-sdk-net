@@ -170,6 +170,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateVpcEndpointServiceConfigurationRequestMarshaller _instance = new CreateVpcEndpointServiceConfigurationRequestMarshaller();        

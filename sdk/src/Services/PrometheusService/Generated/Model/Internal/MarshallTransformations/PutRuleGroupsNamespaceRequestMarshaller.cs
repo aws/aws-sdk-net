@@ -93,7 +93,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetData())
             {
                 context.Writer.WritePropertyName("data");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Data));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Data);
             }
 
             writer.WriteEndObject();

@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("IpamPolicyId", StringUtils.FromString(publicRequest.IpamPolicyId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteIpamPolicyRequestMarshaller _instance = new DeleteIpamPolicyRequestMarshaller();        

@@ -7164,8 +7164,14 @@
           "idempotencyToken":true
         },
         "orchestratorUseCase":{"shape":"NonEmptyString"},
-        "metadata":{"shape":"MessageMetadata"}
+        "metadata":{"shape":"MessageMetadata"},
+        "originRequestId":{"shape":"SendMessageRequestOriginRequestIdString"}
       }
+    },
+    "SendMessageRequestOriginRequestIdString":{
+      "type":"string",
+      "max":256,
+      "min":1
     },
     "SendMessageResponse":{
       "type":"structure",
@@ -7306,7 +7312,9 @@
         "startTimestamp":{"shape":"Timestamp"},
         "endTimestamp":{"shape":"Timestamp"},
         "status":{"shape":"SpanStatus"},
+        "statusDescription":{"shape":"SpanStatusDescriptionString"},
         "requestId":{"shape":"Uuid"},
+        "originRequestId":{"shape":"SpanOriginRequestIdString"},
         "attributes":{"shape":"SpanAttributes"}
       }
     },
@@ -7346,7 +7354,8 @@
         "promptId":{"shape":"Uuid"},
         "promptType":{"shape":"AIPromptType"},
         "promptName":{"shape":"Name"},
-        "promptVersion":{"shape":"Integer"}
+        "promptVersion":{"shape":"Integer"},
+        "timeToFirstTokenMs":{"shape":"Integer"}
       }
     },
     "SpanAttributesTemperatureFloat":{
@@ -7412,7 +7421,8 @@
       "members":{
         "text":{"shape":"SpanTextValue"},
         "toolUse":{"shape":"SpanToolUseValue"},
-        "toolResult":{"shape":"SpanToolResultValue"}
+        "toolResult":{"shape":"SpanToolResultValue"},
+        "reasoning":{"shape":"SpanReasoningValue"}
       },
       "union":true
     },
@@ -7422,6 +7432,18 @@
       "max":10,
       "min":1
     },
+    "SpanOriginRequestIdString":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
+    "SpanReasoningValue":{
+      "type":"structure",
+      "required":["value"],
+      "members":{
+        "value":{"shape":"NonEmptySensitiveString"}
+      }
+    },
     "SpanStatus":{
       "type":"string",
       "enum":[
@@ -7429,6 +7451,11 @@
         "ERROR",
         "TIMEOUT"
       ]
+    },
+    "SpanStatusDescriptionString":{
+      "type":"string",
+      "max":1024,
+      "min":1
     },
     "SpanTextValue":{
       "type":"structure",

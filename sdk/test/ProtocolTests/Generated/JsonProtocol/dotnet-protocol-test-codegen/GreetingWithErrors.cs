@@ -337,5 +337,32 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
         }
 
+        /// <summary>
+        /// Some services serialize errors using __type, and if the response
+        /// includes additional shapes that belong to a different namespace
+        /// there'll be a nested __type property that must not be considered
+        /// when determining which error to be surfaced.  For an example
+        /// service see Amazon DynamoDB.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ErrorTest")]
+        [TestCategory("JsonProtocol")]
+        public void AwsJson11FooErrorWithNestedTypePropertyErrorResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
+            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.restjson#FooError\",\n    \"ErrorDetails\": [\n      {\n          \"__type\": \"com.amazon.internal#ErrorDetails\",\n          \"reason\": \"Some reason\"\n      }\n    ]\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            // Act
+            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            // Assert
+            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
+            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+        }
+
     }
 }

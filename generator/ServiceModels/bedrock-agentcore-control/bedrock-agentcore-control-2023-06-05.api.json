@@ -133,6 +133,24 @@
       ],
       "idempotent":true
     },
+    "CreateConfigurationBundle":{
+      "name":"CreateConfigurationBundle",
+      "http":{
+        "method":"POST",
+        "requestUri":"/configuration-bundles/create",
+        "responseCode":201
+      },
+      "input":{"shape":"CreateConfigurationBundleRequest"},
+      "output":{"shape":"CreateConfigurationBundleResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "CreateEvaluator":{
       "name":"CreateEvaluator",
       "http":{
@@ -170,6 +188,26 @@
       ],
       "idempotent":true
     },
+    "CreateGatewayRule":{
+      "name":"CreateGatewayRule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/gateways/{gatewayIdentifier}/rules",
+        "responseCode":202
+      },
+      "input":{"shape":"CreateGatewayRuleRequest"},
+      "output":{"shape":"CreateGatewayRuleResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
     "CreateGatewayTarget":{
       "name":"CreateGatewayTarget",
       "http":{
@@ -186,6 +224,25 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
         {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "CreateHarness":{
+      "name":"CreateHarness",
+      "http":{
+        "method":"POST",
+        "requestUri":"/harnesses",
+        "responseCode":201
+      },
+      "input":{"shape":"CreateHarnessRequest"},
+      "output":{"shape":"CreateHarnessResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
       "idempotent":true
@@ -252,6 +309,69 @@
         {"shape":"InternalServerException"}
       ]
     },
+    "CreatePaymentConnector":{
+      "name":"CreatePaymentConnector",
+      "http":{
+        "method":"POST",
+        "requestUri":"/payments/managers/{paymentManagerId}/connectors",
+        "responseCode":202
+      },
+      "input":{"shape":"CreatePaymentConnectorRequest"},
+      "output":{"shape":"CreatePaymentConnectorResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "CreatePaymentCredentialProvider":{
+      "name":"CreatePaymentCredentialProvider",
+      "http":{
+        "method":"POST",
+        "requestUri":"/identities/CreatePaymentCredentialProvider",
+        "responseCode":201
+      },
+      "input":{"shape":"CreatePaymentCredentialProviderRequest"},
+      "output":{"shape":"CreatePaymentCredentialProviderResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"ResourceLimitExceededException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"DecryptionFailure"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"},
+        {"shape":"EncryptionFailure"}
+      ],
+      "idempotent":true
+    },
+    "CreatePaymentManager":{
+      "name":"CreatePaymentManager",
+      "http":{
+        "method":"POST",
+        "requestUri":"/payments/managers",
+        "responseCode":202
+      },
+      "input":{"shape":"CreatePaymentManagerRequest"},
+      "output":{"shape":"CreatePaymentManagerResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
     "CreatePolicy":{
       "name":"CreatePolicy",
       "http":{
@@ -264,10 +384,10 @@
       "errors":[
         {"shape":"ServiceQuotaExceededException"},
         {"shape":"AccessDeniedException"},
-        {"shape":"ConflictException"},
         {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
+        {"shape":"ConflictException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"}
       ]
     },
@@ -288,6 +408,45 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ]
+    },
+    "CreateRegistry":{
+      "name":"CreateRegistry",
+      "http":{
+        "method":"POST",
+        "requestUri":"/registries",
+        "responseCode":202
+      },
+      "input":{"shape":"CreateRegistryRequest"},
+      "output":{"shape":"CreateRegistryResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "CreateRegistryRecord":{
+      "name":"CreateRegistryRecord",
+      "http":{
+        "method":"POST",
+        "requestUri":"/registries/{registryId}/records",
+        "responseCode":202
+      },
+      "input":{"shape":"CreateRegistryRecordRequest"},
+      "output":{"shape":"CreateRegistryRecordResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
     },
     "CreateWorkloadIdentity":{
       "name":"CreateWorkloadIdentity",
@@ -422,6 +581,25 @@
       ],
       "idempotent":true
     },
+    "DeleteConfigurationBundle":{
+      "name":"DeleteConfigurationBundle",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/configuration-bundles/{bundleId}",
+        "responseCode":202
+      },
+      "input":{"shape":"DeleteConfigurationBundleRequest"},
+      "output":{"shape":"DeleteConfigurationBundleResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
     "DeleteEvaluator":{
       "name":"DeleteEvaluator",
       "http":{
@@ -460,6 +638,25 @@
       ],
       "idempotent":true
     },
+    "DeleteGatewayRule":{
+      "name":"DeleteGatewayRule",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/gateways/{gatewayIdentifier}/rules/{ruleId}",
+        "responseCode":202
+      },
+      "input":{"shape":"DeleteGatewayRuleRequest"},
+      "output":{"shape":"DeleteGatewayRuleResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
     "DeleteGatewayTarget":{
       "name":"DeleteGatewayTarget",
       "http":{
@@ -473,6 +670,25 @@
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "DeleteHarness":{
+      "name":"DeleteHarness",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/harnesses/{harnessId}",
+        "responseCode":200
+      },
+      "input":{"shape":"DeleteHarnessRequest"},
+      "output":{"shape":"DeleteHarnessResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
@@ -511,6 +727,7 @@
         {"shape":"UnauthorizedException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
@@ -536,6 +753,61 @@
       ],
       "idempotent":true
     },
+    "DeletePaymentConnector":{
+      "name":"DeletePaymentConnector",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/payments/managers/{paymentManagerId}/connectors/{paymentConnectorId}",
+        "responseCode":202
+      },
+      "input":{"shape":"DeletePaymentConnectorRequest"},
+      "output":{"shape":"DeletePaymentConnectorResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "DeletePaymentCredentialProvider":{
+      "name":"DeletePaymentCredentialProvider",
+      "http":{
+        "method":"POST",
+        "requestUri":"/identities/DeletePaymentCredentialProvider",
+        "responseCode":204
+      },
+      "input":{"shape":"DeletePaymentCredentialProviderRequest"},
+      "output":{"shape":"DeletePaymentCredentialProviderResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "DeletePaymentManager":{
+      "name":"DeletePaymentManager",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/payments/managers/{paymentManagerId}",
+        "responseCode":202
+      },
+      "input":{"shape":"DeletePaymentManagerRequest"},
+      "output":{"shape":"DeletePaymentManagerResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
     "DeletePolicy":{
       "name":"DeletePolicy",
       "http":{
@@ -546,9 +818,9 @@
       "input":{"shape":"DeletePolicyRequest"},
       "output":{"shape":"DeletePolicyResponse"},
       "errors":[
+        {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
-        {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
@@ -564,6 +836,44 @@
       },
       "input":{"shape":"DeletePolicyEngineRequest"},
       "output":{"shape":"DeletePolicyEngineResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "DeleteRegistry":{
+      "name":"DeleteRegistry",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/registries/{registryId}",
+        "responseCode":202
+      },
+      "input":{"shape":"DeleteRegistryRequest"},
+      "output":{"shape":"DeleteRegistryResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "DeleteRegistryRecord":{
+      "name":"DeleteRegistryRecord",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/registries/{registryId}/records/{recordId}",
+        "responseCode":200
+      },
+      "input":{"shape":"DeleteRegistryRecordRequest"},
+      "output":{"shape":"DeleteRegistryRecordResponse"},
       "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
@@ -721,6 +1031,42 @@
       ],
       "readonly":true
     },
+    "GetConfigurationBundle":{
+      "name":"GetConfigurationBundle",
+      "http":{
+        "method":"GET",
+        "requestUri":"/configuration-bundles/{bundleId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetConfigurationBundleRequest"},
+      "output":{"shape":"GetConfigurationBundleResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "GetConfigurationBundleVersion":{
+      "name":"GetConfigurationBundleVersion",
+      "http":{
+        "method":"GET",
+        "requestUri":"/configuration-bundles/{bundleId}/versions/{versionId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetConfigurationBundleVersionRequest"},
+      "output":{"shape":"GetConfigurationBundleVersionResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
     "GetEvaluator":{
       "name":"GetEvaluator",
       "http":{
@@ -757,6 +1103,24 @@
       ],
       "readonly":true
     },
+    "GetGatewayRule":{
+      "name":"GetGatewayRule",
+      "http":{
+        "method":"GET",
+        "requestUri":"/gateways/{gatewayIdentifier}/rules/{ruleId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetGatewayRuleRequest"},
+      "output":{"shape":"GetGatewayRuleResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
     "GetGatewayTarget":{
       "name":"GetGatewayTarget",
       "http":{
@@ -769,6 +1133,24 @@
       "errors":[
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "GetHarness":{
+      "name":"GetHarness",
+      "http":{
+        "method":"GET",
+        "requestUri":"/harnesses/{harnessId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetHarnessRequest"},
+      "output":{"shape":"GetHarnessResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
@@ -831,6 +1213,62 @@
       ],
       "readonly":true
     },
+    "GetPaymentConnector":{
+      "name":"GetPaymentConnector",
+      "http":{
+        "method":"GET",
+        "requestUri":"/payments/managers/{paymentManagerId}/connectors/{paymentConnectorId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetPaymentConnectorRequest"},
+      "output":{"shape":"GetPaymentConnectorResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "GetPaymentCredentialProvider":{
+      "name":"GetPaymentCredentialProvider",
+      "http":{
+        "method":"POST",
+        "requestUri":"/identities/GetPaymentCredentialProvider",
+        "responseCode":200
+      },
+      "input":{"shape":"GetPaymentCredentialProviderRequest"},
+      "output":{"shape":"GetPaymentCredentialProviderResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"DecryptionFailure"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "GetPaymentManager":{
+      "name":"GetPaymentManager",
+      "http":{
+        "method":"GET",
+        "requestUri":"/payments/managers/{paymentManagerId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetPaymentManagerRequest"},
+      "output":{"shape":"GetPaymentManagerResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
     "GetPolicy":{
       "name":"GetPolicy",
       "http":{
@@ -843,8 +1281,8 @@
       "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"}
       ],
       "readonly":true
@@ -861,8 +1299,8 @@
       "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"}
       ],
       "readonly":true
@@ -878,6 +1316,43 @@
       "output":{"shape":"GetPolicyGenerationResponse"},
       "errors":[
         {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "GetRegistry":{
+      "name":"GetRegistry",
+      "http":{
+        "method":"GET",
+        "requestUri":"/registries/{registryId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetRegistryRequest"},
+      "output":{"shape":"GetRegistryResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "GetRegistryRecord":{
+      "name":"GetRegistryRecord",
+      "http":{
+        "method":"GET",
+        "requestUri":"/registries/{registryId}/records/{recordId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetRegistryRecordRequest"},
+      "output":{"shape":"GetRegistryRecordResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
@@ -1063,6 +1538,41 @@
       ],
       "readonly":true
     },
+    "ListConfigurationBundleVersions":{
+      "name":"ListConfigurationBundleVersions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/configuration-bundles/{bundleId}/versions",
+        "responseCode":200
+      },
+      "input":{"shape":"ListConfigurationBundleVersionsRequest"},
+      "output":{"shape":"ListConfigurationBundleVersionsResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "ListConfigurationBundles":{
+      "name":"ListConfigurationBundles",
+      "http":{
+        "method":"POST",
+        "requestUri":"/configuration-bundles",
+        "responseCode":200
+      },
+      "input":{"shape":"ListConfigurationBundlesRequest"},
+      "output":{"shape":"ListConfigurationBundlesResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
     "ListEvaluators":{
       "name":"ListEvaluators",
       "http":{
@@ -1075,6 +1585,24 @@
       "errors":[
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "ListGatewayRules":{
+      "name":"ListGatewayRules",
+      "http":{
+        "method":"GET",
+        "requestUri":"/gateways/{gatewayIdentifier}/rules",
+        "responseCode":200
+      },
+      "input":{"shape":"ListGatewayRulesRequest"},
+      "output":{"shape":"ListGatewayRulesResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
@@ -1109,6 +1637,23 @@
       "errors":[
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "ListHarnesses":{
+      "name":"ListHarnesses",
+      "http":{
+        "method":"GET",
+        "requestUri":"/harnesses",
+        "responseCode":200
+      },
+      "input":{"shape":"ListHarnessesRequest"},
+      "output":{"shape":"ListHarnessesResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
@@ -1168,6 +1713,59 @@
       ],
       "readonly":true
     },
+    "ListPaymentConnectors":{
+      "name":"ListPaymentConnectors",
+      "http":{
+        "method":"POST",
+        "requestUri":"/payments/managers/{paymentManagerId}/connectors-list",
+        "responseCode":200
+      },
+      "input":{"shape":"ListPaymentConnectorsRequest"},
+      "output":{"shape":"ListPaymentConnectorsResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "ListPaymentCredentialProviders":{
+      "name":"ListPaymentCredentialProviders",
+      "http":{
+        "method":"POST",
+        "requestUri":"/identities/ListPaymentCredentialProviders",
+        "responseCode":200
+      },
+      "input":{"shape":"ListPaymentCredentialProvidersRequest"},
+      "output":{"shape":"ListPaymentCredentialProvidersResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "ListPaymentManagers":{
+      "name":"ListPaymentManagers",
+      "http":{
+        "method":"POST",
+        "requestUri":"/payments/managers-list",
+        "responseCode":200
+      },
+      "input":{"shape":"ListPaymentManagersRequest"},
+      "output":{"shape":"ListPaymentManagersResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
     "ListPolicies":{
       "name":"ListPolicies",
       "http":{
@@ -1180,8 +1778,8 @@
       "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"}
       ],
       "readonly":true
@@ -1215,8 +1813,8 @@
       "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"ValidationException"},
-        {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"}
       ],
       "readonly":true
@@ -1232,6 +1830,42 @@
       "output":{"shape":"ListPolicyGenerationsResponse"},
       "errors":[
         {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "ListRegistries":{
+      "name":"ListRegistries",
+      "http":{
+        "method":"GET",
+        "requestUri":"/registries",
+        "responseCode":200
+      },
+      "input":{"shape":"ListRegistriesRequest"},
+      "output":{"shape":"ListRegistriesResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "readonly":true
+    },
+    "ListRegistryRecords":{
+      "name":"ListRegistryRecords",
+      "http":{
+        "method":"GET",
+        "requestUri":"/registries/{registryId}/records",
+        "responseCode":200
+      },
+      "input":{"shape":"ListRegistryRecordsRequest"},
+      "output":{"shape":"ListRegistryRecordsResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
         {"shape":"ValidationException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
@@ -1324,6 +1958,24 @@
       "output":{"shape":"StartPolicyGenerationResponse"},
       "errors":[
         {"shape":"ServiceQuotaExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "SubmitRegistryRecordForApproval":{
+      "name":"SubmitRegistryRecordForApproval",
+      "http":{
+        "method":"POST",
+        "requestUri":"/registries/{registryId}/records/{recordId}/submit-for-approval",
+        "responseCode":202
+      },
+      "input":{"shape":"SubmitRegistryRecordForApprovalRequest"},
+      "output":{"shape":"SubmitRegistryRecordForApprovalResponse"},
+      "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
         {"shape":"ValidationException"},
@@ -1451,6 +2103,24 @@
       ],
       "idempotent":true
     },
+    "UpdateConfigurationBundle":{
+      "name":"UpdateConfigurationBundle",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/configuration-bundles/{bundleId}",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateConfigurationBundleRequest"},
+      "output":{"shape":"UpdateConfigurationBundleResponse"},
+      "errors":[
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
     "UpdateEvaluator":{
       "name":"UpdateEvaluator",
       "http":{
@@ -1491,6 +2161,25 @@
       ],
       "idempotent":true
     },
+    "UpdateGatewayRule":{
+      "name":"UpdateGatewayRule",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/gateways/{gatewayIdentifier}/rules/{ruleId}",
+        "responseCode":202
+      },
+      "input":{"shape":"UpdateGatewayRuleRequest"},
+      "output":{"shape":"UpdateGatewayRuleResponse"},
+      "errors":[
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
     "UpdateGatewayTarget":{
       "name":"UpdateGatewayTarget",
       "http":{
@@ -1507,6 +2196,25 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
         {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "UpdateHarness":{
+      "name":"UpdateHarness",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/harnesses/{harnessId}",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateHarnessRequest"},
+      "output":{"shape":"UpdateHarnessResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
       "idempotent":true
@@ -1573,16 +2281,17 @@
       ],
       "idempotent":true
     },
-    "UpdatePolicy":{
-      "name":"UpdatePolicy",
+    "UpdatePaymentConnector":{
+      "name":"UpdatePaymentConnector",
       "http":{
-        "method":"PUT",
-        "requestUri":"/policy-engines/{policyEngineId}/policies/{policyId}",
+        "method":"PATCH",
+        "requestUri":"/payments/managers/{paymentManagerId}/connectors/{paymentConnectorId}",
         "responseCode":202
       },
-      "input":{"shape":"UpdatePolicyRequest"},
-      "output":{"shape":"UpdatePolicyResponse"},
+      "input":{"shape":"UpdatePaymentConnectorRequest"},
+      "output":{"shape":"UpdatePaymentConnectorResponse"},
       "errors":[
+        {"shape":"ServiceQuotaExceededException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
         {"shape":"ValidationException"},
@@ -1592,16 +2301,39 @@
       ],
       "idempotent":true
     },
-    "UpdatePolicyEngine":{
-      "name":"UpdatePolicyEngine",
+    "UpdatePaymentCredentialProvider":{
+      "name":"UpdatePaymentCredentialProvider",
       "http":{
-        "method":"PUT",
-        "requestUri":"/policy-engines/{policyEngineId}",
+        "method":"POST",
+        "requestUri":"/identities/UpdatePaymentCredentialProvider",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdatePaymentCredentialProviderRequest"},
+      "output":{"shape":"UpdatePaymentCredentialProviderResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"DecryptionFailure"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"},
+        {"shape":"EncryptionFailure"}
+      ]
+    },
+    "UpdatePaymentManager":{
+      "name":"UpdatePaymentManager",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/payments/managers/{paymentManagerId}",
         "responseCode":202
       },
-      "input":{"shape":"UpdatePolicyEngineRequest"},
-      "output":{"shape":"UpdatePolicyEngineResponse"},
+      "input":{"shape":"UpdatePaymentManagerRequest"},
+      "output":{"shape":"UpdatePaymentManagerResponse"},
       "errors":[
+        {"shape":"ServiceQuotaExceededException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"},
         {"shape":"ValidationException"},
@@ -1610,6 +2342,99 @@
         {"shape":"InternalServerException"}
       ],
       "idempotent":true
+    },
+    "UpdatePolicy":{
+      "name":"UpdatePolicy",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/policy-engines/{policyEngineId}/policies/{policyId}",
+        "responseCode":202
+      },
+      "input":{"shape":"UpdatePolicyRequest"},
+      "output":{"shape":"UpdatePolicyResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "UpdatePolicyEngine":{
+      "name":"UpdatePolicyEngine",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/policy-engines/{policyEngineId}",
+        "responseCode":202
+      },
+      "input":{"shape":"UpdatePolicyEngineRequest"},
+      "output":{"shape":"UpdatePolicyEngineResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "idempotent":true
+    },
+    "UpdateRegistry":{
+      "name":"UpdateRegistry",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/registries/{registryId}",
+        "responseCode":202
+      },
+      "input":{"shape":"UpdateRegistryRequest"},
+      "output":{"shape":"UpdateRegistryResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "UpdateRegistryRecord":{
+      "name":"UpdateRegistryRecord",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/registries/{registryId}/records/{recordId}",
+        "responseCode":202
+      },
+      "input":{"shape":"UpdateRegistryRecordRequest"},
+      "output":{"shape":"UpdateRegistryRecordResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
+    },
+    "UpdateRegistryRecordStatus":{
+      "name":"UpdateRegistryRecordStatus",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/registries/{registryId}/records/{recordId}/status",
+        "responseCode":202
+      },
+      "input":{"shape":"UpdateRegistryRecordStatusRequest"},
+      "output":{"shape":"UpdateRegistryRecordStatusResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ValidationException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ]
     },
     "UpdateWorkloadIdentity":{
       "name":"UpdateWorkloadIdentity",
@@ -1632,6 +2457,12 @@
     }
   },
   "shapes":{
+    "A2aDescriptor":{
+      "type":"structure",
+      "members":{
+        "agentCard":{"shape":"AgentCardDefinition"}
+      }
+    },
     "AccessDeniedException":{
       "type":"structure",
       "members":{
@@ -1643,10 +2474,39 @@
       },
       "exception":true
     },
+    "Action":{
+      "type":"structure",
+      "members":{
+        "configurationBundle":{"shape":"ConfigurationBundleAction"},
+        "routeToTarget":{"shape":"RouteToTargetAction"}
+      },
+      "union":true
+    },
+    "Actions":{
+      "type":"list",
+      "member":{"shape":"Action"},
+      "max":2,
+      "min":1
+    },
+    "ActorTokenContentType":{
+      "type":"string",
+      "enum":[
+        "NONE",
+        "M2M",
+        "AWS_IAM_ID_TOKEN_JWT"
+      ]
+    },
     "AdditionalModelRequestFields":{
       "type":"structure",
       "members":{},
       "document":true
+    },
+    "AgentCardDefinition":{
+      "type":"structure",
+      "members":{
+        "schemaVersion":{"shape":"SchemaVersion"},
+        "inlineContent":{"shape":"InlineContent"}
+      }
     },
     "AgentEndpointDescription":{
       "type":"string",
@@ -1659,7 +2519,9 @@
         "PYTHON_3_10",
         "PYTHON_3_11",
         "PYTHON_3_12",
-        "PYTHON_3_13"
+        "PYTHON_3_13",
+        "PYTHON_3_14",
+        "NODE_22"
       ]
     },
     "AgentRuntime":{
@@ -1771,6 +2633,13 @@
       "type":"list",
       "member":{"shape":"AgentRuntime"}
     },
+    "AgentSkillsDescriptor":{
+      "type":"structure",
+      "members":{
+        "skillMd":{"shape":"SkillMdDefinition"},
+        "skillDefinition":{"shape":"SkillDefinition"}
+      }
+    },
     "AllowedAudience":{"type":"string"},
     "AllowedAudienceList":{
       "type":"list",
@@ -1810,6 +2679,30 @@
     "AllowedScopesType":{
       "type":"list",
       "member":{"shape":"AllowedScopeType"},
+      "min":1
+    },
+    "AllowedStringListValue":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-zA-Z0-9\\s._:/=+@-]*"
+    },
+    "AllowedStringListValuesList":{
+      "type":"list",
+      "member":{"shape":"AllowedStringListValue"},
+      "max":10,
+      "min":1
+    },
+    "AllowedStringValue":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"[a-zA-Z0-9\\s._:/=+@-]*"
+    },
+    "AllowedStringValuesList":{
+      "type":"list",
+      "member":{"shape":"AllowedStringValue"},
+      "max":10,
       "min":1
     },
     "ApiGatewayTargetConfiguration":{
@@ -1865,6 +2758,10 @@
     "ApiGatewayToolOverrides":{
       "type":"list",
       "member":{"shape":"ApiGatewayToolOverride"}
+    },
+    "ApiKeyArn":{
+      "type":"string",
+      "pattern":"arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+"
     },
     "ApiKeyCredentialLocation":{
       "type":"string",
@@ -1934,6 +2831,12 @@
       },
       "union":true
     },
+    "ApprovalConfiguration":{
+      "type":"structure",
+      "members":{
+        "autoApproval":{"shape":"Boolean"}
+      }
+    },
     "Arn":{
       "type":"string",
       "pattern":"arn:[a-z0-9-\\.]{1,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[^/].{0,1023}"
@@ -1957,6 +2860,13 @@
         "clientId":{"shape":"ClientIdType"}
       }
     },
+    "AuthorizationData":{
+      "type":"structure",
+      "members":{
+        "oauth2":{"shape":"OAuth2AuthorizationData"}
+      },
+      "union":true
+    },
     "AuthorizationEndpointType":{"type":"string"},
     "AuthorizerConfiguration":{
       "type":"structure",
@@ -1970,7 +2880,8 @@
       "enum":[
         "CUSTOM_JWT",
         "AWS_IAM",
-        "NONE"
+        "NONE",
+        "AUTHENTICATE_ONLY"
       ]
     },
     "AuthorizingClaimMatchValueType":{
@@ -2006,9 +2917,36 @@
       "type":"boolean",
       "box":true
     },
+    "BranchName":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[a-zA-Z][a-zA-Z0-9_/-]{0,127}"
+    },
     "BrowserArn":{
       "type":"string",
-      "pattern":"arn:(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:(aws|[0-9]{12}):browser(-custom)?/(aws\\.browser\\.v1|[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10})"
+      "pattern":"arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:(aws|[0-9]{12}):browser(-custom)?/(aws\\.browser\\.v1|[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10})"
+    },
+    "BrowserEnterprisePolicies":{
+      "type":"list",
+      "member":{"shape":"BrowserEnterprisePolicy"},
+      "max":100,
+      "min":0
+    },
+    "BrowserEnterprisePolicy":{
+      "type":"structure",
+      "required":["location"],
+      "members":{
+        "location":{"shape":"ResourceLocation"},
+        "type":{"shape":"BrowserEnterprisePolicyType"}
+      }
+    },
+    "BrowserEnterprisePolicyType":{
+      "type":"string",
+      "enum":[
+        "MANAGED",
+        "RECOMMENDED"
+      ]
     },
     "BrowserId":{
       "type":"string",
@@ -2155,6 +3093,26 @@
         "statement":{"shape":"Statement"}
       }
     },
+    "Certificate":{
+      "type":"structure",
+      "required":["location"],
+      "members":{
+        "location":{"shape":"CertificateLocation"}
+      }
+    },
+    "CertificateLocation":{
+      "type":"structure",
+      "members":{
+        "secretsManager":{"shape":"SecretsManagerLocation"}
+      },
+      "union":true
+    },
+    "Certificates":{
+      "type":"list",
+      "member":{"shape":"Certificate"},
+      "max":200,
+      "min":1
+    },
     "ClaimMatchOperatorType":{
       "type":"string",
       "enum":[
@@ -2170,6 +3128,14 @@
         "matchValueStringList":{"shape":"MatchValueStringList"}
       },
       "union":true
+    },
+    "ClientAuthenticationMethodType":{
+      "type":"string",
+      "enum":[
+        "CLIENT_SECRET_BASIC",
+        "CLIENT_SECRET_POST",
+        "AWS_IAM_ID_TOKEN_JWT"
+      ]
     },
     "ClientIdType":{
       "type":"string",
@@ -2225,6 +3191,13 @@
       },
       "union":true
     },
+    "CodeBasedEvaluatorConfig":{
+      "type":"structure",
+      "members":{
+        "lambdaConfig":{"shape":"LambdaEvaluatorConfig"}
+      },
+      "union":true
+    },
     "CodeConfiguration":{
       "type":"structure",
       "required":[
@@ -2246,7 +3219,7 @@
     },
     "CodeInterpreterArn":{
       "type":"string",
-      "pattern":"arn:(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:(aws|[0-9]{12}):code-interpreter(-custom)?/(aws\\.codeinterpreter\\.v1|[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10})"
+      "pattern":"arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:(aws|[0-9]{12}):code-interpreter(-custom)?/(aws\\.codeinterpreter\\.v1|[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10})"
     },
     "CodeInterpreterId":{
       "type":"string",
@@ -2301,6 +3274,71 @@
         "lastUpdatedAt":{"shape":"DateTimestamp"}
       }
     },
+    "CoinbaseCdpApiKeyIdType":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "pattern":"[a-zA-Z0-9\\-_]+"
+    },
+    "CoinbaseCdpApiKeySecretType":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"[a-zA-Z0-9+/=\\-_\\s]+",
+      "sensitive":true
+    },
+    "CoinbaseCdpConfigurationInput":{
+      "type":"structure",
+      "required":[
+        "apiKeyId",
+        "apiKeySecret",
+        "walletSecret"
+      ],
+      "members":{
+        "apiKeyId":{"shape":"CoinbaseCdpApiKeyIdType"},
+        "apiKeySecret":{"shape":"CoinbaseCdpApiKeySecretType"},
+        "walletSecret":{"shape":"CoinbaseCdpWalletSecretType"}
+      }
+    },
+    "CoinbaseCdpConfigurationOutput":{
+      "type":"structure",
+      "required":[
+        "apiKeyId",
+        "apiKeySecretArn",
+        "walletSecretArn"
+      ],
+      "members":{
+        "apiKeyId":{"shape":"CoinbaseCdpApiKeyIdType"},
+        "apiKeySecretArn":{"shape":"Secret"},
+        "walletSecretArn":{"shape":"Secret"}
+      }
+    },
+    "CoinbaseCdpWalletSecretType":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"[a-zA-Z0-9+/=\\-_\\s]+",
+      "sensitive":true
+    },
+    "ComponentConfiguration":{
+      "type":"structure",
+      "required":["configuration"],
+      "members":{
+        "configuration":{"shape":"Document"}
+      },
+      "sensitive":true
+    },
+    "ComponentConfigurationMap":{
+      "type":"map",
+      "key":{"shape":"ComponentIdentifier"},
+      "value":{"shape":"ComponentConfiguration"}
+    },
+    "ComponentIdentifier":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"[a-zA-Z][a-zA-Z0-9_:/.\\-]{0,2047}"
+    },
     "ConcurrentModificationException":{
       "type":"structure",
       "required":["message"],
@@ -2312,6 +3350,120 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "Condition":{
+      "type":"structure",
+      "members":{
+        "matchPrincipals":{"shape":"MatchPrincipals"},
+        "matchPaths":{"shape":"MatchPaths"}
+      },
+      "union":true
+    },
+    "Conditions":{
+      "type":"list",
+      "member":{"shape":"Condition"},
+      "max":2,
+      "min":1
+    },
+    "ConfigurationBundleAction":{
+      "type":"structure",
+      "members":{
+        "staticOverride":{"shape":"StaticOverride"},
+        "weightedOverride":{"shape":"WeightedOverride"}
+      },
+      "union":true
+    },
+    "ConfigurationBundleArn":{
+      "type":"string",
+      "pattern":"arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:configuration-bundle/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}"
+    },
+    "ConfigurationBundleDescription":{
+      "type":"string",
+      "max":500,
+      "min":1,
+      "pattern":".+",
+      "sensitive":true
+    },
+    "ConfigurationBundleId":{
+      "type":"string",
+      "pattern":"[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}"
+    },
+    "ConfigurationBundleName":{
+      "type":"string",
+      "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,99}"
+    },
+    "ConfigurationBundleReference":{
+      "type":"structure",
+      "required":[
+        "bundleArn",
+        "bundleVersion"
+      ],
+      "members":{
+        "bundleArn":{"shape":"GatewayConfigurationBundleArn"},
+        "bundleVersion":{"shape":"ConfigurationBundleReferenceBundleVersionString"}
+      }
+    },
+    "ConfigurationBundleReferenceBundleVersionString":{
+      "type":"string",
+      "pattern":"[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+    },
+    "ConfigurationBundleStatus":{
+      "type":"string",
+      "enum":[
+        "ACTIVE",
+        "CREATING",
+        "CREATE_FAILED",
+        "UPDATING",
+        "UPDATE_FAILED",
+        "DELETING",
+        "DELETE_FAILED"
+      ]
+    },
+    "ConfigurationBundleSummary":{
+      "type":"structure",
+      "required":[
+        "bundleArn",
+        "bundleId",
+        "bundleName"
+      ],
+      "members":{
+        "bundleArn":{"shape":"ConfigurationBundleArn"},
+        "bundleId":{"shape":"ConfigurationBundleId"},
+        "bundleName":{"shape":"ConfigurationBundleName"},
+        "description":{"shape":"ConfigurationBundleDescription"}
+      }
+    },
+    "ConfigurationBundleSummaryList":{
+      "type":"list",
+      "member":{"shape":"ConfigurationBundleSummary"}
+    },
+    "ConfigurationBundleVersion":{
+      "type":"string",
+      "pattern":"[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+    },
+    "ConfigurationBundleVersionList":{
+      "type":"list",
+      "member":{"shape":"ConfigurationBundleVersion"}
+    },
+    "ConfigurationBundleVersionSummary":{
+      "type":"structure",
+      "required":[
+        "bundleArn",
+        "bundleId",
+        "versionId",
+        "versionCreatedAt"
+      ],
+      "members":{
+        "bundleArn":{"shape":"ConfigurationBundleArn"},
+        "bundleId":{"shape":"ConfigurationBundleId"},
+        "versionId":{"shape":"ConfigurationBundleVersion"},
+        "lineageMetadata":{"shape":"VersionLineageMetadata"},
+        "versionCreatedAt":{"shape":"Timestamp"}
+      }
+    },
+    "ConfigurationBundleVersionSummaryList":{
+      "type":"list",
+      "member":{"shape":"ConfigurationBundleVersionSummary"}
     },
     "ConflictException":{
       "type":"structure",
@@ -2344,6 +3496,25 @@
         "rawText":{"shape":"NaturalLanguage"}
       },
       "union":true
+    },
+    "ContentConfiguration":{
+      "type":"structure",
+      "required":["type"],
+      "members":{
+        "type":{"shape":"ContentType"},
+        "level":{"shape":"ContentLevel"}
+      }
+    },
+    "ContentLevel":{
+      "type":"string",
+      "enum":[
+        "METADATA_ONLY",
+        "FULL_CONTENT"
+      ]
+    },
+    "ContentType":{
+      "type":"string",
+      "enum":["MEMORY_RECORDS"]
     },
     "CreateAgentRuntimeEndpointRequest":{
       "type":"structure",
@@ -2409,6 +3580,7 @@
         "protocolConfiguration":{"shape":"ProtocolConfiguration"},
         "lifecycleConfiguration":{"shape":"LifecycleConfiguration"},
         "environmentVariables":{"shape":"EnvironmentVariablesMap"},
+        "filesystemConfigurations":{"shape":"FilesystemConfigurations"},
         "tags":{"shape":"TagsMap"}
       }
     },
@@ -2496,6 +3668,8 @@
         "networkConfiguration":{"shape":"BrowserNetworkConfiguration"},
         "recording":{"shape":"RecordingConfig"},
         "browserSigning":{"shape":"BrowserSigningConfigInput"},
+        "enterprisePolicies":{"shape":"BrowserEnterprisePolicies"},
+        "certificates":{"shape":"Certificates"},
         "clientToken":{
           "shape":"ClientToken",
           "idempotencyToken":true
@@ -2529,6 +3703,7 @@
         "description":{"shape":"Description"},
         "executionRoleArn":{"shape":"RoleArn"},
         "networkConfiguration":{"shape":"CodeInterpreterNetworkConfiguration"},
+        "certificates":{"shape":"Certificates"},
         "clientToken":{
           "shape":"ClientToken",
           "idempotencyToken":true
@@ -2551,6 +3726,46 @@
         "status":{"shape":"CodeInterpreterStatus"}
       }
     },
+    "CreateConfigurationBundleRequest":{
+      "type":"structure",
+      "required":[
+        "bundleName",
+        "components"
+      ],
+      "members":{
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "bundleName":{"shape":"ConfigurationBundleName"},
+        "description":{"shape":"ConfigurationBundleDescription"},
+        "components":{"shape":"ComponentConfigurationMap"},
+        "branchName":{"shape":"BranchName"},
+        "commitMessage":{"shape":"CreateConfigurationBundleRequestCommitMessageString"},
+        "createdBy":{"shape":"VersionCreatedBySource"},
+        "tags":{"shape":"TagsMap"}
+      }
+    },
+    "CreateConfigurationBundleRequestCommitMessageString":{
+      "type":"string",
+      "max":500,
+      "min":1
+    },
+    "CreateConfigurationBundleResponse":{
+      "type":"structure",
+      "required":[
+        "bundleArn",
+        "bundleId",
+        "versionId",
+        "createdAt"
+      ],
+      "members":{
+        "bundleArn":{"shape":"ConfigurationBundleArn"},
+        "bundleId":{"shape":"ConfigurationBundleId"},
+        "versionId":{"shape":"ConfigurationBundleVersion"},
+        "createdAt":{"shape":"Timestamp"}
+      }
+    },
     "CreateEvaluatorRequest":{
       "type":"structure",
       "required":[
@@ -2567,6 +3782,7 @@
         "description":{"shape":"EvaluatorDescription"},
         "evaluatorConfig":{"shape":"EvaluatorConfig"},
         "level":{"shape":"EvaluatorLevel"},
+        "kmsKeyArn":{"shape":"KmsKeyArn"},
         "tags":{"shape":"TagsMap"}
       }
     },
@@ -2590,7 +3806,6 @@
       "required":[
         "name",
         "roleArn",
-        "protocolType",
         "authorizerType"
       ],
       "members":{
@@ -2621,7 +3836,6 @@
         "updatedAt",
         "status",
         "name",
-        "protocolType",
         "authorizerType"
       ],
       "members":{
@@ -2646,6 +3860,51 @@
         "exceptionLevel":{"shape":"ExceptionLevel"}
       }
     },
+    "CreateGatewayRuleRequest":{
+      "type":"structure",
+      "required":[
+        "gatewayIdentifier",
+        "priority",
+        "actions"
+      ],
+      "members":{
+        "gatewayIdentifier":{
+          "shape":"GatewayIdentifier",
+          "location":"uri",
+          "locationName":"gatewayIdentifier"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "priority":{"shape":"GatewayRulePriority"},
+        "conditions":{"shape":"Conditions"},
+        "actions":{"shape":"Actions"},
+        "description":{"shape":"GatewayRuleDescription"}
+      }
+    },
+    "CreateGatewayRuleResponse":{
+      "type":"structure",
+      "required":[
+        "ruleId",
+        "gatewayArn",
+        "priority",
+        "actions",
+        "createdAt",
+        "status"
+      ],
+      "members":{
+        "ruleId":{"shape":"GatewayRuleId"},
+        "gatewayArn":{"shape":"GatewayArn"},
+        "priority":{"shape":"GatewayRulePriority"},
+        "conditions":{"shape":"Conditions"},
+        "actions":{"shape":"Actions"},
+        "description":{"shape":"GatewayRuleDescription"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"GatewayRuleStatus"},
+        "system":{"shape":"SystemManagedBlock"}
+      }
+    },
     "CreateGatewayTargetRequest":{
       "type":"structure",
       "required":[
@@ -2667,7 +3926,8 @@
         },
         "targetConfiguration":{"shape":"TargetConfiguration"},
         "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"},
-        "metadataConfiguration":{"shape":"MetadataConfiguration"}
+        "metadataConfiguration":{"shape":"MetadataConfiguration"},
+        "privateEndpoint":{"shape":"PrivateEndpoint"}
       }
     },
     "CreateGatewayTargetResponse":{
@@ -2694,7 +3954,48 @@
         "targetConfiguration":{"shape":"TargetConfiguration"},
         "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"},
         "lastSynchronizedAt":{"shape":"DateTimestamp"},
-        "metadataConfiguration":{"shape":"MetadataConfiguration"}
+        "metadataConfiguration":{"shape":"MetadataConfiguration"},
+        "privateEndpoint":{"shape":"PrivateEndpoint"},
+        "privateEndpointManagedResources":{"shape":"PrivateEndpointManagedResources"},
+        "authorizationData":{"shape":"AuthorizationData"},
+        "protocolType":{"shape":"TargetProtocolType"}
+      }
+    },
+    "CreateHarnessRequest":{
+      "type":"structure",
+      "required":[
+        "harnessName",
+        "executionRoleArn"
+      ],
+      "members":{
+        "harnessName":{"shape":"HarnessName"},
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "executionRoleArn":{"shape":"RoleArn"},
+        "environment":{"shape":"HarnessEnvironmentProviderRequest"},
+        "environmentArtifact":{"shape":"HarnessEnvironmentArtifact"},
+        "environmentVariables":{"shape":"EnvironmentVariablesMap"},
+        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
+        "model":{"shape":"HarnessModelConfiguration"},
+        "systemPrompt":{"shape":"HarnessSystemPrompt"},
+        "tools":{"shape":"HarnessTools"},
+        "skills":{"shape":"HarnessSkills"},
+        "allowedTools":{"shape":"HarnessAllowedTools"},
+        "memory":{"shape":"HarnessMemoryConfiguration"},
+        "truncation":{"shape":"HarnessTruncationConfiguration"},
+        "maxIterations":{"shape":"Integer"},
+        "maxTokens":{"shape":"Integer"},
+        "timeoutSeconds":{"shape":"Integer"},
+        "tags":{"shape":"TagsMap"}
+      }
+    },
+    "CreateHarnessResponse":{
+      "type":"structure",
+      "required":["harness"],
+      "members":{
+        "harness":{"shape":"Harness"}
       }
     },
     "CreateMemoryInput":{
@@ -2714,6 +4015,8 @@
         "memoryExecutionRoleArn":{"shape":"Arn"},
         "eventExpiryDuration":{"shape":"CreateMemoryInputEventExpiryDurationInteger"},
         "memoryStrategies":{"shape":"MemoryStrategyInputList"},
+        "indexedKeys":{"shape":"IndexedKeysList"},
+        "streamDeliveryResources":{"shape":"StreamDeliveryResources"},
         "tags":{"shape":"TagsMap"}
       }
     },
@@ -2760,7 +4063,8 @@
         "name":{"shape":"CredentialProviderName"},
         "credentialProviderArn":{"shape":"CredentialProviderArnType"},
         "callbackUrl":{"shape":"String"},
-        "oauth2ProviderConfigOutput":{"shape":"Oauth2ProviderConfigOutput"}
+        "oauth2ProviderConfigOutput":{"shape":"Oauth2ProviderConfigOutput"},
+        "status":{"shape":"Status"}
       }
     },
     "CreateOnlineEvaluationConfigRequest":{
@@ -2807,6 +4111,124 @@
         "failureReason":{"shape":"String"}
       }
     },
+    "CreatePaymentConnectorRequest":{
+      "type":"structure",
+      "required":[
+        "paymentManagerId",
+        "name",
+        "type",
+        "credentialProviderConfigurations"
+      ],
+      "members":{
+        "paymentManagerId":{
+          "shape":"PaymentManagerId",
+          "location":"uri",
+          "locationName":"paymentManagerId"
+        },
+        "name":{"shape":"PaymentConnectorName"},
+        "description":{"shape":"PaymentsDescription"},
+        "type":{"shape":"PaymentConnectorType"},
+        "credentialProviderConfigurations":{"shape":"CredentialsProviderConfigurations"},
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "CreatePaymentConnectorResponse":{
+      "type":"structure",
+      "required":[
+        "paymentConnectorId",
+        "paymentManagerId",
+        "name",
+        "type",
+        "credentialProviderConfigurations",
+        "createdAt",
+        "status"
+      ],
+      "members":{
+        "paymentConnectorId":{"shape":"PaymentConnectorId"},
+        "paymentManagerId":{"shape":"PaymentManagerId"},
+        "name":{"shape":"PaymentConnectorName"},
+        "type":{"shape":"PaymentConnectorType"},
+        "credentialProviderConfigurations":{"shape":"CredentialsProviderConfigurations"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"PaymentConnectorStatus"}
+      }
+    },
+    "CreatePaymentCredentialProviderRequest":{
+      "type":"structure",
+      "required":[
+        "name",
+        "credentialProviderVendor",
+        "providerConfigurationInput"
+      ],
+      "members":{
+        "name":{"shape":"CredentialProviderName"},
+        "credentialProviderVendor":{"shape":"PaymentCredentialProviderVendorType"},
+        "providerConfigurationInput":{"shape":"PaymentProviderConfigurationInput"},
+        "tags":{"shape":"TagsMap"}
+      }
+    },
+    "CreatePaymentCredentialProviderResponse":{
+      "type":"structure",
+      "required":[
+        "name",
+        "credentialProviderVendor",
+        "credentialProviderArn",
+        "providerConfigurationOutput"
+      ],
+      "members":{
+        "name":{"shape":"CredentialProviderName"},
+        "credentialProviderVendor":{"shape":"PaymentCredentialProviderVendorType"},
+        "credentialProviderArn":{"shape":"PaymentCredentialProviderArnType"},
+        "providerConfigurationOutput":{"shape":"PaymentProviderConfigurationOutput"}
+      }
+    },
+    "CreatePaymentManagerRequest":{
+      "type":"structure",
+      "required":[
+        "name",
+        "authorizerType",
+        "roleArn"
+      ],
+      "members":{
+        "name":{"shape":"PaymentManagerName"},
+        "description":{"shape":"PaymentsDescription"},
+        "authorizerType":{"shape":"PaymentsAuthorizerType"},
+        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
+        "roleArn":{"shape":"RoleArn"},
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "tags":{"shape":"TagsMap"}
+      }
+    },
+    "CreatePaymentManagerResponse":{
+      "type":"structure",
+      "required":[
+        "paymentManagerArn",
+        "paymentManagerId",
+        "name",
+        "authorizerType",
+        "roleArn",
+        "createdAt",
+        "status"
+      ],
+      "members":{
+        "paymentManagerArn":{"shape":"PaymentManagerArn"},
+        "paymentManagerId":{"shape":"PaymentManagerId"},
+        "name":{"shape":"PaymentManagerName"},
+        "authorizerType":{"shape":"PaymentsAuthorizerType"},
+        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
+        "roleArn":{"shape":"RoleArn"},
+        "workloadIdentityDetails":{"shape":"WorkloadIdentityDetails"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"PaymentManagerStatus"},
+        "tags":{"shape":"TagsMap"}
+      }
+    },
     "CreatePolicyEngineRequest":{
       "type":"structure",
       "required":["name"],
@@ -2816,7 +4238,9 @@
         "clientToken":{
           "shape":"ClientToken",
           "idempotencyToken":true
-        }
+        },
+        "encryptionKeyArn":{"shape":"KmsKeyArn"},
+        "tags":{"shape":"TagsMap"}
       }
     },
     "CreatePolicyEngineResponse":{
@@ -2838,7 +4262,8 @@
         "updatedAt":{"shape":"DateTimestamp"},
         "policyEngineArn":{"shape":"PolicyEngineArn"},
         "status":{"shape":"PolicyEngineStatus"},
-        "statusReasons":{"shape":"PolicyStatusReasons"}
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "encryptionKeyArn":{"shape":"KmsKeyArn"}
       }
     },
     "CreatePolicyRequest":{
@@ -2890,6 +4315,65 @@
         "statusReasons":{"shape":"PolicyStatusReasons"}
       }
     },
+    "CreateRegistryRecordRequest":{
+      "type":"structure",
+      "required":[
+        "registryId",
+        "name",
+        "descriptorType"
+      ],
+      "members":{
+        "registryId":{
+          "shape":"RegistryIdentifier",
+          "location":"uri",
+          "locationName":"registryId"
+        },
+        "name":{"shape":"RegistryRecordName"},
+        "description":{"shape":"Description"},
+        "descriptorType":{"shape":"DescriptorType"},
+        "descriptors":{"shape":"Descriptors"},
+        "recordVersion":{"shape":"RegistryRecordVersion"},
+        "synchronizationType":{"shape":"SynchronizationType"},
+        "synchronizationConfiguration":{"shape":"SynchronizationConfiguration"},
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "CreateRegistryRecordResponse":{
+      "type":"structure",
+      "required":[
+        "recordArn",
+        "status"
+      ],
+      "members":{
+        "recordArn":{"shape":"RegistryRecordArn"},
+        "status":{"shape":"RegistryRecordStatus"}
+      }
+    },
+    "CreateRegistryRequest":{
+      "type":"structure",
+      "required":["name"],
+      "members":{
+        "name":{"shape":"RegistryName"},
+        "description":{"shape":"Description"},
+        "authorizerType":{"shape":"RegistryAuthorizerType"},
+        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "approvalConfiguration":{"shape":"ApprovalConfiguration"}
+      }
+    },
+    "CreateRegistryResponse":{
+      "type":"structure",
+      "required":["registryArn"],
+      "members":{
+        "registryArn":{"shape":"RegistryArn"}
+      }
+    },
     "CreateWorkloadIdentityRequest":{
       "type":"structure",
       "required":["name"],
@@ -2915,9 +4399,16 @@
       "type":"structure",
       "members":{
         "oauthCredentialProvider":{"shape":"OAuthCredentialProvider"},
-        "apiKeyCredentialProvider":{"shape":"ApiKeyCredentialProvider"}
+        "apiKeyCredentialProvider":{"shape":"ApiKeyCredentialProvider"},
+        "iamCredentialProvider":{"shape":"IamCredentialProvider"}
       },
       "union":true
+    },
+    "CredentialProviderArn":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:.*"
     },
     "CredentialProviderArnType":{
       "type":"string",
@@ -2948,7 +4439,9 @@
       "enum":[
         "GATEWAY_IAM_ROLE",
         "OAUTH",
-        "API_KEY"
+        "API_KEY",
+        "CALLER_IAM_CREDENTIALS",
+        "JWT_PASSTHROUGH"
       ]
     },
     "CredentialProviderVendorType":{
@@ -2980,6 +4473,20 @@
         "Auth0Oauth2",
         "CognitoOauth2"
       ]
+    },
+    "CredentialsProviderConfiguration":{
+      "type":"structure",
+      "members":{
+        "coinbaseCDP":{"shape":"PaymentCredentialProviderConfiguration"},
+        "stripePrivy":{"shape":"PaymentCredentialProviderConfiguration"}
+      },
+      "union":true
+    },
+    "CredentialsProviderConfigurations":{
+      "type":"list",
+      "member":{"shape":"CredentialsProviderConfiguration"},
+      "max":1,
+      "min":1
     },
     "CustomClaimValidationType":{
       "type":"structure",
@@ -3030,6 +4537,12 @@
       },
       "union":true
     },
+    "CustomDescriptor":{
+      "type":"structure",
+      "members":{
+        "inlineContent":{"shape":"InlineContent"}
+      }
+    },
     "CustomEvaluatorArn":{
       "type":"string",
       "pattern":"arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:evaluator\\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}"
@@ -3064,7 +4577,9 @@
         "allowedAudience":{"shape":"AllowedAudienceList"},
         "allowedClients":{"shape":"AllowedClientsList"},
         "allowedScopes":{"shape":"AllowedScopesType"},
-        "customClaims":{"shape":"CustomClaimValidationsType"}
+        "customClaims":{"shape":"CustomClaimValidationsType"},
+        "privateEndpoint":{"shape":"PrivateEndpoint"},
+        "privateEndpointOverrides":{"shape":"PrivateEndpointOverrides"}
       }
     },
     "CustomMemoryStrategyInput":{
@@ -3073,21 +4588,28 @@
       "members":{
         "name":{"shape":"Name"},
         "description":{"shape":"Description"},
-        "namespaces":{"shape":"NamespacesList"},
-        "configuration":{"shape":"CustomConfigurationInput"}
+        "namespaces":{
+          "shape":"NamespacesList",
+          "deprecated":true,
+          "deprecatedMessage":"Use namespaceTemplates instead",
+          "deprecatedSince":"2026-03-02"
+        },
+        "namespaceTemplates":{"shape":"NamespacesList"},
+        "configuration":{"shape":"CustomConfigurationInput"},
+        "memoryRecordSchema":{"shape":"MemoryRecordSchema"}
       }
     },
     "CustomOauth2ProviderConfigInput":{
       "type":"structure",
-      "required":[
-        "oauthDiscovery",
-        "clientId",
-        "clientSecret"
-      ],
+      "required":["oauthDiscovery"],
       "members":{
         "oauthDiscovery":{"shape":"Oauth2Discovery"},
-        "clientId":{"shape":"ClientIdType"},
-        "clientSecret":{"shape":"ClientSecretType"}
+        "clientId":{"shape":"DefaultClientIdType"},
+        "clientSecret":{"shape":"DefaultClientSecretType"},
+        "privateEndpoint":{"shape":"PrivateEndpoint"},
+        "privateEndpointOverrides":{"shape":"PrivateEndpointOverrides"},
+        "onBehalfOfTokenExchangeConfig":{"shape":"OnBehalfOfTokenExchangeConfigType"},
+        "clientAuthenticationMethod":{"shape":"ClientAuthenticationMethodType"}
       }
     },
     "CustomOauth2ProviderConfigOutput":{
@@ -3095,8 +4617,17 @@
       "required":["oauthDiscovery"],
       "members":{
         "oauthDiscovery":{"shape":"Oauth2Discovery"},
-        "clientId":{"shape":"ClientIdType"}
+        "clientId":{"shape":"ClientIdType"},
+        "privateEndpoint":{"shape":"PrivateEndpoint"},
+        "privateEndpointOverrides":{"shape":"PrivateEndpointOverrides"},
+        "onBehalfOfTokenExchangeConfig":{"shape":"OnBehalfOfTokenExchangeConfigType"},
+        "clientAuthenticationMethod":{"shape":"ClientAuthenticationMethodType"}
       }
+    },
+    "CustomParameterMap":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"String"}
     },
     "CustomReflectionConfiguration":{
       "type":"structure",
@@ -3134,6 +4665,23 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "DefaultClientIdType":{
+      "type":"string",
+      "max":256,
+      "min":0
+    },
+    "DefaultClientSecretType":{
+      "type":"string",
+      "max":2048,
+      "min":0,
+      "sensitive":true
+    },
+    "Definition":{
+      "type":"string",
+      "max":1000,
+      "min":1,
+      "sensitive":true
     },
     "DeleteAgentRuntimeEndpointRequest":{
       "type":"structure",
@@ -3298,6 +4846,28 @@
         "lastUpdatedAt":{"shape":"DateTimestamp"}
       }
     },
+    "DeleteConfigurationBundleRequest":{
+      "type":"structure",
+      "required":["bundleId"],
+      "members":{
+        "bundleId":{
+          "shape":"ConfigurationBundleId",
+          "location":"uri",
+          "locationName":"bundleId"
+        }
+      }
+    },
+    "DeleteConfigurationBundleResponse":{
+      "type":"structure",
+      "required":[
+        "bundleId",
+        "status"
+      ],
+      "members":{
+        "bundleId":{"shape":"ConfigurationBundleId"},
+        "status":{"shape":"ConfigurationBundleStatus"}
+      }
+    },
     "DeleteEvaluatorRequest":{
       "type":"structure",
       "required":["evaluatorId"],
@@ -3345,6 +4915,36 @@
         "statusReasons":{"shape":"StatusReasons"}
       }
     },
+    "DeleteGatewayRuleRequest":{
+      "type":"structure",
+      "required":[
+        "gatewayIdentifier",
+        "ruleId"
+      ],
+      "members":{
+        "gatewayIdentifier":{
+          "shape":"GatewayIdentifier",
+          "location":"uri",
+          "locationName":"gatewayIdentifier"
+        },
+        "ruleId":{
+          "shape":"GatewayRuleId",
+          "location":"uri",
+          "locationName":"ruleId"
+        }
+      }
+    },
+    "DeleteGatewayRuleResponse":{
+      "type":"structure",
+      "required":[
+        "ruleId",
+        "status"
+      ],
+      "members":{
+        "ruleId":{"shape":"GatewayRuleId"},
+        "status":{"shape":"GatewayRuleStatus"}
+      }
+    },
     "DeleteGatewayTargetRequest":{
       "type":"structure",
       "required":[
@@ -3376,6 +4976,29 @@
         "targetId":{"shape":"TargetId"},
         "status":{"shape":"TargetStatus"},
         "statusReasons":{"shape":"StatusReasons"}
+      }
+    },
+    "DeleteHarnessRequest":{
+      "type":"structure",
+      "required":["harnessId"],
+      "members":{
+        "harnessId":{
+          "shape":"HarnessId",
+          "location":"uri",
+          "locationName":"harnessId"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true,
+          "location":"querystring",
+          "locationName":"clientToken"
+        }
+      }
+    },
+    "DeleteHarnessResponse":{
+      "type":"structure",
+      "members":{
+        "harness":{"shape":"Harness"}
       }
     },
     "DeleteMemoryInput":{
@@ -3454,6 +5077,75 @@
         "status":{"shape":"OnlineEvaluationConfigStatus"}
       }
     },
+    "DeletePaymentConnectorRequest":{
+      "type":"structure",
+      "required":[
+        "paymentManagerId",
+        "paymentConnectorId"
+      ],
+      "members":{
+        "paymentManagerId":{
+          "shape":"PaymentManagerId",
+          "location":"uri",
+          "locationName":"paymentManagerId"
+        },
+        "paymentConnectorId":{
+          "shape":"PaymentConnectorId",
+          "location":"uri",
+          "locationName":"paymentConnectorId"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true,
+          "location":"querystring",
+          "locationName":"clientToken"
+        }
+      }
+    },
+    "DeletePaymentConnectorResponse":{
+      "type":"structure",
+      "required":["status"],
+      "members":{
+        "status":{"shape":"PaymentConnectorStatus"},
+        "paymentConnectorId":{"shape":"PaymentConnectorId"}
+      }
+    },
+    "DeletePaymentCredentialProviderRequest":{
+      "type":"structure",
+      "required":["name"],
+      "members":{
+        "name":{"shape":"CredentialProviderName"}
+      }
+    },
+    "DeletePaymentCredentialProviderResponse":{
+      "type":"structure",
+      "members":{}
+    },
+    "DeletePaymentManagerRequest":{
+      "type":"structure",
+      "required":["paymentManagerId"],
+      "members":{
+        "paymentManagerId":{
+          "shape":"PaymentManagerId",
+          "location":"uri",
+          "locationName":"paymentManagerId"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true,
+          "location":"querystring",
+          "locationName":"clientToken"
+        }
+      }
+    },
+    "DeletePaymentManagerResponse":{
+      "type":"structure",
+      "required":["status"],
+      "members":{
+        "status":{"shape":"PaymentManagerStatus"},
+        "paymentManagerId":{"shape":"PaymentManagerId"}
+      }
+    },
     "DeletePolicyEngineRequest":{
       "type":"structure",
       "required":["policyEngineId"],
@@ -3484,7 +5176,8 @@
         "updatedAt":{"shape":"DateTimestamp"},
         "policyEngineArn":{"shape":"PolicyEngineArn"},
         "status":{"shape":"PolicyEngineStatus"},
-        "statusReasons":{"shape":"PolicyStatusReasons"}
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "encryptionKeyArn":{"shape":"KmsKeyArn"}
       }
     },
     "DeletePolicyRequest":{
@@ -3532,6 +5225,47 @@
         "statusReasons":{"shape":"PolicyStatusReasons"}
       }
     },
+    "DeleteRegistryRecordRequest":{
+      "type":"structure",
+      "required":[
+        "registryId",
+        "recordId"
+      ],
+      "members":{
+        "registryId":{
+          "shape":"RegistryIdentifier",
+          "location":"uri",
+          "locationName":"registryId"
+        },
+        "recordId":{
+          "shape":"RecordIdentifier",
+          "location":"uri",
+          "locationName":"recordId"
+        }
+      }
+    },
+    "DeleteRegistryRecordResponse":{
+      "type":"structure",
+      "members":{}
+    },
+    "DeleteRegistryRequest":{
+      "type":"structure",
+      "required":["registryId"],
+      "members":{
+        "registryId":{
+          "shape":"RegistryIdentifier",
+          "location":"uri",
+          "locationName":"registryId"
+        }
+      }
+    },
+    "DeleteRegistryResponse":{
+      "type":"structure",
+      "required":["status"],
+      "members":{
+        "status":{"shape":"RegistryStatus"}
+      }
+    },
     "DeleteResourcePolicyRequest":{
       "type":"structure",
       "required":["resourceArn"],
@@ -3564,17 +5298,58 @@
       "min":1,
       "sensitive":true
     },
+    "DescriptorType":{
+      "type":"string",
+      "enum":[
+        "MCP",
+        "A2A",
+        "CUSTOM",
+        "AGENT_SKILLS"
+      ]
+    },
+    "Descriptors":{
+      "type":"structure",
+      "members":{
+        "mcp":{"shape":"McpDescriptor"},
+        "a2a":{"shape":"A2aDescriptor"},
+        "custom":{"shape":"CustomDescriptor"},
+        "agentSkills":{"shape":"AgentSkillsDescriptor"}
+      }
+    },
     "DiscoveryUrl":{
       "type":"string",
       "pattern":".+/\\.well-known/openid-configuration"
     },
     "DiscoveryUrlType":{
       "type":"string",
-      "pattern":".+/\\.well-known/openid-configuration"
+      "pattern":".+/\\.well-known/(openid-configuration|oauth-authorization-server)"
     },
+    "Document":{
+      "type":"structure",
+      "members":{},
+      "document":true
+    },
+    "DomainName":{"type":"string"},
     "Double":{
       "type":"double",
       "box":true
+    },
+    "EfsAccessPointArn":{
+      "type":"string",
+      "max":128,
+      "min":0,
+      "pattern":"arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:access-point/fsap-[0-9a-f]{8,40}"
+    },
+    "EfsAccessPointConfiguration":{
+      "type":"structure",
+      "required":[
+        "accessPointArn",
+        "mountPath"
+      ],
+      "members":{
+        "accessPointArn":{"shape":"EfsAccessPointArn"},
+        "mountPath":{"shape":"MountPath"}
+      }
     },
     "EncryptionFailure":{
       "type":"structure",
@@ -3587,6 +5362,13 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "EndpointIpAddressType":{
+      "type":"string",
+      "enum":[
+        "IPV4",
+        "IPV6"
+      ]
     },
     "EndpointName":{
       "type":"string",
@@ -3639,8 +5421,15 @@
       "members":{
         "name":{"shape":"Name"},
         "description":{"shape":"Description"},
-        "namespaces":{"shape":"NamespacesList"},
-        "reflectionConfiguration":{"shape":"EpisodicReflectionConfigurationInput"}
+        "namespaces":{
+          "shape":"NamespacesList",
+          "deprecated":true,
+          "deprecatedMessage":"Use namespaceTemplates instead",
+          "deprecatedSince":"2026-03-02"
+        },
+        "namespaceTemplates":{"shape":"NamespacesList"},
+        "reflectionConfiguration":{"shape":"EpisodicReflectionConfigurationInput"},
+        "memoryRecordSchema":{"shape":"MemoryRecordSchema"}
       }
     },
     "EpisodicOverrideConfigurationInput":{
@@ -3682,21 +5471,40 @@
       "members":{
         "appendToPrompt":{"shape":"Prompt"},
         "modelId":{"shape":"String"},
-        "namespaces":{"shape":"NamespacesList"}
+        "namespaces":{
+          "shape":"NamespacesList",
+          "deprecated":true,
+          "deprecatedMessage":"Use namespaceTemplates instead",
+          "deprecatedSince":"2026-03-02"
+        },
+        "namespaceTemplates":{"shape":"NamespacesList"},
+        "memoryRecordSchema":{"shape":"MemoryRecordSchema"}
       }
     },
     "EpisodicReflectionConfiguration":{
       "type":"structure",
-      "required":["namespaces"],
       "members":{
-        "namespaces":{"shape":"NamespacesList"}
+        "namespaces":{
+          "shape":"NamespacesList",
+          "deprecated":true,
+          "deprecatedMessage":"Use namespaceTemplates instead",
+          "deprecatedSince":"2026-03-02"
+        },
+        "namespaceTemplates":{"shape":"NamespacesList"},
+        "memoryRecordSchema":{"shape":"MemoryRecordSchema"}
       }
     },
     "EpisodicReflectionConfigurationInput":{
       "type":"structure",
-      "required":["namespaces"],
       "members":{
-        "namespaces":{"shape":"NamespacesList"}
+        "namespaces":{
+          "shape":"NamespacesList",
+          "deprecated":true,
+          "deprecatedMessage":"Use namespaceTemplates instead",
+          "deprecatedSince":"2026-03-02"
+        },
+        "namespaceTemplates":{"shape":"NamespacesList"},
+        "memoryRecordSchema":{"shape":"MemoryRecordSchema"}
       }
     },
     "EpisodicReflectionOverride":{
@@ -3708,7 +5516,14 @@
       "members":{
         "appendToPrompt":{"shape":"Prompt"},
         "modelId":{"shape":"String"},
-        "namespaces":{"shape":"NamespacesList"}
+        "namespaces":{
+          "shape":"NamespacesList",
+          "deprecated":true,
+          "deprecatedMessage":"Use namespaceTemplates instead",
+          "deprecatedSince":"2026-03-02"
+        },
+        "namespaceTemplates":{"shape":"NamespacesList"},
+        "memoryRecordSchema":{"shape":"MemoryRecordSchema"}
       }
     },
     "EvaluationConfigDescription":{
@@ -3729,7 +5544,8 @@
     "EvaluatorConfig":{
       "type":"structure",
       "members":{
-        "llmAsAJudge":{"shape":"LlmAsAJudgeEvaluatorConfig"}
+        "llmAsAJudge":{"shape":"LlmAsAJudgeEvaluatorConfig"},
+        "codeBased":{"shape":"CodeBasedEvaluatorConfig"}
       },
       "union":true
     },
@@ -3811,7 +5627,8 @@
         "status":{"shape":"EvaluatorStatus"},
         "createdAt":{"shape":"Timestamp"},
         "updatedAt":{"shape":"Timestamp"},
-        "lockedForModification":{"shape":"Boolean"}
+        "lockedForModification":{"shape":"Boolean"},
+        "kmsKeyArn":{"shape":"KmsKeyArn"}
       }
     },
     "EvaluatorSummaryList":{
@@ -3822,12 +5639,20 @@
       "type":"string",
       "enum":[
         "Builtin",
-        "Custom"
+        "Custom",
+        "CustomCode"
       ]
     },
     "ExceptionLevel":{
       "type":"string",
       "enum":["DEBUG"]
+    },
+    "ExtractionConfig":{
+      "type":"structure",
+      "members":{
+        "llmExtractionConfig":{"shape":"LlmExtractionConfig"}
+      },
+      "union":true
     },
     "ExtractionConfiguration":{
       "type":"structure",
@@ -3835,6 +5660,21 @@
         "customExtractionConfiguration":{"shape":"CustomExtractionConfiguration"}
       },
       "union":true
+    },
+    "FilesystemConfiguration":{
+      "type":"structure",
+      "members":{
+        "sessionStorage":{"shape":"SessionStorageConfiguration"},
+        "s3FilesAccessPoint":{"shape":"S3FilesAccessPointConfiguration"},
+        "efsAccessPoint":{"shape":"EfsAccessPointConfiguration"}
+      },
+      "union":true
+    },
+    "FilesystemConfigurations":{
+      "type":"list",
+      "member":{"shape":"FilesystemConfiguration"},
+      "max":5,
+      "min":0
     },
     "Filter":{
       "type":"structure",
@@ -3911,9 +5751,25 @@
       "type":"list",
       "member":{"shape":"Finding"}
     },
+    "Float":{
+      "type":"float",
+      "box":true
+    },
+    "FromUrlSynchronizationConfiguration":{
+      "type":"structure",
+      "required":["url"],
+      "members":{
+        "url":{"shape":"McpServerUrl"},
+        "credentialProviderConfigurations":{"shape":"RegistryRecordCredentialProviderConfigurationList"}
+      }
+    },
     "GatewayArn":{
       "type":"string",
-      "pattern":"arn:aws(|-cn|-us-gov):bedrock-agentcore:[a-z0-9-]{1,20}:[0-9]{12}:gateway/[0-9a-zA-Z]{10}"
+      "pattern":"arn:aws(|-cn|-us-gov):bedrock-agentcore:[a-z0-9-]{1,20}:[0-9]{12}:gateway/([0-9a-z][-]?){1,48}-[a-z0-9]{10}"
+    },
+    "GatewayConfigurationBundleArn":{
+      "type":"string",
+      "pattern":"arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:configuration-bundle/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}"
     },
     "GatewayDescription":{
       "type":"string",
@@ -4012,6 +5868,71 @@
       "type":"string",
       "enum":["MCP"]
     },
+    "GatewayRuleDescription":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
+    "GatewayRuleDetail":{
+      "type":"structure",
+      "required":[
+        "ruleId",
+        "gatewayArn",
+        "priority",
+        "actions",
+        "createdAt",
+        "status"
+      ],
+      "members":{
+        "ruleId":{"shape":"GatewayRuleId"},
+        "gatewayArn":{"shape":"GatewayArn"},
+        "priority":{"shape":"GatewayRulePriority"},
+        "conditions":{"shape":"Conditions"},
+        "actions":{"shape":"Actions"},
+        "description":{"shape":"GatewayRuleDescription"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"GatewayRuleStatus"},
+        "system":{"shape":"SystemManagedBlock"},
+        "updatedAt":{"shape":"DateTimestamp"}
+      }
+    },
+    "GatewayRuleId":{
+      "type":"string",
+      "max":36,
+      "min":36,
+      "pattern":"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+    },
+    "GatewayRuleMaxResults":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "GatewayRuleNextToken":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"\\S*"
+    },
+    "GatewayRulePriority":{
+      "type":"integer",
+      "box":true,
+      "max":1000000,
+      "min":1
+    },
+    "GatewayRuleStatus":{
+      "type":"string",
+      "enum":[
+        "CREATING",
+        "ACTIVE",
+        "UPDATING",
+        "DELETING"
+      ]
+    },
+    "GatewayRules":{
+      "type":"list",
+      "member":{"shape":"GatewayRuleDetail"}
+    },
     "GatewayStatus":{
       "type":"string",
       "enum":[
@@ -4035,8 +5956,7 @@
         "status",
         "createdAt",
         "updatedAt",
-        "authorizerType",
-        "protocolType"
+        "authorizerType"
       ],
       "members":{
         "gatewayId":{"shape":"GatewayId"},
@@ -4073,7 +5993,11 @@
         "targetConfiguration":{"shape":"TargetConfiguration"},
         "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"},
         "lastSynchronizedAt":{"shape":"DateTimestamp"},
-        "metadataConfiguration":{"shape":"MetadataConfiguration"}
+        "metadataConfiguration":{"shape":"MetadataConfiguration"},
+        "privateEndpoint":{"shape":"PrivateEndpoint"},
+        "privateEndpointManagedResources":{"shape":"PrivateEndpointManagedResources"},
+        "authorizationData":{"shape":"AuthorizationData"},
+        "protocolType":{"shape":"TargetProtocolType"}
       }
     },
     "GatewayTargetList":{
@@ -4177,7 +6101,9 @@
         "protocolConfiguration":{"shape":"ProtocolConfiguration"},
         "environmentVariables":{"shape":"EnvironmentVariablesMap"},
         "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
-        "requestHeaderConfiguration":{"shape":"RequestHeaderConfiguration"}
+        "requestHeaderConfiguration":{"shape":"RequestHeaderConfiguration"},
+        "metadataConfiguration":{"shape":"RuntimeMetadataConfiguration"},
+        "filesystemConfigurations":{"shape":"FilesystemConfigurations"}
       }
     },
     "GetApiKeyCredentialProviderRequest":{
@@ -4269,6 +6195,8 @@
         "networkConfiguration":{"shape":"BrowserNetworkConfiguration"},
         "recording":{"shape":"RecordingConfig"},
         "browserSigning":{"shape":"BrowserSigningConfigOutput"},
+        "enterprisePolicies":{"shape":"BrowserEnterprisePolicies"},
+        "certificates":{"shape":"Certificates"},
         "status":{"shape":"BrowserStatus"},
         "failureReason":{"shape":"String"},
         "createdAt":{"shape":"DateTimestamp"},
@@ -4305,9 +6233,91 @@
         "executionRoleArn":{"shape":"RoleArn"},
         "networkConfiguration":{"shape":"CodeInterpreterNetworkConfiguration"},
         "status":{"shape":"CodeInterpreterStatus"},
+        "certificates":{"shape":"Certificates"},
         "failureReason":{"shape":"String"},
         "createdAt":{"shape":"DateTimestamp"},
         "lastUpdatedAt":{"shape":"DateTimestamp"}
+      }
+    },
+    "GetConfigurationBundleRequest":{
+      "type":"structure",
+      "required":["bundleId"],
+      "members":{
+        "bundleId":{
+          "shape":"ConfigurationBundleId",
+          "location":"uri",
+          "locationName":"bundleId"
+        },
+        "branchName":{
+          "shape":"BranchName",
+          "location":"querystring",
+          "locationName":"branchName"
+        }
+      }
+    },
+    "GetConfigurationBundleResponse":{
+      "type":"structure",
+      "required":[
+        "bundleArn",
+        "bundleId",
+        "bundleName",
+        "versionId",
+        "components",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "bundleArn":{"shape":"ConfigurationBundleArn"},
+        "bundleId":{"shape":"ConfigurationBundleId"},
+        "bundleName":{"shape":"ConfigurationBundleName"},
+        "description":{"shape":"ConfigurationBundleDescription"},
+        "versionId":{"shape":"ConfigurationBundleVersion"},
+        "components":{"shape":"ComponentConfigurationMap"},
+        "lineageMetadata":{"shape":"VersionLineageMetadata"},
+        "createdAt":{"shape":"Timestamp"},
+        "updatedAt":{"shape":"Timestamp"}
+      }
+    },
+    "GetConfigurationBundleVersionRequest":{
+      "type":"structure",
+      "required":[
+        "bundleId",
+        "versionId"
+      ],
+      "members":{
+        "bundleId":{
+          "shape":"ConfigurationBundleId",
+          "location":"uri",
+          "locationName":"bundleId"
+        },
+        "versionId":{
+          "shape":"ConfigurationBundleVersion",
+          "location":"uri",
+          "locationName":"versionId"
+        }
+      }
+    },
+    "GetConfigurationBundleVersionResponse":{
+      "type":"structure",
+      "required":[
+        "bundleArn",
+        "bundleId",
+        "bundleName",
+        "versionId",
+        "components",
+        "createdAt",
+        "versionCreatedAt"
+      ],
+      "members":{
+        "bundleArn":{"shape":"ConfigurationBundleArn"},
+        "bundleId":{"shape":"ConfigurationBundleId"},
+        "bundleName":{"shape":"ConfigurationBundleName"},
+        "description":{"shape":"ConfigurationBundleDescription"},
+        "versionId":{"shape":"ConfigurationBundleVersion"},
+        "components":{"shape":"ComponentConfigurationMap"},
+        "lineageMetadata":{"shape":"VersionLineageMetadata"},
+        "createdAt":{"shape":"Timestamp"},
+        "versionCreatedAt":{"shape":"Timestamp"}
       }
     },
     "GetEvaluatorRequest":{
@@ -4318,6 +6328,11 @@
           "shape":"EvaluatorId",
           "location":"uri",
           "locationName":"evaluatorId"
+        },
+        "includedData":{
+          "shape":"IncludedData",
+          "location":"querystring",
+          "locationName":"includedData"
         }
       }
     },
@@ -4343,7 +6358,8 @@
         "status":{"shape":"EvaluatorStatus"},
         "createdAt":{"shape":"Timestamp"},
         "updatedAt":{"shape":"Timestamp"},
-        "lockedForModification":{"shape":"Boolean"}
+        "lockedForModification":{"shape":"Boolean"},
+        "kmsKeyArn":{"shape":"KmsKeyArn"}
       }
     },
     "GetGatewayRequest":{
@@ -4366,7 +6382,6 @@
         "updatedAt",
         "status",
         "name",
-        "protocolType",
         "authorizerType"
       ],
       "members":{
@@ -4389,6 +6404,48 @@
         "policyEngineConfiguration":{"shape":"GatewayPolicyEngineConfiguration"},
         "workloadIdentityDetails":{"shape":"WorkloadIdentityDetails"},
         "exceptionLevel":{"shape":"ExceptionLevel"}
+      }
+    },
+    "GetGatewayRuleRequest":{
+      "type":"structure",
+      "required":[
+        "gatewayIdentifier",
+        "ruleId"
+      ],
+      "members":{
+        "gatewayIdentifier":{
+          "shape":"GatewayIdentifier",
+          "location":"uri",
+          "locationName":"gatewayIdentifier"
+        },
+        "ruleId":{
+          "shape":"GatewayRuleId",
+          "location":"uri",
+          "locationName":"ruleId"
+        }
+      }
+    },
+    "GetGatewayRuleResponse":{
+      "type":"structure",
+      "required":[
+        "ruleId",
+        "gatewayArn",
+        "priority",
+        "actions",
+        "createdAt",
+        "status"
+      ],
+      "members":{
+        "ruleId":{"shape":"GatewayRuleId"},
+        "gatewayArn":{"shape":"GatewayArn"},
+        "priority":{"shape":"GatewayRulePriority"},
+        "conditions":{"shape":"Conditions"},
+        "actions":{"shape":"Actions"},
+        "description":{"shape":"GatewayRuleDescription"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"GatewayRuleStatus"},
+        "system":{"shape":"SystemManagedBlock"},
+        "updatedAt":{"shape":"DateTimestamp"}
       }
     },
     "GetGatewayTargetRequest":{
@@ -4434,7 +6491,29 @@
         "targetConfiguration":{"shape":"TargetConfiguration"},
         "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"},
         "lastSynchronizedAt":{"shape":"DateTimestamp"},
-        "metadataConfiguration":{"shape":"MetadataConfiguration"}
+        "metadataConfiguration":{"shape":"MetadataConfiguration"},
+        "privateEndpoint":{"shape":"PrivateEndpoint"},
+        "privateEndpointManagedResources":{"shape":"PrivateEndpointManagedResources"},
+        "authorizationData":{"shape":"AuthorizationData"},
+        "protocolType":{"shape":"TargetProtocolType"}
+      }
+    },
+    "GetHarnessRequest":{
+      "type":"structure",
+      "required":["harnessId"],
+      "members":{
+        "harnessId":{
+          "shape":"HarnessId",
+          "location":"uri",
+          "locationName":"harnessId"
+        }
+      }
+    },
+    "GetHarnessResponse":{
+      "type":"structure",
+      "required":["harness"],
+      "members":{
+        "harness":{"shape":"Harness"}
       }
     },
     "GetMemoryInput":{
@@ -4486,7 +6565,9 @@
         "callbackUrl":{"shape":"String"},
         "oauth2ProviderConfigOutput":{"shape":"Oauth2ProviderConfigOutput"},
         "createdTime":{"shape":"Timestamp"},
-        "lastUpdatedTime":{"shape":"Timestamp"}
+        "lastUpdatedTime":{"shape":"Timestamp"},
+        "status":{"shape":"Status"},
+        "failureReason":{"shape":"String"}
       }
     },
     "GetOnlineEvaluationConfigRequest":{
@@ -4531,6 +6612,112 @@
         "failureReason":{"shape":"String"}
       }
     },
+    "GetPaymentConnectorRequest":{
+      "type":"structure",
+      "required":[
+        "paymentManagerId",
+        "paymentConnectorId"
+      ],
+      "members":{
+        "paymentManagerId":{
+          "shape":"PaymentManagerId",
+          "location":"uri",
+          "locationName":"paymentManagerId"
+        },
+        "paymentConnectorId":{
+          "shape":"PaymentConnectorId",
+          "location":"uri",
+          "locationName":"paymentConnectorId"
+        }
+      }
+    },
+    "GetPaymentConnectorResponse":{
+      "type":"structure",
+      "required":[
+        "paymentConnectorId",
+        "name",
+        "type",
+        "credentialProviderConfigurations",
+        "createdAt",
+        "lastUpdatedAt",
+        "status"
+      ],
+      "members":{
+        "paymentConnectorId":{"shape":"PaymentConnectorId"},
+        "name":{"shape":"PaymentConnectorName"},
+        "description":{"shape":"PaymentsDescription"},
+        "type":{"shape":"PaymentConnectorType"},
+        "credentialProviderConfigurations":{"shape":"CredentialsProviderConfigurations"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "lastUpdatedAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"PaymentConnectorStatus"}
+      }
+    },
+    "GetPaymentCredentialProviderRequest":{
+      "type":"structure",
+      "required":["name"],
+      "members":{
+        "name":{"shape":"CredentialProviderName"}
+      }
+    },
+    "GetPaymentCredentialProviderResponse":{
+      "type":"structure",
+      "required":[
+        "name",
+        "credentialProviderArn",
+        "credentialProviderVendor",
+        "providerConfigurationOutput",
+        "createdTime",
+        "lastUpdatedTime"
+      ],
+      "members":{
+        "name":{"shape":"CredentialProviderName"},
+        "credentialProviderArn":{"shape":"PaymentCredentialProviderArnType"},
+        "credentialProviderVendor":{"shape":"PaymentCredentialProviderVendorType"},
+        "providerConfigurationOutput":{"shape":"PaymentProviderConfigurationOutput"},
+        "createdTime":{"shape":"Timestamp"},
+        "lastUpdatedTime":{"shape":"Timestamp"},
+        "tags":{"shape":"TagsMap"}
+      }
+    },
+    "GetPaymentManagerRequest":{
+      "type":"structure",
+      "required":["paymentManagerId"],
+      "members":{
+        "paymentManagerId":{
+          "shape":"PaymentManagerId",
+          "location":"uri",
+          "locationName":"paymentManagerId"
+        }
+      }
+    },
+    "GetPaymentManagerResponse":{
+      "type":"structure",
+      "required":[
+        "paymentManagerArn",
+        "paymentManagerId",
+        "name",
+        "authorizerType",
+        "roleArn",
+        "createdAt",
+        "lastUpdatedAt",
+        "status"
+      ],
+      "members":{
+        "paymentManagerArn":{"shape":"PaymentManagerArn"},
+        "paymentManagerId":{"shape":"PaymentManagerId"},
+        "name":{"shape":"PaymentManagerName"},
+        "description":{"shape":"PaymentsDescription"},
+        "authorizerType":{"shape":"PaymentsAuthorizerType"},
+        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
+        "roleArn":{"shape":"RoleArn"},
+        "workloadIdentityDetails":{"shape":"WorkloadIdentityDetails"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "lastUpdatedAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"PaymentManagerStatus"},
+        "tags":{"shape":"TagsMap"}
+      }
+    },
     "GetPolicyEngineRequest":{
       "type":"structure",
       "required":["policyEngineId"],
@@ -4561,7 +6748,8 @@
         "updatedAt":{"shape":"DateTimestamp"},
         "policyEngineArn":{"shape":"PolicyEngineArn"},
         "status":{"shape":"PolicyEngineStatus"},
-        "statusReasons":{"shape":"PolicyStatusReasons"}
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "encryptionKeyArn":{"shape":"KmsKeyArn"}
       }
     },
     "GetPolicyGenerationRequest":{
@@ -4652,6 +6840,90 @@
         "policyArn":{"shape":"PolicyArn"},
         "status":{"shape":"PolicyStatus"},
         "statusReasons":{"shape":"PolicyStatusReasons"}
+      }
+    },
+    "GetRegistryRecordRequest":{
+      "type":"structure",
+      "required":[
+        "registryId",
+        "recordId"
+      ],
+      "members":{
+        "registryId":{
+          "shape":"RegistryIdentifier",
+          "location":"uri",
+          "locationName":"registryId"
+        },
+        "recordId":{
+          "shape":"RecordIdentifier",
+          "location":"uri",
+          "locationName":"recordId"
+        }
+      }
+    },
+    "GetRegistryRecordResponse":{
+      "type":"structure",
+      "required":[
+        "registryArn",
+        "recordArn",
+        "recordId",
+        "name",
+        "descriptorType",
+        "descriptors",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "registryArn":{"shape":"RegistryArn"},
+        "recordArn":{"shape":"RegistryRecordArn"},
+        "recordId":{"shape":"RegistryRecordId"},
+        "name":{"shape":"RegistryRecordName"},
+        "description":{"shape":"Description"},
+        "descriptorType":{"shape":"DescriptorType"},
+        "descriptors":{"shape":"Descriptors"},
+        "recordVersion":{"shape":"RegistryRecordVersion"},
+        "status":{"shape":"RegistryRecordStatus"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "statusReason":{"shape":"String"},
+        "synchronizationType":{"shape":"SynchronizationType"},
+        "synchronizationConfiguration":{"shape":"SynchronizationConfiguration"}
+      }
+    },
+    "GetRegistryRequest":{
+      "type":"structure",
+      "required":["registryId"],
+      "members":{
+        "registryId":{
+          "shape":"RegistryIdentifier",
+          "location":"uri",
+          "locationName":"registryId"
+        }
+      }
+    },
+    "GetRegistryResponse":{
+      "type":"structure",
+      "required":[
+        "name",
+        "registryId",
+        "registryArn",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "name":{"shape":"RegistryName"},
+        "description":{"shape":"Description"},
+        "registryId":{"shape":"RegistryId"},
+        "registryArn":{"shape":"RegistryArn"},
+        "authorizerType":{"shape":"RegistryAuthorizerType"},
+        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
+        "approvalConfiguration":{"shape":"ApprovalConfiguration"},
+        "status":{"shape":"RegistryStatus"},
+        "statusReason":{"shape":"String"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"}
       }
     },
     "GetResourcePolicyRequest":{
@@ -4751,21 +7023,485 @@
         "clientId":{"shape":"ClientIdType"}
       }
     },
+    "Harness":{
+      "type":"structure",
+      "required":[
+        "harnessId",
+        "harnessName",
+        "arn",
+        "status",
+        "executionRoleArn",
+        "createdAt",
+        "updatedAt",
+        "model",
+        "systemPrompt",
+        "tools",
+        "skills",
+        "allowedTools",
+        "truncation",
+        "environment"
+      ],
+      "members":{
+        "harnessId":{"shape":"HarnessId"},
+        "harnessName":{"shape":"HarnessName"},
+        "arn":{"shape":"HarnessArn"},
+        "status":{"shape":"HarnessStatus"},
+        "executionRoleArn":{"shape":"RoleArn"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "model":{"shape":"HarnessModelConfiguration"},
+        "systemPrompt":{"shape":"HarnessSystemPrompt"},
+        "tools":{"shape":"HarnessTools"},
+        "skills":{"shape":"HarnessSkills"},
+        "allowedTools":{"shape":"HarnessAllowedTools"},
+        "truncation":{"shape":"HarnessTruncationConfiguration"},
+        "environment":{"shape":"HarnessEnvironmentProvider"},
+        "environmentArtifact":{"shape":"HarnessEnvironmentArtifact"},
+        "environmentVariables":{"shape":"EnvironmentVariablesMap"},
+        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
+        "memory":{"shape":"HarnessMemoryConfiguration"},
+        "maxIterations":{"shape":"Integer"},
+        "maxTokens":{"shape":"Integer"},
+        "timeoutSeconds":{"shape":"Integer"},
+        "failureReason":{"shape":"String"}
+      }
+    },
+    "HarnessAgentCoreBrowserConfig":{
+      "type":"structure",
+      "members":{
+        "browserArn":{"shape":"BrowserArn"}
+      }
+    },
+    "HarnessAgentCoreCodeInterpreterConfig":{
+      "type":"structure",
+      "members":{
+        "codeInterpreterArn":{"shape":"CodeInterpreterArn"}
+      }
+    },
+    "HarnessAgentCoreGatewayConfig":{
+      "type":"structure",
+      "required":["gatewayArn"],
+      "members":{
+        "gatewayArn":{"shape":"GatewayArn"},
+        "outboundAuth":{"shape":"HarnessGatewayOutboundAuth"}
+      }
+    },
+    "HarnessAgentCoreMemoryConfiguration":{
+      "type":"structure",
+      "required":["arn"],
+      "members":{
+        "arn":{"shape":"MemoryArn"},
+        "actorId":{"shape":"String"},
+        "messagesCount":{"shape":"Integer"},
+        "retrievalConfig":{"shape":"HarnessAgentCoreMemoryRetrievalConfigs"}
+      }
+    },
+    "HarnessAgentCoreMemoryRetrievalConfig":{
+      "type":"structure",
+      "members":{
+        "topK":{"shape":"Integer"},
+        "relevanceScore":{"shape":"Float"},
+        "strategyId":{"shape":"String"}
+      }
+    },
+    "HarnessAgentCoreMemoryRetrievalConfigs":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"HarnessAgentCoreMemoryRetrievalConfig"}
+    },
+    "HarnessAgentCoreRuntimeEnvironment":{
+      "type":"structure",
+      "required":[
+        "agentRuntimeArn",
+        "agentRuntimeName",
+        "agentRuntimeId",
+        "lifecycleConfiguration",
+        "networkConfiguration"
+      ],
+      "members":{
+        "agentRuntimeArn":{"shape":"BedrockAgentcoreResourceArn"},
+        "agentRuntimeName":{"shape":"String"},
+        "agentRuntimeId":{"shape":"String"},
+        "lifecycleConfiguration":{"shape":"LifecycleConfiguration"},
+        "networkConfiguration":{"shape":"NetworkConfiguration"},
+        "filesystemConfigurations":{"shape":"FilesystemConfigurations"}
+      }
+    },
+    "HarnessAgentCoreRuntimeEnvironmentRequest":{
+      "type":"structure",
+      "members":{
+        "lifecycleConfiguration":{"shape":"LifecycleConfiguration"},
+        "networkConfiguration":{"shape":"NetworkConfiguration"},
+        "filesystemConfigurations":{"shape":"FilesystemConfigurations"}
+      }
+    },
+    "HarnessAllowedTool":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"(\\*|@?[^/]+(/[^/]+)?)"
+    },
+    "HarnessAllowedTools":{
+      "type":"list",
+      "member":{"shape":"HarnessAllowedTool"}
+    },
+    "HarnessArn":{
+      "type":"string",
+      "pattern":"arn:([^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:harness/[a-zA-Z][a-zA-Z0-9_]{0,39}-[a-zA-Z0-9]{10}"
+    },
+    "HarnessBedrockModelConfig":{
+      "type":"structure",
+      "required":["modelId"],
+      "members":{
+        "modelId":{"shape":"ModelId"},
+        "maxTokens":{"shape":"MaxTokens"},
+        "temperature":{"shape":"Temperature"},
+        "topP":{"shape":"TopP"}
+      }
+    },
+    "HarnessEnvironmentArtifact":{
+      "type":"structure",
+      "members":{
+        "containerConfiguration":{"shape":"ContainerConfiguration"}
+      },
+      "union":true
+    },
+    "HarnessEnvironmentProvider":{
+      "type":"structure",
+      "members":{
+        "agentCoreRuntimeEnvironment":{"shape":"HarnessAgentCoreRuntimeEnvironment"}
+      },
+      "union":true
+    },
+    "HarnessEnvironmentProviderRequest":{
+      "type":"structure",
+      "members":{
+        "agentCoreRuntimeEnvironment":{"shape":"HarnessAgentCoreRuntimeEnvironmentRequest"}
+      },
+      "union":true
+    },
+    "HarnessGatewayOutboundAuth":{
+      "type":"structure",
+      "members":{
+        "awsIam":{"shape":"Unit"},
+        "none":{"shape":"Unit"},
+        "oauth":{"shape":"OAuthCredentialProvider"}
+      },
+      "union":true
+    },
+    "HarnessGeminiModelConfig":{
+      "type":"structure",
+      "required":[
+        "modelId",
+        "apiKeyArn"
+      ],
+      "members":{
+        "modelId":{"shape":"ModelId"},
+        "apiKeyArn":{"shape":"ApiKeyArn"},
+        "maxTokens":{"shape":"MaxTokens"},
+        "temperature":{"shape":"Temperature"},
+        "topP":{"shape":"TopP"},
+        "topK":{"shape":"TopK"}
+      }
+    },
+    "HarnessId":{
+      "type":"string",
+      "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,39}-[a-zA-Z0-9]{10}"
+    },
+    "HarnessInlineFunctionConfig":{
+      "type":"structure",
+      "required":[
+        "description",
+        "inputSchema"
+      ],
+      "members":{
+        "description":{"shape":"HarnessInlineFunctionDescription"},
+        "inputSchema":{"shape":"SensitiveJson"}
+      }
+    },
+    "HarnessInlineFunctionDescription":{
+      "type":"string",
+      "max":4096,
+      "min":1,
+      "sensitive":true
+    },
+    "HarnessMemoryConfiguration":{
+      "type":"structure",
+      "members":{
+        "agentCoreMemoryConfiguration":{"shape":"HarnessAgentCoreMemoryConfiguration"}
+      },
+      "union":true
+    },
+    "HarnessModelConfiguration":{
+      "type":"structure",
+      "members":{
+        "bedrockModelConfig":{"shape":"HarnessBedrockModelConfig"},
+        "openAiModelConfig":{"shape":"HarnessOpenAiModelConfig"},
+        "geminiModelConfig":{"shape":"HarnessGeminiModelConfig"}
+      },
+      "union":true
+    },
+    "HarnessName":{
+      "type":"string",
+      "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,39}"
+    },
+    "HarnessOpenAiModelConfig":{
+      "type":"structure",
+      "required":[
+        "modelId",
+        "apiKeyArn"
+      ],
+      "members":{
+        "modelId":{"shape":"ModelId"},
+        "apiKeyArn":{"shape":"ApiKeyArn"},
+        "maxTokens":{"shape":"MaxTokens"},
+        "temperature":{"shape":"Temperature"},
+        "topP":{"shape":"TopP"}
+      }
+    },
+    "HarnessRemoteMcpConfig":{
+      "type":"structure",
+      "required":["url"],
+      "members":{
+        "url":{"shape":"HarnessRemoteMcpUrl"},
+        "headers":{"shape":"HttpHeadersMap"}
+      }
+    },
+    "HarnessRemoteMcpUrl":{
+      "type":"string",
+      "max":16383,
+      "min":1,
+      "sensitive":true
+    },
+    "HarnessSkill":{
+      "type":"structure",
+      "members":{
+        "path":{"shape":"HarnessSkillPath"}
+      },
+      "union":true
+    },
+    "HarnessSkillPath":{
+      "type":"string",
+      "min":1
+    },
+    "HarnessSkills":{
+      "type":"list",
+      "member":{"shape":"HarnessSkill"}
+    },
+    "HarnessSlidingWindowConfiguration":{
+      "type":"structure",
+      "members":{
+        "messagesCount":{"shape":"Integer"}
+      }
+    },
+    "HarnessStatus":{
+      "type":"string",
+      "enum":[
+        "CREATING",
+        "CREATE_FAILED",
+        "UPDATING",
+        "UPDATE_FAILED",
+        "READY",
+        "DELETING",
+        "DELETE_FAILED"
+      ]
+    },
+    "HarnessSummaries":{
+      "type":"list",
+      "member":{"shape":"HarnessSummary"}
+    },
+    "HarnessSummarizationConfiguration":{
+      "type":"structure",
+      "members":{
+        "summaryRatio":{"shape":"Float"},
+        "preserveRecentMessages":{"shape":"Integer"},
+        "summarizationSystemPrompt":{"shape":"String"}
+      }
+    },
+    "HarnessSummary":{
+      "type":"structure",
+      "required":[
+        "harnessId",
+        "harnessName",
+        "arn",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "harnessId":{"shape":"HarnessId"},
+        "harnessName":{"shape":"HarnessName"},
+        "arn":{"shape":"HarnessArn"},
+        "status":{"shape":"HarnessStatus"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"}
+      }
+    },
+    "HarnessSystemContentBlock":{
+      "type":"structure",
+      "members":{
+        "text":{"shape":"SensitiveText"}
+      },
+      "union":true
+    },
+    "HarnessSystemPrompt":{
+      "type":"list",
+      "member":{"shape":"HarnessSystemContentBlock"}
+    },
+    "HarnessTool":{
+      "type":"structure",
+      "required":["type"],
+      "members":{
+        "type":{"shape":"HarnessToolType"},
+        "name":{"shape":"HarnessToolName"},
+        "config":{"shape":"HarnessToolConfiguration"}
+      }
+    },
+    "HarnessToolConfiguration":{
+      "type":"structure",
+      "members":{
+        "remoteMcp":{"shape":"HarnessRemoteMcpConfig"},
+        "agentCoreBrowser":{"shape":"HarnessAgentCoreBrowserConfig"},
+        "agentCoreGateway":{"shape":"HarnessAgentCoreGatewayConfig"},
+        "inlineFunction":{"shape":"HarnessInlineFunctionConfig"},
+        "agentCoreCodeInterpreter":{"shape":"HarnessAgentCoreCodeInterpreterConfig"}
+      },
+      "union":true
+    },
+    "HarnessToolName":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-zA-Z0-9_-]+"
+    },
+    "HarnessToolType":{
+      "type":"string",
+      "enum":[
+        "remote_mcp",
+        "agentcore_browser",
+        "agentcore_gateway",
+        "inline_function",
+        "agentcore_code_interpreter"
+      ]
+    },
+    "HarnessTools":{
+      "type":"list",
+      "member":{"shape":"HarnessTool"}
+    },
+    "HarnessTruncationConfiguration":{
+      "type":"structure",
+      "required":["strategy"],
+      "members":{
+        "strategy":{"shape":"HarnessTruncationStrategy"},
+        "config":{"shape":"HarnessTruncationStrategyConfiguration"}
+      }
+    },
+    "HarnessTruncationStrategy":{
+      "type":"string",
+      "enum":[
+        "sliding_window",
+        "summarization",
+        "none"
+      ]
+    },
+    "HarnessTruncationStrategyConfiguration":{
+      "type":"structure",
+      "members":{
+        "slidingWindow":{"shape":"HarnessSlidingWindowConfiguration"},
+        "summarization":{"shape":"HarnessSummarizationConfiguration"}
+      },
+      "union":true
+    },
     "HeaderName":{
       "type":"string",
       "max":256,
       "min":1,
-      "pattern":"(Authorization|X-Amzn-Bedrock-AgentCore-Runtime-Custom-[a-zA-Z0-9-]+)"
+      "pattern":"[A-Za-z][A-Za-z0-9_-]{0,255}"
+    },
+    "HttpHeaderKey":{
+      "type":"string",
+      "max":16383,
+      "min":1
     },
     "HttpHeaderName":{
       "type":"string",
       "max":100,
       "min":1
     },
+    "HttpHeaderValue":{
+      "type":"string",
+      "max":16383,
+      "min":1
+    },
+    "HttpHeadersMap":{
+      "type":"map",
+      "key":{"shape":"HttpHeaderKey"},
+      "value":{"shape":"HttpHeaderValue"},
+      "sensitive":true
+    },
     "HttpQueryParameterName":{
       "type":"string",
       "max":40,
       "min":1
+    },
+    "HttpTargetConfiguration":{
+      "type":"structure",
+      "members":{
+        "agentcoreRuntime":{"shape":"RuntimeTargetConfiguration"}
+      },
+      "union":true
+    },
+    "IamCredentialProvider":{
+      "type":"structure",
+      "required":["service"],
+      "members":{
+        "service":{"shape":"IamCredentialProviderServiceString"},
+        "region":{"shape":"IamCredentialProviderRegionString"}
+      }
+    },
+    "IamCredentialProviderRegionString":{
+      "type":"string",
+      "max":32,
+      "min":1,
+      "pattern":"[a-zA-Z0-9-]+"
+    },
+    "IamCredentialProviderServiceString":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-zA-Z0-9._-]+"
+    },
+    "IamPrincipal":{
+      "type":"structure",
+      "required":["arn"],
+      "members":{
+        "arn":{"shape":"IamPrincipalArn"},
+        "operator":{"shape":"PrincipalMatchOperator"}
+      }
+    },
+    "IamPrincipalArn":{
+      "type":"string",
+      "max":2048,
+      "min":0,
+      "pattern":"(arn:aws[a-zA-Z-]*:iam::(\\d{12}|\\*):(user|role)/[\\w+=,.@*?/-]+|arn:aws[a-zA-Z-]*:sts::(\\d{12}|\\*):assumed-role/[\\w+=,.@*?/-]+)"
+    },
+    "IamRoleArn":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+"
+    },
+    "IamSigningRegion":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-z0-9-]+"
+    },
+    "IamSigningServiceName":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[a-zA-Z0-9_-]+"
     },
     "InboundTokenClaimNameType":{
       "type":"string",
@@ -4778,6 +7514,13 @@
       "enum":[
         "STRING",
         "STRING_ARRAY"
+      ]
+    },
+    "IncludedData":{
+      "type":"string",
+      "enum":[
+        "ALL_DATA",
+        "METADATA_ONLY"
       ]
     },
     "IncludedOauth2ProviderConfigInput":{
@@ -4801,6 +7544,23 @@
         "oauthDiscovery":{"shape":"Oauth2Discovery"},
         "clientId":{"shape":"ClientIdType"}
       }
+    },
+    "IndexedKey":{
+      "type":"structure",
+      "required":[
+        "key",
+        "type"
+      ],
+      "members":{
+        "key":{"shape":"MetadataKey"},
+        "type":{"shape":"MetadataValueType"}
+      }
+    },
+    "IndexedKeysList":{
+      "type":"list",
+      "member":{"shape":"IndexedKey"},
+      "max":10,
+      "min":1
     },
     "InferenceConfiguration":{
       "type":"structure",
@@ -4833,6 +7593,11 @@
       "box":true,
       "max":1,
       "min":0
+    },
+    "InlineContent":{
+      "type":"string",
+      "max":102400,
+      "min":1
     },
     "InlinePayload":{
       "type":"string",
@@ -4899,6 +7664,23 @@
         "ServiceManagedKey"
       ]
     },
+    "KinesisResource":{
+      "type":"structure",
+      "required":[
+        "dataStreamArn",
+        "contentConfigurations"
+      ],
+      "members":{
+        "dataStreamArn":{"shape":"Arn"},
+        "contentConfigurations":{"shape":"KinesisResourceContentConfigurationsList"}
+      }
+    },
+    "KinesisResourceContentConfigurationsList":{
+      "type":"list",
+      "member":{"shape":"ContentConfiguration"},
+      "max":1,
+      "min":1
+    },
     "KmsConfiguration":{
       "type":"structure",
       "required":["keyType"],
@@ -4912,6 +7694,24 @@
       "max":2048,
       "min":1,
       "pattern":"arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}"
+    },
+    "LambdaArn":{
+      "type":"string",
+      "pattern":"arn:(aws[a-zA-Z-]*)?:lambda:([a-z]{2}(-gov)?-[a-z]+-\\d{1}):(\\d{12}):function:([a-zA-Z0-9-_.]+)(:(\\$LATEST|[a-zA-Z0-9-_]+))?"
+    },
+    "LambdaEvaluatorConfig":{
+      "type":"structure",
+      "required":["lambdaArn"],
+      "members":{
+        "lambdaArn":{"shape":"LambdaArn"},
+        "lambdaTimeoutInSeconds":{"shape":"LambdaEvaluatorConfigLambdaTimeoutInSecondsInteger"}
+      }
+    },
+    "LambdaEvaluatorConfigLambdaTimeoutInSecondsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":300,
+      "min":1
     },
     "LambdaFunctionArn":{
       "type":"string",
@@ -5072,7 +7872,8 @@
           "shape":"NextToken",
           "location":"querystring",
           "locationName":"nextToken"
-        }
+        },
+        "name":{"shape":"BrowserProfileName"}
       }
     },
     "ListBrowserProfilesResponse":{
@@ -5139,6 +7940,71 @@
         "nextToken":{"shape":"NextToken"}
       }
     },
+    "ListConfigurationBundleVersionsRequest":{
+      "type":"structure",
+      "required":["bundleId"],
+      "members":{
+        "bundleId":{
+          "shape":"ConfigurationBundleId",
+          "location":"uri",
+          "locationName":"bundleId"
+        },
+        "nextToken":{
+          "shape":"String",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"ListConfigurationBundleVersionsRequestMaxResultsInteger",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "filter":{"shape":"VersionFilter"}
+      }
+    },
+    "ListConfigurationBundleVersionsRequestMaxResultsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "ListConfigurationBundleVersionsResponse":{
+      "type":"structure",
+      "required":["versions"],
+      "members":{
+        "versions":{"shape":"ConfigurationBundleVersionSummaryList"},
+        "nextToken":{"shape":"String"}
+      }
+    },
+    "ListConfigurationBundlesRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"String",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"ListConfigurationBundlesRequestMaxResultsInteger",
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListConfigurationBundlesRequestMaxResultsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "ListConfigurationBundlesResponse":{
+      "type":"structure",
+      "required":["bundles"],
+      "members":{
+        "bundles":{"shape":"ConfigurationBundleSummaryList"},
+        "nextToken":{"shape":"String"}
+      }
+    },
     "ListEvaluatorsRequest":{
       "type":"structure",
       "members":{
@@ -5166,6 +8032,35 @@
       "members":{
         "evaluators":{"shape":"EvaluatorSummaryList"},
         "nextToken":{"shape":"String"}
+      }
+    },
+    "ListGatewayRulesRequest":{
+      "type":"structure",
+      "required":["gatewayIdentifier"],
+      "members":{
+        "gatewayIdentifier":{
+          "shape":"GatewayIdentifier",
+          "location":"uri",
+          "locationName":"gatewayIdentifier"
+        },
+        "maxResults":{
+          "shape":"GatewayRuleMaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "nextToken":{
+          "shape":"GatewayRuleNextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListGatewayRulesResponse":{
+      "type":"structure",
+      "required":["gatewayRules"],
+      "members":{
+        "gatewayRules":{"shape":"GatewayRules"},
+        "nextToken":{"shape":"GatewayRuleNextToken"}
       }
     },
     "ListGatewayTargetsRequest":{
@@ -5218,6 +8113,29 @@
       "members":{
         "items":{"shape":"GatewaySummaries"},
         "nextToken":{"shape":"GatewayNextToken"}
+      }
+    },
+    "ListHarnessesRequest":{
+      "type":"structure",
+      "members":{
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListHarnessesResponse":{
+      "type":"structure",
+      "required":["harnesses"],
+      "members":{
+        "harnesses":{"shape":"HarnessSummaries"},
+        "nextToken":{"shape":"NextToken"}
       }
     },
     "ListMemoriesInput":{
@@ -5289,6 +8207,79 @@
       "members":{
         "onlineEvaluationConfigs":{"shape":"OnlineEvaluationConfigSummaryList"},
         "nextToken":{"shape":"String"}
+      }
+    },
+    "ListPaymentConnectorsRequest":{
+      "type":"structure",
+      "required":["paymentManagerId"],
+      "members":{
+        "paymentManagerId":{
+          "shape":"PaymentManagerId",
+          "location":"uri",
+          "locationName":"paymentManagerId"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListPaymentConnectorsResponse":{
+      "type":"structure",
+      "required":["paymentConnectors"],
+      "members":{
+        "paymentConnectors":{"shape":"PaymentConnectorSummaries"},
+        "nextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListPaymentCredentialProvidersRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{"shape":"String"},
+        "maxResults":{"shape":"ListPaymentCredentialProvidersRequestMaxResultsInteger"}
+      }
+    },
+    "ListPaymentCredentialProvidersRequestMaxResultsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":20,
+      "min":1
+    },
+    "ListPaymentCredentialProvidersResponse":{
+      "type":"structure",
+      "required":["credentialProviders"],
+      "members":{
+        "credentialProviders":{"shape":"PaymentCredentialProviders"},
+        "nextToken":{"shape":"String"}
+      }
+    },
+    "ListPaymentManagersRequest":{
+      "type":"structure",
+      "members":{
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListPaymentManagersResponse":{
+      "type":"structure",
+      "required":["paymentManagers"],
+      "members":{
+        "paymentManagers":{"shape":"PaymentManagerSummaries"},
+        "nextToken":{"shape":"NextToken"}
       }
     },
     "ListPoliciesRequest":{
@@ -5413,6 +8404,78 @@
         "nextToken":{"shape":"NextToken"}
       }
     },
+    "ListRegistriesRequest":{
+      "type":"structure",
+      "members":{
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "status":{
+          "shape":"RegistryStatus",
+          "location":"querystring",
+          "locationName":"status"
+        }
+      }
+    },
+    "ListRegistriesResponse":{
+      "type":"structure",
+      "required":["registries"],
+      "members":{
+        "registries":{"shape":"RegistrySummaryList"},
+        "nextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListRegistryRecordsRequest":{
+      "type":"structure",
+      "required":["registryId"],
+      "members":{
+        "registryId":{
+          "shape":"RegistryIdentifier",
+          "location":"uri",
+          "locationName":"registryId"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "name":{
+          "shape":"RegistryRecordName",
+          "location":"querystring",
+          "locationName":"name"
+        },
+        "status":{
+          "shape":"RegistryRecordStatus",
+          "location":"querystring",
+          "locationName":"status"
+        },
+        "descriptorType":{
+          "shape":"DescriptorType",
+          "location":"querystring",
+          "locationName":"descriptorType"
+        }
+      }
+    },
+    "ListRegistryRecordsResponse":{
+      "type":"structure",
+      "required":["registryRecords"],
+      "members":{
+        "registryRecords":{"shape":"RegistryRecordSummaryList"},
+        "nextToken":{"shape":"NextToken"}
+      }
+    },
     "ListTagsForResourceRequest":{
       "type":"structure",
       "required":["resourceArn"],
@@ -5451,6 +8514,13 @@
         "nextToken":{"shape":"String"}
       }
     },
+    "ListingMode":{
+      "type":"string",
+      "enum":[
+        "DEFAULT",
+        "DYNAMIC"
+      ]
+    },
     "LlmAsAJudgeEvaluatorConfig":{
       "type":"structure",
       "required":[
@@ -5464,6 +8534,21 @@
         "modelConfig":{"shape":"EvaluatorModelConfig"}
       }
     },
+    "LlmExtractionConfig":{
+      "type":"structure",
+      "required":["definition"],
+      "members":{
+        "llmExtractionInstruction":{"shape":"LlmExtractionInstruction"},
+        "definition":{"shape":"Definition"},
+        "validation":{"shape":"Validation"}
+      }
+    },
+    "LlmExtractionInstruction":{
+      "type":"string",
+      "max":1000,
+      "min":1,
+      "sensitive":true
+    },
     "LogGroupName":{
       "type":"string",
       "max":512,
@@ -5475,8 +8560,73 @@
       "members":{
         "supportedVersions":{"shape":"McpSupportedVersions"},
         "instructions":{"shape":"McpInstructions"},
-        "searchType":{"shape":"SearchType"}
+        "searchType":{"shape":"SearchType"},
+        "sessionConfiguration":{"shape":"SessionConfiguration"},
+        "streamingConfiguration":{"shape":"StreamingConfiguration"}
       }
+    },
+    "ManagedResourceDetails":{
+      "type":"structure",
+      "members":{
+        "domain":{"shape":"DomainName"},
+        "resourceGatewayArn":{"shape":"ResourceGatewayArn"},
+        "resourceAssociationArn":{"shape":"ResourceAssociationArn"}
+      }
+    },
+    "ManagedVpcResource":{
+      "type":"structure",
+      "required":[
+        "vpcIdentifier",
+        "subnetIds",
+        "endpointIpAddressType"
+      ],
+      "members":{
+        "vpcIdentifier":{"shape":"VpcIdentifier"},
+        "subnetIds":{"shape":"SubnetIds"},
+        "endpointIpAddressType":{"shape":"EndpointIpAddressType"},
+        "securityGroupIds":{"shape":"SecurityGroupIds"},
+        "tags":{"shape":"TagsMap"},
+        "routingDomain":{"shape":"RoutingDomain"}
+      }
+    },
+    "MatchPathPattern":{
+      "type":"string",
+      "max":512,
+      "min":0,
+      "pattern":"/[\\w\\-.]+/\\*"
+    },
+    "MatchPaths":{
+      "type":"structure",
+      "required":["anyOf"],
+      "members":{
+        "anyOf":{"shape":"MatchPathsAnyOfList"}
+      }
+    },
+    "MatchPathsAnyOfList":{
+      "type":"list",
+      "member":{"shape":"MatchPathPattern"},
+      "max":10,
+      "min":1
+    },
+    "MatchPrincipalEntry":{
+      "type":"structure",
+      "members":{
+        "iamPrincipal":{"shape":"IamPrincipal"}
+      },
+      "union":true
+    },
+    "MatchPrincipals":{
+      "type":"structure",
+      "required":["anyOf"],
+      "members":{
+        "anyOf":{"shape":"MatchPrincipalsAnyOfList"}
+      }
+    },
+    "MatchPrincipalsAnyOfList":{
+      "type":"list",
+      "member":{"shape":"MatchPrincipalEntry"},
+      "max":100,
+      "min":1
     },
     "MatchValueString":{
       "type":"string",
@@ -5494,6 +8644,18 @@
       "box":true,
       "max":100,
       "min":1
+    },
+    "MaxTokens":{
+      "type":"integer",
+      "box":true,
+      "min":1
+    },
+    "McpDescriptor":{
+      "type":"structure",
+      "members":{
+        "server":{"shape":"ServerDefinition"},
+        "tools":{"shape":"ToolsDefinition"}
+      }
     },
     "McpInstructions":{
       "type":"string",
@@ -5515,11 +8677,20 @@
       "type":"structure",
       "required":["endpoint"],
       "members":{
-        "endpoint":{"shape":"McpServerTargetConfigurationEndpointString"}
+        "endpoint":{"shape":"McpServerTargetConfigurationEndpointString"},
+        "mcpToolSchema":{"shape":"McpToolSchemaConfiguration"},
+        "listingMode":{"shape":"ListingMode"},
+        "resourcePriority":{"shape":"TargetResourcePriority"}
       }
     },
     "McpServerTargetConfigurationEndpointString":{
       "type":"string",
+      "pattern":"https://.*"
+    },
+    "McpServerUrl":{
+      "type":"string",
+      "max":2048,
+      "min":1,
       "pattern":"https://.*"
     },
     "McpSupportedVersions":{
@@ -5534,6 +8705,14 @@
         "lambda":{"shape":"McpLambdaTargetConfiguration"},
         "mcpServer":{"shape":"McpServerTargetConfiguration"},
         "apiGateway":{"shape":"ApiGatewayTargetConfiguration"}
+      },
+      "union":true
+    },
+    "McpToolSchemaConfiguration":{
+      "type":"structure",
+      "members":{
+        "s3":{"shape":"S3Configuration"},
+        "inlinePayload":{"shape":"InlinePayload"}
       },
       "union":true
     },
@@ -5561,7 +8740,9 @@
         "failureReason":{"shape":"String"},
         "createdAt":{"shape":"Timestamp"},
         "updatedAt":{"shape":"Timestamp"},
-        "strategies":{"shape":"MemoryStrategyList"}
+        "strategies":{"shape":"MemoryStrategyList"},
+        "indexedKeys":{"shape":"IndexedKeysList"},
+        "streamDeliveryResources":{"shape":"StreamDeliveryResources"}
       }
     },
     "MemoryArn":{
@@ -5579,6 +8760,12 @@
       "min":12,
       "pattern":"[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}"
     },
+    "MemoryRecordSchema":{
+      "type":"structure",
+      "members":{
+        "metadataSchema":{"shape":"MetadataSchemaList"}
+      }
+    },
     "MemoryStatus":{
       "type":"string",
       "enum":[
@@ -5594,7 +8781,8 @@
         "strategyId",
         "name",
         "type",
-        "namespaces"
+        "namespaces",
+        "namespaceTemplates"
       ],
       "members":{
         "strategyId":{"shape":"MemoryStrategyId"},
@@ -5602,10 +8790,17 @@
         "description":{"shape":"Description"},
         "configuration":{"shape":"StrategyConfiguration"},
         "type":{"shape":"MemoryStrategyType"},
-        "namespaces":{"shape":"NamespacesList"},
+        "namespaces":{
+          "shape":"NamespacesList",
+          "deprecated":true,
+          "deprecatedMessage":"Use namespaceTemplates instead",
+          "deprecatedSince":"2026-03-02"
+        },
+        "namespaceTemplates":{"shape":"NamespacesList"},
         "createdAt":{"shape":"Timestamp"},
         "updatedAt":{"shape":"Timestamp"},
-        "status":{"shape":"MemoryStrategyStatus"}
+        "status":{"shape":"MemoryStrategyStatus"},
+        "memoryRecordSchema":{"shape":"MemoryRecordSchema"}
       }
     },
     "MemoryStrategyId":{
@@ -5702,6 +8897,35 @@
         "allowedResponseHeaders":{"shape":"AllowedResponseHeaders"}
       }
     },
+    "MetadataKey":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[a-zA-Z0-9\\s._:/=+@-]*"
+    },
+    "MetadataSchemaEntry":{
+      "type":"structure",
+      "required":["key"],
+      "members":{
+        "key":{"shape":"MetadataKey"},
+        "type":{"shape":"MetadataValueType"},
+        "extractionConfig":{"shape":"ExtractionConfig"}
+      }
+    },
+    "MetadataSchemaList":{
+      "type":"list",
+      "member":{"shape":"MetadataSchemaEntry"},
+      "max":20,
+      "min":1
+    },
+    "MetadataValueType":{
+      "type":"string",
+      "enum":[
+        "STRING",
+        "STRINGLIST",
+        "NUMBER"
+      ]
+    },
     "MicrosoftOauth2ProviderConfigInput":{
       "type":"structure",
       "required":[
@@ -5766,8 +8990,15 @@
       "members":{
         "memoryStrategyId":{"shape":"String"},
         "description":{"shape":"Description"},
-        "namespaces":{"shape":"NamespacesList"},
-        "configuration":{"shape":"ModifyStrategyConfiguration"}
+        "namespaces":{
+          "shape":"NamespacesList",
+          "deprecated":true,
+          "deprecatedMessage":"Use namespaceTemplates instead",
+          "deprecatedSince":"2026-03-02"
+        },
+        "namespaceTemplates":{"shape":"NamespacesList"},
+        "configuration":{"shape":"ModifyStrategyConfiguration"},
+        "memoryRecordSchema":{"shape":"MemoryRecordSchema"}
       }
     },
     "ModifyReflectionConfiguration":{
@@ -5801,19 +9032,26 @@
         "selfManagedConfiguration":{"shape":"ModifySelfManagedConfiguration"}
       }
     },
+    "MountPath":{
+      "type":"string",
+      "max":200,
+      "min":6,
+      "pattern":"/mnt/[a-zA-Z0-9._-]+/?"
+    },
     "Name":{
       "type":"string",
       "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,47}"
     },
     "Namespace":{
       "type":"string",
-      "max":1024,
+      "max":512,
       "min":1,
       "pattern":"[a-zA-Z0-9\\-_\\/]*(\\{(actorId|sessionId|memoryStrategyId)\\}[a-zA-Z0-9\\-_\\/]*)*"
     },
     "NamespacesList":{
       "type":"list",
       "member":{"shape":"Namespace"},
+      "max":1,
       "min":1
     },
     "NaturalLanguage":{
@@ -5850,6 +9088,13 @@
       "type":"string",
       "min":1
     },
+    "NumberValidation":{
+      "type":"structure",
+      "members":{
+        "minValue":{"shape":"Double"},
+        "maxValue":{"shape":"Double"}
+      }
+    },
     "NumericalScaleDefinition":{
       "type":"structure",
       "required":[
@@ -5876,6 +9121,23 @@
     "NumericalScaleDefinitions":{
       "type":"list",
       "member":{"shape":"NumericalScaleDefinition"}
+    },
+    "OAuth2AuthorizationData":{
+      "type":"structure",
+      "required":["authorizationUrl"],
+      "members":{
+        "authorizationUrl":{"shape":"OAuth2AuthorizationDataAuthorizationUrlString"},
+        "userId":{"shape":"OAuth2AuthorizationDataUserIdString"}
+      }
+    },
+    "OAuth2AuthorizationDataAuthorizationUrlString":{
+      "type":"string",
+      "min":1
+    },
+    "OAuth2AuthorizationDataUserIdString":{
+      "type":"string",
+      "max":128,
+      "min":1
     },
     "OAuthCredentialProvider":{
       "type":"structure",
@@ -5923,7 +9185,8 @@
       "type":"string",
       "enum":[
         "CLIENT_CREDENTIALS",
-        "AUTHORIZATION_CODE"
+        "AUTHORIZATION_CODE",
+        "TOKEN_EXCHANGE"
       ]
     },
     "OAuthScope":{
@@ -6011,6 +9274,21 @@
       },
       "union":true
     },
+    "OnBehalfOfTokenExchangeConfigType":{
+      "type":"structure",
+      "required":["grantType"],
+      "members":{
+        "grantType":{"shape":"OnBehalfOfTokenExchangeGrantTypeType"},
+        "tokenExchangeGrantTypeConfig":{"shape":"TokenExchangeGrantTypeConfigType"}
+      }
+    },
+    "OnBehalfOfTokenExchangeGrantTypeType":{
+      "type":"string",
+      "enum":[
+        "TOKEN_EXCHANGE",
+        "JWT_AUTHORIZATION_GRANT"
+      ]
+    },
     "OnlineEvaluationConfigArn":{
       "type":"string",
       "pattern":"arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:online-evaluation-config\\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}"
@@ -6027,7 +9305,8 @@
         "CREATE_FAILED",
         "UPDATING",
         "UPDATE_FAILED",
-        "DELETING"
+        "DELETING",
+        "ERROR"
       ]
     },
     "OnlineEvaluationConfigSummary":{
@@ -6081,6 +9360,189 @@
         "EPISODIC_OVERRIDE"
       ]
     },
+    "PaymentConnectorId":{
+      "type":"string",
+      "max":211,
+      "min":12,
+      "pattern":"([0-9a-z][-]?){1,100}-[0-9a-z]{10}"
+    },
+    "PaymentConnectorName":{
+      "type":"string",
+      "max":48,
+      "min":1,
+      "pattern":"[a-zA-Z][a-zA-Z0-9_]{0,47}"
+    },
+    "PaymentConnectorStatus":{
+      "type":"string",
+      "enum":[
+        "CREATING",
+        "UPDATING",
+        "DELETING",
+        "READY",
+        "CREATE_FAILED",
+        "UPDATE_FAILED",
+        "DELETE_FAILED"
+      ]
+    },
+    "PaymentConnectorSummaries":{
+      "type":"list",
+      "member":{"shape":"PaymentConnectorSummary"}
+    },
+    "PaymentConnectorSummary":{
+      "type":"structure",
+      "required":[
+        "paymentConnectorId",
+        "name",
+        "type",
+        "status",
+        "lastUpdatedAt"
+      ],
+      "members":{
+        "paymentConnectorId":{"shape":"PaymentConnectorId"},
+        "name":{"shape":"PaymentConnectorName"},
+        "type":{"shape":"PaymentConnectorType"},
+        "status":{"shape":"PaymentConnectorStatus"},
+        "lastUpdatedAt":{"shape":"DateTimestamp"}
+      }
+    },
+    "PaymentConnectorType":{
+      "type":"string",
+      "enum":[
+        "CoinbaseCDP",
+        "StripePrivy"
+      ]
+    },
+    "PaymentCredentialProviderArn":{
+      "type":"string",
+      "max":2048,
+      "min":69,
+      "pattern":"arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b|aws-iso-e|aws-iso-f|aws-eusc):(acps|bedrock-agentcore):[A-Za-z0-9-]{1,64}:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/paymentcredentialprovider/[a-zA-Z0-9-.]+"
+    },
+    "PaymentCredentialProviderArnType":{
+      "type":"string",
+      "pattern":"arn:(aws|aws-us-gov):acps:[A-Za-z0-9-]{1,64}:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/paymentcredentialprovider/[a-zA-Z0-9-.]+"
+    },
+    "PaymentCredentialProviderConfiguration":{
+      "type":"structure",
+      "required":["credentialProviderArn"],
+      "members":{
+        "credentialProviderArn":{"shape":"PaymentCredentialProviderArn"}
+      }
+    },
+    "PaymentCredentialProviderItem":{
+      "type":"structure",
+      "required":[
+        "name",
+        "credentialProviderVendor",
+        "credentialProviderArn",
+        "createdTime",
+        "lastUpdatedTime"
+      ],
+      "members":{
+        "name":{"shape":"CredentialProviderName"},
+        "credentialProviderVendor":{"shape":"PaymentCredentialProviderVendorType"},
+        "credentialProviderArn":{"shape":"PaymentCredentialProviderArnType"},
+        "createdTime":{"shape":"Timestamp"},
+        "lastUpdatedTime":{"shape":"Timestamp"}
+      }
+    },
+    "PaymentCredentialProviderVendorType":{
+      "type":"string",
+      "enum":[
+        "CoinbaseCDP",
+        "StripePrivy"
+      ]
+    },
+    "PaymentCredentialProviders":{
+      "type":"list",
+      "member":{"shape":"PaymentCredentialProviderItem"}
+    },
+    "PaymentManagerArn":{
+      "type":"string",
+      "max":2048,
+      "min":66,
+      "pattern":"arn:(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/([0-9a-z][-]?){1,48}-[a-z0-9]{10}"
+    },
+    "PaymentManagerId":{
+      "type":"string",
+      "max":211,
+      "min":12,
+      "pattern":"([0-9a-z][-]?){1,100}-[0-9a-z]{10}"
+    },
+    "PaymentManagerName":{
+      "type":"string",
+      "max":48,
+      "min":1,
+      "pattern":"[a-zA-Z][a-zA-Z0-9]{0,47}"
+    },
+    "PaymentManagerStatus":{
+      "type":"string",
+      "enum":[
+        "CREATING",
+        "UPDATING",
+        "DELETING",
+        "READY",
+        "CREATE_FAILED",
+        "UPDATE_FAILED",
+        "DELETE_FAILED"
+      ]
+    },
+    "PaymentManagerSummaries":{
+      "type":"list",
+      "member":{"shape":"PaymentManagerSummary"}
+    },
+    "PaymentManagerSummary":{
+      "type":"structure",
+      "required":[
+        "paymentManagerArn",
+        "paymentManagerId",
+        "name",
+        "authorizerType",
+        "roleArn",
+        "status",
+        "lastUpdatedAt"
+      ],
+      "members":{
+        "paymentManagerArn":{"shape":"PaymentManagerArn"},
+        "paymentManagerId":{"shape":"PaymentManagerId"},
+        "name":{"shape":"PaymentManagerName"},
+        "description":{"shape":"PaymentsDescription"},
+        "authorizerType":{"shape":"PaymentsAuthorizerType"},
+        "roleArn":{"shape":"RoleArn"},
+        "status":{"shape":"PaymentManagerStatus"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "lastUpdatedAt":{"shape":"DateTimestamp"}
+      }
+    },
+    "PaymentProviderConfigurationInput":{
+      "type":"structure",
+      "members":{
+        "coinbaseCdpConfiguration":{"shape":"CoinbaseCdpConfigurationInput"},
+        "stripePrivyConfiguration":{"shape":"StripePrivyConfigurationInput"}
+      },
+      "union":true
+    },
+    "PaymentProviderConfigurationOutput":{
+      "type":"structure",
+      "members":{
+        "coinbaseCdpConfiguration":{"shape":"CoinbaseCdpConfigurationOutput"},
+        "stripePrivyConfiguration":{"shape":"StripePrivyConfigurationOutput"}
+      },
+      "union":true
+    },
+    "PaymentsAuthorizerType":{
+      "type":"string",
+      "enum":[
+        "CUSTOM_JWT",
+        "AWS_IAM"
+      ]
+    },
+    "PaymentsDescription":{
+      "type":"string",
+      "max":4096,
+      "min":1,
+      "pattern":"[a-zA-Z0-9\\s]+"
+    },
     "Policies":{
       "type":"list",
       "member":{"shape":"Policy"},
@@ -6122,7 +9584,8 @@
     "PolicyDefinition":{
       "type":"structure",
       "members":{
-        "cedar":{"shape":"CedarPolicy"}
+        "cedar":{"shape":"CedarPolicy"},
+        "policyGeneration":{"shape":"PolicyGenerationDetails"}
       },
       "union":true
     },
@@ -6145,7 +9608,8 @@
         "updatedAt":{"shape":"DateTimestamp"},
         "policyEngineArn":{"shape":"PolicyEngineArn"},
         "status":{"shape":"PolicyEngineStatus"},
-        "statusReasons":{"shape":"PolicyStatusReasons"}
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "encryptionKeyArn":{"shape":"KmsKeyArn"}
       }
     },
     "PolicyEngineArn":{
@@ -6228,6 +9692,17 @@
       "type":"list",
       "member":{"shape":"PolicyGenerationAsset"}
     },
+    "PolicyGenerationDetails":{
+      "type":"structure",
+      "required":[
+        "policyGenerationId",
+        "policyGenerationAssetId"
+      ],
+      "members":{
+        "policyGenerationId":{"shape":"ResourceId"},
+        "policyGenerationAssetId":{"shape":"ResourceId"}
+      }
+    },
     "PolicyGenerationName":{
       "type":"string",
       "max":48,
@@ -6278,6 +9753,47 @@
         "IGNORE_ALL_FINDINGS"
       ]
     },
+    "PrincipalMatchOperator":{
+      "type":"string",
+      "enum":[
+        "StringEquals",
+        "StringLike"
+      ]
+    },
+    "PrivateEndpoint":{
+      "type":"structure",
+      "members":{
+        "selfManagedLatticeResource":{"shape":"SelfManagedLatticeResource"},
+        "managedVpcResource":{"shape":"ManagedVpcResource"}
+      },
+      "union":true
+    },
+    "PrivateEndpointManagedResources":{
+      "type":"list",
+      "member":{"shape":"ManagedResourceDetails"}
+    },
+    "PrivateEndpointOverride":{
+      "type":"structure",
+      "required":[
+        "domain",
+        "privateEndpoint"
+      ],
+      "members":{
+        "domain":{"shape":"PrivateEndpointOverrideDomain"},
+        "privateEndpoint":{"shape":"PrivateEndpoint"}
+      }
+    },
+    "PrivateEndpointOverrideDomain":{
+      "type":"string",
+      "max":253,
+      "min":1
+    },
+    "PrivateEndpointOverrides":{
+      "type":"list",
+      "member":{"shape":"PrivateEndpointOverride"},
+      "max":5,
+      "min":0
+    },
     "Prompt":{
       "type":"string",
       "max":30000,
@@ -6319,7 +9835,14 @@
         "numerical":{"shape":"NumericalScaleDefinitions"},
         "categorical":{"shape":"CategoricalScaleDefinitions"}
       },
+      "sensitive":true,
       "union":true
+    },
+    "RecordIdentifier":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"(arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/)?[a-zA-Z0-9]{12}"
     },
     "RecordingConfig":{
       "type":"structure",
@@ -6335,6 +9858,195 @@
         "episodicReflectionConfiguration":{"shape":"EpisodicReflectionConfiguration"}
       },
       "union":true
+    },
+    "RegistryArn":{
+      "type":"string",
+      "pattern":"arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}"
+    },
+    "RegistryAuthorizerType":{
+      "type":"string",
+      "enum":[
+        "CUSTOM_JWT",
+        "AWS_IAM"
+      ]
+    },
+    "RegistryId":{
+      "type":"string",
+      "max":16,
+      "min":12,
+      "pattern":"[a-zA-Z0-9]{12,16}"
+    },
+    "RegistryIdentifier":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"(arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}"
+    },
+    "RegistryName":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-zA-Z0-9][a-zA-Z0-9_\\-\\.\\/]*"
+    },
+    "RegistryRecordArn":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}"
+    },
+    "RegistryRecordCredentialProviderConfiguration":{
+      "type":"structure",
+      "required":[
+        "credentialProviderType",
+        "credentialProvider"
+      ],
+      "members":{
+        "credentialProviderType":{"shape":"RegistryRecordCredentialProviderType"},
+        "credentialProvider":{"shape":"RegistryRecordCredentialProviderUnion"}
+      }
+    },
+    "RegistryRecordCredentialProviderConfigurationList":{
+      "type":"list",
+      "member":{"shape":"RegistryRecordCredentialProviderConfiguration"},
+      "max":1,
+      "min":0
+    },
+    "RegistryRecordCredentialProviderType":{
+      "type":"string",
+      "enum":[
+        "OAUTH",
+        "IAM"
+      ]
+    },
+    "RegistryRecordCredentialProviderUnion":{
+      "type":"structure",
+      "members":{
+        "oauthCredentialProvider":{"shape":"RegistryRecordOAuthCredentialProvider"},
+        "iamCredentialProvider":{"shape":"RegistryRecordIamCredentialProvider"}
+      },
+      "union":true
+    },
+    "RegistryRecordIamCredentialProvider":{
+      "type":"structure",
+      "members":{
+        "roleArn":{"shape":"IamRoleArn"},
+        "service":{"shape":"IamSigningServiceName"},
+        "region":{"shape":"IamSigningRegion"}
+      }
+    },
+    "RegistryRecordId":{
+      "type":"string",
+      "max":12,
+      "min":12,
+      "pattern":"[a-zA-Z0-9]{12}"
+    },
+    "RegistryRecordName":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"[a-zA-Z0-9][a-zA-Z0-9_\\-\\.\\/]*"
+    },
+    "RegistryRecordOAuthCredentialProvider":{
+      "type":"structure",
+      "required":["providerArn"],
+      "members":{
+        "providerArn":{"shape":"CredentialProviderArn"},
+        "grantType":{"shape":"RegistryRecordOAuthGrantType"},
+        "scopes":{"shape":"ScopeList"},
+        "customParameters":{"shape":"CustomParameterMap"}
+      }
+    },
+    "RegistryRecordOAuthGrantType":{
+      "type":"string",
+      "enum":["CLIENT_CREDENTIALS"]
+    },
+    "RegistryRecordStatus":{
+      "type":"string",
+      "enum":[
+        "DRAFT",
+        "PENDING_APPROVAL",
+        "APPROVED",
+        "REJECTED",
+        "DEPRECATED",
+        "CREATING",
+        "UPDATING",
+        "CREATE_FAILED",
+        "UPDATE_FAILED"
+      ]
+    },
+    "RegistryRecordSummary":{
+      "type":"structure",
+      "required":[
+        "registryArn",
+        "recordArn",
+        "recordId",
+        "name",
+        "descriptorType",
+        "recordVersion",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "registryArn":{"shape":"RegistryArn"},
+        "recordArn":{"shape":"RegistryRecordArn"},
+        "recordId":{"shape":"RegistryRecordId"},
+        "name":{"shape":"RegistryRecordName"},
+        "description":{"shape":"Description"},
+        "descriptorType":{"shape":"DescriptorType"},
+        "recordVersion":{"shape":"RegistryRecordVersion"},
+        "status":{"shape":"RegistryRecordStatus"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"}
+      }
+    },
+    "RegistryRecordSummaryList":{
+      "type":"list",
+      "member":{"shape":"RegistryRecordSummary"}
+    },
+    "RegistryRecordVersion":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"[a-zA-Z0-9.-]+"
+    },
+    "RegistryStatus":{
+      "type":"string",
+      "enum":[
+        "CREATING",
+        "READY",
+        "UPDATING",
+        "CREATE_FAILED",
+        "UPDATE_FAILED",
+        "DELETING",
+        "DELETE_FAILED"
+      ]
+    },
+    "RegistrySummary":{
+      "type":"structure",
+      "required":[
+        "name",
+        "registryId",
+        "registryArn",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "name":{"shape":"RegistryName"},
+        "description":{"shape":"Description"},
+        "registryId":{"shape":"RegistryId"},
+        "registryArn":{"shape":"RegistryArn"},
+        "authorizerType":{"shape":"RegistryAuthorizerType"},
+        "status":{"shape":"RegistryStatus"},
+        "statusReason":{"shape":"String"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"}
+      }
+    },
+    "RegistrySummaryList":{
+      "type":"list",
+      "member":{"shape":"RegistrySummary"}
     },
     "RequestHeaderAllowlist":{
       "type":"list",
@@ -6360,6 +10072,20 @@
       },
       "union":true
     },
+    "ResourceAssociationArn":{
+      "type":"string",
+      "pattern":"arn:[a-z0-9\\-]+:vpc-lattice:[a-zA-Z0-9\\-]+:\\d{12}:servicenetworkresourceassociation/snra-[0-9a-f]{17}"
+    },
+    "ResourceConfigurationIdentifier":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\\-]+:vpc-lattice:[a-zA-Z0-9\\-]+:\\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))"
+    },
+    "ResourceGatewayArn":{
+      "type":"string",
+      "pattern":"arn:[a-z0-9\\-]+:vpc-lattice:[a-zA-Z0-9\\-]+:\\d{12}:resourcegateway/rgw-[0-9a-z]{17}"
+    },
     "ResourceId":{
       "type":"string",
       "max":59,
@@ -6376,6 +10102,13 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "ResourceLocation":{
+      "type":"structure",
+      "members":{
+        "s3":{"shape":"S3Location"}
+      },
+      "union":true
     },
     "ResourceNotFoundException":{
       "type":"structure",
@@ -6437,6 +10170,19 @@
       "min":1,
       "pattern":"arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+"
     },
+    "RouteToTargetAction":{
+      "type":"structure",
+      "members":{
+        "staticRoute":{"shape":"StaticRoute"},
+        "weightedRoute":{"shape":"WeightedRoute"}
+      },
+      "union":true
+    },
+    "RoutingDomain":{
+      "type":"string",
+      "max":255,
+      "min":3
+    },
     "Rule":{
       "type":"structure",
       "required":["samplingConfig"],
@@ -6446,11 +10192,34 @@
         "sessionConfig":{"shape":"SessionConfig"}
       }
     },
+    "RuntimeArn":{
+      "type":"string",
+      "pattern":"arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:runtime/[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}"
+    },
     "RuntimeContainerUri":{
       "type":"string",
       "max":1024,
       "min":1,
-      "pattern":"([0-9]{12})\\.dkr\\.ecr\\.([a-z0-9-]+)\\.amazonaws\\.com/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(?::([^:@]{1,300}))?(?:@(.+))?"
+      "pattern":"(([0-9]{12})\\.dkr\\.ecr\\.([a-z0-9-]+)\\.amazonaws\\.com(\\.cn)?|public\\.ecr\\.aws)/((?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*)(?::([^:@]{1,300}))?(?:@(.+))?"
+    },
+    "RuntimeMetadataConfiguration":{
+      "type":"structure",
+      "required":["requireMMDSV2"],
+      "members":{
+        "requireMMDSV2":{"shape":"Boolean"}
+      }
+    },
+    "RuntimeQualifier":{
+      "type":"string",
+      "pattern":".*([1-9][0-9]{0,4})|([a-zA-Z][a-zA-Z0-9_]{0,47}).*"
+    },
+    "RuntimeTargetConfiguration":{
+      "type":"structure",
+      "required":["arn"],
+      "members":{
+        "arn":{"shape":"RuntimeArn"},
+        "qualifier":{"shape":"RuntimeQualifier"}
+      }
     },
     "S3BucketUri":{
       "type":"string",
@@ -6461,6 +10230,23 @@
       "members":{
         "uri":{"shape":"S3BucketUri"},
         "bucketOwnerAccountId":{"shape":"AwsAccountId"}
+      }
+    },
+    "S3FilesAccessPointArn":{
+      "type":"string",
+      "max":256,
+      "min":0,
+      "pattern":"arn:aws[-a-z]*:s3files:[0-9a-z-:]+:file-system/fs-[0-9a-f]{17,40}/access-point/fsap-[0-9a-f]{17,40}"
+    },
+    "S3FilesAccessPointConfiguration":{
+      "type":"structure",
+      "required":[
+        "accessPointArn",
+        "mountPath"
+      ],
+      "members":{
+        "accessPointArn":{"shape":"S3FilesAccessPointArn"},
+        "mountPath":{"shape":"MountPath"}
       }
     },
     "S3Location":{
@@ -6552,6 +10338,24 @@
         "integer"
       ]
     },
+    "SchemaVersion":{
+      "type":"string",
+      "max":255,
+      "min":1
+    },
+    "ScopeList":{
+      "type":"list",
+      "member":{"shape":"String"}
+    },
+    "ScopeType":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
+    "ScopesListType":{
+      "type":"list",
+      "member":{"shape":"ScopeType"}
+    },
     "SearchType":{
       "type":"string",
       "enum":["SEMANTIC"]
@@ -6567,9 +10371,26 @@
       "type":"string",
       "pattern":"arn:(aws|aws-us-gov):secretsmanager:[A-Za-z0-9-]{1,64}:[0-9]{12}:secret:[a-zA-Z0-9-_/+=.@!]+"
     },
+    "SecretsManagerLocation":{
+      "type":"structure",
+      "required":["secretArn"],
+      "members":{
+        "secretArn":{"shape":"ToolSecretArn"}
+      }
+    },
     "SecurityGroupId":{
       "type":"string",
       "pattern":"sg-[0-9a-zA-Z]{8,17}"
+    },
+    "SecurityGroupIdentifier":{
+      "type":"string",
+      "pattern":"sg-(([0-9a-z]{8})|([0-9a-z]{17}))"
+    },
+    "SecurityGroupIds":{
+      "type":"list",
+      "member":{"shape":"SecurityGroupIdentifier"},
+      "max":5,
+      "min":0
     },
     "SecurityGroups":{
       "type":"list",
@@ -6605,6 +10426,13 @@
       "max":50,
       "min":0
     },
+    "SelfManagedLatticeResource":{
+      "type":"structure",
+      "members":{
+        "resourceConfigurationIdentifier":{"shape":"ResourceConfigurationIdentifier"}
+      },
+      "union":true
+    },
     "SemanticConsolidationOverride":{
       "type":"structure",
       "required":[
@@ -6633,7 +10461,14 @@
       "members":{
         "name":{"shape":"Name"},
         "description":{"shape":"Description"},
-        "namespaces":{"shape":"NamespacesList"}
+        "namespaces":{
+          "shape":"NamespacesList",
+          "deprecated":true,
+          "deprecatedMessage":"Use namespaceTemplates instead",
+          "deprecatedSince":"2026-03-02"
+        },
+        "namespaceTemplates":{"shape":"NamespacesList"},
+        "memoryRecordSchema":{"shape":"MemoryRecordSchema"}
       }
     },
     "SemanticOverrideConfigurationInput":{
@@ -6665,12 +10500,31 @@
         "modelId":{"shape":"String"}
       }
     },
+    "SensitiveJson":{
+      "type":"structure",
+      "members":{},
+      "document":true,
+      "sensitive":true
+    },
+    "SensitiveText":{
+      "type":"string",
+      "min":1,
+      "sensitive":true
+    },
+    "ServerDefinition":{
+      "type":"structure",
+      "members":{
+        "schemaVersion":{"shape":"SchemaVersion"},
+        "inlineContent":{"shape":"InlineContent"}
+      }
+    },
     "ServerProtocol":{
       "type":"string",
       "enum":[
         "MCP",
         "HTTP",
-        "A2A"
+        "A2A",
+        "AGUI"
       ]
     },
     "ServiceException":{
@@ -6713,6 +10567,25 @@
       "max":1440,
       "min":1
     },
+    "SessionConfiguration":{
+      "type":"structure",
+      "members":{
+        "sessionTimeoutInSeconds":{"shape":"SessionConfigurationSessionTimeoutInSecondsInteger"}
+      }
+    },
+    "SessionConfigurationSessionTimeoutInSecondsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":28800,
+      "min":900
+    },
+    "SessionStorageConfiguration":{
+      "type":"structure",
+      "required":["mountPath"],
+      "members":{
+        "mountPath":{"shape":"MountPath"}
+      }
+    },
     "SetTokenVaultCMKRequest":{
       "type":"structure",
       "required":["kmsConfiguration"],
@@ -6732,6 +10605,19 @@
         "tokenVaultId":{"shape":"TokenVaultIdType"},
         "kmsConfiguration":{"shape":"KmsConfiguration"},
         "lastModifiedDate":{"shape":"Timestamp"}
+      }
+    },
+    "SkillDefinition":{
+      "type":"structure",
+      "members":{
+        "schemaVersion":{"shape":"SchemaVersion"},
+        "inlineContent":{"shape":"InlineContent"}
+      }
+    },
+    "SkillMdDefinition":{
+      "type":"structure",
+      "members":{
+        "inlineContent":{"shape":"InlineContent"}
       }
     },
     "SlackOauth2ProviderConfigInput":{
@@ -6804,8 +10690,42 @@
     },
     "Statement":{
       "type":"string",
-      "max":153600,
+      "max":10000,
       "min":35
+    },
+    "StaticOverride":{
+      "type":"structure",
+      "required":[
+        "bundleArn",
+        "bundleVersion"
+      ],
+      "members":{
+        "bundleArn":{"shape":"GatewayConfigurationBundleArn"},
+        "bundleVersion":{"shape":"StaticOverrideBundleVersionString"}
+      }
+    },
+    "StaticOverrideBundleVersionString":{
+      "type":"string",
+      "pattern":"[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+    },
+    "StaticRoute":{
+      "type":"structure",
+      "required":["targetName"],
+      "members":{
+        "targetName":{"shape":"TargetName"}
+      }
+    },
+    "Status":{
+      "type":"string",
+      "enum":[
+        "CREATING",
+        "CREATE_FAILED",
+        "UPDATING",
+        "UPDATE_FAILED",
+        "READY",
+        "DELETING",
+        "DELETE_FAILED"
+      ]
     },
     "StatusReason":{
       "type":"string",
@@ -6828,10 +10748,152 @@
         "selfManagedConfiguration":{"shape":"SelfManagedConfiguration"}
       }
     },
+    "StreamDeliveryResource":{
+      "type":"structure",
+      "members":{
+        "kinesis":{"shape":"KinesisResource"}
+      },
+      "union":true
+    },
+    "StreamDeliveryResources":{
+      "type":"structure",
+      "required":["resources"],
+      "members":{
+        "resources":{"shape":"StreamDeliveryResourcesList"}
+      }
+    },
+    "StreamDeliveryResourcesList":{
+      "type":"list",
+      "member":{"shape":"StreamDeliveryResource"},
+      "max":1,
+      "min":0
+    },
+    "StreamingConfiguration":{
+      "type":"structure",
+      "members":{
+        "enableResponseStreaming":{"shape":"Boolean"}
+      }
+    },
     "String":{"type":"string"},
+    "StringListValidation":{
+      "type":"structure",
+      "members":{
+        "allowedValues":{"shape":"AllowedStringListValuesList"},
+        "maxItems":{"shape":"StringListValidationMaxItemsInteger"}
+      }
+    },
+    "StringListValidationMaxItemsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":5,
+      "min":1
+    },
+    "StringValidation":{
+      "type":"structure",
+      "required":["allowedValues"],
+      "members":{
+        "allowedValues":{"shape":"AllowedStringValuesList"}
+      }
+    },
+    "StripePrivyAppIdType":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "pattern":"[a-zA-Z0-9\\-_]+"
+    },
+    "StripePrivyAppSecretType":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"[a-zA-Z0-9+/=\\-_\\s]+",
+      "sensitive":true
+    },
+    "StripePrivyAuthorizationIdType":{
+      "type":"string",
+      "max":512,
+      "min":1,
+      "pattern":"[a-zA-Z0-9\\-_]+"
+    },
+    "StripePrivyAuthorizationPrivateKeyType":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"[a-zA-Z0-9+/=\\-_\\s]+",
+      "sensitive":true
+    },
+    "StripePrivyConfigurationInput":{
+      "type":"structure",
+      "required":[
+        "appId",
+        "appSecret",
+        "authorizationPrivateKey",
+        "authorizationId"
+      ],
+      "members":{
+        "appId":{"shape":"StripePrivyAppIdType"},
+        "appSecret":{"shape":"StripePrivyAppSecretType"},
+        "authorizationPrivateKey":{"shape":"StripePrivyAuthorizationPrivateKeyType"},
+        "authorizationId":{"shape":"StripePrivyAuthorizationIdType"}
+      }
+    },
+    "StripePrivyConfigurationOutput":{
+      "type":"structure",
+      "required":[
+        "appId",
+        "appSecretArn",
+        "authorizationPrivateKeyArn",
+        "authorizationId"
+      ],
+      "members":{
+        "appId":{"shape":"StripePrivyAppIdType"},
+        "appSecretArn":{"shape":"Secret"},
+        "authorizationPrivateKeyArn":{"shape":"Secret"},
+        "authorizationId":{"shape":"StripePrivyAuthorizationIdType"}
+      }
+    },
+    "SubmitRegistryRecordForApprovalRequest":{
+      "type":"structure",
+      "required":[
+        "registryId",
+        "recordId"
+      ],
+      "members":{
+        "registryId":{
+          "shape":"RegistryIdentifier",
+          "location":"uri",
+          "locationName":"registryId"
+        },
+        "recordId":{
+          "shape":"RecordIdentifier",
+          "location":"uri",
+          "locationName":"recordId"
+        }
+      }
+    },
+    "SubmitRegistryRecordForApprovalResponse":{
+      "type":"structure",
+      "required":[
+        "registryArn",
+        "recordArn",
+        "recordId",
+        "status",
+        "updatedAt"
+      ],
+      "members":{
+        "registryArn":{"shape":"RegistryArn"},
+        "recordArn":{"shape":"RegistryRecordArn"},
+        "recordId":{"shape":"RegistryRecordId"},
+        "status":{"shape":"RegistryRecordStatus"},
+        "updatedAt":{"shape":"DateTimestamp"}
+      }
+    },
     "SubnetId":{
       "type":"string",
       "pattern":"subnet-[0-9a-zA-Z]{8,17}"
+    },
+    "SubnetIds":{
+      "type":"list",
+      "member":{"shape":"SubnetId"}
     },
     "Subnets":{
       "type":"list",
@@ -6856,7 +10918,14 @@
       "members":{
         "name":{"shape":"Name"},
         "description":{"shape":"Description"},
-        "namespaces":{"shape":"NamespacesList"}
+        "namespaces":{
+          "shape":"NamespacesList",
+          "deprecated":true,
+          "deprecatedMessage":"Use namespaceTemplates instead",
+          "deprecatedSince":"2026-03-02"
+        },
+        "namespaceTemplates":{"shape":"NamespacesList"},
+        "memoryRecordSchema":{"shape":"MemoryRecordSchema"}
       }
     },
     "SummaryOverrideConfigurationInput":{
@@ -6875,6 +10944,16 @@
         "appendToPrompt":{"shape":"Prompt"},
         "modelId":{"shape":"String"}
       }
+    },
+    "SynchronizationConfiguration":{
+      "type":"structure",
+      "members":{
+        "fromUrl":{"shape":"FromUrlSynchronizationConfiguration"}
+      }
+    },
+    "SynchronizationType":{
+      "type":"string",
+      "enum":["URL"]
     },
     "SynchronizeGatewayTargetsRequest":{
       "type":"structure",
@@ -6895,6 +10974,13 @@
       "type":"structure",
       "members":{
         "targets":{"shape":"GatewayTargetList"}
+      }
+    },
+    "SystemManagedBlock":{
+      "type":"structure",
+      "required":["managedBy"],
+      "members":{
+        "managedBy":{"shape":"String"}
       }
     },
     "TagKey":{
@@ -6950,7 +11036,8 @@
     "TargetConfiguration":{
       "type":"structure",
       "members":{
-        "mcp":{"shape":"McpTargetConfiguration"}
+        "mcp":{"shape":"McpTargetConfiguration"},
+        "http":{"shape":"HttpTargetConfiguration"}
       },
       "union":true
     },
@@ -6987,6 +11074,19 @@
       "min":1,
       "pattern":"\\S*"
     },
+    "TargetProtocolType":{
+      "type":"string",
+      "enum":[
+        "MCP",
+        "HTTP"
+      ]
+    },
+    "TargetResourcePriority":{
+      "type":"integer",
+      "box":true,
+      "max":1000,
+      "min":0
+    },
     "TargetStatus":{
       "type":"string",
       "enum":[
@@ -6997,7 +11097,10 @@
         "READY",
         "FAILED",
         "SYNCHRONIZING",
-        "SYNCHRONIZE_UNSUCCESSFUL"
+        "SYNCHRONIZE_UNSUCCESSFUL",
+        "CREATE_PENDING_AUTH",
+        "UPDATE_PENDING_AUTH",
+        "SYNCHRONIZE_PENDING_AUTH"
       ]
     },
     "TargetSummaries":{
@@ -7019,8 +11122,53 @@
         "status":{"shape":"TargetStatus"},
         "description":{"shape":"TargetDescription"},
         "createdAt":{"shape":"DateTimestamp"},
-        "updatedAt":{"shape":"DateTimestamp"}
+        "updatedAt":{"shape":"DateTimestamp"},
+        "resourcePriority":{"shape":"TargetResourcePriority"}
       }
+    },
+    "TargetTrafficSplitEntries":{
+      "type":"list",
+      "member":{"shape":"TargetTrafficSplitEntry"},
+      "max":2,
+      "min":2
+    },
+    "TargetTrafficSplitEntry":{
+      "type":"structure",
+      "required":[
+        "name",
+        "weight",
+        "targetName"
+      ],
+      "members":{
+        "name":{"shape":"TargetTrafficSplitEntryNameString"},
+        "weight":{"shape":"TargetTrafficSplitEntryWeightInteger"},
+        "targetName":{"shape":"TargetName"},
+        "description":{"shape":"TargetTrafficSplitEntryDescriptionString"},
+        "metadata":{"shape":"TrafficSplitMetadataMap"}
+      }
+    },
+    "TargetTrafficSplitEntryDescriptionString":{
+      "type":"string",
+      "max":200,
+      "min":1
+    },
+    "TargetTrafficSplitEntryNameString":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-zA-Z0-9]([a-zA-Z0-9-]{0,62}[a-zA-Z0-9])?"
+    },
+    "TargetTrafficSplitEntryWeightInteger":{
+      "type":"integer",
+      "box":true,
+      "max":99,
+      "min":1
+    },
+    "Temperature":{
+      "type":"float",
+      "box":true,
+      "max":2.0,
+      "min":0.0
     },
     "TenantIdType":{
       "type":"string",
@@ -7098,6 +11246,14 @@
       "min":1
     },
     "TokenEndpointType":{"type":"string"},
+    "TokenExchangeGrantTypeConfigType":{
+      "type":"structure",
+      "required":["actorTokenContent"],
+      "members":{
+        "actorTokenContent":{"shape":"ActorTokenContentType"},
+        "actorTokenScopes":{"shape":"ScopesListType"}
+      }
+    },
     "TokenVaultIdType":{
       "type":"string",
       "max":64,
@@ -7129,6 +11285,84 @@
         "inlinePayload":{"shape":"ToolDefinitions"}
       },
       "union":true
+    },
+    "ToolSecretArn":{
+      "type":"string",
+      "pattern":"arn:aws(-[a-z-]+)?:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+"
+    },
+    "ToolsDefinition":{
+      "type":"structure",
+      "members":{
+        "protocolVersion":{"shape":"SchemaVersion"},
+        "inlineContent":{"shape":"InlineContent"}
+      }
+    },
+    "TopK":{
+      "type":"integer",
+      "box":true,
+      "max":500,
+      "min":0
+    },
+    "TopP":{
+      "type":"float",
+      "box":true,
+      "max":1.0,
+      "min":0.0
+    },
+    "TrafficSplitEntries":{
+      "type":"list",
+      "member":{"shape":"TrafficSplitEntry"},
+      "max":2,
+      "min":2
+    },
+    "TrafficSplitEntry":{
+      "type":"structure",
+      "required":[
+        "name",
+        "weight",
+        "configurationBundle"
+      ],
+      "members":{
+        "name":{"shape":"TrafficSplitEntryNameString"},
+        "weight":{"shape":"TrafficSplitEntryWeightInteger"},
+        "configurationBundle":{"shape":"ConfigurationBundleReference"},
+        "description":{"shape":"TrafficSplitEntryDescriptionString"},
+        "metadata":{"shape":"TrafficSplitMetadataMap"}
+      }
+    },
+    "TrafficSplitEntryDescriptionString":{
+      "type":"string",
+      "max":200,
+      "min":1
+    },
+    "TrafficSplitEntryNameString":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-zA-Z0-9]([a-zA-Z0-9-]{0,62}[a-zA-Z0-9])?"
+    },
+    "TrafficSplitEntryWeightInteger":{
+      "type":"integer",
+      "box":true,
+      "max":99,
+      "min":1
+    },
+    "TrafficSplitMetadataKey":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
+    "TrafficSplitMetadataMap":{
+      "type":"map",
+      "key":{"shape":"TrafficSplitMetadataKey"},
+      "value":{"shape":"TrafficSplitMetadataValue"},
+      "max":25,
+      "min":0
+    },
+    "TrafficSplitMetadataValue":{
+      "type":"string",
+      "max":256,
+      "min":1
     },
     "TriggerCondition":{
       "type":"structure",
@@ -7168,6 +11402,10 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "Unit":{
+      "type":"structure",
+      "members":{}
     },
     "UntagResourceRequest":{
       "type":"structure",
@@ -7258,7 +11496,9 @@
         "requestHeaderConfiguration":{"shape":"RequestHeaderConfiguration"},
         "protocolConfiguration":{"shape":"ProtocolConfiguration"},
         "lifecycleConfiguration":{"shape":"LifecycleConfiguration"},
+        "metadataConfiguration":{"shape":"RuntimeMetadataConfiguration"},
         "environmentVariables":{"shape":"EnvironmentVariablesMap"},
+        "filesystemConfigurations":{"shape":"FilesystemConfigurations"},
         "clientToken":{
           "shape":"ClientToken",
           "idempotencyToken":true
@@ -7313,6 +11553,48 @@
         "lastUpdatedTime":{"shape":"Timestamp"}
       }
     },
+    "UpdateConfigurationBundleRequest":{
+      "type":"structure",
+      "required":["bundleId"],
+      "members":{
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "bundleId":{
+          "shape":"ConfigurationBundleId",
+          "location":"uri",
+          "locationName":"bundleId"
+        },
+        "bundleName":{"shape":"ConfigurationBundleName"},
+        "description":{"shape":"ConfigurationBundleDescription"},
+        "components":{"shape":"ComponentConfigurationMap"},
+        "parentVersionIds":{"shape":"ConfigurationBundleVersionList"},
+        "branchName":{"shape":"BranchName"},
+        "commitMessage":{"shape":"UpdateConfigurationBundleRequestCommitMessageString"},
+        "createdBy":{"shape":"VersionCreatedBySource"}
+      }
+    },
+    "UpdateConfigurationBundleRequestCommitMessageString":{
+      "type":"string",
+      "max":500,
+      "min":1
+    },
+    "UpdateConfigurationBundleResponse":{
+      "type":"structure",
+      "required":[
+        "bundleArn",
+        "bundleId",
+        "versionId",
+        "updatedAt"
+      ],
+      "members":{
+        "bundleArn":{"shape":"ConfigurationBundleArn"},
+        "bundleId":{"shape":"ConfigurationBundleId"},
+        "versionId":{"shape":"ConfigurationBundleVersion"},
+        "updatedAt":{"shape":"Timestamp"}
+      }
+    },
     "UpdateEvaluatorRequest":{
       "type":"structure",
       "required":["evaluatorId"],
@@ -7328,7 +11610,8 @@
         },
         "description":{"shape":"EvaluatorDescription"},
         "evaluatorConfig":{"shape":"EvaluatorConfig"},
-        "level":{"shape":"EvaluatorLevel"}
+        "level":{"shape":"EvaluatorLevel"},
+        "kmsKeyArn":{"shape":"KmsKeyArn"}
       }
     },
     "UpdateEvaluatorResponse":{
@@ -7352,7 +11635,6 @@
         "gatewayIdentifier",
         "name",
         "roleArn",
-        "protocolType",
         "authorizerType"
       ],
       "members":{
@@ -7383,7 +11665,6 @@
         "updatedAt",
         "status",
         "name",
-        "protocolType",
         "authorizerType"
       ],
       "members":{
@@ -7406,6 +11687,52 @@
         "policyEngineConfiguration":{"shape":"GatewayPolicyEngineConfiguration"},
         "workloadIdentityDetails":{"shape":"WorkloadIdentityDetails"},
         "exceptionLevel":{"shape":"ExceptionLevel"}
+      }
+    },
+    "UpdateGatewayRuleRequest":{
+      "type":"structure",
+      "required":[
+        "gatewayIdentifier",
+        "ruleId"
+      ],
+      "members":{
+        "gatewayIdentifier":{
+          "shape":"GatewayIdentifier",
+          "location":"uri",
+          "locationName":"gatewayIdentifier"
+        },
+        "ruleId":{
+          "shape":"GatewayRuleId",
+          "location":"uri",
+          "locationName":"ruleId"
+        },
+        "priority":{"shape":"GatewayRulePriority"},
+        "conditions":{"shape":"Conditions"},
+        "actions":{"shape":"Actions"},
+        "description":{"shape":"GatewayRuleDescription"}
+      }
+    },
+    "UpdateGatewayRuleResponse":{
+      "type":"structure",
+      "required":[
+        "ruleId",
+        "gatewayArn",
+        "priority",
+        "actions",
+        "createdAt",
+        "status"
+      ],
+      "members":{
+        "ruleId":{"shape":"GatewayRuleId"},
+        "gatewayArn":{"shape":"GatewayArn"},
+        "priority":{"shape":"GatewayRulePriority"},
+        "conditions":{"shape":"Conditions"},
+        "actions":{"shape":"Actions"},
+        "description":{"shape":"GatewayRuleDescription"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"GatewayRuleStatus"},
+        "system":{"shape":"SystemManagedBlock"},
+        "updatedAt":{"shape":"DateTimestamp"}
       }
     },
     "UpdateGatewayTargetRequest":{
@@ -7431,7 +11758,8 @@
         "description":{"shape":"TargetDescription"},
         "targetConfiguration":{"shape":"TargetConfiguration"},
         "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"},
-        "metadataConfiguration":{"shape":"MetadataConfiguration"}
+        "metadataConfiguration":{"shape":"MetadataConfiguration"},
+        "privateEndpoint":{"shape":"PrivateEndpoint"}
       }
     },
     "UpdateGatewayTargetResponse":{
@@ -7458,7 +11786,48 @@
         "targetConfiguration":{"shape":"TargetConfiguration"},
         "credentialProviderConfigurations":{"shape":"CredentialProviderConfigurations"},
         "lastSynchronizedAt":{"shape":"DateTimestamp"},
-        "metadataConfiguration":{"shape":"MetadataConfiguration"}
+        "metadataConfiguration":{"shape":"MetadataConfiguration"},
+        "privateEndpoint":{"shape":"PrivateEndpoint"},
+        "privateEndpointManagedResources":{"shape":"PrivateEndpointManagedResources"},
+        "authorizationData":{"shape":"AuthorizationData"},
+        "protocolType":{"shape":"TargetProtocolType"}
+      }
+    },
+    "UpdateHarnessRequest":{
+      "type":"structure",
+      "required":["harnessId"],
+      "members":{
+        "harnessId":{
+          "shape":"HarnessId",
+          "location":"uri",
+          "locationName":"harnessId"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "executionRoleArn":{"shape":"RoleArn"},
+        "environment":{"shape":"HarnessEnvironmentProviderRequest"},
+        "environmentArtifact":{"shape":"UpdatedHarnessEnvironmentArtifact"},
+        "environmentVariables":{"shape":"EnvironmentVariablesMap"},
+        "authorizerConfiguration":{"shape":"UpdatedAuthorizerConfiguration"},
+        "model":{"shape":"HarnessModelConfiguration"},
+        "systemPrompt":{"shape":"HarnessSystemPrompt"},
+        "tools":{"shape":"HarnessTools"},
+        "skills":{"shape":"HarnessSkills"},
+        "allowedTools":{"shape":"HarnessAllowedTools"},
+        "memory":{"shape":"UpdatedHarnessMemoryConfiguration"},
+        "truncation":{"shape":"HarnessTruncationConfiguration"},
+        "maxIterations":{"shape":"Integer"},
+        "maxTokens":{"shape":"Integer"},
+        "timeoutSeconds":{"shape":"Integer"}
+      }
+    },
+    "UpdateHarnessResponse":{
+      "type":"structure",
+      "required":["harness"],
+      "members":{
+        "harness":{"shape":"Harness"}
       }
     },
     "UpdateMemoryInput":{
@@ -7477,7 +11846,9 @@
         "description":{"shape":"Description"},
         "eventExpiryDuration":{"shape":"UpdateMemoryInputEventExpiryDurationInteger"},
         "memoryExecutionRoleArn":{"shape":"Arn"},
-        "memoryStrategies":{"shape":"ModifyMemoryStrategies"}
+        "memoryStrategies":{"shape":"ModifyMemoryStrategies"},
+        "addIndexedKeys":{"shape":"IndexedKeysList"},
+        "streamDeliveryResources":{"shape":"StreamDeliveryResources"}
       }
     },
     "UpdateMemoryInputClientTokenString":{
@@ -7529,7 +11900,8 @@
         "callbackUrl":{"shape":"String"},
         "oauth2ProviderConfigOutput":{"shape":"Oauth2ProviderConfigOutput"},
         "createdTime":{"shape":"Timestamp"},
-        "lastUpdatedTime":{"shape":"Timestamp"}
+        "lastUpdatedTime":{"shape":"Timestamp"},
+        "status":{"shape":"Status"}
       }
     },
     "UpdateOnlineEvaluationConfigRequest":{
@@ -7571,6 +11943,126 @@
         "failureReason":{"shape":"String"}
       }
     },
+    "UpdatePaymentConnectorRequest":{
+      "type":"structure",
+      "required":[
+        "paymentManagerId",
+        "paymentConnectorId"
+      ],
+      "members":{
+        "paymentManagerId":{
+          "shape":"PaymentManagerId",
+          "location":"uri",
+          "locationName":"paymentManagerId"
+        },
+        "paymentConnectorId":{
+          "shape":"PaymentConnectorId",
+          "location":"uri",
+          "locationName":"paymentConnectorId"
+        },
+        "description":{"shape":"PaymentsDescription"},
+        "type":{"shape":"PaymentConnectorType"},
+        "credentialProviderConfigurations":{"shape":"CredentialsProviderConfigurations"},
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "UpdatePaymentConnectorResponse":{
+      "type":"structure",
+      "required":[
+        "paymentConnectorId",
+        "paymentManagerId",
+        "name",
+        "type",
+        "credentialProviderConfigurations",
+        "lastUpdatedAt",
+        "status"
+      ],
+      "members":{
+        "paymentConnectorId":{"shape":"PaymentConnectorId"},
+        "paymentManagerId":{"shape":"PaymentManagerId"},
+        "name":{"shape":"PaymentConnectorName"},
+        "type":{"shape":"PaymentConnectorType"},
+        "credentialProviderConfigurations":{"shape":"CredentialsProviderConfigurations"},
+        "lastUpdatedAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"PaymentConnectorStatus"}
+      }
+    },
+    "UpdatePaymentCredentialProviderRequest":{
+      "type":"structure",
+      "required":[
+        "name",
+        "credentialProviderVendor",
+        "providerConfigurationInput"
+      ],
+      "members":{
+        "name":{"shape":"CredentialProviderName"},
+        "credentialProviderVendor":{"shape":"PaymentCredentialProviderVendorType"},
+        "providerConfigurationInput":{"shape":"PaymentProviderConfigurationInput"}
+      }
+    },
+    "UpdatePaymentCredentialProviderResponse":{
+      "type":"structure",
+      "required":[
+        "name",
+        "credentialProviderVendor",
+        "credentialProviderArn",
+        "providerConfigurationOutput",
+        "createdTime",
+        "lastUpdatedTime"
+      ],
+      "members":{
+        "name":{"shape":"CredentialProviderName"},
+        "credentialProviderVendor":{"shape":"PaymentCredentialProviderVendorType"},
+        "credentialProviderArn":{"shape":"PaymentCredentialProviderArnType"},
+        "providerConfigurationOutput":{"shape":"PaymentProviderConfigurationOutput"},
+        "createdTime":{"shape":"Timestamp"},
+        "lastUpdatedTime":{"shape":"Timestamp"}
+      }
+    },
+    "UpdatePaymentManagerRequest":{
+      "type":"structure",
+      "required":["paymentManagerId"],
+      "members":{
+        "paymentManagerId":{
+          "shape":"PaymentManagerId",
+          "location":"uri",
+          "locationName":"paymentManagerId"
+        },
+        "description":{"shape":"PaymentsDescription"},
+        "authorizerType":{"shape":"PaymentsAuthorizerType"},
+        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
+        "roleArn":{"shape":"RoleArn"},
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        }
+      }
+    },
+    "UpdatePaymentManagerResponse":{
+      "type":"structure",
+      "required":[
+        "paymentManagerArn",
+        "paymentManagerId",
+        "name",
+        "authorizerType",
+        "roleArn",
+        "lastUpdatedAt",
+        "status"
+      ],
+      "members":{
+        "paymentManagerArn":{"shape":"PaymentManagerArn"},
+        "paymentManagerId":{"shape":"PaymentManagerId"},
+        "name":{"shape":"PaymentManagerName"},
+        "authorizerType":{"shape":"PaymentsAuthorizerType"},
+        "roleArn":{"shape":"RoleArn"},
+        "workloadIdentityDetails":{"shape":"WorkloadIdentityDetails"},
+        "lastUpdatedAt":{"shape":"DateTimestamp"},
+        "status":{"shape":"PaymentManagerStatus"}
+      }
+    },
     "UpdatePolicyEngineRequest":{
       "type":"structure",
       "required":["policyEngineId"],
@@ -7580,7 +12072,7 @@
           "location":"uri",
           "locationName":"policyEngineId"
         },
-        "description":{"shape":"Description"}
+        "description":{"shape":"UpdatedDescription"}
       }
     },
     "UpdatePolicyEngineResponse":{
@@ -7602,15 +12094,15 @@
         "updatedAt":{"shape":"DateTimestamp"},
         "policyEngineArn":{"shape":"PolicyEngineArn"},
         "status":{"shape":"PolicyEngineStatus"},
-        "statusReasons":{"shape":"PolicyStatusReasons"}
+        "statusReasons":{"shape":"PolicyStatusReasons"},
+        "encryptionKeyArn":{"shape":"KmsKeyArn"}
       }
     },
     "UpdatePolicyRequest":{
       "type":"structure",
       "required":[
         "policyEngineId",
-        "policyId",
-        "definition"
+        "policyId"
       ],
       "members":{
         "policyEngineId":{
@@ -7623,7 +12115,7 @@
           "location":"uri",
           "locationName":"policyId"
         },
-        "description":{"shape":"Description"},
+        "description":{"shape":"UpdatedDescription"},
         "definition":{"shape":"PolicyDefinition"},
         "validationMode":{"shape":"PolicyValidationMode"}
       }
@@ -7654,6 +12146,149 @@
         "statusReasons":{"shape":"PolicyStatusReasons"}
       }
     },
+    "UpdateRegistryRecordRequest":{
+      "type":"structure",
+      "required":[
+        "registryId",
+        "recordId"
+      ],
+      "members":{
+        "registryId":{
+          "shape":"RegistryIdentifier",
+          "location":"uri",
+          "locationName":"registryId"
+        },
+        "recordId":{
+          "shape":"RecordIdentifier",
+          "location":"uri",
+          "locationName":"recordId"
+        },
+        "name":{"shape":"RegistryRecordName"},
+        "description":{"shape":"UpdatedDescription"},
+        "descriptorType":{"shape":"DescriptorType"},
+        "descriptors":{"shape":"UpdatedDescriptors"},
+        "recordVersion":{"shape":"RegistryRecordVersion"},
+        "synchronizationType":{"shape":"UpdatedSynchronizationType"},
+        "synchronizationConfiguration":{"shape":"UpdatedSynchronizationConfiguration"},
+        "triggerSynchronization":{"shape":"Boolean"}
+      }
+    },
+    "UpdateRegistryRecordResponse":{
+      "type":"structure",
+      "required":[
+        "registryArn",
+        "recordArn",
+        "recordId",
+        "name",
+        "descriptorType",
+        "descriptors",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "registryArn":{"shape":"RegistryArn"},
+        "recordArn":{"shape":"RegistryRecordArn"},
+        "recordId":{"shape":"RegistryRecordId"},
+        "name":{"shape":"RegistryRecordName"},
+        "description":{"shape":"Description"},
+        "descriptorType":{"shape":"DescriptorType"},
+        "descriptors":{"shape":"Descriptors"},
+        "recordVersion":{"shape":"RegistryRecordVersion"},
+        "status":{"shape":"RegistryRecordStatus"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"},
+        "statusReason":{"shape":"String"},
+        "synchronizationType":{"shape":"SynchronizationType"},
+        "synchronizationConfiguration":{"shape":"SynchronizationConfiguration"}
+      }
+    },
+    "UpdateRegistryRecordStatusRequest":{
+      "type":"structure",
+      "required":[
+        "registryId",
+        "recordId",
+        "status",
+        "statusReason"
+      ],
+      "members":{
+        "registryId":{
+          "shape":"RegistryIdentifier",
+          "location":"uri",
+          "locationName":"registryId"
+        },
+        "recordId":{
+          "shape":"RecordIdentifier",
+          "location":"uri",
+          "locationName":"recordId"
+        },
+        "status":{"shape":"RegistryRecordStatus"},
+        "statusReason":{"shape":"UpdateRegistryRecordStatusRequestStatusReasonString"}
+      }
+    },
+    "UpdateRegistryRecordStatusRequestStatusReasonString":{
+      "type":"string",
+      "max":255,
+      "min":0
+    },
+    "UpdateRegistryRecordStatusResponse":{
+      "type":"structure",
+      "required":[
+        "registryArn",
+        "recordArn",
+        "recordId",
+        "status",
+        "statusReason",
+        "updatedAt"
+      ],
+      "members":{
+        "registryArn":{"shape":"RegistryArn"},
+        "recordArn":{"shape":"RegistryRecordArn"},
+        "recordId":{"shape":"RegistryRecordId"},
+        "status":{"shape":"RegistryRecordStatus"},
+        "statusReason":{"shape":"String"},
+        "updatedAt":{"shape":"DateTimestamp"}
+      }
+    },
+    "UpdateRegistryRequest":{
+      "type":"structure",
+      "required":["registryId"],
+      "members":{
+        "registryId":{
+          "shape":"RegistryIdentifier",
+          "location":"uri",
+          "locationName":"registryId"
+        },
+        "name":{"shape":"RegistryName"},
+        "description":{"shape":"UpdatedDescription"},
+        "authorizerConfiguration":{"shape":"UpdatedAuthorizerConfiguration"},
+        "approvalConfiguration":{"shape":"UpdatedApprovalConfiguration"}
+      }
+    },
+    "UpdateRegistryResponse":{
+      "type":"structure",
+      "required":[
+        "name",
+        "registryId",
+        "registryArn",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "name":{"shape":"RegistryName"},
+        "description":{"shape":"Description"},
+        "registryId":{"shape":"RegistryId"},
+        "registryArn":{"shape":"RegistryArn"},
+        "authorizerType":{"shape":"RegistryAuthorizerType"},
+        "authorizerConfiguration":{"shape":"AuthorizerConfiguration"},
+        "approvalConfiguration":{"shape":"ApprovalConfiguration"},
+        "status":{"shape":"RegistryStatus"},
+        "statusReason":{"shape":"String"},
+        "createdAt":{"shape":"DateTimestamp"},
+        "updatedAt":{"shape":"DateTimestamp"}
+      }
+    },
     "UpdateWorkloadIdentityRequest":{
       "type":"structure",
       "required":["name"],
@@ -7676,6 +12311,125 @@
         "allowedResourceOauth2ReturnUrls":{"shape":"ResourceOauth2ReturnUrlListType"},
         "createdTime":{"shape":"Timestamp"},
         "lastUpdatedTime":{"shape":"Timestamp"}
+      }
+    },
+    "UpdatedA2aDescriptor":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"A2aDescriptor"}
+      }
+    },
+    "UpdatedAgentSkillsDescriptor":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"UpdatedAgentSkillsDescriptorFields"}
+      }
+    },
+    "UpdatedAgentSkillsDescriptorFields":{
+      "type":"structure",
+      "members":{
+        "skillMd":{"shape":"UpdatedSkillMdDefinition"},
+        "skillDefinition":{"shape":"UpdatedSkillDefinition"}
+      }
+    },
+    "UpdatedApprovalConfiguration":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"ApprovalConfiguration"}
+      }
+    },
+    "UpdatedAuthorizerConfiguration":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"AuthorizerConfiguration"}
+      }
+    },
+    "UpdatedCustomDescriptor":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"CustomDescriptor"}
+      }
+    },
+    "UpdatedDescription":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"Description"}
+      }
+    },
+    "UpdatedDescriptors":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"UpdatedDescriptorsUnion"}
+      }
+    },
+    "UpdatedDescriptorsUnion":{
+      "type":"structure",
+      "members":{
+        "mcp":{"shape":"UpdatedMcpDescriptor"},
+        "a2a":{"shape":"UpdatedA2aDescriptor"},
+        "custom":{"shape":"UpdatedCustomDescriptor"},
+        "agentSkills":{"shape":"UpdatedAgentSkillsDescriptor"}
+      }
+    },
+    "UpdatedHarnessEnvironmentArtifact":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"HarnessEnvironmentArtifact"}
+      }
+    },
+    "UpdatedHarnessMemoryConfiguration":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"HarnessMemoryConfiguration"}
+      }
+    },
+    "UpdatedMcpDescriptor":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"UpdatedMcpDescriptorFields"}
+      }
+    },
+    "UpdatedMcpDescriptorFields":{
+      "type":"structure",
+      "members":{
+        "server":{"shape":"UpdatedServerDefinition"},
+        "tools":{"shape":"UpdatedToolsDefinition"}
+      }
+    },
+    "UpdatedServerDefinition":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"ServerDefinition"}
+      }
+    },
+    "UpdatedSkillDefinition":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"SkillDefinition"}
+      }
+    },
+    "UpdatedSkillMdDefinition":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"SkillMdDefinition"}
+      }
+    },
+    "UpdatedSynchronizationConfiguration":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"SynchronizationConfiguration"}
+      }
+    },
+    "UpdatedSynchronizationType":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"SynchronizationType"}
+      }
+    },
+    "UpdatedToolsDefinition":{
+      "type":"structure",
+      "members":{
+        "optionalValue":{"shape":"ToolsDefinition"}
       }
     },
     "UserPreferenceConsolidationOverride":{
@@ -7706,7 +12460,14 @@
       "members":{
         "name":{"shape":"Name"},
         "description":{"shape":"Description"},
-        "namespaces":{"shape":"NamespacesList"}
+        "namespaces":{
+          "shape":"NamespacesList",
+          "deprecated":true,
+          "deprecatedMessage":"Use namespaceTemplates instead",
+          "deprecatedSince":"2026-03-02"
+        },
+        "namespaceTemplates":{"shape":"NamespacesList"},
+        "memoryRecordSchema":{"shape":"MemoryRecordSchema"}
       }
     },
     "UserPreferenceOverrideConfigurationInput":{
@@ -7737,6 +12498,15 @@
         "appendToPrompt":{"shape":"Prompt"},
         "modelId":{"shape":"String"}
       }
+    },
+    "Validation":{
+      "type":"structure",
+      "members":{
+        "stringValidation":{"shape":"StringValidation"},
+        "stringListValidation":{"shape":"StringListValidation"},
+        "numberValidation":{"shape":"NumberValidation"}
+      },
+      "union":true
     },
     "ValidationException":{
       "type":"structure",
@@ -7780,6 +12550,36 @@
         "ResourceConflict"
       ]
     },
+    "VersionCreatedBySource":{
+      "type":"structure",
+      "required":["name"],
+      "members":{
+        "name":{"shape":"String"},
+        "arn":{"shape":"String"}
+      }
+    },
+    "VersionFilter":{
+      "type":"structure",
+      "members":{
+        "branchName":{"shape":"BranchName"},
+        "createdByName":{"shape":"String"},
+        "latestPerBranch":{"shape":"Boolean"}
+      }
+    },
+    "VersionLineageMetadata":{
+      "type":"structure",
+      "members":{
+        "parentVersionIds":{"shape":"ConfigurationBundleVersionList"},
+        "branchName":{"shape":"BranchName"},
+        "createdBy":{"shape":"VersionCreatedBySource"},
+        "commitMessage":{"shape":"VersionLineageMetadataCommitMessageString"}
+      }
+    },
+    "VersionLineageMetadataCommitMessageString":{
+      "type":"string",
+      "max":500,
+      "min":1
+    },
     "VpcConfig":{
       "type":"structure",
       "required":[
@@ -7789,6 +12589,24 @@
       "members":{
         "securityGroups":{"shape":"SecurityGroups"},
         "subnets":{"shape":"Subnets"}
+      }
+    },
+    "VpcIdentifier":{
+      "type":"string",
+      "pattern":"vpc-(([0-9a-z]{8})|([0-9a-z]{17}))"
+    },
+    "WeightedOverride":{
+      "type":"structure",
+      "required":["trafficSplit"],
+      "members":{
+        "trafficSplit":{"shape":"TrafficSplitEntries"}
+      }
+    },
+    "WeightedRoute":{
+      "type":"structure",
+      "required":["trafficSplit"],
+      "members":{
+        "trafficSplit":{"shape":"TargetTrafficSplitEntries"}
       }
     },
     "WorkloadIdentityArn":{

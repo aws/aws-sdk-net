@@ -34,9 +34,30 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class BatchConfig
     {
+        private bool? _batchAcrossTopics;
         private int? _maxBatchOpenMs;
         private int? _maxBatchSize;
         private int? _maxBatchSizeBytes;
+
+        /// <summary>
+        /// Gets and sets the property BatchAcrossTopics. 
+        /// <para>
+        /// Whether to allow batching messages from different MQTT topics into a single HTTP request.
+        /// By default, only messages from the same topic are batched together. The default value
+        /// is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? BatchAcrossTopics
+        {
+            get { return this._batchAcrossTopics; }
+            set { this._batchAcrossTopics = value; }
+        }
+
+        // Check to see if BatchAcrossTopics property is set
+        internal bool IsSetBatchAcrossTopics()
+        {
+            return this._batchAcrossTopics.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxBatchOpenMs. 

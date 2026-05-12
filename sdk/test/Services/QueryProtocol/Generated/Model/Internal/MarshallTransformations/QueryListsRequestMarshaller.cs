@@ -150,6 +150,8 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static QueryListsRequestMarshaller _instance = new QueryListsRequestMarshaller();        

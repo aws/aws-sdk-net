@@ -80,8 +80,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The available filesystem types are&#x2028; <c>ext3</c>, <c>ext4</c>, and <c>xfs</c>.
-        /// If no value is specified, the <c>xfs</c> filesystem type is used by default.
+        /// The available filesystem types are <c>ext3</c>, <c>ext4</c>, and <c>xfs</c>. If no
+        /// value is specified, the <c>xfs</c> filesystem type is used by default.
         /// </para>
         /// </summary>
         public TaskFilesystemType FilesystemType

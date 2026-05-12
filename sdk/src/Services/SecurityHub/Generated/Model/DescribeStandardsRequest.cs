@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStandards operation.
-    /// Returns a list of the available standards in Security Hub.
+    /// Returns a list of the available standards in Security Hub CSPM.
     /// 
     ///  
     /// <para>

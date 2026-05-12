@@ -72,6 +72,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("OwnerId", StringUtils.FromString(publicRequest.OwnerId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListDelegationRequestsRequestMarshaller _instance = new ListDelegationRequestsRequestMarshaller();        

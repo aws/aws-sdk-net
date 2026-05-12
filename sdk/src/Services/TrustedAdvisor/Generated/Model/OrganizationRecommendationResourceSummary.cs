@@ -86,7 +86,8 @@ namespace Amazon.TrustedAdvisor.Model
         /// <summary>
         /// Gets and sets the property AwsResourceId. 
         /// <para>
-        /// The AWS resource identifier
+        /// The AWS resource identifier. There are certain checks that generate recommendation
+        /// resources without an awsResourceId.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

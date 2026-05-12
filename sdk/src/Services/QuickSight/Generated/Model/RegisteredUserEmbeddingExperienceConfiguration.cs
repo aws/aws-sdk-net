@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// The type of experience you want to embed. For registered users, you can embed Quick
-    /// Suite dashboards or the Amazon Quick Sight console.
+    /// dashboards or the Amazon Quick Sight console.
     /// 
     ///  <note> 
     /// <para>
@@ -155,7 +155,7 @@ namespace Amazon.QuickSight.Model
         /// The configuration details for providing each Amazon Quick Sight console embedding
         /// experience. This can be used along with custom permissions to restrict access to certain
         /// features. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
-        /// Access to the Amazon Quick Sight Console</a> in the <i>Amazon Quick Suite User Guide</i>.
+        /// Access to the Amazon Quick Sight Console</a> in the <i>Amazon Quick User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -167,7 +167,7 @@ namespace Amazon.QuickSight.Model
         /// to the user with the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
         /// </c> API operation. Use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
         /// </c> API operation to add a new user with a custom permission profile attached. For
-        /// more information, see the following sections in the <i>Amazon Quick Suite User Guide</i>:
+        /// more information, see the following sections in the <i>Amazon Quick User Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -178,13 +178,13 @@ namespace Amazon.QuickSight.Model
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing
-        /// Access to the Amazon Quick Suite Console</a> 
+        /// Access to the Amazon Quick Console</a> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information about the high-level steps for embedding and for an interactive
         /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-        /// Quick Suite Developer Portal</a>.
+        /// Quick Developer Portal</a>.
         /// </para>
         /// </summary>
         public RegisteredUserQuickSightConsoleEmbeddingConfiguration QuickSightConsole

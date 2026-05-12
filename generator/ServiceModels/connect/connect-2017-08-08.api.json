@@ -233,6 +233,23 @@
         {"shape":"AccessDeniedException"}
       ]
     },
+    "AssociateQueueEmailAddresses":{
+      "name":"AssociateQueueEmailAddresses",
+      "http":{
+        "method":"POST",
+        "requestUri":"/queues/{InstanceId}/{QueueId}/associate-email-addresses"
+      },
+      "input":{"shape":"AssociateQueueEmailAddressesRequest"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
     "AssociateQueueQuickConnects":{
       "name":"AssociateQueueQuickConnects",
       "http":{
@@ -1841,6 +1858,22 @@
         {"shape":"InternalServiceException"}
       ]
     },
+    "DescribeAttachedFilesConfiguration":{
+      "name":"DescribeAttachedFilesConfiguration",
+      "http":{
+        "method":"GET",
+        "requestUri":"/attached-files-configurations/{InstanceId}/{AttachmentScope}"
+      },
+      "input":{"shape":"DescribeAttachedFilesConfigurationRequest"},
+      "output":{"shape":"DescribeAttachedFilesConfigurationResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
     "DescribeAuthenticationProfile":{
       "name":"DescribeAuthenticationProfile",
       "http":{
@@ -2514,6 +2547,22 @@
         {"shape":"AccessDeniedException"}
       ]
     },
+    "DisassociateQueueEmailAddresses":{
+      "name":"DisassociateQueueEmailAddresses",
+      "http":{
+        "method":"POST",
+        "requestUri":"/queues/{InstanceId}/{QueueId}/disassociate-email-addresses"
+      },
+      "input":{"shape":"DisassociateQueueEmailAddressesRequest"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
     "DisassociateQueueQuickConnects":{
       "name":"DisassociateQueueQuickConnects",
       "http":{
@@ -2997,6 +3046,22 @@
         {"shape":"InvalidParameterException"},
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"}
+      ]
+    },
+    "ListAttachedFilesConfigurations":{
+      "name":"ListAttachedFilesConfigurations",
+      "http":{
+        "method":"GET",
+        "requestUri":"/attached-files-configurations/{InstanceId}"
+      },
+      "input":{"shape":"ListAttachedFilesConfigurationsRequest"},
+      "output":{"shape":"ListAttachedFilesConfigurationsResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"AccessDeniedException"}
       ]
     },
     "ListAuthenticationProfiles":{
@@ -3510,6 +3575,23 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"},
         {"shape":"InternalServiceException"}
+      ]
+    },
+    "ListQueueEmailAddresses":{
+      "name":"ListQueueEmailAddresses",
+      "http":{
+        "method":"GET",
+        "requestUri":"/queues/{InstanceId}/{QueueId}/email-addresses"
+      },
+      "input":{"shape":"ListQueueEmailAddressesRequest"},
+      "output":{"shape":"ListQueueEmailAddressesResponse"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"AccessDeniedException"}
       ]
     },
     "ListQueueQuickConnects":{
@@ -5032,6 +5114,22 @@
         {"shape":"InternalServiceException"}
       ]
     },
+    "UpdateAttachedFilesConfiguration":{
+      "name":"UpdateAttachedFilesConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/attached-files-configurations/{InstanceId}/{AttachmentScope}"
+      },
+      "input":{"shape":"UpdateAttachedFilesConfigurationRequest"},
+      "output":{"shape":"UpdateAttachedFilesConfigurationResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
     "UpdateAuthenticationProfile":{
       "name":"UpdateAuthenticationProfile",
       "http":{
@@ -6263,7 +6361,8 @@
         "AfterContactWorkStartTimestamp":{"shape":"timestamp"},
         "AfterContactWorkEndTimestamp":{"shape":"timestamp"},
         "AgentInitiatedHoldDuration":{"shape":"Duration"},
-        "StateTransitions":{"shape":"StateTransitions"}
+        "StateTransitions":{"shape":"StateTransitions"},
+        "VoiceEnhancementMode":{"shape":"VoiceEnhancementMode"}
       }
     },
     "AgentLastName":{
@@ -6470,6 +6569,17 @@
         "Customer":{"shape":"ParticipantCapabilities"},
         "Agent":{"shape":"ParticipantCapabilities"}
       }
+    },
+    "AllowedExtension":{
+      "type":"structure",
+      "required":["Extension"],
+      "members":{
+        "Extension":{"shape":"FileExtension"}
+      }
+    },
+    "AllowedExtensionsList":{
+      "type":"list",
+      "member":{"shape":"AllowedExtension"}
     },
     "AllowedFlowModules":{
       "type":"list",
@@ -6860,6 +6970,31 @@
         "ContactFlowId":{"shape":"ContactFlowId"}
       }
     },
+    "AssociateQueueEmailAddressesRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "QueueId",
+        "EmailAddressesConfig"
+      ],
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "QueueId":{
+          "shape":"QueueId",
+          "location":"uri",
+          "locationName":"QueueId"
+        },
+        "EmailAddressesConfig":{"shape":"EmailAddressConfigList"},
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        }
+      }
+    },
     "AssociateQueueQuickConnectsRequest":{
       "type":"structure",
       "required":[
@@ -7096,6 +7231,37 @@
         "TOTAL_FILE_COUNT_EXCEEDED"
       ]
     },
+    "AttachedFilesConfiguration":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "AttachmentScope"
+      ],
+      "members":{
+        "InstanceId":{"shape":"InstanceId"},
+        "AttachmentScope":{"shape":"AttachmentScope"},
+        "MaximumSizeLimitInBytes":{"shape":"MaximumSizeLimitInBytes"},
+        "ExtensionConfiguration":{"shape":"ExtensionConfiguration"},
+        "LastModifiedTime":{"shape":"timestamp"}
+      }
+    },
+    "AttachedFilesConfigurationSummary":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "AttachmentScope"
+      ],
+      "members":{
+        "InstanceId":{"shape":"InstanceId"},
+        "AttachmentScope":{"shape":"AttachmentScope"},
+        "MaximumSizeLimitInBytes":{"shape":"MaximumSizeLimitInBytes"},
+        "ExtensionConfiguration":{"shape":"ExtensionConfiguration"}
+      }
+    },
+    "AttachedFilesConfigurationSummaryList":{
+      "type":"list",
+      "member":{"shape":"AttachedFilesConfigurationSummary"}
+    },
     "AttachedFilesList":{
       "type":"list",
       "member":{"shape":"AttachedFile"}
@@ -7113,6 +7279,15 @@
         "Status":{"shape":"ReferenceStatus"},
         "Arn":{"shape":"ReferenceArn"}
       }
+    },
+    "AttachmentScope":{
+      "type":"string",
+      "enum":[
+        "EMAIL",
+        "CHAT",
+        "CASE",
+        "TASK"
+      ]
     },
     "Attendee":{
       "type":"structure",
@@ -7850,6 +8025,12 @@
       "max":10080,
       "min":60
     },
+    "ChatEntryPointParameters":{
+      "type":"structure",
+      "members":{
+        "FlowId":{"shape":"ContactFlowId"}
+      }
+    },
     "ChatEvent":{
       "type":"structure",
       "required":["Type"],
@@ -8497,7 +8678,8 @@
       "type":"string",
       "enum":[
         "AGENT",
-        "AUTOMATED"
+        "AUTOMATED",
+        "CUSTOMER"
       ]
     },
     "ContactMediaProcessingFailureMode":{
@@ -8561,7 +8743,8 @@
       "enum":[
         "AGENT",
         "SYSTEM",
-        "CUSTOM_BOT"
+        "CUSTOM_BOT",
+        "CUSTOMER"
       ]
     },
     "ContactRecordingType":{
@@ -9212,7 +9395,12 @@
         "Priority":{"shape":"ConfigurableNotificationPriority"},
         "Content":{"shape":"NotificationContent"},
         "Tags":{"shape":"TagMap"},
-        "PredefinedNotificationId":{"shape":"NotificationId"},
+        "PredefinedNotificationId":{
+          "shape":"NotificationId",
+          "deprecated":true,
+          "deprecatedMessage":"PredefinedNotificationId is deprecated. Use ClientToken for idempotency.",
+          "deprecatedSince":"3/13/2026"
+        },
         "ClientToken":{
           "shape":"ClientToken",
           "idempotencyToken":true
@@ -9383,6 +9571,7 @@
           "box":true
         },
         "QuickConnectIds":{"shape":"QuickConnectsList"},
+        "EmailAddressesConfig":{"shape":"EmailAddressConfigList"},
         "Tags":{"shape":"TagMap"}
       }
     },
@@ -11262,6 +11451,32 @@
         "AgentStatus":{"shape":"AgentStatus"}
       }
     },
+    "DescribeAttachedFilesConfigurationRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "AttachmentScope"
+      ],
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "AttachmentScope":{
+          "shape":"AttachmentScope",
+          "location":"uri",
+          "locationName":"AttachmentScope"
+        }
+      }
+    },
+    "DescribeAttachedFilesConfigurationResponse":{
+      "type":"structure",
+      "required":["AttachedFilesConfiguration"],
+      "members":{
+        "AttachedFilesConfiguration":{"shape":"AttachedFilesConfiguration"}
+      }
+    },
     "DescribeAuthenticationProfileRequest":{
       "type":"structure",
       "required":[
@@ -12416,6 +12631,31 @@
         }
       }
     },
+    "DisassociateQueueEmailAddressesRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "QueueId",
+        "EmailAddressesId"
+      ],
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "QueueId":{
+          "shape":"QueueId",
+          "location":"uri",
+          "locationName":"QueueId"
+        },
+        "EmailAddressesId":{"shape":"EmailAddressIdList"},
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        }
+      }
+    },
     "DisassociateQueueQuickConnectsRequest":{
       "type":"structure",
       "required":[
@@ -12711,6 +12951,19 @@
       "max":500,
       "min":1
     },
+    "EmailAddressConfig":{
+      "type":"structure",
+      "required":["EmailAddressId"],
+      "members":{
+        "EmailAddressId":{"shape":"EmailAddressId"}
+      }
+    },
+    "EmailAddressConfigList":{
+      "type":"list",
+      "member":{"shape":"EmailAddressConfig"},
+      "max":50,
+      "min":1
+    },
     "EmailAddressDisplayName":{
       "type":"string",
       "max":256,
@@ -12720,6 +12973,12 @@
     "EmailAddressId":{
       "type":"string",
       "max":500,
+      "min":1
+    },
+    "EmailAddressIdList":{
+      "type":"list",
+      "member":{"shape":"EmailAddressId"},
+      "max":50,
       "min":1
     },
     "EmailAddressInfo":{
@@ -12745,6 +13004,10 @@
         "AliasConfigurations":{"shape":"AliasConfigurationList"}
       }
     },
+    "EmailAddressMetadataList":{
+      "type":"list",
+      "member":{"shape":"EmailAddressSummary"}
+    },
     "EmailAddressRecipientList":{
       "type":"list",
       "member":{"shape":"EmailAddressInfo"},
@@ -12767,6 +13030,14 @@
       "type":"structure",
       "members":{
         "TagFilter":{"shape":"ControlPlaneTagFilter"}
+      }
+    },
+    "EmailAddressSummary":{
+      "type":"structure",
+      "members":{
+        "Id":{"shape":"EmailAddressId"},
+        "Arn":{"shape":"EmailAddressArn"},
+        "IsDefaultOutboundEmail":{"shape":"Boolean"}
       }
     },
     "EmailAttachment":{
@@ -12906,6 +13177,10 @@
         "USER",
         "AI_AGENT"
       ]
+    },
+    "EpochMilliseconds":{
+      "type":"long",
+      "min":0
     },
     "ErrorCode":{"type":"string"},
     "ErrorMessage":{"type":"string"},
@@ -13278,7 +13553,10 @@
         "es-ES",
         "fr-FR",
         "it-IT",
-        "pt-BR"
+        "pt-BR",
+        "ja-JP",
+        "ko-KR",
+        "zh-CN"
       ]
     },
     "EvaluationFormLanguageConfiguration":{
@@ -13760,15 +14038,23 @@
     },
     "EvaluationReviewMetadata":{
       "type":"structure",
-      "required":[
-        "CreatedTime",
-        "CreatedBy",
-        "ReviewRequestComments"
-      ],
+      "required":["ReviewRequestComments"],
       "members":{
         "ReviewId":{"shape":"ResourceId"},
-        "CreatedTime":{"shape":"Timestamp"},
-        "CreatedBy":{"shape":"ARN"},
+        "RequestedTime":{"shape":"Timestamp"},
+        "RequestedBy":{"shape":"ARN"},
+        "CreatedTime":{
+          "shape":"Timestamp",
+          "deprecated":true,
+          "deprecatedMessage":"CreatedTime is deprecated.",
+          "deprecatedSince":"02/17/2026"
+        },
+        "CreatedBy":{
+          "shape":"ARN",
+          "deprecated":true,
+          "deprecatedMessage":"CreatedBy is deprecated.",
+          "deprecatedSince":"02/17/2026"
+        },
         "ReviewRequestComments":{"shape":"EvaluationReviewRequestCommentList"}
       }
     },
@@ -14052,6 +14338,7 @@
         "OnRealTimeCallAnalysisAvailable",
         "OnRealTimeChatAnalysisAvailable",
         "OnPostChatAnalysisAvailable",
+        "OnEmailAnalysisAvailable",
         "OnZendeskTicketCreate",
         "OnZendeskTicketStatusUpdate",
         "OnSalesforceCaseCreate",
@@ -14106,6 +14393,13 @@
     "Expressions":{
       "type":"list",
       "member":{"shape":"Expression"}
+    },
+    "ExtensionConfiguration":{
+      "type":"structure",
+      "required":["AllowedExtensions"],
+      "members":{
+        "AllowedExtensions":{"shape":"AllowedExtensionsList"}
+      }
     },
     "ExternalInvocationConfiguration":{
       "type":"structure",
@@ -14187,6 +14481,12 @@
       "type":"list",
       "member":{"shape":"FieldValue"}
     },
+    "FileExtension":{
+      "type":"string",
+      "max":10,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9-_]+$"
+    },
     "FileId":{
       "type":"string",
       "max":256,
@@ -14221,7 +14521,11 @@
     "FileUseCaseType":{
       "type":"string",
       "enum":[
+        "CONTACT_ANALYSIS",
         "EMAIL_MESSAGE",
+        "EMAIL_MESSAGE_PLAIN_TEXT",
+        "EMAIL_MESSAGE_REDACTED",
+        "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED",
         "ATTACHMENT"
       ]
     },
@@ -15916,6 +16220,34 @@
         "NextToken":{"shape":"NextToken"}
       }
     },
+    "ListAttachedFilesConfigurationsRequest":{
+      "type":"structure",
+      "required":["InstanceId"],
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "MaxResults":{
+          "shape":"MaxResult100",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListAttachedFilesConfigurationsResponse":{
+      "type":"structure",
+      "members":{
+        "AttachedFilesConfigurations":{"shape":"AttachedFilesConfigurationSummaryList"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
     "ListAuthenticationProfilesRequest":{
       "type":"structure",
       "required":["InstanceId"],
@@ -17003,6 +17335,45 @@
         "NextToken":{"shape":"NextToken"}
       }
     },
+    "ListQueueEmailAddressesRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "QueueId"
+      ],
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "QueueId":{
+          "shape":"QueueId",
+          "location":"uri",
+          "locationName":"QueueId"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "MaxResults":{
+          "shape":"MaxResult100",
+          "box":true,
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListQueueEmailAddressesResponse":{
+      "type":"structure",
+      "members":{
+        "NextToken":{"shape":"NextToken"},
+        "EmailAddressMetadataList":{"shape":"EmailAddressMetadataList"},
+        "LastModifiedTime":{"shape":"Timestamp"},
+        "LastModifiedRegion":{"shape":"RegionName"}
+      }
+    },
     "ListQueueQuickConnectsRequest":{
       "type":"structure",
       "required":[
@@ -17592,12 +17963,12 @@
           "locationName":"testCaseName"
         },
         "StartTime":{
-          "shape":"Timestamp",
+          "shape":"EpochMilliseconds",
           "location":"querystring",
           "locationName":"startTime"
         },
         "EndTime":{
-          "shape":"Timestamp",
+          "shape":"EpochMilliseconds",
           "location":"querystring",
           "locationName":"endTime"
         },
@@ -18126,6 +18497,12 @@
       },
       "error":{"httpStatusCode":400},
       "exception":true
+    },
+    "MaximumSizeLimitInBytes":{
+      "type":"long",
+      "box":true,
+      "max":104857600,
+      "min":1
     },
     "MediaConcurrencies":{
       "type":"list",
@@ -20521,7 +20898,9 @@
         "Url":{"shape":"UrlReference"},
         "Attachment":{"shape":"AttachmentReference"},
         "EmailMessage":{"shape":"EmailMessageReference"},
+        "EmailMessageRedacted":{"shape":"EmailMessageReference"},
         "EmailMessagePlainText":{"shape":"EmailMessageReference"},
+        "EmailMessagePlainTextRedacted":{"shape":"EmailMessageReference"},
         "String":{"shape":"StringReference"},
         "Number":{"shape":"NumberReference"},
         "Date":{"shape":"DateReference"},
@@ -20544,7 +20923,9 @@
         "DATE",
         "EMAIL",
         "EMAIL_MESSAGE",
-        "EMAIL_MESSAGE_PLAIN_TEXT"
+        "EMAIL_MESSAGE_PLAIN_TEXT",
+        "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED",
+        "EMAIL_MESSAGE_REDACTED"
       ]
     },
     "ReferenceTypes":{
@@ -22672,7 +23053,10 @@
           "location":"uri",
           "locationName":"TestCaseId"
         },
-        "ClientToken":{"shape":"ClientToken"}
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        }
       }
     },
     "StartTestCaseExecutionResponse":{
@@ -22839,7 +23223,10 @@
           "location":"uri",
           "locationName":"TestCaseId"
         },
-        "ClientToken":{"shape":"ClientToken"}
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        }
       }
     },
     "StopTestCaseExecutionResponse":{
@@ -23334,12 +23721,16 @@
       "type":"structure",
       "members":{
         "Type":{"shape":"TestCaseEntryPointType"},
-        "VoiceCallEntryPointParameters":{"shape":"VoiceCallEntryPointParameters"}
+        "VoiceCallEntryPointParameters":{"shape":"VoiceCallEntryPointParameters"},
+        "ChatEntryPointParameters":{"shape":"ChatEntryPointParameters"}
       }
     },
     "TestCaseEntryPointType":{
       "type":"string",
-      "enum":["VOICE_CALL"]
+      "enum":[
+        "VOICE_CALL",
+        "CHAT"
+      ]
     },
     "TestCaseExecution":{
       "type":"structure",
@@ -23734,6 +24125,41 @@
           "box":true
         },
         "ResetOrderNumber":{"shape":"Boolean"}
+      }
+    },
+    "UpdateAttachedFilesConfigurationRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "AttachmentScope"
+      ],
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "AttachmentScope":{
+          "shape":"AttachmentScope",
+          "location":"uri",
+          "locationName":"AttachmentScope"
+        },
+        "MaximumSizeLimitInBytes":{"shape":"MaximumSizeLimitInBytes"},
+        "ExtensionConfiguration":{"shape":"ExtensionConfiguration"}
+      }
+    },
+    "UpdateAttachedFilesConfigurationResponse":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "AttachmentScope"
+      ],
+      "members":{
+        "InstanceId":{"shape":"InstanceId"},
+        "AttachmentScope":{"shape":"AttachmentScope"},
+        "MaximumSizeLimitInBytes":{"shape":"MaximumSizeLimitInBytes"},
+        "ExtensionConfiguration":{"shape":"ExtensionConfiguration"},
+        "LastModifiedTime":{"shape":"timestamp"}
       }
     },
     "UpdateAuthenticationProfileRequest":{

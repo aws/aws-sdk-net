@@ -39,6 +39,11 @@ namespace Amazon.Lightsail
 {
     /// <summary>
     /// <para>Implementation for accessing Lightsail</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Lightsail is the easiest way to get started with Amazon Web Services (Amazon
     /// Web Services) for developers who need to build websites or web applications. It includes
@@ -1222,6 +1227,12 @@ namespace Amazon.Lightsail
         /// Services Regions, and SMS text messages cannot be sent to some countries/regions.
         /// For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications
         /// in Amazon Lightsail</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>create contact method</c> operation supports tag-based access control via request
+        /// tags. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContactMethod service method.</param>
@@ -9844,6 +9855,12 @@ namespace Amazon.Lightsail
         /// When you update an existing alarm, its state is left unchanged, but the update completely
         /// overwrites the previous configuration of the alarm. The alarm is then evaluated with
         /// the updated configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>put alarm</c> operation supports tag-based access control via request tags.
+        /// For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Lightsail
+        /// Developer Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAlarm service method.</param>

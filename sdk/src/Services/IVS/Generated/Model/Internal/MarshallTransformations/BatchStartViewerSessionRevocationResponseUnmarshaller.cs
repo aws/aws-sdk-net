@@ -59,6 +59,20 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
+            if (context.ResponseData.IsHeaderPresent("Access-Control-Allow-Origin"))
+                response.AccessControlAllowOrigin = context.ResponseData.GetHeaderValue("Access-Control-Allow-Origin");
+            if (context.ResponseData.IsHeaderPresent("Access-Control-Expose-Headers"))
+                response.AccessControlExposeHeaders = context.ResponseData.GetHeaderValue("Access-Control-Expose-Headers");
+            if (context.ResponseData.IsHeaderPresent("Cache-Control"))
+                response.CacheControl = context.ResponseData.GetHeaderValue("Cache-Control");
+            if (context.ResponseData.IsHeaderPresent("Content-Security-Policy"))
+                response.ContentSecurityPolicy = context.ResponseData.GetHeaderValue("Content-Security-Policy");
+            if (context.ResponseData.IsHeaderPresent("Strict-Transport-Security"))
+                response.StrictTransportSecurity = context.ResponseData.GetHeaderValue("Strict-Transport-Security");
+            if (context.ResponseData.IsHeaderPresent("X-Content-Type-Options"))
+                response.XContentTypeOptions = context.ResponseData.GetHeaderValue("X-Content-Type-Options");
+            if (context.ResponseData.IsHeaderPresent("X-Frame-Options"))
+                response.XFrameOptions = context.ResponseData.GetHeaderValue("X-Frame-Options");
 
             return response;
         }

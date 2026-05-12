@@ -37,11 +37,59 @@ namespace Amazon.MarketplaceAgreement.Model
         }
 
         /// <summary>
+        /// Paginator for GetAgreementEntitlements operation
+        ///</summary>
+        public IGetAgreementEntitlementsPaginator GetAgreementEntitlements(GetAgreementEntitlementsRequest request) 
+        {
+            return new GetAgreementEntitlementsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetAgreementTerms operation
         ///</summary>
         public IGetAgreementTermsPaginator GetAgreementTerms(GetAgreementTermsRequest request) 
         {
             return new GetAgreementTermsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgreementCancellationRequests operation
+        ///</summary>
+        public IListAgreementCancellationRequestsPaginator ListAgreementCancellationRequests(ListAgreementCancellationRequestsRequest request) 
+        {
+            return new ListAgreementCancellationRequestsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgreementCharges operation
+        ///</summary>
+        public IListAgreementChargesPaginator ListAgreementCharges(ListAgreementChargesRequest request) 
+        {
+            return new ListAgreementChargesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgreementInvoiceLineItems operation
+        ///</summary>
+        public IListAgreementInvoiceLineItemsPaginator ListAgreementInvoiceLineItems(ListAgreementInvoiceLineItemsRequest request) 
+        {
+            return new ListAgreementInvoiceLineItemsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgreementPaymentRequests operation
+        ///</summary>
+        public IListAgreementPaymentRequestsPaginator ListAgreementPaymentRequests(ListAgreementPaymentRequestsRequest request) 
+        {
+            return new ListAgreementPaymentRequestsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBillingAdjustmentRequests operation
+        ///</summary>
+        public IListBillingAdjustmentRequestsPaginator ListBillingAdjustmentRequests(ListBillingAdjustmentRequestsRequest request) 
+        {
+            return new ListBillingAdjustmentRequestsPaginator(this.client, request);
         }
 
         /// <summary>

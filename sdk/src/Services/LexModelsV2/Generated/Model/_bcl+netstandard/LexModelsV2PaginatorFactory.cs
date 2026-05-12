@@ -37,6 +37,14 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeBotAnalyzerRecommendation operation
+        ///</summary>
+        public IDescribeBotAnalyzerRecommendationPaginator DescribeBotAnalyzerRecommendation(DescribeBotAnalyzerRecommendationRequest request) 
+        {
+            return new DescribeBotAnalyzerRecommendationPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAggregatedUtterances operation
         ///</summary>
         public IListAggregatedUtterancesPaginator ListAggregatedUtterances(ListAggregatedUtterancesRequest request) 
@@ -58,6 +66,14 @@ namespace Amazon.LexModelsV2.Model
         public IListBotAliasReplicasPaginator ListBotAliasReplicas(ListBotAliasReplicasRequest request) 
         {
             return new ListBotAliasReplicasPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBotAnalyzerHistory operation
+        ///</summary>
+        public IListBotAnalyzerHistoryPaginator ListBotAnalyzerHistory(ListBotAnalyzerHistoryRequest request) 
+        {
+            return new ListBotAnalyzerHistoryPaginator(this.client, request);
         }
 
         /// <summary>

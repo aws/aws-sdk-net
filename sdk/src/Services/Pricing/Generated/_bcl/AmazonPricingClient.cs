@@ -39,6 +39,11 @@ namespace Amazon.Pricing
 {
     /// <summary>
     /// <para>Implementation for accessing Pricing</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The Amazon Web Services Price List API is a centralized and convenient way to programmatically
     /// query Amazon Web Services for services, products, and pricing information. The Amazon
@@ -310,6 +315,9 @@ namespace Amazon.Pricing
         /// <param name="request">Container for the necessary parameters to execute the DescribeServices service method.</param>
         /// 
         /// <returns>The response from the DescribeServices service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
         /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
         /// The pagination token expired. Try again without a pagination token.
         /// </exception>
@@ -353,6 +361,9 @@ namespace Amazon.Pricing
         /// </param>
         /// 
         /// <returns>The response from the DescribeServices service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
         /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
         /// The pagination token expired. Try again without a pagination token.
         /// </exception>
@@ -395,6 +406,9 @@ namespace Amazon.Pricing
         /// <param name="request">Container for the necessary parameters to execute the GetAttributeValues service method.</param>
         /// 
         /// <returns>The response from the GetAttributeValues service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
         /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
         /// The pagination token expired. Try again without a pagination token.
         /// </exception>
@@ -436,6 +450,9 @@ namespace Amazon.Pricing
         /// </param>
         /// 
         /// <returns>The response from the GetAttributeValues service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
         /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
         /// The pagination token expired. Try again without a pagination token.
         /// </exception>
@@ -574,6 +591,9 @@ namespace Amazon.Pricing
         /// <param name="request">Container for the necessary parameters to execute the GetProducts service method.</param>
         /// 
         /// <returns>The response from the GetProducts service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
         /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
         /// The pagination token expired. Try again without a pagination token.
         /// </exception>
@@ -612,6 +632,9 @@ namespace Amazon.Pricing
         /// </param>
         /// 
         /// <returns>The response from the GetProducts service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
         /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
         /// The pagination token expired. Try again without a pagination token.
         /// </exception>

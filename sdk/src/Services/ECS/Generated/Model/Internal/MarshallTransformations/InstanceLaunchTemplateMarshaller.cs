@@ -52,6 +52,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CapacityOptionType);
             }
 
+            if(requestObject.IsSetCapacityReservations())
+            {
+                context.Writer.WritePropertyName("capacityReservations");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CapacityReservationRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.CapacityReservations, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetEc2InstanceProfileArn())
             {
                 context.Writer.WritePropertyName("ec2InstanceProfileArn");
@@ -64,6 +75,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.FipsEnabled.Value);
             }
 
+            if(requestObject.IsSetInstanceMetadataTagsPropagation())
+            {
+                context.Writer.WritePropertyName("instanceMetadataTagsPropagation");
+                context.Writer.WriteBooleanValue(requestObject.InstanceMetadataTagsPropagation.Value);
+            }
+
             if(requestObject.IsSetInstanceRequirements())
             {
                 context.Writer.WritePropertyName("instanceRequirements");
@@ -71,6 +88,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
                 var marshaller = InstanceRequirementsRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.InstanceRequirements, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetLocalStorageConfiguration())
+            {
+                context.Writer.WritePropertyName("localStorageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManagedInstancesLocalStorageConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LocalStorageConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

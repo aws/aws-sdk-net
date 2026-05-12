@@ -60,7 +60,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRedactedContent())
             {
                 context.Writer.WritePropertyName("redactedContent");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.RedactedContent));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.RedactedContent);
             }
 
         }

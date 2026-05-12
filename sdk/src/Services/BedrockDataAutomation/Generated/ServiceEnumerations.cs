@@ -349,6 +349,56 @@ namespace Amazon.BedrockDataAutomation
 
 
     /// <summary>
+    /// Constants used for properties of type DataAutomationLibraryStatus.
+    /// </summary>
+    public class DataAutomationLibraryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DataAutomationLibraryStatus
+        /// </summary>
+        public static readonly DataAutomationLibraryStatus ACTIVE = new DataAutomationLibraryStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETING for DataAutomationLibraryStatus
+        /// </summary>
+        public static readonly DataAutomationLibraryStatus DELETING = new DataAutomationLibraryStatus("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataAutomationLibraryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataAutomationLibraryStatus FindValue(string value)
+        {
+            return FindValue<DataAutomationLibraryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataAutomationLibraryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataAutomationProjectStage.
     /// </summary>
     public class DataAutomationProjectStage : ConstantClass
@@ -735,6 +785,52 @@ namespace Amazon.BedrockDataAutomation
 
 
     /// <summary>
+    /// Constants used for properties of type EntityType.
+    /// </summary>
+    public class EntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VOCABULARY for EntityType
+        /// </summary>
+        public static readonly EntityType VOCABULARY = new EntityType("VOCABULARY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntityType FindValue(string value)
+        {
+            return FindValue<EntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageExtractionCategoryType.
     /// </summary>
     public class ImageExtractionCategoryType : ConstantClass
@@ -918,6 +1014,114 @@ namespace Amazon.BedrockDataAutomation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Language(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LibraryIngestionJobOperationType.
+    /// </summary>
+    public class LibraryIngestionJobOperationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE for LibraryIngestionJobOperationType
+        /// </summary>
+        public static readonly LibraryIngestionJobOperationType DELETE = new LibraryIngestionJobOperationType("DELETE");
+        /// <summary>
+        /// Constant UPSERT for LibraryIngestionJobOperationType
+        /// </summary>
+        public static readonly LibraryIngestionJobOperationType UPSERT = new LibraryIngestionJobOperationType("UPSERT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LibraryIngestionJobOperationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LibraryIngestionJobOperationType FindValue(string value)
+        {
+            return FindValue<LibraryIngestionJobOperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LibraryIngestionJobOperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LibraryIngestionJobStatus.
+    /// </summary>
+    public class LibraryIngestionJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for LibraryIngestionJobStatus
+        /// </summary>
+        public static readonly LibraryIngestionJobStatus COMPLETED = new LibraryIngestionJobStatus("COMPLETED");
+        /// <summary>
+        /// Constant COMPLETED_WITH_ERRORS for LibraryIngestionJobStatus
+        /// </summary>
+        public static readonly LibraryIngestionJobStatus COMPLETED_WITH_ERRORS = new LibraryIngestionJobStatus("COMPLETED_WITH_ERRORS");
+        /// <summary>
+        /// Constant FAILED for LibraryIngestionJobStatus
+        /// </summary>
+        public static readonly LibraryIngestionJobStatus FAILED = new LibraryIngestionJobStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for LibraryIngestionJobStatus
+        /// </summary>
+        public static readonly LibraryIngestionJobStatus IN_PROGRESS = new LibraryIngestionJobStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LibraryIngestionJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LibraryIngestionJobStatus FindValue(string value)
+        {
+            return FindValue<LibraryIngestionJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LibraryIngestionJobStatus(string value)
         {
             return FindValue(value);
         }

@@ -82,7 +82,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("metadata", targetDepth))
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, MetadataValue, StringUnmarshaller, MetadataValueUnmarshaller>(StringUnmarshaller.Instance, MetadataValueUnmarshaller.Instance);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, MemoryRecordMetadataValue, StringUnmarshaller, MemoryRecordMetadataValueUnmarshaller>(StringUnmarshaller.Instance, MemoryRecordMetadataValueUnmarshaller.Instance);
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }

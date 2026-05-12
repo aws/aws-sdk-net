@@ -40,6 +40,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// a bot</a> in the <i>Amazon Lex developer guide</i>.
     /// </para>
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class StartMigrationRequest : AmazonLexModelBuildingServiceRequest
     {
         private MigrationStrategy _migrationStrategy;

@@ -9,23 +9,9 @@ public final class ProtocolTestCustomizations {
     private ProtocolTestCustomizations() {
     }
 
-    //These contain collections with nullable values
-    public static final List<String> RestJsonNullMapValueOperations = Arrays.asList(
-            "JsonMapsRequest",
-            "JsonMapsResponse",
-            "SparseJsonMapsRequest",
-            "SparseJsonMapsResponse"
-    );
-    public static final List<String> RestJsonNullMapValueStructures = Arrays.asList(
-            "SparseBooleanMap",
-            "SparseNumberMap"
-    );
-    
     // These operations don't exist in C2J
     public static final List<String> OperationsToSkip = Arrays.asList(
-            "RpcV2CborSparseMaps",
-            "OperationWithDefaults",
-            "SparseNullsOperation"
+            "OperationWithDefaults"
     );
 
     //The rename is written in smithy and since we're generating from the C2J structures we will skip this test.
@@ -43,34 +29,6 @@ public final class ProtocolTestCustomizations {
             "RestJsonOutputUnionWithUnitMember",
             // These tests, which include sparse collections were updated to a separate operation in smithy v1.47,
             // but the smithy2c2j has not been updated yet.
-            "RestJsonLists",
-            "RestJsonListsEmpty",
-            "RestJsonSparseListsSerializeNull",
-            "RestJsonSparseListsSerializeNull",
-            "RestJsonJsonMaps",
-            "RestJsonSerializesZeroValuesInMaps",
-            "RestJsonSerializesDenseSetMap",
-            "RestJsonDeserializesDenseSetMapAndSkipsNull",
-            "RestJsonSerializesNullMapValues",
-            "RestJsonSerializesSparseSetMap",
-            "RestJsonSerializesSparseSetMapAndRetainsNull",
-            "RestJsonDeserializesNullMapValues",
-            "RestJsonDeserializesZeroValuesInMaps",
-            "RestJsonDeserializesSparseSetMap",
-            "RestJsonDeserializesDenseSetMap",
-            "RestJsonDeserializesSparseSetMapAndRetainsNull",
-            "RestJsonListsSerializeNull",
-            "RestJsonListsSerializeNull",
-            "AwsJson11SparseMapsSerializeNullValues",
-            "AwsJson11StructuresDontSerializeNullValues",
-            "AwsJson11StructuresDontDeserializeNullValues",
-            "AwsJson11SparseListsSerializeNull",
-            "AwsJson11SparseMapsDeserializeNullValues",
-            "AwsJson11SparseListsDeserializeNull",
-            "AwsJson11MapsSerializeNullValues",
-            "AwsJson11ListsSerializeNull",
-            "AwsJson11MapsDeserializeNullValues",
-            "AwsJson11ListsDeserializeNull",
             // guided by smithy team to skip operations / tests with mediaType that don't end up as json value traits in c2j
             // and to skip test that interact with default or sparse
             "RestJsonStreamingTraitsWithMediaTypeWithBlob",
@@ -109,9 +67,9 @@ public final class ProtocolTestCustomizations {
             // non-query protocol. this causes our code generation to check on this code instead of what is modeled and our protocol
             // test passes. As this can never happen in a real service, we can skip this to avoid unnecessary customizations in the generator
             // for a scenario that will never happen.
-            "QueryCompatibleAwsJson10CustomCodeError"
-    );
-    public static final List<String> VNextTests = Arrays.asList(
-            //These are the tests that are failing in v4 after updating to 1.54.0 and artifacts 1.0.3004.0. Each one needs to be investigated.
+            "QueryCompatibleAwsJson10CustomCodeError",
+            // a recent update to smithy version 1.68 changed the expected response of this protocol test and updating it now would be a breaking change
+            // so this test is added to the ignore list.
+            "RestJsonIgnoreQueryParamsInResponse"
     );
 }

@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class DataQualityRulesetEvaluationRunFilter
     {
         private DataSource _dataSource;
+        private string _rulesetName;
         private DateTime? _startedAfter;
         private DateTime? _startedBefore;
 
@@ -55,6 +56,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetDataSource()
         {
             return this._dataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RulesetName. 
+        /// <para>
+        /// Filter results by the name of the ruleset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string RulesetName
+        {
+            get { return this._rulesetName; }
+            set { this._rulesetName = value; }
+        }
+
+        // Check to see if RulesetName property is set
+        internal bool IsSetRulesetName()
+        {
+            return this._rulesetName != null;
         }
 
         /// <summary>

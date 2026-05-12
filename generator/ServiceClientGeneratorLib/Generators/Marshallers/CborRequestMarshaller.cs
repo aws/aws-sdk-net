@@ -276,7 +276,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line 127 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\CborRequestMarshaller.tt"
 		
-				ProcessStructure(1, "publicRequest." + payload.PropertyName, payload.Shape);
+				ProcessStructure(1, "publicRequest." + payload.PropertyName, payload.Shape, isSparse: requestStructure.IsSparse, isNested: false);
 		}
 		else
 		{

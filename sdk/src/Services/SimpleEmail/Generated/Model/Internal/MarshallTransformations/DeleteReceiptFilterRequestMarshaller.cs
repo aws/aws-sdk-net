@@ -64,6 +64,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("FilterName", StringUtils.FromString(publicRequest.FilterName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteReceiptFilterRequestMarshaller _instance = new DeleteReceiptFilterRequestMarshaller();        

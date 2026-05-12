@@ -39,6 +39,11 @@ namespace Amazon.PartnerCentralAccount
 {
     /// <summary>
     /// <para>Implementation for accessing PartnerCentralAccount</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS Partner Central Account service provides APIs for managing partner accounts, connections,
     /// and profiles within the AWS Partner Network. This service enables partners to create
@@ -305,6 +310,10 @@ namespace Amazon.PartnerCentralAccount
         /// <exception cref="Amazon.PartnerCentralAccount.Model.ResourceNotFoundException">
         /// The specified resource could not be found. This may occur when referencing a resource
         /// that does not exist or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed a service quota or limit. This may
+        /// occur when trying to create more resources than allowed by the service limits.
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
         /// The request was throttled due to too many requests being sent in a short period of
@@ -597,6 +606,10 @@ namespace Amazon.PartnerCentralAccount
         /// <exception cref="Amazon.PartnerCentralAccount.Model.ResourceNotFoundException">
         /// The specified resource could not be found. This may occur when referencing a resource
         /// that does not exist or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed a service quota or limit. This may
+        /// occur when trying to create more resources than allowed by the service limits.
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
         /// The request was throttled due to too many requests being sent in a short period of

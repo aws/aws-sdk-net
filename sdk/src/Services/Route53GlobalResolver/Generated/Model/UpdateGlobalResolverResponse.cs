@@ -40,7 +40,9 @@ namespace Amazon.Route53GlobalResolver.Model
         private string _description;
         private string _dnsName;
         private string _id;
+        private GlobalResolverIpAddressType _ipAddressType;
         private List<string> _ipv4Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _ipv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _observabilityRegion;
         private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -164,6 +166,24 @@ namespace Amazon.Route53GlobalResolver.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type configured for the updated Global Resolver.
+        /// </para>
+        /// </summary>
+        public GlobalResolverIpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Ipv4Addresses. 
         /// <para>
         /// List of anycast IPv4 addresses associated with the Global Resolver instance.
@@ -188,6 +208,30 @@ namespace Amazon.Route53GlobalResolver.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv6Addresses. 
+        /// <para>
+        /// List of anycast IPv6 addresses associated with the updated Global Resolver instance.
+        /// This field is only populated when ipAddressType is DUAL_STACK.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Ipv6Addresses
+        {
+            get { return this._ipv6Addresses; }
+            set { this._ipv6Addresses = value; }
+        }
+
+        // Check to see if Ipv6Addresses property is set
+        internal bool IsSetIpv6Addresses()
+        {
+            return this._ipv6Addresses != null && (this._ipv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// Name of the Global Resolver.
@@ -209,8 +253,8 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property ObservabilityRegion. 
         /// <para>
-        /// The AWS Regions in which the users' Global Resolver query resolution logs will be
-        /// propagated.
+        /// The Amazon Web Services Regions in which the users' Global Resolver query resolution
+        /// logs will be propagated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=32)]
@@ -229,7 +273,7 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The AWS Regions in which the Global Resolver will operate.
+        /// The Amazon Web Services Regions in which the Global Resolver will operate.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -35,8 +35,10 @@ namespace Amazon.AppStream.Model
     public partial class Stack
     {
         private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
+        private AgentAccessConfig _agentAccessConfig;
         private ApplicationSettingsResponse _applicationSettings;
         private string _arn;
+        private ContentRedirection _contentRedirection;
         private DateTime? _createdTime;
         private string _description;
         private string _displayName;
@@ -75,6 +77,24 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AgentAccessConfig. 
+        /// <para>
+        /// The agent access configuration of the stack, if agent access is enabled.
+        /// </para>
+        /// </summary>
+        public AgentAccessConfig AgentAccessConfig
+        {
+            get { return this._agentAccessConfig; }
+            set { this._agentAccessConfig = value; }
+        }
+
+        // Check to see if AgentAccessConfig property is set
+        internal bool IsSetAgentAccessConfig()
+        {
+            return this._agentAccessConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ApplicationSettings. 
         /// <para>
         /// The persistent application settings for users of the stack.
@@ -108,6 +128,26 @@ namespace Amazon.AppStream.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentRedirection. 
+        /// <para>
+        /// Configuration for bidirectional URL redirection between the streaming session and
+        /// the local client. Use HostToClient to redirect URLs from the remote desktop to the
+        /// local browser.
+        /// </para>
+        /// </summary>
+        public ContentRedirection ContentRedirection
+        {
+            get { return this._contentRedirection; }
+            set { this._contentRedirection = value; }
+        }
+
+        // Check to see if ContentRedirection property is set
+        internal bool IsSetContentRedirection()
+        {
+            return this._contentRedirection != null;
         }
 
         /// <summary>

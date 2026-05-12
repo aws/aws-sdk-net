@@ -56,6 +56,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("ChatEntryPointParameters", targetDepth))
+                {
+                    var unmarshaller = ChatEntryPointParametersUnmarshaller.Instance;
+                    unmarshalledObject.ChatEntryPointParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

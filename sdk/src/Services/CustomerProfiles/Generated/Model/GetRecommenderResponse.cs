@@ -42,6 +42,7 @@ namespace Amazon.CustomerProfiles.Model
         private RecommenderConfig _recommenderConfig;
         private string _recommenderName;
         private RecommenderRecipeName _recommenderRecipeName;
+        private string _recommenderSchemaName;
         private RecommenderStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<TrainingMetrics> _trainingMetrics = AWSConfigs.InitializeCollections ? new List<TrainingMetrics>() : null;
@@ -194,6 +195,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetRecommenderRecipeName()
         {
             return this._recommenderRecipeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommenderSchemaName. 
+        /// <para>
+        /// The name of the recommender schema associated with this recommender.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string RecommenderSchemaName
+        {
+            get { return this._recommenderSchemaName; }
+            set { this._recommenderSchemaName = value; }
+        }
+
+        // Check to see if RecommenderSchemaName property is set
+        internal bool IsSetRecommenderSchemaName()
+        {
+            return this._recommenderSchemaName != null;
         }
 
         /// <summary>

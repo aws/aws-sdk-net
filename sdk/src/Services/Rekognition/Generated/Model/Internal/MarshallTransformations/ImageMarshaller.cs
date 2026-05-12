@@ -49,7 +49,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBytes())
             {
                 context.Writer.WritePropertyName("Bytes");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Bytes));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Bytes);
             }
 
             if(requestObject.IsSetS3Object())

@@ -145,6 +145,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetWarmPoolConfig())
+            {
+                context.Writer.WritePropertyName("warmPoolConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WarmPoolConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WarmPoolConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

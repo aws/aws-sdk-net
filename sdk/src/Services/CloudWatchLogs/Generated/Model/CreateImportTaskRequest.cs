@@ -72,11 +72,11 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (If source has an associated AWS KMS Key) kms:Decrypt
+    /// (If source has an associated Amazon Web Services KMS Key) kms:Decrypt
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (If source has an associated AWS KMS Key) kms:GenerateDataKey
+    /// (If source has an associated Amazon Web Services KMS Key) kms:GenerateDataKey
     /// </para>
     ///  </li> </ul> 
     /// <para>

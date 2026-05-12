@@ -1229,6 +1229,268 @@ namespace Amazon.Batch
 
 
     /// <summary>
+    /// Constants used for properties of type QuotaShareIdleResourceAssignmentStrategy.
+    /// </summary>
+    public class QuotaShareIdleResourceAssignmentStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIFO for QuotaShareIdleResourceAssignmentStrategy
+        /// </summary>
+        public static readonly QuotaShareIdleResourceAssignmentStrategy FIFO = new QuotaShareIdleResourceAssignmentStrategy("FIFO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuotaShareIdleResourceAssignmentStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuotaShareIdleResourceAssignmentStrategy FindValue(string value)
+        {
+            return FindValue<QuotaShareIdleResourceAssignmentStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuotaShareIdleResourceAssignmentStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuotaShareInSharePreemptionState.
+    /// </summary>
+    public class QuotaShareInSharePreemptionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for QuotaShareInSharePreemptionState
+        /// </summary>
+        public static readonly QuotaShareInSharePreemptionState DISABLED = new QuotaShareInSharePreemptionState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for QuotaShareInSharePreemptionState
+        /// </summary>
+        public static readonly QuotaShareInSharePreemptionState ENABLED = new QuotaShareInSharePreemptionState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuotaShareInSharePreemptionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuotaShareInSharePreemptionState FindValue(string value)
+        {
+            return FindValue<QuotaShareInSharePreemptionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuotaShareInSharePreemptionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuotaShareResourceSharingStrategy.
+    /// </summary>
+    public class QuotaShareResourceSharingStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LEND for QuotaShareResourceSharingStrategy
+        /// </summary>
+        public static readonly QuotaShareResourceSharingStrategy LEND = new QuotaShareResourceSharingStrategy("LEND");
+        /// <summary>
+        /// Constant LEND_AND_BORROW for QuotaShareResourceSharingStrategy
+        /// </summary>
+        public static readonly QuotaShareResourceSharingStrategy LEND_AND_BORROW = new QuotaShareResourceSharingStrategy("LEND_AND_BORROW");
+        /// <summary>
+        /// Constant RESERVE for QuotaShareResourceSharingStrategy
+        /// </summary>
+        public static readonly QuotaShareResourceSharingStrategy RESERVE = new QuotaShareResourceSharingStrategy("RESERVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuotaShareResourceSharingStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuotaShareResourceSharingStrategy FindValue(string value)
+        {
+            return FindValue<QuotaShareResourceSharingStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuotaShareResourceSharingStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuotaShareState.
+    /// </summary>
+    public class QuotaShareState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for QuotaShareState
+        /// </summary>
+        public static readonly QuotaShareState DISABLED = new QuotaShareState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for QuotaShareState
+        /// </summary>
+        public static readonly QuotaShareState ENABLED = new QuotaShareState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuotaShareState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuotaShareState FindValue(string value)
+        {
+            return FindValue<QuotaShareState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuotaShareState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuotaShareStatus.
+    /// </summary>
+    public class QuotaShareStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATING for QuotaShareStatus
+        /// </summary>
+        public static readonly QuotaShareStatus CREATING = new QuotaShareStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for QuotaShareStatus
+        /// </summary>
+        public static readonly QuotaShareStatus DELETING = new QuotaShareStatus("DELETING");
+        /// <summary>
+        /// Constant INVALID for QuotaShareStatus
+        /// </summary>
+        public static readonly QuotaShareStatus INVALID = new QuotaShareStatus("INVALID");
+        /// <summary>
+        /// Constant UPDATING for QuotaShareStatus
+        /// </summary>
+        public static readonly QuotaShareStatus UPDATING = new QuotaShareStatus("UPDATING");
+        /// <summary>
+        /// Constant VALID for QuotaShareStatus
+        /// </summary>
+        public static readonly QuotaShareStatus VALID = new QuotaShareStatus("VALID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuotaShareStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuotaShareStatus FindValue(string value)
+        {
+            return FindValue<QuotaShareStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuotaShareStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass

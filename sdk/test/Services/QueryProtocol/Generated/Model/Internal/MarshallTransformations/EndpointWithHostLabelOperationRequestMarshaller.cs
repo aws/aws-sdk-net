@@ -74,6 +74,8 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
             
                 request.HostPrefix = $"foo.{hostPrefixLabels.label}.";
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static EndpointWithHostLabelOperationRequestMarshaller _instance = new EndpointWithHostLabelOperationRequestMarshaller();        

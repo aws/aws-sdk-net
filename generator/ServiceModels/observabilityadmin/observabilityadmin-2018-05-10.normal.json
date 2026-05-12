@@ -510,6 +510,7 @@
         "requestUri":"/StartTelemetryEvaluation",
         "responseCode":200
       },
+      "input":{"shape":"StartTelemetryEvaluationInput"},
       "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"},
@@ -525,6 +526,7 @@
         "requestUri":"/StartTelemetryEvaluationForOrganization",
         "responseCode":200
       },
+      "input":{"shape":"StartTelemetryEvaluationForOrganizationInput"},
       "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"InternalServerException"},
@@ -666,7 +668,7 @@
         {"shape":"ValidationException"},
         {"shape":"TooManyRequestsException"}
       ],
-      "documentation":"<p>Updates the configuration of an existing telemetry pipeline.</p> <note> <p>The following attributes cannot be updated after pipeline creation:</p> <ul> <li> <p> <b>Pipeline name</b> - The pipeline name is immutable</p> </li> <li> <p> <b>Pipeline ARN</b> - The ARN is automatically generated and cannot be changed</p> </li> <li> <p> <b>Source type</b> - Once a pipeline is created with a specific source type (such as S3, CloudWatch Logs, GitHub, or third-party sources), it cannot be changed to a different source type</p> </li> </ul> <p>Processors can be added, removed, or modified. However, some processors are not supported for third-party pipelines and cannot be added through updates.</p> </note> <p> <b>Source-Specific Update Rules</b> </p> <dl> <dt>CloudWatch Logs Sources (Vended and Custom)</dt> <dd> <p> <b>Updatable:</b> <code>sts_role_arn</code> </p> <p> <b>Fixed:</b> <code>data_source_name</code>, <code>data_source_type</code>, sink (must remain <code>@original</code>)</p> </dd> <dt>S3 Sources (Crowdstrike, Zscaler, SentinelOne, Custom)</dt> <dd> <p> <b>Updatable:</b> All SQS configuration parameters, <code>sts_role_arn</code>, codec settings, compression type, bucket ownership settings, sink log group</p> <p> <b>Fixed:</b> <code>notification_type</code>, <code>aws.region</code> </p> </dd> <dt>GitHub Audit Logs</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>scope</code> (can switch between ORGANIZATION/ENTERPRISE), <code>organization</code> or <code>enterprise</code> name, <code>range</code>, authentication credentials (PAT or GitHub App)</p> </dd> <dt>Microsoft Sources (Entra ID, Office365, Windows)</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>tenant_id</code>, <code>workspace_id</code> (Windows only), OAuth2 credentials (<code>client_id</code>, <code>client_secret</code>)</p> </dd> <dt>Okta Sources (SSO, Auth0)</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>domain</code>, <code>range</code> (SSO only), OAuth2 credentials (<code>client_id</code>, <code>client_secret</code>)</p> </dd> <dt>Palo Alto Networks</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>hostname</code>, basic authentication credentials (<code>username</code>, <code>password</code>)</p> </dd> <dt>ServiceNow CMDB</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>instance_url</code>, <code>range</code>, OAuth2 credentials (<code>client_id</code>, <code>client_secret</code>)</p> </dd> <dt>Wiz CNAPP</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>region</code>, <code>range</code>, OAuth2 credentials (<code>client_id</code>, <code>client_secret</code>)</p> </dd> </dl>"
+      "documentation":"<p>Updates the configuration of an existing telemetry pipeline.</p> <note> <p>The following attributes cannot be updated after pipeline creation:</p> <ul> <li> <p> <b>Pipeline name</b> - The pipeline name is immutable</p> </li> <li> <p> <b>Pipeline ARN</b> - The ARN is automatically generated and cannot be changed</p> </li> <li> <p> <b>Source type</b> - Once a pipeline is created with a specific source type (such as S3, CloudWatch Logs, GitHub, or third-party sources), it cannot be changed to a different source type</p> </li> </ul> <p>Processors can be added, removed, or modified. However, some processors are not supported for third-party pipelines and cannot be added through updates.</p> </note> <p> <b>Source-Specific Update Rules</b> </p> <dl> <dt>CloudWatch Logs Sources (Vended and Custom)</dt> <dd> <p> <b>Updatable:</b> <code>sts_role_arn</code> </p> <p> <b>Fixed:</b> <code>data_source_name</code>, <code>data_source_type</code>, sink (must remain <code>@original</code>)</p> </dd> <dt>S3 Sources (Crowdstrike, Zscaler, SentinelOne, Custom)</dt> <dd> <p> <b>Updatable:</b> All SQS configuration parameters, <code>sts_role_arn</code>, codec settings, compression type, bucket ownership settings, sink log group</p> <p> <b>Fixed:</b> <code>notification_type</code>, <code>aws.region</code> </p> </dd> <dt>GitHub Audit Logs</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>scope</code> (can switch between ORGANIZATION/ENTERPRISE), <code>organization</code> or <code>enterprise</code> name, <code>range</code>, authentication credentials (PAT or GitHub App)</p> </dd> <dt>Microsoft Sources (Entra ID, Office365, Windows)</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>tenant_id</code>, <code>workspace_id</code> (Windows only), OAuth2 credentials (<code>client_id</code>, <code>client_secret</code>)</p> </dd> <dt>Okta Sources (SSO, Auth0)</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>domain</code>, <code>range</code>, OAuth2 credentials (<code>client_id</code>, <code>client_secret</code>)</p> </dd> <dt>Palo Alto Networks</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>hostname</code>, basic authentication credentials (<code>username</code>, <code>password</code>)</p> </dd> <dt>ServiceNow CMDB</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>instance_url</code>, <code>range</code>, OAuth2 credentials (<code>client_id</code>, <code>client_secret</code>)</p> </dd> <dt>Wiz CNAPP</dt> <dd> <p> <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>region</code>, <code>range</code>, OAuth2 credentials (<code>client_id</code>, <code>client_secret</code>)</p> </dd> </dl>"
     },
     "UpdateTelemetryRule":{
       "name":"UpdateTelemetryRule",
@@ -831,6 +833,10 @@
         }
       },
       "documentation":"<p> Defines criteria for selecting resources based on field values. </p>"
+    },
+    "AllRegions":{
+      "type":"boolean",
+      "box":true
     },
     "AwsResourceExplorerManagedViewArn":{
       "type":"string",
@@ -1197,6 +1203,11 @@
       },
       "documentation":"<p>Information about a data source associated with the telemetry pipeline. For CloudWatch Logs sources, this includes both a name and type extracted from the log event metadata. For third-party sources (such as S3), this includes only a name, with the type field left empty.</p>"
     },
+    "DataSourceFilterString":{
+      "type":"string",
+      "max":2000,
+      "min":1
+    },
     "DataSources":{
       "type":"list",
       "member":{"shape":"DataSource"}
@@ -1265,6 +1276,10 @@
         "BackupConfiguration":{
           "shape":"LogsBackupConfiguration",
           "documentation":"<p>Configuration defining the backup region and an optional KMS key for the backup destination.</p>"
+        },
+        "LogGroupNameConfiguration":{
+          "shape":"LogGroupNameConfiguration",
+          "documentation":"<p>Configuration that specifies a naming pattern for destination log groups created during centralization. The pattern supports static text and dynamic variables that are replaced with source attributes when log groups are created.</p>"
         }
       },
       "documentation":"<p>Configuration for centralization destination log groups, including encryption and backup settings.</p>"
@@ -1508,6 +1523,14 @@
         "FailureReason":{
           "shape":"FailureReason",
           "documentation":"<p> This field describes the reason for the failure status. The field will only be populated if <code>Status</code> is <code>FAILED_START</code> or <code>FAILED_STOP</code>. </p>"
+        },
+        "HomeRegion":{
+          "shape":"Region",
+          "documentation":"<p> The Amazon Web Services Region that is designated as the home region for multi-region telemetry evaluation for the organization. The home region is the single management point for all multi-region operations on this organization. This field is only present when multi-region telemetry evaluation is active. </p>"
+        },
+        "RegionStatuses":{
+          "shape":"RegionStatuses",
+          "documentation":"<p> A list of per-region telemetry evaluation statuses for the organization. Each entry indicates the evaluation status for a specific spoke region included in the multi-region configuration. This field is only present when multi-region telemetry evaluation is active. </p>"
         }
       }
     },
@@ -1521,6 +1544,14 @@
         "FailureReason":{
           "shape":"FailureReason",
           "documentation":"<p> Describes the reason for the failure status. The field will only be populated if <code>Status</code> is <code>FAILED_START</code> or <code>FAILED_STOP</code>. </p>"
+        },
+        "HomeRegion":{
+          "shape":"Region",
+          "documentation":"<p> The Amazon Web Services Region that is designated as the home region for multi-region telemetry evaluation. The home region is the single management point for all multi-region operations on this account. This field is only present when multi-region telemetry evaluation is active. </p>"
+        },
+        "RegionStatuses":{
+          "shape":"RegionStatuses",
+          "documentation":"<p> A list of per-region telemetry evaluation statuses. Each entry indicates the evaluation status for a specific spoke region included in the multi-region configuration. This field is only present when multi-region telemetry evaluation is active. </p>"
         }
       }
     },
@@ -1575,6 +1606,18 @@
         "TelemetryRule":{
           "shape":"TelemetryRule",
           "documentation":"<p> The configuration details of the organization telemetry rule. </p>"
+        },
+        "HomeRegion":{
+          "shape":"Region",
+          "documentation":"<p> The Amazon Web Services Region where the organization telemetry rule was originally created. For replicated rules in spoke regions, this indicates the region that manages the rule. For rules created without multi-region scope, this field is not present. </p>"
+        },
+        "IsReplicated":{
+          "shape":"IsReplicated",
+          "documentation":"<p> Indicates whether this organization telemetry rule is a replica that was created in this region through multi-region fan-out from the home region. Replicated rules cannot be directly updated or deleted in the spoke region. To modify a replicated rule, make changes in the home region. </p>"
+        },
+        "RegionStatuses":{
+          "shape":"RegionStatuses",
+          "documentation":"<p> A list of per-region replication statuses for the organization telemetry rule. Each entry indicates the replication status of the rule in a specific spoke region. This field is only present for rules created with multi-region scope. </p>"
         }
       }
     },
@@ -1610,6 +1653,18 @@
         "TelemetryRule":{
           "shape":"TelemetryRule",
           "documentation":"<p> The configuration details of the telemetry rule. </p>"
+        },
+        "HomeRegion":{
+          "shape":"Region",
+          "documentation":"<p> The Amazon Web Services Region where the telemetry rule was originally created. For replicated rules in spoke regions, this indicates the region that manages the rule. For rules created without multi-region scope, this field is not present. </p>"
+        },
+        "IsReplicated":{
+          "shape":"IsReplicated",
+          "documentation":"<p> Indicates whether this telemetry rule is a replica that was created in this region through multi-region fan-out from the home region. Replicated rules cannot be directly updated or deleted in the spoke region. To modify a replicated rule, make changes in the home region. </p>"
+        },
+        "RegionStatuses":{
+          "shape":"RegionStatuses",
+          "documentation":"<p> A list of per-region replication statuses for the telemetry rule. Each entry indicates the replication status of the rule in a specific spoke region. This field is only present for rules created with multi-region scope. </p>"
         }
       }
     },
@@ -1675,6 +1730,10 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "IsReplicated":{
+      "type":"boolean",
+      "box":true
     },
     "LabelNameCondition":{
       "type":"structure",
@@ -2011,11 +2070,32 @@
       },
       "documentation":"<p>Configuration parameters for Amazon Bedrock AgentCore logging, including <code>logType</code> settings.</p>"
     },
+    "LogGroupNameConfiguration":{
+      "type":"structure",
+      "required":["LogGroupNamePattern"],
+      "members":{
+        "LogGroupNamePattern":{
+          "shape":"LogGroupNamePattern",
+          "documentation":"<p>The pattern used to generate destination log group names during centralization. The pattern can contain static text and dynamic variables that are replaced with source attributes. If a variable cannot be resolved, it inherits the value from its parent variable in the hierarchy. The pattern must be between 1 and 512 characters.</p> <p>Supported variables:</p> <ul> <li> <p> <b>${source.logGroup}</b> — The original log group name from the source account.</p> </li> <li> <p> <b>${source.accountId}</b> — The Amazon Web Services account ID where the log originated.</p> </li> <li> <p> <b>${source.region}</b> — The Amazon Web Services Region where the log originated.</p> </li> <li> <p> <b>${source.org.id}</b> — The Amazon Web Services Organization ID of the source account.</p> </li> <li> <p> <b>${source.org.ouId}</b> — The organizational unit ID of the source account.</p> </li> <li> <p> <b>${source.org.rootId}</b> — The organization Root ID.</p> </li> <li> <p> <b>${source.org.path}</b> — The organizational path from account to root.</p> </li> </ul>"
+        }
+      },
+      "documentation":"<p>Configuration that specifies a naming pattern for destination log groups created during centralization. The pattern supports static text and dynamic variables that are replaced with source attributes when log groups are created.</p>"
+    },
+    "LogGroupNamePattern":{
+      "type":"string",
+      "documentation":"<p>The pattern used to generate destination log group names during centralization. The pattern can contain static text and dynamic variables that are replaced with source attributes. If a variable cannot be resolved, it inherits the value from its parent variable in the hierarchy. The pattern must be between 1 and 512 characters.</p> <p>Supported variables:</p> <ul> <li> <p> <b>${source.logGroup}</b> — The original log group name from the source account.</p> </li> <li> <p> <b>${source.accountId}</b> — The Amazon Web Services account ID where the log originated.</p> </li> <li> <p> <b>${source.region}</b> — The Amazon Web Services Region where the log originated.</p> </li> <li> <p> <b>${source.org.id}</b> — The Amazon Web Services Organization ID of the source account.</p> </li> <li> <p> <b>${source.org.ouId}</b> — The organizational unit ID of the source account.</p> </li> <li> <p> <b>${source.org.rootId}</b> — The organization Root ID.</p> </li> <li> <p> <b>${source.org.path}</b> — The organizational path from account to root.</p> </li> </ul>",
+      "max":512,
+      "min":1,
+      "pattern":"(?:[\\._\\-/#A-Za-z0-9]+|\\$\\{[A-Za-z]+(?:\\.[A-Za-z]+){1,2}\\})+"
+    },
     "LogType":{
       "type":"string",
       "enum":[
         "APPLICATION_LOGS",
-        "USAGE_LOGS"
+        "USAGE_LOGS",
+        "SECURITY_FINDING_LOGS",
+        "ACCESS_LOGS",
+        "CONNECTION_LOGS"
       ]
     },
     "LogTypes":{
@@ -2078,6 +2158,26 @@
     "Long":{
       "type":"long",
       "box":true
+    },
+    "MskEnhancedMonitoringLevel":{
+      "type":"string",
+      "documentation":"<p> Enumeration of supported enhanced monitoring levels for Amazon MSK clusters: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. </p>",
+      "enum":[
+        "DEFAULT",
+        "PER_BROKER",
+        "PER_TOPIC_PER_BROKER",
+        "PER_TOPIC_PER_PARTITION"
+      ]
+    },
+    "MskMonitoringParameters":{
+      "type":"structure",
+      "members":{
+        "EnhancedMonitoring":{
+          "shape":"MskEnhancedMonitoringLevel",
+          "documentation":"<p> The level of enhanced monitoring for the MSK cluster. </p>"
+        }
+      },
+      "documentation":"<p> Configuration parameters for Amazon MSK cluster monitoring, including enhanced monitoring level settings. </p>"
     },
     "NextToken":{"type":"string"},
     "OrganizationUnitIdentifier":{
@@ -2165,6 +2265,32 @@
       "type":"string",
       "min":1
     },
+    "RegionStatus":{
+      "type":"structure",
+      "members":{
+        "Region":{
+          "shape":"Region",
+          "documentation":"<p> The Amazon Web Services Region code (for example, <code>eu-west-1</code> or <code>us-west-2</code>) that this status applies to. </p>"
+        },
+        "Status":{
+          "shape":"String",
+          "documentation":"<p> The status of the operation in this region. For telemetry evaluation, valid values include <code>STARTING</code>, <code>RUNNING</code>, and <code>FAILED_START</code>. For telemetry rules, valid values include <code>PENDING</code>, <code>ACTIVE</code>, and <code>FAILED</code>. </p>"
+        },
+        "FailureReason":{
+          "shape":"String",
+          "documentation":"<p> The reason for a failure status in this region. This field is only populated when <code>Status</code> indicates a failure. </p>"
+        },
+        "RuleArn":{
+          "shape":"ResourceArn",
+          "documentation":"<p> The Amazon Resource Name (ARN) of the telemetry rule in this spoke region. This field is only present for telemetry rule region statuses and is populated when the rule has been successfully created in the spoke region (status is <code>ACTIVE</code>). </p>"
+        }
+      },
+      "documentation":"<p> Represents the status of a multi-region operation in a specific Amazon Web Services Region. This structure is used to report per-region progress for both telemetry evaluation and telemetry rule replication. </p>"
+    },
+    "RegionStatuses":{
+      "type":"list",
+      "member":{"shape":"RegionStatus"}
+    },
     "Regions":{
       "type":"list",
       "member":{"shape":"Region"},
@@ -2215,7 +2341,15 @@
         "AWS::Route53Resolver::ResolverEndpoint",
         "AWS::BedrockAgentCore::Runtime",
         "AWS::BedrockAgentCore::Browser",
-        "AWS::BedrockAgentCore::CodeInterpreter"
+        "AWS::BedrockAgentCore::CodeInterpreter",
+        "AWS::BedrockAgentCore::Gateway",
+        "AWS::BedrockAgentCore::Memory",
+        "AWS::BedrockAgentCore::WorkloadIdentity",
+        "AWS::SecurityHub::Hub",
+        "AWS::CloudFront::Distribution",
+        "AWS::SecurityHub::HubV2",
+        "AWS::CloudWatch::OTelEnrichment",
+        "AWS::MSK::Cluster"
       ]
     },
     "ResourceTypes":{
@@ -2326,14 +2460,15 @@
     },
     "SourceLogsConfiguration":{
       "type":"structure",
-      "required":[
-        "LogGroupSelectionCriteria",
-        "EncryptedLogGroupStrategy"
-      ],
+      "required":["EncryptedLogGroupStrategy"],
       "members":{
         "LogGroupSelectionCriteria":{
           "shape":"LogsFilterString",
           "documentation":"<p>The selection criteria that specifies which source log groups to centralize. The selection criteria uses the same format as OAM link filters.</p>"
+        },
+        "DataSourceSelectionCriteria":{
+          "shape":"DataSourceFilterString",
+          "documentation":"<p>The selection criteria that specifies which data sources to centralize. The selection criteria uses the same filter expression format as <code>LogGroupSelectionCriteria</code>, but operates on <code>DataSourceName</code> and <code>DataSourceType</code> operands. When both <code>LogGroupSelectionCriteria</code> and <code>DataSourceSelectionCriteria</code> are specified, a log event must match both criteria to be centralized.</p>"
         },
         "EncryptedLogGroupStrategy":{
           "shape":"EncryptedLogGroupStrategy",
@@ -2356,6 +2491,32 @@
         "AwsResourceExplorerManagedViewArn":{
           "shape":"AwsResourceExplorerManagedViewArn",
           "documentation":"<p> The Amazon Resource Name (ARN) of the Resource Explorer managed view created for resource tags for telemetry. </p>"
+        }
+      }
+    },
+    "StartTelemetryEvaluationForOrganizationInput":{
+      "type":"structure",
+      "members":{
+        "Regions":{
+          "shape":"Regions",
+          "documentation":"<p> An optional list of Amazon Web Services Regions to include in multi-region telemetry evaluation for the organization. The current region is always implicitly included and must not be specified in this list. When provided, telemetry evaluation starts in the current region and propagates to all specified regions for the organization. Mutually exclusive with <code>AllRegions</code>. If neither <code>Regions</code> nor <code>AllRegions</code> is provided, the operation applies only to the current region. </p>"
+        },
+        "AllRegions":{
+          "shape":"AllRegions",
+          "documentation":"<p> If set to <code>true</code>, telemetry evaluation for the organization starts in all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. The current region becomes the home region for managing multi-region evaluation for the organization. When new regions become available, evaluation automatically expands to include them. Mutually exclusive with <code>Regions</code>. </p>"
+        }
+      }
+    },
+    "StartTelemetryEvaluationInput":{
+      "type":"structure",
+      "members":{
+        "Regions":{
+          "shape":"Regions",
+          "documentation":"<p> An optional list of Amazon Web Services Regions to include in multi-region telemetry evaluation. The current region is always implicitly included and must not be specified in this list. When provided, telemetry evaluation starts in the current region and propagates to all specified regions. Mutually exclusive with <code>AllRegions</code>. If neither <code>Regions</code> nor <code>AllRegions</code> is provided, the operation applies only to the current region. </p>"
+        },
+        "AllRegions":{
+          "shape":"AllRegions",
+          "documentation":"<p> If set to <code>true</code>, telemetry evaluation starts in all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. The current region becomes the home region for managing multi-region evaluation. When new regions become available, evaluation automatically expands to include them. Mutually exclusive with <code>Regions</code>. </p>"
         }
       }
     },
@@ -2458,7 +2619,8 @@
         "LastUpdateTimeStamp":{
           "shape":"Long",
           "documentation":"<p> The timestamp of the last change to the telemetry configuration for the resource. For example, <code>1728679196318</code>. </p>"
-        }
+        },
+        "TelemetrySourceType":{"shape":"TelemetrySourceType"}
       },
       "documentation":"<p> A model representing the state of a resource within an account according to telemetry config. </p>"
     },
@@ -2505,6 +2667,10 @@
         "LogDeliveryParameters":{
           "shape":"LogDeliveryParameters",
           "documentation":"<p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>"
+        },
+        "MskMonitoringParameters":{
+          "shape":"MskMonitoringParameters",
+          "documentation":"<p> Configuration parameters specific to MSK monitoring when MSK is the resource type. </p>"
         }
       },
       "documentation":"<p> Configuration specifying where and how telemetry data should be delivered for Amazon Web Services resources. </p>"
@@ -2564,7 +2730,7 @@
           "documentation":"<p>The pipeline configuration body that defines the data processing rules and transformations.</p>"
         }
       },
-      "documentation":"<p>Defines the configuration for a telemetry pipeline, including how data flows from sources through processors to destinations.</p>"
+      "documentation":"<p>Defines the configuration for a pipeline, including how data flows from sources through processors to destinations. The configuration is specified in YAML format and must include a valid pipeline definition with required source and sink components. This pipeline enables end-to-end telemetry data collection, transformation, and delivery while supporting optional processing steps and extensions for enhanced functionality.</p> <p>The primary pipeline configuration section are:</p> <ul> <li> <p> <b>Source:</b> Defines where log data originates from (S3 buckets, CloudWatch Logs, third-party APIs). Each pipeline must have exactly one source.</p> </li> <li> <p> <b>Processors (optional):</b> Transform, parse, and enrich log data as it flows through the pipeline. Processors are applied sequentially in the order they are defined.</p> </li> <li> <p> <b>Sink:</b> Defines the destination where processed log data is sent. Each pipeline must have exactly one sink.</p> </li> <li> <p> <b>Extensions (optional):</b> Provide additional functionality such as Amazon Web Services Secrets Manager integration for credential management.</p> </li> </ul> <p>For more details on each configuration section see <a href=\"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-pipelines.html\">CloudWatch pipelines User Guide</a>. Additional comprehensive configuration examples can be found in the <a href=\"https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateTelemetryPipeline.html#API_CreateTelemetryPipeline_Examples\">CreateTelemetryPipeline API docs</a>.</p>"
     },
     "TelemetryPipelineConfigurationBody":{
       "type":"string",
@@ -2668,6 +2834,18 @@
         "SelectionCriteria":{
           "shape":"String",
           "documentation":"<p> Criteria for selecting which resources the rule applies to, such as resource tags. </p>"
+        },
+        "AllowFieldUpdates":{
+          "shape":"Boolean",
+          "documentation":"<p> If set to <code>true</code>, Amazon CloudWatch Observability Admin detects and remediates configuration drift in telemetry resources that it manages. For example, if a VPC flow log's format, traffic type, or aggregation interval no longer matches the rule's destination configuration, the flow log is replaced with one that matches. Only Observability Admin-managed resources are updated; customer-created resources are never modified. Currently supported for <code>AWS::EC2::VPC</code> resources (VPC flow logs). </p>"
+        },
+        "Regions":{
+          "shape":"Regions",
+          "documentation":"<p> An optional list of Amazon Web Services Regions where this telemetry rule should be replicated. When specified, the rule is created in the home region and automatically replicated to all listed regions. Mutually exclusive with <code>AllRegions</code>. </p>"
+        },
+        "AllRegions":{
+          "shape":"AllRegions",
+          "documentation":"<p> If set to <code>true</code>, the telemetry rule is replicated to all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. When new regions become available, the rule automatically replicates to them. Mutually exclusive with <code>Regions</code>. </p>"
         }
       },
       "documentation":"<p> Defines how telemetry should be configured for specific Amazon Web Services resources. </p>"

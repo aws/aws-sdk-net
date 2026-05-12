@@ -470,7 +470,9 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntryPoint. <important> 
+        /// Gets and sets the property EntryPoint. 
+        /// <para>
+        /// <important> 
         /// <para>
         /// Early versions of the Amazon ECS container agent don't properly handle <c>entryPoint</c>
         /// parameters. If you have problems using <c>entryPoint</c>, update your container agent
@@ -481,6 +483,8 @@ namespace Amazon.ECS.Model
         /// The entry point that's passed to the container. This parameter maps to <c>Entrypoint</c>
         /// in the docker container create command and the <c>--entrypoint</c> option to docker
         /// run.
+        /// </para>
+        /// 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -518,6 +522,7 @@ namespace Amazon.ECS.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<KeyValuePair> Environment
         {
             get { return this._environment; }
@@ -1171,6 +1176,7 @@ namespace Amazon.ECS.Model
         /// The private repository authentication credentials to use.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RepositoryCredentials RepositoryCredentials
         {
             get { return this._repositoryCredentials; }

@@ -68,6 +68,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ConnectionArn", StringUtils.FromString(publicRequest.ConnectionArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RegisterPublisherRequestMarshaller _instance = new RegisterPublisherRequestMarshaller();        

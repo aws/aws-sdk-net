@@ -44,6 +44,8 @@ namespace Amazon.RTBFabric.Model
         private string _clientToken;
         private string _description;
         private string _domainName;
+        private GatewayType _gatewayType;
+        private ListenerConfig _listenerConfig;
         private ManagedEndpointConfiguration _managedEndpointConfiguration;
         private int? _port;
         private Protocol _protocol;
@@ -77,6 +79,7 @@ namespace Amazon.RTBFabric.Model
         /// An optional description for the responder gateway.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string Description
         {
             get { return this._description; }
@@ -106,6 +109,39 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayType. 
+        /// <para>
+        /// The type of gateway. Valid values are <c>EXTERNAL</c> or <c>INTERNAL</c>.
+        /// </para>
+        /// </summary>
+        public GatewayType GatewayType
+        {
+            get { return this._gatewayType; }
+            set { this._gatewayType = value; }
+        }
+
+        // Check to see if GatewayType property is set
+        internal bool IsSetGatewayType()
+        {
+            return this._gatewayType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListenerConfig.
+        /// </summary>
+        public ListenerConfig ListenerConfig
+        {
+            get { return this._listenerConfig; }
+            set { this._listenerConfig = value; }
+        }
+
+        // Check to see if ListenerConfig property is set
+        internal bool IsSetListenerConfig()
+        {
+            return this._listenerConfig != null;
         }
 
         /// <summary>
@@ -259,7 +295,7 @@ namespace Amazon.RTBFabric.Model
         /// The unique identifier of the Virtual Private Cloud (VPC).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=12, Max=21)]
         public string VpcId
         {
             get { return this._vpcId; }

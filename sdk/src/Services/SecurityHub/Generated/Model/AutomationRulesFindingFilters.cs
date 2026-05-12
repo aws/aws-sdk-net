@@ -250,7 +250,7 @@ namespace Amazon.SecurityHub.Model
         /// 100 percent confidence. For example, a data exfiltration detection based on a statistical
         /// deviation of network traffic has low confidence because an actual exfiltration hasn't
         /// been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a>
-        /// in the <i>Security Hub User Guide</i>.
+        /// in the <i>Security Hub CSPM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -282,7 +282,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         ///  
         /// <para>
@@ -314,7 +314,7 @@ namespace Amazon.SecurityHub.Model
         /// supports only full integers. A score of <c>0</c> means that the underlying resources
         /// have no criticality, and a score of <c>100</c> is reserved for the most critical resources.
         /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a>
-        /// in the <i>Security Hub User Guide</i>.
+        /// in the <i>Security Hub CSPM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -374,7 +374,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         ///  
         /// <para>
@@ -461,7 +461,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         ///  
         /// <para>
@@ -520,7 +520,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         ///  
         /// <para>
@@ -575,7 +575,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ProductArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) for a third-party product that generated a finding
-        /// in Security Hub. 
+        /// in Security Hub CSPM. 
         /// </para>
         ///  
         /// <para>
@@ -603,7 +603,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ProductName. 
         /// <para>
         ///  Provides the name of the product that generated the finding. For control-based findings,
-        /// the product name is Security Hub. 
+        /// the product name is Security Hub CSPM. 
         /// </para>
         ///  
         /// <para>
@@ -1019,7 +1019,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  One or more finding types in the format of namespace/category/classifier that classify
         /// a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types
-        /// taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.
+        /// taxonomy for ASFF</a> in the <i>Security Hub CSPM User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1051,7 +1051,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         ///  
         /// <para>

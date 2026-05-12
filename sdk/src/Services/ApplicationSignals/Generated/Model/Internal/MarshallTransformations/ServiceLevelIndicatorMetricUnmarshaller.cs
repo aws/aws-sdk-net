@@ -56,6 +56,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("CompositeSliConfig", targetDepth))
+                {
+                    var unmarshaller = CompositeSliConfigUnmarshaller.Instance;
+                    unmarshalledObject.CompositeSliConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DependencyConfig", targetDepth))
                 {
                     var unmarshaller = DependencyConfigUnmarshaller.Instance;
@@ -72,6 +78,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricDataQuery, MetricDataQueryUnmarshaller>(MetricDataQueryUnmarshaller.Instance);
                     unmarshalledObject.MetricDataQueries = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MetricSource", targetDepth))
+                {
+                    var unmarshaller = MetricSourceUnmarshaller.Instance;
+                    unmarshalledObject.MetricSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricType", targetDepth))

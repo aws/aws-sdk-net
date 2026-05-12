@@ -16,7 +16,7 @@ namespace AWSSDK_DotNet.UnitTests
     [TestClass]
     public class ContextInternalTests
     {
-        public class TestEntity
+        public class ContextTestEntity
         {
             [DynamoDBHashKey]
             public int Id { get; set; }
@@ -165,6 +165,15 @@ namespace AWSSDK_DotNet.UnitTests
             public string GsiRange2 { get; set; }
         }
 
+        public class TestRenamableAttributeEntity
+        {
+            [DynamoDBHashKey("PK")]
+            public string Id { get; set; }
+
+            [DynamoDBRangeKey("SK")]
+            public string SortKey { get; set; }
+        }
+
         private Mock<IAmazonDynamoDB> mockClient;
         private DynamoDBContext context;
 
@@ -254,12 +263,50 @@ namespace AWSSDK_DotNet.UnitTests
                             }
                         };
                     }
+
+                    if (req.TableName == "TestRenamableAttributeEntity")
+                    {
+                        return new DescribeTableResponse
+                        {
+                            Table = new TableDescription
+                            {
+                                TableName = "TestRenamableAttributeEntity",
+                                KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                                {
+                                    new KeySchemaElement
+                                    {
+                                        AttributeName = "PK",
+                                        KeyType = KeyType.HASH
+                                    },
+                                    new KeySchemaElement
+                                    {
+                                        AttributeName = "SK",
+                                        KeyType = KeyType.RANGE
+                                    }
+                                },
+                                AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                                {
+                                    new AttributeDefinition
+                                    {
+                                        AttributeName = "PK",
+                                        AttributeType = ScalarAttributeType.S
+                                    },
+                                    new AttributeDefinition
+                                    {
+                                        AttributeName = "SK",
+                                        AttributeType = ScalarAttributeType.S
+                                    }
+                                }
+                            }
+                        };
+                    }
+
                     // Default for TestEntity
                     return new DescribeTableResponse
                     {
                         Table = new TableDescription
                         {
-                            TableName = "TestEntity",
+                            TableName = "ContextTestEntity",
                             KeySchema = new System.Collections.Generic.List<KeySchemaElement>
                             {
                                 new KeySchemaElement
@@ -321,11 +368,12 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertScan_WithFilterExpression_ReturnsMappedFilterExpression()
         {
-            Expression<Func<TestEntity, bool>> expr = e => e.Id == 1;
+            // Create a filter expression (e => e.Id == 1)
+            Expression<Func<ContextTestEntity, bool>> expr = e => e.Id == 1;
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
 
-            var result = context.ConvertScan<TestEntity>(filterExpr, null);
+            var result = context.ConvertScan<ContextTestEntity>(filterExpr, null);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search.FilterExpression);
@@ -343,11 +391,12 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertScan_WithNameFilterExpression_ReturnsMappedFilterExpression()
         {
-            Expression<Func<TestEntity, bool>> expr = e => e.Name == "foo";
+            // Filter: e => e.Name == "foo"
+            Expression<Func<ContextTestEntity, bool>> expr = e => e.Name == "foo";
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
 
-            var result = context.ConvertScan<TestEntity>(filterExpr, null);
+            var result = context.ConvertScan<ContextTestEntity>(filterExpr, null);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search.FilterExpression);
@@ -364,11 +413,12 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertScan_WithGreaterThanFilterExpression_ReturnsMappedFilterExpression()
         {
-            Expression<Func<TestEntity, bool>> expr = e => e.Id > 10;
+            // Filter: e => e.Id > 10
+            Expression<Func<ContextTestEntity, bool>> expr = e => e.Id > 10;
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
 
-            var result = context.ConvertScan<TestEntity>(filterExpr, null);
+            var result = context.ConvertScan<ContextTestEntity>(filterExpr, null);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search.FilterExpression);
@@ -385,11 +435,12 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertScan_WithAndFilterExpression_ReturnsMappedFilterExpression()
         {
-            Expression<Func<TestEntity, bool>> expr = e => e.Id == 1 && e.Name == "foo";
+            // Filter: e => e.Id == 1 && e.Name == "foo"
+            Expression<Func<ContextTestEntity, bool>> expr = e => e.Id == 1 && e.Name == "foo";
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
 
-            var result = context.ConvertScan<TestEntity>(filterExpr, null);
+            var result = context.ConvertScan<ContextTestEntity>(filterExpr, null);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search.FilterExpression);
@@ -406,7 +457,8 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertQueryByValue_WithHashKeyOnly()
         {
-            var result = context.ConvertQueryByValue<TestEntity>(1, null, null);
+            // Act
+            var result = context.ConvertQueryByValue<ContextTestEntity>(1, null, null);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -415,13 +467,14 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(1, actualResult.Filter.ToConditions().Count);
             Assert.IsNull(actualResult.FilterExpression);
             Assert.IsNotNull(actualResult.AttributesToGet);
-            Assert.AreEqual(typeof(TestEntity).GetProperties().Length, actualResult.AttributesToGet.Count);
+            Assert.AreEqual(typeof(ContextTestEntity).GetProperties().Length, actualResult.AttributesToGet.Count);
         }
 
         [TestMethod]
         public void ConvertQueryByValue_WithHashKeyAndExpressionFilter()
         {
-            Expression<Func<TestEntity, bool>> expr = e => e.Name == "bar";
+            // Arrange
+            Expression<Func<ContextTestEntity, bool>> expr = e => e.Name == "bar";
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
 
@@ -431,7 +484,7 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             // Act
-            var result = context.ConvertQueryByValue<TestEntity>(1, operationConfig, null);
+            var result = context.ConvertQueryByValue<ContextTestEntity>(1, operationConfig, null);
 
             Assert.IsNotNull(result);
 
@@ -459,7 +512,7 @@ namespace AWSSDK_DotNet.UnitTests
             var queryConditional = QueryConditional.HashKeyEqualTo("Id", 1);
 
             // Act
-            var result = context.ConvertQueryConditional<ContextInternalTests.TestEntity>(queryConditional, null);
+            var result = context.ConvertQueryConditional<ContextInternalTests.ContextTestEntity>(queryConditional, null);
 
             // Assert
             Assert.IsNotNull(result);
@@ -471,7 +524,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(actualSearch.FilterExpression);
             Assert.IsFalse(actualSearch.FilterExpression.IsSet);
             Assert.IsNotNull(actualSearch.AttributesToGet);
-            Assert.AreEqual(typeof(TestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
+            Assert.AreEqual(typeof(ContextTestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
 
             // Assert KeyExpression
             Assert.IsNotNull(actualSearch.KeyExpression);
@@ -493,7 +546,7 @@ namespace AWSSDK_DotNet.UnitTests
                 .AndRangeKeyEqualTo("Name", "test");
 
             // Act
-            var result = context.ConvertQueryConditional<ContextInternalTests.TestEntity>(queryConditional, null);
+            var result = context.ConvertQueryConditional<ContextInternalTests.ContextTestEntity>(queryConditional, null);
 
             // Assert
             Assert.IsNotNull(result);
@@ -505,7 +558,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(actualSearch.FilterExpression);
             Assert.IsFalse(actualSearch.FilterExpression.IsSet);
             Assert.IsNotNull(actualSearch.AttributesToGet);
-            Assert.AreEqual(typeof(TestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
+            Assert.AreEqual(typeof(ContextTestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
 
             // Assert KeyExpression for both hash and range key
             Assert.IsNotNull(actualSearch.KeyExpression);
@@ -523,6 +576,36 @@ namespace AWSSDK_DotNet.UnitTests
             var actualRangeKeyValue = actualSearch.KeyExpression.ExpressionAttributeValues[":rangeKey0"];
             Assert.AreEqual(1, actualHashKeyValue.AsInt());
             Assert.AreEqual("test", actualRangeKeyValue.AsString());
+        }
+
+        [TestMethod]
+        public void ConvertQueryConditional_WithRenamableHashAndRangeAttributes_ReturnsValidSearch()
+        {
+            var hashKeys = new Dictionary<string, object>
+            {
+                { "PK", "id-1" }
+            };
+
+            var queryConditional = QueryConditional
+                .HashKeysEqual(hashKeys)
+                .AndRangeKeyEqualTo("SK", "sort-1");
+
+            var result = context.ConvertQueryConditional<ContextInternalTests.TestRenamableAttributeEntity>(queryConditional, null);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+
+            var actualSearch = result.Search;
+            Assert.IsNotNull(actualSearch.KeyExpression);
+            Assert.AreEqual("#hashKey0 = :hashKey0 AND #rangeKey0 = :rangeKey0", actualSearch.KeyExpression.ExpressionStatement);
+
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionAttributeNames);
+            Assert.AreEqual("PK", actualSearch.KeyExpression.ExpressionAttributeNames["#hashKey0"]);
+            Assert.AreEqual("SK", actualSearch.KeyExpression.ExpressionAttributeNames["#rangeKey0"]);
+
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionAttributeValues);
+            Assert.AreEqual("id-1", actualSearch.KeyExpression.ExpressionAttributeValues[":hashKey0"].AsString());
+            Assert.AreEqual("sort-1", actualSearch.KeyExpression.ExpressionAttributeValues[":rangeKey0"].AsString());
         }
 
         [TestMethod]
@@ -564,7 +647,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void ConvertQueryByValue_WithExpressionAndQueryFilter_ThrowsInvalidOperationException()
         {
             // Arrange: provide both an expression filter and a QueryFilter which should be incompatible
-            Expression<Func<ContextInternalTests.TestEntity, bool>> expr = e => e.Name == "foo";
+            Expression<Func<ContextInternalTests.ContextTestEntity, bool>> expr = e => e.Name == "foo";
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
 
@@ -579,7 +662,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             // Act & Assert
             var ex = Assert.ThrowsException<InvalidOperationException>(() =>
-                context.ConvertQueryByValue<ContextInternalTests.TestEntity>(1, QueryOperator.Equal, new object[] { "test" }, operationConfig));
+                context.ConvertQueryByValue<ContextInternalTests.ContextTestEntity>(1, QueryOperator.Equal, new object[] { "test" }, operationConfig));
 
             Assert.IsTrue(ex.Message.Contains("Cannot specify both QueryFilter and ExpressionFilter in the same operation configuration. Please use one or the other."), "Unexpected exception message: " + ex.Message);
         }
@@ -589,7 +672,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void ConvertQueryConditional_WithNullQueryConditional_ThrowsArgumentNullException()
         {
             // Act
-            context.ConvertQueryConditional<ContextInternalTests.TestEntity>(null, null);
+            context.ConvertQueryConditional<ContextInternalTests.ContextTestEntity>(null, null);
         }
 
         [TestMethod]
@@ -600,7 +683,7 @@ namespace AWSSDK_DotNet.UnitTests
             var queryConditional = QueryConditional.HashKeysEqual(null);
 
             // Act
-            context.ConvertQueryConditional<ContextInternalTests.TestEntity>(queryConditional, null);
+            context.ConvertQueryConditional<ContextInternalTests.ContextTestEntity>(queryConditional, null);
         }
 
         [TestMethod]
@@ -618,7 +701,7 @@ namespace AWSSDK_DotNet.UnitTests
             var queryConditional = QueryConditional.HashKeyEqualTo("Id", 1);
 
             // Act
-            var result = context.ConvertQueryConditional<ContextInternalTests.TestEntity>(queryConditional, operationConfig);
+            var result = context.ConvertQueryConditional<ContextInternalTests.ContextTestEntity>(queryConditional, operationConfig);
 
             // Assert
             Assert.IsNotNull(result);
@@ -639,7 +722,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("1", keyCondition.AttributeValueList[0].N);
             Assert.IsNull(actualSearch.FilterExpression);
             Assert.IsNotNull(actualSearch.AttributesToGet);
-            Assert.AreEqual(typeof(TestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
+            Assert.AreEqual(typeof(ContextTestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
             Assert.IsNull(actualSearch.KeyExpression);
         }
 
@@ -660,7 +743,7 @@ namespace AWSSDK_DotNet.UnitTests
             try
             {
                 // Act
-                context.ConvertQueryByValue<ContextInternalTests.TestEntity>(hashKeys, operationConfig, null);
+                context.ConvertQueryByValue<ContextInternalTests.ContextTestEntity>(hashKeys, operationConfig, null);
             }
             catch (InvalidOperationException ex)
             {
@@ -706,7 +789,7 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             // Act
-            var result = context.ConvertFromQuery<ContextInternalTests.TestEntity>(queryConfig, null);
+            var result = context.ConvertFromQuery<ContextInternalTests.ContextTestEntity>(queryConfig, null);
 
             // Assert
             Assert.IsNotNull(result);
@@ -731,7 +814,7 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             // Act
-            var result = context.ConvertFromQuery<ContextInternalTests.TestEntity>(request, null);
+            var result = context.ConvertFromQuery<ContextInternalTests.ContextTestEntity>(request, null);
 
             // Assert
             Assert.IsNotNull(result);
@@ -746,7 +829,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertQueryByValue_WithRangeEqualCondition_UsesQueryFilterNotKeyExpression()
         {
-            var result = context.ConvertQueryByValue<ContextInternalTests.TestEntity>(1, QueryOperator.Equal, new object[] { "test" }, null);
+            var result = context.ConvertQueryByValue<ContextInternalTests.ContextTestEntity>(1, QueryOperator.Equal, new object[] { "test" }, null);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -774,7 +857,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertQueryByValue_WithBetweenOperator_UsesQueryFilterNotKeyExpression()
         {
-            var result = context.ConvertQueryByValue<ContextInternalTests.TestEntity>(1, QueryOperator.Between, new object[] { "a", "z" }, null);
+            var result = context.ConvertQueryByValue<ContextInternalTests.ContextTestEntity>(1, QueryOperator.Between, new object[] { "a", "z" }, null);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -783,7 +866,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             Assert.IsNotNull(search.Filter, "Expected Query.Filter to be set for ConvertQueryByValue with BETWEEN range condition.");
             var conditions = search.Filter.ToConditions();
-
+          
             Assert.IsTrue(conditions.ContainsKey("Id"));
             var idCondition = conditions["Id"];
             Assert.AreEqual(ComparisonOperator.EQ, idCondition.ComparisonOperator);
@@ -803,7 +886,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertQueryByValue_WithRangeEqualCondition_AndExpressionFilter_BuildsKeyAndFilterExpressions()
         {
-            Expression<Func<ContextInternalTests.TestEntity, bool>> expr = e => e.Name == "bar";
+            Expression<Func<ContextInternalTests.ContextTestEntity, bool>> expr = e => e.Name == "bar";
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
             var operationConfig = new DynamoDBOperationConfig
@@ -811,7 +894,7 @@ namespace AWSSDK_DotNet.UnitTests
                 Expression = filterExpr
             };
 
-            var result = context.ConvertQueryByValue<ContextInternalTests.TestEntity>(1, QueryOperator.Equal, new object[] { "test" }, operationConfig);
+            var result = context.ConvertQueryByValue<ContextInternalTests.ContextTestEntity>(1, QueryOperator.Equal, new object[] { "test" }, operationConfig);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -840,7 +923,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertQueryByValue_WithBetweenOperator_AndExpressionFilter_BuildsKeyAndFilterExpressions()
         {
-            Expression<Func<ContextInternalTests.TestEntity, bool>> expr = e => e.Id == 1;
+            Expression<Func<ContextInternalTests.ContextTestEntity, bool>> expr = e => e.Id == 1;
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
             var operationConfig = new DynamoDBOperationConfig
@@ -848,7 +931,7 @@ namespace AWSSDK_DotNet.UnitTests
                 Expression = filterExpr
             };
 
-            var result = context.ConvertQueryByValue<ContextInternalTests.TestEntity>(1, QueryOperator.Between, new object[] { "a", "z" }, operationConfig);
+            var result = context.ConvertQueryByValue<ContextInternalTests.ContextTestEntity>(1, QueryOperator.Between, new object[] { "a", "z" }, operationConfig);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -1093,7 +1176,7 @@ namespace AWSSDK_DotNet.UnitTests
             try
             {
                 // Act
-                context.ConvertQueryConditional<ContextInternalTests.TestEntity>(queryConditional, null);
+                context.ConvertQueryConditional<ContextInternalTests.ContextTestEntity>(queryConditional, null);
             }
             catch (InvalidOperationException ex)
             {
@@ -1160,7 +1243,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void GetUpdateIfNotExistsAttributeNames_WithNoIfNotExistsProperties_ReturnsEmptyList()
         {
             var itemStorage = new ItemStorage(new
-                ItemStorageConfig(typeof(TestEntity)))
+                ItemStorageConfig(typeof(ContextTestEntity)))
             {
             };
             var result = DynamoDBContext.GetUpdateIfNotExistsAttributeNames(itemStorage);
@@ -1311,7 +1394,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void BuildCounterConditionExpression_NoCounters_ReturnsNull()
         {
-            var itemStorage = new ItemStorage(new ItemStorageConfig(typeof(TestEntity)));
+            var itemStorage = new ItemStorage(new ItemStorageConfig(typeof(ContextTestEntity)));
             // Ensure no property marked as counter
             foreach (var p in itemStorage.Config.BaseTypeStorageConfig.Properties)
                 p.IsCounter = false;
@@ -1342,13 +1425,13 @@ namespace AWSSDK_DotNet.UnitTests
                 });
 
             var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
-            var config = context.StorageConfigCache.GetConfig<TestEntity>(flatConfig);
+            var config = context.StorageConfigCache.GetConfig<ContextTestEntity>(flatConfig);
             var itemStorage = new ItemStorage(config);
 
             var props = itemStorage.Config.BaseTypeStorageConfig.Properties;
 
-            var first = props.First(p => p.PropertyName == nameof(TestEntity.Id));
-            var second = props.First(p => p.PropertyName == nameof(TestEntity.NullableValue));
+            var first = props.First(p => p.PropertyName == nameof(ContextTestEntity.Id));
+            var second = props.First(p => p.PropertyName == nameof(ContextTestEntity.NullableValue));
 
             first.IsCounter = true;
             first.CounterStartValue = 5;

@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AdminAccounts. 
         /// <para>
-        /// The list of Security Hub administrator accounts.
+        /// The list of Security Hub CSPM administrator accounts.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -65,7 +65,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Feature. 
         /// <para>
         /// The feature where the delegated administrator account is listed. Defaults to Security
-        /// Hub CSPM if not specified.
+        /// Hub CSPM CSPM if not specified.
         /// </para>
         /// </summary>
         public SecurityHubFeature Feature

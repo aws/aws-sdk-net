@@ -60,6 +60,8 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
             if(publicRequest != null)
             {
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static XmlEmptyBlobsRequestMarshaller _instance = new XmlEmptyBlobsRequestMarshaller();        

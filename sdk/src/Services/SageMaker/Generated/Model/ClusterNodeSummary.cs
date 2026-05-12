@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ClusterNodeSummary
     {
+        private ClusterImageVersionStatus _imageVersionStatus;
         private string _instanceGroupName;
         private string _instanceId;
         private ClusterInstanceStatusDetails _instanceStatus;
@@ -44,6 +45,24 @@ namespace Amazon.SageMaker.Model
         private string _nodeLogicalId;
         private string _privateDnsHostname;
         private UltraServerInfo _ultraServerInfo;
+
+        /// <summary>
+        /// Gets and sets the property ImageVersionStatus. 
+        /// <para>
+        /// The status of the image version for the cluster node.
+        /// </para>
+        /// </summary>
+        public ClusterImageVersionStatus ImageVersionStatus
+        {
+            get { return this._imageVersionStatus; }
+            set { this._imageVersionStatus = value; }
+        }
+
+        // Check to see if ImageVersionStatus property is set
+        internal bool IsSetImageVersionStatus()
+        {
+            return this._imageVersionStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceGroupName. 

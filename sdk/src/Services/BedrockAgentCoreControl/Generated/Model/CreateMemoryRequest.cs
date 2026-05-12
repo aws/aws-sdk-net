@@ -39,9 +39,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _description;
         private string _encryptionKeyArn;
         private int? _eventExpiryDuration;
+        private List<IndexedKey> _indexedKeys = AWSConfigs.InitializeCollections ? new List<IndexedKey>() : null;
         private string _memoryExecutionRoleArn;
         private List<MemoryStrategyInput> _memoryStrategies = AWSConfigs.InitializeCollections ? new List<MemoryStrategyInput>() : null;
         private string _name;
+        private StreamDeliveryResources _streamDeliveryResources;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -122,6 +124,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IndexedKeys. 
+        /// <para>
+        /// Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<IndexedKey> IndexedKeys
+        {
+            get { return this._indexedKeys; }
+            set { this._indexedKeys = value; }
+        }
+
+        // Check to see if IndexedKeys property is set
+        internal bool IsSetIndexedKeys()
+        {
+            return this._indexedKeys != null && (this._indexedKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property MemoryExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that provides permissions for the memory
@@ -181,6 +207,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamDeliveryResources. 
+        /// <para>
+        /// Configuration for streaming memory record data to external resources.
+        /// </para>
+        /// </summary>
+        public StreamDeliveryResources StreamDeliveryResources
+        {
+            get { return this._streamDeliveryResources; }
+            set { this._streamDeliveryResources = value; }
+        }
+
+        // Check to see if StreamDeliveryResources property is set
+        internal bool IsSetStreamDeliveryResources()
+        {
+            return this._streamDeliveryResources != null;
         }
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
     {
         private string _id;
         private List<string> _logicalInterfaceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<MediaConnectRouterOutputDestinationSettings> _mediaConnectRouterSettings = AWSConfigs.InitializeCollections ? new List<MediaConnectRouterOutputDestinationSettings>() : null;
         private List<MediaPackageOutputDestinationSettings> _mediaPackageSettings = AWSConfigs.InitializeCollections ? new List<MediaPackageOutputDestinationSettings>() : null;
         private MultiplexProgramChannelDestinationSettings _multiplexSettings;
         private List<OutputDestinationSettings> _settings = AWSConfigs.InitializeCollections ? new List<OutputDestinationSettings>() : null;
@@ -76,6 +77,27 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetLogicalInterfaceNames()
         {
             return this._logicalInterfaceNames != null && (this._logicalInterfaceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaConnectRouterSettings. Destination settings for a
+        /// MediaConnect Router output; one destination for each redundant encoder.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<MediaConnectRouterOutputDestinationSettings> MediaConnectRouterSettings
+        {
+            get { return this._mediaConnectRouterSettings; }
+            set { this._mediaConnectRouterSettings = value; }
+        }
+
+        // Check to see if MediaConnectRouterSettings property is set
+        internal bool IsSetMediaConnectRouterSettings()
+        {
+            return this._mediaConnectRouterSettings != null && (this._mediaConnectRouterSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

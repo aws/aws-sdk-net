@@ -38,6 +38,7 @@ namespace Amazon.DataZone.Model
         private string _blueprintVersion;
         private string _description;
         private string _domainIdentifier;
+        private string _environmentConfigurationName;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identifier;
         private string _name;
@@ -97,6 +98,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDomainIdentifier()
         {
             return this._domainIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentConfigurationName. 
+        /// <para>
+        /// The configuration name of the environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
+        public string EnvironmentConfigurationName
+        {
+            get { return this._environmentConfigurationName; }
+            set { this._environmentConfigurationName = value; }
+        }
+
+        // Check to see if EnvironmentConfigurationName property is set
+        internal bool IsSetEnvironmentConfigurationName()
+        {
+            return this._environmentConfigurationName != null;
         }
 
         /// <summary>

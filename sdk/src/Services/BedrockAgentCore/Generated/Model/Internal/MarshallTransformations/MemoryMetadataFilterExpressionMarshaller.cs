@@ -51,7 +51,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("left");
                 context.Writer.WriteStartObject();
 
-                var marshaller = LeftExpressionMarshaller.Instance;
+                var marshaller = MemoryRecordLeftExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Left, context);
 
                 context.Writer.WriteEndObject();
@@ -68,7 +68,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("right");
                 context.Writer.WriteStartObject();
 
-                var marshaller = RightExpressionMarshaller.Instance;
+                var marshaller = MemoryRecordRightExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Right, context);
 
                 context.Writer.WriteEndObject();

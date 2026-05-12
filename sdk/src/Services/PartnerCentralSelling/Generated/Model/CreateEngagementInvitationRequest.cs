@@ -108,7 +108,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// invitation to a partner. It contains a personalized message from the sender, the invitation's
         /// receiver, and a payload. The <c>Payload</c> can be the <c>OpportunityInvitation</c>,
         /// which includes detailed structures for sender contacts, partner responsibilities,
-        /// customer information, and project details. 
+        /// customer information, and project details, or <c>LeadInvitation</c>, which includes
+        /// structures for customer information and interaction details. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

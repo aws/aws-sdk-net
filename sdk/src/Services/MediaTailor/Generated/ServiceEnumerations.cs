@@ -263,6 +263,14 @@ namespace Amazon.MediaTailor
         /// </summary>
         public static readonly AdsInteractionExcludeEventType NON_AD_MARKER_FOUND = new AdsInteractionExcludeEventType("NON_AD_MARKER_FOUND");
         /// <summary>
+        /// Constant PRE_ADS_REQUEST_FUNCTION_ERROR for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType PRE_ADS_REQUEST_FUNCTION_ERROR = new AdsInteractionExcludeEventType("PRE_ADS_REQUEST_FUNCTION_ERROR");
+        /// <summary>
+        /// Constant PRE_ADS_REQUEST_HOOK_ERROR for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType PRE_ADS_REQUEST_HOOK_ERROR = new AdsInteractionExcludeEventType("PRE_ADS_REQUEST_HOOK_ERROR");
+        /// <summary>
         /// Constant REDIRECTED_VAST_RESPONSE for AdsInteractionExcludeEventType
         /// </summary>
         public static readonly AdsInteractionExcludeEventType REDIRECTED_VAST_RESPONSE = new AdsInteractionExcludeEventType("REDIRECTED_VAST_RESPONSE");
@@ -340,6 +348,18 @@ namespace Amazon.MediaTailor
     public class AdsInteractionPublishOptInEventType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant PRE_ADS_REQUEST_FUNCTION_COMPLETED for AdsInteractionPublishOptInEventType
+        /// </summary>
+        public static readonly AdsInteractionPublishOptInEventType PRE_ADS_REQUEST_FUNCTION_COMPLETED = new AdsInteractionPublishOptInEventType("PRE_ADS_REQUEST_FUNCTION_COMPLETED");
+        /// <summary>
+        /// Constant PRE_ADS_REQUEST_HOOK_SUMMARY for AdsInteractionPublishOptInEventType
+        /// </summary>
+        public static readonly AdsInteractionPublishOptInEventType PRE_ADS_REQUEST_HOOK_SUMMARY = new AdsInteractionPublishOptInEventType("PRE_ADS_REQUEST_HOOK_SUMMARY");
+        /// <summary>
+        /// Constant RAW_ADS_REQUEST for AdsInteractionPublishOptInEventType
+        /// </summary>
+        public static readonly AdsInteractionPublishOptInEventType RAW_ADS_REQUEST = new AdsInteractionPublishOptInEventType("RAW_ADS_REQUEST");
         /// <summary>
         /// Constant RAW_ADS_RESPONSE for AdsInteractionPublishOptInEventType
         /// </summary>
@@ -535,6 +555,56 @@ namespace Amazon.MediaTailor
 
 
     /// <summary>
+    /// Constants used for properties of type EventName.
+    /// </summary>
+    public class EventName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRE_ADS_REQUEST for EventName
+        /// </summary>
+        public static readonly EventName PRE_ADS_REQUEST = new EventName("PRE_ADS_REQUEST");
+        /// <summary>
+        /// Constant PRE_SESSION_INITIALIZATION for EventName
+        /// </summary>
+        public static readonly EventName PRE_SESSION_INITIALIZATION = new EventName("PRE_SESSION_INITIALIZATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventName FindValue(string value)
+        {
+            return FindValue<EventName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FillPolicy.
     /// </summary>
     public class FillPolicy : ConstantClass
@@ -578,6 +648,60 @@ namespace Amazon.MediaTailor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FillPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FunctionType.
+    /// </summary>
+    public class FunctionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM_OUTPUT for FunctionType
+        /// </summary>
+        public static readonly FunctionType CUSTOM_OUTPUT = new FunctionType("CUSTOM_OUTPUT");
+        /// <summary>
+        /// Constant HTTP_REQUEST for FunctionType
+        /// </summary>
+        public static readonly FunctionType HTTP_REQUEST = new FunctionType("HTTP_REQUEST");
+        /// <summary>
+        /// Constant SEQUENTIAL_EXECUTOR for FunctionType
+        /// </summary>
+        public static readonly FunctionType SEQUENTIAL_EXECUTOR = new FunctionType("SEQUENTIAL_EXECUTOR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FunctionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FunctionType FindValue(string value)
+        {
+            return FindValue<FunctionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FunctionType(string value)
         {
             return FindValue(value);
         }
@@ -891,6 +1015,14 @@ namespace Amazon.MediaTailor
         /// </summary>
         public static readonly ManifestServiceExcludeEventType PARSING_ERROR = new ManifestServiceExcludeEventType("PARSING_ERROR");
         /// <summary>
+        /// Constant PRE_SESSION_INIT_FUNCTION_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType PRE_SESSION_INIT_FUNCTION_ERROR = new ManifestServiceExcludeEventType("PRE_SESSION_INIT_FUNCTION_ERROR");
+        /// <summary>
+        /// Constant PRE_SESSION_INIT_HOOK_ERROR for ManifestServiceExcludeEventType
+        /// </summary>
+        public static readonly ManifestServiceExcludeEventType PRE_SESSION_INIT_HOOK_ERROR = new ManifestServiceExcludeEventType("PRE_SESSION_INIT_HOOK_ERROR");
+        /// <summary>
         /// Constant SCTE35_PARSING_ERROR for ManifestServiceExcludeEventType
         /// </summary>
         public static readonly ManifestServiceExcludeEventType SCTE35_PARSING_ERROR = new ManifestServiceExcludeEventType("SCTE35_PARSING_ERROR");
@@ -948,6 +1080,56 @@ namespace Amazon.MediaTailor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ManifestServiceExcludeEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ManifestServicePublishOptInEventType.
+    /// </summary>
+    public class ManifestServicePublishOptInEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRE_SESSION_INIT_FUNCTION_COMPLETED for ManifestServicePublishOptInEventType
+        /// </summary>
+        public static readonly ManifestServicePublishOptInEventType PRE_SESSION_INIT_FUNCTION_COMPLETED = new ManifestServicePublishOptInEventType("PRE_SESSION_INIT_FUNCTION_COMPLETED");
+        /// <summary>
+        /// Constant PRE_SESSION_INIT_HOOK_SUMMARY for ManifestServicePublishOptInEventType
+        /// </summary>
+        public static readonly ManifestServicePublishOptInEventType PRE_SESSION_INIT_HOOK_SUMMARY = new ManifestServicePublishOptInEventType("PRE_SESSION_INIT_HOOK_SUMMARY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManifestServicePublishOptInEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManifestServicePublishOptInEventType FindValue(string value)
+        {
+            return FindValue<ManifestServicePublishOptInEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManifestServicePublishOptInEventType(string value)
         {
             return FindValue(value);
         }
@@ -1048,6 +1230,56 @@ namespace Amazon.MediaTailor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Method(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MethodType.
+    /// </summary>
+    public class MethodType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GET for MethodType
+        /// </summary>
+        public static readonly MethodType GET = new MethodType("GET");
+        /// <summary>
+        /// Constant POST for MethodType
+        /// </summary>
+        public static readonly MethodType POST = new MethodType("POST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MethodType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MethodType FindValue(string value)
+        {
+            return FindValue<MethodType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MethodType(string value)
         {
             return FindValue(value);
         }
@@ -1348,6 +1580,52 @@ namespace Amazon.MediaTailor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RelativePosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuntimeType.
+    /// </summary>
+    public class RuntimeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSONATA for RuntimeType
+        /// </summary>
+        public static readonly RuntimeType JSONATA = new RuntimeType("JSONATA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuntimeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuntimeType FindValue(string value)
+        {
+            return FindValue<RuntimeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuntimeType(string value)
         {
             return FindValue(value);
         }

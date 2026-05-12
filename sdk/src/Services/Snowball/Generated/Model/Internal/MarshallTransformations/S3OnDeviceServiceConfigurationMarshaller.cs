@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// S3OnDeviceServiceConfiguration Marshaller
     /// </summary>
-    public class S3OnDeviceServiceConfigurationMarshaller : IRequestMarshaller<S3OnDeviceServiceConfiguration, JsonMarshallerContext> 
+    public class S3OnDeviceServiceConfigurationMarshaller : IRequestMarshaller<S3OnDeviceServiceConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +45,31 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(S3OnDeviceServiceConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(S3OnDeviceServiceConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetFaultTolerance())
-            {
-                context.Writer.WritePropertyName("FaultTolerance");
-                context.Writer.WriteNumberValue(requestObject.FaultTolerance.Value);
-            }
 
-            if(requestObject.IsSetServiceSize())
+            if (requestObject.IsSetFaultTolerance())
             {
-                context.Writer.WritePropertyName("ServiceSize");
-                context.Writer.WriteNumberValue(requestObject.ServiceSize.Value);
+                context.Writer.WriteTextString("FaultTolerance");
+                context.Writer.WriteInt32(requestObject.FaultTolerance.Value);
             }
-
-            if(requestObject.IsSetStorageLimit())
+            if (requestObject.IsSetServiceSize())
             {
-                context.Writer.WritePropertyName("StorageLimit");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.StorageLimit.Value))
-                {
-                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.StorageLimit.Value));
-                }
-                else
-                {
-                    context.Writer.WriteNumberValue(requestObject.StorageLimit.Value);
-                }
+                context.Writer.WriteTextString("ServiceSize");
+                context.Writer.WriteInt32(requestObject.ServiceSize.Value);
             }
-
-            if(requestObject.IsSetStorageUnit())
+            if (requestObject.IsSetStorageLimit())
             {
-                context.Writer.WritePropertyName("StorageUnit");
-                context.Writer.WriteStringValue(requestObject.StorageUnit);
+                context.Writer.WriteTextString("StorageLimit");
+                context.Writer.WriteOptimizedNumber(requestObject.StorageLimit.Value);
             }
-
+            if (requestObject.IsSetStorageUnit())
+            {
+                context.Writer.WriteTextString("StorageUnit");
+                context.Writer.WriteTextString(requestObject.StorageUnit);
+            }
         }
 
         /// <summary>

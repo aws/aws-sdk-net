@@ -84,6 +84,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TemplateSubject", StringUtils.FromString(publicRequest.TemplateSubject));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static UpdateCustomVerificationEmailTemplateRequestMarshaller _instance = new UpdateCustomVerificationEmailTemplateRequestMarshaller();        

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Travel mode related options for the provided travel mode.
+    /// Mode-specific routing options that further refine how reachable areas are calculated.
+    /// Options are only considered when they match the selected travel mode.
     /// </summary>
     public partial class IsolineTravelModeOptions
     {
@@ -41,7 +42,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Car. 
         /// <para>
-        /// Travel mode options when the provided travel mode is "Car"
+        /// Options specific to passenger vehicle routing (<c>Car</c>, such as vehicle characteristics
+        /// and license plate restrictions.
         /// </para>
         /// </summary>
         public IsolineCarOptions Car
@@ -59,12 +61,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Scooter. 
         /// <para>
-        /// Travel mode options when the provided travel mode is <c>Scooter</c> 
+        /// Options specific to scooter routing (<c>Scooter</c>, such as vehicle characteristics
+        /// and license plate restrictions.
         /// </para>
         ///  <note> 
         /// <para>
-        /// When travel mode is set to <c>Scooter</c>, then the avoidance option <c>ControlledAccessHighways</c>
-        /// defaults to <c>true</c>.
+        /// When using the <c>Scooter</c> travel mode, controlled-access highways are automatically
+        /// avoided unless explicitly allowed.
         /// </para>
         ///  </note>
         /// </summary>
@@ -83,7 +86,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Truck. 
         /// <para>
-        /// Travel mode options when the provided travel mode is "Truck"
+        /// Options specific to commercial truck routing (<c>Truck</c>, including vehicle dimensions,
+        /// weight limits, and hazardous cargo specifications.
         /// </para>
         /// </summary>
         public IsolineTruckOptions Truck

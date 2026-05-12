@@ -59,7 +59,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// Specifies the payment currency.
+        /// Specifies the payment currency. Accepted values are <c>USD</c> (US Dollars) and <c>EUR</c>
+        /// (Euros). If the AWS Partition is <c>aws-eusc</c> (AWS European Sovereign Cloud), the
+        /// currency code must be <c>EUR</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

@@ -125,7 +125,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				var context = new CborMarshallerContext(request, writer);
 
 <#		
-				ProcessStructure(1, "publicRequest." + payload.PropertyName, payload.Shape);
+				ProcessStructure(1, "publicRequest." + payload.PropertyName, payload.Shape, isSparse: requestStructure.IsSparse, isNested: false);
 		}
 		else
 		{

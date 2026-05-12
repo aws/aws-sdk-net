@@ -110,8 +110,8 @@ namespace Amazon.AWSMarketplaceMetering
     ///  <ul> <li> 
     /// <para>
     /// Resolves the registration token that the buyer submits through the browser during
-    /// the registration process. Obtains a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>
-    /// and <c>ProductCode</c>.
+    /// the registration process. Obtains a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>,
+    /// <c>ProductCode</c>, and <c>LicenseArn</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -206,11 +206,12 @@ namespace Amazon.AWSMarketplaceMetering
         /// <summary>
         /// <important> 
         /// <para>
-        ///  The <c>CustomerIdentifier</c> and <c>CustomerAWSAccountID</c> are mutually exclusive
-        /// parameters. You must use one or the other, but not both in the same API request. For
-        /// new implementations, we recommend using the <c>CustomerAWSAccountID</c>. Your current
-        /// integration will continue to work. When updating your implementation, consider migrating
-        /// to <c>CustomerAWSAccountID</c> for improved integration. 
+        /// Amazon Web Services Marketplace is introducing Concurrent Agreements, enabling buyers
+        /// to make multiple purchases per Amazon Web Services account. Starting June 1, 2026,
+        /// new SaaS products must use <c>CustomerAWSAccountId</c> (instead of <c>CustomerIdentifier</c>),
+        /// <c>LicenseArn</c> (instead of <c>ProductCode</c>) to support this feature. Existing
+        /// integrations will continue to work. Review the new integration for Concurrent Agreements
+        /// <a href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -265,6 +266,10 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidCustomerIdentifierException">
         /// You have metered usage for a <c>CustomerIdentifier</c> that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidLicenseException">
+        /// Ensure the <c>LicenseArn</c> is valid, matches the customer, and usage is within the
+        /// license activation period.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
@@ -530,8 +535,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// <c>ResolveCustomer</c> is called by a SaaS application during the registration process.
         /// When a buyer visits your website during the registration process, the buyer submits
         /// a registration token through their browser. The registration token is resolved through
-        /// this API to obtain a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>
-        /// and <c>ProductCode</c>.
+        /// this API to obtain a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>,
+        /// <c>ProductCode</c>, and <c>LicenseArn</c>.
         /// 
         ///  <note> 
         /// <para>

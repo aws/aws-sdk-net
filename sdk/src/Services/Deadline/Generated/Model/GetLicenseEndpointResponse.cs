@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// This is the response object from the GetLicenseEndpoint operation.
+    /// Mixin that adds an optional ARN field to response structures. Apply to SummaryMixins
+    /// (flows into Get, Summary, and BatchGet) and Create outputs.
     /// </summary>
     public partial class GetLicenseEndpointResponse : AmazonWebServiceResponse
     {

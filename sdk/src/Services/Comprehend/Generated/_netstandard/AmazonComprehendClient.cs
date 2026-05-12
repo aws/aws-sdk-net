@@ -39,6 +39,11 @@ namespace Amazon.Comprehend
 {
     /// <summary>
     /// <para>Implementation for accessing Comprehend</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Comprehend is an Amazon Web Services service for gaining insight into the content
     /// of documents. Use these actions to determine the topics contained in your documents,

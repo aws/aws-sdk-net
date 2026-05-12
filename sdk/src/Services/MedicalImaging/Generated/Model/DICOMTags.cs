@@ -58,7 +58,7 @@ namespace Amazon.MedicalImaging.Model
         /// The accession number for the DICOM study.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=512)]
         public string DICOMAccessionNumber
         {
             get { return this._dicomAccessionNumber; }
@@ -115,7 +115,7 @@ namespace Amazon.MedicalImaging.Model
         /// The patient birth date.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=18)]
+        [AWSProperty(Sensitive=true, Min=0, Max=36)]
         public string DICOMPatientBirthDate
         {
             get { return this._dicomPatientBirthDate; }
@@ -134,7 +134,7 @@ namespace Amazon.MedicalImaging.Model
         /// The unique identifier for a patient in a DICOM Study.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=512)]
         public string DICOMPatientId
         {
             get { return this._dicomPatientId; }
@@ -153,7 +153,7 @@ namespace Amazon.MedicalImaging.Model
         /// The patient name.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=512)]
         public string DICOMPatientName
         {
             get { return this._dicomPatientName; }
@@ -191,7 +191,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM provided identifier for the series Body Part Examined.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=128)]
         public string DICOMSeriesBodyPart
         {
             get { return this._dicomSeriesBodyPart; }
@@ -210,7 +210,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM provided identifier for the Series Instance UID.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=512)]
         public string DICOMSeriesInstanceUID
         {
             get { return this._dicomSeriesInstanceUID; }
@@ -229,7 +229,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM provided identifier for the series Modality.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=16)]
+        [AWSProperty(Sensitive=true, Min=0, Max=32)]
         public string DICOMSeriesModality
         {
             get { return this._dicomSeriesModality; }
@@ -267,7 +267,7 @@ namespace Amazon.MedicalImaging.Model
         /// The study date.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=18)]
+        [AWSProperty(Sensitive=true, Min=0, Max=36)]
         public string DICOMStudyDate
         {
             get { return this._dicomStudyDate; }
@@ -286,7 +286,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM provided Study Description.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=512)]
         public string DICOMStudyDescription
         {
             get { return this._dicomStudyDescription; }
@@ -305,7 +305,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM provided identifier for the Study ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=512)]
         public string DICOMStudyId
         {
             get { return this._dicomStudyId; }
@@ -324,7 +324,7 @@ namespace Amazon.MedicalImaging.Model
         /// The DICOM provided identifier for the Study Instance UID.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=512)]
         public string DICOMStudyInstanceUID
         {
             get { return this._dicomStudyInstanceUID; }
@@ -343,7 +343,7 @@ namespace Amazon.MedicalImaging.Model
         /// The study time.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=28)]
+        [AWSProperty(Sensitive=true, Min=0, Max=56)]
         public string DICOMStudyTime
         {
             get { return this._dicomStudyTime; }

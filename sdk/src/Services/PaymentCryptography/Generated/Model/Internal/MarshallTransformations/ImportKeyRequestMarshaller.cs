@@ -109,6 +109,12 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetRequesterComment())
+            {
+                context.Writer.WritePropertyName("RequesterComment");
+                context.Writer.WriteStringValue(publicRequest.RequesterComment);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

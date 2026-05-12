@@ -72,6 +72,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
+                    if (context.TestExpression("throttlingReasons", targetDepth))
+                    {
+                        var unmarshaller = new JsonListUnmarshaller<ThrottlingReason, ThrottlingReasonUnmarshaller>(ThrottlingReasonUnmarshaller.Instance);
+                        unmarshalledObject.ThrottlingReasons = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

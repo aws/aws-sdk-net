@@ -85,6 +85,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetMaximumConcurrentFeeds())
+            {
+                context.Writer.WritePropertyName("maximumConcurrentFeeds");
+                context.Writer.WriteNumberValue(publicRequest.MaximumConcurrentFeeds.Value);
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

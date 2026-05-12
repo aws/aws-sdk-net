@@ -104,7 +104,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property TargetGroupArn. 
         /// <para>
-        /// The ARN of the ELB target group or groups associated with a service or task set.
+        /// The ARN of the Elastic Load Balancing target group or groups associated with a service
+        /// or task set.
         /// </para>
         ///  
         /// <para>

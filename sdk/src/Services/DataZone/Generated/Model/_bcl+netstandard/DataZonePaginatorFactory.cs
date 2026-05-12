@@ -205,6 +205,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListNotebookRuns operation
+        ///</summary>
+        public IListNotebookRunsPaginator ListNotebookRuns(ListNotebookRunsRequest request) 
+        {
+            return new ListNotebookRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNotifications operation
         ///</summary>
         public IListNotificationsPaginator ListNotifications(ListNotificationsRequest request) 
@@ -290,6 +298,14 @@ namespace Amazon.DataZone.Model
         public IListTimeSeriesDataPointsPaginator ListTimeSeriesDataPoints(ListTimeSeriesDataPointsRequest request) 
         {
             return new ListTimeSeriesDataPointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for QueryGraph operation
+        ///</summary>
+        public IQueryGraphPaginator QueryGraph(QueryGraphRequest request) 
+        {
+            return new QueryGraphPaginator(this.client, request);
         }
 
         /// <summary>

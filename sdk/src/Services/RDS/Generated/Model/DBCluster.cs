@@ -110,6 +110,7 @@ namespace Amazon.RDS.Model
         private string _hostedZoneId;
         private bool? _httpEndpointEnabled;
         private bool? _iamDatabaseAuthenticationEnabled;
+        private bool? _internetAccessGatewayEnabled;
         private DateTime? _ioOptimizedNextAllowedModificationTime;
         private int? _iops;
         private string _kmsKeyId;
@@ -141,10 +142,12 @@ namespace Amazon.RDS.Model
         private string _status;
         private List<DBClusterStatusInfo> _statusInfos = AWSConfigs.InitializeCollections ? new List<DBClusterStatusInfo>() : null;
         private bool? _storageEncrypted;
+        private StorageEncryptionType _storageEncryptionType;
         private int? _storageThroughput;
         private string _storageType;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private UpgradeRolloutOrder _upgradeRolloutOrder;
+        private bool? _vpcNetworkingEnabled;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<VpcSecurityGroupMembership>() : null;
 
         /// <summary>
@@ -1149,6 +1152,30 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InternetAccessGatewayEnabled. 
+        /// <para>
+        /// Indicates whether the DB cluster has internet-based connectivity enabled through an
+        /// internet access gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is applicable only for Aurora PostgreSQL clusters created through express
+        /// configuration.
+        /// </para>
+        /// </summary>
+        public bool? InternetAccessGatewayEnabled
+        {
+            get { return this._internetAccessGatewayEnabled; }
+            set { this._internetAccessGatewayEnabled = value; }
+        }
+
+        // Check to see if InternetAccessGatewayEnabled property is set
+        internal bool IsSetInternetAccessGatewayEnabled()
+        {
+            return this._internetAccessGatewayEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IOOptimizedNextAllowedModificationTime. 
         /// <para>
         /// The next time you can modify the DB cluster to use the <c>aurora-iopt1</c> storage
@@ -1842,6 +1869,39 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageEncryptionType. 
+        /// <para>
+        /// The type of encryption used to protect data at rest in the DB cluster. Possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>none</c> - The DB cluster is not encrypted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-rds</c> - The DB cluster is encrypted using an Amazon Web Services owned KMS
+        /// key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-kms</c> - The DB cluster is encrypted using a customer managed KMS key or
+        /// Amazon Web Services managed KMS key.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StorageEncryptionType StorageEncryptionType
+        {
+            get { return this._storageEncryptionType; }
+            set { this._storageEncryptionType = value; }
+        }
+
+        // Check to see if StorageEncryptionType property is set
+        internal bool IsSetStorageEncryptionType()
+        {
+            return this._storageEncryptionType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageThroughput. 
         /// <para>
         /// The storage throughput for the DB cluster. The throughput is automatically set based
@@ -1931,6 +1991,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetUpgradeRolloutOrder()
         {
             return this._upgradeRolloutOrder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VPCNetworkingEnabled. 
+        /// <para>
+        /// Indicates whether the DB cluster uses VPC-based networking.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is applicable only for Aurora PostgreSQL clusters created through express
+        /// configuration.
+        /// </para>
+        /// </summary>
+        public bool? VPCNetworkingEnabled
+        {
+            get { return this._vpcNetworkingEnabled; }
+            set { this._vpcNetworkingEnabled = value; }
+        }
+
+        // Check to see if VPCNetworkingEnabled property is set
+        internal bool IsSetVPCNetworkingEnabled()
+        {
+            return this._vpcNetworkingEnabled.HasValue; 
         }
 
         /// <summary>

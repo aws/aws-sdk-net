@@ -98,6 +98,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     unmarshalledObject.Explanation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ignoredReferenceInputFields", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.IgnoredReferenceInputFields = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("label", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

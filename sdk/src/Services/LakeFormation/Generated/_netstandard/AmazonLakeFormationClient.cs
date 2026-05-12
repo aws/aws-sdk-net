@@ -39,6 +39,11 @@ namespace Amazon.LakeFormation
 {
     /// <summary>
     /// <para>Implementation for accessing LakeFormation</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Lake Formation 
     /// <para>
@@ -1944,6 +1949,12 @@ namespace Amazon.LakeFormation
         /// that are limited to the requested data location and the caller's authorized access
         /// level.
         /// 
+        ///  
+        /// <para>
+        ///  <c>GetDataAccess</c> is logged in CloudTrail whenever a principal requests temporary
+        /// data location credentials to access data in a data lake location that is registered
+        /// with Lake Formation.
+        /// </para>
         ///  
         /// <para>
         ///  The API operation returns an error in the following scenarios:

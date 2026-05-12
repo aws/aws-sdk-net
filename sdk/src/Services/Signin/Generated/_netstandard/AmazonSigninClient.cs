@@ -39,6 +39,11 @@ namespace Amazon.Signin
 {
     /// <summary>
     /// <para>Implementation for accessing Signin</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS Sign-In manages authentication for AWS services. This service provides secure
     /// authentication flows for accessing AWS resources from the console and developer tools.

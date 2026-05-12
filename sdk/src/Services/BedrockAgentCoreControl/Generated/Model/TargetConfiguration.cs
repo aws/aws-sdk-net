@@ -35,7 +35,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class TargetConfiguration
     {
+        private HttpTargetConfiguration _http;
         private McpTargetConfiguration _mcp;
+
+        /// <summary>
+        /// Gets and sets the property Http. 
+        /// <para>
+        /// The HTTP target configuration. Use this to route gateway requests to an HTTP-based
+        /// endpoint such as an AgentCore Runtime.
+        /// </para>
+        /// </summary>
+        public HttpTargetConfiguration Http
+        {
+            get { return this._http; }
+            set { this._http = value; }
+        }
+
+        // Check to see if Http property is set
+        internal bool IsSetHttp()
+        {
+            return this._http != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Mcp. 

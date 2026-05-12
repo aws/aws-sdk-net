@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSelfUpgrades operation.
-    /// Lists all self-upgrade requests for a Quick Suite account.
+    /// Lists all self-upgrade requests for a Quick account.
     /// </summary>
     public partial class ListSelfUpgradesRequest : AmazonQuickSightRequest
     {
@@ -81,7 +81,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The Quick Suite namespace for the self-upgrade requests.
+        /// The Quick namespace for the self-upgrade requests.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

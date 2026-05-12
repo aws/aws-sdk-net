@@ -217,6 +217,10 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>EKS</c> for Amazon Elastic Kubernetes Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>FSx</c> for Amazon FSx
         /// </para>
         ///  </li> <li> 

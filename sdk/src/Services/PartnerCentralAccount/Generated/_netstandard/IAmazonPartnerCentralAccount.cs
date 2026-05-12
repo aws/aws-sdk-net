@@ -77,6 +77,10 @@ namespace Amazon.PartnerCentralAccount
         /// The specified resource could not be found. This may occur when referencing a resource
         /// that does not exist or has been deleted.
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed a service quota or limit. This may
+        /// occur when trying to create more resources than allowed by the service limits.
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
         /// The request was throttled due to too many requests being sent in a short period of
         /// time. The client should implement exponential backoff and retry the request.
@@ -293,6 +297,10 @@ namespace Amazon.PartnerCentralAccount
         /// <exception cref="Amazon.PartnerCentralAccount.Model.ResourceNotFoundException">
         /// The specified resource could not be found. This may occur when referencing a resource
         /// that does not exist or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed a service quota or limit. This may
+        /// occur when trying to create more resources than allowed by the service limits.
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
         /// The request was throttled due to too many requests being sent in a short period of

@@ -49,13 +49,13 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRemovableAttributes())
             {
                 context.Writer.WritePropertyName("removableAttributes");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.RemovableAttributes));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.RemovableAttributes);
             }
 
             if(requestObject.IsSetUpdatableAttributes())
             {
                 context.Writer.WritePropertyName("updatableAttributes");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.UpdatableAttributes));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.UpdatableAttributes);
             }
 
         }

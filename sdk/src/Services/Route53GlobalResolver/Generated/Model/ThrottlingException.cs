@@ -137,7 +137,7 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// The quota code recognized by the AWS Service Quotas service.
+        /// The quota code recognized by the Amazon Web Services Service Quotas service.
         /// </para>
         /// </summary>
         public string QuotaCode
@@ -173,7 +173,7 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The code for the AWS service that owns the quota.
+        /// The code for the Amazon Web Services service that owns the quota.
         /// </para>
         /// </summary>
         public string ServiceCode

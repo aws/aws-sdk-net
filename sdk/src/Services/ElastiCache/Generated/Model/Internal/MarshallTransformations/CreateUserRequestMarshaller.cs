@@ -136,6 +136,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UserName", StringUtils.FromString(publicRequest.UserName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateUserRequestMarshaller _instance = new CreateUserRequestMarshaller();        

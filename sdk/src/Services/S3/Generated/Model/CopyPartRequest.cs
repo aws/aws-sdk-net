@@ -138,8 +138,10 @@ namespace Amazon.S3.Model
     /// <para>
     /// If the source object that you want to copy is in a directory bucket, you must have
     /// the <b> <c>s3express:CreateSession</c> </b> permission in the <c>Action</c> element
-    /// of a policy to read the object. By default, the session is in the <c>ReadWrite</c>
-    /// mode. If you want to restrict the access, you can explicitly set the <c>s3express:SessionMode</c>
+    /// of a policy to read the object. If no session mode is specified, the session will
+    /// be created with the maximum allowable privilege, attempting <c>ReadWrite</c> first,
+    /// then <c>ReadOnly</c> if <c>ReadWrite</c> is not permitted. If you want to explicitly
+    /// restrict the access to be read-only, you can set the <c>s3express:SessionMode</c>
     /// condition key to <c>ReadOnly</c> on the copy source bucket.
     /// </para>
     ///  </li> <li> 

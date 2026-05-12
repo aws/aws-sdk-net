@@ -39,6 +39,11 @@ namespace Amazon.Organizations
 {
     /// <summary>
     /// <para>Implementation for accessing Organizations</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Organizations is a web service that enables you to consolidate your multiple Amazon
     /// Web Services accounts into an <i>organization</i> and centrally manage your accounts
@@ -3436,10 +3441,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can close only 10% of member accounts, between 10 and 1000, within a rolling 30
-        /// day period. This quota is not bound by a calendar month, but starts when you close
-        /// an account. After you reach this limit, you can't close additional accounts. For more
-        /// information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+        /// Within a rolling 30 day period you can close the higher of either 250 or 20% of the
+        /// member accounts in your organization, up to a maximum of 1,000. This quota is not
+        /// bound by a calendar month, but starts when you close an account. After you reach this
+        /// limit, you can't close additional accounts. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
         /// a member account in your organization</a> and <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas
         /// for Organizations</a> in the <i>Organizations User Guide</i>. 
         /// </para>
@@ -4020,10 +4025,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can close only 10% of member accounts, between 10 and 1000, within a rolling 30
-        /// day period. This quota is not bound by a calendar month, but starts when you close
-        /// an account. After you reach this limit, you can't close additional accounts. For more
-        /// information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+        /// Within a rolling 30 day period you can close the higher of either 250 or 20% of the
+        /// member accounts in your organization, up to a maximum of 1,000. This quota is not
+        /// bound by a calendar month, but starts when you close an account. After you reach this
+        /// limit, you can't close additional accounts. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
         /// a member account in your organization</a> and <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas
         /// for Organizations</a> in the <i>Organizations User Guide</i>. 
         /// </para>

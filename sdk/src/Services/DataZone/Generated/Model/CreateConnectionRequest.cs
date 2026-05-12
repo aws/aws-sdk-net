@@ -38,6 +38,7 @@ namespace Amazon.DataZone.Model
     {
         private AwsLocation _awsLocation;
         private string _clientToken;
+        private List<Configuration> _configurations = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
         private string _description;
         private string _domainIdentifier;
         private bool? _enableTrustedIdentityPropagation;
@@ -81,6 +82,29 @@ namespace Amazon.DataZone.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Configurations. 
+        /// <para>
+        /// The configurations of the connection.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Configuration> Configurations
+        {
+            get { return this._configurations; }
+            set { this._configurations = value; }
+        }
+
+        // Check to see if Configurations property is set
+        internal bool IsSetConfigurations()
+        {
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

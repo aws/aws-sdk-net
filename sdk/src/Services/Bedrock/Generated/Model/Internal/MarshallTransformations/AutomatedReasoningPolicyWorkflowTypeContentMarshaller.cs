@@ -62,6 +62,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetGenerateFidelityReportContent())
+            {
+                context.Writer.WritePropertyName("generateFidelityReportContent");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutomatedReasoningPolicyGenerateFidelityReportContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.GenerateFidelityReportContent, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPolicyRepairAssets())
             {
                 context.Writer.WritePropertyName("policyRepairAssets");

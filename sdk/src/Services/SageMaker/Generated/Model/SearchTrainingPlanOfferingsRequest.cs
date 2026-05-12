@@ -59,6 +59,7 @@ namespace Amazon.SageMaker.Model
         private ReservedCapacityInstanceType _instanceType;
         private DateTime? _startTimeAfter;
         private List<string> _targetResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _trainingPlanArn;
         private int? _ultraServerCount;
         private string _ultraServerType;
 
@@ -206,6 +207,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTargetResources()
         {
             return this._targetResources != null && (this._targetResources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN); of an existing training plan to search for extension
+        /// offerings. When specified, the API returns extension offerings that can be used to
+        /// extend the specified training plan.
+        /// </para>
+        /// </summary>
+        public string TrainingPlanArn
+        {
+            get { return this._trainingPlanArn; }
+            set { this._trainingPlanArn = value; }
+        }
+
+        // Check to see if TrainingPlanArn property is set
+        internal bool IsSetTrainingPlanArn()
+        {
+            return this._trainingPlanArn != null;
         }
 
         /// <summary>

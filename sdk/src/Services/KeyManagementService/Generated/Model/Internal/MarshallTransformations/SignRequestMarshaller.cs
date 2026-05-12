@@ -101,7 +101,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetMessage())
             {
                 context.Writer.WritePropertyName("Message");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Message));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Message);
             }
 
             if(publicRequest.IsSetMessageType())

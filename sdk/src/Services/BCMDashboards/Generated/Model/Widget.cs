@@ -40,6 +40,7 @@ namespace Amazon.BCMDashboards.Model
         private string _description;
         private int? _height;
         private int? _horizontalOffset;
+        private string _id;
         private string _title;
         private int? _width;
 
@@ -123,6 +124,25 @@ namespace Amazon.BCMDashboards.Model
         internal bool IsSetHorizontalOffset()
         {
             return this._horizontalOffset.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the widget.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=32, Max=32)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
         }
 
         /// <summary>

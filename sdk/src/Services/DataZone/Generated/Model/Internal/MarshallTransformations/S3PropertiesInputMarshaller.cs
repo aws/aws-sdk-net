@@ -46,6 +46,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetRegisterS3AccessGrantLocation())
+            {
+                context.Writer.WritePropertyName("registerS3AccessGrantLocation");
+                context.Writer.WriteBooleanValue(requestObject.RegisterS3AccessGrantLocation.Value);
+            }
+
             if(requestObject.IsSetS3AccessGrantLocationId())
             {
                 context.Writer.WritePropertyName("s3AccessGrantLocationId");

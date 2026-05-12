@@ -34,10 +34,29 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ParameterTextFieldControl
     {
+        private ControlTitleFormatText _controlTitleFormatText;
         private TextFieldControlDisplayOptions _displayOptions;
         private string _parameterControlId;
         private string _sourceParameterName;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property ControlTitleFormatText. 
+        /// <para>
+        /// The title text format configuration for the control.
+        /// </para>
+        /// </summary>
+        public ControlTitleFormatText ControlTitleFormatText
+        {
+            get { return this._controlTitleFormatText; }
+            set { this._controlTitleFormatText = value; }
+        }
+
+        // Check to see if ControlTitleFormatText property is set
+        internal bool IsSetControlTitleFormatText()
+        {
+            return this._controlTitleFormatText != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DisplayOptions. 
@@ -101,7 +120,7 @@ namespace Amazon.QuickSight.Model
         /// The title of the <c>ParameterTextFieldControl</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string Title
         {
             get { return this._title; }

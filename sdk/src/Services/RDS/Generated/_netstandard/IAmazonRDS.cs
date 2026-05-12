@@ -818,6 +818,13 @@ namespace Amazon.RDS
         /// For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
         /// DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>WithExpressConfiguration</c> parameter to create an Aurora DB Cluster
+        /// with express configuration and create cluster in seconds. Express configuration provides
+        /// a cluster with a writer instance and feature specific values set to all other input
+        /// parameters of this API. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
         /// <param name="cancellationToken">
@@ -1114,7 +1121,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// <zonbook></zonbook><xhtml></xhtml>
+        /// 
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -4004,6 +4011,24 @@ namespace Amazon.RDS
 
         #endregion
                 
+        #region  DescribeServerlessV2PlatformVersions
+
+
+
+        /// <summary>
+        /// Describes the properties of specific platform versions for Aurora Serverless v2.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServerlessV2PlatformVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServerlessV2PlatformVersions service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeServerlessV2PlatformVersions">REST API Reference for DescribeServerlessV2PlatformVersions Operation</seealso>
+        Task<DescribeServerlessV2PlatformVersionsResponse> DescribeServerlessV2PlatformVersionsAsync(DescribeServerlessV2PlatformVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeSourceRegions
 
 
@@ -4896,7 +4921,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// <zonbook></zonbook><xhtml></xhtml>
+        /// 
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -6111,6 +6136,18 @@ namespace Amazon.RDS
         /// If you don't specify a security group, the new DB cluster is associated with the default
         /// security group.
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>EnableVPCNetworking</c> and <c>EnableInternetAccessGateway</c>
+        /// parameters together to restore an Aurora PostgreSQL cluster without VPC networking
+        /// and with internet-based connectivity. These two parameters must always be specified
+        /// together. Set <c>EnableVPCNetworking</c> to <c>false</c> to disable the VPC network
+        /// interface (ENI) for the cluster. <c>EnableInternetAccessGateway</c> enables internet-based
+        /// connectivity through an internet access gateway. IAM database authentication is required
+        /// and must be enabled using <c>EnableIAMDatabaseAuthentication</c>. Once the cluster
+        /// is restored, you need to modify the DB cluster to update <c>MasterUserAuthenticationType</c>
+        /// to <c>iam-db-auth</c>. 
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation only restores the DB cluster, not the DB instances for that DB cluster.
@@ -6235,6 +6272,18 @@ namespace Amazon.RDS
         /// The AZ where RDS restores the DB cluster depends on the AZs in the specified subnet
         /// group.
         /// 
+        ///  
+        /// <para>
+        /// You can use the <c>EnableVPCNetworking</c> and <c>EnableInternetAccessGateway</c>
+        /// parameters together to restore an Aurora PostgreSQL cluster without VPC networking
+        /// and with internet-based connectivity. These two parameters must always be specified
+        /// together. Set <c>EnableVPCNetworking</c> to <c>false</c> to disable the VPC network
+        /// interface (ENI) for the cluster. <c>EnableInternetAccessGateway</c> enables internet-based
+        /// connectivity through an internet access gateway. IAM database authentication is required
+        /// and must be enabled using <c>EnableIAMDatabaseAuthentication</c>. Once the cluster
+        /// is restored, you need to modify the DB cluster to update <c>MasterUserAuthenticationType</c>
+        /// to <c>iam-db-auth</c>. 
+        /// </para>
         ///  <note> 
         /// <para>
         /// For Aurora, this operation only restores the DB cluster, not the DB instances for
@@ -6404,7 +6453,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// <zonbook></zonbook><xhtml></xhtml>
+        /// 
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -6521,7 +6570,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// <zonbook></zonbook><xhtml></xhtml>
+        /// 
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
@@ -6633,7 +6682,7 @@ namespace Amazon.RDS
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.BackupPolicyNotFoundException">
-        /// <zonbook></zonbook><xhtml></xhtml>
+        /// 
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.

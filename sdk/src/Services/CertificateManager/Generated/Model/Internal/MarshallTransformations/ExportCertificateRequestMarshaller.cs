@@ -84,7 +84,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetPassphrase())
             {
                 context.Writer.WritePropertyName("Passphrase");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Passphrase));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Passphrase);
             }
 
             writer.WriteEndObject();

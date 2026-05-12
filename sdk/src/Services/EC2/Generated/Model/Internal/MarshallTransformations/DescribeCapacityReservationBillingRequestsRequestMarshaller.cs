@@ -121,6 +121,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Role", StringUtils.FromString(publicRequest.Role));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeCapacityReservationBillingRequestsRequestMarshaller _instance = new DescribeCapacityReservationBillingRequestsRequestMarshaller();        

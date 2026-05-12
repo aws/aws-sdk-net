@@ -60,6 +60,8 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
             if(publicRequest != null)
             {
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static FlattenedXmlMapRequestMarshaller _instance = new FlattenedXmlMapRequestMarshaller();        

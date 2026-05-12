@@ -82,7 +82,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetPayload())
             {
                 context.Writer.WritePropertyName("payload");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Payload));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Payload);
             }
 
             if(publicRequest.IsSetResourceType())

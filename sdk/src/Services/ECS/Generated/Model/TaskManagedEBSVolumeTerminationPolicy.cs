@@ -42,10 +42,10 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
         /// Indicates whether the volume should be deleted on when the task stops. If a value
-        /// of <c>true</c> is specified, &#x2028;Amazon ECS deletes the Amazon EBS volume on your
-        /// behalf when the task goes into the <c>STOPPED</c> state. If no value is specified,
-        /// the &#x2028;default value is <c>true</c> is used. When set to <c>false</c>, Amazon
-        /// ECS leaves the volume in your &#x2028;account.
+        /// of <c>true</c> is specified, Amazon ECS deletes the Amazon EBS volume on your behalf
+        /// when the task goes into the <c>STOPPED</c> state. If no value is specified, the default
+        /// value is <c>true</c> is used. When set to <c>false</c>, Amazon ECS leaves the volume
+        /// in your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

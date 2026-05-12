@@ -390,6 +390,62 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetTopPathStatisticsByTrafficRequest.BotCategory</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetTopPathStatisticsByTrafficRequest.BotName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetTopPathStatisticsByTrafficRequest.BotOrganization</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetTopPathStatisticsByTrafficRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetTopPathStatisticsByTrafficRequest.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetTopPathStatisticsByTrafficRequest.NumberOfTopTrafficBotsPerPath</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetTopPathStatisticsByTrafficRequest.UriPathPrefix</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^\/[^ ]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetTopPathStatisticsByTrafficRequest.WebAclArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetTopPathStatisticsByTrafficResponse.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetTopPathStatisticsByTrafficResponse.TotalRequestCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.GetWebACLRequest.ARN</property>
     <min>20</min>
     <max>2048</max>
@@ -881,6 +937,21 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.BotStatistics.BotName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.BotStatistics.Percentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.BotStatistics.RequestCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.CustomHTTPHeader.Name</property>
     <min>1</min>
     <max>64</max>
@@ -932,6 +1003,24 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.FilterSource.BotCategory</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.FilterSource.BotName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.FilterSource.BotOrganization</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.FirewallManagerRuleGroup.Name</property>
@@ -1235,6 +1324,20 @@
     <min>1</min>
     <max>512</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.PathStatistics.Path</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.PathStatistics.Percentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.PathStatistics.RequestCount</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.PhoneNumberField.Identifier</property>

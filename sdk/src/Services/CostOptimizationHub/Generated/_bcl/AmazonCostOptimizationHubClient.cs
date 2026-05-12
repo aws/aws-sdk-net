@@ -39,6 +39,11 @@ namespace Amazon.CostOptimizationHub
 {
     /// <summary>
     /// <para>Implementation for accessing CostOptimizationHub</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You can use the Cost Optimization Hub API to programmatically identify, filter, aggregate,
     /// and quantify savings for your cost optimization recommendations across multiple Amazon

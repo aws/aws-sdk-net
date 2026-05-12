@@ -87,6 +87,17 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetDataAutomationLibraryConfiguration())
+            {
+                context.Writer.WritePropertyName("dataAutomationLibraryConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataAutomationLibraryConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DataAutomationLibraryConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("encryptionConfiguration");

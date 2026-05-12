@@ -35,6 +35,8 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class S3Configuration
     {
         private string _destinationIdentifier;
+        private string _kmsKeyId;
+        private string _ownerAccountId;
         private string _roleArn;
 
         /// <summary>
@@ -54,6 +56,45 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetDestinationIdentifier()
         {
             return this._destinationIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same
+        /// Amazon Web Services Region as the destination Amazon S3 bucket.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerAccountId. 
+        /// <para>
+        /// The Amazon Web Services accountId for the bucket owning account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string OwnerAccountId
+        {
+            get { return this._ownerAccountId; }
+            set { this._ownerAccountId = value; }
+        }
+
+        // Check to see if OwnerAccountId property is set
+        internal bool IsSetOwnerAccountId()
+        {
+            return this._ownerAccountId != null;
         }
 
         /// <summary>

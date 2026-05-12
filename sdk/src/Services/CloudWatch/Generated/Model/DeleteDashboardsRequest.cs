@@ -32,7 +32,8 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Container for the parameters to the DeleteDashboards operation.
     /// Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete.
-    /// If there is an error during this call, no dashboards are deleted.
+    /// If there is an error during this call, the operation attempts to delete as many dashboards
+    /// as possible.
     /// </summary>
     public partial class DeleteDashboardsRequest : AmazonCloudWatchRequest
     {

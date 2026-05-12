@@ -31,8 +31,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateOrganizationConfiguration operation.
-    /// Updates the configuration of your organization in Security Hub. Only the Security
-    /// Hub administrator account can invoke this operation.
+    /// Updates the configuration of your organization in Security Hub CSPM. Only the Security
+    /// Hub CSPM administrator account can invoke this operation.
     /// </summary>
     public partial class UpdateOrganizationConfigurationRequest : AmazonSecurityHubRequest
     {
@@ -43,13 +43,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AutoEnable. 
         /// <para>
-        /// Whether to automatically enable Security Hub in new member accounts when they join
-        /// the organization.
+        /// Whether to automatically enable Security Hub CSPM in new member accounts when they
+        /// join the organization.
         /// </para>
         ///  
         /// <para>
-        /// If set to <c>true</c>, then Security Hub is automatically enabled in new accounts.
-        /// If set to <c>false</c>, then Security Hub isn't enabled in new accounts automatically.
+        /// If set to <c>true</c>, then Security Hub CSPM is automatically enabled in new accounts.
+        /// If set to <c>false</c>, then Security Hub CSPM isn't enabled in new accounts automatically.
         /// The default value is <c>false</c>.
         /// </para>
         ///  
@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model
         /// If the <c>ConfigurationType</c> of your organization is set to <c>CENTRAL</c>, then
         /// this field is set to <c>false</c> and can't be changed in the home Region and linked
         /// Regions. However, in that case, the delegated administrator can create a configuration
-        /// policy in which Security Hub is enabled and associate the policy with new organization
+        /// policy in which Security Hub CSPM is enabled and associate the policy with new organization
         /// accounts.
         /// </para>
         /// </summary>
@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AutoEnableStandards. 
         /// <para>
-        /// Whether to automatically enable Security Hub <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+        /// Whether to automatically enable Security Hub CSPM <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
         /// standards</a> in new member accounts when they join the organization.
         /// </para>
         ///  
@@ -86,7 +86,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If equal to <c>DEFAULT</c>, then Security Hub default standards are automatically
+        /// If equal to <c>DEFAULT</c>, then Security Hub CSPM default standards are automatically
         /// enabled for new member accounts. If equal to <c>NONE</c>, then default standards are
         /// not automatically enabled for new member accounts.
         /// </para>

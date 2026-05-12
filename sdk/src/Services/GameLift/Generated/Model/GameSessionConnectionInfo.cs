@@ -41,6 +41,7 @@ namespace Amazon.GameLift.Model
         private string _gameSessionArn;
         private string _ipAddress;
         private List<MatchedPlayerSession> _matchedPlayerSessions = AWSConfigs.InitializeCollections ? new List<MatchedPlayerSession>() : null;
+        private PlayerGatewayStatus _playerGatewayStatus;
         private int? _port;
 
         /// <summary>
@@ -80,7 +81,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionArn. 
         /// <para>
-        /// A unique identifier for the game session. Use the game session ID.
+        /// An identifier for the game session that is unique across all regions. The value is
+        /// always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;ID string&gt;</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -138,6 +141,41 @@ namespace Amazon.GameLift.Model
         internal bool IsSetMatchedPlayerSessions()
         {
             return this._matchedPlayerSessions != null && (this._matchedPlayerSessions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlayerGatewayStatus. 
+        /// <para>
+        /// The current status of player gateway for the game session. Note, even if a fleet has
+        /// PlayerGatewayMode configured as <c>ENABLED</c>, player gateway might not be available
+        /// in a specific location. For more information about locations where player gateway
+        /// is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">supported
+        /// locations</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c> -- Player gateway is available for this game session.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c> -- Player gateway is not available for this game session.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PlayerGatewayStatus PlayerGatewayStatus
+        {
+            get { return this._playerGatewayStatus; }
+            set { this._playerGatewayStatus = value; }
+        }
+
+        // Check to see if PlayerGatewayStatus property is set
+        internal bool IsSetPlayerGatewayStatus()
+        {
+            return this._playerGatewayStatus != null;
         }
 
         /// <summary>

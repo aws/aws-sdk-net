@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateFromAdministratorAccount operation.
-    /// Disassociates the current Security Hub member account from the associated administrator
+    /// Disassociates the current Security Hub CSPM member account from the associated administrator
     /// account.
     /// 
     ///  

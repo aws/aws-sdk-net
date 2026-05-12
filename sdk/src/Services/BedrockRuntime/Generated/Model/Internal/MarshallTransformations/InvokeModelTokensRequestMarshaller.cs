@@ -49,7 +49,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("body");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Body));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Body);
             }
 
         }

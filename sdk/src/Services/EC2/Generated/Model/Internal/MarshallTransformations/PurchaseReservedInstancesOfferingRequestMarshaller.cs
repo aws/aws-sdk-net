@@ -87,6 +87,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ReservedInstancesOfferingId", StringUtils.FromString(publicRequest.ReservedInstancesOfferingId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static PurchaseReservedInstancesOfferingRequestMarshaller _instance = new PurchaseReservedInstancesOfferingRequestMarshaller();        

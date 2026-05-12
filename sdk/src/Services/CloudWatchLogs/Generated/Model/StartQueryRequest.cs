@@ -69,7 +69,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// Or the <c>queryString</c> must include a <c>SOURCE</c> command to select log groups
     /// for the query. The <c>SOURCE</c> command can select log groups based on log group
     /// name prefix, account ID, and log class, or select data sources using dataSource syntax
-    /// in LogsQL, PPL, and SQL. 
+    /// in LogsQL, PPL, and SQL. In LogsQL, the <c>SOURCE</c> command also supports filtering
+    /// by log group tags. 
     /// </para>
     ///  
     /// <para>
@@ -97,7 +98,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// You can have up to 30 concurrent CloudWatch Logs insights queries, including queries
+    /// You can have up to 100 concurrent CloudWatch Logs insights queries, including queries
     /// that have been added to dashboards. 
     /// </para>
     /// </summary>

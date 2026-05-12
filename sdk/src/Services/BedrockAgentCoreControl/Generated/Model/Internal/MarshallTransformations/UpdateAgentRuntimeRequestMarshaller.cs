@@ -129,6 +129,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetFilesystemConfigurations())
+            {
+                context.Writer.WritePropertyName("filesystemConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFilesystemConfigurationsListValue in publicRequest.FilesystemConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FilesystemConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFilesystemConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetLifecycleConfiguration())
             {
                 context.Writer.WritePropertyName("lifecycleConfiguration");
@@ -136,6 +152,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 
                 var marshaller = LifecycleConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.LifecycleConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMetadataConfiguration())
+            {
+                context.Writer.WritePropertyName("metadataConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RuntimeMetadataConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MetadataConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

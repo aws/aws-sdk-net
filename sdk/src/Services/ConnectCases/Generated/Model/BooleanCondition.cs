@@ -37,8 +37,29 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class BooleanCondition
     {
+        private CompoundCondition _andAll;
         private BooleanOperands _equalTo;
         private BooleanOperands _notEqualTo;
+        private CompoundCondition _orAll;
+
+        /// <summary>
+        /// Gets and sets the property AndAll. 
+        /// <para>
+        /// Combines multiple conditions with AND operator. All conditions must be true for the
+        /// compound condition to be true.
+        /// </para>
+        /// </summary>
+        public CompoundCondition AndAll
+        {
+            get { return this._andAll; }
+            set { this._andAll = value; }
+        }
+
+        // Check to see if AndAll property is set
+        internal bool IsSetAndAll()
+        {
+            return this._andAll != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EqualTo. 
@@ -74,6 +95,25 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetNotEqualTo()
         {
             return this._notEqualTo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrAll. 
+        /// <para>
+        /// Combines multiple conditions with OR operator. At least one condition must be true
+        /// for the compound condition to be true.
+        /// </para>
+        /// </summary>
+        public CompoundCondition OrAll
+        {
+            get { return this._orAll; }
+            set { this._orAll = value; }
+        }
+
+        // Check to see if OrAll property is set
+        internal bool IsSetOrAll()
+        {
+            return this._orAll != null;
         }
 
     }

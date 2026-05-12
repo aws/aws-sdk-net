@@ -119,6 +119,8 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Vpc", StringUtils.FromBool(publicRequest.Vpc));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeOrderableDBInstanceOptionsRequestMarshaller _instance = new DescribeOrderableDBInstanceOptionsRequestMarshaller();        

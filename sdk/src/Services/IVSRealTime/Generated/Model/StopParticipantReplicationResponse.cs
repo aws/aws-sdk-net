@@ -43,7 +43,11 @@ namespace Amazon.IVSRealTime.Model
         private string _xFrameOptions;
 
         /// <summary>
-        /// Gets and sets the property AccessControlAllowOrigin.
+        /// Gets and sets the property AccessControlAllowOrigin. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a>
+        /// in the MDN Web Docs.
+        /// </para>
         /// </summary>
         public string AccessControlAllowOrigin
         {
@@ -58,7 +62,11 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AccessControlExposeHeaders.
+        /// Gets and sets the property AccessControlExposeHeaders. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a>
+        /// in the MDN Web Docs.
+        /// </para>
         /// </summary>
         public string AccessControlExposeHeaders
         {
@@ -73,7 +81,11 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CacheControl.
+        /// Gets and sets the property CacheControl. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a>
+        /// in the MDN Web Docs.
+        /// </para>
         /// </summary>
         public string CacheControl
         {
@@ -88,7 +100,11 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContentSecurityPolicy.
+        /// Gets and sets the property ContentSecurityPolicy. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a>
+        /// in the MDN Web Docs.
+        /// </para>
         /// </summary>
         public string ContentSecurityPolicy
         {
@@ -103,7 +119,11 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StrictTransportSecurity.
+        /// Gets and sets the property StrictTransportSecurity. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
+        /// in the MDN Web Docs.
+        /// </para>
         /// </summary>
         public string StrictTransportSecurity
         {
@@ -118,7 +138,11 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property XContentTypeOptions.
+        /// Gets and sets the property XContentTypeOptions. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a>
+        /// in the MDN Web Docs.
+        /// </para>
         /// </summary>
         public string XContentTypeOptions
         {
@@ -133,7 +157,11 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property XFrameOptions.
+        /// Gets and sets the property XFrameOptions. 
+        /// <para>
+        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a>
+        /// in the MDN Web Docs.
+        /// </para>
         /// </summary>
         public string XFrameOptions
         {

@@ -74,6 +74,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("originRequestId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OriginRequestId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("parentSpanId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -120,6 +126,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("statusDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -39,6 +39,11 @@ namespace Amazon.BCMDataExports
 {
     /// <summary>
     /// <para>Implementation for accessing BCMDataExports</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// You can use the Data Exports API to create customized exports from multiple Amazon
     /// Web Services cost management and billing datasets, such as cost and usage data and
@@ -306,6 +311,9 @@ namespace Amazon.BCMDataExports
         /// <param name="request">Container for the necessary parameters to execute the CreateExport service method.</param>
         /// 
         /// <returns>The response from the CreateExport service method, as returned by BCMDataExports.</returns>
+        /// <exception cref="Amazon.BCMDataExports.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.BCMDataExports.Model.InternalServerException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -365,6 +373,9 @@ namespace Amazon.BCMDataExports
         /// </param>
         /// 
         /// <returns>The response from the CreateExport service method, as returned by BCMDataExports.</returns>
+        /// <exception cref="Amazon.BCMDataExports.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.BCMDataExports.Model.InternalServerException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -838,6 +849,9 @@ namespace Amazon.BCMDataExports
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by BCMDataExports.</returns>
+        /// <exception cref="Amazon.BCMDataExports.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.BCMDataExports.Model.InternalServerException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -870,6 +884,9 @@ namespace Amazon.BCMDataExports
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by BCMDataExports.</returns>
+        /// <exception cref="Amazon.BCMDataExports.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.BCMDataExports.Model.InternalServerException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -903,6 +920,9 @@ namespace Amazon.BCMDataExports
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by BCMDataExports.</returns>
+        /// <exception cref="Amazon.BCMDataExports.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.BCMDataExports.Model.InternalServerException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -935,6 +955,9 @@ namespace Amazon.BCMDataExports
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by BCMDataExports.</returns>
+        /// <exception cref="Amazon.BCMDataExports.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.BCMDataExports.Model.InternalServerException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -968,6 +991,9 @@ namespace Amazon.BCMDataExports
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by BCMDataExports.</returns>
+        /// <exception cref="Amazon.BCMDataExports.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.BCMDataExports.Model.InternalServerException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
@@ -1000,6 +1026,9 @@ namespace Amazon.BCMDataExports
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by BCMDataExports.</returns>
+        /// <exception cref="Amazon.BCMDataExports.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.BCMDataExports.Model.InternalServerException">
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
