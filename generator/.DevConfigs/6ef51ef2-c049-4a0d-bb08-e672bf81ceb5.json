@@ -2,7 +2,7 @@
   "services": [
     {
       "serviceName": "DynamoDBv2",
-      "type": "patch",
+      "type": "minor",
       "changeLogMessages": [
         "Replace legacy parameter AttributesToGet with ProjectionExpression and ExpressionAttributeNames in LoadAsync flow"
       ]
