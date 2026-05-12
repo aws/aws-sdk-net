@@ -200,7 +200,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the OAuth2 credential provider.
+        /// The current status of the updated OAuth2 credential provider.
         /// </para>
         /// </summary>
         public Status Status

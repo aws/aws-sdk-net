@@ -1045,5 +1045,48 @@ namespace AWSSDK.UnitTests.Custom.Custom.Runtime
                 }
             }
         }
+        [TestMethod]
+        public void ServiceSpecificEndpointWorksWithSsoProfile()
+        {
+            var ssoProfile = new StringBuilder()
+                .AppendLine("[profile sso-with-services]")
+                .AppendLine("sso_session = my-sso")
+                .AppendLine("sso_account_id = 123456789012")
+                .AppendLine("sso_role_name = MyRole")
+                .AppendLine("region = us-east-1")
+                .AppendLine("services = my-services")
+                .AppendLine("[sso-session my-sso]")
+                .AppendLine("sso_start_url = https://my-sso-portal.awsapps.com/start")
+                .AppendLine("sso_region = us-east-1")
+                .AppendLine("[services my-services]")
+                .AppendLine("s3 =")
+                .AppendLine("\tendpoint_url = https://custom-s3.localhost:4566")
+                .ToString();
+
+            using (var sharedCredentialsFile = new SharedCredentialsFileTestFixture(credentialsFileContents: null, configFileContents: ssoProfile))
+            {
+                string expectedEndpoint = "https://custom-s3.localhost:4566/";
+                var configFile = sharedCredentialsFile.CredentialsFile;
+                if (configFile.TryGetProfile("sso-with-services", out profile))
+                {
+                    var savedProfileEnv = AWSConfigs.AWSProfileName;
+                    var savedProfileLocation = AWSConfigs.AWSProfilesLocation;
+                    try
+                    {
+                        AWSConfigs.AWSProfilesLocation = sharedCredentialsFile.ConfigFilePath;
+                        AWSConfigs.AWSProfileName = profile.Name;
+                        using (var client = new AmazonS3Client())
+                        {
+                            Assert.AreEqual<string>(expectedEndpoint, client.Config.ServiceURL);
+                        }
+                    }
+                    finally
+                    {
+                        AWSConfigs.AWSProfileName = savedProfileEnv;
+                        AWSConfigs.AWSProfilesLocation = savedProfileLocation;
+                    }
+                }
+            }
+        }
     }
 }

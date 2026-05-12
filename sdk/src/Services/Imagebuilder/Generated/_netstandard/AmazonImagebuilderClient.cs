@@ -2662,6 +2662,9 @@ namespace Amazon.Imagebuilder
         /// </param>
         /// 
         /// <returns>The response from the ImportDiskImage service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.AccessDeniedException">
+        /// You do not have permissions to perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
@@ -2672,6 +2675,9 @@ namespace Amazon.Imagebuilder
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.TooManyRequestsException">
+        /// You have attempted too many requests for the specific operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportDiskImage">REST API Reference for ImportDiskImage Operation</seealso>
         public virtual Task<ImportDiskImageResponse> ImportDiskImageAsync(ImportDiskImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

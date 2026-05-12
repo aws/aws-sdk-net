@@ -67,7 +67,7 @@ namespace Amazon.CleanRoomsML.Model
         /// according to the specified unit.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10)]
+        [AWSProperty(Required=true, Max=100)]
         public double? Value
         {
             get { return this._value; }

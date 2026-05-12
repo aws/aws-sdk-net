@@ -243,9 +243,16 @@ namespace Amazon.Invoicing
 
 
         /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
         /// Creates a procurement portal preference configuration for e-invoice delivery and purchase
         /// order retrieval. This preference defines how invoices are delivered to a procurement
         /// portal and how purchase orders are retrieved.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProcurementPortalPreference service method.</param>
         /// 
@@ -277,9 +284,16 @@ namespace Amazon.Invoicing
 
 
         /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
         /// Creates a procurement portal preference configuration for e-invoice delivery and purchase
         /// order retrieval. This preference defines how invoices are delivered to a procurement
         /// portal and how purchase orders are retrieved.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProcurementPortalPreference service method.</param>
         /// <param name="cancellationToken">
@@ -375,8 +389,15 @@ namespace Amazon.Invoicing
 
 
         /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
         /// Deletes an existing procurement portal preference. This action cannot be undone. Active
         /// e-invoice delivery and PO retrieval configurations will be terminated.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProcurementPortalPreference service method.</param>
         /// 
@@ -406,8 +427,15 @@ namespace Amazon.Invoicing
 
 
         /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
         /// Deletes an existing procurement portal preference. This action cannot be undone. Active
         /// e-invoice delivery and PO retrieval configurations will be terminated.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProcurementPortalPreference service method.</param>
         /// <param name="cancellationToken">
@@ -569,7 +597,14 @@ namespace Amazon.Invoicing
 
 
         /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the details of a specific procurement portal preference configuration.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProcurementPortalPreference service method.</param>
         /// 
@@ -604,7 +639,14 @@ namespace Amazon.Invoicing
 
 
         /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the details of a specific procurement portal preference configuration.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProcurementPortalPreference service method.</param>
         /// <param name="cancellationToken">
@@ -757,8 +799,15 @@ namespace Amazon.Invoicing
 
 
         /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
         /// Retrieves a list of procurement portal preferences associated with the Amazon Web
         /// Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProcurementPortalPreferences service method.</param>
         /// 
@@ -790,8 +839,15 @@ namespace Amazon.Invoicing
 
 
         /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
         /// Retrieves a list of procurement portal preferences associated with the Amazon Web
         /// Services account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProcurementPortalPreferences service method.</param>
         /// <param name="cancellationToken">
@@ -887,8 +943,15 @@ namespace Amazon.Invoicing
 
 
         /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
         /// Updates an existing procurement portal preference configuration. This operation can
         /// modify settings for e-invoice delivery and purchase order retrieval.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutProcurementPortalPreference service method.</param>
         /// 
@@ -923,8 +986,15 @@ namespace Amazon.Invoicing
 
 
         /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
         /// Updates an existing procurement portal preference configuration. This operation can
         /// modify settings for e-invoice delivery and purchase order retrieval.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutProcurementPortalPreference service method.</param>
         /// <param name="cancellationToken">
@@ -1149,8 +1219,15 @@ namespace Amazon.Invoicing
 
 
         /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
         /// Updates the status of a procurement portal preference, including the activation state
         /// of e-invoice delivery and purchase order retrieval features.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProcurementPortalPreferenceStatus service method.</param>
         /// 
@@ -1185,8 +1262,15 @@ namespace Amazon.Invoicing
 
 
         /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
         /// Updates the status of a procurement portal preference, including the activation state
         /// of e-invoice delivery and purchase order retrieval features.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProcurementPortalPreferenceStatus service method.</param>
         /// <param name="cancellationToken">

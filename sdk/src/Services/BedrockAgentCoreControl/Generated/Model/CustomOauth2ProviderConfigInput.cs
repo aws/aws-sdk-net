@@ -158,9 +158,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property PrivateEndpointOverrides. 
         /// <para>
-        /// The list of private endpoint overrides for the custom OAuth2 provider. Each override
-        /// maps a specific domain to a private endpoint, enabling secure connectivity through
-        /// VPC Lattice resource configurations.
+        /// The private endpoint overrides for the custom OAuth2 provider configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

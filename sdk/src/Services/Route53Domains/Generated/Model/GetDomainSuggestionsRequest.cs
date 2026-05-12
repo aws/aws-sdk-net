@@ -115,7 +115,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property SuggestionCount. 
         /// <para>
         /// The number of suggested domain names that you want Route 53 to return. Specify a value
-        /// between 1 and 50.
+        /// between 1 and 50. Note that fewer than the requested number might be returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

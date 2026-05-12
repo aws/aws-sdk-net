@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private bool? _cloudWatchMetricsEnabled;
         private DQCompositeRuleEvaluationMethod _compositeRuleEvaluationMethod;
+        private string _customLogGroupPrefix;
         private string _resultsS3Prefix;
 
         /// <summary>
@@ -72,6 +73,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetCompositeRuleEvaluationMethod()
         {
             return this._compositeRuleEvaluationMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomLogGroupPrefix. 
+        /// <para>
+        /// A custom prefix for the CloudWatch log group names. When specified, evaluation run
+        /// logs are written to <c>&lt;CustomLogGroupPrefix&gt;/error</c> and <c>&lt;CustomLogGroupPrefix&gt;/output</c>
+        /// instead of the default <c>/aws-glue/data-quality/error</c> and <c>/aws-glue/data-quality/output</c>
+        /// log groups.
+        /// </para>
+        /// </summary>
+        public string CustomLogGroupPrefix
+        {
+            get { return this._customLogGroupPrefix; }
+            set { this._customLogGroupPrefix = value; }
+        }
+
+        // Check to see if CustomLogGroupPrefix property is set
+        internal bool IsSetCustomLogGroupPrefix()
+        {
+            return this._customLogGroupPrefix != null;
         }
 
         /// <summary>

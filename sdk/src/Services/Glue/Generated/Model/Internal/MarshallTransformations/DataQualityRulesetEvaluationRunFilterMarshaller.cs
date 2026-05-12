@@ -57,6 +57,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetRulesetName())
+            {
+                context.Writer.WritePropertyName("RulesetName");
+                context.Writer.WriteStringValue(requestObject.RulesetName);
+            }
+
             if(requestObject.IsSetStartedAfter())
             {
                 context.Writer.WritePropertyName("StartedAfter");

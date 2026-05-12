@@ -88,6 +88,26 @@ namespace Amazon.BedrockAgentCore.Model
         IListMemoryRecordsPaginator ListMemoryRecords(ListMemoryRecordsRequest request);
 
         /// <summary>
+        /// Paginator for ListPaymentInstruments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPaymentInstrumentsPaginator ListPaymentInstruments(ListPaymentInstrumentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPaymentSessions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPaymentSessionsPaginator ListPaymentSessions(ListPaymentSessionsRequest request);
+
+        /// <summary>
         /// Paginator for ListRecommendations operation
         ///</summary>
         [AWSPaginator(

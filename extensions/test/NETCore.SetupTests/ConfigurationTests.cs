@@ -10,6 +10,7 @@ using Xunit;
 using Amazon;
 using Amazon.S3;
 using Amazon.Runtime;
+using Amazon.Extensions.NETCore.Setup;
 
 namespace NETCore.SetupTests
 {
@@ -284,6 +285,36 @@ namespace NETCore.SetupTests
             Assert.True(serviceConfig.TheBool);
             Assert.Equal(TimeSpan.FromMilliseconds(100), serviceConfig.TimeLength);
             Assert.Equal(TimeSpan.FromMilliseconds(200), serviceConfig.NullableTimeLength);
+        }
+
+        [Fact]
+        public void ProfileSetOnClientConfig()
+        {
+            var options = new AWSOptions
+            {
+                Region = RegionEndpoint.USWest2,
+                Profile = "app-dev",
+                ProfilesLocation = "/custom/location"
+            };
+
+            IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
+            Assert.NotNull(client);
+            Assert.NotNull(client.Config.Profile);
+            Assert.Equal("app-dev", client.Config.Profile.Name);
+            Assert.Equal("/custom/location", client.Config.Profile.Location);
+        }
+
+        [Fact]
+        public void ProfileNotSetOnClientConfigWhenEmpty()
+        {
+            var options = new AWSOptions
+            {
+                Region = RegionEndpoint.USWest2
+            };
+
+            IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
+            Assert.NotNull(client);
+            Assert.Null(client.Config.Profile);
         }
     }
 }

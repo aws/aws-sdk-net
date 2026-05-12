@@ -222,6 +222,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportedBootModes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("supportedInRegion", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportedInRegion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("supportedRootDeviceTypes/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -46,6 +46,28 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEfsAccessPoint())
+            {
+                context.Writer.WritePropertyName("efsAccessPoint");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EfsAccessPointConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EfsAccessPoint, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetS3FilesAccessPoint())
+            {
+                context.Writer.WritePropertyName("s3FilesAccessPoint");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3FilesAccessPointConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3FilesAccessPoint, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSessionStorage())
             {
                 context.Writer.WritePropertyName("sessionStorage");

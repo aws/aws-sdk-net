@@ -1,3 +1,59 @@
+### 4.0.246.0 (2026-05-07 18:38 UTC)
+* BCMDataExports (4.0.4.0)
+	* With this release, customers can configure their data exports to generate additional integration artifacts for Athena and Redshift.
+* BedrockAgentCore (4.0.23.0)
+	* Launching AgentCore payments - a capability that provides secure, instant microtransaction payments for AI agents to access paid APIs, MCP servers, and content. It handles payment processing for x402 protocol, payment limits, and 3P wallet integrations with Coinbase CDP and Stripe (Privy).
+* BedrockAgentCoreControl (4.0.35.0)
+	* Launching AgentCore payments - a capability that provides secure, instant microtransaction payments for AI agents to access paid APIs, MCP servers, and content. It handles payment processing for x402 protocol, payment limits, and 3P wallet integrations with Coinbase CDP and Stripe (Privy).
+* EC2 (4.0.87.0)
+	* DescribeInstanceTypes now accepts an IncludeUnsupportedInRegion parameter. When set, the response also lists instance types that are not available in the current Region. Each instance type includes a SupportedInRegion field indicating its regional availability.
+* GuardDuty (4.0.18.6)
+	* This is a documentation update
+* Invoicing (4.0.7.0)
+	* Updated ListInvoiceSummaries API to add new ReceiverRole filter in Request and Response
+* Route53Resolver (4.0.6.0)
+	* Adds supports for DNS64 on inbound endpoints and IPv6 forwarding through the internet gateway (IGW) on outbound endpoints, making it easier to manage hybrid DNS across IPv4 and IPv6 networks.
+* Extensions.NETCore.Setup (4.0.3.37)
+	* Fix #3538. Allow service specific endpoints to work with SSO profiles.
+
+### 4.0.245.0 (2026-05-06 18:38 UTC)
+* BedrockAgentCoreControl (4.0.34.0)
+	* Adds support for bring-your-own file system in AgentCore Runtime. Developers can mount Amazon S3 Files and Amazon EFS access points directly into agent sessions using filesystemConfigurations.
+* Glue (4.0.29.0)
+	* Adds support for a CustomLogGroupPrefix parameter in StartDataQualityRulesetEvaluationRun to specify custom CloudWatch log group paths, and a RulesetName filter in ListDataQualityRulesetEvaluationRuns to filter evaluation runs by ruleset name.
+* Imagebuilder (4.0.11.0)
+	* The ImportDiskImage API now enforces a maximum character limit of 128 characters on the image name field.
+* LexModelsV2 (4.0.7.0)
+	* Amazon Lex V2 introduces audio filler support for speech-to-speech bots. Configure melody or typing sounds that play during backend processing to reduce perceived latency and maintain a natural conversational experience for callers.
+* MWAA (4.0.4.0)
+	* Amazon MWAA now supports a PublicAndPrivate webserver access mode. The Airflow web server is accessible over both public and private endpoints, enabling workers in VPCs without internet access to reach the Task API privately while retaining public access to the Airflow UI.
+* S3 (4.0.23.0)
+	* Validate outpost access point resource name
+* SageMaker (4.0.56.0)
+	* Amazon SageMaker HyperPod now returns ImageVersionStatus in DescribeCluster, DescribeClusterNode, and ListClusterNodes responses, indicating whether cluster instances are running the latest available image version.
+* SecurityHub (4.0.10.0)
+	* Release GenerateRecommendedPolicyV2 and GetRecommendedPolicyV2 APIs. This supports generating and retrieving policy recommendations to remediate unused permissions findings that are now being supported on Security Hub.
+* Extensions.Bedrock.MEAI (4.0.8.0)
+	* (Preview) Add Bedrock Nova Sonic realtime provider implementing `IRealtimeClient` / `IRealtimeClientSession` for real-time bidirectional audio conversations with tool calling support.
+
+### 4.0.244.0 (2026-05-05 18:16 UTC)
+* CleanRoomsML (4.0.9.0)
+	* Increase max configurable output limits in the Clean Rooms ML configured model algorithm association resource.
+* CloudFront (4.0.15.0)
+	* Adds support for tagging CloudFront Functions and KeyValueStores resources.
+* MarketplaceAgreement (4.0.6.0)
+	* With this release, Agreements API provides a programmatic way to generate quotes, accept offers, track charges and entitlements, manage renewals and cancellations, and streamline operations entirely through APIs without navigating to the AWS Marketplace website or AWS Management Console.
+* MediaTailor (4.0.8.0)
+	* Added support for Monetization Functions. Monetization Functions let you enrich ad requests with external data and transform session parameters using JSONata expressions, without deploying custom infrastructure.
+* MedicalImaging (4.0.7.0)
+	* Add support for DICOM Json Metadata Override features in startDICOMImportJob API
+* OpenSearchService (4.0.20.0)
+	* Amazon OpenSearch Service now supports VPC egress, enabling outbound traffic from your OpenSearch domain to route privately through your VPC instead of the public internet.
+* Route53Domains (4.0.4.0)
+	* This release adds the TLDInMaintenance exception.
+* SageMaker (4.0.55.0)
+	* Adds support for ml.p5.4xlarge instance type for SageMaker Studio JupyterLab and CodeEditor apps for IAD (us-east-1), NRT (ap-northeast-1), BOM (ap-south-1), CGK (ap-southeast-3), GRU (sa-east-1), PDX (us-west-2), CMH (us-east-2).
+
 ### 4.0.243.0 (2026-05-04 18:24 UTC)
 * BedrockAgentCoreControl (4.0.33.0)
 	* Amazon Bedrock AgentCore gateways now support MCP Sessions and response streaming from MCP targets. Session timeouts can be set between 15 minutes and 8 hours, and response streaming enables forwarding stream events sent by MCP targets to gateway users.

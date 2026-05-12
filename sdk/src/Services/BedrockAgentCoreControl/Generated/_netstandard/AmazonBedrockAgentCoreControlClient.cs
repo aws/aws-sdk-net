@@ -1096,6 +1096,188 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  CreatePaymentConnector
+
+        internal virtual CreatePaymentConnectorResponse CreatePaymentConnector(CreatePaymentConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePaymentConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new payment connector for a payment manager. A payment connector integrates
+        /// with a supported payment provider to enable payment processing capabilities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePaymentConnector service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePaymentConnector">REST API Reference for CreatePaymentConnector Operation</seealso>
+        public virtual Task<CreatePaymentConnectorResponse> CreatePaymentConnectorAsync(CreatePaymentConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePaymentConnectorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreatePaymentCredentialProvider
+
+        internal virtual CreatePaymentCredentialProviderResponse CreatePaymentCredentialProvider(CreatePaymentCredentialProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentCredentialProviderResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePaymentCredentialProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new payment credential provider for storing authentication credentials used
+        /// by payment connectors to communicate with external payment providers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentCredentialProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePaymentCredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.DecryptionFailureException">
+        /// Exception thrown when decryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.EncryptionFailureException">
+        /// Exception thrown when encryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceLimitExceededException">
+        /// Exception thrown when a resource limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePaymentCredentialProvider">REST API Reference for CreatePaymentCredentialProvider Operation</seealso>
+        public virtual Task<CreatePaymentCredentialProviderResponse> CreatePaymentCredentialProviderAsync(CreatePaymentCredentialProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentCredentialProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePaymentCredentialProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreatePaymentManager
+
+        internal virtual CreatePaymentManagerResponse CreatePaymentManager(CreatePaymentManagerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentManagerResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePaymentManagerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new payment manager in your Amazon Web Services account. A payment manager
+        /// serves as the top-level resource for managing payment processing capabilities, including
+        /// payment connectors that integrate with supported payment providers.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify <c>CUSTOM_JWT</c> as the <c>authorizerType</c>, you must provide an
+        /// <c>authorizerConfiguration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentManager service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePaymentManager service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePaymentManager">REST API Reference for CreatePaymentManager Operation</seealso>
+        public virtual Task<CreatePaymentManagerResponse> CreatePaymentManagerAsync(CreatePaymentManagerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentManagerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePaymentManagerResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreatePolicy
 
         internal virtual CreatePolicyResponse CreatePolicy(CreatePolicyRequest request)
@@ -2164,6 +2346,156 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = DeleteOnlineEvaluationConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteOnlineEvaluationConfigResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeletePaymentConnector
+
+        internal virtual DeletePaymentConnectorResponse DeletePaymentConnector(DeletePaymentConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePaymentConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a payment connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePaymentConnector service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePaymentConnector">REST API Reference for DeletePaymentConnector Operation</seealso>
+        public virtual Task<DeletePaymentConnectorResponse> DeletePaymentConnectorAsync(DeletePaymentConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePaymentConnectorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeletePaymentCredentialProvider
+
+        internal virtual DeletePaymentCredentialProviderResponse DeletePaymentCredentialProvider(DeletePaymentCredentialProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentCredentialProviderResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePaymentCredentialProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a payment credential provider and its associated stored credentials.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentCredentialProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePaymentCredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePaymentCredentialProvider">REST API Reference for DeletePaymentCredentialProvider Operation</seealso>
+        public virtual Task<DeletePaymentCredentialProviderResponse> DeletePaymentCredentialProviderAsync(DeletePaymentCredentialProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentCredentialProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePaymentCredentialProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeletePaymentManager
+
+        internal virtual DeletePaymentManagerResponse DeletePaymentManager(DeletePaymentManagerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentManagerResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePaymentManagerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a payment manager. All payment connectors associated with the payment manager
+        /// must be deleted before the payment manager can be deleted. This operation initiates
+        /// the deletion process asynchronously.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentManager service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePaymentManager service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePaymentManager">REST API Reference for DeletePaymentManager Operation</seealso>
+        public virtual Task<DeletePaymentManagerResponse> DeletePaymentManagerAsync(DeletePaymentManagerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentManagerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePaymentManagerResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -3269,6 +3601,157 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = GetOnlineEvaluationConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetOnlineEvaluationConfigResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetPaymentConnector
+
+        internal virtual GetPaymentConnectorResponse GetPaymentConnector(GetPaymentConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<GetPaymentConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific payment connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPaymentConnector service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPaymentConnector">REST API Reference for GetPaymentConnector Operation</seealso>
+        public virtual Task<GetPaymentConnectorResponse> GetPaymentConnectorAsync(GetPaymentConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPaymentConnectorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetPaymentCredentialProvider
+
+        internal virtual GetPaymentCredentialProviderResponse GetPaymentCredentialProvider(GetPaymentCredentialProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentCredentialProviderResponseUnmarshaller.Instance;
+
+            return Invoke<GetPaymentCredentialProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific payment credential provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentCredentialProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPaymentCredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.DecryptionFailureException">
+        /// Exception thrown when decryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPaymentCredentialProvider">REST API Reference for GetPaymentCredentialProvider Operation</seealso>
+        public virtual Task<GetPaymentCredentialProviderResponse> GetPaymentCredentialProviderAsync(GetPaymentCredentialProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentCredentialProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPaymentCredentialProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetPaymentManager
+
+        internal virtual GetPaymentManagerResponse GetPaymentManager(GetPaymentManagerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentManagerResponseUnmarshaller.Instance;
+
+            return Invoke<GetPaymentManagerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific payment manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentManager service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPaymentManager service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPaymentManager">REST API Reference for GetPaymentManager Operation</seealso>
+        public virtual Task<GetPaymentManagerResponse> GetPaymentManagerAsync(GetPaymentManagerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentManagerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPaymentManagerResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4471,6 +4954,148 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = ListOnlineEvaluationConfigsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListOnlineEvaluationConfigsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListPaymentConnectors
+
+        internal virtual ListPaymentConnectorsResponse ListPaymentConnectors(ListPaymentConnectorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentConnectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPaymentConnectorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all payment connectors for a specified payment manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPaymentConnectors service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPaymentConnectors">REST API Reference for ListPaymentConnectors Operation</seealso>
+        public virtual Task<ListPaymentConnectorsResponse> ListPaymentConnectorsAsync(ListPaymentConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentConnectorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPaymentConnectorsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListPaymentCredentialProviders
+
+        internal virtual ListPaymentCredentialProvidersResponse ListPaymentCredentialProviders(ListPaymentCredentialProvidersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentCredentialProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentCredentialProvidersResponseUnmarshaller.Instance;
+
+            return Invoke<ListPaymentCredentialProvidersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all payment credential providers in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentCredentialProviders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPaymentCredentialProviders service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPaymentCredentialProviders">REST API Reference for ListPaymentCredentialProviders Operation</seealso>
+        public virtual Task<ListPaymentCredentialProvidersResponse> ListPaymentCredentialProvidersAsync(ListPaymentCredentialProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentCredentialProvidersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentCredentialProvidersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPaymentCredentialProvidersResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListPaymentManagers
+
+        internal virtual ListPaymentManagersResponse ListPaymentManagers(ListPaymentManagersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentManagersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentManagersResponseUnmarshaller.Instance;
+
+            return Invoke<ListPaymentManagersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all payment managers in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentManagers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPaymentManagers service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPaymentManagers">REST API Reference for ListPaymentManagers Operation</seealso>
+        public virtual Task<ListPaymentManagersResponse> ListPaymentManagersAsync(ListPaymentManagersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentManagersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentManagersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPaymentManagersResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -5954,6 +6579,180 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = UpdateOnlineEvaluationConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateOnlineEvaluationConfigResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdatePaymentConnector
+
+        internal virtual UpdatePaymentConnectorResponse UpdatePaymentConnector(UpdatePaymentConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePaymentConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePaymentConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing payment connector. This operation uses PATCH semantics, so you
+        /// only need to specify the fields you want to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePaymentConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePaymentConnector service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePaymentConnector">REST API Reference for UpdatePaymentConnector Operation</seealso>
+        public virtual Task<UpdatePaymentConnectorResponse> UpdatePaymentConnectorAsync(UpdatePaymentConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePaymentConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePaymentConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePaymentConnectorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdatePaymentCredentialProvider
+
+        internal virtual UpdatePaymentCredentialProviderResponse UpdatePaymentCredentialProvider(UpdatePaymentCredentialProviderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePaymentCredentialProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePaymentCredentialProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing payment credential provider with new authentication credentials.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePaymentCredentialProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePaymentCredentialProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.DecryptionFailureException">
+        /// Exception thrown when decryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.EncryptionFailureException">
+        /// Exception thrown when encryption of a secret fails.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePaymentCredentialProvider">REST API Reference for UpdatePaymentCredentialProvider Operation</seealso>
+        public virtual Task<UpdatePaymentCredentialProviderResponse> UpdatePaymentCredentialProviderAsync(UpdatePaymentCredentialProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePaymentCredentialProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePaymentCredentialProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePaymentCredentialProviderResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdatePaymentManager
+
+        internal virtual UpdatePaymentManagerResponse UpdatePaymentManager(UpdatePaymentManagerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePaymentManagerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePaymentManagerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing payment manager. This operation uses PATCH semantics, so you only
+        /// need to specify the fields you want to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePaymentManager service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePaymentManager service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePaymentManager">REST API Reference for UpdatePaymentManager Operation</seealso>
+        public virtual Task<UpdatePaymentManagerResponse> UpdatePaymentManagerAsync(UpdatePaymentManagerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePaymentManagerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePaymentManagerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePaymentManagerResponse>(request, options, cancellationToken);
         }
         #endregion
         

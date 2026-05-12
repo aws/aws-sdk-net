@@ -1,7 +1,7 @@
 
 {
     "NewServiceVersion" : "4.0.0.0",
-    "ProductVersion"    : "4.0.243.0",
+    "ProductVersion"    : "4.0.246.0",
     "CoreVersion"       : "4.0.6.1",
     "OverrideCoreVersion" : "4.0",
     "DefaultToPreview"    : false,
@@ -40,7 +40,7 @@
             "InPreview"               : false
         },
         "CloudFront"     : {
-            "Version" : "4.0.14.1",
+            "Version" : "4.0.15.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -154,7 +154,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "4.0.86.0",
+            "Version" : "4.0.87.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -292,7 +292,7 @@
             "InPreview"               : false
         },
         "Route53Domains"       : {
-            "Version" : "4.0.3.28",
+            "Version" : "4.0.4.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -300,7 +300,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "4.0.22.2",
+            "Version" : "4.0.23.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -796,7 +796,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "4.0.28.1",
+            "Version" : "4.0.29.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -876,7 +876,7 @@
             "InPreview"               : false
         },
         "GuardDuty"                       : {
-            "Version" : "4.0.18.5",
+            "Version" : "4.0.18.6",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -908,7 +908,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "4.0.54.1",
+            "Version" : "4.0.56.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -1068,7 +1068,7 @@
             "InPreview"               : false
         },
         "MediaTailor"                     : {
-            "Version" : "4.0.7.4",
+            "Version" : "4.0.8.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -1140,7 +1140,7 @@
             "InPreview"               : false
         },
         "Route53Resolver"                 : {
-            "Version" : "4.0.5.19",
+            "Version" : "4.0.6.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -1228,7 +1228,7 @@
             "InPreview"               : false
         },
         "SecurityHub"                     : {
-            "Version" : "4.0.9.3",
+            "Version" : "4.0.10.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -1532,7 +1532,7 @@
             "InPreview"               : false
         },
         "Imagebuilder"                    : {
-            "Version" : "4.0.10.3",
+            "Version" : "4.0.11.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -1780,7 +1780,7 @@
             "InPreview"               : false
         },
         "MWAA"                            : {
-            "Version" : "4.0.3.29",
+            "Version" : "4.0.4.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -1932,7 +1932,7 @@
             "InPreview"               : false
         },
         "LexModelsV2"                     : {
-            "Version" : "4.0.6.12",
+            "Version" : "4.0.7.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -2076,7 +2076,7 @@
             "InPreview"               : false
         },
         "OpenSearchService"               : {
-            "Version" : "4.0.19.1",
+            "Version" : "4.0.20.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -2620,7 +2620,7 @@
             "InPreview"               : false
         },
         "MedicalImaging"                      : {
-            "Version" : "4.0.6.6",
+            "Version" : "4.0.7.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -2732,7 +2732,7 @@
             "InPreview"               : false
         },
         "BCMDataExports"                      : {
-            "Version" : "4.0.3.9",
+            "Version" : "4.0.4.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -2804,7 +2804,7 @@
             "InPreview"               : false
         },
         "CleanRoomsML"                        : {
-            "Version" : "4.0.8.18",
+            "Version" : "4.0.9.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -2820,7 +2820,7 @@
             "InPreview"               : false
         },
         "MarketplaceAgreement"                : {
-            "Version" : "4.0.5.8",
+            "Version" : "4.0.6.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -3084,7 +3084,7 @@
             "InPreview"               : false
         },
         "Invoicing"                           : {
-            "Version" : "4.0.6.22",
+            "Version" : "4.0.7.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -3220,7 +3220,7 @@
             "InPreview"               : false
         },
         "BedrockAgentCore"                    : {
-            "Version" : "4.0.22.1",
+            "Version" : "4.0.23.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -3228,7 +3228,7 @@
             "InPreview"               : false
         },
         "BedrockAgentCoreControl"             : {
-            "Version" : "4.0.33.0",
+            "Version" : "4.0.35.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"
@@ -3430,7 +3430,7 @@
     },
     "ExtensionVersions"   : {
         "Extensions.Bedrock.MEAI" : {
-            "Version" : "4.0.7.0",
+            "Version" : "4.0.8.0",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1",
@@ -3489,7 +3489,7 @@
             "InPreview"               : false
         },
         "Extensions.NETCore.Setup"          : {
-            "Version" : "4.0.3.36",
+            "Version" : "4.0.3.37",
             "AssemblyVersionOverride" : "4.0",
             "Dependencies"            : {
                 "Core" : "4.0.6.1"

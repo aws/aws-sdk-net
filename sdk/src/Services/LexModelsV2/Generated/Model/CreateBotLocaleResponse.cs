@@ -34,6 +34,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class CreateBotLocaleResponse : AmazonWebServiceResponse
     {
+        private AudioFillerSettings _audioFillerSettings;
         private string _botId;
         private BotLocaleStatus _botLocaleStatus;
         private string _botVersion;
@@ -47,6 +48,24 @@ namespace Amazon.LexModelsV2.Model
         private SpeechRecognitionSettings _speechRecognitionSettings;
         private UnifiedSpeechSettings _unifiedSpeechSettings;
         private VoiceSettings _voiceSettings;
+
+        /// <summary>
+        /// Gets and sets the property AudioFillerSettings. 
+        /// <para>
+        /// The audio filler settings configured for the created bot locale.
+        /// </para>
+        /// </summary>
+        public AudioFillerSettings AudioFillerSettings
+        {
+            get { return this._audioFillerSettings; }
+            set { this._audioFillerSettings = value; }
+        }
+
+        // Check to see if AudioFillerSettings property is set
+        internal bool IsSetAudioFillerSettings()
+        {
+            return this._audioFillerSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BotId. 

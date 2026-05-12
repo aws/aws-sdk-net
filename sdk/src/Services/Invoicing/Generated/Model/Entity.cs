@@ -34,7 +34,27 @@ namespace Amazon.Invoicing.Model
     /// </summary>
     public partial class Entity
     {
+        private BillingEntity _billingEntity;
         private string _invoicingEntity;
+
+        /// <summary>
+        /// Gets and sets the property BillingEntity. 
+        /// <para>
+        /// Helps you identify whether your invoices are for Amazon Web Services Marketplace or
+        /// for purchases of other Amazon Web Services services.
+        /// </para>
+        /// </summary>
+        public BillingEntity BillingEntity
+        {
+            get { return this._billingEntity; }
+            set { this._billingEntity = value; }
+        }
+
+        // Check to see if BillingEntity property is set
+        internal bool IsSetBillingEntity()
+        {
+            return this._billingEntity != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InvoicingEntity. 
