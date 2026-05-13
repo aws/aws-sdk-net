@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Coinbase CDP configuration output with secret ARNs
+    /// Coinbase CDP configuration output with secret ARNs.
     /// </summary>
     public partial class CoinbaseCdpConfigurationOutput
     {

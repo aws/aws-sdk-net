@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Coinbase CDP configuration - credentials provided by Coinbase Developer Platform
+    /// Coinbase CDP configuration — credentials provided by Coinbase Developer Platform.
     /// </summary>
     public partial class CoinbaseCdpConfigurationInput
     {

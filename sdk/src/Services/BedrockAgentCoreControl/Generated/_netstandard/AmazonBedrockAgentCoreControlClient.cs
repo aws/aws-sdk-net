@@ -3855,6 +3855,59 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  GetPolicyEngineSummary
+
+        internal virtual GetPolicyEngineSummaryResponse GetPolicyEngineSummary(GetPolicyEngineSummaryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicyEngineSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyEngineSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyEngineSummaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a metadata-only summary of a specific policy engine without decrypting customer
+        /// content. This lightweight read operation returns resource identifiers, status, timestamps,
+        /// and the encryption key ARN, but does not include the description or status reasons.
+        /// Because this operation does not require access to the customer's KMS key, it is suitable
+        /// for resource discovery, inventory, and integration scenarios where only metadata is
+        /// needed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyEngineSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPolicyEngineSummary service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicyEngineSummary">REST API Reference for GetPolicyEngineSummary Operation</seealso>
+        public virtual Task<GetPolicyEngineSummaryResponse> GetPolicyEngineSummaryAsync(GetPolicyEngineSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicyEngineSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyEngineSummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPolicyEngineSummaryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetPolicyGeneration
 
         internal virtual GetPolicyGenerationResponse GetPolicyGeneration(GetPolicyGenerationRequest request)
@@ -3902,6 +3955,111 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = GetPolicyGenerationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPolicyGenerationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetPolicyGenerationSummary
+
+        internal virtual GetPolicyGenerationSummaryResponse GetPolicyGenerationSummary(GetPolicyGenerationSummaryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicyGenerationSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyGenerationSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyGenerationSummaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a metadata-only summary of a specific policy generation request without
+        /// decrypting customer content. This lightweight read operation returns resource identifiers,
+        /// status, timestamps, and findings, but does not include status reasons. Because this
+        /// operation does not require access to the customer's KMS key, it is suitable for resource
+        /// discovery, inventory, and integration scenarios where only metadata is needed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyGenerationSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPolicyGenerationSummary service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicyGenerationSummary">REST API Reference for GetPolicyGenerationSummary Operation</seealso>
+        public virtual Task<GetPolicyGenerationSummaryResponse> GetPolicyGenerationSummaryAsync(GetPolicyGenerationSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicyGenerationSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyGenerationSummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPolicyGenerationSummaryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetPolicySummary
+
+        internal virtual GetPolicySummaryResponse GetPolicySummary(GetPolicySummaryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicySummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicySummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicySummaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a metadata-only summary of a specific policy without decrypting customer
+        /// content. This lightweight read operation returns resource identifiers, status, and
+        /// timestamps, but does not include the policy definition, description, or status reasons.
+        /// Because this operation does not require access to the customer's KMS key, it is suitable
+        /// for resource discovery, inventory, and integration scenarios where only metadata is
+        /// needed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicySummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPolicySummary service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicySummary">REST API Reference for GetPolicySummary Operation</seealso>
+        public virtual Task<GetPolicySummaryResponse> GetPolicySummaryAsync(GetPolicySummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPolicySummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicySummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPolicySummaryResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -5196,6 +5354,56 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  ListPolicyEngineSummaries
+
+        internal virtual ListPolicyEngineSummariesResponse ListPolicyEngineSummaries(ListPolicyEngineSummariesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyEngineSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyEngineSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyEngineSummariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a paginated list of metadata-only policy engine summaries without decrypting
+        /// customer content. This lightweight read operation returns resource identifiers, status,
+        /// and timestamps for each policy engine, but does not include descriptions or status
+        /// reasons. Because this operation does not require access to the customer's KMS key,
+        /// it is suitable for resource discovery, inventory, and integration scenarios where
+        /// only metadata is needed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyEngineSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicyEngineSummaries service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyEngineSummaries">REST API Reference for ListPolicyEngineSummaries Operation</seealso>
+        public virtual Task<ListPolicyEngineSummariesResponse> ListPolicyEngineSummariesAsync(ListPolicyEngineSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyEngineSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyEngineSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPolicyEngineSummariesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListPolicyGenerationAssets
 
         internal virtual ListPolicyGenerationAssetsResponse ListPolicyGenerationAssets(ListPolicyGenerationAssetsRequest request)
@@ -5297,6 +5505,112 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  ListPolicyGenerationSummaries
+
+        internal virtual ListPolicyGenerationSummariesResponse ListPolicyGenerationSummaries(ListPolicyGenerationSummariesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyGenerationSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyGenerationSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyGenerationSummariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a paginated list of metadata-only policy generation summaries within a policy
+        /// engine without decrypting customer content. This lightweight read operation returns
+        /// resource identifiers, status, timestamps, and findings for each policy generation,
+        /// but does not include status reasons. Because this operation does not require access
+        /// to the customer's KMS key, it is suitable for resource discovery, inventory, and integration
+        /// scenarios where only metadata is needed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyGenerationSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicyGenerationSummaries service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyGenerationSummaries">REST API Reference for ListPolicyGenerationSummaries Operation</seealso>
+        public virtual Task<ListPolicyGenerationSummariesResponse> ListPolicyGenerationSummariesAsync(ListPolicyGenerationSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyGenerationSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyGenerationSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPolicyGenerationSummariesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListPolicySummaries
+
+        internal virtual ListPolicySummariesResponse ListPolicySummaries(ListPolicySummariesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicySummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicySummariesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicySummariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a paginated list of metadata-only policy summaries within a policy engine
+        /// without decrypting customer content. This lightweight read operation returns resource
+        /// identifiers, status, and timestamps for each policy, but does not include policy definitions,
+        /// descriptions, or status reasons. Because this operation does not require access to
+        /// the customer's KMS key, it is suitable for resource discovery, inventory, and integration
+        /// scenarios where only metadata is needed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicySummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicySummaries service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicySummaries">REST API Reference for ListPolicySummaries Operation</seealso>
+        public virtual Task<ListPolicySummariesResponse> ListPolicySummariesAsync(ListPolicySummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicySummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicySummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPolicySummariesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListRegistries
 
         internal virtual ListRegistriesResponse ListRegistries(ListRegistriesRequest request)
@@ -5312,7 +5626,8 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Lists all registries in the account. You can optionally filter results by status using
-        /// the <c>status</c> parameter.
+        /// the <c>status</c> parameter, or by authorizer type using the <c>authorizerType</c>
+        /// parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRegistries service method.</param>
         /// <param name="cancellationToken">
