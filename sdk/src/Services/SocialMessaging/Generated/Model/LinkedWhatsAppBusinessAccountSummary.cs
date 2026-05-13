@@ -38,6 +38,7 @@ namespace Amazon.SocialMessaging.Model
         private List<WhatsAppBusinessAccountEventDestination> _eventDestinations = AWSConfigs.InitializeCollections ? new List<WhatsAppBusinessAccountEventDestination>() : null;
         private string _id;
         private DateTime? _linkDate;
+        private string _marketingMessagesOnboardingStatus;
         private RegistrationStatus _registrationStatus;
         private string _wabaId;
         private string _wabaName;
@@ -121,6 +122,27 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetLinkDate()
         {
             return this._linkDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MarketingMessagesOnboardingStatus. 
+        /// <para>
+        /// The onboarding status for the Marketing Messages API. This value is fetched from Meta
+        /// and indicates whether the WhatsApp Business Account is onboarded for Meta's Marketing
+        /// Messages API.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public string MarketingMessagesOnboardingStatus
+        {
+            get { return this._marketingMessagesOnboardingStatus; }
+            set { this._marketingMessagesOnboardingStatus = value; }
+        }
+
+        // Check to see if MarketingMessagesOnboardingStatus property is set
+        internal bool IsSetMarketingMessagesOnboardingStatus()
+        {
+            return this._marketingMessagesOnboardingStatus != null;
         }
 
         /// <summary>

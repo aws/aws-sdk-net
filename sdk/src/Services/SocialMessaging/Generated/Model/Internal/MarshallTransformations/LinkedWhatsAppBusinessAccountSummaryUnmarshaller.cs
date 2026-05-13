@@ -80,6 +80,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.LinkDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("marketingMessagesOnboardingStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MarketingMessagesOnboardingStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("registrationStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

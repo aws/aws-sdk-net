@@ -67,11 +67,15 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetId())
                 request.Parameters.Add("id", StringUtils.FromString(publicRequest.Id));
-            if (string.IsNullOrEmpty(publicRequest.MetaTemplateId))
-                throw new AmazonSocialMessagingException("Request object does not have required field MetaTemplateId set");
             
             if (publicRequest.IsSetMetaTemplateId())
                 request.Parameters.Add("metaTemplateId", StringUtils.FromString(publicRequest.MetaTemplateId));
+            
+            if (publicRequest.IsSetTemplateLanguageCode())
+                request.Parameters.Add("templateLanguageCode", StringUtils.FromString(publicRequest.TemplateLanguageCode));
+            
+            if (publicRequest.IsSetTemplateName())
+                request.Parameters.Add("templateName", StringUtils.FromString(publicRequest.TemplateName));
             request.ResourcePath = "/v1/whatsapp/template";
             request.UseQueryString = true;
 
