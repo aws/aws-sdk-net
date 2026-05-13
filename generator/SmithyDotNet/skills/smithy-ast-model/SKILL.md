@@ -25,53 +25,65 @@ A Smithy model JSON file has three top-level keys (see [Smithy JSON AST spec](ht
 Every shape has an absolute ID: `com.amazonaws.cloudtraildata#AuditEvent`. Members append `$member`: `com.amazonaws.cloudtraildata#AuditEvent$id`.
 
 ```csharp
-public record ShapeId(string Namespace, string Name, string? Member)
+public record ShapeId(string Namespace, string Name, string? Member = null)
 {
-    public static ShapeId Parse(string id);       // splits on # and $
+    public static ShapeId Parse(string absoluteShapeId);  // splits on # and $
     public string AbsoluteName => $"{Namespace}#{Name}";  // shape-only; omits $Member — for Shapes dictionary key lookups
     public override string ToString() => Member is null ? AbsoluteName : $"{AbsoluteName}${Member}";  // full canonical ID
-    public static implicit operator string(ShapeId id) => id.AbsoluteName;  // Shapes dictionary interop only
+    public static implicit operator string(ShapeId id) => id.ToString();  // returns full ID including member
 }
 ```
 
-Prefer `ShapeId` keys and properties in the in-memory model (`Dictionary<ShapeId, Shape>`, `OperationShape.Input`, `OperationShape.Output`, etc.). The implicit `string` conversion is only for interop with string-based APIs or temporary deserialization structures.
-
-Parsing rules:
-- `#` separates namespace from name
+Parsing rules (matching the [Smithy spec](https://smithy.io/2.0/spec/model.html#shape-id)):
+- `#` separates namespace from name — exactly one `#` required
 - `$` separates name from member (optional)
+- Namespace, name, and member must all be non-empty when present
+- Examples of invalid IDs: `Name$member` (no `#`), `ns#` (empty name), `ns#name$` (empty member), `ns#foo#bar` (multiple `#`)
 - Prelude shapes use namespace `smithy.api` (e.g. `smithy.api#String`)
 
-### Shape References
+### Shape References — Two Distinct Formats
 
-In the JSON AST, shape references are **objects**, not plain strings:
+The JSON AST has two ways a shape ID appears as a value:
 
+**1. Plain string** — inside a member object, `target` is a plain string:
 ```json
-"members": {
-  "id": {
+"id": {
     "target": "com.amazonaws.cloudtraildata#Uuid",
     "traits": { ... }
-  }
 }
 ```
+The whole object is a `MemberShape`. The `target` field is just a string property on it.
 
-Two custom `JsonConverter`s unwrap these transparently:
-- `ShapeTargetConverter` — for single references (`ShapeId`), reads `{"target": "..."}` → `ShapeId`
-- `ShapeTargetListConverter` — for lists of references (`List<ShapeId>`), reads `[{"target": "..."}, ...]` → `List<ShapeId>`
+**2. Wrapper object** — for operation input/output, service operations lists, etc., the value is a wrapper:
+```json
+"input": { "target": "com.amazonaws.cloudtraildata#PutAuditEventsRequest" }
+```
+Here the entire `{"target": "..."}` is the value of the `input` property on `OperationShape`.
 
-These converters are read-only (`Read` is implemented; `Write` throws `NotSupportedException`). The generator never serializes models back to JSON.
+Three custom `JsonConverter`s in `SmithyDotNet.Generator.Model.Converters` handle these:
+- `ShapeIdConverter` — plain string → `ShapeId` (for `MemberShape.Target`)
+- `ShapeTargetConverter` — `{"target": "..."}` wrapper → `ShapeId` (for `OperationShape.Input`, etc.)
+- `ShapeTargetListConverter` — `[{"target": "..."}, ...]` → `List<ShapeId>` (for `ServiceShape.Operations`, etc.)
+
+All converters are read-only (`Write` throws `NotSupportedException`). The generator never serializes models back to JSON. Use `InvalidOperationException` (not null-forgiving `!`) when a value is unexpectedly null.
 
 ## Shape Type Hierarchy
 
 All shapes derive from an abstract `Shape` base:
 
 ```csharp
-[JsonConverter(typeof(ShapeConverter))]
 public abstract record Shape
 {
     public abstract string Type { get; }
+
+    [JsonPropertyName("traits")]
     public Dictionary<string, JsonElement> Traits { get; init; } = [];
 }
 ```
+
+**Important**: Do NOT put `[JsonConverter(typeof(ShapeConverter))]` on `Shape`. This causes infinite recursion because `ShapeConverter.Read` calls `root.Deserialize<BlobShape>(options)`, and `BlobShape` inherits `Shape`, which triggers the converter again. Instead, register `ShapeConverter` via `JsonSerializerOptions.Converters`.
+
+Use `[JsonPropertyName]` on properties where the C# name differs in casing from the JSON key (e.g. `Traits` → `"traits"`, `Target` → `"target"`). STJ is case-sensitive by default.
 
 ### ShapeConverter Dispatch
 
@@ -93,12 +105,15 @@ public abstract record Shape
 
 ### MemberShape
 
-`MemberShape` is **not** dispatched by `ShapeConverter`. It is deserialized inline by its parent shape. It has a `Target` (`ShapeId`) pointing to another shape.
+`MemberShape` is **not** dispatched by `ShapeConverter`. It is deserialized inline by its parent shape (e.g. when STJ processes a `StructureShape.Members` dictionary). Its `Target` is a plain string in the JSON, so it uses `ShapeIdConverter`:
 
 ```csharp
 public record MemberShape : Shape
 {
     public override string Type => "member";
+
+    [JsonPropertyName("target")]
+    [JsonConverter(typeof(ShapeIdConverter))]
     public required ShapeId Target { get; init; }
 }
 ```
@@ -120,11 +135,15 @@ Presence-only traits have an empty object `{}` as their value:
 
 ## Deserialization Setup
 
+Register `ShapeConverter` via options — not via `[JsonConverter]` attribute on `Shape` (see Shape Type Hierarchy above for why).
+
+`ShapeIdConverter`, `ShapeTargetConverter`, and `ShapeTargetListConverter` are registered via `[JsonConverter]` attributes on individual properties (e.g. `MemberShape.Target`, `OperationShape.Input`) — they do NOT need to go in the options.
+
 ```csharp
 var options = new JsonSerializerOptions
 {
     PropertyNameCaseInsensitive = false,  // Smithy JSON uses exact camelCase keys
-    Converters = { new ShapeConverter(), new ShapeTargetConverter(), new ShapeTargetListConverter() }
+    Converters = { new ShapeConverter() }
 };
 var model = JsonSerializer.Deserialize<SmithyModel>(json, options);
 ```
