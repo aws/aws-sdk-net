@@ -61,6 +61,30 @@ namespace Amazon.SecurityAgent.Model
         }
 
         /// <summary>
+        /// Paginator for ListCodeReviewJobsForCodeReview operation
+        ///</summary>
+        public IListCodeReviewJobsForCodeReviewPaginator ListCodeReviewJobsForCodeReview(ListCodeReviewJobsForCodeReviewRequest request) 
+        {
+            return new ListCodeReviewJobsForCodeReviewPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCodeReviewJobTasks operation
+        ///</summary>
+        public IListCodeReviewJobTasksPaginator ListCodeReviewJobTasks(ListCodeReviewJobTasksRequest request) 
+        {
+            return new ListCodeReviewJobTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCodeReviews operation
+        ///</summary>
+        public IListCodeReviewsPaginator ListCodeReviews(ListCodeReviewsRequest request) 
+        {
+            return new ListCodeReviewsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDiscoveredEndpoints operation
         ///</summary>
         public IListDiscoveredEndpointsPaginator ListDiscoveredEndpoints(ListDiscoveredEndpointsRequest request) 

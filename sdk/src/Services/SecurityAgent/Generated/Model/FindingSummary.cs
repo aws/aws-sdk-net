@@ -35,6 +35,8 @@ namespace Amazon.SecurityAgent.Model
     public partial class FindingSummary
     {
         private string _agentSpaceId;
+        private string _codeReviewId;
+        private string _codeReviewJobId;
         private ConfidenceLevel _confidence;
         private DateTime? _createdAt;
         private string _findingId;
@@ -63,6 +65,42 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetAgentSpaceId()
         {
             return this._agentSpaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeReviewId. 
+        /// <para>
+        /// The unique identifier of the code review associated with the finding.
+        /// </para>
+        /// </summary>
+        public string CodeReviewId
+        {
+            get { return this._codeReviewId; }
+            set { this._codeReviewId = value; }
+        }
+
+        // Check to see if CodeReviewId property is set
+        internal bool IsSetCodeReviewId()
+        {
+            return this._codeReviewId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeReviewJobId. 
+        /// <para>
+        /// The unique identifier of the code review job that produced the finding.
+        /// </para>
+        /// </summary>
+        public string CodeReviewJobId
+        {
+            get { return this._codeReviewJobId; }
+            set { this._codeReviewJobId = value; }
+        }
+
+        // Check to see if CodeReviewJobId property is set
+        internal bool IsSetCodeReviewJobId()
+        {
+            return this._codeReviewJobId != null;
         }
 
         /// <summary>
