@@ -110,7 +110,7 @@ namespace Amazon.ConnectCases.Model
         /// Target duration in minutes within which an SLA should be completed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=129600)]
+        [AWSProperty(Required=true, Min=1, Max=1051200)]
         public long? TargetSlaMinutes
         {
             get { return this._targetSlaMinutes; }

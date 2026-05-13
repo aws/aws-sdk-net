@@ -44,6 +44,12 @@ namespace Amazon.ConnectCases.Model
         /// <para>
         /// The list of conditions to combine using the logical operator.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For API users: A case rule can have a maximum of 5 conditions, spread across a maximum
+        /// of 2 levels of nesting.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
