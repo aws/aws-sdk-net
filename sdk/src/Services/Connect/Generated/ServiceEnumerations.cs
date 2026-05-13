@@ -3689,6 +3689,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant OnAlertUpdate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnAlertUpdate = new EventSourceName("OnAlertUpdate");
+        /// <summary>
         /// Constant OnCaseCreate for EventSourceName
         /// </summary>
         public static readonly EventSourceName OnCaseCreate = new EventSourceName("OnCaseCreate");
@@ -3728,6 +3732,18 @@ namespace Amazon.Connect
         /// Constant OnSalesforceCaseCreate for EventSourceName
         /// </summary>
         public static readonly EventSourceName OnSalesforceCaseCreate = new EventSourceName("OnSalesforceCaseCreate");
+        /// <summary>
+        /// Constant OnSchedulePublish for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnSchedulePublish = new EventSourceName("OnSchedulePublish");
+        /// <summary>
+        /// Constant OnScheduleTimeOffRequestActivity for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnScheduleTimeOffRequestActivity = new EventSourceName("OnScheduleTimeOffRequestActivity");
+        /// <summary>
+        /// Constant OnScheduleUpdate for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnScheduleUpdate = new EventSourceName("OnScheduleUpdate");
         /// <summary>
         /// Constant OnSlaBreach for EventSourceName
         /// </summary>
