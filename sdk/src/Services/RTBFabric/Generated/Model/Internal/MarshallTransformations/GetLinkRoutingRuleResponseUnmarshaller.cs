@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateOutboundExternalLink operation
+    /// Response Unmarshaller for GetLinkRoutingRule operation
     /// </summary>  
-    public class CreateOutboundExternalLinkResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetLinkRoutingRuleResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,12 +46,24 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateOutboundExternalLinkResponse response = new CreateOutboundExternalLinkResponse();
+            GetLinkRoutingRuleResponse response = new GetLinkRoutingRuleResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("conditions", targetDepth))
+                {
+                    var unmarshaller = RuleConditionUnmarshaller.Instance;
+                    response.Conditions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("gatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -64,10 +76,34 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     response.LinkId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("priority", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.Priority = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ruleId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RuleId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("updatedAt", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -99,10 +135,6 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -110,10 +142,6 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -127,9 +155,9 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             return new AmazonRTBFabricException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateOutboundExternalLinkResponseUnmarshaller _instance = new CreateOutboundExternalLinkResponseUnmarshaller();        
+        private static GetLinkRoutingRuleResponseUnmarshaller _instance = new GetLinkRoutingRuleResponseUnmarshaller();        
 
-        internal static CreateOutboundExternalLinkResponseUnmarshaller GetInstance()
+        internal static GetLinkRoutingRuleResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +165,7 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateOutboundExternalLinkResponseUnmarshaller Instance
+        public static GetLinkRoutingRuleResponseUnmarshaller Instance
         {
             get
             {
