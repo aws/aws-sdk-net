@@ -101,6 +101,7 @@ namespace Amazon.EC2.Model
         /// original AMI.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=3, Max=128)]
         public string Name
         {
             get { return this._name; }
