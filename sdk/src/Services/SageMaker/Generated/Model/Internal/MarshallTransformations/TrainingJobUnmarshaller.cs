@@ -296,6 +296,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("WarmPoolStatus", targetDepth))
+                {
+                    var unmarshaller = WarmPoolStatusUnmarshaller.Instance;
+                    unmarshalledObject.WarmPoolStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

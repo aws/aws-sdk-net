@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _description;
         private EventDetails _eventDetails;
         private string _eventId;
+        private ClusterEventLevel _eventLevel;
         private DateTime? _eventTime;
         private string _instanceGroupName;
         private string _instanceId;
@@ -135,6 +136,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEventId()
         {
             return this._eventId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventLevel. 
+        /// <para>
+        /// The severity level of the event. Valid values are <c>Info</c>, <c>Warn</c>, and <c>Error</c>.
+        /// </para>
+        /// </summary>
+        public ClusterEventLevel EventLevel
+        {
+            get { return this._eventLevel; }
+            set { this._eventLevel = value; }
+        }
+
+        // Check to see if EventLevel property is set
+        internal bool IsSetEventLevel()
+        {
+            return this._eventLevel != null;
         }
 
         /// <summary>

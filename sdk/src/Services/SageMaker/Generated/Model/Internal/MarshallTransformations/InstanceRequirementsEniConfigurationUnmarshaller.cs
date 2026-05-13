@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceSpec Object
+    /// Response Unmarshaller for InstanceRequirementsEniConfiguration Object
     /// </summary>  
-    public class ResourceSpecUnmarshaller : IJsonUnmarshaller<ResourceSpec, JsonUnmarshallerContext>
+    public class InstanceRequirementsEniConfigurationUnmarshaller : IJsonUnmarshaller<InstanceRequirementsEniConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceSpec Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InstanceRequirementsEniConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ResourceSpec unmarshalledObject = new ResourceSpec();
+            InstanceRequirementsEniConfiguration unmarshalledObject = new InstanceRequirementsEniConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("AdditionalEnis", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = AdditionalEnisUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalEnis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LifecycleConfigArn", targetDepth))
+                if (context.TestExpression("CustomerEni", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LifecycleConfigArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SageMakerImageArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SageMakerImageArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SageMakerImageVersionAlias", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SageMakerImageVersionAlias = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SageMakerImageVersionArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SageMakerImageVersionArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TrainingPlanArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrainingPlanArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CustomerEni = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResourceSpecUnmarshaller _instance = new ResourceSpecUnmarshaller();        
+        private static InstanceRequirementsEniConfigurationUnmarshaller _instance = new InstanceRequirementsEniConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceSpecUnmarshaller Instance
+        public static InstanceRequirementsEniConfigurationUnmarshaller Instance
         {
             get
             {

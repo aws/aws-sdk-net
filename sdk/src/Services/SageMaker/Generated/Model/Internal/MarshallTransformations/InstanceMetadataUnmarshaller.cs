@@ -80,6 +80,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("InstanceRequirementsEniConfigurations", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<InstanceRequirementsEniConfiguration, InstanceRequirementsEniConfigurationUnmarshaller>(InstanceRequirementsEniConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.InstanceRequirementsEniConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("LcsExecutionState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

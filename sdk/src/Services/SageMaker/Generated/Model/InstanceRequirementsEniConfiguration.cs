@@ -30,50 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The infrastructure configuration for deploying the model to a real-time inference
-    /// endpoint.
+    /// The customer ENI and additional ENIs associated with a network interface category.
     /// </summary>
-    public partial class RealTimeInferenceConfig
+    public partial class InstanceRequirementsEniConfiguration
     {
-        private int? _instanceCount;
-        private ProductionVariantInstanceType _instanceType;
+        private AdditionalEnis _additionalEnis;
+        private string _customerEni;
 
         /// <summary>
-        /// Gets and sets the property InstanceCount. 
+        /// Gets and sets the property AdditionalEnis. 
         /// <para>
-        /// The number of instances of the type specified by <c>InstanceType</c>.
+        /// Information about additional Elastic Network Interfaces (ENIs) associated with the
+        /// instance type category.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0)]
-        public int? InstanceCount
+        public AdditionalEnis AdditionalEnis
         {
-            get { return this._instanceCount; }
-            set { this._instanceCount = value; }
+            get { return this._additionalEnis; }
+            set { this._additionalEnis = value; }
         }
 
-        // Check to see if InstanceCount property is set
-        internal bool IsSetInstanceCount()
+        // Check to see if AdditionalEnis property is set
+        internal bool IsSetAdditionalEnis()
         {
-            return this._instanceCount.HasValue; 
+            return this._additionalEnis != null;
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceType. 
+        /// Gets and sets the property CustomerEni. 
         /// <para>
-        /// The instance type the model is deployed to.
+        /// The ID of the customer-managed Elastic Network Interface (ENI) associated with the
+        /// instance type category.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ProductionVariantInstanceType InstanceType
+        public string CustomerEni
         {
-            get { return this._instanceType; }
-            set { this._instanceType = value; }
+            get { return this._customerEni; }
+            set { this._customerEni = value; }
         }
 
-        // Check to see if InstanceType property is set
-        internal bool IsSetInstanceType()
+        // Check to see if CustomerEni property is set
+        internal bool IsSetCustomerEni()
         {
-            return this._instanceType != null;
+            return this._customerEni != null;
         }
 
     }
