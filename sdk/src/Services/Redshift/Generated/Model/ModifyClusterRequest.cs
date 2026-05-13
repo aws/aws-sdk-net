@@ -148,8 +148,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't disable automated snapshots for RA3 node types. Set the automated retention
-        /// period from 1-35 days.
+        /// You can't disable automated snapshots for RG or RA3 node types. Set the automated
+        /// retention period from 1-35 days.
         /// </para>
         ///  
         /// <para>
@@ -789,8 +789,9 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>dc2.large</c> | <c>dc2.8xlarge</c> | <c>ra3.large</c> | <c>ra3.xlplus</c>
-        /// | <c>ra3.4xlarge</c> | <c>ra3.16xlarge</c> 
+        /// Valid Values: <c>dc2.large</c> | <c>dc2.8xlarge</c>| <c>rg.xlarge</c> | <c>rg.4xlarge</c>
+        /// | <c>ra3.large</c> | <c>ra3.xlplus</c> | <c>ra3.4xlarge</c> | <c>ra3.16xlarge</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -845,9 +846,9 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For clusters with ra3 nodes - Select a port within the ranges <c>5431-5455</c> or
-        /// <c>8191-8215</c>. (If you have an existing cluster with ra3 nodes, it isn't required
-        /// that you change the port to these ranges.)
+        /// For clusters with RG or RA3 nodes - Select a port within the ranges <c>5431-5455</c>
+        /// or <c>8191-8215</c>. (If you have an existing cluster with RG or RA3 nodes, it isn't
+        /// required that you change the port to these ranges.)
         /// </para>
         ///  </li> <li> 
         /// <para>
