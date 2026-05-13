@@ -51,6 +51,11 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
+        /// Idle instances retained during the scale-down delay period are billable at standard
+        /// EC2 pricing.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
         /// The scale down delay does not apply to:
         /// </para>
         ///  <ul> <li> 
