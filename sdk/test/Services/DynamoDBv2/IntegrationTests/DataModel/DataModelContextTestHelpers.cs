@@ -945,6 +945,63 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
+        internal static async Task TestMultiTableTransactionsReturnConsumedCapacity<T>(DynamoDBContext context)
+            where T: Employee, IVersioned, new()
+        {
+            var employee1 = new T
+            {
+                Name = "Alan",
+                Age = 31,
+                Score = 120,
+                ManagerName = "Barbara"
+            };
+            var employee2 = new T
+            {
+                Name = "Diane",
+                Age = 40,
+                Score = 140
+            };
+            var product = new VersionedProduct
+            {
+                Id = 1001,
+                Name = "CloudSpotter",
+                Price = 1200
+            };
+
+            {
+                var employeeTran = context.CreateTransactWrite<T>();
+                employeeTran.AddSaveItems(new[] { employee1, employee2 });
+                var productTran = context.CreateTransactWrite<VersionedProduct>();
+                productTran.AddSaveItem(product);
+                var tran = context.CreateMultiTableTransactWrite(employeeTran, productTran);
+                await tran.ExecuteAsync();
+
+                Assert.NotNull(employee1.Version);
+                Assert.NotNull(employee2.Version);
+                Assert.NotNull(product.Version);
+            }
+
+            {
+                var employeeTran = context.CreateTransactGet<T>();
+                employeeTran.AddKeys(new[] { employee1, employee2 });
+                var productTran = context.CreateTransactGet<VersionedProduct>();
+                productTran.AddKey(product.Id, returnConsumedCapacity: ReturnConsumedCapacity.INDEXES);
+                var tran = context.CreateMultiTableTransactGet(employeeTran, productTran);
+                await tran.ExecuteAsync();
+
+                Assert.NotNull(employeeTran.Results);
+                Assert.Equal(2, employeeTran.Results.Count);
+                Assert.Equal(employee1.Name, employeeTran.Results[0].Name);
+                Assert.Equal(employee1.Version, employeeTran.Results[0].Version);
+                Assert.Equal(employee2.Name, employeeTran.Results[1].Name);
+                Assert.Equal(employee2.Version, employeeTran.Results[1].Version);
+                Assert.NotNull(productTran.Results);
+                Assert.Equal(1, productTran.Results.Count);
+                Assert.Equal(product.Id, productTran.Results[0].Id);
+                Assert.Equal(product.Version, productTran.Results[0].Version);
+            }
+        }
+
         internal static async Task TestMultiTableTransactionsHelper<T>(DynamoDBContext context)
             where T : Employee, IVersioned, new()
         {

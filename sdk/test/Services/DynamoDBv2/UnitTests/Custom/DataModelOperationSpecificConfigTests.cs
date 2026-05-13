@@ -166,7 +166,7 @@ namespace AWSSDK_DotNet.UnitTests
             var transactGetConfig = new TransactGetConfig() { TableNamePrefix = "OperationPrefix-" };
 
             var transactGet = context.CreateTransactGet<DataModel>(transactGetConfig);
-            transactGet.AddKey("123", "Name");
+            transactGet.AddKey("123", rangeKey:"Name");
             transactGet.Execute();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
@@ -191,7 +191,7 @@ namespace AWSSDK_DotNet.UnitTests
             var transactGetConfig = new TransactGetConfig() { TableNamePrefix = "" };
 
             var transactGet = context.CreateTransactGet<DataModel>(transactGetConfig);
-            transactGet.AddKey("123", "Name");
+            transactGet.AddKey("123", rangeKey:"Name");
             transactGet.Execute();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown

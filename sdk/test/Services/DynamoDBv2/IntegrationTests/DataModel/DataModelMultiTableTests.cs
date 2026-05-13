@@ -429,6 +429,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         [Theory]
         [MemberData(nameof(DynamoDBFixture.Conversions), MemberType = typeof(DynamoDBFixture))]
+        public async Task TestWithBuilderTables_MultiTableTransactions_ReturnConsumedCapacity(DynamoDBEntryConversion conversion)
+        {
+            using (var context = CreateBuilderTablesContext(conversion))
+            {
+                await TestMultiTableTransactionsReturnConsumedCapacity<VersionedEmployee>(context);
+            }
+        }
+
+        [Theory]
+        [MemberData(nameof(DynamoDBFixture.Conversions), MemberType = typeof(DynamoDBFixture))]
         public async Task TestPlainContext_BatchOperations(DynamoDBEntryConversion conversion)
         {
             using (var context = CreateBuilderContext(conversion, disableFetchingTableMetadata: false))
