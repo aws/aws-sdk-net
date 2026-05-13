@@ -1,4 +1,5 @@
 using Amazon.Runtime;
+using Amazon;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Util;
 using Amazon.Util.Internal;
@@ -96,6 +97,163 @@ namespace AWSSDK.UnitTests
             _cache.DeleteLoginToken(loginSession, null);
 
             _mockFileRetriever.Verify(x => x.Delete(It.IsAny<string>()), Times.Once);
+        }
+
+        [TestMethod]
+        public void SaveLoginToken_WritesFileWhenRestrictFilePermissionsIsUnrestricted()
+        {
+            var originalValue = AWSConfigs.RestrictFilePermissions;
+            try
+            {
+                AWSConfigs.RestrictFilePermissions = FilePermission.UNRESTRICTED;
+
+                var loginSession = "test-session";
+                var token = new LoginToken
+                {
+                    AccessToken = new LoginImmutableCredentials("key", "secret", "token", DateTime.UtcNow.AddHours(1), "123456789012")
+                };
+
+                _cache.SaveLoginToken(loginSession, token, null);
+
+                _mockFileRetriever.Verify(x => x.WriteAllText(It.IsAny<string>(), It.IsAny<string>()), Times.Once,
+                    "File should still be written when RestrictFilePermissions is Unrestricted");
+                _mockFileRetriever.Verify(x => x.SetFileOwnerReadWrite(It.IsAny<string>()), Times.Never,
+                    "SetFileOwnerReadWrite should not be called when Unrestricted");
+                _mockDirectoryRetriever.Verify(x => x.SetDirectoryOwnerOnly(It.IsAny<string>()), Times.Never,
+                    "SetDirectoryOwnerOnly should not be called when Unrestricted");
+            }
+            finally
+            {
+                AWSConfigs.RestrictFilePermissions = originalValue;
+            }
+        }
+
+        [TestMethod]
+        public async Task SaveLoginTokenAsync_WritesFileWhenRestrictFilePermissionsIsUnrestricted()
+        {
+            var originalValue = AWSConfigs.RestrictFilePermissions;
+            try
+            {
+                AWSConfigs.RestrictFilePermissions = FilePermission.UNRESTRICTED;
+
+                var loginSession = "test-session";
+                var token = new LoginToken
+                {
+                    AccessToken = new LoginImmutableCredentials("key", "secret", "token", DateTime.UtcNow.AddHours(1), "123456789012")
+                };
+
+                await _cache.SaveLoginTokenAsync(loginSession, token, null, CancellationToken.None);
+
+                _mockFileRetriever.Verify(x => x.WriteAllTextAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Once,
+                    "File should still be written when RestrictFilePermissions is Unrestricted");
+                _mockFileRetriever.Verify(x => x.SetFileOwnerReadWrite(It.IsAny<string>()), Times.Never,
+                    "SetFileOwnerReadWrite should not be called when Unrestricted");
+                _mockDirectoryRetriever.Verify(x => x.SetDirectoryOwnerOnly(It.IsAny<string>()), Times.Never,
+                    "SetDirectoryOwnerOnly should not be called when Unrestricted");
+            }
+            finally
+            {
+                AWSConfigs.RestrictFilePermissions = originalValue;
+            }
+        }
+
+        [TestMethod]
+        public void SaveLoginToken_SetsFilePermissionsWhenUserReadWrite()
+        {
+            var originalValue = AWSConfigs.RestrictFilePermissions;
+            try
+            {
+                AWSConfigs.RestrictFilePermissions = FilePermission.USER_READ_WRITE;
+
+                // File doesn't exist yet (new file)
+                _mockFileRetriever.Setup(x => x.Exists(It.IsAny<string>())).Returns(false);
+                // Directory doesn't exist yet (new directory)
+                _mockDirectoryRetriever.Setup(x => x.Exists(It.IsAny<string>())).Returns(false);
+
+                var loginSession = "test-session";
+                var token = new LoginToken
+                {
+                    AccessToken = new LoginImmutableCredentials("key", "secret", "token", DateTime.UtcNow.AddHours(1), "123456789012")
+                };
+
+                _cache.SaveLoginToken(loginSession, token, null);
+
+                _mockFileRetriever.Verify(x => x.WriteAllText(It.IsAny<string>(), It.IsAny<string>()), Times.Once);
+                _mockFileRetriever.Verify(x => x.SetFileOwnerReadWrite(It.IsAny<string>()), Times.Once,
+                    "SetFileOwnerReadWrite should be called for new files when UserReadWrite");
+                _mockDirectoryRetriever.Verify(x => x.SetDirectoryOwnerOnly(It.IsAny<string>()), Times.Once,
+                    "SetDirectoryOwnerOnly should be called for new directories when UserReadWrite");
+            }
+            finally
+            {
+                AWSConfigs.RestrictFilePermissions = originalValue;
+            }
+        }
+
+        [TestMethod]
+        public async Task SaveLoginTokenAsync_SetsFilePermissionsWhenUserReadWrite()
+        {
+            var originalValue = AWSConfigs.RestrictFilePermissions;
+            try
+            {
+                AWSConfigs.RestrictFilePermissions = FilePermission.USER_READ_WRITE;
+
+                // File doesn't exist yet (new file)
+                _mockFileRetriever.Setup(x => x.Exists(It.IsAny<string>())).Returns(false);
+                // Directory doesn't exist yet (new directory)
+                _mockDirectoryRetriever.Setup(x => x.Exists(It.IsAny<string>())).Returns(false);
+
+                var loginSession = "test-session";
+                var token = new LoginToken
+                {
+                    AccessToken = new LoginImmutableCredentials("key", "secret", "token", DateTime.UtcNow.AddHours(1), "123456789012")
+                };
+
+                await _cache.SaveLoginTokenAsync(loginSession, token, null, CancellationToken.None);
+
+                _mockFileRetriever.Verify(x => x.WriteAllTextAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Once);
+                _mockFileRetriever.Verify(x => x.SetFileOwnerReadWrite(It.IsAny<string>()), Times.Once,
+                    "SetFileOwnerReadWrite should be called for new files when UserReadWrite");
+                _mockDirectoryRetriever.Verify(x => x.SetDirectoryOwnerOnly(It.IsAny<string>()), Times.Once,
+                    "SetDirectoryOwnerOnly should be called for new directories when UserReadWrite");
+            }
+            finally
+            {
+                AWSConfigs.RestrictFilePermissions = originalValue;
+            }
+        }
+
+        [TestMethod]
+        public void SaveLoginToken_SkipsPermissionsForExistingFile()
+        {
+            var originalValue = AWSConfigs.RestrictFilePermissions;
+            try
+            {
+                AWSConfigs.RestrictFilePermissions = FilePermission.USER_READ_WRITE;
+
+                // File already exists (not new)
+                _mockFileRetriever.Setup(x => x.Exists(It.IsAny<string>())).Returns(true);
+                // Directory already exists (not new)
+                _mockDirectoryRetriever.Setup(x => x.Exists(It.IsAny<string>())).Returns(true);
+
+                var loginSession = "test-session";
+                var token = new LoginToken
+                {
+                    AccessToken = new LoginImmutableCredentials("key", "secret", "token", DateTime.UtcNow.AddHours(1), "123456789012")
+                };
+
+                _cache.SaveLoginToken(loginSession, token, null);
+
+                _mockFileRetriever.Verify(x => x.WriteAllText(It.IsAny<string>(), It.IsAny<string>()), Times.Once);
+                _mockFileRetriever.Verify(x => x.SetFileOwnerReadWrite(It.IsAny<string>()), Times.Never,
+                    "SetFileOwnerReadWrite should not be called for existing files");
+                _mockDirectoryRetriever.Verify(x => x.SetDirectoryOwnerOnly(It.IsAny<string>()), Times.Never,
+                    "SetDirectoryOwnerOnly should not be called for existing directories");
+            }
+            finally
+            {
+                AWSConfigs.RestrictFilePermissions = originalValue;
+            }
         }
 
         [TestMethod]

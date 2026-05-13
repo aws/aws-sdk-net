@@ -85,6 +85,7 @@ namespace Amazon
         internal static int _cborReaderInitialBufferSize = GetConfigInt(CborReaderInitialBufferSizeKey, defaultValue: 1024 * 4); //4KB
         internal static bool _initializeCollections = GetConfigBool(InitializeCollectionsKey, defaultValue: false);
         internal static bool _disableLegacyPersistenceStore = GetConfigBool(DisableLegacyPersistenceStoreKey, defaultValue: false);
+        internal static FilePermission _restrictFilePermissions = GetRestrictFilePermissionsSetting();
         private static TelemetryProvider _telemetryProvider = new DefaultTelemetryProvider();
 
 #if NET8_0_OR_GREATER
@@ -403,6 +404,60 @@ namespace Amazon
 
         #endregion
 
+        #region RestrictFilePermissions
+
+        /// <summary>
+        /// Key for the RestrictFilePermissions property.
+        /// <seealso cref="Amazon.AWSConfigs.RestrictFilePermissions"/>
+        /// </summary>
+        public const string RestrictFilePermissionsKey = "AWSRestrictFilePermissions";
+
+        /// <summary>
+        /// Environment variable name for controlling cached auth file permissions.
+        /// </summary>
+        internal const string RestrictFilePermissionsEnvVar = "AWS_RESTRICT_FILE_PERMISSIONS";
+
+        /// <summary>
+        /// Controls file and directory permissions for cache files written by the SDK on Unix and macOS platforms.
+        /// This applies to SSO token cache and Login token cache files.
+        /// <para />
+        /// When set to <see cref="Amazon.FilePermission.USER_READ_WRITE"/> (the default), the SDK sets file 
+        /// permissions to owner read/write only (0600) and directory permissions to owner only (0700) when 
+        /// creating new cache files and directories. Existing files and directories are not modified.
+        /// <para />
+        /// When set to <see cref="Amazon.FilePermission.UNRESTRICTED"/>, the SDK does not set any 
+        /// file or directory permissions, relying on the system's default umask.
+        /// <para />
+        /// This setting has no effect on Windows.
+        /// <para />
+        /// The default value is <see cref="Amazon.FilePermission.USER_READ_WRITE"/>.
+        /// <para />
+        /// Setting this property is not thread safe and should only be set at application startup.
+        /// </summary>
+        public static FilePermission RestrictFilePermissions
+        {
+            get { return _rootConfig.RestrictFilePermissions; }
+            set { _rootConfig.RestrictFilePermissions = value; }
+        }
+
+        private static FilePermission GetRestrictFilePermissionsSetting()
+        {
+            // Check the environment variable first, then fall back to app.config/GetConfig
+            string value = Environment.GetEnvironmentVariable(RestrictFilePermissionsEnvVar);
+            if (string.IsNullOrEmpty(value))
+                value = GetConfig(RestrictFilePermissionsKey);
+
+            if (string.IsNullOrEmpty(value))
+                return FilePermission.USER_READ_WRITE;
+
+            if (Enum.TryParse<FilePermission>(value, ignoreCase: true, out var result))
+                return result;
+
+            return FilePermission.USER_READ_WRITE;
+        }
+
+        #endregion
+
         #region AWS Config Sections
 
         /// <summary>
@@ -619,5 +674,23 @@ namespace Amazon
         /// Emit metrics as JSON data
         /// </summary>
         JSON = 1
+    }
+
+    /// <summary>
+    /// Controls how the SDK sets file permissions on cache files it writes on Unix and macOS platforms.
+    /// </summary>
+    public enum FilePermission
+    {
+        /// <summary>
+        /// Sets file permissions to owner read/write only (0600) and directory permissions 
+        /// to owner only (0700) when creating new cache files and directories.
+        /// Existing files and directories are not modified.
+        /// </summary>
+        USER_READ_WRITE = 0,
+
+        /// <summary>
+        /// Does not set any file or directory permissions, relying on the system's default umask.
+        /// </summary>
+        UNRESTRICTED = 1
     }
 }

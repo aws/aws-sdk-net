@@ -55,6 +55,8 @@ namespace Amazon.Util.Internal
 
         public bool DisableLegacyPersistenceStore { get; set; }
 
+        public FilePermission RestrictFilePermissions { get; set; }
+
         private const string _rootAwsSectionName = "aws";
         public RootConfig()
         {
@@ -70,6 +72,7 @@ namespace Amazon.Util.Internal
             CborReaderInitialBufferSize = AWSConfigs._cborReaderInitialBufferSize;
             CorrectForClockSkew = true;
             DisableLegacyPersistenceStore = AWSConfigs._disableLegacyPersistenceStore;
+            RestrictFilePermissions = AWSConfigs._restrictFilePermissions;
 
 #if NET8_0_OR_GREATER
             DisableDangerousDisablePathAndQueryCanonicalization = AWSConfigs._disableDangerousDisablePathAndQueryCanonicalization;

@@ -19,7 +19,17 @@ namespace AWSSDK.UnitTests
         public Dictionary<string, string> Files { get; set; } =
             new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
 
-        public bool Exists(string path)
+        /// <summary>
+        /// Tracks paths that had SetFileOwnerReadWrite called on them.
+        /// </summary>
+        public List<string> FileOwnerReadWritePaths { get; } = new List<string>();
+
+        /// <summary>
+        /// Tracks paths that had SetDirectoryOwnerOnly called on them.
+        /// </summary>
+        public List<string> DirectoryOwnerOnlyPaths { get; } = new List<string>();
+
+        bool IFile.Exists(string path)
         {
             return Files.Keys.Contains(path);
         }
@@ -46,15 +56,40 @@ namespace AWSSDK.UnitTests
             return Task.FromResult(0);
         }
 
+        /// <summary>
+        /// Tracks directories that have been "created" (via CreateDirectory calls).
+        /// </summary>
+        public HashSet<string> Directories { get; } = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
+
+        bool IDirectory.Exists(string path)
+        {
+            return Directories.Contains(path);
+        }
+
         public DirectoryInfo CreateDirectory(string path)
         {
-            // no op
+            Directories.Add(path);
             return null;
         }
 
-        public void Delete(string path)
+        void IFile.Delete(string path)
         {
             Files.Remove(path);
+        }
+
+        public void SetFileOwnerReadWrite(string path)
+        {
+            FileOwnerReadWritePaths.Add(path);
+        }
+
+        void IDirectory.Delete(string path)
+        {
+            Directories.Remove(path);
+        }
+
+        public void SetDirectoryOwnerOnly(string path)
+        {
+            DirectoryOwnerOnlyPaths.Add(path);
         }
 
         public string[] GetFiles(string path, string searchPattern)
@@ -64,5 +99,6 @@ namespace AWSSDK.UnitTests
             return Files.Keys.Where(p => p.StartsWith(path, StringComparison.InvariantCultureIgnoreCase)
                                         && Regex.IsMatch(p, regexGlob)).ToArray();
         }
+
     }
 }
