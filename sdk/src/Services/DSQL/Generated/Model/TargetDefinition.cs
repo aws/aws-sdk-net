@@ -16,40 +16,43 @@
 /*
  * Do not modify this file. This file is generated from the dsql-2018-05-10.normal.json service model.
  */
-
 using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
-#pragma warning disable CS0612,CS0618
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DSQL.Model
 {
     /// <summary>
-    /// Paginators for the DSQL service
-    ///</summary>
-    public class DSQLPaginatorFactory : IDSQLPaginatorFactory
+    /// Target definition for stream destination.
+    /// </summary>
+    public partial class TargetDefinition
     {
-        private readonly IAmazonDSQL client;
-
-        internal DSQLPaginatorFactory(IAmazonDSQL client) 
-        {
-            this.client = client;
-        }
+        private KinesisTargetDefinition _kinesis;
 
         /// <summary>
-        /// Paginator for ListClusters operation
-        ///</summary>
-        public IListClustersPaginator ListClusters(ListClustersRequest request) 
+        /// Gets and sets the property Kinesis. 
+        /// <para>
+        /// Kinesis stream target configuration.
+        /// </para>
+        /// </summary>
+        public KinesisTargetDefinition Kinesis
         {
-            return new ListClustersPaginator(this.client, request);
+            get { return this._kinesis; }
+            set { this._kinesis = value; }
         }
 
-        /// <summary>
-        /// Paginator for ListStreams operation
-        ///</summary>
-        public IListStreamsPaginator ListStreams(ListStreamsRequest request) 
+        // Check to see if Kinesis property is set
+        internal bool IsSetKinesis()
         {
-            return new ListStreamsPaginator(this.client, request);
+            return this._kinesis != null;
         }
+
     }
 }

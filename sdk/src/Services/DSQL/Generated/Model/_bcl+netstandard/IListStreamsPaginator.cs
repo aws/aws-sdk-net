@@ -16,40 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the dsql-2018-05-10.normal.json service model.
  */
-
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DSQL.Model
 {
     /// <summary>
-    /// Paginators for the DSQL service
+    /// Paginator for the ListStreams operation
     ///</summary>
-    public class DSQLPaginatorFactory : IDSQLPaginatorFactory
+    public interface IListStreamsPaginator
     {
-        private readonly IAmazonDSQL client;
-
-        internal DSQLPaginatorFactory(IAmazonDSQL client) 
-        {
-            this.client = client;
-        }
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListStreamsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListClusters operation
-        ///</summary>
-        public IListClustersPaginator ListClusters(ListClustersRequest request) 
-        {
-            return new ListClustersPaginator(this.client, request);
-        }
-
-        /// <summary>
-        /// Paginator for ListStreams operation
-        ///</summary>
-        public IListStreamsPaginator ListStreams(ListStreamsRequest request) 
-        {
-            return new ListStreamsPaginator(this.client, request);
-        }
+        /// Enumerable containing all of the Streams
+        /// </summary>
+        IPaginatedEnumerable<StreamSummary> Streams { get; }
     }
 }
