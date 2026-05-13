@@ -44,6 +44,7 @@ namespace Amazon.Runtime.Credentials
         private readonly List<CredentialsGenerator> _credentialsGenerators;
         private readonly CredentialProfileStoreChain _credentialProfileChain = new();
         private readonly EnvironmentState _lastKnownEnvironmentState = new();
+        private readonly CachedProfileCredentialResolver _cachedProfileCredentialResolver = new();
         private static readonly Lazy<DefaultAWSCredentialsIdentityResolver> _defaultInstance = new();
         private bool _disposed;
 
@@ -114,7 +115,7 @@ namespace Amazon.Runtime.Credentials
         /// </summary>
         public AWSCredentials ResolveIdentity(IClientConfig clientConfig, CancellationToken cancellationToken)
         {
-            var profileCredentials = TryGetProfileCredentials(clientConfig);
+            var profileCredentials = _cachedProfileCredentialResolver.TryResolveCredentials(clientConfig, cancellationToken);
             if (profileCredentials != null) return profileCredentials;
 
             return InternalGetCredentials(cancellationToken);
@@ -125,28 +126,10 @@ namespace Amazon.Runtime.Credentials
 
         public async Task<AWSCredentials> ResolveIdentityAsync(IClientConfig clientConfig, CancellationToken cancellationToken = default)
         {
-            var profileCredentials = TryGetProfileCredentials(clientConfig);
+            var profileCredentials = await _cachedProfileCredentialResolver.TryResolveCredentialsAsync(clientConfig, cancellationToken).ConfigureAwait(false);
             if (profileCredentials != null) return profileCredentials;
 
             return await InternalGetCredentialsAsync(cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Resolves credentials from the profile specified in <paramref name="clientConfig"/>, if any.
-        /// Returns null if no profile name is configured, allowing the caller to fall back to the credential chain.
-        /// </summary>
-        private static AWSCredentials TryGetProfileCredentials(IClientConfig clientConfig)
-        {
-            var profile = clientConfig?.Profile;
-            if (string.IsNullOrEmpty(profile?.Name)) return null;
-
-            var source = new CredentialProfileStoreChain(profile.Location);
-            if (source.TryGetProfile(profile.Name, out CredentialProfile storedProfile))
-            {
-                return storedProfile.GetAWSCredentials(source, true);
-            }
-
-            throw new AmazonClientException($"Unable to find the \"{profile.Name}\" profile specified in the client configuration.");
         }
 
         /// <summary>
@@ -395,6 +378,7 @@ namespace Amazon.Runtime.Credentials
             if (disposing)
             {
                 _credentialResolutionLock.Dispose();
+                _cachedProfileCredentialResolver.Dispose();
             }
             _disposed = true;
         }

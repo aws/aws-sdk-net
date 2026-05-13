@@ -34,7 +34,8 @@ using Amazon.Runtime.CredentialManagement;
 namespace Amazon
 {
     /// <summary>
-    /// Configuration options that apply to the entire SDK.
+    /// Configuration options that apply to the entire SDK. This is meant to be set once during startup configuration
+    /// and changing them while service clients are being used can cause unpredictable behavior.
     /// 
     /// These settings can be configured through app.config or web.config.
     /// Below is a full sample configuration that illustrates all the possible options.
