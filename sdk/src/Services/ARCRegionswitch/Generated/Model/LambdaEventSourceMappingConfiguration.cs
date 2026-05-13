@@ -30,38 +30,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ARCRegionswitch.Model
 {
     /// <summary>
-    /// The configuration for an Amazon Web Services ECS capacity increase.
+    /// Configuration for Amazon Web Services Lambda event source mappings used in a Region
+    /// switch plan.
     /// </summary>
-    public partial class EcsCapacityIncreaseConfiguration
+    public partial class LambdaEventSourceMappingConfiguration
     {
-        private EcsCapacityMonitoringApproach _capacityMonitoringApproach;
-        private List<Service> _services = AWSConfigs.InitializeCollections ? new List<Service>() : null;
-        private int? _targetPercent;
+        private EventSourceMappingAction _action;
+        private Dictionary<string, EventSourceMapping> _regionEventSourceMappings = AWSConfigs.InitializeCollections ? new Dictionary<string, EventSourceMapping>() : null;
         private int? _timeoutMinutes;
-        private EcsUngraceful _ungraceful;
+        private LambdaEventSourceMappingUngraceful _ungraceful;
 
         /// <summary>
-        /// Gets and sets the property CapacityMonitoringApproach. 
+        /// Gets and sets the property Action. 
         /// <para>
-        /// The monitoring approach specified for the configuration, for example, <c>Most_Recent</c>.
+        /// The action to take - whether to <c>enable</c> or <c>disable</c> an event source mapping.
         /// </para>
         /// </summary>
-        public EcsCapacityMonitoringApproach CapacityMonitoringApproach
+        [AWSProperty(Required=true)]
+        public EventSourceMappingAction Action
         {
-            get { return this._capacityMonitoringApproach; }
-            set { this._capacityMonitoringApproach = value; }
+            get { return this._action; }
+            set { this._action = value; }
         }
 
-        // Check to see if CapacityMonitoringApproach property is set
-        internal bool IsSetCapacityMonitoringApproach()
+        // Check to see if Action property is set
+        internal bool IsSetAction()
         {
-            return this._capacityMonitoringApproach != null;
+            return this._action != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Services. 
+        /// Gets and sets the property RegionEventSourceMappings. 
         /// <para>
-        /// The services specified for the configuration.
+        /// Per-region configuration for which Lambda event source mapping to enable or disable
+        /// when activating or deactivating a region.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -69,35 +71,17 @@ namespace Amazon.ARCRegionswitch.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
-        public List<Service> Services
+        [AWSProperty(Required=true, Min=1, Max=2)]
+        public Dictionary<string, EventSourceMapping> RegionEventSourceMappings
         {
-            get { return this._services; }
-            set { this._services = value; }
+            get { return this._regionEventSourceMappings; }
+            set { this._regionEventSourceMappings = value; }
         }
 
-        // Check to see if Services property is set
-        internal bool IsSetServices()
+        // Check to see if RegionEventSourceMappings property is set
+        internal bool IsSetRegionEventSourceMappings()
         {
-            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property TargetPercent. 
-        /// <para>
-        /// The target percentage specified for the configuration. The default is 100.
-        /// </para>
-        /// </summary>
-        public int? TargetPercent
-        {
-            get { return this._targetPercent; }
-            set { this._targetPercent = value; }
-        }
-
-        // Check to see if TargetPercent property is set
-        internal bool IsSetTargetPercent()
-        {
-            return this._targetPercent.HasValue; 
+            return this._regionEventSourceMappings != null && (this._regionEventSourceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -125,7 +109,7 @@ namespace Amazon.ARCRegionswitch.Model
         /// The settings for ungraceful execution.
         /// </para>
         /// </summary>
-        public EcsUngraceful Ungraceful
+        public LambdaEventSourceMappingUngraceful Ungraceful
         {
             get { return this._ungraceful; }
             set { this._ungraceful = value; }

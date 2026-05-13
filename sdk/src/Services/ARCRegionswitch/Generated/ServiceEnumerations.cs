@@ -475,6 +475,56 @@ namespace Amazon.ARCRegionswitch
 
 
     /// <summary>
+    /// Constants used for properties of type EventSourceMappingAction.
+    /// </summary>
+    public class EventSourceMappingAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for EventSourceMappingAction
+        /// </summary>
+        public static readonly EventSourceMappingAction Disable = new EventSourceMappingAction("disable");
+        /// <summary>
+        /// Constant Enable for EventSourceMappingAction
+        /// </summary>
+        public static readonly EventSourceMappingAction Enable = new EventSourceMappingAction("enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventSourceMappingAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventSourceMappingAction FindValue(string value)
+        {
+            return FindValue<EventSourceMappingAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventSourceMappingAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExecutionAction.
     /// </summary>
     public class ExecutionAction : ConstantClass
@@ -566,6 +616,10 @@ namespace Amazon.ARCRegionswitch
         /// Constant EKSResourceScaling for ExecutionBlockType
         /// </summary>
         public static readonly ExecutionBlockType EKSResourceScaling = new ExecutionBlockType("EKSResourceScaling");
+        /// <summary>
+        /// Constant LambdaEventSourceMapping for ExecutionBlockType
+        /// </summary>
+        public static readonly ExecutionBlockType LambdaEventSourceMapping = new ExecutionBlockType("LambdaEventSourceMapping");
         /// <summary>
         /// Constant ManualApproval for ExecutionBlockType
         /// </summary>
@@ -1048,6 +1102,52 @@ namespace Amazon.ARCRegionswitch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GlobalAuroraUngracefulBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LambdaEventSourceMappingUngracefulBehavior.
+    /// </summary>
+    public class LambdaEventSourceMappingUngracefulBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Skip for LambdaEventSourceMappingUngracefulBehavior
+        /// </summary>
+        public static readonly LambdaEventSourceMappingUngracefulBehavior Skip = new LambdaEventSourceMappingUngracefulBehavior("skip");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaEventSourceMappingUngracefulBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaEventSourceMappingUngracefulBehavior FindValue(string value)
+        {
+            return FindValue<LambdaEventSourceMappingUngracefulBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaEventSourceMappingUngracefulBehavior(string value)
         {
             return FindValue(value);
         }
