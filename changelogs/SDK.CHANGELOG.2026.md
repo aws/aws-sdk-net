@@ -1,3 +1,8 @@
+### 3.7.1252.0 (2026-05-14 17:09 UTC)
+* Core 3.7.501.0
+	* On Unix/macOS, SSO token and Login token cache files are now created with 0600 (owner read/write only) and cache directories with 0700 (owner only). Behavior is configurable via AWSConfigs.RestrictFilePermissions.
+	* All services packages updated to require new Core
+
 ### 3.7.1251.1 (2026-04-23 17:01 UTC)
 * S3 (3.7.511.6)
 	* This release adds support for five additional checksum algorithms for data integrity checking in Amazon S3 - MD5, SHA-512, XXHash3, XXHash64, and XXHash128.
