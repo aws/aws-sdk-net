@@ -11,16 +11,10 @@ public class DynamoDbContextDeleteBenchmark : MockedDynamoDbContextDeleteBenchma
     public Task DeleteAsync() => State.ContextDeleteAsync();
 
     [Benchmark]
-    public Task DeleteAsyncWithOperationConfig() => State.ContextDeleteWithOperationConfigAsync();
-
-    [Benchmark]
     public Task DeleteAsyncWithDeleteConfig() => State.ContextDeleteWithDeleteConfigAsync();
 
     [Benchmark]
     public Task DeleteAsyncHashKeyRangeKey() => State.ContextDeleteHashKeyRangeKeyAsync();
-
-    [Benchmark]
-    public Task DeleteAsyncHashKeyRangeKeyWithOperationConfig() => State.ContextDeleteHashKeyRangeKeyWithOperationConfigAsync();
 
     [Benchmark]
     public Task DeleteAsyncHashKeyRangeKeyWithDeleteConfig() => State.ContextDeleteHashKeyRangeKeyWithDeleteConfigAsync();

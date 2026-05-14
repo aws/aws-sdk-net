@@ -10,9 +10,6 @@ public class DynamoDbContextScanBenchmark : MockedDynamoDbContextBenchmark
     public Task ScanAsync() => State.ContextScanAsync();
 
     [Benchmark]
-    public Task ScanWithScanConditionOperationConfigAsync() => State.ContextScanWithScanConditionOperationConfigAsync();
-
-    [Benchmark]
     public Task ScanWithScanConditionScanConfigAsync() => State.ContextScanWithScanConditionScanConfigAsync();
 
     [Benchmark]

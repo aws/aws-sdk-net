@@ -1,5 +1,4 @@
 using Amazon.DynamoDBv2.DocumentModel;
-#pragma warning disable CS0618
 
 namespace AWSSDK.Benchmarks.MockedDynamoDB;
 

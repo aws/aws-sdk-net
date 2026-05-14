@@ -1,8 +1,6 @@
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 
-#pragma warning disable CS0618
-
 namespace AWSSDK.Benchmarks.MockedDynamoDB;
 
 public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkStateBase
@@ -21,32 +19,23 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
     private DynamoDBContext? _context;
     private object? _item;
     private Func<Task>? _contextLoad;
-    private Func<Task>? _contextLoadWithOperationConfig;
     private Func<Task>? _contextLoadWithLoadConfig;
     private Func<Task>? _contextLoadKeyObject;
-    private Func<Task>? _contextLoadKeyObjectWithOperationConfig;
     private Func<Task>? _contextLoadKeyObjectWithLoadConfig;
     private Func<Task>? _contextSave;
-    private Func<Task>? _contextSaveWithOperationConfig;
     private Func<Task>? _contextSaveWithSaveConfig;
     private Func<Task>? _contextSaveWithType;
-    private Func<Task>? _contextSaveWithTypeOperationConfig;
     private Func<Task>? _contextSaveWithTypeSaveConfig;
     private Func<Task>? _contextDelete;
-    private Func<Task>? _contextDeleteWithOperationConfig;
     private Func<Task>? _contextDeleteWithDeleteConfig;
     private Func<Task>? _contextDeleteHashKeyRangeKey;
-    private Func<Task>? _contextDeleteHashKeyRangeKeyWithOperationConfig;
     private Func<Task>? _contextDeleteHashKeyRangeKeyWithDeleteConfig;
     private Func<Task>? _contextQuery;
     private Func<Task>? _contextQueryWithQueryConfig;
-    private Func<Task>? _contextQueryWithOperationConfig;
     private Func<Task>? _contextQueryWithQueryConditionalQueryConfig;
     private Func<Task>? _contextQueryWithQueryOperator;
     private Func<Task>? _contextQueryWithQueryOperatorQueryConfig;
-    private Func<Task>? _contextQueryWithQueryOperatorOperationConfig;
     private Func<Task>? _contextScan;
-    private Func<Task>? _contextScanWithScanConditionOperationConfig;
     private Func<Task>? _contextScanWithScanConditionScanConfig;
     private Func<Task>? _contextScanWithContextExpression;
     private Func<Task>? _contextScanWithContextExpressionScanConfig;
@@ -81,37 +70,25 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
 
     public Task ContextLoadAsync() => _contextLoad!();
 
-    public Task ContextLoadWithOperationConfigAsync() => _contextLoadWithOperationConfig!();
-
     public Task ContextLoadWithLoadConfigAsync() => _contextLoadWithLoadConfig!();
 
     public Task ContextLoadKeyObjectAsync() => _contextLoadKeyObject!();
-
-    public Task ContextLoadKeyObjectWithOperationConfigAsync() => _contextLoadKeyObjectWithOperationConfig!();
 
     public Task ContextLoadKeyObjectWithLoadConfigAsync() => _contextLoadKeyObjectWithLoadConfig!();
 
     public Task ContextSaveAsync() => _contextSave!();
 
-    public Task ContextSaveWithOperationConfigAsync() => _contextSaveWithOperationConfig!();
-
     public Task ContextSaveWithSaveConfigAsync() => _contextSaveWithSaveConfig!();
 
     public Task ContextSaveWithTypeAsync() => _contextSaveWithType!();
-
-    public Task ContextSaveWithTypeOperationConfigAsync() => _contextSaveWithTypeOperationConfig!();
 
     public Task ContextSaveWithTypeSaveConfigAsync() => _contextSaveWithTypeSaveConfig!();
 
     public Task ContextDeleteAsync() => _contextDelete!();
 
-    public Task ContextDeleteWithOperationConfigAsync() => _contextDeleteWithOperationConfig!();
-
     public Task ContextDeleteWithDeleteConfigAsync() => _contextDeleteWithDeleteConfig!();
 
     public Task ContextDeleteHashKeyRangeKeyAsync() => _contextDeleteHashKeyRangeKey!();
-
-    public Task ContextDeleteHashKeyRangeKeyWithOperationConfigAsync() => _contextDeleteHashKeyRangeKeyWithOperationConfig!();
 
     public Task ContextDeleteHashKeyRangeKeyWithDeleteConfigAsync() => _contextDeleteHashKeyRangeKeyWithDeleteConfig!();
 
@@ -119,19 +96,13 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
 
     public Task ContextQueryWithQueryConfigAsync() => _contextQueryWithQueryConfig!();
 
-    public Task ContextQueryWithOperationConfigAsync() => _contextQueryWithOperationConfig!();
-
     public Task ContextQueryWithQueryConditionalQueryConfigAsync() => _contextQueryWithQueryConditionalQueryConfig!();
 
     public Task ContextQueryWithQueryOperatorAsync() => _contextQueryWithQueryOperator!();
 
     public Task ContextQueryWithQueryOperatorQueryConfigAsync() => _contextQueryWithQueryOperatorQueryConfig!();
 
-    public Task ContextQueryWithQueryOperatorOperationConfigAsync() => _contextQueryWithQueryOperatorOperationConfig!();
-
     public Task ContextScanAsync() => _contextScan!();
-
-    public Task ContextScanWithScanConditionOperationConfigAsync() => _contextScanWithScanConditionOperationConfig!();
 
     public Task ContextScanWithScanConditionScanConfigAsync() => _contextScanWithScanConditionScanConfig!();
 
@@ -153,7 +124,6 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
     protected override void ConfigureContextDelegates<T>()
     {
         var typedItem = (T)_item!;
-        var operationConfig = new DynamoDBOperationConfig { OverrideTableName = TableName };
         var loadConfig = new LoadConfig { OverrideTableName = TableName };
         var saveConfig = new SaveConfig { OverrideTableName = TableName };
         var deleteConfig = new DeleteConfig { OverrideTableName = TableName };
@@ -166,26 +136,20 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
 
         //LoadAsync
         _contextLoad = () => _context!.LoadAsync<T>(PartitionKeyValue, SortKeyValue);
-        _contextLoadWithOperationConfig = () => _context!.LoadAsync<T>(PartitionKeyValue, SortKeyValue, operationConfig);
         _contextLoadWithLoadConfig = () => _context!.LoadAsync<T>(PartitionKeyValue, SortKeyValue, loadConfig);
         _contextLoadKeyObject = () => _context!.LoadAsync(typedItem);
-        _contextLoadKeyObjectWithOperationConfig = () => _context!.LoadAsync(typedItem, operationConfig);
         _contextLoadKeyObjectWithLoadConfig = () => _context!.LoadAsync(typedItem, loadConfig);
 
         //SaveAsync
         _contextSave = () => _context!.SaveAsync(typedItem);
-        _contextSaveWithOperationConfig = () => _context!.SaveAsync(typedItem, operationConfig);
         _contextSaveWithSaveConfig = () => _context!.SaveAsync(typedItem, saveConfig);
         _contextSaveWithType = () => _context!.SaveAsync(typeof(T), typedItem);
-        _contextSaveWithTypeOperationConfig = () => _context!.SaveAsync(typeof(T), typedItem, operationConfig);
         _contextSaveWithTypeSaveConfig = () => _context!.SaveAsync(typeof(T), typedItem, saveConfig);
 
         //DeleteAsync
         _contextDelete = () => _context!.DeleteAsync(typedItem);
-        _contextDeleteWithOperationConfig = () => _context!.DeleteAsync(typedItem, operationConfig);
         _contextDeleteWithDeleteConfig = () => _context!.DeleteAsync(typedItem, deleteConfig);
         _contextDeleteHashKeyRangeKey = () => _context!.DeleteAsync<T>(PartitionKeyValue, SortKeyValue);
-        _contextDeleteHashKeyRangeKeyWithOperationConfig = () => _context!.DeleteAsync<T>(PartitionKeyValue, SortKeyValue, operationConfig);
         _contextDeleteHashKeyRangeKeyWithDeleteConfig = () => _context!.DeleteAsync<T>(PartitionKeyValue, SortKeyValue, deleteConfig);
 
         //QueryAsync
@@ -201,11 +165,6 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
             return search.GetNextSetAsync();
         };
 
-        _contextQueryWithOperationConfig = () =>
-        {
-            var search = _context!.QueryAsync<T>(PartitionKeyValue, operationConfig);
-            return search.GetNextSetAsync();
-        };
         _contextQueryWithQueryConditionalQueryConfig = () =>
         {
             var search = _context!.QueryAsync<T>(queryConditional, queryConfig);
@@ -221,22 +180,11 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
             var search = _context!.QueryAsync<T>("PartitionKey", QueryOperator.Equal, new[] { "pk" }, queryConfig);
             return search.GetNextSetAsync();
         };
-        _contextQueryWithQueryOperatorOperationConfig = () =>
-        {
-            var search = _context!.QueryAsync<T>("PartitionKey", QueryOperator.Equal, new[] { "pk" }, operationConfig);
-            return search.GetNextSetAsync();
-        };
 
         //ScanAsync
         _contextScan = () =>
         {
             var search = _context!.ScanAsync<T>(scanConditions);
-            return search.GetNextSetAsync();
-        };
-
-        _contextScanWithScanConditionOperationConfig = () =>
-        {
-            var search = _context!.ScanAsync<T>(scanConditions, operationConfig);
             return search.GetNextSetAsync();
         };
 
