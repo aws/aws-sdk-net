@@ -37,11 +37,33 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetCatalogsRequest : AmazonGlueRequest
     {
+        private bool? _hasDatabases;
         private bool? _includeRoot;
         private int? _maxResults;
         private string _nextToken;
         private string _parentCatalogId;
         private bool? _recursive;
+
+        /// <summary>
+        /// Gets and sets the property HasDatabases. 
+        /// <para>
+        /// When <c>true</c>, the response only includes catalogs that can contain databases.
+        /// Some catalogs are organizational containers that hold only other catalogs, not databases.
+        /// When this parameter is set to <c>true</c>, those container-only catalogs are excluded,
+        /// and only catalogs capable of containing databases are returned. Defaults to <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? HasDatabases
+        {
+            get { return this._hasDatabases; }
+            set { this._hasDatabases = value; }
+        }
+
+        // Check to see if HasDatabases property is set
+        internal bool IsSetHasDatabases()
+        {
+            return this._hasDatabases.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property IncludeRoot. 
