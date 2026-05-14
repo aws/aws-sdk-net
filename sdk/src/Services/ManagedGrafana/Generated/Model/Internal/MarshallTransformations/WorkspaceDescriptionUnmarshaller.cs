@@ -122,6 +122,12 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ipAddressType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("kmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

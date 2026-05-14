@@ -113,6 +113,12 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.GrafanaVersion);
             }
 
+            if(publicRequest.IsSetIpAddressType())
+            {
+                context.Writer.WritePropertyName("ipAddressType");
+                context.Writer.WriteStringValue(publicRequest.IpAddressType);
+            }
+
             if(publicRequest.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");

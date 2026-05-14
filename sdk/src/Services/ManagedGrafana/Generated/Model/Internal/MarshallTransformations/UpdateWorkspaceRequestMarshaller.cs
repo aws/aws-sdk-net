@@ -82,6 +82,12 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AccountAccessType);
             }
 
+            if(publicRequest.IsSetIpAddressType())
+            {
+                context.Writer.WritePropertyName("ipAddressType");
+                context.Writer.WriteStringValue(publicRequest.IpAddressType);
+            }
+
             if(publicRequest.IsSetNetworkAccessControl())
             {
                 context.Writer.WritePropertyName("networkAccessControl");

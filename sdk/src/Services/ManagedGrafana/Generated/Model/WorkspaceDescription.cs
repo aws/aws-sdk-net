@@ -46,6 +46,7 @@ namespace Amazon.ManagedGrafana.Model
         private string _grafanaToken;
         private string _grafanaVersion;
         private string _id;
+        private IPAddressType _ipAddressType;
         private string _kmsKeyId;
         private DateTime? _licenseExpiration;
         private LicenseType _licenseType;
@@ -296,6 +297,25 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The type of IP addresses supported for connection to the workspace. Valid values are
+        /// <c>IPv4</c> and <c>DualStack</c>.
+        /// </para>
+        /// </summary>
+        public IPAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>
