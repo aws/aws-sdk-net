@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The error details of a failed notebook run in Amazon DataZone.
+    /// The error details of a failed notebook run in Amazon SageMaker Unified Studio.
     /// </summary>
     public partial class NotebookRunError
     {

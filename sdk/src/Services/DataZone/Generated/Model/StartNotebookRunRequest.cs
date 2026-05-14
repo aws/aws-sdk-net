@@ -31,9 +31,10 @@ namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the StartNotebookRun operation.
-    /// Starts a notebook run in an Amazon DataZone domain. A notebook run represents the
-    /// execution of a Amazon DataZone notebook within a project. You can configure compute,
-    /// network, timeout, and environment settings for the run.
+    /// Starts a notebook run in Amazon SageMaker Unified Studio. A notebook run represents
+    /// the execution of an <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">Amazon
+    /// SageMaker notebook</a> within a project. You can configure compute, network, timeout,
+    /// and environment settings for the run.
     /// </summary>
     public partial class StartNotebookRunRequest : AmazonDataZoneRequest
     {
@@ -91,7 +92,8 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
         /// <para>
-        /// The identifier of the Amazon DataZone domain in which the notebook run is started.
+        /// The identifier of the Amazon SageMaker Unified Studio domain in which the notebook
+        /// run is started.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

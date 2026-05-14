@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The summary of a notebook run in Amazon DataZone.
+    /// The summary of a notebook run in Amazon SageMaker Unified Studio.
     /// </summary>
     public partial class NotebookRunSummary
     {
@@ -105,7 +105,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The identifier of the Amazon DataZone domain.
+        /// The identifier of the Amazon SageMaker Unified Studio domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

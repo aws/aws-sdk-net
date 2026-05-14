@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The network configuration for a notebook run in Amazon DataZone.
+    /// The network configuration for a notebook run in Amazon SageMaker Unified Studio.
     /// </summary>
     public partial class NetworkConfig
     {
