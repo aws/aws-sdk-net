@@ -33,7 +33,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
     public partial class AmazonLicenseManagerLinuxSubscriptionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("License Manager Linux Subscriptions", "4.0.2.28");
+            InternalSDKUtils.BuildUserAgentString("License Manager Linux Subscriptions", "4.0.2.29");
 
         private static readonly AmazonLicenseManagerLinuxSubscriptionsEndpointResolver EndpointResolver =
             new AmazonLicenseManagerLinuxSubscriptionsEndpointResolver();
