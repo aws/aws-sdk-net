@@ -41,6 +41,7 @@ namespace Amazon.CloudFront.Model
         private int? _numberOfCaCertificates;
         private string _reason;
         private TrustStoreStatus _status;
+        private bool? _useClientCertificateOCSPEndpoint;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -166,6 +167,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseClientCertificateOCSPEndpoint. 
+        /// <para>
+        /// A Boolean that determines whether the trust store uses the CA certificate's OCSP endpoint
+        /// to check certificate revocation status.
+        /// </para>
+        /// </summary>
+        public bool? UseClientCertificateOCSPEndpoint
+        {
+            get { return this._useClientCertificateOCSPEndpoint; }
+            set { this._useClientCertificateOCSPEndpoint = value; }
+        }
+
+        // Check to see if UseClientCertificateOCSPEndpoint property is set
+        internal bool IsSetUseClientCertificateOCSPEndpoint()
+        {
+            return this._useClientCertificateOCSPEndpoint.HasValue; 
         }
 
     }
