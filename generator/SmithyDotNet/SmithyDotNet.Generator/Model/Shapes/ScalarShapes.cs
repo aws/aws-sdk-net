@@ -1,4 +1,4 @@
-namespace SmithyDotNet.Generator.Model;
+namespace SmithyDotNet.Generator.Model.Shapes;
 
 /// <summary>Uninterpreted binary data.</summary>
 /// <remarks><see href="https://smithy.io/2.0/spec/simple-types.html#blob" /></remarks>

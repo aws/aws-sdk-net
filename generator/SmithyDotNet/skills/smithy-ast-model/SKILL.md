@@ -148,7 +148,33 @@ var options = new JsonSerializerOptions
 var model = JsonSerializer.Deserialize<SmithyModel>(json, options);
 ```
 
-The `SmithyModel.Shapes` dictionary uses `ShapeId` as key — this requires either a custom dictionary converter or deserializing as `Dictionary<string, Shape?>` and converting keys post-hoc. If unknown shape types return `null`, skip those entries explicitly during conversion rather than storing null shapes.
+`SmithyModel.Shapes` is a `Dictionary<string, Shape?>` keyed by the absolute shape ID string (e.g. `"com.amazonaws.cloudtraildata#AuditEvent"`). Unknown shape types deserialize to `null` values for forward compatibility.
+
+## Validating Models with the Smithy CLI
+
+Install the Smithy CLI (`smithy`) to validate models and query shapes directly. See [Smithy CLI docs](https://smithy.io/2.0/guides/smithy-cli/cli_installation.html) for installation. Use it to verify shape counts, types, and structure instead of parsing JSON manually.
+
+**Validate a model:**
+```
+smithy validate --allow-unknown-traits <path-to-model.json>
+```
+
+**Query shapes with selectors** ([selector spec](https://smithy.io/2.0/spec/selectors.html)):
+```
+smithy select --selector '<selector>' --show type --allow-unknown-traits <path-to-model.json>
+```
+
+`--allow-unknown-traits` is needed because AWS trait definitions (e.g. `aws.api#service`) are not bundled with the CLI.
+
+**Useful selectors:**
+- `service` — all service shapes
+- `operation` — all operation shapes
+- `structure` — all structure shapes
+- `:is([id|namespace = com.amazonaws.cloudtraildata])` — shapes in a specific namespace (excludes prelude)
+- `service > operation` — operations directly bound to a service
+- `structure > member > string` — structure members targeting string shapes
+
+**PowerShell caveat:** selectors containing `[` or `$` must be single-quoted to prevent PowerShell interpretation. Use `:is(...)` instead of `[...]` attribute selectors when quoting is awkward.
 
 ## Key Invariants
 

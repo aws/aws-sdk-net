@@ -2,7 +2,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using SmithyDotNet.Generator.Model.Converters;
 
-namespace SmithyDotNet.Generator.Model;
+namespace SmithyDotNet.Generator.Model.Shapes;
 
 /// <summary>
 /// Base type for all shapes in the Smithy model. Each shape has a type discriminator

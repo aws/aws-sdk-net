@@ -18,6 +18,8 @@ public record ShapeId(string Namespace, string Name, string? Member = null)
     /// </summary>
     public bool IsPrelude => Namespace == "smithy.api";
 
+    public static readonly ShapeId Unit = new("smithy.api", "Unit");
+
     /// <summary>
     /// Parses an absolute shape ID string. Expects exactly one <c>#</c> separator.
     /// </summary>

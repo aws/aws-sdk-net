@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using SmithyDotNet.Generator.Model.Shapes;
 
 namespace SmithyDotNet.Generator.Model.Converters;
 
@@ -32,15 +33,14 @@ public class ShapeConverter : JsonConverter<Shape>
             "timestamp" => root.Deserialize<TimestampShape>(options),
             "document" => root.Deserialize<DocumentShape>(options),
 
-            // TODO: uncomment as aggregate shape types are added
-            // "list" => root.Deserialize<ListShape>(options),
-            // "map" => root.Deserialize<MapShape>(options),
-            // "structure" => root.Deserialize<StructureShape>(options),
+            "list" => root.Deserialize<ListShape>(options),
+            "map" => root.Deserialize<MapShape>(options),
+            "structure" => root.Deserialize<StructureShape>(options),
             // "union" => root.Deserialize<UnionShape>(options),
             // "enum" => root.Deserialize<EnumShape>(options),
             // "intEnum" => root.Deserialize<IntEnumShape>(options),
-            // "service" => root.Deserialize<ServiceShape>(options),
-            // "operation" => root.Deserialize<OperationShape>(options),
+            "service" => root.Deserialize<ServiceShape>(options),
+            "operation" => root.Deserialize<OperationShape>(options),
             // "resource" => root.Deserialize<ResourceShape>(options),
 
             _ => WarnUnknown(type),
