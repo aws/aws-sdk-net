@@ -26,6 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.CloudHSM.Model;
 using Amazon.CloudHSM;
 
+#if NETFRAMEWORK
 namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
@@ -54,3 +55,4 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
         }
     }
 }
+#endif

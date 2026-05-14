@@ -26,6 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.StorageGateway.Model;
 using Amazon.StorageGateway;
 
+#if NETFRAMEWORK
 namespace AWSSDK_DotNet.UnitTests.TestTools
 {
     [TestClass]
@@ -45,3 +46,4 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
         }
     }
 }
+#endif
