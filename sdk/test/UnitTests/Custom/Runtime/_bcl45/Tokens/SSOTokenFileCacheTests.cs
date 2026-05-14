@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,6 +17,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Amazon;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -121,6 +122,162 @@ namespace AWSSDK.UnitTests.Runtime
 
             // assert file was written to the correct location
             Assert.AreEqual(Path.Combine(testCacheFolder, expectedCacheFile), mockFileSystem.Files.First().Key);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void SaveSsoToken_WritesFileWhenRestrictFilePermissionsIsUnrestricted()
+        {
+            var originalValue = AWSConfigs.RestrictFilePermissions;
+            try
+            {
+                AWSConfigs.RestrictFilePermissions = FilePermission.UNRESTRICTED;
+
+                var testCacheFolder = "test";
+                var mockFileSystem = new MockFileSystem();
+
+                var cachedSsoToken = new SsoToken
+                {
+                    Session = "opt-out-test",
+                    AccessToken = "cachedToken",
+                    ExpiresAt = DateTime.Parse("3000-12-25T21:30:00Z").ToUniversalTime()
+                };
+
+                var ssoTokenFileCache =
+                    new SSOTokenFileCache(
+                        CryptoUtilFactory.CryptoInstance,
+                        mockFileSystem,
+                        mockFileSystem);
+
+                ssoTokenFileCache.SaveSsoToken(cachedSsoToken, testCacheFolder);
+
+                // Verify the file was still written
+                Assert.AreEqual(1, mockFileSystem.Files.Count, "Token file should still be written");
+                // Verify permissions were NOT set (Unrestricted mode)
+                Assert.AreEqual(0, mockFileSystem.FileOwnerReadWritePaths.Count, "SetFileOwnerReadWrite should not be called when Unrestricted");
+                Assert.AreEqual(0, mockFileSystem.DirectoryOwnerOnlyPaths.Count, "SetDirectoryOwnerOnly should not be called when Unrestricted");
+            }
+            finally
+            {
+                AWSConfigs.RestrictFilePermissions = originalValue;
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public async Task SaveSsoTokenAsync_WritesFileWhenRestrictFilePermissionsIsUnrestricted()
+        {
+            var originalValue = AWSConfigs.RestrictFilePermissions;
+            try
+            {
+                AWSConfigs.RestrictFilePermissions = FilePermission.UNRESTRICTED;
+
+                var testCacheFolder = "test";
+                var mockFileSystem = new MockFileSystem();
+
+                var cachedSsoToken = new SsoToken
+                {
+                    Session = "opt-out-test-async",
+                    AccessToken = "cachedToken",
+                    ExpiresAt = DateTime.Parse("3000-12-25T21:30:00Z").ToUniversalTime()
+                };
+
+                var ssoTokenFileCache =
+                    new SSOTokenFileCache(
+                        CryptoUtilFactory.CryptoInstance,
+                        mockFileSystem,
+                        mockFileSystem);
+
+                await ssoTokenFileCache.SaveSsoTokenAsync(cachedSsoToken, testCacheFolder);
+
+                // Verify the file was still written
+                Assert.AreEqual(1, mockFileSystem.Files.Count, "Token file should still be written");
+                // Verify permissions were NOT set (Unrestricted mode)
+                Assert.AreEqual(0, mockFileSystem.FileOwnerReadWritePaths.Count, "SetFileOwnerReadWrite should not be called when Unrestricted");
+                Assert.AreEqual(0, mockFileSystem.DirectoryOwnerOnlyPaths.Count, "SetDirectoryOwnerOnly should not be called when Unrestricted");
+            }
+            finally
+            {
+                AWSConfigs.RestrictFilePermissions = originalValue;
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void SaveSsoToken_SetsPermissionsWhenUserReadWrite()
+        {
+            var originalValue = AWSConfigs.RestrictFilePermissions;
+            try
+            {
+                AWSConfigs.RestrictFilePermissions = FilePermission.USER_READ_WRITE;
+
+                var testCacheFolder = "test";
+                var mockFileSystem = new MockFileSystem();
+
+                var cachedSsoToken = new SsoToken
+                {
+                    Session = "perm-test",
+                    AccessToken = "cachedToken",
+                    ExpiresAt = DateTime.Parse("3000-12-25T21:30:00Z").ToUniversalTime()
+                };
+
+                var ssoTokenFileCache =
+                    new SSOTokenFileCache(
+                        CryptoUtilFactory.CryptoInstance,
+                        mockFileSystem,
+                        mockFileSystem);
+
+                ssoTokenFileCache.SaveSsoToken(cachedSsoToken, testCacheFolder);
+
+                // Verify permissions were set (new file and new directory)
+                Assert.AreEqual(1, mockFileSystem.FileOwnerReadWritePaths.Count, "SetFileOwnerReadWrite should be called once for new file");
+                Assert.AreEqual(1, mockFileSystem.DirectoryOwnerOnlyPaths.Count, "SetDirectoryOwnerOnly should be called once for new directory");
+            }
+            finally
+            {
+                AWSConfigs.RestrictFilePermissions = originalValue;
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public async Task SaveSsoTokenAsync_SetsPermissionsWhenUserReadWrite()
+        {
+            var originalValue = AWSConfigs.RestrictFilePermissions;
+            try
+            {
+                AWSConfigs.RestrictFilePermissions = FilePermission.USER_READ_WRITE;
+
+                var testCacheFolder = "test";
+                var mockFileSystem = new MockFileSystem();
+
+                var cachedSsoToken = new SsoToken
+                {
+                    Session = "perm-test-async",
+                    AccessToken = "cachedToken",
+                    ExpiresAt = DateTime.Parse("3000-12-25T21:30:00Z").ToUniversalTime()
+                };
+
+                var ssoTokenFileCache =
+                    new SSOTokenFileCache(
+                        CryptoUtilFactory.CryptoInstance,
+                        mockFileSystem,
+                        mockFileSystem);
+
+                await ssoTokenFileCache.SaveSsoTokenAsync(cachedSsoToken, testCacheFolder);
+
+                // Verify permissions were set (new file and new directory)
+                Assert.AreEqual(1, mockFileSystem.FileOwnerReadWritePaths.Count, "SetFileOwnerReadWrite should be called once for new file");
+                Assert.AreEqual(1, mockFileSystem.DirectoryOwnerOnlyPaths.Count, "SetDirectoryOwnerOnly should be called once for new directory");
+            }
+            finally
+            {
+                AWSConfigs.RestrictFilePermissions = originalValue;
+            }
         }
 
         [TestMethod]

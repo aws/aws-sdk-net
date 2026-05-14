@@ -53,6 +53,8 @@ namespace Amazon.Util.Internal
         public bool DisableDangerousDisablePathAndQueryCanonicalization { get; set; }
 #endif
 
+        public FilePermission RestrictFilePermissions { get; set; }
+
         private const string _rootAwsSectionName = "aws";
         public RootConfig()
         {
@@ -67,6 +69,7 @@ namespace Amazon.Util.Internal
             UseSdkCache = AWSConfigs._useSdkCache;
             InitializeCollections = AWSConfigs._initializeCollections;
             CorrectForClockSkew = true;
+            RestrictFilePermissions = AWSConfigs._restrictFilePermissions;
 
 #if NET8_0_OR_GREATER
             DisableDangerousDisablePathAndQueryCanonicalization = AWSConfigs._disableDangerousDisablePathAndQueryCanonicalization;

@@ -19,9 +19,29 @@ namespace AWSSDK.UnitTests
         public Dictionary<string, string> Files { get; set; } =
             new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
 
-        public bool Exists(string path)
+        /// <summary>
+        /// Tracks paths that had SetFileOwnerReadWrite called on them.
+        /// </summary>
+        public List<string> FileOwnerReadWritePaths { get; } = new List<string>();
+
+        /// <summary>
+        /// Tracks paths that had SetDirectoryOwnerOnly called on them.
+        /// </summary>
+        public List<string> DirectoryOwnerOnlyPaths { get; } = new List<string>();
+
+        /// <summary>
+        /// Tracks directories that have been created.
+        /// </summary>
+        public HashSet<string> Directories { get; } = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
+
+        bool IFile.Exists(string path)
         {
             return Files.Keys.Contains(path);
+        }
+
+        bool IDirectory.Exists(string path)
+        {
+            return Directories.Contains(path);
         }
 
         public string ReadAllText(string path)
@@ -48,13 +68,28 @@ namespace AWSSDK.UnitTests
 
         public DirectoryInfo CreateDirectory(string path)
         {
-            // no op
+            Directories.Add(path);
             return null;
         }
 
-        public void Delete(string path)
+        void IFile.Delete(string path)
         {
             Files.Remove(path);
+        }
+
+        public void SetFileOwnerReadWrite(string path)
+        {
+            FileOwnerReadWritePaths.Add(path);
+        }
+
+        void IDirectory.Delete(string path)
+        {
+            Directories.Remove(path);
+        }
+
+        public void SetDirectoryOwnerOnly(string path)
+        {
+            DirectoryOwnerOnlyPaths.Add(path);
         }
 
         public string[] GetFiles(string path, string searchPattern)

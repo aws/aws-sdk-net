@@ -220,8 +220,13 @@ namespace Amazon.Runtime.Credentials.Internal
                 }
 
                 var json = SsoTokenUtils.ToJson(token);
-                _directory.CreateDirectory(Path.GetDirectoryName(cacheFilePath));
+                var directoryPath = Path.GetDirectoryName(cacheFilePath);
+                var isNewDirectory = !_directory.Exists(directoryPath);
+                var isNewFile = !_file.Exists(cacheFilePath);
+                _directory.CreateDirectory(directoryPath);
+                FilePermissionHelper.SetDirectoryPermissionsOrCleanup(_directory, directoryPath, isNewDirectory, _logger);
                 _file.WriteAllText(cacheFilePath, json);
+                FilePermissionHelper.SetFilePermissionsOrCleanup(_file, cacheFilePath, isNewFile, _logger);
             }
             catch (Exception e)
             {
@@ -244,8 +249,13 @@ namespace Amazon.Runtime.Credentials.Internal
                 }
 
                 var json = SsoTokenUtils.ToJson(token);
-                _directory.CreateDirectory(Path.GetDirectoryName(cacheFilePath));
+                var directoryPath = Path.GetDirectoryName(cacheFilePath);
+                var isNewDirectory = !_directory.Exists(directoryPath);
+                var isNewFile = !_file.Exists(cacheFilePath);
+                _directory.CreateDirectory(directoryPath);
+                FilePermissionHelper.SetDirectoryPermissionsOrCleanup(_directory, directoryPath, isNewDirectory, _logger);
                 await _file.WriteAllTextAsync(cacheFilePath, json, cancellationToken).ConfigureAwait(false);
+                FilePermissionHelper.SetFilePermissionsOrCleanup(_file, cacheFilePath, isNewFile, _logger);
             }
 
             catch (Exception e)
