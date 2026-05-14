@@ -941,6 +941,60 @@ namespace Amazon.QConnect
 
 
     /// <summary>
+    /// Constants used for properties of type CrossRegionStatus.
+    /// </summary>
+    public class CrossRegionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GLOBAL for CrossRegionStatus
+        /// </summary>
+        public static readonly CrossRegionStatus GLOBAL = new CrossRegionStatus("GLOBAL");
+        /// <summary>
+        /// Constant NONE for CrossRegionStatus
+        /// </summary>
+        public static readonly CrossRegionStatus NONE = new CrossRegionStatus("NONE");
+        /// <summary>
+        /// Constant REGIONAL for CrossRegionStatus
+        /// </summary>
+        public static readonly CrossRegionStatus REGIONAL = new CrossRegionStatus("REGIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CrossRegionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CrossRegionStatus FindValue(string value)
+        {
+            return FindValue<CrossRegionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CrossRegionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExternalSource.
     /// </summary>
     public class ExternalSource : ConstantClass
@@ -2102,6 +2156,56 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ModelLifecycle.
+    /// </summary>
+    public class ModelLifecycle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ModelLifecycle
+        /// </summary>
+        public static readonly ModelLifecycle ACTIVE = new ModelLifecycle("ACTIVE");
+        /// <summary>
+        /// Constant LEGACY for ModelLifecycle
+        /// </summary>
+        public static readonly ModelLifecycle LEGACY = new ModelLifecycle("LEGACY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelLifecycle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelLifecycle FindValue(string value)
+        {
+            return FindValue<ModelLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelLifecycle(string value)
         {
             return FindValue(value);
         }
