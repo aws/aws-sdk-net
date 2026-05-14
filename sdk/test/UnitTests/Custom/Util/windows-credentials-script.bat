@@ -1,6 +1,6 @@
 @ECHO OFF
 FOR /F %%a IN ('POWERSHELL -COMMAND \"$([guid]::NewGuid().ToString())\"') DO   SET NEWGUID=%%a
-for /f "tokens=2 delims==" %%G in ('wmic os get localdatetime /value') do set mydate=%%G
+for /f %%G in ('powershell -command "Get-Date -Format yyyyMMddHHmmss"') do set mydate=%%G
 set year=%mydate:~0,4%
 set month=%mydate:~4,2%
 set day=%mydate:~6,2%
@@ -28,7 +28,7 @@ IF NOT [%2%] == [] (
 )
 IF "%credentialType%"=="Basic" (
     ECHO "AccessKeyId": "AccessKey",
-    ECHO "SecretAccessKey": "SecretKey",
+    ECHO "SecretAccessKey": "SecretKey"
 )
 IF "%credentialType%"=="Session" (
     ECHO "AccessKeyId": "AccessKey",

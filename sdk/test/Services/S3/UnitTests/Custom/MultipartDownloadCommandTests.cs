@@ -187,7 +187,7 @@ namespace AWSSDK.UnitTests
             await command.ExecuteAsync(CancellationToken.None);
         }
 
-#if BCL
+#if NETFRAMEWORK
         [TestMethod]
         [ExpectedException(typeof(InvalidOperationException))]
         public async Task ExecuteAsync_WithMissingFilePath_ThrowsInvalidOperationException()

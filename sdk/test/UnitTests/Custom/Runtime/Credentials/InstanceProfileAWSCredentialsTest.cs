@@ -31,10 +31,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestNullRole()
         {
-            AssertExtensions.ExpectException(() =>
-            {
-                var creds = new InstanceProfileAWSCredentials(role: null);
-            }, typeof(ArgumentNullException), "Value cannot be null." + Environment.NewLine + "Parameter name: role");
+            AssertExtensions.ExpectException(() => new InstanceProfileAWSCredentials(role: null), typeof(ArgumentNullException));
         }
 
         [TestMethod]

@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Lambda")]
-        public void TestInvokeResponseBody()
+        public async System.Threading.Tasks.Task TestInvokeResponseBody()
         {
             var responseBody = "Process exited before completing request:TypeError: Object #<LambdaEventResponse> has no method 'write': at exports.handler (/var/task/helloworld.js:4:14)";
             var requestId = "fakerequ-esti-dfak-ereq-uestidfakere";
@@ -46,7 +46,7 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             {
                 CustomResponses.SetResponse(client, responseBody, requestId, isOK: true);
 
-                var response = client.Invoke(new InvokeRequest
+                var response = await client.InvokeAsync(new InvokeRequest
                 {
                     FunctionName = "TestFunction"
                 });

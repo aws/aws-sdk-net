@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
+#if NETFRAMEWORK
 namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
@@ -24,18 +25,12 @@ namespace AWSSDK_DotNet.UnitTests
         public void Setup()
         {
             _ddbClientMock = new Mock<IAmazonDynamoDB>(MockBehavior.Strict);
-
             var clientConfigMock = new Mock<IClientConfig>();
-            // Setup any properties/methods you expect to be used, e.g.:
-            clientConfigMock.SetupGet(c => c.RegionEndpoint).Returns((RegionEndpoint)null);
-            clientConfigMock.SetupGet(c => c.ServiceURL).Returns((string)null);
-            // Add more setups as needed for your tests
 
             // Setup the Config property on the IAmazonDynamoDB mock
             _ddbClientMock.SetupGet(c => c.Config).Returns(clientConfigMock.Object);
 
             var config = new TableConfig(_tableName);
-
             _table = new Table(_ddbClientMock.Object, config);
             _table.ClearTableData();
             _table.Keys.Add("Id", new KeyDescription { IsHash = true, Type = DynamoDBEntryType.String });
@@ -935,7 +930,8 @@ namespace AWSSDK_DotNet.UnitTests
             }
         }
         #endregion
-          [TestMethod]
+        
+        [TestMethod]
         public void GivenDocument_WhenUpdateHelperCalledWithDefaultUpdateItemOperationConfig_ThenRequestSentWithAttributeUpdates()
         {
             // Arrange
@@ -1159,3 +1155,4 @@ namespace AWSSDK_DotNet.UnitTests
         }
     }
 }
+#endif

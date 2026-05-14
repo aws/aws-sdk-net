@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
 {
@@ -9,7 +11,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
     public class DocumentBatchGetTests
     {
         [TestMethod]
-        public void TestMockability_DocumentBatchGet()
+        public async Task TestMockability_DocumentBatchGet()
         {
             var dummyResults = new List<Document>()
             {
@@ -32,17 +34,17 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             docBatchGet.AddKey("State");
             Assert.AreEqual(1, docBatchGet.TotalKeys);
 
-            docBatchGet.Execute();
+            await docBatchGet.ExecuteAsync(CancellationToken.None);
             Assert.AreEqual(1, docBatchGet.Results.Count);
             Assert.AreEqual("CA", docBatchGet.Results[0]["State"].AsString());
             Assert.AreEqual("12345", docBatchGet.Results[0]["Zip"].AsString());
         }
 
         [TestMethod]
-        public void TestMockability_MultiTableDocumentBatchGet()
+        public async Task TestMockability_MultiTableDocumentBatchGet()
         {
             var addressBatchGet = CreateDocumentBatchGetMock(new List<Document>
-            { 
+            {
                 new Document()
                 {
                     {"State", "CA"},
@@ -71,7 +73,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             personBatchGet.AddKey("John");
             Assert.AreEqual(2, multiBatchGet.TotalKeys);
 
-            multiBatchGet.Execute();
+            await multiBatchGet.ExecuteAsync(CancellationToken.None);
 
             Assert.AreEqual(1, addressBatchGet.Results.Count);
             Assert.AreEqual("CA", addressBatchGet.Results[0]["State"].AsString());
@@ -89,7 +91,8 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             var keys = new List<string>();
 
             documentBatchGet
-                .Setup(x => x.Execute())
+                .Setup(x => x.ExecuteAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask)
                 .Callback(() =>
                 {
                     dummyResults.Clear();
@@ -120,12 +123,12 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             var batches = new List<IDocumentBatchGet>();
 
             multiBatchGet
-                .Setup(x => x.Execute())
-                .Callback(() =>
+                .Setup(x => x.ExecuteAsync(It.IsAny<CancellationToken>()))
+                .Returns(async () =>
                 {
                     foreach (var batch in batches)
                     {
-                        batch.Execute();
+                        await batch.ExecuteAsync(CancellationToken.None);
                     }
                 });
 
@@ -147,7 +150,6 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
                     }
                     return totalKeys;
                 });
-
 
             return multiBatchGet.Object;
         }

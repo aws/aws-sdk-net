@@ -1126,6 +1126,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         public void ReadUnsupportedProfileType()
         {
@@ -1151,6 +1152,8 @@ namespace AWSSDK.UnitTests
                 field.SetValue(null, originalWhitelist);
             }
         }
+#endif
+
         [TestMethod]
         public void ReadAWSSharedCredentialVariableFile()
         {
@@ -1170,6 +1173,7 @@ namespace AWSSDK.UnitTests
             }
 
         }
+#if NETFRAMEWORK
         [TestMethod]
         public void ReadAWSConfigFileVariableFile()
         {
@@ -1183,7 +1187,6 @@ namespace AWSSDK.UnitTests
             finally
             {
                 Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", null);
-                //call static constructor again with reflection to reset the constructor
                 Type AWSConfigFile = typeof(SharedCredentialsFile);
                 AWSConfigFile.TypeInitializer.Invoke(null, null);
             }
@@ -1248,6 +1251,7 @@ namespace AWSSDK.UnitTests
                 AWSConfigFile.TypeInitializer.Invoke(null, null);
             }
         }
+#endif
 
         [TestMethod]
         public void ReadBasicProfileSplitForAWSCredentialsVariable()

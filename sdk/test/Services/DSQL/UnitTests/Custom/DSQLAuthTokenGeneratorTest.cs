@@ -45,6 +45,7 @@ namespace AWSSDK.UnitTests.DSQL
         private static readonly AWSCredentials BasicCredentials = new BasicAWSCredentials(AccessKey, SecretKey);
         private static readonly AWSCredentials SessionCredentials = new SessionAWSCredentials(AccessKey, SecretKey, SessionToken);
 
+#if NETFRAMEWORK
         private Dictionary<Type, IIdentityResolver> originalIdentityResolvers;
 
         [TestInitialize]
@@ -52,9 +53,7 @@ namespace AWSSDK.UnitTests.DSQL
         {
             AWSConfigs.AWSRegion = AWSRegion.SystemName;
 
-            FieldInfo field = typeof(DefaultIdentityResolverConfiguration).GetField
-                ("identityResolvers", BindingFlags.Static | BindingFlags.NonPublic);
-
+            FieldInfo field = typeof(DefaultIdentityResolverConfiguration).GetField("identityResolvers", BindingFlags.Static | BindingFlags.NonPublic);
             originalIdentityResolvers = field.GetValue(null) as Dictionary<Type, IIdentityResolver>;
 
             var mockIdentityResolver = new Mock<IIdentityResolver>();
@@ -69,15 +68,13 @@ namespace AWSSDK.UnitTests.DSQL
         [TestCleanup]
         public void Cleanup()
         {
-            FieldInfo field = typeof(DefaultIdentityResolverConfiguration).GetField
-                ("identityResolvers", BindingFlags.Static | BindingFlags.NonPublic);
-
+            FieldInfo field = typeof(DefaultIdentityResolverConfiguration).GetField("identityResolvers", BindingFlags.Static | BindingFlags.NonPublic);
             field.SetValue(null, originalIdentityResolvers);
         }
+#endif
 
         // DbConnect
 
-#if ASYNC_AWAIT
         [TestMethod]
         [TestCategory("DSQL")]
         public async System.Threading.Tasks.Task GenerateDbConnectAuthTokenBasicAsync()
@@ -93,7 +90,6 @@ namespace AWSSDK.UnitTests.DSQL
             AssertAuthToken(await DSQLAuthTokenGenerator.GenerateDbConnectAuthTokenAsync(SessionCredentials,
                 AWSRegion, DBCluster), AccessKey, AWSRegion, DBConnectActionValue, true);
         }
-#endif
 
         [TestMethod]
         [TestCategory("DSQL")]
@@ -111,6 +107,7 @@ namespace AWSSDK.UnitTests.DSQL
                 AWSRegion, DBCluster), AccessKey, AWSRegion, DBConnectActionValue, true);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         [TestCategory("DSQL")]
         public void GenerateDbConnectAuthTokenNoRegion()
@@ -134,6 +131,7 @@ namespace AWSSDK.UnitTests.DSQL
             AssertAuthToken(DSQLAuthTokenGenerator.GenerateDbConnectAuthToken(DBCluster),
                 AccessKey, FallbackRegionFactory.GetRegionEndpoint(), DBConnectActionValue);
         }
+#endif
 
         [TestMethod]
         [TestCategory("DSQL")]
@@ -183,6 +181,7 @@ namespace AWSSDK.UnitTests.DSQL
                 AWSRegion, DBCluster, TimeSpan.FromSeconds(450)), AccessKey, AWSRegion, DBConnectActionValue, false, 450);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         [TestCategory("DSQL")]
         public void GenerateDbConnectAuthTokenCustomExpiresInNoRegionNoCredentials()
@@ -190,6 +189,7 @@ namespace AWSSDK.UnitTests.DSQL
             AssertAuthToken(DSQLAuthTokenGenerator.GenerateDbConnectAuthToken(DBCluster,
                 TimeSpan.FromSeconds(450)), AccessKey, FallbackRegionFactory.GetRegionEndpoint(), DBConnectActionValue, false, 450);
         }
+#endif
 
         [TestMethod]
         [TestCategory("DSQL")]
@@ -231,7 +231,6 @@ namespace AWSSDK.UnitTests.DSQL
 
         // DbConnectAdmin
 
-        #if ASYNC_AWAIT
         [TestMethod]
         [TestCategory("DSQL")]
         public async System.Threading.Tasks.Task GenerateDbConnectAdminAuthTokenBasicAsync()
@@ -247,7 +246,6 @@ namespace AWSSDK.UnitTests.DSQL
             AssertAuthToken(await DSQLAuthTokenGenerator.GenerateDbConnectAdminAuthTokenAsync(SessionCredentials,
                 AWSRegion, DBCluster), AccessKey, AWSRegion, DBConnectAdminActionValue, true);
         }
-#endif
 
         [TestMethod]
         [TestCategory("DSQL")]
@@ -265,6 +263,7 @@ namespace AWSSDK.UnitTests.DSQL
                 AWSRegion, DBCluster), AccessKey, AWSRegion, DBConnectAdminActionValue, true);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         [TestCategory("DSQL")]
         public void GenerateDbConnectAdminAuthTokenNoRegion()
@@ -288,6 +287,7 @@ namespace AWSSDK.UnitTests.DSQL
             AssertAuthToken(DSQLAuthTokenGenerator.GenerateDbConnectAdminAuthToken(DBCluster),
                 AccessKey, FallbackRegionFactory.GetRegionEndpoint(), DBConnectAdminActionValue);
         }
+#endif
 
         [TestMethod]
         [TestCategory("DSQL")]
@@ -337,6 +337,7 @@ namespace AWSSDK.UnitTests.DSQL
                 AWSRegion, DBCluster, TimeSpan.FromSeconds(450)), AccessKey, AWSRegion, DBConnectAdminActionValue, false, 450);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         [TestCategory("DSQL")]
         public void GenerateDbConnectAdminAuthTokenCustomExpiresInNoRegionNoCredentials()
@@ -344,6 +345,7 @@ namespace AWSSDK.UnitTests.DSQL
             AssertAuthToken(DSQLAuthTokenGenerator.GenerateDbConnectAdminAuthToken(DBCluster,
                 TimeSpan.FromSeconds(450)), AccessKey, FallbackRegionFactory.GetRegionEndpoint(), DBConnectAdminActionValue, false, 450);
         }
+#endif
 
         [TestMethod]
         [TestCategory("DSQL")]
@@ -379,6 +381,5 @@ namespace AWSSDK.UnitTests.DSQL
 
             Assert.IsTrue(Regex.IsMatch(token, regex), token + " doesn't match regex " + regex);
         }
-
     }
 }
