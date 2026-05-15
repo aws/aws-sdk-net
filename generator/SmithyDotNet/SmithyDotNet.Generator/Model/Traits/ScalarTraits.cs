@@ -1,5 +1,5 @@
-using System.Text.Json;
 using SmithyDotNet.Generator.Model.Shapes;
+using static SmithyDotNet.Generator.Model.Traits.TraitHelpers;
 
 namespace SmithyDotNet.Generator.Model.Traits;
 
@@ -19,13 +19,4 @@ public static class ScalarTraits
 
     /// <remarks><see href="https://smithy.io/2.0/spec/constraint-traits.html#pattern-trait" /></remarks>
     public static string? GetPattern(this Shape shape) => GetStringTrait(shape, "smithy.api#pattern");
-
-    /// <summary>
-    /// Looks up a trait by ID on a shape and returns its value as a string,
-    /// or <c>null</c> if the trait is absent or not a string.
-    /// </summary>
-    private static string? GetStringTrait(Shape shape, string traitId) =>
-        shape.Traits.TryGetValue(traitId, out var value) && value.ValueKind == JsonValueKind.String
-            ? value.GetString()
-            : null;
 }

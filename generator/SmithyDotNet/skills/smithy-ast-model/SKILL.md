@@ -126,7 +126,9 @@ Shapes in namespace `smithy.api` (e.g. `smithy.api#String`, `smithy.api#Boolean`
 
 Traits are stored as `Dictionary<string, JsonElement>` on every shape. The key is the full trait ID (e.g. `smithy.api#required`, `aws.api#service`). The value is raw JSON.
 
-Trait values are **not** deserialized at the model layer. They stay as `JsonElement` and are accessed via typed extension methods in `SmithyDotNet.Generator.Model.Traits`. Accessors are organized by trait category: annotation traits (boolean presence checks), scalar traits (single value), and structured traits (typed records in `TraitRecords.cs`).
+Trait values are **not** deserialized at the model layer. They stay as `JsonElement` and are accessed via typed extension methods in `SmithyDotNet.Generator.Model.Traits`. Smithy trait accessors are organized by category: annotation traits (boolean presence checks), scalar traits (single value), and structured traits (typed records in `SmithyTraitRecords.cs`). AWS-specific traits (`aws.*` namespaces) live in `AWSTraits.cs` with records in `AWSTraitRecords.cs`. Use uppercase `AWS` in C# names to match .NET SDK conventions.
+
+Structured trait records use STJ deserialization via `TraitHelpers.DeserializeTrait<T>()` and inherit from `TraitRecord`, which uses `[JsonExtensionData]` to capture unknown properties for forward compatibility. Use `[JsonPropertyName]` on record properties, matching the pattern used by shape types. `ErrorTrait` is the exception — it wraps a plain string value, not a JSON object.
 
 [Annotation traits](https://smithy.io/2.0/spec/model.html#annotation-trait) have an empty object `{}` as their value:
 ```json
