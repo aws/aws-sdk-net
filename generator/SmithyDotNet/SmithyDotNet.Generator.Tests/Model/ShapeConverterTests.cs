@@ -1,26 +1,13 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Model;
-using SmithyDotNet.Generator.Model.Converters;
 using SmithyDotNet.Generator.Model.Shapes;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Model;
 
-public class ShapeConverterTests
+[Collection(nameof(CloudTrailModelCollection))]
+public class ShapeConverterTests(CloudTrailModelFixture fixture)
 {
-    private static readonly JsonSerializerOptions Options = new()
-    {
-        Converters = { new ShapeConverter() },
-    };
-
-    private static readonly JsonDocument ModelDoc = JsonDocument.Parse(File.ReadAllBytes("TestData/cloudtrail-data-model.json"));
-
-    private static Shape? DeserializeShape(string shapeId) => ModelDoc
-        .RootElement
-        .GetProperty("shapes")
-        .GetProperty(shapeId)
-        .Deserialize<Shape>(Options);
-
     [Theory]
     [InlineData("""{"type": "string", "traits": {"smithy.api#pattern": "^[a-z]+$"}}""", typeof(StringShape), "string")]
     [InlineData("""{"type": "boolean"}""", typeof(BooleanShape), "boolean")]
@@ -31,7 +18,7 @@ public class ShapeConverterTests
     [InlineData("""{"type": "timestamp"}""", typeof(TimestampShape), "timestamp")]
     public void Deserialize_ScalarShapes(string json, Type expectedType, string expectedTypeField)
     {
-        var shape = JsonSerializer.Deserialize<Shape>(json, Options);
+        var shape = JsonSerializer.Deserialize<Shape>(json, CloudTrailModelFixture.Options);
         Assert.NotNull(shape);
         Assert.IsType(expectedType, shape);
         Assert.Equal(expectedTypeField, shape.Type);
@@ -41,7 +28,7 @@ public class ShapeConverterTests
     public void Deserialize_MapShape()
     {
         var json = """{ "type": "map", "key": { "target": "smithy.api#String" }, "value": { "target": "smithy.api#Integer" } }""";
-        var map = Assert.IsType<MapShape>(JsonSerializer.Deserialize<Shape>(json, Options));
+        var map = Assert.IsType<MapShape>(JsonSerializer.Deserialize<Shape>(json, CloudTrailModelFixture.Options));
         Assert.Equal("String", map.Key.Target.Name);
         Assert.Equal("Integer", map.Value.Target.Name);
     }
@@ -50,14 +37,14 @@ public class ShapeConverterTests
     public void Deserialize_UnknownType_ReturnsNull()
     {
         var json = """{"type": "someFutureType"}""";
-        var shape = JsonSerializer.Deserialize<Shape>(json, Options);
+        var shape = JsonSerializer.Deserialize<Shape>(json, CloudTrailModelFixture.Options);
         Assert.Null(shape);
     }
 
     [Fact]
     public void Deserialize_CloudTrailDataScalarShapes()
     {
-        var uuid = Assert.IsType<StringShape>(DeserializeShape("com.amazonaws.cloudtraildata#Uuid"));
+        var uuid = Assert.IsType<StringShape>(fixture.DeserializeShape("com.amazonaws.cloudtraildata#Uuid"));
         Assert.True(uuid.Traits.ContainsKey("smithy.api#length"));
         Assert.True(uuid.Traits.ContainsKey("smithy.api#pattern"));
     }
@@ -65,7 +52,7 @@ public class ShapeConverterTests
     [Fact]
     public void Deserialize_CloudTrailDataListShape()
     {
-        var auditEvents = Assert.IsType<ListShape>(DeserializeShape("com.amazonaws.cloudtraildata#AuditEvents"));
+        var auditEvents = Assert.IsType<ListShape>(fixture.DeserializeShape("com.amazonaws.cloudtraildata#AuditEvents"));
 
         Assert.Equal("com.amazonaws.cloudtraildata", auditEvents.Member.Target.Namespace);
         Assert.Equal("AuditEvent", auditEvents.Member.Target.Name);
@@ -75,7 +62,7 @@ public class ShapeConverterTests
     [Fact]
     public void Deserialize_CloudTrailDataStructureShape()
     {
-        var auditEvent = Assert.IsType<StructureShape>(DeserializeShape("com.amazonaws.cloudtraildata#AuditEvent"));
+        var auditEvent = Assert.IsType<StructureShape>(fixture.DeserializeShape("com.amazonaws.cloudtraildata#AuditEvent"));
 
         Assert.Equal(3, auditEvent.Members.Count);
         Assert.Contains("id", auditEvent.Members);
@@ -91,7 +78,7 @@ public class ShapeConverterTests
     [Fact]
     public void Deserialize_CloudTrailDataOperationShape()
     {
-        var putAuditEvents = Assert.IsType<OperationShape>(DeserializeShape("com.amazonaws.cloudtraildata#PutAuditEvents"));
+        var putAuditEvents = Assert.IsType<OperationShape>(fixture.DeserializeShape("com.amazonaws.cloudtraildata#PutAuditEvents"));
 
         Assert.Equal("com.amazonaws.cloudtraildata", putAuditEvents.Input.Namespace);
         Assert.Equal("PutAuditEventsRequest", putAuditEvents.Input.Name);
@@ -103,7 +90,7 @@ public class ShapeConverterTests
     [Fact]
     public void Deserialize_CloudTrailDataServiceShape()
     {
-        var service = Assert.IsType<ServiceShape>(DeserializeShape("com.amazonaws.cloudtraildata#CloudTrailDataService"));
+        var service = Assert.IsType<ServiceShape>(fixture.DeserializeShape("com.amazonaws.cloudtraildata#CloudTrailDataService"));
 
         Assert.Equal("2021-08-11", service.ApiVersion);
         Assert.Single(service.Operations);
@@ -115,7 +102,7 @@ public class ShapeConverterTests
     [Fact]
     public void Deserialize_FullCloudTrailDataModel()
     {
-        var model = JsonSerializer.Deserialize<SmithyModel>(File.ReadAllBytes("TestData/cloudtrail-data-model.json"), Options);
+        var model = JsonSerializer.Deserialize<SmithyModel>(File.ReadAllBytes("TestData/cloudtrail-data-model.json"), CloudTrailModelFixture.Options);
 
         Assert.NotNull(model);
         Assert.Equal("2.0", model.Version);
