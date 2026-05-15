@@ -61,6 +61,12 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
+    /// You can retrieve up to 100,000 log event results from a query, if available, by using
+    /// pagination. Use the <c>nextToken</c> returned in the response to request additional
+    /// pages of results, with each page returning up to 10,000 log events.
+    /// </para>
+    ///  
+    /// <para>
     /// If you are using CloudWatch cross-account observability, you can use this operation
     /// in a monitoring account to start queries in linked source accounts. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
@@ -77,7 +83,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// The maximum number of log events to return in the response. The maximum is 10,000
-        /// log events.
+        /// log events per request. You can retrieve up to 100,000 log event results from a query
+        /// by paginating with the <c>nextToken</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
