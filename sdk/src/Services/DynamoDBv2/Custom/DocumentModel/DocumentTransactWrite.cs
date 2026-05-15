@@ -38,6 +38,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         List<Document> ConditionCheckFailedItems { get; }
 
         /// <summary>
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was provided in TransactOperationConfig.
+        /// </summary>
+        List<ConsumedCapacity> ConsumedCapacity { get; }
+
+        /// <summary>
         /// Add a single item to delete, identified by its hash primary key, using the specified config.
         /// </summary>
         /// <param name="hashKey">Hash key element of the item to delete.</param>
@@ -218,6 +224,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <inheritdoc/>
         public List<Document> ConditionCheckFailedItems { get; internal set; }
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; internal set; }
 
         #endregion
 
@@ -409,6 +418,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             finally
             {
                 if (ConditionCheckFailedItems == null) ConditionCheckFailedItems = new List<Document>();
+                if (ConsumedCapacity == null) ConsumedCapacity = new List<ConsumedCapacity>();
             }
         }
 
@@ -586,6 +596,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public List<IDocumentTransactWrite> TransactionParts { get; private set; }
 
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; private set; }
+
         #endregion
 
 
@@ -655,6 +668,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     if (transactionPart.ConditionCheckFailedItems == null)
                         transactionPart.ConditionCheckFailedItems = new List<Document>();
+                    // check here
                 }
             }
         }
@@ -693,6 +707,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Properties
 
         public List<ITransactWriteRequestItem> Items { get; set; }
+
+        public List<ConsumedCapacity> ConsumedCapacity { get; set; }
 
         #endregion
 
@@ -753,11 +769,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (Items == null || !Items.Any()) return;
 
             var request = ConstructRequest(isAsync: true);
-
+            List<ConsumedCapacity> consumedCapacity;
             try
             {
                 var dynamoDbClient = Items[0].TransactionPart.TargetTable.DDBClient;
-                await dynamoDbClient.TransactWriteItemsAsync(request, cancellationToken).ConfigureAwait(false);
+                var result = await dynamoDbClient.TransactWriteItemsAsync(request, cancellationToken).ConfigureAwait(false);
+                consumedCapacity = result?.ConsumedCapacity;
             }
             catch (TransactionCanceledException ex)
             {
@@ -768,13 +785,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
             foreach (var item in Items)
             {
                 item.CommitChanges();
+                item.TransactionPart.ConsumedCapacity = consumedCapacity;
             }
         }
 
         private TransactWriteItemsRequest ConstructRequest(bool isAsync)
         {
             var transactItems = Items.Select(item => item.GetRequest()).ToList();
-            var request = new TransactWriteItemsRequest { TransactItems = transactItems };
+            var returnConsumedCapacity =
+                Items.Any(x => x.OperationConfig?.ReturnConsumedCapacity == ReturnConsumedCapacity.TOTAL) ? ReturnConsumedCapacity.TOTAL :
+                Items.Any(x => x.OperationConfig?.ReturnConsumedCapacity == ReturnConsumedCapacity.INDEXES) ? ReturnConsumedCapacity.INDEXES :
+                ReturnConsumedCapacity.NONE;
+            var request = new TransactWriteItemsRequest { 
+                TransactItems = transactItems,
+                ReturnConsumedCapacity=returnConsumedCapacity
+            };
             Items[0].TransactionPart.TargetTable.UpdateRequestUserAgentDetails(request, isAsync);
             return request;
         }

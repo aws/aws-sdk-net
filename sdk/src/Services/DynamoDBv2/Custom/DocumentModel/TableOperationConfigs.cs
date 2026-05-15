@@ -422,6 +422,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public Expression ConditionalExpression { get; set; }
 
         /// <summary>
+        /// Controls whether DynamoDB returns capacity consumption details for each Query request.
+        /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
+
+        /// <summary>
         /// Flag specifying what values should be returned if the ConditionalExpression evaluates to false.
         /// </summary>
         public ReturnValuesOnConditionCheckFailure ReturnValuesOnConditionCheckFailure { get; set; }
