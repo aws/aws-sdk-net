@@ -1,3 +1,15 @@
+### 4.0.249.0 (2026-05-15 19:41 UTC)
+* CloudWatchLogs (4.0.25.0)
+	* Updating the max limit for start query api parameter.
+* MediaPackageV2 (4.0.13.0)
+	* This release adds support for AvailabilityStartTimeConfiguration in MediaPackageV2 DASH manifests
+* PartnerCentralSelling (4.0.11.0)
+	* Enable TCV intake on Opportunity to improve Opportunities Hygiene and downstream revenue attribution.
+* Core 4.0.7.1
+	* Reduced CPU on the JSON unmarshalling hot path by removing a redundant Convert.ChangeType conversion in StringUnmarshaller.
+	* Reduced per-response allocations in JSON unmarshalling by deferring StreamReader construction in JsonUnmarshallerContext until Peek() is called.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.248.0 (2026-05-14 18:18 UTC)
 * Bedrock (4.0.26.0)
 	* Advanced Prompt Optimization (AdvPO) allows you to optimize and migrate your prompts for any model on Bedrock by automatically evaluating responses and rewriting prompts to improve performance. This release provides a programmatic way to create, get, list, stop, and delete AdvPO jobs.
