@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProjectSummary Object
+    /// Response Unmarshaller for ExpectedContractDuration Object
     /// </summary>  
-    public class ProjectSummaryUnmarshaller : IJsonUnmarshaller<ProjectSummary, JsonUnmarshallerContext>
+    public class ExpectedContractDurationUnmarshaller : IJsonUnmarshaller<ExpectedContractDuration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProjectSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ExpectedContractDuration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ProjectSummary unmarshalledObject = new ProjectSummary();
+            ExpectedContractDuration unmarshalledObject = new ExpectedContractDuration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeliveryModels", targetDepth))
+                if (context.TestExpression("Term", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DeliveryModels = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Term = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpectedContractDuration", targetDepth))
+                if (context.TestExpression("Value", targetDepth))
                 {
-                    var unmarshaller = ExpectedContractDurationUnmarshaller.Instance;
-                    unmarshalledObject.ExpectedContractDuration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ExpectedCustomerSpend", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ExpectedCustomerSpend, ExpectedCustomerSpendUnmarshaller>(ExpectedCustomerSpendUnmarshaller.Instance);
-                    unmarshalledObject.ExpectedCustomerSpend = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProjectSummaryUnmarshaller _instance = new ProjectSummaryUnmarshaller();        
+        private static ExpectedContractDurationUnmarshaller _instance = new ExpectedContractDurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProjectSummaryUnmarshaller Instance
+        public static ExpectedContractDurationUnmarshaller Instance
         {
             get
             {
