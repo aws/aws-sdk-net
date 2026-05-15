@@ -19,6 +19,7 @@ using Moq;
 using System;
 using System.Reflection;
 
+#if NETFRAMEWORK
 namespace AWSSDK.UnitTests
 {
     [TestClass]
@@ -85,4 +86,5 @@ namespace AWSSDK.UnitTests
         }
     }
 }
+#endif
  

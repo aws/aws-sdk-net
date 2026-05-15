@@ -737,7 +737,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// When the value is left blank, the timeout is defaulted to 2880 minutes.
+        /// When the value is left blank, the timeout is defaulted to 2,880 minutes for Glue version
+        /// 4.0 and earlier, or 480 minutes for Glue version 5.0 and later.
         /// </para>
         ///  
         /// <para>

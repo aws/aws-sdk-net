@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
@@ -50,7 +52,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void GetNextSetHelper_ShouldReturnDocuments()
+        public async Task GetNextSetHelper_ShouldReturnDocuments()
         {
             // Arrange
             var mockDocument = new Document();
@@ -62,11 +64,11 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             _mockDynamoDBClient
-                .Setup(client => client.Scan(It.IsAny<ScanRequest>()))
-                .Returns(mockScanResponse);
+                .Setup(client => client.ScanAsync(It.IsAny<ScanRequest>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(mockScanResponse);
 
             // Act
-            var result = _search.GetNextSetHelper();
+            var result = await _search.GetNextSetHelperAsync(CancellationToken.None);
 
             // Assert
             Assert.AreEqual(1, result.Count);
@@ -77,7 +79,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void GetRemainingHelper_ShouldReturnAllDocuments()
+        public async Task GetRemainingHelper_ShouldReturnAllDocuments()
         {
             // Arrange
             var mockDocument = new Document();
@@ -99,16 +101,16 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             _mockDynamoDBClient
-                .Setup(client => client.Scan(It.Is<ScanRequest>(x => x.ExclusiveStartKey == null)))
-                .Returns(mockScanResponse);
+                .Setup(client => client.ScanAsync(It.Is<ScanRequest>(x => x.ExclusiveStartKey == null), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(mockScanResponse);
 
             _mockDynamoDBClient
-                .Setup(client => client.Scan(It.Is<ScanRequest>(x => x.ExclusiveStartKey != null && x.ExclusiveStartKey.Count == 1)))
-                .Returns(mockLastScanResponse);
+                .Setup(client => client.ScanAsync(It.Is<ScanRequest>(x => x.ExclusiveStartKey != null && x.ExclusiveStartKey.Count == 1), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(mockLastScanResponse);
 
 
             // Act
-            var result = _search.GetRemainingHelper();
+            var result = await _search.GetRemainingHelperAsync(CancellationToken.None);
 
             // Assert
             Assert.AreEqual(2, result.Count);
@@ -117,11 +119,11 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(30, _search.ScannedCount);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public void GetCount_ShouldReturnCorrectCount()
         {
-            // Arrange// Arrange
             var mockScanResponse = new ScanResponse
             {
                 Items = new List<Dictionary<string, AttributeValue>> { new(), new() },
@@ -134,10 +136,8 @@ namespace AWSSDK_DotNet.UnitTests
                 .Setup(client => client.Scan(It.IsAny<ScanRequest>()))
                 .Returns(mockScanResponse);
             _search.Reset();
-            // Act
             var count = _search.Count;
 
-            // Assert
             Assert.AreEqual(2, count);
         }
 
@@ -151,7 +151,6 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void GetCount_WithFilterExpressionOnly_ShouldNotSetScanFilter()
         {
-            // Arrange - Create a Search with FilterExpression but no ScanFilter
             ScanRequest capturedRequest = null;
 
             _mockDynamoDBClient
@@ -169,33 +168,31 @@ namespace AWSSDK_DotNet.UnitTests
                     ExpressionAttributeNames = new Dictionary<string, string> { { "#V", "Views" } },
                     ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":num", new Primitive("10", true) } }
                 }
-                // Note: Filter is not set (null), simulating a scan with only FilterExpression
             };
 
-            // Act
             var count = search.Count;
 
-            // Assert
             Assert.IsNotNull(capturedRequest, "ScanRequest should have been captured");
             Assert.IsFalse(capturedRequest.IsSetScanFilter(), "ScanFilter should NOT be set when only FilterExpression is used");
             Assert.IsNotNull(capturedRequest.FilterExpression, "FilterExpression should be set");
             Assert.AreEqual(5, count);
         }
+#endif
 
         /// <summary>
         /// Verifies that GetNextSetHelper does not set ScanFilter when only FilterExpression is used.
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void GetNextSetHelper_WithFilterExpressionOnly_ShouldNotSetScanFilter()
+        public async Task GetNextSetHelper_WithFilterExpressionOnly_ShouldNotSetScanFilter()
         {
             // Arrange
             ScanRequest capturedRequest = null;
 
             _mockDynamoDBClient
-                .Setup(client => client.Scan(It.IsAny<ScanRequest>()))
-                .Callback<ScanRequest>(req => capturedRequest = req)
-                .Returns(new ScanResponse
+                .Setup(client => client.ScanAsync(It.IsAny<ScanRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<ScanRequest, CancellationToken>((req, ct) => capturedRequest = req)
+                .ReturnsAsync(new ScanResponse
                 {
                     Items = new List<Dictionary<string, AttributeValue>> { new() },
                     LastEvaluatedKey = null,
@@ -216,7 +213,7 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             // Act
-            var result = search.GetNextSetHelper();
+            var result = await search.GetNextSetHelperAsync(CancellationToken.None);
 
             // Assert
             Assert.IsNotNull(capturedRequest, "ScanRequest should have been captured");
@@ -228,7 +225,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void GetNextSetHelper_ShouldUpdateMetricsAfterPage()
+        public async Task GetNextSetHelper_ShouldUpdateMetricsAfterPage()
         {
             // Arrange
             var consumed = new ConsumedCapacity
@@ -252,14 +249,14 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             _mockDynamoDBClient
-                .Setup(client => client.Scan(It.IsAny<ScanRequest>()))
-                .Returns(mockScanResponse);
+                .Setup(client => client.ScanAsync(It.IsAny<ScanRequest>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(mockScanResponse);
 
             _search.Reset();
             _search.ReturnConsumedCapacity = ReturnConsumedCapacity.TOTAL;
 
             // Act
-            var result = _search.GetNextSetHelper();
+            var result = await _search.GetNextSetHelperAsync(CancellationToken.None);
 
             // Assert item count to ensure we exercised the path
             Assert.AreEqual(2, result.Count);
@@ -279,7 +276,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void GetNextSetHelper_SetsReturnConsumedCapacity_WhenNotNone()
+        public async Task GetNextSetHelper_SetsReturnConsumedCapacity_WhenNotNone()
         {
             // Arrange - capture the outgoing ScanRequest
             ScanRequest captured = null;
@@ -291,15 +288,15 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             _mockDynamoDBClient
-                .Setup(client => client.Scan(It.IsAny<ScanRequest>()))
-                .Callback<ScanRequest>(req => captured = req)
-                .Returns(mockScanResponse);
+                .Setup(client => client.ScanAsync(It.IsAny<ScanRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<ScanRequest, CancellationToken>((req, ct) => captured = req)
+                .ReturnsAsync(mockScanResponse);
 
             _search.Reset();
             _search.ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES;
 
             // Act
-            _ = _search.GetNextSetHelper();
+            _ = await _search.GetNextSetHelperAsync(CancellationToken.None);
 
             // Assert: ReturnConsumedCapacity is forwarded to the request
             Assert.IsNotNull(captured, "Expected ScanRequest to be captured.");
@@ -308,7 +305,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void GetNextSetHelper_DoesNotSetReturnConsumedCapacity_WhenNone()
+        public async Task GetNextSetHelper_DoesNotSetReturnConsumedCapacity_WhenNone()
         {
             // Arrange - capture the outgoing ScanRequest
             ScanRequest captured = null;
@@ -320,15 +317,15 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             _mockDynamoDBClient
-                .Setup(client => client.Scan(It.IsAny<ScanRequest>()))
-                .Callback<ScanRequest>(req => captured = req)
-                .Returns(mockScanResponse);
+                .Setup(client => client.ScanAsync(It.IsAny<ScanRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<ScanRequest, CancellationToken>((req, ct) => captured = req)
+                .ReturnsAsync(mockScanResponse);
 
             _search.Reset();
             _search.ReturnConsumedCapacity = ReturnConsumedCapacity.NONE;
 
             // Act
-            _ = _search.GetNextSetHelper();
+            _ = await _search.GetNextSetHelperAsync(CancellationToken.None);
 
             // Assert: when NONE, the property should remain null (not set)
             Assert.IsNotNull(captured, "Expected ScanRequest to be captured.");
@@ -337,7 +334,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void GetNextSetHelper_Query_ShouldUpdateMetricsAfterPage()
+        public async Task GetNextSetHelper_Query_ShouldUpdateMetricsAfterPage()
         {
             // Arrange
             var querySearch = new Search(SearchType.Query)
@@ -368,13 +365,13 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             _mockDynamoDBClient
-                .Setup(client => client.Query(It.IsAny<QueryRequest>()))
-                .Returns(mockQueryResponse);
+                .Setup(client => client.QueryAsync(It.IsAny<QueryRequest>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(mockQueryResponse);
 
             querySearch.ReturnConsumedCapacity = ReturnConsumedCapacity.TOTAL;
 
             // Act
-            var result = querySearch.GetNextSetHelper();
+            var result = await querySearch.GetNextSetHelperAsync(CancellationToken.None);
 
             // Assert
             Assert.AreEqual(2, result.Count);
@@ -392,7 +389,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void GetNextSetHelper_Query_WithNullConsumedCapacity_ShouldNotAddHistory()
+        public async Task GetNextSetHelper_Query_WithNullConsumedCapacity_ShouldNotAddHistory()
         {
             // Arrange
             var querySearch = new Search(SearchType.Query)
@@ -415,11 +412,11 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             _mockDynamoDBClient
-                .Setup(client => client.Query(It.IsAny<QueryRequest>()))
-                .Returns(mockQueryResponse);
+                .Setup(client => client.QueryAsync(It.IsAny<QueryRequest>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(mockQueryResponse);
 
             // Act
-            var result = querySearch.GetNextSetHelper();
+            var result = await querySearch.GetNextSetHelperAsync(CancellationToken.None);
 
             // Assert
             Assert.AreEqual(1, result.Count);
@@ -437,7 +434,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void GetNextSetHelper_Query_SplitsKeyAndFilterConditions_AndSetsConditionalOperator()
+        public async Task GetNextSetHelper_Query_SplitsKeyAndFilterConditions_AndSetsConditionalOperator()
         {
             // Arrange
             QueryRequest captured = null;
@@ -462,12 +459,12 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             _mockDynamoDBClient
-                .Setup(client => client.Query(It.IsAny<QueryRequest>()))
-                .Callback<QueryRequest>(req => captured = req)
-                .Returns(mockQueryResponse);
+                .Setup(client => client.QueryAsync(It.IsAny<QueryRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<QueryRequest, CancellationToken>((req, ct) => captured = req)
+                .ReturnsAsync(mockQueryResponse);
 
             // Act
-            _ = querySearch.GetNextSetHelper();
+            _ = await querySearch.GetNextSetHelperAsync(CancellationToken.None);
 
             // Assert
             Assert.IsNotNull(captured, "Expected QueryRequest to be captured.");
@@ -482,7 +479,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void GetNextSetHelper_Query_WithAttributesToGetAndProjectionExpression_AppliesProjectionAndNames()
+        public async Task GetNextSetHelper_Query_WithAttributesToGetAndProjectionExpression_AppliesProjectionAndNames()
         {
             // Arrange
             QueryRequest captured = null;
@@ -518,12 +515,12 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             _mockDynamoDBClient
-                .Setup(client => client.Query(It.IsAny<QueryRequest>()))
-                .Callback<QueryRequest>(req => captured = req)
-                .Returns(mockQueryResponse);
+                .Setup(client => client.QueryAsync(It.IsAny<QueryRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<QueryRequest, CancellationToken>((req, ct) => captured = req)
+                .ReturnsAsync(mockQueryResponse);
 
             // Act
-            _ = querySearch.GetNextSetHelper();
+            _ = await querySearch.GetNextSetHelperAsync(CancellationToken.None);
 
             // Assert
             Assert.IsNotNull(captured, "Expected QueryRequest to be captured.");
@@ -538,7 +535,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void GetNextSetHelper_Scan_SetsScanFilterIndexAndConditionalOperator()
+        public async Task GetNextSetHelper_Scan_SetsScanFilterIndexAndConditionalOperator()
         {
             // Arrange
             ScanRequest captured = null;
@@ -571,12 +568,12 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             _mockDynamoDBClient
-                .Setup(client => client.Scan(It.IsAny<ScanRequest>()))
-                .Callback<ScanRequest>(req => captured = req)
-                .Returns(mockScanResponse);
+                .Setup(client => client.ScanAsync(It.IsAny<ScanRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<ScanRequest, CancellationToken>((req, ct) => captured = req)
+                .ReturnsAsync(mockScanResponse);
 
             // Act
-            _ = scanSearch.GetNextSetHelper();
+            _ = await scanSearch.GetNextSetHelperAsync(CancellationToken.None);
 
             // Assert
             Assert.IsNotNull(captured, "Expected ScanRequest to be captured.");
@@ -590,7 +587,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void GetNextSetHelper_Scan_AppliesFilterExpressionAttributesToGetAndSegments()
+        public async Task GetNextSetHelper_Scan_AppliesFilterExpressionAttributesToGetAndSegments()
         {
             // Arrange
             ScanRequest captured = null;
@@ -620,12 +617,12 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             _mockDynamoDBClient
-                .Setup(client => client.Scan(It.IsAny<ScanRequest>()))
-                .Callback<ScanRequest>(req => captured = req)
-                .Returns(mockScanResponse);
+                .Setup(client => client.ScanAsync(It.IsAny<ScanRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<ScanRequest, CancellationToken>((req, ct) => captured = req)
+                .ReturnsAsync(mockScanResponse);
 
             // Act
-            _ = scanSearch.GetNextSetHelper();
+            _ = await scanSearch.GetNextSetHelperAsync(CancellationToken.None);
 
             // Assert
             Assert.IsNotNull(captured, "Expected ScanRequest to be captured.");
@@ -642,11 +639,11 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(1, captured.Segment);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public void GetCount_Query_SetsRequestAndUpdatesMetrics()
         {
-            // Arrange
             QueryRequest captured = null;
             var querySearch = new Search(SearchType.Query)
             {
@@ -680,10 +677,8 @@ namespace AWSSDK_DotNet.UnitTests
                 .Callback<QueryRequest>(req => captured = req)
                 .Returns(mockQueryResponse);
 
-            // Act
             var count = querySearch.Count;
 
-            // Assert
             Assert.IsNotNull(captured, "Expected QueryRequest to be captured.");
             Assert.AreEqual(EnumMapper.Convert(SelectValues.Count), captured.Select.ToString());
             Assert.IsFalse(captured.ScanIndexForward.GetValueOrDefault());
@@ -706,7 +701,6 @@ namespace AWSSDK_DotNet.UnitTests
         [TestCategory("DynamoDBv2")]
         public void GetCount_Query_CachesCount()
         {
-            // Arrange
             var querySearch = new Search(SearchType.Query)
             {
                 SourceTable = _mockTable,
@@ -726,14 +720,13 @@ namespace AWSSDK_DotNet.UnitTests
                 .Setup(client => client.Query(It.IsAny<QueryRequest>()))
                 .Returns(mockQueryResponse);
 
-            // Act
             var first = querySearch.Count;
             var second = querySearch.Count;
 
-            // Assert
             Assert.AreEqual(4, first);
             Assert.AreEqual(4, second);
             _mockDynamoDBClient.Verify(client => client.Query(It.IsAny<QueryRequest>()), Times.Once);
         }
+#endif
     }
 }

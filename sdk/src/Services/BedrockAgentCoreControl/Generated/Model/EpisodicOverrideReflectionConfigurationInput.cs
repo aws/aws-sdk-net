@@ -99,8 +99,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Namespaces. 
         /// <para>
-        /// The namespaces to use for episodic reflection. Can be less nested than the episodic
-        /// namespaces.
+        /// This is a legacy parameter, use <c>namespaceTemplates</c>. The namespaces to use for
+        /// episodic reflection. Can be less nested than the episodic namespaces.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -2753,6 +2753,10 @@ namespace Amazon.Mgn
         /// </summary>
         public static readonly SecurityGroupMappingStrategy MAP = new SecurityGroupMappingStrategy("MAP");
         /// <summary>
+        /// Constant MAP_DHCP for SecurityGroupMappingStrategy
+        /// </summary>
+        public static readonly SecurityGroupMappingStrategy MAP_DHCP = new SecurityGroupMappingStrategy("MAP_DHCP");
+        /// <summary>
         /// Constant SKIP for SecurityGroupMappingStrategy
         /// </summary>
         public static readonly SecurityGroupMappingStrategy SKIP = new SecurityGroupMappingStrategy("SKIP");

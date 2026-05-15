@@ -156,7 +156,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The identifier of the Amazon DataZone domain.
+        /// The identifier of the Amazon SageMaker Unified Studio domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

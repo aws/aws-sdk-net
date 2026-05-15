@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class Capabilities
     {
+        private CapabilityState _accessAppsNativeDataStore;
         private CapabilityState _action;
         private CapabilityState _addOrRunAnomalyDetectionForAnalyses;
         private CapabilityState _amazonBedrockARSAction;
@@ -42,6 +43,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _amazonSThreeAction;
         private CapabilityState _analysis;
         private CapabilityState _approveFlowShareRequests;
+        private CapabilityState _apps;
         private CapabilityState _asanaAction;
         private CapabilityState _automate;
         private CapabilityState _bambooHRAction;
@@ -56,6 +58,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _createAndUpdateAmazonBedrockFSAction;
         private CapabilityState _createAndUpdateAmazonBedrockKRSAction;
         private CapabilityState _createAndUpdateAmazonSThreeAction;
+        private CapabilityState _createAndUpdateApps;
         private CapabilityState _createAndUpdateAsanaAction;
         private CapabilityState _createAndUpdateBambooHRAction;
         private CapabilityState _createAndUpdateBoxAgentAction;
@@ -124,6 +127,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _huggingFaceAction;
         private CapabilityState _includeContentInScheduledReportsEmail;
         private CapabilityState _intercomAction;
+        private CapabilityState _invokeAppsAIInference;
         private CapabilityState _jiraAction;
         private CapabilityState _knowledgeBase;
         private CapabilityState _linearAction;
@@ -158,6 +162,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _shareAmazonBedrockKRSAction;
         private CapabilityState _shareAmazonSThreeAction;
         private CapabilityState _shareAnalyses;
+        private CapabilityState _shareApps;
         private CapabilityState _shareAsanaAction;
         private CapabilityState _shareBambooHRAction;
         private CapabilityState _shareBoxAgentAction;
@@ -257,6 +262,24 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _useZendeskAction;
         private CapabilityState _viewAccountSPICECapacity;
         private CapabilityState _zendeskAction;
+
+        /// <summary>
+        /// Gets and sets the property AccessAppsNativeDataStore. 
+        /// <para>
+        /// The ability to access the native data store for new and existing apps.
+        /// </para>
+        /// </summary>
+        public CapabilityState AccessAppsNativeDataStore
+        {
+            get { return this._accessAppsNativeDataStore; }
+            set { this._accessAppsNativeDataStore = value; }
+        }
+
+        // Check to see if AccessAppsNativeDataStore property is set
+        internal bool IsSetAccessAppsNativeDataStore()
+        {
+            return this._accessAppsNativeDataStore != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -401,6 +424,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetApproveFlowShareRequests()
         {
             return this._approveFlowShareRequests != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Apps. 
+        /// <para>
+        /// The ability to perform apps-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Apps
+        {
+            get { return this._apps; }
+            set { this._apps = value; }
+        }
+
+        // Check to see if Apps property is set
+        internal bool IsSetApps()
+        {
+            return this._apps != null;
         }
 
         /// <summary>
@@ -653,6 +694,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateAndUpdateAmazonSThreeAction()
         {
             return this._createAndUpdateAmazonSThreeAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateApps. 
+        /// <para>
+        /// The ability to create or update apps.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateApps
+        {
+            get { return this._createAndUpdateApps; }
+            set { this._createAndUpdateApps = value; }
+        }
+
+        // Check to see if CreateAndUpdateApps property is set
+        internal bool IsSetCreateAndUpdateApps()
+        {
+            return this._createAndUpdateApps != null;
         }
 
         /// <summary>
@@ -1880,6 +1939,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InvokeAppsAIInference. 
+        /// <para>
+        /// The ability to add and invoke AI inference in new and existing apps.
+        /// </para>
+        /// </summary>
+        public CapabilityState InvokeAppsAIInference
+        {
+            get { return this._invokeAppsAIInference; }
+            set { this._invokeAppsAIInference = value; }
+        }
+
+        // Check to see if InvokeAppsAIInference property is set
+        internal bool IsSetInvokeAppsAIInference()
+        {
+            return this._invokeAppsAIInference != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JiraAction. 
         /// <para>
         /// The ability to perform actions using Jira connectors.
@@ -2496,6 +2573,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareAnalyses()
         {
             return this._shareAnalyses != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareApps. 
+        /// <para>
+        /// The ability to share apps with other users.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareApps
+        {
+            get { return this._shareApps; }
+            set { this._shareApps = value; }
+        }
+
+        // Check to see if ShareApps property is set
+        internal bool IsSetShareApps()
+        {
+            return this._shareApps != null;
         }
 
         /// <summary>

@@ -1,25 +1,19 @@
 <Project ToolsVersion="14.0"
-    DefaultTargets="full-build-nodocs"
+    DefaultTargets="local-build"
     xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <InternalBuildTools Condition="'$(InternalBuildTools)'==''">../../AWSDotNetBuildTools</InternalBuildTools>
         <InternalBuildScripts Condition="'$(InternalBuildScripts)'==''">$(InternalBuildTools)/BuildScripts</InternalBuildScripts>
-        <DisableValidateRepo Condition="'$(DisableValidateRepo)'==''">false</DisableValidateRepo>
-        <TestBackwardCompatibility Condition="'$(TestBackwardCompatibility)'==''">true</TestBackwardCompatibility>
-        <ServiceList Condition="'$(ServiceList)'==''"></ServiceList>
-        <SaveBuildArtifacts Condition="'$(SaveBuildArtifacts)'==''">true</SaveBuildArtifacts>
+        <ServiceName Condition="'$(ServiceName)'==''"></ServiceName>
         <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
-
-        <VSToolsPath Condition="'$(VSToolsPath)' == ''">C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0</VSToolsPath>
 
         <!-- perform a release build by default -->
         <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
 
-        <TestWrapperAssembly>TestWrapper/TestRunners/bin/$(Configuration)/TestWrapper.dll</TestWrapperAssembly>        
+        <TestWrapperAssembly>TestWrapper/TestRunners/bin/$(Configuration)/TestWrapper.dll</TestWrapperAssembly>
         <CustomTasksAssembly>CustomTasks/bin/$(Configuration)/CustomTasks.dll</CustomTasksAssembly>
         <TestAnalyzerAssembly>../sdk/test/TestAnalyzer/IntegrationTestsAnalyzer/bin/$(Configuration)/IntegrationTestsAnalyzer.dll</TestAnalyzerAssembly>
-        <RunIntegTests Condition="'$(RunIntegTests)'=='' And '$(IntegCategoriesToTest)' != ''">true</RunIntegTests>
-
+        <CustomSnkFileLocation Condition="'$(CustomSnkFileLocation)'==''">$(MSBuildProjectDirectory)\..\sdk\awssdk.dll.snk</CustomSnkFileLocation>
         <CodeSigning Condition="'$(CodeSigning)'==''">false</CodeSigning>
         <SignedArtifactsPath Condition="'$(SignedArtifactsPath)'==''">../Deployment/</SignedArtifactsPath>
     </PropertyGroup>
@@ -38,106 +32,52 @@
     <Import Project="$(InternalBuildTools)/CodeSign.props" Condition="Exists('$(InternalBuildTools)/CodeSign.props')" />
     <Import Project="common.targets" />
 
-    <!-- properties used in documentation generation -->
     <PropertyGroup>
-        <!-- resources folder where test settings should be placed -->
-        <TestSettingsLocation>..\sdk\test\CrossPlatformTests\CommonTests\Resources</TestSettingsLocation>
         <RunKeyScan Condition="'$(RunKeyScan)'==''">false</RunKeyScan>
+        <TargetFramework Condition="'$(TargetFramework)'==''"></TargetFramework>
     </PropertyGroup>
 
-    <Choose>
-        <When Condition="$(ServiceList.Contains('Core'))">
-            <ItemGroup>
-                <ServiceName Include="..\sdk\src\Services\**\*.sln"/>
-            </ItemGroup>
-        </When>
-        <Otherwise>
-            <ItemGroup>
-                <ServiceName Include="$(ServiceList)" />
-            </ItemGroup>
-        </Otherwise>
-    </Choose>
     <PropertyGroup>
-      <NetFrameworkSolutionsFile>AWSSDK.NetFramework.sln</NetFrameworkSolutionsFile>
+      <NetFrameworkSolutionFile>AWSSDK.NetFramework.sln</NetFrameworkSolutionFile>
       <NetStandardSolutionFile>AWSSDK.NetStandard.sln</NetStandardSolutionFile>
-      <NetFrameworkUnitTestProject>AWSSDK.UnitTests.NetFramework.csproj</NetFrameworkUnitTestProject>
-      <NetStandardUnitTests>UnitTests.NetStandard.csproj</NetStandardUnitTests>
-      <ReferenceServiceDLLs>false</ReferenceServiceDLLs>
-      <GeneratorPartialBuildArgument></GeneratorPartialBuildArgument>
+      <SolutionFile Condition="'$(TargetFramework)'=='net472'">$(NetFrameworkSolutionFile)</SolutionFile>
+      <SolutionFile Condition="'$(TargetFramework)'!='net472'">$(NetStandardSolutionFile)</SolutionFile>
     </PropertyGroup>
 
-    <Target Name="build-buildtools"
-            DependsOnTargets="build-custom-tasks;build-test-wrapper;build-test-analyzer" />
-
+    <!-- ============================================================
+         BUILD TOOLS TARGETS
+         These build the custom MSBuild tasks, test wrapper, and analyzer
+         used by other targets.
+         ============================================================ -->
+    <Target Name="build-buildtools" DependsOnTargets="build-custom-tasks;build-test-wrapper;build-test-analyzer" />
     <Target Name="build-custom-tasks" Condition="!Exists($(CustomTasksAssembly))">
         <Exec Command="dotnet restore CustomTasks/CustomTasks.csproj" />
         <Exec Command="dotnet clean CustomTasks/CustomTasks.csproj" />
         <Exec Command="dotnet build -c $(Configuration) CustomTasks/CustomTasks.csproj" />
     </Target>
-
     <Target Name="build-test-wrapper" Condition="!Exists($(TestWrapperAssembly))">
         <Exec Command="dotnet restore TestWrapper/TestWrapper.sln" />
         <Exec Command="dotnet clean TestWrapper.sln" WorkingDirectory="./TestWrapper" />
         <Exec Command="dotnet build -c $(Configuration) TestWrapper.sln" WorkingDirectory="./TestWrapper" />
     </Target>
-
     <Target Name="build-test-analyzer" Condition="!Exists($(TestAnalyzerAssembly))">
         <Exec Command="dotnet restore ../sdk/test/TestAnalyzer/TestAnalyzer.sln" />
         <Exec Command="dotnet clean ../sdk/test/TestAnalyzer/TestAnalyzer.sln" />
         <Exec Command="dotnet build -c $(Configuration) ../sdk/test/TestAnalyzer/TestAnalyzer.sln" />
     </Target>
-
     <Target Name="clean-buildtools" DependsOnTargets="clean-common">
         <Delete Files="$(TestWrapperAssembly)" />
-        <Delete Files="$(CustomTasksAssembly)" />        
+        <Delete Files="$(CustomTasksAssembly)" />
         <Delete Files="$(TestAnalyzerAssembly)" />
     </Target>
 
     <UsingTask TaskName="CustomTasks.TimingTask" AssemblyFile="$(CustomTasksAssembly)"/>
-    <UsingTask TaskName="CustomTasks.Endpoint.EndpointOverriderTask" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="TestWrapper.MsTestWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
     <UsingTask TaskName="TestWrapper.XUnitWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
 
-
-    <Target Name="init" DependsOnTargets="clean-buildtools;build-buildtools">
-        <Message Text="Running SDK generation and build for configuration: $(Configuration)" Importance="normal" />
-
-        <TimingTask />
-
-        <Copy
-            SourceFiles="trx-transform.xsl"
-            DestinationFolder="$(Deployment)" />
-    </Target>
-
-    <Target Name="override-endpoints-file">
-        <Message Text="Applying overrides to the endpoints-original.json file and save it as endpoints.json" Importance="normal" />
-
-        <EndpointOverriderTask
-            EndpointsJsonSourceLocation = "../sdk/src/Core/endpoints-original.json"
-            EndpointsOverrideLocation = "./CustomTasks/Endpoint/endpoints-override.json"
-        />
-    </Target>
-
-    <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-dependencies;copy-service-models;keyscan;consolidate-docartifacts;save-build"/>
-
-    <Target Name="full-build-service" DependsOnTargets="test-sdk-service"/>
-
-    <Target Name="full-build-nodocs" DependsOnTargets="full-build-nodocs-all;full-build-nodocs-service;verify-signed-sdk-artifacts"/>
-
-    <Target Name="full-build-nodocs-all" DependsOnTargets="test-sdk;package-extensions;keyscan;copy-assemblies;copy-dependencies;copy-service-models;save-build" Condition="'$(ServiceList)'==''"/>
-
-    <Target Name="full-build-nodocs-service" DependsOnTargets="test-sdk-service;package-extensions;keyscan;copy-assemblies;copy-dependencies;copy-service-models;save-build" Condition="'$(ServiceList)'!=''"/>
-
-    <Target Name="restore-nuget">
-        <Message Text="Restore nuget packages"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.CodeAnalysis.sln"/>
-    </Target>
-
-    <Target Name="restore-nuget-service">
-        <Message Text="Restore nuget packages"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\src\Services\%(ServiceName.FileName)"/>
-    </Target>
-
+    <!-- ============================================================
+         CODE GENERATOR
+         ============================================================ -->
     <Target Name="run-generator">
         <CallTarget Targets="clean-old-models" Condition="Exists('$(InternalBuildTools)/references.targets')" />
 
@@ -147,81 +87,34 @@
         <Exec Command="dotnet build -c $(Configuration) --no-incremental /p:RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild) AWSSDKGenerator.sln" WorkingDirectory="../generator"/>
         <Exec Command="dotnet run -c $(Configuration) --project ../../ServiceClientGenerator.csproj -- $(GeneratorPartialBuildArgument)" WorkingDirectory="../generator/ServiceClientGenerator/bin/$(Configuration)"/>
     </Target>
+
+    <!-- ============================================================
+         ROSLYN ANALYZERS
+         ============================================================ -->
     <Target Name="build-custom-roslyn-analyzer" Condition="$(RunAnalyzersDuringBuild)">
         <Message Text="Build Custom Roslyn Analyzer"/>
         <Exec Command="dotnet build -c $(Configuration) --no-incremental CustomRoslynAnalyzers.csproj"
                 WorkingDirectory="..\buildtools\CustomRoslynAnalyzers\CustomRoslynAnalyzers"/>
     </Target>
 
-    <Target Name="ValidateRepo" Condition="Exists('$(InternalBuildTools)\references.targets')=='true' And '$(ServiceList)'=='' And !$(DisableValidateRepo)" DependsOnTargets="build-tools">
-      <ValidateRepoTask
-      RepoPath = "$(MSBuildProjectDirectory)\.."/>
-   </Target>
-
-    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-netstandard;sign-sdk-artifacts;copy-assemblies;copy-dependencies">
-        <Copy
-            SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
-            DestinationFolder="$(Deployment)" />
+    <Target Name="build-roslyn-anlyzer-test-and-run" DependsOnTargets="">
+        <Exec Command="dotnet build -c $(Configuration) --no-incremental CustomRoslynAnalyzers.Test.csproj"
+            WorkingDirectory="..\buildtools\CustomRoslynAnalyzers\CustomRoslynAnalyzers.Test"/>
+        <Exec Command="dotnet test -c $(Configuration) --no-build CustomRoslynAnalyzers.Test.csproj"
+            WorkingDirectory="..\buildtools\CustomRoslynAnalyzers\CustomRoslynAnalyzers.Test"/>
     </Target>
 
-    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;sign-sdk-artifacts;copy-assemblies;copy-dependencies">
-        <Copy
-            SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
-            DestinationFolder="$(Deployment)" />
-    </Target>
-
-    <Target Name="build-sdk-desktop" DependsOnTargets="run-generator;build-custom-roslyn-analyzer;ValidateRepo;restore-nuget;override-endpoints-file">
-        <Message Text="Restore and compile NetFramework SDK"/>
-        <Exec Command="dotnet restore -f  $(NetFrameworkSolutionsFile)" WorkingDirectory="..\sdk"/>
-        <Exec Command="dotnet clean -c $(Configuration) $(NetFrameworkSolutionsFile)" WorkingDirectory="..\sdk"/>
-        <Exec Command="dotnet build -c $(Configuration) --no-incremental $(NetFrameworkSolutionsFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk"/>
-    </Target>
-
-    <Target Name="build-sdk-desktop-service" DependsOnTargets="run-generator;build-custom-roslyn-analyzer;restore-nuget-service;override-endpoints-file">
-        <Message Text="Restore and compile service solution "/>
-        <Exec Command="dotnet restore -f  %(ServiceName.Filename).sln" WorkingDirectory="..\sdk\src\Services\%(ServiceName.Filename)"/>
-        <Exec Command="dotnet clean -c $(Configuration) %(ServiceName.FileName).sln" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)"/>
-        <Exec Command="dotnet build -c $(Configuration) --no-incremental %(ServiceName.FileName).sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)"/>
-    </Target>
-
-    <Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator;build-custom-roslyn-analyzer;override-endpoints-file">
-        <Exec Command="dotnet clean -c $(Configuration) AWSSDK.CodeAnalysis.sln" WorkingDirectory="..\sdk"/>
-        <Exec Command="dotnet build -c $(Configuration) AWSSDK.CodeAnalysis.sln /p:AWSKeyFile=$(CustomSnkFileLocation)" WorkingDirectory="..\sdk"/>
-    </Target>
-
-    <Target Name="build-sdk-netstandard" DependsOnTargets="restore-nuget;run-generator;override-endpoints-file">
-        <Message Text="Restore and compile NetStandard versions of the SDK"/>
-        <Exec Command="dotnet restore -f  $(NetStandardSolutionFile)" WorkingDirectory="..\sdk"/>
-        <Exec Command="dotnet clean -c $(Configuration) $(NetStandardSolutionFile)" WorkingDirectory="..\sdk"/>
-        <Exec Command="dotnet build -c $(Configuration) --no-incremental $(NetStandardSolutionFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk"/>
-    </Target>
-
-    <Target Name="test-sdk" DependsOnTargets="init;build-sdk;build-roslyn-anlyzer-test-and-run;run-unit-tests;run-CSM-tests;test-backward-compatibility" />
-
-    <Target Name="test-sdk-service" DependsOnTargets="init;build-sdk-service;build-roslyn-anlyzer-test-and-run;run-unit-tests-service;test-backward-compatibility" />
-
-    <Target Name="verify-signed-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="$(VerifySignedSdkArtifacts-DependsOnTargets)">
-        <Exec LogStandardErrorAsError="true"
-            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)/Test-Signature.ps1 -folder ../sdk/code-analysis/NuGetInstallScripts/ -pattern *.ps1"/>
-        <Exec LogStandardErrorAsError="true"
-            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)/Test-Signature.ps1 -folder ../sdk/nuget-content/ -pattern *.ps1"/>
-        <Exec LogStandardErrorAsError="true"
-            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)/Test-Signature.ps1 -folder $(SignedArtifactsPath) -pattern AWSSDK*.dll"/>
-    </Target>
-
+    <!-- ============================================================
+         CODE SIGNING
+         ============================================================ -->
     <Target Name="sign-sdk-artifacts" Condition="Exists('$(InternalBuildTools)/references.targets') And $(CodeSigning)" DependsOnTargets="$(SignSdkArtifacts-DependsOnTargets)">
-        <!-- Configure project specfic code sign properties -->
         <ItemGroup>
-            <!-- SDK items -->
             <SignableItems Include="../sdk/src/Core/**/bin/$(Configuration)/*/AWSSDK*.dll" />
             <SignableItems Include="../sdk/src/Services/**/bin/$(Configuration)/*/AWSSDK*.dll" Exclude="**/AWSSDK.Core.dll" />
-            <!-- Extensions -->
             <SignableItems Include="../Extensions/src/**/bin/$(Configuration)/*/AWSSDK.Extensions*.dll" />
-            <!-- Code Analyzer items -->
             <SignableItems Include="../sdk/code-analysis/ServiceAnalysis/**/bin/$(Configuration)/AWSSDK*.CodeAnalysis.dll" />
             <SignableItems Include="../sdk/code-analysis/NuGetInstallScripts/install.ps1" />
             <SignableItems Include="../sdk/code-analysis/NuGetInstallScripts/uninstall.ps1" />
-            <!-- NuGet Package items -->
             <SignableItems Include="../sdk/nuget-content/account-management.ps1" />
             <SignableItems Include="../sdk/nuget-content/install.ps1" />
         </ItemGroup>
@@ -263,126 +156,26 @@
         </CodeSignTask>
     </Target>
 
-    <Target Name="build-tests" Condition="'$(ServiceList)'!=''">
-        <Exec Command="dotnet restore -f  $(NetFrameworkUnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
-        <Exec Command="dotnet clean -c $(Configuration) $(NetFrameworkUnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
-        <Exec Command="dotnet build -c $(Configuration) $(NetFrameworkUnitTestProject) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\test\UnitTests"/>
-
-        <Exec Command="dotnet restore -f  $(NetStandardUnitTests)" WorkingDirectory="..\sdk\test\NetStandard\UnitTests"/>
-        <Exec Command="dotnet clean -c $(Configuration) $(NetStandardUnitTests)" WorkingDirectory="..\sdk\test\NetStandard\UnitTests"/>
-        <Exec Command="dotnet build -c $(Configuration) $(NetStandardUnitTests) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\test\NetStandard\UnitTests"/>
-    </Target>
-
-    <Target Name="run-unit-tests" DependsOnTargets="init;build-sdk;build-tests;build-test-wrapper;" >
-        <MsTestWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\UnitTests\$(NetFrameworkUnitTestProject)"
-            Configuration="$(Configuration)"
-            Categories="$(BCLUnitTestCategories)"
-            TestExecutionProfile="test-runner"/>
-
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\NetStandard\UnitTests\UnitTests.NetStandard.csproj"
-            Configuration="$(Configuration)"
-            Categories="$(NetStandardTestCategories)"
-            TestExecutionProfile="test-runner"/>
-    </Target>
-
-    <Target Name="build-tests-service">
-        <Exec Command="dotnet restore -f  AWSSDK.UnitTests.%(ServiceName.FileName).NetFramework.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests"/>
-        <Exec Command="dotnet clean -c $(Configuration) AWSSDK.UnitTests.%(ServiceName.FileName).NetFramework.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests"/>
-        <Exec Command="dotnet build -c $(Configuration) AWSSDK.UnitTests.%(ServiceName.FileName).NetFramework.csproj /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\UnitTests"/>
-    </Target>
-
-    <Target Name="run-unit-tests-service" DependsOnTargets="build-test-wrapper" >
-        <MsTestWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\Services\%(ServiceName.FileName)\UnitTests\AWSSDK.UnitTests.%(ServiceName.FileName).NetFramework.csproj"
-            Configuration="$(Configuration)"
-            Categories="$(BCLUnitTestCategories)"
-            Condition="Exists('..\sdk\test\Services\%(ServiceName.FileName)\UnitTests\Generated') Or Exists('..\sdk\test\Services\%(ServiceName.FileName)\UnitTests\Custom')"
-            TestExecutionProfile="test-runner"/>
-
-        <!--
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\NetStandard\UnitTests\UnitTests.NetStandard.csproj"
-            Configuration="$(Configuration)"
-            Categories="$(NetStandardTestCategories)"
-            TestExecutionProfile="test-runner"/>
-        -->
-    </Target>
-
-    <Target Name="build-integ-tests-service">
-        <Message Text="Build Integ tests csproj"/>
-        <Exec Command="dotnet restore -f  AWSSDK.IntegrationTests.%(ServiceName.FileName).NetFramework.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests" Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests')"/>
-        <Exec Command="dotnet clean -c $(Configuration) AWSSDK.IntegrationTests.%(ServiceName.FileName).NetFramework.csproj" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests" Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests')"/>
-        <Exec Command="dotnet build -c $(Configuration) AWSSDK.IntegrationTests.%(ServiceName.FileName).NetFramework.csproj /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests" Condition="Exists('..\sdk\src\Services\%(ServiceName.FileName)\Test\IntegrationTests')"/>
-    </Target>
-
-    <Target Name="build-CSM">
-        <Exec Command="dotnet restore -f  CSMTest.sln" WorkingDirectory="..\sdk\test\CSMTest"/>
-        <Exec Command="dotnet clean -c $(Configuration) CSMTest.sln" WorkingDirectory="..\sdk\test\CSMTest"/>
-        <Exec Command="dotnet build -c $(Configuration) --no-incremental CSMTest.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="..\sdk\test\CSMTest"/>
-    </Target>
-
-    <Target Name="run-CSM-tests" DependsOnTargets="build-CSM;build-test-wrapper;run-CSM-integration-tests;run-CSM-unit-tests"/>
-    <Target Name="run-CSM-integration-tests" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
-        <Message Text="CSM Corelr"/>
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CSMTest\Tests\IntegrationTests\AWSSDK.CSM.IntegrationTests.NetStandard.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/>
-        <Message Text="CSM NetFramework"/>
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CSMTest\Tests\IntegrationTests\AWSSDK.CSM.IntegrationTests.NetFramework.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/>
-    </Target>
-
-    <Target Name="run-CSM-unit-tests">
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.AppConfigTests.NetFramework.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/>
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.EnvFallBackTests.NetStandard.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/>
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.EnvFallBackTests.NetFramework.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/>
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.SharedProfileTests.NetStandard.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/>
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="..\sdk\test\CSMTest\Tests\UnitTests\FallBackConfigTests\AWSSDK.SharedProfileTests.NetFramework.csproj"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="test-runner"/>
-    </Target>
-
-    <Target Name="nuget-pack" Condition="'$(Configuration)' == 'Release'">
+    <Target Name="verify-signed-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="$(VerifySignedSdkArtifacts-DependsOnTargets)">
         <Exec LogStandardErrorAsError="true"
-              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1 -PackageList &quot;$(ServiceList)&quot;"/>
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)/Test-Signature.ps1 -folder ../sdk/code-analysis/NuGetInstallScripts/ -pattern *.ps1"/>
+        <Exec LogStandardErrorAsError="true"
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)/Test-Signature.ps1 -folder ../sdk/nuget-content/ -pattern *.ps1"/>
+        <Exec LogStandardErrorAsError="true"
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)/Test-Signature.ps1 -folder $(SignedArtifactsPath) -pattern AWSSDK*.dll"/>
     </Target>
 
-    <Target Name="package-extensions" DependsOnTargets="package-netcore-extensions;package-crt-extensions;package-cloudfront-extensions;package-ec2-extensions;package-meai-extensions;package-cborprotocol-extensions;package-logging-extensions" />
+    <!-- ============================================================
+         EXTENSIONS
+         ============================================================ -->
 
     <Target Name="build-extensions" >
         <Exec Command="dotnet restore -f  AWSSDK.Extensions.sln" WorkingDirectory="../extensions"/>
         <Exec Command="dotnet clean AWSSDK.Extensions.sln" WorkingDirectory="../extensions"/>
         <Exec Command="dotnet build -c $(Configuration) AWSSDK.Extensions.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)"  WorkingDirectory="../extensions"/>
     </Target>
+
+    <Target Name="package-extensions" DependsOnTargets="package-netcore-extensions;package-crt-extensions;package-cloudfront-extensions;package-ec2-extensions;package-meai-extensions;package-cborprotocol-extensions;package-logging-extensions" />
 
     <Target Name="package-netcore-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
@@ -420,16 +213,104 @@
         <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.Logging.Log4NetAdaptor.nuspec -BasePath . -Symbols -SymbolPackageFormat snupkg -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.Logging.Log4NetAdaptor" />
     </Target>
 
-    <Target Name="copy-assemblies" DependsOnTargets="nuget-pack;build-extensions">
-        <Message Text="Collating assemblies for downstream doc generation" />
-        <PropertyGroup>
-            <CustomSnkPublicKeyToken Condition="'$(CustomSnkPublicKeyToken)' == '' ">885c28607f98e604</CustomSnkPublicKeyToken>
-        </PropertyGroup>
-        <Exec LogStandardErrorAsError="true"
-              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-sdkassemblies.ps1 -PublicKeyTokenToCheck $(CustomSnkPublicKeyToken) -BuildType $(Configuration) -ServiceList &quot;$(ServiceList)&quot;"/>
+    <!-- ============================================================
+         TEST TARGETS
+         ============================================================ -->
+    <Target Name="build-test-project-noframework" Condition="'$(TargetFramework)'==''">
+        <Exec Command="dotnet restore -f $(TestsProjectFile)" WorkingDirectory="$(TestsWorkingDirectory)" />
+        <Exec Command="dotnet clean -c $(Configuration) $(TestsProjectFile)" WorkingDirectory="$(TestsWorkingDirectory)" />
+        <Exec Command="dotnet build -c $(Configuration) $(TestsProjectFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="$(TestsWorkingDirectory)" />
+    </Target>
+    <Target Name="build-test-project-framework" Condition="'$(TargetFramework)'!=''">
+        <Exec Command="dotnet restore -f $(TestsProjectFile)" WorkingDirectory="$(TestsWorkingDirectory)" />
+        <Exec Command="dotnet clean -c $(Configuration) $(TestsProjectFile)" WorkingDirectory="$(TestsWorkingDirectory)" />
+        <Exec Command="dotnet build -c $(Configuration) $(TestsProjectFile) -f $(TargetFramework) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="$(TestsWorkingDirectory)" />
+    </Target>
+    <Target Name="build-test-project" DependsOnTargets="build-test-project-framework;build-test-project-noframework"></Target>
+
+    <Target Name="run-tests-mstest" DependsOnTargets="$(run-tests-mstest-DependsOnTargets)">
+        <MsTestWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="$(TestsWorkingDirectory)\$(TestsProjectFile)"
+            Configuration="$(Configuration)"
+            TestExecutionProfile="$(TestsRunnerProfile)"
+            Categories="$(IncludeTestCategories)"
+            CategoriesToIgnore="$(ExcludeTestCategories)"
+            KeepTestResults="true"
+            TargetFramework="$(TargetFramework)"
+            TestResultsPath="$(TestResultsPath)"
+            />
     </Target>
 
-    <Target Name="copy-dependencies" DependsOnTargets="copy-assemblies">
+    <Target Name="run-tests-xunit" DependsOnTargets="$(run-tests-xunit-DependsOnTargets)">
+        <XUnitWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="$(TestsWorkingDirectory)\$(TestsProjectFile)"
+            Configuration="$(Configuration)"
+            TestExecutionProfile="$(TestsRunnerProfile)"
+            Categories="$(IncludeTestCategories)"
+            CategoriesToIgnore="$(ExcludeTestCategories)"
+            KeepTestResults="true"
+            TargetFramework="$(TargetFramework)"
+            TestResultsPath="$(TestResultsPath)" />
+    </Target>
+
+    <!-- ============================================================
+         KEY SCANNING
+         ============================================================ -->
+    <Target Name="keyscan" Condition="Exists('$(InternalBuildTools)/references.targets') And $(RunKeyScan)" DependsOnTargets="$(keyscan-DependsOnTargets)">
+        <ItemGroup>
+            <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/MailManager/Generated/PropertyValueRules.xml" />
+            <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/CertificateManager/Generated/PropertyValueRules.xml" />
+            <PrivateKeyException Include="sdk/test/Services/EC2/UnitTests/Custom/PasswordTest.cs" />
+            <PrivateKeyException Include="sdk/test/NetStandard/UnitTests/sample.rsa.private.key.txt" />
+            <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/IoTManagedIntegrations/Generated/PropertyValueRules.xml" />
+            <PrivateKeyException Include="extensions/test/EC2.DecryptPasswordTests/PasswordTest.cs"/>
+
+            <PrivateKeyException Include="extensions/src/AWSSDK.Extensions.CloudFront.Signers/AmazonCloudFrontUrlSigner.cs"/>
+            <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/URLSignerTest.cs"/>
+            <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/sample.rsa.private.key.txt"/>
+            <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/test-rsa-key.pem"/>
+            <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/test-ecdsa-key.pem"/>
+            <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/test-dsa-key.pem"/>
+        </ItemGroup>
+
+        <ItemGroup>
+            <FileException Include="generator/ServiceModels/elasticbeanstalk/elasticbeanstalk.examples.json" />
+            <FileException Include="generator/ServiceClientGenerator/bin/Release/customizations/elasticbeanstalk.customizations.json" />
+
+            <FileException Include="sdk/code-analysis/NuGetInstallScripts/install.ps1" />
+            <FileException Include="sdk/code-analysis/NuGetInstallScripts/uninstall.ps1" />
+            <FileException Include="sdk/nuget-content/account-management.ps1" />
+            <FileException Include="sdk/nuget-content/install.ps1" />
+
+            <FileException Include="sdk/src/Core/bin/Release/net8.0/AWSSDK.Core.xml" />
+            <FileException Include="sdk/src/Services/S3/bin/Release/net8.0/AWSSDK.S3.xml" />
+            <FileException Include="Deployment/assemblies/net8.0/AWSSDK.Core.xml" />
+            <FileException Include="Deployment/assemblies/net8.0/AWSSDK.S3.xml" />
+            <FileException Include="sdk/test/NetStandard/UnitTests/Core/EventStreamHeaderTests.cs"/>
+        </ItemGroup>
+
+        <ItemGroup>
+            <FolderException Include="generator/ServiceModels"/>
+            <FolderException Include=".git"/>
+            <FolderException Include="Deployment/models"/>
+            <FolderException Include="NuGetDownloads"/>
+        </ItemGroup>
+        <KeyScannerTask
+            Folder="$(MSBuildProjectDirectory)/.."
+            FilePattern="**"
+            PrivateKeyExceptions="@(PrivateKeyException)"
+            FileExceptions="@(FileException)"
+            FolderExceptions="@(FolderException)"
+            ParallelScan="true"
+        />
+    </Target>
+
+    <!-- ============================================================
+         COPY TARGETS
+         ============================================================ -->
+    <Target Name="copy-dependencies">
         <Message Text="Copying dependency dlls" />
         <Exec LogStandardErrorAsError="true" Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-dependencies.ps1"/>
     </Target>
@@ -458,168 +339,65 @@
 
     <Target Name="copy-service-models" DependsOnTargets="$(copy-service-models-DependsOnTargets)">
         <Message Text="Collating service models for downstream tooling" />
-
-    <ItemGroup>
-      <ServiceModels Include="../generator/ServiceModels/**/*" />
-    </ItemGroup>
-
-    <Copy SourceFiles="@(ServiceModels)" DestinationFolder="$(Deployment)/models/%(RecursiveDir)" />
-  </Target>
-
-    <!-- TEST TARGETS/TASKS -->
-
-    <Target Name="build-roslyn-anlyzer-test-and-run" DependsOnTargets="">
-        <Exec Command="dotnet build -c $(Configuration) --no-incremental CustomRoslynAnalyzers.Test.csproj"
-            WorkingDirectory="..\buildtools\CustomRoslynAnalyzers\CustomRoslynAnalyzers.Test"/>
-        <Exec Command="dotnet test -c $(Configuration) --no-build CustomRoslynAnalyzers.Test.csproj"
-            WorkingDirectory="..\buildtools\CustomRoslynAnalyzers\CustomRoslynAnalyzers.Test"/>
-    </Target>
-
-    <UsingTask TaskName="PrepareTestResults" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
-        <ParameterGroup>
-            <ResultFile ParameterType="System.String" Required="true" />
-        </ParameterGroup>
-        <Task>
-            <Code Type="Fragment" Language="cs">
-                <![CDATA[
-                    Log.LogMessage("ResultFile = [{0}], formatting", ResultFile);
-                    string content = File.ReadAllText(ResultFile);
-                    content = content.Replace("<?xml version=\"1.0\" encoding=\"UTF-8\"?>","<?xml version=\"1.0\" encoding=\"UTF-8\"?><?xml-stylesheet type=\"text/xsl\" href=\"trx-transform.xsl\"?>");
-                    File.WriteAllText(ResultFile + ".xml", content);
-                ]]>
-            </Code>
-        </Task>
-    </UsingTask>
-
-    <Target Name="keyscan" Condition="Exists('$(InternalBuildTools)/references.targets') And $(RunKeyScan)" 
-        DependsOnTargets="$(keyscan-DependsOnTargets)">
         <ItemGroup>
-            <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/MailManager/Generated/PropertyValueRules.xml" />
-            <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/CertificateManager/Generated/PropertyValueRules.xml" />
-            <PrivateKeyException Include="sdk/test/Services/EC2/UnitTests/Custom/PasswordTest.cs" />
-            <PrivateKeyException Include="sdk/test/NetStandard/UnitTests/sample.rsa.private.key.txt" />
-            <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/IoTManagedIntegrations/Generated/PropertyValueRules.xml" />
-            <PrivateKeyException Include="extensions/test/EC2.DecryptPasswordTests/PasswordTest.cs"/>
-
-            <PrivateKeyException Include="extensions/src/AWSSDK.Extensions.CloudFront.Signers/AmazonCloudFrontUrlSigner.cs"/>
-            <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/URLSignerTest.cs"/>
-            <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/sample.rsa.private.key.txt"/>
-            <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/test-rsa-key.pem"/>
-            <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/test-ecdsa-key.pem"/>
-            <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/test-dsa-key.pem"/>
+            <ServiceModels Include="../generator/ServiceModels/**/*" />
         </ItemGroup>
 
-    <ItemGroup>
-      <FileException Include="generator/ServiceModels/elasticbeanstalk/elasticbeanstalk.examples.json" />
-      <FileException Include="generator/ServiceClientGenerator/bin/Release/customizations/elasticbeanstalk.customizations.json" />
-      
-      <FileException Include="sdk/code-analysis/NuGetInstallScripts/install.ps1" />
-      <FileException Include="sdk/code-analysis/NuGetInstallScripts/uninstall.ps1" />
-      <FileException Include="sdk/nuget-content/account-management.ps1" />
-      <FileException Include="sdk/nuget-content/install.ps1" />
-
-      <FileException Include="sdk/src/Core/bin/Release/net8.0/AWSSDK.Core.xml" />
-      <FileException Include="sdk/src/Services/S3/bin/Release/net8.0/AWSSDK.S3.xml" />
-      <FileException Include="Deployment/assemblies/net8.0/AWSSDK.Core.xml" />
-      <FileException Include="Deployment/assemblies/net8.0/AWSSDK.S3.xml" />
-      <FileException Include="sdk/test/NetStandard/UnitTests/Core/EventStreamHeaderTests.cs"/>
-    </ItemGroup>
-
-        <ItemGroup>
-            <FolderException Include="generator/ServiceModels"/>
-			<FolderException Include=".git"/>
-			<FolderException Include="Deployment/models"/>
-			<FolderException Include="NuGetDownloads"/>
-        </ItemGroup>
-
-        <KeyScannerTask
-            Folder="$(MSBuildProjectDirectory)/.."
-            FilePattern="**"
-            PrivateKeyExceptions="@(PrivateKeyException)"
-            FileExceptions="@(FileException)"
-            FolderExceptions="@(FolderException)"
-            ParallelScan="true"
-         />
-
+        <Copy SourceFiles="@(ServiceModels)" DestinationFolder="$(Deployment)/models/%(RecursiveDir)" />
     </Target>
 
-    <Target Name="save-build" Condition="Exists('$(InternalBuildTools)\references.targets')=='true' And $(SaveBuildArtifacts)" DependsOnTargets="build-tools">
-        <SaveBuildArtifactTask
-            RepositoryRoot="$(MSBuildProjectDirectory)\.."
-            BuildArtifactType="sdk"
-            GitBranch="$(SaveReferenceGitBranch)"
-            LocalArchiveRootFolder="$(LocalArchiveRootFolder)"
-            />
+    <!-- ============================================================
+         LOCAL BUILD AND TEST (unit tests only - for integration tests see ".\sdk\test\IntegrationTests\AWSSDK.IntegrationTests.csproj")
+         Assumes the generator has been run previously (dotnet msbuild .\buildtools\build.proj /t:run-generator).
+         Usage (from repository root):
+           dotnet msbuild .\buildtools\build.proj
+           dotnet msbuild .\buildtools\build.proj /p:ServiceName=S3
+           dotnet msbuild .\buildtools\build.proj /t:local-test /p:ServiceName=S3
+         ============================================================ -->
+    <Target Name="local-build" DependsOnTargets="build-custom-roslyn-analyzer;local-build-sdk-service;local-build-sdk-all" />
+    <Target Name="local-build-sdk-service" Condition="'$(ServiceName)'!=''">
+        <Message Text="Building $(ServiceName)..." />
+        <Exec Command="dotnet restore $(ServiceName).sln" WorkingDirectory="..\sdk\src\Services\$(ServiceName)"/>
+        <Exec Command="dotnet build -c $(Configuration) --no-incremental $(ServiceName).sln /p:AWSKeyFile=$(CustomSnkFileLocation) /p:SignAssembly=true /p:RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild)" WorkingDirectory="..\sdk\src\Services\$(ServiceName)"/>
+    </Target>
+    <Target Name="local-build-sdk-all" Condition="'$(ServiceName)'==''">
+        <Message Text="Building $(SolutionFile)..." />
+        <Exec Command="dotnet restore $(SolutionFile)" WorkingDirectory="..\sdk"/>
+        <Exec Command="dotnet build -c $(Configuration) --no-incremental $(SolutionFile) /p:AWSKeyFile=$(CustomSnkFileLocation) /p:SignAssembly=true /p:RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild)" WorkingDirectory="..\sdk"/>
     </Target>
 
-    <Target Name="populate-deployment" Condition="Exists('$(InternalBuildTools)\references.targets') And '$(ReferenceServiceDLLs)'" DependsOnTargets="build-tools">
-        <PrepopulateDeploymentFolder
-            BuildArtifactType="sdk"
-            DeploymentFolder="$(Deployment)"
-            GitBranch="last-release"/>
+    <Target Name="local-test" DependsOnTargets="local-build;local-test-service;local-test-all-netframework;local-test-all-netstandard" />
+    <Target Name="local-test-service" Condition="'$(ServiceName)'!=''" DependsOnTargets="local-build-sdk-service">
+        <Exec Command="dotnet test -c $(Configuration) --no-build" WorkingDirectory="..\sdk\test\Services\$(ServiceName)\UnitTests"/>
+    </Target>
+    <Target Name="local-test-all-netframework" Condition="'$(ServiceName)'=='' And '$(SolutionFile)'=='$(NetFrameworkSolutionFile)'" DependsOnTargets="local-build-sdk-all">
+        <Exec Command="dotnet test AWSSDK.UnitTests.NetFramework.csproj -c $(Configuration) --no-build" WorkingDirectory="..\sdk\test\UnitTests"/>
+    </Target>
+    <Target Name="local-test-all-netstandard" Condition="'$(ServiceName)'=='' And '$(SolutionFile)'!='$(NetFrameworkSolutionFile)'" DependsOnTargets="local-build-sdk-all">
+        <Exec Command="dotnet test UnitTests.NetStandard.csproj -c $(Configuration) --no-build" WorkingDirectory="..\sdk\test\NetStandard\UnitTests"/>
     </Target>
 
-    <Target Name="prepare-tests" Condition="'$(TestSettingsFile)' != ''">
-        <Copy
-            SourceFiles="$(TestSettingsFile)"
-            DestinationFolder="$(TestSettingsLocation)" />
+    <!-- ============================================================
+         BACKWARD COMPATIBILITY CHECK
+         Requires InternalBuildTools (AssemblyComparer).
+         Usage (from repository root):
+           dotnet msbuild .\buildtools\build.proj /t:local-check-compatibility
+           dotnet msbuild .\buildtools\build.proj /t:local-check-compatibility /p:BackwardIncompatibilitiesToIgnore="Amazon.Runtime.Internal.Transform.DictionaryUnmarshaller/MethodOverloadAdded"
+         Values support wildcards (*) and can be comma-separated. Formats:
+           NameSpace.ClassName/ErrorCode
+           NameSpace.*/ErrorCode
+           NameSpace.ClassName
+           NameSpace.ClassName+NestedClass
+           /ErrorCode
+         ============================================================ -->
+    <Target Name="local-build-core">
+        <Exec Command="dotnet restore AWSSDK.Core.NetFramework.csproj" WorkingDirectory="..\sdk\src\Core"/>
+        <Exec Command="dotnet build -c $(Configuration) AWSSDK.Core.NetFramework.csproj /p:AWSKeyFile=$(CustomSnkFileLocation) /p:SignAssembly=true" WorkingDirectory="..\sdk\src\Core"/>
+        <Exec Command="dotnet restore AWSSDK.Core.NetStandard.csproj" WorkingDirectory="..\sdk\src\Core"/>
+        <Exec Command="dotnet build -c $(Configuration) AWSSDK.Core.NetStandard.csproj /p:AWSKeyFile=$(CustomSnkFileLocation) /p:SignAssembly=true" WorkingDirectory="..\sdk\src\Core"/>
     </Target>
-
-    <Target Name="test-backward-compatibility" Condition="Exists('$(InternalBuildTools)\references.targets') And '$(ServiceList)'=='' And $(TestBackwardCompatibility)">
-        <Exec Command="dotnet build -c Release --no-incremental AssemblyComparer.sln" WorkingDirectory="$(InternalBuildTools)\AssemblyComparer"/>
-        <!-- BackwardIncompatibilitiesToIgnore is a list of comma separated AssemblyComparer errors that should be ignored. Values can be expressed using the * wildcard. These are some examples of acceptable values:
-             NameSpace.ClassName/ErrorCode
-             NameSpace.*/ErrorCode
-             NameSpace.ClassName
-             NameSpace.ClassName+NestedClass
-             /ErrorCode
-             NameSpacePortion1.*.NameSpacePortion2.*
-             NameSpace.ClassNamePrefix* -->
-        <Exec Command='$(InternalBuildTools)\AssemblyComparer\AssemblyComparer\bin\Release\net46\AssemblyComparer.exe package-comparer --package-name AWSSDK.Core --download-folder ..\NuGetDownloads\ --nuspec ..\sdk\src\Core\AWSSDK.Core.nuspec -cf BinaryIncompatibility,SourceIncompatibility,Warning -ig "$(BackwardIncompatibilitiesToIgnore)"'/>
-    </Target>
-
-    <Target Name="build-test-project-noframework" Condition="'$(TargetFramework)'==''">
-        <Exec Command="dotnet restore -f $(TestsProjectFile)" WorkingDirectory="$(TestsWorkingDirectory)" />
-        <Exec Command="dotnet clean -c $(Configuration) $(TestsProjectFile)" WorkingDirectory="$(TestsWorkingDirectory)" />
-        <Exec Command="dotnet build -c $(Configuration) $(TestsProjectFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="$(TestsWorkingDirectory)" />      
-    </Target>
-    <Target Name="build-test-project-framework" Condition="'$(TargetFramework)'!=''">
-        <Exec Command="dotnet restore -f $(TestsProjectFile)" WorkingDirectory="$(TestsWorkingDirectory)" />
-        <Exec Command="dotnet clean -c $(Configuration) $(TestsProjectFile)" WorkingDirectory="$(TestsWorkingDirectory)" />
-        <Exec Command="dotnet build -c $(Configuration) $(TestsProjectFile) -f $(TargetFramework) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="$(TestsWorkingDirectory)" />        
-    </Target>
-    <Target Name="build-test-project" DependsOnTargets="build-test-project-framework;build-test-project-noframework"></Target>
-    
-    <Target Name="run-tests-mstest" DependsOnTargets="$(run-tests-mstest-DependsOnTargets)">
-        <MsTestWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="$(TestsWorkingDirectory)\$(TestsProjectFile)"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="$(TestsRunnerProfile)"
-            Categories="$(IncludeTestCategories)"
-            CategoriesToIgnore="$(ExcludeTestCategories)"
-            KeepTestResults="true" 
-            TargetFramework="$(TargetFramework)"
-            TestResultsPath="$(TestResultsPath)"
-            />
-    </Target>
-
-    <Target Name="run-tests-xunit" DependsOnTargets="$(run-tests-xunit-DependsOnTargets)">
-        <XUnitWrapperTask
-            TestSuiteRunner="dotnet"
-            TestContainer="$(TestsWorkingDirectory)\$(TestsProjectFile)"
-            Configuration="$(Configuration)"
-            TestExecutionProfile="$(TestsRunnerProfile)"
-            Categories="$(IncludeTestCategories)"
-            CategoriesToIgnore="$(ExcludeTestCategories)"
-            KeepTestResults="true"
-            TargetFramework="$(TargetFramework)"
-            TestResultsPath="$(TestResultsPath)" />
-    </Target>
-
-    <Target Name="build-code-analysis-solution">
-        <Exec Command="dotnet restore -f AWSSDK.CodeAnalysis.sln" WorkingDirectory="../sdk" />
-        <Exec Command="dotnet clean -c $(Configuration) AWSSDK.CodeAnalysis.sln" WorkingDirectory="../sdk"/>
-        <Exec Command="dotnet build -c $(Configuration) AWSSDK.CodeAnalysis.sln /p:AWSKeyFile=$(CustomSnkFileLocation)" WorkingDirectory="../sdk"/>
+    <Target Name="local-check-compatibility" Condition="Exists('$(InternalBuildTools)')" DependsOnTargets="run-generator;local-build-core">
+        <Exec Command="dotnet build -c $(Configuration) --no-incremental AssemblyComparer.sln" WorkingDirectory="$(InternalBuildTools)\AssemblyComparer"/>
+        <Exec Command='dotnet run -c $(Configuration) --project $(InternalBuildTools)\AssemblyComparer\AssemblyComparer\AssemblyComparer.csproj -- package-comparer --package-name AWSSDK.Core --download-folder ..\NuGetDownloads\ --nuspec ..\sdk\src\Core\AWSSDK.Core.nuspec -cf BinaryIncompatibility,SourceIncompatibility,Warning -ig "$(BackwardIncompatibilitiesToIgnore)"'/>
     </Target>
 </Project>

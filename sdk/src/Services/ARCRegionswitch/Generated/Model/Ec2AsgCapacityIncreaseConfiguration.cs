@@ -86,7 +86,8 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property TargetPercent. 
         /// <para>
-        /// The target percentage that you specify for EC2 Auto Scaling groups.
+        /// The target percentage that you specify for EC2 Auto Scaling groups. The default is
+        /// 100.
         /// </para>
         /// </summary>
         public int? TargetPercent

@@ -8,6 +8,7 @@ using Amazon.Runtime.Internal.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
+#if NETFRAMEWORK
 namespace AWSSDK_DotNet.UnitTests
 {
     /// <summary>
@@ -245,3 +246,4 @@ namespace AWSSDK_DotNet.UnitTests
         }
     }
 }
+#endif

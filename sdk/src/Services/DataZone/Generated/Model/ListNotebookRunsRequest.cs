@@ -31,7 +31,8 @@ namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNotebookRuns operation.
-    /// Lists notebook runs in an Amazon DataZone domain.
+    /// Lists <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook
+    /// runs</a> in Amazon SageMaker Unified Studio.
     /// </summary>
     public partial class ListNotebookRunsRequest : AmazonDataZoneRequest
     {
@@ -47,7 +48,8 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
         /// <para>
-        /// The identifier of the Amazon DataZone domain in which to list notebook runs.
+        /// The identifier of the Amazon SageMaker Unified Studio domain in which to list notebook
+        /// runs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

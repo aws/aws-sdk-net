@@ -33,7 +33,7 @@ namespace Amazon.AIOps
     public partial class AmazonAIOpsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AIOps", "4.0.3.27");
+            InternalSDKUtils.BuildUserAgentString("AIOps", "4.0.3.29");
 
         private static readonly AmazonAIOpsEndpointResolver EndpointResolver =
             new AmazonAIOpsEndpointResolver();

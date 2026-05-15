@@ -36,6 +36,7 @@ namespace Amazon.SecurityAgent.Model
     public partial class ListFindingsRequest : AmazonSecurityAgentRequest
     {
         private string _agentSpaceId;
+        private string _codeReviewJobId;
         private ConfidenceLevel _confidence;
         private int? _maxResults;
         private string _name;
@@ -62,6 +63,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetAgentSpaceId()
         {
             return this._agentSpaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeReviewJobId. 
+        /// <para>
+        /// The unique identifier of the code review job to list findings for. Mutually exclusive
+        /// with pentestJobId.
+        /// </para>
+        /// </summary>
+        public string CodeReviewJobId
+        {
+            get { return this._codeReviewJobId; }
+            set { this._codeReviewJobId = value; }
+        }
+
+        // Check to see if CodeReviewJobId property is set
+        internal bool IsSetCodeReviewJobId()
+        {
+            return this._codeReviewJobId != null;
         }
 
         /// <summary>
@@ -144,7 +164,6 @@ namespace Amazon.SecurityAgent.Model
         /// The unique identifier of the pentest job to list findings for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string PentestJobId
         {
             get { return this._pentestJobId; }

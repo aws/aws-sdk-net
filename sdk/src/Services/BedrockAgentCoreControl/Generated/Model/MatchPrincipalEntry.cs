@@ -31,7 +31,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Union for principal matching. Currently supports IAM principal ARN glob matching.
-    /// Extensible for future principal types (e.g., OAuth client ID).
     /// </summary>
     public partial class MatchPrincipalEntry
     {

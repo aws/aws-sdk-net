@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// StripePrivy configuration - credentials provided by Stripe + Privy
+    /// Stripe Privy configuration — credentials provided by Stripe and Privy.
     /// </summary>
     public partial class StripePrivyConfigurationInput
     {

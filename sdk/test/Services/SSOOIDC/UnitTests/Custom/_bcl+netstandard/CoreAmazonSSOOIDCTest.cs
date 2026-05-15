@@ -40,6 +40,7 @@ namespace AWSSDK.UnitTests
             _testFixture.Dispose();
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         public void GetSsoToken()
         {
@@ -72,6 +73,7 @@ namespace AWSSDK.UnitTests
             _testFixture.AssertCreateTokenRequest(_testFixture.CreateTokenWithPkceRequest);
             Assert.AreEqual(1, _testFixture.RetrieveAuthorizationCodeCallbackCount);
         }
+#endif
 
         [TestMethod]
         public async Task GetSsoTokenAsync()
@@ -106,6 +108,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(1, _testFixture.RetrieveAuthorizationCodeCallbackCount);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         public void GetSsoToken_Poll_AuthorizationPendingException()
         {
@@ -119,6 +122,7 @@ namespace AWSSDK.UnitTests
             _testFixture.AssertCreateTokenRequest(_testFixture.CreateTokenRequest, timesCalled: 2);
             _testFixture.AssertSleepCalled(5000);
         }
+#endif
 
         [TestMethod]
         public async Task GetSsoTokenAsync_Poll_AuthorizationPendingException()
@@ -134,6 +138,7 @@ namespace AWSSDK.UnitTests
             _testFixture.AssertSleepCalled(5000);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         public void GetSsoToken_Poll_SlowDownException()
         {
@@ -147,6 +152,7 @@ namespace AWSSDK.UnitTests
             _testFixture.AssertCreateTokenRequest(_testFixture.CreateTokenRequest, timesCalled: 2);
             _testFixture.AssertSleepCalled(10000);
         }
+#endif
 
         [TestMethod]
         public async Task GetSsoTokenAsync_Poll_SlowDownException()
@@ -162,6 +168,7 @@ namespace AWSSDK.UnitTests
             _testFixture.AssertSleepCalled(10000);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         public void GetSsoToken_Poll_TimeoutException()
         {
@@ -177,6 +184,7 @@ namespace AWSSDK.UnitTests
             _testFixture.AssertCreateTokenRequest(_testFixture.CreateTokenRequest, timesCalled: 2);
             _testFixture.AssertSleepCalled(10000);
         }
+#endif
 
         [TestMethod]
         public async Task GetSsoTokenAsync_Poll_TimeoutException()
@@ -194,6 +202,7 @@ namespace AWSSDK.UnitTests
             _testFixture.AssertSleepCalled(10000);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         public void GetSsoToken_Poll_ExpiredTokenException()
         {
@@ -204,6 +213,7 @@ namespace AWSSDK.UnitTests
 
             _testFixture.AssertCreateTokenRequest(_testFixture.CreateTokenRequest);
         }
+#endif
 
         [TestMethod]
         public async Task GetSsoTokenAsync_Poll_ExpiredTokenException()
@@ -217,6 +227,7 @@ namespace AWSSDK.UnitTests
             _testFixture.AssertCreateTokenAsyncRequest(_testFixture.CreateTokenRequest);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         public void GetSsoToken_Poll_Exception()
         {
@@ -229,6 +240,7 @@ namespace AWSSDK.UnitTests
             Assert.AreSame(exception, actualException);
             _testFixture.AssertCreateTokenRequest(_testFixture.CreateTokenRequest);
         }
+#endif
 
         [TestMethod]
         public async Task GetSsoTokenAsync_Poll_Exception()
@@ -244,6 +256,7 @@ namespace AWSSDK.UnitTests
             _testFixture.AssertCreateTokenAsyncRequest(_testFixture.CreateTokenRequest);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         public void GetSsoToken_PkceFlow_RetrieveCodeException()
         {
@@ -263,13 +276,14 @@ namespace AWSSDK.UnitTests
             var exception = new Exception("unexpected exception");
             _testFixture.WithCreateTokenException(exception);
 
-            var actualException = Assert.ThrowsException<Exception>(() => 
+            var actualException = Assert.ThrowsException<Exception>(() =>
                 CoreAmazonSSOOIDC.GetSsoToken(_testFixture.OidcClient.Object, _testFixture.GetSsoTokenRequestWithPkceSuccess)
             );
 
             Assert.AreSame(exception, actualException);
             _testFixture.AssertCreateTokenRequest(_testFixture.CreateTokenWithPkceRequest);
         }
+#endif
 
         [TestMethod]
         public async Task GetSsoTokenAsync_PkceFlow_RetrieveCodeException()

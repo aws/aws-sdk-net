@@ -37,6 +37,7 @@ namespace Amazon.SecurityAgent.Model
     public partial class StartCodeRemediationRequest : AmazonSecurityAgentRequest
     {
         private string _agentSpaceId;
+        private string _codeReviewJobId;
         private List<string> _findingIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _pentestJobId;
 
@@ -57,6 +58,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetAgentSpaceId()
         {
             return this._agentSpaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeReviewJobId. 
+        /// <para>
+        /// The unique identifier of the code review job that produced the findings. Mutually
+        /// exclusive with <c>pentestJobId</c>.
+        /// </para>
+        /// </summary>
+        public string CodeReviewJobId
+        {
+            get { return this._codeReviewJobId; }
+            set { this._codeReviewJobId = value; }
+        }
+
+        // Check to see if CodeReviewJobId property is set
+        internal bool IsSetCodeReviewJobId()
+        {
+            return this._codeReviewJobId != null;
         }
 
         /// <summary>
@@ -86,10 +106,10 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property PentestJobId. 
         /// <para>
-        /// The unique identifier of the pentest job that produced the findings.
+        /// The unique identifier of the pentest job that produced the findings. Mutually exclusive
+        /// with <c>codeReviewJobId</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string PentestJobId
         {
             get { return this._pentestJobId; }

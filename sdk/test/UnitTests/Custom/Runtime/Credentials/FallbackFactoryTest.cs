@@ -493,6 +493,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
+#if NETFRAMEWORK
         /// <summary>
         /// Tests that the properties in the AssumeRoleWithWebIdentityCredentialsObject are used for
         /// the AssumeRoleWithWebIdentity call.
@@ -559,6 +560,7 @@ namespace AWSSDK.UnitTests
             // Verify that the credential properties were used for the STS call
             mock.Verify(stsCall, Times.Once);
         }
+#endif
 
 #if ASYNC_AWAIT
         /// <summary>
@@ -981,11 +983,11 @@ namespace AWSSDK.UnitTests
                     FallbackRegionFactory.Reset();
                     FallbackInternalConfigurationFactory.Reset();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {   // If any exceptions happen during the intial resets, perhaps due to invalid config
                     // dispose right away to reset back to the initial configuration
                     Dispose();
-                    throw ex;
+                    throw;
                 }
             }
 

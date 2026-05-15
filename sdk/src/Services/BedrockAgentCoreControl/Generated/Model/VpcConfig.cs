@@ -34,8 +34,63 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class VpcConfig
     {
+        private bool? _requireServiceS3Endpoint;
         private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property RequireServiceS3Endpoint. 
+        /// <para>
+        /// <note> 
+        /// <para>
+        /// This field applies only to Agent Runtimes. It is not applicable to Browsers or Code
+        /// Interpreters.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Controls whether a service-managed Amazon S3 gateway endpoint is provisioned in the
+        /// VPC network topology for the agent runtime. This gateway is used by Amazon Bedrock
+        /// AgentCore Runtime to download code and container images during agent startup.
+        /// </para>
+        ///  
+        /// <para>
+        /// Starting May 5, 2026, Amazon Bedrock AgentCore Runtime is gradually rolling out a
+        /// change to how network isolation is configured for VPC mode agents. Agent runtimes
+        /// created on or after this rollout will no longer include the service-managed Amazon
+        /// S3 gateway. Instead, all network access, including to Amazon S3, is governed exclusively
+        /// by your VPC configuration. This field cannot be set on agent runtimes created after
+        /// the rollout. Passing this field in an <c>UpdateAgentRuntime</c> request for these
+        /// agent runtimes returns a <c>ValidationException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Agent runtimes created before the rollout are not affected and continue to operate
+        /// with the service-managed Amazon S3 gateway. To enforce full VPC network isolation
+        /// on these existing agent runtimes, set this field to <c>false</c> via the <c>UpdateAgentRuntime</c>
+        /// API. Before opting out, ensure your VPC provides the Amazon S3 access required for
+        /// agent startup. If this field is not specified or is set to <c>true</c>, the service-managed
+        /// Amazon S3 gateway remains provisioned.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is only supported in the <c>UpdateAgentRuntime</c> API for pre-rollout
+        /// agent runtimes. Passing this field in a <c>CreateAgentRuntime</c> request returns
+        /// a <c>ValidationException</c>.
+        /// </para>
+        /// 
+        /// </para>
+        /// </summary>
+        public bool? RequireServiceS3Endpoint
+        {
+            get { return this._requireServiceS3Endpoint; }
+            set { this._requireServiceS3Endpoint = value; }
+        }
+
+        // Check to see if RequireServiceS3Endpoint property is set
+        internal bool IsSetRequireServiceS3Endpoint()
+        {
+            return this._requireServiceS3Endpoint.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroups. 

@@ -1758,6 +1758,9 @@ namespace Amazon.BillingConductor
         /// <exception cref="Amazon.BillingConductor.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ConflictException">
+        /// You can cause an inconsistent state by updating or deleting a resource.
+        /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.InternalServerException">
         /// An unexpected error occurred while processing a request.
         /// </exception>

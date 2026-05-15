@@ -1,3 +1,75 @@
+### 4.0.248.0 (2026-05-14 18:18 UTC)
+* Bedrock (4.0.26.0)
+	* Advanced Prompt Optimization (AdvPO) allows you to optimize and migrate your prompts for any model on Bedrock by automatically evaluating responses and rewriting prompts to improve performance. This release provides a programmatic way to create, get, list, stop, and delete AdvPO jobs.
+* CloudFront (4.0.16.0)
+	* Adding a new boolean for OCSP Revocations in Viewer mTLS Create and Update APIs, and adding a new 'Passthrough' option for TrustStore modes
+* DatabaseMigrationService (4.0.9.0)
+	* Add 9 SDK waiters for DMS Schema Conversion async operations. Eliminates manual polling for import, assessment, conversion, export, and creation jobs.
+* DataZone (4.0.28.0)
+	* Adds support for SageMaker Unified Studio notebook operations, including notebook import and export
+* Glue (4.0.30.0)
+	* Release --has-databases parameter for AWS Glue get-catalogs API, which filters catalog responses to include only those capable of containing databases, excluding parent catalogs that hold only other catalogs. Remove model-level validation on partition index list size for AWS Glue tables.
+* ManagedGrafana (4.0.4.0)
+	* Adds support for dual-stack (IPv4 and IPv6) connectivity to Amazon Managed Grafana workspaces. Customers can configure the ipAddressType parameter when creating or updating a workspace to choose between IPv4-only or dual-stack (IPv4 and IPv6) access.
+* Mgn (4.0.7.0)
+	* Introducing new option for security groups mapping - with MAP-DHCP the service translates security rules from your source environment with DHCP compatibility.
+* QConnect (4.0.11.0)
+	* ListModels is an API that returns the available AI models for a Connect Assistant based on its region and AI prompt type.
+* Core 4.0.7.0
+	* Fixed JSON deserialization of settings files with trailing commas on .NET 8 by adding AllowTrailingCommas to source-generated serializer contexts.
+	* On Unix/macOS, SSO token and Login token cache files are now created with 0600 (owner read/write only) and cache directories with 0700 (owner only). Behavior is configurable via AWSConfigs.RestrictFilePermissions.
+	* All service and extension packages updated to require new Core
+
+### 4.0.247.0 (2026-05-13 18:21 UTC)
+* ARCRegionswitch (4.0.6.0)
+	* Adds support for enabling and disabling Lambda event source mappings in Region switch plans.
+* Batch (4.0.9.3)
+	* Adds a billing callout to docs regarding using the CE Scale Down Delay feature
+* BedrockAgentCoreControl (4.0.36.0)
+	* Adds support for read-only summary APIs for Policy Engine, Policy, and Policy Generation resources, enabling metadata retrieval without KMS decryption for AWS Config integration.
+* BillingConductor (4.0.6.0)
+	* Add ConflictException to UpdateCustomLineItem operation.
+* Connect (4.0.44.0)
+	* This change added three new EventSourceName for schedule notification feature
+* ConnectCampaignsV2 (4.0.8.0)
+	* This release added support for Outbound Campaign timezone detection using all available contact methods
+* ConnectCases (4.0.14.0)
+	* Amazon Connect Cases now supports SLA durations of up to 2 years (1,051,200 minutes), increased from the previous maximum of 90 days (129,600 minutes). This enables you to track long-running service level agreements for cases that require extended resolution timelines.
+* DSQL (4.0.10.0)
+	* Added support for Amazon Aurora DSQL change data capture (CDC) streams that deliver row-level database changes to Amazon Kinesis in JSON format. Includes CreateStream, GetStream, ListStreams, and DeleteStream operations.
+* EC2 (4.0.88.0)
+	* Include length limits in the SDK and documentation for text fields in Image (AMI) APIs such as the image name and description
+* Elasticsearch (4.0.6.0)
+	* Adds support for AutomatedSnapshotPauseOptions.
+* Glue (4.0.29.1)
+	* AWS Glue now defaults the job timeout to 480 minutes for Glue version 5.0 and later when no timeout value is specified. The default remains 2,880 minutes for Glue version 4.0 and earlier.
+* Lightsail (4.0.8.0)
+	* Added OriginIpAddressTypeEnum (ipv4, ipv6, dualstack) and ipAddressType field to Origin and InputOrigin structures for Lightsail CDN distributions. Allows customers to specify how the distribution connects to origins, using IPv4, IPv6, or dualstack networking
+* OpenSearchService (4.0.21.0)
+	* Adds support for AutomatedSnapshotPauseOptions.
+* PartnerCentralAccount (4.0.3.0)
+	* Added ServiceQuotaExceededExceptions for Profile operations
+* PCS (4.0.14.0)
+	* Add support for Amazon EC2 Interruptible-ODCR
+* QuickSight (4.0.21.0)
+	* Adds five new custom permission option for Quick Apps so that these capabilities can be controlled by public SDK and CLI.
+* Redshift (4.0.6.19)
+	* Added rg.xlarge and rg.4xlarge to valid NodeType values and updated documentation for CreateCluster, ModifyCluster, ResizeCluster, and RestoreFromClusterSnapshot APIs to reflect RG node type support.
+* RTBFabric (4.0.5.0)
+	* Customers can now configure custom domain names for their RTB Fabric gateways. This enables partners to use their own branded domain for RTB traffic instead of the default rtbfabric endpoint
+* SageMaker (4.0.57.0)
+	* Adds execution role session name mode to reflect user identity in Studio. Adds Flexible Training Plans on Studio apps. Adds restricted model packages to control access to proprietary model artifacts via IAM. Fixed instance type parity between inference endpoints and managed shadow tests.
+* SecurityAgent (4.0.2.0)
+	* Add support for code reviews, a new resource type that enables automated security-focused static analysis of source code repositories.
+* SocialMessaging (4.0.5.0)
+	* Adds parameters to call the GetWhatsAppMessageTemplate and UpdateWhatsAppMessageTemplate APIs with a template name and language code in place of the template ID. Linked WhatsApp accounts also describe whether the WABA is onboarded to Meta's Marketing Messages API.
+* StepFunctions (4.0.3.0)
+	* Updated default SDK endpoints for AWS Step Functions in AWS GovCloud (US) regions. The default Dual-Stack endpoints now resolve to "states-fips" prefixed hostnames. There are no changes to service behavior. No customer action is required.
+* Core 4.0.6.2
+	* Cache credentials sourced from profiles when calling using the DefaultAWSCredentialsIdentityResolver's ResolveIdentity rather than doing a full file read every time a profile is specified on the config.
+	* Introduce a new internal CredentialsGenerator CachedProfileCredentialResolver which handles caching of profiles and resolving of credentials via profile.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.246.0 (2026-05-07 18:38 UTC)
 * BCMDataExports (4.0.4.0)
 	* With this release, customers can configure their data exports to generate additional integration artifacts for Athena and Redshift.

@@ -15,7 +15,7 @@ using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoMoq;
 using Amazon.Runtime.Telemetry;
 
-
+#if NETFRAMEWORK
 namespace AWSSDK.UnitTests
 {
     [TestClass]
@@ -35,18 +35,13 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestHttpRequestSuccess()
         {
-#if ASYNC_AWAIT
             _fixture.Customize<RequestContext>(cc =>
                 cc.With(config => config.CancellationToken, CancellationToken.None)
             );
 
             _ = TestHttpRequest(CancellationToken.None);
-#else
-            TestHttpRequest(CancellationToken.None);
-#endif
         }
 
-#if ASYNC_AWAIT
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -96,13 +91,8 @@ namespace AWSSDK.UnitTests
 
             Assert.Fail("An WebException was not thrown");
         }
-#endif
 
-#if BCL
         public async System.Threading.Tasks.Task TestHttpRequest(CancellationToken cancellationToken)
-#else
-        public void TestHttpRequest(CancellationToken cancellationToken)
-#endif
         {
             var request = CreateHttpRequest(cancellationToken, out var requestContext);
 
@@ -110,24 +100,15 @@ namespace AWSSDK.UnitTests
 
             var sourceStream = new MemoryStream(Encoding.UTF8.GetBytes(testContent));
             var destinationStream = new MemoryStream();
-#if BCL
             await request.WriteToRequestBodyAsync(destinationStream, sourceStream, null, requestContext);
-#else
-            request.WriteToRequestBody(destinationStream, sourceStream, null, requestContext);
-#endif
 
             var sourceContent = Encoding.UTF8.GetBytes(testContent);
             destinationStream = new MemoryStream();
-#if BCL
             await request.WriteToRequestBodyAsync(destinationStream, sourceContent, null, cancellationToken);
-#else
-            request.WriteToRequestBody(destinationStream, sourceContent, null);
-#endif
         }
 
         private IHttpRequest<Stream> CreateHttpRequest(CancellationToken cancellationToken, out RequestContext requestContext, TimeSpan? requestTimeout = null)
         {
-//Create Web Request
             var targetUri = _fixture.Create<Uri>();
             var sut = _fixture.Create<HttpWebRequestFactory>();
             var request = sut.CreateHttpRequest(targetUri);
@@ -164,9 +145,7 @@ namespace AWSSDK.UnitTests
 
             _fixture.Customize<RequestContext>(cc => cc
                 .FromFactory(() => new RequestContext(true, new NullSigner()))
-#if ASYNC_AWAIT
                 .With(context => context.CancellationToken, cancellationToken)
-#endif
                 .With(context => context.ClientConfig, _fixture.Create<AmazonS3Config>())
                 .Without(context => context.CSMCallAttempt)
                 .Without(context => context.CSMCallEvent)
@@ -223,3 +202,4 @@ namespace AWSSDK.UnitTests
 
     }
 }
+#endif

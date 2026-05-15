@@ -43,5 +43,13 @@ namespace Amazon.DSQL.Model
         {
             return new ListClustersPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListStreams operation
+        ///</summary>
+        public IListStreamsPaginator ListStreams(ListStreamsRequest request) 
+        {
+            return new ListStreamsPaginator(this.client, request);
+        }
     }
 }

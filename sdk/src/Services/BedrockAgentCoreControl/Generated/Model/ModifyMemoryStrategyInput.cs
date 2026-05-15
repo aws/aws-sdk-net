@@ -118,7 +118,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Namespaces. 
         /// <para>
-        /// The updated namespaces for the memory strategy.
+        /// This is a legacy parameter, use <c>namespaceTemplates</c>. The updated namespaces
+        /// for the memory strategy.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

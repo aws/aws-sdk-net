@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// PROVIDER CONFIGURATION INPUT - Contains secrets for creation/update
+    /// Provider configuration input — contains secrets for creation and update. Varies by
+    /// vendor type.
     /// </summary>
     public partial class PaymentProviderConfigurationInput
     {
@@ -38,7 +39,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private StripePrivyConfigurationInput _stripePrivyConfiguration;
 
         /// <summary>
-        /// Gets and sets the property CoinbaseCdpConfiguration.
+        /// Gets and sets the property CoinbaseCdpConfiguration. 
+        /// <para>
+        /// The Coinbase CDP configuration.
+        /// </para>
         /// </summary>
         public CoinbaseCdpConfigurationInput CoinbaseCdpConfiguration
         {
@@ -53,7 +57,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StripePrivyConfiguration.
+        /// Gets and sets the property StripePrivyConfiguration. 
+        /// <para>
+        /// The Stripe Privy configuration.
+        /// </para>
         /// </summary>
         public StripePrivyConfigurationInput StripePrivyConfiguration
         {

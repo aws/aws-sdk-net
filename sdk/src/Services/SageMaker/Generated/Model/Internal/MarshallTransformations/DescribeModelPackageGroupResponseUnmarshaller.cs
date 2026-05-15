@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ManagedConfiguration", targetDepth))
+                {
+                    var unmarshaller = ManagedConfigurationUnmarshaller.Instance;
+                    response.ManagedConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ModelPackageGroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

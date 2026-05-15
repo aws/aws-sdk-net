@@ -1,21 +1,16 @@
 using System.Text.Json;
-using System.Text.Json.Serialization;
+using SmithyDotNet.Generator.Model;
+using SmithyDotNet.Generator.Model.Converters;
 
 namespace SmithyDotNet.Generator;
 
-/// <summary>
-/// Placeholder Smithy model record
-/// For scaffolding we only need enough to round-trip the "smithy" version field
-/// and count top-level shape entries.
-/// </summary>
-internal sealed record SmithyModel(
-    [property: JsonPropertyName("smithy")] string Version,
-    [property: JsonPropertyName("shapes")] Dictionary<string, JsonElement>? Shapes,
-    [property: JsonPropertyName("metadata")] Dictionary<string, JsonElement>? Metadata
-);
-
 public static class Program
 {
+    private static readonly JsonSerializerOptions Options = new()
+    {
+        Converters = { new ShapeConverter() },
+    };
+
     public static int Main(string[] args)
     {
         if (args.Length == 0)
@@ -36,7 +31,7 @@ public static class Program
         try
         {
             using var stream = File.OpenRead(modelPath);
-            model = JsonSerializer.Deserialize<SmithyModel>(stream);
+            model = JsonSerializer.Deserialize<SmithyModel>(stream, Options);
         }
         catch (JsonException ex)
         {
@@ -50,7 +45,7 @@ public static class Program
             return 1;
         }
 
-        var shapeCount = model.Shapes?.Count ?? 0;
+        var shapeCount = model.Shapes.Count;
         Console.WriteLine($"Smithy version: {model.Version}");
         Console.WriteLine($"Found {shapeCount} shapes.");
         return 0;

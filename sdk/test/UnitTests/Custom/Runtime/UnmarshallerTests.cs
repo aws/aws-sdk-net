@@ -37,6 +37,7 @@ using Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations;
 using Amazon.ElasticMapReduce.Model;
 using Amazon.Runtime.EventStreams;
 
+#if NETFRAMEWORK
 namespace AWSSDK.UnitTests
 {
     [TestClass]
@@ -212,7 +213,6 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(configurations[2].Properties.ContainsKey("name"));
         }
 
-#if BCL
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -237,7 +237,6 @@ namespace AWSSDK.UnitTests
             Assert.IsInstanceOfType(context.ResponseContext.Response, typeof(ListBucketsResponse));
             Assert.AreEqual(4, listBucketsResponse.Buckets.Count);
         }
-#endif
 
 
         [TestMethod]
@@ -373,3 +372,4 @@ namespace AWSSDK.UnitTests
 
     }
 }
+#endif

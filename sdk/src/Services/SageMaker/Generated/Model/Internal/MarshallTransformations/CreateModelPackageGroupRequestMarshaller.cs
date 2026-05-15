@@ -75,6 +75,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetManagedConfiguration())
+            {
+                context.Writer.WritePropertyName("ManagedConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManagedConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ManagedConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetModelPackageGroupDescription())
             {
                 context.Writer.WritePropertyName("ModelPackageGroupDescription");

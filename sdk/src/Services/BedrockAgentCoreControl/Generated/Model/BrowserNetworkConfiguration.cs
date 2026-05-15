@@ -59,7 +59,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcConfig.
+        /// Gets and sets the property VpcConfig. 
+        /// <para>
+        /// The VPC configuration for the browser. This configuration is required when the network
+        /// mode is set to <c>VPC</c>.
+        /// </para>
         /// </summary>
         public VpcConfig VpcConfig
         {

@@ -41,6 +41,7 @@ namespace Amazon.Mgn.Model
         private string _mapperSegmentID;
         private string _networkMigrationDefinitionID;
         private string _networkMigrationExecutionID;
+        private List<string> _referencedSegments = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _segmentid;
         private NetworkMigrationCodeGenerationSegmentType _segmentType;
 
@@ -178,6 +179,29 @@ namespace Amazon.Mgn.Model
         internal bool IsSetNetworkMigrationExecutionID()
         {
             return this._networkMigrationExecutionID != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReferencedSegments. 
+        /// <para>
+        /// A list of other segments that this segment depends on or references.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> ReferencedSegments
+        {
+            get { return this._referencedSegments; }
+            set { this._referencedSegments = value; }
+        }
+
+        // Check to see if ReferencedSegments property is set
+        internal bool IsSetReferencedSegments()
+        {
+            return this._referencedSegments != null && (this._referencedSegments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

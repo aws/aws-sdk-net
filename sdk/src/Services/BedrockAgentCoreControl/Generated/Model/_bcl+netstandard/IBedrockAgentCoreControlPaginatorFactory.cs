@@ -248,6 +248,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
         IListPolicyEnginesPaginator ListPolicyEngines(ListPolicyEnginesRequest request);
 
         /// <summary>
+        /// Paginator for ListPolicyEngineSummaries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPolicyEngineSummariesPaginator ListPolicyEngineSummaries(ListPolicyEngineSummariesRequest request);
+
+        /// <summary>
         /// Paginator for ListPolicyGenerationAssets operation
         ///</summary>
         [AWSPaginator(
@@ -266,6 +276,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListPolicyGenerationsPaginator ListPolicyGenerations(ListPolicyGenerationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPolicyGenerationSummaries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPolicyGenerationSummariesPaginator ListPolicyGenerationSummaries(ListPolicyGenerationSummariesRequest request);
+
+        /// <summary>
+        /// Paginator for ListPolicySummaries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPolicySummariesPaginator ListPolicySummaries(ListPolicySummariesRequest request);
 
         /// <summary>
         /// Paginator for ListRegistries operation

@@ -32,13 +32,35 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Container for the parameters to the ListRegistries operation.
     /// Lists all registries in the account. You can optionally filter results by status using
-    /// the <c>status</c> parameter.
+    /// the <c>status</c> parameter, or by authorizer type using the <c>authorizerType</c>
+    /// parameter.
     /// </summary>
     public partial class ListRegistriesRequest : AmazonBedrockAgentCoreControlRequest
     {
+        private RegistryAuthorizerType _authorizerType;
         private int? _maxResults;
         private string _nextToken;
         private RegistryStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AuthorizerType. 
+        /// <para>
+        /// Filter registries by their authorizer type. Possible values are <c>CUSTOM_JWT</c>
+        /// and <c>AWS_IAM</c>. For more information about authorizer types, see the <c>RegistryAuthorizerType</c>
+        /// enum.
+        /// </para>
+        /// </summary>
+        public RegistryAuthorizerType AuthorizerType
+        {
+            get { return this._authorizerType; }
+            set { this._authorizerType = value; }
+        }
+
+        // Check to see if AuthorizerType property is set
+        internal bool IsSetAuthorizerType()
+        {
+            return this._authorizerType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

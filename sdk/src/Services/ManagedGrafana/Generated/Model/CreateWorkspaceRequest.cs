@@ -48,6 +48,7 @@ namespace Amazon.ManagedGrafana.Model
         private string _clientToken;
         private string _configuration;
         private string _grafanaVersion;
+        private IPAddressType _ipAddressType;
         private string _kmsKeyId;
         private NetworkAccessConfiguration _networkAccessControl;
         private string _organizationRoleName;
@@ -174,6 +175,27 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetGrafanaVersion()
         {
             return this._grafanaVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// Specifies whether the workspace supports IPv4 only, or IPv4 and IPv6. Valid values
+        /// are <c>IPv4</c> and <c>DualStack</c>. For more information about IP address types,
+        /// see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-nac.html">Network
+        /// access control</a>.
+        /// </para>
+        /// </summary>
+        public IPAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>
