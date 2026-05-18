@@ -75,30 +75,7 @@ namespace Amazon.Extensions.NETCore.Setup
                 }
             }
 
-            if (_configAction == null)
-            {
-                return CreateServiceClient(logger, options);
-            }
-
-            PerformGlobalConfig(logger, options);
-            var credentials = CreateCredentials(logger, options);
-
-            if (!string.IsNullOrEmpty(options?.SessionRoleArn))
-            {
-                if (string.IsNullOrEmpty(options?.ExternalId))
-                {
-                    credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName);
-                }
-                else
-                {
-                    credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName, new AssumeRoleAWSCredentialsOptions() { ExternalId = options.ExternalId });
-                }
-            }
-
-            var config = CreateConfig(options);
-            _configAction(config, provider);
-            var client = CreateClient(credentials, config);
-            return client as IAmazonService;
+            return CreateServiceClient(logger, options, provider);
         }
 
         /// <summary>
@@ -107,8 +84,9 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <param name="logger">Logger instance for writing diagnostic logs.</param>
         /// <param name="options">The AWS options used for creating the service client.</param>
+        /// <param name="provider">Optional service provider for resolving dependencies in the config action.</param>
         /// <returns>The AWS service client</returns>
-        internal IAmazonService CreateServiceClient(ILogger logger, AWSOptions options)
+        internal IAmazonService CreateServiceClient(ILogger logger, AWSOptions options, IServiceProvider provider = null)
         {
             PerformGlobalConfig(logger, options);
             var credentials = CreateCredentials(logger, options);
@@ -126,6 +104,10 @@ namespace Amazon.Extensions.NETCore.Setup
             }
 
             var config = CreateConfig(options);
+            if (_configAction != null && provider != null)
+            {
+                _configAction(config, provider);
+            }
             var client = CreateClient(credentials, config);
             return client as IAmazonService;
         }
