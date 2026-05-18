@@ -32,7 +32,7 @@ namespace Amazon.Evs.Model
     /// <summary>
     /// Container for the parameters to the CreateEnvironmentHost operation.
     /// Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS supports
-    /// 4-16 hosts per environment.
+    /// 4-32 hosts per environment.
     /// 
     ///  
     /// <para>
