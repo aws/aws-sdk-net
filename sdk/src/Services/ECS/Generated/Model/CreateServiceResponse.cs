@@ -57,6 +57,12 @@ namespace Amazon.ECS.Model
         /// <c>taskSets</c> and <c>deployments</c> parameters will be returned, however the <c>deployments</c>
         /// parameter will be an empty list.
         /// </para>
+        ///  
+        /// <para>
+        /// The response includes a <c>lifecycleHookDetails</c> field, which is an empty array
+        /// when the service is created or updated. The values are populated when a lifecycle
+        /// hook executes and are available as part of the service deployment details (<a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>).
+        /// </para>
         /// </summary>
         public Service Service
         {

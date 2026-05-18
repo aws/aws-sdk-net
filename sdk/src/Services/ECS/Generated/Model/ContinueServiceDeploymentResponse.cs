@@ -30,34 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// <zonbook></zonbook><xhtml></xhtml>
+    /// This is the response object from the ContinueServiceDeployment operation.
     /// </summary>
-    public partial class UpdateServiceResponse : AmazonWebServiceResponse
+    public partial class ContinueServiceDeploymentResponse : AmazonWebServiceResponse
     {
-        private Service _service;
+        private string _serviceDeploymentArn;
 
         /// <summary>
-        /// Gets and sets the property Service. 
+        /// Gets and sets the property ServiceDeploymentArn. 
         /// <para>
-        /// The full description of your service following the update call.
-        /// </para>
-        ///  
-        /// <para>
-        /// The response includes a <c>lifecycleHookDetails</c> field, which is an empty array
-        /// when the service is created or updated. The values are populated when a lifecycle
-        /// hook executes and are available as part of the service deployment details (<a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>).
+        /// The ARN of the service deployment that was continued or rolled back.
         /// </para>
         /// </summary>
-        public Service Service
+        public string ServiceDeploymentArn
         {
-            get { return this._service; }
-            set { this._service = value; }
+            get { return this._serviceDeploymentArn; }
+            set { this._serviceDeploymentArn = value; }
         }
 
-        // Check to see if Service property is set
-        internal bool IsSetService()
+        // Check to see if ServiceDeploymentArn property is set
+        internal bool IsSetServiceDeploymentArn()
         {
-            return this._service != null;
+            return this._serviceDeploymentArn != null;
         }
 
     }

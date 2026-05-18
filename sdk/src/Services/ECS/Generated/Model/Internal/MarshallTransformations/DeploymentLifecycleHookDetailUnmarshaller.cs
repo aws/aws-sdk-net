@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeploymentLifecycleHook Object
+    /// Response Unmarshaller for DeploymentLifecycleHookDetail Object
     /// </summary>  
-    public class DeploymentLifecycleHookUnmarshaller : IJsonUnmarshaller<DeploymentLifecycleHook, JsonUnmarshallerContext>
+    public class DeploymentLifecycleHookDetailUnmarshaller : IJsonUnmarshaller<DeploymentLifecycleHookDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeploymentLifecycleHook Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DeploymentLifecycleHookDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DeploymentLifecycleHook unmarshalledObject = new DeploymentLifecycleHook();
+            DeploymentLifecycleHookDetail unmarshalledObject = new DeploymentLifecycleHookDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,28 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hookDetails", targetDepth))
+                if (context.TestExpression("expiresAt", targetDepth))
                 {
-                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
-                    unmarshalledObject.HookDetails = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ExpiresAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hookTargetArn", targetDepth))
+                if (context.TestExpression("hookId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HookTargetArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.HookId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifecycleStages", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.LifecycleStages = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("targetArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("targetType", targetDepth))
@@ -86,10 +86,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.TargetType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutConfiguration", targetDepth))
+                if (context.TestExpression("timeoutAction", targetDepth))
                 {
-                    var unmarshaller = DeploymentLifecycleHookTimeoutConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TimeoutConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimeoutAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +97,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static DeploymentLifecycleHookUnmarshaller _instance = new DeploymentLifecycleHookUnmarshaller();        
+        private static DeploymentLifecycleHookDetailUnmarshaller _instance = new DeploymentLifecycleHookDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeploymentLifecycleHookUnmarshaller Instance
+        public static DeploymentLifecycleHookDetailUnmarshaller Instance
         {
             get
             {
