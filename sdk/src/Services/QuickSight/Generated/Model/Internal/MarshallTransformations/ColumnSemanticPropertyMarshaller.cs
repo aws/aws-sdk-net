@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SemanticTable Marshaller
+    /// ColumnSemanticProperty Marshaller
     /// </summary>
-    public class SemanticTableMarshaller : IRequestMarshaller<SemanticTable, JsonMarshallerContext> 
+    public class ColumnSemanticPropertyMarshaller : IRequestMarshaller<ColumnSemanticProperty, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,40 +42,39 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SemanticTable requestObject, JsonMarshallerContext context)
+        public void Marshall(ColumnSemanticProperty requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAlias())
+            if(requestObject.IsSetAdditionalNotes())
             {
-                context.Writer.WritePropertyName("Alias");
-                context.Writer.WriteStringValue(requestObject.Alias);
-            }
-
-            if(requestObject.IsSetDestinationTableId())
-            {
-                context.Writer.WritePropertyName("DestinationTableId");
-                context.Writer.WriteStringValue(requestObject.DestinationTableId);
-            }
-
-            if(requestObject.IsSetRowLevelPermissionConfiguration())
-            {
-                context.Writer.WritePropertyName("RowLevelPermissionConfiguration");
+                context.Writer.WritePropertyName("AdditionalNotes");
                 context.Writer.WriteStartObject();
 
-                var marshaller = RowLevelPermissionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.RowLevelPermissionConfiguration, context);
+                var marshaller = AdditionalNotesMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdditionalNotes, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetSemanticMetadata())
+            if(requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("SemanticMetadata");
+                context.Writer.WritePropertyName("Description");
                 context.Writer.WriteStartObject();
 
-                var marshaller = TableSemanticMetadataMarshaller.Instance;
-                marshaller.Marshall(requestObject.SemanticMetadata, context);
+                var marshaller = ColumnDescriptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Description, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSemanticType())
+            {
+                context.Writer.WritePropertyName("SemanticType");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ColumnSemanticTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.SemanticType, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -85,7 +84,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SemanticTableMarshaller Instance = new SemanticTableMarshaller();
+        public readonly static ColumnSemanticPropertyMarshaller Instance = new ColumnSemanticPropertyMarshaller();
 
     }
 }

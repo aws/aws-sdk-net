@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SemanticModelConfiguration Object
+    /// Response Unmarshaller for ColumnSemanticProperty Object
     /// </summary>  
-    public class SemanticModelConfigurationUnmarshaller : IJsonUnmarshaller<SemanticModelConfiguration, JsonUnmarshallerContext>
+    public class ColumnSemanticPropertyUnmarshaller : IJsonUnmarshaller<ColumnSemanticProperty, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SemanticModelConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ColumnSemanticProperty Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SemanticModelConfiguration unmarshalledObject = new SemanticModelConfiguration();
+            ColumnSemanticProperty unmarshalledObject = new ColumnSemanticProperty();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SemanticMetadata", targetDepth))
+                if (context.TestExpression("AdditionalNotes", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<DataSetSemanticMetadata, DataSetSemanticMetadataUnmarshaller>(DataSetSemanticMetadataUnmarshaller.Instance);
-                    unmarshalledObject.SemanticMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = AdditionalNotesUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalNotes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableMap", targetDepth))
+                if (context.TestExpression("Description", targetDepth))
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, SemanticTable, StringUnmarshaller, SemanticTableUnmarshaller>(StringUnmarshaller.Instance, SemanticTableUnmarshaller.Instance);
-                    unmarshalledObject.TableMap = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = ColumnDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SemanticType", targetDepth))
+                {
+                    var unmarshaller = ColumnSemanticTypeUnmarshaller.Instance;
+                    unmarshalledObject.SemanticType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +79,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static SemanticModelConfigurationUnmarshaller _instance = new SemanticModelConfigurationUnmarshaller();        
+        private static ColumnSemanticPropertyUnmarshaller _instance = new ColumnSemanticPropertyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SemanticModelConfigurationUnmarshaller Instance
+        public static ColumnSemanticPropertyUnmarshaller Instance
         {
             get
             {

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SemanticModelConfiguration Marshaller
+    /// TableSemanticMetadata Marshaller
     /// </summary>
-    public class SemanticModelConfigurationMarshaller : IRequestMarshaller<SemanticModelConfiguration, JsonMarshallerContext> 
+    public class TableSemanticMetadataMarshaller : IRequestMarshaller<TableSemanticMetadata, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,43 +42,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SemanticModelConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(TableSemanticMetadata requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetSemanticMetadata())
+            if(requestObject.IsSetColumnMetadata())
             {
-                context.Writer.WritePropertyName("SemanticMetadata");
+                context.Writer.WritePropertyName("ColumnMetadata");
                 context.Writer.WriteStartArray();
-                foreach(var requestObjectSemanticMetadataListValue in requestObject.SemanticMetadata)
+                foreach(var requestObjectColumnMetadataListValue in requestObject.ColumnMetadata)
                 {
                     context.Writer.WriteStartObject();
 
-                    var marshaller = DataSetSemanticMetadataMarshaller.Instance;
-                    marshaller.Marshall(requestObjectSemanticMetadataListValue, context);
+                    var marshaller = SharedColumnSemanticMetadataMarshaller.Instance;
+                    marshaller.Marshall(requestObjectColumnMetadataListValue, context);
 
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetTableMap())
-            {
-                context.Writer.WritePropertyName("TableMap");
-                context.Writer.WriteStartObject();
-                foreach (var requestObjectTableMapKvp in requestObject.TableMap)
-                {
-                    context.Writer.WritePropertyName(requestObjectTableMapKvp.Key);
-                    var requestObjectTableMapValue = requestObjectTableMapKvp.Value;
-
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = SemanticTableMarshaller.Instance;
-                    marshaller.Marshall(requestObjectTableMapValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndObject();
             }
 
         }
@@ -86,7 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SemanticModelConfigurationMarshaller Instance = new SemanticModelConfigurationMarshaller();
+        public readonly static TableSemanticMetadataMarshaller Instance = new TableSemanticMetadataMarshaller();
 
     }
 }

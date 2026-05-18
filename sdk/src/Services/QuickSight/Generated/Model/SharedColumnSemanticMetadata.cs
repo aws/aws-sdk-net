@@ -30,18 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Configuration for the semantic model that defines how prepared data is structured
-    /// for analysis and reporting.
+    /// Semantic metadata shared across one or more columns.
     /// </summary>
-    public partial class SemanticModelConfiguration
+    public partial class SharedColumnSemanticMetadata
     {
-        private List<DataSetSemanticMetadata> _semanticMetadata = AWSConfigs.InitializeCollections ? new List<DataSetSemanticMetadata>() : null;
-        private Dictionary<string, SemanticTable> _tableMap = AWSConfigs.InitializeCollections ? new Dictionary<string, SemanticTable>() : null;
+        private List<string> _columnNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ColumnSemanticProperty> _columnProperties = AWSConfigs.InitializeCollections ? new List<ColumnSemanticProperty>() : null;
 
         /// <summary>
-        /// Gets and sets the property SemanticMetadata. 
+        /// Gets and sets the property ColumnNames. 
         /// <para>
-        /// The dataset-level semantic metadata, including a description and custom instructions.
+        /// The names of the columns this metadata applies to.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -49,23 +48,23 @@ namespace Amazon.QuickSight.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
-        public List<DataSetSemanticMetadata> SemanticMetadata
+        [AWSProperty(Min=1, Max=2000)]
+        public List<string> ColumnNames
         {
-            get { return this._semanticMetadata; }
-            set { this._semanticMetadata = value; }
+            get { return this._columnNames; }
+            set { this._columnNames = value; }
         }
 
-        // Check to see if SemanticMetadata property is set
-        internal bool IsSetSemanticMetadata()
+        // Check to see if ColumnNames property is set
+        internal bool IsSetColumnNames()
         {
-            return this._semanticMetadata != null && (this._semanticMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._columnNames != null && (this._columnNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property TableMap. 
+        /// Gets and sets the property ColumnProperties. 
         /// <para>
-        /// A map of semantic tables that define the analytical structure.
+        /// The semantic properties for the specified columns.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -73,17 +72,17 @@ namespace Amazon.QuickSight.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
-        public Dictionary<string, SemanticTable> TableMap
+        [AWSProperty(Required=true, Min=1, Max=3)]
+        public List<ColumnSemanticProperty> ColumnProperties
         {
-            get { return this._tableMap; }
-            set { this._tableMap = value; }
+            get { return this._columnProperties; }
+            set { this._columnProperties = value; }
         }
 
-        // Check to see if TableMap property is set
-        internal bool IsSetTableMap()
+        // Check to see if ColumnProperties property is set
+        internal bool IsSetColumnProperties()
         {
-            return this._tableMap != null && (this._tableMap.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._columnProperties != null && (this._columnProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

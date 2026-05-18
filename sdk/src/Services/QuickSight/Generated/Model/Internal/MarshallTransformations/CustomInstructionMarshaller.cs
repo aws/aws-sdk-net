@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SemanticTable Marshaller
+    /// CustomInstruction Marshaller
     /// </summary>
-    public class SemanticTableMarshaller : IRequestMarshaller<SemanticTable, JsonMarshallerContext> 
+    public class CustomInstructionMarshaller : IRequestMarshaller<CustomInstruction, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,40 +42,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SemanticTable requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomInstruction requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAlias())
+            if(requestObject.IsSetInlineCustomInstruction())
             {
-                context.Writer.WritePropertyName("Alias");
-                context.Writer.WriteStringValue(requestObject.Alias);
-            }
-
-            if(requestObject.IsSetDestinationTableId())
-            {
-                context.Writer.WritePropertyName("DestinationTableId");
-                context.Writer.WriteStringValue(requestObject.DestinationTableId);
-            }
-
-            if(requestObject.IsSetRowLevelPermissionConfiguration())
-            {
-                context.Writer.WritePropertyName("RowLevelPermissionConfiguration");
+                context.Writer.WritePropertyName("InlineCustomInstruction");
                 context.Writer.WriteStartObject();
 
-                var marshaller = RowLevelPermissionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.RowLevelPermissionConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetSemanticMetadata())
-            {
-                context.Writer.WritePropertyName("SemanticMetadata");
-                context.Writer.WriteStartObject();
-
-                var marshaller = TableSemanticMetadataMarshaller.Instance;
-                marshaller.Marshall(requestObject.SemanticMetadata, context);
+                var marshaller = InlineCustomInstructionMarshaller.Instance;
+                marshaller.Marshall(requestObject.InlineCustomInstruction, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -85,7 +62,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SemanticTableMarshaller Instance = new SemanticTableMarshaller();
+        public readonly static CustomInstructionMarshaller Instance = new CustomInstructionMarshaller();
 
     }
 }
