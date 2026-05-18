@@ -26,5 +26,5 @@ public class RealTableDeleteItemBenchmark : LiveDynamoDbTableBenchmark
     public Task DeleteDynamoDbEntry() => State.TableDeleteDynamoDbEntry();
 
     [Benchmark]
-    public Task DeleteDynamoDbEntryWithDeleteOperationConfigAsync() => State.TableDeleteDynamoDbEntryWithDeleteItemOperationConfigAsync();
+    public Task DeleteDynamoDbEntryWithOperationConfigAsync() => State.TableDeleteDynamoDbEntryWithDeleteItemOperationConfigAsync();
 }
