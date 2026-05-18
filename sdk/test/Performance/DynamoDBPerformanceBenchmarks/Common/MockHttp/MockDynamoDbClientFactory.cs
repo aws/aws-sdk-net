@@ -15,8 +15,8 @@ public static class MockDynamoDbClientFactory
             HttpClientFactory = new MockHttpClientFactory(responseProvider)
         };
 
-        var accessKey = Environment.GetEnvironmentVariable("DEV_AWS_PUBLIC_KEY") ?? "mock-access-key";
-        var secretKey = Environment.GetEnvironmentVariable("DEV_AWS_PRIVATE_KEY") ?? "mock-secret-key";
+        var accessKey = "mock-access-key";
+        var secretKey = "mock-secret-key";
         var credentials = new BasicAWSCredentials(accessKey, secretKey);
 
         return new AmazonDynamoDBClient(credentials, config);

@@ -24,7 +24,7 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
     private Func<Task>? _tableDeleteHashKeyRangeKeyWithOperationConfigAsync;
     private Func<Task>? _tableDeleteWithOperationRequest;
     private Func<Task>? _tableDeleteDynamoDbEntry;
-    private Func<Task>? _tableDeleteDynamoDbEntryWithOperationConfigAsync;
+    private Func<Task>? _tableDeleteDynamoDbEntryWithDeleteItemOperationConfigAsync;
 
     private Func<Task>? _tableGetItemAsync;
     private Func<Task>? _tableGetHashKeyRangeKeyWithOperationConfigAsync;
@@ -113,7 +113,7 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
         _tableDeleteHashKeyRangeKeyWithOperationConfigAsync = () => _table!.DeleteItemAsync(PartitionKeyValue, SortKeyValue, deleteConfig);
         _tableDeleteWithOperationRequest = () => _table!.DeleteItemAsync(deleteRequest);
         _tableDeleteDynamoDbEntry = () => _table!.DeleteItemAsync(_dictionaryKey);
-        _tableDeleteDynamoDbEntryWithOperationConfigAsync = () => _table!.DeleteItemAsync(_dictionaryKey, deleteConfig);
+        _tableDeleteDynamoDbEntryWithDeleteItemOperationConfigAsync = () => _table!.DeleteItemAsync(_dictionaryKey, deleteConfig);
 
         //get item
         _tableGetItemAsync = () => _table!.GetItemAsync(PartitionKeyValue, SortKeyValue);
@@ -197,7 +197,7 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
 
     public Task TableDeleteDynamoDbEntry() => _tableDeleteDynamoDbEntry!();
 
-    public Task TableDeleteDynamoDbEntryWithOperationConfigAsync() => _tableDeleteDynamoDbEntryWithOperationConfigAsync!();
+    public Task TableDeleteDynamoDbEntryWithDeleteItemOperationConfigAsync() => _tableDeleteDynamoDbEntryWithDeleteItemOperationConfigAsync!();
 
     // Get item
     public Task TableGetItemAsync() => _tableGetItemAsync!();
@@ -320,16 +320,13 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
             return filter;
         }
 
-        if (_expressionStyle != BenchmarkExpressionStyle.None)
-        {
-            filter.AddCondition("Renamed", QueryOperator.Equal, "renamed");
-        }
+        filter.AddCondition("Renamed", QueryOperator.Equal, "renamed");
 
         if (_expressionStyle == BenchmarkExpressionStyle.Compound)
         {
             filter.AddCondition("NumericValue", QueryOperator.GreaterThan, 1);
         }
-            return filter;
+        return filter;
     }
 
     private ScanFilter CreateTableScanFilter()
@@ -341,10 +338,7 @@ public sealed class DynamoDbTableBenchmarkState : MockedDynamoDbBenchmarkStateBa
             return filter;
         }
 
-        if (_expressionStyle != BenchmarkExpressionStyle.None)
-        {
-            filter.AddCondition("Renamed", ScanOperator.Equal, "renamed");
-        }
+        filter.AddCondition("Renamed", ScanOperator.Equal, "renamed");
 
         if (_expressionStyle == BenchmarkExpressionStyle.Compound)
         {
