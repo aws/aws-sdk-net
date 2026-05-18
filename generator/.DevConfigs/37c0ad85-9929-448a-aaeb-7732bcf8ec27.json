@@ -1,0 +1,11 @@
+{
+  "extensions": [
+    {
+      "extensionName": "Extensions.NETCore.Setup",
+      "type": "patch",
+      "changeLogMessages": [
+        "Add Action\u003CClientConfig, IServiceProvider\u003E overloads to service registration methods, prng a way to configure clientConfig.HttpClientFactory directly at the point of registration."
+      ]
+    }
+  ]
+}
