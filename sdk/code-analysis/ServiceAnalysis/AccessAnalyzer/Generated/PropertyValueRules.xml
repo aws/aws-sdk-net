@@ -22,7 +22,7 @@
     <property>Amazon.AccessAnalyzer.Model.CreateAnalyzerRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
+    <pattern>[A-Za-z_][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.CreateAnalyzerResponse.Arn</property>
@@ -32,7 +32,7 @@
     <property>Amazon.AccessAnalyzer.Model.CreateArchiveRuleRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
+    <pattern>[A-Za-z_][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.CreateArchiveRuleRequest.RuleName</property>
@@ -41,22 +41,32 @@
     <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.CreateServiceLinkedAnalyzerResponse.Arn</property>
+    <pattern>[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.DeleteAnalyzerRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
+    <pattern>[A-Za-z_][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.DeleteArchiveRuleRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
+    <pattern>[A-Za-z_][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.DeleteArchiveRuleRequest.RuleName</property>
     <min>1</min>
     <max>255</max>
     <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AccessAnalyzer.Model.DeleteServiceLinkedAnalyzerRequest.AnalyzerName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z_][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GenerateFindingRecommendationRequest.AnalyzerArn</property>
@@ -87,13 +97,13 @@
     <property>Amazon.AccessAnalyzer.Model.GetAnalyzerRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
+    <pattern>[A-Za-z_][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetArchiveRuleRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
+    <pattern>[A-Za-z_][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.GetArchiveRuleRequest.RuleName</property>
@@ -151,7 +161,7 @@
     <property>Amazon.AccessAnalyzer.Model.ListArchiveRulesRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
+    <pattern>[A-Za-z_][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ListFindingsRequest.AnalyzerArn</property>
@@ -181,13 +191,13 @@
     <property>Amazon.AccessAnalyzer.Model.UpdateAnalyzerRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
+    <pattern>[A-Za-z_][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.UpdateArchiveRuleRequest.AnalyzerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
+    <pattern>[A-Za-z_][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.UpdateArchiveRuleRequest.RuleName</property>
@@ -235,7 +245,7 @@
     <property>Amazon.AccessAnalyzer.Model.AnalyzerSummary.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z][A-Za-z0-9_.-]*</pattern>
+    <pattern>[A-Za-z_][A-Za-z0-9_.-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AccessAnalyzer.Model.ArchiveRuleSummary.RuleName</property>
