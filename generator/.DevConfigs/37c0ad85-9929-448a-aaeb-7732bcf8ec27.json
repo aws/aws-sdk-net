@@ -4,7 +4,8 @@
       "extensionName": "Extensions.NETCore.Setup",
       "type": "patch",
       "changeLogMessages": [
-        "Add Action\u003CClientConfig, IServiceProvider\u003E overloads to service registration methods, prng a way to configure clientConfig.HttpClientFactory directly at the point of registration."
+        "Allow users to configure HttpClientFactory through DI Factories, by providing an overload of AddAWSService.",
+        "This allows users to use the `IHttpClientFactory` provided by microsoft which is only available through DI, with AWS Services."
       ]
     }
   ]
