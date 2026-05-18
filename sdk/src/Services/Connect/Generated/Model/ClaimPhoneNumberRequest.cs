@@ -31,15 +31,15 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ClaimPhoneNumber operation.
-    /// Claims an available phone number to your Amazon Connect instance or traffic distribution
+    /// Claims an available phone number to your Connect Customer instance or traffic distribution
     /// group. You can call this API only in the same Amazon Web Services Region where the
-    /// Amazon Connect instance or traffic distribution group was created.
+    /// Connect Customer instance or traffic distribution group was created.
     /// 
     ///  
     /// <para>
     /// For more information about how to use this operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html">Claim
     /// a phone number in your country</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-numbers-traffic-distribution-groups.html">Claim
-    /// phone numbers to traffic distribution groups</a> in the <i>Amazon Connect Administrator
+    /// phone numbers to traffic distribution groups</a> in the <i>Connect Customer Administrator
     /// Guide</i>. 
     /// </para>
     ///  <important> 
@@ -109,8 +109,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance that phone numbers are claimed to. You
-        /// can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance that phone numbers are claimed to.
+        /// You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You must enter
         /// <c>InstanceId</c> or <c>TargetArn</c>. 
         /// </para>
@@ -195,7 +195,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution
+        /// The Amazon Resource Name (ARN) for Connect Customer instances or traffic distribution
         /// groups that phone number inbound traffic is routed through. You must enter <c>InstanceId</c>
         /// or <c>TargetArn</c>. 
         /// </para>

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about phone numbers that have been claimed to your Amazon Connect instance
+    /// Information about phone numbers that have been claimed to your Connect Customer instance
     /// or traffic distribution group.
     /// </summary>
     public partial class ListPhoneNumbersSummary
@@ -48,8 +48,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance that phone numbers are claimed to. You
-        /// can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance that phone numbers are claimed to.
+        /// You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -200,7 +200,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution
+        /// The Amazon Resource Name (ARN) for Connect Customer instances or traffic distribution
         /// groups that phone number inbound traffic is routed through.
         /// </para>
         /// </summary>

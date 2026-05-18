@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property AllowedAccessControlHierarchyGroupId. 
         /// <para>
         /// The identifier of the hierarchy group that a security profile uses to restrict access
-        /// to resources in Amazon Connect.
+        /// to resources in Connect Customer.
         /// </para>
         /// </summary>
         public string AllowedAccessControlHierarchyGroupId
@@ -70,8 +70,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AllowedAccessControlTags. 
         /// <para>
-        /// The list of tags that a security profile uses to restrict access to resources in Amazon
-        /// Connect.
+        /// The list of tags that a security profile uses to restrict access to resources in Connect
+        /// Customer.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -152,7 +152,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property HierarchyRestrictedResources. 
         /// <para>
         /// The list of resources that a security profile applies hierarchy restrictions to in
-        /// Amazon Connect. Following are acceptable ResourceNames: <c>User</c>.
+        /// Connect Customer. Following are acceptable ResourceNames: <c>User</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -266,8 +266,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TagRestrictedResources. 
         /// <para>
-        /// The list of resources that a security profile applies tag restrictions to in Amazon
-        /// Connect.
+        /// The list of resources that a security profile applies tag restrictions to in Connect
+        /// Customer.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

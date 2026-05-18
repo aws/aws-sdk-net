@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ListPhoneNumbersSummaryList. 
         /// <para>
-        /// Information about phone numbers that have been claimed to your Amazon Connect instances
+        /// Information about phone numbers that have been claimed to your Connect Customer instances
         /// or traffic distribution groups.
         /// </para>
         /// <para />

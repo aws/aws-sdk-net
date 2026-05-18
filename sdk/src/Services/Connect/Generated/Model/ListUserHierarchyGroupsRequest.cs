@@ -31,13 +31,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUserHierarchyGroups operation.
-    /// Provides summary information about the hierarchy groups for the specified Amazon Connect
-    /// instance.
+    /// Provides summary information about the hierarchy groups for the specified Connect
+    /// Customer instance.
     /// 
     ///  
     /// <para>
     /// For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set
-    /// Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// Up Agent Hierarchies</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial class ListUserHierarchyGroupsRequest : AmazonConnectRequest
@@ -49,7 +49,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

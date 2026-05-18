@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The Amazon Connect instance.
+    /// The Connect Customer instance.
     /// </summary>
     public partial class Instance
     {
@@ -86,7 +86,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -142,7 +142,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceAccessUrl. 
         /// <para>
-        /// This URL allows contact center users to access the Amazon Connect admin website.
+        /// This URL allows contact center users to access the Connect Customer admin website.
         /// </para>
         /// </summary>
         public string InstanceAccessUrl

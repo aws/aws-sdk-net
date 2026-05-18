@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This API is in preview release for Amazon Connect and is subject to change. To request
+    /// This API is in preview release for Connect Customer and is subject to change. To request
     /// access to this API, contact Amazon Web Services Support.
     /// 
     ///  
@@ -62,9 +62,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AllowedIps. 
         /// <para>
-        /// A list of IP address range strings that are allowed to access the Amazon Connect instance.
-        /// For more information about how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure
-        /// IP address based access control</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// A list of IP address range strings that are allowed to access the Connect Customer
+        /// instance. For more information about how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure
+        /// IP address based access control</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -105,9 +105,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property BlockedIps. 
         /// <para>
-        /// A list of IP address range strings that are blocked from accessing the Amazon Connect
+        /// A list of IP address range strings that are blocked from accessing the Connect Customer
         /// instance. For more information about how to configure IP addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-ip-based-ac">Configure
-        /// IP address based access control</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// IP address based access control</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -187,8 +187,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property IsDefault. 
         /// <para>
         /// Shows whether the authentication profile is the default authentication profile for
-        /// the Amazon Connect instance. The default authentication profile applies to all agents
-        /// in an Amazon Connect instance, unless overridden by another authentication profile.
+        /// the Connect Customer instance. The default authentication profile applies to all agents
+        /// in an Connect Customer instance, unless overridden by another authentication profile.
         /// </para>
         /// </summary>
         public bool? IsDefault
@@ -242,9 +242,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MaxSessionDuration. 
         /// <para>
-        /// The long lived session duration for users logged in to Amazon Connect, in minutes.
+        /// The long lived session duration for users logged in to Connect Customer, in minutes.
         /// After this time period, users must log in again. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure
-        /// the session duration</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// the session duration</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=360, Max=720)]
@@ -282,10 +282,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property PeriodicSessionDuration. 
         /// <para>
-        /// The short lived session duration configuration for users logged in to Amazon Connect,
+        /// The short lived session duration configuration for users logged in to Connect Customer,
         /// in minutes. This value determines the maximum possible time before an agent is authenticated.
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure
-        /// the session duration</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// the session duration</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         [Obsolete("PeriodicSessionDuration is deprecated. Use SessionInactivityDuration instead.")]

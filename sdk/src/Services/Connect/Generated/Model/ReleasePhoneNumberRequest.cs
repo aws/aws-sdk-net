@@ -31,14 +31,14 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ReleasePhoneNumber operation.
-    /// Releases a phone number previously claimed to an Amazon Connect instance or traffic
+    /// Releases a phone number previously claimed to an Connect Customer instance or traffic
     /// distribution group. You can call this API only in the Amazon Web Services Region where
     /// the number was claimed.
     /// 
     ///  <important> 
     /// <para>
     /// To release phone numbers from a traffic distribution group, use the <c>ReleasePhoneNumber</c>
-    /// API, not the Amazon Connect admin website.
+    /// API, not the Connect Customer admin website.
     /// </para>
     ///  
     /// <para>

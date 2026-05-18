@@ -106,7 +106,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -130,8 +130,8 @@ namespace Amazon.Connect.Model
         /// agents and supervisors can't pick or assign any contacts from this routing profile.
         /// The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig
         /// objects that can be passed during a CreateRoutingProfile API request. It is different
-        /// from the quota of 50 queues per routing profile per instance that is listed in Amazon
-        /// Connect service quotas.
+        /// from the quota of 50 queues per routing profile per instance that is listed in Connect
+        /// Customer service quotas.
         /// </para>
         ///  
         /// <para>
@@ -212,8 +212,8 @@ namespace Amazon.Connect.Model
         /// The limit of 10 array members applies to the maximum number of <c>RoutingProfileQueueConfig</c>
         /// objects that can be passed during a CreateRoutingProfile API request. It is different
         /// from the quota of 50 queues per routing profile per instance that is listed in <a
-        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
-        /// Connect service quotas</a>. 
+        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Connect
+        /// Customer service quotas</a>. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

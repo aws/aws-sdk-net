@@ -31,9 +31,10 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Status information about the replication process, where you use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ReplicateInstance.html">ReplicateInstance</a>
-    /// API to create a replica of your Amazon Connect instance in another Amazon Web Services
+    /// API to create a replica of your Connect Customer instance in another Amazon Web Services
     /// Region. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Set
-    /// up Amazon Connect Global Resiliency</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// up Connect Customer Global Resiliency</a> in the <i>Connect Customer Administrator
+    /// Guide</i>.
     /// </summary>
     public partial class ReplicationStatusSummary
     {
@@ -83,7 +84,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ReplicationStatusReason. 
         /// <para>
         /// A description of the replication status. Use this information to resolve any issues
-        /// that are preventing the successful replication of your Amazon Connect instance to
+        /// that are preventing the successful replication of your Connect Customer instance to
         /// another Region.
         /// </para>
         /// </summary>

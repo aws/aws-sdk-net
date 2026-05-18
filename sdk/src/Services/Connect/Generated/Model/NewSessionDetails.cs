@@ -42,8 +42,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        ///  A custom key-value pair using an attribute map. The attributes are standard Amazon
-        /// Connect attributes. They can be accessed in flows just like any other contact attributes.
+        ///  A custom key-value pair using an attribute map. The attributes are standard Connect
+        /// Customer attributes. They can be accessed in flows just like any other contact attributes.
         /// 
         /// </para>
         ///  

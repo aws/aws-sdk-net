@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEvaluationForm operation.
-    /// Creates an evaluation form in the specified Amazon Connect instance. The form can
+    /// Creates an evaluation form in the specified Connect Customer instance. The form can
     /// be used to define questions related to agent performance, and create sections to organize
     /// such questions. Question and section identifiers cannot be duplicated within the same
     /// evaluation form.
@@ -130,7 +130,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

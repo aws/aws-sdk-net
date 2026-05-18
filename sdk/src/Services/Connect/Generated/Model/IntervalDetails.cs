@@ -47,8 +47,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// For example, if <c>IntervalPeriod</c> is selected <c>THIRTY_MIN</c>, <c>StartTime</c>
-        /// and <c>EndTime</c> differs by 1 day, then Amazon Connect returns 48 results in the
-        /// response. Each result is aggregated by the THIRTY_MIN period. By default Amazon Connect
+        /// and <c>EndTime</c> differs by 1 day, then Connect Customer returns 48 results in the
+        /// response. Each result is aggregated by the THIRTY_MIN period. By default Connect Customer
         /// aggregates results based on the <c>TOTAL</c> interval period. 
         /// </para>
         ///  

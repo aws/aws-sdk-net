@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateContact operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// This API is in preview release for Connect Customer and is subject to change.
     /// 
     ///  
     /// <para>
@@ -83,8 +83,8 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The endpoint of the customer for which the contact was initiated. For external audio
         /// contacts, this is usually the end customer's phone number. This value can only be
-        /// updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
-        /// Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect
+        /// Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         public Endpoint CustomerEndpoint
@@ -121,7 +121,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -162,8 +162,8 @@ namespace Amazon.Connect.Model
         /// <para>
         ///  Information about the queue associated with a contact. This parameter can only be
         /// updated for external audio contacts. It is used when you integrate third-party systems
-        /// with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
-        /// Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.
+        /// with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect
+        /// Customer Contact Lens integration</a> in the <i> Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         public QueueInfoInput QueueInfo
@@ -205,7 +205,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property SegmentAttributes. 
         /// <para>
         /// A set of system defined key-value pairs stored on individual contact segments (unique
-        /// contact ID) using an attribute map. The attributes are standard Amazon Connect attributes.
+        /// contact ID) using an attribute map. The attributes are standard Connect Customer attributes.
         /// They can be accessed in flows.
         /// </para>
         ///  
@@ -244,8 +244,8 @@ namespace Amazon.Connect.Model
         /// <para>
         /// External system endpoint for the contact was initiated. For external audio contacts,
         /// this is the phone number of the external system such as the contact center. This value
-        /// can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
-        /// Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect
+        /// Customer Contact Lens integration</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         public Endpoint SystemEndpoint
@@ -265,8 +265,8 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Information about the agent associated with a contact. This parameter can only be
         /// updated for external audio contacts. It is used when you integrate third-party systems
-        /// with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
-        /// Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.
+        /// with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect
+        /// Customer Contact Lens integration</a> in the <i> Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         public UserInfo UserInfo
