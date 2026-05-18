@@ -1,4 +1,5 @@
 using System.Text.Json;
+using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Converters;
 using SmithyDotNet.Generator.Model.Shapes;
 using Xunit;
@@ -12,7 +13,12 @@ public class CloudTrailModelFixture
         Converters = { new ShapeConverter() },
     };
 
-    public JsonDocument Document { get; } = JsonDocument.Parse(File.ReadAllBytes("TestData/cloudtrail-data-model.json"));
+    private static readonly byte[] ModelBytes = File.ReadAllBytes("TestData/cloudtrail-data-model.json");
+
+    public JsonDocument Document { get; } = JsonDocument.Parse(ModelBytes);
+
+    public SmithyModel Model { get; } = JsonSerializer.Deserialize<SmithyModel>(ModelBytes, Options)
+        ?? throw new InvalidOperationException("Failed to deserialize SmithyModel.");
 
     public Shape DeserializeShape(string shapeId)
     {

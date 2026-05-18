@@ -45,9 +45,21 @@ public static class Program
             return 1;
         }
 
-        var shapeCount = model.Shapes.Count;
+        try
+        {
+            ModelValidator.Validate(model);
+        }
+        catch (GeneratorException ex)
+        {
+            Console.Error.WriteLine($"Error: {ex.Message}");
+            return 1;
+        }
+
+        var index = new ServiceIndex(model);
         Console.WriteLine($"Smithy version: {model.Version}");
-        Console.WriteLine($"Found {shapeCount} shapes.");
+        Console.WriteLine($"Service API version: {index.Service.ApiVersion}");
+        Console.WriteLine($"Operations: {index.Operations.Count}");
+        Console.WriteLine($"Reachable shapes: {index.Shapes.Count}");
         return 0;
     }
 }
