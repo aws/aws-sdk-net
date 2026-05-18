@@ -30,24 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetIpamResourceCidrs operation.
-    /// Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated
-    /// with more than one resource discovery, the resource CIDRs across all of the resource
-    /// discoveries is returned. A resource discovery is an IPAM component that enables IPAM
-    /// to manage and monitor resources that belong to the owning account.
+    /// Container for the parameters to the DescribeIpamPoolAllocations operation.
+    /// Describes IPAM pool allocations. You can describe all allocations owned by you across
+    /// all pools, or you can describe specific allocations by ID.
+    /// 
+    ///  
+    /// <para>
+    /// If you specify <c>IpamPoolAllocationIds</c>, the results include only the specified
+    /// allocations. If you do not specify <c>IpamPoolAllocationIds</c>, the results include
+    /// all allocations owned by you. You can use <c>Filters</c> to narrow the results.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// This action returns only allocations directly owned by you. To view all allocations
+    /// in a pool you own or that has been shared with you, including allocations owned by
+    /// other accounts, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPoolAllocations.html">GetIpamPoolAllocations</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class GetIpamResourceCidrsRequest : AmazonEC2Request
+    public partial class DescribeIpamPoolAllocationsRequest : AmazonEC2Request
     {
         private bool? _dryRun;
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
-        private string _ipamPoolId;
-        private string _ipamScopeId;
+        private List<string> _ipamPoolAllocationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private string _resourceId;
-        private string _resourceOwner;
-        private RequestIpamResourceTag _resourceTag;
-        private IpamResourceType _resourceType;
 
         /// <summary>
         /// Gets and sets the property DryRun. 
@@ -95,40 +102,26 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IpamPoolId. 
+        /// Gets and sets the property IpamPoolAllocationIds. 
         /// <para>
-        /// The ID of the IPAM pool that the resource is in.
+        /// The IDs of the IPAM pool allocations you want to describe.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public string IpamPoolId
+        public List<string> IpamPoolAllocationIds
         {
-            get { return this._ipamPoolId; }
-            set { this._ipamPoolId = value; }
+            get { return this._ipamPoolAllocationIds; }
+            set { this._ipamPoolAllocationIds = value; }
         }
 
-        // Check to see if IpamPoolId property is set
-        internal bool IsSetIpamPoolId()
+        // Check to see if IpamPoolAllocationIds property is set
+        internal bool IsSetIpamPoolAllocationIds()
         {
-            return this._ipamPoolId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property IpamScopeId. 
-        /// <para>
-        /// The ID of the scope that the resource is in.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string IpamScopeId
-        {
-            get { return this._ipamScopeId; }
-            set { this._ipamScopeId = value; }
-        }
-
-        // Check to see if IpamScopeId property is set
-        internal bool IsSetIpamScopeId()
-        {
-            return this._ipamScopeId != null;
+            return this._ipamPoolAllocationIds != null && (this._ipamPoolAllocationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +132,7 @@ namespace Amazon.EC2.Model
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=1000)]
+        [AWSProperty(Min=1000, Max=100000)]
         public int? MaxResults
         {
             get { return this._maxResults; }
@@ -168,78 +161,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceId. 
-        /// <para>
-        /// The ID of the resource.
-        /// </para>
-        /// </summary>
-        public string ResourceId
-        {
-            get { return this._resourceId; }
-            set { this._resourceId = value; }
-        }
-
-        // Check to see if ResourceId property is set
-        internal bool IsSetResourceId()
-        {
-            return this._resourceId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceOwner. 
-        /// <para>
-        /// The ID of the Amazon Web Services account that owns the resource.
-        /// </para>
-        /// </summary>
-        public string ResourceOwner
-        {
-            get { return this._resourceOwner; }
-            set { this._resourceOwner = value; }
-        }
-
-        // Check to see if ResourceOwner property is set
-        internal bool IsSetResourceOwner()
-        {
-            return this._resourceOwner != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceTag. 
-        /// <para>
-        /// The resource tag.
-        /// </para>
-        /// </summary>
-        public RequestIpamResourceTag ResourceTag
-        {
-            get { return this._resourceTag; }
-            set { this._resourceTag = value; }
-        }
-
-        // Check to see if ResourceTag property is set
-        internal bool IsSetResourceTag()
-        {
-            return this._resourceTag != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceType. 
-        /// <para>
-        /// The resource type.
-        /// </para>
-        /// </summary>
-        public IpamResourceType ResourceType
-        {
-            get { return this._resourceType; }
-            set { this._resourceType = value; }
-        }
-
-        // Check to see if ResourceType property is set
-        internal bool IsSetResourceType()
-        {
-            return this._resourceType != null;
         }
 
     }
