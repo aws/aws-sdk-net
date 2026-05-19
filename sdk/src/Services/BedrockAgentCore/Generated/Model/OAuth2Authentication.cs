@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// OAuth2 authentication information for third-party providers. Supports Google, Apple,
-    /// X, Telegram, and GitHub providers.
+    /// OAuth2 authentication information for third-party providers.
     /// </summary>
     public partial class OAuth2Authentication
     {
@@ -43,7 +42,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The email address from the OAuth2 provider (optional).
+        /// The email address from the OAuth2 provider.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=254)]
@@ -62,7 +61,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The user's name from the OAuth2 provider (optional).
+        /// The user's name from the OAuth2 provider.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -101,7 +100,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The username from the OAuth2 provider (optional).
+        /// The username from the OAuth2 provider.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

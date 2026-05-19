@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPaymentInstrument operation.
-    /// Get a payment instrument by ID
+    /// Get a payment instrument by ID.
     /// </summary>
     public partial class GetPaymentInstrumentRequest : AmazonBedrockAgentCoreRequest
     {

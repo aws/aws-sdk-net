@@ -604,7 +604,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Create a new payment instrument for a connector
+        /// Create a new payment instrument for a connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePaymentInstrument service method.</param>
         /// 
@@ -645,7 +645,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Create a new payment instrument for a connector
+        /// Create a new payment instrument for a connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePaymentInstrument service method.</param>
         /// <param name="cancellationToken">
@@ -692,7 +692,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Create a new payment manager session
+        /// Create a new payment session.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePaymentSession service method.</param>
         /// 
@@ -733,7 +733,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Create a new payment manager session
+        /// Create a new payment session.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePaymentSession service method.</param>
         /// <param name="cancellationToken">
@@ -1178,38 +1178,8 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Delete a payment instrument
-        /// 
-        ///  
-        /// <para>
-        /// Marks a payment instrument as deleted by updating its status to DELETED. This is a
-        /// soft delete operation that preserves the record in the database for audit and compliance
-        /// purposes. The record remains queryable for audit purposes but is excluded from normal
-        /// list and get operations.
-        /// </para>
-        ///  
-        /// <para>
-        /// Deleting an already-deleted or non-existent instrument returns ResourceNotFoundException
-        /// (404).
-        /// </para>
-        ///  
-        /// <para>
-        /// Authorization: The caller must own the instrument (accountId, userId, and paymentManagerId
-        /// must match). If authorization fails, a 403 Forbidden error is returned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Timestamp Management: The updatedAt timestamp is set to the current time, while createdAt
-        /// is preserved. The version field is incremented for optimistic locking.
-        /// </para>
-        ///  
-        /// <para>
-        /// Errors:
-        /// </para>
-        ///  <ul> <li>ResourceNotFoundException: The instrument does not exist or is already deleted</li>
-        /// <li>AccessDeniedException: The caller is not authorized to delete this instrument</li>
-        /// <li>ValidationException: Required fields are missing or invalid</li> <li>InternalServerException:
-        /// An unexpected server error occurred</li> </ul>
+        /// Deletes a payment instrument. This is a soft delete operation that preserves the record
+        /// for audit and compliance purposes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePaymentInstrument service method.</param>
         /// 
@@ -1245,38 +1215,8 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Delete a payment instrument
-        /// 
-        ///  
-        /// <para>
-        /// Marks a payment instrument as deleted by updating its status to DELETED. This is a
-        /// soft delete operation that preserves the record in the database for audit and compliance
-        /// purposes. The record remains queryable for audit purposes but is excluded from normal
-        /// list and get operations.
-        /// </para>
-        ///  
-        /// <para>
-        /// Deleting an already-deleted or non-existent instrument returns ResourceNotFoundException
-        /// (404).
-        /// </para>
-        ///  
-        /// <para>
-        /// Authorization: The caller must own the instrument (accountId, userId, and paymentManagerId
-        /// must match). If authorization fails, a 403 Forbidden error is returned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Timestamp Management: The updatedAt timestamp is set to the current time, while createdAt
-        /// is preserved. The version field is incremented for optimistic locking.
-        /// </para>
-        ///  
-        /// <para>
-        /// Errors:
-        /// </para>
-        ///  <ul> <li>ResourceNotFoundException: The instrument does not exist or is already deleted</li>
-        /// <li>AccessDeniedException: The caller is not authorized to delete this instrument</li>
-        /// <li>ValidationException: Required fields are missing or invalid</li> <li>InternalServerException:
-        /// An unexpected server error occurred</li> </ul>
+        /// Deletes a payment instrument. This is a soft delete operation that preserves the record
+        /// for audit and compliance purposes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePaymentInstrument service method.</param>
         /// <param name="cancellationToken">
@@ -1318,31 +1258,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Delete a payment manager session
-        /// 
-        ///  
-        /// <para>
-        /// Permanently removes a payment session record from the database. This is a hard delete
-        /// operation that removes the session completely.
-        /// </para>
-        ///  
-        /// <para>
-        /// Deleting a non-existent or already-deleted session returns ResourceNotFoundException
-        /// (404).
-        /// </para>
-        ///  
-        /// <para>
-        /// Authorization: The caller must own the session (accountId, userId, and paymentManagerId
-        /// must match). If authorization fails, a 403 Forbidden error is returned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Errors:
-        /// </para>
-        ///  <ul> <li>ResourceNotFoundException: The session does not exist or has already been
-        /// deleted</li> <li>AccessDeniedException: The caller is not authorized to delete this
-        /// session</li> <li>ValidationException: Required fields are missing or invalid</li>
-        /// <li>InternalServerException: An unexpected server error occurred</li> </ul>
+        /// Deletes a payment session. This permanently removes the payment session record.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePaymentSession service method.</param>
         /// 
@@ -1378,31 +1294,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Delete a payment manager session
-        /// 
-        ///  
-        /// <para>
-        /// Permanently removes a payment session record from the database. This is a hard delete
-        /// operation that removes the session completely.
-        /// </para>
-        ///  
-        /// <para>
-        /// Deleting a non-existent or already-deleted session returns ResourceNotFoundException
-        /// (404).
-        /// </para>
-        ///  
-        /// <para>
-        /// Authorization: The caller must own the session (accountId, userId, and paymentManagerId
-        /// must match). If authorization fails, a 403 Forbidden error is returned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Errors:
-        /// </para>
-        ///  <ul> <li>ResourceNotFoundException: The session does not exist or has already been
-        /// deleted</li> <li>AccessDeniedException: The caller is not authorized to delete this
-        /// session</li> <li>ValidationException: Required fields are missing or invalid</li>
-        /// <li>InternalServerException: An unexpected server error occurred</li> </ul>
+        /// Deletes a payment session. This permanently removes the payment session record.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePaymentSession service method.</param>
         /// <param name="cancellationToken">
@@ -2398,7 +2290,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Get a payment instrument by ID
+        /// Get a payment instrument by ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPaymentInstrument service method.</param>
         /// 
@@ -2434,7 +2326,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Get a payment instrument by ID
+        /// Get a payment instrument by ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPaymentInstrument service method.</param>
         /// <param name="cancellationToken">
@@ -2476,7 +2368,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Get the balance of a payment instrument
+        /// Get the balance of a payment instrument.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPaymentInstrumentBalance service method.</param>
         /// 
@@ -2512,7 +2404,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Get the balance of a payment instrument
+        /// Get the balance of a payment instrument.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPaymentInstrumentBalance service method.</param>
         /// <param name="cancellationToken">
@@ -2554,7 +2446,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Get a payment session
+        /// Get a payment session.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPaymentSession service method.</param>
         /// 
@@ -2590,7 +2482,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Get a payment session
+        /// Get a payment session.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPaymentSession service method.</param>
         /// <param name="cancellationToken">
@@ -3289,6 +3181,11 @@ namespace Amazon.BedrockAgentCore
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
         /// The exception that occurs when there is an error in the runtime client. This can happen
         /// due to network issues, invalid configuration, or other client-side problems. Check
@@ -3372,6 +3269,11 @@ namespace Amazon.BedrockAgentCore
         /// The exception that occurs when the specified resource does not exist. This can happen
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
         /// The exception that occurs when there is an error in the runtime client. This can happen
@@ -4738,7 +4640,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// List payment instruments for a manager
+        /// List payment instruments for a manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPaymentInstruments service method.</param>
         /// 
@@ -4769,7 +4671,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// List payment instruments for a manager
+        /// List payment instruments for a manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPaymentInstruments service method.</param>
         /// <param name="cancellationToken">
@@ -4806,7 +4708,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// List payment manager sessions
+        /// List payment sessions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPaymentSessions service method.</param>
         /// 
@@ -4837,7 +4739,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// List payment manager sessions
+        /// List payment sessions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPaymentSessions service method.</param>
         /// <param name="cancellationToken">
@@ -5052,7 +4954,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Process a payment transaction
+        /// Processes a payment using a payment instrument within a payment session.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProcessPayment service method.</param>
         /// 
@@ -5093,7 +4995,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Process a payment transaction
+        /// Processes a payment using a payment instrument within a payment session.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ProcessPayment service method.</param>
         /// <param name="cancellationToken">
@@ -6527,6 +6429,11 @@ namespace Amazon.BedrockAgentCore
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
         /// The exception that occurs when there is an error in the runtime client. This can happen
         /// due to network issues, invalid configuration, or other client-side problems. Check
@@ -6584,6 +6491,11 @@ namespace Amazon.BedrockAgentCore
         /// The exception that occurs when the specified resource does not exist. This can happen
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
         /// The exception that occurs when there is an error in the runtime client. This can happen

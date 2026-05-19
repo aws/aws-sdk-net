@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// LinkedAccount using a phone number in E.164 format.
+    /// Linked account using a phone number in E.164 format.
     /// </summary>
     public partial class LinkedAccountSms
     {
@@ -39,8 +39,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PhoneNumber. 
         /// <para>
-        /// The phone number in E.164 format (e.g., +1234567890). Must be a valid E.164 formatted
-        /// phone number starting with + and containing 1-15 digits.
+        /// The phone number in E.164 format (e.g., +1234567890).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=3, Max=16)]

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// VENDOR-SPECIFIC TOKEN RESPONSE CONFIGURATION - Output
+    /// Vendor-specific token response configuration.
     /// </summary>
     public partial class PaymentTokenResponseOutput
     {
@@ -38,7 +38,10 @@ namespace Amazon.BedrockAgentCore.Model
         private StripePrivyTokenResponseOutput _stripePrivyTokenResponse;
 
         /// <summary>
-        /// Gets and sets the property CoinbaseCdpTokenResponse.
+        /// Gets and sets the property CoinbaseCdpTokenResponse. 
+        /// <para>
+        /// The Coinbase CDP token response.
+        /// </para>
         /// </summary>
         public CoinbaseCdpTokenResponseOutput CoinbaseCdpTokenResponse
         {
@@ -53,7 +56,10 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StripePrivyTokenResponse.
+        /// Gets and sets the property StripePrivyTokenResponse. 
+        /// <para>
+        /// The Stripe Privy token response.
+        /// </para>
         /// </summary>
         public StripePrivyTokenResponseOutput StripePrivyTokenResponse
         {

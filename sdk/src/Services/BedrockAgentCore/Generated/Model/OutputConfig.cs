@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Output destination configuration
+    /// Output destination configuration.
     /// </summary>
     public partial class OutputConfig
     {

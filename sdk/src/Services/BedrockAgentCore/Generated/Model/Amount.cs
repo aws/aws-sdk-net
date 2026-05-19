@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Money amount with currency
+    /// Represents a monetary amount with a currency.
     /// </summary>
     public partial class Amount
     {
@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Currency. 
         /// <para>
-        /// The currency code for this amount.
+        /// The currency code for the amount.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

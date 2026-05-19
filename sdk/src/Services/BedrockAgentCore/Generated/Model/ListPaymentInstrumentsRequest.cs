@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPaymentInstruments operation.
-    /// List payment instruments for a manager
+    /// List payment instruments for a manager.
     /// </summary>
     public partial class ListPaymentInstrumentsRequest : AmazonBedrockAgentCoreRequest
     {

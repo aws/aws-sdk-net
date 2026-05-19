@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// A single token balance entry
+    /// A single token balance entry.
     /// </summary>
     public partial class TokenBalance
     {

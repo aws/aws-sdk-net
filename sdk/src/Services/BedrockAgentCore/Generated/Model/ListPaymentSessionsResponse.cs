@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Response structure for listing payment sessions
+    /// Response structure for listing payment sessions.
     /// </summary>
     public partial class ListPaymentSessionsResponse : AmazonWebServiceResponse
     {
