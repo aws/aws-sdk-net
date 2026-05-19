@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RTBFabric.Model
 {
     /// <summary>
-    /// Key-value pair for query string matching
+    /// A key-value pair for query string matching in a routing rule condition.
     /// </summary>
     public partial class QueryStringKeyValuePair
     {
@@ -40,7 +40,8 @@ namespace Amazon.RTBFabric.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// RFC 3986 unreserved characters
+        /// The key of the query string parameter to match. Must contain only RFC 3986 unreserved
+        /// characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -59,7 +60,8 @@ namespace Amazon.RTBFabric.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// RFC 3986 unreserved characters
+        /// The value of the query string parameter to match. Must contain only RFC 3986 unreserved
+        /// characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

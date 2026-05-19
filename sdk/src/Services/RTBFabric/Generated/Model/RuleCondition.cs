@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RTBFabric.Model
 {
     /// <summary>
-    /// Conditions bag for a routing rule. All non-null fields must match (AND logic). At
-    /// least one field must be set (enforced by CP).
+    /// The conditions for a routing rule. All specified fields must match for the rule to
+    /// apply (AND logic). At least one condition field must be set.
     /// </summary>
     public partial class RuleCondition
     {
@@ -45,7 +45,7 @@ namespace Amazon.RTBFabric.Model
         /// <summary>
         /// Gets and sets the property HostHeader. 
         /// <para>
-        /// Exact host match — RFC 3986 unreserved characters
+        /// The exact host header value to match.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -64,7 +64,7 @@ namespace Amazon.RTBFabric.Model
         /// <summary>
         /// Gets and sets the property HostHeaderWildcard. 
         /// <para>
-        /// Wildcard host pattern (e.g., *.example.com) — RFC 3986 unreserved plus *
+        /// A wildcard pattern for host header matching (for example, <c>*.example.com</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]
@@ -83,7 +83,7 @@ namespace Amazon.RTBFabric.Model
         /// <summary>
         /// Gets and sets the property PathExact. 
         /// <para>
-        /// Exact path match — must start with /; RFC 3986 unreserved plus /
+        /// The exact path to match. Must start with <c>/</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -102,8 +102,8 @@ namespace Amazon.RTBFabric.Model
         /// <summary>
         /// Gets and sets the property PathPrefix. 
         /// <para>
-        /// Path prefix matching — strict starts-with, no wildcard (preferred for new rules).
-        /// Must start with /; RFC 3986 unreserved plus /
+        /// The path prefix to match. The request path must start with this value. Must start
+        /// with <c>/</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -122,7 +122,7 @@ namespace Amazon.RTBFabric.Model
         /// <summary>
         /// Gets and sets the property QueryStringEquals. 
         /// <para>
-        /// Query string key=value pair match (single pair)
+        /// A query string key-value pair that must be present and match exactly.
         /// </para>
         /// </summary>
         public QueryStringKeyValuePair QueryStringEquals
@@ -140,7 +140,7 @@ namespace Amazon.RTBFabric.Model
         /// <summary>
         /// Gets and sets the property QueryStringExists. 
         /// <para>
-        /// Query string key presence check (any value accepted) — RFC 3986 unreserved characters
+        /// A query string key that must be present in the request (any value is accepted).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
