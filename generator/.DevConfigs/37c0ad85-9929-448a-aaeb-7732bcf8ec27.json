@@ -2,10 +2,9 @@
   "extensions": [
     {
       "extensionName": "Extensions.NETCore.Setup",
-      "type": "patch",
+      "type": "minor",
       "changeLogMessages": [
-        "Allow users to configure HttpClientFactory through DI Factories, by providing an overload of AddAWSService.",
-        "This allows users to use the `IHttpClientFactory` provided by microsoft which is only available through DI, with AWS Services.",
+        "Added new callback for the `AddAWSService` and similar methods allowing customization of the service client config before being used to create the service client. For example the callback can be used to configure the `HttpClientFactory` with an implementation coming from the DI using the `IHttpClientFactory` provided by microsoft.",
         "Note: Callers passing a literal null as the second argument to AddAWSService or AddKeyedAWSService may need to cast (e.g., (AWSOptions)null) to resolve overload ambiguity."
       ]
     }
