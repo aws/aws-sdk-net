@@ -39,6 +39,7 @@ namespace Amazon.ManagedGrafana.Model
         private AuthenticationSummary _authentication;
         private DateTime? _created;
         private List<string> _dataSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _degradedWorkspaceReason;
         private string _description;
         private string _endpoint;
         private bool? _freeTrialConsumed;
@@ -152,6 +153,26 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetDataSources()
         {
             return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DegradedWorkspaceReason. 
+        /// <para>
+        /// If the workspace is in the <c>DEGRADED</c> status, this field describes the reason
+        /// the workspace is degraded.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string DegradedWorkspaceReason
+        {
+            get { return this._degradedWorkspaceReason; }
+            set { this._degradedWorkspaceReason = value; }
+        }
+
+        // Check to see if DegradedWorkspaceReason property is set
+        internal bool IsSetDegradedWorkspaceReason()
+        {
+            return this._degradedWorkspaceReason != null;
         }
 
         /// <summary>

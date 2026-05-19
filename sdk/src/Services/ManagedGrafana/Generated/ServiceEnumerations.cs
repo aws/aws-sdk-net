@@ -679,6 +679,10 @@ namespace Amazon.ManagedGrafana
         /// </summary>
         public static readonly WorkspaceStatus CREATION_FAILED = new WorkspaceStatus("CREATION_FAILED");
         /// <summary>
+        /// Constant DEGRADED for WorkspaceStatus
+        /// </summary>
+        public static readonly WorkspaceStatus DEGRADED = new WorkspaceStatus("DEGRADED");
+        /// <summary>
         /// Constant DELETING for WorkspaceStatus
         /// </summary>
         public static readonly WorkspaceStatus DELETING = new WorkspaceStatus("DELETING");
