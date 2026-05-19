@@ -10947,6 +10947,14 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly InstanceType MlP548xlarge = new InstanceType("ml.p5.48xlarge");
         /// <summary>
+        /// Constant MlP54xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlP54xlarge = new InstanceType("ml.p5.4xlarge");
+        /// <summary>
+        /// Constant MlP5en48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlP5en48xlarge = new InstanceType("ml.p5en.48xlarge");
+        /// <summary>
         /// Constant MlP6B20048xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlP6B20048xlarge = new InstanceType("ml.p6-b200.48xlarge");
