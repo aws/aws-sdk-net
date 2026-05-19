@@ -469,6 +469,7 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             string description = response.Description;
             string gatewayId = response.GatewayId;
             int inboundLinksCount = response.InboundLinksCount;
+            int linksRequestedCount = response.LinksRequestedCount;
             int port = response.Port;
             string protocol = response.Protocol;
             List<string> securityGroupIds = response.SecurityGroupIds;
