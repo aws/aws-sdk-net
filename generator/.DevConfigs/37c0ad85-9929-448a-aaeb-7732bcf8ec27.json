@@ -1,0 +1,12 @@
+{
+  "extensions": [
+    {
+      "extensionName": "Extensions.NETCore.Setup",
+      "type": "minor",
+      "changeLogMessages": [
+        "Added new callback for the `AddAWSService` and similar methods allowing customization of the service client config before being used to create the service client. For example the callback can be used to configure the `HttpClientFactory` with an implementation coming from the DI using the `IHttpClientFactory` provided by Microsoft.",
+        "Note: Callers passing a literal null as the second argument to AddAWSService or AddKeyedAWSService may need to cast (e.g., (AWSOptions)null) to resolve overload ambiguity."
+      ]
+    }
+  ]
+}

@@ -342,6 +342,90 @@ namespace DependencyInjectionTests
         }
 #endif
 
+        [Fact]
+        public void AddAWSService_WithConfigAction_AppliesConfig()
+        {
+            var services = new ServiceCollection();
+            services.AddDefaultAWSOptions(new AWSOptions { Region = RegionEndpoint.USEast1, Credentials = new Amazon.Runtime.BasicAWSCredentials("test", "test") });
+            services.AddAWSService<IAmazonS3>((config, sp) =>
+            {
+                config.BufferSize = 1234;
+            });
+
+            var serviceProvider = services.BuildServiceProvider();
+            var s3 = serviceProvider.GetRequiredService<IAmazonS3>();
+
+            Assert.Equal(1234, s3.Config.BufferSize);
+        }
+
+        [Fact]
+        public void AddAWSService_WithOptionsAndConfigAction_AppliesBoth()
+        {
+            var services = new ServiceCollection();
+            services.AddAWSService<IAmazonS3>(new AWSOptions { Region = RegionEndpoint.EUWest1, Credentials = new Amazon.Runtime.BasicAWSCredentials("test", "test") }, (config, sp) =>
+            {
+                config.BufferSize = 5678;
+            });
+
+            var serviceProvider = services.BuildServiceProvider();
+            var s3 = serviceProvider.GetRequiredService<IAmazonS3>();
+
+            Assert.Equal(RegionEndpoint.EUWest1, s3.Config.RegionEndpoint);
+            Assert.Equal(5678, s3.Config.BufferSize);
+        }
+
+        [Fact]
+        public void TryAddAWSService_WithConfigAction_AppliesConfig()
+        {
+            var services = new ServiceCollection();
+            services.AddDefaultAWSOptions(new AWSOptions { Region = RegionEndpoint.USEast1, Credentials = new Amazon.Runtime.BasicAWSCredentials("test", "test") });
+            services.TryAddAWSService<IAmazonS3>((config, sp) =>
+            {
+                config.BufferSize = 9999;
+            });
+
+            var serviceProvider = services.BuildServiceProvider();
+            var s3 = serviceProvider.GetRequiredService<IAmazonS3>();
+
+            Assert.Equal(9999, s3.Config.BufferSize);
+        }
+
+        [Fact]
+        public void AddAWSService_ConfigActionReceivesWorkingServiceProvider()
+        {
+            var services = new ServiceCollection();
+            services.AddSingleton(new AWSSetting { Region = RegionEndpoint.APSouth1, Profile = "TestProfile" });
+            services.AddDefaultAWSOptions(new AWSOptions { Region = RegionEndpoint.USEast1, Credentials = new Amazon.Runtime.BasicAWSCredentials("test", "test") });
+            services.AddAWSService<IAmazonS3>((config, sp) =>
+            {
+                var setting = sp.GetRequiredService<AWSSetting>();
+                config.BufferSize = setting.Profile.Length;
+            });
+
+            var serviceProvider = services.BuildServiceProvider();
+            var s3 = serviceProvider.GetRequiredService<IAmazonS3>();
+
+            Assert.Equal("TestProfile".Length, s3.Config.BufferSize);
+        }
+
+#if NET8_0_OR_GREATER
+        [Fact]
+        public void AddKeyedAWSService_WithConfigAction_AppliesConfig()
+        {
+            var services = new ServiceCollection();
+            services.AddDefaultAWSOptions(new AWSOptions { Region = RegionEndpoint.USEast1, Credentials = new Amazon.Runtime.BasicAWSCredentials("test", "test") });
+            services.AddKeyedAWSService<IAmazonS3>(TestControllerKeyed.Key, (config, sp) =>
+            {
+                config.BufferSize = 4321;
+            });
+
+            var serviceProvider = services.BuildServiceProvider();
+            var controller = ActivatorUtilities.CreateInstance<TestControllerKeyed>(serviceProvider);
+
+            Assert.Equal(4321, controller.S3Client.Config.BufferSize);
+        }
+#endif
+
         public class TestController
         {
             public IAmazonS3 S3Client { get; private set; }
