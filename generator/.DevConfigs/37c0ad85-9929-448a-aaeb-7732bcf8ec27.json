@@ -5,7 +5,8 @@
       "type": "patch",
       "changeLogMessages": [
         "Allow users to configure HttpClientFactory through DI Factories, by providing an overload of AddAWSService.",
-        "This allows users to use the `IHttpClientFactory` provided by microsoft which is only available through DI, with AWS Services."
+        "This allows users to use the `IHttpClientFactory` provided by microsoft which is only available through DI, with AWS Services.",
+        "Note: Callers passing a literal null as the second argument to AddAWSService or AddKeyedAWSService may need to cast (e.g., (AWSOptions)null) to resolve overload ambiguity."
       ]
     }
   ]
