@@ -64,16 +64,11 @@ namespace Amazon.DevOpsAgent.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// Filter criteria to apply when listing tasks
+        /// Filter criteria to apply when listing tasks Filtering restrictions: - Each filter
+        /// field list is limited to a single value - Filtering by Priority and Status at the
+        /// same time when not filtering by Type is not permitted - Timestamp filters (createdAfter,
+        /// createdBefore) can be combined with other filters when not sorting by priority
         /// </para>
-        ///  
-        /// <para>
-        /// Filtering restrictions:
-        /// </para>
-        ///  <ul> <li>Each filter field list is limited to a single value</li> <li>Filtering by
-        /// Priority and Status at the same time when not filtering by Type is not permitted</li>
-        /// <li>Timestamp filters (createdAfter, createdBefore) can be combined with other filters
-        /// when not sorting by priority</li> </ul>
         /// </summary>
         public TaskFilter Filter
         {
@@ -146,11 +141,10 @@ namespace Amazon.DevOpsAgent.Model
         /// <summary>
         /// Gets and sets the property SortField. 
         /// <para>
-        /// Field to sort by
+        /// Field to sort by Sorting restrictions: - Only sorting on createdAt is supported when
+        /// using priority or status filters alone. - Sorting by priority is not supported when
+        /// using Timestamp filters (createdAfter, createdBefore)
         /// </para>
-        ///  <pre><c>Sorting restrictions: </c></pre> <ul> <li>Only sorting on createdAt is supported
-        /// when using priority or status filters alone.</li> <li>Sorting by priority is not supported
-        /// when using Timestamp filters (createdAfter, createdBefore)</li> </ul>
         /// </summary>
         public TaskSortField SortField
         {

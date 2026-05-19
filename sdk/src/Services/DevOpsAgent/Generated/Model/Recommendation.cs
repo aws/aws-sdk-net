@@ -41,6 +41,8 @@ namespace Amazon.DevOpsAgent.Model
         private string _goalId;
         private long? _goalVersion;
         private RecommendationPriority _priority;
+        private DateTime? _rankedAt;
+        private int? _rankPosition;
         private string _recommendationId;
         private RecommendationStatus _status;
         private string _taskId;
@@ -176,6 +178,43 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetPriority()
         {
             return this._priority != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RankedAt. 
+        /// <para>
+        /// Timestamp when the recommendation was last ranked
+        /// </para>
+        /// </summary>
+        public DateTime? RankedAt
+        {
+            get { return this._rankedAt; }
+            set { this._rankedAt = value; }
+        }
+
+        // Check to see if RankedAt property is set
+        internal bool IsSetRankedAt()
+        {
+            return this._rankedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RankPosition. 
+        /// <para>
+        /// Position in ranked list (1 = highest priority)
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? RankPosition
+        {
+            get { return this._rankPosition; }
+            set { this._rankPosition = value; }
+        }
+
+        // Check to see if RankPosition property is set
+        internal bool IsSetRankPosition()
+        {
+            return this._rankPosition.HasValue; 
         }
 
         /// <summary>

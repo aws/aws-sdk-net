@@ -30,49 +30,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Mixin for webhook update support.
+    /// Configuration for SigV4-authenticated MCP server integration.
     /// </summary>
-    public partial class MCPServerNewRelicConfiguration
+    public partial class MCPServerSigV4Configuration
     {
-        private string _accountId;
-        private string _endpoint;
+        private List<string> _tools = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property Tools. 
         /// <para>
-        /// New Relic Account ID
+        /// List of MCP tools available for the association.
         /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=7)]
-        public string AccountId
-        {
-            get { return this._accountId; }
-            set { this._accountId = value; }
-        }
-
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
-        {
-            return this._accountId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Endpoint. 
-        /// <para>
-        /// MCP server endpoint URL (e.g., https://mcp.newrelic.com/mcp/)
-        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Endpoint
+        public List<string> Tools
         {
-            get { return this._endpoint; }
-            set { this._endpoint = value; }
+            get { return this._tools; }
+            set { this._tools = value; }
         }
 
-        // Check to see if Endpoint property is set
-        internal bool IsSetEndpoint()
+        // Check to see if Tools property is set
+        internal bool IsSetTools()
         {
-            return this._endpoint != null;
+            return this._tools != null && (this._tools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
