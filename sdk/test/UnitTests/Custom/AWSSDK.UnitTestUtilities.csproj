@@ -55,6 +55,7 @@
     <Compile Include="Runtime/RegionEndpointProviderTest.cs" />
     <Compile Include="Runtime/TerminatePipeline.cs" />
     <Compile Include="Runtime/UserAgentTests.cs" />
+    <Compile Include="Runtime/PooledContentWriterTests.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="ConstantClassTestBase.cs" />
     <Compile Include="CapacityManagerTests.cs" />
@@ -84,10 +85,12 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
     <ProjectReference Include="../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../../src/Services/S3/AWSSDK.S3.NetFramework.csproj" />
+    <ProjectReference Include="../../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetFramework.csproj" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
     <ProjectReference Include="../../../src/Core/AWSSDK.Core.NetStandard.csproj" />
     <ProjectReference Include="../../../src/Services/S3/AWSSDK.S3.NetStandard.csproj" />
+    <ProjectReference Include="../../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetStandard.csproj" />
   </ItemGroup>
 
   <ItemGroup>
