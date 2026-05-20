@@ -668,8 +668,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     if (transactionPart.ConditionCheckFailedItems == null)
                         transactionPart.ConditionCheckFailedItems = new List<Document>();
-                    if (transactionPart.ConsumedCapacity == null)
-                        transactionPart.ConsumedCapacity = new List<ConsumedCapacity>();
+                    // check here
                 }
             }
         }

@@ -21,7 +21,6 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Telemetry.Tracing;
 using ThirdParty.RuntimeBackports;
 
@@ -34,11 +33,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public partial interface ITransactWrite
     {
-        /// <summary>
-        /// Represents a non-generic interface for writing/deleting/version-checking multiple items
-        /// in a single DynamoDB table in a transaction.
-        /// </summary>
-        public List<ConsumedCapacity> ConsumedCapacity { get;}
     }
 
     /// <summary>
@@ -68,8 +62,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Add a single item to be saved in the current transaction operation.
         /// </summary>
         /// <param name="item">Item to save.</param>
-        /// <param name="returnConsumedCapacity">ReturnConsumedCapacity.</param>
-        void AddSaveItem(T item, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddSaveItem(T item);
 
         /// <summary>
         /// Add a single item to be saved in the current transaction operation.
@@ -177,9 +170,6 @@ namespace Amazon.DynamoDBv2.DataModel
         internal TracerProvider TracerProvider { get; set; }
 
         internal abstract void PopulateObjects();
-
-        /// <inheritdoc/>
-        public List<ConsumedCapacity> ConsumedCapacity { get; set; }
     }
 
     /// <summary>
@@ -226,7 +216,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public void AddSaveItem(T item, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddSaveItem(T item)
         {
             if (item == null) return;
 
@@ -236,7 +226,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Expression conditionExpression = CreateConditionExpressionForVersion(storage);
             SetNewVersion(storage);
 
-            AddDocumentTransaction(storage, conditionExpression, returnConsumedCapacity);
+            AddDocumentTransaction(storage, conditionExpression);
 
             var objectItem = new DynamoDBContext.ObjectWithItemStorage
             {
@@ -406,7 +396,6 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 objectItem.PopulateObject(_context, _config);
             }
-            ConsumedCapacity = DocumentTransaction.ConsumedCapacity;
         }
 
         private bool ShouldUseVersioning()
@@ -440,7 +429,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return DynamoDBContext.CreateConditionExpressionForVersion(storage, conversionConfig);
         }
 
-        private void AddDocumentTransaction(ItemStorage storage, Expression conditionExpression, ReturnConsumedCapacity returnConsumedCapacity = null)
+        private void AddDocumentTransaction(ItemStorage storage, Expression conditionExpression)
         {
             var hashKeyPropertyNames = storage.Config.HashKeyPropertyNames;
             var rangeKeyPropertyNames = storage.Config.RangeKeyPropertyNames;
@@ -460,8 +449,7 @@ namespace Amazon.DynamoDBv2.DataModel
             var operationConfig = new TransactWriteItemOperationConfig
             {
                 ConditionalExpression = conditionExpression,
-                ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
-                ReturnConsumedCapacity = returnConsumedCapacity
+                ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
             };
 
             // If there are no attributes left, we need to use PutItem
