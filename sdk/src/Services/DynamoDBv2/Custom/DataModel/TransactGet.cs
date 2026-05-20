@@ -20,6 +20,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Telemetry.Tracing;
 using ThirdParty.RuntimeBackports;
 
@@ -38,6 +39,14 @@ namespace Amazon.DynamoDBv2.DataModel
         /// This is only populated after a call to Execute.
         /// </remarks>
         List<object> UntypedResults { get; }
+
+        /// <summary>
+        /// List of non-generic results retrieved from DynamoDB.
+        /// </summary>
+        /// <remarks>
+        /// This is only populated after a call to Execute.
+        /// </remarks>
+        List<ConsumedCapacity> ConsumedCapacity { get;}
     }
 
     /// <summary>
@@ -127,6 +136,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         public List<object> UntypedResults { get; } = new();
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; internal set; }
     }
 
     /// <summary>
@@ -235,6 +247,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 UntypedResults.Add(result);
                 Results.Add(result);
             }
+            ConsumedCapacity = DocumentTransaction.ConsumedCapacity;
         }
     }
 
