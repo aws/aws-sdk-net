@@ -135,6 +135,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.CreateGrant(Amazon.KeyManagementService.Model.CreateGrantRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.CreateGrant(Amazon.KeyManagementService.Model.CreateGrantRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateGrantRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateGrantResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a grant that allows the specified AWS service principal to encrypt and decrypt data with the specified KMS key. The grant includes a SourceArn constraint that restricts the grant permissions to requests associated with the specified DynamoDB table.
+                </para>
+                <code
+                    title="To create a grant for a service principal"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-create-a-grant-for-a-service-principal-1477972226783" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.CreateKey(Amazon.KeyManagementService.Model.CreateKeyRequest)" />
             <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.CreateKey(Amazon.KeyManagementService.Model.CreateKeyRequest)" />
             <member name="T:Amazon.KeyManagementService.Model.CreateKeyRequest" />
@@ -1180,6 +1199,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListGrants(Amazon.KeyManagementService.Model.ListGrantsRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListGrants(Amazon.KeyManagementService.Model.ListGrantsRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ListGrantsRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ListGrantsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists grants for the specified KMS key that were created with a GranteeServicePrincipal. The response includes the GranteeServicePrincipal, RetiringServicePrincipal, and SourceArn constraint fields.
+                </para>
+                <code
+                    title="To list grants for a grantee service principal"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-list-grants-by-grantee-service-principal-1481067365390" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListKeyPolicies(Amazon.KeyManagementService.Model.ListKeyPoliciesRequest)" />
             <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListKeyPolicies(Amazon.KeyManagementService.Model.ListKeyPoliciesRequest)" />
             <member name="T:Amazon.KeyManagementService.Model.ListKeyPoliciesRequest" />
@@ -1270,6 +1308,25 @@
                     title="To list grants that the specified principal can retire"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
                     region="to-list-grants-that-the-specified-principal-can-retire-1481140499620" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListRetirableGrants(Amazon.KeyManagementService.Model.ListRetirableGrantsRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListRetirableGrants(Amazon.KeyManagementService.Model.ListRetirableGrantsRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ListRetirableGrantsRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ListRetirableGrantsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the grants that the specified AWS service principal can retire.
+                </para>
+                <code
+                    title="To list grants that the specified service principal can retire"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-list-grants-by-retiring-service-principal-1481140499621" />
             </example>
         </value>
     </doc>
