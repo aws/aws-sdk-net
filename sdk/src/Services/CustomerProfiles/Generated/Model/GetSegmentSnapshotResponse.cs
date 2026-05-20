@@ -65,7 +65,7 @@ namespace Amazon.CustomerProfiles.Model
         /// Gets and sets the property DestinationUri. 
         /// <para>
         /// The destination to which the segment will be exported. This field must be provided
-        /// if the request is not submitted from the Amazon Connect Admin Website.
+        /// if the request is not submitted from the Connect Customer Admin Website.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

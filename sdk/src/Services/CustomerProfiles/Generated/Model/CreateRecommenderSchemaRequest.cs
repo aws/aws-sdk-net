@@ -64,7 +64,7 @@ namespace Amazon.CustomerProfiles.Model
         /// Gets and sets the property Fields. 
         /// <para>
         /// A map of dataset type to column definitions that specifies which data columns to include
-        /// in the schema. Currently only the <c>_webAnalytics</c> key is supported.
+        /// in the schema. The <c>_webAnalytics</c> and <c>_catalogItem</c> keys are supported.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -72,7 +72,7 @@ namespace Amazon.CustomerProfiles.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=1, Max=2)]
         public Dictionary<string, List<RecommenderSchemaField>> Fields
         {
             get { return this._fields; }
