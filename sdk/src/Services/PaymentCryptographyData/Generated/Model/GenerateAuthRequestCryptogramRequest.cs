@@ -30,32 +30,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
-    /// Container for the parameters to the VerifyAuthRequestCryptogram operation.
-    /// Verifies Authorization Request Cryptogram (ARQC) for a EMV chip payment card authorization.
-    /// For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/data-operations.verifyauthrequestcryptogram.html">Verify
+    /// Container for the parameters to the GenerateAuthRequestCryptogram operation.
+    /// Generates an Authorization Request Cryptogram (ARQC) for an EMV chip payment card
+    /// authorization. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/data-operations.generateauthrequestcryptogram.html">Generate
     /// auth request cryptogram</a> in the <i>Amazon Web Services Payment Cryptography User
     /// Guide</i>.
     /// 
     ///  
     /// <para>
-    /// ARQC generation is done outside of Amazon Web Services Payment Cryptography and is
-    /// typically generated on a point of sale terminal for an EMV chip card to obtain payment
-    /// authorization during transaction time. For ARQC verification, you must first import
-    /// the ARQC generated outside of Amazon Web Services Payment Cryptography by calling
-    /// <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
-    /// This operation uses the imported ARQC and an major encryption key (DUKPT) created
-    /// by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
-    /// to either provide a boolean ARQC verification result or provide an APRC (Authorization
-    /// Response Cryptogram) response using Method 1 or Method 2. The <c>ARPC_METHOD_1</c>
-    /// uses <c>AuthResponseCode</c> to generate ARPC and <c>ARPC_METHOD_2</c> uses <c>CardStatusUpdate</c>
-    /// to generate ARPC. 
+    /// ARQC generation uses an Issuer Master Key (IMK) for application cryptograms (TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS)
+    /// to derive a session key, which is then used to generate the cryptogram from the provided
+    /// transaction data (when applicable). To use this operation, you must first create or
+    /// import an IMK-AC key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+    /// or <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
+    /// The <c>KeyModesOfUse</c> should be set to <c>DeriveKey</c> for the IMK-AC encryption
+    /// key.
     /// </para>
-    ///  
+    ///  <important> 
+    /// <para>
+    /// This operation is intended for development and testing scenarios only. It is not recommended
+    /// to use this operation as a substitute for card-based cryptogram generation in production
+    /// payment flows.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
     /// key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
     /// types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography
-    /// User Guide</i>.
+    /// User Guide</i>. 
     /// </para>
     ///  
     /// <para>
@@ -69,67 +71,22 @@ namespace Amazon.PaymentCryptographyData.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>VerifyCardValidationData</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>VerifyPinData</a> 
+    ///  <a>VerifyAuthRequestCryptogram</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class VerifyAuthRequestCryptogramRequest : AmazonPaymentCryptographyDataRequest
+    public partial class GenerateAuthRequestCryptogramRequest : AmazonPaymentCryptographyDataRequest
     {
-        private string _authRequestCryptogram;
-        private CryptogramAuthResponse _authResponseAttributes;
         private string _keyIdentifier;
         private MajorKeyDerivationMode _majorKeyDerivationMode;
         private SessionKeyDerivation _sessionKeyDerivationAttributes;
         private string _transactionData;
 
         /// <summary>
-        /// Gets and sets the property AuthRequestCryptogram. 
-        /// <para>
-        /// The auth request cryptogram imported into Amazon Web Services Payment Cryptography
-        /// for ARQC verification using a major encryption key and transaction data.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=16)]
-        public string AuthRequestCryptogram
-        {
-            get { return this._authRequestCryptogram; }
-            set { this._authRequestCryptogram = value; }
-        }
-
-        // Check to see if AuthRequestCryptogram property is set
-        internal bool IsSetAuthRequestCryptogram()
-        {
-            return this._authRequestCryptogram != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property AuthResponseAttributes. 
-        /// <para>
-        /// The attributes and values for auth request cryptogram verification. These parameters
-        /// are required in case using ARPC Method 1 or Method 2 for ARQC verification.
-        /// </para>
-        /// </summary>
-        public CryptogramAuthResponse AuthResponseAttributes
-        {
-            get { return this._authResponseAttributes; }
-            set { this._authResponseAttributes = value; }
-        }
-
-        // Check to see if AuthResponseAttributes property is set
-        internal bool IsSetAuthResponseAttributes()
-        {
-            return this._authResponseAttributes != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property KeyIdentifier. 
         /// <para>
-        /// The <c>keyARN</c> of the major encryption key that Amazon Web Services Payment Cryptography
-        /// uses for ARQC verification.
+        /// The <c>keyARN</c> of the IMK-AC (TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS) that Amazon Web
+        /// Services Payment Cryptography uses to generate the ARQC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]
@@ -148,9 +105,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property MajorKeyDerivationMode. 
         /// <para>
-        /// The method to use when deriving the major encryption key for ARQC verification within
-        /// Amazon Web Services Payment Cryptography. The same key derivation mode was used for
-        /// ARQC generation outside of Amazon Web Services Payment Cryptography.
+        /// The method to use when deriving the major encryption key for ARQC generation within
+        /// Amazon Web Services Payment Cryptography.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -169,9 +125,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property SessionKeyDerivationAttributes. 
         /// <para>
-        /// The attributes and values to use for deriving a session key for ARQC verification
-        /// within Amazon Web Services Payment Cryptography. The same attributes were used for
-        /// ARQC generation outside of Amazon Web Services Payment Cryptography.
+        /// The attributes and values to use for deriving a session key for ARQC generation within
+        /// Amazon Web Services Payment Cryptography.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -190,9 +145,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property TransactionData. 
         /// <para>
-        /// The transaction data that Amazon Web Services Payment Cryptography uses for ARQC verification.
-        /// The same transaction is used for ARQC generation outside of Amazon Web Services Payment
-        /// Cryptography.
+        /// The transaction data that Amazon Web Services Payment Cryptography uses for ARQC generation.
+        /// The same transaction data is used for ARQC verification by the issuer using <a>VerifyAuthRequestCryptogram</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=1024)]
