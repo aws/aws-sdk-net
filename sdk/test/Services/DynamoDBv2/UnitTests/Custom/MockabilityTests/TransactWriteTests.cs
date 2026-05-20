@@ -75,7 +75,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             var transactWrite = new Mock<ITransactWrite<T>>();
 
             transactWrite
-                .Setup(x => x.AddSaveItem(It.IsAny<T>()))
+                .Setup(x => x.AddSaveItem(It.IsAny<T>(), null))
                 .Callback((T item) => itemsToSave.Add(item));
 
             transactWrite.
