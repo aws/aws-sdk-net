@@ -41,6 +41,7 @@ namespace Amazon.PartnerCentralSelling.Model
         private string _customerBusinessProblem;
         private string _customerUseCase;
         private List<string> _deliveryModels = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ExpectedContractDuration _expectedContractDuration;
         private List<ExpectedCustomerSpend> _expectedCustomerSpend = AWSConfigs.InitializeCollections ? new List<ExpectedCustomerSpend>() : null;
         private string _otherCompetitorNames;
         private string _otherSolutionDescription;
@@ -259,6 +260,26 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetDeliveryModels()
         {
             return this._deliveryModels != null && (this._deliveryModels.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedContractDuration. 
+        /// <para>
+        /// Optional. The expected duration of the contract associated with this opportunity.
+        /// Partners use this value alongside expected customer spend to convert Total Contract
+        /// Value (TCV) into Monthly Recurring Revenue (MRR).
+        /// </para>
+        /// </summary>
+        public ExpectedContractDuration ExpectedContractDuration
+        {
+            get { return this._expectedContractDuration; }
+            set { this._expectedContractDuration = value; }
+        }
+
+        // Check to see if ExpectedContractDuration property is set
+        internal bool IsSetExpectedContractDuration()
+        {
+            return this._expectedContractDuration != null;
         }
 
         /// <summary>

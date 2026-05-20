@@ -2553,6 +2553,10 @@ namespace Amazon.CloudFront
         /// </summary>
         public static readonly ViewerMtlsMode Optional = new ViewerMtlsMode("optional");
         /// <summary>
+        /// Constant Passthrough for ViewerMtlsMode
+        /// </summary>
+        public static readonly ViewerMtlsMode Passthrough = new ViewerMtlsMode("passthrough");
+        /// <summary>
         /// Constant Required for ViewerMtlsMode
         /// </summary>
         public static readonly ViewerMtlsMode Required = new ViewerMtlsMode("required");

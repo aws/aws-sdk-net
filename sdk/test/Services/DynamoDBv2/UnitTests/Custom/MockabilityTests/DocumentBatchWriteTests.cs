@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
 {
@@ -10,7 +12,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
     public class DocumentBatchWriteTests
     {
         [TestMethod]
-        public void TestMockability_DocumentBatchWrite()
+        public async Task TestMockability_DocumentBatchWrite()
         {
             var itemsToPut = new List<Document>();
             var inMemoryTable = new List<Document>();
@@ -29,19 +31,19 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             Assert.AreEqual(2, itemsToPut.Count);
             Assert.AreEqual(0, inMemoryTable.Count);
 
-            batchWrite.Execute();
+            await batchWrite.ExecuteAsync(CancellationToken.None);
             Assert.AreEqual(0, itemsToPut.Count);
             Assert.AreEqual(2, inMemoryTable.Count);
 
             var firstDoc = inMemoryTable.First();
             Assert.AreEqual("value1", firstDoc["key1"].AsString());
-            
+
             var secondDoc = inMemoryTable.Skip(1).First();
             Assert.AreEqual("value2", secondDoc["key2"].AsString());
         }
 
         [TestMethod]
-        public void TestMockability_MultiTableDocumentBatchWrite()
+        public async Task TestMockability_MultiTableDocumentBatchWrite()
         {
             var itemsToPut_table1 = new List<Document>();
             var inMemory_table1 = new List<Document>();
@@ -60,7 +62,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             Assert.AreEqual(0, inMemory_table1.Count);
             Assert.AreEqual(0, inMemory_table2.Count);
 
-            multiBatchWrite.Execute();
+            await multiBatchWrite.ExecuteAsync(CancellationToken.None);
             Assert.AreEqual(1, inMemory_table1.Count);
             Assert.AreEqual(1, inMemory_table2.Count);
             Assert.AreEqual("value1", inMemory_table1.First()["key1"].AsString());
@@ -75,8 +77,9 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
                 .Setup(x => x.AddDocumentToPut(It.IsAny<Document>()))
                 .Callback((Document item) => itemsToPut.Add(item));
 
-            batchWrite.
-                Setup(x => x.Execute())
+            batchWrite
+                .Setup(x => x.ExecuteAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask)
                 .Callback(() =>
                 {
                     foreach (var item in itemsToPut)
@@ -103,12 +106,12 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
                 });
 
             multiBatchWrite
-                .Setup(x => x.Execute())
-                .Callback(() =>
+                .Setup(x => x.ExecuteAsync(It.IsAny<CancellationToken>()))
+                .Returns(async () =>
                 {
                     foreach (var batch in batches)
                     {
-                        batch.Execute();
+                        await batch.ExecuteAsync(CancellationToken.None);
                     }
                 });
 

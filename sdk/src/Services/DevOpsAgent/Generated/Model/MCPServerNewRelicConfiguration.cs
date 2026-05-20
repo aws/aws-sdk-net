@@ -43,7 +43,7 @@ namespace Amazon.DevOpsAgent.Model
         /// New Relic Account ID
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6)]
+        [AWSProperty(Required=true, Min=3, Max=7)]
         public string AccountId
         {
             get { return this._accountId; }

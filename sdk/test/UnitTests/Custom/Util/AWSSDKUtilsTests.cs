@@ -40,6 +40,7 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(regex.IsMatch(userAgentValue));
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
@@ -57,6 +58,7 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(regex.IsMatch(userAgentValue), $"User agent \"{userAgentValue}\" fails regex \"{regexStr}\"");
             Assert.IsTrue(userAgentValue.Contains("md/aws-sdk-dotnet-core#"));
         }
+#endif
 
         [TestMethod]
         [TestCategory("UnitTest")]

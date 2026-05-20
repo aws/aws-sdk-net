@@ -213,6 +213,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListNotebooks operation
+        ///</summary>
+        public IListNotebooksPaginator ListNotebooks(ListNotebooksRequest request) 
+        {
+            return new ListNotebooksPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNotifications operation
         ///</summary>
         public IListNotificationsPaginator ListNotifications(ListNotificationsRequest request) 

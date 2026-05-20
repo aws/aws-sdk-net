@@ -306,6 +306,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                         }
                     },
                     new CreateDashManifestConfiguration {
+                        AvailabilityStartTimeConfiguration = new DashAvailabilityStartTimeConfiguration { FixedAvailabilityStartTime = new DateTime(2026, 4, 17, 11, 0, 0, DateTimeKind.Utc) },
                         BaseUrls = new List<DashBaseUrl> {
                             new DashBaseUrl {
                                 DvbPriority = 2,

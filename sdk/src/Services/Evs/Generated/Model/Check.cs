@@ -104,7 +104,7 @@ namespace Amazon.Evs.Model
         ///  
         /// <para>
         /// If this check fails, you will need to add hosts so that your environment meets this
-        /// minimum requirement. Amazon EVS only supports environments with 4-16 hosts.
+        /// minimum requirement. Amazon EVS only supports environments with 4-32 hosts.
         /// </para>
         ///  </li> </ul>
         /// </summary>

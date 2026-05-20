@@ -31,11 +31,11 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateLambdaFunction operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// This API is in preview release for Connect Customer and is subject to change.
     /// 
     ///  
     /// <para>
-    /// Allows the specified Amazon Connect instance to access the specified Lambda function.
+    /// Allows the specified Connect Customer instance to access the specified Lambda function.
     /// </para>
     /// </summary>
     public partial class AssociateLambdaFunctionRequest : AmazonConnectRequest
@@ -89,7 +89,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

@@ -14,6 +14,7 @@
  */
 
 using System.IO;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Util.Internal
 {
@@ -21,20 +22,37 @@ namespace Amazon.Util.Internal
     /// Wrapper class over <see cref="Directory"/> operations.
     /// This change was done for testability.
     /// </summary>
+    [AWSIsBackwardsCompatible]
     public interface IDirectory
     {
+        /// <inheritdoc cref="Directory.Exists(string)"/>
+        bool Exists(string path);
+
         /// <inheritdoc cref="Directory.CreateDirectory(string)"/>
         DirectoryInfo CreateDirectory(string path);
         /// <inheritdoc cref="Directory.GetFiles(string, string)"/>
         string[] GetFiles(string path, string searchPattern);
+
+        /// <inheritdoc cref="Directory.Delete(string)"/>
+        void Delete(string path);
+
+        /// <summary>
+        /// Sets directory permissions to owner read/write/execute only (0700) on Unix/macOS. No-op on Windows.
+        /// </summary>
+        void SetDirectoryOwnerOnly(string path);
     }
 
     /// <inheritdoc cref="IDirectory"/>
     public class DirectoryRetriever : IDirectory
     {
+        public bool Exists(string path) => Directory.Exists(path);
+
         public DirectoryInfo CreateDirectory(string path) => Directory.CreateDirectory(path);
 
         public string[] GetFiles(string path, string searchPattern) => Directory.GetFiles(path, searchPattern);
 
+        public void Delete(string path) => Directory.Delete(path);
+
+        public void SetDirectoryOwnerOnly(string path) => FilePermissionHelper.SetDirectoryOwnerOnly(path);
     }
 }

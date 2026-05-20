@@ -92,7 +92,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property Namespace. 
         /// <para>
         /// The namespace prefix to filter memory records by. Searches for memory records in namespaces
-        /// that start with the provided prefix.
+        /// that start with the provided prefix. Either <c>namespace</c> or <c>namespacePath</c>
+        /// is required.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -112,7 +113,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property NamespacePath. 
         /// <para>
         /// Use namespacePath for hierarchical retrievals. Return all memory records where namespace
-        /// falls under the same parent hierarchy.
+        /// falls under the same parent hierarchy. Either <c>namespace</c> or <c>namespacePath</c>
+        /// is required.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMetricDataV2 operation.
-    /// Gets metric data from the specified Amazon Connect instance. 
+    /// Gets metric data from the specified Connect Customer instance. 
     /// 
     ///  
     /// <para>
@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
     /// <para>
     /// For a description of the historical metrics that are supported by <c>GetMetricDataV2</c>
     /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-    /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// definitions</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -160,7 +160,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The following filter keys correspond to Amazon Connect resources and are used for
+        /// The following filter keys correspond to Connect Customer resources and are used for
         /// authorizing requests. A <c>GetMetricDataV2</c> request requires at least one of these
         /// filters:
         /// </para>
@@ -233,7 +233,7 @@ namespace Amazon.Connect.Model
         ///  </li> <li> 
         /// <para>
         /// To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create
-        /// a historical metrics report</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// a historical metrics report</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// <para />
@@ -337,8 +337,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// For example, if <c>IntervalPeriod</c> is selected <c>THIRTY_MIN</c>, <c>StartTime</c>
-        /// and <c>EndTime</c> differs by 1 day, then Amazon Connect returns 48 results in the
-        /// response. Each result is aggregated by the THIRTY_MIN period. By default Amazon Connect
+        /// and <c>EndTime</c> differs by 1 day, then Connect Customer returns 48 results in the
+        /// response. Each result is aggregated by the THIRTY_MIN period. By default Connect Customer
         /// aggregates results based on the <c>TOTAL</c> interval period. 
         /// </para>
         ///  
@@ -419,7 +419,7 @@ namespace Amazon.Connect.Model
         /// The metrics to retrieve. Specify the name or metricId, groupings, and filters for
         /// each metric. The following historical metrics are available. For a description of
         /// each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-        /// definition</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// definition</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2962,7 +2962,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource. This includes the <c>instanceId</c>
-        /// an Amazon Connect instance.
+        /// an Connect Customer instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

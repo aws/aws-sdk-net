@@ -213,6 +213,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListPolicyEngineSummaries operation
+        ///</summary>
+        public IListPolicyEngineSummariesPaginator ListPolicyEngineSummaries(ListPolicyEngineSummariesRequest request) 
+        {
+            return new ListPolicyEngineSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPolicyGenerationAssets operation
         ///</summary>
         public IListPolicyGenerationAssetsPaginator ListPolicyGenerationAssets(ListPolicyGenerationAssetsRequest request) 
@@ -226,6 +234,22 @@ namespace Amazon.BedrockAgentCoreControl.Model
         public IListPolicyGenerationsPaginator ListPolicyGenerations(ListPolicyGenerationsRequest request) 
         {
             return new ListPolicyGenerationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicyGenerationSummaries operation
+        ///</summary>
+        public IListPolicyGenerationSummariesPaginator ListPolicyGenerationSummaries(ListPolicyGenerationSummariesRequest request) 
+        {
+            return new ListPolicyGenerationSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicySummaries operation
+        ///</summary>
+        public IListPolicySummariesPaginator ListPolicySummaries(ListPolicySummariesRequest request) 
+        {
+            return new ListPolicySummariesPaginator(this.client, request);
         }
 
         /// <summary>

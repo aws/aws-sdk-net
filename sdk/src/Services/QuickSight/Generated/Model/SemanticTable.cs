@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _alias;
         private string _destinationTableId;
         private RowLevelPermissionConfiguration _rowLevelPermissionConfiguration;
+        private TableSemanticMetadata _semanticMetadata;
 
         /// <summary>
         /// Gets and sets the property Alias. 
@@ -93,6 +94,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRowLevelPermissionConfiguration()
         {
             return this._rowLevelPermissionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SemanticMetadata. 
+        /// <para>
+        /// The column-level semantic metadata for this semantic table.
+        /// </para>
+        /// </summary>
+        public TableSemanticMetadata SemanticMetadata
+        {
+            get { return this._semanticMetadata; }
+            set { this._semanticMetadata = value; }
+        }
+
+        // Check to see if SemanticMetadata property is set
+        internal bool IsSetSemanticMetadata()
+        {
+            return this._semanticMetadata != null;
         }
 
     }

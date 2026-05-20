@@ -31,7 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociatePhoneNumberContactFlow operation.
-    /// Removes the flow association from a phone number claimed to your Amazon Connect instance.
+    /// Removes the flow association from a phone number claimed to your Connect Customer
+    /// instance.
     /// 
     ///  <important> 
     /// <para>
@@ -54,7 +55,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

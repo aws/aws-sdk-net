@@ -16,6 +16,8 @@
 using Amazon.Runtime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests.Runtime
 {
@@ -28,7 +30,7 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void ChainProcessMultipleProvidersCorrectly()
+        public async Task ChainProcessMultipleProvidersCorrectly()
         {
             var fakeToken1 = new AWSToken { Token = "1" };
             var fakeToken2 = new AWSToken { Token = "2" };
@@ -36,18 +38,18 @@ namespace AWSSDK.UnitTests.Runtime
 
             var mockProvider1 = new Mock<IAWSTokenProvider>();
             mockProvider1
-                .Setup(x => x.TryResolveToken(out fakeToken1))
-                .Returns(false);
+                .Setup(x => x.TryResolveTokenAsync(It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new TryResponse<AWSToken> { Success = false, Value = fakeToken1 });
 
             var mockProvider2 = new Mock<IAWSTokenProvider>();
             mockProvider2
-                .Setup(x => x.TryResolveToken(out fakeToken2))
-                .Returns(true); //<--- first in chain to resolve true
+                .Setup(x => x.TryResolveTokenAsync(It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new TryResponse<AWSToken> { Success = true, Value = fakeToken2 });
 
             var mockProvider3 = new Mock<IAWSTokenProvider>();
             mockProvider3
-                .Setup(x => x.TryResolveToken(out fakeToken3))
-                .Returns(true);
+                .Setup(x => x.TryResolveTokenAsync(It.IsAny<CancellationToken>()))
+                .ReturnsAsync(new TryResponse<AWSToken> { Success = true, Value = fakeToken3 });
 
             var chain =
                 new AWSTokenProviderChain(
@@ -55,10 +57,10 @@ namespace AWSSDK.UnitTests.Runtime
                     mockProvider2.Object,
                     mockProvider3.Object);
 
-            var success = chain.TryResolveToken(out var token);
+            var result = await chain.TryResolveTokenAsync();
 
-            Assert.IsTrue(success);
-            Assert.AreEqual(token.Token, fakeToken2.Token);
+            Assert.IsTrue(result.Success);
+            Assert.AreEqual(result.Value.Token, fakeToken2.Token);
         }
     }
 }

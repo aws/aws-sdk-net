@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Auth;
 
+#if NETFRAMEWORK
 namespace AWSSDK.UnitTests
 {
     [TestClass]
@@ -248,7 +249,6 @@ namespace AWSSDK.UnitTests
         }
 
 
-#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [TestCategory(@"Runtime\AsyncNetFramework")]
@@ -341,6 +341,6 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(exception.GetType() == typeof(AmazonServiceException));
             Assert.AreEqual(1, Tester.CallCount);
         }
-#endif
     }
 }
+#endif

@@ -30,14 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Payment request details union
+    /// The payment input details, which vary by payment type.
     /// </summary>
     public partial class PaymentInput
     {
         private CryptoX402PaymentInput _cryptox402;
 
         /// <summary>
-        /// Gets and sets the property CryptoX402.
+        /// Gets and sets the property CryptoX402. 
+        /// <para>
+        /// Input for a crypto X402 payment.
+        /// </para>
         /// </summary>
         public CryptoX402PaymentInput CryptoX402
         {

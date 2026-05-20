@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Payment manager session
+    /// A payment session for managing payment transactions.
     /// </summary>
     public partial class PaymentSession
     {
@@ -46,7 +46,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property AvailableLimits. 
         /// <para>
-        /// The available limits for this session after accounting for processed payments.
+        /// The current available spending limits.
         /// </para>
         /// </summary>
         public AvailableLimits AvailableLimits
@@ -64,7 +64,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when this payment session was created.
+        /// The timestamp when the session was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,7 +102,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Limits. 
         /// <para>
-        /// The spending limits for this session.
+        /// The spending limits for the payment session.
         /// </para>
         /// </summary>
         public SessionLimits Limits
@@ -139,7 +139,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentSessionId. 
         /// <para>
-        /// The unique identifier for this payment session.
+        /// The unique identifier of the payment session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=31, Max=31)]
@@ -158,7 +158,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The timestamp when this payment session was last updated.
+        /// The timestamp when the session was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -177,7 +177,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The user ID associated with this payment session.
+        /// The user ID associated with this session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=120)]

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// No user with the specified credentials was found in the Amazon Connect instance.
+    /// No user with the specified credentials was found in the Connect Customer instance.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

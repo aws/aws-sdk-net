@@ -84,6 +84,8 @@ namespace AWSSDK.UnitTests
             try
             {
                 Environment.SetEnvironmentVariable("AWS_REGION", region);
+                FallbackRegionFactory.Reset();
+
                 var config = new TestClientConfig();
                 
                 // Throws as expected here.
@@ -95,6 +97,7 @@ namespace AWSSDK.UnitTests
             finally
             {
                 Environment.SetEnvironmentVariable("AWS_REGION", currentRegion);
+                FallbackRegionFactory.Reset();
             }
         }
 

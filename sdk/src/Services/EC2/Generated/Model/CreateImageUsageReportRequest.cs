@@ -83,6 +83,7 @@ namespace Amazon.EC2.Model
         /// request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string ClientToken
         {
             get { return this._clientToken; }

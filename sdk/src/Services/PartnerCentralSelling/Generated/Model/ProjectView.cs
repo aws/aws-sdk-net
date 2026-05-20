@@ -36,6 +36,7 @@ namespace Amazon.PartnerCentralSelling.Model
     {
         private string _customerUseCase;
         private List<string> _deliveryModels = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ExpectedContractDuration _expectedContractDuration;
         private List<ExpectedCustomerSpend> _expectedCustomerSpend = AWSConfigs.InitializeCollections ? new List<ExpectedCustomerSpend>() : null;
         private string _otherSolutionDescription;
         private List<string> _salesActivities = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -81,6 +82,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetDeliveryModels()
         {
             return this._deliveryModels != null && (this._deliveryModels.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpectedContractDuration. 
+        /// <para>
+        /// Optional. The expected contract duration for this opportunity, representing the anticipated
+        /// length of the contract in the unit specified by <c>Term</c>.
+        /// </para>
+        /// </summary>
+        public ExpectedContractDuration ExpectedContractDuration
+        {
+            get { return this._expectedContractDuration; }
+            set { this._expectedContractDuration = value; }
+        }
+
+        // Check to see if ExpectedContractDuration property is set
+        internal bool IsSetExpectedContractDuration()
+        {
+            return this._expectedContractDuration != null;
         }
 
         /// <summary>

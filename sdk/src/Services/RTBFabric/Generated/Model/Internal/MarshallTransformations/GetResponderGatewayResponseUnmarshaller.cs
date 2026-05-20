@@ -100,6 +100,12 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     response.InboundLinksCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("linksRequestedCount", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.LinksRequestedCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("listenerConfig", targetDepth))
                 {
                     var unmarshaller = ListenerConfigUnmarshaller.Instance;

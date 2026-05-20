@@ -24,6 +24,7 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.Text.RegularExpressions;
 
+#if NETFRAMEWORK
 namespace AWSSDK.UnitTests
 {
     [TestClass]
@@ -206,3 +207,4 @@ namespace AWSSDK.UnitTests
         }
     }
 }
+#endif

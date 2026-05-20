@@ -133,7 +133,8 @@ namespace AWSSDK.UnitTests
             Assert.ThrowsException<ProcessAWSCredentialException>(() =>
                 new ProcessAWSCredentials($"{Executable} {ArgumentsSession}").DetermineProcessCredential());
         }
-        
+
+#if NETFRAMEWORK
         [TestMethod]
         public void ValidateRequiredFieldsCheck()
         {
@@ -146,6 +147,7 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual("System.ArgumentNullException", proc.InnerException.GetType().FullName);
                 Assert.IsTrue(proc.InnerException.ToString().Contains("System.ArgumentNullException: Value cannot be null.\r\nParameter name: awsAccessKeyId\r\n"));
             }
-        }                
+        }
+#endif
     }
 }

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// CloudWatch Logs destination for batch evaluation results
+    /// CloudWatch Logs destination for batch evaluation results.
     /// </summary>
     public partial class CloudWatchOutputConfig
     {

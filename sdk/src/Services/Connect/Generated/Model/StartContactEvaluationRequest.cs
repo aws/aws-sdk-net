@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the StartContactEvaluation operation.
-    /// Starts an empty evaluation in the specified Amazon Connect instance, using the given
+    /// Starts an empty evaluation in the specified Connect Customer instance, using the given
     /// evaluation form for the particular contact. The evaluation form version used for the
     /// contact evaluation corresponds to the currently activated version. If no version is
     /// activated for the evaluation form, the contact evaluation cannot be started. 
@@ -95,7 +95,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactId. 
         /// <para>
-        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// The identifier of the contact in this instance of Connect Customer. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -133,7 +133,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

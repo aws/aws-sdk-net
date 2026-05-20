@@ -76,14 +76,11 @@ namespace AWSSDK.UnitTests
 
                 var retryPolicy = new Mock21StandardRetryPolicy(config);
                 Handler = new RetryHandler(retryPolicy);
-                if (RuntimePipeline.Handlers.Find(h => h is RetryHandler) != null)
+                while (RuntimePipeline.Handlers.Find(h => h is RetryHandler) != null)
                 {
-                    RuntimePipeline.ReplaceHandler<RetryHandler>(Handler);
+                    RuntimePipeline.RemoveHandler<RetryHandler>();
                 }
-                else
-                {
-                    RuntimePipeline.AddHandler(Handler);
-                }
+                RuntimePipeline.AddHandler(Handler);
 
                 var executionContext = CreateTestContext(null, null, config);
                 doAction(executionContext, retryPolicy);
@@ -118,14 +115,21 @@ namespace AWSSDK.UnitTests
 
             requestContext.Request.Endpoint = new Uri("https://sqs.us-east-1.amazonaws.com");
 
-            // Uses PutObjectResponse.txt as a dummy HTTP response — same as RuntimePipelineTestBase.
-            // The actual response content is irrelevant; retry tests only need a non-null HttpResponse.
+#if NETFRAMEWORK
             var dummyResponse = MockWebResponse.CreateFromResource("PutObjectResponse.txt") as HttpWebResponse;
             return new Amazon.Runtime.Internal.ExecutionContext(requestContext,
                 new ResponseContext
                 {
                     HttpResponse = new HttpWebRequestResponseData(dummyResponse)
                 });
+#else
+            var dummyResponse = MockWebResponse.CreateFromResource("PutObjectResponse.txt") as System.Net.Http.HttpResponseMessage;
+            return new Amazon.Runtime.Internal.ExecutionContext(requestContext,
+                new ResponseContext
+                {
+                    HttpResponse = new HttpClientResponseData(dummyResponse)
+                });
+#endif
         }
 
         private AmazonSQSConfig CreateSQSConfig()
@@ -587,10 +591,9 @@ namespace AWSSDK.UnitTests
 
                 var retryPolicy = new Mock21StandardRetryPolicy(config);
                 Handler = new RetryHandler(retryPolicy);
-                if (RuntimePipeline.Handlers.Find(h => h is RetryHandler) != null)
-                    RuntimePipeline.ReplaceHandler<RetryHandler>(Handler);
-                else
-                    RuntimePipeline.AddHandler(Handler);
+                while (RuntimePipeline.Handlers.Find(h => h is RetryHandler) != null)
+                    RuntimePipeline.RemoveHandler<RetryHandler>();
+                RuntimePipeline.AddHandler(Handler);
 
                 var executionContext = CreateSqsReceiveMessageContext(config);
                 doAction(executionContext, retryPolicy);

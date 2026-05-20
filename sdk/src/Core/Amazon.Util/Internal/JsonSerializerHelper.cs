@@ -54,6 +54,7 @@ namespace Amazon.Util.Internal
     {
     }
 
+    [JsonSourceGenerationOptions(AllowTrailingCommas = true)]
     [JsonSerializable(typeof(Dictionary<string, string>))]
     public partial class DictionaryStringStringJsonSerializerContexts : JsonSerializerContext
     {
@@ -65,6 +66,7 @@ namespace Amazon.Util.Internal
 #endif
     }
 
+    [JsonSourceGenerationOptions(AllowTrailingCommas = true)]
     [JsonSerializable(typeof(Dictionary<string, Dictionary<string, string>>))]
     public partial class DictionaryStringDictionaryStringJsonSerializerContexts : JsonSerializerContext
     {
@@ -92,6 +94,7 @@ namespace Amazon.Util.Internal
     {
     }
 
+    [JsonSourceGenerationOptions(AllowTrailingCommas = true)]
     [JsonSerializable(typeof(Amazon.Runtime.Internal.ProcessCredentialVersion1))]
     public partial class ProcessCredentialVersion1JsonSerializerContexts : JsonSerializerContext
     {
@@ -130,6 +133,9 @@ namespace Amazon.Util.Internal
 #pragma warning disable CA1019 // Since this is a dummy implementation of JsonSerializableAttribute for pre .NET 8 targets we don't need the accessor.
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public sealed class JsonSerializableAttribute : Attribute { public JsonSerializableAttribute(Type type) { } }
+
+    [AttributeUsage(AttributeTargets.Class)]
+    public sealed class JsonSourceGenerationOptionsAttribute : Attribute { public bool AllowTrailingCommas { get; set; } }
 #pragma warning restore CA1019
 #endif
 }

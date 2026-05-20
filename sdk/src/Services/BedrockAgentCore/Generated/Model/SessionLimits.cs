@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Session spending limits
+    /// The spending limits configuration for a payment session.
     /// </summary>
     public partial class SessionLimits
     {
@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MaxSpendAmount. 
         /// <para>
-        /// The maximum amount that can be spent in this session.
+        /// The maximum amount that can be spent in the session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

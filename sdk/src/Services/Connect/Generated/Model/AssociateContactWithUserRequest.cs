@@ -78,13 +78,13 @@ namespace Amazon.Connect.Model
     ///  </li> <li> 
     /// <para>
     /// The service quota <i>Queues per routing profile per instance</i> applies to manually
-    /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-    /// Connect quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+    /// Customer quotas</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-    /// Connect endpoints and quotas</a>.
+    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+    /// Customer endpoints and quotas</a>.
     /// </para>
     /// </summary>
     public partial class AssociateContactWithUserRequest : AmazonConnectRequest
@@ -96,7 +96,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactId. 
         /// <para>
-        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// The identifier of the contact in this instance of Connect Customer. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -115,7 +115,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

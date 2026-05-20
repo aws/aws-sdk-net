@@ -3273,6 +3273,64 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type PauseState.
+    /// </summary>
+    public class PauseState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for PauseState
+        /// </summary>
+        public static readonly PauseState Active = new PauseState("Active");
+        /// <summary>
+        /// Constant Completed for PauseState
+        /// </summary>
+        public static readonly PauseState Completed = new PauseState("Completed");
+        /// <summary>
+        /// Constant Disabled for PauseState
+        /// </summary>
+        public static readonly PauseState Disabled = new PauseState("Disabled");
+        /// <summary>
+        /// Constant Scheduled for PauseState
+        /// </summary>
+        public static readonly PauseState Scheduled = new PauseState("Scheduled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PauseState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PauseState FindValue(string value)
+        {
+            return FindValue<PauseState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PauseState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PrincipalType.
     /// </summary>
     public class PrincipalType : ConstantClass

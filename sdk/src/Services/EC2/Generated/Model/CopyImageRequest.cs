@@ -167,6 +167,7 @@ namespace Amazon.EC2.Model
         /// idempotency in Amazon EC2 API requests</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -220,6 +221,7 @@ namespace Amazon.EC2.Model
         /// A description for the new AMI.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string Description
         {
             get { return this._description; }
@@ -421,7 +423,7 @@ namespace Amazon.EC2.Model
         /// The name of the new AMI.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=3, Max=128)]
         public string Name
         {
             get { return this._name; }

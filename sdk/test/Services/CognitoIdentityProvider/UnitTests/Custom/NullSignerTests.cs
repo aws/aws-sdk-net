@@ -25,14 +25,14 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("CognitoIdentityProvider")]
-        public void CheckToMakeSureProtocolNotSetForTempCreds()
+        public async Task CheckToMakeSureProtocolNotSetForTempCreds()
         {
             var client = new AmazonCognitoIdentityProviderClient("accessKeyId", "secretKey", "sessionToken", Amazon.RegionEndpoint.USEast1);
 
             Exception caughtException = null;
             try
             {
-                client.SignUp(new SignUpRequest
+                await client.SignUpAsync(new SignUpRequest
                 {
                     ClientId = "clientId",
                     Username = "username",

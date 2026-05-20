@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SubmitContactEvaluation operation.
-    /// Submits a contact evaluation in the specified Amazon Connect instance. Answers included
+    /// Submits a contact evaluation in the specified Connect Customer instance. Answers included
     /// in the request are merged with existing answers for the given evaluation. If no answers
     /// or notes are passed, the evaluation is submitted with the existing answers and notes.
     /// You can delete an answer or note by passing an empty object (<c>{}</c>) to the question
@@ -97,7 +97,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

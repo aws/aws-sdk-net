@@ -46,14 +46,11 @@ namespace AWSSDK.UnitTests
                 retryPolicy.ExponentialPower = exponentialPower ?? retryPolicy.ExponentialPower;
 
                 Handler = new RetryHandler(retryPolicy);
-                if(RuntimePipeline.Handlers.Find(h => h is RetryHandler) != null)
+                while (RuntimePipeline.Handlers.Find(h => h is RetryHandler) != null)
                 {
-                    RuntimePipeline.ReplaceHandler<RetryHandler>(Handler);
+                    RuntimePipeline.RemoveHandler<RetryHandler>();
                 }
-                else
-                {
-                    RuntimePipeline.AddHandler(Handler);
-                }
+                RuntimePipeline.AddHandler(Handler);
 
                 var executionContext = CreateTestContext(null, null, config);
 
@@ -414,6 +411,7 @@ namespace AWSSDK.UnitTests
             }, config);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -491,6 +489,7 @@ namespace AWSSDK.UnitTests
                 retryPolicy.AssertSdkRequestMatch(new string[] { "attempt=1; max=3", "attempt=1; max=3", "attempt=1; max=3" });
             }, config, capacityManager: null, exponentialPower: 1, exponentialBase: 1);
         }
+#endif
 
         [TestMethod]
         [TestCategory("UnitTest")]

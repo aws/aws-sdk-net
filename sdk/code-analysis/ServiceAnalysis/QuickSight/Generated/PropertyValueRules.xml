@@ -3670,6 +3670,11 @@
     <pattern>(?=^.{2,256}$)(?!.*\s)[0-9a-zA-Z-_.:=+@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.AdditionalNotes.Text</property>
+    <min>0</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.AggFunction.PeriodField</property>
     <max>256</max>
   </property-value-rule>
@@ -4648,6 +4653,11 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DataSetSemanticDescription.Text</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DataSetStringFilterCondition.ColumnName</property>
     <min>1</min>
     <max>128</max>
@@ -5530,6 +5540,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.InlineCustomInstruction.InstructionText</property>
+    <min>0</min>
+    <max>50000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.InputColumn.Id</property>
@@ -7496,6 +7511,11 @@
     <property>Amazon.QuickSight.Model.UntagColumnOperation.ColumnName</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UploadedDocumentMetadata.Name</property>
+    <min>1</min>
+    <max>127</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UploadSettings.Delimiter</property>

@@ -1045,6 +1045,7 @@ namespace AWSSDK.UnitTests.Custom.Custom.Runtime
                 }
             }
         }
+
         [TestMethod]
         public void ServiceSpecificEndpointWorksWithSsoProfile()
         {

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Summary of a payment instrument for list operations
+    /// Summary of a payment instrument for list operations.
     /// </summary>
     public partial class PaymentInstrumentSummary
     {

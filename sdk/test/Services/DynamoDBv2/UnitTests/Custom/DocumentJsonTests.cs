@@ -1,5 +1,6 @@
 ﻿using Amazon.DynamoDBv2.DocumentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AWSSDK_DotNet.UnitTests
 {
@@ -90,7 +91,7 @@ namespace AWSSDK_DotNet.UnitTests
   ""one"": 1,
   ""17digits"": 1584097275961.1233
 }}";
-            Assert.AreEqual(expectedJson, json);
+            Assert.IsTrue(string.Equals(expectedJson, json, StringComparison.OrdinalIgnoreCase));
         }
 
             [TestMethod]

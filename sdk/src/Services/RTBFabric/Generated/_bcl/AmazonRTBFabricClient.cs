@@ -374,6 +374,97 @@ namespace Amazon.RTBFabric
 
         #endregion
         
+        #region  AssociateCertificate
+
+
+        /// <summary>
+        /// Associates an ACM certificate with a responder gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateCertificate service method.</param>
+        /// 
+        /// <returns>The response from the AssociateCertificate service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because you exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/AssociateCertificate">REST API Reference for AssociateCertificate Operation</seealso>
+        public virtual AssociateCertificateResponse AssociateCertificate(AssociateCertificateRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateCertificateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates an ACM certificate with a responder gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateCertificate service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because you exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/AssociateCertificate">REST API Reference for AssociateCertificate Operation</seealso>
+        public virtual Task<AssociateCertificateResponse> AssociateCertificateAsync(AssociateCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateCertificateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateCertificateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateInboundExternalLink
 
 
@@ -568,6 +659,109 @@ namespace Amazon.RTBFabric
 
         #endregion
         
+        #region  CreateLinkRoutingRule
+
+
+        /// <summary>
+        /// Creates a routing rule for a link.
+        /// 
+        ///  
+        /// <para>
+        /// Routing rules use priority-based evaluation where lower priority numbers are evaluated
+        /// first. Each rule specifies conditions that must all match for the rule to apply.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLinkRoutingRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateLinkRoutingRule service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because you exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/CreateLinkRoutingRule">REST API Reference for CreateLinkRoutingRule Operation</seealso>
+        public virtual CreateLinkRoutingRuleResponse CreateLinkRoutingRule(CreateLinkRoutingRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateLinkRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLinkRoutingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLinkRoutingRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a routing rule for a link.
+        /// 
+        ///  
+        /// <para>
+        /// Routing rules use priority-based evaluation where lower priority numbers are evaluated
+        /// first. Each rule specifies conditions that must all match for the rule to apply.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLinkRoutingRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLinkRoutingRule service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because you exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/CreateLinkRoutingRule">REST API Reference for CreateLinkRoutingRule Operation</seealso>
+        public virtual Task<CreateLinkRoutingRuleResponse> CreateLinkRoutingRuleAsync(CreateLinkRoutingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateLinkRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLinkRoutingRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLinkRoutingRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateOutboundExternalLink
 
 
@@ -580,6 +774,10 @@ namespace Amazon.RTBFabric
         /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
         /// The request could not be completed because you do not have sufficient access to perform
         /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
         /// The request could not be completed because of an internal server error. Try your call
@@ -621,6 +819,10 @@ namespace Amazon.RTBFabric
         /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
         /// The request could not be completed because you do not have sufficient access to perform
         /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
         /// The request could not be completed because of an internal server error. Try your call
@@ -1009,6 +1211,91 @@ namespace Amazon.RTBFabric
 
         #endregion
         
+        #region  DeleteLinkRoutingRule
+
+
+        /// <summary>
+        /// Deletes a routing rule from a link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLinkRoutingRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLinkRoutingRule service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/DeleteLinkRoutingRule">REST API Reference for DeleteLinkRoutingRule Operation</seealso>
+        public virtual DeleteLinkRoutingRuleResponse DeleteLinkRoutingRule(DeleteLinkRoutingRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteLinkRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLinkRoutingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLinkRoutingRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a routing rule from a link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLinkRoutingRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLinkRoutingRule service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/DeleteLinkRoutingRule">REST API Reference for DeleteLinkRoutingRule Operation</seealso>
+        public virtual Task<DeleteLinkRoutingRuleResponse> DeleteLinkRoutingRuleAsync(DeleteLinkRoutingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteLinkRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLinkRoutingRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLinkRoutingRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteOutboundExternalLink
 
 
@@ -1107,6 +1394,10 @@ namespace Amazon.RTBFabric
         /// The request could not be completed because you do not have sufficient access to perform
         /// this action.
         /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
         /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
         /// The request could not be completed because of an internal server error. Try your call
         /// again.
@@ -1144,6 +1435,10 @@ namespace Amazon.RTBFabric
         /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
         /// The request could not be completed because you do not have sufficient access to perform
         /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
         /// The request could not be completed because of an internal server error. Try your call
@@ -1184,6 +1479,10 @@ namespace Amazon.RTBFabric
         /// The request could not be completed because you do not have sufficient access to perform
         /// this action.
         /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
         /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
         /// The request could not be completed because of an internal server error. Try your call
         /// again.
@@ -1222,6 +1521,10 @@ namespace Amazon.RTBFabric
         /// The request could not be completed because you do not have sufficient access to perform
         /// this action.
         /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
         /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
         /// The request could not be completed because of an internal server error. Try your call
         /// again.
@@ -1244,6 +1547,174 @@ namespace Amazon.RTBFabric
             options.ResponseUnmarshaller = DeleteResponderGatewayResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteResponderGatewayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateCertificate
+
+
+        /// <summary>
+        /// Removes a certificate association from a responder gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateCertificate service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateCertificate service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because you exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/DisassociateCertificate">REST API Reference for DisassociateCertificate Operation</seealso>
+        public virtual DisassociateCertificateResponse DisassociateCertificate(DisassociateCertificateRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateCertificateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a certificate association from a responder gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateCertificate service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because you exceeded a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/DisassociateCertificate">REST API Reference for DisassociateCertificate Operation</seealso>
+        public virtual Task<DisassociateCertificateResponse> DisassociateCertificateAsync(DisassociateCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateCertificateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateCertificateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCertificateAssociation
+
+
+        /// <summary>
+        /// Retrieves the details of a certificate association with a responder gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCertificateAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetCertificateAssociation service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetCertificateAssociation">REST API Reference for GetCertificateAssociation Operation</seealso>
+        public virtual GetCertificateAssociationResponse GetCertificateAssociation(GetCertificateAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCertificateAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCertificateAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetCertificateAssociationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the details of a certificate association with a responder gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCertificateAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCertificateAssociation service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetCertificateAssociation">REST API Reference for GetCertificateAssociation Operation</seealso>
+        public virtual Task<GetCertificateAssociationResponse> GetCertificateAssociationAsync(GetCertificateAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCertificateAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCertificateAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCertificateAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1418,6 +1889,83 @@ namespace Amazon.RTBFabric
             options.ResponseUnmarshaller = GetLinkResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetLinkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLinkRoutingRule
+
+
+        /// <summary>
+        /// Retrieves the details of a routing rule for a link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLinkRoutingRule service method.</param>
+        /// 
+        /// <returns>The response from the GetLinkRoutingRule service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetLinkRoutingRule">REST API Reference for GetLinkRoutingRule Operation</seealso>
+        public virtual GetLinkRoutingRuleResponse GetLinkRoutingRule(GetLinkRoutingRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetLinkRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLinkRoutingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetLinkRoutingRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the details of a routing rule for a link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLinkRoutingRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLinkRoutingRule service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/GetLinkRoutingRule">REST API Reference for GetLinkRoutingRule Operation</seealso>
+        public virtual Task<GetLinkRoutingRuleResponse> GetLinkRoutingRuleAsync(GetLinkRoutingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetLinkRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLinkRoutingRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetLinkRoutingRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1649,6 +2197,160 @@ namespace Amazon.RTBFabric
             options.ResponseUnmarshaller = GetResponderGatewayResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetResponderGatewayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCertificateAssociations
+
+
+        /// <summary>
+        /// Lists the certificate associations for a responder gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificateAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListCertificateAssociations service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListCertificateAssociations">REST API Reference for ListCertificateAssociations Operation</seealso>
+        public virtual ListCertificateAssociationsResponse ListCertificateAssociations(ListCertificateAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCertificateAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCertificateAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCertificateAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the certificate associations for a responder gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificateAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCertificateAssociations service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListCertificateAssociations">REST API Reference for ListCertificateAssociations Operation</seealso>
+        public virtual Task<ListCertificateAssociationsResponse> ListCertificateAssociationsAsync(ListCertificateAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCertificateAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCertificateAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCertificateAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLinkRoutingRules
+
+
+        /// <summary>
+        /// Lists the routing rules for a link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLinkRoutingRules service method.</param>
+        /// 
+        /// <returns>The response from the ListLinkRoutingRules service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListLinkRoutingRules">REST API Reference for ListLinkRoutingRules Operation</seealso>
+        public virtual ListLinkRoutingRulesResponse ListLinkRoutingRules(ListLinkRoutingRulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListLinkRoutingRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLinkRoutingRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListLinkRoutingRulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the routing rules for a link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLinkRoutingRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLinkRoutingRules service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/ListLinkRoutingRules">REST API Reference for ListLinkRoutingRules Operation</seealso>
+        public virtual Task<ListLinkRoutingRulesResponse> ListLinkRoutingRulesAsync(ListLinkRoutingRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListLinkRoutingRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLinkRoutingRulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLinkRoutingRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2366,6 +3068,91 @@ namespace Amazon.RTBFabric
             options.ResponseUnmarshaller = UpdateLinkModuleFlowResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateLinkModuleFlowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLinkRoutingRule
+
+
+        /// <summary>
+        /// Updates a routing rule for a link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLinkRoutingRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLinkRoutingRule service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/UpdateLinkRoutingRule">REST API Reference for UpdateLinkRoutingRule Operation</seealso>
+        public virtual UpdateLinkRoutingRuleResponse UpdateLinkRoutingRule(UpdateLinkRoutingRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLinkRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLinkRoutingRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLinkRoutingRuleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a routing rule for a link.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLinkRoutingRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLinkRoutingRule service method, as returned by RTBFabric.</returns>
+        /// <exception cref="Amazon.RTBFabric.Model.AccessDeniedException">
+        /// The request could not be completed because you do not have sufficient access to perform
+        /// this action.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ConflictException">
+        /// The request could not be completed because of a conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.InternalServerException">
+        /// The request could not be completed because of an internal server error. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ResourceNotFoundException">
+        /// The request could not be completed because the resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.RTBFabric.Model.ValidationException">
+        /// The request could not be completed because it fails satisfy the constraints specified
+        /// by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rtbfabric-2023-05-15/UpdateLinkRoutingRule">REST API Reference for UpdateLinkRoutingRule Operation</seealso>
+        public virtual Task<UpdateLinkRoutingRuleResponse> UpdateLinkRoutingRuleAsync(UpdateLinkRoutingRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLinkRoutingRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLinkRoutingRuleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateLinkRoutingRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion

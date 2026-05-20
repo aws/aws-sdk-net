@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NETFRAMEWORK
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
@@ -228,3 +229,4 @@ namespace AWSSDK_DotNet.UnitTests.EC2
         }
     }
 }
+#endif

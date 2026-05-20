@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchContacts operation.
-    /// Searches contacts in an Amazon Connect instance.
+    /// Searches contacts in an Connect Customer instance.
     /// </summary>
     public partial class SearchContactsRequest : AmazonConnectRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of Amazon Connect instance. You can find the instance ID in the Amazon
+        /// The identifier of Connect Customer instance. You can find the instance ID in the Amazon
         /// Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

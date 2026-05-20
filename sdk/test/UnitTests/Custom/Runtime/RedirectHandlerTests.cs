@@ -16,6 +16,7 @@ using System.Reflection;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 
+#if NETFRAMEWORK
 namespace AWSSDK.UnitTests
 {
     [TestClass()]
@@ -64,7 +65,6 @@ namespace AWSSDK.UnitTests
         }
 
 
-#if BCL
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
@@ -98,7 +98,6 @@ namespace AWSSDK.UnitTests
             await RuntimePipeline.InvokeAsync<AmazonWebServiceResponse>(context);
             Assert.AreEqual(2, Tester.CallCount);
         }
-#endif
     }
 
     public class HttpWebResponseHelper
@@ -121,3 +120,4 @@ namespace AWSSDK.UnitTests
         }
     }
 }
+#endif

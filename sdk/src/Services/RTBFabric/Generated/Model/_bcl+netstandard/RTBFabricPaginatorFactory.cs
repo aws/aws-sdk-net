@@ -37,6 +37,22 @@ namespace Amazon.RTBFabric.Model
         }
 
         /// <summary>
+        /// Paginator for ListCertificateAssociations operation
+        ///</summary>
+        public IListCertificateAssociationsPaginator ListCertificateAssociations(ListCertificateAssociationsRequest request) 
+        {
+            return new ListCertificateAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLinkRoutingRules operation
+        ///</summary>
+        public IListLinkRoutingRulesPaginator ListLinkRoutingRules(ListLinkRoutingRulesRequest request) 
+        {
+            return new ListLinkRoutingRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLinks operation
         ///</summary>
         public IListLinksPaginator ListLinks(ListLinksRequest request) 

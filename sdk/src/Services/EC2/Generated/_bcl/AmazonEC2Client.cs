@@ -21394,6 +21394,77 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeIpamPoolAllocations
+
+
+        /// <summary>
+        /// Describes IPAM pool allocations. You can describe all allocations owned by you across
+        /// all pools, or you can describe specific allocations by ID.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify <c>IpamPoolAllocationIds</c>, the results include only the specified
+        /// allocations. If you do not specify <c>IpamPoolAllocationIds</c>, the results include
+        /// all allocations owned by you. You can use <c>Filters</c> to narrow the results.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This action returns only allocations directly owned by you. To view all allocations
+        /// in a pool you own or that has been shared with you, including allocations owned by
+        /// other accounts, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPoolAllocations.html">GetIpamPoolAllocations</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPoolAllocations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamPoolAllocations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPoolAllocations">REST API Reference for DescribeIpamPoolAllocations Operation</seealso>
+        public virtual DescribeIpamPoolAllocationsResponse DescribeIpamPoolAllocations(DescribeIpamPoolAllocationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeIpamPoolAllocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamPoolAllocationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamPoolAllocationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes IPAM pool allocations. You can describe all allocations owned by you across
+        /// all pools, or you can describe specific allocations by ID.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify <c>IpamPoolAllocationIds</c>, the results include only the specified
+        /// allocations. If you do not specify <c>IpamPoolAllocationIds</c>, the results include
+        /// all allocations owned by you. You can use <c>Filters</c> to narrow the results.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This action returns only allocations directly owned by you. To view all allocations
+        /// in a pool you own or that has been shared with you, including allocations owned by
+        /// other accounts, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPoolAllocations.html">GetIpamPoolAllocations</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPoolAllocations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamPoolAllocations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPoolAllocations">REST API Reference for DescribeIpamPoolAllocations Operation</seealso>
+        public virtual Task<DescribeIpamPoolAllocationsResponse> DescribeIpamPoolAllocationsAsync(DescribeIpamPoolAllocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeIpamPoolAllocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamPoolAllocationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeIpamPoolAllocationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeIpamPools
 
 
@@ -39133,6 +39204,51 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyIpamPoolResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyIpamPoolResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyIpamPoolAllocation
+
+
+        /// <summary>
+        /// Modifies the description of an IPAM pool allocation. For more information, see <a
+        /// href="https://docs.aws.amazon.com/vpc/latest/ipam/modify-alloc-ipam.html">Modify an
+        /// IPAM pool allocation</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPoolAllocation service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIpamPoolAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPoolAllocation">REST API Reference for ModifyIpamPoolAllocation Operation</seealso>
+        public virtual ModifyIpamPoolAllocationResponse ModifyIpamPoolAllocation(ModifyIpamPoolAllocationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyIpamPoolAllocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamPoolAllocationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIpamPoolAllocationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the description of an IPAM pool allocation. For more information, see <a
+        /// href="https://docs.aws.amazon.com/vpc/latest/ipam/modify-alloc-ipam.html">Modify an
+        /// IPAM pool allocation</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPoolAllocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamPoolAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPoolAllocation">REST API Reference for ModifyIpamPoolAllocation Operation</seealso>
+        public virtual Task<ModifyIpamPoolAllocationResponse> ModifyIpamPoolAllocationAsync(ModifyIpamPoolAllocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyIpamPoolAllocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamPoolAllocationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyIpamPoolAllocationResponse>(request, options, cancellationToken);
         }
 
         #endregion

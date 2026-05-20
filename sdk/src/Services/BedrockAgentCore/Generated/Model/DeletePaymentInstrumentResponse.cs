@@ -30,12 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Response structure for deleting a payment instrument
-    /// 
-    ///  
-    /// <para>
-    /// Returns the deletion status with HTTP 200 OK status code on successful soft deletion.
-    /// </para>
+    /// Response structure for deleting a payment instrument.
     /// </summary>
     public partial class DeletePaymentInstrumentResponse : AmazonWebServiceResponse
     {

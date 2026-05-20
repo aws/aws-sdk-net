@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPaymentInstrumentBalance operation.
-    /// Get the balance of a payment instrument
+    /// Get the balance of a payment instrument.
     /// </summary>
     public partial class GetPaymentInstrumentBalanceRequest : AmazonBedrockAgentCoreRequest
     {
@@ -65,8 +65,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Chain. 
         /// <para>
-        /// The specific blockchain chain to query balance on. Required because balances are chain-specific
-        /// — the same wallet address may hold different token balances on different chains.
+        /// The specific blockchain chain to query balance on. Required because balances are chain-specific.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -142,8 +141,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Token. 
         /// <para>
-        /// The token to query balance for. Required to specify which supported token's balance
-        /// to return.
+        /// The token to query balance for. Only tokens supported for X402 payments are returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

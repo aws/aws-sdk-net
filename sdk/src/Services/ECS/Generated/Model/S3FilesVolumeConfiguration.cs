@@ -37,8 +37,8 @@ namespace Amazon.ECS.Model
     ///  <important> 
     /// <para>
     /// Your task definition must include a Task IAM Role. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-files-prereq-policies.html#s3-files-prereq-iam-compute-role">
-    /// IAM role for attaching your file system to AWS compute resources</a> for required
-    /// permissions.
+    /// IAM role for attaching your file system to Amazon Web Services compute resources</a>
+    /// for required permissions.
     /// </para>
     ///  </important>
     /// </summary>

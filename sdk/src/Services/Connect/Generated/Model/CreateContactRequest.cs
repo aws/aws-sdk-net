@@ -83,8 +83,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A custom key-value pair using an attribute map. The attributes are standard Amazon
-        /// Connect attributes, and can be accessed in flows just like any other contact attributes.
+        /// A custom key-value pair using an attribute map. The attributes are standard Connect
+        /// Customer attributes, and can be accessed in flows just like any other contact attributes.
         /// </para>
         ///  
         /// <para>
@@ -256,7 +256,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -297,7 +297,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The ID of the previous contact when creating a transfer contact. This value can be
         /// provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate
-        /// Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect
+        /// Connect Customer Contact Lens with external voice systems</a> in the <i>Connect Customer
         /// Administrator Guide</i>.
         /// </para>
         /// </summary>
@@ -342,7 +342,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property RelatedContactId. 
         /// <para>
-        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// The identifier of the contact in this instance of Connect Customer. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -362,7 +362,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property SegmentAttributes. 
         /// <para>
         /// A set of system defined key-value pairs stored on individual contact segments (unique
-        /// contact ID) using an attribute map. The attributes are standard Amazon Connect attributes.
+        /// contact ID) using an attribute map. The attributes are standard Connect Customer attributes.
         /// They can be accessed in flows.
         /// </para>
         ///  

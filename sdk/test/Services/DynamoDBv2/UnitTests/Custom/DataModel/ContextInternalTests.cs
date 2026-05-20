@@ -2,6 +2,7 @@
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
+using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
@@ -11,6 +12,8 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using DynamoDBContextConfig = Amazon.DynamoDBv2.DataModel.DynamoDBContextConfig;
+
+#if NETFRAMEWORK
 
 namespace AWSSDK_DotNet.UnitTests
 {
@@ -195,7 +198,7 @@ namespace AWSSDK_DotNet.UnitTests
                             Table = new TableDescription
                             {
                                 TableName = "TestGSIEntity",
-                                KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                                KeySchema = new List<KeySchemaElement>
                                 {
                                     new KeySchemaElement
                                     {
@@ -203,7 +206,7 @@ namespace AWSSDK_DotNet.UnitTests
                                         KeyType = KeyType.HASH
                                     }
                                 },
-                                AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                                AttributeDefinitions = new List<AttributeDefinition>
                                 {
                                     new AttributeDefinition
                                     {
@@ -231,12 +234,12 @@ namespace AWSSDK_DotNet.UnitTests
                                         AttributeType = ScalarAttributeType.S
                                     }
                                 },
-                                GlobalSecondaryIndexes = new System.Collections.Generic.List<GlobalSecondaryIndexDescription>
+                                GlobalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>
                                 {
                                     new GlobalSecondaryIndexDescription
                                     {
                                         IndexName = "GSI1",
-                                        KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                                        KeySchema = new List<KeySchemaElement>
                                         {
                                             new KeySchemaElement
                                             {
@@ -274,7 +277,7 @@ namespace AWSSDK_DotNet.UnitTests
                             Table = new TableDescription
                             {
                                 TableName = "TestRenamableAttributeEntity",
-                                KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                                KeySchema = new List<KeySchemaElement>
                                 {
                                     new KeySchemaElement
                                     {
@@ -287,7 +290,7 @@ namespace AWSSDK_DotNet.UnitTests
                                         KeyType = KeyType.RANGE
                                     }
                                 },
-                                AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                                AttributeDefinitions = new List<AttributeDefinition>
                                 {
                                     new AttributeDefinition
                                     {
@@ -310,7 +313,7 @@ namespace AWSSDK_DotNet.UnitTests
                         Table = new TableDescription
                         {
                             TableName = "ContextTestEntity",
-                            KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                            KeySchema = new List<KeySchemaElement>
                             {
                                 new KeySchemaElement
                                 {
@@ -323,7 +326,7 @@ namespace AWSSDK_DotNet.UnitTests
                                     KeyType = KeyType.RANGE
                                 }
                             },
-                            AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                            AttributeDefinitions = new List<AttributeDefinition>
                             {
                                 new AttributeDefinition
                                 {
@@ -345,7 +348,7 @@ namespace AWSSDK_DotNet.UnitTests
                     Table = new TableDescription
                     {
                         TableName = "TestEntityWithUpdateBehavior",
-                        KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                        KeySchema = new List<KeySchemaElement>
                         {
                             new KeySchemaElement
                             {
@@ -353,7 +356,7 @@ namespace AWSSDK_DotNet.UnitTests
                                 KeyType = KeyType.HASH
                             }
                         },
-                        AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                        AttributeDefinitions = new List<AttributeDefinition>
                         {
                             new AttributeDefinition
                             {
@@ -515,7 +518,7 @@ namespace AWSSDK_DotNet.UnitTests
             var queryConditional = QueryConditional.HashKeyEqualTo("Id", 1);
 
             // Act
-            var result = context.ConvertQueryConditional<ContextInternalTests.ContextTestEntity>(queryConditional, null);
+            var result = context.ConvertQueryConditional<ContextTestEntity>(queryConditional, null);
 
             // Assert
             Assert.IsNotNull(result);
@@ -549,7 +552,7 @@ namespace AWSSDK_DotNet.UnitTests
                 .AndRangeKeyEqualTo("Name", "test");
 
             // Act
-            var result = context.ConvertQueryConditional<ContextInternalTests.ContextTestEntity>(queryConditional, null);
+            var result = context.ConvertQueryConditional<ContextTestEntity>(queryConditional, null);
 
             // Assert
             Assert.IsNotNull(result);
@@ -593,7 +596,7 @@ namespace AWSSDK_DotNet.UnitTests
                 .HashKeysEqual(hashKeys)
                 .AndRangeKeyEqualTo("SK", "sort-1");
 
-            var result = context.ConvertQueryConditional<ContextInternalTests.TestRenamableAttributeEntity>(queryConditional, null);
+            var result = context.ConvertQueryConditional<TestRenamableAttributeEntity>(queryConditional, null);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -623,7 +626,7 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             // Act
-            var result = context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+            var result = context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig);
 
             // Assert
             Assert.IsNotNull(result);
@@ -650,7 +653,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void ConvertQueryByValue_WithExpressionAndQueryFilter_ThrowsInvalidOperationException()
         {
             // Arrange: provide both an expression filter and a QueryFilter which should be incompatible
-            Expression<Func<ContextInternalTests.ContextTestEntity, bool>> expr = e => e.Name == "foo";
+            Expression<Func<ContextTestEntity, bool>> expr = e => e.Name == "foo";
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
 
@@ -665,7 +668,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             // Act & Assert
             var ex = Assert.ThrowsException<InvalidOperationException>(() =>
-                context.ConvertQueryByValue<ContextInternalTests.ContextTestEntity>(1, QueryOperator.Equal, new object[] { "test" }, operationConfig));
+                context.ConvertQueryByValue<ContextTestEntity>(1, QueryOperator.Equal, new object[] { "test" }, operationConfig));
 
             Assert.IsTrue(ex.Message.Contains("Cannot specify both QueryFilter and ExpressionFilter in the same operation configuration. Please use one or the other."), "Unexpected exception message: " + ex.Message);
         }
@@ -675,7 +678,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void ConvertQueryConditional_WithNullQueryConditional_ThrowsArgumentNullException()
         {
             // Act
-            context.ConvertQueryConditional<ContextInternalTests.ContextTestEntity>(null, null);
+            context.ConvertQueryConditional<ContextTestEntity>(null, null);
         }
 
         [TestMethod]
@@ -686,14 +689,14 @@ namespace AWSSDK_DotNet.UnitTests
             var queryConditional = QueryConditional.HashKeysEqual(null);
 
             // Act
-            context.ConvertQueryConditional<ContextInternalTests.ContextTestEntity>(queryConditional, null);
+            context.ConvertQueryConditional<ContextTestEntity>(queryConditional, null);
         }
 
         [TestMethod]
         public void ConvertQueryConditional_WithQueryFilter_ReturnsValidSearch()
         {
             // Arrange
-            var queryFilter = new System.Collections.Generic.List<ScanCondition>
+            var queryFilter = new List<ScanCondition>
             {
                 new ScanCondition("Name", ScanOperator.Equal, "foo")
             };
@@ -704,7 +707,7 @@ namespace AWSSDK_DotNet.UnitTests
             var queryConditional = QueryConditional.HashKeyEqualTo("Id", 1);
 
             // Act
-            var result = context.ConvertQueryConditional<ContextInternalTests.ContextTestEntity>(queryConditional, operationConfig);
+            var result = context.ConvertQueryConditional<ContextTestEntity>(queryConditional, operationConfig);
 
             // Assert
             Assert.IsNotNull(result);
@@ -746,7 +749,7 @@ namespace AWSSDK_DotNet.UnitTests
             try
             {
                 // Act
-                context.ConvertQueryByValue<ContextInternalTests.ContextTestEntity>(hashKeys, operationConfig, null);
+                context.ConvertQueryByValue<ContextTestEntity>(hashKeys, operationConfig, null);
             }
             catch (InvalidOperationException ex)
             {
@@ -769,7 +772,7 @@ namespace AWSSDK_DotNet.UnitTests
             try
             {
                 // Act
-                context.ConvertQueryByValue<ContextInternalTests.TestGSIEntity>("GsiHash", operationConfig, null);
+                context.ConvertQueryByValue<TestGSIEntity>("GsiHash", operationConfig, null);
             }
             catch (InvalidOperationException ex)
             {
@@ -792,7 +795,7 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             // Act
-            var result = context.ConvertFromQuery<ContextInternalTests.ContextTestEntity>(queryConfig, null);
+            var result = context.ConvertFromQuery<ContextTestEntity>(queryConfig, null);
 
             // Assert
             Assert.IsNotNull(result);
@@ -817,7 +820,7 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             // Act
-            var result = context.ConvertFromQuery<ContextInternalTests.ContextTestEntity>(request, null);
+            var result = context.ConvertFromQuery<ContextTestEntity>(request, null);
 
             // Assert
             Assert.IsNotNull(result);
@@ -832,7 +835,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertQueryByValue_WithRangeEqualCondition_UsesQueryFilterNotKeyExpression()
         {
-            var result = context.ConvertQueryByValue<ContextInternalTests.ContextTestEntity>(1, QueryOperator.Equal, new object[] { "test" }, null);
+            var result = context.ConvertQueryByValue<ContextTestEntity>(1, QueryOperator.Equal, new object[] { "test" }, null);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -860,7 +863,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertQueryByValue_WithBetweenOperator_UsesQueryFilterNotKeyExpression()
         {
-            var result = context.ConvertQueryByValue<ContextInternalTests.ContextTestEntity>(1, QueryOperator.Between, new object[] { "a", "z" }, null);
+            var result = context.ConvertQueryByValue<ContextTestEntity>(1, QueryOperator.Between, new object[] { "a", "z" }, null);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -889,7 +892,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertQueryByValue_WithRangeEqualCondition_AndExpressionFilter_BuildsKeyAndFilterExpressions()
         {
-            Expression<Func<ContextInternalTests.ContextTestEntity, bool>> expr = e => e.Name == "bar";
+            Expression<Func<ContextTestEntity, bool>> expr = e => e.Name == "bar";
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
             var operationConfig = new DynamoDBOperationConfig
@@ -897,7 +900,7 @@ namespace AWSSDK_DotNet.UnitTests
                 Expression = filterExpr
             };
 
-            var result = context.ConvertQueryByValue<ContextInternalTests.ContextTestEntity>(1, QueryOperator.Equal, new object[] { "test" }, operationConfig);
+            var result = context.ConvertQueryByValue<ContextTestEntity>(1, QueryOperator.Equal, new object[] { "test" }, operationConfig);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -926,7 +929,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ConvertQueryByValue_WithBetweenOperator_AndExpressionFilter_BuildsKeyAndFilterExpressions()
         {
-            Expression<Func<ContextInternalTests.ContextTestEntity, bool>> expr = e => e.Id == 1;
+            Expression<Func<ContextTestEntity, bool>> expr = e => e.Id == 1;
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
             var operationConfig = new DynamoDBOperationConfig
@@ -934,7 +937,7 @@ namespace AWSSDK_DotNet.UnitTests
                 Expression = filterExpr
             };
 
-            var result = context.ConvertQueryByValue<ContextInternalTests.ContextTestEntity>(1, QueryOperator.Between, new object[] { "a", "z" }, operationConfig);
+            var result = context.ConvertQueryByValue<ContextTestEntity>(1, QueryOperator.Between, new object[] { "a", "z" }, operationConfig);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -966,7 +969,7 @@ namespace AWSSDK_DotNet.UnitTests
                 .AndHashKeyEqualTo("GsiHash2", "hashValue2")
                 .AndRangeKeyBetween("GsiRange", "a", "z");
 
-            Expression<Func<ContextInternalTests.TestGSIEntity, bool>> expr = e => e.Id == 1;
+            Expression<Func<TestGSIEntity, bool>> expr = e => e.Id == 1;
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
             var operationConfig = new DynamoDBOperationConfig
@@ -975,7 +978,7 @@ namespace AWSSDK_DotNet.UnitTests
                 IndexName = "GSI1"
             };
 
-            var result = context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+            var result = context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -1013,7 +1016,7 @@ namespace AWSSDK_DotNet.UnitTests
                 .AndHashKeyEqualTo("GsiHash2", "hashValue2")
                 .AndRangeKeyLessThanOrEqual("GsiRange", "m");
 
-            Expression<Func<ContextInternalTests.TestGSIEntity, bool>> expr = e => e.Id == 1;
+            Expression<Func<TestGSIEntity, bool>> expr = e => e.Id == 1;
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
             var operationConfig = new DynamoDBOperationConfig
@@ -1022,7 +1025,7 @@ namespace AWSSDK_DotNet.UnitTests
                 IndexName = "GSI1"
             };
 
-            var result = context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+            var result = context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -1057,7 +1060,7 @@ namespace AWSSDK_DotNet.UnitTests
                 .AndHashKeyEqualTo("GsiHash2", "hashValue2")
                 .AndRangeKeyLessThan("GsiRange", "m");
 
-            Expression<Func<ContextInternalTests.TestGSIEntity, bool>> expr = e => e.Id == 1;
+            Expression<Func<TestGSIEntity, bool>> expr = e => e.Id == 1;
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
             var operationConfig = new DynamoDBOperationConfig
@@ -1066,7 +1069,7 @@ namespace AWSSDK_DotNet.UnitTests
                 IndexName = "GSI1"
             };
 
-            var result = context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+            var result = context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -1101,7 +1104,7 @@ namespace AWSSDK_DotNet.UnitTests
                 .AndHashKeyEqualTo("GsiHash2", "hashValue2")
                 .AndRangeKeyGreaterThanOrEqual("GsiRange", "m");
 
-            Expression<Func<ContextInternalTests.TestGSIEntity, bool>> expr = e => e.Id == 1;
+            Expression<Func<TestGSIEntity, bool>> expr = e => e.Id == 1;
             var filterExpr = new ContextExpression();
             filterExpr.SetFilter(expr);
             var operationConfig = new DynamoDBOperationConfig
@@ -1110,7 +1113,7 @@ namespace AWSSDK_DotNet.UnitTests
                 IndexName = "GSI1"
             };
 
-            var result = context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+            var result = context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig);
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Search);
@@ -1155,7 +1158,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             try
             {
-                context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+                context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig);
             }
             catch (InvalidOperationException ex)
             {
@@ -1179,7 +1182,7 @@ namespace AWSSDK_DotNet.UnitTests
             try
             {
                 // Act
-                context.ConvertQueryConditional<ContextInternalTests.ContextTestEntity>(queryConditional, null);
+                context.ConvertQueryConditional<ContextTestEntity>(queryConditional, null);
             }
             catch (InvalidOperationException ex)
             {
@@ -1206,7 +1209,7 @@ namespace AWSSDK_DotNet.UnitTests
             try
             {
                 // Act
-                context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+                context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig);
             }
             catch (InvalidOperationException ex)
             {
@@ -1232,7 +1235,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             try
             {
-                context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+                context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig);
             }
             catch (InvalidOperationException ex)
             {
@@ -1279,11 +1282,11 @@ namespace AWSSDK_DotNet.UnitTests
                     Table = new TableDescription
                     {
                         TableName = "TestEntityWithUpdateBehavior",
-                        KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                        KeySchema = new List<KeySchemaElement>
                         {
                             new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH }
                         },
-                        AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                        AttributeDefinitions = new List<AttributeDefinition>
                         {
                             new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N }
                         }
@@ -1311,11 +1314,11 @@ namespace AWSSDK_DotNet.UnitTests
                     Table = new TableDescription
                     {
                         TableName = "TestEntityWithDeepFlatten",
-                        KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                        KeySchema = new List<KeySchemaElement>
                         {
                             new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH }
                         },
-                        AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                        AttributeDefinitions = new List<AttributeDefinition>
                         {
                             new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N }
                         }
@@ -1343,11 +1346,11 @@ namespace AWSSDK_DotNet.UnitTests
                     Table = new TableDescription
                     {
                         TableName = "TestEntityWithDeepFlattenPartial",
-                        KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                        KeySchema = new List<KeySchemaElement>
                         {
                             new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH }
                         },
-                        AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                        AttributeDefinitions = new List<AttributeDefinition>
                         {
                             new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N }
                         }
@@ -1373,11 +1376,11 @@ namespace AWSSDK_DotNet.UnitTests
                     Table = new TableDescription
                     {
                         TableName = "TestEntityWithSiblingFlatten",
-                        KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                        KeySchema = new List<KeySchemaElement>
                         {
                             new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH }
                         },
-                        AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                        AttributeDefinitions = new List<AttributeDefinition>
                         {
                             new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N }
                         }
@@ -1416,11 +1419,11 @@ namespace AWSSDK_DotNet.UnitTests
                     Table = new TableDescription
                     {
                         TableName = "TestEntityWithUpdateBehavior",
-                        KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                        KeySchema = new List<KeySchemaElement>
                         {
                             new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH }
                         },
-                        AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                        AttributeDefinitions = new List<AttributeDefinition>
                         {
                             new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N }
                         }
@@ -1477,11 +1480,11 @@ namespace AWSSDK_DotNet.UnitTests
                     Table = new TableDescription
                     {
                         TableName = "TestEntityWithUpdateBehavior",
-                        KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                        KeySchema = new List<KeySchemaElement>
                         {
                             new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH }
                         },
-                        AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                        AttributeDefinitions = new List<AttributeDefinition>
                         {
                             new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N }
                         }
@@ -1518,11 +1521,11 @@ namespace AWSSDK_DotNet.UnitTests
                     Table = new TableDescription
                     {
                         TableName = "TestEntityWithSiblingFlatten",
-                        KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                        KeySchema = new List<KeySchemaElement>
                         {
                             new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH }
                         },
-                        AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                        AttributeDefinitions = new List<AttributeDefinition>
                         {
                             new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N }
                         }
@@ -1696,3 +1699,5 @@ namespace AWSSDK_DotNet.UnitTests
         }
     }
 }
+
+#endif

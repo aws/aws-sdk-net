@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.BedrockRuntime;
 using Amazon.Runtime;
@@ -33,7 +34,7 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]        
-        public void ValidServiceSpecificTokenConfigured()
+        public async Task ValidServiceSpecificTokenConfigured()
         {
             var originalValue = Environment.GetEnvironmentVariable("AWS_BEARER_TOKEN_BEDROCK");
             try
@@ -41,7 +42,9 @@ namespace AWSSDK.UnitTests.Runtime
                 Environment.SetEnvironmentVariable("AWS_BEARER_TOKEN_BEDROCK", BedrockToken);
                 using (var client = new AmazonBedrockRuntimeClient())
                 {
-                    Assert.IsTrue(client.Config.AWSTokenProvider.TryResolveToken(out var token));
+                    var tokenResult = await client.Config.AWSTokenProvider.TryResolveTokenAsync();
+                    Assert.IsTrue(tokenResult.Success);
+                    var token = tokenResult.Value;
                     Assert.AreEqual(BedrockToken, token.Token);
                     Assert.IsTrue(client.Config.AuthSchemePreference[0] == "httpBearerAuth");
                 }
@@ -78,7 +81,7 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]        
-        public void TokenConfiguredWithAuthSchemePreference()
+        public async Task TokenConfiguredWithAuthSchemePreference()
         {
             var originalBedrock = Environment.GetEnvironmentVariable("AWS_BEARER_TOKEN_BEDROCK");
             var originalAuth = Environment.GetEnvironmentVariable("AWS_AUTH_SCHEME_PREFERENCE");
@@ -88,7 +91,9 @@ namespace AWSSDK.UnitTests.Runtime
                 Environment.SetEnvironmentVariable("AWS_AUTH_SCHEME_PREFERENCE", "sigv4,httpBearerAuth");
                 using (var client = new AmazonBedrockRuntimeClient())
                 {
-                    Assert.IsTrue(client.Config.AWSTokenProvider.TryResolveToken(out var token));
+                    var tokenResult = await client.Config.AWSTokenProvider.TryResolveTokenAsync();
+                    Assert.IsTrue(tokenResult.Success);
+                    var token = tokenResult.Value;
                     Assert.IsTrue(client.Config.AuthSchemePreference[0] == "httpBearerAuth");
                     Assert.AreEqual(BedrockToken, token.Token);
                 }
@@ -103,7 +108,7 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]        
-        public void ExplicitServiceConfigTakesPrecedence()
+        public async Task ExplicitServiceConfigTakesPrecedence()
         {
             var originalValue = Environment.GetEnvironmentVariable("AWS_BEARER_TOKEN_BEDROCK");
             try
@@ -117,7 +122,9 @@ namespace AWSSDK.UnitTests.Runtime
 
                 using (var client = new AmazonBedrockRuntimeClient(config))
                 {
-                    Assert.IsTrue(client.Config.AWSTokenProvider.TryResolveToken(out var token));
+                    var tokenResult = await client.Config.AWSTokenProvider.TryResolveTokenAsync();
+                    Assert.IsTrue(tokenResult.Success);
+                    var token = tokenResult.Value;
                     Assert.AreEqual(FooToken, token.Token);
                     Assert.AreSame(explicitProvider, client.Config.AWSTokenProvider);
                 }

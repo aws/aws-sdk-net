@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// StripePrivy configuration output with secret ARNs
+    /// Stripe Privy configuration output with secret ARNs.
     /// </summary>
     public partial class StripePrivyConfigurationOutput
     {

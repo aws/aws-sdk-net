@@ -17,6 +17,7 @@ using Amazon.Util.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
+#if NETFRAMEWORK
 namespace AWSSDK.UnitTests
 {
     [TestClass]
@@ -65,3 +66,4 @@ namespace AWSSDK.UnitTests
         }
     }
 }
+#endif

@@ -348,6 +348,47 @@ namespace Amazon.SecurityAgent
 
         #endregion
         
+        #region  BatchDeleteCodeReviews
+
+
+        /// <summary>
+        /// Deletes one or more code reviews from an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteCodeReviews service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteCodeReviews service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDeleteCodeReviews">REST API Reference for BatchDeleteCodeReviews Operation</seealso>
+        public virtual BatchDeleteCodeReviewsResponse BatchDeleteCodeReviews(BatchDeleteCodeReviewsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteCodeReviewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteCodeReviewsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteCodeReviewsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes one or more code reviews from an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteCodeReviews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteCodeReviews service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDeleteCodeReviews">REST API Reference for BatchDeleteCodeReviews Operation</seealso>
+        public virtual Task<BatchDeleteCodeReviewsResponse> BatchDeleteCodeReviewsAsync(BatchDeleteCodeReviewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteCodeReviewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteCodeReviewsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDeleteCodeReviewsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchDeletePentests
 
 
@@ -499,6 +540,129 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = BatchGetArtifactMetadataResponseUnmarshaller.Instance;
             
             return InvokeAsync<BatchGetArtifactMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetCodeReviewJobs
+
+
+        /// <summary>
+        /// Retrieves information about one or more code review jobs in an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeReviewJobs service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCodeReviewJobs service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetCodeReviewJobs">REST API Reference for BatchGetCodeReviewJobs Operation</seealso>
+        public virtual BatchGetCodeReviewJobsResponse BatchGetCodeReviewJobs(BatchGetCodeReviewJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetCodeReviewJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCodeReviewJobsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCodeReviewJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about one or more code review jobs in an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeReviewJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCodeReviewJobs service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetCodeReviewJobs">REST API Reference for BatchGetCodeReviewJobs Operation</seealso>
+        public virtual Task<BatchGetCodeReviewJobsResponse> BatchGetCodeReviewJobsAsync(BatchGetCodeReviewJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetCodeReviewJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCodeReviewJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetCodeReviewJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetCodeReviewJobTasks
+
+
+        /// <summary>
+        /// Retrieves information about one or more tasks within a code review job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeReviewJobTasks service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCodeReviewJobTasks service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetCodeReviewJobTasks">REST API Reference for BatchGetCodeReviewJobTasks Operation</seealso>
+        public virtual BatchGetCodeReviewJobTasksResponse BatchGetCodeReviewJobTasks(BatchGetCodeReviewJobTasksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetCodeReviewJobTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCodeReviewJobTasksResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCodeReviewJobTasksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about one or more tasks within a code review job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeReviewJobTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCodeReviewJobTasks service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetCodeReviewJobTasks">REST API Reference for BatchGetCodeReviewJobTasks Operation</seealso>
+        public virtual Task<BatchGetCodeReviewJobTasksResponse> BatchGetCodeReviewJobTasksAsync(BatchGetCodeReviewJobTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetCodeReviewJobTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCodeReviewJobTasksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetCodeReviewJobTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetCodeReviews
+
+
+        /// <summary>
+        /// Retrieves information about one or more code reviews in an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeReviews service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCodeReviews service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetCodeReviews">REST API Reference for BatchGetCodeReviews Operation</seealso>
+        public virtual BatchGetCodeReviewsResponse BatchGetCodeReviews(BatchGetCodeReviewsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetCodeReviewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCodeReviewsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCodeReviewsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about one or more code reviews in an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeReviews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCodeReviews service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetCodeReviews">REST API Reference for BatchGetCodeReviews Operation</seealso>
+        public virtual Task<BatchGetCodeReviewsResponse> BatchGetCodeReviewsAsync(BatchGetCodeReviewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetCodeReviewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCodeReviewsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetCodeReviewsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -790,6 +954,49 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCodeReview
+
+
+        /// <summary>
+        /// Creates a new code review configuration in an agent space. A code review defines the
+        /// parameters for automated security-focused code analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCodeReview service method.</param>
+        /// 
+        /// <returns>The response from the CreateCodeReview service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateCodeReview">REST API Reference for CreateCodeReview Operation</seealso>
+        public virtual CreateCodeReviewResponse CreateCodeReview(CreateCodeReviewRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCodeReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCodeReviewResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCodeReviewResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new code review configuration in an agent space. A code review defines the
+        /// parameters for automated security-focused code analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCodeReview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCodeReview service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateCodeReview">REST API Reference for CreateCodeReview Operation</seealso>
+        public virtual Task<CreateCodeReviewResponse> CreateCodeReviewAsync(CreateCodeReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCodeReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCodeReviewResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCodeReviewResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1753,6 +1960,133 @@ namespace Amazon.SecurityAgent
 
         #endregion
         
+        #region  ListCodeReviewJobsForCodeReview
+
+
+        /// <summary>
+        /// Returns a paginated list of code review job summaries for the specified code review
+        /// configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeReviewJobsForCodeReview service method.</param>
+        /// 
+        /// <returns>The response from the ListCodeReviewJobsForCodeReview service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListCodeReviewJobsForCodeReview">REST API Reference for ListCodeReviewJobsForCodeReview Operation</seealso>
+        public virtual ListCodeReviewJobsForCodeReviewResponse ListCodeReviewJobsForCodeReview(ListCodeReviewJobsForCodeReviewRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCodeReviewJobsForCodeReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeReviewJobsForCodeReviewResponseUnmarshaller.Instance;
+
+            return Invoke<ListCodeReviewJobsForCodeReviewResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of code review job summaries for the specified code review
+        /// configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeReviewJobsForCodeReview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCodeReviewJobsForCodeReview service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListCodeReviewJobsForCodeReview">REST API Reference for ListCodeReviewJobsForCodeReview Operation</seealso>
+        public virtual Task<ListCodeReviewJobsForCodeReviewResponse> ListCodeReviewJobsForCodeReviewAsync(ListCodeReviewJobsForCodeReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCodeReviewJobsForCodeReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeReviewJobsForCodeReviewResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCodeReviewJobsForCodeReviewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCodeReviewJobTasks
+
+
+        /// <summary>
+        /// Returns a paginated list of task summaries for the specified code review job, optionally
+        /// filtered by step name or category.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeReviewJobTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListCodeReviewJobTasks service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListCodeReviewJobTasks">REST API Reference for ListCodeReviewJobTasks Operation</seealso>
+        public virtual ListCodeReviewJobTasksResponse ListCodeReviewJobTasks(ListCodeReviewJobTasksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCodeReviewJobTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeReviewJobTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListCodeReviewJobTasksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of task summaries for the specified code review job, optionally
+        /// filtered by step name or category.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeReviewJobTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCodeReviewJobTasks service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListCodeReviewJobTasks">REST API Reference for ListCodeReviewJobTasks Operation</seealso>
+        public virtual Task<ListCodeReviewJobTasksResponse> ListCodeReviewJobTasksAsync(ListCodeReviewJobTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCodeReviewJobTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeReviewJobTasksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCodeReviewJobTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCodeReviews
+
+
+        /// <summary>
+        /// Returns a paginated list of code review summaries for the specified agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeReviews service method.</param>
+        /// 
+        /// <returns>The response from the ListCodeReviews service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListCodeReviews">REST API Reference for ListCodeReviews Operation</seealso>
+        public virtual ListCodeReviewsResponse ListCodeReviews(ListCodeReviewsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCodeReviewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeReviewsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCodeReviewsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of code review summaries for the specified agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeReviews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCodeReviews service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListCodeReviews">REST API Reference for ListCodeReviews Operation</seealso>
+        public virtual Task<ListCodeReviewsResponse> ListCodeReviewsAsync(ListCodeReviewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCodeReviewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeReviewsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCodeReviewsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDiscoveredEndpoints
 
 
@@ -2278,6 +2612,49 @@ namespace Amazon.SecurityAgent
 
         #endregion
         
+        #region  StartCodeReviewJob
+
+
+        /// <summary>
+        /// Starts a new code review job for a code review configuration. The job executes the
+        /// security-focused code analysis defined in the code review.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCodeReviewJob service method.</param>
+        /// 
+        /// <returns>The response from the StartCodeReviewJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StartCodeReviewJob">REST API Reference for StartCodeReviewJob Operation</seealso>
+        public virtual StartCodeReviewJobResponse StartCodeReviewJob(StartCodeReviewJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartCodeReviewJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCodeReviewJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartCodeReviewJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a new code review job for a code review configuration. The job executes the
+        /// security-focused code analysis defined in the code review.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCodeReviewJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCodeReviewJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StartCodeReviewJob">REST API Reference for StartCodeReviewJob Operation</seealso>
+        public virtual Task<StartCodeReviewJobResponse> StartCodeReviewJobAsync(StartCodeReviewJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartCodeReviewJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCodeReviewJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartCodeReviewJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartPentestJob
 
 
@@ -2317,6 +2694,49 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = StartPentestJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartPentestJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopCodeReviewJob
+
+
+        /// <summary>
+        /// Stops a running code review job. The job transitions to a stopping state and then
+        /// to stopped after cleanup completes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopCodeReviewJob service method.</param>
+        /// 
+        /// <returns>The response from the StopCodeReviewJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StopCodeReviewJob">REST API Reference for StopCodeReviewJob Operation</seealso>
+        public virtual StopCodeReviewJobResponse StopCodeReviewJob(StopCodeReviewJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopCodeReviewJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopCodeReviewJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopCodeReviewJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a running code review job. The job transitions to a stopping state and then
+        /// to stopped after cleanup completes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopCodeReviewJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopCodeReviewJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StopCodeReviewJob">REST API Reference for StopCodeReviewJob Operation</seealso>
+        public virtual Task<StopCodeReviewJobResponse> StopCodeReviewJobAsync(StopCodeReviewJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopCodeReviewJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopCodeReviewJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopCodeReviewJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2528,6 +2948,47 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCodeReview
+
+
+        /// <summary>
+        /// Updates an existing code review configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCodeReview service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCodeReview service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateCodeReview">REST API Reference for UpdateCodeReview Operation</seealso>
+        public virtual UpdateCodeReviewResponse UpdateCodeReview(UpdateCodeReviewRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCodeReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCodeReviewResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCodeReviewResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing code review configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCodeReview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCodeReview service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateCodeReview">REST API Reference for UpdateCodeReview Operation</seealso>
+        public virtual Task<UpdateCodeReviewResponse> UpdateCodeReviewAsync(UpdateCodeReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCodeReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCodeReviewResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateCodeReviewResponse>(request, options, cancellationToken);
         }
 
         #endregion

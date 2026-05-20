@@ -76,6 +76,7 @@ namespace AWSSDK.UnitTests
 
             requestContext.Request.Endpoint = new Uri("https://s3.amazonaws.com");
 
+#if NETFRAMEWORK
             var putObjectResponse = MockWebResponse.CreateFromResource("PutObjectResponse.txt")
                 as HttpWebResponse;
             return new Amazon.Runtime.Internal.ExecutionContext(requestContext,
@@ -83,6 +84,15 @@ namespace AWSSDK.UnitTests
                 {
                     HttpResponse = new HttpWebRequestResponseData(putObjectResponse)
                 });
+#else
+            var putObjectResponse = MockWebResponse.CreateFromResource("PutObjectResponse.txt")
+                as System.Net.Http.HttpResponseMessage;
+            return new Amazon.Runtime.Internal.ExecutionContext(requestContext,
+                new ResponseContext
+                {
+                    HttpResponse = new HttpClientResponseData(putObjectResponse)
+                });
+#endif
         }
     }
 
@@ -154,7 +164,6 @@ namespace AWSSDK.UnitTests
                 Validate(this.CallCount);
         }
 
-#if BCL
         public override async Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             await Task.Delay(100);
@@ -171,8 +180,6 @@ namespace AWSSDK.UnitTests
 
             return new T();
         }
-#endif
-
     }
 
     public class MockHandler : PipelineHandler
@@ -181,11 +188,9 @@ namespace AWSSDK.UnitTests
         {
         }
 
-#if BCL
         public override Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             return Task.FromResult<T>(new T());
         }
-#endif
     }
 }

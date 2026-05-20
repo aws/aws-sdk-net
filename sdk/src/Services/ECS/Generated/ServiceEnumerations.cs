@@ -1937,6 +1937,56 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type DeploymentLifecycleHookAction.
+    /// </summary>
+    public class DeploymentLifecycleHookAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUE for DeploymentLifecycleHookAction
+        /// </summary>
+        public static readonly DeploymentLifecycleHookAction CONTINUE = new DeploymentLifecycleHookAction("CONTINUE");
+        /// <summary>
+        /// Constant ROLLBACK for DeploymentLifecycleHookAction
+        /// </summary>
+        public static readonly DeploymentLifecycleHookAction ROLLBACK = new DeploymentLifecycleHookAction("ROLLBACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentLifecycleHookAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentLifecycleHookAction FindValue(string value)
+        {
+            return FindValue<DeploymentLifecycleHookAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentLifecycleHookAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentLifecycleHookStage.
     /// </summary>
     public class DeploymentLifecycleHookStage : ConstantClass
@@ -1954,6 +2004,10 @@ namespace Amazon.ECS
         /// Constant POST_TEST_TRAFFIC_SHIFT for DeploymentLifecycleHookStage
         /// </summary>
         public static readonly DeploymentLifecycleHookStage POST_TEST_TRAFFIC_SHIFT = new DeploymentLifecycleHookStage("POST_TEST_TRAFFIC_SHIFT");
+        /// <summary>
+        /// Constant PRE_PRODUCTION_TRAFFIC_SHIFT for DeploymentLifecycleHookStage
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStage PRE_PRODUCTION_TRAFFIC_SHIFT = new DeploymentLifecycleHookStage("PRE_PRODUCTION_TRAFFIC_SHIFT");
         /// <summary>
         /// Constant PRE_SCALE_UP for DeploymentLifecycleHookStage
         /// </summary>
@@ -2000,6 +2054,118 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeploymentLifecycleHookStage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentLifecycleHookStatus.
+    /// </summary>
+    public class DeploymentLifecycleHookStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWAITING_ACTION for DeploymentLifecycleHookStatus
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStatus AWAITING_ACTION = new DeploymentLifecycleHookStatus("AWAITING_ACTION");
+        /// <summary>
+        /// Constant FAILED for DeploymentLifecycleHookStatus
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStatus FAILED = new DeploymentLifecycleHookStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DeploymentLifecycleHookStatus
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStatus IN_PROGRESS = new DeploymentLifecycleHookStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for DeploymentLifecycleHookStatus
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStatus SUCCEEDED = new DeploymentLifecycleHookStatus("SUCCEEDED");
+        /// <summary>
+        /// Constant TIMED_OUT for DeploymentLifecycleHookStatus
+        /// </summary>
+        public static readonly DeploymentLifecycleHookStatus TIMED_OUT = new DeploymentLifecycleHookStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentLifecycleHookStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentLifecycleHookStatus FindValue(string value)
+        {
+            return FindValue<DeploymentLifecycleHookStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentLifecycleHookStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentLifecycleHookTargetType.
+    /// </summary>
+    public class DeploymentLifecycleHookTargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_LAMBDA for DeploymentLifecycleHookTargetType
+        /// </summary>
+        public static readonly DeploymentLifecycleHookTargetType AWS_LAMBDA = new DeploymentLifecycleHookTargetType("AWS_LAMBDA");
+        /// <summary>
+        /// Constant PAUSE for DeploymentLifecycleHookTargetType
+        /// </summary>
+        public static readonly DeploymentLifecycleHookTargetType PAUSE = new DeploymentLifecycleHookTargetType("PAUSE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentLifecycleHookTargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentLifecycleHookTargetType FindValue(string value)
+        {
+            return FindValue<DeploymentLifecycleHookTargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentLifecycleHookTargetType(string value)
         {
             return FindValue(value);
         }

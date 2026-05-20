@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateEmailAddressAlias operation.
-    /// Associates an email address alias with an existing email address in an Amazon Connect
+    /// Associates an email address alias with an existing email address in an Connect Customer
     /// instance. This creates a forwarding relationship where emails sent to the alias email
     /// address are automatically forwarded to the primary email address. 
     /// 
@@ -58,7 +58,7 @@ namespace Amazon.Connect.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>Brand management</b>: Enable you to use familiar brand-specific email addresses
-    /// that forward to the appropriate Amazon Connect instance email address.
+    /// that forward to the appropriate Connect Customer instance email address.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -97,8 +97,8 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-    /// Connect endpoints and quotas</a>.
+    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+    /// Customer endpoints and quotas</a>.
     /// </para>
     ///  
     /// <para>
@@ -107,7 +107,7 @@ namespace Amazon.Connect.Model
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>:
-    /// Removes the alias association between two email addresses in an Amazon Connect instance.
+    /// Removes the alias association between two email addresses in an Connect Customer instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -147,7 +147,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property AliasConfiguration. 
         /// <para>
         /// Configuration object that specifies which email address will serve as the alias. The
-        /// specified email address must already exist in the Amazon Connect instance and cannot
+        /// specified email address must already exist in the Connect Customer instance and cannot
         /// already be configured as an alias or have an alias of its own.
         /// </para>
         /// </summary>
@@ -208,7 +208,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

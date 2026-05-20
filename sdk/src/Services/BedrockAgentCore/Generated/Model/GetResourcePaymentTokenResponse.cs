@@ -39,8 +39,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentTokenResponse. 
         /// <para>
-        /// Vendor-specific token response output Contains all response data in a type-safe, vendor-specific
-        /// structure
+        /// Vendor-specific token response output. Contains all response data in a type-safe,
+        /// vendor-specific structure.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

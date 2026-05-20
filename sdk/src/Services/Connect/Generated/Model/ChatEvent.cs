@@ -61,12 +61,12 @@ namespace Amazon.Connect.Model
         ///  <ul> <li> 
         /// <para>
         /// For allowed message content, see the <c>Content</c> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a>
-        /// topic in the <i>Amazon Connect Participant Service API Reference</i>.
+        /// topic in the <i>Connect Customer Participant Service API Reference</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For allowed event content, see the <c>Content</c> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a>
-        /// topic in the <i>Amazon Connect Participant Service API Reference</i>. 
+        /// topic in the <i>Connect Customer Participant Service API Reference</i>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -93,12 +93,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// For allowed message content types, see the <c>ContentType</c> parameter in the <a
         /// href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a>
-        /// topic in the <i>Amazon Connect Participant Service API Reference</i>.
+        /// topic in the <i>Connect Customer Participant Service API Reference</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For allowed event content types, see the <c>ContentType</c> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a>
-        /// topic in the <i>Amazon Connect Participant Service API Reference</i>. 
+        /// topic in the <i>Connect Customer Participant Service API Reference</i>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

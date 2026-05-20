@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchUserHierarchyGroups operation.
-    /// Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering.
+    /// Searches UserHierarchyGroups in an Connect Customer instance, with optional filtering.
     /// 
     ///  <important> 
     /// <para>
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
+        /// The identifier of the Connect Customer instance. You can find the instanceId in the
         /// ARN of the instance.
         /// </para>
         /// </summary>

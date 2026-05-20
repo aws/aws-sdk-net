@@ -155,6 +155,10 @@ namespace Amazon.PartnerCentralAccount
         /// </summary>
         public static readonly BusinessValidationCode INCOMPATIBLE_LEGAL_NAME = new BusinessValidationCode("INCOMPATIBLE_LEGAL_NAME");
         /// <summary>
+        /// Constant INELIGIBLE_ACCOUNT_TIER for BusinessValidationCode
+        /// </summary>
+        public static readonly BusinessValidationCode INELIGIBLE_ACCOUNT_TIER = new BusinessValidationCode("INELIGIBLE_ACCOUNT_TIER");
+        /// <summary>
         /// Constant INVALID_ACCOUNT_LINKING_STATUS for BusinessValidationCode
         /// </summary>
         public static readonly BusinessValidationCode INVALID_ACCOUNT_LINKING_STATUS = new BusinessValidationCode("INVALID_ACCOUNT_LINKING_STATUS");
@@ -1116,6 +1120,14 @@ namespace Amazon.PartnerCentralAccount
         /// Constant LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION for ServiceQuotaExceededExceptionReason
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION = new ServiceQuotaExceededExceptionReason("LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION");
+        /// <summary>
+        /// Constant LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY = new ServiceQuotaExceededExceptionReason("LIMIT_EXCEEDED_NUMBER_OF_PROFILE_UPDATE_PER_DAY");
+        /// <summary>
+        /// Constant LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY = new ServiceQuotaExceededExceptionReason("LIMIT_EXCEEDED_NUMBER_OF_PROFILE_VISIBILITY_UPDATE_PER_DAY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

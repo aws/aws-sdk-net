@@ -132,7 +132,6 @@ namespace Amazon.Glue.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=3)]
         public List<PartitionIndex> PartitionIndexes
         {
             get { return this._partitionIndexes; }
