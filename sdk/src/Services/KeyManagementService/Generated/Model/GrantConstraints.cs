@@ -31,15 +31,18 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html#cryptographic-operations">cryptographic
-    /// operations</a> in the grant only when the operation request includes the specified
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html">encryption
-    /// context</a>. 
+    /// operations</a> in the grant only when the operation request meets the specified constraints.
     /// 
     ///  
     /// <para>
-    /// KMS applies the grant constraints only to cryptographic operations that support an
-    /// encryption context, that is, all cryptographic operations with a symmetric KMS key.
-    /// Grant constraints are not applied to operations that do not support an encryption
+    /// KMS supports the following grant constraints:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>EncryptionContextEquals</c> and <c>EncryptionContextSubset</c> — These encryption
+    /// context constraints apply only to cryptographic operations that support an encryption
+    /// context, that is, all cryptographic operations with a symmetric KMS key. Encryption
+    /// context grant constraints are not applied to operations that do not support an encryption
     /// context, such as cryptographic operations with asymmetric KMS keys and management
     /// operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.
     /// </para>
@@ -62,12 +65,23 @@ namespace Amazon.KeyManagementService.Model
     /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-encryption-context">kms:EncryptionContext:context-key</a>
     /// in the <i> <i>Key Management Service Developer Guide</i> </i>.
     /// </para>
-    ///  </important>
+    ///  </important> </li> <li> 
+    /// <para>
+    ///  <c>SourceArn</c> — This grant constraint allows the permissions in the grant only
+    /// when the request is made on behalf of a specific Amazon Web Services resource, identified
+    /// by its <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Name (ARN)</a>. This is effectively the same as having the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a>
+    /// global condition key in the grant. The SourceArn constraint is supported on grants
+    /// for all types of KMS keys and can also be applied to the <a>DescribeKey</a> operation
+    /// when specified in the request. However, it does not apply to <a>RetireGrant</a> operation.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GrantConstraints
     {
         private Dictionary<string, string> _encryptionContextEquals = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Dictionary<string, string> _encryptionContextSubset = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _sourceArn;
 
         /// <summary>
         /// Gets and sets the property EncryptionContextEquals. 
@@ -119,6 +133,29 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetEncryptionContextSubset()
         {
             return this._encryptionContextSubset != null && (this._encryptionContextSubset.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceArn. 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+        /// Amazon Resource Name (ARN)</a> of an Amazon Web Services resource on behalf of which
+        /// the request is made. This is effectively the same as having the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a>
+        /// global condition key in the grant. The SourceArn constraint ensures that the principal
+        /// can use the KMS key only when the request is made on behalf of the specified resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=512)]
+        public string SourceArn
+        {
+            get { return this._sourceArn; }
+            set { this._sourceArn = value; }
+        }
+
+        // Check to see if SourceArn property is set
+        internal bool IsSetSourceArn()
+        {
+            return this._sourceArn != null;
         }
 
     }
