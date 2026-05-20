@@ -222,6 +222,24 @@ namespace Amazon.Runtime.Internal.Util
                     throw new ArgumentException("Request must have a seekable content stream to calculate checksum");
                 }
             }
+#if !NETFRAMEWORK
+            // PooledContentWriter may be null if Content was already accessed by an earlier pipeline stage,
+            // which triggers a lazy copy and disposes the writer.
+            else if (request.PooledContentWriter != null)
+            {
+                var memory = request.PooledContentWriter.WrittenMemory;
+                if (System.Runtime.InteropServices.MemoryMarshal.TryGetArray(memory, out var segment))
+                {
+                    var checksumBytes = algorithm.ComputeHash(segment.Array, segment.Offset, segment.Count);
+                    return Convert.ToBase64String(checksumBytes);
+                }
+                else
+                {
+                    var checksumBytes = algorithm.ComputeHash(memory.ToArray());
+                    return Convert.ToBase64String(checksumBytes);
+                }
+            }
+#endif
             else if (request.Content != null)
             {
                 var checksumBytes = algorithm.ComputeHash(request.Content);

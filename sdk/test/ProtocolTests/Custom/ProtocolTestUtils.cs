@@ -34,7 +34,6 @@ namespace AWSSDK.ProtocolTests.Utils
 {
     internal class ProtocolTestUtils
     {
-        // return an object since this should be able to return a request or a response
         public static IRequest RunMockRequest(AmazonWebServiceRequest request, IMarshaller<IRequest, AmazonWebServiceRequest> marshaller, IClientConfig config)
         {
             var pipeline = new RuntimePipeline(new List<IPipelineHandler>
@@ -139,6 +138,9 @@ namespace AWSSDK.ProtocolTests.Utils
 
             public void InvokeSync(IExecutionContext executionContext)
             {
+                // Materialize content before it's accessed by test assertions,
+                // since Marshaller.Dispose() returns the pooled buffer to the pool.
+                _ = executionContext.RequestContext.Request.Content;
             }
         }
 

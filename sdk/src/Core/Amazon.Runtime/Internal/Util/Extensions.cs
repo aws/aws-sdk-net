@@ -42,6 +42,11 @@ namespace Amazon.Runtime.Internal.Util
             if (request == null)
                 return false;
 
+#if !NETFRAMEWORK
+            if (request.PooledContentWriter != null)
+                return true;
+#endif
+
             if (request.ContentStream != null || request.Content != null)
                 return true;
 

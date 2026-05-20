@@ -93,7 +93,16 @@ namespace Amazon.Runtime.Internal
             }
             else
             {
+#if !NETFRAMEWORK
+                // PooledContentWriter may be null if Content was already accessed by an earlier pipeline stage.
+                ReadOnlyMemory<byte> input;
+                if (request.PooledContentWriter != null)
+                    input = request.PooledContentWriter.WrittenMemory;
+                else
+                    input = AWSSDKUtils.GetRequestPayloadBytes(request);
+#else
                 var input = AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
                 if (input.Length >= minCompressionSize)
                 {
                     executionContext.RequestContext.Metrics.AddProperty(Metric.UncompressedRequestSize, input.Length);

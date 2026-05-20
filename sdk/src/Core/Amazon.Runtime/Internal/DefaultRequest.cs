@@ -22,6 +22,9 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using Amazon.Runtime.EventStreams;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 
 namespace Amazon.Runtime.Internal
 {
@@ -301,10 +304,31 @@ namespace Amazon.Runtime.Internal
         {
             get
             {
+#if !NETFRAMEWORK
+                // Lazy copy: only allocates if external code accesses Content directly.
+                // Internal pipeline code should read PooledContentWriter.WrittenMemory instead.
+                if (content == null && PooledContentWriter != null)
+                {
+                    content = PooledContentWriter.WrittenMemory.ToArray();
+
+                    // Once we materialize the byte[] copy, release the pooled buffer immediately
+                    // to avoid holding two copies of the payload in memory.
+                    PooledContentWriter.Dispose();
+                    PooledContentWriter = null;
+                }
+#endif
                 return this.content;
             }
             set
             {
+#if !NETFRAMEWORK
+                // Return the pooled buffer before replacing the content.
+                if (PooledContentWriter != null)
+                {
+                    PooledContentWriter.Dispose();
+                    PooledContentWriter = null;
+                }
+#endif
                 this.content = value;
             }
         }
@@ -589,5 +613,33 @@ namespace Amazon.Runtime.Internal
         /// Auth scheme chosen for the current request.
         /// </summary>
         public IAuthSchemeOption ChosenAuthScheme { get; set; }
+
+#if !NETFRAMEWORK
+        /// <inheritdoc/>
+        public ArrayPoolBufferWriter<byte> PooledContentWriter { get; set; }
+#endif
+
+        /// <summary>
+        /// Disposes pooled resources held by this request.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes managed resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+#if !NETFRAMEWORK
+                PooledContentWriter?.Dispose();
+                PooledContentWriter = null;
+#endif
+            }
+        }
     }
 }

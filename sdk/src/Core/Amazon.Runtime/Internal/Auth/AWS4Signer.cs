@@ -18,6 +18,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
+#if NET8_0_OR_GREATER
+using System.Security.Cryptography;
+#endif
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Endpoints;
@@ -528,16 +531,52 @@ namespace Amazon.Runtime.Internal.Auth
 
                 SetContentEncodingHeader(request);
             }
+            else if (request.ContentStream != null)
+                computedContentHash = request.ComputeContentStreamHash();
+
             else
             {
-                if (request.ContentStream != null)
-                    computedContentHash = request.ComputeContentStreamHash();
+                // When PooledContentWriter is set, hash directly from the pooled buffer to avoid
+                // triggering the Content getter's lazy copy. The approach differs by target:
+                // - NET8_0: SHA256.HashData accepts ReadOnlySpan, zero allocation.
+                // - !NETFRAMEWORK (netcoreapp3.1): No one-shot Span API, so extract the underlying
+                //   array via MemoryMarshal.TryGetArray and use ComputeSHA256Hash(byte[], offset, count).
+                // - NETFRAMEWORK: No PooledContentWriter support, use existing byte[] path.
+#if NET8_0_OR_GREATER
+                // Hash directly from the pooled buffer without copying using the one-shot SHA256 API.
+                ReadOnlySpan<byte> payloadSpan;
+                if (request.PooledContentWriter != null)
+                {
+                    payloadSpan = request.PooledContentWriter.WrittenMemory.Span;
+                }
                 else
                 {
-                    byte[] payloadBytes = AWSSDKUtils.GetRequestPayloadBytes(request, request.UseQueryString);
-                    byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(payloadBytes);
-                    computedContentHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
+                    payloadSpan = AWSSDKUtils.GetRequestPayloadBytes(request, request.UseQueryString);
                 }
+                byte[] payloadHashBytes = SHA256.HashData(payloadSpan);
+#elif !NETFRAMEWORK
+                byte[] payloadHashBytes;
+                if (request.PooledContentWriter != null)
+                {
+                    var memory = request.PooledContentWriter.WrittenMemory;
+                    if (System.Runtime.InteropServices.MemoryMarshal.TryGetArray(memory, out var segment))
+                    {
+                        payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(segment.Array, segment.Offset, segment.Count);
+                    }
+                    else
+                    {
+                        payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(memory.ToArray());
+                    }
+                }
+                else
+                {
+                    payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(AWSSDKUtils.GetRequestPayloadBytes(request, request.UseQueryString));
+                }
+#else
+                byte[] payloadBytes = AWSSDKUtils.GetRequestPayloadBytes(request, request.UseQueryString);
+                byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(payloadBytes);
+#endif
+                computedContentHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
             }
 
 

@@ -34,29 +34,51 @@ namespace Amazon.Runtime.Internal
     public class Marshaller : PipelineHandler
     {
         /// <summary>
-        /// Calls pre invoke logic before calling the next handler 
+        /// Calls pre invoke logic before calling the next handler
         /// in the pipeline.
         /// </summary>
         /// <param name="executionContext">The execution context which contains both the
         /// requests and response context.</param>
         public override void InvokeSync(IExecutionContext executionContext)
         {
-            PreInvoke(executionContext);
-            base.InvokeSync(executionContext);
+            try
+            {
+                PreInvoke(executionContext);
+                base.InvokeSync(executionContext);
+            }
+            finally
+            {
+                // Returns pooled buffers (e.g. ArrayPoolBufferWriter) to the pool after the entire inner
+                // pipeline completes, including all retries. Safe to call even if already disposed.
+                // This must not happen before the HttpHandler finishes reading the WrittenMemory,
+                // since HttpRequestMessageFactory wraps it in ReadOnlyMemoryContent/ByteArrayContent.
+                executionContext.RequestContext.Request?.Dispose();
+            }
         }
 
         /// <summary>
-        /// Calls pre invoke logic before calling the next handler 
+        /// Calls pre invoke logic before calling the next handler
         /// in the pipeline.
         /// </summary>
         /// <typeparam name="T">The response type for the current request.</typeparam>
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>
         /// <returns>A task that represents the asynchronous operation.</returns>
-        public override System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
+        public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
-            PreInvoke(executionContext);
-            return base.InvokeAsync<T>(executionContext);
+            try
+            {
+                PreInvoke(executionContext);
+                return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
+            }
+            finally
+            {
+                // Returns pooled buffers (e.g. ArrayPoolBufferWriter) to the pool after the entire inner
+                // pipeline completes, including all retries. Safe to call even if already disposed.
+                // This must not happen before the HttpHandler finishes reading the WrittenMemory,
+                // since HttpRequestMessageFactory wraps it in ReadOnlyMemoryContent/ByteArrayContent.
+                executionContext.RequestContext.Request?.Dispose();
+            }
         }
 
         /// <summary>

@@ -19,6 +19,9 @@ using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.EventStreams;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 
 namespace Amazon.Runtime.Internal
 {
@@ -32,7 +35,7 @@ namespace Amazon.Runtime.Internal
     /// </para>
     /// </summary>
     [AWSIsBackwardsCompatible]
-    public interface IRequest
+    public interface IRequest : IDisposable
     {
         /// <summary>
         /// A publisher provided by consumers of the SDK to provide events that the SDK will pull from to stream to the service.
@@ -415,5 +418,13 @@ namespace Amazon.Runtime.Internal
         /// Auth scheme chosen for the current request.
         /// </summary>
         IAuthSchemeOption ChosenAuthScheme { get; set; }
+
+#if !NETFRAMEWORK
+        /// <summary>
+        /// Pooled buffer writer holding the serialized request body.
+        /// When set, pipeline consumers should read WrittenMemory instead of Content to avoid copying the data.
+        /// </summary>
+        ArrayPoolBufferWriter<byte> PooledContentWriter { get; set; }
+#endif
     }
 }

@@ -292,6 +292,14 @@ namespace Amazon.Runtime.Internal
             // This code path ends up using a ByteArrayContent for System.Net.HttpClient used by .NET Core.
             // HttpClient can't seem to handle ByteArrayContent with 0 length so in that case use
             // the StreamContent code path.
+#if !NETFRAMEWORK
+            else if (wrappedRequest.PooledContentWriter != null && wrappedRequest.PooledContentWriter.WrittenMemory.Length > 0)
+            {
+                var contentMemory = wrappedRequest.PooledContentWriter.WrittenMemory;
+                requestContext.Metrics.AddProperty(Metric.RequestSize, contentMemory.Length);
+                httpRequest.WriteToRequestBody(requestContent, contentMemory, requestContext.Request.Headers);
+            }
+#endif
             else if (wrappedRequest.Content != null && wrappedRequest.Content.Length > 0)
             {
                 byte[] requestData = wrappedRequest.Content;
@@ -424,35 +432,49 @@ namespace Amazon.Runtime.Internal
 #endif
 
             httpRequest.Method = request.HttpMethod;
-            if (request.MayContainRequestBody())
-            {
-                var content = request.Content;
-                if (request.SetContentFromParameters || (content == null && request.ContentStream == null))
-                {
-                    // Mapping parameters to query string or body are mutually exclusive.
-                    if (!request.UseQueryString)
-                    {
-                        string queryString = AWSSDKUtils.GetParametersAsString(request);
-                        content = Encoding.UTF8.GetBytes(queryString);
-                        request.Content = content;
-                        request.SetContentFromParameters = true;
-                    }
-                    else
-                    {
-                        request.Content = ArrayEx.Empty<byte>();
-                    }
-                }
 
-                if (content != null)
+            if (!request.MayContainRequestBody())
+                return httpRequest;
+
+            // PooledContentWriter and SetContentFromParameters are mutually exclusive:
+            // JSON marshallers set PooledContentWriter, query-string services set parameters.
+#if !NETFRAMEWORK
+            if (request.SetContentFromParameters || (request.PooledContentWriter == null && request.Content == null && request.ContentStream == null))
+#else
+            if (request.SetContentFromParameters || (request.Content == null && request.ContentStream == null))
+#endif
+            {
+                // Mapping parameters to query string or body are mutually exclusive.
+                if (!request.UseQueryString)
                 {
-                    request.Headers[HeaderKeys.ContentLengthHeader] =
-                        content.Length.ToString(CultureInfo.InvariantCulture);
+                    string queryString = AWSSDKUtils.GetParametersAsString(request);
+                    request.Content = Encoding.UTF8.GetBytes(queryString);
+                    request.SetContentFromParameters = true;
                 }
-                else if (request.ContentStream != null && request.ContentStream.CanSeek && !request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
+                else
                 {
-                    request.Headers[HeaderKeys.ContentLengthHeader] =
-                        request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
+                    request.Content = ArrayEx.Empty<byte>();
                 }
+            }
+
+#if !NETFRAMEWORK
+            if (request.PooledContentWriter != null)
+            {
+                request.Headers[HeaderKeys.ContentLengthHeader] =
+                    request.PooledContentWriter.WrittenCount.ToString(CultureInfo.InvariantCulture);
+            }
+            else if (request.Content != null)
+#else
+            if (request.Content != null)
+#endif
+            {
+                request.Headers[HeaderKeys.ContentLengthHeader] =
+                    request.Content.Length.ToString(CultureInfo.InvariantCulture);
+            }
+            else if (request.ContentStream != null && request.ContentStream.CanSeek && !request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
+            {
+                request.Headers[HeaderKeys.ContentLengthHeader] =
+                    request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             }
 
             return httpRequest;
