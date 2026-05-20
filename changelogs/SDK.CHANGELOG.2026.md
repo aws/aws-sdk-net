@@ -1,3 +1,20 @@
+### 4.0.252.0 (2026-05-20 18:24 UTC)
+* BedrockRuntime (4.0.18.0)
+	* Supporting Request Metadata for Invoke Model and Invoke Model with Response Stream
+* CustomerProfiles (4.0.12.0)
+	* Amazon Connect Customer Profiles adds support for item catalog columns in RecommenderSchema, ExcludedColumns in Create and Update Recommender to specify columns to exclude from training, and the ability to disable automatic retraining by setting TrainingFrequency to 0.
+* KeyManagementService (4.0.11.0)
+	* AWS KMS now supports creating grants for AWS service principals using new GranteeServicePrincipal and RetiringServicePrincipal parameters. This release adds SourceArn grant constraint and three condition keys for controlling CreateGrant access. For more information, see Grants in AWS KMS.
+* MWAA (4.0.4.4)
+	* Updated API documentation to describe the PublicAndPrivate webserver access mode.
+* PaymentCryptographyData (4.0.7.0)
+	* GenerateAuthRequestCryptogram API launch.
+* Extensions.NETCore.Setup (4.0.4.0)
+	* Added new callback for the `AddAWSService` and similar methods allowing customization of the service client config before being used to create the service client. For example the callback can be used to configure the `HttpClientFactory` with an implementation coming from the DI using the `IHttpClientFactory` provided by Microsoft.
+	* Note: Callers passing a literal null as the second argument to AddAWSService or AddKeyedAWSService may need to cast (e.g., (AWSOptions)null) to resolve overload ambiguity.
+* Core 4.0.7.2
+	* Remove outdated xamarin links on httpClientFactory docs.
+
 ### 4.0.251.0 (2026-05-19 18:24 UTC)
 * BedrockAgentCore (4.0.24.0)
 	* Add RetryableConflictException (HTTP 409) to InvokeAgentRuntime and StopRuntimeSession to prevent orphaned VMs during concurrent session access. The SDK automatically retries this exception with backoff. Enforcement is not yet active and will be enabled in a future service update.
