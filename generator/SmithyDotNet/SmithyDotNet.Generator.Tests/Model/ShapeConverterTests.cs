@@ -16,6 +16,9 @@ public class ShapeConverterTests(CloudTrailModelFixture fixture)
     [InlineData("""{"type": "double"}""", typeof(DoubleShape), "double")]
     [InlineData("""{"type": "blob"}""", typeof(BlobShape), "blob")]
     [InlineData("""{"type": "timestamp"}""", typeof(TimestampShape), "timestamp")]
+    [InlineData("""{"type": "enum", "members": {}}""", typeof(EnumShape), "enum")]
+    [InlineData("""{"type": "intEnum", "members": {}}""", typeof(IntEnumShape), "intEnum")]
+    [InlineData("""{"type": "union", "members": {}}""", typeof(UnionShape), "union")]
     public void Deserialize_ScalarShapes(string json, Type expectedType, string expectedTypeField)
     {
         var shape = JsonSerializer.Deserialize<Shape>(json, CloudTrailModelFixture.Options);
