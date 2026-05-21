@@ -36,6 +36,7 @@ namespace Amazon.CleanRooms.Model
     public partial class StartProtectedJobRequest : AmazonCleanRoomsRequest
     {
         private ProtectedJobComputeConfiguration _computeConfiguration;
+        private string _jobComputePayerAccountId;
         private ProtectedJobParameters _jobParameters;
         private string _membershipIdentifier;
         private ProtectedJobResultConfigurationInput _resultConfiguration;
@@ -57,6 +58,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetComputeConfiguration()
         {
             return this._computeConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobComputePayerAccountId. 
+        /// <para>
+        /// The account ID of the member that pays for the job compute costs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string JobComputePayerAccountId
+        {
+            get { return this._jobComputePayerAccountId; }
+            set { this._jobComputePayerAccountId = value; }
+        }
+
+        // Check to see if JobComputePayerAccountId property is set
+        internal bool IsSetJobComputePayerAccountId()
+        {
+            return this._jobComputePayerAccountId != null;
         }
 
         /// <summary>

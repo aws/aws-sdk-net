@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MemberChangeSpecification Marshaller
+    /// UpdateMembershipPaymentConfiguration Marshaller
     /// </summary>
-    public class MemberChangeSpecificationMarshaller : IRequestMarshaller<MemberChangeSpecification, JsonMarshallerContext> 
+    public class UpdateMembershipPaymentConfigurationMarshaller : IRequestMarshaller<UpdateMembershipPaymentConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,51 +42,39 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MemberChangeSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(UpdateMembershipPaymentConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAccountId())
+            if(requestObject.IsSetJobCompute())
             {
-                context.Writer.WritePropertyName("accountId");
-                context.Writer.WriteStringValue(requestObject.AccountId);
-            }
-
-            if(requestObject.IsSetDisplayName())
-            {
-                context.Writer.WritePropertyName("displayName");
-                context.Writer.WriteStringValue(requestObject.DisplayName);
-            }
-
-            if(requestObject.IsSetMemberAbilities())
-            {
-                context.Writer.WritePropertyName("memberAbilities");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectMemberAbilitiesListValue in requestObject.MemberAbilities)
-                {
-                        context.Writer.WriteStringValue(requestObjectMemberAbilitiesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetMlMemberAbilities())
-            {
-                context.Writer.WritePropertyName("mlMemberAbilities");
+                context.Writer.WritePropertyName("jobCompute");
                 context.Writer.WriteStartObject();
 
-                var marshaller = MLMemberAbilitiesMarshaller.Instance;
-                marshaller.Marshall(requestObject.MlMemberAbilities, context);
+                var marshaller = MembershipJobComputePaymentConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.JobCompute, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetPaymentConfiguration())
+            if(requestObject.IsSetMachineLearning())
             {
-                context.Writer.WritePropertyName("paymentConfiguration");
+                context.Writer.WritePropertyName("machineLearning");
                 context.Writer.WriteStartObject();
 
-                var marshaller = PaymentConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.PaymentConfiguration, context);
+                var marshaller = MembershipMLPaymentConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.MachineLearning, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetQueryCompute())
+            {
+                context.Writer.WritePropertyName("queryCompute");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MembershipQueryComputePaymentConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.QueryCompute, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -96,7 +84,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MemberChangeSpecificationMarshaller Instance = new MemberChangeSpecificationMarshaller();
+        public readonly static UpdateMembershipPaymentConfigurationMarshaller Instance = new UpdateMembershipPaymentConfigurationMarshaller();
 
     }
 }

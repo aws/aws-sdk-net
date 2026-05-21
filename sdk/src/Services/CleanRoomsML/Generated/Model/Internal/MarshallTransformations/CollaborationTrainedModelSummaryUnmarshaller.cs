@@ -98,6 +98,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     unmarshalledObject.MembershipIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("mlModelTrainingPayerAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MlModelTrainingPayerAccountId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

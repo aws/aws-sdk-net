@@ -130,6 +130,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.KmsKeyArn);
             }
 
+            if(publicRequest.IsSetMlModelInferencePayerAccountId())
+            {
+                context.Writer.WritePropertyName("mlModelInferencePayerAccountId");
+                context.Writer.WriteStringValue(publicRequest.MlModelInferencePayerAccountId);
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
