@@ -1,4 +1,5 @@
-﻿using Amazon.DynamoDBv2.DataModel;
+﻿using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
@@ -76,7 +77,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
 
             transactWrite
                 .Setup(x => x.AddSaveItem(It.IsAny<T>(), null))
-                .Callback((T item) => itemsToSave.Add(item));
+                .Callback((T item, ReturnConsumedCapacity _) => itemsToSave.Add(item));
 
             transactWrite.
                 Setup(x => x.Execute())

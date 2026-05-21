@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// List of consumed capacity details.
-        /// Populated after Execute is called if ReturnConsumedCapacity was provided in TransactOperationConfig.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
         /// </summary>
         List<ConsumedCapacity> ConsumedCapacity { get; }
 
@@ -406,6 +406,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             finally
             {
                 if (ConditionCheckFailedItems == null) ConditionCheckFailedItems = new List<Document>();
+                if (ConsumedCapacity == null) ConsumedCapacity = new List<ConsumedCapacity>();
             }
         }
 
@@ -596,9 +597,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public List<IDocumentTransactWrite> TransactionParts { get; private set; }
 
-        /// <inheritdoc/>
-        public List<ConsumedCapacity> ConsumedCapacity { get; private set; }
-
         #endregion
 
 
@@ -709,8 +707,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         public List<ITransactWriteRequestItem> Items { get; set; }
 
-        public List<ConsumedCapacity> ConsumedCapacity { get; set; }
-
         #endregion
 
 
@@ -736,7 +732,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (Items == null || !Items.Any()) return;
 
             var request = ConstructRequest(isAsync: false);
-
+            List<ConsumedCapacity> consumedCapacity;
             try
             {
 #if NETSTANDARD
@@ -751,7 +747,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 var internalClient = Items[0].TransactionPart.TargetTable.DDBClient;
 #endif
 
-                internalClient.TransactWriteItems(request);
+                var result = internalClient.TransactWriteItems(request);
+                consumedCapacity = result?.ConsumedCapacity;
             }
             catch (TransactionCanceledException ex)
             {
@@ -762,6 +759,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             foreach (var item in Items)
             {
                 item.CommitChanges();
+                item.TransactionPart.ConsumedCapacity = consumedCapacity;
             }
         }
 
@@ -794,8 +792,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             var transactItems = Items.Select(item => item.GetRequest()).ToList();
             var returnConsumedCapacity =
-                Items.Any(x => x.OperationConfig?.ReturnConsumedCapacity == ReturnConsumedCapacity.TOTAL) ? ReturnConsumedCapacity.TOTAL :
                 Items.Any(x => x.OperationConfig?.ReturnConsumedCapacity == ReturnConsumedCapacity.INDEXES) ? ReturnConsumedCapacity.INDEXES :
+                Items.Any(x => x.OperationConfig?.ReturnConsumedCapacity == ReturnConsumedCapacity.TOTAL) ? ReturnConsumedCapacity.TOTAL :
                 ReturnConsumedCapacity.NONE;
             var request = new TransactWriteItemsRequest { 
                 TransactItems = transactItems,

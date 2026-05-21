@@ -950,21 +950,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             var employee1 = new T
             {
-                Name = "Alan",
-                Age = 31,
+                Name = "Name1",
+                Age = 34,
                 Score = 120,
-                ManagerName = "Barbara"
+                ManagerName = "Manager1"
             };
             var employee2 = new T
             {
-                Name = "Diane",
-                Age = 40,
+                Name = "Name2",
+                Age = 44,
                 Score = 140
             };
             var product = new VersionedProduct
             {
-                Id = 1001,
-                Name = "CloudSpotter",
+                Id = 3001,
+                Name = "Product Name",
                 Price = 1200
             };
 
@@ -978,53 +978,84 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 await tran.ExecuteAsync();
 
                 Assert.Equal(2, employeeTran.ConsumedCapacity.Count);
-                Assert.Equal(4, employeeTran.ConsumedCapacity[0].WriteCapacityUnits);
-                Assert.Null(employeeTran.ConsumedCapacity[0].ReadCapacityUnits);
-                Assert.Null(employeeTran.ConsumedCapacity[0].GlobalSecondaryIndexes);
-                Assert.Null(employeeTran.ConsumedCapacity[0].LocalSecondaryIndexes);
-                Assert.Equal(2, employeeTran.ConsumedCapacity[1].WriteCapacityUnits);
-                Assert.Null(employeeTran.ConsumedCapacity[1].ReadCapacityUnits);
-                Assert.Null(employeeTran.ConsumedCapacity[1].GlobalSecondaryIndexes);
-                Assert.Null(employeeTran.ConsumedCapacity[1].LocalSecondaryIndexes);
-
+                Assert.Collection(
+                    employeeTran.ConsumedCapacity.OrderBy(x => x.WriteCapacityUnits),
+                    capacity =>
+                    {
+                        Assert.Equal(2, capacity.WriteCapacityUnits);
+                        Assert.Null(capacity.ReadCapacityUnits);
+                        Assert.Null(capacity.GlobalSecondaryIndexes);
+                        Assert.Null(capacity.LocalSecondaryIndexes);
+                    },
+                    capacity =>
+                    {
+                        Assert.Equal(4, capacity.WriteCapacityUnits);
+                        Assert.Null(capacity.ReadCapacityUnits);
+                        Assert.Null(capacity.GlobalSecondaryIndexes);
+                        Assert.Null(capacity.LocalSecondaryIndexes);
+                    });
                 Assert.Equal(2, productTran.ConsumedCapacity.Count);
-                Assert.Equal(4, productTran.ConsumedCapacity[0].WriteCapacityUnits);
-                Assert.Null(productTran.ConsumedCapacity[0].ReadCapacityUnits);
-                Assert.Null(productTran.ConsumedCapacity[0].GlobalSecondaryIndexes);
-                Assert.Null(productTran.ConsumedCapacity[0].LocalSecondaryIndexes);
-                Assert.Equal(2, productTran.ConsumedCapacity[1].WriteCapacityUnits);
-                Assert.Null(productTran.ConsumedCapacity[1].ReadCapacityUnits);
-                Assert.Null(productTran.ConsumedCapacity[1].GlobalSecondaryIndexes);
-                Assert.Null(productTran.ConsumedCapacity[1].LocalSecondaryIndexes);
+                Assert.Collection(
+                    productTran.ConsumedCapacity.OrderBy(x => x.WriteCapacityUnits),
+                    capacity =>
+                    {
+                        Assert.Equal(2, capacity.WriteCapacityUnits);
+                        Assert.Null(capacity.ReadCapacityUnits);
+                        Assert.Null(capacity.GlobalSecondaryIndexes);
+                        Assert.Null(capacity.LocalSecondaryIndexes);
+                    },
+                    capacity =>
+                    {
+                        Assert.Equal(4, capacity.WriteCapacityUnits);
+                        Assert.Null(capacity.ReadCapacityUnits);
+                        Assert.Null(capacity.GlobalSecondaryIndexes);
+                        Assert.Null(capacity.LocalSecondaryIndexes);
+                    });
             }
 
             {
                 var employeeTran = context.CreateTransactGet<T>();
-                employeeTran.AddKeys(new[] { employee1, employee2 });
+                employeeTran.AddKey(employee1, returnConsumedCapacity: ReturnConsumedCapacity.INDEXES);
+                employeeTran.AddKey(employee2, returnConsumedCapacity: ReturnConsumedCapacity.INDEXES);
                 var productTran = context.CreateTransactGet<VersionedProduct>();
                 productTran.AddKey(product.Id, returnConsumedCapacity: ReturnConsumedCapacity.INDEXES);
                 var tran = context.CreateMultiTableTransactGet(employeeTran, productTran);
                 await tran.ExecuteAsync();
 
                 Assert.Equal(2, employeeTran.ConsumedCapacity.Count);
-                Assert.Equal(4, employeeTran.ConsumedCapacity[0].ReadCapacityUnits);
-                Assert.Null(employeeTran.ConsumedCapacity[0].WriteCapacityUnits);
-                Assert.Null(employeeTran.ConsumedCapacity[0].GlobalSecondaryIndexes);
-                Assert.Null(employeeTran.ConsumedCapacity[0].LocalSecondaryIndexes);
-                Assert.Equal(2, employeeTran.ConsumedCapacity[1].ReadCapacityUnits);
-                Assert.Null(employeeTran.ConsumedCapacity[1].WriteCapacityUnits);
-                Assert.Null(employeeTran.ConsumedCapacity[1].GlobalSecondaryIndexes);
-                Assert.Null(employeeTran.ConsumedCapacity[1].LocalSecondaryIndexes);
-
+                Assert.Collection(
+                    employeeTran.ConsumedCapacity.OrderBy(x => x.ReadCapacityUnits),
+                    capacity =>
+                    {
+                        Assert.Equal(2, capacity.ReadCapacityUnits);
+                        Assert.Null(capacity.WriteCapacityUnits);
+                        Assert.Null(capacity.GlobalSecondaryIndexes);
+                        Assert.Null(capacity.LocalSecondaryIndexes);
+                    },
+                    capacity =>
+                    {
+                        Assert.Equal(4, capacity.ReadCapacityUnits);
+                        Assert.Null(capacity.WriteCapacityUnits);
+                        Assert.Null(capacity.GlobalSecondaryIndexes);
+                        Assert.Null(capacity.LocalSecondaryIndexes);
+                    });
                 Assert.Equal(2, productTran.ConsumedCapacity.Count);
-                Assert.Equal(4, productTran.ConsumedCapacity[0].ReadCapacityUnits);
-                Assert.Null(productTran.ConsumedCapacity[0].WriteCapacityUnits);
-                Assert.Null(productTran.ConsumedCapacity[0].GlobalSecondaryIndexes);
-                Assert.Null(productTran.ConsumedCapacity[0].LocalSecondaryIndexes);
-                Assert.Equal(2, productTran.ConsumedCapacity[1].ReadCapacityUnits);
-                Assert.Null(productTran.ConsumedCapacity[1].WriteCapacityUnits);
-                Assert.Null(productTran.ConsumedCapacity[1].GlobalSecondaryIndexes);
-                Assert.Null(productTran.ConsumedCapacity[1].LocalSecondaryIndexes);
+                Assert.Collection(
+                    productTran.ConsumedCapacity.OrderBy(x => x.ReadCapacityUnits),
+                    capacity =>
+                    {
+                        Assert.Equal(2, capacity.ReadCapacityUnits);
+                        Assert.Null(capacity.WriteCapacityUnits);
+                        Assert.Null(capacity.GlobalSecondaryIndexes);
+                        Assert.Null(capacity.LocalSecondaryIndexes);
+                    },
+                    capacity =>
+                    {
+                        Assert.Equal(4, capacity.ReadCapacityUnits);
+                        Assert.Null(capacity.WriteCapacityUnits);
+                        Assert.Null(capacity.GlobalSecondaryIndexes);
+                        Assert.Null(capacity.LocalSecondaryIndexes);
+                    });
             }
         }
 
