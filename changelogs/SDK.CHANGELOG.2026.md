@@ -1,3 +1,111 @@
+### 4.0.253.0 (2026-05-21 20:23 UTC)
+* ACMPCA (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* APIGateway (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* ApiGatewayV2 (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppRegistry (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppStream (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* Backup (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+* Batch (4.0.9.6)
+	* Clarified CreateComputeEnvironment parameter requirements - serviceRole is required for UNMANAGED compute environments, allocationStrategy is required for EKS compute environments, and compute environments must be created in the ENABLED state.
+* BedrockAgent (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockAgentCoreControl (4.0.37.0)
+	* Adds dataset management APIs for creating, versioning, and managing evaluation datasets.
+* BedrockRuntime (4.0.19.0)
+	* Adding new BDD representation of endpoint ruleset
+* CertificateManager (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* CleanRooms (4.0.17.0)
+	* Collaboration creators can update payment configurations without recreating the collaboration. When multiple payer candidates are configured for a cost type, analysis runners can specify the actual payer at submission time, providing granular control over billing.
+* CleanRoomsML (4.0.10.0)
+	* Collaboration creators can update payment configurations without recreating the collaboration. When multiple payer candidates are configured for a cost type, analysis runners can specify the actual payer at submission time, providing granular control over billing.
+* Cloud9 (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeArtifact (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeGuruProfiler (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Comprehend (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ComprehendMedical (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Connect (4.0.46.0)
+	* Adding new BDD representation of endpoint ruleset
+* DataSync (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* DLM (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* EKS (4.0.17.0)
+	* Adding new BDD representation of endpoint ruleset
+* Evs (4.0.8.0)
+	* A new GetDepotUrl API has been added to retrieve a URL for accessing Amazon EVS custom addon packages. Customers can use this URL to configure vSphere Lifecycle Manager (vLCM) as an online depot source, enabling upgrades of addon components across ESXi hosts.
+* FMS (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* FSx (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* GlobalAccelerator (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* GuardDuty (4.0.20.0)
+	* Adding new BDD representation of endpoint ruleset
+* HealthLake (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTJobsDataPlane (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Kafka (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* KendraRanking (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisVideoArchivedMedia (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* MarketplaceEntitlementService (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaConnect (4.0.8.0)
+	* Adds support for controlling the timecode source of NDI flow outputs.
+* MediaTailor (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* MigrationHubConfig (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MigrationHubOrchestrator (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* NetworkManager (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* Pricing (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* QApps (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* QuickSight (4.0.23.0)
+	* Adding new BDD representation of endpoint ruleset
+* Route53Resolver (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* SageMaker (4.0.59.0)
+	* Add support for disabling home EFS file system creation on SageMaker domains.
+* SageMakerMetrics (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* SecurityHub (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* ServerlessApplicationRepository (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* Signer (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* SSOAdmin (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Textract (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* TranscribeService (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* Translate (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* VerifiedPermissions (4.0.8.0)
+	* Support hard deleting policy store aliases. Users can now delete an alias and immediately reassign it to a different policy store without waiting for the soft-delete retention period.
+* WorkMail (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+
 ### 4.0.252.0 (2026-05-20 18:24 UTC)
 * BedrockRuntime (4.0.18.0)
 	* Supporting Request Metadata for Invoke Model and Invoke Model with Response Stream
