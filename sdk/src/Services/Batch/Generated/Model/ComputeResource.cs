@@ -69,6 +69,12 @@ namespace Amazon.Batch.Model
         /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
         /// specify it.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// This parameter is required for Amazon EKS compute environments. For Amazon ECS compute
+        /// environments, if this parameter isn't specified, the <c>BEST_FIT</c> allocation strategy
+        /// is used by default.
+        /// </para>
         ///  </note> <dl> <dt>BEST_FIT (default)</dt> <dd> 
         /// <para>
         /// Batch selects an instance type that best fits the needs of the jobs with a preference
